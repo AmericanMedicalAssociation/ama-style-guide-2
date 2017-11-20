@@ -216,11 +216,11 @@ gulp.task('watch', function () {
     ['sass']
   );
 
-  // Watch icons
-  gulp.watch(
-    config.icons.files,
-    ['icons']
-  );
+  // // Watch icons
+  // gulp.watch(
+  //   config.icons.files,
+  //   ['icons']
+  // );
 
   // Watch fonts
   gulp.watch(
@@ -236,7 +236,7 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    'icons',
+    // 'icons',
     ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
