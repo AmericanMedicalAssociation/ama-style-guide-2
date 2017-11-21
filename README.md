@@ -67,7 +67,7 @@ sudo npm install -g n
 sudo n stable
 ```
 
-* Node versions higher than `v7.10.0` are not yet supported, so please exercise caution when using these instructions. 
+\* Node versions higher than `v7.10.0` are not yet supported, so please exercise caution when using these instructions. 
 
 - Update npm
 
