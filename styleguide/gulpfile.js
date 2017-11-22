@@ -1,12 +1,8 @@
 // npm requirements
 var gulp        = require('gulp'),
-  bump        = require('gulp-bump'),
   clean       = require('gulp-clean'),
   concat      = require('gulp-concat'),
   browserSync = require('browser-sync'),
-  cssmin      = require('gulp-cssmin'),
-  filter      = require('gulp-filter'),
-  git         = require('gulp-git'),
   gulpif      = require('gulp-if'),
   imagemin    = require('gulp-imagemin'),
   rename      = require('gulp-rename'),
@@ -22,11 +18,8 @@ var gulp        = require('gulp'),
   gulpicon    = require('gulpicon/tasks/gulpicon'),
   sourcemaps  = require('gulp-sourcemaps'),
   prefix      = require('gulp-autoprefixer'),
-  postcss     = require('gulp-postcss'),
-  reporter    = require('postcss-reporter'),
   stylelint   = require('gulp-stylelint'),
   gutil       = require('gulp-util');
-gutil       = require('gulp-util'),
   pWaitFor    = require('p-wait-for'),
   pathExists  = require('path-exists');
 
@@ -103,9 +96,8 @@ gulp.task('sass', ['scss-lint'], function () {
   return gulp.src(config.scss.files)
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
-    .pipe(sass())
+    .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
     .pipe(prefix('last 2 version'))
-    .pipe(gulpif(production, cssmin()))
     .pipe(gulpif(production, rename({
       suffix: '.min'
     })))
@@ -126,13 +118,15 @@ gulp.task('minifyIcons', function() {
 // Based on https://github.com/filamentgroup/gulpicon#usage
 var iconFiles = glob.sync("source/assets/icons/svg/*.svg");
 var iconConfig = require("./source/assets/icons/config.js");
+
 iconConfig.dest = "public/assets/icons/";
 gulp.task('makeIcons', gulpicon(iconFiles, iconConfig));
+
 gulp.task('waitForIcons', function(callback) {
   var trigger = iconConfig.dest + 'preview.html';
   return pWaitFor(() => pathExists(trigger, '1000')).then(() => {
     console.log('Yay! The icons now exist.');
-});
+  });
 });
 gulp.task('reloadIcons', function() {
   return gulp.src('', {read: false})
@@ -215,12 +209,6 @@ gulp.task('watch', function () {
     config.scss.files,
     ['sass']
   );
-
-  // // Watch icons
-  // gulp.watch(
-  //   config.icons.files,
-  //   ['icons']
-  // );
 
   // Watch fonts
   gulp.watch(
