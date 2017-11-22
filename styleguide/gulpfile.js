@@ -216,11 +216,11 @@ gulp.task('watch', function () {
     ['sass']
   );
 
-  // // Watch icons
-  // gulp.watch(
-  //   config.icons.files,
-  //   ['icons']
-  // );
+  // Watch icons
+  gulp.watch(
+    config.icons.files,
+    ['icons']
+  );
 
   // Watch fonts
   gulp.watch(
