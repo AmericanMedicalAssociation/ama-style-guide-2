@@ -1,34 +1,27 @@
 // npm requirements
 var gulp        = require('gulp'),
-  bump        = require('gulp-bump'),
-  clean       = require('gulp-clean'),
-  concat      = require('gulp-concat'),
-  browserSync = require('browser-sync'),
-  cssmin      = require('gulp-cssmin'),
-  filter      = require('gulp-filter'),
-  git         = require('gulp-git'),
-  gulpif      = require('gulp-if'),
-  imagemin    = require('gulp-imagemin'),
-  rename      = require('gulp-rename'),
-  sass        = require('gulp-sass'),
-  sassGlob    = require('gulp-sass-glob'),
-  shell       = require('gulp-shell'),
-  tagversion  = require('gulp-tag-version'),
-  uglify      = require('gulp-uglify'),
-  ghPages     = require('gulp-gh-pages'),
-  runSequence = require('run-sequence'),
-  glob        = require('glob'),
-  svgmin      = require('gulp-svgmin'),
-  gulpicon    = require('gulpicon/tasks/gulpicon'),
-  sourcemaps  = require('gulp-sourcemaps'),
-  prefix      = require('gulp-autoprefixer'),
-  postcss     = require('gulp-postcss'),
-  reporter    = require('postcss-reporter'),
-  stylelint   = require('gulp-stylelint'),
-  gutil       = require('gulp-util');
-gutil       = require('gulp-util'),
-  pWaitFor    = require('p-wait-for'),
-  pathExists  = require('path-exists');
+    clean       = require('gulp-clean'),
+    concat      = require('gulp-concat'),
+    browserSync = require('browser-sync'),
+    gulpif      = require('gulp-if'),
+    imagemin    = require('gulp-imagemin'),
+    rename      = require('gulp-rename'),
+    sass        = require('gulp-sass'),
+    sassGlob    = require('gulp-sass-glob'),
+    svgmin      = require('gulp-svgmin'),
+    shell       = require('gulp-shell'),
+    tagversion  = require('gulp-tag-version'),
+    uglify      = require('gulp-uglify'),
+    ghPages     = require('gulp-gh-pages'),
+    runSequence = require('run-sequence'),
+    glob        = require('glob'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    prefix      = require('gulp-autoprefixer'),
+    stylelint   = require('gulp-stylelint'),
+    gutil       = require('gulp-util');
+    pWaitFor    = require('p-wait-for'),
+    pathExists  = require('path-exists'),
+    gulpicon    = require("gulpicon/tasks/gulpicon");
 
 // Config
 var config = require('./build.config.json');
@@ -99,20 +92,6 @@ gulp.task('images', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('sass', ['scss-lint'], function () {
-  return gulp.src(config.scss.files)
-    .pipe(sourcemaps.init())
-    .pipe(sassGlob())
-    .pipe(sass())
-    .pipe(prefix('last 2 version'))
-    .pipe(gulpif(production, cssmin()))
-    .pipe(gulpif(production, rename({
-      suffix: '.min'
-    })))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(config.css.dest))
-    .pipe(browserSync.reload({stream:true}));
-});
 
 // Task: Handle icons
 // We have to do this in a few steps until
@@ -141,6 +120,20 @@ gulp.task('reloadIcons', function() {
 
 gulp.task('icons', function (callback) {
   runSequence('minifyIcons', 'makeIcons', 'waitForIcons', 'reloadIcons', callback);
+});
+
+gulp.task('sass', ['scss-lint'], function () {
+  return gulp.src(config.scss.files)
+    .pipe(sourcemaps.init())
+    .pipe(sassGlob())
+    .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
+    .pipe(prefix('last 2 version'))
+    .pipe(gulpif(production, rename({
+      suffix: '.min'
+    })))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(config.scss.dest))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 // Task: patternlab
@@ -204,24 +197,23 @@ gulp.task('watch', function () {
     ['images']
   );
 
-  // Watch Css
+  // Watch icons
+  gulp.watch(
+    config.icons.files,
+    ['icons']
+  );
+
+  // Watch css
   gulp.watch(
     config.css.files,
     ['css']
   );
 
-  // Watch Sass
+  // Watch sass
   gulp.watch(
     config.scss.files,
     ['sass']
   );
-
-  // // Watch icons
-  // gulp.watch(
-  //   config.icons.files,
-  //   ['icons']
-  // );
-
   // Watch fonts
   gulp.watch(
     config.fonts.files,
@@ -237,7 +229,7 @@ gulp.task('default', ['clean:before'], function (callback) {
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
     // 'icons',
-    ['scripts', 'fonts', 'images', 'sass'],
+    ['scripts', 'fonts', 'images', 'icons', 'sass'],
     'patternlab',
     'styleguide',
     'sass',
