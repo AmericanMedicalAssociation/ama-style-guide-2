@@ -203,7 +203,7 @@ gulp.task('watch', function () {
     ['icons']
   );
 
-  // Watch css
+  // Watch Css
   gulp.watch(
     config.css.files,
     ['css']
@@ -214,6 +214,7 @@ gulp.task('watch', function () {
     config.scss.files,
     ['sass']
   );
+
   // Watch fonts
   gulp.watch(
     config.fonts.files,
