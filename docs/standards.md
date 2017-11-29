@@ -2,23 +2,37 @@
 
 Since SG2 is a living design library that is home to reusable patterns, it's important for all contributing developers to attempt to create patterns the same way. 
 
-Any new work merged into SG2 must follow the following standards:
+Any new work merged into SG2 must meet the following standards:
 
 ### PatternLab Organization
 
-#### "Meta" section
-Still needs to be added. Will contain ______.
-
-#### "Base" section
-Still needs to be added. Will contain ______.
-
 #### How patterns are organized:
-- Layouts should be used for templates but not molecules
+- Patterns should be listed alphabetically in the pattern list. No numbers (explain what this means).
+- Talk about where SCSS and JS files should go (in a separate .scss directory?), as well as Twig and .md files (no subdirectories?). We may still need to make a decision about this.
+
+##### Atoms
 - An atom should be the basic HTML elements
+
+##### Molecules
 - A molecule should include most of the markup and pull in atoms as necessary
+
+##### Organisms
 - Organisms should be very little markup, it should be mostly wrappers around molecules
-- Patterns should be listed alphabetically in pattern list
-- Variants of patterns with the same data model should be pseudopatterns
+
+##### Templates
+- Layouts should be used for templates but not molecules
+
+##### Pages
+Add a description here.
+
+##### Base
+Add a description of the "base" patterns here. Do they always get reused, or no?
+
+Contains:
+- "Colors" atom showing variables and base color palette.
+
+##### Meta
+Add a description of the "meta" patterns here. This section still needs to be added to SG2.
 
 ### How to classify/name patterns
 - [PROBLEM] Pattern classification in PL is inaccurate
@@ -31,10 +45,11 @@ Still needs to be added. Will contain ______.
 - [PROBLEM] Pattern needs more information/definition
 
 #### Rules for naming:
-- Keep it vague.
-- Keep it conversational/human readable.
+- Keep it vague. Add a good and bad example here.
+- Keep it conversational/human readable. Add a good and bad example here.
 
 #### Naming pattern variants 
+- Variants of patterns with the same data model should be pseudopatterns
 - Variants should be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color")
 - Icons should have "icon" in the pattern name. 
 - "Article stub" could be a good way to name article previews 
@@ -76,12 +91,4 @@ Still needs to be added. Will contain ______.
 
 #### Javascript
 - JS approach
-- JS functionality should be attached to js-<element> class (?)
-
-
-### Graveyard
-- No numbers
-
-
-
-
+- JS functionality should be attached to js-<element> class (? We should double check if we really want to do this)
