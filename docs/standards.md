@@ -45,20 +45,24 @@ See "PatternLab Organization" above.
 
 #### Pattern scalability
 It's important for patterns to be easily reusable.
-- Patterns should use JSON for their content.
+- Patterns should use JSON for their content:
+  - Bad: `<a href="link.html">I am a link</a>`
+  - Good: `<a href="{{ url }}">{{ text }}</a>`
 
-| Bad        | Good           |
-| ------------- |-------------|
-| `test`      | `test` |
+- Patterns should be named something that won't exclude them from being used somewhere else in the future.*
+  - Bad: an atom named `login-form-password-field`
+  - Good: an atom named `password-field`
+  
+  \* unless they aren't intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms). 
 
-| Bad        | Good           |
-| ------------- |-------------|
-| > test      | > test |
-
-- Patterns should be named something that won't exclude them from being used somewhere else in the future.
 - Patterns should be coded to accept CSS classes or other HTML attributes from the patterns that include them.
-- Patterns should not include hard-coded styles or classes that may not apply to all instances in which the pattern is used. 
+  - Bad: `<div class="foo">{{ div.content }}</div>`
+  - Good: `<div class="foo {{ div.class }}">{{ div.content }}</div>`
 
+- Patterns should not include hard-coded styles or classes that may not apply to all instances in which the pattern is used.
+  - Bad: `<div class="dropdown__list-item dropdown__list-item-foo dropdown__list-item-bar"></div>`
+  - Good: `<div class="dropdown__list-item {{class}}"></div>`
+  
 #### Pattern consistency
 
 
