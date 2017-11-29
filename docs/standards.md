@@ -64,17 +64,50 @@ It's important for patterns to be easily reusable.
   - Good: `<div class="dropdown__list-item {{class}}"></div>`
   
 #### Pattern consistency
+- Patterns should generally adhere to the existing name/organization schema. File names, pattern organization within PatternLab, and code should appear in kind with the existing patterns in the library.
+
+   - Bad: `<DIV><A HREF="{{ url }}"></A></ BR>`
+  - Good: `<div><a href="{{ url }}"</a><br>`
+
+#### Pattern namespacing
+Pattern code should comply with the BEM naming system. 
+
+  - Bad: `differentlyCapitalized.twig`  
+  - Bad: `named-with-a-number2.twig`
+  - Bad: `named_with_underscores.twig`
+  - Bad: `atoms/our-special-project/header.twig`
+  
+
+  
+    - Bad:
+    > <div class="header">
+    >   <a href="{{ url }}" class="fancy-link">{{ content }}</a>
+    >   <img src="{{ src }} class="fun-image">
+    > </div>
+    
+    
+    - Good:
+    > <div class="header">
+    >   <a href="{{ url }}" class="header__link-fancy">{{ content }}</a>
+    >   <img src="{{ src }} class="header__image-fun">
+    > </div>
+    
+#### Pattern definition in `.md`
+PatternLab users can view information about each pattern using the "Pattern Info" feature, whose content is supplied by data provided in a `.md` file.
+
+It should include some sections. There will be a template.
+@todo expand this section or link to useful information
 
 
-### Checklist for new work:
-- [ ] Pattern classification: are the elements classified into patterns in a way that makes intuitive sense and aligns with our classification system? (See "PatternLab Organization" above.)
-- [ ] Pattern scalability: is the pattern easily reusable if that is its intent, or is it too specific to be easily included elsewhere? Does the base pattern scale easily with the use of variants?
-- [ ] Pattern consistency: is the pattern consistently classified, coded, and conceptualized with the existing patterns?
-- [ ] Pattern namespacing: does the pattern code comply with the BEM naming system? Is it intuitively clear by looking at the markup what each element's purpose is?
-- [ ] Pattern name descriptiveness: is the pattern named something that is, at a glance, recognizable? Is there an "official" (from the requirements) name for the pattern that should be used instead?
-- [ ] Pattern content descriptiveness: is the placeholder content descriptive of the type of content that will go there (e.g. "helper text for input above" for helper text)?
-- [ ] Pattern cohesion: was the pattern introduced to address an explicit feature, bug, or change request? Has the work followed the existing process for adding new work?
-- [ ] Pattern definition: is the pattern fully documented in its `.md` file? Is it obvious from looking at the pattern what its purpose is and how it should be used?
+### Checklist:
+- [ ] classification: are the elements classified into patterns in a way that makes intuitive sense and aligns with our classification system? (See "PatternLab Organization" above.)
+- [ ] scalability: is the pattern easily reusable if that is its intent, or is it too specific to be easily included elsewhere? Does the base pattern scale easily with the use of variants?
+- [ ] consistency: is the pattern consistently classified, coded, and conceptualized with the existing patterns?
+- [ ] namespacing: does the pattern code comply with the BEM naming system? Is it intuitively clear by looking at the markup what each element's purpose is?
+- [ ] name descriptiveness: is the pattern named something that is, at a glance, recognizable? Is there an "official" (from the requirements) name for the pattern that should be used instead?
+- [ ] content descriptiveness: is the placeholder content descriptive of the type of content that will go there (e.g. "helper text for input above" for helper text)?
+- [ ] cohesion: was the pattern introduced to address an explicit feature, bug, or change request? Has the work followed the existing process for adding new work?
+- [ ] definition: is the pattern fully documented in its `.md` file? Is it obvious from looking at the pattern what its purpose is and how it should be used?
 
 #### Rules for naming:
 - Keep it vague. Add a good and bad example here.
