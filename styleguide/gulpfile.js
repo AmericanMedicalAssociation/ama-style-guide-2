@@ -29,7 +29,6 @@ var config = require('./build.config.json');
 
 // Trigger
 var production;
-
 // Task: Clean:before
 // Description: Removing assets files before running other tasks
 gulp.task('clean:before', function () {
@@ -229,8 +228,8 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    // 'icons',
-    ['scripts', 'fonts', 'images', 'icons', 'sass'],
+    'icons',
+    ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
     'sass',
