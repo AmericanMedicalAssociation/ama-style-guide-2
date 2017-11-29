@@ -45,13 +45,13 @@ See "PatternLab Organization" above.
 
 #### Pattern scalability
 It's important for patterns to be easily reusable.
-- Patterns should use JSON for their content:
+- Patterns should use JSON data from an associated `.json` file for their content:
   - Bad: `<a href="link.html">I am a link</a>`
-  - Good: `<a href="{{ url }}">{{ text }}</a>`
+  - Good: `<a href="{{ link.url }}">{{ link.text }}</a>`
 
 - Patterns should be named something that won't exclude them from being used somewhere else in the future.*
-  - Bad: an atom named `login-form-password-field`
-  - Good: an atom named `password-field`
+  - Bad: an atom named `login-form-password-field.twig`
+  - Good: an atom named `password-field.twig`
   
   \* unless they aren't intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms). 
 
