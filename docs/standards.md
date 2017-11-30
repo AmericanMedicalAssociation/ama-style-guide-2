@@ -2,12 +2,12 @@
 
 Since SG2 is a living design library that is home to reusable patterns, it's important for all contributing developers to attempt to create patterns the same way. 
 
-Any new work merged into SG2 must meet the following standards:
+Any new work contributed into SG2 must meet the following standards:
 
 ### PatternLab Organization
 
 #### How patterns are organized:
-- Patterns should be listed alphabetically in the pattern list. No numbers (explain what this means): we don't need to number elements under top level folder, like 00-atoms/10-forms/<this stuff> – (twig/json) they're named things, not numbered things – at this point these things are actual THINGS. lol 
+- Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`). 
 - Talk about where SCSS and JS files should go (in a separate .scss directory?), as well as Twig and .md files (no subdirectories?). We may still need to make a decision about this.
 
 ##### Atoms
@@ -16,7 +16,7 @@ Any new work merged into SG2 must meet the following standards:
 
 ##### Molecules
 - A molecule should include most of the markup and pull in atoms as necessary.
-- Not every element in a molecule needs to be an atom. (?)
+- Not every element in a molecule needs to be an atom.
 
 ##### Organisms
 - Organisms should be very little markup, it should be mostly wrappers around molecules or atoms.
@@ -37,7 +37,20 @@ Contains:
 Add a description of the "meta" patterns here. This section still needs to be added to SG2.
 
 ### How to classify/name patterns
-@todo - put checklist items here and give examples
+All pattern class names should follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`). 
+
+Below is an example of how a breadcrumb organism for the default AMA theme may appear:
+```html
+<section class="ama__breadcrumbs ">
+  <nav class="ama__breadcrumbs__container">
+    <ol class="ama__breadcrumbs__items">
+      <li class="ama__breadcrumbs__item"><a href="#">Link 1</a></li>
+      <li class="ama__breadcrumbs__item"><a href="#">Link 2</a></li>
+    </ol>
+  </nav>
+</section>
+```
+This pattern shows that `breadcrumbs` is a block of the `ama` theme and has the elements `container`, `items` and `item`.
 
 #### Pattern classification
 See "PatternLab Organization" above. 
@@ -53,7 +66,7 @@ It's important for patterns to be easily reusable.
   - Bad: an atom named `login-form-password-field.twig`
   - Good: an atom named `password-field.twig`
   
-  \* unless they aren't intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms). 
+  \* unless they are **not** intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms). 
 
 - Patterns should be coded to accept CSS classes or other HTML attributes from the patterns that include them.
   - Bad: `<div class="foo">{{ div.content }}</div>`
@@ -76,28 +89,25 @@ Pattern code should comply with the BEM naming system.
   - Bad: `named-with-a-number2.twig`
   - Bad: `named_with_underscores.twig`
   - Bad: `atoms/our-special-project/header.twig`
-  
-
-  
-    - Bad:
-    > <div class="header">
-    >   <a href="{{ url }}" class="fancy-link">{{ content }}</a>
-    >   <img src="{{ src }} class="fun-image">
-    > </div>
-    
-    
-    - Good:
-    > <div class="header">
-    >   <a href="{{ url }}" class="header__link-fancy">{{ content }}</a>
-    >   <img src="{{ src }} class="header__image-fun">
-    > </div>
-    
+  - Bad:
+  ```html
+    <div class="header">
+      <a href="{{ url }}" class="fancy-link">{{ content }}</a>
+      <img src="{{ src }} class="fun-image">
+    </div>
+  ```
+   - Good:
+   ```html
+    <div class="header">
+      <a href="{{ url }}" class="header__link-fancy">{{ content }}</a>
+      <img src="{{ src }} class="header__image-fun">
+    </div>
+  ```
 #### Pattern definition in `.md`
 PatternLab users can view information about each pattern using the "Pattern Info" feature, whose content is supplied by data provided in a `.md` file.
 
-It should include some sections. There will be a template.
-@todo expand this section or link to useful information
-
+Please follow the [template](#) for creating `pattern.md` files.
+@todo: add template and update link.
 
 ### Checklist:
 - [ ] classification: are the elements classified into patterns in a way that makes intuitive sense and aligns with our classification system? (See "PatternLab Organization" above.)
@@ -110,14 +120,14 @@ It should include some sections. There will be a template.
 - [ ] definition: is the pattern fully documented in its `.md` file? Is it obvious from looking at the pattern what its purpose is and how it should be used?
 
 #### Rules for naming:
-- Keep it vague. Add a good and bad example here.
-- Keep it conversational/human readable. Add a good and bad example here.
+- Pattern names should be vague human-readable descriptions of the component. Generally, we should attempt to use the same plain language that the business would use when that language is not used in a different way elsewhere. (e.g. Don't say refer to a component as a "module" because that word has other meaning in the scope of these projects.)
+- Good: `ama__breadcrumbs`
+- Bad: `list--ordered--wayfinder`
 
 #### Naming pattern variants 
-- Variants of patterns with the same data model should be pseudopatterns. Add docs from code_conventions.md here.
+- Variants of patterns with the same data model should be pseudo patterns. Add docs from code_conventions.md here.
 - Variants should be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color")
 - Icons should have "icon" in the pattern name. 
-- ATTN folks working on the styleguide (AMA-style-guide) – a .json file needs to accompany an element, and 
 
 ### Documenting patterns
 - We will create a template for the markdown files for SG2
@@ -134,7 +144,7 @@ It should include some sections. There will be a template.
 
 #### Add patterns using Twig and JSON
 
-- When possible we should be using Twig blocks
+- When possible we should be using and extending Twig blocks
 - Even header number can be passed in `<h{{ header.level }} `, etc.
 - [PROBLEM] Pattern Twig isn't integrated properly in d8
 - [PROBLEM] pattern code needs longhand / Twig namespacing
@@ -143,7 +153,7 @@ It should include some sections. There will be a template.
 
 #### CSS
 - Class names should follow standard BEM naming and be prefixed with `ama`
-- [PROBLEM] Pattern needs more specific code (replace ama_theme wrapper with ama- class prefix)
+- [PROBLEM] Pattern needs more specific code (replace `.ama_theme` wrapper with `ama__` class prefix)
 - Refrain from nesting things
 - Utilize extends whenever possible
 - Sass rules:
