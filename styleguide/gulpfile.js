@@ -103,14 +103,14 @@ gulp.task('minifyIcons', function() {
 
 // Based on https://github.com/filamentgroup/gulpicon#usage
 var iconFiles = glob.sync(config.icons.files);
-var iconConfig = require("./source/assets/icons/config.js");
+var iconConfig = require(config.icons.configFile);
 iconConfig.dest = config.icons.dest;
 gulp.task('makeIcons', gulpicon(iconFiles, iconConfig));
 gulp.task('waitForIcons', function(callback) {
-  var trigger = config.icons.dest + 'preview.html';
+  var trigger = iconConfig.dest + 'preview.html';
   return pWaitFor(() => pathExists(trigger, '1000')).then(() => {
     console.log('Yay! The icons now exist.');
-});
+  });
 });
 gulp.task('reloadIcons', function() {
   return gulp.src('', {read: false})
@@ -181,7 +181,7 @@ gulp.task('watch', function () {
   // Watch Pattern Lab files
   gulp.watch(
     config.patternlab.files,
-    ['patternlab', 'default']
+    ['patternlab']
   );
 
   // Watch scripts
@@ -228,10 +228,11 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    ['icons', 'scripts', 'fonts', 'images', 'sass'],
+    ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
     'sass',
+    'icons',
     callback
   );
 });

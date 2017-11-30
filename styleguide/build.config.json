@@ -22,15 +22,20 @@
     ]
   },
   "scripts": {
+    "base"  : "source/assets/js/",
     "files" : [
       "source/assets/js/jquery-3.2.1.js",
       "source/assets/js/jquery.validate.js",
+      "source/assets/js/jquery.cookie.js",
       "source/assets/js/drupal-attach-behaviors.js",
       "source/assets/js/**/*.js",
       "source/_patterns/**/*.js"
     ],
     "drupalfiles" : [
       "source/assets/js/jquery.validate.js",
+      "source/assets/js/fitvids.js",
+      "source/assets/js/init.js",
+      "source/assets/js/form-items.js",
       "source/assets/js/nav.js",
       "source/_patterns/**/*.js"
     ],
@@ -55,11 +60,12 @@
     ],
     "dest" : "public/assets/fonts/"
   },
-  "icons": {
-    "base" : "source/assets/images/icons/",
-    "files": "source/assets/images/icons/svg/*.svg",
-    "min"  : "public/assets/images/icons/svg/",
-    "dest" : "public/assets/images/icons/"
+  "icons" : {
+    "base" : "source/assets/icons/",
+    "configFile" : "./source/assets/icons/config.js",
+    "files" : "source/assets/icons/svg/*.svg",
+    "min"  : "public/assets/icons/svg/",
+    "dest" : "public/assets/icons/"
   },
   "images": {
     "base" : "source/assets/images/",
@@ -82,3 +88,4 @@
     ]
   }
 }
+
