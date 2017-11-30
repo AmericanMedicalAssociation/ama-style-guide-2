@@ -21,7 +21,8 @@ var gulp        = require('gulp'),
     gutil       = require('gulp-util');
     pWaitFor    = require('p-wait-for'),
     pathExists  = require('path-exists'),
-    gulpicon    = require("gulpicon/tasks/gulpicon");
+    gulpicon    = require("gulpicon/tasks/gulpicon"),
+    plumber     = require('gulp-plumber');
 
 // Config
 var config = require('./build.config.json');
@@ -52,6 +53,7 @@ gulp.task('scripts', function () {
   // Package up all of the custom stuff for Drupal to consume
   var ds = gulp.src(config.scripts.drupalfiles)
   // unminified for development
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat('styleguide-custom.js'))
     .pipe(sourcemaps.write())
@@ -60,6 +62,7 @@ gulp.task('scripts', function () {
   // Package up everything for use by Pattern Lab
   return gulp.src(config.scripts.files)
   // unminified for development
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
     .pipe(sourcemaps.write())
@@ -75,6 +78,7 @@ gulp.task('scripts', function () {
 // Task: Handle fonts
 gulp.task('fonts', function () {
   return gulp.src(config.fonts.files)
+    .pipe(plumber())
     .pipe(gulp.dest(
       config.fonts.dest
     ))
@@ -84,6 +88,7 @@ gulp.task('fonts', function () {
 // Task: Handle media
 gulp.task('images', function () {
   return gulp.src(config.images.files)
+    .pipe(plumber())
     .pipe(gulpif(production, imagemin()))
     .pipe(gulp.dest(
       config.images.dest
@@ -97,6 +102,7 @@ gulp.task('images', function () {
 // https://github.com/filamentgroup/gulpicon/issues/1 is resolved
 gulp.task('minifyIcons', function() {
   return gulp.src(config.icons.files)
+    .pipe(plumber())
     .pipe(svgmin())
     .pipe(gulp.dest(config.icons.min));
 });
@@ -123,6 +129,7 @@ gulp.task('icons', function (callback) {
 
 gulp.task('sass', ['scss-lint'], function () {
   return gulp.src(config.scss.files)
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
@@ -139,6 +146,7 @@ gulp.task('sass', ['scss-lint'], function () {
 // Description: Build static Pattern Lab files via PHP script
 gulp.task('patternlab', function () {
   return gulp.src('', {read: false})
+    .pipe(plumber())
     .pipe(shell([
       'php core/console --generate'
     ]))
@@ -149,6 +157,7 @@ gulp.task('patternlab', function () {
 // Description: Copy Styleguide-Folder from core/ to public
 gulp.task('styleguide', function() {
   return gulp.src(config.patternlab.styleguide.files)
+    .pipe(plumber())
     .pipe(gulp.dest(config.patternlab.styleguide.dest));
 });
 
@@ -175,6 +184,24 @@ gulp.task('scss-lint', function() {
     }));
 });
 
+
+// copy files settings
+var svg2twig = {
+  base: config.icons.base,
+  src: config.icons.files,
+  dest: "./source/_patterns/01-atoms/media/icons/"
+};
+
+/* copy files */
+gulp.task("svg2twig", function() {
+  return gulp.src(svg2twig.src, { base: svg2twig.base })
+    .pipe(plumber())
+    .pipe(rename({
+      extname: ".twig"
+    }))
+    .pipe(gulp.dest(svg2twig.dest))
+});
+
 // Task: Watch files
 gulp.task('watch', function () {
 
@@ -199,7 +226,7 @@ gulp.task('watch', function () {
   // Watch icons
   gulp.watch(
     config.icons.files,
-    ['icons']
+    ['icons', 'svg2twig']
   );
 
   // Watch Css
@@ -210,7 +237,7 @@ gulp.task('watch', function () {
 
   // Watch sass
   gulp.watch(
-    config.scss.files,
+    config.scss.watch,
     ['sass']
   );
 
@@ -231,11 +258,13 @@ gulp.task('default', ['clean:before'], function (callback) {
     ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
-    'sass',
     'icons',
+    'sass',
     callback
   );
 });
+
+// gulp.task('default', runSequence(['scripts', 'fonts', 'images', 'sass', 'patternlab', 'styleguide']));
 
 // Task: Start your production-process
 // Description: Type 'gulp' in the terminal
