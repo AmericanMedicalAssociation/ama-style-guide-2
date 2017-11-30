@@ -90,14 +90,14 @@ Pattern code should comply with the BEM naming system.
   - Bad: `named_with_underscores.twig`
   - Bad: `atoms/our-special-project/header.twig`
   - Bad:
-  ```html
+  ```twig
     <div class="header">
       <a href="{{ url }}" class="fancy-link">{{ content }}</a>
       <img src="{{ src }} class="fun-image">
     </div>
   ```
    - Good:
-   ```html
+   ```twig
     <div class="header">
       <a href="{{ url }}" class="header__link-fancy">{{ content }}</a>
       <img src="{{ src }} class="header__image-fun">
