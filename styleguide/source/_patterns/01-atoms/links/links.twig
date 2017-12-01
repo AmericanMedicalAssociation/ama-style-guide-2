@@ -1,8 +1,11 @@
 {% for link in links %}
   <a href="{{ link.href }}"
      class="link {{ link.class }} {{ class }}"
-     target="{{ target|default('_self')}}">
+     target="{{ link.target }}">
     {{ link.text }}
   </a>
-  <br>
+{% else %}
+  <a href="{{ url }}" class="link {{ class }}" target="{{ target|default('_self')}}">
+    {{ content|default('Generic Link') }}
+  </a>
 {% endfor %}

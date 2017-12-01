@@ -1,8 +1,11 @@
 // npm requirements
 var gulp        = require('gulp'),
+    bump        = require('gulp-bump'),
     clean       = require('gulp-clean'),
     concat      = require('gulp-concat'),
     browserSync = require('browser-sync'),
+    filter      = require('gulp-filter'),
+    git         = require('gulp-git'),
     gulpif      = require('gulp-if'),
     imagemin    = require('gulp-imagemin'),
     rename      = require('gulp-rename'),
@@ -17,6 +20,8 @@ var gulp        = require('gulp'),
     glob        = require('glob'),
     sourcemaps  = require('gulp-sourcemaps'),
     prefix      = require('gulp-autoprefixer'),
+    postcss     = require('gulp-postcss'),
+    reporter    = require('postcss-reporter'),
     stylelint   = require('gulp-stylelint'),
     gutil       = require('gulp-util');
     pWaitFor    = require('p-wait-for'),
@@ -208,7 +213,7 @@ gulp.task('watch', function () {
   // Watch Pattern Lab files
   gulp.watch(
     config.patternlab.files,
-    ['patternlab']
+    ['patternlab', 'sass']
   );
 
   // Watch scripts
