@@ -26,6 +26,7 @@
     "files" : [
       "source/assets/js/jquery-3.2.1.js",
       "source/assets/js/jquery.validate.js",
+      "source/assets/js/jquery.cookie.js",
       "source/assets/js/drupal-attach-behaviors.js",
       "source/assets/js/**/*.js",
       "source/_patterns/**/*.js"
@@ -49,10 +50,8 @@
   },
   "scss": {
     "base" : "source/assets/css/",
-    "files": [
-      "source/assets/css/**/*.scss",
-      "source/_patterns/**/**/**/*.scss"
-    ],
+    "files": "source/assets/scss/*.scss",
+    "watch": "source/assets/scss/**/*.scss",
     "dest" : "public/assets/css/"
   },
   "fonts": {
@@ -62,11 +61,10 @@
     ],
     "dest" : "public/assets/fonts/"
   },
-  "icons": {
+  "icons" : {
     "base" : "source/assets/icons/",
-    "files": [
-      "source/assets/icons/svg/*.svg"
-    ],
+    "configFile" : "./source/assets/icons/config.js",
+    "files" : "source/assets/icons/svg/*.svg",
     "min"  : "public/assets/icons/svg/",
     "dest" : "public/assets/icons/"
   },
@@ -91,3 +89,4 @@
     ]
   }
 }
+

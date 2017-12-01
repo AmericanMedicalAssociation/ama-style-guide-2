@@ -1,34 +1,33 @@
 // npm requirements
 var gulp        = require('gulp'),
-  bump        = require('gulp-bump'),
-  clean       = require('gulp-clean'),
-  concat      = require('gulp-concat'),
-  browserSync = require('browser-sync'),
-  cssmin      = require('gulp-cssmin'),
-  filter      = require('gulp-filter'),
-  git         = require('gulp-git'),
-  gulpif      = require('gulp-if'),
-  imagemin    = require('gulp-imagemin'),
-  rename      = require('gulp-rename'),
-  sass        = require('gulp-sass'),
-  sassGlob    = require('gulp-sass-glob'),
-  shell       = require('gulp-shell'),
-  tagversion  = require('gulp-tag-version'),
-  uglify      = require('gulp-uglify'),
-  ghPages     = require('gulp-gh-pages'),
-  runSequence = require('run-sequence'),
-  glob        = require('glob'),
-  svgmin      = require('gulp-svgmin'),
-  gulpicon    = require('gulpicon/tasks/gulpicon'),
-  sourcemaps  = require('gulp-sourcemaps'),
-  prefix      = require('gulp-autoprefixer'),
-  postcss     = require('gulp-postcss'),
-  reporter    = require('postcss-reporter'),
-  stylelint   = require('gulp-stylelint'),
-  gutil       = require('gulp-util');
-gutil       = require('gulp-util'),
-  pWaitFor    = require('p-wait-for'),
-  pathExists  = require('path-exists');
+    bump        = require('gulp-bump'),
+    clean       = require('gulp-clean'),
+    concat      = require('gulp-concat'),
+    browserSync = require('browser-sync'),
+    filter      = require('gulp-filter'),
+    git         = require('gulp-git'),
+    gulpif      = require('gulp-if'),
+    imagemin    = require('gulp-imagemin'),
+    rename      = require('gulp-rename'),
+    sass        = require('gulp-sass'),
+    sassGlob    = require('gulp-sass-glob'),
+    svgmin      = require('gulp-svgmin'),
+    shell       = require('gulp-shell'),
+    tagversion  = require('gulp-tag-version'),
+    uglify      = require('gulp-uglify'),
+    ghPages     = require('gulp-gh-pages'),
+    runSequence = require('run-sequence'),
+    glob        = require('glob'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    prefix      = require('gulp-autoprefixer'),
+    postcss     = require('gulp-postcss'),
+    reporter    = require('postcss-reporter'),
+    stylelint   = require('gulp-stylelint'),
+    gutil       = require('gulp-util');
+    pWaitFor    = require('p-wait-for'),
+    pathExists  = require('path-exists'),
+    gulpicon    = require("gulpicon/tasks/gulpicon"),
+    plumber     = require('gulp-plumber');
 
 // Config
 var config = require('./build.config.json');
@@ -36,7 +35,6 @@ var config = require('./build.config.json');
 
 // Trigger
 var production;
-
 // Task: Clean:before
 // Description: Removing assets files before running other tasks
 gulp.task('clean:before', function () {
@@ -60,6 +58,7 @@ gulp.task('scripts', function () {
   // Package up all of the custom stuff for Drupal to consume
   var ds = gulp.src(config.scripts.drupalfiles)
   // unminified for development
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat('styleguide-custom.js'))
     .pipe(sourcemaps.write())
@@ -68,6 +67,7 @@ gulp.task('scripts', function () {
   // Package up everything for use by Pattern Lab
   return gulp.src(config.scripts.files)
   // unminified for development
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
     .pipe(sourcemaps.write())
@@ -83,15 +83,17 @@ gulp.task('scripts', function () {
 // Task: Handle fonts
 gulp.task('fonts', function () {
   return gulp.src(config.fonts.files)
+    .pipe(plumber())
     .pipe(gulp.dest(
       config.fonts.dest
     ))
     .pipe(browserSync.reload({stream:true}));
 });
 
-// Task: Handle images
+// Task: Handle media
 gulp.task('images', function () {
   return gulp.src(config.images.files)
+    .pipe(plumber())
     .pipe(gulpif(production, imagemin()))
     .pipe(gulp.dest(
       config.images.dest
@@ -99,40 +101,27 @@ gulp.task('images', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('sass', ['scss-lint'], function () {
-  return gulp.src(config.scss.files)
-    .pipe(sourcemaps.init())
-    .pipe(sassGlob())
-    .pipe(sass())
-    .pipe(prefix('last 2 version'))
-    .pipe(gulpif(production, cssmin()))
-    .pipe(gulpif(production, rename({
-      suffix: '.min'
-    })))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(config.css.dest))
-    .pipe(browserSync.reload({stream:true}));
-});
 
 // Task: Handle icons
 // We have to do this in a few steps until
 // https://github.com/filamentgroup/gulpicon/issues/1 is resolved
 gulp.task('minifyIcons', function() {
   return gulp.src(config.icons.files)
+    .pipe(plumber())
     .pipe(svgmin())
     .pipe(gulp.dest(config.icons.min));
 });
 
 // Based on https://github.com/filamentgroup/gulpicon#usage
-var iconFiles = glob.sync("source/assets/icons/svg/*.svg");
-var iconConfig = require("./source/assets/icons/config.js");
-iconConfig.dest = "public/assets/icons/";
+var iconFiles = glob.sync(config.icons.files);
+var iconConfig = require(config.icons.configFile);
+iconConfig.dest = config.icons.dest;
 gulp.task('makeIcons', gulpicon(iconFiles, iconConfig));
 gulp.task('waitForIcons', function(callback) {
   var trigger = iconConfig.dest + 'preview.html';
   return pWaitFor(() => pathExists(trigger, '1000')).then(() => {
     console.log('Yay! The icons now exist.');
-});
+  });
 });
 gulp.task('reloadIcons', function() {
   return gulp.src('', {read: false})
@@ -143,10 +132,26 @@ gulp.task('icons', function (callback) {
   runSequence('minifyIcons', 'makeIcons', 'waitForIcons', 'reloadIcons', callback);
 });
 
+gulp.task('sass', ['scss-lint'], function () {
+  return gulp.src(config.scss.files)
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sassGlob())
+    .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
+    .pipe(prefix('last 2 version'))
+    .pipe(gulpif(production, rename({
+      suffix: '.min'
+    })))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(config.scss.dest))
+    .pipe(browserSync.reload({stream:true}));
+});
+
 // Task: patternlab
 // Description: Build static Pattern Lab files via PHP script
 gulp.task('patternlab', function () {
   return gulp.src('', {read: false})
+    .pipe(plumber())
     .pipe(shell([
       'php core/console --generate'
     ]))
@@ -157,6 +162,7 @@ gulp.task('patternlab', function () {
 // Description: Copy Styleguide-Folder from core/ to public
 gulp.task('styleguide', function() {
   return gulp.src(config.patternlab.styleguide.files)
+    .pipe(plumber())
     .pipe(gulp.dest(config.patternlab.styleguide.dest));
 });
 
@@ -183,13 +189,31 @@ gulp.task('scss-lint', function() {
     }));
 });
 
+
+// copy files settings
+var svg2twig = {
+  base: config.icons.base,
+  src: config.icons.files,
+  dest: "./source/_patterns/01-atoms/media/icons/"
+};
+
+/* copy files */
+gulp.task("svg2twig", function() {
+  return gulp.src(svg2twig.src, { base: svg2twig.base })
+    .pipe(plumber())
+    .pipe(rename({
+      extname: ".twig"
+    }))
+    .pipe(gulp.dest(svg2twig.dest))
+});
+
 // Task: Watch files
 gulp.task('watch', function () {
 
   // Watch Pattern Lab files
   gulp.watch(
     config.patternlab.files,
-    ['patternlab']
+    ['patternlab', 'default']
   );
 
   // Watch scripts
@@ -198,10 +222,16 @@ gulp.task('watch', function () {
     ['scripts']
   );
 
-  // Watch images
+  // Watch media
   gulp.watch(
     config.images.files,
     ['images']
+  );
+
+  // Watch icons
+  gulp.watch(
+    config.icons.files,
+    ['icons', 'svg2twig']
   );
 
   // Watch Css
@@ -210,17 +240,11 @@ gulp.task('watch', function () {
     ['css']
   );
 
-  // Watch Sass
+  // Watch sass
   gulp.watch(
-    config.scss.files,
+    config.scss.watch,
     ['sass']
   );
-
-  // // Watch icons
-  // gulp.watch(
-  //   config.icons.files,
-  //   ['icons']
-  // );
 
   // Watch fonts
   gulp.watch(
@@ -236,14 +260,16 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    // 'icons',
     ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
+    'icons',
     'sass',
     callback
   );
 });
+
+// gulp.task('default', runSequence(['scripts', 'fonts', 'images', 'sass', 'patternlab', 'styleguide']));
 
 // Task: Start your production-process
 // Description: Type 'gulp' in the terminal
