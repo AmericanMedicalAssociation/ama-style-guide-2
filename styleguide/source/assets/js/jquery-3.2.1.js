@@ -5351,7 +5351,7 @@ jQuery.event = {
 				}
 			},
 
-			// For cross-browser consistency, don't fire native .click() on links
+			// For cross-browser consistency, don't fire native .click() on link
 			_default: function( event ) {
 				return nodeName( event.target, "a" );
 			}

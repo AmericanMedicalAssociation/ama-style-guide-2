@@ -213,7 +213,7 @@ gulp.task('watch', function () {
   // Watch Pattern Lab files
   gulp.watch(
     config.patternlab.files,
-    ['patternlab', 'sass']
+    ['patternlab', 'default']
   );
 
   // Watch scripts
