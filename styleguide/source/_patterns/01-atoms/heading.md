@@ -1,10 +1,10 @@
 ### Description
-This Pattern shows a link with various colors.
+This Pattern shows headers.
 
 ### Variables
 ~~~
-link {
-  href:
+header {
+  level:
     type: string / required
   text:
     type: string / required
