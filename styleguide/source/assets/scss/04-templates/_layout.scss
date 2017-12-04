@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+          [topic_rail-left] 8em
+          [topic_content] auto
+          [topic_rail-right] 8em;
+  grid-template-rows: 3em auto auto auto 3em;
+  grid-template-rows: auto auto 1fr auto;
+  grid-column-gap: 10px;
+  min-height: 100vh;
+}
+
+header.ribbon {
+  background-color: $purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.wayfinder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.topic_rail-left {
+  background-color: mistyrose;
+  grid-row: 3 / 5;
+}
+
+article.topic_content {
+  padding: 0.5em;
+  background: #fff;
+}
+
+aside.topic_rail-right {
+  background-color: lavender;
+
+}
+
+footer {
+  background-color: silver;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-column: 1 / 4;
+  grid-row: 5;
+}
+
+//Phone
+@media screen and (max-width: 479px) {
+  header.ribbon {
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+
+  section.wayfinder {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
+
+  article.topic_content {
+    grid-column: 1 / 4;
+    grid-row: 3;
+  }
+
+  aside.topic_rail-right {
+    grid-column: 1 / 4;
+    grid-row: 4;
+  }
+
+  section.topic_rail-left {
+    grid-column: 1 / 4;
+    grid-row: 5;
+  }
+}
+
+//Tablet
+@media screen and (min-width: 480px) and (max-width: 639px) {
+
+  header.ribbon {
+    grid-column: 1 / 4;
+  }
+
+  section.wayfinder {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
+
+  section.topic_rail-left {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  aside.topic_rail-right {
+    grid-column: 1;
+    grid-row: 4 / 5;
+  }
+
+  article.topic_content {
+    grid-column: 2 / 4;
+    grid-row: 3 / 5;
+  }
+}
+
+//Desktop
+@media screen and (min-width: 640px) {
+  header.ribbon {
+    grid-column: 1 / 4;
+  }
+
+  section.wayfinder {
+    grid-column: 2 / 4;
+  }
+
+  section.topic_rail-left {
+    grid-row: 3 / 5;
+    grid-column: 1;
+  }
+
+  aside.topic_rail-right {
+    grid-row: 3 / 5;
+    grid-column: 3;
+  }
+
+  article.topic_content {
+    grid-row: 3 / 5;
+    grid-column: 2;
+  }
+}
