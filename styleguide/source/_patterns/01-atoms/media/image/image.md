@@ -14,5 +14,3 @@ image {
     type: string / required
 }
 ~~~
-
-
