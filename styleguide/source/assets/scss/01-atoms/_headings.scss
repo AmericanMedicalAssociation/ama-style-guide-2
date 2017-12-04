@@ -5,12 +5,12 @@
   @include type($font-serif, 1.888em, $font-weight-medium, 1.1176470588);
 
   // Tablet
-  @include breakpoint($bp-med min-width) {
+  @media (min-width: $bp-med) {
     @include type($font-serif, 2.4em, $font-weight-medium, 1.0833333333);
   }
 
   // Desktop
-  @include breakpoint($bp-large min-width) {
+  @media (min-width: $bp-large) {
     @include type($font-serif, 2.7em, $font-weight-medium, 1.0740740741);
   }
 }
@@ -20,7 +20,7 @@
   @include type($font-serif, 1.222em, $font-weight-medium, 1.1818181818);
   margin-bottom: 6px;
 
-  @include breakpoint($bp-med min-width) {
+  @media (min-width: $bp-med) {
     @include type($font-serif, 1.7em, $font-weight-medium, 1.1176470588);
     margin-bottom: 9px;
   }
@@ -31,7 +31,7 @@
   @include type($font-serif, 1.111em, $font-weight-medium, 1.2);
   margin-bottom: 6px;
 
-  @include breakpoint($bp-med min-width) {
+  @media (min-width: $bp-med) {
     @include type($font-serif, 1.5em, $font-weight-medium, 1.1333333333);
     margin-bottom: 9px;
   }
@@ -42,7 +42,7 @@
   @include type($font-sans-serif, 18px, $font-weight-bold, 1.2222222222);
   margin-bottom: 6px;
 
-  @include breakpoint($bp-med min-width) {
+  @media (min-width: $bp-med) {
     @include type($font-sans-serif, 24px, $font-weight-bold, 1.1666666667);
     margin-bottom: 9px;
   }
@@ -53,7 +53,7 @@
   @include type($font-sans-serif, 16px, $font-weight-bold, 1.4375);
   margin-bottom: 6px;
 
-  @include breakpoint($bp-med min-width) {
+  @media (min-width: $bp-med) {
     @include type($font-sans-serif, 18px, $font-weight-bold, 1.3888888889);
     margin-bottom: 9px;
   }
@@ -64,7 +64,7 @@
   @include type($font-sans-serif, 14px, $font-weight-bold, 1.5);
   margin-bottom: 6px;
 
-  @include breakpoint($bp-med min-width) {
+  @media (min-width: $bp-med) {
     @include type($font-sans-serif, 15px, $font-weight-bold, 1.4666666667);
     margin-bottom: 9px;
   }
