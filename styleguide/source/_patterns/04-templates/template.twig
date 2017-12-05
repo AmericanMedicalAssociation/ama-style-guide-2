@@ -1,20 +1,43 @@
-<div class="container">
-  <nav class="ribbon">
+<nav id="ribbon" class="ama__ribbon">
+  {% block ribbon %}
+    <!-- @see organisms/ribbon.twig -->
     {% include "@base/placeholder.twig" with {'placeholder':{'text':'Navigaton'}} %}
-  </nav>
-  <header>
+  {% endblock %}
+</nav>
+
+<header id="header" class="ama__header" role="banner">
+  <a href="#main-content" class="ama__header__skip-nav visually-hidden focusable">Skip to main content'</a>
+  {% block header %}
+    <!-- @see organisms/header.twig -->
     {% include "@base/placeholder.twig" with {'placeholder':{'text':'Header'}} %}
-  </header>
-  <article>
-    {% include "@base/placeholder.twig" with {'placeholder':{'text':'Content'}} %}
-  </article>
+  {% endblock %}
+</header>
+
+<main role="main" id="main-content l--three-col" tabindex="-1">{# Keeping tabindex for accessibility purposes #}
+
+  <div class="page-content">
+    {% block pageContent %}
+      {% include "@base/placeholder.twig" with {'placeholder':{'text':'Content'}} %}
+    {% endblock %}
+  </div>
+
   <aside class="primary">
-    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar Primary'}} %}
+    {% block sidebarPrimary %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar Primary'}} %}
+    {% endblock %}
   </aside>
+
   <aside class="secondary">
-    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar Secondary'}} %}
+    {% block sidebarSecondary %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar Secondary'}} %}
+    {% endblock %}
   </aside>
-  <footer>
+
+</main>
+
+<footer id="footer" class="ama__footer" role="contentinfo">
+  {% block footer %}
+    <!-- @see organisms/footer.twig -->
     {% include '@base/placeholder.twig' with {'placeholder':{'text':'Footer'}} %}
-  </footer>
-</div>
+  {% endblock %}
+</footer>
