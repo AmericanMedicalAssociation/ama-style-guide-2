@@ -1,6 +1,3 @@
-<header id="header" class="ama__header" role="banner">
-  {% block header %}
-    <!-- @see organisms/header.twig -->
-    {% include "@base/placeholder.twig" with {'placeholder':{'text':'Header'}} %}
-  {% endblock %}
-</header>
+{% block pageContent %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Article content'}} %}
+{% endblock %}

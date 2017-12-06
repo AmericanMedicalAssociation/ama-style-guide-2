@@ -1,22 +1,13 @@
 {% extends '@templates/three-column.twig' %}
 
 {% block pageContent %}
-  Page Content
-  {# include "@organisms/article.twig" #}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page content'}} %}
 {% endblock %}
 
 {% block sidebarPrimary %}
-  Sidebar Primary
-  {# include "@organisms/widget.twig" #}
-  {# include "@organisms/widget.twig" #}
-  {# include "@organisms/widget.twig" #}
-  {# include "@organisms/widget.twig" #}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar primary content'}} %}
 {% endblock %}
 
 {% block sidebarSecondary %}
-  Sidebar Secondary
-  {# include "@organisms/widget.twig" #}
-  {# include "@organisms/widget.twig" #}
-  {# include "@organisms/widget.twig" #}
-  {# include "@organisms/widget.twig" #}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar secondary content'}} %}
 {% endblock %}

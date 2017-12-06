@@ -1,13 +1,35 @@
 {% include "@atoms/skip-to-main-content.twig" %}
-<main id="main-content" class="three-column" tabindex="-1" role="main">
-  {% include "@organisms/ribbon.twig" %}
-  {% include "@organisms/article.twig" %}
 
-  {# Keeping tabindex for accessibility purposes #}
+{% block ribbon %}
+  {% include "@organisms/ribbon.twig" %}
+{% endblock %}
+
+{% block header %}
   {% include "@organisms/header.twig" %}
-  {% include "@organisms/sidebar-primary.twig" %}
-  {% include "@organisms/sidebar-secondary.twig" %}
+{% endblock %}
+
+<main id="main-content" class="three-column" tabindex="-1" role="main">
+  {# Keeping tabindex for accessibility purposes #}
+  <article class="ama__page-content" role="article">
+    {% block pageContent %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page content'}} %}
+    {% endblock %}
+  </article>
+
+  <aside id="sidebar-primary" class="ama__sidebar-primary" role="complementary">
+    {% block sidebarPrimary %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar primary topic content'}} %}
+    {% endblock %}
+  </aside>
+
+  <aside id="sidebar-secondary" class="ama__sidebar-secondary" role="complementary">
+    {% block sidebarSecondary %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar secondary topic content'}} %}
+    {% endblock %}
+  </aside>
 </main>
 
-{% include "@organisms/footer.twig" %}
+{% block footer %}
+  {% include "@organisms/footer.twig" %}
+{% endblock %}
 
