@@ -1,15 +1,12 @@
 ### Description
 This is the standard button pattern
 
-### Status
-* Stable as of 6.0.0
-
 ### Variant options
-* Using a [link](./?p=atoms-button-as-link) instead of a button
+* Using a 
+* [link](./?p=atoms-button-as-link) instead of a button
 * [small](./?p=atoms-button-as-small)
+* [solid](./?p=atoms-button-as-outline)
 * [outline](./?p=atoms-button-as-outline)
-* [gray](./?p=atoms-button-as-quaternary-color) color
-* [green with an outline](./?p=atoms-button-as-secondary-color)
 
 
 ### Variables
@@ -25,9 +22,7 @@ button: {
     type: string / optional (ex: "button", "submit")
   size:
     type: string / optional ("" or "small")
-  theme:
-    type: string / optional ("", "secondary", or "quaternary")
-  outline: 
-    type: boolean
+  style:
+    type: string / optional ("solid" or "outline")
 }
 ~~~
