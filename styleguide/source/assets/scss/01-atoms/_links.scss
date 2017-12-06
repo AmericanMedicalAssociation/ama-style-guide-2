@@ -1,0 +1,52 @@
+/* Links */
+a {
+  color: $black;
+  text-decoration: none;
+  outline: 0;
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
+
+.ama__link-black {
+  &:link,
+  &:visited {
+    color: $black;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.ama__link-white {
+  &:link,
+  &:visited {
+    color: $white;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+.ama__link-blue {
+  &:link,
+  &:visited {
+    color: $blue;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $blue;
+    text-decoration: underline;
+  }
+}
