@@ -4,11 +4,7 @@ This is the standard button pattern
 
 ### Variant options
 * Using a 
-* [link](./?p=atoms-button-as-link) instead of a button
-* [small](./?p=atoms-button-as-small)
-* [solid](./?p=atoms-button-as-outline)
-* [outline](./?p=atoms-button-as-outline)
-
+* [outline](./?p=atoms-button-as-secondary)
 
 ### Variables
 ~~~
@@ -21,9 +17,7 @@ button: {
     type: string / required
   type:
     type: string / optional (ex: "button", "submit")
-  size:
-    type: string / optional ("" or "small")
   style:
-    type: string / optional ("solid" or "outline")
+    type: string / optional ("secondary" or "")
 }
 ~~~

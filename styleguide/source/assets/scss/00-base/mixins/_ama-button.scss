@@ -1,13 +1,11 @@
 // Parameters
-// $size => "normal", "small"
-// $type => "solid", "outline"
-// $color => rgba() or hex value
+// $type => "secondary", ""
 //
 
-@mixin ama-button ($size:"normal", $style:"solid") {
+@mixin ama-button ($size:"", $style:"") {
   @include ama-button-base;
   // layout
-  @if($size == "normal") {
+  @if($size == "") {
     @include type($font-sans-serif, 100%, $base-font-weight, 1);
     padding: 20px 40px;
   }
@@ -17,17 +15,8 @@
     padding: 7px 20px;
   }
 
-  @if($style == "solid") {
-    background-color: $purple;
-    border-color: transparent;
-    color: $white;
+  @if($style == "secondary") {
 
-    &:hover {
-      background-color: $purple-darker;
-    }
-  }
-    //outline
-  @else {
     background-color: transparent;
     border-color: $purple;
     color: $purple;
@@ -35,6 +24,16 @@
     &:hover {
       background-color: $purple;
       color: $white;
+    }
+  }
+    //outline
+  @else {
+    background-color: $purple;
+    border-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $purple-darker;
     }
   }
 }
