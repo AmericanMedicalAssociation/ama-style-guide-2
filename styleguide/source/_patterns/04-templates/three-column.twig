@@ -2,11 +2,11 @@
 
 <div class="container">
   {% block ribbon %}
-    {% include "@organisms/ribbon.twig" %}
+    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page  ribbon'}} %}
   {% endblock %}
 
   {% block header %}
-    {% include "@organisms/header.twig" %}
+    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page header'}} %}
   {% endblock %}
 
   <main id="main-content" class="three-column" tabindex="-1" role="main">
@@ -31,6 +31,6 @@
   </main>
 
   {% block footer %}
-    {% include "@organisms/footer.twig" %}
+    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page footer'}} %}
   {% endblock %}
 </div>
