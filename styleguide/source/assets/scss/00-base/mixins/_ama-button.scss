@@ -1,0 +1,30 @@
+// Parameters
+// $type => "secondary", ""
+//
+
+@mixin ama-button ($size:"", $style:"") {
+  @include ama-button-base;
+  // layout
+  @include type($font-sans-serif, 100%, $base-font-weight, 1);
+  padding: 20px 40px;
+
+  @if($style == "secondary") {
+    background-color: transparent;
+    border-color: $purple;
+    color: $purple;
+
+    &:hover {
+      background-color: $purple;
+      color: $white;
+    }
+  } //outline
+  @else {
+    background-color: $purple;
+    border-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $purple-darker;
+    }
+  }
+}

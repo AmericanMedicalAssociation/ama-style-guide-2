@@ -1,0 +1,22 @@
+@mixin ama-button-base {
+  border-radius: 0;
+  border: 1px solid $purple;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 20px 40px;
+  /* stylelint-disable property-no-vendor-prefix */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* stylelint-enable */
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: $purple-darker;
+    background-color: $purple-darker;
+    color: $white;
+  }
+}
