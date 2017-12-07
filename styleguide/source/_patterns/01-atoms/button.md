@@ -4,7 +4,7 @@ This is the standard button pattern
 
 ### Variant options
 * Using a 
-* [outline](./?p=atoms-button-as-secondary)
+* [secondary](./?p=atoms-button-as-secondary)
 
 ### Variables
 ~~~
