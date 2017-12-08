@@ -1,0 +1,8 @@
+<nav class="ama__menu-nav js-menu-dropdown-wrapper">
+  <h3 class="ama__menu-user__label js-menu-dropdown-trigger">
+    <span class="label">{{ menuUser.label }}</span>
+    <span class="icon">{% include "@atoms/media/icons/svg/icon-usermenu.twig" %}</span>
+  </h3>
+  {% set unorderedList = menuUser.list %}
+  {% include "@atoms/unordered-list.twig" %}
+</nav>

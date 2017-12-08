@@ -1,0 +1,48 @@
+.ama__menu-nav {
+  position: relative;
+}
+
+.ama__menu-dropdown__label {
+  @extend %ama__ribbon__dropdown-label;
+  color: white;
+  border-left: 1px solid $gray-8;
+  border-right: 1px solid $gray-8;
+
+  .icon {
+    margin-left: 0.75em;
+
+    svg {
+      height: 11px;
+      width: 10px;
+    }
+  }
+
+  &.is-active {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.ama__menu-dropdown {
+  @extend %ama__ribbon__dropdown;
+
+  &__item {
+    @extend %ama__ribbon__item;
+    border-left: 1px solid $gray-8;
+    border-right: 1px solid $gray-8;
+
+    @media (min-width: $bp-med) {
+      background-color: $purple-darker;
+      border-bottom: none;
+      padding: 3px 8px;
+    }
+  }
+
+  &__link {
+    @extend %ama__ribbon__link;
+    @media (min-width: $bp-med) {
+      padding: 8px 0 8px 15px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.ama__menu-nav {
+  position: relative;
+}
+
+.ama__menu-user__label {
+  @extend %ama__ribbon__dropdown-label;
+
+  .label {
+    display: inline-block;
+    text-indent: -9999px;
+  }
+
+  .icon {
+    float: right;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+
+    &:hover {
+      background-color: $purple-darker;
+    }
+  }
+
+  @media (min-width: $bp-med) {
+    display: none;
+  }
+}
+
+.ama__menu-user {
+  @extend %ama__ribbon__dropdown;
+  background-color: $purple;
+
+  &.is-active {
+    @media (min-width: $bp-med) {
+      display: flex;
+    }
+  }
+
+  @media (min-width: $bp-med) {
+    display: flex;
+    justify-content: flex-end;
+    overflow: visible;
+    max-height: none;
+    position: relative;
+    padding: 12px;
+  }
+
+  &__item {
+    @extend %ama__ribbon__item;
+
+    @media (min-width: $bp-med) {
+      padding: 0;
+      background-color: transparent;
+      border-bottom: 0;
+
+      &:first-child {
+        border-right: 1px solid $gray-8;
+      }
+
+      &:last-child a {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__link {
+    @extend %ama__ribbon__link;
+
+    @media (min-width: $bp-med) {
+      color: $white;
+      margin: 0 8px;
+    }
+  }
+}
