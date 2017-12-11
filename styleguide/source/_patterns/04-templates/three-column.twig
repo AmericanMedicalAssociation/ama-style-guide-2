@@ -4,35 +4,35 @@
 
 <div class="container">
   {% block ribbon %}
-    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page  ribbon'}} %}
+    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page ribbon'}} %}
   {% endblock %}
 
   {% block header %}
-    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page header'}} %}
+    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page header'}} %}
   {% endblock %}
 
   <main id="main-content" class="three-column" tabindex="-1" role="main">
     {# Keeping tabindex for accessibility purposes #}
     <article class="ama__page-content" role="article">
       {% block pageContent %}
-        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page content'}} %}
+        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page content'}} %}
       {% endblock %}
     </article>
 
     <aside id="sidebar-primary" class="ama__sidebar-primary" role="complementary">
       {% block sidebarPrimary %}
-        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar primary topic content'}} %}
+        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar primary content'}} %}
       {% endblock %}
     </aside>
 
     <aside id="sidebar-secondary" class="ama__sidebar-secondary" role="complementary">
       {% block sidebarSecondary %}
-        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar secondary topic content'}} %}
+        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar secondary content'}} %}
       {% endblock %}
     </aside>
   </main>
 
   {% block footer %}
-    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Topic page footer'}} %}
+    {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page footer'}} %}
   {% endblock %}
 </div>
