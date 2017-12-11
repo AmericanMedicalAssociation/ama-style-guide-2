@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html class="{{ htmlClass }}">
-  {% include '@meta/header.twig' %}
-  <body class="{{ bodyClass }}">
-    {% extends '@templates/three-column.twig' %}
+{% extends '@templates/three-column.twig' %}
 
-    {% block pageContent %}
-      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page content'}} %}
-    {% endblock %}
+{% block pageContent %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page content'}} %}
+{% endblock %}
 
-    {% block sidebarPrimary %}
-      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar primary content'}} %}
-    {% endblock %}
+{% block sidebarPrimary %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar primary content'}} %}
+{% endblock %}
 
-    {% block sidebarSecondary %}
-      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar secondary content'}} %}
-    {% endblock %}
-
-    {% include '@meta/footer.twig' %}
-  </body>
-</html>
+{% block sidebarSecondary %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar secondary content'}} %}
+{% endblock %}

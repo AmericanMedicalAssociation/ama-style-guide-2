@@ -1,4 +1,6 @@
-{% include "@atoms/skip-nav.twig" %}
+{% block skipNav %}
+  {% include "@atoms/skip-nav.twig" %}
+{% endblock %}
 
 <div class="container">
   {% block ribbon %}
