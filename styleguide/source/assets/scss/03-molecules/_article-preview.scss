@@ -1,0 +1,26 @@
+.ama__topic_article-preview-container-image {
+  height: auto;
+  width: 100%;
+}
+
+.ama__topic_article-preview_container-title {
+  @include gutter($padding-top-full...);
+}
+
+.ama__topic_article-preview.related,
+.ama__topic_article-preview.small {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+
+  .ama__topic_article-preview_container-title {
+  }
+
+  .ama__topic_article-preview-container {
+  }
+
+  .ama__topic_article-preview_description {
+    @include gutter($padding-top-half...);
+  }
+}
