@@ -29,7 +29,7 @@ if (self != top) {
   var targetOrigin = (window.location.protocol == "file:") ? "*" : window.location.protocol+"//"+window.location.host;
   parent.postMessage(options, targetOrigin);
   
-  // find all link and add an onclick handler for replacing the iframe address so the history works
+  // find all links and add an onclick handler for replacing the iframe address so the history works
   var aTags = document.getElementsByTagName('a');
   for (var i = 0; i < aTags.length; i++) {
     aTags[i].onclick = function(e) {
