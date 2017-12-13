@@ -6,42 +6,41 @@ body {
   color: #000;
   -webkit-font-smoothing: antialiased;
   @include type($base-font-family, $base-font-size, $base-font-weight, $base-line-height);
-  @include font-size(1.11, large);
+  @include font-size(1, large);
+
+  @include breakpoint($bp-med) {
+    @include font-size(1.1, large);
+  }
+  @include breakpoint($bp-large) {
+    @include font-size(1.2, large);
+  }
 }
 
 // Specific Typography classes
-.ama__type-hero,
-%ama__type-hero {
-  @include type($font-serif, 28px, $font-weight-medium, 1.1428571429);
+h1,
+.joe__h1,
+%joe__h1 {
+  @include type($font-sans-serif, 42px, $font-weight-bold, 1.3043478261);
 }
 
-@mixin ama__type-hero {
-  @include type($font-serif, 28px, $font-weight-medium, 1.1428571429);
+@mixin joe__h1() {
+  @include type($font-sans-serif, 42px, $font-weight-bold, 1.3043478261);
 }
 
-.ama__type-larger,
-%ama__type-larger {
-  @include type($font-sans-serif, 23px, $font-weight-medium, 1.3043478261);
+h2,
+.joe__h2,
+%joe__h2 {
+  @include type($font-sans-serif, 38px, $font-weight-bold, 1.3333333333);
 }
 
-@mixin ama__type-larger() {
-  @include type($font-sans-serif, 23px, $font-weight-medium, 1.3043478261);
+@mixin joe__h2() {
+  @include type($font-sans-serif, 38px, $font-weight-bold, 1.3333333333);
 }
 
-// (Formerly B2)
-.ama__type-large,
-%ama__type-large {
-  @include type($font-sans-serif, 21px, $font-weight-medium, 1.3333333333);
-}
-
-@mixin ama__type-large() {
-  @include type($font-sans-serif, 21px, $font-weight-medium, 1.3333333333);
-}
-
-// (Formerly B3)
-.ama__type-medium,
-%ama__type-medium {
-  @include type($font-sans-serif, 18px, $font-weight-medium, 1.3888888889);
+h3,
+.joe__h3,
+%joe__h3 {
+  @include type($font-sans-serif, 24px, $font-weight-bold, 1.3888888889);
 }
 
 // (Formerly B4)
