@@ -1,0 +1,18 @@
+.ribbon_user_menu {
+  .ribbon_user_menu--nav {
+    display: flex;
+    list-style: none;
+  }
+
+  .ribbon_user_menu--nav_item a {
+    padding: 8px;
+    color: $white;
+    @extend %ama__type-smaller;
+  }
+
+  .ribbon_user_menu--nav_item:first-child::after {
+    content: "|";
+    padding: 0 10px;
+    color: $gray-8;
+  }
+}

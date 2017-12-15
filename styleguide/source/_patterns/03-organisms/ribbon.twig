@@ -1,3 +1,8 @@
-<nav id="ribbon" role="navigation" class="ama__ribbon">
-  <h3>Patterns need to be put here. This is just a placeholder</h3>
-</nav>
+{% set class = "ama__ribbon__dropdown--nav__menu" %}
+
+<section class="ama__ribbon">
+  {% set ribbonDropdown = ribbon %}
+  {% include "@molecules/ribbon-dropdown.twig" %}
+  {% set ribbonDropdown = ribbon.userMenu %}
+  {% include "@molecules/ribbon-dropdown.twig" %}
+</section>

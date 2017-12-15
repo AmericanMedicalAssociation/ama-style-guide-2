@@ -1,0 +1,72 @@
+.ama__ribbon__dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ama__ribbon__dropdown--trigger {
+  display: flex;
+  align-content: center;
+  background-color: $purple;
+  color: $white;
+  cursor: pointer;
+  outline: none;
+  padding: 15px;
+  width: 100%;
+
+  .icon svg {
+    height: 11px;
+    display: inline-block;
+    line-height: 9px;
+    width: 10px;
+    fill: $white;
+    margin-left: 0.75em;
+    transition: all 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $purple-darker;
+  }
+
+  &.is-active {
+    background-color: $purple-darker;
+
+    .icon svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.ama__ribbon__dropdown--nav {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+
+  &__menu {
+    position: absolute;
+    background-color: $purple;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  &.is-active {
+    transition: max-height 0.3s ease-in;
+    max-height: 600px;
+  }
+}
+
+.ama__ribbon__dropdown--nav__menu {
+  margin-bottom: 0;
+
+  & a {
+    @extend %ama__type-smaller;
+    display: block;
+    color: $white;
+    padding: 8px 15px;
+  }
+}

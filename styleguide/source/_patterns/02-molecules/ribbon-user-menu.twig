@@ -1,0 +1,11 @@
+{% set class = "link" %}
+
+<nav class="ribbon_user_menu">
+  <ul class="ribbon_user_menu--nav">
+    {% for link in userMenu.links %}
+      <li class="ribbon_user_menu--nav_item">
+        {% include '@atoms/link.twig' %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
