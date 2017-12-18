@@ -1,8 +1,15 @@
 {% set class = "ama__ribbon__dropdown--nav__menu" %}
+{% set ribbonDropdown = ribbon.ribbonDropdown %}
+{% set userMenu = ribbon.userMenu %}
 
 <section class="ama__ribbon">
-  {% set ribbonDropdown = ribbon %}
   {% include "@molecules/ribbon-dropdown.twig" %}
-  {% set ribbonDropdown = ribbon.userMenu %}
-  {% include "@molecules/ribbon-dropdown.twig" %}
+  <div class="ama__ribbon_user_menu--container">
+    {% include "@molecules/ribbon-user-menu.twig" %}
+
+    {% set ribbonDropdown = ribbon.ribbonDropdown.userMenuDropdown %}
+    {% if ribbon.ribbonDropdown.userMenuDropdown %}
+      {% include "@molecules/ribbon-dropdown.twig" %}
+    {% endif %}
+  </div>
 </section>

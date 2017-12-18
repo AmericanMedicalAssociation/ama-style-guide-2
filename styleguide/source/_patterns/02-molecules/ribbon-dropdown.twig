@@ -1,15 +1,17 @@
-{% set unorderedList = userMenu ? ribbonDropdown.userMenu.unorderedList : ribbonDropdown.unorderedList %}
+{% set unorderedList = ribbonDropdown.userMenuDropdown ? ribbonDropdown.userMenuDropdown.unorderedList : ribbonDropdown.unorderedList %}
 {% set class = "ama__ribbon__dropdown--nav__menu" %}
 
 <nav class="ama__ribbon__dropdown">
   <div class="ama__ribbon__dropdown--trigger" tabindex="0" href="#">
-    {{ ribbonDropdown.triggerText|raw }}
+    <span class="name">
+      {{ ribbonDropdown.triggerText|raw }}
+    </span>
     <span class="icon">
       {% include "@atoms/media/icons/svg/icon-arrow.twig" %}
     </span>
-  </div>
-  <div class="ama__ribbon__dropdown--nav">
-    {% include '@atoms/unordered-list.twig' %}
+    <div class="ama__ribbon__dropdown--nav">
+      {% include '@atoms/unordered-list.twig' %}
+    </div>
   </div>
 </nav>
 

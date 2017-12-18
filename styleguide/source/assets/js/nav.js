@@ -14,14 +14,14 @@
       $('.ama__ribbon__dropdown').each(function () {
         var class_active = 'is-active';
 
-        $('.ama__ribbon__dropdown--trigger').on('click', function(e) {
+        $('.ama__ribbon__dropdown--trigger', this).on('click', function(e) {
           e.stopPropagation()
           // Unfocus on the dropdown.
           $(this).blur();
           // Add our class for CSS.
           $(this).toggleClass(class_active);
           // Add our class to the dropdown UL.
-          $(this).siblings().toggleClass(class_active);
+          $(this).children().toggleClass(class_active);
         })
       })
     }
