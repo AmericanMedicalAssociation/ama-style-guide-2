@@ -8,6 +8,10 @@ Any new work contributed into SG2 must meet the following standards:
 
 #### How patterns are organized:
 - Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`). 
+- The directory structure inside each pattern type (atoms, etc) should ve flat; patterns should _not_ go inside grouped subfolders
+  - Bad: Atoms > Text > Heading
+  - Good: Atoms > Heading
+  - Good: Atoms > Link
 - Talk about where SCSS and JS files should go (in a separate .scss directory?), as well as Twig and .md files (no subdirectories?). We may still need to make a decision about this.
 
 ##### Atoms
