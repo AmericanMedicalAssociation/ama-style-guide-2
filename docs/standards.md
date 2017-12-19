@@ -100,8 +100,8 @@ Pattern code should comply with the BEM naming system.
    - Good:
    ```twig
     <div class="header">
-      <a href="{{ url }}" class="header__link-fancy">{{ content }}</a>
-      <img src="{{ src }} class="header__image-fun">
+      <a href="{{ url }}" class="header__link--fancy">{{ content }}</a>
+      <img src="{{ src }} class="header__image--fun">
     </div>
   ```
 #### Pattern definition in `.md`
