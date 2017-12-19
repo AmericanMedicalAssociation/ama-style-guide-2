@@ -37,9 +37,6 @@ Add a description of the "base" patterns here. Do they always get reused, or no?
 Contains:
 - "Colors" atom showing variables and base color palette.
 
-##### Meta
-Add a description of the "meta" patterns here. This section still needs to be added to SG2.
-
 ### How to classify/name patterns
 All pattern class names should follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`). 
 
