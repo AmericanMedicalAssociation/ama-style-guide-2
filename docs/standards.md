@@ -29,7 +29,7 @@ Any new work contributed into SG2 must meet the following standards:
 - Templates will be used for the general layouts (e.g. regions of the page) but not molecules
 
 ##### Pages
-Add a description here.
+Pages are examples of a what a page (generally a node, although sometimes a view) will look like in the website. 
 
 ##### Base
 Add a description of the "base" patterns here. Do they always get reused, or no?
