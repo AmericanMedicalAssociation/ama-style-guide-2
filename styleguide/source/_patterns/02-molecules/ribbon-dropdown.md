@@ -10,10 +10,13 @@ The dropdown navigation present in the header ribbon.
 ### Variant options
 * [user-menu](./?p=molecules/ribbon-dropdown~user-menu)
 * [user-menu](./?p=molecules/ribbon-dropdown~user-menu-auth)
+* [user-menu](./?p=molecules-ribbon-dropdown-mobile-auth)
+* [user-menu](./?molecules-ribbon-dropdown-mobile)
 
 ### Variables
 ~~~
   "ribbonDropdown": {
+    "mobile": boolean
     "triggerText": string/required
     "unorderedList": [
       {

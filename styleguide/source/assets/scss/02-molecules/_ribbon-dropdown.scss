@@ -5,42 +5,49 @@
   @extend %ama__type-smaller;
 }
 
-.ama__ribbon__dropdown--trigger {
-  display: flex;
-  align-content: center;
-  background-color: $purple;
-  color: $white;
-  cursor: pointer;
-  outline: none;
-  min-width: 12.5em;
-  padding: 15px;
-  width: 100%;
-
-  .name {
-    flex-grow: 1;
+.ama__ribbon__dropdown {
+  &--trigger {
+    display: flex;
+    align-content: center;
+    color: $white;
+    cursor: pointer;
+    outline: none;
+    min-width: 12.5em;
+    padding: 15px;
+    width: 100%;
+    background-color: $purple;
   }
 
-  .icon svg {
-    height: 11px;
-    display: inline-block;
-    line-height: 9px;
-    width: 10px;
-    fill: $white;
-    margin-left: 0.75em;
-    transition: all 0.3s ease;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $purple-darker;
-  }
-
-  &.is-active {
+  &--trigger.is-active {
     background-color: $purple-darker;
 
     .icon svg {
       transform: rotate(180deg);
     }
+  }
+
+  &--trigger--name {
+    flex-grow: 1;
+  }
+
+  &--trigger--icon {
+    display: inline-block;
+    line-height: 9px;
+    fill: $white;
+    margin-left: 0.75em;
+    transition: all 0.3s ease;
+
+    &--arrow {
+      width: 10px;
+    }
+
+    &--user {
+      width: 21px;
+    }
+  }
+
+  &--trigger--mobile {
+    justify-content: flex-end;
   }
 }
 
@@ -55,18 +62,22 @@
   width: 100%;
 
   &__menu {
-    background-color: $purple;
+    background: $black-20;
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
     z-index: 100;
-  }
 
-  &.is-active {
-    transition: max-height 0.3s ease-in;
-    max-height: 600px;
+    @include breakpoint($bp-med) {
+      background: $purple;
+    }
   }
+}
+
+.ama__ribbon__dropdown--nav.is-active {
+  transition: max-height 0.3s ease-in;
+  max-height: 600px;
 }
 
 .ama__ribbon__dropdown--nav__menu {
@@ -75,7 +86,11 @@
   & a {
     @extend %ama__type-smaller;
     display: block;
-    color: $white;
+    color: $black;
     padding: 8px 15px;
+
+    @include breakpoint($bp-med) {
+      color: $white;
+    }
   }
 }
