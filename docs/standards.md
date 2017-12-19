@@ -26,7 +26,7 @@ Any new work contributed into SG2 must meet the following standards:
 - Organisms should be very little markup, it should be mostly wrappers around molecules or atoms.
 
 ##### Templates
-- Layouts should be used for templates but not molecules
+- Templates will be used for the general layouts (e.g. regions of the page) but not molecules
 
 ##### Pages
 Add a description here.
