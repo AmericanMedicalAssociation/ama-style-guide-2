@@ -207,6 +207,14 @@ gulp.task("svg2twig", function() {
     .pipe(gulp.dest(svg2twig.dest))
 });
 
+// Copy twig files from source
+/* copy files */
+gulp.task("copyTwigFiles", function() {
+  return gulp.src(config.twigSource.files)
+    .pipe(plumber())
+    .pipe(gulp.dest(config.twigSource.dest))
+});
+
 // Task: Watch files
 gulp.task('watch', function () {
 
@@ -263,6 +271,7 @@ gulp.task('default', ['clean:before'], function (callback) {
     ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
+    'copyTwigFiles',
     'icons',
     'sass',
     callback
