@@ -1,0 +1,18 @@
+{% set heading = topicPromo.heading %}
+{% set paragraph = topicPromo.paragraph %}
+{% set image = topicPromo.image %}
+{% set button = topicPromo.button %}
+{% set border = topicPromo.border ? "ama__topic_promotion--border" : "" %}
+
+<div class="ama__topic_promotion {{ class }} {{ border }}">
+  {% if topicPromo.image %}
+    {% include '@atoms/image.twig' %}
+  {% endif %}
+
+  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+
+  {% if topicPromo.button %}
+    {% include '@atoms/button.twig' %}
+  {% endif %}
+</div>
