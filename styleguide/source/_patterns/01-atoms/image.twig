@@ -1,6 +1,19 @@
-<img 
-    class="ma__image"
-    alt="{{ image.alt }}" 
-    src="{{ image.src }}" 
-    height="{{ image.height }}" 
+{% if image.href %}
+  <a
+    href="{{ image.href }}"
+    title="{{ image.info }}">
+    <img
+      class="{{ class }} ama__image"
+      alt="{{ image.alt }}"
+      src="{{ image.src }}"
+      height="{{ image.height }}"
+      width="{{ image.width }}" />
+  </a>
+{% else %}
+  <img
+    class="{{ class }} ama__image"
+    alt="{{ image.alt }}"
+    src="{{ image.src }}"
+    height="{{ image.height }}"
     width="{{ image.width }}" />
+{% endif %}
