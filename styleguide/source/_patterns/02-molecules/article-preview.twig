@@ -5,7 +5,7 @@
 {% macro topic_video(topic_article_video) %}
   {% set video = topic_article_video %}
   {% if video %}
-    {% include "@atoms/media/video.twig" %}
+    {% include "@atoms/video.twig" %}
   {% endif %}
 {% endmacro %}
 
@@ -14,7 +14,7 @@
   {% set image = topic_article_image %}
   {% if image %}
     <div class="ama__topic_article-preview-container">
-      {% include "@atoms/media/image.twig"  with { 'class': 'ama__topic_article-preview-container-image'} %}
+      {% include "@atoms/image.twig"  with { 'class': 'ama__topic_article-preview-container-image'} %}
     </div>
   {% endif %}
 {% endmacro %}
