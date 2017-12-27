@@ -7,49 +7,23 @@
  * - https://drupal.org/node/1446420
  * - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
  */
- (function ($, Drupal) {
-   Drupal.behaviors.ribbonnav = {
-     attach: function (context, settings) {
-       (function ($) {
+(function ($, Drupal) {
 
-         // Search
+  Drupal.behaviors.ribbonnav = {
+    attach: function (context, settings) {
+      $('.ama__ribbon__dropdown').each(function () {
+        var class_active = 'is-active';
 
-         // When a user clicks on the ribbon trigger (main)
-         $('.ribbon_dropdown_trigger').click(function() {
-           // Unfocus on the dropdown
-           $(this).blur();
-           // add a class to the sibling dropdown
-           $(this).toggleClass('is-active');
-           $(this).siblings('.ribbon_dropdown_nav').toggleClass('is-active').slideToggle(300);
-           $('.ribbon_user-menu_trigger').removeClass('is-active');
-           $('.ribbon_user-menu_nav').removeClass('is-active').slideUp(300);;
-           $('.ribbon_user-menu_trigger-auth').removeClass('is-active');
-           $('.ribbon_user-menu_nav-child').removeClass('is-active').slideUp(300);
-         });
-
-         // When a user clicks on the ribbon trigger for user dropdown
-         $('.ribbon_user-menu_trigger').click(function() {
-           // Unfocus on the dropdown
-           $(this).blur();
-           // add a class to the sibling dropdown
-           $(this).toggleClass('is-active');
-           $(this).siblings('.ribbon_user-menu_nav').toggleClass('is-active').slideToggle(300);
-           $('.ribbon_dropdown_trigger').removeClass('is-active');
-           $('.ribbon_dropdown_nav').removeClass('is-active').slideUp(300);
-         });
-
-         // When a user clicks on the ribbon trigger for authenticated user dropdown
-         $('.ribbon_user-menu_trigger-auth').click(function() {
-           // Unfocus on the dropdown
-           $(this).blur();
-           // add a class to the sibling dropdown
-           $(this).toggleClass('is-active');
-           $(this).siblings('.ribbon_user-menu_nav-child').toggleClass('is-active').slideToggle(300);
-           $('.ribbon_dropdown_trigger').removeClass('is-active');
-           $('.ribbon_dropdown_nav').removeClass('is-active').slideUp(300);
-         });
-
-       })(jQuery);
-     }
-   };
- })(jQuery, Drupal);
+        $('.ama__ribbon__dropdown--trigger', this).on('click', function(e) {
+          e.stopPropagation()
+          // Unfocus on the dropdown.
+          $(this).blur();
+          // Add our class for CSS.
+          $(this).toggleClass(class_active);
+          // Add our class to the dropdown UL.
+          $(this).children().toggleClass(class_active);
+        })
+      })
+    }
+  }
+})(jQuery, Drupal);

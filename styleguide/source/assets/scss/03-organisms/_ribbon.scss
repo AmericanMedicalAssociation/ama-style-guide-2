@@ -1,0 +1,18 @@
+.ama__ribbon {
+  background-color: $purple;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 51;
+
+  & > .ama__ribbon__dropdown:first-child  {
+    align-items: flex-start;
+    border-left: 1px solid $gray-8;
+    border-right: 1px solid $gray-8;
+
+    .ama__ribbon__dropdown--nav {
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{% set unorderedList = ribbonDropdown.userMenuDropdown ? ribbonDropdown.userMenuDropdown.unorderedList : ribbonDropdown.unorderedList %}
+{% set class = "ama__ribbon__dropdown--nav__menu" %}
+{% set mobileClass = ribbonDropdown.mobile ? "ama__ribbon__dropdown--trigger--mobile" : "" %}
+
+<nav class="ama__ribbon__dropdown">
+  <div class="ama__ribbon__dropdown--trigger {{ mobileClass }}" tabindex="0" href="#">
+    {% if ribbonDropdown.mobile %}
+      <i class="ama__ribbon__dropdown--trigger--icon ama__ribbon__dropdown--trigger--icon--user">
+        {% include "@atoms/media/icons/svg/icon-usermenu.twig" %}
+      </i>
+    {% else %}
+      <span class="ama__ribbon__dropdown--trigger--name">
+        {{ ribbonDropdown.triggerText|raw }}
+      </span>
+      <i class="ama__ribbon__dropdown--trigger--icon ama__ribbon__dropdown--trigger--icon--arrow">
+        {% include "@atoms/media/icons/svg/icon-arrow.twig" %}
+      </i>
+    {% endif %}
+
+    <div class="ama__ribbon__dropdown--nav">
+      {% include '@atoms/unordered-list.twig' %}
+    </div>
+  </div>
+</nav>
+
