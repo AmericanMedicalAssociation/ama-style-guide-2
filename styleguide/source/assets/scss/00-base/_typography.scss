@@ -2,162 +2,60 @@
 body {
   /* stylelint-disable property-no-vendor-prefix */
   -webkit-text-size-adjust: 100%;
-  /* stylelint-enable */
-  color: #000;
   -webkit-font-smoothing: antialiased;
-  @include type($base-font-family, $base-font-size, $base-font-weight, $base-line-height);
-  @include font-size(1.11, large);
-}
-
-// Specific Typography classes
-.ama__type-hero,
-%ama__type-hero {
-  @include type($font-serif, 28px, $font-weight-medium, 1.1428571429);
-}
-
-@mixin ama__type-hero {
-  @include type($font-serif, 28px, $font-weight-medium, 1.1428571429);
-}
-
-.ama__type-larger,
-%ama__type-larger {
-  @include type($font-sans-serif, 23px, $font-weight-medium, 1.3043478261);
-}
-
-@mixin ama__type-larger() {
-  @include type($font-sans-serif, 23px, $font-weight-medium, 1.3043478261);
-}
-
-// (Formerly B2)
-.ama__type-large,
-%ama__type-large {
-  @include type($font-sans-serif, 21px, $font-weight-medium, 1.3333333333);
-}
-
-@mixin ama__type-large() {
-  @include type($font-sans-serif, 21px, $font-weight-medium, 1.3333333333);
-}
-
-// (Formerly B3)
-.ama__type-medium,
-%ama__type-medium {
-  @include type($font-sans-serif, 18px, $font-weight-medium, 1.3888888889);
-}
-
-// (Formerly B4)
-.ama__type-small,
-%ama__type-small {
-  @include type($font-sans-serif, 16px, $font-weight-medium, 1.4375);
-  }
-
-// (Formerly B5)
-.ama__type-smaller,
-%ama__type-smaller {
-  @include type($font-sans-serif, 14px, $font-weight-medium, 1.5);
-}
-
-// (Formerly B1)
-.ama__type-search,
-%ama__type-search {
-  @include type($font-serif, 28px, $font-weight-medium, 1.25);
+  /* stylelint-enable */
+  color: $black;
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($p-font-sizes);
 }
 
 //Headers
 
 h1,
 .ama__h1,
-%h1 {
-  @include type($font-serif, 1.888em, $font-weight-medium, 1.1176470588);
-}
-
-// Body size is increased to 20px, the new value needs to be set in px
-// so that the header ems are calculated properly
-@include breakpoint($bp-med min-width) {
-  h1,
-  .h1,
-  %h1 {
-    @include type($font-serif, 2.4em, $font-weight-medium, 1.0833333333);
-  }
-}
-
-// Scale up to wide
-@include breakpoint($bp-large min-width) {
-  h1,
-  .ama__h1,
-  %h1 {
-    @include type($font-serif, 2.7em, $font-weight-medium, 1.0740740741);
-  }
+%ama__h1 {
+  @include type($myriad-pro, $font-weight-bold);
+  @include font-size($h1-font-sizes);
 }
 
 h2,
 .ama__h2,
-%h2 {
-  @include type($font-serif, 1.222em, $font-weight-medium, 1.1818181818);
-  margin-bottom: 6px;
+%ama__h2 {
+  @include type($myriad-pro, $font-weight-semibold);
+  @include font-size($h2-font-sizes);
 }
 
-// Body size is increased to 20px, the new value needs to be set in px
-// so that the header ems are calculated properly
-@include breakpoint($bp-med min-width) {
-  h2,
-  .ama__h2,
-  %h2 {
-    @include type($font-serif, 1.7em, $font-weight-medium, 1.1176470588);
-    margin-bottom: 9px;
-  }
-}
-
-// Sets up the base font styles for body, h3, mobile first scaling up
 h3,
 .ama__h3,
-%h3 {
-  @include type($font-serif, 1.111em, $font-weight-medium, 1.2);
-  margin-bottom: 6px;
-}
-
-// Body size is increased to 20px, the new value needs to be set in px
-// so that the header ems are calculated properly
-@include breakpoint($bp-med min-width) {
-  h3,
-  .ama__h3,
-  %h3 {
-    @include type($font-serif, 1.5em, $font-weight-medium, 1.1333333333);
-    margin-bottom: 9px;
-  }
+%ama__h3 {
+  @include type($myriad-pro, $font-weight-semibold);
+  @include font-size($h3-font-sizes);
 }
 
 h4,
 .ama__h4,
-%h4 {
-  @include type($font-sans-serif, 18px, $font-weight-bold, 1.2222222222);
-  margin-bottom: 6px;
-
-  @include breakpoint($bp-med min-width) {
-    @include type($font-sans-serif, 24px, $font-weight-bold, 1.1666666667);
-    margin-bottom: 9px;
-  }
+%ama__h4 {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($h4-font-sizes);
 }
 
 h5,
 .ama__h5,
-%h5 {
-  @include type($font-sans-serif, 16px, $font-weight-bold, 1.4375);
-  margin-bottom: 6px;
-
-  @include breakpoint($bp-med min-width) {
-    @include type($font-sans-serif, 18px, $font-weight-bold, 1.3888888889);
-    margin-bottom: 9px;
-  }
+%ama__h5 {
+  @include type($myriad-pro, $font-weight-semibold);
+  @include font-size($h5-font-sizes);
 }
 
-h6,
-.ama__h6,
-%h6 {
-  @include type($font-sans-serif, 14px, $font-weight-bold, 1.5);
-  margin-bottom: 6px;
+small,
+.ama__type-smaller,
+%ama__type-smaller {
+  @include type($myriad-pro, $font-weight-bold);
+  @include font-size($small-font-sizes);
+}
 
-  @include breakpoint($bp-med min-width) {
-    @include type($font-sans-serif, 15px, $font-weight-bold, 1.4666666667);
-    margin-bottom: 9px;
-  }
+.ama__type-italic,
+%ama__type-italic {
+  @include type($myriad-pro, $font-weight-bold);
+  @include font-size($small-font-sizes);
+  font-style: italic;
 }
