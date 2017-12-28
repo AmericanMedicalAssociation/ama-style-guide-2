@@ -1,8 +1,12 @@
-{% set heading = topicPromo.heading %}
-{% set paragraph = topicPromo.paragraph %}
-{% set image = topicPromo.image %}
-{% set button = topicPromo.button %}
-{% set border = topicPromo.border ? "ama__topic_promotion--border" : "" %}
+{% set
+  heading, paragraph, image, button, border, email, checkbox =
+  topicPromo.heading,
+  topicPromo.paragraph,
+  topicPromo.image,
+  topicPromo.button, topicPromo.border ? "ama__topic_promotion--border" : "",
+  topicPromo.email,
+  topicPromo.checkbox
+%}
 
 <div class="ama__topic_promotion {{ class }} {{ border }}">
   {% if topicPromo.image %}
@@ -12,7 +16,15 @@
   {% include '@atoms/heading.twig' %}
   {% include '@atoms/paragraph.twig' %}
 
-  {% if topicPromo.button %}
+  {% if topicPromo.button and not topicPromo.email %}
     {% include '@atoms/button.twig' %}
+  {% endif %}
+
+  {% if topicPromo.email %}
+    <form class="ama__form" action="#">
+      {% include '@atoms/forms/email-field.twig' %}
+      {% include '@atoms/button.twig' %}
+      {% include '@atoms/forms/checkbox.twig' %}
+    </form>
   {% endif %}
 </div>
