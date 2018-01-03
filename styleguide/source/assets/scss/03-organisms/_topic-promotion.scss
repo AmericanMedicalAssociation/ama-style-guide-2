@@ -1,5 +1,5 @@
 .ama__topic_promotion {
-  background: $black-7;
+  border: solid 1px $gray-8;
   @include gutter($padding-top-half...);
   @include gutter($padding-right-half...);
   @include gutter($padding-bottom-half...);
@@ -10,14 +10,17 @@
     @include child-top-gutters($gutter / 2);
   }
 
-
-  &--border {
-    background: $white;
-    border: solid 1px $gray-8;
+  &--background {
+    background: $black-15;
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
   & > * {
     margin-bottom: 0;
   }
+}
+
+.ama__topic_promotion--link:hover {
+  background: $black-15;
+  display: block;
 }

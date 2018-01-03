@@ -1,30 +1,28 @@
 {% set
-  heading, paragraph, image, button, border, email, checkbox =
+  heading, paragraph, link, image, button, background, email, checkbox =
   topicPromo.heading,
   topicPromo.paragraph,
+  topicPromo.link,
   topicPromo.image,
-  topicPromo.button, topicPromo.border ? "ama__topic_promotion--border" : "",
+  topicPromo.button,
+  topicPromo.background ? "ama__topic_promotion--background" : "",
   topicPromo.email,
   topicPromo.checkbox
 %}
+{% if topicPromo.link %}
+  <a href="{{ topicPromo.link }}" class="ama__topic_promotion--link">
+{% endif %}
+  <div class="ama__topic_promotion {{ class }} {{ background }}">
+    {% if topicPromo.image %}
+      {% include '@atoms/image.twig' %}
+    {% endif %}
 
-<div class="ama__topic_promotion {{ class }} {{ border }}">
-  {% if topicPromo.image %}
-    {% include '@atoms/image.twig' %}
-  {% endif %}
+    {% include '@atoms/heading.twig' %}
+    {% include '@atoms/paragraph.twig' %}
 
-  {% include '@atoms/heading.twig' %}
-  {% include '@atoms/paragraph.twig' %}
-
-  {% if topicPromo.button and not topicPromo.email %}
-    {% include '@atoms/button.twig' %}
-  {% endif %}
-
-  {% if topicPromo.email %}
-    <form class="ama__form" action="#">
-      {% include '@atoms/forms/email-field.twig' %}
+    {% if topicPromo.button %}
       {% include '@atoms/button.twig' %}
-      {% include '@atoms/forms/checkbox.twig' %}
-    </form>
-  {% endif %}
-</div>
+    {% endif %}
+  </div>
+{% if topicPromo.link %}</a>{% endif %}
+
