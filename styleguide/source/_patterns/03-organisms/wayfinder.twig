@@ -1,0 +1,22 @@
+<section class="ama_wayfinder">
+  <div class="ama_wayfinder--grid container">
+    <div class="ama_wayfinder--referrer">
+      {% if wayfinder.referred %}
+        {% set linkBackUrl = wayfinder.referred.referrerHref %}
+        {% set linkBackTitle = wayfinder.referred.referrerTitle %}
+        <div class="ama_wayfinder--referrer--link-back">
+          <a href="{{ linkBackUrl }}">
+            {% include '@atoms/media/icons/svg/icon-select.twig' %}
+            <span class="ama_wayfinder--referrer--link-back_text">
+              {{ linkBackTitle }}
+            </span>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+    <div class="ama_wayfinder--logo">
+      {% set logo = wayfinder.logo %}
+      {% include '@atoms/site-logo.twig' %}
+    </div>
+  </div>
+</section>
