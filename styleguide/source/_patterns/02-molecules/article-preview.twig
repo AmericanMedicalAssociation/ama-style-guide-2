@@ -1,21 +1,15 @@
 {% set link = topic_article_preview.title %}
 {% set class = topic_article_preview.class %}
 
-{#Topic videos#}
-{% macro topic_video(topic_article_video) %}
-  {% set video = topic_article_video %}
-  {% if video %}
+{#Topic media#}
+{% macro topic_mediaType(topic_article_preview) %}
+  {% set topic_article_mediaType = topic_article_preview.mediaType %}
+  {% if topic_article_mediaType == "video" %}
+    {% set video = topic_article_preview.video %}
     {% include "@atoms/video.twig" %}
-  {% endif %}
-{% endmacro %}
-
-{#Topic images#}
-{% macro topic_image(topic_article_image) %}
-  {% set image = topic_article_image %}
-  {% if image %}
-    <div class="ama__topic_article-preview-container">
-      {% include "@atoms/image.twig"  with { 'class': 'ama__topic_article-preview-container-image'} %}
-    </div>
+  {% else %}
+    {% set image = topic_article_preview.image %}
+    {% include "@atoms/image.twig"  with { 'class': 'ama__topic_article-preview-container-image'} %}
   {% endif %}
 {% endmacro %}
 
@@ -47,8 +41,7 @@
 {% endmacro %}
 
 <div class="ama__topic_article-preview {{ class }}">
-  {{ _self.topic_image(topic_article_preview.image) }}
-  {{ _self.topic_video(topic_article_preview.video) }}
+  {{ _self.topic_mediaType(topic_article_preview) }}
   <div class="ama__topic_article-preview_copy">
     {{ _self.topic_title(topic_article_preview.link) }}
     {{ _self.topic_description(topic_article_preview) }}
