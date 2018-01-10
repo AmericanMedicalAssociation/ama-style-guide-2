@@ -1,16 +1,4 @@
-{% include '@atoms/skip-nav.twig' %}
-
-{% block ribbon %}
-  {% set placeholder = three_column.ribbon.placeholder %}
-  {% include '@base/placeholder.twig' %}
-{% endblock %}
-
-{% block header %}
-  {% set placeholder = three_column.header.placeholder %}
-  {% include '@base/placeholder.twig' %}
-{% endblock %}
-
-<main id="main-content" class="ama__layout--three-column container" tabindex="-1" role="main">
+<div class="ama__layout--three-column">
   {# Keeping tabindex for accessibility purposes #}
   <article class="ama__page-content" role="article">
     {% block pageContent %}
@@ -32,9 +20,4 @@
       {% include '@base/placeholder.twig' %}
     {% endblock %}
   </aside>
-</main>
-
-{% block footer %}
-  {% set placeholder = three_column.footer.placeholder %}
-  {% include '@base/placeholder.twig' %}
-{% endblock %}
+</div>
