@@ -189,7 +189,6 @@ gulp.task('scss-lint', function() {
     }));
 });
 
-
 // copy files settings
 var svg2twig = {
   base: config.icons.base,
@@ -207,12 +206,35 @@ gulp.task("svg2twig", function() {
     .pipe(gulp.dest(svg2twig.dest))
 });
 
+gulp.task('cleanTwig:before', function () {
+  return gulp.src(
+    config.twigSource.dest
+  )
+  .pipe(clean({
+    force: true
+  }))
+});
+
 // Copy twig files from source
-/* copy files */
-gulp.task("copyTwigFiles", function() {
+gulp.task("copyTwigFiles", ['cleanTwig:before'], function() {
   return gulp.src(config.twigSource.files)
     .pipe(plumber())
     .pipe(gulp.dest(config.twigSource.dest))
+});
+
+gulp.task('default', ['clean:before'], function (callback) {
+  production = false;
+
+  // We need to re-run sass last to make sure the latest styles.css gets loaded
+  runSequence(
+    ['scripts', 'fonts', 'images', 'sass'],
+    'patternlab',
+    'styleguide',
+    'copyTwigFiles',
+    'icons',
+    'sass',
+    callback
+  );
 });
 
 // Task: Watch files
@@ -258,6 +280,11 @@ gulp.task('watch', function () {
   gulp.watch(
     config.fonts.files,
     ['fonts']
+  );
+
+  gulp.watch(
+    config.twigSource.files,
+    ['default']
   );
 });
 
