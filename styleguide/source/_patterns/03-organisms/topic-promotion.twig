@@ -1,28 +1,33 @@
 {% set
-  heading, paragraph, link, image, button, background, email, checkbox =
-  topicPromo.heading,
-  topicPromo.paragraph,
-  topicPromo.link,
-  topicPromo.image,
-  topicPromo.button,
-  topicPromo.background ? "ama__topic_promotion--background" : "",
-  topicPromo.email,
-  topicPromo.checkbox
+  heading, paragraph, link, image, showCta, button, style =
+  heading,
+  paragraph,
+  link,
+  image,
+  button ? "true" : "false",
+  button,
+  style
 %}
-{% if topicPromo.link %}
-  <a href="{{ topicPromo.link }}" class="ama__topic_promotion--link">
+
+{% if not button %}
+  <a href="{{ link }}" class="ama__topic_promotion--link">
 {% endif %}
-  <div class="ama__topic_promotion {{ class }} {{ background }}">
-    {% if topicPromo.image %}
+<div class="ama__topic_promotion {{ class }} ama__topic_promotion--{{ style }}">
+  {% if image %}
+    {% if patternlab %}
       {% include '@atoms/image.twig' %}
+    {% else %}
+      <div class="ama__image">
+        {{ image }}
+      </div>
     {% endif %}
+  {% endif %}
 
-    {% include '@atoms/heading.twig' %}
-    {% include '@atoms/paragraph.twig' %}
+  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/paragraph.twig' %}
 
-    {% if topicPromo.button %}
-      {% include '@atoms/button.twig' %}
-    {% endif %}
-  </div>
-{% if topicPromo.link %}</a>{% endif %}
-
+  {% if button %}
+    {% include '@atoms/button.twig' %}
+  {% endif %}
+</div>
+{% if not button %}</a>{% endif %}

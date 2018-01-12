@@ -1,5 +1,4 @@
 .ama__topic_promotion {
-  border: solid 1px $gray-8;
   @include gutter($padding-top-half...);
   @include gutter($padding-right-half...);
   @include gutter($padding-bottom-half...);
@@ -12,16 +11,32 @@
 
   &--background {
     background: $black-15;
-    border: 0;
+  }
+
+  &--border {
+    border: solid 1px $gray-8;
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
   & > * {
     margin-bottom: 0;
   }
+
+  .ama__image,
+  .ama__image img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.ama__topic_promotion--link:hover {
-  background: $black-15;
+.ama__topic_promotion--link {
   display: block;
+
+  .ama__topic_promotion--border:hover {
+    background: $black-15;
+  }
+
+  .ama__topic_promotion--background:hover {
+    background: darken($black-15, 5%);
+  }
 }
