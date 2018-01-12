@@ -206,21 +206,23 @@ gulp.task("svg2twig", function() {
     .pipe(gulp.dest(svg2twig.dest))
 });
 
-gulp.task('cleanTwig:before', function () {
-  return gulp.src(
-    config.twigSource.dest
-  )
-  .pipe(clean({
-    force: true
-  }))
-});
-
 // Copy twig files from source
-gulp.task("copyTwigFiles", ['cleanTwig:before'], function() {
+gulp.task("copyTwigFiles", function() {
   return gulp.src(config.twigSource.files)
     .pipe(plumber())
     .pipe(gulp.dest(config.twigSource.dest))
 });
+
+gulp.task('cleanTwig', ['clean:before'], function (callback) {
+  production = false;
+
+  runSequence(
+    'patternlab',
+    'copyTwigFiles',
+    callback
+  );
+});
+
 
 gulp.task('default', ['clean:before'], function (callback) {
   production = false;
@@ -284,7 +286,7 @@ gulp.task('watch', function () {
 
   gulp.watch(
     config.twigSource.files,
-    ['default']
+    ['cleanTwig']
   );
 });
 
