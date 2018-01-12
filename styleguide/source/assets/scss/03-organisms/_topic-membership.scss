@@ -1,0 +1,29 @@
+.ama__topic_membership {
+  background: $black-15;
+  @include gutter($padding-top-half...);
+  @include gutter($padding-right-half...);
+  @include gutter($padding-bottom-half...);
+  @include gutter($padding-left-half...);
+  @include child-top-gutters($gutter-mobile / 2);
+
+  @include breakpoint($bp-med) {
+    @include child-top-gutters($gutter / 2);
+  }
+
+  // Remove margins on child elements so that we can set consistent spacing elsewhere.
+  & > * {
+    margin-bottom: 0;
+  }
+
+  .ama__button {
+    width: 100%;
+  }
+}
+
+.ama__topic_membership--link {
+  display: block;
+
+  .ama__topic_membership:hover {
+    background: darken($black-15, 5%);
+  }
+}
