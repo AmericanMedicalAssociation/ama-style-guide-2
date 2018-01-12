@@ -1,0 +1,21 @@
+<ul>
+  {% if patternLab %}
+    {% for link in links %}
+      <li class="list_item-topic-tools">
+        {% include "@atoms/link.twig" with {
+          "link": {
+            "href": link.href,
+            "class": link.class,
+            "title": link.title,
+            "target": link.target,
+            "text": link.text
+          }
+        } %}
+      </li>
+    {% endfor %}
+  {% else %}
+    {% for item in items %}
+      <li {{ attributes.addClass('list_item-topic-tools') }}>{{ item }}</li>
+    {% endfor %}
+  {% endif %}
+</ul>

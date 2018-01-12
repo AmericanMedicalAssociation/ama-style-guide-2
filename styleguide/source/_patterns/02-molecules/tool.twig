@@ -1,0 +1,10 @@
+<a href="{{ tool.field_source }}" target="_blank">
+  <span class="icon {{ tool.field_tool_type }} list_topic-tools_icon" data-grunticon-embed></span>
+  <p class="list_topic-tools_title">{{ tool.label }}</p>
+  {% if tool.field_extension is not empty %}
+    <span class="file_type list_topic-tools_file-type">{{ tool.field_extension }}</span>
+  {% endif %}
+  {% if tool.field_download_size is not empty %}
+    <span class="file_size list_topic-tools_file-size">{{ tool.field_download_size }}</span>
+  {% endif %}
+</a>
