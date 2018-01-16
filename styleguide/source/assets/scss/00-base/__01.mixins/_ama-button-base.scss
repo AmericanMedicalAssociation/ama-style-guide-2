@@ -2,7 +2,7 @@
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($p-font-sizes);
   border-radius: 0;
-  border: 1px solid $purple;
+  border: 1px solid $topic_purple;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -17,8 +17,8 @@
   transition: all 0.4s ease;
 
   &:hover {
-    border-color: $hoverPurple;
-    background-color: $hoverPurple;
-    color: $white;
+    border-color: $topic_purple-darker;
+    background-color: $topic_purple-darker;
+    color: $topic_white;
   }
 }
