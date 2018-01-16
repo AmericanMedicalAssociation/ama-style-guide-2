@@ -1,8 +1,9 @@
 .ama__placeholder {
-  @extend h2;
-  color: $black-15;
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($h2-font-sizes);
   min-height: 50px;
-  border: 4px dashed $black-15;
+  color: $topic_black-15;
+  border: 4px dashed $topic_black-15;
   text-align: center;
   height: 100%;
   width: 100%;
