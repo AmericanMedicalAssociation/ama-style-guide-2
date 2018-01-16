@@ -1,0 +1,9 @@
+<ul class="ama__social-share">
+  {% for link in social %}
+    {% set title, href, text, target, class =
+    link.text, link.url, link.text, "_self", link.icon %}
+    <li>
+      <a href="{{ href }}" class="social--{{class}}"></a>
+    </li>
+  {% endfor %}
+</ul>
