@@ -1,9 +1,9 @@
 {% set showCta = button ? "true" : "false" %}
 
 {% if not button %}
-  <a href="{{ link }}" class="ama__topic_membership--link">
+  <a href="{{ link }}" class="ama__membership--link">
 {% endif %}
-<div class="ama__topic_membership {{ class }}">
+<div class="ama__membership {{ class }}">
   {% if image %}
     {% if patternlab %}
       {% include '@atoms/image.twig' %}

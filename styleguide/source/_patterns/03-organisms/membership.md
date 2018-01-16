@@ -1,15 +1,15 @@
 ---
-el: ".ama__topic_membership"
-title: "Topic Membership"
+el: ".ama__membership"
+title: "Membership"
 ---
 
-The topic membership pattern includes a heading, a description, and a CTA button (optional).
+The membership pattern includes a heading, a description, and a CTA button (optional).
 
 [EWL-3817](https://issues.ama-assn.org/browse/EWL-3817)
 [EWL-4214](https://issues.ama-assn.org/browse/EWL-4214)
 
 ### Variant options
-* [With CTA button](./?p=organisms-topic-membership-with-cta)
+* [With CTA button](./?p=organisms-membership-with-cta)
 
 ### Variables
 ~~~
