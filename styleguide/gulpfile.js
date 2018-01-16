@@ -207,18 +207,18 @@ gulp.task("svg2twig", function() {
 });
 
 // Copy twig files from source
-gulp.task("copyTwigFiles", function() {
-  return gulp.src(config.twigSource.files)
+gulp.task("copy-twig-files", function() {
+  return gulp.src(config.twigsource.files)
     .pipe(plumber())
-    .pipe(gulp.dest(config.twigSource.dest))
+    .pipe(gulp.dest(config.twigsource.dest))
 });
 
-gulp.task('cleanTwig', ['clean:before'], function (callback) {
+gulp.task('clean-twig', ['clean:before'], function (callback) {
   production = false;
 
   runSequence(
     'patternlab',
-    'copyTwigFiles',
+    'copy-twig-files',
     callback
   );
 });
@@ -232,7 +232,7 @@ gulp.task('default', ['clean:before'], function (callback) {
     ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
-    'copyTwigFiles',
+    'copy-twig-files',
     'icons',
     'sass',
     callback
@@ -285,8 +285,8 @@ gulp.task('watch', function () {
   );
 
   gulp.watch(
-    config.twigSource.files,
-    ['cleanTwig']
+    config.twigsource.files,
+    ['clean-twig']
   );
 });
 
@@ -300,7 +300,7 @@ gulp.task('default', ['clean:before'], function (callback) {
     ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
-    'copyTwigFiles',
+    'copy-twig-files',
     'icons',
     'sass',
     callback

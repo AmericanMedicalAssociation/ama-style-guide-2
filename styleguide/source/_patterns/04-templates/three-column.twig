@@ -7,14 +7,14 @@
     {% endblock %}
   </article>
 
-  <aside id="sidebar-primary" class="ama__sidebar-primary" role="complementary">
+  <aside id="sidebar-primary" class="ama__sidebar--primary" role="complementary">
     {% block sidebarPrimary %}
       {% set placeholder = three_column.sidebar_primary.placeholder %}
       {% include '@base/placeholder.twig' %}
     {% endblock %}
   </aside>
 
-  <aside id="sidebar-secondary" class="ama__sidebar-secondary" role="complementary">
+  <aside id="sidebar-secondary" class="ama__sidebar--secondary" role="complementary">
     {% block sidebarSecondary %}
       {% set placeholder = three_column.sidebar_secondary.placeholder %}
       {% include '@base/placeholder.twig' %}
