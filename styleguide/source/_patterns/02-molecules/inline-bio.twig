@@ -14,8 +14,9 @@
   {% set heading = inline_bio.heading %}
   {% include "@atoms/heading.twig" %}
 
-  {% set paragraph = inline_bio.paragraph %}
-  {% include "@atoms/paragraph.twig" %}
+  {% for paragraph in inline_bio.paragraphs %}
+    {% include "@atoms/paragraph.twig" %}
+  {% endfor %}
 
   {% set link = inline_bio.link %}
   {% include "@atoms/link.twig" %}
