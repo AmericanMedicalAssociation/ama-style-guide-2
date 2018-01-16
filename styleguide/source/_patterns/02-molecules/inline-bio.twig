@@ -1,0 +1,23 @@
+{#Bio image#}
+{% macro bio_image(bio_image) %}
+  {% set image = bio_image %}
+  {% if image %}
+    {% include "@atoms/image.twig"  with {
+      "class": "ama__inline-bio__image"}
+    %}
+  {% endif %}
+{% endmacro %}
+
+<aside class="ama__inline-bio">
+  {{ _self.bio_image(inline_bio.image) }}
+
+  {% set heading = inline_bio.heading %}
+  {% include "@atoms/heading.twig" %}
+
+  {% set paragraph = inline_bio.paragraph %}
+  {% include "@atoms/paragraph.twig" %}
+
+  {% set link = inline_bio.link %}
+  {% include "@atoms/link.twig" %}
+
+</aside>
