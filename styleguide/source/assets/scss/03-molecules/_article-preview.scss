@@ -62,6 +62,14 @@
 
 /** inline article preview 4422 */
 
+// @todo - when new typography is merged in, replace this with the central variable.
+$h4-font-sizes-article-preview-inline: (
+  null  : (18px, 1.22),
+  small  : (18px, 1.22),
+  medium: (20px, 1.6),
+  large: (28px, 1.25),
+);
+
 .ama__article-preview-inline {
   border: solid #eee;
   border-width: 1px 0;
@@ -69,10 +77,11 @@
 }
 
 .ama__article-preview-inline__label {
+  @include font-size($h4-font-sizes-article-preview-inline);
   margin: 0;
 }
 
 .ama__article-preview-inline__link {
-  @extend %ama__h4;
-  color: #027DBC;
+  @include font-size($h4-font-sizes-article-preview-inline);
+  color: $blue;
 }
