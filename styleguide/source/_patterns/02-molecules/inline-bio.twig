@@ -9,15 +9,13 @@
 {% endmacro %}
 
 <aside class="ama__inline-bio">
-  {{ _self.bio_image(inline_bio.image) }}
+  {{ _self.bio_image(image) }}
 
-  {% set heading = inline_bio.heading %}
   {% include "@atoms/heading.twig" %}
 
-  {% for paragraph in inline_bio.paragraphs %}
+  {% for paragraph in paragraphs %}
     {% include "@atoms/paragraph.twig" %}
   {% endfor %}
 
-  {% set link = inline_bio.link %}
   {% include "@atoms/link.twig" %}
 </aside>
