@@ -3,18 +3,20 @@
 {% set userMenu = ribbon.userMenu %}
 
 <section class="ama__ribbon">
-  {% include "@molecules/ribbon-dropdown.twig" %}
-  <div class="ama__ribbon_user_menu--container">
-    {% include "@molecules/ribbon-user-menu.twig" %}
-
-    {% set ribbonDropdown = ribbon.ribbonDropdown.userMenuDropdown %}
-    {% if ribbon.ribbonDropdown.userMenuDropdown %}
-      {% include "@molecules/ribbon-dropdown.twig" %}
-    {% endif %}
-  </div>
-
-  <div class="ama__ribbon_user_menu--mobile">
-    {% set ribbonDropdown = ribbon.mobileMenu %}
+  <div class="container">
     {% include "@molecules/ribbon-dropdown.twig" %}
+    <div class="ama__ribbon_user_menu--container">
+      {% include "@molecules/ribbon-user-menu.twig" %}
+
+      {% set ribbonDropdown = ribbon.ribbonDropdown.userMenuDropdown %}
+      {% if ribbon.ribbonDropdown.userMenuDropdown %}
+        {% include "@molecules/ribbon-dropdown.twig" %}
+      {% endif %}
+    </div>
+
+    <div class="ama__ribbon_user_menu--mobile">
+      {% set ribbonDropdown = ribbon.mobileMenu %}
+      {% include "@molecules/ribbon-dropdown.twig" %}
+    </div>
   </div>
 </section>
