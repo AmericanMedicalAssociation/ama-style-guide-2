@@ -2,8 +2,13 @@
   @extend %clearfix;
   margin: 30px 0;
   padding: 20px 0;
-  border-top: 1px solid $gray-8;
-  border-bottom: 1px solid $gray-8;
+  // @todo confirm this change with UX
+  // original grays are deprecated with topic page
+  // border-top: 1px solid $gray-8;
+  // border-bottom: 1px solid $gray-8;
+  // new/similar grays based on new color palette
+  border-top: 1px solid $grey-50;
+  border-bottom: 1px solid $grey-50;
 
   @include breakpoint($bp-small) {
     margin: 40px 0;
@@ -34,7 +39,11 @@
   }
 
   &__meta {
-    color: $black-55;
+    // @todo confirm this change with UX
+    // original grays are deprecated with topic page
+    // color: $black-55;
+    // new/similar grays based on new color palette
+    color: $grey-64;
     margin-bottom: 0;
     display: inline-block;
 
@@ -44,8 +53,9 @@
   }
 
   &__link {
+    @extend %link--blue;
     display: block;
     margin-top: 6px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
   }
 }
