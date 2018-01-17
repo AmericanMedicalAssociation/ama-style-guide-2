@@ -55,7 +55,7 @@
     height: 60px;
     width: 100%;
     background-color: $white;
-    border: 1px solid $gray-8;
+    border: 1px solid $gray-50;
     border-radius: 0;
     outline: none;
     padding: 0 15px;
@@ -75,12 +75,12 @@
       right: -30px;
       width: 30px;
       height: 30px;
-      background-color: red;
+      background-color: topic_red;
 
     }
 
     &.error {
-      border: 2px solid $red-darker;
+      border: 2px solid $topic_red;
       padding: 0 14px;
     }
 
@@ -115,7 +115,7 @@
     -moz-appearance: none; /*removes default dropdown arrow in Firefox*/
     text-indent: 0.01px; /*removes default dropdown arrow in Firefox*/
     text-overflow: ""; /*removes default dropdown arrow in Firefox*/
-    color: $gray-8;
+    color: $gray-50;
 
     option {
       color: $black;
@@ -123,23 +123,23 @@
 
     &:invalid,
     option[value=""] {
-      color: $gray-8;
+      color: $gray-50;
     }
   }
 
   // Placeholder text styles
   ::-webkit-input-placeholder { /* Chrome */
-    color: $gray-8;
+    color: $gray-50;
   }
   :-ms-input-placeholder { /* IE 10+ */
-    color: $gray-8;
+    color: $gray-50;
   }
   ::-moz-placeholder { /* Firefox 19+ */
-    color: $gray-8;
+    color: $gray-50;
     opacity: 1;
   }
   :-moz-placeholder { /* Firefox 4 - 18 */
-    color: $gray-8;
+    color: $gray-50;
     opacity: 1;
   }
 
@@ -147,7 +147,7 @@
   label {
     &.error {
       display: block;
-      color: $red-darker;
+      color: $topic_red;
       margin-top: 4px;
       clear: both;
     }
@@ -225,10 +225,10 @@
 
   /* Validation */
   .has-error {
-  	border-color: $red;
+  	border-color: $topic_red;
   }
   .is-valid {
-  	border-color: $green;
+  	border-color: $topic_green;
   }
 }
 
