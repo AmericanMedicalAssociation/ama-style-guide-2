@@ -1,1 +1,2 @@
-<a href="{{ url }}" class="ama__tag">{{ text }}</a>
+{% set link.href, link.text, link.class = url, text, "ama__tag" %}
+{% include "@atoms/link.twig" %}
