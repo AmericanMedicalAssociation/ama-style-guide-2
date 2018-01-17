@@ -132,6 +132,14 @@ gulp.task('icons', function (callback) {
   runSequence('minifyIcons', 'makeIcons', 'waitForIcons', 'reloadIcons', callback);
 });
 
+//Task: Copy css to public
+gulp.task('css',function() {
+  return gulp.src(config.css.files)
+    .pipe(gulp.dest(config.css.dest))
+    .pipe(browserSync.reload({stream:true}));
+});
+
+// Task: Handle Sass and CSS
 gulp.task('sass', ['scss-lint'], function () {
   return gulp.src(config.scss.files)
     .pipe(plumber())
@@ -268,7 +276,7 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    ['scripts', 'fonts', 'images', 'sass'],
+    ['scripts', 'fonts', 'images', 'css', 'sass'],
     'patternlab',
     'styleguide',
     'copyTwigFiles',
