@@ -4,7 +4,7 @@
 {% if button.href %}
   <a 
     href="{{ button.href }}" 
-    class="ama__button"
+    class="ama__button {{ buttonSize }} {{buttonStyle}}"
     title="{{ button.info }}">
       {{ button.text }}
   </a>
