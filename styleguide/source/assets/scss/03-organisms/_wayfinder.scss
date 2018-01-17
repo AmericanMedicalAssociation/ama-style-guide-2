@@ -1,0 +1,42 @@
+.ama__wayfinder {
+  border-bottom: solid 1px $gray-8;
+
+  .ama__wayfinder--referrer {
+    align-self: center;
+    flex-basis: 50%;
+    display: flex;
+
+    &__link-back a {
+      display: none;
+      justify-content: center;
+      font-size: 0.9em;
+    }
+
+    &__link-back svg {
+      transform: rotate(90deg) translateY(-4px) translateX(7px); // adjust the positioning of the icon so it lines up with the text and the container edge.
+    }
+
+    &__link-back_text {
+      padding-left: 4px; // add some visual breathing room between the icon and the text.
+    }
+  }
+
+  &__grid {
+    display: none;
+    padding: $gutter-mobile 0 $gutter-mobile ($gutter-mobile / 4);
+
+    @include breakpoint($bp-med) {
+      padding: ($gutter-mobile / 4) 0;
+    }
+    @include breakpoint($bp-small) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    align-items: center;
+    display: flex;
+    flex-basis: 50%;
+  }
+}

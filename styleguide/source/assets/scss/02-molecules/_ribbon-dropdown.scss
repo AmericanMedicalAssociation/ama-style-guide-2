@@ -2,9 +2,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
-}
+  border-left: 1px solid $gray-8;
+  border-right: 1px solid $gray-8;
+  @extend .ama__type-smaller;
 
-.ama__ribbon__dropdown {
+  &:last-child {
+    border-left: 0;
+  }
+
   &--trigger {
     display: flex;
     align-content: center;

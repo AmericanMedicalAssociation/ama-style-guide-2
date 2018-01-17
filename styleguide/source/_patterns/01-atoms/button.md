@@ -19,5 +19,7 @@ button: {
     type: string / optional (ex: "button", "submit")
   style:
     type: string / optional ("secondary" or "")
+   size:
+    type: string / optional ("small", "block" or "")
 }
 ~~~
