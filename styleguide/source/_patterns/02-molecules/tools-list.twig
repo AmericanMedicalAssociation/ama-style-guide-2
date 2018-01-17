@@ -1,0 +1,11 @@
+<ul class="list_topic-tools">
+  {% if patternLab %}
+    {% for tool in tools %}
+      <li class="list_item-topic-tools">{% include "@molecules/tool.twig" %}</li>
+    {% endfor %}
+  {% else %}
+    {% for item in items %}
+      <li {{ attributes.addClass('list_item-topic-tools') }}>{{ item }}</li>
+    {% endfor %}
+  {% endif %}
+</ul>

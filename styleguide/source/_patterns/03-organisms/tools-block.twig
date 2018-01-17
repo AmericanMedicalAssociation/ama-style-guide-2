@@ -1,0 +1,87 @@
+<div class="topic_tools {{ class }}">
+  {% block headingTools %}
+    {% if patternLab %}
+      {% include "@atoms/heading.twig" with {
+        "heading": {
+          "level": 2,
+          "class": "tools_title",
+          "text": "Topics, Tools, and Resources"
+        }
+      } %}
+    {% endif %}
+
+  {% endblock %}
+
+  {% block tools %}
+    {% if patternLab %}
+      {% include "@molecules/tools-list.twig" with {
+        "tools": [
+          {
+            "field_source": "http://www.google.com",
+            "field_tool_type": "audio",
+            "field_extension": ".mp3",
+            "field_download_size": "82 KB",
+            "label": "Google"
+          },
+          {
+            "field_source": "http://www.yahoo.com",
+            "field_tool_type": "pdf",
+            "field_extension": ".pdf",
+            "field_download_size": "158 MB",
+            "label": "Yahoo"
+          },
+          {
+            "field_source": "http://www.bing.com",
+            "field_tool_type": "video",
+            "field_extension": ".mp4",
+            "field_download_size": "1.4 GB",
+            "label": "Bing"
+          }
+        ]
+      } %}
+    {% endif %}
+  {% endblock %}
+
+  {% block headingLinks %}
+    {% if patternLab %}
+      {% include "@atoms/heading.twig" with {
+        "heading": {
+          "level": 5,
+          "class": "tools_title-learn-more",
+          "text": "Learn More About:"
+        }
+      } %}
+    {% endif %}
+  {% endblock %}
+
+  {% block links %}
+    {% if patternLab %}
+      {% include "@molecules/link-list.twig" with {
+        "links": [
+          {
+            "title": "Google",
+            "href": "http://www.google.com",
+            "text": "Visit Google now",
+            "target": "_blank",
+            "class": "link-black"
+          },
+          {
+            "title": "Weather.com",
+            "href": "http://www.weather.com",
+            "text": "Visit The Weather Channel",
+            "target": "_blank",
+            "class": "link-black"
+          },
+          {
+            "title": "NASA",
+            "href": "http://www.nasa.gov",
+            "text": "Check out NASA",
+            "target": "_blank",
+            "class": "link-black"
+          }
+        ]
+      } %}
+    {% endif %}
+  {% endblock %}
+
+</div>
