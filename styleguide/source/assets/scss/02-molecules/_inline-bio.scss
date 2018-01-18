@@ -2,11 +2,6 @@
   @extend %clearfix;
   margin: 30px 0;
   padding: 20px 0;
-  // @todo confirm this change with UX
-  // original grays are deprecated with topic page
-  // border-top: 1px solid $gray-8;
-  // border-bottom: 1px solid $gray-8;
-  // new/similar grays based on new color palette
   border-top: 1px solid $gray-50;
   border-bottom: 1px solid $gray-50;
 
@@ -39,10 +34,6 @@
   }
 
   &__meta {
-    // @todo confirm this change with UX
-    // original grays are deprecated with topic page
-    // color: $black-55;
-    // new/similar grays based on new color palette
     color: $gray-64;
     margin-bottom: 0;
     display: inline-block;
@@ -57,5 +48,9 @@
     display: block;
     margin-top: 6px;
     font-weight: $font-weight-semibold;
+
+    svg {
+      fill: $topic_blue;
+    }
   }
 }

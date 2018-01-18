@@ -17,5 +17,7 @@
     {% include "@atoms/paragraph.twig" %}
   {% endfor %}
 
-  {% include "@atoms/link.twig" %}
+  {% for link in links %}
+    {% include "@atoms/link.twig" %}
+  {% endfor %}
 </aside>
