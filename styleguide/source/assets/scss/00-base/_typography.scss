@@ -45,22 +45,22 @@ h5,
 }
 
 small,
-.ama__type-small,
-%ama__type-small {
+.ama__type--small,
+%ama__type--small {
   @include type($myriad-pro, $font-weight-regular);
   @include font-size($small-font-sizes);
 }
 
-.ama__type-italic,
+.ama__type--italic,
 %ama__type-italic {
-  @include type($myriad-pro, $font-weight-regular);
+  @include -type($myriad-pro, $font-weight-regular);
   @include font-size($small-font-sizes);
   font-style: italic;
 }
 
 strong,
-.ama__strong,
-%ama__strong {
+.ama__type--strong,
+%ama__type--strong {
   @include type($myriad-pro, $font-weight-bold);
   @include font-size($p-font-sizes);
 }
@@ -119,14 +119,14 @@ body.topic {
   }
 
   small,
-  .topic__type-small,
-  %topic__type-small {
+  .topic__type--small,
+  %topic__type--small {
     @include type($myriad-pro, $font-weight-bold);
     @include font-size($small-topic-font-sizes);
   }
 
-  .topic__type-italic,
-  %topic__type-italic {
+  .topic__type--italic,
+  %topic__type--italic {
     @include type($myriad-pro, $font-weight-bold);
     @include font-size($small-topic-font-sizes);
     font-style: italic;
