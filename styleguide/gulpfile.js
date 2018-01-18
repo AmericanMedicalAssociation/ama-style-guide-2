@@ -1,33 +1,32 @@
 // npm requirements
 var gulp        = require('gulp'),
-    bump        = require('gulp-bump'),
-    clean       = require('gulp-clean'),
-    concat      = require('gulp-concat'),
-    browserSync = require('browser-sync'),
-    filter      = require('gulp-filter'),
-    git         = require('gulp-git'),
-    gulpif      = require('gulp-if'),
-    imagemin    = require('gulp-imagemin'),
-    rename      = require('gulp-rename'),
-    sass        = require('gulp-sass'),
-    sassGlob    = require('gulp-sass-glob'),
-    svgmin      = require('gulp-svgmin'),
-    shell       = require('gulp-shell'),
-    tagversion  = require('gulp-tag-version'),
-    uglify      = require('gulp-uglify'),
-    ghPages     = require('gulp-gh-pages'),
-    runSequence = require('run-sequence'),
-    glob        = require('glob'),
-    sourcemaps  = require('gulp-sourcemaps'),
-    prefix      = require('gulp-autoprefixer'),
-    postcss     = require('gulp-postcss'),
-    reporter    = require('postcss-reporter'),
-    stylelint   = require('gulp-stylelint'),
-    gutil       = require('gulp-util');
-    pWaitFor    = require('p-wait-for'),
-    pathExists  = require('path-exists'),
-    gulpicon    = require("gulpicon/tasks/gulpicon"),
-    plumber     = require('gulp-plumber');
+  bump        = require('gulp-bump'),
+  clean       = require('gulp-clean'),
+  concat      = require('gulp-concat'),
+  browserSync = require('browser-sync'),
+  filter      = require('gulp-filter'),
+  git         = require('gulp-git'),
+  gulpif      = require('gulp-if'),
+  imagemin    = require('gulp-imagemin'),
+  rename      = require('gulp-rename'),
+  sass        = require('gulp-sass'),
+  sassGlob    = require('gulp-sass-glob'),
+  svgmin      = require('gulp-svgmin'),
+  shell       = require('gulp-shell'),
+  tagversion  = require('gulp-tag-version'),
+  uglify      = require('gulp-uglify'),
+  ghPages     = require('gulp-gh-pages'),
+  runSequence = require('run-sequence'),
+  glob        = require('glob'),
+  sourcemaps  = require('gulp-sourcemaps'),
+  prefix      = require('gulp-autoprefixer'),
+  postcss     = require('gulp-postcss'),
+  reporter    = require('postcss-reporter'),
+  stylelint   = require('gulp-stylelint'),
+  gutil       = require('gulp-util'),
+  pWaitFor    = require('p-wait-for'),
+  pathExists  = require('path-exists'),
+  plumber     = require('gulp-plumber');
 
 // Config
 var config = require('./build.config.json');
@@ -112,27 +111,6 @@ gulp.task('minifyIcons', function() {
     .pipe(gulp.dest(config.icons.min));
 });
 
-// Based on https://github.com/filamentgroup/gulpicon#usage
-var iconFiles = glob.sync(config.icons.files);
-var iconConfig = require(config.icons.configFile);
-iconConfig.dest = config.icons.dest;
-gulp.task('makeIcons', gulpicon(iconFiles, iconConfig));
-gulp.task('waitForIcons', function(callback) {
-  var trigger = iconConfig.dest + 'preview.html';
-  return pWaitFor(() => pathExists(trigger, '1000')).then(() => {
-    console.log('Yay! The icons now exist.');
-  });
-});
-gulp.task('reloadIcons', function() {
-  return gulp.src('', {read: false})
-    .pipe(browserSync.reload({stream:true}));
-});
-
-gulp.task('icons', function (callback) {
-  runSequence('minifyIcons', 'makeIcons', 'waitForIcons', 'reloadIcons', callback);
-});
-
-// Task: Handle Sass and CSS
 gulp.task('sass', ['scss-lint'], function () {
   return gulp.src(config.scss.files)
     .pipe(plumber())
@@ -234,6 +212,32 @@ gulp.task('default', ['clean:before'], function (callback) {
     'patternlab',
     'styleguide',
     'copy-twig-files',
+    'icons',
+    'sass',
+    callback
+  );
+});
+
+gulp.task('cleanTwig', ['clean:before'], function (callback) {
+  production = false;
+
+  runSequence(
+    'patternlab',
+    'copyTwigFiles',
+    callback
+  );
+});
+
+
+gulp.task('default', ['clean:before'], function (callback) {
+  production = false;
+
+  // We need to re-run sass last to make sure the latest styles.css gets loaded
+  runSequence(
+    ['scripts', 'fonts', 'images', 'sass'],
+    'patternlab',
+    'styleguide',
+    'copyTwigFiles',
     'icons',
     'sass',
     callback
