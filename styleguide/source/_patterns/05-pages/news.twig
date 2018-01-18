@@ -1,0 +1,18 @@
+{% extends '@templates/two-column-right.twig' %}
+
+{% block header %}
+  {% include '@organisms/ribbon.twig' %}
+  {% include '@organisms/wayfinder.twig' %}
+  <div class="container">
+    {% include '@atoms/page-title.twig' %}
+    
+  </div>
+{% endblock %}
+
+{% block pageContent %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page content'}} %}
+{% endblock %}
+
+{% block sidebarSecondary %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar secondary content'}} %}
+{% endblock %}
