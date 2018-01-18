@@ -1,9 +1,9 @@
 ### Description
-This Pattern shows headers.
+This Pattern shows heading.
 
 ### Variables
 ~~~
-header {
+heading {
   level:
     type: string / required
   text:
