@@ -5,31 +5,28 @@ Inline block copy
 
 ### Variables
 ~~~
-  "inlineBlockCopy": {
-      "heading": {
-        level:
-           type: string / required
-         text:
-           type: string / required
-         class:
-           type: string / optional
-      },
-      paragraph {
-        text:
-          type: string
-      },
-      button: {
-        href:
-          type: string (url) / optional
-        info: 
-          type: string / optional
-        text: 
-          type: string / required
-        type:
-          type: string / optional (ex: "button", "submit")
-        style:
-          type: string / optional ("secondary" or "")
-      }
-    }
+  "heading": {
+    level:
+       type: string / required
+     text:
+       type: string / required
+     class:
+       type: string / optional
+  },
+  paragraph {
+    text:
+      type: string
+  },
+  button: {
+    href:
+      type: string (url) / optional
+    info: 
+      type: string / optional
+    text: 
+      type: string / required
+    type:
+      type: string / optional (ex: "button", "submit")
+    style:
+      type: string / optional ("secondary" or "")
   }
 ~~~
