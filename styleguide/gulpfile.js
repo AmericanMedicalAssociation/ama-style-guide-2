@@ -132,13 +132,6 @@ gulp.task('icons', function (callback) {
   runSequence('minifyIcons', 'makeIcons', 'waitForIcons', 'reloadIcons', callback);
 });
 
-//Task: Copy css to public
-gulp.task('css',function() {
-  return gulp.src(config.css.files)
-    .pipe(gulp.dest(config.css.dest))
-    .pipe(browserSync.reload({stream:true}));
-});
-
 // Task: Handle Sass and CSS
 gulp.task('sass', ['scss-lint'], function () {
   return gulp.src(config.scss.files)
@@ -197,7 +190,6 @@ gulp.task('scss-lint', function() {
     }));
 });
 
-
 // copy files settings
 var svg2twig = {
   base: config.icons.base,
@@ -216,11 +208,36 @@ gulp.task("svg2twig", function() {
 });
 
 // Copy twig files from source
-/* copy files */
-gulp.task("copyTwigFiles", function() {
-  return gulp.src(config.twigSource.files)
+gulp.task("copy-twig-files", function() {
+  return gulp.src(config.twigsource.files)
     .pipe(plumber())
-    .pipe(gulp.dest(config.twigSource.dest))
+    .pipe(gulp.dest(config.twigsource.dest))
+});
+
+gulp.task('clean-twig', ['clean:before'], function (callback) {
+  production = false;
+
+  runSequence(
+    'patternlab',
+    'copy-twig-files',
+    callback
+  );
+});
+
+
+gulp.task('default', ['clean:before'], function (callback) {
+  production = false;
+
+  // We need to re-run sass last to make sure the latest styles.css gets loaded
+  runSequence(
+    ['scripts', 'fonts', 'images', 'sass'],
+    'patternlab',
+    'styleguide',
+    'copy-twig-files',
+    'icons',
+    'sass',
+    callback
+  );
 });
 
 // Task: Watch files
@@ -250,12 +267,6 @@ gulp.task('watch', function () {
     ['icons', 'svg2twig']
   );
 
-  // Watch Css
-  gulp.watch(
-    config.css.files,
-    ['css']
-  );
-
   // Watch sass
   gulp.watch(
     config.scss.watch,
@@ -267,6 +278,11 @@ gulp.task('watch', function () {
     config.fonts.files,
     ['fonts']
   );
+
+  gulp.watch(
+    config.twigsource.files,
+    ['clean-twig']
+  );
 });
 
 // Task: Default
@@ -276,10 +292,10 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    ['scripts', 'fonts', 'images', 'css', 'sass'],
+    ['scripts', 'fonts', 'images', 'sass'],
     'patternlab',
     'styleguide',
-    'copyTwigFiles',
+    'copy-twig-files',
     'icons',
     'sass',
     callback

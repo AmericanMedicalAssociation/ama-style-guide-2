@@ -4,8 +4,6 @@
 
 @mixin ama-button ($size:"", $style:"") {
   @include ama-button-base;
-  // layout
-  padding: 20px 40px;
 
   @if($style == "secondary") {
     background-color: transparent;
@@ -25,5 +23,16 @@
     &:hover {
       background-color: $topic_purple-darker;
     }
+  }
+
+  @if($size == "small") {
+    @include gutter-all($padding-all-half...);
+  }
+  @elseif ($size == "block") {
+    display: block;
+    width: 100%;
+  }
+  @else {
+   display: inline-block;
   }
 }

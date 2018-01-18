@@ -82,5 +82,4 @@
 
   // Internal counter for unique video names.
   $.fn.fitVids._count = 0;
-
 })( jQuery );

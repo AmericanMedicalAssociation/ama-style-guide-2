@@ -11,18 +11,23 @@
 
   Drupal.behaviors.ribbonnav = {
     attach: function (context, settings) {
+
       $('.ama__ribbon__dropdown').each(function () {
         var class_active = 'is-active';
 
         $('.ama__ribbon__dropdown--trigger', this).on('click', function(e) {
-          e.stopPropagation()
+          e.stopPropagation();
           // Unfocus on the dropdown.
           $(this).blur();
           // Add our class for CSS.
           $(this).toggleClass(class_active);
           // Add our class to the dropdown UL.
           $(this).children().toggleClass(class_active);
-        })
+        });
+
+        $(document).click( function(){
+          $('.ama__ribbon__dropdown--trigger', this).removeClass(class_active).children().removeClass(class_active)
+        });
       })
     }
   }
