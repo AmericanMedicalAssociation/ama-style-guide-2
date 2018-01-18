@@ -1,10 +1,12 @@
 .ama__ribbon {
   background-color: $purple;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 51;
+  & > div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 51;
+  }
 
   & > .ama__ribbon__dropdown:first-child  {
     align-items: flex-start;
