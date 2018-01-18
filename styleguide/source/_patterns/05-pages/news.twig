@@ -10,6 +10,7 @@
 
 {% block pageContent %}
     {% include '@atoms/paragraph.twig' %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page content'}} %}
 {% endblock %}
 
 {% block sidebarSecondary %}
