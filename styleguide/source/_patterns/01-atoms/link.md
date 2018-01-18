@@ -14,5 +14,7 @@ link {
     type: string / optional
   title:
     type: string / optional
+  icon:
+    type: string / optional
 }
 ~~~
