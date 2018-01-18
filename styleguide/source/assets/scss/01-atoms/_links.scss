@@ -7,9 +7,16 @@ a {
   &:focus {
     color: $topic_black;
   }
+
+  svg {
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
+  }
 }
 
-.ama__link-black {
+.ama__link--black,
+%link--black {
   &:link,
   &:visited {
     color: $topic_black;
@@ -23,7 +30,8 @@ a {
   }
 }
 
-.ama__link-white {
+.ama__link--white,
+%link--white {
   &:link,
   &:visited {
     color: $topic_white;
@@ -37,7 +45,8 @@ a {
   }
 }
 
-.ama__link-blue {
+.ama__link--blue,
+%link--blue {
   &:link,
   &:visited {
     color: $topic_blue;
