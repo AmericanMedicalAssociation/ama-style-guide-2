@@ -132,6 +132,7 @@ gulp.task('icons', function (callback) {
   runSequence('minifyIcons', 'makeIcons', 'waitForIcons', 'reloadIcons', callback);
 });
 
+// Task: Handle Sass and CSS
 gulp.task('sass', ['scss-lint'], function () {
   return gulp.src(config.scss.files)
     .pipe(plumber())
@@ -264,12 +265,6 @@ gulp.task('watch', function () {
   gulp.watch(
     config.icons.files,
     ['icons', 'svg2twig']
-  );
-
-  // Watch Css
-  gulp.watch(
-    config.css.files,
-    ['css']
   );
 
   // Watch sass
