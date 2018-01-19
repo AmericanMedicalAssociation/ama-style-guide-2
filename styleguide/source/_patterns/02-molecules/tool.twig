@@ -3,10 +3,10 @@ tool.icon, tool.paragraph, tool.type, tool.size, tool.link
 %}
 
 <a class="ama__tool" href={{ link }}>
-  <icon class="ama__tool--icon {{ icon }}"></icon>
-  <div class="ama__tool--text">
+  <icon class="ama__tool__icon {{ icon }}"></icon>
+  <div class="ama__tool__text">
     {% include '@atoms/paragraph.twig' %}
-    <div class="ama__tool--meta">
+    <div class="ama__tool__meta">
       <span> {{ type }}</span>
       <span>{{ size }}</span>
     </div>
