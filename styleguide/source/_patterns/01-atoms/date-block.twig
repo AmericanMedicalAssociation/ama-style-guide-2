@@ -1,7 +1,0 @@
-{% set month, day, year = "now"|date("F"), "now"|date("d"), "now"|date("Y") %}
-
-<div class="date-block">
-  <span class="date-block__month">{{ dateMonth | default(month) }}</span>
-  <span class="date-block__day">{{ dateDay | default(day) }},</span>
-  <span class="date-block__year">{{ dateYear| default(year) }}</span>
-</div>
