@@ -1,11 +1,18 @@
-.ama__artice-header {
+.ama__article-header {
+  display: flex;
+  flex-direction: column;
+
   &__link {
     @extend %link--blue;
     @extend %ama__h5;
     text-transform: uppercase;
   }
 
+  &__date {
+    align-self: flex-start;
+  }
+
   &__share {
-    float: right;
+    align-self: flex-end;
   }
 }
