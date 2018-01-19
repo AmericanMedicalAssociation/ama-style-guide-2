@@ -1,11 +1,6 @@
----
-el: ".ama__membership"
-title: "Membership with CTA"
----
-
+### Description
 The membership pattern includes a heading, a description, and a CTA button (optional). In this variant the CTA button is displayed as an example.
 
-[EWL-3817](https://issues.ama-assn.org/browse/EWL-3817)
 [EWL-4214](https://issues.ama-assn.org/browse/EWL-4214)
 
 ### Variant options

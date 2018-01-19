@@ -1,17 +1,19 @@
 /* Links */
-a.topic {
+a {
   @include type($myriad-pro, $font-weight-regular);
   @include font-size($h4-font-sizes);
   color: $blue;
   text-decoration: none;
   outline: 0;
+
   &:hover,
   &:focus {
     color: $blue;
   }
 }
 
-.ama__link--white {
+.ama__link--white,
+%ama__link--white {
   @include type($myriad-pro, $font-weight-regular);
   @include font-size($h4-font-sizes);
 
@@ -27,7 +29,8 @@ a.topic {
   }
 }
 
-.ama__link--blue {
+.ama__link--blue,
+%ama__link--blue {
   @include type($myriad-pro, $font-weight-regular);
   @include font-size($h4-font-sizes);
 
@@ -44,7 +47,8 @@ a.topic {
   }
 }
 
-.ama__link--purple {
+.ama__link--purple,
+%ama__link--purple{
   @include type($myriad-pro, $font-weight-regular);
   @include font-size($p-font-sizes);
 
@@ -62,24 +66,26 @@ a.topic {
 }
 
 //Topic page links
-
-a {
-  color: $topic_black;
-  text-decoration: none;
-  outline: 0;
-  &:hover,
-  &:focus {
+body.topic {
+  a {
     color: $topic_black;
-  }
+    text-decoration: none;
+    outline: 0;
+    &:hover,
+    &:focus {
+      color: $topic_black;
+    }
 
-  svg {
-    height: 22px;
-    width: 22px;
-    vertical-align: middle;
+    svg {
+      height: 22px;
+      width: 22px;
+      vertical-align: middle;
+    }
   }
 }
 
-.topic__link--black {
+.topic__link--black,
+%topic__link--black {
   &:link,
   &:visited {
     color: $topic_black;
@@ -124,3 +130,5 @@ a {
     text-decoration: underline;
   }
 }
+
+

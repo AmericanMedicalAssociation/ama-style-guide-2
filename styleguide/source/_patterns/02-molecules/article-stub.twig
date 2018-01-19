@@ -1,0 +1,66 @@
+{% set patternLab = articleStub.patternLab %}
+{% set link = articleStub.title %}
+{% set classes = [
+  articleStub.related ? "ama__article-stub--related",
+  articleStub.small ? "ama__article-stub--small"
+] %}
+
+{% macro mediaType(articleStub) %}
+  {% set article_mediaType = articleStub.mediaType %}
+  {% if article_mediaType == "video" %}
+    {% set video = articleStub.video %}
+    {% include "@atoms/video.twig" %}
+  {% else %}
+    {% set image = articleStub.image %}
+    {% include "@atoms/image.twig"  with { 'class': 'ama__image'} %}
+  {% endif %}
+{% endmacro %}
+
+{% macro description(articleStub) %}
+  {% set title = articleStub.title_only %}
+  {% set related = articleStub.related %}
+  {% set link = articleStub.link %}
+  {% set paragraph = articleStub.paragraph %}
+  {% set readtime = articleStub.readtime %}
+  {% set date = articleStub.date %}
+
+
+  {% if paragraph and not title and not related %}
+    <div class="ama__article-stub__description">
+      {% include "@atoms/paragraph.twig" %}
+    </div>
+  {% endif %}
+  {% if readtime and date and not related %}
+    <div class="ama__metadata article-stub__metadata col-xs-12">
+      {% include "@molecules/article-metadata.twig" %}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{#Show only title#}
+{% macro title(articleStub) %}
+  {% set link = articleStub.link %}
+  {% if link %}
+    {% if articleStub.related %}
+      <h4>
+        {% include "@atoms/link.twig" %}
+      </h4>
+      {% else %}
+      <h2>
+        {% include "@atoms/link.twig" %}
+      </h2>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+<div class="ama__article-stub {{ classes|join(' ') }}">
+  {% if patternLab %}
+    {{ _self.mediaType(articleStub) }}
+  {% else %}
+    {{ media }}
+  {% endif %}
+  <div class="ama__article-stub__copy">
+    {{ _self.title(articleStub) }}
+    {{ _self.description(articleStub) }}
+  </div>
+</div>
