@@ -4,14 +4,20 @@
   {% include '@organisms/ribbon.twig' %}
   {% include '@organisms/wayfinder.twig' %}
   <div class="container">
+    {% include '@atoms/link.twig' %}
     {% include '@atoms/page-title.twig' %}
   </div>
 {% endblock %}
 
 {% block pageContent %}
-    {% include '@atoms/paragraph.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+  {% include '@molecules/article-stub-as-inline.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+  {% include '@molecules/tags.twig' %}
+  {% include '@organisms/four-up-teaser.twig' %}
 {% endblock %}
 
 {% block sidebarSecondary %}
-  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar secondary content'}} %}
+  {% include '@organisms/tools-block.twig' %}
+  {% include '@organisms/membership.twig' %}
 {% endblock %}
