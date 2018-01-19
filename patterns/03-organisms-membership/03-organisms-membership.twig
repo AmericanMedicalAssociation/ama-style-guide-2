@@ -1,0 +1,15 @@
+{% set heading, paragraph, button = membership.heading, membership.paragraph, membership.button %}
+
+{% if button %}
+  <a href="{{ membership.link }}" class="ama__membership--link">
+{% endif %}
+
+<div class="ama__membership {{ class }}">
+  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+
+  {% if button %}
+    {% include '@atoms/button.twig' %}
+  {% endif %}
+</div>
+{% if button %}</a>{% endif %}

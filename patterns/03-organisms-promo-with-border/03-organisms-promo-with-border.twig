@@ -1,0 +1,26 @@
+{% set link = "https://www.google.com/" %}
+{% set classes = [
+  border ? "ama__promo--border",
+  background ? "ama__promo--background"
+] %}
+
+{% if not button %}
+  <a href="{{ link }}" class="ama__promo--link">
+{% endif %}
+<div class="ama__promo {{ class }} {{ classes|join(' ') }}">
+  {% block image %}
+    {% if image %}
+      <div class="ama__image">
+        {% include '@atoms/image.twig' %}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+
+  {% if button %}
+    {% include '@atoms/button.twig' %}
+  {% endif %}
+</div>
+{% if not button %}</a>{% endif %}

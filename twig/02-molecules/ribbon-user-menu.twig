@@ -1,0 +1,12 @@
+{% set links = userMenu.loggedIn ? userMenu.loggedIn.links : userMenu.links %}
+{% set class = "link" %}
+
+<nav class="ama__ribbon_user_menu">
+  <ul class="ama__ribbon_user_menu--nav">
+    {% for link in links %}
+      <li class="ama__ribbon_user_menu--nav_item">
+        {% include '@atoms/link.twig' %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
