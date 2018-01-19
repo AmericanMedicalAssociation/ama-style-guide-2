@@ -94,35 +94,33 @@ a {
 }
 
 .ama__link--white,
-%link--white {
-  .topic__link--white {
-    &:link,
-    &:visited {
-      color: $topic_white;
-    }
-    // if the default link style changes this will need to include color: black; text-decoration: none;
-    &:active,
-    &:hover,
-    &:focus {
-      color: $topic_white;
-      text-decoration: underline;
-    }
+%link--white,
+.topic__link--white {
+  &:link,
+  &:visited {
+    color: $topic_white;
   }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $topic_white;
+    text-decoration: underline;
+  }
+}
 
-  .ama__link--blue,
-  %link--blue {
-    .topic__link--blue {
-      &:link,
-      &:visited {
-        color: $topic_blue;
-      }
-      // if the default link style changes this will need to include color: black; text-decoration: none;
-      &:active,
-      &:hover,
-      &:focus {
-        color: $topic_blue;
-        text-decoration: underline;
-      }
-    }
+.ama__link--blue,
+%link--blue,
+.topic__link--blue {
+  &:link,
+  &:visited {
+    color: $topic_blue;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $topic_blue;
+    text-decoration: underline;
   }
 }
