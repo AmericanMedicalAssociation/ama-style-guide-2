@@ -1,4 +1,3 @@
-{% set patternLab = articleStub.patternLab %}
 {% set link = articleStub.title %}
 {% set classes = [
   articleStub.related ? "ama__article-stub--related",
@@ -52,11 +51,8 @@
 {% endmacro %}
 
 <div class="ama__article-stub {{ classes|join(' ') }}">
-  {% if patternLab %}
-    {{ _self.mediaType(articleStub) }}
-  {% else %}
-    {{ media }}
-  {% endif %}
+  {{ _self.mediaType(articleStub) }}
+
   <div class="ama__article-stub__copy">
     {{ _self.title(articleStub) }}
     {{ _self.description(articleStub) }}
