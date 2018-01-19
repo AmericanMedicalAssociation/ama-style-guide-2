@@ -30,9 +30,11 @@
       {% include "@atoms/paragraph.twig" %}
     </div>
   {% endif %}
-  <div class="ama__metadata article-stub__metadata col-xs-12">
-    {% include "@molecules/article-metadata.twig" %}
-  </div>
+  {% if readtime and date and not related %}
+    <div class="ama__metadata article-stub__metadata col-xs-12">
+      {% include "@molecules/article-metadata.twig" %}
+    </div>
+  {% endif %}
 {% endmacro %}
 
 {#Show only title#}
@@ -40,14 +42,14 @@
   {% set link = articleStub.link %}
   {% if link %}
     {% if articleStub.related %}
-<h4>
-  {% include "@atoms/link.twig" %}
-</h4>
-{% else %}
-<h2>
-  {% include "@atoms/link.twig" %}
-</h2>
-{% endif %}
+      <h4>
+        {% include "@atoms/link.twig" %}
+      </h4>
+      {% else %}
+      <h2>
+        {% include "@atoms/link.twig" %}
+      </h2>
+    {% endif %}
   {% endif %}
 {% endmacro %}
 
