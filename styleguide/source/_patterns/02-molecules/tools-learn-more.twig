@@ -1,0 +1,12 @@
+<div class="ama__tools--learn-more">
+  {% set heading = learnMore.heading %}
+  {% include "@atoms/heading.twig" %}
+  <ul>
+    {% for link in learnMore.links %}
+      {% set link = link %}
+      <li>
+        {% include '@atoms/link.twig' %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

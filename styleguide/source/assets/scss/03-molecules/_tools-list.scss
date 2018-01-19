@@ -1,0 +1,10 @@
+.ama__tools--list {
+  li {
+    display: flex;
+    @include ama-rules(1px, "", $topic_black-7, solid);
+
+    &:last-of-type {
+      @include ama-rules(1px, "", $topic_black-7, solid);
+    }
+  }
+}

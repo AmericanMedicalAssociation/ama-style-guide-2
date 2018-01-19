@@ -1,0 +1,27 @@
+.ama__tool {
+  display: flex;
+  align-items: center;
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
+  width: 100%;
+
+  &--icon {
+    display: block;
+    @include gutter($padding-right-half...);
+  }
+
+  &--text {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  &--meta {
+    display: flex;
+
+    & * {
+      color: $topic_gray-8;
+      flex-basis: 50%;
+    }
+  }
+}
