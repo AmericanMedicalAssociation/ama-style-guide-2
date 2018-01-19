@@ -5,7 +5,6 @@
   articleStub.small ? "ama__article-stub--small"
 ] %}
 
-{#Topic media#}
 {% macro mediaType(articleStub) %}
   {% set article_mediaType = articleStub.mediaType %}
   {% if article_mediaType == "video" %}
@@ -17,7 +16,6 @@
   {% endif %}
 {% endmacro %}
 
-{#Topic related #}
 {% macro description(articleStub) %}
   {% set title = articleStub.title_only %}
   {% set related = articleStub.related %}
@@ -28,13 +26,13 @@
 
 
   {% if paragraph and not title and not related %}
-<div class="ama__article-stub--description">
-  {% include "@atoms/paragraph.twig" %}
-</div>
-<div class="ama__metadata article-stub--metadata col-xs-12">
-  {% include "@molecules/article-metadata.twig" %}
-</div>
-{% endif %}
+    <div class="ama__article-stub--description">
+      {% include "@atoms/paragraph.twig" %}
+    </div>
+  {% endif %}
+  <div class="ama__metadata article-stub--metadata col-xs-12">
+    {% include "@molecules/article-metadata.twig" %}
+  </div>
 {% endmacro %}
 
 {#Show only title#}
