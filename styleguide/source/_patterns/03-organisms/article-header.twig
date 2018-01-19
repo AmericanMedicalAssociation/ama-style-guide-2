@@ -1,7 +1,10 @@
-<header class="ama__header--article">
+<header class="ama__artice-header">
     {% include "@atoms/link.twig" %}
     {% include "@atoms/heading.twig" %}
     {% include "@atoms/date-block.twig" %}
-    {% include "@molecules/social-share.twig" %}
+    <div class="ama__artice-header__share">
+      {% include "@molecules/social-share.twig" %}
+    </div>
+    {% set bio_image = bio.image %}
     {% include "@molecules/inline-bio.twig" %}
 </header>
