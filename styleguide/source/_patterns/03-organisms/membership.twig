@@ -1,19 +1,10 @@
-{% set showCta = button ? "true" : "false" %}
+{% set heading, paragraph, button = membership.heading, membership.paragraph, membership.button %}
 
-{% if not button %}
-  <a href="{{ link }}" class="ama__membership--link">
+{% if button %}
+  <a href="{{ membership.link }}" class="ama__membership--link">
 {% endif %}
-<div class="ama__membership {{ class }}">
-  {% if image %}
-    {% if patternlab %}
-      {% include '@atoms/image.twig' %}
-    {% else %}
-      <div class="ama__image">
-        {{ image }}
-      </div>
-    {% endif %}
-  {% endif %}
 
+<div class="ama__membership {{ class }}">
   {% include '@atoms/heading.twig' %}
   {% include '@atoms/paragraph.twig' %}
 
@@ -21,4 +12,4 @@
     {% include '@atoms/button.twig' %}
   {% endif %}
 </div>
-{% if not button %}</a>{% endif %}
+{% if button %}</a>{% endif %}
