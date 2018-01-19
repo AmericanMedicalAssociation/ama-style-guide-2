@@ -1,7 +1,10 @@
 .ama__inline-block-copy {
+  @extend .col-xs-4;
+  @include gutter($margin-all-half...);
+  float: left;
+
   &--content {
-    @include gutter($padding-top-half...);
-    @include gutter($padding-bottom-full...);
+    @include gutter($padding-all-half...);
   }
 
   .ama__h2 {
