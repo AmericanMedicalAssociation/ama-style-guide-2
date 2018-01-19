@@ -2,6 +2,9 @@
   @if($direction == "vertical") {
     border-left: $width $color $style;
   }
+  @elseif($direction == "bottom") {
+    border-bottom: $width $color $style;
+  }
   @else {
     border-top: $width $color $style;
   }
