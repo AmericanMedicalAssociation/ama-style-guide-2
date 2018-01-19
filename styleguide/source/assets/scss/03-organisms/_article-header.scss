@@ -14,5 +14,10 @@
 
   &__share {
     align-self: flex-end;
+    display: none;
+
+    @include breakpoint($bp-small) {
+      display: inline-block;
+    }
   }
 }
