@@ -2,9 +2,9 @@
 {% set buttonStyle =  button.style ? "ama__button--" ~ button.style : "" %}
 
 {% if button.href %}
-  <a
-    href="{{ button.href }}"
-    class="ama__button"
+  <a 
+    href="{{ button.href }}" 
+    class="ama__button {{ buttonSize }} {{buttonStyle}}"
     title="{{ button.info }}">
       {{ button.text }}
   </a>

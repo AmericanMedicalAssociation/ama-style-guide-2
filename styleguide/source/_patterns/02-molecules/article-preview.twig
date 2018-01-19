@@ -1,9 +1,9 @@
 {% set patternLab = topic_article_preview.patternLab %}
-{% set link = topic_article_preview.title %}
 {% set classes = [
   topic_article_preview.related ? "ama__topic_article-preview--related",
   topic_article_preview.small ? "ama__topic_article-preview--small"
 ] %}
+{% set link = title %}
 
 {#Topic media#}
 {% macro topic_mediaType(topic_article_preview) %}
