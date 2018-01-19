@@ -11,13 +11,13 @@
 }
 
 .ama__article-stub--related {
+  @include ama-rules(1px, '', solid, $gray-50 );
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  @include ama-rules(1px, '', solid, $gray-50 );
-  @include gutter($padding-top-half...);
-  @include gutter($padding-bottom-half...);
 
   .ama__image,
   .ama__video {
@@ -29,10 +29,10 @@
   }
 
   .ama__article-stub__copy {
+    @include gutter($padding-left-half...);
+    @extend .col-xs-9;
     display: flex;
     align-items: center;
-    @extend .col-xs-9;
-    @include gutter($padding-left-half...);
     padding-top: 0;
 
   }
@@ -82,3 +82,4 @@ $body-font-sizes-article-stub-inline: (
   @include font-size($h4-font-sizes-article-stub-inline);
   color: $blue;
 }
+

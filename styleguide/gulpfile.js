@@ -186,6 +186,14 @@ gulp.task("svg2twig", function() {
     .pipe(gulp.dest(svg2twig.dest))
 });
 
+gulp.task('cleanTwig', ['clean:before'], function (callback) {
+  runSequence(
+    'patternlab',
+    'copyTwigFiles',
+    callback
+  );
+});
+
 // Copy twig files from source
 /* copy files */
 gulp.task("copyTwigFiles", function() {
