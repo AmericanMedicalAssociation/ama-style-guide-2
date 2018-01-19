@@ -1,4 +1,68 @@
 /* Links */
+a.topic {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($h4-font-sizes);
+  color: $blue;
+  text-decoration: none;
+  outline: 0;
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+}
+
+.ama__link--white {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($h4-font-sizes);
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+  &:active,
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+.ama__link--blue {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($h4-font-sizes);
+
+  &:link,
+  &:visited {
+    color: $blue;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+
+.ama__link--purple {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($p-font-sizes);
+
+  &:link,
+  &:visited {
+    color: $purple;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $purple;
+    text-decoration: underline;
+  }
+}
+
+//Topic page links
+
 a {
   color: $topic_black;
   text-decoration: none;
@@ -15,8 +79,7 @@ a {
   }
 }
 
-.ama__link--black,
-%link--black {
+.topic__link--black {
   &:link,
   &:visited {
     color: $topic_black;
@@ -32,30 +95,34 @@ a {
 
 .ama__link--white,
 %link--white {
-  &:link,
-  &:visited {
-    color: $topic_white;
+  .topic__link--white {
+    &:link,
+    &:visited {
+      color: $topic_white;
+    }
+    // if the default link style changes this will need to include color: black; text-decoration: none;
+    &:active,
+    &:hover,
+    &:focus {
+      color: $topic_white;
+      text-decoration: underline;
+    }
   }
-  // if the default link style changes this will need to include color: black; text-decoration: none;
-  &:active,
-  &:hover,
-  &:focus {
-    color: $topic_white;
-    text-decoration: underline;
-  }
-}
 
-.ama__link--blue,
-%link--blue {
-  &:link,
-  &:visited {
-    color: $topic_blue;
-  }
-  // if the default link style changes this will need to include color: black; text-decoration: none;
-  &:active,
-  &:hover,
-  &:focus {
-    color: $topic_blue;
-    text-decoration: underline;
+  .ama__link--blue,
+  %link--blue {
+    .topic__link--blue {
+      &:link,
+      &:visited {
+        color: $topic_blue;
+      }
+      // if the default link style changes this will need to include color: black; text-decoration: none;
+      &:active,
+      &:hover,
+      &:focus {
+        color: $topic_blue;
+        text-decoration: underline;
+      }
+    }
   }
 }
