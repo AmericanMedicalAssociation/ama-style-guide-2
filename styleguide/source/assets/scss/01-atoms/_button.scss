@@ -2,8 +2,26 @@
 .ama__button,
 button {
   @include ama-button();
-}
 
-.ama__button--secondary {
-  @include ama-button("", "secondary");
+  &--secondary {
+    @include ama-button("", "secondary");
+  }
+
+  &--block {
+    @include ama-button("block", "");
+  }
+
+  &--small {
+    @include ama-button("small", "");
+  }
+
+  &--block,
+  &--secondary {
+    @include ama-button("block", "secondary");
+  }
+
+  &--small,
+  &--secondary {
+    @include ama-button("block", "secondary");
+  }
 }

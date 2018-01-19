@@ -1,6 +1,7 @@
 @mixin ama-button-base {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($p-font-sizes);
+  @include gutter-all($padding-all-half...);
   border-radius: 0;
   border: 1px solid $topic_purple;
   cursor: pointer;
@@ -9,7 +10,6 @@
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  padding: 20px 40px;
   /* stylelint-disable property-no-vendor-prefix */
   -moz-appearance: none;
   -webkit-appearance: none;
