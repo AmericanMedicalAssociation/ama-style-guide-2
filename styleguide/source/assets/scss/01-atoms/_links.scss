@@ -10,6 +10,12 @@ a {
   &:focus {
     color: $blue;
   }
+
+  svg {
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
+  }
 }
 
 .ama__link--white,
@@ -99,8 +105,9 @@ body.topic {
   }
 }
 
-.topic__link--white,
-%topic__link--white {
+.ama__link--white,
+%link--white,
+.topic__link--white {
   &:link,
   &:visited {
     color: $topic_white;
@@ -114,8 +121,9 @@ body.topic {
   }
 }
 
-.topic__link--blue,
-%topic__link--blue {
+.ama__link--blue,
+%link--blue,
+.topic__link--blue {
   &:link,
   &:visited {
     color: $topic_blue;
@@ -128,5 +136,3 @@ body.topic {
     text-decoration: underline;
   }
 }
-
-
