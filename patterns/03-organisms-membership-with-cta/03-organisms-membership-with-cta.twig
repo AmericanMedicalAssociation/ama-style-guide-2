@@ -1,6 +1,6 @@
 {% set heading, paragraph, button = membership.heading, membership.paragraph, membership.button %}
 
-{% if button %}
+{% if not button %}
   <a href="{{ membership.link }}" class="ama__membership--link">
 {% endif %}
 
@@ -12,4 +12,4 @@
     {% include '@atoms/button.twig' %}
   {% endif %}
 </div>
-{% if button %}</a>{% endif %}
+{% if not button %}</a>{% endif %}
