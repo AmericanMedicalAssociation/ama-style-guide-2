@@ -76,7 +76,10 @@ gulp.task('scripts', function () {
     .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(gulp.dest(config.scripts.dest))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({
+      stream:true,
+      notify:false
+    }));
 });
 
 // Task: Handle fonts
@@ -86,7 +89,10 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(
       config.fonts.dest
     ))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({
+      stream:true,
+      notify:false
+    }));
 });
 
 // Task: Handle media
@@ -97,7 +103,10 @@ gulp.task('images', function () {
     .pipe(gulp.dest(
       config.images.dest
     ))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({
+      stream:true,
+      notify:false
+    }));
 });
 
 
@@ -123,7 +132,10 @@ gulp.task('sass', ['scss-lint'], function () {
     })))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.scss.dest))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({
+      stream:true,
+      notify:false
+    }));
 });
 
 // Task: patternlab
@@ -134,7 +146,10 @@ gulp.task('patternlab', function () {
     .pipe(shell([
       'php core/console --generate'
     ]))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({
+      stream:true,
+      notify:false
+    }));
 });
 
 // Task: styleguide
@@ -152,6 +167,7 @@ gulp.task('browser-sync', function() {
     server: {
       baseDir: config.root
     },
+    notify: false,
     ghostMode: true,
     open: "local"
   });
