@@ -4,9 +4,13 @@ node_js:
   - node
   - 7.10.0
 
-script:
+before_install:
   - cd styleguide
+
+install:
   - npm install
   - npm install -g backstop
+
+script:
   - gulp serve
   - backstop test
