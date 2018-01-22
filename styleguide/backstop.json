@@ -1,0 +1,59 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "bp-xs",
+      "width": 400,
+      "height": 480
+    },
+    {
+      "label": "bp-small",
+      "width": 600,
+      "height": 480
+    },
+    {
+      "label": "bp-med",
+      "width": 900,
+      "height": 1024
+    },
+    {
+      "label": "bp-large",
+      "width": 1200,
+      "height": 1024
+    },
+    {
+      "label": "bp-xl",
+      "width": 1400,
+      "height": 1024
+    }
+  ],
+  "onBeforeScript": "chromy/onBefore.js",
+  "onReadyScript": "chromy/onReady.js",
+  "scenarios": [
+    {
+      "label": "atoms-button",
+      "url": "http://localhost:3000/?p=atoms-button",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=atoms-button",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "#sg-viewport"
+      ]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "chrome",
+  "engineFlags": [],
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
