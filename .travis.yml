@@ -4,15 +4,9 @@ node_js:
   - node
   - 7.10.0
 
-before_install:
-  # Navigate to the correct directory
-  - cd styleguide; npm install
-  - cd styleguide; npm install -g backstop
-
-before_script:
-  # run gulp
-  - cd styleguide; gulp serve
-
 script:
-  # test
+  - cd styleguide
+  - npm install
+  - npm install -g backstop
+  - gulp serve
   - backstop test
