@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - node
+  - 7
+
+before_install:
+  # Navigate to the correct directory
+  - cd styleguide
+  # install dependencies
+  - npm install
+  # add backstop
+  - npm install -g backstop
+
+before_script:
+  # run gulp
+  - gulp serve
+
+script:
+  # test
+  - backstop test
