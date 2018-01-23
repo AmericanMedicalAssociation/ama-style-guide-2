@@ -1,5 +1,5 @@
 // npm requirements
-var gulp        = require('gulp'),
+var gulp      = require('gulp'),
   bump        = require('gulp-bump'),
   clean       = require('gulp-clean'),
   concat      = require('gulp-concat'),
@@ -218,6 +218,12 @@ gulp.task("copyTwigFiles", function() {
     .pipe(gulp.dest(config.twigsource.dest))
 });
 
+// Run backstop to run tests
+gulp.task( 'backstop', function () {
+  return gulp.src('')
+    .pipe(shell(['backstop test']))
+});
+
 // Task: Watch files
 gulp.task('watch', function () {
 
@@ -284,6 +290,18 @@ gulp.task('serve', function () {
     'default',
     'browser-sync',
     'watch'
+  );
+});
+
+// Task: Start your production-process
+// Description: Type 'gulp' in the terminal
+gulp.task('test', function () {
+  production = false;
+
+  runSequence(
+    'default',
+    'browser-sync',
+    'backstop'
   );
 });
 

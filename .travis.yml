@@ -1,16 +1,14 @@
 language: node_js
 
 node_js:
-  - node
   - 7.10.0
 
 before_install:
   - cd styleguide
+  - composer install --no-interaction
 
 install:
   - npm install
-  - npm install -g backstop
 
 script:
-  - gulp serve
-  - backstop test
+  - gulp test
