@@ -42,11 +42,13 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
-  justify-content: flex-end;
+  align-items: flex-end;
 
 
-  &--description {
+  .ama__topic_article-preview--copy {
     @include gutter($padding-right-half...);
+    flex-basis: 60%;
+    align-self: center;
   }
 }
 

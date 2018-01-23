@@ -51,13 +51,11 @@
 {% endmacro %}
 
 <div class="ama__topic_article--preview {{ classes|join(' ') }}">
-  {% if patternLab %}
+  {% block article_preview %}
     {{ _self.topic_mediaType(topic_article_preview) }}
-  {% else %}
-    {{ media }}
-  {% endif %}
-  <div class="ama__topic_article-preview--copy">
-    {{ _self.topic_title(topic_article_preview) }}
-    {{ _self.topic_description(topic_article_preview) }}
-  </div>
+    <div class="ama__topic_article-preview--copy">
+      {{ _self.topic_title(topic_article_preview) }}
+      {{ _self.topic_description(topic_article_preview) }}
+    </div>
+  {% endblock %}
 </div>
