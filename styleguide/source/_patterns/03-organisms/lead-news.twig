@@ -1,0 +1,7 @@
+<div class="ama__lead-news">
+  {{ leadNews.label }}
+  {% for article in leadNews.articles %}
+    {% set articleStub = article %}
+    {% include "@molecules/article-stub.twig" %}
+  {% endfor %}
+</div>
