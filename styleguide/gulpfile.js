@@ -173,6 +173,10 @@ gulp.task('browser-sync', function() {
   });
 });
 
+gulp.task('browser-exit', function() {
+  process.exit();
+});
+
 // Task: Sass Linting
 // Description: lint sass files
 gulp.task('scss-lint', function() {
@@ -297,11 +301,11 @@ gulp.task('serve', function () {
 // Description: Type 'gulp' in the terminal
 gulp.task('test', function () {
   production = false;
-
   runSequence(
     'default',
     'browser-sync',
-    'backstop'
+    'backstop',
+    'browser-exit'
   );
 });
 
