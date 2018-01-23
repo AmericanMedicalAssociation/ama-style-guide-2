@@ -4,7 +4,6 @@ var bump  = require('gulp-bump');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var del = require('del');
-var git = require('gulp-git');
 var ghPages = require('gulp-gh-pages-gift');
 var gulpif = require('gulp-if');
 var gutil = require('gulp-util');
@@ -145,13 +144,15 @@ function publish() {
 }
 
 // Function: Tagging deployed code
-function tag() {
+function tag(importance) {
   return gulp.src(config.versioning.files)
-  // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
-    // Tag it.
-    .pipe(tagversion({args: 'master'}))
-    // Push tag.
+    .pipe(bump({type: importance}))
+    // commit the changed version number
+
+    // read only one file to get the version number
+    // **tag it in the repository**
+    .pipe(tagversion())
     .pipe(shell(['git push origin --tags']));
 }
 
@@ -203,7 +204,6 @@ gulp.task('serve', gulp.series(build, local), function () {
   production = false;
 });
 
-// Task: Release the code
-// Description: Release runs deploy to build to gh-pages,
-// pushes the same code to master, then tags master.
-gulp.task('release', gulp.series(cleanPublish, publish, setMaster, tag));
+gulp.task('release', gulp.series(cleanPublish, publish, setMaster, tag), function(callback) {
+  return tag(minor);
+})
