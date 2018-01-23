@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var argv = require( 'argv' );
 var browserSync = require('browser-sync');
 var bump  = require('gulp-bump');
 var cleanCSS = require('gulp-clean-css');
@@ -144,15 +145,13 @@ function publish() {
 }
 
 // Function: Tagging deployed code
-function tag(importance) {
+function tag() {
   return gulp.src(config.versioning.files)
+  // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
-    .pipe(bump({type: importance}))
-    // commit the changed version number
-
-    // read only one file to get the version number
-    // **tag it in the repository**
-    .pipe(tagversion())
+    // Tag it.
+    .pipe(tagversion({args: 'master'}))
+    // Push tag.
     .pipe(shell(['git push origin --tags']));
 }
 
@@ -205,5 +204,5 @@ gulp.task('serve', gulp.series(build, local), function () {
 });
 
 gulp.task('release', gulp.series(cleanPublish, publish, setMaster, tag), function(callback) {
-  return tag(minor);
+  return setMaster(callback) ;
 })
