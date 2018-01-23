@@ -145,13 +145,18 @@ function publish() {
 }
 
 // Function: Tagging deployed code
+// this command prunes all the tags in your local env
+// git tag -l | xargs git tag -d && git fetch -t
+
 function tag() {
   return gulp.src(config.versioning.files)
   // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
-    .pipe(bump({type:'patch'}))
+    .pipe(bump({type: 'minor'}))
+    .pipe(gulp.dest('./'))
+
     // Tag it.
-    .pipe(tagversion({args: 'master'}))
+    .pipe(tagversion({argv: 'master'}))
     // Push tag.
     .pipe(shell(['git push origin --tags']));
 }
