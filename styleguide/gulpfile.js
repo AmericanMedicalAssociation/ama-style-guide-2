@@ -173,7 +173,7 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('browser-exit', function() {
+gulp.task('exit', function() {
   process.exit();
 });
 
@@ -305,7 +305,7 @@ gulp.task('test', function () {
     'default',
     'browser-sync',
     'backstop',
-    'browser-exit'
+    'exit'
   );
 });
 
