@@ -1,7 +1,7 @@
 {% set link = articleStub.title %}
 {% set classes = [
-  articleStub.related ? "ama__article-stub--related",
-  articleStub.small ? "ama__article-stub--small"
+articleStub.related ? "ama__article-stub--related",
+articleStub.small ? "ama__article-stub--small"
 ] %}
 
 {% macro mediaType(articleStub) %}
@@ -20,31 +20,30 @@
   {% set related = articleStub.related %}
   {% set link = articleStub.link %}
   {% set paragraph = articleStub.paragraph %}
-  {% set readtime = articleStub.readtime %}
-  {% set date = articleStub.date %}
-
 
   {% if paragraph and not title and not related %}
     <div class="ama__article-stub__description">
       {% include "@atoms/paragraph.twig" %}
     </div>
   {% endif %}
-  {% if readtime and date and not related %}
-    <div class="ama__metadata article-stub__metadata col-xs-12">
-      {% include "@molecules/article-metadata.twig" %}
-    </div>
+{% endmacro %}
+
+{% macro metadata(articleStub) %}
+  {% set metadata = articleStub.metadata %}
+  {% if metadata and paragraph and not title and not related %}
+    {% include "@molecules/article-metadata.twig" %}
   {% endif %}
 {% endmacro %}
 
 {#Show only title#}
-{% macro title(articleStub) %}
-  {% set link = articleStub.link %}
+{% macro title(article_title) %}
+  {% set link = article_title.link %}
   {% if link %}
-    {% if articleStub.related %}
+    {% if article_title.related %}
       <h4>
         {% include "@atoms/link.twig" %}
       </h4>
-      {% else %}
+    {% else %}
       <h2>
         {% include "@atoms/link.twig" %}
       </h2>
@@ -53,10 +52,23 @@
 {% endmacro %}
 
 <div class="ama__article-stub {{ classes|join(' ') }}">
-  {{ _self.mediaType(articleStub) }}
+  {% block articleStub_media %}
+    {{ _self.mediaType(articleStub) }}
+  {% endblock %}
 
   <div class="ama__article-stub__copy">
-    {{ _self.title(articleStub) }}
-    {{ _self.description(articleStub) }}
+    {% block articleStub_title %}
+      {{ _self.title(articleStub) }}
+    {% endblock %}
+
+    {% block articleStub_description %}
+      {{ _self.description(articleStub) }}
+    {% endblock %}
+
+    <div class="ama__article-stub__metadata">
+      {% block articleStub_metadata %}
+        {{ _self.metadata(articleStub) }}
+      {% endblock %}
+    </div>
   </div>
 </div>
