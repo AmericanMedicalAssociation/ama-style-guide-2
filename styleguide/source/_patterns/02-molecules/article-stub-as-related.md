@@ -1,7 +1,8 @@
-title: "Article stub as related"
-
 ### Description
-An Article Stub as related molecule contains a topic label (optional), an article title, a description, and either an image or a Youtube embed and metadata that includes data and read/playtime. Variants are defined based on what fields are needed in each variant, i.e. image or video. The order of elements is determined using flexbox where different from the base pattern.
+This is a variant of the [Article Stub](./?p=molecules-article-stub) pattern containing an article title, and either an image or a Youtube embed and metadata that includes data and read/playtime.
+
+## How to generate
+* set the `related` variable to true
 
 [EWL-4281](https://issues.ama-assn.org/browse/EWL-4281)
 [EWL-4432](https://issues.ama-assn.org/browse/EWL-4432)
@@ -41,6 +42,6 @@ articleStub {
       text:
         type: string
     }
-    
+
 }
 ~~~
