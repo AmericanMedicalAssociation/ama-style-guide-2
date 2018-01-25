@@ -10,13 +10,13 @@
   }
 
   &--related {
+    @include ama-rules(1px, '', solid, $gray-50);
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    @include ama-rules(1px, '', solid, $gray-50);
-    @include gutter($padding-top-half...);
-    @include gutter($padding-bottom-half...);
 
     .ama__image,
     .ama__video {
@@ -28,10 +28,10 @@
     }
 
     .ama__article-stub__copy {
-      display: flex;
-      flex-direction: column;
       @extend .col-xs-9;
       @include gutter($padding-left-half...);
+      display: flex;
+      flex-direction: column;
       padding-top: 0;
     }
   }
@@ -45,9 +45,9 @@
 
     .ama__article-stub__copy {
       @include gutter($padding-right-half...);
-      flex-basis: 60%;
       align-self: center;
       justify-self: flex-start;
+      flex: 1;
     }
   }
 
