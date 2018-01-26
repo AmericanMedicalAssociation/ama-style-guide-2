@@ -1,6 +1,6 @@
 <div class="ama__four-up-teaser">
-  {% for item in fourUpTeaser.items[0:4] %}
-    {% set articleStub = item %}
+  {% for article in fourUpTeaser %}
+    {% set articleStub = article %}
     {% include "@molecules/article-stub.twig" %}
   {% endfor %}
 </div>
