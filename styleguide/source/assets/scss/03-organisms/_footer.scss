@@ -1,0 +1,55 @@
+.ama__footer {
+  background-color: $gray-7;
+  //margin-top: 50px;
+  //padding: 40px 0 10px;
+
+  @include breakpoint($bp-large min-width) {
+    //padding: 50px 0 10px;
+  }
+
+  .ama__rule--horizontal {
+    border-color: $gray-64;
+  }
+}
+
+.footer-inner {
+  position: relative;
+  // @grid();
+
+  @include breakpoint($bp-large min-width) {
+    //flex-direction: row !important;
+  }
+}
+
+.footer-primary {
+  //margin-bottom: 40px;
+  @include breakpoint($bp-large) {
+  // 8 cols
+  }
+
+  @include breakpoint($bp-med min-width) {
+    //padding-right: 100px;
+  }
+}
+
+.footer-secondary {
+  //@include grid__unit--cols(12);
+
+  @include breakpoint($bp-large) {
+    //@include grid__unit--cols(4);
+  }
+
+  .rule_horizontal {
+    //margin: 40px 0;
+  }
+}
+
+.footer-primary-bottom {
+  //position: absolute;
+  //bottom: 0;
+}
+
+.footer_text-copyright  {
+  //@extend %type-smaller;
+  color: $gray-64;
+}
