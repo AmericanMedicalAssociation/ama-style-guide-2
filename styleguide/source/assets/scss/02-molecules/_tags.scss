@@ -1,16 +1,23 @@
 .ama__tags {
-  margin: 0;
-  padding: 0;
+  @include ama-rules(1px, "", $gray-7, solid);
+  @include ama-rules(1px, "bottom", $gray-7, solid);
+  @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
+  @include gutter($padding-top-full...);
+  @include gutter($padding-bottom-full...);
   list-style-type: none;
-
-  li {
-    display: inline-block;
+  display: flex;
+  flex: 1;
+  
+  &:last-child {
+    margin-right: 0;
   }
-}
 
-.ama__tag {
-  display: inline-block;
-  padding: ($gutter / 4) ($gutter / 2);
-  background: $gray-7;
-  color: $purple;
+  .ama__tag {
+    @include gutter($margin-right-half...);
+    @include gutter-all($padding-all-half...);
+    display: block;
+    background: $gray-7;
+    color: $purple;
+  }
 }
