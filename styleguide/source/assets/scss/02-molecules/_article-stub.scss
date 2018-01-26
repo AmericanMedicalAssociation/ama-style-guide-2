@@ -1,5 +1,5 @@
 .ama__article-stub {
-  @include gutter($margin-bottom-full...);
+  @include gutter($margin-bottom-half...);
 
   &--container-image {
     height: auto;
@@ -10,10 +10,13 @@
     flex-grow: 1;
   }
 
+  &__description {
+    @include gutter($padding-bottom-half...);
+  }
+
   &--related {
     @include ama-rules(1px, '', solid, $gray-50);
     @include gutter($padding-top-half...);
-    @include gutter($padding-bottom-half...);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
