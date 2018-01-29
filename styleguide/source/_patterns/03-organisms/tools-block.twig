@@ -1,4 +1,4 @@
-{% set heading, tools, learnMore = toolsBlock.heading, toolsBlock.tools, toolsBlock.learnMore %}
+{% set heading, tools, learnMore = toolsBlock.heading, toolsBlock.tools, tools.learnMore %}
 <div class="ama__tools-block {{ class }}">
   {% block headingTools %}
     {% include "@atoms/heading.twig" %}
