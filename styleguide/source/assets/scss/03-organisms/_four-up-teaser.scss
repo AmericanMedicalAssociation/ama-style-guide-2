@@ -13,10 +13,6 @@
     flex-wrap: nowrap;
   }
 
-  a {
-    @extend %ama__type--small;
-  }
-
   .ama__article-stub {
     @include gutter($margin-bottom-full...);
     flex-grow: 1;
@@ -30,6 +26,10 @@
       &:nth-of-type(odd) {
         @include gutter($padding-right-quarter...);
       }
+    }
+
+    &__copy > h2 {
+      @extend %ama__type--small;
     }
 
     @include breakpoint($bp-med) {
