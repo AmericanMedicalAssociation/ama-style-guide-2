@@ -2,7 +2,7 @@
   {% include '@base/placeholder.twig' %}
 {% endblock %}
 
-<div class="ama__layout--three-column container">
+<div class="ama__layout--three-column container {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
   <article class="ama__layout--three-column__page-content" role="article">
     {% block pageContent %}
