@@ -1,5 +1,6 @@
 .ama__tools__learn-more {
   @include gutter($margin-bottom-full...);
+  display: none;
 
   > h5 {
     @include gutter($padding-bottom-half...);
@@ -9,5 +10,9 @@
   ul {
     list-style-type: disc;
     @include gutter($padding-left-full...);
+  }
+
+  @include breakpoint($bp-med min-width) {
+    display: block;
   }
 }

@@ -7,6 +7,10 @@
 
   &__copy {
     flex-grow: 1;
+
+    @include breakpoint($bp-large min-width) {
+      @include gutter($padding-left-half...);
+    }
   }
 
   &--related {
@@ -21,19 +25,24 @@
     .ama__image,
     .ama__video {
       @extend .col-xs-3;
-      & > div {
+      display: none;
+      align-items: center;
+
+      @include breakpoint($bp-large min-width) {
         display: flex;
-        align-items: center;
       }
     }
 
     .ama__article-stub__copy {
       @extend .col-xs-9;
       @extend %ama__type--small;
-      @include gutter($padding-left-half...);
       display: flex;
       flex-direction: column;
       padding-top: 0;
+
+      @include breakpoint($bp-large min-width) {
+        @include gutter($padding-left-half...);
+      }
     }
   }
 
@@ -45,10 +54,13 @@
 
 
     .ama__article-stub__copy {
-      @include gutter($padding-right-half...);
       align-self: center;
       justify-self: flex-start;
       flex: 1;
+
+      @include breakpoint($bp-large min-width) {
+        @include gutter($padding-left-half...);
+      }
     }
   }
 

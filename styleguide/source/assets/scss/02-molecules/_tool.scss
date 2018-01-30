@@ -7,13 +7,21 @@
 
   &__icon {
     @include gutter($padding-right-half...);
-    display: block;
+    display: none;
+
+    @include breakpoint($bp-large) {
+      display: block;
+    }
   }
 
   &__text {
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
+    flex-basis: 100%;
+
+    @include breakpoint($bp-large) {
+      flex-basis: 50%;
+    }
   }
 
   &__meta {
