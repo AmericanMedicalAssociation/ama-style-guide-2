@@ -1,20 +1,26 @@
 <footer class="ama__footer">
   <h2 class="ama__mission-statement">The AMA promotes the art and science of medicine and the betterment of public health.</h2>
+  <div class="ama__footer__menu-container">
+    {% include "@molecules/social-share.twig" %}
+    <div class="ama__rule ama__rule--horizontal"></div>
+    <ul class="ama__footer__menu-secondary-user">
+      {% for column in menus.secondaryUser %}
+        <div>
+          {% for link in column %}
+            <li>
+              <a href="{{ link.url }}">{{ link.text }}</a>
+            </li>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </ul>
+  </div>
   {% include "@atoms/copyright.twig" %}
   <ul class="ama__footer__menu-utility">
     {% for link in menus.utility %}
-      <a href="{{ link.url }}">{{ link.text }}</a>
-    {% endfor %}
-  </ul>
-
-  {% include "@molecules/social-share.twig" %}
-  <div class="ama__rule ama__rule--horizontal"></div>
-
-  <ul class="ama__footer__menu-secondary-user">
-    {% for column in menus.secondaryUser %}
-      {% for link in column %}
+      <li>
         <a href="{{ link.url }}">{{ link.text }}</a>
-      {% endfor %}
+      </li>
     {% endfor %}
   </ul>
 </footer>

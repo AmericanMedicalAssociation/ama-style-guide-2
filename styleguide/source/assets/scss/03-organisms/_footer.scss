@@ -1,10 +1,11 @@
 .ama__footer {
+  @include gutter-all($padding-all-full...);
+  @include child-top-gutters($gutter);
   background-color: $gray-7;
-  //margin-top: 50px;
-  //padding: 40px 0 10px;
 
   @include breakpoint($bp-large min-width) {
-    //padding: 50px 0 10px;
+    display: flex;
+    flex-flow: row wrap;
   }
 
   .ama__rule--horizontal {
@@ -12,44 +13,49 @@
   }
 }
 
-.footer-inner {
-  position: relative;
-  // @grid();
-
-  @include breakpoint($bp-large min-width) {
-    //flex-direction: row !important;
-  }
+.ama__copyright,
+.ama__footer__menu-utility {
+  @extend %ama__type--small;
 }
 
-.footer-primary {
-  //margin-bottom: 40px;
-  @include breakpoint($bp-large) {
-  // 8 cols
-  }
-
-  @include breakpoint($bp-med min-width) {
-    //padding-right: 100px;
-  }
-}
-
-.footer-secondary {
-  //@include grid__unit--cols(12);
-
-  @include breakpoint($bp-large) {
-    //@include grid__unit--cols(4);
-  }
-
-  .rule_horizontal {
-    //margin: 40px 0;
-  }
-}
-
-.footer-primary-bottom {
-  //position: absolute;
-  //bottom: 0;
-}
-
-.footer_text-copyright  {
-  //@extend %type-smaller;
+.ama__copyright  {
   color: $gray-64;
+}
+
+.ama__footer ul {
+  list-style-type: none;
+}
+
+.ama__footer__menu-secondary-user {
+  display: flex;
+
+  div {
+    width: 50%;
+  }
+}
+
+.ama__footer__menu-utility li {
+  display: inline-block;
+}
+
+.ama__footer__menu-utility li:not(:last-child):after {
+  content: "|";
+}
+
+@include breakpoint($bp-large min-width) {
+  .ama__mission-statement {
+    @include gutter($padding-right-full...);
+    width: 70%;
+  }
+
+  .ama__footer__menu-container {
+    width: 30%;
+    > ul {
+      width: 100%;
+    }
+  }
+
+  .ama__copyright {
+    width: 100%;
+  }
 }
