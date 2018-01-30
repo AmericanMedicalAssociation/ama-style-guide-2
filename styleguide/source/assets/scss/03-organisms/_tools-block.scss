@@ -1,8 +1,13 @@
   // The tools block.
 .ama__tools-block {
+  display: none;
   max-width: 800px;
 
   > h4 {
     @include gutter($padding-bottom-half...);
+  }
+
+  @include breakpoint($bp-med min-width) {
+    display: block;
   }
 }
