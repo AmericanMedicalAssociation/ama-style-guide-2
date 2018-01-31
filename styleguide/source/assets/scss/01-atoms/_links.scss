@@ -17,6 +17,23 @@ a {
   }
 }
 
+.ama__link--black,
+%ama__link--black {
+  @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: $black;
+  }
+  &:active,
+  &:hover,
+  &:focus {
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
 .ama__link--white,
 %ama__link--white {
   @include type($myriad-pro, $font-weight-regular);
