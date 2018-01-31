@@ -2,7 +2,7 @@
 a {
   @include type($myriad-pro, $font-weight-regular);
   color: $black;
-  text-decoration: none;
+  text-decoration: underline;
   outline: 0;
 
   &:hover,
@@ -20,6 +20,7 @@ a {
 .ama__link--white,
 %ama__link--white {
   @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
 
   &:link,
   &:visited {
@@ -36,6 +37,7 @@ a {
 .ama__link--blue,
 %ama__link--blue {
   @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
 
   &:link,
   &:visited {
@@ -53,6 +55,7 @@ a {
 .ama__link--purple,
 %ama__link--purple{
   @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
 
   &:link,
   &:visited {
@@ -65,10 +68,5 @@ a {
     color: $purple;
     text-decoration: underline;
   }
-}
-
-//Adds underlines to all links inside of p tags
-p a {
-  text-decoration: underline;
 }
 
