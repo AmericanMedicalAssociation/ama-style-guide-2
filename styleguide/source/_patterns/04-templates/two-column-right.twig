@@ -2,16 +2,20 @@
   {% include '@base/placeholder.twig' %}
 {% endblock %}
 
-<div class="ama__layout--two-column--right container">
+<div class="ama__layout--two-column container {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
   <article class="ama__layout--two-column__page-content" role="article">
     {% block pageContent %}
+      {% set placeholder = two_column.page_content.placeholder %}
       {% include '@base/placeholder.twig' %}
     {% endblock %}
   </article>
 
+  <aside id="sidebar-primary" class="ama__layout--two-column__sidebar--primary" role="complementary"></aside>
+
   <aside id="sidebar-secondary" class="ama__layout--two-column__sidebar--secondary" role="complementary">
     {% block sidebarSecondary %}
+      {% set placeholder = two_column.sidebar_secondary.placeholder %}
       {% include '@base/placeholder.twig' %}
     {% endblock %}
   </aside>

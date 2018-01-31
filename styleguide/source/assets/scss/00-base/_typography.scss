@@ -44,6 +44,12 @@ h5,
   @include font-size($h5-font-sizes);
 }
 
+p {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($p-font-sizes);
+  @include gutter($margin-bottom-half...);
+}
+
 small,
 .ama__type--small,
 %ama__type--small {
