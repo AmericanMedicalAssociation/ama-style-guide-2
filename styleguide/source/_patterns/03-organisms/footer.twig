@@ -2,7 +2,9 @@
   <h2 class="ama__mission-statement">The AMA promotes the art and science of medicine and the betterment of public health.</h2>
 
   <div class="ama__footer__menu-container">
-    {% include "@molecules/social-share.twig" %}
+    {% block social %}
+      {% include "@molecules/social-share.twig" %}
+    {% endblock %}
     <div class="ama__rule ama__rule--horizontal"></div>
 
     {% block menus %}
@@ -20,12 +22,16 @@
     {% endblock menus %}
 
   </div>
+
   {% include "@atoms/copyright.twig" %}
-  <ul class="ama__footer__menu-utility">
-    {% for link in menus.utility %}
-      <li>
-        <a href="{{ link.url }}">{{ link.text }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+
+  {% block utility %}
+    <ul class="ama__footer__menu-utility">
+      {% for link in menus.utility %}
+        <li>
+          <a href="{{ link.url }}">{{ link.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endblock %}
 </footer>
