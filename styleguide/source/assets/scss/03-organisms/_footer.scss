@@ -1,0 +1,64 @@
+.ama__footer {
+  @include gutter-all($padding-all-full...);
+  @include child-top-gutters($gutter);
+  background-color: $gray-7;
+
+  @include breakpoint($bp-large min-width) {
+    > .container {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+
+  .ama__rule--horizontal {
+    border-color: $gray-64;
+  }
+}
+
+.ama__copyright,
+.ama__footer__menu-utility {
+  @extend %ama__type--small;
+}
+
+.ama__copyright  {
+  color: $gray-64;
+}
+
+.ama__footer ul {
+  list-style-type: none;
+}
+
+.ama__footer__menu-secondary-user {
+  display: flex;
+  margin: 20px 0;
+
+  ul {
+    width: 50%;
+  }
+}
+
+.ama__footer__menu-utility li {
+  display: inline-block;
+}
+
+.ama__footer__menu-utility li:not(:last-child):after {
+  content: "|";
+}
+
+@include breakpoint($bp-large min-width) {
+  .ama__mission-statement {
+    @include gutter($padding-right-full...);
+    width: calc(100% / 3 * 2);
+  }
+
+  .ama__footer__menu-container {
+    width: calc(100% / 3 * 1);
+    > ul {
+      width: 100%;
+    }
+  }
+
+  .ama__copyright {
+    width: 100%;
+  }
+}

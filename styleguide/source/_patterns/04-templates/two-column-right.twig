@@ -1,5 +1,5 @@
 {% block header %}
-  {% include '@base/placeholder.twig' %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page header content'}}%}
 {% endblock %}
 
 <div class="ama__layout--two-column container {{ class }}">
@@ -22,5 +22,5 @@
 </div>
 
 {% block footer %}
-  {% include '@base/placeholder.twig' %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page footer content'}}%}
 {% endblock %}
