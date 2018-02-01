@@ -1,0 +1,71 @@
+.ama__article-stub {
+  @include gutter($margin-bottom-half...);
+
+  &__copy {
+    flex-grow: 1;
+  }
+
+  &__description {
+    @include gutter($padding-bottom-half...);
+  }
+
+  &--related {
+    @include ama-rules(1px, '', solid, $gray-50);
+    @include gutter($padding-top-half...);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+
+    .ama__image,
+    .ama__video {
+      @extend .col-xs-3;
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .ama__article-stub__copy {
+      @extend .col-xs-9;
+      @extend %ama__type--small;
+      @include gutter($padding-left-half...);
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+
+  &--small {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+
+
+    .ama__article-stub__copy {
+      @include gutter($padding-right-half...);
+      align-self: center;
+      justify-self: flex-start;
+      flex: 1;
+    }
+  }
+
+  &--inline {
+    border: solid #eee;
+    border-width: 1px 0;
+    padding: $gutter 0;
+  }
+
+  &--inline__label {
+    margin: 0;
+  }
+
+  &--inline__link {
+    color: $blue;
+  }
+
+  &--inline__link:hover {
+    color: $hoverBlue;
+  }
+}
