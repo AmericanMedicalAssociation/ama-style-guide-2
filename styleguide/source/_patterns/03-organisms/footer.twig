@@ -1,37 +1,39 @@
 <footer class="ama__footer">
-  <h2 class="ama__mission-statement">The AMA promotes the art and science of medicine and the betterment of public health.</h2>
+  <div class="container">
+    <h2 class="ama__mission-statement">The AMA promotes the art and science of medicine and the betterment of public health.</h2>
 
-  <div class="ama__footer__menu-container">
-    {% block social %}
-      {% include "@molecules/social-share.twig" %}
-    {% endblock %}
-    <div class="ama__rule ama__rule--horizontal"></div>
+    <div class="ama__footer__menu-container">
+      {% block social %}
+        {% include "@molecules/social-share.twig" %}
+      {% endblock %}
+      <div class="ama__rule ama__rule--horizontal"></div>
 
-    {% block menus %}
-      <div class="ama__footer__menu-secondary-user">
-        {% for column in menus.secondaryUser %}
-          <ul>
-            {% for link in column %}
-              <li>
-                <a href="{{ link.url }}">{{ link.text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+      {% block menus %}
+        <div class="ama__footer__menu-secondary-user">
+          {% for column in menus.secondaryUser %}
+            <ul>
+              {% for link in column %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.text }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        </div>
+      {% endblock menus %}
+
+    </div>
+
+    {% include "@atoms/copyright.twig" %}
+
+    {% block utility %}
+      <ul class="ama__footer__menu-utility">
+        {% for link in menus.utility %}
+          <li>
+            <a href="{{ link.url }}">{{ link.text }}</a>
+          </li>
         {% endfor %}
-      </div>
-    {% endblock menus %}
-
+      </ul>
+    {% endblock %}
   </div>
-
-  {% include "@atoms/copyright.twig" %}
-
-  {% block utility %}
-    <ul class="ama__footer__menu-utility">
-      {% for link in menus.utility %}
-        <li>
-          <a href="{{ link.url }}">{{ link.text }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endblock %}
 </footer>

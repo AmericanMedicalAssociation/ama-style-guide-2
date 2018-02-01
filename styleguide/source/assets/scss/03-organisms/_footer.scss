@@ -4,8 +4,10 @@
   background-color: $gray-7;
 
   @include breakpoint($bp-large min-width) {
-    display: flex;
-    flex-flow: row wrap;
+    > .container {
+      display: flex;
+      flex-flow: row wrap;
+    }
   }
 
   .ama__rule--horizontal {
@@ -28,6 +30,7 @@
 
 .ama__footer__menu-secondary-user {
   display: flex;
+  margin: 20px 0;
 
   ul {
     width: 50%;
@@ -45,11 +48,11 @@
 @include breakpoint($bp-large min-width) {
   .ama__mission-statement {
     @include gutter($padding-right-full...);
-    width: 70%;
+    width: calc(100% / 3 * 2);
   }
 
   .ama__footer__menu-container {
-    width: 30%;
+    width: calc(100% / 3 * 1);
     > ul {
       width: 100%;
     }
