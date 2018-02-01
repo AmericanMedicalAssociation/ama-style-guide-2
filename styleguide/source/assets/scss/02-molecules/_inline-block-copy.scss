@@ -1,13 +1,24 @@
 .ama__inline-block-copy {
-  @extend .col-xs-4;
-  @include gutter($margin-all-half...);
-  float: left;
+  @include gutter($margin-right-half...);
+  @include gutter($margin-top-half...);
+  @include gutter($margin-bottom-half...);
+  float: none;
 
-  &--content {
-    @include gutter($padding-all-half...);
+  @include breakpoint($bp-xs min-width) {
+    float: left;
   }
 
-  .ama__h2 {
-    margin-top: 0;
+  .ama__rule {
+    margin: 0;
+  }
+
+  &__content {
+    @include gutter($padding-right-full...);
+    @include gutter($padding-top-full...);
+    @include gutter($padding-bottom-full...);
+  }
+
+  .ama__button {
+    @include gutter($margin-top-full...);
   }
 }
