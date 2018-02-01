@@ -4,17 +4,18 @@
   @include gutter($padding-bottom-half...);
   @include gutter($padding-left-half...);
   @include child-top-gutters($gutter-mobile / 2);
+  font-weight: $font-weight-semibold;
 
   @include breakpoint($bp-med) {
     @include child-top-gutters($gutter / 2);
   }
 
   &--background {
-    background: $topic_black-15;
+    background: $gray-7;
   }
 
   &--border {
-    border: solid 1px $topic_gray-8;
+    border: solid 1px $gray-50;
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
@@ -33,10 +34,10 @@
   display: block;
 
   &--border:hover {
-    background: $topic_black-15;
+    background: $gray-7;
   }
 
   &--background:hover {
-    background: darken($topic_black-15, 5%);
+    background: $gray-50;
   }
 }

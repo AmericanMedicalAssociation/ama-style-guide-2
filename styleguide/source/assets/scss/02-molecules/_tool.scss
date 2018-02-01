@@ -1,13 +1,13 @@
 .ama__tool {
-  display: flex;
-  align-items: center;
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
+  display: flex;
+  align-items: center;
   width: 100%;
 
   &__icon {
-    display: block;
     @include gutter($padding-right-half...);
+    display: block;
   }
 
   &__text {
@@ -17,10 +17,11 @@
   }
 
   &__meta {
+    @include font-size($small-font-sizes);
     display: flex;
 
     & * {
-      color: $topic_gray-8;
+      color: $gray-64;
       flex-basis: 50%;
     }
   }

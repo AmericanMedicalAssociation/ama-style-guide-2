@@ -1,19 +1,21 @@
+{% set image, heading = bio.image, bio.heading %}
+
 <aside class="ama__inline-bio">
-  {% set image = bio.image %}
   {% if bio.image %}
-    {% include "@atoms/image.twig"  with {
-      "class": "ama__inline-bio__image"}
-    %}
+      {% include "@atoms/image.twig"  with {
+        "class": "ama__inline-bio__image"}
+      %}
   {% endif %}
 
-  {% set heading = bio.heading %}
-  {% include "@atoms/heading.twig" %}
+  <div class="ama__inline-bio__text">
+    {% include "@atoms/heading.twig" %}
 
-  {% for paragraph in bio.paragraphs %}
-    {% include "@atoms/paragraph.twig" %}
-  {% endfor %}
+    {% for paragraph in bio.paragraphs %}
+      {% include "@atoms/paragraph.twig" %}
+    {% endfor %}
 
-  {% for link in bio.links %}
-    {% include "@atoms/link.twig" %}
-  {% endfor %}
+    {% for link in bio.links %}
+      {% include "@atoms/link.twig" %}
+    {% endfor %}
+  </div>
 </aside>
