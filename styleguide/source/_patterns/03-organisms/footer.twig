@@ -14,7 +14,7 @@
             <ul>
               {% for link in column %}
                 <li>
-                  <a href="{{ link.url }}">{{ link.text }}</a>
+                  <a href="{{ link.url }}" class="ama__link--black">{{ link.text }}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -30,7 +30,7 @@
       <ul class="ama__footer__menu-utility">
         {% for link in menus.utility %}
           <li>
-            <a href="{{ link.url }}">{{ link.text }}</a>
+            <a href="{{ link.url }}" class="ama__link--black">{{ link.text }}</a>
           </li>
         {% endfor %}
       </ul>
