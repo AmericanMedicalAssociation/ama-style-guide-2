@@ -1,8 +1,0 @@
-{# This pattern is a wrapper that, despite being a sibling of the article preview variant pseudopatterns, includes one in its code. #}
-{# We're using the "Title only" variant of Article Preview because it already exists. #}
-{% set heading, link = articlePreviewAsInline.heading, articlePreviewAsInline.link %}
-
-<div class="ama__article-preview-inline">
-  {% include "@atoms/heading.twig" %}
-  {% include "@atoms/link.twig" %}
-</div>

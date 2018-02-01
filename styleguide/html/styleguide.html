@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
 
-  <link rel="stylesheet" href="https://use.typekit.net/eie0akm.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1516720148" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1516720148" media="all" />
+  <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1517527908" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1517527908" media="all" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
@@ -24,8 +24,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1516720148" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1516720148" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1517527908" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1517527908" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -1927,104 +1927,6 @@ If no date is entered the date will default to the current month, day and year.<
   </h2>
   
   <div class="sg-pattern-body">
-    <p>The label is similar in tone to "related coverage" but its text is an editable string.</p>
-
-<p>Status: prototype</p>
-
-<h3>Description</h3>
-
-<p>An opportunity for editors to call out articles that are topically similar to the the article that the user's currently reading. The linked page should always be a news article and the presentation should always be inline (rendered among the body content). In d8 will be a link to a Drupal entity.</p>
-
-<p>This pattern is not a pseudopattern; rather, it is a wrapper for an "Article Preview as Inline" pattern, which includes a heading and the "Title Only" Article Preview variant.</p>
-
-<p><a href="https://issues.ama-assn.org/browse/EWL-4422">EWL-4422</a></p>
-
-<h3>Variables</h3>
-
-<pre><code>{
-  "heading": {
-    "level": int/required
-    "text": string/required
-    "class": "ama__article-preview-inline__label"
-  },
-  "link": {
-    "href": string/required
-    "text": string/required
-    "title": string/optional
-    "target": string/optional
-    "class": "ama__article-preview-inline__link"
-  }
-}
-</code></pre>
-  </div>
-</div>                        <div id="" class="sg-subtype">
-  <h2>
-    <a href="../../patterns/" class="patternLink" data-patternpartial="">
-      
-    </a>
-  </h2>
-  
-  <div class="sg-pattern-body">
-    <h3>Description</h3>
-
-<p>An Article Preview molecule contains a topic label (optional), an article title, a description, and optionally either an image or a Youtube embed and metadata that includes data and read/playtime. Variants are defined based on what fields are needed in each variant, i.e. image or video. The order of elements is determined using flexbox where different from the base pattern.</p>
-
-<p>Variants are managed by use of pseudo-patterns.</p>
-
-<ul>
-<li>"Article Preview Small Image" is the variant of this pattern that includes a smaller image.</li>
-<li>"Article Preview Video" is the variant of this pattern that includes a video rather than an image.</li>
-<li>"Article Preview Related" is the variant of this pattern that includes an image and title.</li>
-<li>"Article Preview Related No Image" is the variant of this pattern that includes a linked title.</li>
-</ul>
-
-<p><a href="https://issues.ama-assn.org/browse/EWL-4281">EWL-4281</a></p>
-
-<pre><code>topic_article_preview {
-  title_only: string / optional
-    type: string / required
-    link {
-      href:
-        type: string / required
-      text:
-        type: string / required
-      class:
-        type: string / optional
-      target:
-        type: string / optional
-      title:
-        type: string / optional
-    }
-    image {
-      alt:
-        type: string / required
-      src:
-        type: string (url) / required
-      height:
-        type: string / required
-      width:
-        type: string / required
-    }
-    video: string / optional
-    related: string / optional
-    small: string / optional
-    class: string / optional
-    paragraph {
-      text:
-        type: string
-    }
-
-}
-</code></pre>
-  </div>
-</div>                        <div id="" class="sg-subtype">
-  <h2>
-    <a href="../../patterns/" class="patternLink" data-patternpartial="">
-      
-    </a>
-  </h2>
-  
-  <div class="sg-pattern-body">
     <h3>Description</h3>
 
 <p>An Article Stub (renamed from Article Preview) molecule contains a topic label (optional), an article title, a description, and optionally either an image or a Youtube embed and metadata that includes data and read/playtime. Variants are defined based on what fields are needed in each variant, i.e. image or video. The order of elements is determined using flexbox where different from the base pattern.</p>
@@ -2547,6 +2449,53 @@ If no date is entered the date will default to the current month, day and year.<
   </h2>
   
   <div class="sg-pattern-body">
+    <p>The footer of the website. Includes the missions statement (static), social share, horizontal rule, footer menus, copyright and utility menu.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4215">EWL-4215</a></p>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  "menus": {
+    "utility": [
+      {
+        "url": string/required (url),
+        "text": string/required
+      }
+    ],
+    "secondaryUser": [
+      [
+        {
+        "url": string/required (url),
+        "text": string/required
+        }
+      ],
+      [
+        {
+        "url": string/required (url),
+        "text": string/required
+        }
+      ]
+    ]
+  },
+  "social": [
+    {
+      "text":  string / required
+      "icon":  string / required
+      "url":  string / required (url)
+    }
+  ]
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
     <p>A collection of up to four articles displaying an image (optional), title, and metadata (optional).</p>
 
 <p><a href="https://issues.ama-assn.org/browse/EWL-4434">EWL-4434</a></p>
@@ -2578,6 +2527,60 @@ If no date is entered the date will default to the current month, day and year.<
   ]
 }
 </code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
+<p>This pattern is a block that may include varying numbers of the article stub hero and article stub with a small image molecules.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4388">EWL-4388</a></p>
+
+<h3>Variables</h3>
+
+<p>~~~
+"label": string / optional
+  "articles": [
+    title_only: string / optional
+    type: string / required
+    link {
+      href:
+        type: string / required
+      text:
+        type: string / required
+      class:
+        type: string / optional
+      target:
+        type: string / optional
+      title:
+        type: string / optional
+    }
+    image {
+      alt:
+        type: string / required
+      src:
+        type: string (url) / required
+      height:
+        type: string / required
+      width:
+        type: string / required
+    }
+    video: string / optional
+    related: string / optional
+    small: string / optional
+    class: string / optional
+    paragraph {
+      text:
+        type: string
+    }
+  ]
+}</p>
   </div>
 </div>                        <div id="" class="sg-subtype">
   <h2>
@@ -2862,6 +2865,18 @@ If no date is entered the date will default to the current month, day and year.<
 <li>This template contains <a href="https://twig.symfony.com/doc/2.x/tags/extends.html">Twig Blocks</a> that can be used to populated the Pre Content, Page Content, Right Rail, or Post Content sections with patterns</li>
 </ul>
   </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
+<p>(In Drupal 8) the IPE from Drupal. Added here so that custom styling can be included in the assets consumed by d8.</p>
+  </div>
 </div>            </div> <!--end #sg-patterns-->
 </div><!--end .sg-main-->
       <!--DO NOT REMOVE-->
@@ -2900,10 +2915,10 @@ If no date is entered the date will default to the current month, day and year.<
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1516720148">
+<script id="pl-js-polyfill-insert-1517527908">
   (function() {
     if (self != top) {
-      var cb = '1516720148';
+      var cb = '1517527908';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -2913,10 +2928,10 @@ If no date is entered the date will default to the current month, day and year.<
   })();
 </script>
 
-<script id="pl-js-insert-1516720148">
+<script id="pl-js-insert-1517527908">
   (function() {
     if (self != top) {
-      var cb = '1516720148';
+      var cb = '1517527908';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

@@ -1,15 +1,26 @@
 {% set heading, paragraph, button = membership.heading, membership.paragraph, membership.button %}
 
-{% if button %}
-  <a href="{{ membership.link }}" class="ama__membership--link">
-{% endif %}
+{% block startMembershipLink %}
+  {% if not button %}
+    <a href="{{ membership.link }}" class="ama__membership--link">
+  {% endif %}
+{% endblock %}
 
 <div class="ama__membership {{ class }}">
-  {% include '@atoms/heading.twig' %}
-  {% include '@atoms/paragraph.twig' %}
+  {% block membershipHeading %}
+   {% include '@atoms/heading.twig' %}
+  {% endblock %}
 
-  {% if button %}
-    {% include '@atoms/button.twig' %}
-  {% endif %}
+  {% block membershipDescription %}
+    {% include '@atoms/paragraph.twig' %}
+  {% endblock %}
+
+  {% block membershipButton %}
+    {% if button %}
+      {% include '@atoms/button.twig' %}
+    {% endif %}
+  {% endblock %}
 </div>
-{% if button %}</a>{% endif %}
+{% block EndMembershipLink %}
+  {% if not button %}</a>{% endif %}
+{% endblock %}

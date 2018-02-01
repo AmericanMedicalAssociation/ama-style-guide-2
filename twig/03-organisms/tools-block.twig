@@ -4,11 +4,12 @@
     {% include "@atoms/heading.twig" %}
   {% endblock %}
 
-  {% block topicTools %}
+  {% block tools %}
     {% include "@molecules/tools-list.twig" %}
   {% endblock %}
-
-  {% block learnMore %}
-    {% include "@molecules/tools-learn-more.twig" %}
-  {% endblock %}
 </div>
+
+
+{% block learnMore %}
+  {% include "@molecules/tools-learn-more.twig" %}
+{% endblock %}
