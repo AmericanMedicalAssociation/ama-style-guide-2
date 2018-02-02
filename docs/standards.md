@@ -4,7 +4,29 @@ Since SG2 is a living design library that is home to reusable patterns, it's imp
 
 Any new work contributed into SG2 must meet the following standards:
 
-### PatternLab Organization
+### Workflow standards for contributing to SG2/D8
+
+#### Keep work discrete
+- Encapsulate your work in the smallest discrete chunks possible.
+- Avoid using `rebase` to branch off of unmerged branches. Doing so can make your code difficult for others to understand and review, which can impede workflow and make working as a team harder; instead, branch off of `develop` whenever possible.
+- If you must branch off of unmerged branches, leave a note in the PR (in the testing instructions specifying which files/functionality to check and what to ignore, in the Additional Notes section highlighting that the PR was branched off of an unmerged branch). Use the `has dependency!` tag.
+- Only work on what's in your assigned ticket. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer 
+- What to do if you're blocked? Add the `blocked` label and comments in th PR and in JIRA. Blocked tickets should be linked accordingly in JIRA (if they are not, add the link).
+- If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket. If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (loop in a colleague, etc.) - but avoid lumping in the fix with your PR if it's a global change.
+
+#### Communicate with the team
+- Announce in Slack when you begin working on or reviewing a PR, in addition to adding the label. (follow PR review docs - add link)
+
+#### Follow the PR Template and include quality information
+- Follow the template
+- Leave clear testing instructions: [image example]
+
+#### If you encounter a PR that doesn\'t adhere to these standards:
+-- add the `review standards` label to the PR
+-- notify the assignee in Slack on a public channel (#dttwebdev or #projectstyleguide); provide links to written documentation of standards and ask that the person review them and consult you if there are any questions. 
+-- Ask the assignee to notify you when they're done.
+
+### PatternLab Standards
 
 #### How patterns are organized:
 - Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`). 
