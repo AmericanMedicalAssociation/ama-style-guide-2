@@ -15,7 +15,7 @@ Any new work contributed into SG2 must meet the following standards:
 - If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket. If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (loop in a colleague, etc.) - but avoid lumping in the fix with your PR if it's a global change.
 
 #### Communicate with the team
-- Announce in Slack when you begin working on or reviewing a PR, in addition to adding the label. (follow PR review docs - add link)
+- Announce in Slack when you begin working on or reviewing a PR, in addition to adding the label. (follow PR review docs - <a href="https://github.com/AmericanMedicalAssociation/documentation/wiki/Contributing-and-Reviewing-Pull-Requests#submitting-a-pr-for-code-review">see here</a>)
 
 #### Follow the PR Template and include quality information
 - Follow the template
