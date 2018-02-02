@@ -8,8 +8,8 @@ Any new work contributed into SG2 must meet the following standards:
 
 #### Keep work discrete
 - Encapsulate your work in the smallest discrete chunks possible.
-- Avoid using `rebase` to branch off of unmerged branches. Doing so can make your code difficult for others to understand and review, which can impede workflow and make working as a team harder; instead, branch off of `develop` whenever possible.
-- If you must branch off of unmerged branches, leave a note in the PR (in the testing instructions specifying which files/functionality to check and what to ignore, in the Additional Notes section highlighting that the PR was branched off of an unmerged branch). Use the `has dependency!` tag.
+- Avoid using `rebase` 
+- Avoid branching off of unmerged branches. Doing so can make your code difficult for others to understand and review, which can impede workflow and make working as a team harder; instead, branch off of `develop` whenever possible.
 - Only work on what's in your assigned ticket. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer 
 - What to do if you're blocked? Add the `blocked` label and comments in th PR and in JIRA. Blocked tickets should be linked accordingly in JIRA (if they are not, add the link).
 - If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket. If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (loop in a colleague, etc.) - but avoid lumping in the fix with your PR if it's a global change.
