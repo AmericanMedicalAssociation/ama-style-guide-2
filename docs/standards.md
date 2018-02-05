@@ -35,14 +35,14 @@ In order to maintain the traceability of our branches we **always** merge and **
 
 ### Team communication
 - Before working on any unassigned work please refer to a project manager and also review the current backlog for additional work.
-- If you find you are blocked on work, add the `blocked` label. Also, comment in the PR and in the JIRA ticket. Blocked tickets should be linked accordingly in JIRA (if they are not, add the link).
+- If you find you are blocked on work, add the `blocked` label. Also, comment in the PR and in the JIRA ticket. Blocked tickets must be linked accordingly in JIRA (if they are not, add the link).
     - Notify the team of your blocker during the next scrum.
 - Announce in Slack when you begin working on or reviewing a PR, in addition to adding the `ready for review` or `in review` label (respectively).
 - If the Pull Request does not meet our standards please refrain from reviewing and instead add the `review standards` label and note that in a PM-friendly slack channel (#dtt-web-dev or #project-styleguide).
     - Please also provide links to written documentation of standards and ask that the person review them and consult you if there are any questions.
     - Ask the assignee to notify you when they're done.
     - Move the JIRA ticket from `Development Complete` to `In Progress`
-        _This is the responsibility of the **reviewer**. The reviewer should also comment on the ticket with **why** they are moving it back._
+        _This is the responsibility of the **reviewer**. The reviewer must also comment on the ticket with **why** they are moving it back._
 
 ### Guidelines for Contributing
 - Follow the [Pull Request Template](../.github/PULL_REQUEST_TEMPLATE.md)
@@ -52,14 +52,14 @@ In order to maintain the traceability of our branches we **always** merge and **
 
 ## PatternLab Standards
 ### How patterns are organized:
-- Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`).
-- The directory structure inside each pattern type (atoms, etc) should be flat; patterns should _not_ go inside grouped subfolders
+- Patterns must be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`).
+- The directory structure inside each pattern type (atoms, etc) must be flat; patterns must _not_ go inside grouped subfolders
   - Bad: Atoms > Text > Heading
   - Good: Atoms > Heading
   - Good: Atoms > Link
-- SCSS files should be in the `styleguide/source/assets/scss` directory. They should be in partials according to why type of atomic component that they are.
-- JS files should be in the `styleguide/source/assets/js` directory. They should be named according to the pattern that they accompany.
-- Twig and Markdown files should be in the `styleguide/source/_patterns` directory. They should be in the directory according to why type of atomic component that they are. They should not be nested further than their atomic identifier.
+- SCSS files must be in the `styleguide/source/assets/scss` directory. They should be in partials according to why type of atomic component that they are.
+- JS files must be in the `styleguide/source/assets/js` directory. They should be named according to the pattern that they accompany.
+- Twig and Markdown files must be in the `styleguide/source/_patterns` directory. They must be in the directory according to why type of atomic component that they are. They should not be nested further than their atomic identifier.
 
 #### Atoms
 An atom should be the basic HTML elements. They can sometimes be more than one element (e.g. an unordered list). Sometimes there may be multiple atoms of the same HTML element with different classes.
@@ -86,7 +86,7 @@ Base patterns are elements that are global and useful to the styleguide process 
     - [Placeholder](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=base-placeholder)
 
 ### How to classify/name patterns
-All pattern class names should follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`).
+All pattern class names must follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`).
 
 Below is an example of how a breadcrumb organism for the default AMA theme may appear:
 ```html
@@ -103,32 +103,32 @@ This pattern shows that `breadcrumbs` is a block of the `ama` theme and has the 
 
 ### Pattern scalability
 It's important for patterns to be easily reusable.
-- Patterns should use JSON data from an associated `.json` file for their content:
+- Patterns must use JSON data from an associated `.json` file for their content:
   - Bad: `<a href="link.html">I am a link</a>`
   - Good: `<a href="{{ link.url }}">{{ link.text }}</a>`
 
-- Patterns should be named something that won't exclude them from being used somewhere else in the future.*
+- Patterns must be named something that won't exclude them from being used somewhere else in the future.*
   - Bad: an atom named `login-form-password-field.twig`
   - Good: an atom named `password-field.twig`
 
   \* unless they are **not** intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms).
 
-- Patterns should be coded to accept CSS classes or other HTML attributes from the patterns that include them.
+- Patterns must be coded to accept CSS classes or other HTML attributes from the patterns that include them.
   - Bad: `<div class="foo">{{ div.content }}</div>`
   - Good: `<div class="foo {{ div.class }}">{{ div.content }}</div>`
 
-- Patterns should not include hard-coded styles or classes that may not apply to all instances in which the pattern is used.
+- Patterns must not include hard-coded styles or classes that may not apply to all instances in which the pattern is used.
   - Bad: `<div class="dropdown__list-item dropdown__list-item-foo dropdown__list-item-bar"></div>`
   - Good: `<div class="dropdown__list-item {{class}}"></div>`
 
 ### Pattern consistency
-- Patterns should generally adhere to the existing name/organization schema. File names, pattern organization within PatternLab, and code should appear in kind with the existing patterns in the library.
+- Patterns must generally adhere to the existing name/organization schema. File names, pattern organization within PatternLab, and code should appear in kind with the existing patterns in the library.
 
    - Bad: `<DIV><A HREF="{{ url }}"></A></ BR>`
   - Good: `<div><a href="{{ url }}"</a><br>`
 
 ### Pattern namespacing
-Pattern code should comply with the BEM naming system.
+Pattern code must comply with the BEM naming system.
 
   - Bad: `differentlyCapitalized.twig`  
   - Bad: `named-with-a-number2.twig`
@@ -151,7 +151,7 @@ Pattern code should comply with the BEM naming system.
 ### Pattern definition in `.md`
 PatternLab users can view information about each pattern using the "Pattern Info" feature, whose content is supplied by data provided in a `.md` file.
 
-All `pattern.md` files should include the following elements:
+All `pattern.md` files must include the following elements:
 * Description that details what the pattern is, what is included and how it is intended to be used.
 * A list of variants (if applicable)
 * The JIRA tickets (linked) that apply to that patterns
@@ -164,27 +164,27 @@ All `pattern.md` files should include the following elements:
 - [ ] scalability: is the pattern easily reusable if that is its intent, or is it too specific to be easily included elsewhere? Does the base pattern scale easily with the use of variants?
 - [ ] consistency: is the pattern consistently classified, coded, and conceptualized with the existing patterns?
 - [ ] namespacing: does the pattern code comply with the BEM naming system? Is it intuitively clear by looking at the markup what each element's purpose is?
-- [ ] name descriptiveness: is the pattern named something that is, at a glance, recognizable? Is there an "official" (from the requirements) name for the pattern that should be used instead?
+- [ ] name descriptiveness: is the pattern named something that is, at a glance, recognizable? Is there an "official" (from the requirements) name for the pattern that must be used instead?
 - [ ] content descriptiveness: is the placeholder content descriptive of the type of content that will go there (e.g. "helper text for input above" for helper text)?
 - [ ] cohesion: was the pattern introduced to address an explicit feature, bug, or change request? Has the work followed the existing process for adding new work?
 - [ ] definition: is the pattern fully documented in its `.md` file? Is it obvious from looking at the pattern what its purpose is and how it should be used?
 
 ### Rules for naming:
-- Pattern names should be vague human-readable descriptions of the component. Generally, we should attempt to use the same plain language that the business would use when that language is not used in a different way elsewhere. (e.g. Don't say refer to a component as a "module" because that word has other meaning in the scope of these projects.)
+- Pattern names must be vague human-readable descriptions of the component. Generally, we should attempt to use the same plain language that the business would use when that language is not used in a different way elsewhere. (e.g. Don't say refer to a component as a "module" because that word has other meaning in the scope of these projects.)
 - Good: `ama__breadcrumbs`
 - Bad: `list--ordered--wayfinder`
 
 ### Naming pattern variants
-- Variants of patterns with the same data model should be pseudo patterns. Add docs from code_conventions.md here.
-- Variants should be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color"). Alternatively, sometimes the pattern variant will make more sense using "with" instead of "as"; example "Promo with CTA" instead of "Promo as with CTA".
-- Icons should have "icon" in the pattern name.
+- Variants of patterns with the same data model must be pseudo patterns. Add docs from code_conventions.md here.
+- Variants must be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color"). Alternatively, sometimes the pattern variant will make more sense using "with" instead of "as"; example "Promo with CTA" instead of "Promo as with CTA".
+- Icons must have "icon" in the pattern name.
 
 ### Documenting patterns
-- Variants should have their own MD files that point to the main item
-- All patterns should have the following info in .md: x, y, z
+- Variants must have their own MD files that point to the main item
+- All patterns must have the following info in .md: x, y, z
 - base colors have variables printed
 - Newly created or updated patterns include an updated screenshot for visual regression testing.
-- Pattern names should be added to the [Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary)
+- Pattern names must be added to the [Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary)
 - [PROBLEM] Pattern needs more useful presentation
 - [PROBLEM] Pattern .md information is outdated
 
@@ -203,7 +203,7 @@ All `pattern.md` files should include the following elements:
 - [PROBLEM] pattern code should leverage json array and twig loops
 
 ### CSS
-- Class names should follow standard BEM naming and be prefixed with `ama`
+- Class names must follow standard BEM naming and be prefixed with `ama`
 - [PROBLEM] Pattern needs more specific code (replace `.ama_theme` wrapper with `ama__` class prefix)
 - Refrain from nesting things
 - Utilize extends whenever possible

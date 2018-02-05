@@ -1,8 +1,8 @@
 # Contributing
 
-Below are the guidelines for contributing code to the American Medical Association Styleguide v2. Contributions of code should be made via pull request.
+Below are the guidelines for contributing code to the American Medical Association Styleguide v2. Contributions of code must be made via pull request.
 
-_Contributions should **not** be made without an accompanying JIRA ticket or GitHub issue._
+_Contributions must **not** be made without an accompanying JIRA ticket or GitHub issue._
 
 **DO NOT SUBMIT OR REVIEW A PULL REQUEST UNLESS IT FOLLOWS THE [SG2 STANDARDS](../docs/standards.md).**
 
@@ -17,27 +17,28 @@ If you would like to include commits from a different branch that has not been m
 
 * **All Pull Requests must follow the [Pull Request Template](PULL_REQUEST_TEMPLATE.md)**.
 * Encapsulate your work in the smallest discrete chunks possible.
-* The title should be a simple imperative sentence; examples,
+* The title must be a simple imperative sentence; examples,
     * Good: Add Symfony code style documentation.
     * Bad: Adding Symfony code style documentation. [bad because it is declarative]
 * The title must include the JIRA ticket number and the title must match the summary of the JIRA ticket. **Do not work on work that has _not_ already been ticketed**; examples,
     * Good: [EWL-4421] Create News Header Organism
     * Bad: Tools clean up
-* The PR should be atomic: the PR should address an indivisible and irreducible topic. The more atomic PRs are the more easily they can be reviewed and merged.
+* The PR must be atomic: the PR must address an indivisible and irreducible topic. The more atomic PRs are the more easily they can be reviewed and merged.
     * Do not address multiple issues in one PR.
-* The PR description should:
+* The PR description must:
     * give context: explain why you are creating the PR, e.g. reference the GitHub issue or JIRA ticket number it addresses
-    * state the solution: the context should lead into what you did to resolve the issue
+    * state the solution: the context must lead into what you did to resolve the issue
     * identify any follow up changes that will be needed and how that is going to be addressed, i.e. what does this PR not address?
 
 * **Do not review a PR unless it follows the [SG2 Standards](../docs/standards.md)**.
     * If you find that a PR does not follow existing standards instead please add the `review standards` label to the PR and notify the developer and PM in a public slack channel (#dtt-web-dev or #project-styleguide) that you cannot review the PR until it follows the standards.
-* If you create a branch you own it; no one else should modify it without your permission.
+* If you create a branch you own it; no one else must modify it without your permission.
 * If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
+* All pull requests must include any creation or updates to relevant visual regression tests. For more infomration on how to do this please see the [How do I run tests?](https://issues.ama-assn.org:8446/confluence/pages/viewpage.action?pageId=23298568) document in Confluence.
 
 ## Git Commit Guidelines
 
-Commits should be atomic: the commit should be an indivisible and irreducible change. The commit message can be best described with an example, which we will model after Tim Pope's [blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
+Commits must be atomic: the commit must be an indivisible and irreducible change. The commit message can be best described with an example, which we will model after Tim Pope's [blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
     Capitalized, short (50 chars or less) summary.
 
@@ -79,7 +80,7 @@ When you have finished development work on a ticket:
 2. Announce in the relevant Slack channel (#project-styleguide) that you are doing review of the PR.
 3. Checkout the branch.
 4. Review for code quality and test functionality:
-    - Functionality: build your local environment. Check for expected behavior. The developer should have left some instructions for testing; follow these.
+    - Functionality: build your local environment. Check for expected behavior. The developer must have left some instructions for testing; follow these.
     - Visual QA: make sure nothing looks terribly broken. It's also usually a good idea to check against any style guide patterns linked in the "style guide" section of the PR template if applicable. Check responsive behavior. (Currently in our process, browser testing will be handled later.)
     - Code quality: follow [SG2 Standards](../docs/standards.md)! They're great! Individual repos have their own code standards, so be aware of those as well (Style Guide has a /docs folder, for Drupal follow Drupal best practices, etc.)
 5. On your local machine merge `develop` into the branch to preview how the branch will interact with the rest of the code base once merged. It's not necessary to push the merge commit. Repeat steps 3-4.
