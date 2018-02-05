@@ -1,36 +1,42 @@
-## SG2 Standards Checklist
+# SG2 Standards
 
-Since SG2 is a living design library that is home to reusable patterns, it's important for all contributing developers to attempt to create patterns the same way. 
+Since SG2 is a living design library that is home to reusable patterns, it's important for all contributing developers to attempt to create patterns the same way.
 
 Any new work contributed into SG2 must meet the following standards:
 
-### Workflow standards for contributing to SG2/D8
+## Workflow standards
+### Separating work between the team
+- Only work on what's in your assigned ticket. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer and/or PM to notify them of the potential conflict.
 
-#### Keep work discrete
-- Encapsulate your work in the smallest discrete chunks possible.
-- Avoid using `rebase` 
-- Avoid branching off of unmerged branches. Doing so can make your code difficult for others to understand and review, which can impede workflow and make working as a team harder; instead, branch off of `develop` whenever possible.
-- Only work on what's in your assigned ticket. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer 
-- What to do if you're blocked? Add the `blocked` label and comments in th PR and in JIRA. Blocked tickets should be linked accordingly in JIRA (if they are not, add the link).
-- If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket. If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (loop in a colleague, etc.) - but avoid lumping in the fix with your PR if it's a global change.
+### Pull or Fetch?
 
-#### Communicate with the team
-- Announce in Slack when you begin working on or reviewing a PR, in addition to adding the label. (follow PR review docs - add link)
+In order to get upstream changes that have been merged, you can use `git fetch` followed by `git merge`, or alternatively use `git pull`. A fetch allows you to see what has changed, and then to decide if you would like to add those changes in your branch with merge. Use `git fetch` then `git merge origin/branchname` to bring the branch up to date.
 
-#### Follow the PR Template and include quality information
-- Follow the template
-- Leave clear testing instructions: [image example]
+Using `git pull` is `git fetch` followed immediately by `git merge FETCH_HEAD` in one step. In some situations, `git pull` may be suitable.
 
-#### If you encounter a PR that doesn\'t adhere to these standards:
--- add the `review standards` label to the PR
--- notify the assignee in Slack on a public channel (#dttwebdev or #projectstyleguide); provide links to written documentation of standards and ask that the person review them and consult you if there are any questions. 
--- Ask the assignee to notify you when they're done.
+### Avoid Code Conflicts
+- Do not rebase branches.
+- Avoid branching off of unmerged branches. Instead, branch off of `develop` whenever possible.
+- If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket and notify the lead and/or PM of the new bug.
+    - If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (reach out to the team or PMs to see if anyone has bandwidth to work on that ticket) - but avoid lumping in the fix with your current PR.
+* If you create a branch you own it; no one else should modify it without your permission.
+* If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
 
-### PatternLab Standards
+### Communicate with the team
+- Announce in Slack when you begin working on or reviewing a PR, in addition to adding the `ready for review` or `in review` label (respectively).
+- If the Pull Request does not meet our standards please refrain from reviewing and instead add the `review standards` label and note that in a PM-friendly slack channel (#dtt-web-dev or #project-styleguide).
+    - Please also provide links to written documentation of standards and ask that the person review them and consult you if there are any questions.
+    -- Ask the assignee to notify you when they're done.
 
-#### How patterns are organized:
-- Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`). 
-- The directory structure inside each pattern type (atoms, etc) should ve flat; patterns should _not_ go inside grouped subfolders
+### Follow the PR Template and include quality information
+- Follow the [template](PULL_REQUEST_TEMPLATE.md)
+- Leave clear testing instructions; examples,
+    - [Good PR Example](https://github.com/AmericanMedicalAssociation/AMA-Corporate-site/pull/1262)
+
+## PatternLab Standards
+### How patterns are organized:
+- Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`).
+- The directory structure inside each pattern type (atoms, etc) should be flat; patterns should _not_ go inside grouped subfolders
   - Bad: Atoms > Text > Heading
   - Good: Atoms > Heading
   - Good: Atoms > Link
@@ -45,13 +51,14 @@ Any new work contributed into SG2 must meet the following standards:
 - Not every element in a molecule needs to be an atom.
 
 ##### Organisms
+- An organism should be a section of a page, therefore if a component is visually a section of the page.
 - Organisms should be very little markup, it should be mostly wrappers around molecules or atoms.
 
 ##### Templates
 - Templates will be used for the general layouts (e.g. regions of the page) but not molecules
 
 ##### Pages
-Pages are examples of a what a page (generally a node, although sometimes a view) will look like in the website. 
+Pages are examples of a what a page (generally a node, although sometimes a view) will look like in the website.
 
 ##### Base
 Add a description of the "base" patterns here. Do they always get reused, or no?
@@ -60,7 +67,7 @@ Contains:
 - "Colors" atom showing variables and base color palette.
 
 ### How to classify/name patterns
-All pattern class names should follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`). 
+All pattern class names should follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`).
 
 Below is an example of how a breadcrumb organism for the default AMA theme may appear:
 ```html
@@ -76,7 +83,7 @@ Below is an example of how a breadcrumb organism for the default AMA theme may a
 This pattern shows that `breadcrumbs` is a block of the `ama` theme and has the elements `container`, `items` and `item`.
 
 #### Pattern classification
-See "PatternLab Organization" above. 
+See "PatternLab Organization" above.
 @todo - figure out a good/bad example.
 
 #### Pattern scalability
@@ -88,8 +95,8 @@ It's important for patterns to be easily reusable.
 - Patterns should be named something that won't exclude them from being used somewhere else in the future.*
   - Bad: an atom named `login-form-password-field.twig`
   - Good: an atom named `password-field.twig`
-  
-  \* unless they are **not** intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms). 
+
+  \* unless they are **not** intended to be reusable. This rule may apply more to smaller patterns (i.e. atoms).
 
 - Patterns should be coded to accept CSS classes or other HTML attributes from the patterns that include them.
   - Bad: `<div class="foo">{{ div.content }}</div>`
@@ -98,7 +105,7 @@ It's important for patterns to be easily reusable.
 - Patterns should not include hard-coded styles or classes that may not apply to all instances in which the pattern is used.
   - Bad: `<div class="dropdown__list-item dropdown__list-item-foo dropdown__list-item-bar"></div>`
   - Good: `<div class="dropdown__list-item {{class}}"></div>`
-  
+
 #### Pattern consistency
 - Patterns should generally adhere to the existing name/organization schema. File names, pattern organization within PatternLab, and code should appear in kind with the existing patterns in the library.
 
@@ -106,7 +113,7 @@ It's important for patterns to be easily reusable.
   - Good: `<div><a href="{{ url }}"</a><br>`
 
 #### Pattern namespacing
-Pattern code should comply with the BEM naming system. 
+Pattern code should comply with the BEM naming system.
 
   - Bad: `differentlyCapitalized.twig`  
   - Bad: `named-with-a-number2.twig`
@@ -147,10 +154,10 @@ Please follow the [template](#) for creating `pattern.md` files.
 - Good: `ama__breadcrumbs`
 - Bad: `list--ordered--wayfinder`
 
-#### Naming pattern variants 
+#### Naming pattern variants
 - Variants of patterns with the same data model should be pseudo patterns. Add docs from code_conventions.md here.
 - Variants should be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color")
-- Icons should have "icon" in the pattern name. 
+- Icons should have "icon" in the pattern name.
 
 ### Documenting patterns
 - We will create a template for the markdown files for SG2
@@ -188,3 +195,13 @@ Please follow the [template](#) for creating `pattern.md` files.
 #### Javascript
 - JS approach
 - JS functionality should be attached to js-<element> class (? We should double check if we really want to do this)
+
+## Community Guidelines
+
+Development standards are the collective technical values and goals shared by all. Our hope and expectation is that everyone, no matter level of skill or experience, will feel welcome to own these standards. As owners, we hope you both challenge existing standards and establish new ones. Here are goals that we hope our community seeks to promote in our standards:
+
+* **Integrity** - our standards should reflect the level of excellence we want to embody in practice.
+* **Dialectic** - our conversations around standards should be a practice of dialectic rather than debate.
+* **Efficiency** - our standards and conversations should be brief, factual, and to the point.
+* **Completeness** - documentation of our standards should be concise, but comprehensive--explore and document edge cases.
+* **Atomicity** - changes to standards should be the smallest set of coherent changes.
