@@ -6,13 +6,15 @@ Any new work contributed into SG2 must meet the following standards:
 
 ## Workflow standards
 ### Encapsulating work
-- *Only work on what's in your assigned ticket*. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer and/or PM to notify them of the potential conflict.
-- If you find that you need to work on work assigned to someone else:
-    1. Talk to the currently assigned developer to ensure they are aware of your conflict and you are aware of the status of the work
-    1. Confirm with the lead or PM that you have discussed together and have decided to take over the work.
-    1. Assign the ticket to yourself
-    1. Leave a comment on the ticket explaining why you have taken over the assignment
-    1. Begin work
+- **Only work on what's in your assigned ticket**.
+- If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned - _only work on the stuff in your assigned JIRA ticket_.
+    - If the ticket is **not** assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer and/or PM to notify them of the potential conflict.
+    - If you find that you need to work on work assigned to someone else:
+      1. Talk to the currently assigned developer to ensure they are aware of your conflict and you are aware of the status of the work
+      1. Confirm with the lead or PM that you have discussed together and have decided to take over the work.
+      1. Assign the ticket to yourself
+      1. Leave a comment on the ticket explaining why you have taken over the assignment
+      1. Begin work
 
 ### Pull or Fetch?
 In order to get upstream changes that have been merged, you can use `git fetch` followed by `git merge`, or alternatively use `git pull`. A fetch allows you to see what has changed, and then to decide if you would like to add those changes in your branch with merge. Use `git fetch` then `git merge origin/branchname` to bring the branch up to date.
@@ -20,14 +22,14 @@ In order to get upstream changes that have been merged, you can use `git fetch` 
 Using `git pull` is `git fetch` followed immediately by `git merge FETCH_HEAD` in one step. In some situations, `git pull` may be suitable.
 
 ### Merge or Rebase?
-In order to maintain the traceability of our branches we *always* merge and *never* rebase branches. This helps keeping information about the historical existence of a feature branch and groups together all commits part of the feature. This requires that branches are merged through a pull request for quality and code review.
+In order to maintain the traceability of our branches we **always** merge and **never** rebase branches. This helps keep information about the historical existence of a feature branch and groups together all commits part of the feature. This requires that branches are merged through a pull request for quality and code review.
 
 #### Avoid Code Conflicts
 - Avoid rebasing branches.
 - Avoid branching off of unmerged branches. Instead, branch off of `develop` whenever possible.
-- If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket and notify the lead and/or PM of the new bug.
+- If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket and notify the lead and PM of the new bug.
     - Communicate to the PM that you have created a ticket with the explanation of the bug. Please also communicate to them that it may block another ticket (with the ticket information).
-    - If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (reach out to the team or PMs to see if anyone has bandwidth to work on that ticket) - but avoid lumping in the fix with your current PR.
+    - If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (reach out to the team or PMs to see if anyone has bandwidth to work on that ticket) - _but avoid lumping in the fix with your current PR_.
 * If you create a branch you own it; no one else should modify it without your permission.
 * If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
 
@@ -39,13 +41,14 @@ In order to maintain the traceability of our branches we *always* merge and *nev
 - If the Pull Request does not meet our standards please refrain from reviewing and instead add the `review standards` label and note that in a PM-friendly slack channel (#dtt-web-dev or #project-styleguide).
     - Please also provide links to written documentation of standards and ask that the person review them and consult you if there are any questions.
     - Ask the assignee to notify you when they're done.
-    - Move the JIRA ticket from "Dev complete" to "In progress"
-        _This is the responsibility of the *reviewer*. The reviewer should also comment on the ticket with *why* they are moving it back._
+    - Move the JIRA ticket from `Development Complete` to `In Progress`
+        _This is the responsibility of the **reviewer**. The reviewer should also comment on the ticket with **why** they are moving it back._
 
-### Follow the PR Template and include quality information
-- Follow the [template](../.github/PULL_REQUEST_TEMPLATE.md)
-- Leave clear testing instructions; examples,
-    - [Good PR Example](https://github.com/AmericanMedicalAssociation/AMA-Corporate-site/pull/1262)
+### Guidelines for Contributing
+- Follow the [Pull Request Template](../.github/PULL_REQUEST_TEMPLATE.md)
+- Review the [Guidelines for Contributing](../.github/CONTRIBUTING.md)
+- Leave clear and descriptive testing instructions; examples,
+    - [Good PR](https://github.com/AmericanMedicalAssociation/AMA-Corporate-site/pull/1262)
 
 ## PatternLab Standards
 ### How patterns are organized:
@@ -78,12 +81,9 @@ Pages are examples of a what a page (generally a node, although sometimes a view
     - [News Article](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=pages-news)
 
 #### Base
-Base patterns are elements that are global and useful to the styelguide process but will not be directly ingested as a component; examples
+Base patterns are elements that are global and useful to the styleguide process but will not be directly ingested as a component; examples
     - [Color palette](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=base-colors)
     - [Placeholder](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=base-placeholder)
-
-Contains:
-- "Colors" atom showing variables and base color palette.
 
 ### How to classify/name patterns
 All pattern class names should follow standard [BEM practices](http://getbem.com/naming/) and be prefixed according to their theme (e.g. `ama__`).
@@ -151,8 +151,13 @@ Pattern code should comply with the BEM naming system.
 ### Pattern definition in `.md`
 PatternLab users can view information about each pattern using the "Pattern Info" feature, whose content is supplied by data provided in a `.md` file.
 
-Please follow the [template](#) for creating `pattern.md` files.
-@todo: add template and update link.
+All `pattern.md` files should include the following elements:
+* Description that details what the pattern is, what is included and how it is intended to be used.
+* A list of variants (if applicable)
+* The JIRA tickets (linked) that apply to that patterns
+* An outline of the json data model that includes the variables and whether they are required or optional.
+
+[Good pattern.md Example](ama-style-guide-2/styleguide/source/_patterns/02-molecules/article-stub.md)
 
 ## Checklist:
 - [ ] classification: are the elements classified into patterns in a way that makes intuitive sense and aligns with our classification system? (See "PatternLab Organization" above.)
@@ -175,10 +180,11 @@ Please follow the [template](#) for creating `pattern.md` files.
 - Icons should have "icon" in the pattern name.
 
 ### Documenting patterns
-- We will create a template for the markdown files for SG2
 - Variants should have their own MD files that point to the main item
 - All patterns should have the following info in .md: x, y, z
 - base colors have variables printed
+- Newly created or updated patterns include an updated screenshot for visual regression testing.
+- Pattern names should be added to the [Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary)
 - [PROBLEM] Pattern needs more useful presentation
 - [PROBLEM] Pattern .md information is outdated
 
@@ -186,9 +192,9 @@ Please follow the [template](#) for creating `pattern.md` files.
 - [PROBLEM] Pattern needs DRYer code
 - [PROBLEM] Pattern code is not correct/semantic/accessible/etc
 - [PROBLEM] pattern code is missing 'alt' attributes
+- All files include an empty line at the end of the file.
 
 ### Add patterns using Twig and JSON
-
 - When possible we should be using and extending Twig blocks
 - Even header number can be passed in `<h{{ header.level }} `, etc.
 - [PROBLEM] Pattern Twig isn't integrated properly in d8
@@ -209,7 +215,7 @@ Please follow the [template](#) for creating `pattern.md` files.
 
 ### Javascript
 - JS approach
-- JS functionality should be attached to js-<element> class (? We should double check if we really want to do this)
+- JS functionality should be attached to js-<element> class
 
 ## Community Guidelines
 

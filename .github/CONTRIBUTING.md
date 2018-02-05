@@ -1,20 +1,26 @@
 # Contributing
 
-Below are the standards for contributing code to the American Medical Association Styleguide v2. Contributions of code should be made via pull request. Contributions should not be made without an accompanying JIRA ticket or GitHub issue.
+Below are the guidelines for contributing code to the American Medical Association Styleguide v2. Contributions of code should be made via pull request.
+
+_Contributions should **not** be made without an accompanying JIRA ticket or GitHub issue._
+
+** DO NOT SUBMIT OR REVIEW A PULL REQUEST UNLESS IT FOLLOWS THE [SG2 STANDARDS](../docs/standards.md).**
 
 
 ## Creating branches
 
-This project follows a git branching workflow using `feature/branchname`, `bugfix/branchname`, `hotfix/branchname`. When creating a new branch, it is helpful to base it off of `develop`. If you would like to include commits from a different branch that has not been merged, include those changes by checking out a new branch that is based on `develop`, and then use `git rebase origin/NameOfBranchWithDesiredChanges`. This often works out better in the long run instead of 'chaining' feature branches off of each other directly.
+This project follows a git branching workflow using `feature/branchname`, `bugfix/branchname`, `hotfix/branchname`. When creating a new branch, it **must** be based off of `develop`.
+
+If you would like to include commits from a different branch that has not been merged, include those changes by checking out a new branch that is based on `develop`, and then use `git merge origin/NameOfBranchWithDesiredChanges`. This often works out better in the long run instead of 'chaining' feature branches off of each other directly.
 
 ## Pull Request Guidelines
 
-* All Pull Requests should follow the [Pull Request Template](PULL_REQUEST_TEMPLATE.md).
+* **All Pull Requests must follow the [Pull Request Template](PULL_REQUEST_TEMPLATE.md)**.
 * Encapsulate your work in the smallest discrete chunks possible.
 * The title should be a simple imperative sentence; examples,
     * Good: Add Symfony code style documentation.
     * Bad: Adding Symfony code style documentation. [bad because it is declarative]
-* Whenever possible the title should include the JIRA ticket number and the title should match the summmary of the JIRA ticket. *Do not work on work that has not already been ticketed*; examples,
+* The title must include the JIRA ticket number and the title must match the summary of the JIRA ticket. **Do not work on work that has _not_ already been ticketed**; examples,
     * Good: [EWL-4421] Create News Header Organism
     * Bad: Tools clean up
 * The PR should be atomic: the PR should address an indivisible and irreducible topic. The more atomic PRs are the more easily they can be reviewed and merged.
@@ -24,7 +30,7 @@ This project follows a git branching workflow using `feature/branchname`, `bugfi
     * state the solution: the context should lead into what you did to resolve the issue
     * identify any follow up changes that will be needed and how that is going to be addressed, i.e. what does this PR not address?
 
-* Do not review a PR unless it follows the [SG2 Standards](../docs/standards.md).
+* **Do not review a PR unless it follows the [SG2 Standards](../docs/standards.md)**.
     * If you find that a PR does not follow existing standards instead please add the `review standards` label to the PR and notify the developer and PM in a public slack channel (#dtt-web-dev or #project-styleguide) that you cannot review the PR until it follows the standards.
 * If you create a branch you own it; no one else should modify it without your permission.
 * If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
@@ -57,20 +63,20 @@ Commits should be atomic: the commit should be an indivisible and irreducible ch
 ## Submitting work for review
 When you have finished development work on a ticket:
 
-1. In Jira, change the ticket status from In Progress to Development Complete.
+1. In JIRA, change the ticket status from `In Progress` to `Development Complete`.
 1. Submit your PR to Github.
 1. Make sure that under "Assignees" you have assigned yourself to the PR.
-1. Add the label "Ready for Review" so others know they can begin reviewing.
-1. Update the Jira ticket with a link to the PR
-1. If an open PR comes back with questions or requested changes, make sure the Jira ticket is moved back to In Progress while you resume work on the issue.
-1. When you are done making changes, add the ready for review label to the PR again and ping the original reviewer to let him/her know that your PR has been updated.
+1. Add the label `ready for review` so others know they can begin reviewing.
+1. Update the JIRA ticket with a link to the PR
+1. If an open PR comes back with questions or requested changes, make sure the JIRA ticket is moved back to In Progress while you resume work on the issue.
+1. When you are done making changes, add the `ready for review` label to the PR again and ping the original reviewer to let him/her know that your PR has been updated.
 
 ## Reviewing a PR
 1. In Github
     - remove the `ready for review` label
     - add the `in review` label
     - assign yourself to the PR as a reviewer
-2. Announce in the relevant Slack channel that you are doing review of the PR.
+2. Announce in the relevant Slack channel (#project-styleguide) that you are doing review of the PR.
 3. Checkout the branch.
 4. Review for code quality and test functionality:
     - Functionality: build your local environment. Check for expected behavior. The developer should have left some instructions for testing; follow these.
@@ -85,4 +91,5 @@ When you have finished development work on a ticket:
     - If everything looks good:
         - Merge the branch to `develop`
         - Delete the feature branch.
-        - Move Jira ticket/s to `Testing` but DO NOT re-assign (leads will do that after release).
+        - Move JIRA ticket/s to `Testing` but **DO NOT re-assign** (leads will do that after release).
+        - Comment that you have reviewed and merged the linked PRs.
