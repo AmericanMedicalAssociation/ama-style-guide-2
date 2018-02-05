@@ -4,7 +4,7 @@ Below are the guidelines for contributing code to the American Medical Associati
 
 _Contributions should **not** be made without an accompanying JIRA ticket or GitHub issue._
 
-** DO NOT SUBMIT OR REVIEW A PULL REQUEST UNLESS IT FOLLOWS THE [SG2 STANDARDS](../docs/standards.md).**
+**DO NOT SUBMIT OR REVIEW A PULL REQUEST UNLESS IT FOLLOWS THE [SG2 STANDARDS](../docs/standards.md).**
 
 
 ## Creating branches
