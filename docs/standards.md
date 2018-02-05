@@ -54,28 +54,33 @@ In order to maintain the traceability of our branches we *always* merge and *nev
   - Bad: Atoms > Text > Heading
   - Good: Atoms > Heading
   - Good: Atoms > Link
-- Talk about where SCSS and JS files should go (in a separate .scss directory?), as well as Twig and .md files (no subdirectories?). We may still need to make a decision about this.
+- SCSS files should be in the `styleguide/source/assets/scss` directory. They should be in partials according to why type of atomic component that they are.
+- JS files should be in the `styleguide/source/assets/js` directory. They should be named according to the pattern that they accompany.
+- Twig and Markdown files should be in the `styleguide/source/_patterns` directory. They should be in the directory according to why type of atomic component that they are. They should not be nested further than their atomic identifier.
 
-##### Atoms
-- An atom should be the basic HTML elements.
-- They can sometimes be more than one element (e.g. an unordered list).
+#### Atoms
+An atom should be the basic HTML elements. They can sometimes be more than one element (e.g. an unordered list). Sometimes there may be multiple atoms of the same HTML element with different classes.
 
-##### Molecules
-- A molecule should include most of the markup and pull in atoms as necessary.
-- Not every element in a molecule needs to be an atom.
+#### Molecules
+A molecule should include most of the markup and pull in atoms as necessary. Not every element in a molecule needs to be an atom; examples,
+    - [Article Stub](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=molecules-article-stub)
 
-##### Organisms
-- An organism should be a section of a page, therefore if a component is visually a section of the page.
-- Organisms should be very little markup, it should be mostly wrappers around molecules or atoms.
+#### Organisms
+An organism should be a section of a page, therefore if a component is visually a section of the page. Organisms should be very little markup, it should be mostly wrappers around molecules or atoms; examples,
+    - [Article Header](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-article-header)
 
-##### Templates
-- Templates will be used for the general layouts (e.g. regions of the page) but not molecules
+#### Templates
+Templates will be used for the general layouts (e.g. regions of the page) but not molecules. These pages exist to show what a page layout will look like but does not include any patterns for any specific pages; examples,
+    - [Three column](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=templates-three-column)
 
-##### Pages
-Pages are examples of a what a page (generally a node, although sometimes a view) will look like in the website.
+#### Pages
+Pages are examples of a what a page (generally a node, although sometimes a view) will look like in the website. These are the fully prototyped version of a page that includes patterns that would be used on that page; examples,
+    - [News Article](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=pages-news)
 
-##### Base
-Add a description of the "base" patterns here. Do they always get reused, or no?
+#### Base
+Base patterns are elements that are global and useful to the styelguide process but will not be directly ingested as a component; examples
+    - [Color palette](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=base-colors)
+    - [Placeholder](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=base-placeholder)
 
 Contains:
 - "Colors" atom showing variables and base color palette.
@@ -96,11 +101,7 @@ Below is an example of how a breadcrumb organism for the default AMA theme may a
 ```
 This pattern shows that `breadcrumbs` is a block of the `ama` theme and has the elements `container`, `items` and `item`.
 
-#### Pattern classification
-See "PatternLab Organization" above.
-@todo - figure out a good/bad example.
-
-#### Pattern scalability
+### Pattern scalability
 It's important for patterns to be easily reusable.
 - Patterns should use JSON data from an associated `.json` file for their content:
   - Bad: `<a href="link.html">I am a link</a>`
@@ -120,13 +121,13 @@ It's important for patterns to be easily reusable.
   - Bad: `<div class="dropdown__list-item dropdown__list-item-foo dropdown__list-item-bar"></div>`
   - Good: `<div class="dropdown__list-item {{class}}"></div>`
 
-#### Pattern consistency
+### Pattern consistency
 - Patterns should generally adhere to the existing name/organization schema. File names, pattern organization within PatternLab, and code should appear in kind with the existing patterns in the library.
 
    - Bad: `<DIV><A HREF="{{ url }}"></A></ BR>`
   - Good: `<div><a href="{{ url }}"</a><br>`
 
-#### Pattern namespacing
+### Pattern namespacing
 Pattern code should comply with the BEM naming system.
 
   - Bad: `differentlyCapitalized.twig`  
@@ -147,13 +148,13 @@ Pattern code should comply with the BEM naming system.
       <img src="{{ src }} class="header__image--fun">
     </div>
   ```
-#### Pattern definition in `.md`
+### Pattern definition in `.md`
 PatternLab users can view information about each pattern using the "Pattern Info" feature, whose content is supplied by data provided in a `.md` file.
 
 Please follow the [template](#) for creating `pattern.md` files.
 @todo: add template and update link.
 
-### Checklist:
+## Checklist:
 - [ ] classification: are the elements classified into patterns in a way that makes intuitive sense and aligns with our classification system? (See "PatternLab Organization" above.)
 - [ ] scalability: is the pattern easily reusable if that is its intent, or is it too specific to be easily included elsewhere? Does the base pattern scale easily with the use of variants?
 - [ ] consistency: is the pattern consistently classified, coded, and conceptualized with the existing patterns?
@@ -163,14 +164,14 @@ Please follow the [template](#) for creating `pattern.md` files.
 - [ ] cohesion: was the pattern introduced to address an explicit feature, bug, or change request? Has the work followed the existing process for adding new work?
 - [ ] definition: is the pattern fully documented in its `.md` file? Is it obvious from looking at the pattern what its purpose is and how it should be used?
 
-#### Rules for naming:
+### Rules for naming:
 - Pattern names should be vague human-readable descriptions of the component. Generally, we should attempt to use the same plain language that the business would use when that language is not used in a different way elsewhere. (e.g. Don't say refer to a component as a "module" because that word has other meaning in the scope of these projects.)
 - Good: `ama__breadcrumbs`
 - Bad: `list--ordered--wayfinder`
 
-#### Naming pattern variants
+### Naming pattern variants
 - Variants of patterns with the same data model should be pseudo patterns. Add docs from code_conventions.md here.
-- Variants should be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color")
+- Variants should be named “[base item] as [variant]” (e.g. "Header as overlay" or "Button as Secondary Color"). Alternatively, sometimes the pattern variant will make more sense using "with" instead of "as"; example "Promo with CTA" instead of "Promo as with CTA".
 - Icons should have "icon" in the pattern name.
 
 ### Documenting patterns
@@ -186,7 +187,7 @@ Please follow the [template](#) for creating `pattern.md` files.
 - [PROBLEM] Pattern code is not correct/semantic/accessible/etc
 - [PROBLEM] pattern code is missing 'alt' attributes
 
-#### Add patterns using Twig and JSON
+### Add patterns using Twig and JSON
 
 - When possible we should be using and extending Twig blocks
 - Even header number can be passed in `<h{{ header.level }} `, etc.
@@ -195,7 +196,7 @@ Please follow the [template](#) for creating `pattern.md` files.
 - [PROBLEM] Pattern has hard coded or static data model
 - [PROBLEM] pattern code should leverage json array and twig loops
 
-#### CSS
+### CSS
 - Class names should follow standard BEM naming and be prefixed with `ama`
 - [PROBLEM] Pattern needs more specific code (replace `.ama_theme` wrapper with `ama__` class prefix)
 - Refrain from nesting things
@@ -206,7 +207,7 @@ Please follow the [template](#) for creating `pattern.md` files.
 - Color names
 - Globbing is fine as long as source maps are still included
 
-#### Javascript
+### Javascript
 - JS approach
 - JS functionality should be attached to js-<element> class (? We should double check if we really want to do this)
 
