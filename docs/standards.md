@@ -4,7 +4,6 @@ Since SG2 is a living design library that is home to reusable patterns, it's imp
 
 Any new work contributed into SG2 must meet the following standards:
 
-<<<<<<< HEAD
 ## Workflow standards
 ### Encapsulating work
 - *Only work on what's in your assigned ticket*. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer and/or PM to notify them of the potential conflict.
@@ -52,35 +51,6 @@ In order to maintain the traceability of our branches we *always* merge and *nev
 ### How patterns are organized:
 - Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`).
 - The directory structure inside each pattern type (atoms, etc) should be flat; patterns should _not_ go inside grouped subfolders
-=======
-### Workflow standards for contributing to SG2/D8
-
-#### Keep work discrete
-- Encapsulate your work in the smallest discrete chunks possible.
-- Avoid using `rebase` 
-- Avoid branching off of unmerged branches. Doing so can make your code difficult for others to understand and review, which can impede workflow and make working as a team harder; instead, branch off of `develop` whenever possible.
-- Only work on what's in your assigned ticket. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer 
-- What to do if you're blocked? Add the `blocked` label and comments in th PR and in JIRA. Blocked tickets should be linked accordingly in JIRA (if they are not, add the link).
-- If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket. If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (loop in a colleague, etc.) - but avoid lumping in the fix with your PR if it's a global change.
-
-#### Communicate with the team
-- Announce in Slack when you begin working on or reviewing a PR, in addition to adding the label. (follow PR review docs - <a href="https://github.com/AmericanMedicalAssociation/documentation/wiki/Contributing-and-Reviewing-Pull-Requests#submitting-a-pr-for-code-review">see here</a>)
-
-#### Follow the PR Template and include quality information
-- Follow the template
-- Leave clear testing instructions: [image example]
-
-#### If you encounter a PR that doesn\'t adhere to these standards:
--- add the `review standards` label to the PR
--- notify the assignee in Slack on a public channel (#dttwebdev or #projectstyleguide); provide links to written documentation of standards and ask that the person review them and consult you if there are any questions. 
--- Ask the assignee to notify you when they're done.
-
-### PatternLab Standards
-
-#### How patterns are organized:
-- Patterns should be listed alphabetically in the pattern list. No numbers (e.g. `atoms/forms/text-input` instead of `00-atoms/10-forms/05-text`). 
-- The directory structure inside each pattern type (atoms, etc) should ve flat; patterns should _not_ go inside grouped subfolders
->>>>>>> 8f3009416be41caddc8e32edd89bcdba2a8a9734
   - Bad: Atoms > Text > Heading
   - Good: Atoms > Heading
   - Good: Atoms > Link
