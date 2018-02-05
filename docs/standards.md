@@ -43,7 +43,7 @@ In order to maintain the traceability of our branches we *always* merge and *nev
         _This is the responsibility of the *reviewer*. The reviewer should also comment on the ticket with *why* they are moving it back._
 
 ### Follow the PR Template and include quality information
-- Follow the [template](PULL_REQUEST_TEMPLATE.md)
+- Follow the [template](../.github/PULL_REQUEST_TEMPLATE.md)
 - Leave clear testing instructions; examples,
     - [Good PR Example](https://github.com/AmericanMedicalAssociation/AMA-Corporate-site/pull/1262)
 

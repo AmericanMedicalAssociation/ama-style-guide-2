@@ -9,7 +9,7 @@ This project follows a git branching workflow using `feature/branchname`, `bugfi
 
 ## Pull Request Guidelines
 
-* All Pull Requests should follow the [Pull Request Template](/PULL_REQUEST_TEMPLATE.md).
+* All Pull Requests should follow the [Pull Request Template](PULL_REQUEST_TEMPLATE.md).
 * Encapsulate your work in the smallest discrete chunks possible.
 * The title should be a simple imperative sentence; examples,
     * Good: Add Symfony code style documentation.
@@ -24,7 +24,7 @@ This project follows a git branching workflow using `feature/branchname`, `bugfi
     * state the solution: the context should lead into what you did to resolve the issue
     * identify any follow up changes that will be needed and how that is going to be addressed, i.e. what does this PR not address?
 
-* Do not review a PR unless it follows the [SG2 Standards](./docs/standards).
+* Do not review a PR unless it follows the [SG2 Standards](../docs/standards.md).
     * If you find that a PR does not follow existing standards instead please add the `review standards` label to the PR and notify the developer and PM in a public slack channel (#dtt-web-dev or #project-styleguide) that you cannot review the PR until it follows the standards.
 * If you create a branch you own it; no one else should modify it without your permission.
 * If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
