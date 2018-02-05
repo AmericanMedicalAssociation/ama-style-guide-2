@@ -29,7 +29,7 @@ Use something like [Skitch](https://evernote.com/skitch/) or [GIPHY Capture](htt
 
 
 ## Remaining Tasks
-Remaining tasks?
+Things relevant to here may be updating [The Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary?src=contextnavpagetreemode) with the latest naming changes or review of the relative [D8](https://github.com/AmericanMedicalAssociation/ama-d8) work.
 
 
 ## Additional Notes
