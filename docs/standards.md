@@ -5,28 +5,42 @@ Since SG2 is a living design library that is home to reusable patterns, it's imp
 Any new work contributed into SG2 must meet the following standards:
 
 ## Workflow standards
-### Separating work between the team
-- Only work on what's in your assigned ticket. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer and/or PM to notify them of the potential conflict.
+### Encapsulating work
+- *Only work on what's in your assigned ticket*. If you find that your ticket requires functionality/styling/etc. that is defined in a different ticket, either coordinate with the developer to whom that ticket's assigned, or switch to working on the ticket if unassigned. - only work on the stuff in your assigned JIRA ticket. If the ticket is not assigned to you but you feel you may need to work on it (or need code from it or whatever) reach out to the developer and/or PM to notify them of the potential conflict.
+- If you find that you need to work on work assigned to someone else:
+    1. Talk to the currently assigned developer to ensure they are aware of your conflict and you are aware of the status of the work
+    1. Confirm with the lead or PM that you have discussed together and have decided to take over the work.
+    1. Assign the ticket to yourself
+    1. Leave a comment on the ticket explaining why you have taken over the assignment
+    1. Begin work
 
 ### Pull or Fetch?
-
 In order to get upstream changes that have been merged, you can use `git fetch` followed by `git merge`, or alternatively use `git pull`. A fetch allows you to see what has changed, and then to decide if you would like to add those changes in your branch with merge. Use `git fetch` then `git merge origin/branchname` to bring the branch up to date.
 
 Using `git pull` is `git fetch` followed immediately by `git merge FETCH_HEAD` in one step. In some situations, `git pull` may be suitable.
 
-### Avoid Code Conflicts
-- Do not rebase branches.
+### Merge or Rebase?
+In order to maintain the traceability of our branches we *always* merge and *never* rebase branches. This helps keeping information about the historical existence of a feature branch and groups together all commits part of the feature. This requires that branches are merged through a pull request for quality and code review.
+
+#### Avoid Code Conflicts
+- Avoid rebasing branches.
 - Avoid branching off of unmerged branches. Instead, branch off of `develop` whenever possible.
 - If you notice a bug that falls outside of the scope of your assigned JIRA ticket, log it as a new JIRA ticket and notify the lead and/or PM of the new bug.
+    - Communicate to the PM that you have created a ticket with the explanation of the bug. Please also communicate to them that it may block another ticket (with the ticket information).
     - If it is blocking you, switch focus to that ticket or find another way for that ticket to get done (reach out to the team or PMs to see if anyone has bandwidth to work on that ticket) - but avoid lumping in the fix with your current PR.
 * If you create a branch you own it; no one else should modify it without your permission.
 * If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
 
-### Communicate with the team
+### Team communication
+- Before working on any unassigned work please refer to a project manager and also review the current backlog for additional work.
+- If you find you are blocked on work, add the `blocked` label. Also, comment in the PR and in the JIRA ticket. Blocked tickets should be linked accordingly in JIRA (if they are not, add the link).
+    - Notify the team of your blocker during the next scrum.
 - Announce in Slack when you begin working on or reviewing a PR, in addition to adding the `ready for review` or `in review` label (respectively).
 - If the Pull Request does not meet our standards please refrain from reviewing and instead add the `review standards` label and note that in a PM-friendly slack channel (#dtt-web-dev or #project-styleguide).
     - Please also provide links to written documentation of standards and ask that the person review them and consult you if there are any questions.
-    -- Ask the assignee to notify you when they're done.
+    - Ask the assignee to notify you when they're done.
+    - Move the JIRA ticket from "Dev complete" to "In progress"
+        _This is the responsibility of the *reviewer*. The reviewer should also comment on the ticket with *why* they are moving it back._
 
 ### Follow the PR Template and include quality information
 - Follow the [template](PULL_REQUEST_TEMPLATE.md)
