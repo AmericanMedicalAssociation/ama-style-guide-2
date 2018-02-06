@@ -1,5 +1,5 @@
 ---
-el: '.info-card'
+el: '.ama__info-card'
 title: 'Information Card'
 ---
 Information cards begin on the left and stack every two cards in desktop format. Information cards include a label (usually "Media Contact:"), name, title, phone number(s), fax number(s), and email.
