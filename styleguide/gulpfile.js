@@ -14,11 +14,10 @@ var prefix = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sassGlob = require('gulp-sass-glob');
-var shell = require('gulp-shell');
+var exec = require('gulp-exec');
 var stylelint = require('gulp-stylelint');
 var tagversion = require('gulp-tag-version');
 var uglify = require('gulp-uglify');
-
 var config = require('./build.config.json');
 var production;
 
@@ -91,6 +90,16 @@ var svg2twigconfig = {
   dest: "./source/_patterns/01-atoms/media/icons/"
 };
 
+// Run backstop to run tests
+function backstop(done) {
+  exec('backstop test', function () {
+  });
+
+  // return shell(['backstop test']);
+  // return gulp.src()
+  // .pipe(shell(['backstop test'], done));
+}
+
 function svg2twig() {
   return gulp.src(svg2twigconfig.src, { base: svg2twigconfig.base })
     .pipe(plumber())
@@ -111,7 +120,7 @@ function copyTwigFiles() {
 // Description: Build static Pattern Lab files via PHP script
 function patternlab() {
   return gulp.src(' ', {read: false})
-    .pipe(shell([
+    .pipe(exec([
       'php core/console --generate'
     ]))
     .pipe(browserSync.reload({stream:true}));
@@ -151,14 +160,14 @@ function publish() {
 function tag() {
   return gulp.src(config.versioning.files)
   // Fetch master so that we can tag it.
-    .pipe(shell(['git fetch origin master:master']))
+    .pipe(exec(['git fetch origin master:master']))
     .pipe(bump({type: 'minor'}))
     .pipe(gulp.dest('./'))
 
     // Tag it.
     .pipe(tagversion({argv: 'master'}))
     // Push tag.
-    .pipe(shell(['git push origin --tags']));
+    .pipe(exec(['git push origin --tags']));
 }
 
 function setMaster(callback) {
@@ -176,6 +185,7 @@ exports.styles = styles;
 exports.scssLint = scssLint;
 exports.drupalScripts = drupalScripts;
 exports.patternLabscripts = patternLabscripts;
+exports.backstop = backstop;
 exports.svg2twig = svg2twig;
 exports.copyTwigFiles = copyTwigFiles;
 exports.patternlab = patternlab;
@@ -189,7 +199,7 @@ exports.setMaster = setMaster;
 /*
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
-var build = gulp.series(clean, patternlab, styleguide,
+var build = gulp.series(clean, patternlab, styleguide, backstop,
   gulp.parallel(styles,scssLint, drupalScripts, svg2twig, copyTwigFiles));
 
 var local = gulp.parallel(watch, patternLabscripts, startBrowserSync);
