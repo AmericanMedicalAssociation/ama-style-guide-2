@@ -10,6 +10,14 @@ Information cards begin on the left and stack every two cards in desktop format.
 ~~~
 {
   infoCard: {
+    heading {
+      level:
+        type: string / required
+      text:
+        type: string / required
+      class:
+        type: string / optional
+    },
     image {
       alt:
         type: string / required
