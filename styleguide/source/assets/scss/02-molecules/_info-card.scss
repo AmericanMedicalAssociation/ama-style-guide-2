@@ -1,0 +1,44 @@
+.ama__info-card {
+
+  &__wrap {
+    background: $gray-7;
+    border: 1px solid $gray-50;
+    margin-bottom: 30px;
+
+    @include breakpoint($bp-med) {
+      display: grid;
+      grid-template-columns: 1fr 8fr;
+      grid-column-gap: 20px;
+      padding: 20px;
+    }
+  }
+
+  &__text {
+    p {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($bp-small) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+
+    @include breakpoint($bp-small) {
+      grid-row: 1;
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0;
+
+    @include breakpoint($bp-small) {
+      margin-bottom: 0;
+    }
+  }
+}
