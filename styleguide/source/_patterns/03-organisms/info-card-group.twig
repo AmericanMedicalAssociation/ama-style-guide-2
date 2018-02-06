@@ -1,0 +1,6 @@
+<div class="ama__info-card-group">
+  {% for item in infoCardGroup %}
+    {% set infoCard = item %}
+    {% include "@molecules/info-card.twig" %}
+  {% endfor %}
+</div>
