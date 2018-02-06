@@ -1,11 +1,13 @@
 ---
 el: ".ama__header--article"
-title: "Article Header"
+title: "Masthead"
 ---
 
 [Some desciption needs to be updated here]
 
 [EWL-4421](https://issues.ama-assn.org/browse/EWL-4421)
+[EWL-4485](https://issues.ama-assn.org/browse/EWL-4485)
+
 
 ### Variables
 ~~~
