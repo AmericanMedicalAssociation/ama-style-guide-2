@@ -31,13 +31,43 @@
   "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
+      "label": "atoms-button",
+      "url": "http://localhost:3000/?p=atoms-button",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=atoms-button",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "#sg-viewport"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "atoms-subtitle",
+      "url": "http://localhost:3000/?p=atoms-subtitle",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=atoms-subtitle",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        "#sg-viewport"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
       "label": "molecules-info-card",
       "url": "http://localhost:3000/patterns/02-molecules-info-card/02-molecules-info-card.html",
       "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-info-card/02-molecules-info-card.html",
       "readySelector": ".ama__info-card",
+      "hideSelectors": [],
+      "removeSelectors": [],
       "selectors": [
         ".ama__info-card"
-      ]
+      ],
+      "misMatchThreshold" : 3,
+      "requireSameDimensions": false
     }
   ],
   "paths": {
@@ -52,6 +82,6 @@
   "engineFlags": [],
   "asyncCaptureLimit": 5,
   "asyncCompareLimit": 50,
-  "debug": true,
+  "debug": false,
   "debugWindow": false
 }
