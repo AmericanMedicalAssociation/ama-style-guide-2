@@ -6,9 +6,7 @@ node_js:
 before_install:
   - cd styleguide
   - composer install --no-interaction
-
-install:
-  - npm install
+  - npm install -g npm@latest
 
 script:
   - gulp test
