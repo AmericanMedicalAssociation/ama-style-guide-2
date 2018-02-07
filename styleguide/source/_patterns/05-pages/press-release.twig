@@ -1,5 +1,13 @@
 {% extends '@templates/two-column-right.twig' %}
 
+{% block header %}
+  {% include '@organisms/ribbon.twig' %}
+  {% include '@organisms/wayfinder.twig' %}
+  <div class="container">
+    {% include '@organisms/masthead.twig' %}
+  </div>
+{% endblock %}
+
 {% block pageContent %}
 {% endblock %}
 

@@ -1,8 +1,9 @@
-{%  set link, heading, bio, bio_image, social = masthead.link, masthead.heading, masthead.bio, masthead.bio.image, masthead.social %}
+{%  set link, heading, subtitle, bio, bio_image, social = masthead.link, masthead.heading, masthead.subtitle, masthead.bio, masthead.bio.image, masthead.social %}
 
 <header class="ama__article-header">
     {% include "@atoms/link.twig" %}
     {% include "@atoms/heading.twig" %}
+    {% include "@atoms/subtitle.twig" %}
     <div class="ama__article-header__date">
       {% include "@atoms/date-block.twig" %}
     </div>
