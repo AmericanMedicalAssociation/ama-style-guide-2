@@ -1,5 +1,11 @@
 
 <article class="ama__partner">
+  {% if logo %}
+      {% set image = logo %}
+      {% include "@atoms/image.twig" with {
+        "class": "ama__partner__logo" }
+      %}
+  {% endif %}
 
   {% if infoCard %}
     {% set image, heading, link = infoCard.image, infoCard.heading, infoCard.link %}
