@@ -209,11 +209,15 @@ All `pattern.md` files must include the following elements:
 - Utilize extends whenever possible
 - Sass rules:
 - A sass file for new patterns (?)
-- Units of measurement
 - Globbing is fine as long as source maps are still included
 
 #### Color Naming
 Upon changes to the color palette, color variables should be named according to the new color palette provided by the UX team (which should include names).
+
+#### Units of Measurement
+- Pixel dimensions are used for rules under five pixels
+- Pixel dimensions are used for dimensions that are fixed.
+- Font sizing is in `em`s
 
 ### Javascript
 - JS approach
