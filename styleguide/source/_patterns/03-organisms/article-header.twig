@@ -1,4 +1,4 @@
-{%  set link, heading, bio, bio_image, social = articleHeader.link, articleHeader.heading, articleHeader.bio, articleHeader.bio.image, articleHeader.social %}
+{%  set link, heading, social = articleHeader.link, articleHeader.heading, articleHeader.social %}
 
 <header class="ama__article-header">
     {% include "@atoms/link.twig" %}
@@ -9,5 +9,4 @@
     <div class="ama__article-header__share">
       {% include "@molecules/social-share.twig" %}
     </div>
-    {% include "@molecules/inline-bio.twig" %}
 </header>
