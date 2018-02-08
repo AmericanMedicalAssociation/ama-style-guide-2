@@ -210,8 +210,10 @@ All `pattern.md` files must include the following elements:
 - Sass rules:
 - A sass file for new patterns (?)
 - Units of measurement
-- Color names
 - Globbing is fine as long as source maps are still included
+
+#### Color Naming
+Upon changes to the color palette, color variables should be named according to the new color palette provided by the UX team (which should include names).
 
 ### Javascript
 - JS approach
