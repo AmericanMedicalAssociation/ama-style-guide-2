@@ -1,0 +1,8 @@
+
+<article class="ama__partner">
+
+  {% if infoCard %}
+    {% set image, heading, link = infoCard.image, infoCard.heading, infoCard.link %}
+    {% include "@molecules/info-card.twig" %}
+  {% endif %}
+</article>
