@@ -2,7 +2,13 @@
 el: '.ama__info-card'
 title: 'Information Card'
 ---
-Information cards begin on the left and stack every two cards in desktop format. Information cards include a label (usually "Media Contact:"), name, title, phone number(s), fax number(s), and email.
+
+### Description
+Information card molecules contain a heading that denotes the card type (required), an image (optional), and format-able text (required). Variants are defined based on what fields are included and type of information (or card type).
+
+Variants are managed by use of pseudo-patterns.
+
+- ["Info Card as Media Contact"](/?p=molecules-info-card-as-media-contact) is the variant of this pattern that includes a smaller image and appears on within the [Partner Information](#) on a [Press Release Page](/?p=pages-press-release).
 
 [EWL-4487](https://issues.ama-assn.org/browse/EWL-4487)
 
