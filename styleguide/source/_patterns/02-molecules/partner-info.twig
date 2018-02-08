@@ -11,4 +11,10 @@
     {% set image, heading, link = infoCard.image, infoCard.heading, infoCard.link %}
     {% include "@molecules/info-card.twig" %}
   {% endif %}
+
+  {% set heading = boilerplate.heading %}
+  {% include "@atoms/heading.twig" %}
+
+  {% set paragraph = boilerplate.paragraph %}
+  {% include "@atoms/paragraph.twig" %}
 </article>
