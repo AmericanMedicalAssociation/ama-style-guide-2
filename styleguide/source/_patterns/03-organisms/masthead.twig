@@ -1,13 +1,13 @@
 {%  set link, heading, subtitle, bio, bio_image, social = masthead.link, masthead.heading, masthead.subtitle, masthead.bio, masthead.bio.image, masthead.social %}
 
-<header class="ama__article-header">
+<header class="ama__masthead">
     {% include "@atoms/link.twig" %}
     {% include "@atoms/heading.twig" %}
     {% include "@atoms/subtitle.twig" %}
-    <div class="ama__article-header__date">
+    <div class="ama__masthead__date">
       {% include "@atoms/date-block.twig" %}
     </div>
-    <div class="ama__article-header__share">
+    <div class="ama__masthead__share">
       {% include "@molecules/social-share.twig" %}
     </div>
     {% include "@molecules/inline-bio.twig" %}
