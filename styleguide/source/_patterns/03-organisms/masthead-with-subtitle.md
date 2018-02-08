@@ -1,15 +1,11 @@
 ---
 el: ".ama__header--article"
-title: "Masthead"
+title: "Masthead with Subtitle"
 ---
 
-The Masthead includes a People Bio, a group of social icons/links, a date, a category link (?) and a heading.
+A variant of the Masthead that includes a subtitle.
 
-[EWL-4421](https://issues.ama-assn.org/browse/EWL-4421)
 [EWL-4485](https://issues.ama-assn.org/browse/EWL-4485)
-
-### Variants
-- [Masthead with Subtitle](/?p=organisms-masthead-with-subtitle)
 
 ### Variables
 ~~~
@@ -36,6 +32,9 @@ The Masthead includes a People Bio, a group of social icons/links, a date, a cat
         type: string / required
       class:
         type: string / optional
+    },
+    "subtitle": {
+      text: string / optional
     },
     "social": [
       {
