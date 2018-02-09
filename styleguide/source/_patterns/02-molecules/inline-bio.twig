@@ -9,9 +9,8 @@
 
   <div class="ama__inline-bio__text">
     {% include "@atoms/heading.twig" %}
-
-    {% for paragraph in bio.paragraphs %}
-      {% include "@atoms/paragraph.twig" %}
+    {% for heading in bio.metaHeading %}
+      {% include "@atoms/heading.twig" %}
     {% endfor %}
 
     {% for link in bio.links %}
