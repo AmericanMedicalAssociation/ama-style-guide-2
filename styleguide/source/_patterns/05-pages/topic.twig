@@ -3,9 +3,10 @@
 {% block header %}
   {% include '@organisms/ribbon.twig' %}
   {% include '@organisms/wayfinder.twig' %}
-  <div class="container">
-    {% include '@atoms/page-title.twig' %}
-  </div>
+{% endblock %}
+
+{% block contentTop %}
+  {% include '@atoms/page-title.twig' %}
 {% endblock %}
 
 {% block pageContent %}

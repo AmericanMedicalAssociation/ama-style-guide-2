@@ -4,11 +4,11 @@
 
 <div class="ama__layout--two-column container {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
-  <aside class="ama__layout--two-column__content-top">
+  <section class="ama__layout--two-column__content-top">
     {% block contentTop %}
       {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
     {% endblock %}
-  </aside>
+  </section>
 
   <article class="ama__layout--two-column__page-content" role="article">
     {% block pageContent %}
