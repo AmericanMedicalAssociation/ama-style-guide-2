@@ -8,12 +8,18 @@
     text-transform: uppercase;
   }
 
+  &__container {
+    @include gutter($padding-top-full...);
+    display: flex;
+    align-items: center;
+  }
+
   &__date {
-    align-self: flex-start;
+    flex: 1;
   }
 
   &__share {
-    align-self: flex-end;
+
     display: none;
 
     @include breakpoint($bp-small) {
