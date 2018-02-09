@@ -4,10 +4,15 @@
 
 <div class="ama__layout--two-column container {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
+  <section class="ama__layout--two-column__content-top">
+    {% block contentTop %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
+    {% endblock %}
+  </section>
+
   <article class="ama__layout--two-column__page-content" role="article">
     {% block pageContent %}
-      {% set placeholder = two_column.page_content.placeholder %}
-      {% include '@base/placeholder.twig' %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page Content region content'}}%}
     {% endblock %}
   </article>
 
@@ -15,8 +20,7 @@
 
   <aside id="sidebar-secondary" class="ama__layout--two-column__sidebar--secondary" role="complementary">
     {% block sidebarSecondary %}
-      {% set placeholder = two_column.sidebar_secondary.placeholder %}
-      {% include '@base/placeholder.twig' %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Sidebar Secondary region content'}}%}
     {% endblock %}
   </aside>
 </div>

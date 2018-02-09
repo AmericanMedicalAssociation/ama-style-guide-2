@@ -1,4 +1,4 @@
-{%  set link, heading, subtitle, bio, bio_image, social = masthead.link, masthead.heading, masthead.subtitle, masthead.bio, masthead.bio.image, masthead.social %}
+{%  set link, heading, subtitle, social = masthead.link, masthead.heading, masthead.subtitle, masthead.social %}
 
 <header class="ama__masthead">
     {% include "@atoms/link.twig" %}
@@ -10,5 +10,4 @@
     <div class="ama__masthead__share">
       {% include "@molecules/social-share.twig" %}
     </div>
-    {% include "@molecules/inline-bio.twig" %}
 </header>

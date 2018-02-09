@@ -3,9 +3,11 @@
 {% block header %}
   {% include '@organisms/ribbon.twig' %}
   {% include '@organisms/wayfinder.twig' %}
-  <div class="container">
-    {% include '@organisms/masthead.twig' %}
-  </div>
+{% endblock %}
+
+{% block contentTop %}
+  {% include '@organisms/masthead.twig' %}
+  {% include "@molecules/inline-bio.twig" %}
 {% endblock %}
 
 {% block pageContent %}
