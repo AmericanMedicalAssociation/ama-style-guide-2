@@ -1,5 +1,9 @@
 {% extends '@templates/three-column.twig' %}
 
+{% block contentTop %}
+  {% include '@atoms/page-title.twig' %}
+{% endblock %}
+
 {% block pageContent %}
   {% set leadNews = leadNews %}
   {% include '@organisms/lead-news.twig' %}
