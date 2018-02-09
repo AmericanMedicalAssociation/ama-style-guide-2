@@ -1,22 +1,35 @@
 {% extends '@templates/three-column.twig' %}
 
+{% block header %}
+  {% include '@organisms/ribbon.twig' %}
+  {% include '@organisms/wayfinder.twig' %}
+{% endblock %}
+
 {% block contentTop %}
   {% include '@atoms/page-title.twig' %}
 {% endblock %}
 
 {% block pageContent %}
-  {% set leadNews = leadNews %}
   {% include '@organisms/lead-news.twig' %}
 {% endblock %}
 
 {% block sidebarPrimary %}
-  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar primary content'}} %}
+  {% include '@organisms/membership.twig' %}
+  {% include '@organisms/tools-block.twig' %}
+  {% set articleStub = articleStubOne %}
+  {% include '@molecules/article-stub.twig' %}
+  {% set articleStub = articleStubTwo %}
+  {% include '@molecules/article-stub.twig' %}
 {% endblock %}
 
 {% block sidebarSecondary %}
-  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page sidebar secondary content'}} %}
+  {% set membership = membershipTwo %}
+  {% include '@organisms/membership.twig' %}
+  {% set membership = membershipThree %}
+  {% include '@organisms/membership.twig' %}
 {% endblock %}
 
 {% block footer %}
+  {% set menus, social = footer.menus, footer.social %}
   {% include '@organisms/footer.twig' %}
 {% endblock %}
