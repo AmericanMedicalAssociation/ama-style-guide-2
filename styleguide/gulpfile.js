@@ -343,9 +343,9 @@ gulp.task('tag', function () {
   // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
     // Tag it.
-    .pipe(tagversion({args: 'master'}))
+    .pipe(tagversion())
     // Push tag.
-    .pipe(shell(['git push origin --tags']));
+    .pipe(shell(['git push --tags']));
 });
 
 gulp.task('set-master', function (callback) {
@@ -363,5 +363,5 @@ gulp.task('release', function (callback) {
   runSequence = require('run-sequence').use(gulp);
   // Build the style guide, publish to gh-pages, set the branch to master,
   // publish to master, then tag master.
-  runSequence('default', 'publish', 'set-master', 'publish', 'tag', callback);
+  runSequence('default', 'publish', 'set-master', 'tag', callback);
 });
