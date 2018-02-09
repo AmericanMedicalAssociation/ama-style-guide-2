@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1517527961" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1517527961" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1518205269" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1518205269" media="all" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
@@ -24,8 +24,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1517527961" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1517527961" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1518205269" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1518205269" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -1875,6 +1875,31 @@ If no date is entered the date will default to the current month, day and year.<
   <div class="sg-pattern-body">
     <h3>Description</h3>
 
+<p>A bit of text that can act as supplementary text to a Page Title. It is styled like a <code>&lt;h2&gt;</code> element by default but semantically is just a <code>&lt;p&gt;</code>.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4484">EWL-4484</a></p>
+
+<h3>Variant options</h3>
+
+<p>none</p>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  "text": string/required
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
 <p>A link with special "tag" styling.</p>
 
 <p><a href="https://issues.ama-assn.org/browse/EWL-4423">EWL-4423</a></p>
@@ -1988,6 +2013,72 @@ If no date is entered the date will default to the current month, day and year.<
   </h2>
   
   <div class="sg-pattern-body">
+    <h3>Description</h3>
+
+<p>Information card molecules contain a heading that denotes the card type (required), an image (optional), and format-able text (required). Variants are defined based on what fields are included and type of information (or card type).</p>
+
+<p>Variants are managed by use of pseudo-patterns.</p>
+
+<ul>
+<li><a href="/?p=molecules-info-card-as-media-contact">"Info Card as Media Contact"</a> is the variant of this pattern that includes a smaller image and appears on within the <a href="#">Partner Information</a> on a <a href="/?p=pages-press-release">Press Release Page</a>.</li>
+</ul>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4487">EWL-4487</a></p>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  infoCard: {
+    heading {
+      level:
+        type: string / required
+      text:
+        type: string / required
+      class:
+        type: string / optional
+    },
+    image {
+      alt:
+        type: string / required
+      src:
+        type: string (url) / required
+      height:
+        type: string / required
+      width:
+        type: string / required
+    },
+    paragraph {
+      text:
+        type: string
+      class:
+        type: string / optional
+    },
+    link {
+      href:
+        type: string / required
+      text:
+        type: string / required
+      class:
+        type: string / optional
+      target:
+        type: string / optional
+      title:
+        type: string / optional
+      icon:
+        type: string / optional
+    }
+  }
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
     <p>The Inline Biography component appears within a page's body text. It contains an optional image, name, title, specialty, and link to a full bio page.</p>
 
 <p><a href="https://issues.ama-assn.org/browse/EWL-4420">EWL-4420</a></p>
@@ -2079,6 +2170,95 @@ If no date is entered the date will default to the current month, day and year.<
     style:
       type: string / optional ("secondary" or "")
   }
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
+<p>Partner Information molecules contain a logo, a <a href="/?p=molecules-info-card-as-media-contact">"Information Card as Media Contact"</a>, and a boilerplate description consisting of a heading and a paragraph.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4487">EWL-4487</a></p>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  infoCard: {
+    heading {
+      level:
+        type: string / required
+      text:
+        type: string / required
+      class:
+        type: string / optional
+    },
+    image {
+      alt:
+        type: string / required
+      src:
+        type: string (url) / required
+      height:
+        type: string / required
+      width:
+        type: string / required
+    },
+    paragraph {
+      text:
+        type: string
+      class:
+        type: string / optional
+    },
+    link {
+      href:
+        type: string / required
+      text:
+        type: string / required
+      class:
+        type: string / optional
+      target:
+        type: string / optional
+      title:
+        type: string / optional
+      icon:
+        type: string / optional
+    }
+  }
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
+<p>A image parade used specifically for the press page.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4486">EWL-4486</a></p>
+
+<pre><code><br />"images": [
+  image {
+    alt:
+      type: string / required
+    src:
+      type: string (url) / required
+    height:
+      type: string / required
+    width:
+      type: string / required
+  }
+]
+
 </code></pre>
   </div>
 </div>                        <div id="" class="sg-subtype">
@@ -2667,6 +2847,46 @@ If no date is entered the date will default to the current month, day and year.<
   </h2>
   
   <div class="sg-pattern-body">
+    <p>A collection of up to three articles displayed in a column (meant for use in a sidebar). Displays an image (optional) and title.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4434">EWL-4433</a></p>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  "items": [
+    {
+      "patternLab": true,
+      "link": {
+        "title": string/optional
+        "href": string/required
+        "text": string/required
+        "class": "ama__link-black",
+        "target": "_self"
+      },
+      "image": {
+        "alt": string/required
+        "src": "string/required
+        "height": string/optional
+        "width": string/optional
+      },
+      "date": string/optional
+      "readtime": string/optional
+    },
+   ... # repeat for each item.
+    }
+  ]
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
     <p>A Promotion is a pattern that includes a heading, a description, a logo (optional), an image (optional), and a CTA button (optional).</p>
 
 <p>This pattern can optionally have one of two background/border styles, shown via variants.</p>
@@ -2875,6 +3095,20 @@ If no date is entered the date will default to the current month, day and year.<
   <div class="sg-pattern-body">
     <h3>Description</h3>
 
+<p>Press page with two columns.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4479">EWL-4479 SG2 | Create Press release page </a></p>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
 <p>(In Drupal 8) the IPE from Drupal. Added here so that custom styling can be included in the assets consumed by d8.</p>
   </div>
 </div>            </div> <!--end #sg-patterns-->
@@ -2915,10 +3149,10 @@ If no date is entered the date will default to the current month, day and year.<
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1517527961">
+<script id="pl-js-polyfill-insert-1518205269">
   (function() {
     if (self != top) {
-      var cb = '1517527961';
+      var cb = '1518205269';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -2928,10 +3162,10 @@ If no date is entered the date will default to the current month, day and year.<
   })();
 </script>
 
-<script id="pl-js-insert-1517527961">
+<script id="pl-js-insert-1518205269">
   (function() {
     if (self != top) {
-      var cb = '1517527961';
+      var cb = '1518205269';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
