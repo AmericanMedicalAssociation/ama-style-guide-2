@@ -1,6 +1,8 @@
 .ama__masthead {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid $gray-50;
+  @include gutter($margin-bottom-full...);
 
   &__link {
     @extend %ama__link--blue;
