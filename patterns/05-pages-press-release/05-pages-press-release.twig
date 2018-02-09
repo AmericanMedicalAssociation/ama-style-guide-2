@@ -1,5 +1,9 @@
 {% extends '@templates/two-column-right.twig' %}
 
+{% block contentTop %}
+  {% include '@organisms/masthead.twig' %}
+{% endblock %}
+
 {% block pageContent %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@organisms/partner-list.twig' %}
