@@ -1,7 +1,7 @@
 {%  set link, heading, social = articleHeader.link, articleHeader.heading, articleHeader.social %}
 
 <header class="ama__article-header">
-    {% include "@atoms/link.twig" %}
+    <h4>{% include "@atoms/link.twig" %}</h4>
     {% include "@atoms/heading.twig" %}
     <div class="ama__article-header__date">
       {% include "@atoms/date-block.twig" %}
