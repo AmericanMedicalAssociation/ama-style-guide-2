@@ -49,6 +49,7 @@ In order to maintain the traceability of our branches we **always** merge and **
 - Review the [Guidelines for Contributing](../.github/CONTRIBUTING.md)
 - Leave clear and descriptive testing instructions; examples,
     - [Good PR](https://github.com/AmericanMedicalAssociation/AMA-Corporate-site/pull/1262)
+- Run visual regression tests locally to ensure that the work does not introduce new bugs.
 
 ## PatternLab Standards
 ### How patterns are organized:
