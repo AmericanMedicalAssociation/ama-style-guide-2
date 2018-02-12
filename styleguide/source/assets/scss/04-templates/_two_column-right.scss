@@ -25,6 +25,7 @@
   }
 
   &__page-content {
+    @include gutter($padding-top-full...);
     grid-column: 1 / 5;
     grid-row: 2;
 
@@ -57,6 +58,7 @@
   } // end aside.primary
 
   &--secondary {
+    @include gutter($padding-top-full...);
     grid-column: 1 / 5;
     grid-row: 3 / 4;
 
