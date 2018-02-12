@@ -4,10 +4,18 @@
   display: flex;
   align-items: center;
   width: 100%;
+  
+  &:hover {
+    text-decoration: none;
+  }
 
   &__icon {
     @include gutter($padding-right-half...);
-    display: block;
+    display: none;
+
+    @include breakpoint($bp-med min-width) {
+      display: block;
+    }
   }
 
   &__text {
@@ -16,13 +24,25 @@
     flex-basis: 50%;
   }
 
+  &__text p {
+    margin-bottom: 0;
+  }
+
   &__meta {
     @include font-size($small-font-sizes);
     display: flex;
 
     & * {
       color: $gray-64;
-      flex-basis: 50%;
+      flex-basis: 100%;
+
+      @include breakpoint($bp-med min-width) {
+        flex-basis: 50%;
+      }
     }
   }
+}
+
+.ama__tool:hover .ama__tool__text p {
+  text-decoration: underline;
 }
