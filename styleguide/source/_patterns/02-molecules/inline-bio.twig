@@ -8,6 +8,8 @@
   {% endif %}
 
   <div class="ama__inline-bio__text">
+    {% include "@atoms/heading.twig" %}
+
     {% for paragraph in bio.paragraphs %}
       {% include "@atoms/paragraph.twig" %}
     {% endfor %}
