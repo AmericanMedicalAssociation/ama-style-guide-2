@@ -8,6 +8,15 @@
     @extend %ama__h4;
     align-self: left;
     text-transform: uppercase;
+    padding: $gutter-mobile 0 $gutter-mobile/2;
+
+    @include breakpoint($bp-med) {
+      padding: $gutter-mobile/2 0 $gutter-mobile;
+    }
+
+    @include breakpoint($bp-xl) {
+      padding: $gutter 0;
+    }
   }
 
   &__date {
