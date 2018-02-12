@@ -12,6 +12,14 @@
   &--related {
     @include ama-rules(1px, '', solid, $gray-50);
     @include gutter($padding-top-half...);
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+
+    &:last-child {
+      @include ama-rules(1px, 'bottom', solid, $gray-50);
+      @include gutter($padding-bottom-half...);
+    }
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -28,7 +36,6 @@
 
     .ama__article-stub__copy {
       @extend .col-xs-9;
-      @extend %ama__type--small;
       @include gutter($padding-left-half...);
       display: flex;
       flex-direction: column;
