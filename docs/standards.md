@@ -71,7 +71,7 @@ A molecule should include most of the markup and pull in atoms as necessary. Not
 
 #### Organisms
 An organism should be a section of a page, therefore if a component is visually a section of the page. Organisms should be very little markup, it should be mostly wrappers around molecules or atoms; examples,
-    - [Article Header](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-article-header)
+    - [Masthead](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-masthead)
 
 #### Templates
 Templates will be used for the general layouts (e.g. regions of the page) but not molecules. These pages exist to show what a page layout will look like but does not include any patterns for any specific pages; examples,
