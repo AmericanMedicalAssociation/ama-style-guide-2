@@ -1,5 +1,4 @@
 {
-  "id": "backstop_default",
   "viewports": [
     {
       "label": "bp-xs",
@@ -27,197 +26,29 @@
       "height": 1024
     }
   ],
-  "onBeforeScript": "chromy/onBefore.js",
-  "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
-      "label": "atoms-button",
-      "url": "http://localhost:3000/patterns/01-atoms-button/01-atoms-button.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/01-atoms-button/01-atoms-button.html",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__button   "
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "atoms-subtitle",
-      "url": "http://localhost:3000/patterns/01-atoms-subtitle/01-atoms-subtitle.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/01-atoms-subtitle/01-atoms-subtitle.html",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__subtitle"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "press-release-logos",
-      "url": "http://localhost:3000/patterns/02-molecules-press-release-logos/02-molecules-press-release-logos.html",
-      "referenceUrl": "",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".press-release-logos"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "molecules-inline-bio",
-      "url": "http://localhost:3000/patterns/02-molecules-inline-bio/02-molecules-inline-bio.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-inline-bio/02-molecules-inline-bio.html",
-      "readySelector": ".ama__inline-bio",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__inline-bio"
-      ],
-      "misMatchThreshold" : 3,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "molecules-info-card",
-      "url": "http://localhost:3000/patterns/02-molecules-info-card/02-molecules-info-card.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-info-card/02-molecules-info-card.html",
-      "readySelector": ".ama__info-card",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__info-card"
-      ],
-      "misMatchThreshold" : 3,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "molecules-info-card-as-media-contact",
-      "url": "http://localhost:3000/patterns/02-molecules-info-card-as-media-contact/02-molecules-info-card-as-media-contact.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-info-card-as-media-contact/02-molecules-info-card-as-media-contact.html",
-      "readySelector": ".ama__info-card",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__info-card"
-      ],
-      "misMatchThreshold" : 3,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "molecules-partner-info",
-      "url": "http://localhost:3000/patterns/02-molecules-partner-info/02-molecules-partner-info.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-partner-info/02-molecules-partner-info.html",
-      "readySelector": ".ama__partner",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__partner"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "molecules-inline-bio",
-      "url": "http://localhost:3000/patterns/02-molecules-inline-bio/02-molecules-inline-bio.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-inline-bio/02-molecules-inline-bio.html",
-      "readySelector": ".ama__inline-bio",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__inline-bio"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "organisms-partner-list",
-      "url": "http://localhost:3000/patterns/03-organisms-partner-list/03-organisms-partner-list.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-partner-list/03-organisms-partner-list.html",
-      "readySelector": ".ama__partner-list",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__partner-list"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "organisms-masthead",
-      "url": "http://localhost:3000/patterns/03-organisms-masthead/03-organisms-masthead.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-masthead",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__masthead"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "organisms-masthead-with-subtitle",
-      "url": "http://localhost:3000/patterns/03-organisms-masthead-with-subtitle/03-organisms-masthead-with-subtitle.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-masthead-with-subtitle",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__masthead"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "templates-two-column-right",
-      "url": "http://localhost:3000/patterns/04-templates-two-column-right/04-templates-two-column-right.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/04-templates-two-column-right/04-templates-two-column-right.html",
-      "readySelector": ".ama__layout--two-column",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__layout--two-column"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "topics-page",
-      "url": "http://localhost:3000/patterns/05-pages-topic/05-pages-topic.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-topic/05-pages-topic.html",
-      "delay": 5000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "press-release",
+      "label": "Press Release Page",
       "url": "http://localhost:3000/patterns/05-pages-press-release/05-pages-press-release.html",
       "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-press-release/05-pages-press-release.html",
-      "delay": 5000,
-      "hideSelectors": [],
+      "hideSelectors": [
+        ".ama-placeholder"
+      ],
       "removeSelectors": [],
-      "selectors": [],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
-      "label": "news",
-      "url": "http://localhost:3000/patterns/05-pages-news/05-pages-news.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-news/05-pages-news.html",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
+      "selectors": [
+        "document",
+        ".ama__masthead",
+        ".press-release-logos",
+        ".ama__partner-list",
+        ".ama__tags",
+        ".ama__four-up-teaser",
+        ".ama__tools-block",
+        ".ama__membership"
+      ],
+      "readyEvent": null,
+      "delay": 500,
+      "onReadyScript": null,
+      "onBeforeScript": null
     }
   ],
   "paths": {
@@ -227,11 +58,9 @@
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "report": ["browser", "CI"],
-  "engine": "chrome",
-  "engineFlags": [],
-  "asyncCaptureLimit": 5,
-  "asyncCompareLimit": 50,
+  "engine": "phantomjs",
+  "report": ["browser", "CLI"],
+  "cliExitOnFail": false,
   "debug": false,
-  "debugWindow": false
+  "port": 3001
 }
