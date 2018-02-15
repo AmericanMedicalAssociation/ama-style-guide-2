@@ -222,6 +222,12 @@ gulp.task("copyTwigFiles", function() {
     .pipe(gulp.dest(config.twigsource.dest))
 });
 
+// Create reference screenshots from `gh-pages` and `referenceUrl`
+gulp.task( 'reference', function () {
+  return gulp.src('')
+    .pipe(shell(['backstop reference']))
+});
+
 // Run backstop to run tests
 gulp.task( 'backstop', function () {
   return gulp.src('')
@@ -302,6 +308,7 @@ gulp.task('serve', function () {
 gulp.task('test', function () {
   production = false;
   runSequence(
+    'reference',
     'default',
     'browser-sync',
     'backstop',
