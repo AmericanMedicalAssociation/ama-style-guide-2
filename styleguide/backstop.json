@@ -28,6 +28,32 @@
   ],
   "scenarios": [
     {
+      "label": "News Article Page",
+      "url": "http://localhost:3000/patterns/05-pages-press-release/05-pages-news.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-press-release/05-pages-news.html",
+      "hideSelectors": [
+        ".ama-placeholder"
+      ],
+      "removeSelectors": [],
+      "selectors": [
+        "document",
+        ".ama__masthead",
+        ".ama__inline-bio",
+        ".ama__layout--two-column__page-content",
+        ".ama__article-stub--inline",
+        ".ama__inline-block-copy"
+        ".ama__tags",
+        ".ama__four-up-teaser",
+        ".ama__tools-block",
+        ".ama__membership",
+        ".ama__column-teaser"
+      ],
+      "readyEvent": null,
+      "delay": 500,
+      "onReadyScript": null,
+      "onBeforeScript": null
+    },
+    {
       "label": "Press Release Page",
       "url": "http://localhost:3000/patterns/05-pages-press-release/05-pages-press-release.html",
       "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-press-release/05-pages-press-release.html",
@@ -39,6 +65,7 @@
         "document",
         ".ama__masthead",
         ".press-release-logos",
+        ".ama__layout--two-column__page-content"
         ".ama__partner-list",
         ".ama__tags",
         ".ama__four-up-teaser",
