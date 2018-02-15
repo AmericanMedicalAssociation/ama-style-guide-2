@@ -1,7 +1,7 @@
 .ama__layout--two-column {
   display: grid;
   display: -ms-grid;
-  grid-template-columns: 1fr 5fr 3fr;
+  grid-template-columns: 1fr 6fr 2.5fr;
   grid-template-rows: auto auto auto;
   min-height: 30em;
   -ms-grid-columns: 1fr 5fr 3fr;
@@ -45,6 +45,7 @@
 
 .ama__layout--two-column__sidebar {
   &--primary {
+    @include gutter($padding-top-full...);
     grid-column: 1 / 5;
     grid-row: 2;
     -ms-grid-row: 2;
