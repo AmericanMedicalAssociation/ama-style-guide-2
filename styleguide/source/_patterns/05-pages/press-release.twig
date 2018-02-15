@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block pageContent %}
+  {% set images = pressReleaseLogos %}
+  {% include '@molecules/press-release-logos.twig' %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@organisms/partner-list.twig' %}
   {% include '@molecules/tags.twig' %}

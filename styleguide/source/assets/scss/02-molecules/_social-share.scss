@@ -18,9 +18,9 @@ $social-icons: (
   .social--#{$name} {
     display: inline-block;
     background: url("../../assets/icons/svg/icon-" + $name + ".svg") no-repeat 0 0;
-    background-size: 40px 50px;
-    height: 50px;
-    width: 50px;
+    background-size: 31px;
+    height: 31px;
+    width: 31px;
 
     &:hover {
       background-image: url("../../assets/icons/svg/icon-" + $name + "-hover.svg");
@@ -33,4 +33,8 @@ $social-icons: (
   display: flex;
   margin: 0;
   padding: 0;
+
+  li ~ li {
+    margin-left: $gutter/2;
+  }
 }

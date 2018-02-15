@@ -5,16 +5,32 @@
 
   &__link {
     @extend %ama__link--blue;
-    @extend %ama__h5;
+    @extend %ama__h4;
+    align-self: left;
     text-transform: uppercase;
+    padding: $gutter-mobile 0 $gutter-mobile/2;
+
+    @include breakpoint($bp-med) {
+      padding: $gutter-mobile/2 0 $gutter-mobile;
+    }
+
+    @include breakpoint($bp-xl) {
+      padding: $gutter 0;
+    }
+  }
+
+  &__container {
+    @include gutter($padding-top-full...);
+    display: flex;
+    align-items: center;
   }
 
   &__date {
-    align-self: flex-start;
+    flex: 1;
   }
 
   &__share {
-    align-self: flex-end;
+
     display: none;
 
     @include breakpoint($bp-small) {
