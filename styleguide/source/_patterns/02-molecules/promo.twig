@@ -1,13 +1,9 @@
 {% set link = "https://www.google.com/" %}
-{% set classes = [
-  border ? "ama__promo--border",
-  background ? "ama__promo--background"
-] %}
 
 {% if not button %}
   <a href="{{ link }}" class="ama__promo--link ama__link--black">
 {% endif %}
-<div class="ama__promo {{ class }} {{ classes|join(' ') }}">
+<div class="ama__promo {{ class }} ama__promo--{{ style }}">
   {% block image %}
     {% if image %}
       <div class="ama__image">
