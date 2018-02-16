@@ -1,9 +1,11 @@
 {% set link = "https://www.google.com/" %}
 
 {% if not button %}
-  <a href="{{ link }}" class="ama__promo--link ama__link--black">
+  <a href="{{ link }}" class="ama__promo ama__promo--{{ style }}">
+{% else %}
+  <div class="ama__promo ama__promo--{{ style }}">
 {% endif %}
-<div class="ama__promo {{ class }} ama__promo--{{ style }}">
+
   {% block image %}
     {% if image %}
       <div class="ama__image">
@@ -18,5 +20,9 @@
   {% if button %}
     {% include '@atoms/button.twig' %}
   {% endif %}
-</div>
-{% if not button %}</a>{% endif %}
+
+{% if not button %}
+  </div>
+{% else %}
+  </a>
+{% endif %}
