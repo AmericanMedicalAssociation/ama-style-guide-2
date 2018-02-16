@@ -32,7 +32,7 @@ articleStub.small ? "ama__article-stub--small"
 {% macro metadata(articleStub) %}
   {% set metadata, paragraph, title_only = articleStub.metadata, articleStub.paragraph, articleStub.title_only%}
   {% if metadata and paragraph and not title_only %}
-    {% include "@molecules/article-metadata.twig" %}
+    {% include "@molecules/article-stub-metadata.twig" %}
   {% endif %}
 {% endmacro %}
 
