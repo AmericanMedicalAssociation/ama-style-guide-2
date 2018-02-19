@@ -44,8 +44,9 @@ This style guide is a compilation of [atomic components](http://bradfrost.com/bl
 This project will maintain a number of branches:
 
 - `develop` - the (uncompiled) working branch
-- [WIP] `gh-pages` - the compiled, publicly accessible “production” artifact
+- [WIP] `gh-pages` - the compiled, publicly accessible “production” artifact. Users can access the GitHub pages site [here](https://americanmedicalassociation.github.io/ama-style-guide-2/)
 - [WIP] `dev-assets` - the compiled, Drupal-consumed artifact for testing
+- `test-results` - the visual regression test results from the latest Travis run. Users can access the BackstopJS report [here](http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/test-results/html_report/index.html).
 - `master` - the compiled production release that gets tagged.
 
 For more detail on how to deploy to these branches, see [Creating a Release](https://github.com/AmericanMedicalAssociation/AMA-style-guide/blob/develop/docs/creating_a_release.md)
@@ -67,7 +68,7 @@ sudo npm install -g n
 sudo n stable
 ```
 
-\* Node versions higher than `v7.10.0` are not yet supported, so please exercise caution when using these instructions. 
+\* Node versions higher than `v7.10.0` are not yet supported, so please exercise caution when using these instructions.
 
 - Update npm
 
@@ -98,6 +99,6 @@ When adding new SVG icon assets:
 
 Inline CSS is bad because can affect other SVG files. Example: the `.st0`  class is included by Adobe Illustrator for some SVG icons. This can affect all the SVG files on the page that have a class called `.st0`.
 
-The tool of choice for optimizing .svg icons is SVGO. It's lightweight and fast. 
+The tool of choice for optimizing .svg icons is SVGO. It's lightweight and fast.
 - To install it, `cd` into your working project directory, and then run `npm install -g svgo`
 - After you install SVGO, run `svgo [point to your SVG assets directory path]`

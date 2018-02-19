@@ -23,6 +23,8 @@ If you are creating or updating a pattern be sure you have created or updated th
 
 For more information on visual regression testing review the [How do I run tests?](https://issues.ama-assn.org:8446/confluence/pages/viewpage.action?pageId=23298568) document in confluence.
 
+You can review the latest Travis test results on the `test-results` branch or in browser [here](http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/test-results/html_report/index.html).
+
 
 ## Relevant Screenshots/GIFs
 Use something like [Skitch](https://evernote.com/skitch/) or [GIPHY Capture](https://giphy.com/apps/giphycapture) to capture images/gifs to demonstrate behaviors.
