@@ -303,8 +303,9 @@ gulp.task('serve', function () {
   );
 });
 
-// Task: Start your production-process
-// Description: Type 'gulp' in the terminal
+// Task: Run visual regression tests
+// Description: Type 'gulp test' in the terminal
+// Create reference screenshots from `gh-pages`, build site, run backstop and stop browserSync
 gulp.task('test', function () {
   production = false;
   runSequence(
@@ -341,6 +342,13 @@ gulp.task('drupal-deploy', function () {
   config.deployment.branch = "dev-assets";
   // run default to build the code and then publish it to our branch
   runSequence('default', 'publish');
+});
+
+// Task: Deploy Travis results
+// Description: Push the results of running BackstopJS on Travis to a specific branch of the github repository,
+gulp.task('test-results', function () {
+  return gulp.src(config.deployment.local.test)
+    .pipe(ghPages({ branch: config.deployment.test}));
 });
 
 // Function: Tagging deployed code
