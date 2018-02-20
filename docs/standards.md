@@ -49,6 +49,7 @@ In order to maintain the traceability of our branches we **always** merge and **
 - Review the [Guidelines for Contributing](../.github/CONTRIBUTING.md)
 - Leave clear and descriptive testing instructions; examples,
     - [Good PR](https://github.com/AmericanMedicalAssociation/AMA-Corporate-site/pull/1262)
+- Run visual regression tests locally to ensure that the work does not introduce new bugs.
 
 ## PatternLab Standards
 ### How patterns are organized:
@@ -70,7 +71,7 @@ A molecule should include most of the markup and pull in atoms as necessary. Not
 
 #### Organisms
 An organism should be a section of a page, therefore if a component is visually a section of the page. Organisms should be very little markup, it should be mostly wrappers around molecules or atoms; examples,
-    - [Article Header](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-article-header)
+    - [Masthead](https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-masthead)
 
 #### Templates
 Templates will be used for the general layouts (e.g. regions of the page) but not molecules. These pages exist to show what a page layout will look like but does not include any patterns for any specific pages; examples,
@@ -209,9 +210,15 @@ All `pattern.md` files must include the following elements:
 - Utilize extends whenever possible
 - Sass rules:
 - A sass file for new patterns (?)
-- Units of measurement
-- Color names
 - Globbing is fine as long as source maps are still included
+
+#### Color Naming
+Upon changes to the color palette, color variables should be named according to the new color palette provided by the UX team (which should include names).
+
+#### Units of Measurement
+- Pixel dimensions are used for rules under five pixels
+- Pixel dimensions are used for dimensions that are fixed.
+- Font sizing is in `em`s
 
 ### Javascript
 - JS approach
