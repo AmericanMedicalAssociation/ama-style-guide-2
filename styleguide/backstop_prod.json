@@ -200,7 +200,7 @@
     {
       "label": "press-release-logos",
       "url": "http://localhost:3000/patterns/02-molecules-press-release-logos/02-molecules-press-release-logos.html",
-      "referenceUrl": "",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-press-release-logos/02-molecules-press-release-logos.html",
       "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
@@ -669,9 +669,12 @@
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
+  "casperFlags": [
+    "--ignore-ssl-errors=true",
+    "--ssl-protocol=any"
+  ],
   "engine": "phantomjs",
   "report": ["browser"],
   "cliExitOnFail": false,
-  "debug": false,
-  "port": 3001
+  "debug": false
 }
