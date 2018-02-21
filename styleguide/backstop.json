@@ -31,40 +31,119 @@
   "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
-      "label": "atoms-button",
-      "url": "http://localhost:3000/patterns/01-atoms-button/01-atoms-button.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/01-atoms-button/01-atoms-button.html",
-      "delay": 1000,
+      "label": "atoms-all",
+      "url": "http://localhost:3000/patterns/01-atoms/index.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/01-atoms/index.html",
+      "readySelector": "#sg-patterns",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        ".ama__button   "
+        "#sg-patterns"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
     },
     {
-      "label": "atoms-subtitle",
-      "url": "http://localhost:3000/patterns/01-atoms-subtitle/01-atoms-subtitle.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/01-atoms-subtitle/01-atoms-subtitle.html",
+      "label": "molecules-article-stub-metadata",
+      "url": "http://localhost:3000/patterns/02-molecules-article-metadata/02-molecules-article-metadata.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-metadata/02-molecules-article-metadata.html",
       "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        ".ama__subtitle"
+        ".ama__article-stub-metadata__date",
+        ".ama__article-stub-metadata__readtime"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
     },
     {
-      "label": "press-release-logos",
-      "url": "http://localhost:3000/patterns/02-molecules-press-release-logos/02-molecules-press-release-logos.html",
-      "referenceUrl": "",
+      "label": "molecules-article-stub-as-inline",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub-as-inline/02-molecules-article-stub-as-inline.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub-as-inline/02-molecules-article-stub-as-inline.html",
       "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        ".press-release-logos"
+        ".ama__article-stub--inline"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-article-stub",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub/02-molecules-article-stub.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub/02-molecules-article-stub.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__article-stub"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-article-stub-as-related-content",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub-as-related-content/02-molecules-article-stub-as-related-content.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub-as-related-content/02-molecules-article-stub-as-related-content.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__article-stub--related"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-article-stub-as-related",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub-as-related/02-molecules-article-stub-as-related.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub-as-related/02-molecules-article-stub-as-related.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__article-stub--related"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-article-stub-as-small-image",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub-as-small-image/02-molecules-article-stub-as-small-image.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub-as-small-image/02-molecules-article-stub-as-small-image.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__article-stub--small"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-article-stub-as-title-only",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub-as-title-only/02-molecules-article-stub-as-title-only.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub-as-title-only/02-molecules-article-stub-as-title-only.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__article-stub"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-article-stub-as-video",
+      "url": "http://localhost:3000/patterns/02-molecules-article-stub-as-video/02-molecules-article-stub-as-video.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-article-stub-as-video/02-molecules-article-stub-as-video.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__article-stub--small"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
@@ -109,6 +188,19 @@
       "requireSameDimensions": false
     },
     {
+      "label": "molecules-inline-block-copy",
+      "url": "http://localhost:3000/patterns/02-molecules-inline-block-copy/02-molecules-inline-block-copy.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-inline-block-copy/02-molecules-inline-block-copy.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__inline-block-copy"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
       "label": "molecules-partner-info",
       "url": "http://localhost:3000/patterns/02-molecules-partner-info/02-molecules-partner-info.html",
       "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-partner-info/02-molecules-partner-info.html",
@@ -122,14 +214,157 @@
       "requireSameDimensions": false
     },
     {
-      "label": "molecules-inline-bio",
-      "url": "http://localhost:3000/patterns/02-molecules-inline-bio/02-molecules-inline-bio.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-inline-bio/02-molecules-inline-bio.html",
-      "readySelector": ".ama__inline-bio",
+      "label": "molecules-ribbon-dropdown",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-dropdown/02-molecules-ribbon-dropdown.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-dropdown/02-molecules-ribbon-dropdown.html",
+      "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        ".ama__inline-bio"
+        ".ama__masthead"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "press-release-logos",
+      "url": "http://localhost:3000/patterns/02-molecules-press-release-logos/02-molecules-press-release-logos.html",
+      "referenceUrl": "",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".press-release-logos"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-ribbon-dropdown-mobile",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-dropdown-mobile/02-molecules-ribbon-dropdown-mobile.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-dropdown-mobile/02-molecules-ribbon-dropdown-mobile.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon__dropdown"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-ribbon-dropdown-user-menu-auth",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-dropdown-user-menu-auth/02-molecules-ribbon-dropdown-user-menu-auth.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-dropdown-user-menu-auth/02-molecules-ribbon-dropdown-user-menu-auth.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon__dropdown"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-ribbon-user-menu",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-user-menu/02-molecules-ribbon-user-menu.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-user-menu/02-molecules-ribbon-user-menu.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon_user_menu"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-ribbon-user-menu-logged-in",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-user-menu-logged-in/02-molecules-ribbon-user-menu-logged-in.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-user-menu-logged-in/02-molecules-ribbon-user-menu-logged-in.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon_user_menu"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-ribbon-dropdown-mobile-auth",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-dropdown-mobile-auth/02-molecules-ribbon-dropdown-mobile-auth.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-dropdown-mobile-auth/02-molecules-ribbon-dropdown-mobile-auth.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon__dropdown--trigger"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-social-share",
+      "url": "http://localhost:3000/patterns/02-molecules-social-share/02-molecules-social-share.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-social-share/02-molecules-social-share.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__social-share"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-tags",
+      "url": "http://localhost:3000/patterns/02-molecules-tags/02-molecules-tags.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-tags/02-molecules-tags.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__tags"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-tool",
+      "url": "http://localhost:3000/patterns/02-molecules-tool/02-molecules-tool.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-tool/02-molecules-tool.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__tool"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-tools-learn-more",
+      "url": "http://localhost:3000/patterns/02-molecules-tools-learn-more/02-molecules-tools-learn-more.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-tools-learn-more/02-molecules-tools-learn-more.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__tools__learn-more"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-tools-list",
+      "url": "http://localhost:3000/patterns/02-molecules-tools-list/02-molecules-tools-list.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-tools-list/02-molecules-tools-list.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__tools--list"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
@@ -142,7 +377,7 @@
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        ".ama__partner-list"
+        ".press-release-logos"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
@@ -174,6 +409,227 @@
       "requireSameDimensions": false
     },
     {
+      "label": "organisms-column-teaser",
+      "url": "http://localhost:3000/patterns/03-organisms-column-teaser/03-organisms-column-teaser.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-column-teaser/03-organisms-column-teaser.html",
+      "readySelector": ".ama__column-teaser",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__column-teaser"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-footer",
+      "url": "http://localhost:3000/patterns/03-organisms-footer/03-organisms-footer.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-footer/03-organisms-footer.html",
+      "readySelector": ".ama__footer",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__footer"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-four-up-teaser",
+      "url": "http://localhost:3000/patterns/03-organisms-four-up-teaser/03-organisms-four-up-teaser.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-four-up-teaser/03-organisms-four-up-teaser.html",
+      "readySelector": ".ama__four-up-teaser",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__four-up-teaser"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-lead-news",
+      "url": "http://localhost:3000/patterns/03-organisms-lead-news/03-organisms-lead-news.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-lead-news/03-organisms-lead-news.html",
+      "readySelector": ".ama__lead-news",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__lead-news"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-membership-with-cta",
+      "url": "http://localhost:3000/patterns/03-organisms-membership-with-cta/03-organisms-membership-with-cta.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-membership-with-cta/03-organisms-membership-with-cta.html",
+      "readySelector": ".ama__membership ",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__membership "
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-membership",
+      "url": "http://localhost:3000/patterns/03-organisms-membership/03-organisms-membership.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-membership/03-organisms-membership.html",
+      "readySelector": ".ama__membership--link ",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__membership--link "
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-partner-list",
+      "url": "http://localhost:3000/patterns/03-organisms-partner-list/03-organisms-partner-list.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-partner-list/03-organisms-partner-list.html",
+      "readySelector": ".ama__partner-list",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__partner-list"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-promo",
+      "url": "http://localhost:3000/patterns/03-organisms-promo/03-organisms-promo.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-promo/03-organisms-promo.html",
+      "readySelector": ".ama__promo",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__promo"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-promo-with-border",
+      "url": "http://localhost:3000/patterns/03-organisms-promo-with-border/03-organisms-promo-with-border.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-promo-with-border/03-organisms-promo-with-border.html",
+      "readySelector": ".ama__promo--border",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__promo--border"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-promo-with-cta",
+      "url": "http://localhost:3000/patterns/03-organisms-promo-with-cta/03-organisms-promo-with-cta.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-promo-with-cta/03-organisms-promo-with-cta.html",
+      "readySelector": ".ama__promo",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__promo"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-promo-with-image",
+      "url": "http://localhost:3000/patterns/03-organisms-promo-with-image/03-organisms-promo-with-image.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-promo-with-image/03-organisms-promo-with-image.html",
+      "readySelector": ".ama__promo",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__promo"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-ribbon",
+      "url": "http://localhost:3000/patterns/03-organisms-ribbon/03-organisms-ribbon.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-ribbon/03-organisms-ribbon.html",
+      "readySelector": ".ama__ribbon",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-ribbon-auth",
+      "url": "http://localhost:3000/patterns/03-organisms-ribbon-auth/03-organisms-ribbon-auth.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-ribbon-auth/03-organisms-ribbon-auth.html",
+      "readySelector": ".ama__ribbon",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-tools-block",
+      "url": "http://localhost:3000/patterns/03-organisms-tools-block/03-organisms-tools-block.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-tools-block/03-organisms-tools-block.html",
+      "readySelector": ".ama__tools-block ",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__tools-block "
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-wayfinder",
+      "url": "http://localhost:3000/patterns/03-organisms-wayfinder/03-organisms-wayfinder.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-wayfinder/03-organisms-wayfinder.html",
+      "readySelector": ".ama__wayfinder ",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__wayfinder "
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "organisms-wayfinder-referred",
+      "url": "http://localhost:3000/patterns/03-organisms-wayfinder-referred/03-organisms-wayfinder-referred.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-wayfinder-referred/03-organisms-wayfinder-referred.html",
+      "readySelector": ".ama__wayfinder ",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__wayfinder "
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "templates-three-column",
+      "url": "http://localhost:3000/patterns/04-templates-three-column/04-templates-three-column.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/04-templates-three-column/04-templates-three-column.html",
+      "readySelector": ".ama__layout--three-column ",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__layout--three-column "
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
       "label": "templates-two-column-right",
       "url": "http://localhost:3000/patterns/04-templates-two-column-right/04-templates-two-column-right.html",
       "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/04-templates-two-column-right/04-templates-two-column-right.html",
@@ -187,13 +643,15 @@
       "requireSameDimensions": false
     },
     {
-      "label": "topics-page",
-      "url": "http://localhost:3000/patterns/05-pages-topic/05-pages-topic.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-topic/05-pages-topic.html",
-      "delay": 5000,
+      "label": "pages-news",
+      "url": "http://localhost:3000/patterns/05-pages-news/05-pages-news.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-news/05-pages-news.html",
+      "readySelector": "body",
       "hideSelectors": [],
       "removeSelectors": [],
-      "selectors": [],
+      "selectors": [
+        "body"
+      ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
     },
@@ -201,7 +659,7 @@
       "label": "press-release",
       "url": "http://localhost:3000/patterns/05-pages-press-release/05-pages-press-release.html",
       "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-press-release/05-pages-press-release.html",
-      "delay": 5000,
+      "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [],
@@ -209,9 +667,9 @@
       "requireSameDimensions": false
     },
     {
-      "label": "news",
-      "url": "http://localhost:3000/patterns/05-pages-news/05-pages-news.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-news/05-pages-news.html",
+      "label": "topics-page",
+      "url": "http://localhost:3000/patterns/05-pages-topic/05-pages-topic.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/05-pages-topic/05-pages-topic.html",
       "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
