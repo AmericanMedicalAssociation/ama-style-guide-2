@@ -232,6 +232,9 @@ gulp.task( 'reference', function () {
 gulp.task( 'backstop', function () {
   return gulp.src('')
     .pipe(shell(['backstop test --config=backstop_prod.json']))
+    .on('error', function () {
+      process.exit(1)
+    });
 });
 
 // Task: Watch files
@@ -313,15 +316,7 @@ gulp.task('test', function () {
     'default',
     'browser-sync',
     'backstop'
-  ),
-  function(err) {
-    if (err) {
-      var exitCode = 2;
-      log('[ERROR] gulp build task failed', err);
-      log('[FAIL] gulp build task failed - exiting with code' + exitCode);
-      return process.exit(exitCode);
-    }
-  };
+  );
 });
 
 // Task: Publish static content
