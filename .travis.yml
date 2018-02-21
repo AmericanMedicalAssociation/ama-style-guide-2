@@ -3,6 +3,7 @@ addons:
 language: node_js
 node_js:
   - 7.10.0
+github-token: $GITHUB_TOKEN
 before_install:
   - git config --global user.email publish@travis.github
   - git config --global user.name "Travis"
@@ -14,4 +15,6 @@ install:
 script:
   - gulp test
 after_failure:
+  skip-clean: true
+  keep-history: true
   - gulp test-results
