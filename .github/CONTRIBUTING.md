@@ -17,6 +17,7 @@ If you would like to include commits from a different branch that has not been m
 
 * **All Pull Requests must follow the [Pull Request Template](PULL_REQUEST_TEMPLATE.md)**.
 * Encapsulate your work in the smallest discrete chunks possible.
+* Before creating a PR, run visual regression tests locally to ensure the work does not introduce any bugs into the codebase.
 * The title must be a simple imperative sentence; examples,
     * Good: Add Symfony code style documentation.
     * Bad: Adding Symfony code style documentation. [bad because it is declarative]
@@ -65,6 +66,7 @@ Commits must be atomic: the commit must be an indivisible and irreducible change
 ## Submitting work for review
 When you have finished development work on a ticket:
 
+1. Run visual regression tests locally to ensure the new work does not introduce any bugs into the codebase.
 1. In JIRA, change the ticket status from `In Progress` to `Development Complete`.
 1. Submit your PR to Github.
 1. Make sure that under "Assignees" you have assigned yourself to the PR.
@@ -84,8 +86,9 @@ When you have finished development work on a ticket:
     - Functionality: build your local environment. Check for expected behavior. The developer must have left some instructions for testing; follow these.
     - Visual QA: make sure nothing looks terribly broken. It's also usually a good idea to check against any style guide patterns linked in the "style guide" section of the PR template if applicable. Check responsive behavior. (Currently in our process, browser testing will be handled later.)
     - Code quality: follow [SG2 Standards](../docs/standards.md)! They're great! Individual repos have their own code standards, so be aware of those as well (Style Guide has a /docs folder, for Drupal follow Drupal best practices, etc.)
-5. On your local machine merge `develop` into the branch to preview how the branch will interact with the rest of the code base once merged. It's not necessary to push the merge commit. Repeat steps 3-4.
-6. Use the "Review" workflow features in GitHub to leave your review.
+5. Run visual regression tests locally to ensure the new code does not introduce any bugs.
+6. On your local machine merge `develop` into the branch to preview how the branch will interact with the rest of the code base once merged. It's not necessary to push the merge commit. Repeat steps 3-5.
+7. Use the "Review" workflow features in GitHub to leave your review.
     - If changes are requested or the PR is not ready to merge:
         - Change the label to 'question`.
         - Change Jira ticket/s status from `Development Complete` to `In Progress` to indicate that the developer still needs to make changes.
