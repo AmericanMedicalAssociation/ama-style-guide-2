@@ -348,7 +348,11 @@ gulp.task('drupal-deploy', function () {
 // Description: Push the results of running BackstopJS on Travis to a specific branch of the github repository,
 gulp.task('test-results', function () {
   return gulp.src(config.deployment.local.test)
-    .pipe(ghPages({ branch: config.deployment.test}));
+    .pipe(ghPages({
+      force: true,
+      message: "Travis CI test results for $TRAVIS_TEST_RESULT" 
+      branch: config.deployment.test
+    }));
 });
 
 // Function: Tagging deployed code
