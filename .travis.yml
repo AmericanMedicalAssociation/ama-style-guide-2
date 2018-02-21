@@ -4,6 +4,8 @@ language: node_js
 node_js:
   - 7.10.0
 before_install:
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
   - cd styleguide
   - composer install --no-interaction
   - npm i -g npm@5.6.0
