@@ -5,15 +5,15 @@
     flex-grow: 1;
   }
 
-  &__description {
-    @include gutter($padding-bottom-half...);
+  .ama__image,
+  .ama__video {
+    @include gutter($margin-bottom-half...);
   }
 
   &--related {
     @include ama-rules(1px, '', solid, $gray-50);
     @include gutter($padding-top-half...);
-    @include gutter($margin-top-full...);
-    @include gutter($margin-bottom-full...);
+    @include gutter($margin-top-half...);
 
     &:last-child {
       @include ama-rules(1px, 'bottom', solid, $gray-50);
@@ -28,6 +28,8 @@
     .ama__image,
     .ama__video {
       @extend .col-xs-3;
+      margin-bottom: 0;
+
       & > div {
         display: flex;
         align-items: center;
