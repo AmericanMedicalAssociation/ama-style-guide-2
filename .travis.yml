@@ -12,8 +12,6 @@ before_install:
 install:
   - npm install
 script:
-  - backstop reference
-  - gulp serve
-  - backstop test
+  - gulp test
 after_failure:
   - gulp test-results

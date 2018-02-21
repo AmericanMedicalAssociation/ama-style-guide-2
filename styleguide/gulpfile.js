@@ -225,13 +225,13 @@ gulp.task("copyTwigFiles", function() {
 // Create reference screenshots from `gh-pages` and `referenceUrl`
 gulp.task( 'reference', function () {
   return gulp.src('')
-    .pipe(shell(['backstop reference']))
+    .pipe(shell(['backstop reference --config=backstop_prod.json']))
 });
 
 // Run backstop to run tests
 gulp.task( 'backstop', function () {
   return gulp.src('')
-    .pipe(shell(['backstop test']))
+    .pipe(shell(['backstop test --config=backstop_prod.json']))
 });
 
 // Task: Watch files

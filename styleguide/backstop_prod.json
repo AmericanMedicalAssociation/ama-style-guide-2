@@ -1,29 +1,30 @@
 {
+  "id": "backstop_prod",
   "viewports": [
     {
       "label": "bp-xs",
       "width": 400,
-      "height": 480
+      "height": 3000
     },
     {
       "label": "bp-small",
       "width": 600,
-      "height": 480
+      "height": 3000
     },
     {
       "label": "bp-med",
       "width": 900,
-      "height": 1024
+      "height": 3000
     },
     {
       "label": "bp-large",
       "width": 1200,
-      "height": 1024
+      "height": 3000
     },
     {
       "label": "bp-xl",
       "width": 1400,
-      "height": 1024
+      "height": 3000
     }
   ],
   "scenarios": [
@@ -35,8 +36,7 @@
       "hideSelectors": [],
       "removeSelectors": [],
       "selectors": [
-        ".ama__article-stub-metadata__date",
-        ".ama__article-stub-metadata__readtime"
+        "body"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
@@ -142,7 +142,7 @@
       "selectors": [
         ".ama__inline-bio"
       ],
-      "misMatchThreshold" : 3,
+      "misMatchThreshold" : 1,
       "requireSameDimensions": false
     },
     {
@@ -155,7 +155,7 @@
       "selectors": [
         ".ama__info-card"
       ],
-      "misMatchThreshold" : 3,
+      "misMatchThreshold" : 1,
       "requireSameDimensions": false
     },
     {
@@ -168,7 +168,7 @@
       "selectors": [
         ".ama__info-card"
       ],
-      "misMatchThreshold" : 3,
+      "misMatchThreshold" : 1,
       "requireSameDimensions": false
     },
     {
@@ -198,19 +198,6 @@
       "requireSameDimensions": false
     },
     {
-      "label": "molecules-ribbon-dropdown",
-      "url": "http://localhost:3000/patterns/02-molecules-ribbon-dropdown/02-molecules-ribbon-dropdown.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-dropdown/02-molecules-ribbon-dropdown.html",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectors": [
-        ".ama__masthead"
-      ],
-      "misMatchThreshold" : 1,
-      "requireSameDimensions": false
-    },
-    {
       "label": "press-release-logos",
       "url": "http://localhost:3000/patterns/02-molecules-press-release-logos/02-molecules-press-release-logos.html",
       "referenceUrl": "",
@@ -219,6 +206,19 @@
       "removeSelectors": [],
       "selectors": [
         ".press-release-logos"
+      ],
+      "misMatchThreshold" : 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "molecules-ribbon-dropdown",
+      "url": "http://localhost:3000/patterns/02-molecules-ribbon-dropdown/02-molecules-ribbon-dropdown.html",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/02-molecules-ribbon-dropdown/02-molecules-ribbon-dropdown.html",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectors": [
+        ".ama__ribbon__dropdown"
       ],
       "misMatchThreshold" : 1,
       "requireSameDimensions": false
@@ -369,7 +369,7 @@
     {
       "label": "organisms-masthead",
       "url": "http://localhost:3000/patterns/03-organisms-masthead/03-organisms-masthead.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-masthead",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-masthead/03-organisms-masthead.html",
       "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
@@ -382,7 +382,7 @@
     {
       "label": "organisms-masthead-with-subtitle",
       "url": "http://localhost:3000/patterns/03-organisms-masthead-with-subtitle/03-organisms-masthead-with-subtitle.html",
-      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/?p=organisms-masthead-with-subtitle",
+      "referenceUrl": "https://americanmedicalassociation.github.io/ama-style-guide-2/patterns/03-organisms-masthead-with-subtitle/03-organisms-masthead-with-subtitle.html",
       "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
