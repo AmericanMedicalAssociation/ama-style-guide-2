@@ -350,7 +350,7 @@ gulp.task('test-results', function () {
   return gulp.src(config.deployment.local.test)
     .pipe(ghPages({
       force: true,
-      message: "Travis CI test results for $TRAVIS_TEST_RESULT" 
+      message: "Travis CI test results for $TRAVIS_TEST_RESULT",
       branch: config.deployment.test
     }));
 });
