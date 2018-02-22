@@ -14,6 +14,7 @@ install:
   - npm install
 script:
   - gulp test
+before_cache:
+  - skip_cleanup: true
 after_failure:
-  skip_cleanup: true
   - gulp test-results
