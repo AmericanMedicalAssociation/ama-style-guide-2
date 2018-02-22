@@ -14,6 +14,8 @@ h1,
 %ama__h1 {
   @include type($myriad-pro, $font-weight-bold);
   @include font-size($h1-font-sizes);
+  @include gutter($margin-bottom-full...);
+
 }
 
 h2.news,
@@ -21,6 +23,7 @@ h2.news,
 %ama__h2 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h2-font-sizes);
+  @include gutter($margin-bottom-half...);
 }
 
 h3,
@@ -28,6 +31,7 @@ h3,
 %ama__h3 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h3-font-sizes);
+  @include gutter($margin-bottom-half...);
 }
 
 h4,
