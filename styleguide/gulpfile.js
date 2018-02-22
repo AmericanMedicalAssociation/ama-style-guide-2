@@ -274,11 +274,12 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    ['scripts', 'fonts', 'images', 'sass'],
+    ['fonts', 'images'],
     'patternlab',
     'styleguide',
     'copyTwigFiles',
     'sass',
+    'scripts',
     callback
   );
 });
