@@ -343,6 +343,7 @@ gulp.task('tag', function () {
   return gulp.src(config.versioning.files)
   // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
+
     // Tag it.
     .pipe(tagversion())
     // Push tag.
