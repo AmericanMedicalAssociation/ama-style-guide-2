@@ -15,4 +15,5 @@ install:
 script:
   - gulp test
 after_failure:
+  skip_cleanup: true
   - gulp test-results

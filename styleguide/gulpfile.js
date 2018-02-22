@@ -353,7 +353,7 @@ gulp.task('test-results', function () {
     .pipe(ghPages({
       force: true,
       origin: "https://${GITHUB_TOKEN}@github.com/AmericanMedicalAssociation/ama-style-guide-2.git",
-      cacheDir: config.deployment.local.test,
+      cacheDir: "./backstop_data",
       branch: config.deployment.test
     }));
 });
