@@ -566,7 +566,8 @@ h1,
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 900;
   font-size: 1.4em;
-  line-height: 1.143; }
+  line-height: 1.143;
+  margin-bottom: 20px; }
   @media screen and (min-width: 37.5em) {
     h1,
     .ama__h1,
@@ -585,6 +586,11 @@ h1,
     .ama__page-title {
       font-size: 2.111em;
       line-height: 1.111; } }
+  @media (min-width: 56.25em) {
+    h1,
+    .ama__h1,
+    .ama__page-title {
+      margin-bottom: 28px; } }
 
 h2.news,
 .ama__h2,
@@ -592,7 +598,8 @@ h2.news,
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.4em;
-  line-height: 1.143; }
+  line-height: 1.143;
+  margin-bottom: 10px; }
   @media screen and (min-width: 37.5em) {
     h2.news,
     .ama__h2,
@@ -611,6 +618,11 @@ h2.news,
     .ama__subtitle {
       font-size: 1.444em;
       line-height: 1.192; } }
+  @media (min-width: 56.25em) {
+    h2.news,
+    .ama__h2,
+    .ama__subtitle {
+      margin-bottom: 14px; } }
 
 h3,
 .ama__h3,
@@ -618,7 +630,8 @@ h3,
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.1em;
-  line-height: 1.182; }
+  line-height: 1.182;
+  margin-bottom: 10px; }
   @media screen and (min-width: 37.5em) {
     h3,
     .ama__h3,
@@ -637,10 +650,15 @@ h3,
     .ama__inline-bio__meta {
       font-size: 1.222em;
       line-height: 1.182; } }
+  @media (min-width: 56.25em) {
+    h3,
+    .ama__h3,
+    .ama__inline-bio__meta {
+      margin-bottom: 14px; } }
 
 h4,
 .ama__h4,
-.ama__masthead__link {
+.ama__masthead__content__link {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 0.9;
@@ -648,19 +666,19 @@ h4,
   @media screen and (min-width: 37.5em) {
     h4,
     .ama__h4,
-    .ama__masthead__link {
+    .ama__masthead__content__link {
       font-size: 0.9;
       line-height: 1.6; } }
   @media screen and (min-width: 56.25em) {
     h4,
     .ama__h4,
-    .ama__masthead__link {
+    .ama__masthead__content__link {
       font-size: 1.556em;
       line-height: 1.25; } }
   @media screen and (min-width: 75em) {
     h4,
     .ama__h4,
-    .ama__masthead__link {
+    .ama__masthead__content__link {
       font-size: 1.556em;
       line-height: 1.25; } }
 
@@ -830,12 +848,12 @@ button {
   .ama__button:hover,
   button:hover {
     border-color: #46166B;
-    background-color: #6B4589;
+    background-color: #9073A6;
     color: #ffffff; }
   
   .ama__button:hover,
   button:hover {
-    background-color: #6B4589; }
+    background-color: #9073A6; }
   
   .ama__button--secondary,
   button--secondary {
@@ -886,7 +904,7 @@ button {
     .ama__button--secondary:hover,
     button--secondary:hover {
       border-color: #46166B;
-      background-color: #6B4589;
+      background-color: #9073A6;
       color: #ffffff; }
     
     .ama__button--secondary:hover,
@@ -944,12 +962,12 @@ button {
     .ama__button--block:hover,
     button--block:hover {
       border-color: #46166B;
-      background-color: #6B4589;
+      background-color: #9073A6;
       color: #ffffff; }
     
     .ama__button--block:hover,
     button--block:hover {
-      background-color: #6B4589; }
+      background-color: #9073A6; }
   
   .ama__button--small,
   button--small {
@@ -1000,12 +1018,12 @@ button {
     .ama__button--small:hover,
     button--small:hover {
       border-color: #46166B;
-      background-color: #6B4589;
+      background-color: #9073A6;
       color: #ffffff; }
     
     .ama__button--small:hover,
     button--small:hover {
-      background-color: #6B4589; }
+      background-color: #9073A6; }
     
     .ama__button--small breakpoint($bp-med),
     button--small breakpoint($bp-med) {
@@ -1015,8 +1033,6 @@ button {
   color: #5C5C5C; }
 
 .date-block {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 900;
   text-transform: uppercase; }
 
 /* Define the Sassy Map called $icons */
@@ -1289,7 +1305,7 @@ a {
   text-decoration: underline;
   outline: 0; }
   a:hover, a:focus {
-    color: #6B4589; }
+    background-color: #9073A6; }
   a svg {
     height: 22px;
     width: 22px;
@@ -1303,7 +1319,8 @@ a {
     color: #000000; }
   .ama__link--black:active, .ama__link--black:hover, .ama__link--black:focus {
     color: #000000;
-    text-decoration: underline; }
+    text-decoration: underline;
+    background-color: transparent; }
 
 .ama__link--white {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -1313,23 +1330,25 @@ a {
     color: #ffffff; }
   .ama__link--white:active, .ama__link--white:hover, .ama__link--white:focus {
     color: #ffffff;
-    text-decoration: underline; }
+    text-decoration: underline;
+    background-color: transparent; }
 
 .ama__link--blue,
-.ama__masthead__link {
+.ama__masthead__content__link {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none; }
   .ama__link--blue:link, .ama__link--blue:visited,
-  .ama__masthead__link:link,
-  .ama__masthead__link:visited {
+  .ama__masthead__content__link:link,
+  .ama__masthead__content__link:visited {
     color: #027DBC; }
   .ama__link--blue:active, .ama__link--blue:hover, .ama__link--blue:focus,
-  .ama__masthead__link:active,
-  .ama__masthead__link:hover,
-  .ama__masthead__link:focus {
+  .ama__masthead__content__link:active,
+  .ama__masthead__content__link:hover,
+  .ama__masthead__content__link:focus {
     color: #3597C9;
-    text-decoration: underline; }
+    text-decoration: underline;
+    background-color: transparent; }
 
 .ama__link--purple {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -1339,7 +1358,8 @@ a {
     color: #46166B; }
   .ama__link--purple:active, .ama__link--purple:hover, .ama__link--purple:focus {
     color: #46166B;
-    text-decoration: underline; }
+    text-decoration: underline;
+    background-color: transparent; }
 
 .ama__page-title {
   padding-top: 20px; }
@@ -1681,7 +1701,7 @@ figcaption {
     width: 100%;
     background-color: #46166B; }
   .ama__ribbon__dropdown--trigger.is-active {
-    background-color: #6B4589; }
+    background-color: #9073A6; }
     .ama__ribbon__dropdown--trigger.is-active .icon svg {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
@@ -2136,45 +2156,56 @@ figcaption {
           padding: 0; } }
 
 .ama__masthead {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-bottom: 1px solid #7F7F7F; }
-  .ama__masthead__link {
-    -ms-flex-item-align: left;
-        align-self: left;
-    text-transform: uppercase;
-    padding: 20px 0 10px; }
-    @media (min-width: 56.25em) {
-      .ama__masthead__link {
-        padding: 10px 0 20px; } }
-    @media (min-width: 87.5em) {
-      .ama__masthead__link {
-        padding: 28px 0; } }
-  .ama__masthead__container {
-    padding-top: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    @media (min-width: 56.25em) {
-      .ama__masthead__container {
-        padding-top: 28px; } }
-  .ama__masthead__date {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
-  .ama__masthead__share {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr; }
+  @media (min-width: 75em) {
+    .ama__masthead {
+      grid-template-columns: 1fr 6fr 2.5fr; } }
+  .ama__masthead__sidebar {
     display: none; }
+    @media (min-width: 56.25em) {
+      .ama__masthead__sidebar {
+        display: block;
+        grid-column: 1; } }
+  .ama__masthead__content {
+    border-bottom: 1px solid #5C5C5C;
+    grid-column: 1; }
     @media (min-width: 37.5em) {
-      .ama__masthead__share {
-        display: inline-block; } }
+      .ama__masthead__content {
+        grid-column: 2/5; } }
+    .ama__masthead__content__link {
+      -ms-flex-item-align: left;
+          align-self: left;
+      text-transform: uppercase;
+      padding: 20px 0 10px; }
+      @media (min-width: 56.25em) {
+        .ama__masthead__content__link {
+          padding: 10px 0 20px; } }
+      @media (min-width: 87.5em) {
+        .ama__masthead__content__link {
+          padding: 28px 0; } }
+    .ama__masthead__content__container {
+      padding-top: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      @media (min-width: 56.25em) {
+        .ama__masthead__content__container {
+          padding-top: 28px; } }
+    .ama__masthead__content__date {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+    .ama__masthead__content__share {
+      display: none; }
+      @media (min-width: 37.5em) {
+        .ama__masthead__content__share {
+          display: inline-block; } }
 
 .ama__membership {
   background: #EDEDED;
