@@ -278,11 +278,12 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    ['scripts', 'fonts', 'images', 'sass'],
+    ['fonts', 'images'],
     'patternlab',
     'styleguide',
     'copyTwigFiles',
     'sass',
+    'scripts',
     callback
   );
 });
@@ -346,6 +347,7 @@ gulp.task('tag', function () {
   return gulp.src(config.versioning.files)
   // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
+
     // Tag it.
     .pipe(tagversion())
     // Push tag.
