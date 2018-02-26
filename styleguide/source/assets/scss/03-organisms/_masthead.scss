@@ -2,7 +2,6 @@
   display: grid;
   display: -ms-grid;
   grid-template-columns: 1fr;
-  -ms-grid-columns: 1fr;
 
   @include breakpoint($bp-large min-width) {
     grid-template-columns: 1fr 6fr 2.5fr;
@@ -19,10 +18,13 @@
 
   &__content {
     @include ama-rules(1px, "bottom", $gray-64, solid);
-      grid-column: 1;
+      grid-column: 1/5;
 
     @include breakpoint($bp-small min-width) {
-      grid-column: 2/5;
+      &.indented {
+        grid-column: 2/5;
+      }
+
     }
 
     &__link {
