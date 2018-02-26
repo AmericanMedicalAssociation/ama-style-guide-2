@@ -126,7 +126,11 @@ gulp.task('sass', ['scss-lint'], function () {
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
-    .pipe(prefix('last 2 version'))
+    .pipe(prefix({
+      browsers: ['last 2 versions'],
+      grid: true,
+      cascade: false
+    }))
     .pipe(gulpif(production, rename({
       suffix: '.min'
     })))

@@ -1,17 +1,13 @@
 .ama__layout--three-column {
   display: grid;
-  display: -ms-grid;
   grid-template-columns: 100%;
 
   @include breakpoint($bp-small) {
     grid-template-columns: 2fr 1fr;
-    -ms-grid-columns: 2fr 1fr;
   }
 
   @include breakpoint($bp-med) {
     grid-template-columns: 1fr 2fr 1fr;
-    -ms-grid-columns: 1fr 2fr 1fr;
-    -ms-grid-rows: auto auto auto;
   }
 
   &__content-top {
@@ -26,33 +22,23 @@
     @include breakpoint($bp-med min-width) {
       grid-column: 1 / 5;
       grid-row: 1;
-      -ms-grid-column: 2;
-      -ms-grid-row: 1;
     }
   }
 
   &__page-content {
     grid-row: 2;
     grid-column: 1;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
 
     @include breakpoint($bp-small) {
       grid-row-start: 2;
       grid-row-end: 4;
       grid-column: 1;
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 4;
-      -ms-grid-column: 1;
     }
 
     @include breakpoint($bp-med) {
       grid-row: 2;
       grid-row-end: 4;
       grid-column: 2;
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 4;
-      -ms-grid-column: 2;
     }
   }
 }// end article
@@ -61,15 +47,11 @@
   &--primary {
     grid-row: 3;
     grid-column: 1;
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
 
     @include breakpoint($bp-small) {
-      margin-left: 28px;
+      @include gutter($margin-left-full...);
       grid-row: 2;
       grid-column: 2;
-      -ms-grid-row: 2;
-      -ms-grid-column: 2;
     }
 
     @include breakpoint($bp-med) {
@@ -77,32 +59,23 @@
       grid-row-start: 2;
       grid-row-end: 4;
       grid-column: 1;
-      margin-right: 28px;
-      -ms-grid-column: 1;
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 4;
+      @include gutter($margin-right-full...);
     }
   } // end aside.primary
 
   &--secondary {
     grid-row: 4;
     grid-column: 1;
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
 
     @include breakpoint($bp-small) {
-      margin-left: 28px;
+      @include gutter($margin-left-full...);
       grid-row: 3;
       grid-column: 2;
-      -ms-grid-row: 3;
-      -ms-grid-column: 2;
     }
 
     @include breakpoint($bp-med) {
       grid-row: 2;
       grid-column: 3;
-      -ms-grid-row: 2;
-      -ms-grid-column: 3;
     }
   } // end aside.secondary
 }
