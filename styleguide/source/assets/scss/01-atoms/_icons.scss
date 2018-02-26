@@ -47,6 +47,8 @@ $icons: (
     display: inline-block;
     background: url("../icons/svg/icon-" + $name + ".svg") no-repeat 0 0;
     background-size: 40px 50px;
+    min-height: 50px;
+    min-width: 50px;
     max-height: 50px;
     max-width: 50px;
   }
@@ -54,6 +56,8 @@ $icons: (
 
 @each $name in $icons {
   #atoms-icon-#{$name} svg {
+    min-height: 50px;
+    min-width: 50px;
     max-height: 50px;
     max-width: 50px;
   }
