@@ -1,15 +1,18 @@
 {%  set link, heading, subtitle, social = masthead.link, masthead.heading, masthead.subtitle, masthead.social %}
 
 <header class="ama__masthead">
+  <div class="ama__masthead__sidebar" role="complementary"></div>
+  <div class="ama__masthead__content" role="complementary">
     {% include "@atoms/link.twig" %}
     {% include "@atoms/heading.twig" %}
     {% include "@atoms/subtitle.twig" %}
-    <div class="ama__masthead__container">
-      <div class="ama__masthead__date">
+    <div class="ama__masthead__content__container">
+      <div class="ama__masthead__content__date">
         {% include "@atoms/date-block.twig" %}
       </div>
-      <div class="ama__masthead__share">
+      <div class="ama__masthead__content__share">
         {% include "@molecules/social-share.twig" %}
       </div>
     </div>
+  </div>
 </header>
