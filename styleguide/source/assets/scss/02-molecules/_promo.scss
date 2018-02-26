@@ -3,8 +3,11 @@
   @include gutter($padding-right-half...);
   @include gutter($padding-bottom-half...);
   @include gutter($padding-left-half...);
+  @include gutter($margin-bottom-full...);
   @include child-top-gutters($gutter-mobile / 2);
+  display: block;
   font-weight: $font-weight-semibold;
+  text-decoration: none;
 
   @include breakpoint($bp-med) {
     @include child-top-gutters($gutter / 2);
@@ -28,16 +31,24 @@
     max-width: 100%;
     height: auto;
   }
+
+  .ama__button--secondary {
+    width: 100%;
+  }
 }
 
-.ama__promo--link {
-  display: block;
-
-  &--border:hover {
-    background: $gray-7;
+a.ama__promo { // styling for when this pattern renders as a link.
+  &--background {
+    &:hover {
+      background: darken($gray-7, 8%); // from UX - #d9d9d9
+      color: black;
+    }
   }
 
-  &--background:hover {
-    background: $gray-50;
+  &--border {
+    &:hover {
+      background: $gray-7;
+      color: black;
+    }
   }
 }
