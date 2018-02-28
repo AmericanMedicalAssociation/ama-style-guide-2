@@ -17,6 +17,15 @@ a {
   }
 }
 
+aside {
+  a {
+    &:hover,
+    &:focus {
+      background: none; 
+    }
+  }
+}
+
 .ama__link--black,
 %ama__link--black {
   @include type($myriad-pro, $font-weight-regular);
