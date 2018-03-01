@@ -4,12 +4,7 @@
   @include gutter($padding-right-half...);
   @include gutter($padding-bottom-half...);
   @include gutter($padding-left-half...);
-  @include gutter($margin-bottom-full...);
   @include child-top-gutters($gutter-mobile / 2);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   @include breakpoint($bp-med) {
     @include child-top-gutters($gutter / 2);
