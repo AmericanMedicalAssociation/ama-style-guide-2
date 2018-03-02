@@ -1,6 +1,5 @@
 .ama__footer {
   @include gutter-all($padding-all-full...);
-  @include child-top-gutters($gutter);
   background-color: $gray-7;
 
   @include breakpoint($bp-large min-width) {
@@ -13,6 +12,15 @@
   .ama__rule--horizontal {
     border-color: $gray-64;
   }
+}
+
+.ama__footer__container {
+  @include child-top-gutters($gutter);
+}
+
+.ama__footer__menu-container {
+  @include gutter($margin-top-half...);
+  @include child-top-gutters($gutter / 2);
 }
 
 .ama__copyright,
@@ -30,11 +38,14 @@
 
 .ama__footer__menu-secondary-user {
   display: flex;
-  margin: 20px 0;
 
   ul {
     width: 50%;
   }
+}
+
+.ama__footer__menu-utility {
+  margin-top: 0;
 }
 
 .ama__footer__menu-utility li {
