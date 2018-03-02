@@ -4,11 +4,7 @@
   @include gutter($padding-right-half...);
   @include gutter($padding-bottom-half...);
   @include gutter($padding-left-half...);
-  @include child-top-gutters($gutter-mobile / 2);
-
-  @include breakpoint($bp-med) {
-    @include child-top-gutters($gutter / 2);
-  }
+  @include child-top-gutters($gutter / 2);
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
   & > * {
