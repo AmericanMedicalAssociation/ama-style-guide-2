@@ -5,11 +5,6 @@ a {
   text-decoration: underline;
   outline: 0;
 
-  &:hover,
-  &:focus {
-    background-color: $hoverPurple;
-  }
-
   svg {
     height: 22px;
     width: 22px;
@@ -17,13 +12,13 @@ a {
   }
 }
 
-aside {
-  a {
-    &:hover,
-    &:focus {
-      background: none; 
-    }
-  }
+*[class*="__page-content"] {
+ a {
+   &:hover,
+   &:focus {
+     background-color: $hoverPurple;
+   }
+ }
 }
 
 .ama__link--black,
