@@ -1,0 +1,33 @@
+.ama__membership {
+  background: $gray-7;
+  @include gutter($padding-top-half...);
+  @include gutter($padding-right-half...);
+  @include gutter($padding-bottom-half...);
+  @include gutter($padding-left-half...);
+  @include child-top-gutters($gutter / 2);
+
+  // Remove margins on child elements so that we can set consistent spacing elsewhere.
+  & > * {
+    margin-bottom: 0;
+  }
+
+  .ama__button {
+    width: 100%;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+}
+
+.ama__membership--link {
+  display: block;
+
+  &:hover {
+    color: $black;
+  }
+
+  .ama__membership:hover {
+    background: darken($gray-50, 5%);
+  }
+}

@@ -1,0 +1,16 @@
+.ama__press-release__logos {
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px;
+  }
+
+  & > * {
+    @include gutter($margin-bottom-full...);
+    max-width: 177px;
+  }
+}

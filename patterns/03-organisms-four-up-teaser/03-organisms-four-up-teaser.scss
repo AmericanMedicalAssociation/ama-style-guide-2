@@ -1,0 +1,43 @@
+.ama__four-up-teaser {
+  display: flex;
+  flex-direction: column;
+  @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint($bp-med) {
+    flex-wrap: nowrap;
+  }
+
+  .ama__article-stub {
+    @include gutter($margin-bottom-full...);
+    flex-grow: 1;
+    flex-basis: 0;
+
+    @include breakpoint($bp-small $bp-med) {
+      &:nth-of-type(even) {
+        @include gutter($padding-left-quarter...);
+      }
+
+      &:nth-of-type(odd) {
+        @include gutter($padding-right-quarter...);
+      }
+    }
+
+    &__copy > h2 {
+      @extend %ama__type--small;
+    }
+
+    @include breakpoint($bp-med) {
+      @include gutter($padding-right-half...);
+      &:last-child {
+        padding: 0;
+      }
+    }
+  }
+}
+

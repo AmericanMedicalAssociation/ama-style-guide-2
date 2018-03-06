@@ -1,0 +1,65 @@
+.ama__masthead {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr;
+
+  @include breakpoint($bp-large min-width) {
+    grid-template-columns: 1fr 6fr 2.5fr;
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include breakpoint($bp-med min-width) {
+      display: block;
+      grid-column: 1;
+    }
+  }
+
+  &__content {
+    @include ama-rules(1px, "bottom", $gray-64, solid);
+      grid-column: 1/5;
+
+    @include breakpoint($bp-small min-width) {
+      &--indented {
+        grid-column: 2/5;
+      }
+
+    }
+
+    &__link {
+      @extend %ama__link--blue;
+      @extend %ama__h4;
+      align-self: left;
+      text-transform: uppercase;
+      padding: $gutter-mobile 0 $gutter-mobile/2;
+
+      @include breakpoint($bp-med) {
+        padding: $gutter-mobile/2 0 $gutter-mobile;
+      }
+
+      @include breakpoint($bp-xl) {
+        padding: $gutter 0;
+      }
+    }
+
+    &__container {
+      @include gutter($padding-top-full...);
+      display: flex;
+      align-items: center;
+    }
+
+    &__date {
+      flex: 1;
+    }
+
+    &__share {
+
+      display: none;
+
+      @include breakpoint($bp-small) {
+        display: inline-block;
+      }
+    }
+  }
+}
