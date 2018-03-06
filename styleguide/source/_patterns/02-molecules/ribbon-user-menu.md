@@ -4,8 +4,8 @@ The user menu navigation present in the header ribbon.
 [EWL-4104](https://issues.ama-assn.org/browse/EWL-4104)
 
 ### Variant options
-* [user-menu](./?p=molecules/ribbon-user-menu)
-* [user-menu](./?p=molecules/ribbon-user-menu-logged-in)
+* [user-menu](?p=molecules/ribbon-user-menu)
+* [user-menu](?p=molecules/ribbon-user-menu-logged-in)
 
 ### Variables
 ~~~
