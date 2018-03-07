@@ -8,10 +8,10 @@ The dropdown navigation present in the header ribbon.
 * Main Nav (assets/js/nav.js)
 
 ### Variant options
-* [user-menu](./?p=molecules/ribbon-dropdown~user-menu)
-* [user-menu](./?p=molecules/ribbon-dropdown~user-menu-auth)
-* [user-menu](./?p=molecules-ribbon-dropdown-mobile-auth)
-* [user-menu](./?molecules-ribbon-dropdown-mobile)
+* [user-menu](?p=molecules/ribbon-dropdown~user-menu)
+* [user-menu](?p=molecules/ribbon-dropdown~user-menu-auth)
+* [user-menu](?p=molecules-ribbon-dropdown-mobile-auth)
+* [user-menu](?p=molecules-ribbon-dropdown-mobile)
 
 ### Variables
 ~~~
