@@ -1,13 +1,27 @@
 .ama__tools__learn-more {
-  @include gutter($margin-bottom-full...);
 
   > h5 {
-    @include gutter($padding-bottom-half...);
-    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-quarter...);
+    padding-top: 0;
   }
 
   ul {
     list-style-type: disc;
     @include gutter($padding-left-full...);
+  }
+}
+
+/* Workaround - here we override the specificity from the child-top-gutters mixin.
+ * The mixin applies a top margin to all children of an element.
+ * Since `.ama__tools__learn-more` is a sibling of the Tools block rather than a child of it,
+ * it's being given a top margin unintentionally.
+ * @todo - this is a workaround and should be remediated if the markup/pattern structure is corrected.
+ */
+.ama__layout--three-column__sidebar--primary,
+.ama__layout--three-column__sidebar--secondary,
+.ama__layout--two-column__sidebar--primary,
+.ama__layout--two-column__sidebar--secondary  {
+  .ama__tools__learn-more {
+    @include gutter($margin-top-half...);
   }
 }

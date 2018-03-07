@@ -44,6 +44,11 @@
 }// end article
 
 .ama__layout--three-column__sidebar {
+  &--primary,
+  &--secondary {
+    @include child-top-gutters($gutter);
+  }
+
   &--primary {
     grid-row: 3;
     grid-column: 1;
