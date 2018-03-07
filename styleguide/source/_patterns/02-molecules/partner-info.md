@@ -4,7 +4,7 @@ title: 'Partner Information'
 ---
 
 ### Description
-Partner Information molecules contain a logo, a ["Information Card as Media Contact"](/?p=molecules-info-card-as-media-contact), and a boilerplate description consisting of a heading and a paragraph.
+Partner Information molecules contain a logo, a ["Information Card as Media Contact"](?p=molecules-info-card-as-media-contact), and a boilerplate description consisting of a heading and a paragraph.
 
 [EWL-4487](https://issues.ama-assn.org/browse/EWL-4487)
 
