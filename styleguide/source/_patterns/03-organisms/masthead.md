@@ -9,7 +9,7 @@ The Masthead includes a People Bio, a group of social icons/links, a date, a cat
 [EWL-4485](https://issues.ama-assn.org/browse/EWL-4485)
 
 ### Variants
-- [Masthead with Subtitle](/?p=organisms-masthead-with-subtitle)
+- [Masthead with Subtitle](?p=organisms-masthead-with-subtitle)
 
 ### Variables
 ~~~

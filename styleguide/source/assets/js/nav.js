@@ -15,7 +15,7 @@
       $('.ama__ribbon__dropdown').each(function () {
         var class_active = 'is-active';
 
-        $('.ama__ribbon__dropdown--trigger', this).on('click', function(e) {
+        $('.ama__ribbon__dropdown__trigger', this).on('click', function(e) {
           e.stopPropagation();
           // Unfocus on the dropdown.
           $(this).blur();
@@ -26,7 +26,7 @@
         });
 
         $(document).click( function(){
-          $('.ama__ribbon__dropdown--trigger', this).removeClass(class_active).children().removeClass(class_active)
+          $('.ama__ribbon__dropdown__trigger', this).removeClass(class_active).children().removeClass(class_active)
         });
       })
     }

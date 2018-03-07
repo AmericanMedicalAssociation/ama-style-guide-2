@@ -5,7 +5,7 @@ el: ".ama__promo"
 
 This variant shows an example of the Promo pattern when an image is included.
 
-See the base pattern for more info: [Promo](/?p=molecules-promo)
+See the base pattern for more info: [Promo](?p=molecules-promo)
 
 ### Tickets
 [EWL-4514](https://issues.ama-assn.org/browse/EWL-4514)
