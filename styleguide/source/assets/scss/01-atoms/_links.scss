@@ -5,16 +5,20 @@ a {
   text-decoration: underline;
   outline: 0;
 
-  &:hover,
-  &:focus {
-    background-color: $hoverPurple;
-  }
-
   svg {
     height: 22px;
     width: 22px;
     vertical-align: middle;
   }
+}
+
+*[class*="__page-content"] {
+ a {
+   &:hover,
+   &:focus {
+     background-color: $hoverPurple;
+   }
+ }
 }
 
 .ama__link--black,
