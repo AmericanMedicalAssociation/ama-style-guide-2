@@ -37,6 +37,11 @@
 } // end article
 
 .ama__layout--two-column__sidebar {
+  &--primary,
+  &--secondary {
+    @include child-top-gutters($gutter);
+  }
+
   &--primary {
     @include gutter($padding-top-full...);
     grid-column: 1 / 5;
