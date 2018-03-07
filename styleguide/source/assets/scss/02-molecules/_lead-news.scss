@@ -1,3 +1,8 @@
 .ama__lead-news {
   @include child-top-gutters($gutter / 2);
+
+  .ama__article-stub:not(:first-child) {
+    @include ama-rules(1px, '', solid, $gray-50);
+    @include gutter($padding-top-half...);
+  }
 }
