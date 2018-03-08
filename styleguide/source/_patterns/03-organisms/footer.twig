@@ -1,3 +1,5 @@
+{% set heading = heading|merge({ "level": "2", "class": "ama__h2 ama__mission-statement" }) %}
+
 <footer class="ama__footer">
   <div class="container ama__footer__container">
     {% include "@atoms/heading.twig" %}
@@ -7,6 +9,7 @@
 
       <div class="ama__rule ama__rule--horizontal"></div>
 
+      {% block menus %}
         <div class="ama__footer__menu-secondary-user">
           {% for column in menus.secondaryUser %}
             <ul>
@@ -18,17 +21,20 @@
             </ul>
           {% endfor %}
         </div>
+      {% endblock menus %}
 
     </div>
 
     {% include "@atoms/copyright.twig" %}
 
-    <ul class="ama__footer__menu-utility">
-      {% for link in menus.utility %}
-        <li>
-          {% include "@atoms/link.twig" with {"class" : "ama__link--black"} %}
-        </li>
-      {% endfor %}
-    </ul>
+    {% block utility %}
+      <ul class="ama__footer__menu-utility">
+        {% for link in menus.utility %}
+          <li>
+            {% include "@atoms/link.twig" with {"class" : "ama__link--black"} %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
   </div>
 </footer>
