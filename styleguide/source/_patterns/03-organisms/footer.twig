@@ -1,39 +1,34 @@
 <footer class="ama__footer">
   <div class="container ama__footer__container">
-    <h2 class="ama__mission-statement">The AMA promotes the art and science of medicine and the betterment of public health.</h2>
+    {% include "@atoms/heading.twig" %}
 
     <div class="ama__footer__menu-container">
-      {% block social %}
-        {% include "@molecules/social-share.twig" %}
-      {% endblock %}
+      {% include "@molecules/social-share.twig" %}
+
       <div class="ama__rule ama__rule--horizontal"></div>
 
-      {% block menus %}
         <div class="ama__footer__menu-secondary-user">
           {% for column in menus.secondaryUser %}
             <ul>
               {% for link in column %}
                 <li>
-                  {% include "@atoms/link.twig" with "class" : "ama__link--black" %}
+                  {% include "@atoms/link.twig" with {"class" : "ama__link--black"} %}
                 </li>
               {% endfor %}
             </ul>
           {% endfor %}
         </div>
-      {% endblock menus %}
 
     </div>
 
     {% include "@atoms/copyright.twig" %}
 
-    {% block utility %}
-      <ul class="ama__footer__menu-utility">
-        {% for link in menus.utility %}
-          <li>
-            {% include "@atoms/link.twig" with "class" : "ama__link--black" %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endblock %}
+    <ul class="ama__footer__menu-utility">
+      {% for link in menus.utility %}
+        <li>
+          {% include "@atoms/link.twig" with {"class" : "ama__link--black"} %}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </footer>
