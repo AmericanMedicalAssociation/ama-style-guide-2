@@ -30,9 +30,12 @@ articleStub.small ? "ama__article-stub--small"
 {% endmacro %}
 
 {% macro metadata(articleStub) %}
-  {% set metadata, paragraph, title_only = articleStub.metadata, articleStub.paragraph, articleStub.title_only%}
+  {% set metadata, paragraph, title_only = articleStub.metadata, articleStub.paragraph, articleStub.title_only %}
+  
   {% if metadata and paragraph and not title_only %}
-    {% include "@molecules/article-stub-metadata.twig" %}
+    <div class="ama__article-stub__metadata">
+      {% include "@molecules/article-stub-metadata.twig" %}
+    </div>
   {% endif %}
 {% endmacro %}
 
@@ -60,10 +63,8 @@ articleStub.small ? "ama__article-stub--small"
       {{ _self.description(articleStub) }}
     {% endblock %}
 
-    <div class="ama__article-stub__metadata">
       {% block articleStub_metadata %}
         {{ _self.metadata(articleStub) }}
       {% endblock %}
-    </div>
   </div>
 </div>
