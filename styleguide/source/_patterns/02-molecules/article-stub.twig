@@ -42,9 +42,10 @@ articleStub.small ? "ama__article-stub--small"
 {% macro title(article_title) %}
   {% set link = article_title.link %}
   {% if link %}
-    <h3>
-      {% include "@atoms/link.twig" %}
-    </h3>
+    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+      <h3>
+        {% include "@atoms/link.twig" %}
+      </h3>
   {% endif %}
 {% endmacro %}
 
