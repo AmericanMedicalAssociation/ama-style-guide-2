@@ -1,10 +1,9 @@
 .ama__wayfinder {
   border-bottom: solid 1px $gray-50;
 
+
   .ama__wayfinder--referrer {
-    align-self: center;
-    flex-basis: 50%;
-    display: flex;
+    display: inline-block;
 
     &__link-back a {
       display: none;
@@ -31,12 +30,11 @@
     @include breakpoint($bp-small) {
       display: flex;
       flex-direction: row;
+      justify-content: center;
     }
   }
 
   &__logo {
-    align-items: center;
-    display: flex;
-    flex-basis: 50%;
+    display: inline-block;
   }
 }
