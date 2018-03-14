@@ -11,7 +11,7 @@ articleStub.small ? "ama__article-stub--small"
       {% include "@atoms/video.twig" %}
     {% else %}
       {% set image = articleStub.image %}
-      {% include "@atoms/image.twig"  with { 'class': 'ama__image'} %}
+      {% include "@atoms/image.twig"  with { 'class': 'ama__image' } %}
     {% endif %}
   {% endif %}
 {% endmacro %}
@@ -32,7 +32,9 @@ articleStub.small ? "ama__article-stub--small"
 {% macro metadata(articleStub) %}
   {% set metadata, paragraph, title_only = articleStub.metadata, articleStub.paragraph, articleStub.title_only%}
   {% if metadata and paragraph and not title_only %}
-    {% include "@molecules/article-stub-metadata.twig" %}
+    <div class="ama__article-stub__metadata">
+      {% include "@molecules/article-stub-metadata.twig" %}
+    </div>
   {% endif %}
 {% endmacro %}
 
@@ -40,9 +42,10 @@ articleStub.small ? "ama__article-stub--small"
 {% macro title(article_title) %}
   {% set link = article_title.link %}
   {% if link %}
-    <h3>
-      {% include "@atoms/link.twig" %}
-    </h3>
+    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+      <h3>
+        {% include "@atoms/link.twig" %}
+      </h3>
   {% endif %}
 {% endmacro %}
 
@@ -52,18 +55,8 @@ articleStub.small ? "ama__article-stub--small"
   {% endblock %}
 
   <div class="ama__article-stub__copy">
-    {% block articleStub_title %}
-      {{ _self.title(articleStub) }}
-    {% endblock %}
-
-    {% block articleStub_description %}
-      {{ _self.description(articleStub) }}
-    {% endblock %}
-
-    <div class="ama__article-stub__metadata">
-      {% block articleStub_metadata %}
-        {{ _self.metadata(articleStub) }}
-      {% endblock %}
-    </div>
+    {{ _self.title(articleStub) }}
+    {{ _self.description(articleStub) }}
+    {{ _self.metadata(articleStub) }}
   </div>
 </div>
