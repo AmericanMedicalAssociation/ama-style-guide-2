@@ -20,12 +20,11 @@
     width: 100%;
     background-color: $purple;
 
-    &.is-active {
-      background-color: $hoverPurple;
-    }
 
-    &.is-active &__icon__arrow svg {
-      transform: rotate(180deg);
+    &.is-active &__icon  {
+      &__arrow svg {
+        transform: rotate(180deg);
+      }
     }
 
     &__mobile {
@@ -83,10 +82,6 @@
 
         @include breakpoint($bp-med) {
           color: $white;
-        }
-
-        &:hover {
-          background: $gray-7;
         }
       }
     }
