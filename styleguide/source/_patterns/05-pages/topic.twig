@@ -31,6 +31,6 @@
 {% endblock %}
 
 {% block footer %}
-  {% set menus, social = footer.menus, footer.social %}
+  {% set heading, menus, social = footer.heading, footer.menus, footer.social %}
   {% include '@organisms/footer.twig' %}
 {% endblock %}
