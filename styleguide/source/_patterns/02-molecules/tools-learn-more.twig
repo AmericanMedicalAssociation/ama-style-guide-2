@@ -6,7 +6,7 @@
   <ul>
     {% block learMoreLinks %}
       {% for link in learnMore.links %}
-        {% set link = link %}
+        {% set link = link|merge({ "class": "ama__link--black" }) %}
         <li>
           {% include '@atoms/link.twig' %}
         </li>
