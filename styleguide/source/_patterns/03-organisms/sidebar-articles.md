@@ -49,4 +49,5 @@ This pattern is a block that may optionally include:
     }
   ]
 }
+
 ~~~
