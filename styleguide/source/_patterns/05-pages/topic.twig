@@ -17,10 +17,7 @@
   {% include '@organisms/membership.twig' %}
   {% include '@organisms/tools-block.twig' %}
   {% include '@molecules/promo.twig' %}
-  {% set articleStub = articleStubOne %}
-  {% include '@molecules/article-stub.twig' %}
-  {% set articleStub = articleStubTwo %}
-  {% include '@molecules/article-stub.twig' %}
+  {% include '@organisms/sidebar-articles.twig' %}
 {% endblock %}
 
 {% block sidebarSecondary %}
@@ -31,6 +28,6 @@
 {% endblock %}
 
 {% block footer %}
-  {% set menus, social = footer.menus, footer.social %}
+  {% set heading, menus, social = footer.heading, footer.menus, footer.social %}
   {% include '@organisms/footer.twig' %}
 {% endblock %}
