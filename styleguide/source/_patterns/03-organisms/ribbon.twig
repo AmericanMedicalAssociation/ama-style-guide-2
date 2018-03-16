@@ -5,7 +5,7 @@
   <div class="container">
     {% include "@molecules/ribbon-dropdown.twig" %}
     <div class="ama__ribbon_user_menu__container">
-      {% set userMenu = ribbon.userMenu %}
+      {% set userMenu = ribbon.userMenu.links %}
       {% if userMenu is not empty %}
         {% include "@molecules/ribbon-user-menu.twig" %}
       {% endif %}
