@@ -10,7 +10,7 @@
 
   <div class="ama__inline-bio__text">
     {% for heading in bio.headings %}
-      {% set heading = heading({ "level": "3", "class": "ama__h3" }) %}
+      {% set heading = heading ? heading|merge({ "level": "3", "class": "ama__h3" }) : "" %}
       {% include "@atoms/heading.twig" %}
     {% endfor %}
 
