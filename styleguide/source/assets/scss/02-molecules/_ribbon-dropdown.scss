@@ -18,14 +18,14 @@
     min-width: 12.5em;
     padding: 15px;
     width: 100%;
+    border-left: 1px solid $gray-50;
     background-color: $purple;
 
-    &.is-active {
-      background-color: $hoverPurple;
-    }
 
-    &.is-active &__icon__arrow svg {
-      transform: rotate(180deg);
+    &.is-active &__icon  {
+      &__arrow svg {
+        transform: rotate(180deg);
+      }
     }
 
     &__mobile {
@@ -77,16 +77,13 @@
       }
 
       a {
+        @extend .ama__link--white;
         display: block;
         color: $black;
         padding: 8px 15px;
 
         @include breakpoint($bp-med) {
           color: $white;
-        }
-
-        &:hover {
-          background: $gray-7;
         }
       }
     }
