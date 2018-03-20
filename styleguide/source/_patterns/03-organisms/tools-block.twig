@@ -1,4 +1,12 @@
-{% set heading, tools, learnMore = toolsBlock.heading, toolsBlock.tools, toolsBlock.learnMore %}
+{% set
+  tools, learnMore, heading =
+  toolsBlock.tools,
+  toolsBlock.learnMore,
+  toolsBlock.heading|merge({
+    "level": "5",
+    "class": "ama__h5"
+  })
+%}
 <div class="ama__tools-block {{ class }}">
   {% block headingTools %}
     {% include "@atoms/heading.twig" %}
