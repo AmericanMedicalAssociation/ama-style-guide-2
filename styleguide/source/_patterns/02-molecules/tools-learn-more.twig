@@ -9,7 +9,6 @@
   <ul>
     {% block learMoreLinks %}
       {% for link in learnMore.links %}
-        {% set link = link %}
         <li>
           {% include '@atoms/link.twig' %}
         </li>
