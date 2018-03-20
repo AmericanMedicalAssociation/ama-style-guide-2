@@ -1,15 +1,12 @@
 {% set class = "ama__ribbon__dropdown__nav__menu" %}
 {% set ribbonDropdown = ribbon.ribbonDropdown %}
+{% set userMenu = ribbon.userMenu.loggedIn.links ? ribbon.userMenu.loggedIn.links : ribbon.userMenu %}
 
 <section class="ama__ribbon">
   <div class="container">
     {% include "@molecules/ribbon-dropdown.twig" %}
     <div class="ama__ribbon_user_menu__container">
-      {% set userMenu = ribbon.userMenu.links %}
-      {% if userMenu is not empty %}
-        {% include "@molecules/ribbon-user-menu.twig" %}
-      {% endif %}
-
+      {% include "@molecules/ribbon-user-menu.twig" %}
 
       {% set ribbonDropdown = ribbon.ribbonDropdown.userMenuDropdown %}
       {% if ribbon.ribbonDropdown.userMenuDropdown %}
