@@ -5,7 +5,7 @@
   button ? button : promo.button,
   image ? image : promo.image,
   paragraph ? paragraph : promo.paragraph,
-  heading ? heading : promo.heading
+  heading ? heading|merge({level: "2", class: "ama__h2"})
 %}
 
 {% if button %}
