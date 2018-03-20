@@ -22,6 +22,14 @@
     padding-left: 0;
     @extend .col-xs-12;
     @extend .col-sm-4;
+    @include gutter($padding-top-full...);
+    @include gutter($padding-right-full...);
+    @include gutter($padding-bottom-full...);
+    @include gutter($margin-right-full...);
+
+    @include breakpoint($bp-small) {
+      float: left;
+    }
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
