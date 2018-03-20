@@ -1,4 +1,7 @@
-{% set image, heading = bio.image, bio.heading %}
+{% set image, heading = bio.image, bio.heading|merge({
+  "level": "4",
+  "class": "ama__inline-bio__title ama__link--blue"
+}) %}
 
 <aside class="ama__inline-bio">
   {% if bio.image %}

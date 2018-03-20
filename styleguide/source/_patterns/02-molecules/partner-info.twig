@@ -1,4 +1,4 @@
-{% set heading = boilerplate.heading|merge({
+{% set heading = infoCard.heading|merge({
     "level": "3",
     "text": "About the AMA",
     "class": ""
@@ -20,7 +20,12 @@
 
   {% if boilerplate %}
     <div class="ama__partner__boilerplate">
-      {% set heading = boilerplate.heading %}
+      {% set heading = boilerplate.heading|merge({
+          "level": "3",
+          "text": "About the AMA",
+          "class": ""
+        })
+      %}
       {% include "@atoms/heading.twig" %}
 
       {% set paragraph = boilerplate.paragraph %}

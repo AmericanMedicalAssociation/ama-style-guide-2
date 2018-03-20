@@ -8,6 +8,10 @@
 {% block pageContent %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@molecules/article-stub-as-inline.twig' %}
+  {% set heading = heading|merge({
+    "level": "1",
+    "class": "ama__h1"
+  }) %}
   {% include '@atoms/heading.twig' %}
   {% include '@molecules/inline-block-copy.twig' %}
   {% include '@atoms/paragraph.twig' %}
