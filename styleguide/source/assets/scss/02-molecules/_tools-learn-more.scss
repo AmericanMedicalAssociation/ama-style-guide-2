@@ -10,6 +10,10 @@
     list-style-type: disc;
     @include gutter($padding-left-full...);
   }
+
+  & a {
+    @extend .ama__link--black;
+  }
 }
 
 /* Workaround - here we override the specificity from the child-top-gutters mixin.
