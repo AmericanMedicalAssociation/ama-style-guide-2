@@ -2,10 +2,10 @@
   tools, learnMore, heading =
   toolsBlock.tools,
   toolsBlock.learnMore,
-  toolsBlock.heading|merge({
+  toolsBlock.heading ? toolsBlock.heading|merge({
     "level": "5",
     "class": "ama__h5"
-  })
+  }) : heading
 %}
 <div class="ama__tools-block {{ class }}">
   {% block headingTools %}
