@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1520378552" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1520378552" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1521580814" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1521580814" media="all" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
@@ -24,8 +24,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1520378552" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1520378552" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1521580814" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1521580814" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -2256,6 +2256,83 @@ If no date is entered the date will default to the current month, day and year.<
   <div class="sg-pattern-body">
     <h3>Description</h3>
 
+<p>The membership pattern includes a heading, a description, and a CTA button (optional). In this variant the CTA button is displayed as an example.</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4214">EWL-4214</a></p>
+
+<h3>Variant options</h3>
+
+<ul>
+<li><a href="?p=molecules-membership">Base pattern (without CTA)</a></li>
+</ul>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  "heading": {
+    "level": int/required
+    "text": string/required
+    "class": "ama__h2"
+  },
+  "link": string/required
+  "paragraph" : {
+    "text": string/required
+  },
+  "button": {
+    "text": string/optional
+    "style": "primary"
+  }
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <p>The membership pattern includes a heading, a description, and a CTA button (optional).</p>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-3817">EWL-3817</a>
+<a href="https://issues.ama-assn.org/browse/EWL-4214">EWL-4214</a></p>
+
+<h3>Variant options</h3>
+
+<ul>
+<li><a href="?p=molecules-membership-with-cta">With CTA button</a></li>
+</ul>
+
+<h3>Variables</h3>
+
+<pre><code>{
+  "heading": {
+    "level": int/required
+    "text": string/required
+    "class": "ama__h2"
+  },
+  "link": string/required
+  "paragraph" : {
+    "text": string/required
+  },
+  (optional) "button": {
+    "text": string/optional
+    "style": "primary"
+  }
+}
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
 <p>Partner Information molecules contain a logo, a <a href="?p=molecules-info-card-as-media-contact">"Information Card as Media Contact"</a>, and a boilerplate description consisting of a heading and a paragraph.</p>
 
 <p><a href="https://issues.ama-assn.org/browse/EWL-4487">EWL-4487</a></p>
@@ -3171,83 +3248,6 @@ If no date is entered the date will default to the current month, day and year.<
   </h2>
   
   <div class="sg-pattern-body">
-    <h3>Description</h3>
-
-<p>The membership pattern includes a heading, a description, and a CTA button (optional). In this variant the CTA button is displayed as an example.</p>
-
-<p><a href="https://issues.ama-assn.org/browse/EWL-4214">EWL-4214</a></p>
-
-<h3>Variant options</h3>
-
-<ul>
-<li><a href="?p=organisms-membership">Base pattern (without CTA)</a></li>
-</ul>
-
-<h3>Variables</h3>
-
-<pre><code>{
-  "heading": {
-    "level": int/required
-    "text": string/required
-    "class": "ama__h2"
-  },
-  "link": string/required
-  "paragraph" : {
-    "text": string/required
-  },
-  "button": {
-    "text": string/optional
-    "style": "primary"
-  }
-}
-</code></pre>
-  </div>
-</div>                        <div id="" class="sg-subtype">
-  <h2>
-    <a href="../../patterns/" class="patternLink" data-patternpartial="">
-      
-    </a>
-  </h2>
-  
-  <div class="sg-pattern-body">
-    <p>The membership pattern includes a heading, a description, and a CTA button (optional).</p>
-
-<p><a href="https://issues.ama-assn.org/browse/EWL-3817">EWL-3817</a>
-<a href="https://issues.ama-assn.org/browse/EWL-4214">EWL-4214</a></p>
-
-<h3>Variant options</h3>
-
-<ul>
-<li><a href="?p=organisms-membership-with-cta">With CTA button</a></li>
-</ul>
-
-<h3>Variables</h3>
-
-<pre><code>{
-  "heading": {
-    "level": int/required
-    "text": string/required
-    "class": "ama__h2"
-  },
-  "link": string/required
-  "paragraph" : {
-    "text": string/required
-  },
-  (optional) "button": {
-    "text": string/optional
-    "style": "primary"
-  }
-}
-</code></pre>
-  </div>
-</div>                        <div id="" class="sg-subtype">
-  <h2>
-    <a href="../../patterns/" class="patternLink" data-patternpartial="">
-      
-    </a>
-  </h2>
-  
-  <div class="sg-pattern-body">
     <p>A collection of up to three articles displayed in a column (meant for use in a sidebar). Displays an image (optional) and title.</p>
 
 <p><a href="https://issues.ama-assn.org/browse/EWL-4434">EWL-4433</a></p>
@@ -3329,6 +3329,69 @@ If no date is entered the date will default to the current month, day and year.<
       ]
     }
   }
+</code></pre>
+  </div>
+</div>                        <div id="" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/" class="patternLink" data-patternpartial="">
+      
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    <h3>Description</h3>
+
+<p>This pattern is a block that may optionally include:</p>
+
+<ul>
+<li>Article Stub</li>
+<li>Article Stub as Small Image</li>
+<li>Article Stub (with no image)</li>
+<li>Article Stub as Title Only</li>
+</ul>
+
+<p><a href="https://issues.ama-assn.org/browse/EWL-4389">EWL-4389</a></p>
+
+<h3>Variables</h3>
+
+<pre><code>  "label": string / optional
+  "articles": [
+    {
+      title_only: string / optional
+      type: string / required
+      link {
+        href:
+          type: string / required
+        text:
+          type: string / required
+        class:
+          type: string / optional
+        target:
+          type: string / optional
+        title:
+          type: string / optional
+      }
+      image {
+        alt:
+          type: string / required
+        src:
+          type: string (url) / required
+        height:
+          type: string / required
+        width:
+          type: string / required
+      }
+      video: string / optional
+      related: string / optional
+      small: string / optional
+      class: string / optional
+      paragraph {
+        text:
+          type: string
+      }
+    }
+  ]
+}
 </code></pre>
   </div>
 </div>                        <div id="" class="sg-subtype">
@@ -3486,18 +3549,6 @@ If no date is entered the date will default to the current month, day and year.<
 
 <p><a href="https://issues.ama-assn.org/browse/EWL-4479">EWL-4479 SG2 | Create Press release page </a></p>
   </div>
-</div>                        <div id="" class="sg-subtype">
-  <h2>
-    <a href="../../patterns/" class="patternLink" data-patternpartial="">
-      
-    </a>
-  </h2>
-  
-  <div class="sg-pattern-body">
-    <h3>Description</h3>
-
-<p>(In Drupal 8) the IPE from Drupal. Added here so that custom styling can be included in the assets consumed by d8.</p>
-  </div>
 </div>            </div> <!--end #sg-patterns-->
 </div><!--end .sg-main-->
       <!--DO NOT REMOVE-->
@@ -3536,10 +3587,10 @@ If no date is entered the date will default to the current month, day and year.<
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1520378552">
+<script id="pl-js-polyfill-insert-1521580814">
   (function() {
     if (self != top) {
-      var cb = '1520378552';
+      var cb = '1521580814';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -3549,10 +3600,10 @@ If no date is entered the date will default to the current month, day and year.<
   })();
 </script>
 
-<script id="pl-js-insert-1520378552">
+<script id="pl-js-insert-1521580814">
   (function() {
     if (self != top) {
-      var cb = '1520378552';
+      var cb = '1521580814';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
