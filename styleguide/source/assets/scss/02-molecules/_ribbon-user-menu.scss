@@ -26,11 +26,12 @@
   }
 
   &__nav_item {
-    &:first-child {
-      border-right: 1px solid $gray-64;
+    &:nth-child(2) {
+      border-left: 1px solid $gray-64;
     }
 
     a {
+      @extend .ama__link--white;
       display: block;
       padding: 15px;
     }

@@ -1,6 +1,6 @@
 {% set class = "ama__ribbon__dropdown__nav__menu" %}
 {% set ribbonDropdown = ribbon.ribbonDropdown %}
-{% set userMenu = ribbon.userMenu %}
+{% set userMenu = ribbon.userMenu.loggedIn.links ? ribbon.userMenu.loggedIn.links : ribbon.userMenu %}
 
 <section class="ama__ribbon">
   <div class="container">

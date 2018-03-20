@@ -16,23 +16,20 @@
   }
 
   &__text {
+    color: $gray-64;
+    @include type($myriad-pro, $font-weight-semibold);
+    display: block;
+
     @include breakpoint($bp-small) {
       display: inline-block;
     }
-  }
 
-  &__title {
-    margin-bottom: 0;
-  }
+    & > * {
+      margin-bottom: 0;
+    }
 
-  &__meta {
-    @extend .ama__h3;
-    color: $gray-64;
-    margin-bottom: 0;
-    display: inline-block;
-
-    @include breakpoint($bp-small) {
-      display: block;
+    & > :first-child {
+      color: $black;
     }
   }
 
@@ -40,7 +37,7 @@
     font-size: 1em;
     display: block;
     margin-top: 6px;
-    font-weight: $font-weight-semibold;
+    @include type($myriad-pro, $font-weight-semibold);
 
     svg {
       fill: $blue;
