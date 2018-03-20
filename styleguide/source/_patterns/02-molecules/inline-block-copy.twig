@@ -1,4 +1,9 @@
-{% set heading, paragraph, button = inlineBlockCopy.heading, inlineBlockCopy.paragraph, inlineBlockCopy.button %}
+{% set paragraph, button = inlineBlockCopy.paragraph, inlineBlockCopy.button %}
+{% set heading = inlineBlockCopy.heading|merge({
+    "level": "2",
+    "class": "ama__h2"
+  })
+%}
 
 <div class="ama__inline-block-copy col-xs-12 col-sm-4">
   <div class="ama__rule"></div>
