@@ -1,5 +1,8 @@
 <div class="ama__tools__learn-more">
-  {% set heading = learnMore.heading %}
+  {% set heading = learnMore.heading|merge({
+    "level": 5,
+    "class": "ama__h5"
+  }) %}
   {% block learMoreHeading %}
     {% include "@atoms/heading.twig" %}
   {% endblock %}
