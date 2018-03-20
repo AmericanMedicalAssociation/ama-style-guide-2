@@ -9,7 +9,8 @@
   {% include '@atoms/paragraph.twig' %}
   {% include '@molecules/article-stub-as-inline.twig' %}
   {% include '@atoms/heading.twig' %}
-  {#{% include '@molecules/inline-block-copy.twig' %}#}
+  {% set promo = promoAsInline %}
+  {% include '@molecules/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@molecules/tags.twig' %}
   {% include '@organisms/four-up-teaser.twig' %}
