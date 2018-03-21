@@ -8,9 +8,7 @@ The ecosystem ribbon is a nav dom element with class .ribbon that exists at the 
 * Main Nav (assets/js/nav.js)
 
 ### Variant options
-* [user-menu](./?p=molecules/p=organisms-ribbon)
-* [user-menu](./?p=organisms/p=organisms-ribbon-auth)
-
+* [ribbon-auth](./?p=organisms-ribbon-auth)
 
 ### Variables
 ~~~
