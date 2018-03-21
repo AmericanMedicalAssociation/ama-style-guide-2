@@ -1,12 +1,12 @@
 {% set logo, link = wayfinder.logo, wayfinder.link %}
-{% set link = link|merge({ "class": "ama__link--black ama__wayfinder--referrer__link-back" }) %}
+{% set referred = wayfinder.referred ? "referred" : "notReferred" %}
 
 <section class="ama__wayfinder">
   <div class="ama__wayfinder__grid container">
     <div class="ama__wayfinder--referrer">
-      {% if wayfinder.referred %}
+      <div class="{{ referred }} ama__wayfinder--referrer__link-back">
         {% include '@atoms/link.twig' %}
-      {% endif %}
+      </div>
     </div>
     <div class="ama__wayfinder__logo">
       {% include '@atoms/site-logo.twig' %}
