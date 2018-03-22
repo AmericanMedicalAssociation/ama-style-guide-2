@@ -1,12 +1,22 @@
 .ama__tool {
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
+  @include ama-rules(1px, "", $gray-64, solid);
   display: flex;
   align-items: center;
   width: 100%;
   
   &:hover {
     text-decoration: none;
+
+    &__text p {
+      text-decoration: underline;
+    }
+  }
+
+  &:last-of-type {
+    @include ama-rules(1px, "bottom", $gray-64, solid);
+    @include gutter($margin-bottom-half...);
   }
 
   &__icon {
@@ -41,8 +51,4 @@
       }
     }
   }
-}
-
-.ama__tool:hover .ama__tool__text p {
-  text-decoration: underline;
 }
