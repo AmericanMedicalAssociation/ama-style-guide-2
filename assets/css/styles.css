@@ -363,7 +363,7 @@
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12 {
+.col-xs-12, .ama__promo--inline {
   width: 100%; }
 
 /* col-sm-* classes */
@@ -374,7 +374,7 @@
     width: 16.66667%; }
   .col-sm-3 {
     width: 25%; }
-  .col-sm-4 {
+  .col-sm-4, .ama__promo--inline {
     width: 33.33333%; }
   .col-sm-5 {
     width: 41.66667%; }
@@ -1681,13 +1681,13 @@ a {
 *[class*="__page-content"] a:hover, *[class*="__page-content"] a:focus {
   background-color: #9073A6; }
 
-.ama__link--black, .ama__tools__learn-more a {
+.ama__link--black, .ama__tools-learn-more a, .ama__wayfinder--referrer__link-back a {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none; }
-  .ama__link--black:link, .ama__tools__learn-more a:link, .ama__link--black:visited, .ama__tools__learn-more a:visited {
+  .ama__link--black:link, .ama__tools-learn-more a:link, .ama__wayfinder--referrer__link-back a:link, .ama__link--black:visited, .ama__tools-learn-more a:visited, .ama__wayfinder--referrer__link-back a:visited {
     color: #000000; }
-  .ama__link--black:active, .ama__tools__learn-more a:active, .ama__link--black:hover, .ama__tools__learn-more a:hover, .ama__link--black:focus, .ama__tools__learn-more a:focus {
+  .ama__link--black:active, .ama__tools-learn-more a:active, .ama__wayfinder--referrer__link-back a:active, .ama__link--black:hover, .ama__tools-learn-more a:hover, .ama__wayfinder--referrer__link-back a:hover, .ama__link--black:focus, .ama__tools-learn-more a:focus, .ama__wayfinder--referrer__link-back a:focus {
     color: #000000;
     text-decoration: underline;
     background-color: transparent; }
@@ -1970,44 +1970,6 @@ figcaption {
     .ama__inline-bio__link svg {
       fill: #027DBC; }
 
-.ama__inline-block-copy {
-  margin-right: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  float: none; }
-  @media (min-width: 56.25em) {
-    .ama__inline-block-copy {
-      margin-right: 28px; } }
-  @media (min-width: 56.25em) {
-    .ama__inline-block-copy {
-      margin-top: 28px; } }
-  @media (min-width: 56.25em) {
-    .ama__inline-block-copy {
-      margin-bottom: 28px; } }
-  @media (min-width: 25em) {
-    .ama__inline-block-copy {
-      float: left; } }
-  .ama__inline-block-copy .ama__rule {
-    margin: 0; }
-  .ama__inline-block-copy__content {
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px; }
-    @media (min-width: 56.25em) {
-      .ama__inline-block-copy__content {
-        padding-right: 28px; } }
-    @media (min-width: 56.25em) {
-      .ama__inline-block-copy__content {
-        padding-top: 28px; } }
-    @media (min-width: 56.25em) {
-      .ama__inline-block-copy__content {
-        padding-bottom: 28px; } }
-  .ama__inline-block-copy .ama__button {
-    margin-top: 20px; }
-    @media (min-width: 56.25em) {
-      .ama__inline-block-copy .ama__button {
-        margin-top: 28px; } }
-
 .ama__lead-news > * {
   margin-top: 7px; }
   .ama__lead-news > *:first-child {
@@ -2093,6 +2055,33 @@ figcaption {
     background: #EDEDED; }
   .ama__promo--border {
     border: solid 1px #7F7F7F; }
+  .ama__promo--inline {
+    border-top: solid 1px #7F7F7F;
+    border-bottom: solid 1px #7F7F7F;
+    padding-left: 0;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px; }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline {
+        padding-top: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline {
+        padding-right: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline {
+        padding-bottom: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline {
+        margin-right: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline {
+        margin-bottom: 28px; } }
+    @media (min-width: 37.5em) {
+      .ama__promo--inline {
+        float: left; } }
   .ama__promo > * {
     margin-bottom: 0; }
   .ama__promo .ama__image,
@@ -2375,6 +2364,7 @@ a.ama__promo--border:hover {
 .ama__tool {
   padding-top: 10px;
   padding-bottom: 10px;
+  border-top: 1px solid #5C5C5C;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2390,6 +2380,14 @@ a.ama__promo--border:hover {
       padding-bottom: 14px; } }
   .ama__tool:hover {
     text-decoration: none; }
+    .ama__tool:hover__text p {
+      text-decoration: underline; }
+  .ama__tool:last-of-type {
+    border-bottom: 1px solid #5C5C5C;
+    margin-bottom: 10px; }
+    @media (min-width: 56.25em) {
+      .ama__tool:last-of-type {
+        margin-bottom: 14px; } }
   .ama__tool__icon {
     padding-right: 10px;
     display: none; }
@@ -2437,52 +2435,13 @@ a.ama__promo--border:hover {
           -ms-flex-preferred-size: 50%;
           flex-basis: 50%; } }
 
-.ama__tool:hover .ama__tool__text p {
-  text-decoration: underline; }
-
-.ama__tools__learn-more {
-  margin-top: 10px; }
+.ama__tools-learn-more a {
+  list-style: disc inside none;
+  display: list-item;
+  padding-left: 5px; }
   @media (min-width: 56.25em) {
-    .ama__tools__learn-more {
-      margin-top: 14px; } }
-  .ama__tools__learn-more > h5 {
-    padding-bottom: 5px;
-    padding-top: 0; }
-    @media (min-width: 56.25em) {
-      .ama__tools__learn-more > h5 {
-        padding-bottom: 7px; } }
-  .ama__tools__learn-more ul {
-    list-style-type: disc;
-    padding-left: 20px; }
-    @media (min-width: 56.25em) {
-      .ama__tools__learn-more ul {
-        padding-left: 28px; } }
-
-/* Workaround - here we override the specificity from the child-top-gutters mixin.
- * The mixin applies a top margin to all children of an element.
- * Since `.ama__tools__learn-more` is a sibling of the Tools block rather than a child of it,
- * it's being given a top margin unintentionally.
- * @todo - this is a workaround and should be remediated if the markup/pattern structure is corrected.
- */
-.ama__layout--three-column__sidebar--primary .ama__tools__learn-more,
-.ama__layout--three-column__sidebar--secondary .ama__tools__learn-more,
-.ama__layout--two-column__sidebar--primary .ama__tools__learn-more,
-.ama__layout--two-column__sidebar--secondary .ama__tools__learn-more {
-  margin-top: 10px; }
-  @media (min-width: 56.25em) {
-    .ama__layout--three-column__sidebar--primary .ama__tools__learn-more,
-    .ama__layout--three-column__sidebar--secondary .ama__tools__learn-more,
-    .ama__layout--two-column__sidebar--primary .ama__tools__learn-more,
-    .ama__layout--two-column__sidebar--secondary .ama__tools__learn-more {
-      margin-top: 14px; } }
-
-.ama__tools--list li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-top: 1px solid #5C5C5C; }
-  .ama__tools--list li:last-of-type {
-    border-bottom: 1px solid #5C5C5C; }
+    .ama__tools-learn-more a {
+      padding-left: 7px; } }
 
 .ama__column-teaser > * {
   margin-top: 7px; }
@@ -2770,29 +2729,14 @@ a.ama__membership {
     .ama__sidebar-articles__block-title {
       margin-bottom: 14px; } }
 
-.ama__tools-block {
-  max-width: 800px; }
-  .ama__tools-block > h5 {
-    padding-bottom: 5px; }
-    @media (min-width: 56.25em) {
-      .ama__tools-block > h5 {
-        padding-bottom: 7px; } }
+.ama__tools h5 {
+  padding-bottom: 5px; }
+  @media (min-width: 56.25em) {
+    .ama__tools h5 {
+      padding-bottom: 7px; } }
 
 .ama__wayfinder {
   border-bottom: solid 1px #7F7F7F; }
-  .ama__wayfinder .ama__wayfinder--referrer {
-    display: inline-block; }
-    .ama__wayfinder .ama__wayfinder--referrer__link-back a {
-      display: none;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      font-size: 0.9em; }
-    .ama__wayfinder .ama__wayfinder--referrer__link-back svg {
-      -webkit-transform: rotate(90deg) translateY(-4px) translateX(7px);
-      transform: rotate(90deg) translateY(-4px) translateX(7px); }
-    .ama__wayfinder .ama__wayfinder--referrer__link-back_text {
-      padding-left: 4px; }
   .ama__wayfinder__grid {
     display: none;
     padding: 20px 0 20px 5px; }
@@ -2810,9 +2754,48 @@ a.ama__membership {
         flex-direction: row;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center; } }
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; } }
   .ama__wayfinder__logo {
-    display: inline-block; }
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+  .ama__wayfinder--referrer {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .ama__wayfinder--referrer__link-back {
+      display: none;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-size: 0.9em;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .ama__wayfinder--referrer__link-back.referred {
+        display: block; }
+      .ama__wayfinder--referrer__link-back a {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .ama__wayfinder--referrer__link-back a:before {
+          content: "";
+          background: transparent url("data:image/svg+xml;charset%3DUS-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2218%22%20height%3D%2210%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h18v10H0z%22%2F%3E%3C%2Fdefs%3E%3CclipPath%20id%3D%22b%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%20overflow%3D%22visible%22%2F%3E%3C%2FclipPath%3E%3Cpath%20clip-path%3D%22url%28%23b%29%22%20d%3D%22M9%2010L.293%201.639c-.391-.375-.391-.983%200-1.358s1.023-.375%201.414%200L9%207.284%2016.293.281c.391-.375%201.023-.375%201.414%200s.391.983%200%201.358L9%2010z%22%2F%3E%3C%2Fsvg%3E") no-repeat;
+          width: 18px;
+          height: 10px;
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg); }
+    .ama__wayfinder--referrer__link-back svg {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg); }
+    .ama__wayfinder--referrer__link-back_text {
+      padding-left: 4px; }
 
 .ama__layout--three-column {
   display: -ms-grid;
