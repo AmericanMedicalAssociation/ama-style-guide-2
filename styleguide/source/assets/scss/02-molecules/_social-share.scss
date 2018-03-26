@@ -17,13 +17,14 @@ $social-icons: (
 @each $name in $social-icons {
   .social--#{$name} {
     display: inline-block;
-    background: url("../../assets/icons/svg/icon-" + $name + ".svg") no-repeat 0 0;
+    background: url("../icons/svg/icon-" + $name + ".svg") no-repeat 0 0;
     background-size: 31px;
     height: 31px;
     width: 31px;
 
     &:hover {
-      background-image: url("../../assets/icons/svg/icon-" + $name + "-hover.svg");
+      background: url("../icons/svg/icon-" + $name + "-hover.svg");
+      background-size: 31px;
     }
   }
 }

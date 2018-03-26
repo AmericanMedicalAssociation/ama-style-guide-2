@@ -1,11 +1,8 @@
 .ama__layout--two-column {
   display: grid;
-  display: -ms-grid;
   grid-template-columns: 1fr 6fr 2.5fr;
   grid-template-rows: auto auto auto;
   min-height: 30em;
-  -ms-grid-columns: 1fr 5fr 3fr;
-  -ms-grid-rows: auto auto auto;
 
   &__content-top {
     grid-column: 1 / 5;
@@ -19,8 +16,6 @@
     @include breakpoint($bp-med min-width) {
       grid-column: 1 / 5;
       grid-row: 1;
-      -ms-grid-column: 2;
-      -ms-grid-row: 1;
     }
   }
 
@@ -37,24 +32,24 @@
     @include breakpoint($bp-med min-width) {
       grid-column: 2;
       grid-row: 2 / 4;
-      -ms-grid-column: 2;
-      -ms-grid-row: 2;
     }
   }
 } // end article
 
 .ama__layout--two-column__sidebar {
+  &--primary,
+  &--secondary {
+    @include child-top-gutters($gutter);
+  }
+
   &--primary {
     @include gutter($padding-top-full...);
     grid-column: 1 / 5;
     grid-row: 2;
-    -ms-grid-row: 2;
 
     @include breakpoint($bp-med min-width) {
       grid-column: 1;
       grid-row: 1 / 4;
-      -ms-grid-column: 1;
-      -ms-grid-row: 1;
     }
   } // end aside.primary
 
@@ -67,8 +62,6 @@
       @include gutter($padding-left-full...);
       grid-column: 3;
       grid-row: 2 / 4;
-      -ms-grid-column: 3;
-      -ms-grid-row: 2;
     }
   } // end aside.secondary
 }

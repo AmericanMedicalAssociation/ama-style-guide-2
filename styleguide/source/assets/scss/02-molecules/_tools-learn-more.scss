@@ -1,13 +1,8 @@
-.ama__tools__learn-more {
-  @include gutter($margin-bottom-full...);
-
-  > h5 {
-    @include gutter($padding-bottom-half...);
-    @include gutter($padding-top-half...);
-  }
-
-  ul {
-    list-style-type: disc;
-    @include gutter($padding-left-full...);
+.ama__tools-learn-more {
+  & a {
+    @extend .ama__link--black;
+    list-style: disc inside none;
+    display:list-item;
+    @include gutter($padding-left-quarter...);
   }
 }

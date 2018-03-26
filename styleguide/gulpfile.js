@@ -126,7 +126,11 @@ gulp.task('sass', ['scss-lint'], function () {
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
-    .pipe(prefix('last 2 version'))
+    .pipe(prefix({
+      browsers: ['last 2 versions'],
+      grid: true,
+      cascade: false
+    }))
     .pipe(gulpif(production, rename({
       suffix: '.min'
     })))
@@ -283,11 +287,12 @@ gulp.task('default', ['clean:before'], function (callback) {
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
   runSequence(
-    ['scripts', 'fonts', 'images', 'sass'],
+    ['fonts', 'images'],
     'patternlab',
     'styleguide',
     'copyTwigFiles',
     'sass',
+    'scripts',
     callback
   );
 });
@@ -364,6 +369,7 @@ gulp.task('tag', function () {
   return gulp.src(config.versioning.files)
   // Fetch master so that we can tag it.
     .pipe(shell(['git fetch origin master:master']))
+
     // Tag it.
     .pipe(tagversion())
     // Push tag.

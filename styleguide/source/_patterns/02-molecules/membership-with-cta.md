@@ -4,7 +4,7 @@ The membership pattern includes a heading, a description, and a CTA button (opti
 [EWL-4214](https://issues.ama-assn.org/browse/EWL-4214)
 
 ### Variant options
-* [Base pattern (without CTA)](./?p=organisms-membership)
+* [Base pattern (without CTA)](?p=molecules-membership)
 
 ### Variables
 ~~~

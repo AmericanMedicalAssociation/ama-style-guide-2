@@ -8,7 +8,7 @@ Information card molecules contain a heading that denotes the card type (require
 
 Variants are managed by use of pseudo-patterns.
 
-- ["Info Card as Media Contact"](/?p=molecules-info-card-as-media-contact) is the variant of this pattern that includes a smaller image and appears on within the [Partner Information](#) on a [Press Release Page](/?p=pages-press-release).
+- ["Info Card as Media Contact"](?p=molecules-info-card-as-media-contact) is the variant of this pattern that includes a smaller image and appears on within the [Partner Information](#) on a [Press Release Page]?p=pages-press-release).
 
 [EWL-4487](https://issues.ama-assn.org/browse/EWL-4487)
 

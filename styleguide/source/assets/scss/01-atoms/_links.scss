@@ -5,16 +5,20 @@ a {
   text-decoration: underline;
   outline: 0;
 
-  &:hover,
-  &:focus {
-    color: $hoverPurple;
-  }
-
   svg {
     height: 22px;
     width: 22px;
     vertical-align: middle;
   }
+}
+
+*[class*="__page-content"] {
+ a {
+   &:hover,
+   &:focus {
+     background-color: $hoverPurple;
+   }
+ }
 }
 
 .ama__link--black,
@@ -31,6 +35,7 @@ a {
   &:focus {
     color: $black;
     text-decoration: underline;
+    background-color: transparent;
   }
 }
 
@@ -48,6 +53,7 @@ a {
   &:focus {
     color: $white;
     text-decoration: underline;
+    background-color: transparent;
   }
 }
 
@@ -66,6 +72,7 @@ a {
   &:focus {
     color: $hoverBlue;
     text-decoration: underline;
+    background-color: transparent;
   }
 }
 
@@ -84,6 +91,7 @@ a {
   &:focus {
     color: $purple;
     text-decoration: underline;
+    background-color: transparent;
   }
 }
 

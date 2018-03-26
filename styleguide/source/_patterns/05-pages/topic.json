@@ -1,15 +1,80 @@
 {
+  "ribbon": {
+    "ribbonDropdown": {
+      "triggerText": "American Medical Association",
+      "unorderedList": [
+        {
+          "text": "<a href=\"#\">AMA Wire</a>"
+        },
+        {
+          "text": "<a href=\"#\">AMA Store</a>"
+        },
+        {
+          "text": "<a href=\"#\">The JAMA Network</a>"
+        },
+        {
+          "text": "<a href=\"#\">Journal of Ethics</a>"
+        }
+      ]
+    },
+    "userMenu": [
+      {
+        "title": "Become a Member",
+        "href": "#",
+        "text": "Become a Member",
+        "target": "",
+        "class": "ama__link--white"
+      },
+      {
+        "title": "Sign In",
+        "href": "#",
+        "text": "Sign In",
+        "target": "",
+        "class": "ama__link--white"
+      },
+      {
+        "title": "Create Account",
+        "href": "#",
+        "text": "Create Account",
+        "target": "",
+        "class": "ama__link--white"
+      }
+    ],
+    "mobileMenu": {
+      "mobile": true,
+      "triggerText": "",
+      "unorderedList": [
+        {
+          "text": "<a href=\"#\">Become a Member</a>"
+        },
+        {
+          "text": "<a href=\"#\">Sign In</a>"
+        },
+        {
+          "text": "<a href=\"#\">Create Account</a>"
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  },
+  "wayfinder": {
+    "logo": {
+      "image": "../../assets/images/brand/logo.svg",
+      "href": "https://www.ama-assn.org",
+      "alt": "American Medical Association"
+    }
+  },
   "leadNews": {
     "label": "Label text for Lead News Block",
     "articles": [
       {
         "title_only": "",
         "link": {
-          "title": "Link to something",
-          "href": "#",
-          "text": "Example Title Text for Article using the \"Hero\" view mode",
-          "class": "ama__link--black",
-          "target": "_self"
+          "title": "A link to Yahoo.",
+          "href": "http://www.yahoo.com",
+          "text": "Example Title Text for Article using the \"Hero\" view mode"
         },
         "image": {
           "alt": "alt text",
@@ -31,28 +96,28 @@
       {
         "title_only": "",
         "link": {
-          "title": "Link to something",
-          "href": "#",
-          "text": "Example Article using the \"Hero\" No Media mode",
-          "class": "ama__link--black",
-          "target": "_self"
+          "title": "A link to Google.",
+          "href": "http://www.google.com",
+          "text": "Example Title Text for Article using the \"Hero\" No Media mode"
         },
         "image": "",
         "video": "",
-        "related": true,
+        "related": "",
         "small": "",
         "paragraph": {
-          "text": "A related paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
+          "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
+        },
+        "metadata": {
+          "date": "Jan 19, 2018",
+          "readtime": "4 min read"
         }
       },
       {
         "title_only": "",
         "link": {
-          "title": "Link to something",
-          "href": "#",
-          "text": "Lorem ipsum dolor sit amet.",
-          "class": "ama__link--black",
-          "target": "_self"
+          "title": "A link to AOL.",
+          "href": "http://www.aol.com",
+          "text": "Example Title Text for Article using the \"Related Articles Small Image\" view mode"
         },
         "image": {
           "alt": "alt text",
@@ -62,10 +127,19 @@
         },
         "video": "",
         "related": true,
-        "small": "",
-        "paragraph": {
-          "text": ""
-        }
+        "small": ""
+      },
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google.",
+          "href": "http://www.google.com",
+          "text": "Example Title Text for Article using the \"Related Articles No Image\" View Mode"
+        },
+        "image": "",
+        "video": "",
+        "related": true,
+        "small": ""
       }
     ]
   },
@@ -74,9 +148,7 @@
   },
   "membership": {
     "heading": {
-      "level": "2",
-      "text": "Title for Membership Block",
-      "class": "ama__h2"
+      "text": "Title for Membership Block"
     },
     "link": "http://www.google.com",
     "paragraph": {
@@ -87,13 +159,11 @@
       "style": "primary"
     }
   },
-  "toolsBlock": {
+  "tools": {
     "heading": {
-      "level": "4",
-      "text": "Topic tools list biz rule 1",
-      "class": "ama__h4"
+      "text": "Topic tools list biz rule 1"
     },
-    "tools": [
+    "list": [
       {
         "icon": "icon--pdf",
         "paragraph": {
@@ -121,8 +191,6 @@
     ],
     "learnMore": {
       "heading": {
-        "level": 5,
-        "class": "ama__h5",
         "text": "Learn More About:"
       },
       "links": [
@@ -147,58 +215,116 @@
       ]
     }
   },
-  "articleStubOne": {
-    "title_only": "",
-    "link": {
-      "title": "Link to something",
-      "href": "#",
-      "text": "Lorem ipsum dolor sit amet.",
-      "class": "ama__link--black",
-      "target": "_self"
+  "promo": {
+    "style": "border",
+    "heading": {
+      "text": "Title for Topic Promotion Block"
     },
-    "image": {
-      "alt": "alt text",
-      "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
-      "height": "600",
-      "width": "800"
+    "link": "http://www.google.com",
+    "button": {
+      "text": "This is CTA text.",
+      "style": "secondary"
     },
-    "video": "",
-    "related": "",
-    "small": "",
-    "paragraph": {
-      "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
-    },
-    "metadata": {
-      "date": "Jul 28, 2017",
-      "readtime": "5 min read"
+    "paragraph" : {
+      "text": "This text will be rendered as a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium neque eu aliquet feugiat. Proin rhoncus ut nisi at pharetra. Fusce laoreet malesuada ex, eget porttitor ante interdum in."
     }
   },
-  "articleStubTwo": {
-    "title_only": "",
-    "link": {
-      "title": "Link to something",
-      "href": "#",
-      "text": "Lorem ipsum dolor sit amet.",
-      "class": "ama__link--black",
-      "target": "_self"
+  "sidebarArticles": {
+    "heading": {
+      "text": "Test title for Sidebar Articles"
     },
-    "image": "",
-    "video": "",
-    "related": "",
-    "small": "",
-    "paragraph": {
-      "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
-    },
-    "metadata": {
-      "date": "Jul 28, 2017",
-      "readtime": "5 min read"
-    }
+    "articles": [
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google, for example.",
+          "href": "http://www.google.com",
+          "text": "Lorem ipsum dolor sit amet."
+        },
+        "image": {
+          "alt": "alt text",
+          "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
+          "height": "600",
+          "width": "800"
+        },
+        "video": "",
+        "related": "",
+        "small": "",
+        "paragraph": {
+          "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
+        },
+        "metadata": {
+          "date": "Jul 28, 2017",
+          "readtime": "5 min read"
+        }
+      },
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google, for example.",
+          "href": "http://www.google.com",
+          "text": "Lorem ipsum dolor sit amet."
+        },
+        "image": {
+          "alt": "alt text",
+          "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
+          "height": "600",
+          "width": "800"
+        },
+        "video": "",
+        "related": "",
+        "small": true,
+        "paragraph": {
+          "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
+        },
+        "metadata": {
+          "date": "Jul 28, 2017",
+          "readtime": "5 min read"
+        }
+      },
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google, for example.",
+          "href": "http://www.google.com",
+          "text": "Lorem ipsum dolor sit amet."
+        },
+        "image": "",
+        "video": "",
+        "related": "",
+        "small": "",
+        "paragraph": {
+          "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
+        },
+        "metadata": {
+          "date": "Jul 28, 2017",
+          "readtime": "5 min read"
+        }
+      },
+      {
+        "title_only": true,
+        "link": {
+          "title": "A link to Google, for example.",
+          "href": "http://www.google.com",
+          "text": "Lorem ipsum dolor sit amet."
+        },
+        "image": "",
+        "video": "",
+        "related": "",
+        "small": "",
+        "paragraph": {
+          "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
+        },
+        "metadata": {
+          "date": "Jul 28, 2017",
+          "readtime": "5 min read"
+        }
+      }
+    ]
   },
   "membershipTwo": {
     "heading": {
-      "level": "2",
-      "text": "Title for Membership Block",
-      "class": "ama__h2"
+      "text": "Title for Membership Block"
     },
     "link": "http://www.google.com",
     "paragraph": {
@@ -211,9 +337,7 @@
   },
   "membershipThree": {
     "heading": {
-      "level": "2",
-      "text": "Title for Membership Block",
-      "class": "ama__h2"
+      "text": "Title for Membership Block"
     },
     "link": "http://www.google.com",
     "paragraph": {

@@ -1,10 +1,5 @@
 {% extends '@templates/two-column-right.twig' %}
 
-{% block header %}
-  {% include '@organisms/ribbon.twig' %}
-  {% include '@organisms/wayfinder.twig' %}
-{% endblock %}
-
 {% block contentTop %}
   {% include '@organisms/masthead.twig' %}
   {% include "@molecules/inline-bio.twig" %}
@@ -13,15 +8,20 @@
 {% block pageContent %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@molecules/article-stub-as-inline.twig' %}
+  {% set heading = heading|merge({
+    "level": "1",
+    "class": "ama__h1"
+  }) %}
   {% include '@atoms/heading.twig' %}
-  {% include '@molecules/inline-block-copy.twig' %}
+  {% set promo = promoAsInline %}
+  {% include '@molecules/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@molecules/tags.twig' %}
   {% include '@organisms/four-up-teaser.twig' %}
 {% endblock %}
 
 {% block sidebarSecondary %}
-  {% include '@organisms/tools-block.twig' %}
-  {% include '@organisms/membership.twig' %}
+  {% include '@organisms/tools.twig' %}
+  {% include '@molecules/membership.twig' %}
   {% include '@organisms/column-teaser.twig' %}
 {% endblock %}
