@@ -22,9 +22,12 @@ Explain the technical implementation of the work done.
 
 _If the new work does your work introduce visual regressions into existing work in the Style Guide (or in a Drupal 8 environment)_, either call these out here or address them before marking the PR as `ready for review`.
 
+**What is the filter for the test you created? Tell the reviewer to run your specific test.** (e.g. `--filter=<organisms-masthead>` Would be the filter to run _all_ of the test for the Masthead.)
 If you are creating or updating a pattern be sure you have created or updated the [scenario in `backstop.json`](ama-style-guide-2/styleguide/backstop.json) and have included a new or updated screenshot in [`bitmaps_reference`](ama-style-guide-2/styleguide/backstop_data/bitmaps_reference).
 
 For more information on visual regression testing review the [How do I run tests?](https://issues.ama-assn.org:8446/confluence/pages/viewpage.action?pageId=23298568) document in Confluence.
+
+You can review the latest Travis test results on the `test-results` branch or in browser [here](http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/test-results/html_report/index.html).
 
 
 ## Relevant Screenshots/GIFs

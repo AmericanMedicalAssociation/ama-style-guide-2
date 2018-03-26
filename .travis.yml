@@ -1,15 +1,21 @@
+addons:
+  chrome: beta
 language: node_js
-
 node_js:
   - 7.10.0
-
+github-token: $GITHUB_TOKEN
 before_install:
+  - git config --global user.email publish@travis.github
+  - git config --global user.name "Travis"
   - cd styleguide
   - composer install --no-interaction
   - npm i -g npm@5.6.0
-
 install:
   - npm install
-
 script:
   - gulp test
+after_failure:
+  - eval "$(ssh-agent -s)" #start the ssh agent
+  - chmod 600 .travis/deploy_key.pem # this key should have push access
+  - ssh-add .travis/deploy_key.pem
+  - ./test-results.sh

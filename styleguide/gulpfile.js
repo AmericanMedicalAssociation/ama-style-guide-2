@@ -226,10 +226,19 @@ gulp.task("copyTwigFiles", function() {
     .pipe(gulp.dest(config.twigsource.dest))
 });
 
+// Create reference screenshots from `gh-pages` and `referenceUrl`
+gulp.task( 'reference', function () {
+  return gulp.src('')
+    .pipe(shell(['backstop reference --config=backstop_prod.json']))
+});
+
 // Run backstop to run tests
 gulp.task( 'backstop', function () {
   return gulp.src('')
-    .pipe(shell(['backstop test']))
+    .pipe(shell(['backstop test --config=backstop_prod.json']))
+    .on('error', function () {
+      process.exit(1)
+    });
 });
 
 // Task: Watch files
@@ -302,15 +311,16 @@ gulp.task('serve', function () {
   );
 });
 
-// Task: Start your production-process
-// Description: Type 'gulp' in the terminal
+// Task: Run visual regression tests
+// Description: Type 'gulp test' in the terminal
+// Create reference screenshots from `gh-pages`, build site, run backstop and stop browserSync
 gulp.task('test', function () {
   production = false;
   runSequence(
+    'reference',
     'default',
     'browser-sync',
-    'backstop',
-    'exit'
+    'backstop'
   );
 });
 
@@ -339,6 +349,18 @@ gulp.task('drupal-deploy', function () {
   config.deployment.branch = "dev-assets";
   // run default to build the code and then publish it to our branch
   runSequence('default', 'publish');
+});
+
+// Task: Deploy Travis results
+// Description: Push the results of running BackstopJS on Travis to a specific branch of the github repository,
+gulp.task('test-results', function () {
+  return gulp.src(config.deployment.local.test)
+    .pipe(ghPages({
+      force: true,
+      origin: "https://${GITHUB_TOKEN}@github.com/AmericanMedicalAssociation/ama-style-guide-2.git",
+      cacheDir: "./backstop_data",
+      branch: config.deployment.test
+    }));
 });
 
 // Function: Tagging deployed code
