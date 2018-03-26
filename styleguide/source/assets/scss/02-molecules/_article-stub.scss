@@ -6,6 +6,8 @@
 
   .ama__image,
   .ama__video {
+    flex-basis: 41.66667%;
+    max-width: 41.66667%;
     @include gutter($margin-bottom-half...);
   }
 
@@ -51,7 +53,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    align-items: flex-end;
+    align-items: flex-start;
 
 
     .ama__article-stub__copy {
