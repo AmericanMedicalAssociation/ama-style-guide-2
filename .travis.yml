@@ -14,5 +14,8 @@ install:
   - npm install
 script:
   - gulp test
-  - pwd
+after_failure:
+  - eval "$(ssh-agent -s)" #start the ssh agent
+  - chmod 600 .travis/deploy_key.pem # this key should have push access
+  - ssh-add .travis/deploy_key.pem
   - ./test-results.sh
