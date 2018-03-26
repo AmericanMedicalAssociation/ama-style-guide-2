@@ -30,6 +30,7 @@
     .ama__image,
     .ama__video {
       @extend .col-xs-3;
+      @include gutter($padding-right-half...);
       align-self: flex-start;
       margin-bottom: 0;
 
@@ -40,12 +41,24 @@
     }
 
     .ama__article-stub__title {
-      @include gutter($padding-left-half...);
       display: flex;
       flex-direction: column;
       padding-top: 0;
       align-self: start;
       width: 75%;
+    }
+
+    .ama__article-stub__copy {
+      width: 75%;
+    }
+  }
+
+  &--related + &--image,
+  &--related + &--video {
+    .ama__image,
+    .ama__video {
+      @include gutter($padding-left-half...);
+      order: 1;
     }
   }
 
@@ -71,6 +84,10 @@
       flex-basis: 41.66667%;
       max-width: 41.66667%;
       order: 2;
+    }
+
+    .ama__video__container {
+      @include gutter($margin-bottom-half...);
     }
   }
 
