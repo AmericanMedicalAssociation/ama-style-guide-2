@@ -30,6 +30,7 @@
     .ama__image,
     .ama__video {
       @extend .col-xs-3;
+      align-self: flex-start;
       margin-bottom: 0;
 
       & > div {
@@ -39,16 +40,12 @@
     }
 
     .ama__article-stub__title {
+      @include gutter($padding-left-half...);
       display: flex;
       flex-direction: column;
       padding-top: 0;
       align-self: start;
-      width: 100%;
-
-      @include breakpoint($bp-small){
-        @include gutter($padding-left-half...);
-        width: 75%;
-      }
+      width: 75%;
     }
   }
 
