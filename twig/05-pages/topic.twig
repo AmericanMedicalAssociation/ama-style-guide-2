@@ -1,0 +1,33 @@
+{% extends '@templates/three-column.twig' %}
+
+{% block header %}
+  {% include '@organisms/ribbon.twig' %}
+  {% include '@organisms/wayfinder.twig' %}
+{% endblock %}
+
+{% block contentTop %}
+  {% include '@atoms/page-title.twig' %}
+{% endblock %}
+
+{% block pageContent %}
+  {% include '@organisms/lead-news.twig' %}
+{% endblock %}
+
+{% block sidebarPrimary %}
+  {% include '@molecules/membership.twig' %}
+  {% include '@organisms/tools.twig' %}
+  {% include '@molecules/promo.twig' %}
+  {% include '@organisms/sidebar-articles.twig' %}
+{% endblock %}
+
+{% block sidebarSecondary %}
+  {% set membership = membershipTwo %}
+  {% include '@molecules/membership.twig' %}
+  {% set membership = membershipThree %}
+  {% include '@molecules/membership.twig' %}
+{% endblock %}
+
+{% block footer %}
+  {% set heading, menus, social = footer.heading, footer.menus, footer.social %}
+  {% include '@organisms/footer.twig' %}
+{% endblock %}

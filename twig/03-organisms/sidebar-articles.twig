@@ -1,0 +1,18 @@
+<div class="ama__sidebar-articles">
+  {% set heading = {
+    "text": sidebarArticles.heading.text,
+    "level": "3",
+    "class": "ama__h3 ama__sidebar-articles__block-title"
+  }
+  %}
+
+  {% include "@atoms/heading.twig" %}
+
+  {% block content %}
+    {% for article in sidebarArticles.articles %}
+      {% set articleStub = article %}
+      {% include "@molecules/article-stub.twig" %}
+    {% endfor %}
+  {% endblock content %}
+</div>
+

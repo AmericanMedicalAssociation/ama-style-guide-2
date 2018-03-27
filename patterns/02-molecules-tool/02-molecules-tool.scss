@@ -1,0 +1,55 @@
+.ama__tool {
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
+  @include ama-rules(1px, "", $gray-64, solid);
+  $c: &; //Sets the parent selector as a variable to be used later
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+
+    #{$c}__text p {
+      text-decoration: underline;
+    }
+  }
+
+  &:last-of-type {
+    @include ama-rules(1px, "bottom", $gray-64, solid);
+    @include gutter($margin-bottom-half...);
+  }
+
+  &__icon {
+    @include gutter($padding-right-half...);
+    display: none;
+
+    @include breakpoint($bp-med min-width) {
+      display: block;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  &__text p {
+    margin-bottom: 0;
+  }
+
+  &__meta {
+    @include font-size($small-font-sizes);
+    display: flex;
+
+    & * {
+      color: $gray-64;
+      flex-basis: 100%;
+
+      @include breakpoint($bp-med min-width) {
+        flex-basis: 50%;
+      }
+    }
+  }
+}
