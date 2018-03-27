@@ -338,7 +338,7 @@ gulp.task('drupal-deploy', function () {
   // Change the deploy branch
   config.deployment.branch = "dev-assets";
   // run default to build the code and then publish it to our branch
-  runSequence('default', 'publish');
+  runSequence('default', 'copyTwigFiles', 'publish');
 });
 
 // Function: Tagging deployed code
