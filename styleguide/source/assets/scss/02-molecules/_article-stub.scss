@@ -1,5 +1,9 @@
 .ama__article-stub {
 
+  a {
+    @extend %ama__link--no-underline;
+  }
+
   &__copy {
     flex-grow: 1;
   }
@@ -52,7 +56,6 @@
     flex-wrap: wrap;
     flex-direction: row-reverse;
     align-items: flex-end;
-
 
     .ama__article-stub__copy {
       @include gutter($padding-right-half...);

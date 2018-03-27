@@ -18,7 +18,7 @@
             <ul>
               {% for link in column %}
                 <li>
-                  {% include "@atoms/link.twig" with {"class" : "ama__link--black"} %}
+                  {% include "@atoms/link.twig" %}
                 </li>
               {% endfor %}
             </ul>
@@ -34,7 +34,7 @@
       <ul class="ama__footer__menu-utility">
         {% for link in menus.utility %}
           <li>
-            {% include "@atoms/link.twig" with {"class" : "ama__link--black"} %}
+            {% include "@atoms/link.twig"} %}
           </li>
         {% endfor %}
       </ul>
