@@ -17,29 +17,31 @@
         }
       ]
     },
-    "userMenu": [
-      {
-        "title": "Become a Member",
-        "href": "#",
-        "text": "Become a Member",
-        "target": "",
-        "class": "ama__link--white"
-      },
-      {
-        "title": "Sign In",
-        "href": "#",
-        "text": "Sign In",
-        "target": "",
-        "class": "ama__link--white"
-      },
-      {
-        "title": "Create Account",
-        "href": "#",
-        "text": "Create Account",
-        "target": "",
-        "class": "ama__link--white"
-      }
-    ],
+    "userMenu": {
+      "links": [
+        {
+          "title": "Become a Member",
+          "href": "https://member.ama-assn.org/join-renew",
+          "text": "Become a Member",
+          "target": "",
+          "class": "ama__link--white"
+        },
+        {
+          "title": "Sign In",
+          "href": "#{env_login}",
+          "text": "Sign In",
+          "target": "",
+          "class": "ama__link--white"
+        },
+        {
+          "title": "Create Account",
+          "href": "https://login.ama-assn.org/account/signup?returnurl=http%3A%2F%2Fwww.ama-assn.org%2Fama%3FafterRegisterUrl=http%3A%2F%2Fwww.ama-assn.org%2Fama",
+          "text": "Create Account",
+          "target": "",
+          "class": "ama__link--white"
+        }
+      ]
+    },
     "mobileMenu": {
       "mobile": true,
       "triggerText": "",
@@ -75,9 +77,7 @@
       "class": "ama__masthead__content__link"
     },
     "heading": {
-      "level": "1",
-      "text": "JAMA Network to launch fully open-access journal",
-      "class": "ama__h1"
+      "text": "JAMA Network to launch fully open-access journal"
     },
     "social": [
       {
@@ -114,19 +114,15 @@
       "height": "175",
       "width": ""
     },
-    "heading": {
-      "level": "4",
-      "text": "Steven J. Stack, MD",
-      "class": "ama__inline-bio__title ama__link--blue"
-    },
-    "paragraphs": [
+    "headings": [
       {
-        "text": "President",
-        "class": "ama__inline-bio__meta"
+        "text": "Steven J. Stack, MD"
       },
       {
-        "text": "Emergency Medicine",
-        "class": "ama__inline-bio__meta"
+        "text": "President"
+      },
+      {
+        "text": "Emergency Medicine"
       }
     ],
     "links": [
@@ -155,35 +151,27 @@
     "class": "ama__link--blue"
   },
   "heading": {
-    "level": "2",
-    "text": "Jama Network Open will provide",
-    "class": "ama__h1"
+    "text": "Jama Network Open will provide"
   },
-  "inlineBlockCopy": {
+  "promoAsInline": {
+    "style": "inline",
     "heading": {
-      "level": "2",
-      "text": "Title Text",
-      "class": "ama__h2"
+      "text": "Title Text"
     },
     "paragraph" : {
       "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
     },
     "button": {
       "href": "#",
-      "info": "Sign Up",
       "text": "Sign up",
-      "type": "button",
-      "style": "secondary",
-      "size": ""
+      "style": "secondary"
     }
   },
-  "toolsBlock": {
+  "tools": {
     "heading": {
-      "level": "5",
-      "text": "Topics, Tools and Resources",
-      "class": "ama__h5"
+      "text": "Topics, Tools and Resources"
     },
-    "tools": [
+    "list": [
       {
         "icon": "icon--audio",
         "paragraph": {
@@ -235,8 +223,6 @@
     ],
     "learnMore": {
       "heading": {
-        "level": 5,
-        "class": "ama__h5",
         "text": "Learn More About:"
       },
       "links": [
@@ -263,24 +249,19 @@
   },
   "membership": {
     "heading": {
-      "level": "2",
-      "text": "Title for Membership Block",
-      "class": "ama__h2"
+      "text": "Title for Membership Block"
     },
     "link": "http://www.google.com",
     "paragraph" : {
       "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
     },
     "button": {
-      "text": "This is CTA text.",
-      "style": "primary"
+      "text": "This is CTA text."
     }
   },
   "articleStubAsInline": {
     "heading": {
-      "level": 4,
-      "text": "Example Label Text for an Inline Article Stub",
-      "class": "ama__article-stub--inline__label"
+      "text": "Example Label Text for an Inline Article Stub"
     },
     "link": {
       "href": "http://www.google.com",
@@ -307,9 +288,7 @@
   },
   "learnMore": {
     "heading": {
-      "level": 5,
-      "class": "ama__h5",
-      "text": "Learn More About:"
+      "class": "ama__h5"
     },
     "links": [
       {

@@ -1,9 +1,3 @@
-<ul class="ama__tools--list">
-  {% block toolsList %}
-    {% for tool in tools %}
-      <li class="ama__tools--list__tools">
-        {% include "@molecules/tool.twig" %}
-      </li>
-    {% endfor %}
-  {% endblock %}
-</ul>
+{% for tool in tools %}
+  {% include "@molecules/tool.twig" %}
+{% endfor %}

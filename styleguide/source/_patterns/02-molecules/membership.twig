@@ -1,0 +1,30 @@
+{% set
+  link, button, paragraph, heading =
+  membership.link,
+  membership.button,
+  membership.paragraph,
+  membership.heading|merge({
+    "level": "2",
+    "class": "ama__h2"
+  })
+%}
+
+{% if button %}
+<div class="ama__membership">
+  {% else %}
+  <a href="{{ link }}" class="ama__membership">
+    {% endif %}
+
+    {% include '@atoms/heading.twig' %}
+    {% include '@atoms/paragraph.twig' %}
+
+    {% if button %}
+      {% include '@atoms/button.twig' with {"style" : "primary"} %}
+    {% endif %}
+
+    {% if button %}
+</div>
+{% else %}
+  </a>
+{% endif %}
+
