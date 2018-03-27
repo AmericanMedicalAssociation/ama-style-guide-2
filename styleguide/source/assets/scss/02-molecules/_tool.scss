@@ -2,14 +2,15 @@
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
   @include ama-rules(1px, "", $gray-64, solid);
+  $c: &; //Sets the parent selector as a variable to be used later
   display: flex;
   align-items: center;
   width: 100%;
-  
+
   &:hover {
     text-decoration: none;
 
-    &__text p {
+    #{$c}__text p {
       text-decoration: underline;
     }
   }
