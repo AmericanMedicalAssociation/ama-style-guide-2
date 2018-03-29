@@ -1,13 +1,15 @@
 {% set link = articleStub.title %}
 {% set classes = [
 articleStub.related ? "ama__article-stub--related",
-articleStub.small ? "ama__article-stub--small"
+articleStub.small ? "ama__article-stub--small",
+articleStub.image ? "ama__article-stub--image",
+articleStub.video ? "ama__article-stub--video"
 ] %}
 
 {% macro mediaType(articleStub) %}
   {% if articleStub.video or articleStub.image %}
     {% if articleStub.video %}
-      {% set video = article_mediaType %}
+      {% set video = articleStub.video %}
       {% include "@atoms/video.twig" %}
     {% else %}
       {% set image = articleStub.image %}
@@ -43,7 +45,7 @@ articleStub.small ? "ama__article-stub--small"
   {% set link = article_title.link %}
   {% if link %}
     {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
-      <h3>
+      <h3 class="ama__article-stub__title">
         {% include "@atoms/link.twig" %}
       </h3>
   {% endif %}
@@ -54,8 +56,9 @@ articleStub.small ? "ama__article-stub--small"
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
 
+  {{ _self.title(articleStub) }}
+
   <div class="ama__article-stub__copy">
-    {{ _self.title(articleStub) }}
     {{ _self.description(articleStub) }}
     {{ _self.metadata(articleStub) }}
   </div>

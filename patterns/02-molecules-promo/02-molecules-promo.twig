@@ -1,11 +1,11 @@
 {% set
   style, link, button, image, paragraph, heading =
-  style ? style : promo.style,
-  link ? link : promo.link,
-  button ? button : promo.button,
-  image ? image : promo.image,
-  paragraph ? paragraph : promo.paragraph,
-  heading ? heading|merge({"level": "2", "class": "ama__h2"}) : promo.heading|merge({"level": "2", "class": "ama__h2"})
+  promo.style,
+  promo.link,
+  promo.button,
+  promo.image,
+  promo.paragraph,
+  promo.heading ? promo.heading|merge({level: "2", class: "ama__h2"})
 %}
 
 {% if button %}
