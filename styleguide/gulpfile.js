@@ -338,20 +338,7 @@ gulp.task('drupal-deploy', function () {
   // Change the deploy branch
   config.deployment.branch = "dev-assets";
   // run default to build the code and then publish it to our branch
-  runSequence('default', 'publish');
-});
-
-// Function: Tagging deployed code
-// Description: After code is pushed to master using master-deploy, tag it.
-gulp.task('tag', function () {
-  return gulp.src(config.versioning.files)
-  // Fetch master so that we can tag it.
-    .pipe(shell(['git fetch origin master:master']))
-
-    // Tag it.
-    .pipe(tagversion())
-    // Push tag.
-    .pipe(shell(['git push --tags']));
+  runSequence('default', 'copyTwigFiles', 'publish');
 });
 
 gulp.task('set-master', function (callback) {
@@ -369,5 +356,5 @@ gulp.task('release', function (callback) {
   runSequence = require('run-sequence').use(gulp);
   // Build the style guide, publish to gh-pages, set the branch to master,
   // publish to master, then tag master.
-  runSequence('default', 'publish', 'set-master', 'tag', callback);
+  runSequence('default', 'publish', 'set-master', callback);
 });
