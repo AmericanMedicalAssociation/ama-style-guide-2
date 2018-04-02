@@ -9,7 +9,7 @@
 %}
 
 {% if button %}
-  <div class="ama__promo ama__promo--{{ style }}">
+  <div {{ setAttributes('ama__promo', attributes) }}>
 {% else %}
   <a href="{{ link }}" class="ama__promo ama__promo--{{ style }}">
 {% endif %}
