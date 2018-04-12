@@ -4,6 +4,10 @@
     @extend %ama__link--no-underline;
   }
 
+  &__title {
+    width: 100%;
+  }
+
   &__copy {
     flex-grow: 1;
   }
@@ -30,6 +34,8 @@
     .ama__image,
     .ama__video {
       @extend .col-xs-3;
+      @include gutter($padding-right-half...);
+      align-self: flex-start;
       margin-bottom: 0;
 
       & > div {
@@ -38,16 +44,25 @@
       }
     }
 
-    .ama__article-stub__copy {
-      @extend .col-xs-9;
+    .ama__article-stub__title {
       display: flex;
       flex-direction: column;
       padding-top: 0;
       align-self: start;
+      width: 75%;
     }
 
-    .ama__image + .ama__article-stub__copy {
+    .ama__article-stub__copy {
+      width: 75%;
+    }
+  }
+
+  &--related + &--image,
+  &--related + &--video {
+    .ama__image,
+    .ama__video {
       @include gutter($padding-left-half...);
+      order: 1;
     }
   }
 
@@ -55,13 +70,28 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    align-items: flex-end;
+    align-items: flex-start;
+
+    .ama__article-stub__title {
+      order: 1;
+    }
 
     .ama__article-stub__copy {
       @include gutter($padding-right-half...);
-      align-self: center;
       justify-self: flex-start;
       flex: 1;
+      order: 2;
+    }
+
+    .ama__image,
+    .ama__video {
+      flex-basis: 41.66667%;
+      max-width: 41.66667%;
+      order: 2;
+    }
+
+    .ama__video__container {
+      @include gutter($margin-bottom-half...);
     }
   }
 
