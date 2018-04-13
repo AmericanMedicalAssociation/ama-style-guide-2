@@ -1,0 +1,18 @@
+{% if link.icon %}
+  <a
+    href="{{ link.href }}"
+    title="{{ link.title }}"
+    target="{{ link.target }}"
+    class="{{ link.class }}">
+    {% include link.icon %}
+    {{ link.text }}
+  </a>
+{% else %}
+  <a
+    href="{{ link.href }}"
+    title="{{ link.title }}"
+    target="{{ link.target }}"
+    class="{{ link.class }}">
+    {{ link.text }}
+  </a>
+{% endif %}
