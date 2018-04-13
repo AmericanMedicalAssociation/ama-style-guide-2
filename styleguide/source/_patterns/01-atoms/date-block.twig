@@ -1,4 +1,4 @@
-{% set month, day, year = "June", "2", "now"|date("Y", 'UTC') %}
+{% set month, day, year = "now"|date("F"), "now"|date("d"), "now"|date("Y") %}
 
 <h3 class="ama__h3 date-block">
   <span class="date-block__month">{{ dateMonth | default(month) }}</span>
