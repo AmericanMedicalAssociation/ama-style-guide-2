@@ -2,13 +2,12 @@
 {% include '@atoms/page-title.twig' %}
 
 {% for item in items %}
+  {% if item.type == 'heading' %}
+    {% set heading = item.content %}
+  {% else %}
+    {% set paragraph = item.content %}
+  {% endif %}
 
-    {% if item.type == 'heading' %}
-        {% set heading = item.content %}
-    {% else %}
-        {% set paragraph = item.content %}
-    {% endif %}
-
-    {% include item.template %}
+  {% include item.template %}
 
 {% endfor %}
