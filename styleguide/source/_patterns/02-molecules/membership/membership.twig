@@ -15,11 +15,11 @@
     <a href="{{ link }}" class="ama__membership">
   {% endif %}
 
-  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/heading/heading.twig' %}
   {% include '@atoms/paragraph.twig' %}
 
   {% if button %}
-      {% include '@atoms/button.twig' with {"style" : "primary"} %}
+      {% include '@atoms/button/button.twig' with {"style" : "primary"} %}
   {% endif %}
 
 {{ button ? "</div>"|raw : "</a>"|raw }}
