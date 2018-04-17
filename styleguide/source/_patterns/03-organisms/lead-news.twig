@@ -2,6 +2,6 @@
   {{ leadNews.label }}
   {% for article in leadNews.articles %}
     {% set articleStub = article %}
-    {% include "@molecules/article-stub.twig" %}
+    {% include "@molecules/article-stub/article-stub.twig" %}
   {% endfor %}
 </div>

@@ -35,7 +35,7 @@ articleStub.video ? "ama__article-stub--video"
   {% set metadata, paragraph, title_only = articleStub.metadata, articleStub.paragraph, articleStub.title_only %}
   {% if metadata and paragraph and not title_only %}
     <div class="ama__article-stub__metadata">
-      {% include "@molecules/article-stub-metadata.twig" %}
+      {% include "@molecules/article-stub/article-stub-metadata.twig" %}
     </div>
   {% endif %}
 {% endmacro %}
