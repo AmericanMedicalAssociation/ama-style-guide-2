@@ -1,0 +1,187 @@
+.ama__hub-cards {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 12px;
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+
+
+  .ama__hub-card {
+    @include breakpoint($bp-small $bp-med) {
+      // 2-up layout
+      // when there are three items it's 50:50
+      &:nth-child(1):nth-last-child(2) {
+        margin-right: 12px;
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+
+      &:nth-child(2):nth-last-child(1) {
+        margin-left: 12px;
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+
+      // 3-up layout
+      // when there are three items it's 50:50/100
+      // first item is
+      &:nth-child(1):nth-last-child(3) {
+        margin-right: 12px;
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+      // last of three doesn't have right padding
+      &:nth-child(2):nth-last-child(2) {
+        margin-left: 12px;
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+
+      &:nth-child(3):nth-last-child(1) {
+        width: 100%;
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          // modified so this isn't giant but it results in it being more landscape shape
+          min-height: calc((((100vw -  32px) / 2)) * 1.5);
+        }
+      }
+
+      // 3-up layout
+      // when there are three items it's 50:50/50:50
+      &:nth-child(1):nth-last-child(4),
+      &:nth-child(2):nth-last-child(3),
+      &:nth-child(3):nth-last-child(2),
+      &:nth-child(4):nth-last-child(1) {
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+      // first of three doesn't have left padding
+      &:nth-child(1):nth-last-child(4),
+      &:nth-child(3):nth-last-child(2) {
+        margin-right: 12px;
+      }
+      // last of three doesn't have right padding
+      &:nth-child(2):nth-last-child(3),
+      &:nth-child(4):nth-last-child(1) {
+        margin-left: 12px;
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      // 2-up layout
+      // when there are three items it's 50:50
+      &:nth-child(1):nth-last-child(2) {
+        margin-right: 12px;
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+
+      &:nth-child(2):nth-last-child(1) {
+        margin-left: 12px;
+        width: calc(50% - 12px);
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  32px) / 2) / 2) * 3);
+        }
+      }
+
+      // 3-up layout
+      // when there are three items it's 33:33:33
+      &:nth-child(1):nth-last-child(3),
+      &:nth-child(2):nth-last-child(2),
+      &:nth-child(3):nth-last-child(1) {
+        width: calc(33% - 16px);
+        margin: 0 14px;
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  42px) / 3) / 2) * 3);
+        }
+      }
+      // first of three doesn't have left padding
+      &:nth-child(1):nth-last-child(3) {
+        margin-left: 0;
+      }
+      // last of three doesn't have right padding
+      &:nth-child(3):nth-last-child(1) {
+        margin-right: 0;
+      }
+
+      // 4-up layout
+      // when there are three items it's 25:25:25:25
+      &:nth-child(1):nth-last-child(4),
+      &:nth-child(2):nth-last-child(3),
+      &:nth-child(3):nth-last-child(2),
+      &:nth-child(4):nth-last-child(1) {
+        width: calc(25% - 18px);
+        margin: 0 12px;
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: calc((((100vw -  42px) / 4) / 2) * 3);
+        }
+      }
+      // first of three doesn't have left padding
+      &:nth-child(1):nth-last-child(4) {
+        margin-left: 0;
+      }
+      // last of three doesn't have right padding
+      &:nth-child(4):nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint($bp-large) {
+      // 3-up layout
+      // when there are three items it's 33:33:33
+      &:nth-child(1):nth-last-child(3),
+      &:nth-child(2):nth-last-child(2),
+      &:nth-child(3):nth-last-child(1) {
+
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: 570px;
+        }
+      }
+
+      // 4-up layout
+      // when there are three items it's 25:25:25:25
+      &:nth-child(1):nth-last-child(4),
+      &:nth-child(2):nth-last-child(3),
+      &:nth-child(3):nth-last-child(2),
+      &:nth-child(4):nth-last-child(1) {
+        &.hub-card-portrait,
+        &.card-cta-portrait {
+          min-height: 423px;
+        }
+      }
+    }
+  }
+}

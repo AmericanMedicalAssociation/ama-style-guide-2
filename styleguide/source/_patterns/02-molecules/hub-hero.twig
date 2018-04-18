@@ -1,0 +1,9 @@
+{% set heading, paragraph, button = hubHero.heading, hubHero.paragraph, hubHero.button %}
+
+<section class="ama__hub-hero">
+  {% include "@atoms/heading.twig" %}
+  {% include "@atoms/paragraph.twig" %}
+  <div class="ama__hub-hero_button-container">
+    {% include "@atoms/button.twig" %}
+  </div>
+</section>

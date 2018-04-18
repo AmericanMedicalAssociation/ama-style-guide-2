@@ -1,0 +1,24 @@
+.ama__hub-card {
+  display: flex;
+  background: $gray-7;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+
+  &__heading {
+    @include gutter($margin-top-full...);
+  }
+
+  &__description {
+    @include gutter-all($padding-all-full...);
+  }
+
+  > img {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: darken($gray-7, 10%);
+  }
+}

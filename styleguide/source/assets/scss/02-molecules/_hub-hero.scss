@@ -1,0 +1,23 @@
+.ama__hub-hero,
+.ama__hero-banner {
+  @include gutter($padding-top-full...);
+  width: 100%;
+  min-height: 200px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-size: contain;
+  background: url('https://ipsumimage.appspot.com/1200x400?l=3:1|1200x400&s=36') no-repeat 0 0;
+
+  @include breakpoint($bp-small) {
+    min-height: 400px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .header {
+    margin: 0;
+  }
+}

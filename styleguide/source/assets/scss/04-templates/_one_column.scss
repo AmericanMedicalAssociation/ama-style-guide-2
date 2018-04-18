@@ -1,0 +1,16 @@
+.ama__layout--one-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  min-height: 30em;
+
+  &__content-top {
+    grid-column: 1;
+  }
+
+  &__page-content {
+    @include gutter($padding-top-full...);
+    grid-column: 1;
+  }
+} // end article
+

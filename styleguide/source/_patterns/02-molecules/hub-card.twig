@@ -1,0 +1,15 @@
+{% set image, heading, paragraph, button = hubCard.image, hubCard.heading, hubCard.paragraph, hubCard.button %}
+
+<a class="ama__hub-card" href="">
+  {% if hubCard.image %}
+    {% include "@atoms/image.twig" %}
+  {% endif %}
+  <div class="ama__hub-card__description">
+    {% include "@atoms/heading.twig" %}
+    {% include "@atoms/paragraph.twig" %}
+
+    {% if hubCard.button %}
+      {% include "@atoms/button.twig" %}
+    {% endif %}
+  </div>
+</a>
