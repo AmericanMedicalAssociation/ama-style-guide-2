@@ -9,9 +9,9 @@
 %}
 
 {% if button %}
-  <div class="ama__promo ama__promo--{{ style }}">
-{% else %}
-  <a href="{{ link }}" class="ama__promo ama__promo--{{ style }}">
+<div {{ attributes.addClass('ama__promo ama__promo--'~ style) }}>
+    {% else %}
+  <a href="{{ link }}" {{ attributes.addClass('ama__promo ama__promo--'~ style) }}>
 {% endif %}
 
   {% block image %}
