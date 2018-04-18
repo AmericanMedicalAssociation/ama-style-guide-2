@@ -1,5 +1,4 @@
-/*------------------------------------*\
-    $AMA PATTERNS
+/*------------------------------------*    $AMA PATTERNS
 \*------------------------------------*/
 .ama__hero,
 .ama__related-articles-block {
@@ -19,8 +18,7 @@
       .ama__related-articles-block > * {
         margin-top: 14px; } }
 
-/*------------------------------------*\
-    $FORMS
+/*------------------------------------*    $FORMS
 \*------------------------------------*/
 .ama__form {
   /* Validation */ }
@@ -255,8 +253,7 @@
   .ama__form .is-valid {
     border-color: #4D8406; }
 
-/*------------------------------------*\
-    $SPECIFIC FORMS
+/*------------------------------------*    $SPECIFIC FORMS
 \*------------------------------------*/
 * {
   -webkit-box-sizing: border-box;
@@ -274,17 +271,13 @@
   display: flex; }
 
 /* Align item in center wrt major axis*/
-
-.flex-center-x,
-.flex-center-xy {
+.flex-center-x, .flex-center-xy {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
 
 /* Align item in center wrt minor axis*/
-
-.flex-center-y,
-.flex-center-xy {
+.flex-center-y, .flex-center-xy {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -580,8 +573,7 @@
       font-size: 1.444em;
       line-height: 1.192; } }
 
-/*------------------------------------*\
-    $RESET
+/*------------------------------------*    $RESET
 \*------------------------------------*/
 /* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
 * {
@@ -1686,16 +1678,34 @@ a {
     width: 22px;
     vertical-align: middle; }
 
-*[class*="__page-content"] a:hover, *[class*="__page-content"] a:focus {
+*[class*="__page-content"] p a:hover, *[class*="__page-content"] p a:focus {
   background-color: #9073A6; }
 
-.ama__link--black, .ama__tools-learn-more a, .ama__wayfinder--referrer__link-back a {
+.ama__link--no-underline, .ama__wayfinder--referrer__link-back a,
+.ama__article-stub a,
+.ama__tool,
+.ama__tools-learn-more a {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none; }
-  .ama__link--black:link, .ama__tools-learn-more a:link, .ama__wayfinder--referrer__link-back a:link, .ama__link--black:visited, .ama__tools-learn-more a:visited, .ama__wayfinder--referrer__link-back a:visited {
+  .ama__link--no-underline:link, .ama__wayfinder--referrer__link-back a:link, .ama__link--no-underline:visited, .ama__wayfinder--referrer__link-back a:visited,
+  .ama__article-stub a:link,
+  .ama__tool:link,
+  .ama__tools-learn-more a:link,
+  .ama__article-stub a:visited,
+  .ama__tool:visited,
+  .ama__tools-learn-more a:visited {
     color: #000000; }
-  .ama__link--black:active, .ama__tools-learn-more a:active, .ama__wayfinder--referrer__link-back a:active, .ama__link--black:hover, .ama__tools-learn-more a:hover, .ama__wayfinder--referrer__link-back a:hover, .ama__link--black:focus, .ama__tools-learn-more a:focus, .ama__wayfinder--referrer__link-back a:focus {
+  .ama__link--no-underline:active, .ama__wayfinder--referrer__link-back a:active, .ama__link--no-underline:hover, .ama__wayfinder--referrer__link-back a:hover, .ama__link--no-underline:focus, .ama__wayfinder--referrer__link-back a:focus,
+  .ama__article-stub a:active,
+  .ama__tool:active,
+  .ama__tools-learn-more a:active,
+  .ama__article-stub a:hover,
+  .ama__tool:hover,
+  .ama__tools-learn-more a:hover,
+  .ama__article-stub a:focus,
+  .ama__tool:focus,
+  .ama__tools-learn-more a:focus {
     color: #000000;
     text-decoration: underline;
     background-color: transparent; }
@@ -1725,17 +1735,6 @@ a {
   .ama__masthead__content__link:hover,
   .ama__masthead__content__link:focus {
     color: #3597C9;
-    text-decoration: underline;
-    background-color: transparent; }
-
-.ama__link--purple {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 400;
-  text-decoration: none; }
-  .ama__link--purple:link, .ama__link--purple:visited {
-    color: #46166B; }
-  .ama__link--purple:active, .ama__link--purple:hover, .ama__link--purple:focus {
-    color: #46166B;
     text-decoration: underline;
     background-color: transparent; }
 
@@ -2416,9 +2415,9 @@ a.ama__promo--border:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: top;
+  -ms-flex-align: top;
+  align-items: top;
   width: 100%; }
   @media (min-width: 56.25em) {
     .ama__tool {
@@ -2484,9 +2483,9 @@ a.ama__promo--border:hover {
           flex-basis: 50%; } }
 
 .ama__tools-learn-more a {
+  padding-left: 5px;
   list-style: disc inside none;
-  display: list-item;
-  padding-left: 5px; }
+  display: list-item; }
   @media (min-width: 56.25em) {
     .ama__tools-learn-more a {
       padding-left: 7px; } }
@@ -2904,6 +2903,12 @@ a.ama__membership {
     margin-top: 0; }
   @media (min-width: 56.25em) {
     .ama__layout--three-column__sidebar--primary > *, .ama__layout--three-column__sidebar--secondary > * {
+      margin-top: 28px; } }
+
+.ama__layout--three-column__sidebar--primary > div[class*="ama__"] + div[class*="ama__"], .ama__layout--three-column__sidebar--primary div:not([class*="ama__"]) > div[class*="ama__"] + div[class*="ama__"], .ama__layout--three-column__sidebar--secondary > div[class*="ama__"] + div[class*="ama__"], .ama__layout--three-column__sidebar--secondary div:not([class*="ama__"]) > div[class*="ama__"] + div[class*="ama__"] {
+  margin-top: 20px; }
+  @media (min-width: 56.25em) {
+    .ama__layout--three-column__sidebar--primary > div[class*="ama__"] + div[class*="ama__"], .ama__layout--three-column__sidebar--primary div:not([class*="ama__"]) > div[class*="ama__"] + div[class*="ama__"], .ama__layout--three-column__sidebar--secondary > div[class*="ama__"] + div[class*="ama__"], .ama__layout--three-column__sidebar--secondary div:not([class*="ama__"]) > div[class*="ama__"] + div[class*="ama__"] {
       margin-top: 28px; } }
 
 .ama__layout--three-column__sidebar--primary {
