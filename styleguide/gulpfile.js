@@ -282,6 +282,7 @@ gulp.task('default', ['clean:before'], function (callback) {
     'patternlab',
     'styleguide',
     'copyTwigFiles',
+    'svg2twig',
     'sass',
     'scripts',
     callback
