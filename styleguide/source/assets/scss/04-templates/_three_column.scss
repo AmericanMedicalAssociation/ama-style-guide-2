@@ -47,6 +47,12 @@
   &--primary,
   &--secondary {
     @include child-top-gutters($gutter);
+
+    & > div[class*="ama__"], div:not([class*="ama__"]) > div[class*="ama__"] {
+      & + div[class*="ama__"] {
+        @include gutter($margin-top-full...);
+      }
+    }
   }
 
   &--primary {

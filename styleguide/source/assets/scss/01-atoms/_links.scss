@@ -12,7 +12,7 @@ a {
   }
 }
 
-*[class*="__page-content"] {
+*[class*="__page-content"] p {
  a {
    &:hover,
    &:focus {
@@ -21,8 +21,8 @@ a {
  }
 }
 
-.ama__link--black,
-%ama__link--black {
+.ama__link--no-underline,
+%ama__link--no-underline {
   @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
@@ -38,7 +38,7 @@ a {
     background-color: transparent;
   }
 }
-
+//
 .ama__link--white,
 %ama__link--white {
   @include type($myriad-pro, $font-weight-regular);
@@ -71,25 +71,6 @@ a {
   &:hover,
   &:focus {
     color: $hoverBlue;
-    text-decoration: underline;
-    background-color: transparent;
-  }
-}
-
-.ama__link--purple,
-%ama__link--purple{
-  @include type($myriad-pro, $font-weight-regular);
-  text-decoration: none;
-
-  &:link,
-  &:visited {
-    color: $purple;
-  }
-  // if the default link style changes this will need to include color: black; text-decoration: none;
-  &:active,
-  &:hover,
-  &:focus {
-    color: $purple;
     text-decoration: underline;
     background-color: transparent;
   }
