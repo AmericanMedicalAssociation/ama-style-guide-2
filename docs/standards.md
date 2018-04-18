@@ -221,8 +221,25 @@ Upon changes to the color palette, color variables should be named according to 
 - Font sizing is in `em`s
 
 ### Javascript
-- JS approach
-- JS functionality should be attached to js-<element> class
+- Drupal requires that Javascript be encapsulated using `Drupal.behaviours`
+- Refer to https://www.drupal.org/docs/8/api/javascript-api/javascript-api-overview
+- Use the Drupal community guidelines for Javascript https://www.drupal.org/docs/develop/standards/javascript/javascript-coding-standards
+
+***This a snippet from the Drupal JS coding standards doc***
+- Indenting
+  - All code MUST indent using two (2) space characters,
+  - All code MUST NOT indent using tab characters,
+  - All code MUST NOT end with trailing whitespace. 
+  
+- Semi-colons
+  - JavaScript allows optional "semi-colon insertion". Drupal standards do not.
+  - All statements (except for, function, if, switch, try, while) MUST be followed by a semi-colon (;),
+  - Return values MUST start on the same line as the return keyword.
+  
+- CamelCasing
+  - For variables that are not constants or constructors, multi-word variables and functions SHOULD be lowerCamelCased.
+  - The first letter of each variable or function SHOULD be lowercase, and the first letter of subsequent words SHOULD be capitalized. There SHOULD NOT be underscores between the words.
+  - In case a variable contains a jQuery object, the variable MUST start with a dollar sign ($):
 
 ## Community Guidelines
 
