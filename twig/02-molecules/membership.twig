@@ -10,21 +10,16 @@
 %}
 
 {% if button %}
-<div class="ama__membership">
+    <div {{ setAttributes('ama__membership', attributes) }}>
   {% else %}
-  <a href="{{ link }}" class="ama__membership">
-    {% endif %}
+    <a href="{{ link }}" class="ama__membership">
+  {% endif %}
 
-    {% include '@atoms/heading.twig' %}
-    {% include '@atoms/paragraph.twig' %}
+  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/paragraph.twig' %}
 
-    {% if button %}
+  {% if button %}
       {% include '@atoms/button.twig' with {"style" : "primary"} %}
-    {% endif %}
+  {% endif %}
 
-    {% if button %}
-</div>
-{% else %}
-  </a>
-{% endif %}
-
+{{ button ? "</div>"|raw : "</a>"|raw }}
