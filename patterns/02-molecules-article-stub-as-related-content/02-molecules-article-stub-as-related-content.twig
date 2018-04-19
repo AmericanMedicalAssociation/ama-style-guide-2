@@ -58,8 +58,10 @@ articleStub.video ? "ama__article-stub--video"
 
   {{ _self.title(articleStub) }}
 
+  {% if not articleStub.related %}
   <div class="ama__article-stub__copy">
     {{ _self.description(articleStub) }}
     {{ _self.metadata(articleStub) }}
   </div>
+  {% endif %}
 </div>

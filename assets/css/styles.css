@@ -2074,7 +2074,7 @@ figcaption {
       .ama__press-release__logos > * {
         margin-bottom: 28px; } }
 
-.ama__promo {
+.ama__promo, .ama__promo--background, .ama__promo--border, a.ama__promo--background, a.ama__promo--border {
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
@@ -2083,23 +2083,23 @@ figcaption {
   font-weight: 600;
   text-decoration: none; }
   @media (min-width: 56.25em) {
-    .ama__promo {
+    .ama__promo, .ama__promo--background, .ama__promo--border, a.ama__promo--background, a.ama__promo--border {
       padding-top: 14px; } }
   @media (min-width: 56.25em) {
-    .ama__promo {
+    .ama__promo, .ama__promo--background, .ama__promo--border, a.ama__promo--background, a.ama__promo--border {
       padding-right: 14px; } }
   @media (min-width: 56.25em) {
-    .ama__promo {
+    .ama__promo, .ama__promo--background, .ama__promo--border, a.ama__promo--background, a.ama__promo--border {
       padding-bottom: 14px; } }
   @media (min-width: 56.25em) {
-    .ama__promo {
+    .ama__promo, .ama__promo--background, .ama__promo--border, a.ama__promo--background, a.ama__promo--border {
       padding-left: 14px; } }
-  .ama__promo > * {
+  .ama__promo > *, .ama__promo--background > *, .ama__promo--border > *, a.ama__promo--background > *, a.ama__promo--border > * {
     margin-top: 7px; }
-    .ama__promo > *:first-child {
+    .ama__promo > *:first-child, .ama__promo--background > *:first-child, .ama__promo--border > *:first-child {
       margin-top: 0; }
     @media (min-width: 56.25em) {
-      .ama__promo > * {
+      .ama__promo > *, .ama__promo--background > *, .ama__promo--border > *, a.ama__promo--background > *, a.ama__promo--border > * {
         margin-top: 14px; } }
   .ama__promo--background {
     background: #EDEDED; }
@@ -2132,13 +2132,13 @@ figcaption {
     @media (min-width: 37.5em) {
       .ama__promo--inline {
         float: left; } }
-  .ama__promo > * {
+  .ama__promo > *, .ama__promo--background > *, .ama__promo--border > *, a.ama__promo--background > *, a.ama__promo--border > * {
     margin-bottom: 0; }
-  .ama__promo .ama__image,
-  .ama__promo .ama__image img {
+  .ama__promo .ama__image, .ama__promo--background .ama__image, .ama__promo--border .ama__image,
+  .ama__promo .ama__image img, .ama__promo--background .ama__image img, .ama__promo--border .ama__image img {
     max-width: 100%;
     height: auto; }
-  .ama__promo .ama__button--secondary {
+  .ama__promo .ama__button--secondary, .ama__promo--background .ama__button--secondary, .ama__promo--border .ama__button--secondary {
     width: 100%; }
 
 a.ama__promo--background:hover {
@@ -2171,7 +2171,6 @@ a.ama__promo--border:hover {
     color: #ffffff;
     cursor: pointer;
     outline: none;
-    min-width: 12.5em;
     padding: 15px;
     width: 100%;
     border-left: 1px solid #7F7F7F;
@@ -2190,18 +2189,20 @@ a.ama__promo--border:hover {
     .ama__ribbon__dropdown__trigger__icon {
       display: inline-block;
       line-height: 19px;
-      fill: #ffffff;
       margin-left: 0.75em;
+      fill: #ffffff;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease; }
       .ama__ribbon__dropdown__trigger__icon__arrow {
         width: 10px; }
-      .ama__ribbon__dropdown__trigger__icon__user svg {
-        height: 21px;
-        width: 23px; }
+      .ama__ribbon__dropdown__trigger__icon__user {
+        margin-left: 0; }
+        .ama__ribbon__dropdown__trigger__icon__user svg {
+          height: 21px;
+          width: 23px; }
   .ama__ribbon__dropdown__nav {
     position: absolute;
-    left: 0;
+    right: -1px;
     top: 100%;
     max-height: 0;
     overflow: hidden;
@@ -2741,6 +2742,9 @@ a.ama__membership {
 
 .ama__ribbon {
   background-color: #46166B; }
+  @media (max-width: 37.5em) {
+    .ama__ribbon .container {
+      padding: 0; } }
   .ama__ribbon > div {
     position: relative;
     display: -webkit-box;
