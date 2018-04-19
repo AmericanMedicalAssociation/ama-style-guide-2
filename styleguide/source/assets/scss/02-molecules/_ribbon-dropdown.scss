@@ -38,17 +38,22 @@
     &__icon {
       display: inline-block;
       line-height: 19px;
-      fill: $white;
       margin-left: 0.75em;
+      fill: $white;
+
       transition: all 0.3s ease;
 
       &__arrow {
         width: 10px;
       }
 
-      &__user svg {
-        height: 21px;
-        width: 23px;
+      &__user {
+        margin-left: 0;
+
+        svg {
+          height: 21px;
+          width: 23px;
+        }
       }
     }
   }

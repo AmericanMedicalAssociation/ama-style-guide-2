@@ -1,5 +1,12 @@
 .ama__ribbon {
   background-color: $purple;
+
+  @include breakpoint($bp-small max-width) {
+    .container {
+      padding: 0;
+    }
+  }
+
   & > div {
     position: relative;
     display: flex;
