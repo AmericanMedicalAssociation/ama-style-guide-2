@@ -1,12 +1,19 @@
-{% set image, heading, paragraph, button = hubCard.image, hubCard.heading, hubCard.paragraph, hubCard.button %}
+{% set image, heading, paragraph, unorderedList, button = hubCard.image, hubCard.heading, hubCard.paragraph, hubCard.unorderedList, hubCard.button %}
 
-<a class="ama__hub-card" href="">
-  {% if hubCard.image %}
+<a class="ama__hub-card {{ hubCard.layout }}" href="">
+  {% if hubCard.image.src is not empty %}
     {% include "@atoms/image.twig" %}
   {% endif %}
   <div class="ama__hub-card__description">
     {% include "@atoms/heading.twig" %}
-    {% include "@atoms/paragraph.twig" %}
+
+    {% if hubCard.paragraph is not empty %}
+      {% include "@atoms/paragraph.twig" %}
+    {% endif %}
+
+    {% if hubCard.unorderedList is not empty %}
+      {% include "@atoms/unordered-list.twig" with { 'class': 'ama__hub-card__list' }  %}
+    {% endif %}
 
     {% if hubCard.button %}
       {% include "@atoms/button.twig" %}

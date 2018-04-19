@@ -1,9 +1,19 @@
-{% set heading, paragraph, button = hubHero.heading, hubHero.paragraph, hubHero.button %}
+{% set heading, paragraph, unorderedList, button = hubHero.heading, hubHero.paragraph, hubHero.unorderedList, hubHero.button %}
 
-<section class="ama__hub-hero">
-  {% include "@atoms/heading.twig" %}
-  {% include "@atoms/paragraph.twig" %}
-  <div class="ama__hub-hero_button-container">
-    {% include "@atoms/button.twig" %}
+<section class="ama__hub-hero {{ hubHero.layout }}">
+  <div class="ama__hub-hero__description">
+    {% include "@atoms/heading.twig" %}
+
+    {% if hubHero.paragraph is not empty %}
+      {% include "@atoms/paragraph.twig" %}
+    {% endif %}
+
+    {% if hubHero.unorderedList is not empty %}
+      {% include "@atoms/unordered-list.twig" with { 'class': 'ama__hub-hero__list' }  %}
+    {% endif %}
+
+    <div class="ama__hub-hero_button-container">
+      {% include "@atoms/button.twig" %}
+    </div>
   </div>
 </section>

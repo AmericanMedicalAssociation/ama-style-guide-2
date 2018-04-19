@@ -1,11 +1,10 @@
-.ama__hub-hero,
-.ama__hero-banner {
-  @include gutter($padding-top-full...);
+.ama__hub-hero {
+  $grandparent: &;
   width: 100%;
   min-height: 200px;
   max-width: 1200px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
   text-align: center;
   background-size: contain;
@@ -19,5 +18,79 @@
 
   .header {
     margin: 0;
+  }
+
+  &__list {
+    margin: inherit;
+    padding: inherit;
+
+    ul {
+      margin: inherit;
+      padding: inherit;
+    }
+  }
+
+  &__description {
+    @include gutter-all($padding-all-full...);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &--cta-only {
+    flex-direction: column;
+    justify-content: center;
+    background: $gray-7;
+    min-height: 0;
+  }
+
+  &--side-right {
+    flex-direction: row;
+    justify-content: flex-end;
+    background: url('https://ipsumimage.appspot.com/1280x720?l=16:9|1280x720&s=36') no-repeat center center;
+    background-size: 100%;
+
+    #{$grandparent}__description {
+      background-color: rgba($white, 0.45);
+      width: 50%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+
+  &--hero-side {
+    flex-direction: row;
+    justify-content: flex-start;
+    background: url('https://ipsumimage.appspot.com/1280x720?l=16:9|1280x720&s=36') no-repeat center center;
+    background-size: 100%;
+
+    #{$grandparent}__description {
+      background-color: rgba($white, 0.45);
+      width: 50%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+
+  &--split {
+    align-items: stretch;
+
+    #{$grandparent}__copy {
+      margin-top: auto;
+      margin-bottom: 0;
+      order: 2;
+
+
+      align-self: flex-end;
+    }
+
+    #{$grandparent}_button-container {
+      @include gutter-all($margin-all-full...);
+      order: 1;
+    }
   }
 }
