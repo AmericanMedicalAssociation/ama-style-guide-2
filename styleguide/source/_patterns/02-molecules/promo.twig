@@ -8,10 +8,12 @@
   promo.heading ? promo.heading|merge({level: "2", class: "ama__h2"})
 %}
 
+{% set classes = "ama__promo--#{style}" %}
+
 {% if button %}
-<div {{ attributes.addClass('ama__promo ama__promo--'~ style) }}>
+<div {{ setAttributes(classes, attributes) }}>
     {% else %}
-  <a href="{{ link }}" {{ attributes.addClass('ama__promo ama__promo--'~ style) }}>
+  <a href="{{ link }}" {{ setAttributes(classes, attributes) }}>
 {% endif %}
 
   {% block image %}
