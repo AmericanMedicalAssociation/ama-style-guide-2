@@ -3,7 +3,6 @@ An Article Stub (renamed from Article Preview) molecule contains a topic label (
 
 Variants are managed by use of pseudo-patterns.
 
-- "Article Stub Small Image" is the variant of this pattern that includes a smaller image.
 - "Article Stub Video" is the variant of this pattern that includes a video rather than an image.
 - "Article Stub Related" is the variant of this pattern that includes an image and title.
 - "Article Stub Related No Image" is the variant of this pattern that includes a linked title.
