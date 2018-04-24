@@ -22,6 +22,7 @@
               $('.character-count').removeClass('error');
             }
           }
+          
           $('.textarea').keyup(function() {
             count_remaining_character();
           });
