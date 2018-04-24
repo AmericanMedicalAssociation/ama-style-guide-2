@@ -1,0 +1,68 @@
+.ama__resource-tabs {
+}
+
+.ama__resource-tabs__nav {
+  width: 100%;
+  list-style-type: none;
+  background: $purple;
+  display: flex;
+
+}
+
+.ama__resource-tabs__nav li {
+  display: block;
+  padding: $gutter / 2;
+  color: $white;
+  text-align: center;
+  border-right: solid 1px #ffffff;
+  margin: 0;
+
+  &.--is-active {
+    background: $white;
+    color: $purple;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ama__resource-tabs__nav__icon {
+  margin: 0 auto;
+  border: solid 1px white;
+  background: rgba(255,255,255,.3);
+  width: 20px;
+  height: 20px;
+  @include breakpoint($bp-med) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.--is-active .ama__resource-tabs__nav__icon {
+  border: solid 1px $purple;
+}
+
+.ama__resource-tabs__content {
+  position: relative;
+}
+
+.ama__resource-tabs__nav__label {
+  display: none;
+  @include breakpoint($bp-med) {
+    display: block;
+  }
+}
+
+.ama__resource-tabs__content section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  padding: $gutter / 2;
+
+  &.--is-active {
+    z-index: 10;
+  }
+}

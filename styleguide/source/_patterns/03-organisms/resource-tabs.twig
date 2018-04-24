@@ -1,0 +1,54 @@
+<div class="ama__resource-tabs">
+  <ul class="ama__resource-tabs__nav">
+    <li data-tab="media" class="--is-active">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Media</div>
+    </li>
+    <li data-tab="downloads">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Downloads</div>
+    </li>
+    <li data-tab="related-links">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Related Links</div>
+    </li>
+    <li data-tab="schedules">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Schedules</div>
+    </li>
+    <li data-tab="tables">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Tables</div>
+    </li>
+    <li data-tab="contacts">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Contacts</div>
+    </li>
+  </ul>
+  <div class="ama__resource-tabs__content">
+    <section id="media" class="--is-active">
+      {% set heading = {level: '3', text: 'Media'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
+    <section id="downloads">
+      {% set heading = {level: '3', text: 'Downloads'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
+    <section id="related-links">
+      {% set heading = {level: '3', text: 'Related Links'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
+    <section id="schedules">
+      {% set heading = {level: '3', text: 'Schedules'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
+    <section id="tables">
+      {% set heading = {level: '3', text: 'Tables'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
+    <section id="contacts">
+      {% set heading = {level: '3', text: 'Contacts'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
+  </div>
+</div>
