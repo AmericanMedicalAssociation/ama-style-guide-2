@@ -14,6 +14,7 @@
     attach: function (context, settings) {
       (function ($) {
 
+        $( "[type=checkbox]" ).checkboxradio();
         //////////////////////////////////
         // Validate form
         //////////////////////////////////
