@@ -1,5 +1,9 @@
 <div class="ama__resource-tabs">
   <ul class="ama__resource-tabs__nav">
+    <li data-tab="resources">
+      <div class="ama__resource-tabs__nav__icon"></div>
+      <div class="ama__resource-tabs__nav__label">Resources</div>
+    </li>
     <li data-tab="media" class="--is-active">
       <div class="ama__resource-tabs__nav__icon"></div>
       <div class="ama__resource-tabs__nav__label">Media</div>
@@ -26,6 +30,10 @@
     </li>
   </ul>
   <div class="ama__resource-tabs__content">
+    <section id="resources" class="--is-active">
+      {% set heading = {level: '3', text: 'Resources'}  %}
+      {% include '@atoms/heading.twig' %}
+    </section>
     <section id="media" class="--is-active">
       {% set heading = {level: '3', text: 'Media'}  %}
       {% include '@atoms/heading.twig' %}
