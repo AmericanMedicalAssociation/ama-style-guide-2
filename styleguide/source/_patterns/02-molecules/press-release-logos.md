@@ -3,8 +3,6 @@ A image parade used specifically for the press page.
 
 [EWL-4486](https://issues.ama-assn.org/browse/EWL-4486)
 
-### Use Case
-
 ~~~
 
 "images": [
