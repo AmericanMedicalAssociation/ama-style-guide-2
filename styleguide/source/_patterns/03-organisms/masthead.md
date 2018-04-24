@@ -11,6 +11,8 @@ The Masthead includes a People Bio, a group of social icons/links, a date, a cat
 ### Variants
 - [Masthead with Subtitle](?p=organisms-masthead-with-subtitle)
 
+### Use Case
+
 ### Variables
 ~~~
 {

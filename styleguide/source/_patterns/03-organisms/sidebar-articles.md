@@ -8,6 +8,7 @@ This pattern is a block that may optionally include:
 
 [EWL-4389](https://issues.ama-assn.org/browse/EWL-4389)
 
+### Use Case
 
 ### Variables
 ~~~

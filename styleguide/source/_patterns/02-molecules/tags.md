@@ -10,6 +10,9 @@ An unordered list in which the list items are links with special "tag" styling. 
 ### Variant options
 none
 
+### Use Case
+Produce clickable links of categories of content.
+
 ### Variables
 ~~~
 {

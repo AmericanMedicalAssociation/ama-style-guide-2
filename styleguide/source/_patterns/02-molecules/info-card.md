@@ -12,6 +12,9 @@ Variants are managed by use of pseudo-patterns.
 
 [EWL-4487](https://issues.ama-assn.org/browse/EWL-4487)
 
+### Use Case
+Produces a card design with available information.
+
 ### Variables
 ~~~
 {

@@ -13,6 +13,9 @@ The dropdown navigation present in the header ribbon.
 * [user-menu](?p=molecules-ribbon-dropdown-mobile-auth)
 * [user-menu](?p=molecules-ribbon-dropdown-mobile)
 
+### Use Case
+A mechanism to switch from high level services.
+
 ### Variables
 ~~~
   "ribbonDropdown": {

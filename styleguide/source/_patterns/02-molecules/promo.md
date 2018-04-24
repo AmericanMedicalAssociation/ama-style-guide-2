@@ -24,6 +24,9 @@ This pattern should only ever have a Secondary CTA button, and never a Primary o
 [EWL-4185](https://issues.ama-assn.org/browse/EWL-4185)
 [EWL-4514](https://issues.ama-assn.org/browse/EWL-4514)
 
+### Use Case
+Produces an eye catching promotional container.
+
 ### Variables
 ~~~
 {

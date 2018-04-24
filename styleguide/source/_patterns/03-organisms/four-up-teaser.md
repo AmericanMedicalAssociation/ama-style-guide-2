@@ -7,6 +7,9 @@ A collection of up to four articles displaying an image (optional), title, and m
 
 [EWL-4434](https://issues.ama-assn.org/browse/EWL-4434)
 
+### Use Case
+A collection of clickable articles.
+
 ### Variables
 ~~~
 {

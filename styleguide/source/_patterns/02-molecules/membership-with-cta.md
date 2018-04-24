@@ -6,6 +6,9 @@ The membership pattern includes a heading, a description, and a CTA button (opti
 ### Variant options
 * [Base pattern (without CTA)](?p=molecules-membership)
 
+### Use Case
+A membership container containing a call to action link.
+
 ### Variables
 ~~~
 {
