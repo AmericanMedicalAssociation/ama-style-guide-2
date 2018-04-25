@@ -9,6 +9,7 @@
       (function ($) {
         $(document).ready(function(){
           $( "[type=checkbox]" ).checkboxradio();
+          $( "[type=radio]" ).checkboxradio().buttonset().find('label').css('width', '19.4%');;
         });
       })(jQuery);
     }
