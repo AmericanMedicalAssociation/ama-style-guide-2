@@ -3,9 +3,9 @@ el: ".ama__promo-group"
 title: "Promo Group"
 ---
 
-A collection of three column wide promo molecules displaying an image (optional), title, and button. 
+A collection of three column wide promo molecules displaying an image (optional), paragraph text (optional), and button. 
 
-[EWL-4893(https://issues.ama-assn.org/browse/EWL-4893)
+[EWL-4893](https://issues.ama-assn.org/browse/EWL-4893)
 
 ### Variables
 ~~~
