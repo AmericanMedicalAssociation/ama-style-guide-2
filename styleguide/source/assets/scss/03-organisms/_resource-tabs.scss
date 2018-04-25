@@ -14,12 +14,18 @@
   padding: $gutter / 2;
   color: $white;
   text-align: center;
-  border-right: solid 1px #ffffff;
   margin: 0;
+  border-right: solid 1px $white;
 
   &.--is-active {
     background: $white;
     color: $purple;
+    border-right: double 3px $purple;
+    border-left: solid 1px;
+
+    + li {
+      padding-left: 11px;
+    }
   }
 
   &:hover {
