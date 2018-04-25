@@ -1,3 +1,4 @@
-<label for="checkbox-nested-2">2 Queen
-  <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2">
+<label for="{{ checkbox.id }}">
+  {{ checkbox.label }}
+  <input type="checkbox" name="{{ checkbox.name }}" id="{{ checkbox.id }}" value="{{ checkbox.value }}">
 </label>
