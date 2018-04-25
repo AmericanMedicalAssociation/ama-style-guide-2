@@ -3,13 +3,9 @@
 {% block contentLeft %}
   {% include '@organisms/masthead.twig' %}
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate debitis dignissimos, dolorem dolorum ea eius hic laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus, eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eaque illo, ipsa maxime nobis quod repellat sit sunt veritatis vitae voluptate voluptates! Adipisci aspernatur distinctio ipsum libero nostrum quos ullam.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eaque earum molestias mollitia nesciunt nulla quasi ratione reiciendis soluta, voluptatibus.</p>
   {% include '@molecules/article-stub-as-inline.twig' with { articleStubAsInline : body.articleStubAsInline } %}
-  {% include '@molecules/tags.twig' %}
-{% endblock %}
-
-{% block contentRight %}
-  {% include '@organisms/resource-tabs.twig' with { tags : body.tags } %}
-{% endblock %}
-
-{% block footer %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur cupiditate, ea eius, facilis fuga laudantium modi molestiae placeat similique soluta tempora vel? Aliquid cupiditate delectus distinctio, doloribus enim eveniet illum, laudantium obcaecati pariatur perspiciatis quaerat quod similique velit. Eos libero provident quod sit.</p>
+  {% include '@molecules/tags.twig' with { tags : body.tags } %}
 {% endblock %}
