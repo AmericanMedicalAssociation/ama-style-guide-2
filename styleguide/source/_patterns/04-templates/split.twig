@@ -1,0 +1,28 @@
+{% block header %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page header content'}}%}
+{% endblock %}
+
+<div class="ama__layout--split container {{ class }}">
+  {# Keeping tabindex for accessibility purposes #}
+  <section class="ama__layout--split__content-top">
+    {% block contentTop %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
+    {% endblock %}
+  </section>
+
+  <section class="ama__layout--split__left">
+    {% block contentLeft %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Left region content'}}%}
+    {% endblock %}
+  </section>
+
+  <section class="ama__layout--split__right">
+    {% block contentRight %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Right region content'}}%}
+    {% endblock %}
+  </section>
+</div>
+
+{% block footer %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page footer content'}}%}
+{% endblock %}
