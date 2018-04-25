@@ -12,22 +12,22 @@ A collection of three column wide promo molecules displaying an image (optional)
 {
   "promoGroup": [
     {
-      style: "background", (required, options: "background", "border")
-      heading: {
-        level: "2"
-        text: 
+      style: "background", (required)
+      image: (optional) {
+        alt: 
           type: string / required
-        class: "ama__h2"
-      }
-      button: {
-          text: 
-            type: string / required
-          style: "block"
+        src: 
+          type: string / required
         }
       paragraph: {
         text: 
+          type: string / optional
+        }
+      button: {
+        text: 
           type: string / required
-      }
+        style: "block"
+        }
     },
    ... # repeat for each item.
     }
