@@ -1,9 +1,15 @@
 {% extends '@templates/split.twig' %}
 
 {% block contentLeft %}
-  Hiii test
+  {% include '@organisms/masthead.twig' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate debitis dignissimos, dolorem dolorum ea eius hic laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus, eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
+  {% include '@molecules/article-stub-as-inline.twig' with { articleStubAsInline : body.articleStubAsInline } %}
+  {% include '@molecules/tags.twig' %}
 {% endblock %}
 
 {% block contentRight %}
-  {% include '@organisms/resource-tabs.twig' %}
+  {% include '@organisms/resource-tabs.twig' with { tags : body.tags } %}
+{% endblock %}
+
+{% block footer %}
 {% endblock %}
