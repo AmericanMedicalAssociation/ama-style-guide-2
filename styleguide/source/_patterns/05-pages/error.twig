@@ -1,0 +1,20 @@
+{% extends '@templates/one-column.twig' %}
+
+{% block header %}
+  {% include '@organisms/ribbon.twig' %}
+  {% include '@organisms/wayfinder.twig' %}
+{% endblock %}
+
+{% block contentTop %}
+  {% include '@atoms/page-title.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+{% endblock %}
+
+{% block pageContent %}
+  {% include '@organisms/promo-group.twig' %}
+{% endblock %}
+
+{% block footer %}
+  {% set heading, menus, social = footer.heading, footer.menus, footer.social %}
+  {% include '@organisms/footer.twig' %}
+{% endblock %}
