@@ -1,12 +1,19 @@
 .ui-checkboxradio-label {
   @include gutter($margin-top-half...);
   @include gutter($margin-bottom-full...);
+  color: $gray-64;
   display: block;
   padding: 0;
   text-align: left;
+
+  &:hover {
+    color: $gray-64;
+  }
 }
 
 .ui-checkboxradio-label .ui-icon-background {
+  position: relative;
+  left: 2px;
   border: 1px solid $gray-7;
   width: 16px;
   height: 16px;
