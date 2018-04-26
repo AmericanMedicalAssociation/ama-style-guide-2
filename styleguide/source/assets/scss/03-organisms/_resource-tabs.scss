@@ -11,7 +11,7 @@
 
 .ama__resource-tabs__nav li {
   display: block;
-  padding: $gutter / 2;
+  padding: ($gutter / 2) ($gutter / 4);
   color: $white;
   text-align: center;
   margin: 0;
@@ -40,15 +40,22 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     width: 40px;
     height: 40px;
   }
 }
 
 li {
-  &[data-tab='resources'] .ama__resource-tabs__nav__icon {
-    background-image: url('../icons/svg/icon-resources-nav-resources.svg');
+  &[data-tab='resources'] {
+    display: block;
+    @include breakpoint($bp-small) {
+      display: none;
+    }
+
+    .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-resources.svg');
+    }
   }
 
   &[data-tab='media'] .ama__resource-tabs__nav__icon {
@@ -112,7 +119,7 @@ li {
 
 .ama__resource-tabs__nav__label {
   display: none;
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     display: block;
   }
 }
@@ -127,5 +134,12 @@ li {
 
   &.--is-active {
     z-index: 10;
+  }
+}
+
+.ama__resource-tabs__content section#resources {
+  display: block;
+  @include breakpoint($bp-small) {
+    display: none;
   }
 }
