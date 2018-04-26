@@ -8,6 +8,9 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
+          $('.ama__select-menu__select').selectmenu();
+          $( "[type=checkbox]" ).checkboxradio();
+
           // Textarea word count
           function count_remaining_character() {
             var max_length = 150;
