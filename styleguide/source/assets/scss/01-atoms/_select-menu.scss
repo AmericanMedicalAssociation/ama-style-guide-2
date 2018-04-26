@@ -1,11 +1,6 @@
-.ui-state-default,
-.ui-widget-content
-.ui-state-default,
-.ui-widget-header
-.ui-state-default,
-.ui-button,
-.ui-button.ui-state-disabled:hover,
-.ui-button.ui-state-disabled:active {
+.ui-selectmenu-button,
+.ui-selectmenu-button:hover,
+.ui-selectmenu-button:active {
   border: 1px solid $gray-7;
   border-radius: 0;
   background: $white;
@@ -25,6 +20,18 @@
     border:1px solid $hoverPurple;
     box-shadow: none;
   }
+
+  .ui-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8px 5px 0 5px;
+    border-style: solid;
+    border-color: $black $white $white $white;
+  }
 }
 
 .ui-selectmenu-text {
@@ -34,33 +41,21 @@
   text-overflow: ellipsis;
 }
 
-.ui-widget.ui-widget-content {
+.ui-selectmenu-button {
   border: 1px solid $gray-7;
   background: $white;
   color: $black;
   max-height: 400px
 }
 
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active,
-a.ui-button:active,
-.ui-button:active,
-.ui-button.ui-state-active:hover {
+.ui-selectmenu-menu .ui-state-active,
+.ui-selectmenu-menu .ui-widget-content .ui-state-active,
+.ui-selectmenu-menu .ui-widget-header .ui-state-active,
+.ui-selectmenu-menu a.ui-button:active,
+.ui-selectmenu-menu .ui-button:active,
+.ui-selectmenu-menu .ui-button.ui-state-active:hover {
   border: 0;
   background: $purple;
   font-weight: normal;
   color: $white;
-}
-
-.ui-button .ui-icon {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  border-width: 8px 5px 0 5px;
-  border-style: solid;
-  border-color: $black transparent transparent transparent;
 }
