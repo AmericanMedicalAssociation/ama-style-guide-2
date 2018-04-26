@@ -1,0 +1,43 @@
+.ui-checkboxradio-label{
+  background: transparent;
+  border: 0;
+  color: $black;
+  outline: none;
+  box-shadow: none;
+
+  &:focus,
+  &:active,
+  &:hover {
+    border: 0;
+    color: $black;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  span {
+    color: $gray-64;
+  }
+
+  .ui-icon {
+    box-shadow: none;
+    border: 1px solid $gray-7;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.ui-checkboxradio-label.ui-state-active,
+.ui-checkboxradio-label.ui-state-active:active,
+.ui-checkboxradio-label.ui-state-active:hover {
+  background-color: transparent;
+  border: 0;
+  color: $black;
+  outline: none;
+  box-shadow: none;
+
+  .ui-icon {
+    background-color: $purple;
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-icons_ffffff_256x240.png");
+  }
+}
