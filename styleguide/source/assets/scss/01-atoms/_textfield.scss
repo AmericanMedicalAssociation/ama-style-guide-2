@@ -1,7 +1,3 @@
-/*------------------------------------*\
-    $FORMS
-\*------------------------------------*/
-
 // Global input styles
 input[type="text"],
 input[type="password"],
@@ -49,24 +45,11 @@ label {
   font-weight: 700;
   text-transform: uppercase;
   color: $gray-50;
-}
 
-
-.form-group {
-  position: relative;
-
-  .help-text {
-    @include font-size($small-font-sizes);
-    color: $gray-50;
-    font-style: italic;
-  }
-
-  .character-count {
-    float: right;
-
-    &.error {
-      color: $red;
-    }
+  &.error {
+    color: $red;
+    font-weight: normal;
+    display: block;
+    text-transform: inherit;
   }
 }
-
