@@ -91,11 +91,28 @@
           </p>
         {% endif %}
       {% endfor %}
-
     </section>
     <section id="related-links">
-      {% set heading = {level: '3', text: 'Related Links'}  %}
-      {% include '@atoms/heading.twig' %}
+      {% for group in tabContent.relatedLinks.groups %}
+        <h3>{{ group.heading }}</h3>
+        {% if group.title %}
+          <h5>{{ group.title }}</h5>
+        {% endif %}
+        <ul>
+          {% for link in group.links %}
+            <li>
+              <a href="{{ link.href }}" title="{{ link.title }}" class="ama__resource-tabs__content__downloads__link ama__link--icon">
+                {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
+                {{ link.text }}
+              </a>
+              {% if link.subtext %}
+                <p class="ama__type--small">{{ link.subtext }}</p>
+              {% endif %}
+            </li>
+          {% endfor %}
+          {% include '@molecules/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
+        </ul>
+      {% endfor %}
     </section>
     <section id="schedules">
       {% set heading = {level: '3', text: 'Schedules'}  %}
