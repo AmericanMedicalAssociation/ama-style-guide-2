@@ -35,12 +35,63 @@
       {% include '@atoms/heading.twig' %}
     </section>
     <section id="media" class="--is-active">
-      {% set heading = {level: '3', text: 'Media'}  %}
-      {% include '@atoms/heading.twig' %}
+      <div data-anchor="media-1">
+        <h3>Media 1</h3>
+          <a href="{{ tabContent.media.media1.link.href }}" title="{{ tabContent.media.media1.link.title }}" class="ama__link--icon">
+            {% include '@atoms/media/icons/svg/icon-audio.twig' %}
+            {{ tabContent.media.media1.link.text }}
+          </a>
+      </div>
+      <div data-anchor="media-2">
+        <h3>Media 2</h3>
+        <a href="{{ tabContent.media.media2.link.href }}" title="{{ tabContent.media.media2.link.title }}" class="ama__link--icon">
+          {% include '@atoms/media/icons/svg/icon-video.twig' %}
+          {{ tabContent.media.media2.link.text }}
+        </a>
+        {% set video = tabContent.media.media2.video %}
+        <div class="ama__resource-tab__content__video">
+          {% include '@atoms/video.twig' %}
+          {% if tabContent.media.media2.subtext %}
+            <p class="ama__type--small">
+              {{ tabContent.media.media2.subtext }}
+            </p>
+          {% endif %}
+        </div>
+        {% include '@molecules/promo.twig' with { promo : tabContent.media.media2.promo } %}
+      </div>
+      <div data-anchor="media-3">
+        <h3>Media 3</h3>
+        <div class="ama__resource-tab__content__image">
+          {% include '@atoms/image.twig' with { image : tabContent.media.media3.image }%}
+          {% if tabContent.media.media3.subtext %}
+            <p class="ama__type--small">
+              {{ tabContent.media.media3.subtext }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+      <div data-anchor="media-4">
+        <h3>Media 4</h3>
+        <a href="{{ tabContent.media.media4.link.href }}" title="{{ tabContent.media.media4.link.title }}" class="ama__link--icon">
+          {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
+          {{ tabContent.media.media4.link.text }}
+        </a>
+      </div>
     </section>
     <section id="downloads">
-      {% set heading = {level: '3', text: 'Downloads'}  %}
-      {% include '@atoms/heading.twig' %}
+      {% for download in tabContent.downloads %}
+        <h3>{{ download.title }}</h3>
+        {% if download.heading %}
+          <h5>{{ download.heading }}</h5>
+        {% endif %}
+        {% include '@molecules/tool.twig' with { tool : download }%}
+        {% if download.subtext %}
+          <p class="ama__type--small">
+            {{ download.subtext }}
+          </p>
+        {% endif %}
+      {% endfor %}
+
     </section>
     <section id="related-links">
       {% set heading = {level: '3', text: 'Related Links'}  %}
