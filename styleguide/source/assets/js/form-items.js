@@ -10,6 +10,7 @@
         $(document).ready(function(){
           $( "[type=checkbox]" ).checkboxradio();
           $( "[type=radio]" ).checkboxradio().buttonset().find('label').css('width', '19.4%');;
+          $('.ama__select-menu__select').selectmenu();
         });
       })(jQuery);
     }
