@@ -1,7 +1,8 @@
+<label>{{ rangeField.label }}</label>
 <div class="ama__range-field">
   <ul class="ama__range-field__legend">
-    <li>Not Satisfied</li>
-    <li>Can Show Value</li>
-    <li>Very Satisfied</li>
+    {% for legend in rangeField.legend %}
+      <li>{{ legend }}</li>
+    {% endfor %}
   </ul>
 </div>

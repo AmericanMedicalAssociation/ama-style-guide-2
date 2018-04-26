@@ -16,7 +16,7 @@
             value: 50,
             min: 10,
             max: 100,
-            step: 10,
+            step: 1,
           }).append(legend);
         });
       })(jQuery);
