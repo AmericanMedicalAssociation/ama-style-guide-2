@@ -1,0 +1,9 @@
+@mixin grid_column_layout($columns, $grid-column-gap, $grid-row-gap){
+  display: grid;
+  grid-column-gap: $grid-column-gap;
+  grid-row-gap: $grid-row-gap;
+  @include breakpoint($bp-med){
+    grid-template-columns: repeat($columns, 1fr);
+  }
+
+}
