@@ -1,11 +1,11 @@
-{% set image, link = infoCard.image, infoCard.link %}
+{% set type, image, link = infoCard.type, infoCard.image, infoCard.link %}
 {% set heading = infoCard.heading|merge({
     "level": "3",
     "class": "ama__info-card__label"
   })
 %}
 
-<div class="ama__info-card">
+<div class="ama__info-card ama__info-card--{{ type }}">
   {% include "@atoms/heading.twig" %}
   <div class="ama__info-card__wrap">
     {% if infoCard.image %}
