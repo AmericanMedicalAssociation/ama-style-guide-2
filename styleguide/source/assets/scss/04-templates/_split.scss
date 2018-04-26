@@ -12,6 +12,7 @@
   display: none;
   @include breakpoint($bp-small) {
     display: block;
+    padding-right: $gutter / 2;
   }
 }
 
@@ -20,5 +21,6 @@
   grid-row: 2;
   @include breakpoint($bp-small) {
     grid-column: 2 / 2;
+    border-left: solid 2px lightgrey;
   }
 }
