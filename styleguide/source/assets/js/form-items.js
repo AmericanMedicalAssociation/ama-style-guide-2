@@ -8,6 +8,9 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
+          $('.ama__select-menu__select').selectmenu();
+
+          // Range Field
           var legend = $('.ama__range-field__legend');
 
           $(".ama__range-field").slider({
