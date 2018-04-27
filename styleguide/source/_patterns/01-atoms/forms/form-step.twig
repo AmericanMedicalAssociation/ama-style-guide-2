@@ -1,0 +1,9 @@
+<label>{{ formStep.label }}</label>
+<ul class="form-steps">
+  {% for step in formStep.steps %}
+    <li class="{{ step.status }}">
+      <span class="form-steps__icon {{ step.icon }}">{{ loop.index }}</span>
+      <span class="form-steps__label"n>{{ step.label }}</span>
+    </li>
+  {% endfor %}
+</ul>

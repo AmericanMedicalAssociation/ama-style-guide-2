@@ -1,0 +1,55 @@
+.form-steps {
+  list-style: none;
+
+  li {
+    @include gutter($margin-bottom-full...);
+    @extend %ama__h2;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin: 0;
+
+
+    &.completed {
+      .form-steps__icon {
+        @extend .icon--completed;
+        border-radius: 0;
+        text-indent: -500px;
+      }
+    }
+
+    &.edit,
+    &.current {
+      .form-steps__icon {
+        @extend .icon--edit;
+        border-radius: 0;
+        text-indent: -500px;
+      }
+    }
+
+    &.error {
+      .form-steps__icon {
+        @extend .icon--error;
+        border-radius: 0;
+        text-indent: -500px;
+      }
+    }
+  }
+
+  &__icon {
+    @extend %ama__h2;
+    background-color: $gray-50;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    line-height: 40px;
+    margin: 0;
+  }
+
+  &__label {
+    @include gutter($margin-left-half...);
+  }
+}
