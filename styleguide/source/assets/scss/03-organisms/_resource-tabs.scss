@@ -43,7 +43,7 @@
 }
 
 li {
-  &[data-tab='resources'] {
+  &[data-resource='resources'] {
     display: block;
     @include breakpoint($bp-small) {
       display: none;
@@ -54,56 +54,56 @@ li {
     }
   }
 
-  &[data-tab='media'] .ama__resource-tabs__nav__icon {
+  &[data-resource='media'] .ama__resource-tabs__nav__icon {
     background-image: url('../icons/svg/icon-resources-nav-media.svg');
   }
 
-  &[data-tab='downloads'] .ama__resource-tabs__nav__icon {
+  &[data-resource='downloads'] .ama__resource-tabs__nav__icon {
     background-image: url('../icons/svg/icon-resources-nav-downloads.svg');
   }
 
-  &[data-tab='related-links'] .ama__resource-tabs__nav__icon {
+  &[data-resource='related-links'] .ama__resource-tabs__nav__icon {
     background-image: url('../icons/svg/icon-resources-nav-relatedlinks.svg');
   }
 
-  &[data-tab='schedules'] .ama__resource-tabs__nav__icon {
+  &[data-resource='schedules'] .ama__resource-tabs__nav__icon {
     background-image: url('../icons/svg/icon-resources-nav-schedules.svg');
   }
 
-  &[data-tab='tables'] .ama__resource-tabs__nav__icon {
+  &[data-resource='tables'] .ama__resource-tabs__nav__icon {
     background-image: url('../icons/svg/icon-resources-nav-table.svg');
   }
 
-  &[data-tab='contacts'] .ama__resource-tabs__nav__icon {
+  &[data-resource='contacts'] .ama__resource-tabs__nav__icon {
     background-image: url('../icons/svg/icon-resources-nav-contacts.svg');
   }
 
   &.--is-active {
-    &[data-tab='resources'] .ama__resource-tabs__nav__icon {
+    &[data-resource='resources'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-resources-active.svg');
     }
 
-    &[data-tab='media'] .ama__resource-tabs__nav__icon {
+    &[data-resource='media'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-media-active.svg');
     }
 
-    &[data-tab='downloads'] .ama__resource-tabs__nav__icon {
+    &[data-resource='downloads'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-downloads-active.svg');
     }
 
-    &[data-tab='related-links'] .ama__resource-tabs__nav__icon {
+    &[data-resource='related-links'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-relatedlinks-active.svg');
     }
 
-    &[data-tab='schedules'] .ama__resource-tabs__nav__icon {
+    &[data-resource='schedules'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-schedules-active.svg');
     }
 
-    &[data-tab='tables'] .ama__resource-tabs__nav__icon {
+    &[data-resource='tables'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-table-active.svg');
     }
 
-    &[data-tab='contacts'] .ama__resource-tabs__nav__icon {
+    &[data-resource='contacts'] .ama__resource-tabs__nav__icon {
       background-image: url('../icons/svg/icon-resources-nav-contacts-active.svg');
     }
   }

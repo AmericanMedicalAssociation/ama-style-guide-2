@@ -8,8 +8,10 @@ $('.ama__resource-tabs__nav li, .ama__page--resource__resource-link').click(func
 // function showTab() - shows and hides the tab.
 function showTab($tab) {
   $('.--is-active').removeClass('--is-active');
+  // Show the section.
   $('.ama__resource-tabs__content section#' + $tab.attr('id')).addClass('--is-active');
-  $tab.addClass('--is-active');
+  // Put an active state on the tab.
+  $('.ama__resource-tabs__nav li[data-resource="' + $tab.attr('id') + '"]').addClass('--is-active');
 }
 
 // function findTab() - return object that is the section to be displayed.
