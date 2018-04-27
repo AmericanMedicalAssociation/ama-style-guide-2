@@ -1,6 +1,12 @@
 .ama__layout--split {
   display: grid;
   grid-template-columns: 50% 50%;
+
+  &.container {
+    @include breakpoint($bp-small max-width) {
+      padding: 0;
+    }
+  }
 }
 
 .ama__layout--split__content-top {

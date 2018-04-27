@@ -8,21 +8,24 @@
   list-style-type: none;
   background: $purple;
   display: flex;
-
+  overflow-x: scroll;
 }
 
-// Fake the purple tabs background extending to the right edge of the viewport.
-.ama__resource-tabs__nav:after {
-  display: block;
-  position: absolute;
-  background: $purple;
-  width: 100%;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
-  height: 100%;
-  content: "";
-}
+//// Fake the purple tabs background extending to the right edge of the viewport.
+//.ama__resource-tabs__nav:after {
+//  display: none;
+//  @include breakpoint($bp-small) {
+//    display: block;
+//    position: absolute;
+//    background: $purple;
+//    width: 100%;
+//    top: 0;
+//    right: 0;
+//    transform: translateX(100%);
+//    height: 100%;
+//    content: "";
+//  }
+//}
 
 .ama__resource-tabs__nav li {
   display: block;
