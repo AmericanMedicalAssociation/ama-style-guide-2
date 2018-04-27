@@ -38,8 +38,8 @@
             animate: true,
             range: "min",
             value: 1,
-            min: 1,
-            max: 100,
+            min: 2000,
+            max: 5000,
             step: 1,
             create: function(){
               var handle = jQuery(this).find('.ui-slider-handle');
