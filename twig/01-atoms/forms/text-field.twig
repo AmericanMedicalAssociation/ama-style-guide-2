@@ -1,1 +1,10 @@
-<input name="{{ textField.name }}" type="text" placeholder="{{ textField.placeholder }}" required="" aria-required="true">
+{% set setError = textField.error ? "error" %}
+
+<div class="form-group {{ setError }}">
+  <label>{{ textField.label }}</label>
+  <input class="error" name="{{ textField.name }}" type="text" placeholder="{{ textField.placeholder }}" required="" aria-required="true">
+  {% if textField.error %}
+    <label class="error" for="cname">{{ textField.error  }}</label>
+  {% endif %}
+  <small class="help-text">{{ textField.helpText }}</small>
+</div>
