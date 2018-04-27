@@ -215,12 +215,32 @@
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}
       {% include '@atoms/heading.twig' %}
+      section blocked, waiting on <a href="https://github.com/AmericanMedicalAssociation/ama-style-guide-2/pull/210">https://github.com/AmericanMedicalAssociation/ama-style-guide-2/pull/210</a>
     </section>
     <section id="contacts">
       <h3>Contacts</h3>
+      <h5>This is a subheading for a contact group</h5>
       <div data-anchor="contacts-1">
         {#{% set infoCard = tabContent.contacts.infoCard %}#}
         {#{% include '@molecules/info-card.twig' %}#}
+        <div class="ama__info-card ama__info-card--contact">
+          <h3 class="ama__info-card__label">Contact:</h3>
+          <div class="ama__info-card__wrap">
+            <img class="ama__info-card__image ama__image" alt="placeholder" src="https://via.placeholder.com/280x280/027DBC/ffffff" height="" width="">
+
+            <div class="ama__info-card__text">
+              <p class=""> Robert J Mills</p>
+              <p class=""> AMA Media &amp; Editorial</p>
+              <p class=""> ph: (312) 464-5970</p>
+              <p class=""> ph: (312) 464-5970</p>
+              <p class=""> fax: (312) 464-5970</p>
+
+              <a href="mailto:robert.mills@ama-assn.org" title="Email Robert J Mills" target="_self" class="">
+                robert.mills@ama-assn.org
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
