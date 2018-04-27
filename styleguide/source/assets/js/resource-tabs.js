@@ -1,46 +1,40 @@
-$('.ama__resource-tabs__nav li').click(function(){
-  showTab($(this));
+$('.ama__resource-tabs__nav li, .ama__page--resource__resource-link').click(function(){
+  // Figure out which tab to display.
+  $tab = findTab($(this));
+  // Show the tab.
+  showTab($tab);
 });
 
-function showTab(tab) {
-  if ($.type(tab) === 'object') {
-    var sectionName = tab.attr('data-tab');
-    $tab = tab;
-  } else {
-    var sectionName = tab;
-
-  }
-
-  console.log('showing ' + sectionName);
+// function showTab() - shows and hides the tab.
+function showTab($tab) {
   $('.--is-active').removeClass('--is-active');
-  $('.ama__resource-tabs__content section#' + sectionName).addClass('--is-active');
+  $('.ama__resource-tabs__content section#' + $tab.attr('id')).addClass('--is-active');
   $tab.addClass('--is-active');
 }
 
-$('.ama__page--resource__resource-link').click(function(){
-  sectionName = getSectionName($(this));
-  findTab(sectionName);
-  console.log('show ' + $sectionName);
-
-});
-
-// Returns the section name of the clicked tab nav item.
-function getSectionName($link) {
-
+// function findTab() - return object that is the section to be displayed.
+function findTab($obj) {
+  // Get the ID for the section to display.
+  var resourceData =_getSectionID($obj);
+  // Find out which tab the sectionID corresponds to.
+  $('.ama__resource-tabs section').each(function() {
+    var attrID = $(this).attr('id');
+    if(attrID.indexOf(resourceData['sectionID']) >= 0) {
+      $tab = $(this);
+    }
+  });
+  return $tab;
 }
 
-// Returns a DOM object that corresponds with the nav item associated
-// with the clicked resource link.
-function findTab($resourceLink) {
-  console.log($resourceLink);
-  var resource = $resourceLink.attr('data-resource');
-  var resourceName = resource.substr(0, resource.indexOf('-'));
-  console.log(resourceName);
-  $('.ama__resource-tabs__nav li').each(function(){
-    var dataTab = $(this).attr('data-tab');
-    if(dataTab.indexOf(resourceName) >= 0) {
-      console.log('found tab' + dataTab);
-      return dataTab;
-    }
-  })
+// function _getSectionID() - return array containing the specific resource to show and the section element's ID attribute.
+function _getSectionID($obj) {
+  // Parse out the section ID from the clicked object.
+  var resourceData = [];
+  resourceData['resourceID'] = $obj.attr('data-resource');
+  resourceData['sectionID'] = resourceData['resourceID']
+    .substr(0, resourceData['resourceID'].indexOf('-'));
+  if (!resourceData['sectionID']) {
+    resourceData['sectionID'] = resourceData['resourceID'];
+  }
+  return resourceData;
 }
