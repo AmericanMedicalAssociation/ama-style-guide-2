@@ -8,8 +8,9 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
-          $('.ama__select-menu__select').selectmenu();
           $( "[type=checkbox]" ).checkboxradio();
+          $( "[type=radio]" ).checkboxradio().buttonset().find('label').css('width', '19.4%');
+          $('.ama__select-menu__select').selectmenu();
 
           // Textarea word count
           function count_remaining_character() {
