@@ -1,0 +1,65 @@
+.ama__form-steps {
+  list-style: none;
+
+  li {
+    @include gutter($margin-bottom-full...);
+    @extend %ama__h3;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  &__icon-container {
+    @include gutter($margin-right-full...);
+    width: 40px;
+    height: 45px;
+    overflow: hidden;
+  }
+
+  &__icon {
+    @extend %ama__h3;
+    background-color: $gray-50;
+    color: $white;
+    width: 40px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    line-height: 32px;
+    margin: 0;
+
+    &.completed {
+      @extend .icon--completed;
+      border-radius: 0;
+      text-indent: -500px;
+    }
+
+    &.edit,
+    &.current {
+      @extend .icon--edit;
+      border-radius: 0;
+      text-indent: -500px;
+    }
+
+    &.error {
+      @extend .icon--error;
+      border-radius: 0;
+      text-indent: -500px;
+    }
+  }
+
+  &__label {
+    margin: 0;
+
+    &__optional {
+      color: $gray-50;
+      font-style: italic;
+      display: block;
+    }
+
+    &__text {
+      @extend %ama__h2;
+    }
+  }
+}
