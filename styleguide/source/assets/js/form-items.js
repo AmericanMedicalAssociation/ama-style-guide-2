@@ -47,7 +47,7 @@
               handle.append(bubble);
             },
             slide: function(evt, ui) {
-              ui.handle.childNodes[0].innerHTML = ui.value;
+              ui.handle.childNodes[0].innerHTML = '$' + ui.value;
             }
           }).append(legend);
         });
