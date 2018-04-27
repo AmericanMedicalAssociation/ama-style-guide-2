@@ -57,9 +57,20 @@ label {
 }
 
 .form-group {
+  position: relative;
+
   .help-text {
     @include font-size($small-font-sizes);
     color: $gray-50;
     font-style: italic;
   }
+
+  .character-count {
+    float: right;
+
+    &.error {
+      color: $red;
+    }
+  }
 }
+

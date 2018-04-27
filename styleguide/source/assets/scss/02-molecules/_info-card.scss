@@ -33,4 +33,13 @@
   &__label {
     margin-bottom: 0;
   }
+
+  &--contact{
+    .ama__info-card__image{
+      max-width: none;
+      @include breakpoint($bp-small){
+        width: 50%;
+      }
+    }
+  }
 }
