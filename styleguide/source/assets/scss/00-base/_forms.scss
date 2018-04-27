@@ -1,3 +1,76 @@
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
+
+// Global input styles
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-appearance: none;
+  /* stylelint-enable */
+  @include gutter($padding-left-half...);
+  @include gutter($padding-right-half...);
+  @include font-size($p-font-sizes);
+  outline: none;
+  border: 1px solid $gray-7;
+  display: block;
+  box-shadow: none;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    border: 1px solid $purple;
+  }
+
+  &.error {
+    border: 1px solid $red;
+  }
+
+  &.valid {
+    color: $black;
+  }
+}
+
+label {
+  @include font-size($small-font-sizes);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $gray-50;
+
+  span {
+    text-transform: capitalize;
+  }
+}
+
+.form-group {
+  position: relative;
+
+  .help-text {
+    @include font-size($small-font-sizes);
+    color: $gray-50;
+    font-style: italic;
+  }
+
+  .character-count {
+    float: right;
+
+    &.error {
+      color: $red;
+    }
+  }
+}
+
