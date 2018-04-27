@@ -15,9 +15,6 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-  /* stylelint-disable property-no-vendor-prefix */
-  -webkit-appearance: none;
-  /* stylelint-enable */
   @include gutter($padding-left-half...);
   @include gutter($padding-right-half...);
   @include font-size($p-font-sizes);
@@ -40,7 +37,9 @@ textarea {
   }
 }
 
-label {
+label,
+legend,
+.ama__label {
   @include font-size($small-font-sizes);
   font-weight: 700;
   text-transform: uppercase;
