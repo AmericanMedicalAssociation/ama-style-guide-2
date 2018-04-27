@@ -80,39 +80,43 @@
     </section>
     <section id="downloads">
       {% for download in tabContent.downloads %}
-        <h3>{{ download.title }}</h3>
-        {% if download.heading %}
-          <h5>{{ download.heading }}</h5>
-        {% endif %}
-        {% include '@molecules/tool.twig' with { tool : download }%}
-        {% if download.subtext %}
-          <p class="ama__type--small">
-            {{ download.subtext }}
-          </p>
-        {% endif %}
+        <div data-anchor="downloads-1">
+          <h3>{{ download.title }}</h3>
+          {% if download.heading %}
+            <h5>{{ download.heading }}</h5>
+          {% endif %}
+          {% include '@molecules/tool.twig' with { tool : download }%}
+          {% if download.subtext %}
+            <p class="ama__type--small">
+              {{ download.subtext }}
+            </p>
+          {% endif %}
+        </div>
       {% endfor %}
     </section>
     <section id="related-links">
       {% for group in tabContent.relatedLinks.groups %}
-        <h3>{{ group.heading }}</h3>
-        {% if group.title %}
-          <h5>{{ group.title }}</h5>
-        {% endif %}
-        <ul>
-          {% for link in group.links %}
-            <li>
-              <a href="{{ link.href }}" title="{{ link.title }}" class="ama__resource-tabs__content__downloads__link ama__link--icon">
-                {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
-                {{ link.text }}
-                {% if link.cme %}{% include '@atoms/media/icons/svg/icon-cme.twig' %}{% endif %}
-              </a>
-              {% if link.subtext %}
-                <p class="ama__type--small">{{ link.subtext }}</p>
-              {% endif %}
-            </li>
-          {% endfor %}
-          {% include '@molecules/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
-        </ul>
+        <div data-anchor="related-links-1">
+          <h3>{{ group.heading }}</h3>
+          {% if group.title %}
+            <h5>{{ group.title }}</h5>
+          {% endif %}
+          <ul>
+            {% for link in group.links %}
+              <li>
+                <a href="{{ link.href }}" title="{{ link.title }}" class="ama__resource-tabs__content__downloads__link ama__link--icon">
+                  {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
+                  {{ link.text }}
+                  {% if link.cme %}{% include '@atoms/media/icons/svg/icon-cme.twig' %}{% endif %}
+                </a>
+                {% if link.subtext %}
+                  <p class="ama__type--small">{{ link.subtext }}</p>
+                {% endif %}
+              </li>
+            {% endfor %}
+            {% include '@molecules/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
+          </ul>
+        </div>
       {% endfor %}
     </section>
     <section id="schedules">
@@ -146,8 +150,8 @@
             <td>Lorem ipsum dolor sit amet, consectetur</td>
           </tr>
         </table>
-        {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
       </div>
+      {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}

@@ -152,6 +152,11 @@ li {
     //z-index: 10;
     display: block;
   }
+
+  > * + * {
+    margin-top: $gutter;
+  }
+
 }
 
 .ama__resource-tabs__content section#resources.--is-active {
