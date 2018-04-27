@@ -17,7 +17,7 @@
             var character_entered = $('.textarea').val().length;
             var character_remaining = max_length - character_entered;
             $('.character-count').html(character_remaining);
-            if(max_length < character_entered) {
+            if (max_length < character_entered) {
               $('.textarea').addClass('error');
               $('.character-count').addClass('error');
             } else {
