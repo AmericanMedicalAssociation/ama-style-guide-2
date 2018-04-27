@@ -153,8 +153,11 @@
       {% include '@atoms/heading.twig' %}
     </section>
     <section id="contacts">
-      {% set heading = {level: '3', text: 'Contacts'}  %}
-      {% include '@atoms/heading.twig' %}
+      <h3>Contacts</h3>
+      <div data-anchor="contacts-1">
+        {#{% set infoCard = tabContent.contacts.infoCard %}#}
+        {#{% include '@molecules/info-card.twig' %}#}
+      </div>
     </section>
   </div>
 </div>
