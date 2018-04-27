@@ -104,6 +104,7 @@
               <a href="{{ link.href }}" title="{{ link.title }}" class="ama__resource-tabs__content__downloads__link ama__link--icon">
                 {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
                 {{ link.text }}
+                {% if link.cme %}{% include '@atoms/media/icons/svg/icon-cme.twig' %}{% endif %}
               </a>
               {% if link.subtext %}
                 <p class="ama__type--small">{{ link.subtext }}</p>
