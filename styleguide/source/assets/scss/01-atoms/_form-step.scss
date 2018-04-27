@@ -3,7 +3,7 @@
 
   li {
     @include gutter($margin-bottom-full...);
-    @extend %ama__h2;
+    @extend %ama__h3;
     display: flex;
     align-items: center;
     font-weight: normal;
@@ -18,7 +18,7 @@
   }
 
   &__icon {
-    @extend %ama__h2;
+    @extend %ama__h3;
     background-color: $gray-50;
     color: $white;
     width: 40px;
@@ -53,14 +53,13 @@
     margin: 0;
 
     &__optional {
-      @extend %ama__type-italic;
-      @extend %ama__type--small;
       color: $gray-50;
+      font-style: italic;
       display: block;
     }
 
     &__text {
-      @extend %ama__h3;
+      @extend %ama__h2;
     }
   }
 }
