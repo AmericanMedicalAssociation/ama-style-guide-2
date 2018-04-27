@@ -8,8 +8,8 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
-          $( '[type=checkbox]' ).checkboxradio();
-          $( '[type=radio]' ).checkboxradio().buttonset().find('label').css('width', '19.4%');
+          $('[type=checkbox]').checkboxradio();
+          $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
           $('.ama__select-menu__select').selectmenu();
 
           function count_remaining_character() {
@@ -32,9 +32,9 @@
 
           // Range Field
           var legend = $('.ama__range-field__legend');
-          var handle = $( '#currentValue' );
+          var handle = $( "#currentValue" );
 
-          $('.ama__range-field').slider({
+          $(".ama__range-field").slider({
             animate: true,
             range: 'min',
             value: 1,
@@ -43,7 +43,7 @@
             step: 1,
             create: function(){
               var handle = jQuery(this).find('.ui-slider-handle');
-              var bubble = jQuery('<div class='valuebox'></div>');
+              var bubble = jQuery('<div class="ama__range-field__valuebox"></div>');
               handle.append(bubble);
             },
             slide: function(evt, ui) {
