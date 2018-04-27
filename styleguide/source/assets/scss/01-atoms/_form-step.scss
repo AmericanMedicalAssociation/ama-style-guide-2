@@ -1,4 +1,4 @@
-.form-steps {
+.ama__form-steps {
   list-style: none;
 
   li {
@@ -8,32 +8,13 @@
     align-items: center;
     font-weight: normal;
     margin: 0;
-
-
-    &.completed {
-      .form-steps__icon {
-        @extend .icon--completed;
-        border-radius: 0;
-        text-indent: -500px;
-      }
-    }
-
-    &.edit,
-    &.current {
-      .form-steps__icon {
-        @extend .icon--edit;
-        border-radius: 0;
-        text-indent: -500px;
-      }
-    }
-
-    &.error {
-      .form-steps__icon {
-        @extend .icon--error;
-        border-radius: 0;
-        text-indent: -500px;
-      }
-    }
+  }
+  
+  &__icon-container {
+    @include gutter($margin-right-full...);
+    width: 40px;
+    height: 45px;
+    overflow: hidden;
   }
 
   &__icon {
@@ -41,15 +22,45 @@
     background-color: $gray-50;
     color: $white;
     width: 40px;
-    height: 40px;
+    height: 35px;
     border-radius: 50%;
     text-align: center;
     display: inline-block;
-    line-height: 40px;
+    line-height: 32px;
     margin: 0;
+
+    &.completed {
+      @extend .icon--completed;
+      border-radius: 0;
+      text-indent: -500px;
+    }
+
+    &.edit,
+    &.current {
+      @extend .icon--edit;
+      border-radius: 0;
+      text-indent: -500px;
+    }
+
+    &.error {
+      @extend .icon--error;
+      border-radius: 0;
+      text-indent: -500px;
+    }
   }
 
   &__label {
-    @include gutter($margin-left-half...);
+    margin: 0;
+
+    &__optional {
+      @extend %ama__type-italic;
+      @extend %ama__type--small;
+      color: $gray-50;
+      display: block;
+    }
+
+    &__text {
+      @extend %ama__h3;
+    }
   }
 }
