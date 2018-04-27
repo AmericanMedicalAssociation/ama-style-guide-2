@@ -1,4 +1,4 @@
-$('.ama__resource-tabs__nav li, .ama__page--resource__resource-link').click(function(){
+$('*[data-resource]').click(function(){
   // Figure out which tab to display.
   $tab = findTab($(this));
   // Show the tab.
