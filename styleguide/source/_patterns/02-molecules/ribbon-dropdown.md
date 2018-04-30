@@ -14,7 +14,7 @@ The dropdown navigation present in the header ribbon.
 * [user-menu](?p=molecules-ribbon-dropdown-mobile)
 
 ### Use Case
-A mechanism to switch from high level services.
+A mechanism to switch between high-level services and sites related to AMA.
 
 ### Variables
 ~~~

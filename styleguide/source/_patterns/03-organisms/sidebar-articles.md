@@ -8,6 +8,9 @@ This pattern is a block that may optionally include:
 
 [EWL-4389](https://issues.ama-assn.org/browse/EWL-4389)
 
+### Use Case
+Container for article stub or its variants. Appears within the body copy of a page. For display related or promotional information within the body of an article or page.
+
 ### Variables
 ~~~
   "label": string / optional

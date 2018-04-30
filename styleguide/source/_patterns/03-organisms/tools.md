@@ -4,7 +4,7 @@ The tools organism includes a heading, the topic tools list, and learn more abou
 [EWL-3766](https://issues.ama-assn.org/browse/EWL-4165)
 
 ### Use Case
-A list of links providing additional functionality.
+The full block for additional information, resources, content available to be added to a node. Includes related articles under Learn More.
   
   
 ### Variables

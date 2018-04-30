@@ -11,7 +11,7 @@ An unordered list in which the list items are links with special "tag" styling. 
 none
 
 ### Use Case
-Produce clickable links of categories of content.
+Produce clickable links to categories of content. Organize content into "buckets" that relate to user interests and business interests.
 
 ### Variables
 ~~~

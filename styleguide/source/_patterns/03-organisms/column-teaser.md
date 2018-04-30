@@ -8,7 +8,7 @@ A collection of up to three articles displayed in a column (meant for use in a s
 [EWL-4433](https://issues.ama-assn.org/browse/EWL-4434)
 
 ### Use Case
-A list of clickable articles.
+A list of clickable articles related to the main content by shared taxonomy term.
 
 ### Variables
 ~~~

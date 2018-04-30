@@ -2,7 +2,7 @@
 Tools learn more section
 
 ### Use Case
-Produces an aditional link for aditional information.
+Provides the ability to include aditional link for aditional information.
 
 ### Variables
 ~~~

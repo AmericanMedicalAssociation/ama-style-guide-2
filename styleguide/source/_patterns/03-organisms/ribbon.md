@@ -11,7 +11,7 @@ The ecosystem ribbon is a nav dom element with class .ribbon that exists at the 
 * [ribbon-auth](./?p=organisms-ribbon-auth)
 
 ### Use Case
-A container for the Ribbon dropdown menu and User links.
+Global navigation item that provides access to various high-level AMA services/websites, provides access to account log in, and promotes membership and account creation.
 
 ### Variables
 ~~~
