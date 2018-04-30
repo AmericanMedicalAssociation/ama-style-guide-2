@@ -8,34 +8,14 @@
     </tr>
   </thead>
   <tbody>
+  {% for tbody in table.tbodys %}
     <tr>
-      <td>Haircut</td>
-      <td>Hairdresser</td>
-      <td>12/09</td>
-      <td>Great idea</td>
-      <td>30</td>
+      <td>{{ tbody.Purchase }}</td>
+      <td>{{ tbody.Location }}</td>
+      <td>{{ tbody.Date }}</td>
+      <td>{{ tbody.Evaluation }}</td>
+      <td>{{ tbody.Cost }}</td>
     </tr>
-    <tr>
-      <td>Lasagna</td>
-      <td>Restaurant</td>
-      <td>12/09</td>
-      <td>Regrets</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <td>Shoes</td>
-      <td>Shoeshop</td>
-      <td>13/09</td>
-      <td>Big regrets</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <td>Toothpaste</td>
-      <td>Supermarket</td>
-      <td>13/09</td>
-      <td>Good</td>
-      <td>5</td>
-    </tr>
+  {% endfor %}
   </tbody>
 </table>
-
