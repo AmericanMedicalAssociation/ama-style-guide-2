@@ -15,4 +15,14 @@ table:
     th:
       type: string
   }]
+  tbodys [{ 
+    <columnName>:
+      type: string
+    <columnName>:
+      type: string
+    <columnName>:
+      type: string
+    <columnName>:
+      type: string
+  }]
 ~~~
