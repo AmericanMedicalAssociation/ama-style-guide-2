@@ -8,7 +8,8 @@ Information card molecules contain a heading that denotes the card type (require
 
 Variants are managed by use of pseudo-patterns.
 
-- ["Info Card as Media Contact"](?p=molecules-info-card-as-media-contact) is the variant of this pattern that includes a smaller image and appears on within the [Partner Information](#) on a [Press Release Page]?p=pages-press-release).
+- ["Info Card as Media Contact"](?p=molecules-info-card-as-media-contact) is the variant of this pattern that includes a smaller image and appears on within the [Partner Information](#) on a [Press Release Page](?p=pages-press-release).
+- ["Info Card as Contact"](?p=molecules-info-card-as-contact) is the variant of this pattern that includes a 50% width image and appears in the right region content of a [Resource Page](?p=pages-resource).
 
 [EWL-4487](https://issues.ama-assn.org/browse/EWL-4487)
 
@@ -19,6 +20,7 @@ Produces a card design with available information.
 ~~~
 {
   infoCard: {
+    type: "default", (required, options: "default", "media", "contact")
     heading {
       level:
         type: string / required

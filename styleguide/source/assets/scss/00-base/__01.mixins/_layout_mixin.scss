@@ -1,0 +1,16 @@
+$three-column: 3, 2, $gutter, $gutter*2;
+
+@mixin grid_column_layout($col-desktop, $col-tablet, $grid-column-gap, $grid-row-gap){
+  display: grid;
+  grid-column-gap: $grid-column-gap;
+  grid-row-gap: $grid-row-gap;
+
+  @include breakpoint($bp-small){
+    grid-template-columns: repeat($col-tablet, 1fr);
+  }
+
+  @include breakpoint($bp-med){
+    grid-template-columns: repeat($col-desktop, 1fr);
+  }
+
+}
