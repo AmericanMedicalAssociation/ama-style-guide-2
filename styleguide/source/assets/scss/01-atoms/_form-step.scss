@@ -1,13 +1,17 @@
 .ama__form-steps {
   list-style: none;
 
-  li {
+  &__step {
     @include gutter($margin-bottom-full...);
     @extend %ama__h3;
     display: flex;
     align-items: center;
     font-weight: normal;
     margin: 0;
+  }
+
+  &__step:hover {
+    cursor: pointer;
   }
   
   &__icon-container {
@@ -51,6 +55,18 @@
 
   &__label {
     margin: 0;
+    flex: 1;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      border-bottom: 1px solid $gray-50;
+      width: 100%;
+      top: 40%;
+      z-index: -1;
+    }
 
     &__optional {
       color: $gray-50;
@@ -59,7 +75,9 @@
     }
 
     &__text {
+      @include gutter($padding-right-full...);
       @extend %ama__h2;
+      background-color: $white;
     }
   }
 }

@@ -50,6 +50,14 @@
               ui.handle.childNodes[0].innerHTML = '$' + ui.value;
             }
           }).append(legend);
+
+          // Form accordion
+
+          $('.ama__form-steps__step').click(function() {
+            $(this).next().slideToggle();
+            return false;
+          }).next().slideDown();
+
         });
       })(jQuery);
     }

@@ -56,8 +56,10 @@ label {
   }
 }
 
-.form-group {
+.ama__form-group {
+  @include gutter($margin-bottom-full...);
   position: relative;
+  display: block;
 
   .help-text {
     @include font-size($small-font-sizes);
@@ -66,11 +68,32 @@ label {
   }
 
   .character-count {
-    float: right;
+    text-align: right;
 
     &.error {
       color: $red;
     }
+  }
+
+  &__submit {
+    @include gutter($margin-top-full...);
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.ama__form-header {
+  @include gutter($margin-bottom-full...);
+  @include gutter($padding-bottom-full...);
+  border-bottom: 1px solid $gray-50;
+}
+
+.ama__form-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  & > div {
+    flex: 1;
   }
 }
 

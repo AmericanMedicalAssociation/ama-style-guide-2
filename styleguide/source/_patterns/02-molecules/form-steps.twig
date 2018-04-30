@@ -1,0 +1,6 @@
+<div class="ama__form-steps">
+  {% for step in formSteps %}
+    {% set step = step %}
+    {% include "@atoms/forms/form-step.twig" %}
+  {% endfor %}
+</div>
