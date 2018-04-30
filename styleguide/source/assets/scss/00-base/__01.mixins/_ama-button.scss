@@ -6,7 +6,7 @@
   @include ama-button-base;
 
   @if($style == "secondary") {
-    background-color: transparent;
+    background-color: $white;
     border-color: $purple;
     color: $purple;
 
@@ -15,7 +15,7 @@
       color: $white;
     }
   } //outline
-  @if($style == "reset") {
+  @else if($style == "reset") {
     background-color: transparent;
     border-color: transparent;
     color: $purple;
