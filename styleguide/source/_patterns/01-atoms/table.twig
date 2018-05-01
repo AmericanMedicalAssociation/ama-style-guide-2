@@ -2,19 +2,19 @@
   <caption>{{ table.caption }}</caption>
   <thead>
     <tr>
-      {% for thead in table.theads %}
+      {% for thead in table.thead %}
         <th data-title="{{ thead.th }}">{{ thead.th }}</th>
       {% endfor %}
     </tr>
   </thead>
   <tbody>
-  {% for tbody in table.tbodys %}
+  {% for td in table.tbody %}
     <tr>
-      <td>{{ tbody.Purchase }}</td>
-      <td>{{ tbody.Location }}</td>
-      <td>{{ tbody.Date }}</td>
-      <td>{{ tbody.Evaluation }}</td>
-      <td>{{ tbody.Cost }}</td>
+      <td>{{ td.Purchase }}</td>
+      <td>{{ td.Location }}</td>
+      <td>{{ td.Date }}</td>
+      <td>{{ td.Evaluation }}</td>
+      <td>{{ td.Cost }}</td>
     </tr>
   {% endfor %}
   </tbody>
