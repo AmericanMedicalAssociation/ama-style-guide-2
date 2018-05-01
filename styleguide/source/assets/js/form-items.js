@@ -10,26 +10,9 @@
         $(document).ready(function(){
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
-          $('.ama__select-menu__select').selectmenu().remove(this, 'option[value=\'option1\'').selectmenu("refresh");
+          $('.ama__select-menu__select').selectmenu();
 
-          $('.multiselect').multiselect({
-            open: function() {
-              $('.multiselect').multiselect({
-                  header: false,
-                  classes: '',
-                  checkAllText: 'Check all',
-                  uncheckAllText: 'Uncheck all',
-                  noneSelectedText: 'Select options',
-                  selectedText: '# Selected',
-                  selectedList: 0,
-                  show: '',
-                  hide: '',
-                  autoOpen: false,
-                  multiple: true,
-                  position: {}
-              });
-            }
-          });
+          $('.multiselect').multiselect();
 
           $('.ama__tooltip').tooltip({
             tooltipClass: "ama__tooltip-bubble"
@@ -77,7 +60,7 @@
           // Form accordion
 
           $('.ama__form-steps__step').click(function() {
-            $(this).next().slideToggle();
+            $(this).next('.ama__form-section').slideToggle();
             return false;
           }).next().slideDown();
 

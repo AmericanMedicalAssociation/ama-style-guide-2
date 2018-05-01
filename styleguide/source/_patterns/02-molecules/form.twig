@@ -19,7 +19,6 @@ form.heading, form.paragraph,form.textField,form. date, form.email, form.passwor
         {% set step = form.formSteps[1] %}
         {% include "@atoms/forms/form-step.twig" %}
         <div class="ama__form-section">
-          {% include "@atoms/forms/date-field.twig" %}
           {% include "@atoms/forms/email-field.twig" %}
           {% include "@atoms/forms/password-field.twig" %}
         </div>
