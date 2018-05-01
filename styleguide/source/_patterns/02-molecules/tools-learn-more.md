@@ -1,6 +1,9 @@
 ### Description
 Tools learn more section
 
+### Use Case
+Provides the ability to include aditional link for aditional information.
+
 ### Variables
 ~~~
 "learnMore": {

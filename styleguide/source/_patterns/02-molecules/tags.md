@@ -10,6 +10,9 @@ An unordered list in which the list items are links with special "tag" styling. 
 ### Variant options
 none
 
+### Use Case
+Produce clickable links to categories of content. Organize content into "buckets" that relate to user interests and business interests.
+
 ### Variables
 ~~~
 {

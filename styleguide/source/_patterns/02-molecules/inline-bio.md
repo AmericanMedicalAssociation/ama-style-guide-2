@@ -6,6 +6,9 @@ The Inline Biography component appears within a page's body text. It contains an
 
 [EWL-4420](https://issues.ama-assn.org/browse/EWL-4420)
 
+### Use Case
+Provides simple information about the author of a particular article.
+
 ### Variables
 ~~~
 {

@@ -11,6 +11,9 @@ The membership pattern includes a heading, a description, and a CTA button (opti
 ### Variant options
 * [With CTA button](?p=molecules-membership-with-cta)
 
+### Use Case
+A membership container for relevent data.
+
 ### Variables
 ~~~
 {

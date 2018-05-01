@@ -24,6 +24,9 @@ This pattern should only ever have a Secondary CTA button, and never a Primary o
 [EWL-4185](https://issues.ama-assn.org/browse/EWL-4185)
 [EWL-4514](https://issues.ama-assn.org/browse/EWL-4514)
 
+### Use Case
+This produces a container for a "Promotional" Item meant for addtional information with a call to action button.
+
 ### Variables
 ~~~
 {

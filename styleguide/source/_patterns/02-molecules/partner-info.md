@@ -8,6 +8,9 @@ Partner Information molecules contain a logo, a ["Information Card as Media Cont
 
 [EWL-4487](https://issues.ama-assn.org/browse/EWL-4487)
 
+### Use Case
+Groups information relating to partners on press releases. Associates a logo with contact information, and boilerplate copy about an organization.
+
 ### Variables
 ~~~
 {
