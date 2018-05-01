@@ -31,7 +31,9 @@
             }
           });
 
-          $('.ama__tooltip').tooltip();
+          $('.ama__tooltip').tooltip({
+            tooltipClass: "ama__tooltip-bubble"
+          });
 
           function count_remaining_character() {
             var max_length = 150;
