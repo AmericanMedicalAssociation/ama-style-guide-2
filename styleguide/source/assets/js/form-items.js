@@ -12,9 +12,7 @@
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
           $('.ama__select-menu__select').selectmenu().remove(this, 'option[value=\'option1\'').selectmenu("refresh");
 
-          $.ech.multiselect.prototype.options.minWidth = "auto";
           $('.multiselect').multiselect({
-
             open: function() {
               $('.multiselect').multiselect({
                   header: false,
