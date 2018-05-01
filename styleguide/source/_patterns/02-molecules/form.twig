@@ -1,9 +1,10 @@
 {% set setError = form.textField.error ? "error" %}
-{% set heading, textField, date, email, password, telephone, number, textArea, selectMenu, checkbox, radioButton, rangeField, button =
-form.heading, form.textField,form. date, form.email, form.password, form.telephone, form.number, form.textArea, form.selectMenu, form.checkbox, form.radioButton, form.rangeField, form.button %}
+{% set heading, paragraph, textField, date, email, password, telephone, number, textArea, selectMenu, checkbox, radioButton, rangeField, button =
+form.heading, form.paragraph,form.textField,form. date, form.email, form.password, form.telephone, form.number, form.textArea, form.selectMenu, form.checkbox, form.radioButton, form.rangeField, form.button %}
 
 <div class="container">
   {% include "@atoms/heading.twig" %}
+  {% include "@atoms/paragraph.twig" %}
 
   <div class="ama__form-wrapper">
     <div class="ama__form-container">

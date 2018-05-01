@@ -10,7 +10,30 @@
         $(document).ready(function(){
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
-          $('.ama__select-menu__select').selectmenu();
+          $('.ama__select-menu__select').selectmenu().remove(this, 'option[value=\'option1\'').selectmenu("refresh");
+
+          $.ech.multiselect.prototype.options.minWidth = "auto";
+          $('.multiselect').multiselect({
+
+            open: function() {
+              $('.multiselect').multiselect({
+                  header: false,
+                  classes: '',
+                  checkAllText: 'Check all',
+                  uncheckAllText: 'Uncheck all',
+                  noneSelectedText: 'Select options',
+                  selectedText: '# Selected',
+                  selectedList: 0,
+                  show: '',
+                  hide: '',
+                  autoOpen: false,
+                  multiple: true,
+                  position: {}
+              });
+            }
+          });
+
+          $('.ama__tooltip').tooltip();
 
           function count_remaining_character() {
             var max_length = 150;

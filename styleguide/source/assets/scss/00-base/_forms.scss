@@ -61,20 +61,6 @@ label {
   position: relative;
   display: block;
 
-  .help-text {
-    @include font-size($small-font-sizes);
-    color: $gray-50;
-    font-style: italic;
-  }
-
-  .character-count {
-    text-align: right;
-
-    &.error {
-      color: $red;
-    }
-  }
-
   &__submit {
     @include gutter($margin-top-full...);
     display: flex;
@@ -86,6 +72,10 @@ label {
   @include gutter($margin-bottom-full...);
   @include gutter($padding-bottom-full...);
   border-bottom: 1px solid $gray-50;
+}
+
+.ama__form-lead-in {
+  @include gutter($margin-bottom-full...);
 }
 
 .ama__form-wrapper {
