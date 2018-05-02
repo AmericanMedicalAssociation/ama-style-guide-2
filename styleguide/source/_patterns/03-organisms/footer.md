@@ -7,6 +7,9 @@ The footer of the website. Includes the missions statement (static), social shar
 
 [EWL-4215](https://issues.ama-assn.org/browse/EWL-4215)
 
+### Use Case
+A global footer container for common links.
+
 ### Variables
 ~~~
 {

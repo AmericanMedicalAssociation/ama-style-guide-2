@@ -3,6 +3,8 @@ This pattern is a block that may include varying numbers of the article stub her
 
 [EWL-4388](https://issues.ama-assn.org/browse/EWL-4388)
 
+### Use Case
+A collection of clickable lead articles
 
 ### Variables
 ~~~

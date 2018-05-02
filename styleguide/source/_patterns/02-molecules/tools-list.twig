@@ -1,3 +1,7 @@
 {% for tool in tools %}
-  {% include "@molecules/tool.twig" %}
+  {% if tool.membersOnly %}
+    {% include "@molecules/tool-as-gated.twig" %}
+  {% else %}
+    {% include "@molecules/tool.twig" %}
+  {% endif %}
 {% endfor %}
