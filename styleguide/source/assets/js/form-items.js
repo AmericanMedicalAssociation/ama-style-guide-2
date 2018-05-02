@@ -62,7 +62,7 @@
           $('.ama__form-steps__step').click(function() {
             $(this).next('.ama__form-section').slideToggle();
             return false;
-          }).next().slideDown();
+          }).next('.ama__form-section').slideDown();
 
         });
       })(jQuery);
