@@ -8,14 +8,12 @@
     </tr>
   </thead>
   <tbody>
-  {% for td in table.tbody %}
-    <tr>
-      <td>{{ td.Purchase }}</td>
-      <td>{{ td.Location }}</td>
-      <td>{{ td.Date }}</td>
-      <td>{{ td.Evaluation }}</td>
-      <td>{{ td.Cost }}</td>
-    </tr>
-  {% endfor %}
+    {% for tr in table.tbody %}
+      <tr>
+        {% for td in tr.data %}
+          <td>{{ td }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
   </tbody>
 </table>
