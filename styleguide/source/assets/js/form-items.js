@@ -58,11 +58,10 @@
           }).append(legend);
 
           // Form accordion
-
-          $('.ama__form-steps__step').click(function() {
-            $(this).next('.ama__form-section').slideToggle();
-            return false;
-          }).next('.ama__form-section').slideDown();
+          $( ".tablist" ).accordion({
+            header: ".ama__form-steps__step",
+            heightStyle: "content"
+          });
 
         });
       })(jQuery);

@@ -46,44 +46,13 @@ textarea {
 }
 
 label {
-  @include font-size($small-font-sizes);
+  @extend %ama__type--small;
   font-weight: 700;
   text-transform: uppercase;
   color: $gray-50;
 
   span {
     text-transform: capitalize;
-  }
-}
-
-.ama__form-group {
-  @include gutter($margin-bottom-full...);
-  position: relative;
-  display: block;
-
-  &__submit {
-    @include gutter($margin-top-full...);
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-.ama__form-header {
-  @include gutter($margin-bottom-full...);
-  @include gutter($padding-bottom-full...);
-  border-bottom: 1px solid $gray-50;
-}
-
-.ama__form-lead-in {
-  @include gutter($margin-bottom-full...);
-}
-
-.ama__form-wrapper {
-  display: flex;
-  flex-direction: row;
-
-  & > div {
-    flex: 1;
   }
 }
 
