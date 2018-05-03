@@ -11,8 +11,7 @@
   Drupal.behaviors.responsiveGate = {
     attach: function(context, settings) {
       var heightGate = $('.ama__tags').offset().top - $('.ama__gate').offset().top;
-      console.log(heightGate);
-      $('.ama__gate').height(heightGate);
+      $('.ama__gate', context).height(heightGate);
     }
   };
 })(jQuery, Drupal);
