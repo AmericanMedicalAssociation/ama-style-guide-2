@@ -12,6 +12,12 @@
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
           $('.ama__select-menu__select').selectmenu();
 
+          $('.multiselect').multiselect();
+
+          $('.ama__tooltip').tooltip({
+            tooltipClass: "ama__tooltip-bubble"
+          });
+
           function count_remaining_character() {
             var max_length = 150;
             var character_entered = $('.textarea').val().length;
@@ -50,6 +56,13 @@
               ui.handle.childNodes[0].innerHTML = '$' + ui.value;
             }
           }).append(legend);
+
+          // Form accordion
+          $( ".tablist" ).accordion({
+            header: ".ama__form-steps__step",
+            heightStyle: "content"
+          });
+
         });
       })(jQuery);
     }

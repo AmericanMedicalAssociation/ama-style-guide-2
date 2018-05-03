@@ -1,0 +1,94 @@
+.ui-multiselect {
+  color: $black;
+  background: $white;
+  border: 1px solid $gray-7;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  min-width: 100%;
+  padding: 0.4em 0.2em;
+
+  .ui-multiselect-open .ui-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8px 5px 0 5px;
+    border-style: solid;
+    border-color: $black transparent transparent transparent;
+  }
+
+  &.ui-state-hover,
+  &.ui-state-focus {
+    background: $white;
+    border: 1px solid $purple;
+    color: $black;
+    outline: none;
+  }
+}
+
+.ui-widget.ui-widget-content {
+  border: 1px solid $gray-7;
+  border-radius: 0;
+  min-width: 100%;
+}
+
+.ui-multiselect-menu {
+  .ui-multiselect-header {
+    display: none;
+  }
+
+  .ui-multiselect-checkboxes  {
+    min-width: 100%;
+
+    label {
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      padding: 10px 1em;
+      position: relative;
+
+      &.ui-state-hover {
+        background: $purple;
+        color: $white;
+      }
+    }
+
+    li {
+      margin: 0;
+
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      input:checked ~ span:before {
+        background-color: $purple;
+        background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-icons_ffffff_256x240.png");
+        background-position: -63px -143px;
+      }
+    }
+
+    li span {
+      @extend p;
+      text-indent: 30px;
+      margin: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: $white;
+        border: 1px solid $gray-7;
+      }
+    }
+  }
+}
