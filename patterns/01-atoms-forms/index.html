@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1524865304" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1524865304" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1525385374" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1525385374" media="all" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
@@ -25,8 +25,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1524865304" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1524865304" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1525385374" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1525385374" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -66,15 +66,17 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-checkbox"></div>
     
   <div class="sg-pattern-example">
-    <label for="checkbox">
-  <span>checkbox</span>
-  <input type="checkbox" name="checkbox" id="checkbox" value="checkbox">
-</label>
+    <div class="ama__form-group">
+  <label for="checkbox">
+    <span>checkbox</span>
+    <input type="checkbox" name="checkbox" id="checkbox" value="checkbox">
+  </label>
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-checkbox" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard checkbox pattern\nThe ID and for have to match in the label<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"checkbox\": {\n    name: type: string \/ optional\n    id: \"type: string \/ optional\n    value:  type: string \/ optional\n    label: type: string \/ required\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"checkbox","patternPartial":"atoms-checkbox","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard checkbox pattern\nThe ID and for have to match in the label<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"checkbox\": {\n    name: type: string \/ optional\n    id: \"type: string \/ optional\n    value:  type: string \/ optional\n    label: type: string \/ required\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"checkbox","patternPartial":"atoms-checkbox","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-date-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -97,13 +99,15 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-date-field"></div>
     
   <div class="sg-pattern-example">
-    <label>Date of birth</label>
-<input type="text" id="dateField" name="date field" value="date value" placeholder=--/--/---- data-mask="00/00/0000" />
+    <div class="ama__form-group">
+  <label>Date of birth</label>
+  <input class="ama__date" type="text" id="dateField" name="datefield" value="date value" placeholder="--/--/----" data-mask="00/00/0000" />
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-date-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard date field pattern. Only numbers will be accepted in this field.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"date\": {\n    \"name\": string \/ required\n    \"id\": string \/ optional\n    \"value\": string \/ required\n    \"label\": string \/ required\n    \"placeholder\": string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"date field","patternPartial":"atoms-date-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard date field pattern. Only numbers will be accepted in this field.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"date\": {\n    \"name\": string \/ required\n    \"id\": string \/ optional\n    \"value\": string \/ required\n    \"label\": string \/ required\n    \"placeholder\": string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"date field","patternPartial":"atoms-date-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-email-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -126,12 +130,15 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-email-field"></div>
     
   <div class="sg-pattern-example">
-    <input name="email" type="email" placeholder="Email placeholder" required="" aria-required="true">
+    <div class="ama__form-group">
+  <label>email</label>
+  <input name="email" type="email" placeholder="Email placeholder" required="" aria-required="true">
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-email-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard email field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"email\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"email field","patternPartial":"atoms-email-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard email field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"email\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"email field","patternPartial":"atoms-email-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-form-step" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -154,63 +161,20 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-form-step"></div>
     
   <div class="sg-pattern-example">
-    <ul class="ama__form-steps">
-      <li>
-      <div class="ama__form-steps__icon-container">
-        <span class="ama__form-steps__icon completed">1</span>
-      </div>
-      <p class="ama__form-steps__label">
-        <span class="ama__form-steps__label__text">Step as Not Editable</span>
-        <span class="ama__form-steps__label__optional"></span>
-      </p>
-
-    </li>
-      <li>
-      <div class="ama__form-steps__icon-container">
-        <span class="ama__form-steps__icon current">2</span>
-      </div>
-      <p class="ama__form-steps__label">
-        <span class="ama__form-steps__label__text">Step as Current</span>
-        <span class="ama__form-steps__label__optional"></span>
-      </p>
-
-    </li>
-      <li>
-      <div class="ama__form-steps__icon-container">
-        <span class="ama__form-steps__icon ">3</span>
-      </div>
-      <p class="ama__form-steps__label">
-        <span class="ama__form-steps__label__text">Step as Yet to be Completed</span>
-        <span class="ama__form-steps__label__optional">Optional</span>
-      </p>
-
-    </li>
-      <li>
-      <div class="ama__form-steps__icon-container">
-        <span class="ama__form-steps__icon error">4</span>
-      </div>
-      <p class="ama__form-steps__label">
-        <span class="ama__form-steps__label__text">Step as Error</span>
-        <span class="ama__form-steps__label__optional">Optional</span>
-      </p>
-
-    </li>
-      <li>
-      <div class="ama__form-steps__icon-container">
-        <span class="ama__form-steps__icon current">5</span>
-      </div>
-      <p class="ama__form-steps__label">
-        <span class="ama__form-steps__label__text">Step as Editable</span>
-        <span class="ama__form-steps__label__optional">Optional</span>
-      </p>
-
-    </li>
-  </ul>
+    <div class="ama__form-steps__step" role="tab">
+  <div class="ama__form-steps__icon-container">
+    <span class="ama__form-steps__icon completed">1</span>
+  </div>
+  <p class="ama__form-steps__label">
+    <span class="ama__form-steps__label__text">Step as Not Editable</span>
+    <span class="ama__form-steps__label__optional"></span>
+  </p>
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-form-step" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"form step","patternPartial":"atoms-form-step","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form-steps","lineagePath":"..\/..\/patterns\/02-molecules-form-steps\/02-molecules-form-steps.html"},{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard form step pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"step\":  {\n      \"label\": string \/ required\n      \"icon\": string \/ completed, edit, current, error\n      \"index\": integer\n    }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"form step","patternPartial":"atoms-form-step","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-month-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -233,12 +197,56 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-month-field"></div>
     
   <div class="sg-pattern-example">
-    <input name="month" type="month">
+    <div class="ama__form-group">
+  <label>month</label>
+  <input name="month" type="month">
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-month-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard month field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"month\": {\n    \"name\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"month field","patternPartial":"atoms-month-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard month field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"month\": {\n    \"name\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"month field","patternPartial":"atoms-month-field","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="atoms-multiselect" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/01-atoms-forms-multiselect/01-atoms-forms-multiselect.html" class="patternLink" data-patternpartial="atoms-multiselect" title="Link to Pattern">
+        multiselect
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="atoms-multiselect" title="View Pattern Info" id="sg-pattern-extra-toggle-atoms-multiselect" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-multiselect"></div>
+    
+  <div class="sg-pattern-example">
+    <select class="multiselect" title="Basic example" multiple="multiple" name="example-basic" size="5">
+  <option value="option1">Option 1</option>
+  <option value="option2">Option 2</option>
+  <option value="option3">Option 3</option>
+  <option value="option4">Option 4</option>
+  <option value="option5">Option 5</option>
+  <option value="option6">Option 6</option>
+  <option value="option7">Option 7</option>
+  <option value="option8">Option 8</option>
+  <option value="option9">Option 9</option>
+  <option value="option10">Option 10</option>
+  <option value="option11">Option 11</option>
+  <option value="option12">Option 12</option>
+</select>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-atoms-multiselect" class="sg-pattern-data">
+    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"multiselect","patternPartial":"atoms-multiselect","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-number-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -261,12 +269,14 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-number-field"></div>
     
   <div class="sg-pattern-example">
-    <input name="number" type="number" minlength="4" maxlength="4" placeholder="Number placeholder">
+    <div class="ama__form-group">
+  <input name="number" type="number" minlength="4" maxlength="4" placeholder="Number placeholder">
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-number-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard number field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"number\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"number field","patternPartial":"atoms-number-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard number field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"number\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"number field","patternPartial":"atoms-number-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-password-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -289,12 +299,15 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-password-field"></div>
     
   <div class="sg-pattern-example">
-    <input name="password" type="password" placeholder="Password placeholder">
+    <div class="ama__form-group">
+  <label>password</label>
+  <input name="password" type="password" placeholder="Password placeholder">
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-password-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard password field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"password\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"password field","patternPartial":"atoms-password-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard password field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"password\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"password field","patternPartial":"atoms-password-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-radio-button" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -317,7 +330,7 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-radio-button"></div>
     
   <div class="sg-pattern-example">
-    <div class="control-group">
+    <div class="ama__form-group">
   <legend>Year Medical Student</legend>
   <label for="radio-1">PY1</label>
   <input type="radio" name="radio-1" id="radio-1">
@@ -330,7 +343,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-radio-button" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"radio button","patternPartial":"atoms-radio-button","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"radio button","patternPartial":"atoms-radio-button","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-range-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -353,20 +366,22 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-range-field"></div>
     
   <div class="sg-pattern-example">
-    <label>Range Field</label>
-<div class="ama__range-field">
-  <ul class="ama__range-field__legend">
-          <li>$2000</li>
-          <li>$2500</li>
-          <li>$5000</li>
-      </ul>
-  <div id="currentValue" class="ama__range-field__valuebox"></div>
+    <div class="ama__form-group">
+  <label>Range Field</label>
+  <div class="ama__range-field">
+    <ul class="ama__range-field__legend">
+              <li>$2000</li>
+              <li>$2500</li>
+              <li>$5000</li>
+          </ul>
+    <div id="currentValue" class="ama__range-field__valuebox"></div>
+  </div>
 </div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-range-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard range field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n\"rangeField\": {\n    \"label\": type: string \/ optional\n    \"legend\": type: array \/ required\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"range field","patternPartial":"atoms-range-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard range field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n\"rangeField\": {\n    \"label\": type: string \/ optional\n    \"legend\": type: array \/ required\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"range field","patternPartial":"atoms-range-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-select-menu" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -389,21 +404,23 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-select-menu"></div>
     
   <div class="sg-pattern-example">
-    <label>label text</label>
-<select
-  name="text-select"
-  id="text-select"
-  class="ama__select-menu__select js-dropdown-select ">
-  <option value="" selected disabled hidden>Select an option</option>
-      <option data-url="http://www.google.com" value="http://www.google.com">Option one</option>
-      <option data-url="http://www.google.com" value="http://www.google.com">Option two</option>
-      <option data-url="http://www.google.com" value="http://www.google.com">Option three</option>
-  </select>
+    <div class="ama__form-group">
+  <label>label text</label>
+  <select
+    name="text-select"
+    id="text-select"
+    class="ama__select-menu__select js-dropdown-select ">
+    <option value="" selected disabled hidden>Select an option</option>
+          <option data-url="http://www.google.com" value="http://www.google.com">Option one</option>
+          <option data-url="http://www.google.com" value="http://www.google.com">Option two</option>
+          <option data-url="http://www.google.com" value="http://www.google.com">Option three</option>
+      </select>
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-select-menu" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard select menu pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>  \"selectMenu\":{\n    \"label\": type: string \/ optional\n    \"required\": type: boolean \/ optional\n    \"id\":\"text-select\"\n    \"options\":[{\n      \"value\":\"type: string \/ required\n      \"text\": type: string \/ required\n    }]\n  }\n<\/code><\/pre>","patternExtension":"twig","patternName":"select menu","patternPartial":"atoms-select-menu","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard select menu pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>  \"selectMenu\":{\n    \"label\": type: string \/ optional\n    \"required\": type: boolean \/ optional\n    \"id\":\"text-select\"\n    \"options\":[{\n      \"value\":\"type: string \/ required\n      \"text\": type: string \/ required\n    }]\n  }\n<\/code><\/pre>","patternExtension":"twig","patternName":"select menu","patternPartial":"atoms-select-menu","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-telephone-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -426,13 +443,15 @@
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-telephone-field"></div>
     
   <div class="sg-pattern-example">
-    <label>Phone Number</label>
-<input name="telephone" type="tel" placeholder="(---) -- ----" data-mask="(000) 000-0000">
+    <div class="ama__form-group">
+  <label>Phone Number</label>
+  <input name="telephone" type="tel" placeholder="(---) -- ----" data-mask="(000) 000-0000">
+</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-telephone-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"telephone field","patternPartial":"atoms-telephone-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"telephone field","patternPartial":"atoms-telephone-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-text-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -456,16 +475,17 @@
     
   <div class="sg-pattern-example">
     
-<div class="form-group ">
+<div class="ama__form-group ">
   <label>Label</label>
-  <input class="error" name="text field" type="text" placeholder="Text field placeholder" required="" aria-required="true">
-    <small class="help-text">Help Text</small>
-</div>
+  <input class="" name="text field" type="text" placeholder="Text field placeholder" required="" aria-required="true">
+  
+      <small class="ama__help-text">Help Text</small>
+  </div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-text-field" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard text field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"textField\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"text field","patternPartial":"atoms-text-field","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard text field pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"textField\": {\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"text field","patternPartial":"atoms-text-field","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-text-field-as-error" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -489,17 +509,52 @@
     
   <div class="sg-pattern-example">
     
-<div class="form-group error">
+<div class="ama__form-group error">
   <label>Label</label>
   <input class="error" name="text field" type="text" placeholder="Text field placeholder" required="" aria-required="true">
       <label class="error" for="cname">Field is required.</label>
-    <small class="help-text">Help Text</small>
-</div>
+  
+      <small class="ama__help-text">Help Text</small>
+  </div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-text-field-as-error" class="sg-pattern-data">
-    {"lineage":false,"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"text field as error","patternPartial":"atoms-text-field-as-error","patternState":""}
+    {"lineage":false,"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"text field as error","patternPartial":"atoms-text-field-as-error","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="atoms-text-field-with-tooltip" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/01-atoms-forms-text-field-with-tooltip/01-atoms-forms-text-field-with-tooltip.html" class="patternLink" data-patternpartial="atoms-text-field-with-tooltip" title="Link to Pattern">
+        text field with tooltip
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="atoms-text-field-with-tooltip" title="View Pattern Info" id="sg-pattern-extra-toggle-atoms-text-field-with-tooltip" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-text-field-with-tooltip"></div>
+    
+  <div class="sg-pattern-example">
+    
+<div class="ama__form-group ">
+  <label>Label</label>
+  <input class="" name="text field" type="text" placeholder="Text field placeholder" required="" aria-required="true">
+  
+      <a href="#" class="ama__tooltip" title="AMA will not Loem ipsum alsips clar ipsum alsips clipsum alsips clar ipsum alsips clar ipsum alsips clar">Why do we need this? </a>
+  </div>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-atoms-text-field-with-tooltip" class="sg-pattern-data">
+    {"lineage":false,"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"","patternExtension":"twig","patternName":"text field with tooltip","patternPartial":"atoms-text-field-with-tooltip","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-textarea" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -531,7 +586,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-textarea" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard textarea pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"textarea\": {\n    \"label\": type: string \/ optional\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"textarea","patternPartial":"atoms-textarea","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This is the standard textarea pattern<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"textarea\": {\n    \"label\": type: string \/ optional\n    \"name\": type: string \/ optional\n    \"placeholder\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"textarea","patternPartial":"atoms-textarea","patternState":""}
   </script>
 </div><!--end .sg-pattern-->            </div> <!--end #sg-patterns-->
 </div><!--end .sg-main-->
@@ -571,10 +626,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1524865304">
+<script id="pl-js-polyfill-insert-1525385374">
   (function() {
     if (self != top) {
-      var cb = '1524865304';
+      var cb = '1525385374';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -584,10 +639,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1524865304">
+<script id="pl-js-insert-1525385374">
   (function() {
     if (self != top) {
-      var cb = '1524865304';
+      var cb = '1525385374';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
@@ -599,8 +654,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-multiselect-widget/3.0.0/jquery.multiselect.min.js"></script>
       <script src="../../assets/js/app.js"></script>
-      <!--<script src="../../assets/js/app.min.js"></script>-->
     </div>
   </body>
 
