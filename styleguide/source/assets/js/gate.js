@@ -10,8 +10,11 @@
 (function ($, Drupal) {
   Drupal.behaviors.responsiveGate = {
     attach: function(context, settings) {
-      var heightGate = $('.ama__tags').offset().top - $('.ama__gate').offset().top;
-      $('.ama__gate', context).height(heightGate);
+      if ($('.ama__gate', context).length) {
+        var heightGate = $('.ama__tags').offset().top - $('.ama__gate').offset().top;
+        $('.ama__gate', context).height(heightGate);
+        $('.ama__gate').nextUntil('.ama__tags').wrapAll('<div class="ama__gate__blurry" />');
+      }
     }
   };
 })(jQuery, Drupal);
