@@ -1,0 +1,189 @@
+.ama__resource-tabs {
+  height: 100%;
+}
+
+.ama__resource-tabs__nav {
+  position: relative;
+  width: 100%;
+  list-style-type: none;
+  background: $purple;
+  display: flex;
+  overflow-x: scroll;
+}
+
+//// Fake the purple tabs background extending to the right edge of the viewport.
+//.ama__resource-tabs__nav:after {
+//  display: none;
+//  @include breakpoint($bp-small) {
+//    display: block;
+//    position: absolute;
+//    background: $purple;
+//    width: 100%;
+//    top: 0;
+//    right: 0;
+//    transform: translateX(100%);
+//    height: 100%;
+//    content: "";
+//  }
+//}
+
+.ama__resource-tabs__nav li {
+  display: block;
+  padding: ($gutter / 2) ($gutter / 4);
+  color: $white;
+  text-align: center;
+  margin: 0;
+  border-right: solid 1px $white;
+
+  &.--is-active {
+    background: $white;
+    color: $purple;
+    border-right: double 3px $purple;
+    border-left: solid 1px;
+
+    + li {
+      padding-left: 4px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ama__resource-tabs__nav__icon {
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+}
+
+li {
+  &[data-resource='resources'] {
+    display: block;
+    @include breakpoint($bp-small) {
+      display: none;
+    }
+
+    .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-resources.svg');
+    }
+  }
+
+  &[data-resource='media'] .ama__resource-tabs__nav__icon {
+    background-image: url('../icons/svg/icon-resources-nav-media.svg');
+  }
+
+  &[data-resource='downloads'] .ama__resource-tabs__nav__icon {
+    background-image: url('../icons/svg/icon-resources-nav-downloads.svg');
+  }
+
+  &[data-resource='related-links'] .ama__resource-tabs__nav__icon {
+    background-image: url('../icons/svg/icon-resources-nav-relatedlinks.svg');
+  }
+
+  &[data-resource='schedules'] .ama__resource-tabs__nav__icon {
+    background-image: url('../icons/svg/icon-resources-nav-schedules.svg');
+  }
+
+  &[data-resource='tables'] .ama__resource-tabs__nav__icon {
+    background-image: url('../icons/svg/icon-resources-nav-table.svg');
+  }
+
+  &[data-resource='contacts'] .ama__resource-tabs__nav__icon {
+    background-image: url('../icons/svg/icon-resources-nav-contacts.svg');
+  }
+
+  &.--is-active {
+    &[data-resource='resources'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-resources-active.svg');
+    }
+
+    &[data-resource='media'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-media-active.svg');
+    }
+
+    &[data-resource='downloads'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-downloads-active.svg');
+    }
+
+    &[data-resource='related-links'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-relatedlinks-active.svg');
+    }
+
+    &[data-resource='schedules'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-schedules-active.svg');
+    }
+
+    &[data-resource='tables'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-table-active.svg');
+    }
+
+    &[data-resource='contacts'] .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-contacts-active.svg');
+    }
+  }
+}
+
+.ama__resource-tabs__content {
+  position: relative;
+  height: 100%;
+}
+
+.ama__resource-tabs__nav__label {
+  display: none;
+  @include breakpoint($bp-large) {
+    display: block;
+  }
+}
+
+.ama__resource-tabs__content section {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $white;
+  padding: $gutter / 2;
+
+  &.--is-active {
+    //z-index: 10;
+    display: block;
+  }
+
+  > * + * {
+    margin-top: $gutter;
+  }
+
+}
+
+.ama__resource-tabs__content section#resources.--is-active {
+  display: block;
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+}
+
+section#related-links ul {
+  list-style-type: none;
+  li {
+    margin: 0;
+  }
+}
+
+#schedules {
+  table {
+    border-spacing: 0;
+  }
+
+  td {
+    border: solid 1px grey;
+    border-right: solid 1px grey
+  }
+
+  tr:nth-child(even) {
+    background: rgba(0,0,0,.2);
+  }
+}

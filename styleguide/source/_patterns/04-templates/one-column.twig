@@ -4,6 +4,7 @@
 
 <div class="ama__layout--one-column container {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
+
   <section class="ama__layout--one-column__content-top">
     {% block contentTop %}
       {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
@@ -12,11 +13,11 @@
 
   <article class="ama__layout--one-column__page-content" role="article">
     {% block pageContent %}
-      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page Content region content'}}%}
+      {% set placeholder = one_column.page_content.placeholder %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page main content'}}%}
     {% endblock %}
   </article>
 
-  <aside id="sidebar-primary" class="ama__layout--one-column__sidebar--primary" role="complementary"></aside>
 </div>
 
 {% block footer %}

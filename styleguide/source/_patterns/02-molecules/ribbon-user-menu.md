@@ -7,6 +7,9 @@ The user menu navigation present in the header ribbon.
 * [user-menu](?p=molecules/ribbon-user-menu)
 * [user-menu](?p=molecules/ribbon-user-menu-logged-in)
 
+### Use Case
+A mechanism for user links.
+
 ### Variables
 ~~~
   "userMenu": {
