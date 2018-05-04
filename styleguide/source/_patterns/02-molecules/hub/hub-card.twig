@@ -1,6 +1,10 @@
-{% set image, heading, paragraph, unorderedList, button = hubCard.image, hubCard.heading, hubCard.paragraph, hubCard.unorderedList, hubCard.button %}
+{% set image, heading, paragraph, unorderedList, button, selectMenu = hubCard.image, hubCard.heading, hubCard.paragraph, hubCard.unorderedList, hubCard.button, hubCard.selectMenu %}
 
-<a class="ama__hub-card {{ hubCard.layout }}" href="">
+ {% if hubCard.layout == "ama__hub-card--portrait" %}
+   {% set background = "background-image: url( #{hubCard.backgroundImage} );" %}
+ {% endif %}
+
+<a class="ama__hub-card {{ hubCard.layout }}" href="#" style="{{ background }}">
   {% if hubCard.image.src is not empty %}
     {% include "@atoms/image.twig" %}
   {% endif %}
@@ -17,6 +21,10 @@
 
     {% if hubCard.button %}
       {% include "@atoms/button.twig" %}
+    {% endif %}
+
+    {% if hubCard.selectMenu %}
+      {% include "@atoms/forms/select-menu.twig" %}
     {% endif %}
   </div>
 </a>

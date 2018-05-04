@@ -1,28 +1,35 @@
 .ama__hub-hero {
-  $grandparent: &;
   width: 100%;
   min-height: 200px;
-  max-width: 1200px;
   display: flex;
   align-items: stretch;
   flex-direction: column;
   text-align: center;
+  background-color: $gray-7;
   background-size: contain;
-  background: url('https://ipsumimage.appspot.com/1200x400?l=3:1|1200x400&s=36') no-repeat 0 0;
 
   @include breakpoint($bp-small) {
-    min-height: 400px;
     background-position: center;
     background-size: cover;
   }
 
-  .header {
-    margin: 0;
+  &__heading {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-top-full...);
+
+    &h1,
+    &h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copy {
+    @include gutter-all($padding-all-full...);
   }
 
   &__list {
+    @include gutter-all($padding-all-full...);
     margin: inherit;
-    padding: inherit;
 
     ul {
       margin: inherit;
@@ -30,11 +37,43 @@
     }
   }
 
+  &__image {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+
+    @include breakpoint($bp-small) {
+      flex-basis: 50%;
+    }
+
+    .ama__image {
+      width: 100%;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+
+    @include breakpoint($bp-small) {
+      flex-basis: 50%;
+    }
+
+    .ama__video {
+      width: 100%;
+    }
+  }
+
   &__description {
-    @include gutter-all($padding-all-full...);
     display: flex;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  &__button-container {
+    @include gutter-all($padding-all-full...);
+    text-align: center;
   }
 
   &--cta-only {
@@ -45,41 +84,60 @@
   }
 
   &--side-right {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
-    background: url('https://ipsumimage.appspot.com/1280x720?l=16:9|1280x720&s=36') no-repeat center center;
     background-size: 100%;
 
-    #{$grandparent}__description {
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
       background-color: rgba($white, 0.45);
-      width: 50%;
+      width: 100%;
       justify-content: center;
       display: flex;
       flex-direction: column;
       text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
     }
   }
 
   &--hero-side {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    background: url('https://ipsumimage.appspot.com/1280x720?l=16:9|1280x720&s=36') no-repeat center center;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    #{$grandparent}__description {
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
       background-color: rgba($white, 0.45);
-      width: 50%;
+      width: 100%;
       justify-content: center;
       display: flex;
       flex-direction: column;
       text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
     }
   }
 
-  &--split {
+  &--split-no-overlay {
     align-items: stretch;
 
-    #{$grandparent}__copy {
+    .ama__hub-hero__description {
+      flex: 1;
+    }
+
+    .ama__hub-hero__copy {
       margin-top: auto;
       margin-bottom: 0;
       order: 2;
@@ -88,9 +146,51 @@
       align-self: flex-end;
     }
 
-    #{$grandparent}_button-container {
+    .ama__hub-hero_button-container {
       @include gutter-all($margin-all-full...);
       order: 1;
     }
   }
+
+  &--split {
+    @extend .ama__hub-hero--split-no-overlay;
+
+    .ama__hub-hero__heading,
+    .ama__hub-hero__copy {
+      @include gutter-all($padding-all-full...);
+      background-color: rgba(255, 255, 255, 0.45);
+    }
+  }
+
+  &--fifty-fifty {
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--fifty-fifty-left {
+    @extend .ama__hub-hero--fifty-fifty;
+    flex-direction: column;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row-reverse;
+    }
+  }
+
 }
