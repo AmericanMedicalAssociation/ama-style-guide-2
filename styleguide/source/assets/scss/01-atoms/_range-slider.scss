@@ -2,9 +2,10 @@
   &.ui-widget.ui-widget-content {
     @include gutter-all($margin-all-half...);
     @include gutter($margin-top-full...);
-    border: 3px solid $gray-7;
-    height: 0;
+    border: 0;
+    border-top: 3px solid $gray-7;
     border-radius: 0;
+    height: auto;
   }
 
   .ui-state-default,
@@ -25,7 +26,7 @@
     border: 0;
     border-radius: 0;
     background: $purple;
-    top: -2px;
+    top: -4px;
     height: 6px;
   }
 
