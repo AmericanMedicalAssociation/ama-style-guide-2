@@ -16,7 +16,7 @@ A hero CTA that consists of a title, optional description, optional background i
 * [As split](?p=molecules-hub-hero-as-split)
 * [As split no overlay](?p=molecules-hub-hero-as-split-no-overlay)
 
-[EWL-4995(https://issues.ama-assn.org/browse/EWL-4995)
+[EWL-4995](https://issues.ama-assn.org/browse/EWL-4995)
 
 
 ### Use Case
