@@ -10,14 +10,14 @@ setup_git() {
 }
 
 commit_website_files() {
-  git checkout -b test-results
+  git checkout test-results
   git add backstop_data/
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
-  git remote add origin https://${GITHUB_TOKEN}@github.com/AmericanMedicalAssociation/ama-style-guide-2.git > /dev/null 2>&1
-  git push --quiet --set-upstream origin test-results
+  git remote add origin https://${GITHUB_TOKEN}@github.com/AmericanMedicalAssociation/ama-style-guide-2.git
+  git push --force origin test-results
 }
 
 setup_git

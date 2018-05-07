@@ -5,8 +5,8 @@ node_js:
   - 7.10.0
 github-token: $GITHUB_TOKEN
 before_install:
-  - git config --global user.email publish@travis.github
-  - git config --global user.name "Travis"
+  - git config --global user.email deploy@travis-ci.org
+  - git config --global user.name "Deploymnet Bot"
   - cd styleguide
   - composer install --no-interaction
   - npm i -g npm@5.6.0
@@ -15,7 +15,10 @@ install:
 script:
   - gulp test
 after_failure:
-  - eval "$(ssh-agent -s)" #start the ssh agent
-  - chmod 600 .travis/deploy_key.pem # this key should have push access
-  - ssh-add .travis/deploy_key.pem
-  - ./test-results.sh
+  deploy:
+    provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+    local-dir: backstop_data/
+    target-branch: test-results
+    verbose: true
