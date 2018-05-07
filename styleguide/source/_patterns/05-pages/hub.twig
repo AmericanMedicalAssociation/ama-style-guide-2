@@ -1,12 +1,8 @@
-{% extends '@templates/one-column.twig' %}
+{% set hubHero, hubSectionHeader, hubHeroes, hubCards = hubPage.hubHero, hubPage.hubSectionHeader, hubPage.hubHeroes, hubPage.hubCards %}
 
-
-{% block contentTop %}
-  {% set hubHero = hub.hubHero %}
-  {% include '@molecules/hub-hero.twig' %}
-{% endblock %}
-
-{% block pageContent %}
-  {% set hubSectionHeader = hub.hubSectionHeader %}
-  {% include '@molecules/hub-section-header.twig' %}
-{% endblock %}
+<main class="hub-page container">
+  {% include "@molecules/hub/hub-hero.twig" %}
+  {% include "@molecules/hub/hub-section-header.twig" %}
+  {% include "@organisms/hub-heroes.twig" %}
+  {% include "@organisms/hub-cards.twig" %}
+</main>
