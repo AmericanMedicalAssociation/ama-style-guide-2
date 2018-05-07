@@ -6,7 +6,6 @@ node_js:
 github-token: $GITHUB_TOKEN
 before_install:
   - git config --global user.email deploy@travis-ci.org
-  - git config --global user.name "Deploymnet Bot"
   - cd styleguide
   - composer install --no-interaction
   - npm i -g npm@5.6.0
@@ -15,10 +14,4 @@ install:
 script:
   - gulp test
 after_failure:
-  deploy:
-    provider: pages
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-    local-dir: backstop_data/
-    target-branch: test-results
-    verbose: true
+  - ./test-results.sh

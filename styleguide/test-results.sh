@@ -2,8 +2,6 @@
 #!/bin/sh
 set -e # Exit with nonzero exit code if anything fails
 
-TARGET_BRANCH="test-results"
-
 setup_git() {
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
