@@ -1,5 +1,5 @@
 .ama__hub-card {
-  @include gutter($margin-bottom-full...);
+  @include gutter($margin-bottom-half...);
   display: flex;
   background-color: $gray-7;
   background-size: contain;
@@ -47,20 +47,19 @@
       margin-top: auto;
     }
   }
-  
 
   @include breakpoint($bp-small $bp-med) {
     // 2-up layout
     // when there are three items it's 50:50
     &:nth-child(1):nth-last-child(2) {
       @include gutter($margin-right-half...);
-      @include gutter($margin-bottom-full...);
+      @include gutter($margin-bottom-half...);
       width: calc(50% - 14px);
     }
 
     &:nth-child(2):nth-last-child(1) {
       @include gutter($margin-left-half...);
-      @include gutter($margin-bottom-full...);
+      @include gutter($margin-bottom-half...);
       width: calc(50% - 14px);
     }
 
@@ -69,7 +68,7 @@
     // first item is
     &:nth-child(1):nth-last-child(3) {
       @include gutter($margin-right-half...);
-      @include gutter($margin-bottom-full...);
+      @include gutter($margin-bottom-half...);
       width: calc(50% - 14px);
     }
     // last of three doesn't have right padding
@@ -95,13 +94,12 @@
     &:nth-child(1):nth-last-child(4),
     &:nth-child(3):nth-last-child(2) {
       @include gutter($margin-right-half...);
-      @include gutter($margin-bottom-full...);
+      @include gutter($margin-bottom-half...);
     }
     // last of three doesn't have right padding
     &:nth-child(2):nth-last-child(3),
     &:nth-child(4):nth-last-child(1) {
-      @include gutter($margin-left-half...);
-      @include gutter($margin-bottom-full...);
+      @include gutter($margin-bottom-half...);
     }
   }
 
@@ -114,8 +112,8 @@
     }
 
     &:nth-child(2):nth-last-child(1) {
-      @include gutter($margin-left-half...);
-      width: calc(50% - 14px);
+      margin-right: 0;
+      width: 50%;
     }
 
     // 3-up layout
@@ -123,9 +121,8 @@
     &:nth-child(1):nth-last-child(3),
     &:nth-child(2):nth-last-child(2),
     &:nth-child(3):nth-last-child(1) {
-      @include gutter($margin-left-half...);
       @include gutter($margin-right-half...);
-      width: calc(33% - 14px);
+      width: calc(33.333% - 14px);
     }
     // first of three doesn't have left padding
     &:nth-child(1):nth-last-child(3) {
@@ -134,6 +131,7 @@
     // last of three doesn't have right padding
     &:nth-child(3):nth-last-child(1) {
       margin-right: 0;
+      width: 33.333%;
     }
 
     // 4-up layout
