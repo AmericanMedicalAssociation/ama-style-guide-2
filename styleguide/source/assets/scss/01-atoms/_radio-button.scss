@@ -9,27 +9,23 @@
   &:hover {
     color: $gray-64;
   }
-}
 
-.ui-checkboxradio-label .ui-icon-background {
-  position: relative;
-  left: 2px;
-  border: 1px solid $gray-7;
-  width: 16px;
-  height: 16px;
-  background-image: none;
-  box-shadow: none;
-}
+  &.ui-checkboxradio-checked .ui-icon,
+  &.ui-checkboxradio-checked:hover .ui-icon {
+    background-color: $purple;
+    border: 1px solid $purple;
+    border-radius: 50%;
 
-.ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-icon,
-.ui-checkboxradio-radio-label.ui-checkboxradio-checked:hover .ui-icon {
-  background-color: $purple;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid $white;
-}
+    &.ui-icon {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      background-image: none;
+      box-shadow: none;
+    }
+  }
 
-.ui-checkboxradio-icon-space {
-  @include gutter($margin-left-half...);
+  .ui-checkboxradio-icon-space {
+    @include gutter($margin-left-half...);
+  }
 }
