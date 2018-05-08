@@ -1,0 +1,196 @@
+.ama__hub-hero {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  text-align: center;
+  background-color: $gray-7;
+  background-size: contain;
+
+  @include breakpoint($bp-small) {
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__heading {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-top-full...);
+
+    &h1,
+    &h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copy {
+    @include gutter-all($padding-all-full...);
+  }
+
+  &__list {
+    @include gutter-all($padding-all-full...);
+    margin: inherit;
+
+    ul {
+      margin: inherit;
+      padding: inherit;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+
+    @include breakpoint($bp-small) {
+      flex-basis: 50%;
+    }
+
+    .ama__image {
+      width: 100%;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+
+    @include breakpoint($bp-small) {
+      flex-basis: 50%;
+    }
+
+    .ama__video {
+      width: 100%;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__button-container {
+    @include gutter-all($padding-all-full...);
+    text-align: center;
+  }
+
+  &--cta-only {
+    flex-direction: column;
+    justify-content: center;
+    background: $gray-7;
+    min-height: 0;
+  }
+
+  &--side-right {
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: 100%;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--hero-side {
+    flex-direction: column;
+    justify-content: flex-start;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--split-no-overlay {
+    align-items: stretch;
+
+    .ama__hub-hero__description {
+      flex: 1;
+    }
+
+    .ama__hub-hero__copy {
+      margin-top: auto;
+      margin-bottom: 0;
+      order: 2;
+
+
+      align-self: flex-end;
+    }
+
+    .ama__hub-hero_button-container {
+      @include gutter-all($margin-all-full...);
+      order: 1;
+    }
+  }
+
+  &--split {
+    @extend .ama__hub-hero--split-no-overlay;
+
+    .ama__hub-hero__heading,
+    .ama__hub-hero__copy {
+      @include gutter-all($padding-all-full...);
+      background-color: rgba(255, 255, 255, 0.45);
+    }
+  }
+
+  &--fifty-fifty {
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--fifty-fifty-left {
+    @extend .ama__hub-hero--fifty-fifty;
+    flex-direction: column;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row-reverse;
+    }
+  }
+
+}
