@@ -357,5 +357,5 @@ gulp.task('release', function (callback) {
   runSequence = require('run-sequence').use(gulp);
   // Build the style guide, publish to gh-pages, set the branch to master,
   // publish to master, then tag master.
-  runSequence('default', 'publish', 'set-master', callback);
+  runSequence('default', 'publish', 'drupal-deploy', 'set-master', callback);
 });
