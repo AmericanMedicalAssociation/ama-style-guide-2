@@ -8,9 +8,9 @@ A hero CTA that consists of a title, optional description, optional background i
 
 ### Variant options
 * [As cta only](?p=molecules-hub-hero-as-cta-only)
-* [As fity fifty](?p=molecules-hub-hero-as-fifty-fifty)
-* [As fity fifty left](?p=molecules-hub-hero-as-fifty-fifty-left)
-* [As fity fifty video](?p=molecules-hub-hero-as-fifty-fifty-video)
+* [As fifty fifty](?p=molecules-hub-hero-as-fifty-fifty)
+* [As fifty fifty left](?p=molecules-hub-hero-as-fifty-fifty-left)
+* [As fifty fifty video](?p=molecules-hub-hero-as-fifty-fifty-video)
 * [As side](?p=molecules-hub-hero-as-side)
 * [As side right](?p=molecules-hub-hero-as-side-right)
 * [As split](?p=molecules-hub-hero-as-split)
