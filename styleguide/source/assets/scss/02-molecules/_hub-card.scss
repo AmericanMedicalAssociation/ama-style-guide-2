@@ -1,0 +1,53 @@
+.ama__hub-card {
+  display: flex;
+  background-color: $gray-7;
+  background-size: contain;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  min-height: 400px;
+
+  &__heading {
+    @include gutter-all($padding-all-full...);
+    margin: 0;
+  }
+
+  &__description {
+    @include gutter-all($padding-all-full...);
+  }
+
+  > img {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: darken($gray-7, 10%);
+  }
+
+  &--no-image {
+    min-height: 0;
+
+    .ama__hub-card__heading {
+      border-bottom: 1px solid $gray-50;
+    }
+
+    .ama__hub-card__text {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-half...);
+    }
+  }
+
+  &--portrait {
+    background-size: cover;
+    min-height: calc(((100vw - 40px) / 2) * 3);
+    background-position: center top;
+
+    .ama__hub-card__description {
+      margin-top: auto;
+    }
+  }
+
+  &--select {
+
+  }
+}
