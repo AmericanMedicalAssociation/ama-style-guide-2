@@ -14,4 +14,4 @@ install:
 script:
   - gulp test
 after_failure:
-  - ./test-results.sh
+  - "$TRAVIS_BUILD_DIR/scripts/test-results"
