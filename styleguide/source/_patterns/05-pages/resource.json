@@ -189,60 +189,136 @@
         }
       }
     },
-    "schedules": {
-      "scheduleone": {
-        "subheading": "Lorem ipsum dolor."
-      },
-      "promo": {
-        "style": "background",
-        "heading": {
-          "text": "This is an h2"
-        },
-        "link": "http://www.google.com",
-        "paragraph" : {
-          "text": "Lorem ipsum dolor sit amet, adipiscing"
-        },
-        "button": {
-          "text": "Tell us now",
-          "style": "primary"
+    "schedules": [
+      {
+        "subheading": "Lorem ipsum dolor.",
+        "table": {
+          "caption": "How I chose to spend my money",
+          "thead": [
+            {
+              "th": "Purchase"
+            },
+            {
+              "th": "Location"
+            },
+            {
+              "th": "Date"
+            },
+            {
+              "th": "Evaluation"
+            },
+            {
+              "th": "Cost (€)"
+            }
+          ],
+          "tbody": [
+            {
+              "td": [
+                "Haircut",
+                "Hairdresser",
+                "12/09",
+                "Great idea",
+                "30"
+              ]
+            },
+            {
+              "td": [
+                "Lasagna",
+                "Restaurant",
+                "12/09",
+                "Regrets",
+                "18"
+              ]
+            },
+            {
+              "td": [
+                "Shoes",
+                "Shoeshop",
+                "13/09",
+                "Big regrets",
+                "65"
+              ]
+            },
+            {
+              "td": [
+                "Toothpaste",
+                "Supermarket",
+                "13/09",
+                "Good",
+                "5"
+              ]
+            }
+          ],
+          "promo": {
+            "style": "background",
+            "heading": {
+              "text": "This is an h2"
+            },
+            "link": "http://www.google.com",
+            "paragraph": {
+              "text": "Lorem ipsum dolor sit amet, adipiscing"
+            },
+            "button": {
+              "text": "Tell us now",
+              "style": "primary"
+            }
+          }
         }
       }
-    },
-    "contacts": {
-      "infoCard": {
-        "type": "contact",
-        "heading": {
-          "text": "Contact:"
-        },
-        "image": {
-          "alt": "placeholder",
-          "src": "https://via.placeholder.com/280x280/027DBC/ffffff",
-          "height": "",
-          "width": ""
-        },
-        "paragraphs": [
-          {
-            "text": "Robert J Mills"
-          },
-          {
-            "text": "AMA Media & Editorial"
-          },
-          {
-            "text": "ph: (312) 464-5970"
-          },
-          {
-            "text": "ph: (312) 464-5970"
-          },
-          {
-            "text": "fax: (312) 464-5970"
-          }
+    ],
+    "tables": [
+      {
+        "caption": "",
+        "thead": [
+          { "th": "Purchase" },
+          { "th": "Location" },
+          { "th": "Date" },
+          { "th": "Evaluation" },
+          { "th": "Cost (€)" }
         ],
-        "link": {
-          "title": "Email Robert J Mills",
-          "href": "mailto:robert.mills@ama-assn.org",
-          "text": "robert.mills@ama-assn.org",
-          "target": "_self"
+        "tbody": [
+          { "td":["Haircut", "Hairdresser", "12/09", "Great idea", "30"] },
+          { "td":["Lasagna", "Restaurant", "12/09", "Regrets", "18"] },
+          { "td":["Shoes", "Shoeshop", "13/09", "Big regrets", "65"] },
+          { "td":["Toothpaste", "Supermarket", "13/09", "Good", "5"] }
+        ]
+      }
+    ]
+  },
+  "contacts": {
+    "infoCard": {
+      "type": "contact",
+      "heading": {
+        "text": "Contact:"
+      },
+      "image": {
+        "alt": "placeholder",
+        "src": "https://via.placeholder.com/280x280/027DBC/ffffff",
+        "height": "",
+        "width": ""
+      },
+      "paragraphs": [
+        {
+          "text": "Robert J Mills"
+        },
+        {
+          "text": "AMA Media & Editorial"
+        },
+        {
+          "text": "ph: (312) 464-5970"
+        },
+        {
+          "text": "ph: (312) 464-5970"
+        },
+        {
+          "text": "fax: (312) 464-5970"
         }
+      ],
+      "link": {
+        "title": "Email Robert J Mills",
+        "href": "mailto:robert.mills@ama-assn.org",
+        "text": "robert.mills@ama-assn.org",
+        "target": "_self"
       }
     }
   }

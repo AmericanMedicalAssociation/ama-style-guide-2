@@ -181,43 +181,23 @@
       {% endfor %}
     </section>
     <section id="schedules">
-      <div data-anchor="schedules-1">
-        {% set heading = {level: '3', text: 'Schedule 1'}  %}
-        {% include '@atoms/heading.twig' %}
-        <h5>{{ tabContent.schedules.scheduleone.subheading }}</h5>
-        <table>
-          <tr>
-            <td>Dates</td>
-            <td>Information</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-        </table>
-      </div>
+      {% for schedule in tabContent.schedules %}
+        <div data-anchor="schedules-1">
+          {% set heading = {level: '3', text: 'Schedule 1'}  %}
+          {% include '@atoms/heading.twig' %}
+          <h5>{{ schedule.subheading }}</h5>
+          {% set table = schedule.table %}
+          {% include '@atoms/table.twig' %}
+        </div>
+      {% endfor %}
       {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}
       {% include '@atoms/heading.twig' %}
-      section blocked, waiting on <a href="https://github.com/AmericanMedicalAssociation/ama-style-guide-2/pull/210">https://github.com/AmericanMedicalAssociation/ama-style-guide-2/pull/210</a>
+      {% for table in tabContent.tables %}
+        {% include '@atoms/table.twig' %}
+      {% endfor %}
     </section>
     <section id="contacts">
       <h3>Contacts</h3>
