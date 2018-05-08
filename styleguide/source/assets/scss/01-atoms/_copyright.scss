@@ -1,3 +1,8 @@
-.ama__copyright {
+.ama__copyright  {
+  @extend %ama__type--small;
   color: $gray-64;
+
+  @include breakpoint($bp-large min-width) {
+    width: 100%;
+  }
 }
