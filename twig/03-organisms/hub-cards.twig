@@ -1,0 +1,6 @@
+<div class="ama__hub-row">
+  {% for hubCard in hubCards %}
+    {% set image, heading, paragraph = hubCard.image, hubCard.heading, hubCard.paragraph %}
+    {% include "@molecules/hub/hub-card.twig" %}
+  {% endfor %}
+</div>
