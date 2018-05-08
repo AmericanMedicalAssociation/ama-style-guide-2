@@ -18,82 +18,96 @@ table {
   }
 }
 
-tbody {
+caption {
   display: block;
 
-  tr {
-    display: block;
-  }
-
-  tr.odd, tr:nth-child(odd)  {
-    background: $gray-7;
-  }
-
-  td {
-    border: 1px solid $gray-7;
-    display: block;
-    padding-left: 50%;
-    position: relative;
-    @include breakpoint($bp-small) {
-      padding-left: 0;
-      border: 1px solid $gray-50;
-    }
-  }
-
-  td:before {
-    font-weight: bold;
-    text-transform: uppercase;
-    content: attr(data-title);
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    white-space: normal;
-  }
-
   @include breakpoint($bp-small) {
-    display: table-row-group;
-
-    tr {
-      display: table-row;
-    }
-
-    td {
-      display: table-cell;
-      vertical-align: top;
-    }
-
-    td:before {
-      display: none;
-    }
+    display: table-caption;
   }
 }
 
-thead tr {
-  text-transform: uppercase;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-
-  @include breakpoint($bp-small) {
-    position: static;
-  }
-}
-
-thead,
-tfoot {
+thead {
   display: block;
-
-  th {
-    display: block;
-    border: 1px solid $gray-50;
-  }
 
   @include breakpoint($bp-small) {
     display: table-header-group;
+  }
+
+  tr {
+    text-transform: uppercase;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+    @include breakpoint($bp-small) {
+      position: static;
+    }
 
     th {
-      display: table-cell;
+      display: block;
+      border: 1px solid $gray-50;
+
+      @include breakpoint($bp-small) {
+        display: table-cell;
+      }
     }
+  }
+}
+
+tbody {
+  display: block;
+
+  @include breakpoint($bp-small) {
+    display: table-row-group;
+  }
+
+  tr {
+    display: block;
+
+    @include breakpoint($bp-small) {
+      display: table-row;
+    }
+
+    &.odd,
+    &:nth-child(odd)  {
+      background: $gray-7;
+    }
+
+    td {
+      border: 1px solid $gray-7;
+      display: block;
+      padding: 2px 2px 2px 50%;
+      position: relative;
+
+      @include breakpoint($bp-small) {
+        display: table-cell;
+        vertical-align: top;
+        padding: 2px;
+        border: 1px solid $gray-50;
+      }
+
+      &:before {
+        font-weight: bold;
+        text-transform: uppercase;
+        content: attr(data-title);
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        white-space: normal;
+
+        @include breakpoint($bp-small) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+tfoot {
+  display: block;
+
+  @include breakpoint($bp-small) {
+    display: table-header-group;
   }
 }

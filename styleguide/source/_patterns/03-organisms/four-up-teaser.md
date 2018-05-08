@@ -7,6 +7,9 @@ A collection of up to four articles displaying an image (optional), title, and m
 
 [EWL-4434](https://issues.ama-assn.org/browse/EWL-4434)
 
+### Use Case
+A collection of up to four clickable pages that appear on News Article, Press Release, and Event content types. Their selection is editorially driven and can be any page, not limited by content type. The same four pages appear in all locations and must be manually curated outside of any one node.
+
 ### Variables
 ~~~
 {

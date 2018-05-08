@@ -10,6 +10,8 @@ Variants are managed by use of pseudo-patterns.
 [EWL-4281](https://issues.ama-assn.org/browse/EWL-4281)
 [EWL-4432](https://issues.ama-assn.org/browse/EWL-4432)
 
+### Use Case
+This produces an Artcle teaser for use if certain fields are present. Entices a user to click on a related article which exists on a separate page.
 
 ~~~
 articleStub {

@@ -46,31 +46,13 @@ textarea {
 }
 
 label {
-  @include font-size($small-font-sizes);
+  @extend %ama__type--small;
   font-weight: 700;
   text-transform: uppercase;
   color: $gray-50;
 
   span {
     text-transform: capitalize;
-  }
-}
-
-.form-group {
-  position: relative;
-
-  .help-text {
-    @include font-size($small-font-sizes);
-    color: $gray-50;
-    font-style: italic;
-  }
-
-  .character-count {
-    float: right;
-
-    &.error {
-      color: $red;
-    }
   }
 }
 

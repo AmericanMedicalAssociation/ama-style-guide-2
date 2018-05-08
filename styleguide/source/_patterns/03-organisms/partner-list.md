@@ -7,6 +7,9 @@ A collection of up to three articles displayed in a column (meant for use in a s
 
 [EWL-4433](https://issues.ama-assn.org/browse/EWL-4434)
 
+### Use Case
+Contains a list of all the partners mentioned within a Press Release so visitors know the logo, contact info, and business/organization summary of all parties involved in the press release.
+
 ### Variables
 ~~~
 {
