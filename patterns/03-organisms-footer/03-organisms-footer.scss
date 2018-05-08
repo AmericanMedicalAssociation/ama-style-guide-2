@@ -10,67 +10,56 @@
     }
   }
 
-  .ama__rule--horizontal {
-    border-color: $gray-64;
-  }
-}
-
-.ama__footer__container {
-  @include child-top-gutters($gutter);
-}
-
-.ama__footer__menu-container {
-  @include gutter($margin-top-half...);
-  @include child-top-gutters($gutter / 2);
-}
-
-.ama__copyright,
-.ama__footer__menu-utility {
-  @extend %ama__type--small;
-}
-
-.ama__copyright  {
-  color: $gray-64;
-}
-
-.ama__footer ul {
-  list-style-type: none;
-}
-
-.ama__footer__menu-secondary-user {
-  display: flex;
-
   ul {
-    width: 50%;
-  }
-}
-
-.ama__footer__menu-utility {
-  margin-top: 0;
-}
-
-.ama__footer__menu-utility li {
-  display: inline-block;
-}
-
-.ama__footer__menu-utility li:not(:last-child):after {
-  content: "|";
-}
-
-@include breakpoint($bp-large min-width) {
-  .ama__mission-statement {
-    @include gutter($padding-right-full...);
-    width: calc(100% / 3 * 2);
+    list-style-type: none;
   }
 
-  .ama__footer__menu-container {
-    width: calc(100% / 3 * 1);
-    > ul {
-      width: 100%;
+  &__container {
+    @include child-top-gutters($gutter);
+  }
+
+  &__menu-container {
+    @include gutter($margin-top-half...);
+    @include child-top-gutters($gutter / 2);
+
+    @include breakpoint($bp-large min-width) {
+      width: calc(100% / 3 * 1);
+      > ul {
+        width: 100%;
+      }
     }
   }
 
-  .ama__copyright {
-    width: 100%;
+  &__menu-secondary-user {
+    display: flex;
+
+    ul {
+      width: 50%;
+    }
+  }
+
+  &__menu-utility {
+    @extend %ama__type--small;
+    margin-top: 0;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child):after {
+        content: "|";
+      }
+    }
+  }
+
+  &__mission-statement {
+    @include breakpoint($bp-large min-width) {
+      @include gutter($padding-right-full...);
+      width: calc(100% / 3 * 2);
+    }
+  }
+
+  // This is interesting...
+  .ama__rule--horizontal {
+    border-color: $gray-64;
   }
 }
