@@ -6,7 +6,7 @@ set -e # Exit with nonzero exit code if anything fails
 REPO="${REPO}"
 
 # Setup a deploy branch
-deploy_branch = "test-results-${TRAVIS_BUILD_ID}"
+deploy_branch="test-results-${TRAVIS_BUILD_ID}"
 
 # Fail if we still don't know where the repo is.
 echo "Deploying to the SG2 repo at '$REPO'."
