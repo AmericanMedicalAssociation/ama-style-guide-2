@@ -71,8 +71,14 @@ li {
     }
   }
 
-  &[data-resource='media'] .ama__resource-tabs__nav__icon {
-    background-image: url('../icons/svg/icon-resources-nav-media.svg');
+  &[data-resource='media'] {
+    @include breakpoint($bp-small) {
+      border-left: 0;
+    }
+
+    .ama__resource-tabs__nav__icon {
+      background-image: url('../icons/svg/icon-resources-nav-media.svg');
+    }
   }
 
   &[data-resource='downloads'] .ama__resource-tabs__nav__icon {
@@ -100,8 +106,14 @@ li {
       background-image: url('../icons/svg/icon-resources-nav-resources-active.svg');
     }
 
-    &[data-resource='media'] .ama__resource-tabs__nav__icon {
-      background-image: url('../icons/svg/icon-resources-nav-media-active.svg');
+    &[data-resource='media'] {
+      @include breakpoint($bp-small) {
+        border-left: 0;
+      }
+
+      .ama__resource-tabs__nav__icon {
+        background-image: url('../icons/svg/icon-resources-nav-media-active.svg');
+      }
     }
 
     &[data-resource='downloads'] .ama__resource-tabs__nav__icon {
@@ -129,6 +141,10 @@ li {
 .ama__resource-tabs__content {
   position: relative;
   height: 100%;
+
+  a:not(.ama__tool) {
+    @extend %ama__link--no-underline;
+  }
 }
 
 .ama__resource-tabs__nav__label {
@@ -166,24 +182,22 @@ li {
   }
 }
 
+.ama__layout--split__left .ama__masthead {
+  margin-right: - $gutter / 2;
+  margin-bottom: $gutter;
+}
+
+.ama__layout--split__left .ama__masthead > * {
+  padding-right: $gutter / 2;
+}
+
+.ama__layout--split__left .ama__masthead__content {
+  border-bottom: solid 1px $gray-50;
+}
+
 section#related-links ul {
   list-style-type: none;
   li {
     margin: 0;
-  }
-}
-
-#schedules {
-  table {
-    border-spacing: 0;
-  }
-
-  td {
-    border: solid 1px grey;
-    border-right: solid 1px grey
-  }
-
-  tr:nth-child(even) {
-    background: rgba(0,0,0,.2);
   }
 }
