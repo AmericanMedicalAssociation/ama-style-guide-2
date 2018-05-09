@@ -6,7 +6,7 @@ set -e # Exit with nonzero exit code if anything fails
 REPO="${REPO}"
 
 # Fail if we still don't know where the repo is.
-echo "Deploying to the Acquia repo at '$ACQUIA_REPO'."
+echo "Deploying to the SG2 repo at '$REPO'."
 if [ -z "$REPO" ] ; then
     echo "Cannot deploy without a repo."
     exit 1
