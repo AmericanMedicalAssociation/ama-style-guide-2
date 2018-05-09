@@ -2,6 +2,15 @@
 #!/bin/sh
 set -e # Exit with nonzero exit code if anything fails
 
+# Pass the REPO parameter
+REPO="${REPO}"
+
+# Fail if we still don't know where the repo is.
+echo "Deploying to the Acquia repo at '$ACQUIA_REPO'."
+if [ -z "$REPO" ] ; then
+    echo "Cannot deploy without a repo."
+    exit 1
+
 setup_git() {
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
@@ -10,11 +19,10 @@ setup_git() {
 commit_website_files() {
   git checkout test-results
   git add backstop_data/
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  git commit --message "Travis build: ${TRAVIS_BUILD_NUMBER}"
 }
 
 upload_files() {
-  git remote add origin https://${GITHUB_TOKEN_2}@github.com/AmericanMedicalAssociation/ama-style-guide-2.git
   git push --force origin test-results
 }
 
