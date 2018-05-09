@@ -10,6 +10,7 @@ echo "Deploying to the SG2 repo at '$REPO'."
 if [ -z "$REPO" ] ; then
     echo "Cannot deploy without a repo."
     exit 1
+fi
 
 setup_git() {
   git config --global user.email "travis@travis-ci.org"
