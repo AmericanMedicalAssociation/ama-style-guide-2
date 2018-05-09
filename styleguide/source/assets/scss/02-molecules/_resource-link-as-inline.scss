@@ -1,15 +1,16 @@
 .ama__resource-link--inline {
-  @include gutter($padding-top-full...);
-  @include gutter($padding-bottom-full...);
+  @include gutter($padding-top-half...);
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+  display: block;
   border: solid #eee;
   border-width: 1px 0;
+  text-decoration: none;
 
   &__label {
     @extend %ama__h4;
     margin: 0;
-    color: purple;
+    color: $purple;
   }
 
   &__text {
@@ -17,6 +18,6 @@
   }
 
   &:hover {
-    color: $hoverBlue;
+    color: $blue;
   }
 }
