@@ -51,35 +51,37 @@
             <div class="ama__masthead__content__share">
               <ul class="ama__social-share">
                 <li>
-                  <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook"></a>
+                  <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook-gray"></a>
                 </li>
                 <li>
-                  <a href="plus.google.com/+americanmedicalassociation" class="social--googleplus"></a>
+                  <a href="plus.google.com/+americanmedicalassociation" class="social--googleplus-gray"></a>
                 </li>
                 <li>
-                  <a href="twitter.com/AmerMedicalAssn" class="social--twitter"></a>
+                  <a href="twitter.com/AmerMedicalAssn" class="social--twitter-gray"></a>
                 </li>
                 <li>
-                  <a href="www.linkedin.com/company/american-medical-association" class="social--linkedin"></a>
+                  <a href="www.linkedin.com/company/american-medical-association" class="social--linkedin-gray"></a>
                 </li>
                 <li>
-                  <a href="www.youtube.com/user/AmerMedicalAssn" class="social--youtube"></a>
+                  <a href="www.youtube.com/user/AmerMedicalAssn" class="social--youtube-gray"></a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </header>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
-        <a href="#" class="ama__page--resource__resource-link" data-resource="downloads-1">(Download 1)</a> eius hic laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus, eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
+      <div class="ama__page--resources__page-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
+          <a href="#" class="ama__page--resource__resource-link" data-resource="downloads-1">(Download 1)</a> eius hic laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus, eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
 
-      <a href="#" data-resource="media-3">
-        <div class="ama__resource-link--inline">
-          <h4 class="ama__resource-link--inline__label&quot;">Example Label Text for an Inline Resource Link</h4>
-          <h3 class="ama__resource-link--inline__text&quot;">Example text for the article link, lorem ipsum dolor sit amet</h3>
-        </div>
-      </a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur cupiditate, ea eius, facilis fuga laudantium modi molestiae placeat similique soluta tempora vel? Aliquid cupiditate delectus distinctio, doloribus enim eveniet illum, laudantium obcaecati pariatur perspiciatis quaerat quod similique velit. Eos libero provident quod sit.</p>
+        <a href="#" data-resource="media-3">
+          <div class="ama__resource-link--inline">
+            <h4 class="ama__resource-link--inline__label&quot;">Example Label Text for an Inline Resource Link</h4>
+            <h3 class="ama__resource-link--inline__text&quot;">Example text for the article link, lorem ipsum dolor sit amet</h3>
+          </div>
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur cupiditate, ea eius, facilis fuga laudantium modi molestiae placeat similique soluta tempora vel? Aliquid cupiditate delectus distinctio, doloribus enim eveniet illum, laudantium obcaecati pariatur perspiciatis quaerat quod similique velit. Eos libero provident quod sit.</p>
+      </div>
       <ul class="ama__tags">
         <li>
           <a href="http://www.google.com" title="" target="" class="ama__tag">
@@ -179,43 +181,23 @@
       {% endfor %}
     </section>
     <section id="schedules">
-      <div data-anchor="schedules-1">
-        {% set heading = {level: '3', text: 'Schedule 1'}  %}
-        {% include '@atoms/heading.twig' %}
-        <h5>{{ tabContent.schedules.scheduleone.subheading }}</h5>
-        <table>
-          <tr>
-            <td>Dates</td>
-            <td>Information</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-          <tr>
-            <td>MMM DD-DD YYYY</td>
-            <td>Lorem ipsum dolor sit amet, consectetur</td>
-          </tr>
-        </table>
-      </div>
+      {% for schedule in tabContent.schedules %}
+        <div data-anchor="schedules-1">
+          {% set heading = {level: '3', text: 'Schedule 1'}  %}
+          {% include '@atoms/heading.twig' %}
+          <h5>{{ schedule.subheading }}</h5>
+          {% set table = schedule.table %}
+          {% include '@atoms/table.twig' %}
+        </div>
+      {% endfor %}
       {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}
       {% include '@atoms/heading.twig' %}
-      section blocked, waiting on <a href="https://github.com/AmericanMedicalAssociation/ama-style-guide-2/pull/210">https://github.com/AmericanMedicalAssociation/ama-style-guide-2/pull/210</a>
+      {% for table in tabContent.tables %}
+        {% include '@atoms/table.twig' %}
+      {% endfor %}
     </section>
     <section id="contacts">
       <h3>Contacts</h3>
