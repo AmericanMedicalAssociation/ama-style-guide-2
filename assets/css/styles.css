@@ -2758,7 +2758,9 @@ figcaption {
     flex-direction: column;
     padding-top: 0;
     -ms-flex-item-align: start;
-    align-self: start;
+    align-self: start; }
+  .ama__article-stub--related .ama__video + .ama__article-stub__title,
+  .ama__article-stub--related .ama__image + .ama__article-stub__title {
     width: 75%; }
   .ama__article-stub--related .ama__article-stub__copy {
     width: 75%; }
@@ -3485,16 +3487,6 @@ a.ama__promo--border:hover {
     @media (min-width: 56.25em) {
       .ama__tool__icon {
         display: block; } }
-  .ama__tool__text {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%; }
   .ama__tool__text p, .ama__tool__text .ui-multiselect-menu .ui-multiselect-checkboxes li span, .ui-multiselect-menu .ui-multiselect-checkboxes li .ama__tool__text span, .ama__tool__text .ama__resource-link--inline__text {
     margin-bottom: 0; }
   .ama__tool__icon-lock {
@@ -3527,11 +3519,15 @@ a.ama__promo--border:hover {
 
 .ama__tools-learn-more a {
   padding-left: 5px;
-  list-style: disc inside none;
-  display: list-item; }
+  list-style: disc outside none;
+  display: list-item;
+  margin-left: 20px; }
   @media (min-width: 56.25em) {
     .ama__tools-learn-more a {
       padding-left: 7px; } }
+  @media (min-width: 56.25em) {
+    .ama__tools-learn-more a {
+      margin-left: 28px; } }
 
 .ama__hub-row {
   display: -webkit-box;
@@ -4225,7 +4221,11 @@ a.ama__promo--border:hover {
   .ama__membership .ama__button {
     width: 100%; }
   .ama__membership ul {
-    list-style-position: inside; }
+    list-style-position: outside;
+    margin-left: 20px; }
+    @media (min-width: 56.25em) {
+      .ama__membership ul {
+        margin-left: 28px; } }
 
 a.ama__membership {
   display: block;
