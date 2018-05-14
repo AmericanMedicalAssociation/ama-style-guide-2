@@ -60,4 +60,20 @@
       max-width: none;
     }
   }
+
+  &--location {
+    .ama__info-card__wrap {
+      @include breakpoint($bp-small) {
+        display: flex;
+      }
+    }
+
+    .ama__info-card__map {
+      display: inline-block;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
 }
