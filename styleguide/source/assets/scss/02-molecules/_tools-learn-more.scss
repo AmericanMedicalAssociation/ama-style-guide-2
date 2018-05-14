@@ -2,7 +2,8 @@
   & a {
     @extend %ama__link--no-underline;
     @include gutter($padding-left-quarter...);
-    list-style: disc inside none;
+    list-style: disc outside none;
     display:list-item;
+    @include gutter($margin-left-full...);
   }
 }
