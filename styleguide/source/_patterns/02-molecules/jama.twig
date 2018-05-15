@@ -4,7 +4,7 @@
   <ul class="ama__jama__links">
     {% for link in jama.links %}
       <li>
-        {% include "@atoms/link.twig" %}
+        {% include "@atoms/image.twig" with { image : link } %}
       </li>
     {% endfor %}
   </ul>
