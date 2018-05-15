@@ -1,13 +1,20 @@
 {% if image.href %}
   <a
     href="{{ image.href }}"
-    title="{{ image.info }}">
+    title="{{ image.info }}"
+    class="{{ image.text ? "ama__link--with-image" }}"
+  >
     <img
       class="{{ class }} ama__image"
       alt="{{ image.alt }}"
       src="{{ image.src }}"
       height="{{ image.height }}"
       width="{{ image.width }}" />
+    {% if image.text %}
+      <span class="ama__image__text">
+    {{ image.text }}
+  </span>
+    {% endif %}
   </a>
 {% else %}
   <img
