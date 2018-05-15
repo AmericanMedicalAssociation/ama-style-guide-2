@@ -1,0 +1,23 @@
+.ama__jama {
+  a {
+    text-decoration: none;
+
+    &.ama__jama__link--sign-up {
+      color: $hoverRed;
+    }
+  }
+
+  .ama__rule:first-of-type {
+    border-color: $hoverRed;
+  }
+}
+
+.ama__jama__links a {
+  @include font-size($p-font-sizes);
+  @include type($myriad-pro, $font-weight-semibold);
+
+  &:hover {
+    color: $hoverRed;
+    text-decoration: underline;
+  }
+}
