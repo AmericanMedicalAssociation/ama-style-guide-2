@@ -15,38 +15,37 @@ This produces an Artcle teaser for use if certain fields are present. Entices a 
 
 ~~~
 articleStub {
-  title_only: string / optional
-    type: string / required
-    link {
-      href:
-        type: string / required
-      text:
-        type: string / required
-      class:
-        type: string / optional
-      target:
-        type: string / optional
-      title:
-        type: string / optional
-    }
-    image {
-      alt:
-        type: string / required
-      src:
-        type: string (url) / required
-      height:
-        type: string / required
-      width:
-        type: string / required
-    }
-    video: string / optional
-    related: string / optional
-    small: string / optional
-    class: string / optional
-    paragraph {
-      text:
-        type: string
-    }
-    
+  type: string / required
+  link {
+    href:
+      type: string / required
+    text:
+      type: string / required
+    class:
+      type: string / optional
+    target:
+      type: string / optional
+    title:
+      type: string / optional
+  }
+  image {
+    alt:
+      type: string / required
+    src:
+      type: string (url) / required
+    height:
+      type: string / required
+    width:
+      type: string / required
+  }
+  video: string / optional
+  related: string / optional
+  small: string / optional
+  class: string / optional
+  paragraph {
+    text:
+      type: string
+  }
+  "metadata": (see article stub metadata atom)
 }
 ~~~
