@@ -36,8 +36,7 @@
     }
 
     a {
-      @include font-size($p-font-sizes);
-      @include type($myriad-pro, $font-weight-semibold);
+      @extend .ama__link--hover-red;
       display: block;
       padding: ($gutter / 4) 0;
 
