@@ -19,9 +19,7 @@ Provides links to relevant JAMA content, as well as a link that serves as a CTA 
         href: 
           type: string (url) / required
         text: 
-          type: string / required
-        class: 
-          ama__link-hover-red
+          type: string / required      
       },
       // add more links as needed.
     }
