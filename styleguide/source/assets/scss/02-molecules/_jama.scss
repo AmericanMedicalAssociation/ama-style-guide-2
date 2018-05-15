@@ -1,23 +1,42 @@
 .ama__jama {
   a {
     text-decoration: none;
+    display: block;
 
     &.ama__jama__link--sign-up {
+      margin-top: $gutter / 8;
       color: $hoverRed;
     }
   }
 
-  .ama__rule:first-of-type {
-    border-color: $hoverRed;
+  .ama__rule {
+    margin-top: $gutter / 2;
+
+    &:first-of-type {
+      margin-top: $gutter / 4;
+      border-color: $hoverRed;
+    }
   }
 }
 
-.ama__jama__links a {
-  @include font-size($p-font-sizes);
-  @include type($myriad-pro, $font-weight-semibold);
+.ama__jama__links {
+  list-style-type: none;
 
-  &:hover {
-    color: $hoverRed;
-    text-decoration: underline;
+  li {
+    &:last-of-type a {
+      padding-bottom: 0;
+    }
+
+    a {
+      @include font-size($p-font-sizes);
+      @include type($myriad-pro, $font-weight-semibold);
+      display: block;
+      padding: ($gutter / 4) 0;
+
+      &:hover {
+        color: $hoverRed;
+        text-decoration: underline;
+      }
+    }
   }
 }
