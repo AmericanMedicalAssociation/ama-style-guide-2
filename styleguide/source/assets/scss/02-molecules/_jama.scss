@@ -37,6 +37,20 @@
       border-color: $hoverRed;
     }
   }
+
+  // Styles the Image Href with Text variant.
+  li {
+
+    img {
+      display: none;
+    }
+
+    &.ama__link--with-image {
+      img {
+        display: block;
+      }
+    }
+  }
 }
 
 .ama__jama__links {
@@ -55,22 +69,6 @@
       &:hover {
         color: $hoverRed;
         text-decoration: underline;
-      }
-    }
-  }
-}
-
-.ama__jama {
-  // Styles the Image Href with Text variant.
-  li {
-
-    img {
-      display: none;
-    }
-
-    &.ama__link--with-image {
-      img {
-        display: block;
       }
     }
   }
