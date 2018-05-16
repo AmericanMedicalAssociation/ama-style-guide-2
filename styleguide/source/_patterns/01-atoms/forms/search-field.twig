@@ -1,0 +1,8 @@
+<section class="ama__search">
+  <span class="ama__search__results">Items 39</span>
+  <label for="ama__search__label" class="is-vishidden">{{ searchField.label }}:</label>
+  <input id="ama__search__field" name="{{ searchField.name }}" type="text" placeholder="{{ searchField.placeholder }}" required="" aria-required="true">
+  <button id="ama__search__button" aria-label="Search button">
+    {% include '@atoms/media/icons/svg/icon-search.twig' %}
+  </button>
+</section>
