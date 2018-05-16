@@ -1,0 +1,19 @@
+<h2 class="ama__h2">{{ agenda.agendaName }}</h2>
+<div class="simpleTabs" id="ama__agenda">
+  <ul class="simpleTabsNavigation">
+    {% for agendaTab in agenda.agendaTabs %}
+    <li class="ama__agenda-date"><a href="#">{{ agendaTab.tabTitle }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="simpleTabsNavigation--mobile">
+    <select class="ama__select-menu__select">
+      {% for agendaTab in agenda.agendaTabs %}
+        <option>{{ agendaTab.tabTitle }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% for agendaTab in agenda.agendaTabs %}
+    {%  set table = agendaTab.table %}
+    <div class="simpleTabsContent">[insert table here]</div>
+  {% endfor %}
+</div>
