@@ -6,12 +6,10 @@ This is the standard search field pattern
 ~~~
 {
   "searchField": {
-    "label": type: string / optional
-    "require": type: boolean / optional
-    "id": type: string / optional
-    "optioins": type: string / optional
-        "value": type: string / optional
-        "text": type: string / optional
+     "label": type: string / optional
+     "name": type: string / optional
+     "placeholder": type: string / optional
+     "helpText": type: string / optional
   }
 }
 ~~~
