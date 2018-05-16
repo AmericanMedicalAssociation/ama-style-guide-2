@@ -1,6 +1,5 @@
-.search-filter {
+.search-list {
   position: relative;
-  display: inline-block;
 
   input {
     @include gutter($padding-right-full...);
@@ -13,11 +12,14 @@
     &:focus,
     &:active {
       outline: none;
-      border-color: $hoverBlue;
+      border: 0;
+      border-bottom: 1px solid $hoverBlue;
     }
   }
 
-  .icon--search {
+  &:after {
+    @extend .icon--search;
+    content: "";
     position: absolute;
     top: 5px;
     right: -5px;
@@ -25,34 +27,27 @@
     min-width: 24px;
     min-height:24px;
   }
-}
 
-/* Menu
-----------------------------------*/
-.ui-autocomplete {
-  &.ui-menu {
-    list-style:none;
-    padding: 0;
-    margin: 0;
-    display:block;
 
-    .ui-menu-item {
+  .filter {
+    display: none;
+    border: 1px solid $gray-7;
+    list-style: none;
+
+    li {
+      list-style: none;
       margin: 0;
-      padding: 0;
-      border: 0;
 
-      .ui-menu-item-wrapper {
-        @include font-size($p-font-sizes);
-        @include gutter($padding-right-half...);
-        @include gutter($padding-left-half...);
-        border: 0;
-        margin: -1px;
+      label {
+        @include gutter($padding-top-half...);
+        @include gutter($padding-bottom-half...);
+        margin: 0;
+        border-radius: 0;
       }
 
-      .ui-state-hover,
-      .ui-state-active {
+      &:hover label {
         background: $purple;
-        border: 0;
+        color: $white;
       }
     }
   }
