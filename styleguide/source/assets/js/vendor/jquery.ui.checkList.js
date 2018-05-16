@@ -1,121 +1,126 @@
 (function($) {
-	$.widget("ui.checkList", {	
-		options: {
-			listItems : [],
-			selectedItems: [],
-			effect: 'blink',
-			onChange: {},
-			objTable: '',
-			icount: 0,
-		},
-		
-		_create: function() {
-			var self = this, o = self.options, el = self.element;
-			var placeholder = "Search List";
+  $.widget("ui.checkList", {
+    options: {
+      listItems : [],
+      selectedItems: [],
+      effect: 'blink',
+      onChange: {},
+      objList: '',
+      icount: 0,
+    },
 
-			// generate outer div
-			var container = $('<div/>').addClass('search-list');
+    _create: function() {
+      var self = this, o = self.options, el = self.element;
+      var placeholder = "Search List";
 
-			// generate toolbar
-			var toolbar = $('<div/>').addClass('toolbar');
+      // generate outer div
+      var container = $('<div/>').addClass('search-list');
 
-			var txtfilter = $('<input/>').attr({type:'text', placeholder: placeholder}).addClass('txtFilter').keyup(function(){
-				self._filter($(this).val());
-			});
+      // generate toolbar
+      var toolbar = $('<div/>').addClass('toolbar');
 
-			toolbar.append($('<div/>').addClass('filterbox').append(txtfilter));
+      var txtfilter = $('<input/>').attr({type:'text', placeholder: placeholder}).addClass('txtFilter').keyup(function(){
+        self._filter($(this).val());
+      });
 
-			// generate list table object
-			o.objTable = $('<ul/>').addClass('ama__list filter');
-			
-			container.append(toolbar);
-			container.append(o.objTable);
-			el.append(container);
+      toolbar.append($('<div/>').addClass('filterbox').append(txtfilter));
 
-			self.loadList();
-		},
+      // generate list table object
+      o.objList = $('<ul role="group" aria-labelledby="checkboxGroup1"/>').addClass('ama__list filter');
 
-		_addItem: function(listItem){
-			var self = this, o = self.options, el = self.element;
+      container.append(toolbar);
+      container.append(o.objList);
+      el.append(container);
 
-			var itemId = 'itm' + (o.icount++);	// generate item id
-			var itm = $('<li/>');
-			var chk = $('<input/>').attr('type','checkbox').attr('id',itemId)
-					.addClass('chk')
-					.attr('data-text',listItem.text)
-					.attr('data-value',listItem.value);
-      var label = $('<label/>').attr('for',itemId).text(listItem.text);
-			itm.append(chk, label);
-			o.objTable.append(itm);
+      self.loadList();
+    },
 
-			// bind selection-change
-			el.delegate('.chk','click', function(){self._selChange()});
-		},
+    _addItem: function(listItem){
+      var self = this, o = self.options, el = self.element;
 
-		loadList: function(){
-			var self = this, o = self.options, el = self.element;
+      var itemId = 'itm' + (o.icount++);	// generate item id
+      var itm = $('<li role="menuitem" />');
+      var chk = $('<input role="checkbox" />').attr('type','checkbox').attr('id',itemId)
+        .addClass('chk')
+        .attr('data-text',listItem.text)
+        .attr('data-value',listItem.value);
+      var label = $('<label />').attr('for',itemId).text(listItem.text);
 
-			o.objTable.empty().hide();
+      itm.append(chk, label);
+      o.objList.append(itm);
 
-			$.each(o.listItems,function(){
-				self._addItem(this);
-			});
-		},
+      // bind selection-change
+      el.delegate('.chk','click', function(){
+        self._selChange();
+      });
+    },
 
-		_selChange: function(){
-			var self = this, o = self.options, el = self.element;
 
-			// empty selection
-			o.selectedItems = [];
+    loadList: function(){
+      var self = this, o = self.options, el = self.element;
 
-			// scan elements, find checked ones
-			o.objTable.find('.chk').each(function(){
+      o.objList.empty().hide();
 
-				if($(this).prop('checked')){
-					o.selectedItems.push({
-						text: $(this).attr('data-text'),
-						value: $(this).attr('data-value')
-					});
+      $.each(o.listItems,function(){
+        self._addItem(this);
+      });
+    },
 
-					$(this).parent().addClass('highlight').siblings().addClass('highlight');
-				} else {
-					$(this).parent().removeClass('highlight').siblings().removeClass('highlight');
-				}
-			});
+    _selChange: function(){
+      var self = this, o = self.options, el = self.element;
 
-			// fire onChange event
-			o.onChange.call();
-		},
+      // empty selection
+      o.selectedItems = [];
 
-		_filter: function(filter){
-			var self = this, o = self.options;
+      // scan elements, find checked ones
+      o.objList.find('.chk').each(function(){
 
-      o.objTable.find('.chk').each(function(){
+        if($(this).prop('checked')){
+          o.selectedItems.push({
+            text: $(this).attr('data-text'),
+            value: $(this).attr('data-value')
+          });
 
-				if($(this).attr('data-text').toLowerCase().indexOf(filter.toLowerCase()) > -1)
-				{
-					$(this).parent().show();
+          $(this).parent().addClass('highlight').siblings().addClass('highlight');
+        } else {
+          $(this).parent().removeClass('highlight').siblings().removeClass('highlight');
+        }
+      });
+
+      // fire onChange event
+      o.onChange.call();
+    },
+
+    _filter: function(filter){
+      var self = this, o = self.options;
+
+      o.objList.find('.chk').each(function(){
+
+        if($(this).attr('data-text').toLowerCase().indexOf(filter.toLowerCase()) > -1)
+        {
+          $(this).parent().show();
           $(this).parent().parent().hide();
-				}
-				else{
-					$(this).parent().hide();
+        }
+        else{
+          $(this).parent().hide();
           $(this).parent().parent().show();
-				}
-			});
-		},
+        }
+      });
+    },
 
-		getSelection: function(){
-			var self = this,
-          o = self.options
-			return o.selectedItems;
-		},
 
-		setData: function(dataModel){
-			var self = this,
-          o = self.options
-			o.listItems = dataModel;
-			self.loadList();
-			self._selChange();
-		}
-	});
+    getSelection: function(){
+      var self = this,
+        o = self.options
+      return o.selectedItems;
+    },
+
+    setData: function(dataModel){
+      var self = this,
+        o = self.options
+      o.listItems = dataModel;
+      self.loadList();
+      self._selChange();
+    }
+  });
 })($);

@@ -165,7 +165,7 @@
             $('#selectedItems').text(JSON.stringify(selection));
           }
 
-          $('#searchList').checkList({
+          $('#filterList').checkList({
             listItems: dataModel,
             onChange: selChange
           });
