@@ -2,7 +2,7 @@
   {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page header content'}}%}
 {% endblock %}
 
-<div class="ama__layout--two-column--left container {{ class }}">
+<div class="ama__layout--two-column--left {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
   <section class="ama__layout--two-column--left__content-top">
     {% block contentTop %}
@@ -16,9 +16,7 @@
     {% endblock %}
   </article>
 
-  <aside id="sidebar-primary" class="ama__layout--two-column--left__sidebar--primary" role="complementary"></aside>
-
-  <aside id="sidebar-secondary" class="ama__layout--two-column--left__sidebar--secondary" role="complementary">
+   <aside id="sidebar-primary" class="ama__layout--two-column--left__sidebar--primary" role="complementary">
     {% block sidebarSecondary %}
       {% include '@base/placeholder.twig' with {'placeholder':{'text':'Primary Sidebar region content'}}%}
     {% endblock %}
