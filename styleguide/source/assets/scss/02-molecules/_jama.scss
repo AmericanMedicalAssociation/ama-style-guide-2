@@ -1,4 +1,6 @@
 .ama__jama {
+  clear: both;
+
   @include breakpoint($bp-med max-width) {
     margin-bottom: $gutter;
   }
@@ -14,6 +16,16 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  .ama__link--with-image {
+    img {
+      display: none;
+    }
+
+    a {
+      display: flex;
     }
   }
 
@@ -45,5 +57,27 @@
         text-decoration: underline;
       }
     }
+  }
+}
+
+.ama__jama {
+  // Styles the Image Href with Text variant.
+  li {
+
+    img {
+      display: none;
+    }
+
+    &.ama__link--with-image {
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+*[class*="__page-content"] .ama__jama {
+  .ama__jama__links li a {
+    margin-top: $gutter / 4;
   }
 }
