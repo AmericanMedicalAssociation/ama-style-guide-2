@@ -16,6 +16,7 @@
   {% set promo = promoAsInline %}
   {% include '@molecules/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
+  {% include '@molecules/jama.twig' with {jama : jamaAsContentBottom} %}
   {% include '@molecules/tags.twig' %}
   {% include '@organisms/four-up-teaser.twig' %}
 {% endblock %}

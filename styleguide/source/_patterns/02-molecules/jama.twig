@@ -3,8 +3,8 @@
   <div class="ama__rule ama__rule--horizontal"></div>
   <ul class="ama__jama__links">
     {% for link in jama.links %}
-      <li>
-        {% include "@atoms/link.twig" %}
+      <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
+        {% include "@atoms/image.twig" with { "image" : link } %}
       </li>
     {% endfor %}
   </ul>
