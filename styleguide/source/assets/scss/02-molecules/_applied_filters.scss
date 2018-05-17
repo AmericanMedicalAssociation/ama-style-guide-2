@@ -1,0 +1,30 @@
+.applied-filters {
+  @include gutter($padding-bottom-half...);
+  border-bottom: 1px solid $gray-50;
+
+  &__header {
+    overflow: hidden;
+  }
+
+  &__label {
+
+    float: left;
+  }
+
+  &__remove {
+    float: right;
+    display: block;
+    text-decoration: none;
+  }
+
+  &__tag {
+    display: inline-block;
+
+    &__remove {
+      @include gutter($margin-right-half...);
+      @extend .ama__link--blue;
+      margin-left: 4px;
+    }
+  }
+}
+

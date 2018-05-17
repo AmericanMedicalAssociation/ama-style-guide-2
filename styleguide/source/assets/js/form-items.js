@@ -216,6 +216,23 @@
             heightStyle: "content"
           });
 
+          // Applied filters
+          var $data = ['alpha', 'beta', 'gamma'];
+          if ($data) {
+            $.each($data, function (number) {
+              $('<li class="applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="applied-filters__tag__remove" href="#">x</a>');
+            });
+          }
+
+          //remove tag
+          $('.applied-filters__tag').on('click', '.applied-filters__tag__remove', function () {
+            $(this).parent().remove();
+          });
+
+          $('#appliedFiltersRemove').on('click', function () {
+            $('#appliedFiltersTags').children().remove();
+          });
+
         });
       })(jQuery);
     }
