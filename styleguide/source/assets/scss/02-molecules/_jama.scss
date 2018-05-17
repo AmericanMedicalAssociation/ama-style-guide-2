@@ -1,4 +1,6 @@
 .ama__jama {
+  clear: both;
+
   @include breakpoint($bp-med max-width) {
     margin-bottom: $gutter;
   }
@@ -17,12 +19,36 @@
     }
   }
 
+  .ama__link--with-image {
+    img {
+      display: none;
+    }
+
+    a {
+      display: flex;
+    }
+  }
+
   .ama__rule {
     margin-top: $gutter / 2;
 
     &:first-of-type {
       margin-top: $gutter / 4;
       border-color: $hoverRed;
+    }
+  }
+
+  // Styles the Image Href with Text variant.
+  li {
+
+    img {
+      display: none;
+    }
+
+    &.ama__link--with-image {
+      img {
+        display: block;
+      }
     }
   }
 }
@@ -45,5 +71,11 @@
         text-decoration: underline;
       }
     }
+  }
+}
+
+*[class*="__page-content"] .ama__jama {
+  .ama__jama__links li a {
+    margin-top: $gutter / 4;
   }
 }

@@ -8,9 +8,6 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
-          $('[type=checkbox]').checkboxradio();
-          $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
-          $('.ama__select-menu__select').selectmenu();
 
           $('.multiselect').multiselect();
 
@@ -31,6 +28,162 @@
               $('.character-count').removeClass('error');
             }
           }
+
+          // Start search filter
+
+          var availableTags = [
+            "Alabama",
+            "Alaska",
+            "American Samoa",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "District Of Columbia",
+            "Federated States Of Micronesia",
+            "Florida",
+            "Georgia",
+            "Guam",
+            "Hawaii",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Maine",
+            "Marshall Islands",
+            "Maryland",
+            "Massachusetts",
+            "Michigan",
+            "Minnesota",
+            "Mississippi",
+            "Missouri",
+            "Montana",
+            "Nebraska",
+            "Nevada",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "New York",
+            "North Carolina",
+            "North Dakota",
+            "Northern Mariana Islands",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Palau",
+            "Pennsylvania",
+            "Puerto Rico",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Vermont",
+            "Virgin Islands",
+            "Virginia",
+            "Washington",
+            "West Virginia",
+            "Wisconsin",
+            "Wyoming"
+          ];
+
+          $( "#search_filter" ).autocomplete({
+            source: availableTags
+          });
+
+          $.ui.autocomplete.prototype._resizeMenu = function () {
+            var ul = this.menu.element;
+            ul.outerWidth(this.element.outerWidth());
+          };
+
+
+          // Start search filter with checkboxes
+
+          var dataModel = [
+            {text: 'Alabama', value: '2'},
+            {text: 'Alaska', value: '2'},
+            {text: 'American Samoa', value: '2'},
+            {text: 'Arizona', value: '2'},
+            {text: 'Arkansas', value: '2'},
+            {text: 'California', value: '2'},
+            {text: 'Colorado', value: '2'},
+            {text: 'Connecticut', value: '2'},
+            {text: 'Delaware', value: '2'},
+            {text: 'District Of Columbia', value: '2'},
+            {text: 'Federated States Of Micronesia', value: '2'},
+            {text: 'Florida', value: '2'},
+            {text: 'Georgia', value: '2'},
+            {text: 'Guam', value: '2'},
+            {text: 'Hawaii', value: '2'},
+            {text: 'Idaho', value: '2'},
+            {text: 'Illinois', value: '2'},
+            {text: 'Indiana', value: '2'},
+            {text: 'Iowa', value: '2'},
+            {text: 'Kansas', value: '2'},
+            {text: 'Kentucky', value: '2'},
+            {text: 'Louisiana', value: '2'},
+            {text: 'Maine', value: '2'},
+            {text: 'Marshall Islands', value: '2'},
+            {text: 'Maryland', value: '2'},
+            {text: 'Massachusetts', value: '2'},
+            {text: 'Michigan', value: '2'},
+            {text: 'Minnesota', value: '2'},
+            {text: 'Mississippi', value: '2'},
+            {text: 'Missouri', value: '2'},
+            {text: 'Montana', value: '2'},
+            {text: 'Nebraska', value: '2'},
+            {text: 'Nevada', value: '2'},
+            {text: 'New Hampshire', value: '2'},
+            {text: 'New Jersey', value: '2'},
+            {text: 'New Mexico', value: '2'},
+            {text: 'New York', value: '2'},
+            {text: 'North Carolina', value: '2'},
+            {text: 'North Dakota', value: '2'},
+            {text: 'Northern Mariana Islands', value: '2'},
+            {text: 'Ohio', value: '2'},
+            {text: 'Oklahoma', value: '2'},
+            {text: 'Oregon', value: '2'},
+            {text: 'Palau', value: '2'},
+            {text: 'Pennsylvania', value: '2'},
+            {text: 'Puerto Rico', value: '2'},
+            {text: 'Rhode Island', value: '2'},
+            {text: 'South Carolina', value: '2'},
+            {text: 'South Dakota', value: '2'},
+            {text: 'Tennessee', value: '2'},
+            {text: 'Texas', value: '2'},
+            {text: 'Utah', value: '2'},
+            {text: 'Vermont', value: '2'},
+            {text: 'Virgin Islands', value: '2'},
+            {text: 'Virginia', value: '2'},
+            {text: 'Washington', value: '2'},
+            {text: 'West Virginia', value: '2'},
+            {text: 'Wisconsin', value: '2'},
+            {text: 'Wyoming', value: '2'},
+            {text: '', value: ''}
+          ];
+
+          function selChange(){
+            var selection = $('#myCheckList').checkList('getSelection');
+
+            $('#selectedItems').text(JSON.stringify(selection));
+          }
+
+          $('#filterList').checkList({
+            listItems: dataModel,
+            onChange: selChange
+          });
+
+
+          $('[type=checkbox]').checkboxradio();
+          $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
+          $('.ama__select-menu__select').selectmenu();
+
 
           $('.textarea').keyup(function() {
             count_remaining_character();
@@ -61,6 +214,23 @@
           $( ".tablist" ).accordion({
             header: ".ama__form-steps__step",
             heightStyle: "content"
+          });
+
+          // Applied filters
+          var $data = ['alpha', 'beta', 'gamma'];
+          if ($data) {
+            $.each($data, function (number) {
+              $('<li class="applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="applied-filters__tag__remove" href="#">x</a>');
+            });
+          }
+
+          //remove tag
+          $('.applied-filters__tag').on('click', '.applied-filters__tag__remove', function () {
+            $(this).parent().remove();
+          });
+
+          $('#appliedFiltersRemove').on('click', function () {
+            $('#appliedFiltersTags').children().remove();
           });
 
         });
