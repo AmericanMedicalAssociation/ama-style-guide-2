@@ -20,7 +20,9 @@
     {% endif %}
 
     {% include "@atoms/heading.twig" %}
-    {% include "@atoms/subtitle.twig" %}
+    {% if subtitle %}
+      {% include "@atoms/subtitle.twig" %}
+    {% endif %}
 
     {% if masthead.date.month and masthead.social %}
       <div class="ama__masthead__content__container">

@@ -1,3 +1,7 @@
+{% if not pageContentClass %}
+{% set pageContentClass = 'ama__layout--two-column__page-content' %}
+{% endif %}
+
 {% block header %}
   {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page header content'}}%}
 {% endblock %}
@@ -10,7 +14,7 @@
     {% endblock %}
   </section>
 
-  <article class="ama__layout--two-column--right__page-content" role="article">
+  <article class="{{ pageContentClass }}" role="article">
     {% block pageContent %}
       {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page Content region content'}}%}
     {% endblock %}

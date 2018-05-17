@@ -1,3 +1,5 @@
+/*=======Resource Tabs=======*/
+
 $('*[data-resource]').click(function(){
   // Figure out which tab to display.
   $tab = findTab($(this));
@@ -40,3 +42,15 @@ function _getSectionID($obj) {
   }
   return resourceData;
 }
+/*====== jQuery UI tabs ======*/
+
+
+(function($) {
+    $( ".ama__tabs" ).tabs();
+    
+    //Simulate click event on actual simpleTabs tab from mobile drop down.
+    $('.ama__tabs-navigation--mobile select').on( "selectmenuchange", function( event, ui ) {
+        var selectedValue = ui.item.value;
+        $('a[href="#'+selectedValue+'"]').click();
+    } );
+})(jQuery);
