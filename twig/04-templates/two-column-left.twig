@@ -1,0 +1,28 @@
+{% block header %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page header content'}}%}
+{% endblock %}
+
+<div class="ama__layout--two-column--left {{ class }}">
+  {# Keeping tabindex for accessibility purposes #}
+  <section class="ama__layout--two-column--left__content-top">
+    {% block contentTop %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
+    {% endblock %}
+  </section>
+
+  <article class="ama__layout--two-column--left__page-content" role="article">
+    {% block pageContent %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page Content region content'}}%}
+    {% endblock %}
+  </article>
+
+   <aside id="sidebar-primary" class="ama__layout--two-column--left__sidebar--primary" role="complementary">
+    {% block sidebarSecondary %}
+      {% include '@base/placeholder.twig' with {'placeholder':{'text':'Primary Sidebar region content'}}%}
+    {% endblock %}
+  </aside>
+</div>
+
+{% block footer %}
+  {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page footer content'}}%}
+{% endblock %}

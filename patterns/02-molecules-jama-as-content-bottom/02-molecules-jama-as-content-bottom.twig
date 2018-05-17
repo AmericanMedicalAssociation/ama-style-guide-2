@@ -1,0 +1,13 @@
+<div class="ama__jama">
+  {% include "@atoms/site-logo-as-jama.twig" %}
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <ul class="ama__jama__links">
+    {% for link in jama.links %}
+      <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
+        {% include "@atoms/image.twig" with { "image" : link } %}
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to JAMA</a>
+</div>

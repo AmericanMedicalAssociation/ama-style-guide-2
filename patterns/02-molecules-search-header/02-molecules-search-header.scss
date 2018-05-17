@@ -1,0 +1,31 @@
+.ama__search-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .ama__form-group {
+    margin: 0;
+    @include gutter($margin-left-full...);
+
+    label {
+      @extend .is-vishidden;
+    }
+  }
+
+  &__results {
+    @include gutter($margin-top-half...);
+    color: $gray-50;
+    display: block;
+  }
+
+  &__clear {
+    @include gutter($margin-left-full...);
+    @extend %ama__link--no-underline;
+    display: inline-block;
+    font-size: .8em;
+
+    &:link {
+      color: $purple;
+    }
+  }
+}
