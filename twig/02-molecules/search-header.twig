@@ -1,0 +1,9 @@
+<secion class="ama__search-header">
+  {% set searchField = searchHeader.searchField %}
+  {% include "@atoms/forms/search-field.twig" %}
+  {% set selectMenu = searchHeader.selectMenu %}
+  {% include "@atoms/forms/select-menu.twig" %}
+</secion>
+<secion class="ama__search-header__results">
+  <span class="ama__search-header__msg">Results for "Searched term"</span><a class="ama__search-header__clear" href="#">Clear Search</a>
+</secion>
