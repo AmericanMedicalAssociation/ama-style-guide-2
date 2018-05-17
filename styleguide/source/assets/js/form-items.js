@@ -216,6 +216,21 @@
             heightStyle: "content"
           });
 
+          $( ".expand-list" ).accordion({
+            multiple: true,
+            icons: false,
+            collapsible: true,
+            active: false,
+            animate: 500,
+            activate : function (event, ui)
+            {
+              if($(ui.newPanel).hasClass('ui-accordion-content-active')) {
+                $(ui.newPanel).prev().addClass('active');
+              } else {
+                $(ui.oldPanel).prev().removeClass('active');
+              }
+            }
+          });
         });
       })(jQuery);
     }
