@@ -1,0 +1,38 @@
+.ama__event-stub {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    @extend %ama__link--no-underline;
+  }
+
+  &__title {
+    width: 100%;
+  }
+
+  &__copy {
+    justify-self: flex-start;
+    flex: 1;
+    order: 2;
+  }
+
+  &__date {
+    font-style: italic;
+  }
+
+  &__location {
+    margin-bottom: 0;
+  }
+
+  .ama__image {
+    @include gutter($margin-bottom-half...);
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+
+  &--featured {
+    background: $gray-7;
+  }
+}

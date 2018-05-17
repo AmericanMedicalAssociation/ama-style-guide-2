@@ -1,0 +1,50 @@
+{% set link = eventStub.title %}
+{% set classes = [
+  eventStub.sticky ? "ama__event-stub--sticky",
+  eventStub.cme ? "ama__event-stub--cme"
+] %}
+
+{% set link, paragraph = eventStub.link, eventStub.paragraph %}
+
+{% macro mediaType(eventStub) %}
+  {% if eventStub.image %}
+    {% set image = eventStub.image %}
+    {% include "@atoms/image.twig"  with { 'class': 'ama__image' } %}
+  {% endif %}
+{% endmacro %}
+
+
+
+<div class="ama__event-stub {{ classes|join(' ') }}">
+  {% block eventStub_media %}
+    {{ _self.mediaType(eventStub) }}
+  {% endblock %}
+
+  <div class="ama__event-stub__copy">
+
+    {% if link %}
+      {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+      <h2 class="ama__event-stub__title">
+        {% include "@atoms/link.twig" %}
+      </h2>
+    {% endif %}
+
+    {% if eventStub.location %}
+      {% set heading = eventStub.location %}
+      {% include "@atoms/heading.twig" %}
+    {% endif %}
+
+    {% if eventStub.date %}
+      {% set date = eventStub.date %}
+      <div class="ama__event-stub__date">{{ date.month }} {{ date.day }}, {{ date.year }}
+      </div>
+    {% endif %}
+
+    {% if paragraph %}
+      <div class="ama__event-stub__description">
+        {% include "@atoms/paragraph.twig" %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
