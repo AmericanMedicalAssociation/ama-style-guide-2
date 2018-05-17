@@ -14,18 +14,25 @@
 <header class="ama__masthead">
   <div class="ama__masthead__sidebar" role="complementary"></div>
   <div class="ama__masthead__content {{ indented }}" role="complementary">
-    {% include "@atoms/link.twig" %}
+
+    {% if masthead.link.title %}
+      {% include "@atoms/link.twig" %}
+    {% endif %}
+
     {% include "@atoms/heading.twig" %}
     {% if subtitle %}
       {% include "@atoms/subtitle.twig" %}
     {% endif %}
-    <div class="ama__masthead__content__container">
-      <div class="ama__masthead__content__date">
-        {% include "@atoms/date-block.twig" %}
+
+    {% if masthead.date.month and masthead.social %}
+      <div class="ama__masthead__content__container">
+        <div class="ama__masthead__content__date">
+          {% include "@atoms/date-block.twig" %}
+        </div>
+        <div class="ama__masthead__content__share">
+          {% include "@molecules/social-share.twig" %}
+        </div>
       </div>
-      <div class="ama__masthead__content__share">
-        {% include "@molecules/social-share.twig" %}
-      </div>
-    </div>
+    {% endif %}
   </div>
 </header>
