@@ -3,13 +3,26 @@
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  position: relative;
 
   a {
     @extend %ama__link--no-underline;
   }
 
+  &__cme {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    svg {
+      fill: $purple;
+    }
+  }
+
   &__title {
     width: 100%;
+    font-weight: 600;
+    margin-bottom: 0;
   }
 
   &__copy {
@@ -26,8 +39,13 @@
     margin-bottom: 0;
   }
 
+  &__discount {
+    font-style: italic;
+    color: $purple;
+  }
+
   .ama__image {
-    @include gutter($margin-bottom-half...);
+    @include gutter($margin-right-full...);
     align-self: flex-start;
     margin-bottom: 0;
   }
