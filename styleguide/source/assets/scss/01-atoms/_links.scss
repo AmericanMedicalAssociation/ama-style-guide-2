@@ -84,3 +84,21 @@ a {
   }
 }
 
+.ama__link--hover-red,
+%ama__link--hover-red {
+  @include type($myriad-pro, $font-weight-semibold);
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: $black;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $hoverRed;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}

@@ -12,5 +12,14 @@ $three-column: 3, 2, $gutter, $gutter*2;
   @include breakpoint($bp-med){
     grid-template-columns: repeat($col-desktop, 1fr);
   }
+}
 
+@mixin is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
 }
