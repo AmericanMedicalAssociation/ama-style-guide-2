@@ -1,0 +1,30 @@
+.ama__search {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  &__results {
+    white-space: nowrap;
+  }
+
+  // This has to be specific b/c it's so different.
+  #ama__search__field {
+    @include gutter($margin-left-full...);
+    @include gutter($padding-right-full...);
+    border: 0;
+    border-bottom: 1px solid $light-blue;
+    font-style: italic;
+    color: $gray-50;
+    line-height: initial;
+    padding: 1em 1em 0 0;
+  }
+
+  // This has to be specific b/c it's so different.
+  #ama__search__button {
+    margin-left: -24px;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
