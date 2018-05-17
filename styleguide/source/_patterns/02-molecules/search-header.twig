@@ -1,5 +1,5 @@
 <secion class="ama__search-header">
-  <div class="ama__search-header__results-num">Items 39</div>
+  <div class="ama__search-header__results-num">{{ searchHeader.searchResultsNum }}</div>
   {% set searchField = searchHeader.searchField %}
   {% include "@atoms/forms/search-field.twig" %}
   {% set selectMenu = searchHeader.selectMenu %}
