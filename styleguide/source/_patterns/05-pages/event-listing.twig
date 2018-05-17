@@ -1,10 +1,14 @@
 {% extends '@templates/two-column-left.twig' %}
 
 {% block contentTop %}
+  {% set masthead = eventListing.masthead %}
+  {% include '@organisms/masthead.twig' %}
 {% endblock %}
 
 {% block sidebarPrimary %}
 {% endblock %}
 
 {% block pageContent %}
+  {% set searchHeader = eventListing.searchHeader %}
+  {% include '@molecules/search-header.twig' %}
 {% endblock %}
