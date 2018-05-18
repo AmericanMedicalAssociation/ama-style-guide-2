@@ -1,10 +1,14 @@
 {% extends '@templates/two-column-left.twig' %}
 
 {% block contentTop %}
+  {% include '@organisms/masthead.twig' %}
 {% endblock %}
 
 {% block sidebarPrimary %}
 {% endblock %}
 
 {% block pageContent %}
+  {% include '@molecules/search-header.twig' %}
+  {% include '@organisms/event-list.twig' %}
+  {% include "@molecules/article-stub-as-inline-alt.twig" %}
 {% endblock %}
