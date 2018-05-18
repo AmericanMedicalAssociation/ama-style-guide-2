@@ -1,23 +1,22 @@
-.ama__search {
-  width: 100%;
+.ama__search__field {
+  @include gutter($margin-bottom-full...);
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
+  align-items: center;
 
-  &__results {
-    white-space: nowrap;
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 0;
   }
 
   // This has to be specific b/c it's so different.
-  #ama__search__field {
-    @include gutter($margin-left-full...);
-    @include gutter($padding-right-full...);
+  #ama__search__input {
     border: 0;
     border-bottom: 1px solid $light-blue;
     font-style: italic;
     color: $gray-50;
     line-height: initial;
-    padding: 1em 1em 0 0;
+    padding: 1em 28px 3px 0;
   }
 
   // This has to be specific b/c it's so different.
