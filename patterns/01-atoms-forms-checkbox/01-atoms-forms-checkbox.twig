@@ -1,9 +1,9 @@
-<div class="ama__form-group">
-  <label for="{{ checkbox.id }}">
-    <span>{{ checkbox.label }}</span>
-    <input type="checkbox" name="{{ checkbox.name }}" id="{{ checkbox.id }}" value="{{ checkbox.value }}">
-    {% if checkbox.count %}
-      <span class="filter-count">({{ checkbox.count }})</span>
-    {% endif %}
-  </label>
-</div>
+{% set index =  checkbox.index ? checkbox.index : loop.index %}
+
+<label class="ama__checkbox" for="checkbox-{{ index }}">
+  <span>{{ checkbox.label }}</span>
+  <input type="checkbox" name="{{ checkbox.name }}" id="checkbox-{{ index }}" value="{{ checkbox.value }}">
+  {% if checkbox.count %}
+    <span class="filter-count">({{ checkbox.count }})</span>
+  {% endif %}
+</label>

@@ -179,7 +179,6 @@
             onChange: selChange
           });
 
-
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
           $('.ama__select-menu__select').selectmenu();
@@ -220,12 +219,12 @@
           var $data = ['alpha', 'beta', 'gamma'];
           if ($data) {
             $.each($data, function (number) {
-              $('<li class="applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="applied-filters__tag__remove" href="#">x</a>');
+              $('<li class="ama__applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="ama__applied-filters__tag__remove" href="#">x</a>');
             });
           }
 
           //remove tag
-          $('.applied-filters__tag').on('click', '.applied-filters__tag__remove', function () {
+          $('.ama__applied-filters__tag').on('click', '.ama__applied-filters__tag__remove', function () {
             $(this).parent().remove();
           });
 
@@ -233,6 +232,46 @@
             $('#appliedFiltersTags').children().remove();
           });
 
+          // Expand list
+          $( ".ama__expand-list" ).accordion({
+            multiple: true,
+            icons: false,
+            heightStyle: "content",
+            collapsible: true,
+            active: false,
+            animate: 500,
+            activate : function (event, ui)
+            {
+              if($(ui.newPanel).hasClass('ui-accordion-content-active')) {
+                $(ui.newPanel).prev().addClass('active');
+              } else {
+                $(ui.oldPanel).prev().removeClass('active');
+              }
+            }
+          });
+
+          // Collapse all accordion panels
+          $('.ama__filter__collapse-panels button').click(function(){
+            $('.ama__expand-list .ui-accordion-header').each( function() {
+              if($(this).hasClass('ui-state-active') || $(this).hasClass('active')) {
+                $(this).click();
+              }
+            });
+          });
+
+          // Open accordion panels for mobile
+          $('.ama__applied-filters__show-filters').click(function(){
+            $('.ama__expand-list, .ama__applied-filters__tags').slideDown();
+            $('.ama__filter__see-results').fadeIn();
+            $(this).fadeOut();
+          });
+
+          // Close accordion panels
+          $('.ama__filter__see-results').click(function(){
+            $('.ama__expand-list, .ama__applied-filters__tags').slideUp();
+            $('.ama__applied-filters__show-filters').fadeIn();
+            $(this).fadeOut();
+          });
         });
       })(jQuery);
     }
