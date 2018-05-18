@@ -3,6 +3,6 @@
 (function($) {
     $( ".ama__accordion" ).accordion({
         heightStyle: "content",
-        activeHeader: "ui-icon-caret-1-s"
+        collapsible: true
     });
 })(jQuery);
