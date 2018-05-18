@@ -1,0 +1,18 @@
+.ama__filter {
+  @include gutter($padding-right-full...);
+  @include gutter($padding-left-full...);
+
+  .ama__checkboxes {
+    max-height: 300px;
+    overflow: scroll;
+  }
+
+  &__collapse-panels {
+    @include gutter($margin-top-full...);
+    text-align: right;
+
+    @include breakpoint($bp-large){
+      display: none;
+    }
+  }
+}

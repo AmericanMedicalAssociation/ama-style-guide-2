@@ -7,8 +7,20 @@
   }
 
   &__label {
-
     float: left;
+
+    &--desktop {
+      display: none;
+    }
+
+    @include breakpoint($bp-small min-width) {
+      &--mobile {
+        display: none;
+      }
+      &--desktop {
+        display: block;
+      }
+    }
   }
 
   &__remove {

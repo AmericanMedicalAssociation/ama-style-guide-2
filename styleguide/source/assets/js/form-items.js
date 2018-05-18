@@ -179,7 +179,6 @@
             onChange: selChange
           });
 
-
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
           $('.ama__select-menu__select').selectmenu();
@@ -233,6 +232,32 @@
             $('#appliedFiltersTags').children().remove();
           });
 
+          // Expand list
+          $( ".ama__expand-list" ).accordion({
+            multiple: true,
+            icons: false,
+            heightStyle: "content",
+            collapsible: true,
+            active: 0,
+            animate: 500,
+            activate : function (event, ui)
+            {
+              if($(ui.newPanel).hasClass('ui-accordion-content-active')) {
+                $(ui.newPanel).prev().addClass('active');
+              } else {
+                $(ui.oldPanel).prev().removeClass('active');
+              }
+            }
+          });
+
+          // Collapse all accordion panels
+          $('.ama__filter__collapse-panels button').click(function(){
+            $('.ama__expand-list .ui-accordion-header').each( function() {
+              if($(this).hasClass('ui-state-active') || $(this).hasClass('active')) {
+                $(this).click();
+              }
+            });
+          });
         });
       })(jQuery);
     }
