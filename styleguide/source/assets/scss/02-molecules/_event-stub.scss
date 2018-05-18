@@ -1,9 +1,9 @@
 .ama__event-stub {
+  @include gutter($margin-bottom-full...);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  position: relative;
 
   a {
     @extend %ama__link--no-underline;
@@ -29,6 +29,7 @@
     justify-self: flex-start;
     flex: 1;
     order: 2;
+    position: relative;
   }
 
   &__date {
@@ -45,9 +46,15 @@
   }
 
   .ama__image {
-    @include gutter($margin-right-full...);
-    align-self: flex-start;
-    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-right-full...);
+      max-width: 180px;
+      align-self: flex-start;
+      margin-bottom: 0;
+    }
   }
 
   .ama__rule {
