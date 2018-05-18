@@ -36,14 +36,9 @@
     <h3 class="ama__accordion-tab">{{ pageTabs[2].tabTitle }}</h3>
     <div id="{{ pageTabs[2].tabId }}" class="ama__tabs--content">
 
-      {% set infoCard = pageTabs[2].tabContent['infoCard1'] %}
-      {% include '@molecules/info-card.twig' %}
+      {% set eventSpeakers = pageTabs[2].tabContent['eventSpeakers'] %}
+      {% include '@organisms/event-speakers.twig' %}
 
-      {% set infoCard = pageTabs[2].tabContent['infoCard2'] %}
-      {% include '@molecules/info-card.twig' %}
-
-      {% set infoCard = pageTabs[2].tabContent['infoCard3'] %}
-      {% include '@molecules/info-card.twig' %}
 
       {% set articleStubAsInline = pageTabs[2].tabContent['articleStubAsInline'] %}
       {% include '@molecules/article-stub-as-inline.twig' %}
