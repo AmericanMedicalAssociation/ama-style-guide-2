@@ -13,22 +13,27 @@ Contains a list of all the event stubs based on search and filter criteria on th
 {
   "items": [
     {
-      "patternLab": true,
       "link": {
         "title": string/optional
         "href": string/required
         "text": string/required
-        "class": "ama__link-black",
-        "target": "_self"
       },
+      "location": {
+        "text": string/optional
+        "level": "3"
+        "class": "ama__h3 ama__event-stub__location"
+      },
+      "date": string/optional,
       "image": {
         "alt": string/required
         "src": "string/required
-        "height": string/optional
-        "width": string/optional
+        "height": "180"
+        "width": "180"
       },
-      "date": string/optional
-      "readtime": string/optional
+      "sticky": true/false
+      "cme": true/false
+      "discount": string/optional
+      "paragraph": string/optional
     },
    ... # repeat for each item.
     }

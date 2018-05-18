@@ -1,51 +1,40 @@
 ### Description
-An Article Stub (renamed from Article Preview) molecule contains a topic label (optional), an article title, a description, and optionally either an image or a Youtube embed and metadata that includes data and read/playtime. Variants are defined based on what fields are needed in each variant, i.e. image or video. The order of elements is determined using flexbox where different from the base pattern.
+An Event Stub molecule contains an image (optional), an event title, an event location, a date, and a description. Optionally, the event stub may also include discount text and a CME icon.
 
 Variants are managed by use of pseudo-patterns.
 
-- "Article Stub Video" is the variant of this pattern that includes a video rather than an image.
-- "Article Stub Related" is the variant of this pattern that includes an image and title.
-- "Article Stub Related No Image" is the variant of this pattern that includes a linked title.
+- "Event Stub as Sticky" is the variant of this pattern that appears when an event stub has been marked as "sticky at the top of lists".
 
-[EWL-4281](https://issues.ama-assn.org/browse/EWL-4281)
-[EWL-4432](https://issues.ama-assn.org/browse/EWL-4432)
+[EWL-4605](https://issues.ama-assn.org/browse/EWL-4605)
 
 ### Use Case
-This produces an Artcle teaser for use if certain fields are present. Entices a user to click on a related article which exists on a separate page.
+This produces an Event teaser for use on the Event listing. Entices a user to click on an event which exists on a separate page.
 
 ~~~
-articleStub {
-  type: string / required
-  link {
-    href:
-      type: string / required
-    text:
-      type: string / required
-    class:
-      type: string / optional
-    target:
-      type: string / optional
-    title:
-      type: string / optional
+### Variables
+{
+  "eventStub": {
+    "link": {
+      "title": string/optional
+      "href": string/required
+      "text": string/required
+    },
+    "location": {
+      "text": string/optional
+      "level": "3"
+      "class": "ama__h3 ama__event-stub__location"
+    },
+    "date": string/optional,
+    "image": {
+      "alt": string/required
+      "src": "string/required
+      "height": "180"
+      "width": "180"
+    },
+    "sticky": true/false
+    "cme": true/false
+    "discount": string/optional
+    "paragraph": string/optional
   }
-  image {
-    alt:
-      type: string / required
-    src:
-      type: string (url) / required
-    height:
-      type: string / required
-    width:
-      type: string / required
-  }
-  video: string / optional
-  related: string / optional
-  small: string / optional
-  class: string / optional
-  paragraph {
-    text:
-      type: string
-  }
-  "metadata": (see article stub metadata atom)
 }
 ~~~
