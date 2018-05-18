@@ -1,0 +1,68 @@
+.ama__event-stub {
+  @include gutter($margin-bottom-full...);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    @extend %ama__link--no-underline;
+  }
+
+  &__cme {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    svg {
+      fill: $purple;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  &__copy {
+    justify-self: flex-start;
+    flex: 1;
+    order: 2;
+    position: relative;
+  }
+
+  &__date {
+    font-style: italic;
+  }
+
+  &__location {
+    margin-bottom: 0;
+  }
+
+  &__discount {
+    font-style: italic;
+    color: $purple;
+  }
+
+  .ama__image {
+    width: 100%;
+    height: auto;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-right-full...);
+      max-width: 180px;
+      align-self: flex-start;
+      margin-bottom: 0;
+    }
+  }
+
+  .ama__rule {
+    flex: 1 100%;
+    order: 3;
+  }
+
+  &--sticky {
+    background: $gray-7;
+  }
+}

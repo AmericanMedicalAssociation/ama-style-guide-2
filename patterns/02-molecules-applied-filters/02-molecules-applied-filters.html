@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1526594507" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1526594507" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1526682740" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1526682740" media="all" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
@@ -25,23 +25,30 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1526594507" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1526594507" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1526682740" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1526682740" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
 <body class="">
-<div class="applied-filters">
-  <div class="applied-filters__header">
-    <p class="applied-filters__label">Filtering by:</p>
-    <a id="appliedFiltersRemove" class="ama__link applied-filters__remove">Clear Filters</a>
+
+<div class="ama__applied-filters">
+  <div class="ama__applied-filters__header">
+    <p class="ama__applied-filters__label">Filters</p>
+    
+  <button type="button"
+          class="ama__button  ama__button--secondary ama__applied-filters__show-filters"
+          aria-label="alt">
+    Filter
+  </button>
+    <a id="appliedFiltersRemove" class="ama__link--blue ama__applied-filters__remove">Clear Filters</a>
   </div>
-  <ul id="appliedFiltersTags" class="applied-filters__tags"></ul>
+  <ul id="appliedFiltersTags" class="ama__applied-filters__tags"></ul>
 </div>
 
       <!--DO NOT REMOVE-->
       <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"molecules"},"patternDesc":"<h3>Description<\/h3>\n\n<p>The applied filters molecule displays the filters that are currently being used to filter content and allow the user to remove a filter by clicking \"x\" icon. All filters can be removed by click \"clear filters\"<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>appliedFilters: \n  label: type: string\n  clearAll: type: string\n<\/code><\/pre>","patternExtension":"twig","patternName":"Applied Filters","patternPartial":"molecules-applied-filters","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-button","lineagePath":"..\/..\/patterns\/02-molecules-applied-filters\/02-molecules-applied-filters.html"}],"lineageR":[{"lineagePattern":"organisms-filter","lineagePath":"..\/..\/patterns\/03-organisms-filter\/03-organisms-filter.html"}],"patternBreadcrumb":{"patternType":"molecules"},"patternDesc":"<h3>Description<\/h3>\n\n<p>The applied filters molecule displays the filters that are currently being used to filter content and allow the user to remove a filter by clicking \"x\" icon. All filters can be removed by click \"clear filters\"<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>appliedFilters: \n  label: type: string\n  clearAll: type: string\n<\/code><\/pre>","patternExtension":"twig","patternName":"Applied Filters","patternPartial":"molecules-applied-filters","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -75,10 +82,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1526594507">
+<script id="pl-js-polyfill-insert-1526682740">
   (function() {
     if (self != top) {
-      var cb = '1526594507';
+      var cb = '1526682740';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -88,10 +95,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1526594507">
+<script id="pl-js-insert-1526682740">
   (function() {
     if (self != top) {
-      var cb = '1526594507';
+      var cb = '1526682740';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

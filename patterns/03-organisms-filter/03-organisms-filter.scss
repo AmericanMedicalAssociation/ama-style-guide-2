@@ -1,0 +1,40 @@
+.ama__filter {
+  @include gutter($padding-right-full...);
+  @include gutter($padding-left-full...);
+
+  .ama__applied-filters__tags,
+  .ama__expand-list {
+    display: none;
+  }
+
+  .ama__checkboxes {
+    max-height: 300px;
+    overflow: scroll;
+  }
+
+  @include breakpoint($bp-med){
+    .ama__applied-filters__tags,
+    .ama__expand-list {
+      display: block;
+    }
+
+    .ama__search-header,
+    .ama__search-header__results {
+      display: none;
+    }
+  }
+
+  &__see-results {
+    display: none;
+  }
+
+  &__collapse-panels {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+    text-align: center;
+
+    @include breakpoint($bp-large){
+      display: none;
+    }
+  }
+}

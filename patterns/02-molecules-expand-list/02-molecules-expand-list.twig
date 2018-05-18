@@ -1,0 +1,12 @@
+<div class="ama__expand-list">
+  {% for panel in expandList %}
+    <h4 class="ama__expand-list__header">
+      <span class="ama__expand-list__header__icon"></span>
+      <span class="ama__expand-list__header__text">{{ panel.header }}</span>
+    </h4>
+    <div class="ama__expand-list__panel panel">
+      {% set checkboxes, index = panel.checkboxes, panel.index %}
+      {% include panel.content %}
+    </div>
+  {% endfor %}
+</div>
