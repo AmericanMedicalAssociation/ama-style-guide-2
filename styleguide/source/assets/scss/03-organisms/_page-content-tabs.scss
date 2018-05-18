@@ -1,0 +1,53 @@
+
+.ama__tab-title--page{
+  a.ui-tabs-anchor {
+    padding: 10px 10px 3px !important;
+    line-height: 1.3;
+    color: $black;
+  }
+
+  &.ui-tabs-active {
+    a {
+      border-bottom: solid 3px $purple;
+    }
+  }
+}
+
+.ama__accordion-tab.ui-state-default{
+  @extend .ama__h4;
+  color: $purple;
+  border: solid thin $purple;
+  text-align: center;
+  background: #FFF;
+  border-radius: 0;
+  //padding: 10px;
+
+  .ui-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-25%);
+    display: none;
+  }
+
+  &.ui-state-active{
+    background: $purple;
+    color: #FFF;
+
+    .ui-icon{
+      display: block;
+    }
+  }
+
+  @include breakpoint($bp-small){
+    display: none;
+  }
+}
+
+.ama__accordion{
+  .ama__tabs--content {
+    padding: 20px 5px;
+
+    @include breakpoint($bp-small);
+  }
+}
