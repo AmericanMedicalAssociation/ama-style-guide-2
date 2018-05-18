@@ -1,7 +1,6 @@
 {% extends '@templates/two-column-left.twig' %}
 
 {% block contentTop %}
-  {% set masthead = eventListing.masthead %}
   {% include '@organisms/masthead.twig' %}
 {% endblock %}
 
@@ -9,6 +8,7 @@
 {% endblock %}
 
 {% block pageContent %}
-  {% set searchHeader = eventListing.searchHeader %}
   {% include '@molecules/search-header.twig' %}
+  {% include '@organisms/event-list.twig' %}
+  {% include "@molecules/article-stub-as-inline-alt.twig" %}
 {% endblock %}
