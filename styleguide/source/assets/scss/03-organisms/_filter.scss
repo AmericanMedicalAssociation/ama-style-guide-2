@@ -12,13 +12,14 @@
     overflow: scroll;
   }
 
-  @include breakpoint($bp-large){
+  @include breakpoint($bp-small){
     .ama__applied-filters__tags,
     .ama__expand-list {
       display: block;
     }
 
-    .ama__search-header {
+    .ama__search-header,
+    .ama__search-header__results {
       display: none;
     }
   }

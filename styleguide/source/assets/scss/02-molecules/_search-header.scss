@@ -1,11 +1,52 @@
 .ama__search-header {
+  align-items: baseline;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
 
-  .ama__form-group {
-    margin: 0;
-    @include gutter($margin-left-full...);
+  @include breakpoint($bp-small) {
+    flex-wrap: initial;
+    flex-direction: row;
+  }
+
+  &__results-num {
+    white-space: nowrap;
+    text-align: center;
+    order: 2;
+    flex: 1;
+
+    @include breakpoint($bp-small) {
+      order: initial;
+      flex: initial;
+    }
+  }
+
+  .ama__search__field {
+    width:100%;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+    }
+  }
+
+  &__options {
+    order: 4;
+
+    .ama__form-group {
+      margin: 0;
+
+      .ui-button {
+        line-height: unset;
+
+        @include breakpoint($bp-small) {
+          vertical-align: initial;
+        }
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+      order: initial;
+    }
 
     label {
       @extend .is-vishidden;
@@ -14,6 +55,7 @@
 
   &__results {
     @include gutter($margin-top-half...);
+    @include gutter($margin-bottom-half...);
     color: $gray-50;
     display: block;
   }

@@ -1,10 +1,16 @@
 {% extends '@templates/two-column-left.twig' %}
+{% set filter = eventListing.filter %}
 
 {% block contentTop %}
+  {% include '@organisms/masthead.twig' %}
 {% endblock %}
 
 {% block sidebarPrimary %}
+  {% include "@organisms/filter.twig" %}
 {% endblock %}
 
 {% block pageContent %}
+  {% include '@molecules/search-header.twig' %}
+  {% include '@organisms/event-list.twig' %}
+  {% include "@molecules/article-stub-as-inline-alt.twig" %}
 {% endblock %}

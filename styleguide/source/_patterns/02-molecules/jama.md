@@ -1,13 +1,21 @@
 ---
 el: '.ama__jama'
-title: 'JAMA'
+title: 'JAMA / JAMA as Sidebar'
 ---
-The default JAMA molecule. It is meant to be used in the right rail of an A1 page, but this is the base pattern and its styling is not restricted to any one content area.
+Appears differently depending on where it's placed in the layout: see [News with JAMA Examples]().
 
-[EWL-5039](https://issues.ama-assn.org/browse/EWL-5039)
+* [EWL-5039](https://issues.ama-assn.org/browse/EWL-5039)
+* [EWL-5040](https://issues.ama-assn.org/browse/EWL-5040)
+* [EWL-5041](https://issues.ama-assn.org/browse/EWL-5041)
+* [EWL-5042](https://issues.ama-assn.org/browse/EWL-5042)
 
 ### Use Case
 Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.
+
+### Variants
+* **JAMA as Sidebar (base) (this variant) -**  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a `.ama__foo__page-content` or `.ama__page-foo__teasers`, its styling is not restricted to any one content area. 
+* **JAMA as Content Bottom\* -** variant that appears when this molecule is dropped into the "Page Content" section of a layout. 
+* **JAMA as Three Up\* -** variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in `section.ama__page--foo__teasers` wrapper). 
 
 ### Variables
 ~~~
