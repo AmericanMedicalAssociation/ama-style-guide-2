@@ -1,0 +1,12 @@
+{% set appliedFilters, expandList, button = filter.appliedFilters, filter.expandList, filter.button %}
+
+<div class="ama__filter">
+  {% include "@molecules/applied-filters.twig" %}
+  {% include "@molecules/expand-list.twig" %}
+
+  <div class="ama__filter__collapse-panels">
+    {% include "@atoms/button.twig" %}
+  </div>
+</div>
+
+

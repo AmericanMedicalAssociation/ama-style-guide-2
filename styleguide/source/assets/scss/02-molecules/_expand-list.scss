@@ -1,7 +1,9 @@
-.expand-list {
-  .expand-list__header {
-    @include gutter($padding-left-full...);
-    @include gutter($padding-right-full...);
+.ama__expand-list {
+  .ui-accordion-header,
+  &__header {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    padding-left: 0;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -12,6 +14,10 @@
     color: $black;
     text-transform: uppercase;
 
+    &:active,
+    &:focus {
+      outline: none;
+    }
 
     &__text {
       @extend h3;
@@ -19,10 +25,11 @@
       margin-bottom: 0;
     }
 
-    .expand-list__header__icon {
+    &__icon {
       position: relative;
       width: 16px;
       height: 16px;
+      float: right;
 
       &:before,
       &:after {
@@ -51,7 +58,7 @@
     }
 
     &.active {
-      .expand-list__header__icon {
+      .ama__expand-list__header__icon {
         cursor: pointer;
         &:before{ transform: rotate(90deg); }
         &:after{ transform: rotate(180deg); }
@@ -60,10 +67,21 @@
   }
 
   .ui-accordion-content {
-    @include gutter($padding-left-full...);
-    @include gutter($padding-right-full...);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    border: 0;
     border-radius: 0;
+  }
+
+  .ui-accordion-content .ama__checkboxes {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include breakpoint($bp-large){
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
   }
 }

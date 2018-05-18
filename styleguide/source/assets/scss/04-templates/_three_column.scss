@@ -30,14 +30,11 @@
     grid-column: 1;
 
     @include breakpoint($bp-small) {
-      grid-row-start: 2;
-      grid-row-end: 4;
       grid-column: 1;
     }
 
     @include breakpoint($bp-med) {
       grid-row: 2;
-      grid-row-end: 4;
       grid-column: 2;
     }
   }
@@ -67,8 +64,6 @@
 
     @include breakpoint($bp-med) {
       margin-left: 0;
-      grid-row-start: 2;
-      grid-row-end: 4;
       grid-column: 1;
       @include gutter($margin-right-full...);
     }
