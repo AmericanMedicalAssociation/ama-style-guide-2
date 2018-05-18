@@ -7,6 +7,12 @@
     overflow: scroll;
   }
 
+  @include breakpoint($bp-large){
+    .ama__search-header {
+      display: none;
+    }
+  }
+
   &__collapse-panels {
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
