@@ -238,7 +238,7 @@
             icons: false,
             heightStyle: "content",
             collapsible: true,
-            active: 0,
+            active: false,
             animate: 500,
             activate : function (event, ui)
             {
