@@ -79,3 +79,30 @@
     margin-top: $gutter / 4;
   }
 }
+
+.ama__page--news__teasers .ama__jama__links {
+  @include breakpoint($bp-small) {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      width: 32%;
+    }
+
+    a {
+      padding-bottom: 0;
+    }
+  }
+
+  .ama__link--with-image a {
+    flex-flow: column nowrap;
+
+    .ama__image__text {
+      padding: 0;
+    }
+  }
+
+  .ama__image {
+    width: 100%;
+  }
+}
