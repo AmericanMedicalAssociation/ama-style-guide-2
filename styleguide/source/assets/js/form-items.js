@@ -224,7 +224,7 @@
           }
 
           //remove tag
-          $('.applied-filters__tag').on('click', '.ama__applied-filters__tag__remove', function () {
+          $('.ama__applied-filters__tag').on('click', '.ama__applied-filters__tag__remove', function () {
             $(this).parent().remove();
           });
 
