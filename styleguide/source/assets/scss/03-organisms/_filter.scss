@@ -2,15 +2,29 @@
   @include gutter($padding-right-full...);
   @include gutter($padding-left-full...);
 
+  .ama__applied-filters__tags,
+  .ama__expand-list {
+    display: none;
+  }
+
   .ama__checkboxes {
     max-height: 300px;
     overflow: scroll;
   }
 
   @include breakpoint($bp-large){
+    .ama__applied-filters__tags,
+    .ama__expand-list {
+      display: block;
+    }
+
     .ama__search-header {
       display: none;
     }
+  }
+
+  &__see-results {
+    display: none;
   }
 
   &__collapse-panels {

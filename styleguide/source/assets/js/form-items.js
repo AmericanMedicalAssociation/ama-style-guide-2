@@ -219,12 +219,12 @@
           var $data = ['alpha', 'beta', 'gamma'];
           if ($data) {
             $.each($data, function (number) {
-              $('<li class="applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="applied-filters__tag__remove" href="#">x</a>');
+              $('<li class="ama__applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="ama__applied-filters__tag__remove" href="#">x</a>');
             });
           }
 
           //remove tag
-          $('.applied-filters__tag').on('click', '.applied-filters__tag__remove', function () {
+          $('.applied-filters__tag').on('click', '.ama__applied-filters__tag__remove', function () {
             $(this).parent().remove();
           });
 
@@ -257,6 +257,20 @@
                 $(this).click();
               }
             });
+          });
+
+          // Open accordion panels for mobile
+          $('.ama__applied-filters__show-filters').click(function(){
+            $('.ama__expand-list, .ama__applied-filters__tags').slideDown();
+            $('.ama__filter__see-results').fadeIn();
+            $(this).fadeOut();
+          });
+
+          // Close accordion panels
+          $('.ama__filter__see-results').click(function(){
+            $('.ama__expand-list, .ama__applied-filters__tags').slideUp();
+            $('.ama__applied-filters__show-filters').fadeIn();
+            $(this).fadeOut();
           });
         });
       })(jQuery);
