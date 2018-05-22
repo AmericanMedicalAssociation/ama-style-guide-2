@@ -54,14 +54,44 @@
   max-height: 400px
 }
 
-.ui-selectmenu-menu .ui-state-active,
-.ui-selectmenu-menu .ui-widget-content .ui-state-active,
-.ui-selectmenu-menu .ui-widget-header .ui-state-active,
-.ui-selectmenu-menu a.ui-button:active,
-.ui-selectmenu-menu .ui-button:active,
-.ui-selectmenu-menu .ui-button.ui-state-active:hover {
-  border: 0;
-  background: $purple;
-  font-weight: normal;
-  color: $white;
+.ui-selectmenu-menu .ui-menu-item {
+  .ui-menu-item-wrapper {
+    @include gutter($padding-left-full...);
+  }
+
+  &:hover {
+    background-color: $purple;
+
+    .ui-menu-item-wrapper.ui-state-active {
+      color: $white;
+
+      &:before {
+        background: none;
+      }
+    }
+  }
+
+  .ui-menu-item-wrapper.ui-state-active,
+  .ui-widget-content .ui-menu-item-wrapper.ui-state-active,
+  .ui-widget-header .ui-menu-item-wrapper.ui-state-active,
+  a.ui-button:active,
+  .ui-button:active {
+    border: 0;
+    font-weight: normal;
+    color: $black;
+    background: transparent;
+
+    &:before {
+      @extend .icon--checkmark-black;
+      content: "";
+      background-size: 14px 14px;
+      padding-right: 15px;
+      margin-left: -28px;
+      position: relative;
+      max-width: 14px;
+      max-height: 14px;
+      min-width: 14px;
+      min-height: 14px;
+    }
+  }
 }
