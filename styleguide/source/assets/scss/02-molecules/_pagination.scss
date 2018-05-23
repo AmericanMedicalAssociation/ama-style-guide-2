@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: $gutter*1.5;
+  @include gutter($padding-top-full...);
   @include gutter($padding-bottom-full...);
 
   // This is for all links in pager including prev/next.
