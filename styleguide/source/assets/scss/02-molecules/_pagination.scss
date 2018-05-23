@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: $gutter*2;
+  @include gutter($margin-bottom-full...);
 
   // This is for all links in pager including prev/next.
   a ~ a {
@@ -14,7 +16,7 @@
       padding: 2px;
 
       &.is-active {
-        color: $gray-64;
+        color: $purple;
         text-decoration: underline;
       }
     }
@@ -36,10 +38,6 @@
       @include breakpoint($bp-small) {
         position: relative !important;
       }
-    }
-
-    &.is-active {
-      text-decoration: none;
     }
 
     span {
