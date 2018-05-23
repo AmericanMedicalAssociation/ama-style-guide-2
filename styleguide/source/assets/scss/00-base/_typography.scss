@@ -39,6 +39,18 @@ h4,
 %ama__h4 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h4-font-sizes);
+
+  &--blue {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($h4-font-sizes--blue);
+    color: $blue;
+  }
+
+  &--purple {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($h4-font-sizes--purple);
+    color: $purple;
+  }
 }
 
 h5,
