@@ -193,7 +193,7 @@
       {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
-      {% set heading = {level: '3', text: 'Tables'}  %}
+      {% set heading = {level: '3', text: 'Table 1'}  %}
       {% include '@atoms/heading.twig' %}
       {% for table in tabContent.tables %}
         {% include '@atoms/table.twig' %}
@@ -203,8 +203,6 @@
       <h3>Contacts</h3>
       <h5>This is a subheading for a contact group</h5>
       <div data-anchor="contacts-1">
-        {#{% set infoCard = tabContent.contacts.infoCard %}#}
-        {#{% include '@molecules/info-card.twig' %}#}
         <div class="ama__info-card ama__info-card--contact">
           <h3 class="ama__info-card__label">Contact:</h3>
           <div class="ama__info-card__wrap">
