@@ -11,7 +11,6 @@ body {
 
 h1,
 .ama__h1,
-.ama__h1 a,
 %ama__h1 {
   @include type($myriad-pro, $font-weight-bold);
   @include font-size($h1-font-sizes);
@@ -21,7 +20,6 @@ h1,
 
 h2.news,
 .ama__h2,
-.ama__h2 a,
 %ama__h2 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h2-font-sizes);
@@ -30,7 +28,6 @@ h2.news,
 
 h3,
 .ama__h3,
-.ama__h3 a,
 %ama__h3 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h3-font-sizes);
@@ -39,15 +36,25 @@ h3,
 
 h4,
 .ama__h4,
-.ama__h4 a,
 %ama__h4 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h4-font-sizes);
+
+  &--blue {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($h4-font-sizes--blue);
+    color: $purple;
+  }
+
+  &--purple {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($h4-font-sizes--purple);
+    color: $blue;
+  }
 }
 
 h5,
 .ama__h5,
-.ama__h5 a,
 %ama__h5 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h5-font-sizes);
