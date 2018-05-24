@@ -118,7 +118,8 @@
             </p>
           {% endif %}
         </div>
-        {% include '@molecules/promo.twig' with { promo : tabContent.media.media2.promo } %}
+        {% set membership = tabContent.media.media2.membership %}
+        {% include '@molecules/membership.twig' %}
       </div>
       <div data-anchor="media-3">
         <h3>Media 3</h3>
@@ -175,7 +176,8 @@
                 {% endif %}
               </li>
             {% endfor %}
-            {% include '@molecules/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
+            {% set membership = tabContent.relatedLinks.membership %}
+            {% include '@molecules/membership.twig' %}
           </ul>
         </div>
       {% endfor %}
@@ -190,7 +192,19 @@
           {% include '@atoms/table.twig' %}
         </div>
       {% endfor %}
-      {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
+      {% set membership = {
+          heading: {
+            "text": "Title for Membership Block"
+          },
+          link: "http://www.google.com",
+          paragraph: {
+            "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
+          },
+          button: {
+            "text": "This is CTA text."
+          }
+      } %}
+      {% include '@molecules/membership.twig' %}
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Table 1'}  %}
@@ -198,6 +212,19 @@
       {% for table in tabContent.tables %}
         {% include '@atoms/table.twig' %}
       {% endfor %}
+      {% set membership = {
+        heading: {
+          "text": "Title for Membership Block"
+        },
+        link: "http://www.google.com",
+        paragraph: {
+          "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
+        },
+        button: {
+          "text": "This is CTA text."
+        }
+      } %}
+      {% include '@molecules/membership.twig' %}
     </section>
     <section id="contacts">
       <h3>Contacts</h3>
