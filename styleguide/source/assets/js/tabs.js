@@ -46,8 +46,13 @@ function _getSectionID($obj) {
 
 
 (function($) {
-    $( ".ama__tabs" ).tabs();
-    
+    $( ".ama__tabs" ).tabs({
+        activate: function (event, ui) {
+          window.location.hash = ui.newPanel.attr('id');
+          return false;
+        }
+      });
+
     //Simulate click event on actual simpleTabs tab from mobile drop down.
     $('.ama__tabs-navigation--mobile select').on( "selectmenuchange", function( event, ui ) {
         var selectedValue = ui.item.value;
