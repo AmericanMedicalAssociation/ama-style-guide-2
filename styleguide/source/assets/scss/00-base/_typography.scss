@@ -9,13 +9,6 @@ body {
   @include font-size($p-font-sizes);
 }
 
-%headerLinks {
-  a {
-    font-weight: inherit;
-    font-size: inherit;
-  }
-}
-
 h1,
 .ama__h1,
 .ama__h1 a,
@@ -23,7 +16,6 @@ h1,
   @include type($myriad-pro, $font-weight-bold);
   @include font-size($h1-font-sizes);
   @include gutter($margin-bottom-full...);
-  @extend %headerLinks;
 }
 
 h2.news,
@@ -32,7 +24,6 @@ h2.news,
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h2-font-sizes);
   @include gutter($margin-bottom-half...);
-  @extend %headerLinks;
 }
 
 h3,
@@ -41,7 +32,6 @@ h3,
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h3-font-sizes);
   @include gutter($margin-bottom-half...);
-  @extend %headerLinks;
 }
 
 h4,
@@ -49,7 +39,6 @@ h4,
 %ama__h4 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h4-font-sizes);
-  @extend %headerLinks;
 
   &--blue {
     @include type($myriad-pro, $font-weight-regular);
@@ -71,7 +60,6 @@ h5,
 %ama__h5 {
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h5-font-sizes);
-  @extend %headerLinks;
 }
 
 p {
