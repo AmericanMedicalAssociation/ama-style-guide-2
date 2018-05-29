@@ -2,14 +2,14 @@
   <a
     href="{{ image.href }}"
     title="{{ image.info }}">
-    {{ image.text is not empty ? "<div class='ama__image-wrap'>" }}
+    {{ image.heading is not empty ? "<div class='ama__image-wrap'>" }}
     <img
       class="{{ class }} ama__image"
       alt="{{ image.alt }}"
       src="{{ image.src }}"
       height="{{ image.height }}"
       width="{{ image.width }}" />
-    {{ image.text is not empty ? "</div>" }}
+    {{ image.heading is not empty ? "</div>" }}
     {% if image.heading %}
       <span class="ama__image__text">
         {% if image.subtitle %}
