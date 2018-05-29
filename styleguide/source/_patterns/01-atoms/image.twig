@@ -10,10 +10,15 @@
       height="{{ image.height }}"
       width="{{ image.width }}" />
     {{ image.text is not empty ? "</div>" }}
-    {% if image.text %}
+    {% if image.heading %}
       <span class="ama__image__text">
-    {{ image.text }}
-  </span>
+        {% if image.subtitle %}
+          <span class="ama__image__text__subtitle">
+            {{ image.subtitle }}
+          </span>
+        {% endif %}
+        {% include "@atoms/heading.twig" with { "heading" : image.heading } %}
+      </span>
     {% endif %}
   </a>
 {% else %}

@@ -83,12 +83,28 @@
       @extend .ama__link--hover-red;
       display: block;
       padding: ($gutter / 4) 0;
+      text-decoration: none;
 
       &:hover {
-        color: $hoverRed;
-        text-decoration: underline;
+        h3 {
+          text-decoration: underline;
+          color: $hoverRed;
+        }
+
+        .ama__image__text__subtitle {
+          color: $black;
+        }
       }
     }
+  }
+}
+
+.ama__jama .ama__image__text {
+  .ama__image__text__subtitle {
+    @extend p;
+    display: block;
+    font-style: italic;
+    margin-bottom: 0;
   }
 }
 
