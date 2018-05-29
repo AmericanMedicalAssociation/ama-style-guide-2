@@ -5,6 +5,10 @@
     margin-bottom: $gutter;
   }
 
+  .logo img {
+    padding-bottom: $gutter / 2;
+  }
+
   a {
     text-decoration: none;
     display: block;
@@ -30,7 +34,7 @@
   }
 
   .ama__rule {
-    margin-top: $gutter / 2;
+    margin-top: $gutter * .75;
 
     &:first-of-type {
       margin-top: $gutter / 4;
@@ -53,6 +57,26 @@
   }
 }
 
+.ama__jama__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  margin-top: $gutter / 2;
+  margin-bottom: $gutter / 4;
+
+  .ama__icon {
+    max-height: 30px;
+    margin-right: $gutter / 4;
+    max-width: 30px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    min-height: 30px;
+    min-width: 30px;
+  }
+}
+
 .ama__jama__links {
   list-style-type: none;
 
@@ -65,12 +89,28 @@
       @extend .ama__link--hover-red;
       display: block;
       padding: ($gutter / 4) 0;
+      text-decoration: none;
 
       &:hover {
-        color: $hoverRed;
-        text-decoration: underline;
+        h3 {
+          text-decoration: underline;
+          color: $hoverRed;
+        }
+
+        .ama__image__text__subtitle {
+          color: $black;
+        }
       }
     }
+  }
+}
+
+.ama__jama .ama__image__text {
+  .ama__image__text__subtitle {
+    @extend p;
+    display: block;
+    font-style: italic;
+    margin-bottom: 0;
   }
 }
 
@@ -105,5 +145,13 @@
 
   .ama__image {
     width: 100%;
+  }
+}
+
+.ama__jama--reg {
+  font-style: italic;
+
+  &:after {
+    content: '\00ae';
   }
 }
