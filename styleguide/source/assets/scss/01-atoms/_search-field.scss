@@ -10,7 +10,9 @@
   }
 
   // This has to be specific b/c it's so different.
-  #ama__search__input {
+  &__input[type="text"],
+  &__input[type="text"]:focus,
+  &__input[type="text"]:active {
     border: 0;
     border-bottom: 1px solid $light-blue;
     font-style: italic;
@@ -20,7 +22,7 @@
   }
 
   // This has to be specific b/c it's so different.
-  #ama__search__button {
+  &__button {
     margin-left: -24px;
     background: none;
     border: none;
