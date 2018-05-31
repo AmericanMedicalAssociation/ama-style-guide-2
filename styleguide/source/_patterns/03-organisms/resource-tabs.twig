@@ -155,6 +155,8 @@
           {% endif %}
         </div>
       {% endfor %}
+      {% set membership = tabContent.downloads.membership %}
+      {% include '@molecules/membership.twig' %}
     </section>
     <section id="related-links">
       {% for group in tabContent.relatedLinks.groups %}
