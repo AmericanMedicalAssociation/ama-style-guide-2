@@ -29,6 +29,18 @@
     @include breakpoint($bp-small min-width) {
       &--indented {
         grid-column: 2/5;
+
+        // Temporary to accommodate DOM in A1 Drupal theme
+        &.ama__masthead--no-border {
+          border: 0;
+        }
+
+        // Temporary to accommodate DOM in A1 Drupal theme
+        .layout__region {
+          grid-column-start: 2;
+          grid-column-end: 5;
+          @include ama-rules(1px, "bottom", $gray-64, solid);
+        }
       }
 
     }
