@@ -1,4 +1,11 @@
 .ama__tools {
+  @include gutter($padding-left-full...);
+  @include gutter($padding-right-full...);
+
+  @include breakpoint($bp-med min-width) {
+    padding: 0;
+  }
+
   h5 {
     @include gutter($padding-bottom-quarter...);
   }

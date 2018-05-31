@@ -9,10 +9,24 @@
   }
 
   &__title {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+
+    @include breakpoint($bp-med min-width) {
+      padding: 0;
+    }
+
     width: 100%;
   }
 
   &__copy {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+
+    @include breakpoint($bp-med min-width) {
+      padding: 0;
+    }
+
     flex-grow: 1;
   }
 
