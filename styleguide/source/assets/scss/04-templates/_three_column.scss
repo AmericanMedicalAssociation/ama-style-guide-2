@@ -1,12 +1,15 @@
 .ama__layout--three-column {
   display: grid;
   grid-template-columns: 100%;
+  padding: 0;
 
   @include breakpoint($bp-small) {
     grid-template-columns: 2fr 1fr;
   }
 
   @include breakpoint($bp-med) {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
     grid-template-columns: 1fr 2fr 1fr;
   }
 
