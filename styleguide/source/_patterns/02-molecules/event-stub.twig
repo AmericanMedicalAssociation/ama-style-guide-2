@@ -8,7 +8,7 @@
 {% macro mediaType(eventStub) %}
   {% if eventStub.image %}
     {% set image = eventStub.image %}
-    {% include "@atoms/image.twig"  with { 'class': 'ama__image' } %}
+    {% include "@atoms/image/image.twig"  with { 'class': 'ama__image' } %}
   {% endif %}
 {% endmacro %}
 

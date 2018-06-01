@@ -9,7 +9,7 @@
 <section class="ama__hub-hero {{ hubHero.layout }}" style="{{ background }}">
   {% if hubHero.image.src is not empty %}
     <div class="ama__hub-hero__image">
-      {% include "@atoms/image.twig" %}
+      {% include "@atoms/image/image.twig" %}
     </div>
   {% elseif hubHero.video.src is not empty %}
     <div class="ama__hub-hero__video">
