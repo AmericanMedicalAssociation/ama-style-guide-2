@@ -16,15 +16,15 @@
   {% set promo = promoAsInline %}
   {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
-  {% include '@molecules/jama.twig' with {jama : jamaAsContentBottom} %}
+  {% include '@molecules/jama/jama.twig' with {jama : jamaAsContentBottom} %}
   {% include '@molecules/tags.twig' %}
   <section class="ama__page--news__teasers">
-    {% include '@molecules/jama.twig' with {jama : jamaAsThreeUp} %}
+    {% include '@molecules/jama/jama.twig' with {jama : jamaAsThreeUp} %}
     {% include '@organisms/four-up-teaser.twig' %}
   </section>
 {% endblock %}
 
 {% block sidebarSecondary %}
-  {% include '@molecules/jama.twig' with {jama : jamaAsSidebar} %}
+  {% include '@molecules/jama/jama.twig' with {jama : jamaAsSidebar} %}
   {% include '@organisms/tools.twig' %}
 {% endblock %}
