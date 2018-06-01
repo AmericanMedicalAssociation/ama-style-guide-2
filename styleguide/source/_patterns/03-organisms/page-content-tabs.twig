@@ -48,13 +48,13 @@
     <div id="{{ pageTabs[3].tabId }}" class="ama__tabs--content">
 
       {% set infoCard = pageTabs[3].tabContent['infoCard1'] %}
-      {% include '@molecules/info-card.twig' %}
+      {% include '@molecules/info-card/info-card.twig' %}
 
       {% set paragraph = pageTabs[3].tabContent['paragraph'] %}
       {% include '@atoms/paragraph.twig' %}
 
       {% set infoCard = pageTabs[3].tabContent['infoCard2'] %}
-      {% include '@molecules/info-card.twig' %}
+      {% include '@molecules/info-card/info-card.twig' %}
 
       {% set articleStubAsInline = pageTabs[3].tabContent['articleStubAsInline'] %}
       {% include '@molecules/article-stub-as-inline.twig' %}
