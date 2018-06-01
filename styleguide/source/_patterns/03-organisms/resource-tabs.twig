@@ -118,7 +118,7 @@
             </p>
           {% endif %}
         </div>
-        {% include '@molecules/promo.twig' with { promo : tabContent.media.media2.promo } %}
+        {% include '@molecules/promo/promo.twig' with { promo : tabContent.media.media2.promo } %}
       </div>
       <div data-anchor="media-3">
         <h3>Media 3</h3>
@@ -190,7 +190,7 @@
           {% include '@atoms/table.twig' %}
         </div>
       {% endfor %}
-      {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
+      {% include '@molecules/promo/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}

@@ -1,7 +1,7 @@
 {% extends '@templates/two-column-right.twig' %}
 
 {% block contentTop %}
-  {% include '@organisms/masthead.twig' %}
+  {% include '@organisms/masthead/masthead.twig' %}
   {% include "@molecules/inline-bio.twig" %}
 {% endblock %}
 
@@ -14,7 +14,7 @@
   }) %}
   {% include '@atoms/heading/heading.twig' %}
   {% set promo = promoAsInline %}
-  {% include '@molecules/promo.twig' %}
+  {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
   {% include '@molecules/jama.twig' with {jama : jamaAsContentBottom} %}
   {% include '@molecules/tags.twig' %}
