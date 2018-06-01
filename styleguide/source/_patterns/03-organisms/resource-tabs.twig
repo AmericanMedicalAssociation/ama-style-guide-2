@@ -184,7 +184,7 @@
       {% for schedule in tabContent.schedules %}
         <div data-anchor="schedules-1">
           {% set heading = {level: '3', text: 'Schedule 1'}  %}
-          {% include '@atoms/heading.twig' %}
+          {% include '@atoms/heading/heading.twig' %}
           <h5>{{ schedule.subheading }}</h5>
           {% set table = schedule.table %}
           {% include '@atoms/table.twig' %}
@@ -194,7 +194,7 @@
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}
-      {% include '@atoms/heading.twig' %}
+      {% include '@atoms/heading/heading.twig' %}
       {% for table in tabContent.tables %}
         {% include '@atoms/table.twig' %}
       {% endfor %}
