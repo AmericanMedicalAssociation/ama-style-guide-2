@@ -1,6 +1,6 @@
 ### Description
 This is the standard checkbox pattern
-
+The ID and for have to match in the label
 
 ### Variables
 ~~~

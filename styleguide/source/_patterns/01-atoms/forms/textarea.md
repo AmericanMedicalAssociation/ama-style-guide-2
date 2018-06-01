@@ -6,6 +6,7 @@ This is the standard textarea pattern
 ~~~
 {
   "textarea": {
+    "label": type: string / optional
     "name": type: string / optional
     "placeholder": type: string / optional
   }

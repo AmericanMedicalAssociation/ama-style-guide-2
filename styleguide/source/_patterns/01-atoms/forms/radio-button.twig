@@ -1,2 +1,6 @@
-<input type="radio" name="{{ radio.name }}" value="{{ radio.value }}" id="{{ radio.id }}">
-<label for="checkbox">{{ radio.label }}</label>
+{% set index =  radioButton.index ? radioButton.index : loop.index %}
+
+<div class="ama__radio">
+  <label for="radio-{{ index }}">{{ radioButton.name }}</label>
+  <input type="radio" name="{{ radioButton.name }}" id="radio-{{ index }}" value="{{ radioButton.value }}">
+</div>

@@ -1,239 +1,58 @@
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
-.ama__form {
-  form ol,
-  form ul {
-  	list-style: none;
-  	margin-left: 0;
+
+// Global input styles
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-appearance: none;
+  /* stylelint-enable */
+  @include gutter($padding-left-half...);
+  @include gutter($padding-right-half...);
+  @include font-size($p-font-sizes);
+  outline: none;
+  border: 1px solid $gray-7;
+  display: block;
+  box-shadow: none;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    border: 1px solid $purple;
   }
 
-  fieldset {
-  	border: 0;
-  	padding: 0;
-  	margin: 0;
+  &.error {
+    border: 1px solid $red;
   }
 
-  legend {
-    margin-bottom: 0.5em;
-  }
-
-  label {
-  	display: block;
-  }
-
-  button,
-  input,
-  select,
-  textarea {
-      font-family: inherit;
-      font-size: 100%;
-      margin: 0 1px 0;
-  }
-
-  // Global input styles
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  input[type="date"],
-  input[type="month"],
-  input[type="time"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="week"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="color"],
-  select,
-  textarea {
-  	/* stylelint-disable property-no-vendor-prefix */
-    -webkit-appearance: none;
-  	/* stylelint-enable */
-    position: relative;
-    height: 60px;
-    width: 100%;
-    background-color: $white;
-    border: 1px solid $gray-50;
-    border-radius: 0;
-    outline: none;
-    padding: 0 15px;
-
-    &:focus,
-    &:active {
-      border: 2px solid $purple;
-      outline: none;
-      padding: 0 14px;
-    }
-
-    &:after {
-      display: block;
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -30px;
-      width: 30px;
-      height: 30px;
-      background-color: topic_red;
-
-    }
-
-    &.error {
-      border: 2px solid $red;
-      padding: 0 14px;
-    }
-
-    &.valid {
-      color: $black;
-    }
-  }
-
-  // Overriding textarea styles
-  textarea {
-    height: 250px;
-    padding: 15px;
-
-    &:focus,
-    &:active {
-      border: 2px solid $purple;
-      outline: none;
-      padding: 14px;
-    }
-
-    &.error {
-      padding: 14px;
-    }
-  }
-
-  select {
-    background-image: url("../../assets/icons/svg/icon-opendropdown.svg");
-    background-position: calc(100% - 8px) 52%;
-    background-repeat: no-repeat;
-    padding-right: 30px;
-    /* stylelint-disable-next-line */
-    -moz-appearance: none; /*removes default dropdown arrow in Firefox*/
-    text-indent: 0.01px; /*removes default dropdown arrow in Firefox*/
-    text-overflow: ""; /*removes default dropdown arrow in Firefox*/
-    color: $gray-50;
-
-    option {
-      color: $black;
-    }
-
-    &:invalid,
-    option[value=""] {
-      color: $gray-50;
-    }
-  }
-
-  // Placeholder text styles
-  ::-webkit-input-placeholder { /* Chrome */
-    color: $gray-50;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: $gray-50;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color: $gray-50;
-    opacity: 1;
-  }
-  :-moz-placeholder { /* Firefox 4 - 18 */
-    color: $gray-50;
-    opacity: 1;
-  }
-
-  // Requried label error styles
-  label {
-    &.error {
-      display: block;
-      color: $red;
-      margin-top: 4px;
-      clear: both;
-    }
-  }
-
-  // Checkbox and radio button styles
-  input[type="checkbox"],
-  input[type="radio"] {
-    @extend %element-invisible;
-
-    // Label styles
-    + label {
-      margin: 0 0 0.3em;
-
-      // Custom checkboxes and radio buttons
-      &:before {
-        position: relative;
-        top: 0.15em;
-        display: inline-block;
-        content: "";
-        width: 20px;
-        height: 20px;
-        background-image: url("../../assets/icons/svg/radio.svg");
-        background-position: 0px 0px;
-        background-size: 20px;
-        background-repeat: no-repeat;
-        margin-right: 10px;
-      }
-    }
-
-    // Active styles
-    &:checked + label {
-      font-weight: 700;
-
-      &:before {
-        background-position: 0px -25px;
-      }
-    }
-
-    // Tab focus styles
-    &:focus + label {
-      font-weight: 700;
-    }
-  }
-
-  // Add radius curves to radio buttons
-  input[type="checkbox"] {
-    + label:before {
-      background-image: url("../../assets/icons/svg/icon-checkbox.svg");
-    }
-
-    &:checked + label:before {
-      background-position: 0px -25px;
-    }
-  }
-
-  input[type="search"] {
-  	/* stylelint-disable property-no-vendor-prefix */
-    -webkit-appearance: none;
-  	/* stylelint-enable */
-  	border-radius: 0;
-  }
-
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-decoration {
-  	/* stylelint-disable property-no-vendor-prefix */
-  	-webkit-appearance: none;
-  	/* stylelint-enable */
-  }
-
-  //Form Field Container
-  .field-container {
-  	margin-bottom: $gutter;
-  }
-
-  /* Validation */
-  .has-error {
-  	border-color: $red;
-  }
-  .is-valid {
-  	border-color: $green;
+  &.valid {
+    color: $black;
   }
 }
 
+label {
+  @extend %ama__type--small;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $gray-50;
 
+  span {
+    text-transform: capitalize;
+  }
+}
 
-/*------------------------------------*\
-    $SPECIFIC FORMS
-\*------------------------------------*/

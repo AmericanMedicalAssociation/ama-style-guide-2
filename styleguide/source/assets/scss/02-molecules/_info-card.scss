@@ -33,4 +33,39 @@
   &__label {
     margin-bottom: 0;
   }
+
+  &--contact{
+    .ama__info-card__image{
+      max-width: none;
+      @include breakpoint($bp-small){
+        width: 50%;
+      }
+    }
+  }
+
+  &--event {
+    .ama__info-card__wrap {
+      margin-bottom: 0;
+    }
+
+    .ama__info-card__image {
+      max-width: none;
+    }
+  }
+
+  &--location {
+    .ama__info-card__wrap {
+      @include breakpoint($bp-small) {
+        display: flex;
+      }
+    }
+
+    .ama__info-card__map {
+      display: inline-block;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
 }

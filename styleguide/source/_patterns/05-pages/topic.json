@@ -67,7 +67,11 @@
     }
   },
   "leadNews": {
-    "label": "Label text for Lead News Block",
+    "heading": {
+      "level": "5",
+      "text": "Label text for Lead News Block",
+      "class": "ama__h5 ama__lead-news__title"
+    },
     "articles": [
       {
         "title_only": "",
@@ -76,6 +80,7 @@
           "href": "http://www.yahoo.com",
           "text": "Example Title Text for Article using the \"Hero\" view mode"
         },
+        "headingLevel": "h2",
         "image": {
           "alt": "alt text",
           "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
@@ -100,6 +105,7 @@
           "href": "http://www.google.com",
           "text": "Example Title Text for Article using the \"Hero\" No Media mode"
         },
+        "headingLevel": "h2",
         "image": "",
         "video": "",
         "related": "",
@@ -119,6 +125,7 @@
           "href": "http://www.aol.com",
           "text": "Example Title Text for Article using the \"Related Articles Small Image\" view mode"
         },
+        "headingLevel": "h3",
         "image": {
           "alt": "alt text",
           "src": "https://ipsumimage.appspot.com/450x321?l=7:5|450x321&s=36",
@@ -136,6 +143,46 @@
           "href": "http://www.google.com",
           "text": "Example Title Text for Article using the \"Related Articles No Image\" View Mode"
         },
+        "headingLevel": "h3",
+        "image": "",
+        "video": "",
+        "related": true,
+        "small": ""
+      },
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google.",
+          "href": "http://www.google.com",
+          "text": "You matched! Now here’s what to expect when you’re interning"
+        },
+        "headingLevel": "h3",
+        "image": "",
+        "video": "",
+        "related": true,
+        "small": ""
+      },
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google.",
+          "href": "http://www.google.com",
+          "text": "Financial plans on track? Residents, see how you compare"
+        },
+        "headingLevel": "h3",
+        "image": "",
+        "video": "",
+        "related": true,
+        "small": ""
+      },
+      {
+        "title_only": "",
+        "link": {
+          "title": "A link to Google.",
+          "href": "http://www.google.com",
+          "text": "6 points to keep in mind when seeking and securing mentors"
+        },
+        "headingLevel": "h3",
         "image": "",
         "video": "",
         "related": true,
@@ -161,13 +208,23 @@
   },
   "tools": {
     "heading": {
-      "text": "Topic tools list biz rule 1"
+      "class": "ama__h5",
+      "text": "Topics, Tools and Resources",
+      "level": "5"
     },
     "list": [
       {
+        "icon": "icon--external-site",
+        "paragraph": {
+          "text": "Med Students' Financial Preparedness (2017 report)"
+        },
+        "link": "https://www.ama-assn.org",
+        "membersOnly": true
+      },
+      {
         "icon": "icon--pdf",
         "paragraph": {
-          "text": "Test tool PDF"
+          "text": "Medical Student Wellness and Beyond: Creating a healthy culture for all"
         },
         "type": ".PDF",
         "size": "9.9 MB",
@@ -183,33 +240,35 @@
         "link": "https://www.ama-assn.org"
       },
       {
-        "icon": "icon--external-site",
+        "icon": "icon--internal-site",
         "paragraph": {
-          "text": "Test Tool External Site"
+          "text": "AMA Residency & Fellowship Database®"
         }
       }
     ],
     "learnMore": {
       "heading": {
-        "text": "Learn More About:"
+        "class": "ama__h5",
+        "text": "Learn More About:",
+        "level": "5"
       },
       "links": [
         {
           "title": "Link to something",
           "href": "#",
-          "text": "Lorem ipsum dolor sit amet.",
+          "text": "Viewpoint: Small Steps to Address Medical Resident Burnout",
           "target": "_self"
         },
         {
           "title": "Link to something",
           "href": "#",
-          "text": "Lorem ipsum dolor sit amet.",
+          "text": "Pregnancy and Motherhood During Surgical Training",
           "target": "_self"
         },
         {
           "title": "Link to something",
           "href": "#",
-          "text": "Lorem ipsum dolor sit amet.",
+          "text": "Viewpoint: Building on #MeToo to Enhance Learning Environment in Med Schools",
           "target": "_self"
         }
       ]
@@ -241,6 +300,7 @@
           "href": "http://www.google.com",
           "text": "Lorem ipsum dolor sit amet."
         },
+        "headingLevel": "h3",
         "image": {
           "alt": "alt text",
           "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
@@ -265,30 +325,7 @@
           "href": "http://www.google.com",
           "text": "Lorem ipsum dolor sit amet."
         },
-        "image": {
-          "alt": "alt text",
-          "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
-          "height": "600",
-          "width": "800"
-        },
-        "video": "",
-        "related": "",
-        "small": true,
-        "paragraph": {
-          "text": "A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose."
-        },
-        "metadata": {
-          "date": "Jul 28, 2017",
-          "readtime": "5 min read"
-        }
-      },
-      {
-        "title_only": "",
-        "link": {
-          "title": "A link to Google, for example.",
-          "href": "http://www.google.com",
-          "text": "Lorem ipsum dolor sit amet."
-        },
+        "headingLevel": "h3",
         "image": "",
         "video": "",
         "related": "",
@@ -308,6 +345,7 @@
           "href": "http://www.google.com",
           "text": "Lorem ipsum dolor sit amet."
         },
+        "headingLevel": "h3",
         "image": "",
         "video": "",
         "related": "",

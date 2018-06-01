@@ -17,7 +17,11 @@
 .ama__tag {
   @include gutter($margin-right-half...);
   @include gutter-all($padding-all-half...);
+  text-decoration: none;
   display: block;
   background: $gray-7;
   color: $purple;
+  &:hover{
+    text-decoration: underline;
+  }
 }

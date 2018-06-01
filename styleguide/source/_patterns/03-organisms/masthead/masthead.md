@@ -8,6 +8,9 @@ The Masthead includes a People Bio, a group of social icons/links, a date, a cat
 [EWL-4421](https://issues.ama-assn.org/browse/EWL-4421)
 [EWL-4485](https://issues.ama-assn.org/browse/EWL-4485)
 
+### Use Case
+Displays the title (and subtitle), the (sub)category, date of publication, and social media links of a page.
+
 ### Variants
 - [Masthead with Subtitle](?p=organisms-masthead-with-subtitle)
 

@@ -6,6 +6,8 @@ articleStub.image ? "ama__article-stub--image",
 articleStub.video ? "ama__article-stub--video"
 ] %}
 
+{% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
+
 {% macro mediaType(articleStub) %}
   {% if articleStub.video or articleStub.image %}
     {% if articleStub.video %}
@@ -18,48 +20,34 @@ articleStub.video ? "ama__article-stub--video"
   {% endif %}
 {% endmacro %}
 
-{% macro description(articleStub) %}
-  {% set title = articleStub.title_only %}
-  {% set related = articleStub.related %}
-  {% set link = articleStub.link %}
-  {% set paragraph = articleStub.paragraph %}
-
-  {% if paragraph and not title %}
-    <div class="ama__article-stub__description">
-      {% include "@atoms/paragraph.twig" %}
-    </div>
-  {% endif %}
-{% endmacro %}
-
-{% macro metadata(articleStub) %}
-  {% set metadata, paragraph, title_only = articleStub.metadata, articleStub.paragraph, articleStub.title_only %}
-  {% if metadata and paragraph and not title_only %}
-    <div class="ama__article-stub__metadata">
-      {% include "@molecules/article-stub/article-stub-metadata.twig" %}
-    </div>
-  {% endif %}
-{% endmacro %}
-
-{#Show only title#}
-{% macro title(article_title) %}
-  {% set link = article_title.link %}
-  {% if link %}
-    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
-      <h3 class="ama__article-stub__title">
-        {% include "@atoms/link/link.twig" %}
-      </h3>
-  {% endif %}
-{% endmacro %}
-
 <div class="ama__article-stub {{ classes|join(' ') }}">
   {% block articleStub_media %}
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
 
-  {{ _self.title(articleStub) }}
+  {% if link %}
+    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+    <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
+      {% include "@atoms/link.twig" %}
+    </{{ headingLevel }}>
+  {% endif %}
 
+  {% if not articleStub.related %}
   <div class="ama__article-stub__copy">
-    {{ _self.description(articleStub) }}
-    {{ _self.metadata(articleStub) }}
+
+    {% if paragraph %}
+      <div class="ama__article-stub__description">
+        {% include "@atoms/paragraph.twig" %}
+      </div>
+    {% endif %}
+
+
+    {% if metadata %}
+      <div class="ama__article-stub__metadata">
+        {% include "@molecules/article-stub-metadata.twig" %}
+      </div>
+    {% endif %}
+
   </div>
+  {% endif %}
 </div>

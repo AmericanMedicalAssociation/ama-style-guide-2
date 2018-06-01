@@ -1,0 +1,31 @@
+.ama__search__field {
+  @include gutter($margin-bottom-full...);
+  display: flex;
+  align-items: center;
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 0;
+  }
+
+  // This has to be specific b/c it's so different.
+  &__input[type="text"],
+  &__input[type="text"]:focus,
+  &__input[type="text"]:active {
+    border: 0;
+    border-bottom: 1px solid $light-blue;
+    font-style: italic;
+    color: $gray-50;
+    line-height: initial;
+    padding: 1em 28px 3px 0;
+  }
+
+  // This has to be specific b/c it's so different.
+  &__button {
+    margin-left: -24px;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}

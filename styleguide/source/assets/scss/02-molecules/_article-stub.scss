@@ -1,7 +1,12 @@
 .ama__article-stub {
 
+
   a {
-    @extend %ama__link--no-underline;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__title {
@@ -49,6 +54,11 @@
       flex-direction: column;
       padding-top: 0;
       align-self: start;
+    }
+
+    // Only if we have an image, do we set a width on things...
+    .ama__video + .ama__article-stub__title,
+    .ama__image + .ama__article-stub__title {
       width: 75%;
     }
 
@@ -114,5 +124,11 @@
 
   &--inline__link:hover {
     color: $hoverBlue;
+  }
+
+  &--inline-alt {
+    @include gutter($padding-bottom-full...);
+    @include gutter($margin-bottom-full...);
+    border-bottom: 1px solid $gray-50;
   }
 }

@@ -16,8 +16,10 @@
   {% set promo = promoAsInline %}
   {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
-  {% include '@molecules/tags.twig' %}
-  {% include '@organisms/four-up-teaser.twig' %}
+  <section class="ama__page--news__teasers">
+    {% include '@molecules/tags.twig' %}
+    {% include '@organisms/four-up-teaser.twig' %}
+  </section>
 {% endblock %}
 
 {% block sidebarSecondary %}

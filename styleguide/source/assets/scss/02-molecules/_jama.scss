@@ -1,0 +1,157 @@
+.ama__jama {
+  clear: both;
+
+  @include breakpoint($bp-med max-width) {
+    margin-bottom: $gutter;
+  }
+
+  .logo img {
+    padding-bottom: $gutter / 2;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+
+    &.ama__jama__link--sign-up {
+      margin-top: $gutter / 8;
+      color: $hoverRed;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .ama__link--with-image {
+    img {
+      display: none;
+    }
+
+    a {
+      display: flex;
+    }
+  }
+
+  .ama__rule {
+    margin-top: $gutter * .75;
+
+    &:first-of-type {
+      margin-top: $gutter / 4;
+      border-color: $hoverRed;
+    }
+  }
+
+  // Styles the Image Href with Text variant.
+  li {
+
+    img {
+      display: none;
+    }
+
+    &.ama__link--with-image {
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+.ama__jama__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  margin-top: $gutter / 2;
+  margin-bottom: $gutter / 4;
+
+  .ama__icon {
+    max-height: 30px;
+    margin-right: $gutter / 4;
+    max-width: 30px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    min-height: 30px;
+    min-width: 30px;
+  }
+}
+
+.ama__jama__links {
+  list-style-type: none;
+
+  li {
+    &:last-of-type a {
+      padding-bottom: 0;
+    }
+
+    a {
+      @extend .ama__link--hover-red;
+      display: block;
+      padding: ($gutter / 4) 0;
+      text-decoration: none;
+
+      &:hover {
+        h3 {
+          text-decoration: underline;
+          color: $hoverRed;
+        }
+
+        .ama__image__text__subtitle {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.ama__jama .ama__image__text {
+  .ama__image__text__subtitle {
+    @extend p;
+    display: block;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+}
+
+*[class*="__page-content"] .ama__jama {
+  .ama__jama__links li a {
+    margin-top: $gutter / 4;
+  }
+}
+
+.ama__page--news__teasers .ama__jama__links,
+.ama__page--press-release__teasers .ama__jama__links {
+  @include breakpoint($bp-small) {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      width: 32%;
+    }
+
+    a {
+      padding-bottom: 0;
+    }
+  }
+
+  .ama__link--with-image a {
+    flex-flow: column nowrap;
+
+    .ama__image__text {
+      padding: 0;
+    }
+  }
+
+  .ama__image {
+    width: 100%;
+  }
+}
+
+.ama__jama--reg {
+  font-style: italic;
+
+  &:after {
+    content: '\00ae';
+  }
+}

@@ -49,6 +49,14 @@
       align-items: center;
     }
 
+    .ama__h1 {
+      @include gutter($margin-bottom-half...);
+    }
+
+    .ama__subtitle {
+      @extend %ama__h3;
+    }
+
     &__date {
       flex: 1;
     }
