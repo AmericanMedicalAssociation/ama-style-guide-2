@@ -146,7 +146,7 @@
           {% if download.heading %}
             <h5>{{ download.heading }}</h5>
           {% endif %}
-          {% include '@molecules/tool.twig' with { tool : download }%}
+          {% include '@molecules/tool/tool.twig' with { tool : download }%}
           {% if download.subtext %}
             <p class="ama__type--small">
               {{ download.subtext }}
