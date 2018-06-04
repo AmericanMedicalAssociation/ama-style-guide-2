@@ -215,23 +215,6 @@
             heightStyle: "content"
           });
 
-          // Applied filters
-          var $data = ['alpha', 'beta', 'gamma'];
-          if ($data) {
-            $.each($data, function (number) {
-              $('<li class="ama__applied-filters__tag"  />').appendTo('#appliedFiltersTags').append($data[number]).append('<a class="ama__applied-filters__tag__remove" href="#">x</a>');
-            });
-          }
-
-          //remove tag
-          $('.ama__applied-filters__tag').on('click', '.ama__applied-filters__tag__remove', function () {
-            $(this).parent().remove();
-          });
-
-          $('#appliedFiltersRemove').on('click', function () {
-            $('#appliedFiltersTags').children().remove();
-          });
-
           // Expand list
           $( ".ama__expand-list" ).accordion({
             multiple: true,
@@ -272,6 +255,34 @@
             $('.ama__applied-filters__show-filters').fadeIn();
             $(this).fadeOut();
           });
+
+          // search filter
+          function listFilter(input, list) { // header is any element, list is an unordered list
+            // custom css expression for a case-insensitive contains()
+            jQuery.expr[':'].Contains = function(a,i,m){
+              return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+            };
+
+            $(input).change( function () {
+                var filter = $(this).val();
+                if(filter) {
+                  // this finds all links in a list that contain the input,
+                  // and hide the ones not containing the input while showing the ones that do
+                  $(list).find("span:not(:Contains(" + filter + "))").parent().hide();
+                  $(list).find("span:Contains(" + filter + ")").parent().show();
+                } else {
+                  $(list).find("label").show();
+                }
+                return false;
+                // only show results after 3 characters are entered
+              }).keyup( function() {
+                if( this.value.length < 4 ) return;
+                  $(this).change();
+              });
+          }
+
+          listFilter($("#ama__search__location"), $(".ama__form-group"));
+
         });
       })(jQuery);
     }

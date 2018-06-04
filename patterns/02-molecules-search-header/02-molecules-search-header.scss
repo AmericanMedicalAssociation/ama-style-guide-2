@@ -2,10 +2,16 @@
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
+  @include gutter($padding-left-full...);
+  @include gutter($padding-right-full...);
 
   @include breakpoint($bp-small) {
     flex-wrap: initial;
     flex-direction: row;
+  }
+
+  @include breakpoint($bp-med) {
+    padding: 0;
   }
 
   &__results-num {
@@ -57,8 +63,14 @@
   &__results {
     @include gutter($margin-top-half...);
     @include gutter($margin-bottom-half...);
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
     color: $gray-50;
     display: block;
+
+    @include breakpoint($bp-med) {
+      padding: 0;
+    }
   }
 
   &__clear {

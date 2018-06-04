@@ -2,10 +2,23 @@
   display: grid;
   display: -ms-grid;
   grid-template-columns: 1fr;
+  @include gutter($padding-left-full...);
+  @include gutter($padding-right-full...);
+
+  @include breakpoint($bp-med min-width) {
+    padding: 0;
+  }
 
   @include breakpoint($bp-large min-width) {
     grid-template-columns: 1fr 6fr 2.5fr;
+    padding: 0;
   }
+
+  // Temporary to accommodate DOM in A1 Drupal theme
+  &--grid {
+    display: block;
+  }
+
 
   &__sidebar {
     display: none;
@@ -23,6 +36,18 @@
     @include breakpoint($bp-small min-width) {
       &--indented {
         grid-column: 2/5;
+
+        // Temporary to accommodate DOM in A1 Drupal theme
+        &.ama__masthead--no-border {
+          border: 0;
+        }
+
+        // Temporary to accommodate DOM in A1 Drupal theme
+        .layout__region {
+          grid-column-start: 2;
+          grid-column-end: 5;
+          @include ama-rules(1px, "bottom", $gray-64, solid);
+        }
       }
 
     }

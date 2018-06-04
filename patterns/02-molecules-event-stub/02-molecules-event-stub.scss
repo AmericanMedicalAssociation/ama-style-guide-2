@@ -1,5 +1,6 @@
 .ama__event-stub {
   @include gutter($margin-bottom-full...);
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -26,6 +27,12 @@
   }
 
   &__copy {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+    @include breakpoint($bp-med) {
+      padding: 0;
+    }
+
     justify-self: flex-start;
     flex: 1;
     order: 2;
