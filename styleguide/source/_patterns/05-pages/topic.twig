@@ -1,8 +1,8 @@
 {% extends '@templates/three-column.twig' %}
 
 {% block header %}
-  {% include '@organisms/ribbon.twig' %}
-  {% include '@organisms/wayfinder.twig' %}
+  {% include '@organisms/ribbon/ribbon.twig' %}
+  {% include '@organisms/wayfinder/wayfinder.twig' %}
 {% endblock %}
 
 {% block contentTop %}
@@ -14,17 +14,17 @@
 {% endblock %}
 
 {% block sidebarPrimary %}
-  {% include '@molecules/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' %}
   {% include '@organisms/tools.twig' %}
-  {% include '@molecules/promo.twig' %}
+  {% include '@molecules/promo/promo.twig' %}
   {% include '@organisms/sidebar-articles.twig' %}
 {% endblock %}
 
 {% block sidebarSecondary %}
   {% set membership = membershipTwo %}
-  {% include '@molecules/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' %}
   {% set membership = membershipThree %}
-  {% include '@molecules/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' %}
 {% endblock %}
 
 {% block footer %}

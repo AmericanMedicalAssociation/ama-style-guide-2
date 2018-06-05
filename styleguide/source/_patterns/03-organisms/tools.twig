@@ -2,14 +2,14 @@
   {% set heading, moreHeading = tools.heading, tools.learnMore.heading %}
   {% set tools, moreLinks = tools.list, tools.learnMore.links %}
 
-  {% include "@atoms/heading.twig" %}
+  {% include "@atoms/heading/heading.twig" %}
 
   {% block tools %}
     {% include "@molecules/tools-list.twig" %}
   {% endblock %}
 
   {% set heading = moreHeading %}
-  {% include "@atoms/heading.twig" %}
+  {% include "@atoms/heading/heading.twig" %}
 
   {% set links = moreLinks%}
   <div class="ama__tools-learn-more">

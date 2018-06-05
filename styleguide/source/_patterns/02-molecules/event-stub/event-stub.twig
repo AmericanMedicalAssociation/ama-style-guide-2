@@ -8,7 +8,7 @@
 {% macro mediaType(eventStub) %}
   {% if eventStub.image %}
     {% set image = eventStub.image %}
-    {% include "@atoms/image.twig"  with { 'class': 'ama__image' } %}
+    {% include "@atoms/image/image.twig"  with { 'class': 'ama__image' } %}
   {% endif %}
 {% endmacro %}
 
@@ -29,13 +29,13 @@
     {% if link %}
       {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
       <h2 class="ama__h2 ama__event-stub__title">
-        {% include "@atoms/link.twig" %}
+        {% include "@atoms/link/link.twig" %}
       </h2>
     {% endif %}
 
     {% if eventStub.location %}
       {% set heading = eventStub.location %}
-      {% include "@atoms/heading.twig" %}
+      {% include "@atoms/heading/heading.twig" %}
     {% endif %}
 
     {% if eventStub.date %}
