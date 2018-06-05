@@ -5,7 +5,7 @@
 
 <footer class="ama__footer">
   <div class="container ama__footer__container">
-    {% include "@atoms/heading.twig" %}
+    {% include "@atoms/heading/heading.twig" %}
 
     <div class="ama__footer__menu-container">
       {% include "@molecules/social-share.twig" %}
@@ -18,7 +18,7 @@
             <ul>
               {% for link in column %}
                 <li>
-                  {% include "@atoms/link.twig" %}
+                  {% include "@atoms/link/link.twig" %}
                 </li>
               {% endfor %}
             </ul>
@@ -34,7 +34,7 @@
       <ul class="ama__footer__menu-utility">
         {% for link in menus.utility %}
           <li>
-            {% include "@atoms/link.twig" %}
+            {% include "@atoms/link/link.twig" %}
           </li>
         {% endfor %}
       </ul>

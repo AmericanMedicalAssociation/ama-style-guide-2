@@ -1,0 +1,38 @@
+{%  set
+  indented, link, heading, subtitle, date, social =
+  masthead.indented ? "ama__masthead__content--indented" : "",
+  masthead.link,
+  masthead.heading|merge({
+    "level": "1",
+    "class": "ama__h1"
+  }),
+  masthead.subtitle,
+  masthead.date,
+  masthead.social
+%}
+
+<header class="ama__masthead">
+  <div class="ama__masthead__sidebar" role="complementary"></div>
+  <div class="ama__masthead__content {{ indented }}" role="complementary">
+
+    {% if masthead.link.title %}
+      {% include "@atoms/link/link.twig" %}
+    {% endif %}
+
+    {% include "@atoms/heading/heading.twig" %}
+    {% if subtitle %}
+      {% include "@atoms/subtitle.twig" %}
+    {% endif %}
+
+    {% if masthead.date.month and masthead.social %}
+      <div class="ama__masthead__content__container">
+        <div class="ama__masthead__content__date">
+          {% include "@atoms/date-block.twig" %}
+        </div>
+        <div class="ama__masthead__content__share">
+          {% include "@molecules/social-share.twig" %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</header>

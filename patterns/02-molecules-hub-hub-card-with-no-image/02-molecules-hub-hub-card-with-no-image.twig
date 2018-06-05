@@ -6,10 +6,10 @@
 
 <a class="ama__hub-card {{ hubCard.layout }}" href="#" style="{{ background }}">
   {% if hubCard.image.src is not empty %}
-    {% include "@atoms/image.twig" %}
+    {% include "@atoms/image/image.twig" %}
   {% endif %}
   <div class="ama__hub-card__description">
-    {% include "@atoms/heading.twig" %}
+    {% include "@atoms/heading/heading.twig" %}
 
     {% if hubCard.paragraph is not empty %}
       {% include "@atoms/paragraph.twig" %}
@@ -20,7 +20,7 @@
     {% endif %}
 
     {% if hubCard.button %}
-      {% include "@atoms/button.twig" %}
+      {% include "@atoms/button/button.twig" %}
     {% endif %}
 
     {% if hubCard.selectMenu %}

@@ -1,7 +1,7 @@
 {% extends '@templates/two-column-right.twig' %}
 
 {% block contentTop %}
-  {% include '@organisms/masthead.twig' %}
+  {% include '@organisms/masthead/masthead.twig' %}
 {% endblock %}
 
 {% block pageContent %}
@@ -17,5 +17,5 @@
 
 {% block sidebarSecondary %}
   {% include '@organisms/tools.twig' %}
-  {% include '@molecules/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' %}
 {% endblock %}
