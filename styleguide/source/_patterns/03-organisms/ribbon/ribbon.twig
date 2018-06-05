@@ -4,19 +4,19 @@
 
 <section class="ama__ribbon">
   <div class="container">
-    {% include "@molecules/ribbon-dropdown.twig" %}
+    {% include "@molecules/ribbon-dropdown/ribbon-dropdown.twig" %}
     <div class="ama__ribbon_user_menu__container">
-      {% include "@molecules/ribbon-user-menu.twig" %}
+      {% include "@molecules/ribbon-user-menu/ribbon-user-menu.twig" %}
 
       {% set ribbonDropdown = ribbon.ribbonDropdown.userMenuDropdown %}
       {% if ribbon.ribbonDropdown.userMenuDropdown %}
-        {% include "@molecules/ribbon-dropdown.twig" %}
+        {% include "@molecules/ribbon-dropdown/ribbon-dropdown.twig" %}
       {% endif %}
     </div>
 
     <div class="ama__ribbon_user_menu__mobile">
       {% set ribbonDropdown = ribbon.mobileMenu %}
-      {% include "@molecules/ribbon-dropdown.twig" %}
+      {% include "@molecules/ribbon-dropdown/ribbon-dropdown.twig" %}
     </div>
   </div>
 </section>

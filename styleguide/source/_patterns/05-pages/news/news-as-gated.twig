@@ -1,7 +1,7 @@
 {% extends '@templates/two-column-right.twig' %}
 
 {% block contentTop %}
-  {% include '@organisms/masthead.twig' %}
+  {% include '@organisms/masthead/masthead.twig' %}
   {% include "@molecules/inline-bio.twig" %}
 {% endblock %}
 
@@ -13,9 +13,9 @@
     "level": "1",
     "class": "ama__h1"
   }) %}
-  {% include '@atoms/heading.twig' %}
+  {% include '@atoms/heading/heading.twig' %}
   {% set promo = promoAsInline %}
-  {% include '@molecules/promo.twig' %}
+  {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
   <section class="ama__page--news__teasers">
     {% include '@molecules/tags.twig' %}
@@ -25,6 +25,6 @@
 
 {% block sidebarSecondary %}
   {% include '@organisms/tools.twig' %}
-  {% include '@molecules/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' %}
   {% include '@organisms/column-teaser.twig' %}
 {% endblock %}

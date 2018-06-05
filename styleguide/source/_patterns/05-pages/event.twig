@@ -3,7 +3,7 @@
 {% extends '@templates/two-column-right.twig' %}
 
 {% block contentTop %}
-  {% include '@organisms/masthead.twig' %}
+  {% include '@organisms/masthead/masthead.twig' %}
 {% endblock %}
 
 {% block pageContent %}
@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block sidebarSecondary %}
-  {% include '@molecules/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' %}
   {% include '@organisms/tools.twig' %}
   {% include '@organisms/column-teaser.twig' %}
 {% endblock %}

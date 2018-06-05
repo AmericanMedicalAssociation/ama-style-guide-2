@@ -1,5 +1,5 @@
 <div class="ama__jama">
-  {% include "@atoms/site-logo-as-jama.twig" %}
+  {% include "@atoms/site-logo/site-logo-as-jama.twig" %}
   <div class="ama__rule ama__rule--horizontal"></div>
   <span class="ama__jama__title">
     {% if jama.title.icon is not empty %}
@@ -10,7 +10,7 @@
   <ul class="ama__jama__links">
     {% for link in jama.links|slice(0, 3) %}
       <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
-        {% include "@atoms/image.twig" with { "image" : link } %}
+        {% include "@atoms/image/image.twig" with { "image" : link } %}
       </li>
     {% endfor %}
   </ul>

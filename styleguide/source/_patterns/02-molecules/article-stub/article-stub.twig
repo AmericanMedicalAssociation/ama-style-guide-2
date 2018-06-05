@@ -15,7 +15,7 @@ articleStub.video ? "ama__article-stub--video"
       {% include "@atoms/video.twig" %}
     {% else %}
       {% set image = articleStub.image %}
-      {% include "@atoms/image.twig"  with { 'class': 'ama__image' } %}
+      {% include "@atoms/image/image.twig"  with { 'class': 'ama__image' } %}
     {% endif %}
   {% endif %}
 {% endmacro %}
@@ -28,7 +28,7 @@ articleStub.video ? "ama__article-stub--video"
   {% if link %}
     {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
     <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
-      {% include "@atoms/link.twig" %}
+      {% include "@atoms/link/link.twig" %}
     </{{ headingLevel }}>
   {% endif %}
 
@@ -44,7 +44,7 @@ articleStub.video ? "ama__article-stub--video"
 
     {% if metadata %}
       <div class="ama__article-stub__metadata">
-        {% include "@molecules/article-stub-metadata.twig" %}
+        {% include "@molecules/article-stub/article-stub-metadata.twig" %}
       </div>
     {% endif %}
 

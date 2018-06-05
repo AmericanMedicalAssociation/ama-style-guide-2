@@ -8,14 +8,14 @@
 <article class="ama__partner">
   {% if logo %}
       {% set image = logo %}
-      {% include "@atoms/image.twig" with {
+      {% include "@atoms/image/image.twig" with {
         "class": "ama__partner__logo" }
       %}
   {% endif %}
 
   {% if infoCard %}
     {% set image, heading, link = infoCard.image, infoCard.heading, infoCard.link %}
-    {% include "@molecules/info-card.twig" %}
+    {% include "@molecules/info-card/info-card.twig" %}
   {% endif %}
 
   {% if boilerplate %}
@@ -26,7 +26,7 @@
           "class": ""
         })
       %}
-      {% include "@atoms/heading.twig" %}
+      {% include "@atoms/heading/heading.twig" %}
 
       {% set paragraph = boilerplate.paragraph %}
       {% include "@atoms/paragraph.twig" %}

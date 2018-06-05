@@ -6,10 +6,10 @@
 %}
 
 <div class="ama__info-card ama__info-card--{{ infoCard.type }}">
-  {% include "@atoms/heading.twig" %}
+  {% include "@atoms/heading/heading.twig" %}
   <div class="ama__info-card__wrap">
     {% if infoCard.image %}
-      {% include "@atoms/image.twig" with {"class": "ama__info-card__image"}
+      {% include "@atoms/image/image.twig" with {"class": "ama__info-card__image"}
       %}
     {% endif %}
 
@@ -25,7 +25,7 @@
       {% endfor %}
 
       {% if infoCard.link %}
-        {% include "@atoms/link.twig" %}
+        {% include "@atoms/link/link.twig" %}
       {% endif %}
     </div>
   </div>
