@@ -20,14 +20,28 @@ Provides links to relevant JAMA content, as well as a link that serves as a CTA 
 ### Variables
 ~~~
   jama {
+    title: {
+        text: 
+          type: string / optional
+        icon: 
+          type: string (url) / optional
+      },
     links {
       {
+        subtitle:
+          type: string / optional
         title: 
           type: string / required
         href: 
           type: string (url) / required
-        text: 
-          type: string / required      
+        heading: [
+          level: 
+            type: int "3"
+          text: 
+            type: string / required       
+          class:
+            type: string "ama__h3"
+        ]      
       },
       // add more links as needed.
     }
