@@ -1,0 +1,38 @@
+{% set
+  style, link, button, image, paragraph, heading =
+  promo.style,
+  promo.link,
+  promo.button,
+  promo.image,
+  promo.paragraph,
+  promo.heading ? promo.heading|merge({level: "2", class: "ama__h2"})
+%}
+
+{% set classes = "ama__promo--#{style}" %}
+
+{% if button %}
+<div {{ setAttributes(classes, attributes) }}>
+    {% else %}
+  <a href="{{ link }}" {{ setAttributes(classes, attributes) }}>
+{% endif %}
+
+  {% block image %}
+    {% if image %}
+      <div class="ama__image">
+        {% include '@atoms/image/image.twig' %}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% include '@atoms/heading/heading.twig' %}
+  {% include '@atoms/paragraph.twig' %}
+
+  {% if button %}
+    {% include '@atoms/button/button.twig' %}
+  {% endif %}
+
+{% if button %}
+  </div>
+{% else %}
+  </a>
+{% endif %}

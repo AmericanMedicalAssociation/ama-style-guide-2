@@ -118,12 +118,12 @@
             </p>
           {% endif %}
         </div>
-        {% include '@molecules/promo.twig' with { promo : tabContent.media.media2.promo } %}
+        {% include '@molecules/promo/promo.twig' with { promo : tabContent.media.media2.promo } %}
       </div>
       <div data-anchor="media-3">
         <h3>Media 3</h3>
         <div class="ama__resource-tab__content__image">
-          {% include '@atoms/image.twig' with { image : tabContent.media.media3.image }%}
+          {% include '@atoms/image/image.twig' with { image : tabContent.media.media3.image }%}
           {% if tabContent.media.media3.subtext %}
             <p class="ama__type--small">
               {{ tabContent.media.media3.subtext }}
@@ -146,7 +146,7 @@
           {% if download.heading %}
             <h5>{{ download.heading }}</h5>
           {% endif %}
-          {% include '@molecules/tool.twig' with { tool : download }%}
+          {% include '@molecules/tool/tool.twig' with { tool : download }%}
           {% if download.subtext %}
             <p class="ama__type--small">
               {{ download.subtext }}
@@ -175,7 +175,7 @@
                 {% endif %}
               </li>
             {% endfor %}
-            {% include '@molecules/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
+            {% include '@molecules/membership/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
           </ul>
         </div>
       {% endfor %}
@@ -184,17 +184,17 @@
       {% for schedule in tabContent.schedules %}
         <div data-anchor="schedules-1">
           {% set heading = {level: '3', text: 'Schedule 1'}  %}
-          {% include '@atoms/heading.twig' %}
+          {% include '@atoms/heading/heading.twig' %}
           <h5>{{ schedule.subheading }}</h5>
           {% set table = schedule.table %}
           {% include '@atoms/table.twig' %}
         </div>
       {% endfor %}
-      {% include '@molecules/promo.twig' with { promo : tabContent.schedules.promo } %}
+      {% include '@molecules/promo/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
       {% set heading = {level: '3', text: 'Tables'}  %}
-      {% include '@atoms/heading.twig' %}
+      {% include '@atoms/heading/heading.twig' %}
       {% for table in tabContent.tables %}
         {% include '@atoms/table.twig' %}
       {% endfor %}
@@ -204,7 +204,7 @@
       <h5>This is a subheading for a contact group</h5>
       <div data-anchor="contacts-1">
         {#{% set infoCard = tabContent.contacts.infoCard %}#}
-        {#{% include '@molecules/info-card.twig' %}#}
+        {#{% include '@molecules/info-card/info-card.twig' %}#}
         <div class="ama__info-card ama__info-card--contact">
           <h3 class="ama__info-card__label">Contact:</h3>
           <div class="ama__info-card__wrap">

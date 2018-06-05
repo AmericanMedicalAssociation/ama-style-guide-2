@@ -3,7 +3,7 @@
 form.heading, form.paragraph,form.textField,form. date, form.email, form.password, form.telephone, form.number, form.textArea, form.selectMenu, form.checkbox, form.radioButton, form.rangeField, form.button %}
 
 <div class="container">
-  {% include "@atoms/heading.twig" %}
+  {% include "@atoms/heading/heading.twig" %}
   {% include "@atoms/paragraph.twig" %}
 
   <div class="ama__form-wrapper">
@@ -50,7 +50,7 @@ form.heading, form.paragraph,form.textField,form. date, form.email, form.passwor
         </div>
 
         <div class="ama__form-group__submit">
-          {% include "@atoms/button.twig" %}
+          {% include "@atoms/button/button.twig" %}
         </div>
       </form>
     </div>

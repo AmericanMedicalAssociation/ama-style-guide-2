@@ -1,0 +1,39 @@
+{% set image, link = infoCard.image, infoCard.link %}
+{% set heading = infoCard.heading|merge({
+  "level": "3",
+  "class": "ama__info-card__label"
+})
+%}
+
+<div class="ama__info-card ama__info-card--{{ infoCard.type }}">
+  {% include "@atoms/heading/heading.twig" %}
+  <div class="ama__info-card__wrap">
+    {% if infoCard.image %}
+      {% include "@atoms/image/image.twig" with {"class": "ama__info-card__image"}
+      %}
+    {% endif %}
+
+    {% if infoCard.map %}
+      <div class="ama__info-card__map">
+        {% include "@atoms/map.twig" with {"map": infoCard.map} %}
+      </div>
+    {% endif %}
+
+    <div class="ama__info-card__text">
+      {% for paragraph in infoCard.paragraphs %}
+        {% include "@atoms/paragraph.twig" %}
+      {% endfor %}
+
+      {% if infoCard.link %}
+        {% include "@atoms/link/link.twig" %}
+      {% endif %}
+    </div>
+  </div>
+  {% if infoCard.blurb %}
+  <p>
+    {% for paragraph in infoCard.blurb %}
+      {% include "@atoms/paragraph.twig" %}
+    {% endfor %}
+  </p>
+  {% endif %}
+</div>

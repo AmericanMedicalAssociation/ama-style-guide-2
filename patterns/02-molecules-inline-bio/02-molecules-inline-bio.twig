@@ -2,7 +2,7 @@
 
 <aside class="ama__inline-bio">
   {% if bio.image %}
-    {% include "@atoms/image.twig"  with {
+    {% include "@atoms/image/image.twig"  with {
       "class": "ama__inline-bio__image"
     }
     %}
@@ -11,11 +11,11 @@
   <div class="ama__inline-bio__text">
     {% for heading in bio.headings %}
       {% set heading = heading ? heading|merge({ "level": "3", "class": "ama__h3" }) : "" %}
-      {% include "@atoms/heading.twig" %}
+      {% include "@atoms/heading/heading.twig" %}
     {% endfor %}
 
     {% for link in bio.links %}
-      {% include "@atoms/link.twig" %}
+      {% include "@atoms/link/link.twig" %}
     {% endfor %}
   </div>
 </aside>
