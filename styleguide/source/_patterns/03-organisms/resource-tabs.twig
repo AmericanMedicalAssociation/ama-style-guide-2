@@ -141,16 +141,16 @@
       </div>
     </section>
     <section id="downloads">
-      {% for download in tabContent.downloads %}
+      {% for group in tabContent.downloads.groups %}
         <div data-anchor="downloads-1">
-          <h3>{{ download.title }}</h3>
-          {% if download.heading %}
-            <h5>{{ download.heading }}</h5>
+          <h3>{{ group.title }}</h3>
+          {% if group.heading %}
+            <h5>{{ group.heading }}</h5>
           {% endif %}
-          {% include '@molecules/tool.twig' with { tool : download }%}
-          {% if download.subtext %}
+          {% include '@molecules/tool.twig' with { tool : group }%}
+          {% if group.subtext %}
             <p class="ama__type--small">
-              {{ download.subtext }}
+              {{ group.subtext }}
             </p>
           {% endif %}
         </div>
