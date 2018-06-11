@@ -24,10 +24,15 @@
       margin: 0 ($gutter / 4) ($gutter / 4) 0;
       padding: 0 0 0 ($gutter / 4);
     }
+
     list-style-type: none;
     border-left: solid 2px;
     margin: 0 ($gutter / 2) ($gutter / 2) 0;
     padding: 0 0 0 ($gutter / 2);
+
+    &.ama__subcategory-exploration__list__item--hidden {
+      display: none;
+    }
   }
 
   a {
@@ -47,6 +52,10 @@
   }
 
   .ama__subcategory-exploration__show-more {
+    position: absolute;
+    top: 0;
+    right: 0;
+
     @include breakpoint($bp-small max-width) {
       font-size: 16px;
     }

@@ -1,14 +1,12 @@
 <div class="ama__subcategory-exploration">
   <ul class="ama__subcategory-exploration__list ama__subcategory-exploration__list--expanded">
-    {% for link in subcategoryExploration.links %}
-      <li>
+    {% for key,link in subcategoryExploration.links %}
+      <li {% if key > 2 %} class="ama__subcategory-exploration__list__item--hidden" {% endif %}>
         <a href="{{ link.url }}">
           <h2>{{ link.text }}</h2>
         </a>
       </li>
     {% endfor %}
-    <li class="ama__subcategory-exploration__show-more">
-      More
-    </li>
   </ul>
+  <div class="ama__subcategory-exploration__show-more">More</div>
 </div>
