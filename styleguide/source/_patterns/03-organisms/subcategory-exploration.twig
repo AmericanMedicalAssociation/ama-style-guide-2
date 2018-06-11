@@ -1,12 +1,15 @@
 <div class="ama__subcategory-exploration">
-  <ul class="ama__subcategory-exploration__list ama__subcategory-exploration__list--expanded">
-    {% for key,link in subcategoryExploration.links %}
-      <li {% if key > 2 %} class="ama__subcategory-exploration__list__item--hidden" {% endif %}>
+  <ul class="ama__subcategory-exploration__list">
+    {% for link in subcategoryExploration.links %}
+      <li>
         <a href="{{ link.url }}">
           <h2>{{ link.text }}</h2>
         </a>
       </li>
     {% endfor %}
   </ul>
-  <div class="ama__subcategory-exploration__show-more">More</div>
+  <a href="#" class="ama__subcategory-exploration__show-more">View all subcategories v</a>
+  <div class="ama__subcategory-exploration__select ama__subcategory-exploration__select--visible">
+    {% include "@atoms/forms/select-menu.twig" %}
+  </div>
 </div>
