@@ -1,0 +1,11 @@
+<div class="ama__subcategory-exploration">
+  <ul>
+    {% for link in subcategoryExploration.links %}
+      <li>
+        <a href="{{ link.url }}">
+          <h2>{{ link.text }}</h2>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
