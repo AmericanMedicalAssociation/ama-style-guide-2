@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     margin-left: -2px - $gutter / 2;
     overflow: hidden;
+    height: 5.4em;
   }
 
   li {
@@ -43,11 +44,17 @@
   }
 
   .ama__subcategory-exploration__show-more {
-    @include breakpoint($bp-small max-width) {
-      font-size: 16px;
-    }
-    @extend .ama__h2;
-      width: 100%;
+     @include font-size($h2-font-sizes);
+     @include breakpoint($bp-small max-width) {
+       font-size: 16px;
+     }
+     @include breakpoint($bp-small) {
+       display: inline-block;
+       margin-top: $gutter / 2;
+     }
+
+     width: 100%;
+
 
     .ama__subcategory-exploration__show-more--close {
       display: none;
