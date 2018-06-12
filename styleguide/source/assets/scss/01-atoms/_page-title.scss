@@ -2,4 +2,14 @@
 .ama__page-title {
   @extend %ama__h1;
   @include gutter($padding-top-full...);
+
+  &.allCaps {
+    text-transform: none;
+  }
+
+  @include breakpoint($bp-med){
+    &.allCaps {
+      text-transform: uppercase;
+    }
+  }
 }

@@ -1,1 +1,3 @@
-<h1 class="ama__page-title">{{ pageTitle.text }}</h1>
+{% set allCaps = pageTitle.allCaps ? "allCaps" : "" %}
+
+<h1 class="ama__page-title {{ allCaps }}">{{ pageTitle.text }}</h1>
