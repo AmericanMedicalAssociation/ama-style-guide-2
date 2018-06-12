@@ -2,7 +2,7 @@
 This is a H1 tag typically used as a Page Title.
 
 ### Variant options
-- "Page title as all caps" is the variant that has all caps on desktop but not on mobile or tablet
+- [Page Title as All Caps](?p=atoms-page-title-as-all-caps)
 
 ### Variables
 ~~~
