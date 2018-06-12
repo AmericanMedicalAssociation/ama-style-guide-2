@@ -1,9 +1,14 @@
 .ama__subcategory-exploration {
+  border-bottom: solid 1px $gray-50;
+  padding-bottom: $gutter / 2;
+  @include breakpoint($bp-small) {
+    padding-bottom: $gutter;
+  }
 
   .ama__subcategory-exploration__list { // <ul>
     @include breakpoint($bp-small max-width) {
       margin-left: -2px - $gutter / 4;
-      height: 1em;
+      height: 1.1em;
     }
 
     display: flex;
@@ -58,6 +63,10 @@
        display: inline-block;
        margin-top: $gutter / 2;
      }
+
+    @include breakpoint($bp-large) {
+      display: none;
+    }
 
      width: 100%;
 
