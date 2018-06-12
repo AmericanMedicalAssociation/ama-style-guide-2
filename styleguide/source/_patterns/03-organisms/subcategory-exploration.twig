@@ -9,11 +9,7 @@
     {% endfor %}
   </ul>
   <a href="#" class="ama__subcategory-exploration__show-more">View all subcategories
-  <span class="ama__subcategory-exploration__show-more--open">{% include "@atoms/media/icons/svg/icon-opendropdown.twig" %}</span>
-  <span class="ama__subcategory-exploration__show-more--close">{% include "@atoms/media/icons/svg/icon-closedropdown.twig" %}</span>
+    <span class="ama__subcategory-exploration__show-more--open">{% include "@atoms/media/icons/svg/icon-opendropdown.twig" %}</span>
+    <span class="ama__subcategory-exploration__show-more--close">{% include "@atoms/media/icons/svg/icon-closedropdown.twig" %}</span>
   </a>
-  <div class="ama__subcategory-exploration__select">
-    {% set selectMenu = subcategoryExploration.selectMenu %}
-    {% include "@atoms/forms/select-menu.twig" %}
-  </div>
 </div>

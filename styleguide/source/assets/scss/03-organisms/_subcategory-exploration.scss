@@ -12,6 +12,10 @@
     margin-left: -2px - $gutter / 2;
     overflow: hidden;
     height: 5.4em;
+
+      &--expanded {
+        height: auto;
+      }
   }
 
   li {
@@ -45,16 +49,17 @@
 
   .ama__subcategory-exploration__show-more {
      @include font-size($h2-font-sizes);
+
      @include breakpoint($bp-small max-width) {
        font-size: 16px;
      }
+
      @include breakpoint($bp-small) {
        display: inline-block;
        margin-top: $gutter / 2;
      }
 
      width: 100%;
-
 
     .ama__subcategory-exploration__show-more--close {
       display: none;
@@ -69,18 +74,5 @@
         display: inline;
       }
     }
-  }
-
-  .ama__subcategory-exploration__select {
-    display: none;
-
-    &.ama__subcategory-exploration__select--visible {
-      display: block;
-    }
-  }
-
-  .ui-selectmenu-button.ui-button,
-  .ama__select-menu__select {
-    width: auto;
   }
 }
