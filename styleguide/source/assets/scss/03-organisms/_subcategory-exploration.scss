@@ -47,7 +47,21 @@
       font-size: 16px;
     }
     @extend .ama__h2;
-    width: 100%;
+      width: 100%;
+
+    .ama__subcategory-exploration__show-more--close {
+      display: none;
+    }
+
+    &--expanded {
+      .ama__subcategory-exploration__show-more--open {
+        display: none;
+      }
+
+      .ama__subcategory-exploration__show-more--close {
+        display: inline;
+      }
+    }
   }
 
   .ama__subcategory-exploration__select {
@@ -56,5 +70,10 @@
     &.ama__subcategory-exploration__select--visible {
       display: block;
     }
+  }
+
+  .ui-selectmenu-button.ui-button,
+  .ama__select-menu__select {
+    width: auto;
   }
 }

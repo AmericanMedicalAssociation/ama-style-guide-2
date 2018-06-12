@@ -1,8 +1,8 @@
-// $(document).click(function() {
-//   var lastItem = $(this).find($('li:visible:last'));
-//   console.log(lastItem);
-// });
+$( ".ama__select-menu__select" ).selectmenu({
+  width: false
+});
 
-// <li class="ama__subcategory-exploration__show-more">
-//   More
-//   </li>
+$('.ama__subcategory-exploration__show-more').click(function() {
+  $('.ama__subcategory-exploration__select').toggleClass('ama__subcategory-exploration__select--visible');
+  $(this).toggleClass('ama__subcategory-exploration__show-more--expanded');
+});
