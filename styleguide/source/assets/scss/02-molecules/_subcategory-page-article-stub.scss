@@ -1,0 +1,33 @@
+.ama__subcategory-page-article-stub {
+  display: flex;
+  text-decoration: none;
+
+  &__image {
+    display: none;
+    min-width: 33%;
+
+    @include breakpoint($bp-small) {
+      display: block;
+    }
+  }
+
+  &__text {
+    @include breakpoint($bp-small) {
+      padding: 0 ($gutter / 2);
+    }
+  }
+
+  &__subcategory {
+    text-transform: uppercase;
+    color: $purple;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &:hover {
+    .ama__subcategory-page-article-stub__heading {
+      text-decoration: underline;
+    }
+  }
+}
