@@ -1,5 +1,6 @@
 .ama__subcategory-page-article-stub {
   display: flex;
+  text-decoration: none;
 
   &__image {
     display: none;
@@ -24,10 +25,8 @@
     margin: 0;
   }
 
-  &__heading {
-    text-decoration: none;
-
-    &:hover {
+  &:hover {
+    .ama__subcategory-page-article-stub__heading {
       text-decoration: underline;
     }
   }
