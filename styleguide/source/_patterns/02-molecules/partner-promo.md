@@ -5,10 +5,11 @@ title: Partner Promo
 ### Description
 Links the user to promotional content
 
-Elements (all are required for use of this template): 
-– Title 
-– Subtext
-- CTA 
+Elements:
+- Image (optional) 
+– Title (required)
+– Subtext (required)
+- CTA (required)
 
 User story: As a user I can navigate to promotional content.
 
@@ -17,23 +18,33 @@ User story: As a user I can navigate to promotional content.
 ### Variables
 ~~~~
   partnerPromo: {
+    image: { // optional 
+      alt: 
+        type: string / required
+      src: 
+        type: string / required (url)
+      height: 
+        type: string / "100%"
+      width: 
+        type: string / "100%"
+    }
     heading: 
-      type: text / required
+      type: string / required
     paragraph:
-      type: text / required
+      type: string / required
     button: {
       href: 
-        type: text (url) / required
+        type: string (url) / required
       info: 
-        type: text / required
+        type: string / required
       text: 
-        type: text / required
+        type: string / required
       type: 
-        type: text / required ("button")
+        type: string / required ("button")
       style: 
-        type: text / required ("primary")
+        type: string / required ("primary")
       size: 
-        type: text / optional (empty)
+        type: string / optional (empty)
     }
   }
 ~~~~
