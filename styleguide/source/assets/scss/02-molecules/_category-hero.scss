@@ -18,10 +18,10 @@
       padding: 1em .25em 1em 1em;
 
       a {
-        color: $white;
-        display: block;
         @include type($myriad-pro, $font-weight-semibold);
         @include font-size($h1-font-sizes);
+        color: $white;
+        display: block;
       }
     }
 
@@ -31,7 +31,6 @@
   &__copy {
     @include gutter($padding-left-half...);
     @include gutter($padding-right-half...);
-
     flex-grow: 1;
   }
 
