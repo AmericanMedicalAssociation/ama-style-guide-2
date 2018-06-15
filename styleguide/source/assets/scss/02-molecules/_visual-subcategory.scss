@@ -6,6 +6,7 @@
   align-items: center;
   text-align: center;
   width: 95px;
+  text-decoration: none;
 
   &:nth-child(3),
   &:nth-child(4),
@@ -13,13 +14,8 @@
     display: none;
   }
 
-  .ama__link {
-    @include gutter($margin-top-half...);
-    @include gutter($margin-bottom-half...);
-    @extend h4--purple;
-    font-weight: 800;
-    text-decoration: none;
-    line-height: 1em;
+  .ama__h4--purple {
+    line-height: inherit;
   }
 
   @include breakpoint($bp-small) {

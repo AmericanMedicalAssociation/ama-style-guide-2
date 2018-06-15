@@ -13,9 +13,9 @@
 
       function checkSize(){
         if ($(".ama__subcategory-exploration__subcategory-wrapper").outerWidth() < 800 ) {
-          $('.ama__subcategory-exploration__subcategory:lt(3)').show();
+          $('.ama__subcategory-exploration__subcategory:lt(3)').css('display', 'block');
         } else {
-          $('.ama__subcategory-exploration__subcategory:lt(5)').show();
+          $('.ama__subcategory-exploration__subcategory:lt(5)').css('display', 'block');
         }
       }
 
