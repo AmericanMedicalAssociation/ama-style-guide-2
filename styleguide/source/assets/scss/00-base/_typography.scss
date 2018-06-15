@@ -50,6 +50,19 @@ h4,
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h4-font-sizes);
   @extend %headerLinks;
+
+  &--purple {
+    @include font-size($h4-font-sizes--purple);
+    text-transform: uppercase;
+    color: $purple;
+
+  }
+
+  &--blue {
+    @include font-size($h4-font-sizes--blue);
+    text-transform: uppercase;
+    color: $blue;
+  }
 }
 
 h5,
