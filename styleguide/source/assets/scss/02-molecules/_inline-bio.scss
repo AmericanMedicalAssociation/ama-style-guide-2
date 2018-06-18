@@ -17,11 +17,15 @@
   }
 
   &__text {
-    color: $gray-64;
     @include type($myriad-pro, $font-weight-semibold);
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+
+    color: $gray-64;
     display: block;
 
     @include breakpoint($bp-small) {
+      padding: 0;
       display: inline-block;
     }
 

@@ -15,6 +15,7 @@ Explain the technical implementation of the work done.
 
 ## To Test
 - [ ] Add detailed steps for reviewers to test this feature.
+- [ ] Did you test in IE 11?
 
 ## Visual Regressions
 

@@ -28,7 +28,13 @@
   text-align: center;
   background: #FFF;
   border-radius: 0;
-  //padding: 10px;
+
+  @include gutter($margin-left-full...);
+  @include gutter($margin-right-full...);
+
+  @include breakpoint($bp-small) {
+    margin: 20px 5px;
+  };
 
   .ui-icon {
     position: absolute;
@@ -40,7 +46,14 @@
 
   &.ui-state-active{
     background: $purple;
-    color: #FFF;
+    color: $white;
+
+    @include gutter($margin-left-full...);
+    @include gutter($margin-right-full...);
+
+    @include breakpoint($bp-small) {
+      margin: 20px 5px;
+    };
 
     .ui-icon{
       display: block;
@@ -57,5 +70,11 @@
     padding: 20px 0px;
 
     @include breakpoint($bp-small);
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+
+    @include breakpoint($bp-small) {
+      padding: 20px 5px;
+    };
   }
 }

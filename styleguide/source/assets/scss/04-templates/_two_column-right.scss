@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 6fr 2.5fr;
   grid-template-rows: auto auto auto;
   min-height: 30em;
+  padding: 0;
 
   &__content-top {
     grid-column: 1 / 5;
@@ -20,8 +21,10 @@
   }
 
   &__page-content {
-    position: relative;
     @include gutter($padding-top-full...);
+    @include gutter($padding-right-full...);
+    @include gutter($padding-left-full...);
+    position: relative;
     grid-column: 1 / 5;
     grid-row: 2;
 
@@ -31,13 +34,15 @@
     }
 
     @include breakpoint($bp-med min-width) {
+      padding: 0;
       grid-column: 2;
       grid-row: 2 / 4;
     }
   }
+
   &__page-content__flush-left {
+    @include gutter($padding-right-full...);
     position: relative;
-    @include gutter($padding-top-full...);
     grid-column: 1 / 5;
     grid-row: 2;
 
