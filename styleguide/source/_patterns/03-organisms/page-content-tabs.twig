@@ -15,7 +15,7 @@
       {% include '@atoms/paragraph.twig' %}
 
       {% set articleStubAsInline = pageTabs[0].tabContent['articleStubAsInline'] %}
-      {% include '@molecules/article-stub-as-inline.twig' %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
 
       {% include '@atoms/paragraph.twig' %}
     </div>
@@ -27,7 +27,7 @@
       {% include '@molecules/agenda.twig' %}
 
       {% set articleStubAsInline = pageTabs[1].tabContent['articleStubAsInline'] %}
-      {% include '@molecules/article-stub-as-inline.twig' %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
 
       {% set agenda = pageTabs[1].tabContent['agenda2'] %}
       {% include '@molecules/agenda.twig' %}
@@ -41,7 +41,7 @@
 
 
       {% set articleStubAsInline = pageTabs[2].tabContent['articleStubAsInline'] %}
-      {% include '@molecules/article-stub-as-inline.twig' %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
     </div>
 
     <h3 class="ama__accordion-tab">{{ pageTabs[3].tabTitle }}</h3>
@@ -57,7 +57,7 @@
       {% include '@molecules/info-card/info-card.twig' %}
 
       {% set articleStubAsInline = pageTabs[3].tabContent['articleStubAsInline'] %}
-      {% include '@molecules/article-stub-as-inline.twig' %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
     </div>
   </div>
 </div>
