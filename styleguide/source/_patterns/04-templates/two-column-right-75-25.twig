@@ -1,0 +1,12 @@
+<div class="ama__layout--two-col-right--75-25 {{ class }}">
+  <div class="ama__layout--two-col-right--75-25__left">
+    {% block contentLeft %}
+      {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Left side content' } } %}
+    {% endblock %}
+  </div>
+  <div class="ama__layout--two-col-right--75-25__right">
+    {% block contentRight %}
+      {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Right side content' } } %}
+    {% endblock %}
+  </div>
+</div>
