@@ -21,4 +21,8 @@
 {% block contentRight %}
   {% set membership = subcategoryIndex.promotionalRealEstate.membership %}
   {% include '@molecules/membership/membership.twig' %}
+
+  {% set partnerPromo = subcategoryIndex.promotionalRealEstate.partnerPromo %}
+  {% include '@molecules/partner-promo.twig' %}
+
 {% endblock %}
