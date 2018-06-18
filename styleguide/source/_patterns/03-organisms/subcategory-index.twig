@@ -2,10 +2,14 @@
 
 {% extends '@templates/two-column-right-75-25.twig' %}
 
-{% block contentLeft %}
+
+{% block contentTop %}
   {% set searchField, displaySwitchMenu = subcategoryIndex.searchField, subcategoryIndex.displaySwitchMenu %}
   {% include '@atoms/forms/search-field-as-in-body.twig' %}
   {% include '@molecules/display-switch-menu.twig' %}
+{% endblock %}
+
+{% block contentLeft %}
   <div class="ama__subcategory-index__stubs">
     {% for stub in subcategoryIndex.articleStubs %}
       {% set subCatArticleStub = stub %}
@@ -15,5 +19,6 @@
 {% endblock %}
 
 {% block contentRight %}
-  Right side stuff
+  {% set membership = subcategoryIndex.promotionalRealEstate.membership %}
+  {% include '@molecules/membership/membership.twig' %}
 {% endblock %}
