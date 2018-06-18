@@ -1,7 +1,10 @@
 {% set layoutClass = 'container ama__subcategory-index ' %}
+{% set membership, partnerPromo, subscribePromo =
+  subcategoryIndex.promotionalRealEstate.membership,
+  subcategoryIndex.promotionalRealEstate.partnerPromo,
+  subcategoryIndex.promotionalRealEstate.subscribePromo %}
 
 {% extends '@templates/two-column-right-75-25.twig' %}
-
 
 {% block contentTop %}
   {% set searchField, displaySwitchMenu = subcategoryIndex.searchField, subcategoryIndex.displaySwitchMenu %}
@@ -11,24 +14,27 @@
 
 {% block contentLeft %}
   <div class="ama__subcategory-index__stubs">
-    {% for stub in subcategoryIndex.articleStubs %}
+    {% for stub in subcategoryIndex.articleStubs|slice(0, 3) %}
       {% set subCatArticleStub = stub %}
       {% include '@molecules/subcategory-page-article-stub.twig' %}
     {% endfor %}
-    <div class="ama__subcategory-index__stubs__load-more">
-      {% include '@atoms/button/button.twig' with { button : subcategoryIndex.loadMoreButton }%}
-    </div>
+
+    {% include '@molecules/subscribe-promo.twig' %}
+
+    {% for stub in subcategoryIndex.articleStubs|slice(4, 7) %}
+      {% set subCatArticleStub = stub %}
+      {% include '@molecules/subcategory-page-article-stub.twig' %}
+    {% endfor %}
+  </div>
+
+  <div class="ama__subcategory-index__stubs__load-more">
+    {% include '@atoms/button/button.twig' with { button : subcategoryIndex.loadMoreButton }%}
   </div>
 {% endblock %}
 
 {% block contentRight %}
-  {% set membership = subcategoryIndex.promotionalRealEstate.membership %}
   {% include '@molecules/membership/membership.twig' %}
-
-  {% set partnerPromo = subcategoryIndex.promotionalRealEstate.partnerPromo %}
   {% include '@molecules/partner-promo.twig' %}
-
-  {% set subscribePromo = subcategoryIndex.promotionalRealEstate.subscribePromo %}
   {% include '@molecules/subscribe-promo.twig' %}
 
 {% endblock %}

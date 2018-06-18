@@ -1,11 +1,18 @@
 .ama__layout--two-col-right--75-25 {
+  @include breakpoint($bp-small max-width) {
+    grid-template-columns: 100%;
+  }
+
   display: grid;
   grid-template-columns: 75% 25%;
-  grid-column-gap: 24px;
+  grid-column-gap: $gutter;
   grid-template-rows: auto auto;
-  grid-row-gap: 24px;
+  grid-row-gap: $gutter;
 
   &__top {
+    @include breakpoint($bp-small max-width) {
+      padding: 0 ($gutter / 2);
+    }
     grid-row: 1 / 1;
     grid-column: 1 / 2;
   }
@@ -16,6 +23,10 @@
   }
 
   &__right {
+    @include breakpoint($bp-small max-width) {
+      display: none;
+    }
+
     grid-column: 2 / 2;
     grid-row: 2 / 2;
   }

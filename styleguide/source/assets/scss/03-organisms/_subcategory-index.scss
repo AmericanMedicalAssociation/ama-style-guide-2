@@ -6,21 +6,49 @@
     }
   }
 
+  &.container {
+    @include breakpoint($bp-small max-width) {
+      padding: 0;
+    }
+  }
+
   .ama__display-switch-menu {
     margin-top: $gutter;
   }
 
   .ama__subcategory-page-article-stub {
+    @include breakpoint($bp-small max-width) {
+      padding: $gutter / 2;
+    }
+
     padding: $gutter 0;
     border-bottom: solid 2px $gray-7;
+
+    &*:not(.ama__subcategory-page-article-stub) + .ama__subcategory-page-article-stub {
+      border-bottom: 0;
+    }
+  }
+
+  .ama__subcategory-index__stubs > *:not(.ama__subcategory-page-article-stub) {
+    @include breakpoint($bp-small max-width) {
+      display: block;
+      margin: $gutter ($gutter / 2);
+    }
+
+    display: none;
   }
 
   .ama__subcategory-index__stubs__load-more {
     text-align: center;
-    padding: $gutter 0;
+    padding: $gutter ($gutter / 2);
 
     button {
-      width: 33%;
+      width: 100%;
+      font-weight: 400;
+
+      @include breakpoint($bp-small min-width) {
+        width: 33%;
+      }
     }
   }
 }
