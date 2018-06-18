@@ -1,15 +1,26 @@
-.ama__subcategory-index__stubs .ama__subcategory-page-article-stub {
-  padding-bottom: $gutter;
-  padding-bottom: $gutter;
-  border-bottom: solid 2px $gray-7;
-}
+.ama__subcategory-index {
 
+  .ama__layout--two-col-right--75-25__right {
+    > * + * {
+      margin-top: $gutter * 2;
+    }
+  }
 
-.ama__subcategory-index__stubs__load-more {
-  text-align: center;
-  padding: $gutter 0;
+  .ama__display-switch-menu {
+    margin-top: $gutter;
+  }
 
-  button {
-    width: 33%;
+  .ama__subcategory-page-article-stub {
+    padding: $gutter 0;
+    border-bottom: solid 2px $gray-7;
+  }
+
+  .ama__subcategory-index__stubs__load-more {
+    text-align: center;
+    padding: $gutter 0;
+
+    button {
+      width: 33%;
+    }
   }
 }
