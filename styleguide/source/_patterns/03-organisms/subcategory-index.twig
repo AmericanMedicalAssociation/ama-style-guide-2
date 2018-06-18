@@ -15,6 +15,9 @@
       {% set subCatArticleStub = stub %}
       {% include '@molecules/subcategory-page-article-stub.twig' %}
     {% endfor %}
+    <div class="ama__subcategory-index__stubs__load-more">
+      {% include '@atoms/button/button.twig' with { button : subcategoryIndex.loadMoreButton }%}
+    </div>
   </div>
 {% endblock %}
 
