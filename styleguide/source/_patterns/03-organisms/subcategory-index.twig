@@ -3,7 +3,8 @@
 {% extends '@templates/two-column-right-75-25.twig' %}
 
 {% block contentLeft %}
-  Left side stuff
+  {% set searchField = subcategoryIndex.searchField %}
+  {% include '@atoms/forms/search-field-as-in-body.twig' %}
 {% endblock %}
 
 {% block contentRight %}
