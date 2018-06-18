@@ -1,10 +1,17 @@
-{% set class = 'container' %}
+{% set layoutClass = 'container' %}
 
 {% extends '@templates/two-column-right-75-25.twig' %}
 
 {% block contentLeft %}
-  {% set searchField = subcategoryIndex.searchField %}
+  {% set searchField, displaySwitchMenu = subcategoryIndex.searchField, subcategoryIndex.displaySwitchMenu %}
   {% include '@atoms/forms/search-field-as-in-body.twig' %}
+  {% include '@molecules/display-switch-menu.twig' %}
+  <div class="ama__subcategory-index__stubs">
+    {% for stub in subcategoryIndex.articleStubs %}
+      {% set subCatArticleStub = stub %}
+      {% include '@molecules/subcategory-page-article-stub.twig' %}
+    {% endfor %}
+  </div>
 {% endblock %}
 
 {% block contentRight %}
