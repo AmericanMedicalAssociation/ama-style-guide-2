@@ -1,4 +1,4 @@
-{% set link = articleStub.title %}
+{% set link = articleStub.title %}subcategory
 {% set classes = [
 articleStub.related ? "ama__article-stub--related",
 articleStub.small ? "ama__article-stub--small",
@@ -25,8 +25,13 @@ articleStub.video ? "ama__article-stub--video"
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
 
+  {% if articleStub.categoryPage.paragraph %}
+    {% include "@atoms/paragraph.twig" %}
+  {% endif %}
+
   {% if link %}
     {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+    {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
     <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
       {% include "@atoms/link/link.twig" %}
     </{{ headingLevel }}>
