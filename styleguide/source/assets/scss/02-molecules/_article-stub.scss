@@ -1,6 +1,4 @@
 .ama__article-stub {
-
-
   a {
     text-decoration: none;
 
@@ -126,7 +124,6 @@
     @include gutter($margin-bottom-full...);
     border: solid #eee;
     border-width: 1px 0;
-
   }
 
   &--inline__label {
@@ -147,6 +144,16 @@
     @include gutter($padding-right-full...);
     @include gutter($margin-bottom-full...);
     border-bottom: 1px solid $gray-50;
+
+    @include breakpoint($bp-med) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--category .ama__h5 {
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
 
     @include breakpoint($bp-med) {
       padding-left: 0;

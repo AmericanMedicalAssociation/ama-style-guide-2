@@ -58,6 +58,13 @@ h5,
   @include type($myriad-pro, $font-weight-semibold);
   @include font-size($h5-font-sizes);
   @extend %headerLinks;
+
+  &--purple {
+    @include type($myriad-pro, $font-weight-bold);
+    @include gutter($margin-bottom-half...);
+    color: $purple;
+    text-transform: uppercase;
+  }
 }
 
 p {
