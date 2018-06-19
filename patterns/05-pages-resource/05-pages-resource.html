@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1528213982" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1528213982" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1529450306" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1529450306" media="all" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
@@ -25,8 +25,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1528213982" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1528213982" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1529450306" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1529450306" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -60,15 +60,15 @@
           <p class="ama__subtitle">Example text for a subtitle, lorem ipsum sit dolor</p>
 
     
-          <div class="ama__masthead__content__container">
-        <div class="ama__masthead__content__date">
+    <div class="ama__masthead__content__container">
+              <div class="ama__masthead__content__date">
           <h3 class="ama__h3 date-block">
   <span class="date-block__month">April</span>
   <span class="date-block__day">17,</span>
   <span class="date-block__year">2018</span>
 </h3>
         </div>
-        <div class="ama__masthead__content__share">
+                    <div class="ama__masthead__content__share">
           <ul class="ama__social-share">
           <li>
       <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook-gray"></a>
@@ -87,8 +87,8 @@
     </li>
   </ul>
         </div>
-      </div>
-      </div>
+          </div>
+  </div>
 </header>
 <div class="ama____page--resources__page-content">
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
@@ -125,11 +125,11 @@
   <section class="ama__layout--split__right">
       <div class="ama__resource-tabs">
   <ul class="ama__resource-tabs__nav">
-    <li data-resource="resources">
+    <li data-resource="resources" class="js--tab-start--mobile">
       <div class="ama__resource-tabs__nav__icon"></div>
       <div class="ama__resource-tabs__nav__label">Resources</div>
     </li>
-    <li data-resource="media" class="--is-active">
+    <li data-resource="media" class="js--tab-start--tablet --is-active">
       <div class="ama__resource-tabs__nav__icon"></div>
       <div class="ama__resource-tabs__nav__label">Media</div>
     </li>
@@ -154,6 +154,20 @@
       <div class="ama__resource-tabs__nav__label">Contacts</div>
     </li>
   </ul>
+  <script>
+    var viewportWidth = window.innerWidth;
+    if(viewportWidth < 600){
+        var amaTabMedia = document.getElementsByClassName('js--tab-start--tablet');
+        var amaTabMain = document.getElementsByClassName('js--tab-start--mobile');
+
+        for (var i=0; i<amaTabMain.length; i++) {
+            amaTabMain[i].classList.add('--is-active');
+        }
+        for (var i=0; i<amaTabMedia.length; i++){
+            amaTabMedia[i].classList.remove('--is-active');
+        }
+    }
+  </script>
   <div class="ama__resource-tabs__content">
     <section id="resources" class="--is-active">
       <header class="ama__masthead">
@@ -234,7 +248,7 @@
         </a>
                 <div class="ama__resource-tab__content__video">
           <div class="ama__video__container">
-  <iframe src="https://www.youtube.com/embed/WlitmHHpXhw" frameborder="0" class="iframe-video"></iframe>
+  <iframe src="https://player.vimeo.com/video/60673761" frameborder="0" class="iframe-video"></iframe>
 </div>                      <p class="ama__type--small">
               This is example subtext for a media type.
             </p>
@@ -530,10 +544,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1528213982">
+<script id="pl-js-polyfill-insert-1529450306">
   (function() {
     if (self != top) {
-      var cb = '1528213982';
+      var cb = '1529450306';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -543,10 +557,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1528213982">
+<script id="pl-js-insert-1529450306">
   (function() {
     if (self != top) {
-      var cb = '1528213982';
+      var cb = '1529450306';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
