@@ -15,7 +15,6 @@
         var subcategoryWrapper = $('.ama__subcategory-exploration__subcategory-wrapper').outerWidth();
         var subcategoryTitle = $('.ama__subcategory-exploration__title').outerWidth();
         $(".ama__subcategory-exploration__subcategory").hide();
-        console.log(subcategoryTitle < 550)
 
         if (subcategoryWrapper > 0 && subcategoryWrapper < 290 && subcategoryTitle > 200 ) {
           $(".ama__subcategory-exploration__subcategory").slice(0, 2).css('display', 'block');
