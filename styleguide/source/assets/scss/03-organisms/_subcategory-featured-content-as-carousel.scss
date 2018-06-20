@@ -1,0 +1,33 @@
+.ama__subcategory-featured-content-as-carousel{
+
+  &__container {
+    @include gutter($margin-top-full...);
+    display: flex;
+    flex-direction: row;
+    margin-left: -20px;
+    flex-wrap: wrap;
+
+    @include breakpoint($bp-med min-width) {
+      flex-wrap: nowrap;
+      margin-left: -28px;
+    }
+  }
+
+  .ama__article-stub {
+    @include gutter($margin-left-full...);
+    @include gutter($margin-bottom-full...);
+    width: 100%;
+
+    @include breakpoint($bp-small min-width) {
+      width: 47%;
+    }
+
+    @include breakpoint($bp-med min-width) {
+      width: 25%;
+    }
+  }
+
+  .ama__article-stub__title {
+    padding: 0;
+  }
+}
