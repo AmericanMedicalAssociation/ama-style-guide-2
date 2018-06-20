@@ -1,0 +1,9 @@
+<div class="ama__category-page-article-stub">
+  {% set contentGroupingHeader = categoryArticleStub.contentGroupingHeader %}
+  {% include "@atoms/content-grouping-header.twig" %}
+  <div class="ama__category-page-article-stub__container">
+    {% for articleStub in categoryArticleStub.articleStubs %}
+      {% include "@molecules/article-stub/article-stub.twig" %}
+    {% endfor %}
+  </div>
+</div>
