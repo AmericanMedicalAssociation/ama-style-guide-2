@@ -12,10 +12,23 @@
     attach: function(context, settings) {
 
       function checkSize(){
-        if ($(".ama__subcategory-exploration__subcategory-wrapper").outerWidth() < 800 ) {
-          $('.ama__subcategory-exploration__subcategory:lt(3)').css('display', 'block');
+        var subcategoryWrapper = $('.ama__subcategory-exploration__subcategory-wrapper').outerWidth();
+        var subcategoryTitle = $('.ama__subcategory-exploration__title').outerWidth();
+        $(".ama__subcategory-exploration__subcategory").hide();
+        console.log(subcategoryTitle < 550)
+
+        if (subcategoryWrapper > 0 && subcategoryWrapper < 290 && subcategoryTitle > 200 ) {
+          $(".ama__subcategory-exploration__subcategory").slice(0, 2).css('display', 'block');
+        } else if (subcategoryWrapper > 290 && subcategoryWrapper < 500 && subcategoryTitle > 200 ) {
+          $(".ama__subcategory-exploration__subcategory").slice(0, 3).css('display', 'block');
+        } else if ((subcategoryWrapper > 300 && subcategoryWrapper < 450) && subcategoryTitle < 200) {
+          $(".ama__subcategory-exploration__subcategory").slice(0, 2).css('display', 'block');
+        } else if ((subcategoryWrapper > 450 && subcategoryWrapper < 715) && subcategoryTitle < 200) {
+          $(".ama__subcategory-exploration__subcategory").slice(0, 3).css('display', 'block');
+        } else if ((subcategoryWrapper > 715 && subcategoryWrapper < 950) && subcategoryTitle < 200) {
+          $(".ama__subcategory-exploration__subcategory").slice(0, 4).css('display', 'block');
         } else {
-          $('.ama__subcategory-exploration__subcategory:lt(5)').css('display', 'block');
+          $(".ama__subcategory-exploration__subcategory").slice(0, 5).css('display', 'block');
         }
       }
 
