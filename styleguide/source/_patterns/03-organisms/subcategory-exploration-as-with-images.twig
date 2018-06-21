@@ -2,11 +2,9 @@
   <div class="ama__subcategory-exploration__container">
     {% set heading = subcategoryExploration.heading %}
     {% include "@atoms/heading/heading.twig" %}
-    <div class="ama__subcategory-exploration__subcategory-wrapper">
-      {% for subcategory in subcategoryExploration.subcategory %}
-        {% include "@molecules/visual-subcategory.twig" %}
-      {% endfor %}
-    </div>
+    {% for subcategory in subcategoryExploration.subcategory %}
+      {% include "@molecules/visual-subcategory.twig" %}
+    {% endfor %}
   </div>
   <div class="ama__subcategory-exploration__view-all">
     {% set link = subcategoryExploration.viewAll %}
