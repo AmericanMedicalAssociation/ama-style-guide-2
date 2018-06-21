@@ -3237,6 +3237,20 @@ figcaption {
       padding-left: 0;
       padding-right: 0; } }
 
+.ama__article-stub--category .ama__h5 {
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media (min-width: 56.25em) {
+    .ama__article-stub--category .ama__h5 {
+      padding-left: 28px; } }
+  @media (min-width: 56.25em) {
+    .ama__article-stub--category .ama__h5 {
+      padding-right: 28px; } }
+  @media (min-width: 56.25em) {
+    .ama__article-stub--category .ama__h5 {
+      padding-left: 0;
+      padding-right: 0; } }
+
 .ama__category-hero a {
   text-decoration: none; }
   .ama__category-hero a:hover {
@@ -4492,6 +4506,78 @@ a.ama__promo--border:hover {
   .ama__social-share li ~ li {
     margin-left: 14px; }
 
+.ama__subcategory-exploration {
+  padding: 20px;
+  background-color: #EDEDED;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 1180px; }
+  .ama__subcategory-exploration breakpoint($bp-med) {
+    padding: 28px; }
+  .ama__subcategory-exploration__container {
+    width: 100%; }
+    @media (min-width: 37.5em) {
+      .ama__subcategory-exploration__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; } }
+  .ama__subcategory-exploration__subcategory-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+  .ama__subcategory-exploration__title {
+    margin-top: 20px;
+    margin-right: 20px;
+    height: auto; }
+    @media (min-width: 56.25em) {
+      .ama__subcategory-exploration__title {
+        margin-top: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__subcategory-exploration__title {
+        margin-right: 28px; } }
+    @media (min-width: 37.5em) {
+      .ama__subcategory-exploration__title {
+        max-width: 150px; } }
+  .ama__subcategory-exploration__view-all, .ama__subcategory-exploration__view-less {
+    clear: both;
+    text-align: right;
+    width: 100%; }
+    .ama__subcategory-exploration__view-all .ama__link, .ama__subcategory-exploration__view-less .ama__link {
+      display: block;
+      color: #027DBC;
+      text-decoration: none;
+      line-height: 1em;
+      font-weight: 800; }
+  .ama__subcategory-exploration__view-less {
+    display: none; }
+
 .ama__subcategory-page-article-stub {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4636,6 +4722,36 @@ a.ama__promo--border:hover {
   @media (min-width: 56.25em) {
     .ama__tools-learn-more a {
       margin-left: 28px; } }
+
+.ama__subcategory-exploration__subcategory {
+  margin-bottom: 20px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  width: 95px;
+  text-decoration: none; }
+  @media (min-width: 56.25em) {
+    .ama__subcategory-exploration__subcategory {
+      margin-bottom: 28px; } }
+  .ama__subcategory-exploration__subcategory:nth-child(3), .ama__subcategory-exploration__subcategory:nth-child(4), .ama__subcategory-exploration__subcategory:nth-child(5) {
+    display: none; }
+  .ama__subcategory-exploration__subcategory .ama__h4--purple {
+    line-height: inherit; }
+  @media (min-width: 37.5em) {
+    .ama__subcategory-exploration__subcategory {
+      width: 150px; } }
+  @media (min-width: 56.25em) {
+    .ama__subcategory-exploration__subcategory {
+      width: 180px; } }
 
 .ama__hub-row {
   display: -webkit-box;

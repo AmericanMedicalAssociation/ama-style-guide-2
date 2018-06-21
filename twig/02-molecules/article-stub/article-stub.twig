@@ -1,15 +1,16 @@
 {% set link = articleStub.title %}
 {% set classes = [
-articleStub.related ? "ama__article-stub--related",
-articleStub.small ? "ama__article-stub--small",
-articleStub.image ? "ama__article-stub--image",
-articleStub.video ? "ama__article-stub--video"
+  articleStub.related ? "ama__article-stub--related",
+  articleStub.small ? "ama__article-stub--small",
+  articleStub.image ? "ama__article-stub--image",
+  articleStub.video ? "ama__article-stub--video",
+  articleStub.categoryPage ? "ama__article-stub--category"
 ] %}
 
 {% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
 
 {% macro mediaType(articleStub) %}
-  {% if articleStub.video or articleStub.image %}
+  {% if articleStub.video.src or articleStub.image.src %}
     {% if articleStub.video %}
       {% set video = articleStub.video %}
       {% include "@atoms/video.twig" %}
@@ -25,8 +26,14 @@ articleStub.video ? "ama__article-stub--video"
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
 
+  {% if articleStub.categoryPage.heading %}
+    {% set heading = articleStub.categoryPage.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %}
+
   {% if link %}
     {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+    {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
     <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
       {% include "@atoms/link/link.twig" %}
     </{{ headingLevel }}>
@@ -36,11 +43,11 @@ articleStub.video ? "ama__article-stub--video"
   <div class="ama__article-stub__copy">
 
     {% if paragraph %}
+      {% set paragraph = articleStub.paragraph %}
       <div class="ama__article-stub__description">
         {% include "@atoms/paragraph.twig" %}
       </div>
     {% endif %}
-
 
     {% if metadata %}
       <div class="ama__article-stub__metadata">
