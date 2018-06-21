@@ -5,7 +5,7 @@
   </div>
   <div class="ama__partner-promo__text">
     {% include '@atoms/heading/heading.twig' with { heading : partnerPromo.heading } %}
-    {% incldue '@atoms/paragraph.twig' with { paragraph: partnerPromo.paragraph } %}
+    {% include '@atoms/paragraph.twig' with { paragraph: partnerPromo.paragraph } %}
     {% set button = partnerPromo.button %}
     {% include '@atoms/button/button.twig' %}
   </div>
