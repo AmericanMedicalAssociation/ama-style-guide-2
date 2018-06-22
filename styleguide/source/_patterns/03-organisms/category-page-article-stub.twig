@@ -1,5 +1,7 @@
 <div class="ama__category-page-article-stub">
-  {% set contentGroupingHeader = categoryArticleStub.contentGroupingHeader %}
+  {% if categoryArticleStub.contentGroupingHeader %}
+    {% set contentGroupingHeader = categoryArticleStub.contentGroupingHeader %}
+  {% endif %}
   {% include "@atoms/content-grouping-header.twig" %}
   <div class="ama__category-page-article-stub__container">
     {% for articleStub in categoryArticleStub.articleStubs %}
