@@ -1,4 +1,4 @@
-{% set layoutClass = 'container ama__subcategory-index ' %}
+{% set layoutClass = 'container ama__category-index ' %}
 {% set membership, partnerPromo, subscribePromo =
   categoryIndex.promotionalRealEstate.membership,
   categoryIndex.promotionalRealEstate.partnerPromo,
@@ -7,17 +7,14 @@
 {% extends '@templates/two-column-right-75-25.twig' %}
 
 {% block contentTop %}
-  {% set searchField, displaySwitchMenu = categoryIndex.searchField, categoryIndex.displaySwitchMenu %}
-  {% include '@atoms/forms/search-field-as-in-body.twig' %}
-  {% include '@molecules/display-switch-menu.twig' %}
 {% endblock %}
 
 {% block contentLeft %}
   {% include "@atoms/content-grouping-header.twig" with { contentGroupingHeader : categoryIndex.contentGroupingHeader } %}
   <div class="ama__category-index__stubs">
     {% for stub in categoryIndex.articleStubs %}
-      {% set catArticleStub = stub %}
-      {% include '@molecules/article-stub/article-stub.twig' %}
+      {% set subCatArticleStub = stub %}
+      {% include '@molecules/subcategory-page-article-stub.twig' %}
     {% endfor %}
   </div>
 
@@ -27,7 +24,6 @@
 {% endblock %}
 
 {% block contentRight %}
-  {% include '@molecules/membership/membership.twig' %}
   {% include '@molecules/partner-promo.twig' %}
   {% include '@molecules/subscribe-promo.twig' %}
 
