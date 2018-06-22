@@ -14,14 +14,7 @@
 
 {% block contentLeft %}
   <div class="ama__subcategory-index__stubs">
-    {% for stub in subcategoryIndex.articleStubs|slice(0, 3) %}
-      {% set subCatArticleStub = stub %}
-      {% include '@molecules/subcategory-page-article-stub.twig' %}
-    {% endfor %}
-
-    {% include '@molecules/subscribe-promo.twig' %}
-
-    {% for stub in subcategoryIndex.articleStubs|slice(4, 7) %}
+    {% for stub in subcategoryIndex.articleStubs %}
       {% set subCatArticleStub = stub %}
       {% include '@molecules/subcategory-page-article-stub.twig' %}
     {% endfor %}
