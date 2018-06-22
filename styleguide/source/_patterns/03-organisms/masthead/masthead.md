@@ -13,6 +13,11 @@ Displays the title (and subtitle), the (sub)category, date of publication, and s
 
 ### Variants
 - [Masthead with Subtitle](?p=organisms-masthead-with-subtitle)
+- [Masthead as Indented](?p=organisms-masthead-as-indented)
+- [Masthead as Simplified](?p=organisms-masthead-as-simplified)
+- [Masthead with subtitle](?p=organisms-masthead-with-subtitle)
+- [Masthead with Subtitle as Indented](?p=organisms-masthead-with-subtitle-as-indented)
+- [Masthead as Title Only](?p=organisms-masthead-as-title-only)
 
 ### Variables
 ~~~
