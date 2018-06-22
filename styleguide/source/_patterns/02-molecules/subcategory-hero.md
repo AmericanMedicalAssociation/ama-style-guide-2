@@ -8,11 +8,13 @@ Links the user to another piece of content.
 Elements:
 – Image
 - Subcategory name
-– Article Title
+- Article Title
 - Publish date
 - Read time
 
 UI: A user can further explore content by clicking on Article Title or Article Image
+
+[EWL-5311](https://issues.ama-assn.org/browse/EWL-5311)
 
 ### User Story
 As a user I can preview a piece of content and then click on it to learn more.
