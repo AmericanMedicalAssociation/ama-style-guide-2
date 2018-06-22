@@ -1,7 +1,7 @@
 <div class="ama__subscribe-promo">
-  <p class="ama__subscribe-promo__subject-title">{{ subscribePromo.subjectTitle }}</p>
-  <p class="ama__subscribe-promo__heading">{{ subscribePromo.heading }}</p>
-  <p class="ama__subscribe-promo__paragraph">{{ subscribePromo.paragraph }}</p>
+  {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.subjectTitle } %}
+  {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.heading } %}
+  {% include '@atoms/paragraph.twig' with { paragraph : subscribePromo.paragraph } %}
   {% set email = subscribePromo.email %}
   {% include '@atoms/forms/email-field.twig' %}
   {% set button = subscribePromo.button %}

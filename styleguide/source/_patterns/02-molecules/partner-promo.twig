@@ -1,11 +1,13 @@
 {% set image = partnerPromo.image %}
 <div class="ama__partner-promo">
-  <div class="ama__partner-promo__image">
-    {% include '@atoms/image/image.twig' %}
-  </div>
+  {% if image is not empty %}
+    <div class="ama__partner-promo__image">
+      {% include '@atoms/image/image.twig' %}
+    </div>
+  {% endif %}
   <div class="ama__partner-promo__text">
-    <h2 class="ama__partner-promo__heading">{{ partnerPromo.heading }}</h2>
-    <p class="ama__partner-promo__paragraph">{{ partnerPromo.paragraph }}</p>
+    {% include '@atoms/heading/heading.twig' with { heading : partnerPromo.heading } %}
+    {% include '@atoms/paragraph.twig' with { paragraph: partnerPromo.paragraph } %}
     {% set button = partnerPromo.button %}
     {% include '@atoms/button/button.twig' %}
   </div>
