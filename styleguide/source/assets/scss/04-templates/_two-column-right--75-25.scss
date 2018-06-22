@@ -1,10 +1,10 @@
 .ama__layout--two-col-right--75-25 {
   @include breakpoint($bp-small max-width) {
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
   }
 
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 3fr 1fr;
   grid-column-gap: $gutter;
   grid-template-rows: auto auto;
   grid-row-gap: $gutter;
