@@ -1,9 +1,5 @@
+{% set categoryArticleStub = subcategoryExploration %}
+
 <div class="ama__subcategory-featured-content-as-carousel">
-  {% set contentGroupingHeader = categoryArticleStub.contentGroupingHeader %}
-  {% include "@atoms/content-grouping-header.twig" %}
-  <div class="ama__category-page-article-stub__container">
-    {% for articleStub in categoryArticleStub.articleStubs %}
-      {% include "@molecules/article-stub/article-stub.twig" %}
-    {% endfor %}
-  </div>
+  {% include "@organisms/category-page-article-stub.twig" %}
 </div>
