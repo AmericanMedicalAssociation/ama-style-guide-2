@@ -1,0 +1,34 @@
+{% set layoutClass = 'container ama__subcategory-index ' %}
+{% set membership, partnerPromo, subscribePromo =
+  categoryIndex.promotionalRealEstate.membership,
+  categoryIndex.promotionalRealEstate.partnerPromo,
+  categoryIndex.promotionalRealEstate.subscribePromo %}
+
+{% extends '@templates/two-column-right-75-25.twig' %}
+
+{% block contentTop %}
+  {% set searchField, displaySwitchMenu = categoryIndex.searchField, categoryIndex.displaySwitchMenu %}
+  {% include '@atoms/forms/search-field-as-in-body.twig' %}
+  {% include '@molecules/display-switch-menu.twig' %}
+{% endblock %}
+
+{% block contentLeft %}
+  {% include "@atoms/content-grouping-header.twig" with { contentGroupingHeader : categoryIndex.contentGroupingHeader } %}
+  <div class="ama__category-index__stubs">
+    {% for stub in categoryIndex.articleStubs %}
+      {% set catArticleStub = stub %}
+      {% include '@molecules/article-stub/article-stub.twig' %}
+    {% endfor %}
+  </div>
+
+  <div class="ama__category-index__stubs__load-more">
+    {% include '@atoms/button/button.twig' with { button : categoryIndex.loadMoreButton }%}
+  </div>
+{% endblock %}
+
+{% block contentRight %}
+  {% include '@molecules/membership/membership.twig' %}
+  {% include '@molecules/partner-promo.twig' %}
+  {% include '@molecules/subscribe-promo.twig' %}
+
+{% endblock %}
