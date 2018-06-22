@@ -1,0 +1,17 @@
+<div class="ama__subcategory-exploration">
+  <div class="ama__subcategory-exploration__container">
+    {% set heading = subcategoryExploration.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+    {% for subcategory in subcategoryExploration.subcategory %}
+      {% include "@molecules/visual-subcategory.twig" %}
+    {% endfor %}
+  </div>
+  <div class="ama__subcategory-exploration__view-all">
+    {% set link = subcategoryExploration.viewAll %}
+    {% include "@atoms/link/link.twig" %}
+  </div>
+  <div class="ama__subcategory-exploration__view-less">
+    {% set link = subcategoryExploration.viewLess %}
+    {% include "@atoms/link/link.twig" %}
+  </div>
+</div>
