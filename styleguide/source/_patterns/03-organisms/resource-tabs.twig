@@ -1,49 +1,37 @@
-<div class="ama__resource-tabs">
+<div class="ama__tabs ama__resource-tabs">
   <ul class="ama__resource-tabs__nav">
-    <li data-resource="resources" class="js--tab-start--mobile">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Resources</div>
-    </li>
-    <li data-resource="media" class="js--tab-start--tablet --is-active">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Media</div>
-    </li>
-    <li data-resource="downloads">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Downloads</div>
-    </li>
-    <li data-resource="related-links">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Related Links</div>
-    </li>
-    <li data-resource="schedules">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Schedules</div>
-    </li>
-    <li data-resource="tables">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Tables</div>
-    </li>
-    <li data-resource="contacts">
-      <div class="ama__resource-tabs__nav__icon"></div>
-      <div class="ama__resource-tabs__nav__label">Contacts</div>
-    </li>
+    {% for tab in tabs %}
+      {% if tab.classes %}
+        {% set classes = 'class="'~tab.classes~'"' %}
+      {% else %}
+        {% set classes = null %}
+      {% endif %}
+      <li>
+        <a href="#{{ tab.tabId }}">
+          <div class="ama__resource-tabs__nav__icon"></div>
+          <div class="ama__resource-tabs__nav__label" {{ classes }}>{{ tab.tabTitle }}</div>
+        </a>
+      </li>
+    {% endfor %}
   </ul>
   <script>
-    var viewportWidth = window.innerWidth;
-    if(viewportWidth < 600){
-        var amaTabMedia = document.getElementsByClassName('js--tab-start--tablet');
-        var amaTabMain = document.getElementsByClassName('js--tab-start--mobile');
+      var viewportWidth = window.innerWidth;
+      if (viewportWidth < 600) {
+          var amaTabMedia = document.getElementsByClassName('js--tab-start--tablet');
+          var amaTabMain = document.getElementsByClassName('js--tab-start--mobile');
 
-        for (var i=0; i<amaTabMain.length; i++) {
-            amaTabMain[i].classList.add('--is-active');
-        }
-        for (var i=0; i<amaTabMedia.length; i++){
-            amaTabMedia[i].classList.remove('--is-active');
-        }
-    }
+          for (var i = 0; i < amaTabMain.length; i++) {
+              amaTabMain[i].classList.add('--is-active');
+          }
+          for (var i = 0; i < amaTabMedia.length; i++) {
+              amaTabMedia[i].classList.remove('--is-active');
+          }
+      }
   </script>
   <div class="ama__resource-tabs__content">
+    {% for tab in tabs %}
+
+    {% endfor %}
     <section id="resources" class="--is-active">
       <header class="ama__masthead">
         <div class="ama__masthead__sidebar" role="complementary"></div>
@@ -85,16 +73,23 @@
         </div>
       </header>
       <div class="ama__page--resources__page-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
-          <a href="#" class="ama__page--resource__resource-link" data-resource="downloads-1">(Download 1)</a> eius hic laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus, eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a
+              href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
+          <a href="#" class="ama__page--resource__resource-link" data-resource="downloads-1">(Download 1)</a> eius hic
+          laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus,
+          eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
 
         <a href="#" data-resource="media-3">
           <div class="ama__resource-link--inline">
             <h4 class="ama__resource-link--inline__label&quot;">Example Label Text for an Inline Resource Link</h4>
-            <h3 class="ama__resource-link--inline__text&quot;">Example text for the article link, lorem ipsum dolor sit amet</h3>
+            <h3 class="ama__resource-link--inline__text&quot;">Example text for the article link, lorem ipsum dolor sit
+              amet</h3>
           </div>
         </a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur cupiditate, ea eius, facilis fuga laudantium modi molestiae placeat similique soluta tempora vel? Aliquid cupiditate delectus distinctio, doloribus enim eveniet illum, laudantium obcaecati pariatur perspiciatis quaerat quod similique velit. Eos libero provident quod sit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur cupiditate, ea eius,
+          facilis fuga laudantium modi molestiae placeat similique soluta tempora vel? Aliquid cupiditate delectus
+          distinctio, doloribus enim eveniet illum, laudantium obcaecati pariatur perspiciatis quaerat quod similique
+          velit. Eos libero provident quod sit.</p>
       </div>
       <ul class="ama__tags">
         <li>
@@ -112,14 +107,16 @@
     <section id="media" class="--is-active">
       <div data-anchor="media-1">
         <h3>Media 1</h3>
-          <a href="{{ tabContent.media.media1.link.href }}" title="{{ tabContent.media.media1.link.title }}" class="ama__link--icon">
-            {% include '@atoms/media/icons/svg/icon-audio.twig' %}
-            {{ tabContent.media.media1.link.text }}
-          </a>
+        <a href="{{ tabContent.media.media1.link.href }}" title="{{ tabContent.media.media1.link.title }}"
+           class="ama__link--icon">
+          {% include '@atoms/media/icons/svg/icon-audio.twig' %}
+          {{ tabContent.media.media1.link.text }}
+        </a>
       </div>
       <div data-anchor="media-2">
         <h3>Media 2</h3>
-        <a href="{{ tabContent.media.media2.link.href }}" title="{{ tabContent.media.media2.link.title }}" class="ama__link--icon">
+        <a href="{{ tabContent.media.media2.link.href }}" title="{{ tabContent.media.media2.link.title }}"
+           class="ama__link--icon">
           {% include '@atoms/media/icons/svg/icon-video.twig' %}
           {{ tabContent.media.media2.link.text }}
         </a>
@@ -137,7 +134,7 @@
       <div data-anchor="media-3">
         <h3>Media 3</h3>
         <div class="ama__resource-tab__content__image">
-          {% include '@atoms/image/image.twig' with { image : tabContent.media.media3.image }%}
+          {% include '@atoms/image/image.twig' with { image : tabContent.media.media3.image } %}
           {% if tabContent.media.media3.subtext %}
             <p class="ama__type--small">
               {{ tabContent.media.media3.subtext }}
@@ -147,7 +144,8 @@
       </div>
       <div data-anchor="media-4">
         <h3>Media 4</h3>
-        <a href="{{ tabContent.media.media4.link.href }}" title="{{ tabContent.media.media4.link.title }}" class="ama__link--icon">
+        <a href="{{ tabContent.media.media4.link.href }}" title="{{ tabContent.media.media4.link.title }}"
+           class="ama__link--icon">
           {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
           {{ tabContent.media.media4.link.text }}
         </a>
@@ -160,7 +158,7 @@
           {% if download.heading %}
             <h5>{{ download.heading }}</h5>
           {% endif %}
-          {% include '@molecules/tool/tool.twig' with { tool : download }%}
+          {% include '@molecules/tool/tool.twig' with { tool : download } %}
           {% if download.subtext %}
             <p class="ama__type--small">
               {{ download.subtext }}
@@ -179,7 +177,8 @@
           <ul>
             {% for link in group.links %}
               <li>
-                <a href="{{ link.href }}" title="{{ link.title }}" class="ama__resource-tabs__content__downloads__link ama__link--icon">
+                <a href="{{ link.href }}" title="{{ link.title }}"
+                   class="ama__resource-tabs__content__downloads__link ama__link--icon">
                   {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
                   {{ link.text }}
                   {% if link.cme %}{% include '@atoms/media/icons/svg/icon-cme.twig' %}{% endif %}
@@ -197,7 +196,7 @@
     <section id="schedules">
       {% for schedule in tabContent.schedules %}
         <div data-anchor="schedules-1">
-          {% set heading = {level: '3', text: 'Schedule 1'}  %}
+          {% set heading = {level: '3', text: 'Schedule 1'} %}
           {% include '@atoms/heading/heading.twig' %}
           <h5>{{ schedule.subheading }}</h5>
           {% set table = schedule.table %}
@@ -207,7 +206,7 @@
       {% include '@molecules/promo/promo.twig' with { promo : tabContent.schedules.promo } %}
     </section>
     <section id="tables">
-      {% set heading = {level: '3', text: 'Tables'}  %}
+      {% set heading = {level: '3', text: 'Tables'} %}
       {% include '@atoms/heading/heading.twig' %}
       {% for table in tabContent.tables %}
         {% include '@atoms/table.twig' %}
@@ -222,7 +221,8 @@
         <div class="ama__info-card ama__info-card--contact">
           <h3 class="ama__info-card__label">Contact:</h3>
           <div class="ama__info-card__wrap">
-            <img class="ama__info-card__image ama__image" alt="placeholder" src="https://via.placeholder.com/280x280/027DBC/ffffff" height="" width="">
+            <img class="ama__info-card__image ama__image" alt="placeholder"
+                 src="https://via.placeholder.com/280x280/027DBC/ffffff" height="" width="">
 
             <div class="ama__info-card__text">
               <p class=""> Robert J Mills</p>
