@@ -1,41 +1,35 @@
-$three-column: 3, 2, $gutter/2;
+$three-column: 3, 2, $gutter/2, $gutter*2;
 
-@mixin grid_column_layout($col-desktop, $col-tablet, $margins) {
-  &:before, &:after {
-    display: block;
-    content: '';
-    clear: both;
-  }
+@mixin grid_column_layout($col-desktop, $col-tablet, $col-gap, $row-gap) {
+  margin: auto $col-gap*-1 $row-gap*-1;
+  display: flex;
+  flex-wrap: wrap;
 
   $col-width-tablet: percentage((1/$col-tablet));
   $col-width-desktop: percentage((1/$col-desktop));
 
   & > * {
-    @if ($margins) {
-      margin: $margins;
-    }
+    margin: auto $col-gap $row-gap;
   }
 
   @include breakpoint($bp-small) {
-    display: flex;
-    flex-wrap: wrap;
     & > * {
-      flex: 1 1 calc(#{$col-width-tablet} - #{$margins*2});
+      flex: 1 1 calc(#{$col-width-tablet} - #{$col-gap*2});
       max-width: $col-width-tablet;
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         flex: 1 1 auto;
-        width: calc(#{$col-width-tablet} - #{$margins*2});
+        width: calc(#{$col-width-tablet} - #{$col-gap*2});
       }
     }
   }
 
   @include breakpoint($bp-med) {
     & > * {
-      flex: 1 1 calc(#{$col-width-desktop} - #{$margins*2});
+      flex: 1 1 calc(#{$col-width-desktop} - #{$col-gap*2});
       max-width: $col-width-desktop;
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         flex: 1 1 auto;
-        width: calc(#{$col-width-desktop} - #{$margins*2});
+        width: calc(#{$col-width-desktop} - #{$col-gap*2});
       }
     }
   }
