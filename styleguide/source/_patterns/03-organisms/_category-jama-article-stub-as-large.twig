@@ -1,0 +1,20 @@
+{% extends '@templates/split.twig' %}
+
+{% block header %}
+{% endblock %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block contentLeft %}
+  {% set jama = category.jamaAsContentBottom %}
+  {% include '@molecules/jama/jama.twig' %}
+{% endblock %}
+
+{% block contentRight %}
+  {% set articleStub = category.articleStubAsLarge %}
+  {% include '@molecules/article-stub/article-stub.twig' %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

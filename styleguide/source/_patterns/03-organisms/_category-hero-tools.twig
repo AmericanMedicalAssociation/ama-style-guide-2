@@ -1,0 +1,9 @@
+{% extends '@templates/two-column-right-75-25.twig' %}
+{% block contentLeft %}
+  {% set categoryHero = category.categoryHero %}
+  {% include '@molecules/category-hero.twig' %}
+{% endblock %}
+{% block contentRight %}
+  {% set tools = category.tools %}
+  {% include '@organisms/tools.twig' %}
+{% endblock %}

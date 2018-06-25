@@ -1,0 +1,45 @@
+<div class="ama__category container">
+  {#Then I should see the "Masthead as Title Only"#}
+  {% set masthead = category.masthead %}
+  {% include '@organisms/masthead/masthead.twig' %}
+
+  {#And I should see the "Subcategory Exploration"#}
+  {% set subcategoryExploration = category.subcategoryExploration %}
+  {% include '@organisms/subcategory-exploration.twig' %}
+
+  {#And I should see the "Category Page Hero"#}
+  {#And I should see the "Tools List"#}
+  {#And I should optionally see a promo in the "Promotional Real Estate" under the "Tools list"#}
+  {% include '@organisms/_category-hero-tools.twig' %}
+
+  {#And I should see the "JAMA as content bottom"#}
+  {#And I should see the "Article Stub as Large for Category Page"#}
+  {% include '@organisms/_category-jama-article-stub-as-large.twig' %}
+
+  {#And I should see the "Category Page Article Stub Four-Up"#}
+  {% set categoryArticleStub = category.categoryArticleStub %}
+  {% include '@organisms/category-page-article-stub.twig' %}
+
+  {#And I should see the "Subcategory Featured Content"#}
+  <div>Subcategory Featured Content</div>
+
+  {#And I should see the "Subcategory Featured Content as Carousel"#}
+  {% set subcategoryExploration = category.subcategoryFeaturedContentAsCarousel %}
+  {% include '@organisms/subcategory-featured-content-as-carousel.twig' %}
+
+  {#And I should see the "Category Page Article Stub Three-Up"#}
+  {#And I should optionally see a "JAMA Promo" in the Promotional Real Estate next to the "Category Page Article Stub Three-Up"#}
+  <div>Category Page Article Stub Three-Up and a JAMA as Three-Up</div>
+
+  {#And I should see the "Category Page Article Stub as Large Two-Up"#}
+  <div>Category Page Article Stub as Large Two-Up</div>
+
+  {#And I should see the "Category Page Index"#}
+  {% set categoryIndex = category.categoryIndex %}
+  {% include '@organisms/category-index.twig' %}
+
+  {#And I should see the "Subcategory Explorer as with Images"#}
+  {% set subcategoryExplorationWithImages = category.subcategoryExplorationWithImages %}
+  {% include '@organisms/subcategory-exploration-as-with-images.twig' %}
+
+</div>
