@@ -11,10 +11,12 @@
     {% include '@organisms/subcategory-exploration.twig' %}
   </div>
 
-  {#And I should see the "Category Page Hero"#}
-  {#And I should see the "Tools List"#}
-  {#And I should optionally see a promo in the "Promotional Real Estate" under the "Tools list"#}
-  {% include '@organisms/_category-hero-tools.twig' %}
+  <div class="container ama__category__row--no-mobile-padding">
+    {#And I should see the "Category Page Hero"#}
+    {#And I should see the "Tools List"#}
+    {#And I should optionally see a promo in the "Promotional Real Estate" under the "Tools list"#}
+    {% include '@organisms/_category-hero-tools.twig' %}
+  </div>
 
   {#And I should see the "JAMA as content bottom"#}
   {#And I should see the "Article Stub as Large for Category Page"#}

@@ -1,9 +1,12 @@
 .ama__category {
-  .ama__masthead {
+  &__row--no-mobile-padding {
     @include breakpoint($bp-small max-width) {
-      margin-bottom: $gutter / 4;
+      padding: 0;
     }
+  }
 
+  .ama__masthead {
+    margin-bottom: $gutter / 4;
     padding: 0;
   }
 
@@ -13,5 +16,9 @@
 
   .ama__tools {
     padding: 0;
+  }
+
+  .ama__membership {
+    margin: $gutter 0;
   }
 }
