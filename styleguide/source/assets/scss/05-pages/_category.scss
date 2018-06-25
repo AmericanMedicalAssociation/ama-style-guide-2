@@ -1,7 +1,24 @@
 .ama__category {
+
+  &__row {
+    padding: $gutter 0;
+    border-top: solid 2px $gray-50;
+  }
+
   &__row--no-mobile-padding {
     @include breakpoint($bp-small max-width) {
       padding: 0;
+    }
+  }
+
+  &__row--no-border {
+    border: 0;
+    padding: 0;
+  }
+
+  &__row--hidden-mobile {
+    @include breakpoint($bp-small max-width) {
+      display: none;
     }
   }
 
@@ -20,5 +37,9 @@
 
   .ama__membership {
     margin: $gutter 0;
+  }
+
+  .ama__layout--split__right .ama__article-stub--category {
+    padding: 0 ($gutter / 2);
   }
 }

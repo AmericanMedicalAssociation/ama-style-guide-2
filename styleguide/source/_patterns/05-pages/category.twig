@@ -1,17 +1,17 @@
 <div class="ama__category">
   {#Then I should see the "Masthead as Title Only"#}
-  <div class="container">
+  <div class="container ama__category__row ama__category__row--no-border">
     {% set masthead = category.masthead %}
     {% include '@organisms/masthead/masthead.twig' %}
   </div>
 
-  <div class="container">
+  <div class="container ama__category__row ama__category__row--no-border">
     {#And I should see the "Subcategory Exploration"#}
     {% set subcategoryExploration = category.subcategoryExploration %}
     {% include '@organisms/subcategory-exploration.twig' %}
   </div>
 
-  <div class="container ama__category__row--no-mobile-padding">
+  <div class="container ama__category__row ama__category__row--no-mobile-padding ama__category__row--no-border">
     {#And I should see the "Category Page Hero"#}
     {#And I should see the "Tools List"#}
     {#And I should optionally see a promo in the "Promotional Real Estate" under the "Tools list"#}
@@ -20,7 +20,9 @@
 
   {#And I should see the "JAMA as content bottom"#}
   {#And I should see the "Article Stub as Large for Category Page"#}
-  {% include '@organisms/_category-jama-article-stub-as-large.twig' %}
+  <div class="container ama__category__row ama__category__row--hidden-mobile">
+    {% include '@organisms/_category-jama-article-stub-as-large.twig' %}
+  </div>
 
   {#And I should see the "Category Page Article Stub Four-Up"#}
   {% set categoryArticleStub = category.categoryArticleStub %}
