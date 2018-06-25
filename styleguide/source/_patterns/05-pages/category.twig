@@ -25,30 +25,43 @@
   </div>
 
   {#And I should see the "Category Page Article Stub Four-Up"#}
-  {% set categoryArticleStub = category.categoryArticleStub %}
-  {% include '@organisms/category-page-article-stub.twig' %}
+  <div class="container ama__category__row">
+    {% set categoryArticleStub = category.categoryArticleStub %}
+    {% include '@organisms/category-page-article-stub.twig' %}
+  </div>
 
   {#And I should see the "Subcategory Featured Content"#}
-  {% set subcatFeaturedContent = category.subcatFeaturedContent %}
-  {% include '@organisms/subcategory-featured-content.twig' %}
+  <div class="container ama__category__row">
+    {% set subcatFeaturedContent = category.subcatFeaturedContent %}
+    {% include '@organisms/subcategory-featured-content.twig' %}
+  </div>
 
   {#And I should see the "Subcategory Featured Content as Carousel"#}
-  {% set subcategoryExploration = category.subcategoryFeaturedContentAsCarousel %}
-  {% include '@organisms/subcategory-featured-content-as-carousel.twig' %}
+  <div class="container ama__category__row">
+    {% set subcategoryExploration = category.subcategoryFeaturedContentAsCarousel %}
+    {% include '@organisms/subcategory-featured-content-as-carousel.twig' %}
+  </div>
 
   {#And I should see the "Category Page Article Stub Three-Up"#}
   {#And I should optionally see a "JAMA Promo" in the Promotional Real Estate next to the "Category Page Article Stub Three-Up"#}
-  <div>Category Page Article Stub Three-Up and a JAMA as Three-Up</div>
+  <div class="container ama__category__row">
+    {% include '@organisms/_category-article-three-up-jama.twig' %}
+  </div>
 
   {#And I should see the "Category Page Article Stub as Large Two-Up"#}
-  <div>Category Page Article Stub as Large Two-Up</div>
+  <div class="container ama__category__row">
+    <div>Category Page Article Stub as Large Two-Up</div>
+  </div>
 
   {#And I should see the "Category Page Index"#}
-  {% set categoryIndex = category.categoryIndex %}
-  {% include '@organisms/category-index.twig' %}
+  <div class="container ama__category__row">
+    {% set categoryIndex = category.categoryIndex %}
+    {% include '@organisms/category-index.twig' %}
+  </div>
 
   {#And I should see the "Subcategory Explorer as with Images"#}
-  {% set subcategoryExplorationWithImages = category.subcategoryExplorationWithImages %}
-  {% include '@organisms/subcategory-exploration-as-with-images.twig' %}
-
+  <div class="container ama__category__row ama__category__row--no-border">
+    {% set subcategoryExplorationWithImages = category.subcategoryExplorationWithImages %}
+    {% include '@organisms/subcategory-exploration-as-with-images.twig' %}
+  </div>
 </div>

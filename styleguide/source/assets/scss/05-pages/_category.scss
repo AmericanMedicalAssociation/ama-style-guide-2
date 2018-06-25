@@ -3,6 +3,10 @@
   &__row {
     padding: $gutter 0;
     border-top: solid 2px $gray-50;
+
+    .container {
+      padding: 0;
+    }
   }
 
   &__row--no-mobile-padding {
@@ -41,5 +45,13 @@
 
   .ama__layout--split__right .ama__article-stub--category {
     padding: 0 ($gutter / 2);
+  }
+
+  &__article-stub-three-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-column-gap: $gutter;
+    grid-row-gap: $gutter;
   }
 }
