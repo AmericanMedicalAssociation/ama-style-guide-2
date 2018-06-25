@@ -1,11 +1,15 @@
-<div class="ama__category container">
+<div class="ama__category">
   {#Then I should see the "Masthead as Title Only"#}
-  {% set masthead = category.masthead %}
-  {% include '@organisms/masthead/masthead.twig' %}
+  <div class="container">
+    {% set masthead = category.masthead %}
+    {% include '@organisms/masthead/masthead.twig' %}
+  </div>
 
-  {#And I should see the "Subcategory Exploration"#}
-  {% set subcategoryExploration = category.subcategoryExploration %}
-  {% include '@organisms/subcategory-exploration.twig' %}
+  <div class="container">
+    {#And I should see the "Subcategory Exploration"#}
+    {% set subcategoryExploration = category.subcategoryExploration %}
+    {% include '@organisms/subcategory-exploration.twig' %}
+  </div>
 
   {#And I should see the "Category Page Hero"#}
   {#And I should see the "Tools List"#}
@@ -21,7 +25,8 @@
   {% include '@organisms/category-page-article-stub.twig' %}
 
   {#And I should see the "Subcategory Featured Content"#}
-  <div>Subcategory Featured Content</div>
+  {% set subcatFeaturedContent = category.subcatFeaturedContent %}
+  {% include '@organisms/subcategory-featured-content.twig' %}
 
   {#And I should see the "Subcategory Featured Content as Carousel"#}
   {% set subcategoryExploration = category.subcategoryFeaturedContentAsCarousel %}
