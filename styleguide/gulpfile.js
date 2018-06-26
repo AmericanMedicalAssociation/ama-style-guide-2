@@ -315,47 +315,47 @@ gulp.task('test', function () {
   );
 });
 
-// Task: Publish static content
-// Description: Publish static content using rsync shell command
-gulp.task('publish', ['clean:publish'], function () {
-  return gulp.src(config.deployment.local.path)
-    .pipe(ghPages({ branch: config.deployment.branch}));
-});
-
-// Task: Deploy to GitHub pages
-// Description: Build the public code and deploy it to GitHub pages
-gulp.task('deploy', function () {
-  // make sure to use the gulp from node_modules and not a different version
-  runSequence = require('run-sequence').use(gulp);
-  // run default to build the code and then publish it GitHub pages
-  runSequence('default', 'publish');
-});
-
-// Task: Deploy to dev-assets branch
-// Description: Build the public code and deploy it to be consumed by Drupal
-gulp.task('drupal-deploy', function () {
-  // make sure to use the gulp from node_modules and not a different version
-  runSequence = require('run-sequence').use(gulp);
-  // Change the deploy branch
-  config.deployment.branch = "dev-assets";
-  // run default to build the code and then publish it to our branch
-  runSequence('default', 'copyTwigFiles', 'publish');
-});
-
-gulp.task('set-master', function (callback) {
-  // Change the deploy branch
-  gutil.log('Setting branch to master.');
-  config.deployment.branch = "master";
-  callback();
-})
-
-// Task: Release the code
-// Description: Release runs deploy to build to gh-pages,
-// pushes the same code to master, then tags master.
-gulp.task('release', function (callback) {
-  // make sure to use the gulp from node_modules and not a different version
-  runSequence = require('run-sequence').use(gulp);
-  // Build the style guide, publish to gh-pages, set the branch to master,
-  // publish to master, then tag master.
-  runSequence('default', 'publish', 'set-master', callback);
-});
+// // Task: Publish static content
+// // Description: Publish static content using rsync shell command
+// gulp.task('publish', ['clean:publish'], function () {
+//   return gulp.src(config.deployment.local.path)
+//     .pipe(ghPages({ branch: config.deployment.branch}));
+// });
+//
+// // Task: Deploy to GitHub pages
+// // Description: Build the public code and deploy it to GitHub pages
+// gulp.task('deploy', function () {
+//   // make sure to use the gulp from node_modules and not a different version
+//   runSequence = require('run-sequence').use(gulp);
+//   // run default to build the code and then publish it GitHub pages
+//   runSequence('default', 'publish');
+// });
+//
+// // Task: Deploy to dev-assets branch
+// // Description: Build the public code and deploy it to be consumed by Drupal
+// gulp.task('drupal-deploy', function () {
+//   // make sure to use the gulp from node_modules and not a different version
+//   runSequence = require('run-sequence').use(gulp);
+//   // Change the deploy branch
+//   config.deployment.branch = "dev-assets";
+//   // run default to build the code and then publish it to our branch
+//   runSequence('default', 'copyTwigFiles', 'publish');
+// });
+//
+// gulp.task('set-master', function (callback) {
+//   // Change the deploy branch
+//   gutil.log('Setting branch to master.');
+//   config.deployment.branch = "master";
+//   callback();
+// })
+//
+// // Task: Release the code
+// // Description: Release runs deploy to build to gh-pages,
+// // pushes the same code to master, then tags master.
+// gulp.task('release', function (callback) {
+//   // make sure to use the gulp from node_modules and not a different version
+//   runSequence = require('run-sequence').use(gulp);
+//   // Build the style guide, publish to gh-pages, set the branch to master,
+//   // publish to master, then tag master.
+//   runSequence('default', 'publish', 'set-master', callback);
+// });
