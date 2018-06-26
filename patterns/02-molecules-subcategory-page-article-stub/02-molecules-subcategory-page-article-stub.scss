@@ -4,7 +4,6 @@
 
   &__image {
     display: none;
-    min-width: 33%;
 
     @include breakpoint($bp-small) {
       display: block;
@@ -18,9 +17,7 @@
   }
 
   &__subcategory {
-    text-transform: uppercase;
-    color: $purple;
-    font-size: 16px;
+    @extend .ama__h4--purple;
     font-weight: 600;
     margin: 0;
   }
