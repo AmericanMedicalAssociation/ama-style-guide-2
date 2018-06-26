@@ -2,10 +2,9 @@
   $('.ama__subcategory-featured-content-as-carousel .ama__category-page-article-stub__container').slick({
     slidesToShow: 4,
     slidesToScroll: 2,
-    infinite: true,
+    infinite: false,
     dots: true,
     arrows: true,
-    centerMode: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -13,8 +12,7 @@
           slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
-          centerMode: true
+          dots: true
         }
       },
       {
@@ -23,8 +21,7 @@
           slidesToShow: 2,
           slidesToScroll: 2,
           dots: true,
-          arrows: false,
-          centerMode: true,
+          arrows: false
         }
       },
       {
@@ -33,8 +30,7 @@
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
-          arrows: false,
-          centerMode: true,
+          arrows: false
         }
       }
       // You can unslick at a given breakpoint now by adding:
