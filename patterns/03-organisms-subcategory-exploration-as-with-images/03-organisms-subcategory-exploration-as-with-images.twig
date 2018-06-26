@@ -1,19 +1,17 @@
-<div class="ama__subcategory-exploration">
-  <div class="ama__subcategory-exploration__container">
-    {% set heading = subcategoryExploration.heading %}
+<div class="ama__subcategory-exploration-with-images">
+  <div class="ama__subcategory-exploration-with-images__container">
+    {% set heading = subcategoryExplorationWithImages.heading %}
     {% include "@atoms/heading/heading.twig" %}
-    <div class="ama__subcategory-exploration__subcategory-wrapper">
-      {% for subcategory in subcategoryExploration.subcategory %}
-        {% include "@molecules/visual-subcategory.twig" %}
-      {% endfor %}
-    </div>
+    {% for subcategory in subcategoryExplorationWithImages.subcategory %}
+      {% include "@molecules/visual-subcategory.twig" %}
+    {% endfor %}
   </div>
-  <div class="ama__subcategory-exploration__view-all">
-    {% set link = subcategoryExploration.viewAll %}
+  <div class="ama__subcategory-exploration-with-images__view-all">
+    {% set link = subcategoryExplorationWithImages.viewAll %}
     {% include "@atoms/link/link.twig" %}
   </div>
-  <div class="ama__subcategory-exploration__view-less">
-    {% set link = subcategoryExploration.viewLess %}
+  <div class="ama__subcategory-exploration-with-images__view-less">
+    {% set link = subcategoryExplorationWithImages.viewLess %}
     {% include "@atoms/link/link.twig" %}
   </div>
 </div>

@@ -1,0 +1,35 @@
+.ama__subscribe-promo {
+  display: inline-block;
+  padding: $gutter / 2;
+  color: $white;
+  background: $purple;
+
+  &__subject-title {
+    @extend .ama__h4--white;
+    padding-bottom: $gutter / 2;
+  }
+
+  .ama__form-group {
+    input {
+      @include type($myriad-pro, $font-weight-regular);
+      font-style: italic;
+    }
+
+    label {
+      visibility: hidden;
+    }
+  }
+
+  button {
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    height: 40px;
+    padding: 0 14px;
+
+    &:hover {
+      background: $hoverPurple;
+    }
+  }
+}
