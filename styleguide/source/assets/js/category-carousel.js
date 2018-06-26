@@ -1,9 +1,10 @@
 (function($) {
-  $('.ama__category-page-article-stub__container').slick({
+  $('.ama__subcategory-featured-content-as-carousel .ama__category-page-article-stub__container').slick({
     slidesToShow: 4,
     slidesToScroll: 2,
     infinite: true,
     dots: true,
+    arrows: true,
     centerMode: true,
     responsive: [
       {
