@@ -1,14 +1,11 @@
 {% extends '@templates/two-column-right-75-25.twig' %}
 
-{% block header %}
-{% endblock %}
-
 {% block contentTop %}
+  {% set contentGroupingHeader = category.articleStubsThreeUp.contentGroupingHeader %}
+  {% include '@atoms/content-grouping-header.twig' %}
 {% endblock %}
 
 {% block contentLeft %}
-  {% set contentGroupingHeader = category.articleStubsThreeUp.contentGroupingHeader %}
-  {% include '@atoms/content-grouping-header.twig' %}
   <div class="ama__category__article-stub-three-up">
     {% for articleStub in category.articleStubsThreeUp.content %}
       {% include "@molecules/article-stub/article-stub.twig" %}
