@@ -21,6 +21,7 @@
 
   {#And I should see the "Subcategory Page Index"#}
   <div class="container">
-    {#{% set  %}#}
+    {% set subcategoryIndex = subcategory.subcategoryIndex %}
+    {% include '@organisms/subcategory-index.twig' %}
   </div>
 </div>
