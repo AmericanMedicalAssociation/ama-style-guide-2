@@ -1,0 +1,23 @@
+{% extends '@templates/two-column-right-75-25.twig' %}
+{% block contentTop %}
+{% endblock %}
+{% block contentLeft %}
+  {% set categoryHero = category.categoryHero %}
+  {% include '@molecules/category-hero.twig' %}
+{% endblock %}
+{% block contentRight %}
+  {% set tools = category.tools %}
+  {% include '@organisms/tools.twig' %}
+  {# @todo replace this with actual Twig - there is an error presently. #}
+  <div class="ama__membership">
+
+    <h2 class="ama__h2">Title for Membership Block</h2>
+    <p class=""> This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet.</p>
+
+
+    <button type="" class="ama__button   " aria-label="">
+      This is CTA text.
+    </button>
+
+  </div>
+{% endblock %}
