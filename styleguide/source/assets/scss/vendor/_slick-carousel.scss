@@ -1,6 +1,9 @@
 /* Slider */
 
 .slick-slider {
+  @include gutter($margin-top-full...);
+  @include gutter($margin-left-full...);
+  @include gutter($margin-right-full...);
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -100,7 +103,7 @@
 }
 
 .slick-prev {
-  left: 30px;
+  left: -25px;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-right: 20px solid $purple;
@@ -115,7 +118,7 @@
   height: 0;
   border-bottom: 20px solid transparent;
   border-left: 20px solid $purple;
-  right: 0;
+  right: -25px;
 
   &:hover {
     border-left: 20px solid $hoverPurple;
