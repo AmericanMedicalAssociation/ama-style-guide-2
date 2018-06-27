@@ -1,6 +1,6 @@
 .ama__layout--split {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
 
   &.container {
     @include breakpoint($bp-small max-width) {
@@ -16,8 +16,10 @@
 
 .ama__layout--split__left {
   display: none;
+  grid-row: 2;
   @include breakpoint($bp-small) {
     display: block;
+    grid-column: 1 / 1;
     padding-right: $gutter / 2;
   }
 }

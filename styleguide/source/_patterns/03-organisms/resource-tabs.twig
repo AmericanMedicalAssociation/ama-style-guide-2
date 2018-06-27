@@ -1,85 +1,26 @@
 <div class="ama__tabs ama__resource-tabs">
   <ul class="ama__resource-tabs__nav">
     {% for tab in tabs %}
-      {% if tab.classes %}
-        {% set classes = 'class="'~tab.classes~'"' %}
-      {% else %}
-        {% set classes = null %}
-      {% endif %}
-      <li>
+      <li class="{{ tab.classes }}">
         <a href="#{{ tab.tabId }}">
           <div class="ama__resource-tabs__nav__icon"></div>
-          <div class="ama__resource-tabs__nav__label" {{ classes }}>{{ tab.tabTitle }}</div>
+          <div class="ama__resource-tabs__nav__label">{{ tab.tabTitle }}</div>
         </a>
       </li>
     {% endfor %}
   </ul>
-  <script>
-      var viewportWidth = window.innerWidth;
-      if (viewportWidth < 600) {
-          var amaTabMedia = document.getElementsByClassName('js--tab-start--tablet');
-          var amaTabMain = document.getElementsByClassName('js--tab-start--mobile');
-
-          for (var i = 0; i < amaTabMain.length; i++) {
-              amaTabMain[i].classList.add('--is-active');
-          }
-          for (var i = 0; i < amaTabMedia.length; i++) {
-              amaTabMedia[i].classList.remove('--is-active');
-          }
-      }
-  </script>
   <div class="ama__resource-tabs__content">
-    {% for tab in tabs %}
 
-    {% endfor %}
-    <section id="resources" class="--is-active">
-      <header class="ama__masthead">
-        <div class="ama__masthead__sidebar" role="complementary"></div>
-        <div class="ama__masthead__content " role="complementary">
-          <a href="#" title="Category link" target="_self" class="ama__masthead__content__link">
-            Lorem Ipsum
-          </a>
-          <h1 class="ama__h1">Example Heading for Resources Page</h1>
-          <p class="ama__subtitle">Example text for a subtitle, lorem ipsum sit dolor</p>
-
-          <div class="ama__masthead__content__container">
-            <div class="ama__masthead__content__date">
-              <h3 class="ama__h3 date-block">
-                <span class="date-block__month">April</span>
-                <span class="date-block__day">17,</span>
-                <span class="date-block__year">2018</span>
-              </h3>
-            </div>
-            <div class="ama__masthead__content__share">
-              <ul class="ama__social-share">
-                <li>
-                  <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook-gray"></a>
-                </li>
-                <li>
-                  <a href="plus.google.com/+americanmedicalassociation" class="social--googleplus-gray"></a>
-                </li>
-                <li>
-                  <a href="twitter.com/AmerMedicalAssn" class="social--twitter-gray"></a>
-                </li>
-                <li>
-                  <a href="www.linkedin.com/company/american-medical-association" class="social--linkedin-gray"></a>
-                </li>
-                <li>
-                  <a href="www.youtube.com/user/AmerMedicalAssn" class="social--youtube-gray"></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </header>
+    <section id="resources">
+      {% include '@organisms/masthead/masthead.twig' %}
       <div class="ama__page--resources__page-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a
               href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
-          <a href="#" class="ama__page--resource__resource-link" data-resource="downloads-1">(Download 1)</a> eius hic
+          <a href="#downloads" class="ama__page--resource__resource-link" >(Download 1)</a> eius hic
           laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus,
           eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
 
-        <a href="#" data-resource="media-3">
+        <a href="#media">
           <div class="ama__resource-link--inline">
             <h4 class="ama__resource-link--inline__label&quot;">Example Label Text for an Inline Resource Link</h4>
             <h3 class="ama__resource-link--inline__text&quot;">Example text for the article link, lorem ipsum dolor sit
@@ -104,7 +45,7 @@
         </li>
       </ul>
     </section>
-    <section id="media" class="--is-active">
+    <section id="media">
       <div data-anchor="media-1">
         <h3>Media 1</h3>
         <a href="{{ tabContent.media.media1.link.href }}" title="{{ tabContent.media.media1.link.title }}"

@@ -16,14 +16,17 @@ function _getSectionID($obj) {
 
 
 (function($) {
-    $( ".ama__tabs" ).tabs({
-        activate: function (event, ui) {
-          window.location.hash = ui.newPanel.attr('id');
-          return false;
-        }
-      });
+    $( ".ama__tabs" ).tabs();
+    var viewportWidth = window.innerWidth;
+    if (viewportWidth < 600) {
+        $(".ama__resource-tabs").tabs();
+    }else{
+        $(".ama__resource-tabs").tabs({
+            active: 1
+        });
+    }
     $(".ama__tabs > ul a").click(function(e){
-        e.preventDefault()
+        e.preventDefault();
         return false;
     });
 
