@@ -70,8 +70,6 @@
 
     &__container {
       @include gutter($padding-top-full...);
-      display: flex;
-      align-items: center;
     }
 
     .ama__h1 {
@@ -83,11 +81,11 @@
     }
 
     &__date {
-      flex: 1;
+      float: left;
     }
 
     &__share {
-
+      float: right;
       display: none;
 
       @include breakpoint($bp-small) {

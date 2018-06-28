@@ -1,10 +1,10 @@
 <div class="ama__resource-tabs">
   <ul class="ama__resource-tabs__nav">
-    <li data-resource="resources">
+    <li data-resource="resources" class="js--tab-start--mobile">
       <div class="ama__resource-tabs__nav__icon"></div>
       <div class="ama__resource-tabs__nav__label">Resources</div>
     </li>
-    <li data-resource="media" class="--is-active">
+    <li data-resource="media" class="js--tab-start--tablet --is-active">
       <div class="ama__resource-tabs__nav__icon"></div>
       <div class="ama__resource-tabs__nav__label">Media</div>
     </li>
@@ -29,6 +29,20 @@
       <div class="ama__resource-tabs__nav__label">Contacts</div>
     </li>
   </ul>
+  <script>
+    var viewportWidth = window.innerWidth;
+    if(viewportWidth < 600){
+        var amaTabMedia = document.getElementsByClassName('js--tab-start--tablet');
+        var amaTabMain = document.getElementsByClassName('js--tab-start--mobile');
+
+        for (var i=0; i<amaTabMain.length; i++) {
+            amaTabMain[i].classList.add('--is-active');
+        }
+        for (var i=0; i<amaTabMedia.length; i++){
+            amaTabMedia[i].classList.remove('--is-active');
+        }
+    }
+  </script>
   <div class="ama__resource-tabs__content">
     <section id="resources" class="--is-active">
       <header class="ama__masthead">
