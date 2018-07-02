@@ -1,0 +1,47 @@
+
+#!/bin/sh
+set -e # Exit with nonzero exit code if anything fails
+
+# Pass the REPO parameter
+REPO="${REPO}"
+
+# Setup a deploy branch
+deploy_branch="test-results-${TRAVIS_BUILD_ID}"
+
+# Fail if we still don't know where the repo is.
+echo "Deploying to the SG2 repo at '$REPO'."
+if [ -z "$REPO" ] ; then
+    echo "Cannot deploy without a repo."
+    exit 1
+fi
+
+setup_git() {
+  echo "Setting up git"
+  git config --global user.email "travis@travis-ci.org"
+  git config --global user.name "Travis CI"
+  git clone --bare "$REPO" artifacts/current/.git
+  git branch --set-upstream-to "origin/${deploy_branch}"
+
+  # Don't do anything else if it didn't work.
+  if git remote -v | grep -q 'github'
+  then
+      echo "clone failed"
+      exit 1
+  fi
+}
+
+commit_website_files() {
+  echo "Committing to ${deploy_branch}."
+  git checkout -b "$deploy_branch"
+  git add backstop_data/
+  git commit --message "Travis build: ${TRAVIS_BUILD_ID}"
+}
+
+upload_files() {
+  echo "Deploying to ${deploy_branch}."
+  git push -u origin ${deploy_branch}
+}
+
+setup_git
+commit_website_files
+upload_files
