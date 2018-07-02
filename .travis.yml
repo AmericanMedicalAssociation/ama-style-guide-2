@@ -1,15 +1,16 @@
+addons:
+  chrome: beta
 language: node_js
-
 node_js:
-  - 7.10.0
-
+  - 9.9.0
+github-token: $GITHUB_TOKEN_2
 before_install:
   - cd styleguide
   - composer install --no-interaction
-  - npm i -g npm@5.6.0
-
+  - npm i -g npm
 install:
   - npm install
-
 script:
   - gulp test
+after_failure:
+  - "$TRAVIS_BUILD_DIR/scripts/test-results"

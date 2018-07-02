@@ -129,6 +129,7 @@ This project will maintain a number of branches:
 - `develop` - the (uncompiled) working branch
 - `gh-pages` - the compiled, publicly accessible “testing” artifact
 - `dev-assets` - the compiled production release that gets tagged.
+- `test-results-[ID]` - the visual regression test results from a Travis run. Users can access the BackstopJS report at `http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/test-results-[ID]/html_report/index.html`.
 
 For more detail on how to deploy to these branches, see [Creating a Release](https://github.com/AmericanMedicalAssociation/AMA-style-guide/blob/develop/docs/creating_a_release.md)
 
