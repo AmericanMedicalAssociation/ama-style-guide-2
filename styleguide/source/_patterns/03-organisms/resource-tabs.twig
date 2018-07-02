@@ -10,204 +10,141 @@
     {% endfor %}
   </ul>
   <div class="ama__resource-tabs__content">
-
     <section id="resources">
+      {% set masthead = tabs[0].tabContent.masthead %}
       {% include '@organisms/masthead/masthead.twig' %}
+
       <div class="ama__page--resources__page-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores atque cupiditate <a
-              href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea
-          <a href="#downloads" class="ama__page--resource__resource-link" >(Download 1)</a> eius hic
-          laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel veniam. Delectus,
-          eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.</p>
+              href="http://www.google.com">normal link</a> debitis dignissimos, dolorem dolorum ea <a href="#downloads"
+                                                                                                      class="ama__page--resource__resource-link">(Download
+            1)</a> eius hic laboriosam, necessitatibus nesciunt nobis omnis placeat reprehenderit tenetur ullam vel
+          veniam. Delectus, eaque est molestiae pariatur quae quidem suscipit tenetur voluptatibus.
+        </p>
 
-        <a href="#media">
-          <div class="ama__resource-link--inline">
-            <h4 class="ama__resource-link--inline__label&quot;">Example Label Text for an Inline Resource Link</h4>
-            <h3 class="ama__resource-link--inline__text&quot;">Example text for the article link, lorem ipsum dolor sit
-              amet</h3>
-          </div>
-        </a>
+        {% set resourceLinkAsInline = tabs[0].tabContent.resourceLinkAsInline %}
+        {% include '@molecules/resource-link-as-inline.twig' %}
+
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur cupiditate, ea eius,
           facilis fuga laudantium modi molestiae placeat similique soluta tempora vel? Aliquid cupiditate delectus
           distinctio, doloribus enim eveniet illum, laudantium obcaecati pariatur perspiciatis quaerat quod similique
           velit. Eos libero provident quod sit.</p>
       </div>
-      <ul class="ama__tags">
-        <li>
-          <a href="http://www.google.com" title="" target="" class="ama__tag">
-            Lorem ipsum
-          </a>
-        </li>
-        <li>
-          <a href="http://www.yahoo.com" title="" target="" class="ama__tag">
-            Dolor sit
-          </a>
-        </li>
-      </ul>
+
+      {% set tags = tabs[0].tabContent.tags %}
+      {% include '@molecules/tags.twig' %}
     </section>
     <section id="media">
-      <div data-anchor="media-1">
-        <h3>Media 1</h3>
-        <a href="{{ tabContent.media.media1.link.href }}" title="{{ tabContent.media.media1.link.title }}"
-           class="ama__link--icon">
-          {% include '@atoms/media/icons/svg/icon-audio.twig' %}
-          {{ tabContent.media.media1.link.text }}
-        </a>
-      </div>
-      <div data-anchor="media-2">
-        <h3>Media 2</h3>
-        <a href="{{ tabContent.media.media2.link.href }}" title="{{ tabContent.media.media2.link.title }}"
-           class="ama__link--icon">
-          {% include '@atoms/media/icons/svg/icon-video.twig' %}
-          {{ tabContent.media.media2.link.text }}
-        </a>
-        {% set video = tabContent.media.media2.video %}
-        <div class="ama__resource-tab__content__video">
-          {% include '@atoms/video.twig' %}
-          {% if tabContent.media.media2.subtext %}
-            <p class="ama__type--small">
-              {{ tabContent.media.media2.subtext }}
-            </p>
+      {% for mediaItem in tabs[1].tabContent.media %}
+        <div id="ama__resource--media-{{ loop.index }}">
+          {% set heading = mediaItem.heading %}
+          {% include '@atoms/heading/heading.twig' %}
+
+          {% if mediaItem.image %}
+            {% set image = mediaItem.image %}
+            {% include '@atoms/image/image.twig' %}
+          {% elseif mediaItem.link %}
+            {% set link = mediaItem.link %}
+            {% include '@atoms/link/link.twig' %}
+
+            {% if mediaItem.video %}
+              {% set video = mediaItem.video %}
+              {% include '@atoms/video.twig' %}
+            {% endif %}
           {% endif %}
-        </div>
-        {% set membership = tabContent.media.media2.membership %}
-        {% include '@molecules/membership/membership.twig' %}
-      </div>
-      <div data-anchor="media-3">
-        <h3>Media 3</h3>
-        <div class="ama__resource-tab__content__image">
-          {% include '@atoms/image/image.twig' with { image : tabContent.media.media3.image } %}
-          {% if tabContent.media.media3.subtext %}
-            <p class="ama__type--small">
-              {{ tabContent.media.media3.subtext }}
-            </p>
-          {% endif %}
-        </div>
-      </div>
-      <div data-anchor="media-4">
-        <h3>Media 4</h3>
-        <a href="{{ tabContent.media.media4.link.href }}" title="{{ tabContent.media.media4.link.title }}"
-           class="ama__link--icon">
-          {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
-          {{ tabContent.media.media4.link.text }}
-        </a>
-      </div>
-    </section>
-    <section id="downloads">
-      {% for group in tabContent.downloads.groups %}
-        <div data-anchor="downloads-1">
-          <h3>{{ group.title }}</h3>
-          {% if group.heading %}
-            <h5>{{ group.heading }}</h5>
-          {% endif %}
-          {% include '@molecules/tool/tool.twig' with { tool : group }%}
-          {% if group.subtext %}
-            <p class="ama__type--small">
-              {{ group.subtext }}
-            </p>
+
+          {% if mediaItem.subtext %}
+            {% set paragraph = mediaItem.subtext %}
+            {% include '@atoms/paragraph.twig' %}
           {% endif %}
         </div>
       {% endfor %}
-      {% set membership = tabContent.downloads.membership %}
+      {% set membership = tabs[1].tabContent.membership %}
+      {% include '@molecules/membership/membership.twig' %}
+    </section>
+    <section id="downloads">
+      {% for download in tabs[2].tabContent.downloads %}
+        {% set heading = download.heading %}
+        {% include '@atoms/heading/heading.twig' %}
+
+        {% if download.title %}
+          {% set heading = download.title %}
+          {% include '@atoms/heading/heading.twig' %}
+        {% endif %}
+
+        {% set tool = download.tool %}
+        {% include '@molecules/tool/tool.twig' %}
+
+        {% if download.subtext %}
+          <p class="ama__type--small">{{ link.subtext }}</p>
+        {% endif %}
+      {% endfor %}
+
+      {% set membership = tabs[2].tabContent.membership %}
       {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="related-links">
-      {% for group in tabContent.relatedLinks.groups %}
-        <div data-anchor="related-links-1">
-          <h3>{{ group.heading }}</h3>
-          {% if group.title %}
-            <h5>{{ group.title }}</h5>
+      {% for group in tabs[3].tabContent.relatedLinkGroups %}
+        <div id="ama__resource--related-links-{{ loop.index }}">
+          {% set heading = group.heading %}
+          {% include '@atoms/heading/heading.twig' %}
+
+          {% if group.subheading %}
+            {% set heading = group.subheading %}
+            {% include '@atoms/heading/heading.twig' %}
           {% endif %}
+
           <ul>
             {% for link in group.links %}
               <li>
-                <a href="{{ link.href }}" title="{{ link.title }}"
-                   class="ama__resource-tabs__content__downloads__link ama__link--icon">
-                  {% include '@atoms/media/icons/svg/icon-podcast.twig' %}
-                  {{ link.text }}
-                  {% if link.cme %}{% include '@atoms/media/icons/svg/icon-cme.twig' %}{% endif %}
-                </a>
+                {% include '@atoms/link/link.twig' %}
+
                 {% if link.subtext %}
-                  <p class="ama__type--small">{{ link.subtext }}</p>
+                  {% set paragraph = link.subtext %}
+                  {% include '@atoms/paragraph.twig' %}
                 {% endif %}
               </li>
             {% endfor %}
-            {% set membership = tabContent.relatedLinks.membership %}
-            {% include '@molecules/membership/membership.twig' %}
           </ul>
         </div>
       {% endfor %}
+      {% set membership = tabs[3].tabContent.membership %}
+      {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="schedules">
-      {% for schedule in tabContent.schedules %}
-        <div data-anchor="schedules-1">
-          {% set heading = {level: '3', text: 'Schedule 1'} %}
-          {% include '@atoms/heading/heading.twig' %}
-          <h5>{{ schedule.subheading }}</h5>
-          {% set table = schedule.table %}
-          {% include '@atoms/table.twig' %}
-        </div>
+      {% for schedule in tabs[4].tabContent.schedules %}
+        {% set heading = schedule.heading %}
+        {% include '@atoms/heading/heading.twig' %}
+        {% set heading = schedule.subheading %}
+        {% include '@atoms/heading/heading.twig' %}
+        {% set table = schedule.table %}
+        {% include '@atoms/table.twig' %}
       {% endfor %}
-      {% set membership = {
-          heading: {
-            "text": "Title for Membership Block"
-          },
-          link: "http://www.google.com",
-          paragraph: {
-            "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
-          },
-          button: {
-            "text": "This is CTA text."
-          }
-      } %}
+
+      {% set membership = tabs[4].tabContent.membership %}
       {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="tables">
-      {% set heading = {level: '3', text: 'Table 1'}  %}
+      {% set heading = tabs[5].tabContent.heading %}
       {% include '@atoms/heading/heading.twig' %}
-      {% for table in tabContent.tables %}
+
+      {% for table in tabs[5].tabContent.tables %}
         {% include '@atoms/table.twig' %}
       {% endfor %}
-      {% set membership = {
-        heading: {
-          "text": "Title for Membership Block"
-        },
-        link: "http://www.google.com",
-        paragraph: {
-          "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
-        },
-        button: {
-          "text": "This is CTA text."
-        }
-      } %}
+
+      {% set membership = tabs[5].tabContent.membership %}
       {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="contacts">
-      <h3>Contacts</h3>
-      <h5>This is a subheading for a contact group</h5>
-      <div data-anchor="contacts-1">
-        {#{% set infoCard = tabContent.contacts.infoCard %}#}
-        {#{% include '@molecules/info-card/info-card.twig' %}#}
-        <div class="ama__info-card ama__info-card--contact">
-          <h3 class="ama__info-card__label">Contact:</h3>
-          <div class="ama__info-card__wrap">
-            <img class="ama__info-card__image ama__image" alt="placeholder"
-                 src="https://via.placeholder.com/280x280/027DBC/ffffff" height="" width="">
+      {% set heading = tabs[6].tabContent.heading %}
+      {% include '@atoms/heading/heading.twig' %}
 
-            <div class="ama__info-card__text">
-              <p class=""> Robert J Mills</p>
-              <p class=""> AMA Media &amp; Editorial</p>
-              <p class=""> ph: (312) 464-5970</p>
-              <p class=""> ph: (312) 464-5970</p>
-              <p class=""> fax: (312) 464-5970</p>
-
-              <a href="mailto:robert.mills@ama-assn.org" title="Email Robert J Mills" target="_self" class="">
-                robert.mills@ama-assn.org
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% for group in tabs[6].tabContent.contactGroups %}
+        {% set heading = group.heading %}
+        {% include '@atoms/heading/heading.twig' %}
+        {% set infoCard = group.infoCard %}
+        {% include '@molecules/info-card/info-card.twig' %}
+      {% endfor %}
     </section>
   </div>
 </div>
