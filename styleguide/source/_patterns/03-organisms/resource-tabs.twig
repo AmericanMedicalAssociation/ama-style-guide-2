@@ -70,7 +70,8 @@
             </p>
           {% endif %}
         </div>
-        {% include '@molecules/promo/promo.twig' with { promo : tabContent.media.media2.promo } %}
+        {% set membership = tabContent.media.media2.membership %}
+        {% include '@molecules/membership/membership.twig' %}
       </div>
       <div data-anchor="media-3">
         <h3>Media 3</h3>
@@ -93,20 +94,22 @@
       </div>
     </section>
     <section id="downloads">
-      {% for download in tabContent.downloads %}
+      {% for group in tabContent.downloads.groups %}
         <div data-anchor="downloads-1">
-          <h3>{{ download.title }}</h3>
-          {% if download.heading %}
-            <h5>{{ download.heading }}</h5>
+          <h3>{{ group.title }}</h3>
+          {% if group.heading %}
+            <h5>{{ group.heading }}</h5>
           {% endif %}
-          {% include '@molecules/tool/tool.twig' with { tool : download } %}
-          {% if download.subtext %}
+          {% include '@molecules/tool/tool.twig' with { tool : group }%}
+          {% if group.subtext %}
             <p class="ama__type--small">
-              {{ download.subtext }}
+              {{ group.subtext }}
             </p>
           {% endif %}
         </div>
       {% endfor %}
+      {% set membership = tabContent.downloads.membership %}
+      {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="related-links">
       {% for group in tabContent.relatedLinks.groups %}
@@ -129,7 +132,8 @@
                 {% endif %}
               </li>
             {% endfor %}
-            {% include '@molecules/membership/membership.twig' with { membership : tabContent.relatedLinks.membership } %}
+            {% set membership = tabContent.relatedLinks.membership %}
+            {% include '@molecules/membership/membership.twig' %}
           </ul>
         </div>
       {% endfor %}
@@ -144,14 +148,39 @@
           {% include '@atoms/table.twig' %}
         </div>
       {% endfor %}
-      {% include '@molecules/promo/promo.twig' with { promo : tabContent.schedules.promo } %}
+      {% set membership = {
+          heading: {
+            "text": "Title for Membership Block"
+          },
+          link: "http://www.google.com",
+          paragraph: {
+            "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
+          },
+          button: {
+            "text": "This is CTA text."
+          }
+      } %}
+      {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="tables">
-      {% set heading = {level: '3', text: 'Tables'} %}
+      {% set heading = {level: '3', text: 'Table 1'}  %}
       {% include '@atoms/heading/heading.twig' %}
       {% for table in tabContent.tables %}
         {% include '@atoms/table.twig' %}
       {% endfor %}
+      {% set membership = {
+        heading: {
+          "text": "Title for Membership Block"
+        },
+        link: "http://www.google.com",
+        paragraph: {
+          "text": "This could be a paragraph, or it could be an unordered list. Lorem ipsum dolor sit amet."
+        },
+        button: {
+          "text": "This is CTA text."
+        }
+      } %}
+      {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="contacts">
       <h3>Contacts</h3>
