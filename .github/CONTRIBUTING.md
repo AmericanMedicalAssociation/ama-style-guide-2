@@ -67,13 +67,13 @@ Commits must be atomic: the commit must be an indivisible and irreducible change
 When you have finished development work on a ticket:
 
 1. Run visual regression tests locally to ensure the new work does not introduce any bugs into the codebase.
-2. In JIRA, change the ticket status from `In Progress` to `Development Complete`.
-3. Submit your PR to Github.
-4. Make sure that under "Assignees" you have assigned yourself to the PR.
-5. Add the label `ready for review` so others know they can begin reviewing.
-6. Update the JIRA ticket with a link to the PR
-7. If an open PR comes back with questions or requested changes, make sure the JIRA ticket is moved back to In Progress while you resume work on the issue.
-8. When you are done making changes, add the `ready for review` label to the PR again and ping the original reviewer to let him/her know that your PR has been updated.
+1. In JIRA, change the ticket status from `In Progress` to `Development Complete`.
+1. Submit your PR to Github.
+1. Make sure that under "Assignees" you have assigned yourself to the PR.
+1. Add the label `ready for review` so others know they can begin reviewing.
+1. Update the JIRA ticket with a link to the PR
+1. If an open PR comes back with questions or requested changes, make sure the JIRA ticket is moved back to In Progress while you resume work on the issue.
+1. When you are done making changes, add the `ready for review` label to the PR again and ping the original reviewer to let him/her know that your PR has been updated.
 
 ## Reviewing a PR
 1. In Github

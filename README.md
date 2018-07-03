@@ -107,17 +107,6 @@ This style guide is a compilation of [atomic components](http://bradfrost.com/bl
       Something about how this pattern is used on the page
 ~~~~
 
-**For Visual Regression Testing (VRT)**
-
-- When develop is pulled and branched to start a feature or bugfix run BackstopJS
-- There are two ways to do this:
-  - `test backstop` to run backstop when `gulp serve` is not running
-  - `gulp backstop` when `gulp serve` is running
-- If a new pattern has been created a corresponding backstop test needs to be added
-- All backstop tests are located in backstop.js and are grouped by atomic sizing
-- For more information on how to write a backstop test and setting up backstop refer to: https://github.com/garris/BackstopJS
-- `backstop approve` when the references images needed to be updated or added - these images are committed in the PR
-
 **Glossary**
 - So we can all be on the same page regarding terminology a glossary has been created: https://issues.ama-assn.org:8446/confluence/display/DTD/glossary
 - Update the glossary when you create a new pattern or add to existing patterns. This will help ensure we are all talking about the same thing when features are requested or bugs are reported.
@@ -132,6 +121,40 @@ This project will maintain a number of branches:
 - `visual-regression-testing-artifact/[PULL_REQUEST_ID]` - the visual regression test results from a Travis run. Users can access the BackstopJS report at `http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/visual-regression-testing-artifact/[PULL_REQUEST_ID]/html_report/index.html`.
 
 For more detail on how to deploy to these branches, see [Creating a Release](https://github.com/AmericanMedicalAssociation/AMA-style-guide/blob/develop/docs/creating_a_release.md)
+
+## Visual Regression Testing (VRT)
+
+`BackstopJS` is used for visual regression testing. This tool compares reference images (screenshots) to captured screenshots. A report is generated that highlights any differences.
+
+### Create References
+
+References are not stored in the repository so that they can always be made against the production version of the style guide.
+
+Gulp can be used to generate references using the command, `gulp reference`.
+
+You should create references when creating a new branch and again before submitting a pull request.
+
+### Run Tests
+
+Tests can be run either while the styleguide is being served or as a single command.
+
+#### While Gulp is Serving the Style Guide
+
+While `gulp serve` is running and the style guide is available, you can create the references with `gulp reference` and then run tests with `gulp backstop`. 
+
+#### When Gulp is not Serving the Style Guide
+
+You can use a single command to generate references and run the tests, `gulp test`.
+
+### View Test Results
+
+After the tests are run, a report page is available at `backstop_data/html_report/index.html`. This file can be opened in a browser to review the results. The full file path will depend on where you have this repository.
+
+### Adding Tests
+
+If a new pattern has been created a corresponding backstop test needs to be added. All backstop tests are located in backstop.js and are grouped by atomic sizing.
+
+For more information on how to write a backstop test and setting up backstop refer to: https://github.com/garris/BackstopJS.
 
 ## Troubleshooting:
 ### Make sure your npm dependencies are up to date
