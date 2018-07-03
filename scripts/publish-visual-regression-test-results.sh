@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
 # Setup a deploy branch
@@ -35,7 +35,7 @@ echo "Committing to ${git_deploy_branch}."
 git checkout -b "${git_deploy_branch}"
 # Copy artifacts
 cp -R ../backstop_data/* .
-git add .
+travis_retry git add .
 git commit --message "Travis build: ${TRAVIS_BUILD_ID}"
 
 echo "Deploying to ${git_deploy_branch}."
