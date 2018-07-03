@@ -14,5 +14,4 @@ install:
 script:
   - gulp test
 after_failure:
-  - export -f travis_retry
   - "$TRAVIS_BUILD_DIR/scripts/publish-visual-regression-test-results.sh"
