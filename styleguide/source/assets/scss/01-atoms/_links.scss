@@ -20,6 +20,14 @@ a {
     max-height: 22px;
     max-width: 22px;
     vertical-align: middle;
+
+    &:first-child {
+      @include gutter($margin-right-half...);
+    }
+
+    &:last-child {
+      @include gutter($margin-left-half...);
+    }
   }
 }
 
