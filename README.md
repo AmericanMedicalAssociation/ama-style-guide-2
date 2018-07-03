@@ -126,9 +126,11 @@ For more detail on how to deploy to these branches, see [Creating a Release](htt
 
 `BackstopJS` is used for visual regression testing. This tool compares reference images (screenshots) to captured screenshots. A report is generated that highlights any differences.
 
-### Create References
+References are always made from the latest production version of the style guide and are not stored in the repository.
 
-References are not stored in the repository so that they can always be made against the production version of the style guide.
+For more detail on production releases are created, see [Creating a Release](https://github.com/AmericanMedicalAssociation/AMA-style-guide/blob/develop/docs/creating_a_release.md)
+
+### Create References
 
 Gulp can be used to generate references using the command, `gulp reference`.
 
