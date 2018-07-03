@@ -352,31 +352,6 @@ gulp.task('drupal-deploy', function () {
   runSequence('default', 'copyTwigFiles', 'publish');
 });
 
-// Task: Deploy Travis results
-// Description: Push the results of running BackstopJS on Travis to a specific branch of the github repository,
-gulp.task('test-results', function () {
-  return gulp.src(config.deployment.local.test)
-    .pipe(ghPages({
-      force: true,
-      origin: "https://${GITHUB_TOKEN}@github.com/AmericanMedicalAssociation/ama-style-guide-2.git",
-      cacheDir: "./backstop_data",
-      branch: config.deployment.test
-    }));
-});
-
-// Function: Tagging deployed code
-// Description: After code is pushed to master using master-deploy, tag it.
-gulp.task('tag', function () {
-  return gulp.src(config.versioning.files)
-  // Fetch master so that we can tag it.
-    .pipe(shell(['git fetch origin master:master']))
-
-    // Tag it.
-    .pipe(tagversion())
-    // Push tag.
-    .pipe(shell(['git push --tags']));
-});
-
 gulp.task('set-master', function (callback) {
   // Change the deploy branch
   gutil.log('Setting branch to master.');
