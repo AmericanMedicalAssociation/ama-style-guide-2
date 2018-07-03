@@ -28,4 +28,25 @@
     border: none;
     padding: 0;
   }
+
+  &--in-body {
+    @include breakpoint($bp-small) {
+      width: 75%;
+    }
+
+    align-items: unset;
+
+    .ama__search__field__input[type="text"],
+    .ama__search__field__input[type="text"]:focus,
+    .ama__search__field__input[type="text"]:active {
+      padding: 5px 10px;
+      border: solid 1px $purple;
+    }
+
+    .ama__search__field__button {
+      background: $purple;
+      margin: 0;
+      padding: 5px 5px 0;
+    }
+  }
 }

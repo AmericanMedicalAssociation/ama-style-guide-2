@@ -1,0 +1,32 @@
+.ama__subcategory-exploration__subcategory {
+  @include gutter($margin-bottom-full...);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  text-decoration: none;
+
+  img {
+    width: 100%;
+  }
+
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(5) {
+    display: none;
+  }
+
+  .ama__h4--purple {
+    line-height: inherit;
+  }
+
+  @include breakpoint($bp-small) {
+    width: 15%;
+  }
+
+  @include breakpoint($bp-med) {
+    width: 15%;
+  }
+}
