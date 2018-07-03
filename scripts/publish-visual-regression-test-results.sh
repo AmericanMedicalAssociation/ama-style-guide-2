@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
+# This file requires two environmental variables that are set on Travis CI. See https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings.
+# GITHUB_TOKEN must be a Github personal access token that has `repo` access, see https://github.com/settings/tokens.
+# GITHUB_TOKEN_REPO must be in the format of `@github.com/[user]/[project].git`. Note the `/` after the `github.com` part which used for HTTPS connections.
+
 # Setup a deploy branch
 if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
   git_branch_id="${TRAVIS_PULL_REQUEST}"
