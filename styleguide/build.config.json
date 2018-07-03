@@ -2,8 +2,7 @@
   "root": "./public",
   "deployment": {
     "local": {
-      "path": "./public/**/*",
-      "test": "./backstop_data/**/*"
+      "path": "./public/**/*"
     },
     "remote": {
       "host": "YOUR HOST"
@@ -11,8 +10,7 @@
     "rsync": {
       "options": "-avzh --delete -e ssh"
     },
-    "branch": "",
-    "test": "test-results"
+    "branch": ""
   },
   "assets": {
     "base": "source/assets/",
@@ -98,3 +96,4 @@
     "dest" : "public/twig/"
   }
 }
+
