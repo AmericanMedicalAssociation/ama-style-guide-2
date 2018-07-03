@@ -3,7 +3,11 @@ addons:
 language: node_js
 node_js:
   - 9.9.0
-github-token: $GITHUB_TOKEN_2
+github-token: $GITHUB_TOKEN_VRT
+cache:
+  directories:
+    - $HOME/styleguide/vendor
+    - $HOME/styleguide/node_modules
 before_install:
   - cd styleguide
   - composer install --no-interaction
