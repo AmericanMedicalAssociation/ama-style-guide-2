@@ -35,8 +35,9 @@ echo "Committing to ${git_deploy_branch}."
 git checkout -b "${git_deploy_branch}"
 # Copy artifacts
 cp -R ../backstop_data/* .
-travis_retry git add .
-git commit --message "Travis build: ${TRAVIS_BUILD_ID}"
+git add .
+# The commit message output causes issues with Travis when it is too long.
+git commit --message "Travis build: ${TRAVIS_BUILD_ID}" --quiet
 
 echo "Deploying to ${git_deploy_branch}."
 # Force push in case there were artifacts for this PR / branch before.
