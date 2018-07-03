@@ -226,10 +226,19 @@ gulp.task("copyTwigFiles", function() {
     .pipe(gulp.dest(config.twigsource.dest))
 });
 
+// Create reference screenshots from `gh-pages` and `referenceUrl`
+gulp.task( 'reference', function () {
+  return gulp.src('')
+    .pipe(shell(['backstop reference']))
+});
+
 // Run backstop to run tests
 gulp.task( 'backstop', function () {
   return gulp.src('')
     .pipe(shell(['backstop test']))
+    .on('error', function () {
+      process.exit(1)
+    });
 });
 
 // Task: Watch files
@@ -303,15 +312,16 @@ gulp.task('serve', function () {
   );
 });
 
-// Task: Start your production-process
-// Description: Type 'gulp' in the terminal
+// Task: Run visual regression tests
+// Description: Type 'gulp test' in the terminal
+// Create reference screenshots from `gh-pages`, build site, run backstop and stop browserSync
 gulp.task('test', function () {
   production = false;
   runSequence(
+    'reference',
     'default',
     'browser-sync',
-    'backstop',
-    'exit'
+    'backstop'
   );
 });
 

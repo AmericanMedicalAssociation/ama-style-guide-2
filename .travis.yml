@@ -1,15 +1,17 @@
 language: node_js
-
 node_js:
-  - 7.10.0
-
+  - 9.9.0
+cache:
+  directories:
+    - $HOME/styleguide/vendor
+    - $HOME/styleguide/node_modules
 before_install:
   - cd styleguide
   - composer install --no-interaction
-  - npm i -g npm@5.6.0
-
+  - npm i -g npm
 install:
   - npm install
-
 script:
   - gulp test
+after_failure:
+  - "$TRAVIS_BUILD_DIR/scripts/publish-visual-regression-test-results.sh"
