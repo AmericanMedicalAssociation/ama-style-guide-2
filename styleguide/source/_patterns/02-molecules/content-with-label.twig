@@ -10,4 +10,7 @@
   {% else %}
     {{ contentWithLabel.dd }}
   {% endif %}
+  {% if contentWithLabel.gated %}
+    <span class="as-gated">{{ contentWithLabel.gated }}</span>
+  {% endif %}
 </dd>
