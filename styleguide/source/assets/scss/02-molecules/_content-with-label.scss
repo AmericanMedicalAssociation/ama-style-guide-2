@@ -1,0 +1,43 @@
+dl {
+  overflow: hidden;
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+dd {
+  margin: 0 0 $gutter/2;
+
+  span {
+    display: block;
+  }
+
+  .as-gated {
+    @extend .ama__type--small;
+    display: inline;
+
+
+    &:before {
+      content: "";
+      @extend .icon--lock;
+      height: 20px;
+      width: 14px;
+      margin-left: $gutter/4;
+    }
+  }
+}
+
+@include breakpoint($bp-small min-width) {
+  dt {
+    float: left;
+    clear: left;
+  }
+
+  dd {
+    float: left;
+    margin-left: $gutter/4;
+  }
+}
