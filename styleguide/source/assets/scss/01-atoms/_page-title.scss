@@ -3,12 +3,12 @@
   @extend %ama__h1;
   @include gutter($padding-top-full...);
 
-  &.allCaps {
+  &.is-uppercase {
     text-transform: none;
   }
 
   @include breakpoint($bp-med){
-    &.is-all-caps {
+    &.is-uppercase {
       text-transform: uppercase;
     }
   }
