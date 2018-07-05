@@ -1,0 +1,9 @@
+<div class="ama__bio-image-with-body">
+  {% for bioSection in bioImageWithBody.bioSections %}
+    {% include "@organisms/bio-section.twig" %}
+  {% endfor %}
+
+  {% set heading, paragraph = bioImageWithBody.bio.heading, bioImageWithBody.bio.paragraph %}
+  {% include "@atoms/heading/heading.twig" %}
+  {% include "@atoms/paragraph.twig" %}
+</div>

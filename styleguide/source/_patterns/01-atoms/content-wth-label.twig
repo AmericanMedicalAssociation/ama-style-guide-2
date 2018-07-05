@@ -1,0 +1,13 @@
+<dt>{{ contentWithLabel.dt }}</dt>
+<dd>
+  {% if contentWithLabel.dd.link %}
+    {% set link = contentWithLabel.dd.link %}
+    {% include '@atoms/link/link.twig' %}
+  {% elseif contentWithLabel.dd is iterable %}
+    {% for dd in contentWithLabel.dd %}
+      <span>{{ dd.title }}</span>
+    {% endfor %}
+  {% else %}
+    {{ contentWithLabel.dd }}
+  {% endif %}
+</dd>

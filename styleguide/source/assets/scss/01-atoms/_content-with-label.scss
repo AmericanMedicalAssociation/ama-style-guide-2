@@ -1,0 +1,29 @@
+dl {
+  overflow: hidden;
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin: 0 0 $gutter/2;
+
+  span {
+    display: block;
+  }
+
+}
+
+@include breakpoint($bp-small min-width) {
+  dt {
+    float: left;
+    clear: left;
+  }
+
+  dd {
+    float: left;
+    margin-left: $gutter/4;
+  }
+}
