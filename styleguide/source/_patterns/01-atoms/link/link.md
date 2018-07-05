@@ -1,9 +1,8 @@
 ### Description
 This Pattern shows a link with various colors.
 
-Variants are managed by use of pseudo-patterns.
-
-- "Link with Icon" is the variant of this pattern that includes an icon atom before the link.
+### Variant options
+* [icon](./?p=atoms-link-icon) - "Link with Icon" is the variant of this pattern that includes an icon atom before the link.
 
 ### Variables
 ~~~
