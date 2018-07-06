@@ -27,6 +27,19 @@
       text-decoration: underline;
     }
   }
+  // homepage
+  @else if($style == "homepage") {
+    background-color: $homepagePurple;
+    border-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $hoverPurple;
+      border-color: transparent;
+      color: $white;
+      text-decoration: underline;
+    }
+  }
   @else {
     background-color: $purple;
     border-color: transparent;
