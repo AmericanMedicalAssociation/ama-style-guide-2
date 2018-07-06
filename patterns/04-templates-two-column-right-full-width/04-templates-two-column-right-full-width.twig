@@ -5,12 +5,12 @@
     {% endblock %}
   </div>
   <div class="ama__layout--two-col-right--full-width__page-content">
-    <div class="ama__layout--two-col-right--full-width__left">
+    <div class="ama__layout--two-col-right--full-width__page-content__left">
       {% block contentLeft %}
         {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Left side content' } } %}
       {% endblock %}
     </div>
-    <div class="ama__layout--two-col-right--full-width__right">
+    <div class="ama__layout--two-col-right--full-width__page-content__right">
       {% block contentRight %}
         {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Right side content' } } %}
       {% endblock %}

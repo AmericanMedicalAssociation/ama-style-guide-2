@@ -1,2 +1,25 @@
 .ama__people-listing {
+  .container {
+    overflow: hidden;
+  }
+
+  &__card-container {
+    @include grid_column_layout(4, 2, 0, 0);
+    @include gutter($padding-top-full...);
+    @include gutter($padding-bottom-full...);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint($bp-small){
+      @include grid_column_layout(4, 2, $gutter/2, $gutter/2);
+    }
+
+    @include breakpoint($bp-med){
+      @include grid_column_layout(4, 2, $gutter, $gutter);
+    }
+  }
+
+  .ama__masthead {
+    padding: 0;
+  }
 }
