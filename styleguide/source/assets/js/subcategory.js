@@ -12,8 +12,8 @@
     attach: function(context, settings) {
 
       function checkSize(){
-        var subcategoryWrapper = $('.ama__subcategory-exploration').outerWidth();
-        var subcategoryTitle = $('.ama__subcategory-exploration__title').outerWidth();
+        var subcategoryWrapper = $('.ama__subcategory-exploration-with-images').outerWidth();
+        var subcategoryTitle = $('.ama__subcategory-exploration-with-images__title').outerWidth();
         subcategory = $('.ama__subcategory-exploration__subcategory');
         subcategory.hide();
 
@@ -33,20 +33,20 @@
       }
 
       function viewMore() {
-        $('.ama__subcategory-exploration__view-less').hide();
-        $('.ama__subcategory-exploration__view-all').show();
+        $('.ama__subcategory-exploration-with-images__view-less').hide();
+        $('.ama__subcategory-exploration-with-images__view-all').show();
 
         $('.viewAll').click(function() {
           subcategory.fadeIn();
-          $('.ama__subcategory-exploration__view-all').hide();
-          $('.ama__subcategory-exploration__view-less').show();
+          $('.ama__subcategory-exploration-with-images__view-all').hide();
+          $('.ama__subcategory-exploration-with-images__view-less').show();
         });
 
         $('.viewLess').click(function() {
           subcategory.hide();
           checkSize();
-          $('.ama__subcategory-exploration__view-less').hide();
-          $('.ama__subcategory-exploration__view-all').show();
+          $('.ama__subcategory-exploration-with-images__view-less').hide();
+          $('.ama__subcategory-exploration-with-images__view-all').show();
         });
       }
 
