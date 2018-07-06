@@ -1,4 +1,9 @@
-<dt>{{ contentWithLabel.dt }}</dt>
+<dt>
+  {{ contentWithLabel.dt }}
+  {% if contentWithLabel.gated %}
+    <span class="as-gated"></span>
+  {% endif %}
+</dt>
 <dd>
   {% if contentWithLabel.dd.link %}
     {% set link = contentWithLabel.dd.link %}

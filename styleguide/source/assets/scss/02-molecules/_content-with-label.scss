@@ -6,6 +6,20 @@ dl {
 dt {
   font-weight: 600;
   text-transform: capitalize;
+
+  .as-gated {
+    &:before {
+      @extend .icon--lock;
+      content: "";
+      height: 20px;
+      width: 14px;
+      margin-left: $gutter/4;
+    }
+
+    @include breakpoint($bp-small min-width) {
+      display: none;
+    }
+  }
 }
 
 dd {
@@ -17,15 +31,17 @@ dd {
 
   .as-gated {
     @extend .ama__type--small;
-    display: inline;
-
+    display: none;
 
     &:before {
-      content: "";
       @extend .icon--lock;
+      content: "";
       height: 20px;
       width: 14px;
-      margin-left: $gutter/4;
+    }
+
+    @include breakpoint($bp-small min-width) {
+      display: inline;
     }
   }
 }
