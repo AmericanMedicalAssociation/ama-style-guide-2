@@ -24,6 +24,10 @@ h1,
   @include font-size($h1-font-sizes);
   @include gutter($margin-bottom-full...);
   @extend %headerLinks;
+
+  &--homepage {
+    color: $purple;
+  }
 }
 
 h2.news,
@@ -33,6 +37,12 @@ h2.news,
   @include font-size($h2-font-sizes);
   @include gutter($margin-bottom-half...);
   @extend %headerLinks;
+
+  &--homepage {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($h2-font-sizes--homepage);
+    color: $gray-64;
+  }
 }
 
 h3,
@@ -42,6 +52,11 @@ h3,
   @include font-size($h3-font-sizes);
   @include gutter($margin-bottom-half...);
   @extend %headerLinks;
+
+  &--homepage {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($h3-font-sizes--homepage);
+  }
 }
 
 h4,
@@ -68,6 +83,11 @@ h4,
     @include font-size($h4-font-sizes--purple);
     text-transform: uppercase;
     color: $white;
+  }
+
+  &--homepage {
+    @include font-size($h4-font-sizes--homepage);
+    color: $purple;
   }
 }
 
