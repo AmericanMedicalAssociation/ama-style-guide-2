@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
 
   &__top {
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small max-width) {
       padding: 0 ($gutter / 2);
       margin-bottom: 0;
     }
@@ -14,26 +14,23 @@
 
   &__page-content {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-column-gap: $gutter;
     grid-template-rows: auto auto auto;
     grid-row-gap: $gutter;
 
-    @include breakpoint($bp-small min-width) {
-      grid-template-columns: 3fr 1fr;
+    &__left {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
     }
-  }
 
-  &__left {
-    grid-column: 1 / 1;
-    grid-row: 2 / 2;
-  }
+    &__right {
+      @include breakpoint($bp-small max-width) {
+        grid-column: 1 / 1;
+        grid-row: 3 / 3;
+        padding: 0 ($gutter / 2);
+      }
 
-  &__right {
-    grid-column: 1 / 1;
-    grid-row: 3 / 3;
-
-    @include breakpoint($bp-small min-width) {
       grid-column: 2 / 2;
       grid-row: 2 / 2;
     }
