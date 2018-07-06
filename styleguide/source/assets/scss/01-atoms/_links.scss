@@ -16,6 +16,8 @@ a {
 }
 
 .ama__link--icon {
+  text-decoration: none;
+
   svg {
     max-height: 22px;
     max-width: 22px;
@@ -23,7 +25,8 @@ a {
   }
 
   span {
-    @include gutter($margin-right-half...);
+    margin-right: $gutter/4;
+    text-decoration: underline;
   }
 }
 
@@ -73,6 +76,10 @@ a {
 %ama__link--blue {
   @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
+
+  span {
+    text-decoration: none;
+  }
 
   &:link,
   &:visited {
