@@ -11,5 +11,18 @@ before_install:
 install:
   - npm install
 
-script:
-  - gulp test
+#script:
+#  - gulp test
+
+#after_success:
+#  - "$TRAVIS_BUILD_DIR/scripts/deploy-gh-pages"
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: $TRAVIS_BUILD_DIR/public
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  commit_message: "Deploy release ${TRAVIS_TAG}"
+  on:
+    branch: develop
