@@ -40,6 +40,19 @@
       text-decoration: underline;
     }
   }
+  // homepage secondary
+  @else if($style == "homepage-secondary") {
+    background-color: $white;
+    border-color: transparent;
+    color: $homepagePurple;
+
+    &:hover {
+      background-color: $white;
+      border-color: transparent;
+      color: $hoverPurple;
+      text-decoration: underline;
+    }
+  }
   @else {
     background-color: $purple;
     border-color: transparent;

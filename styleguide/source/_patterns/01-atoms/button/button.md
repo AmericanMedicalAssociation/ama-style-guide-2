@@ -6,7 +6,9 @@ This is the standard button pattern
 
 ### Variant options
 * [secondary](./?p=atoms-button-as-secondary)
+* [reset](./?p=atoms-button-as-reset)
 * [homepage](./?p=atoms-button-as-homepage)
+* [homepage secondary](./?p=atoms-button-as-homepage-secondary)
 
 ### Variables
 ~~~
