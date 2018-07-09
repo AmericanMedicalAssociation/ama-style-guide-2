@@ -4,7 +4,7 @@
 (function($) {
     var defaultActiveTab = 0
     var viewportWidth = window.innerWidth;
-    if (viewportWidth > 600 && $('.ama__resource-tabs').length > 0) {
+    if (viewportWidth >= 600 && $('.ama__resource-tabs').length > 0) {
         defaultActiveTab = 1;
     }
     $(".ama__tabs").tabs({

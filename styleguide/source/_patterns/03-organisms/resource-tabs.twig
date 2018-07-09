@@ -58,9 +58,11 @@
             {% include '@atoms/paragraph.twig' %}
           {% endif %}
         </div>
+        {% if loop.index == 2 %}
+          {% set membership = tabs[1].tabContent.membership %}
+          {% include '@molecules/membership/membership.twig' %}
+        {% endif %}
       {% endfor %}
-      {% set membership = tabs[1].tabContent.membership %}
-      {% include '@molecules/membership/membership.twig' %}
     </section>
     <section id="downloads">
       {% for download in tabs[2].tabContent.downloads %}
