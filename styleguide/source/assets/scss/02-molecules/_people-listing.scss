@@ -1,0 +1,40 @@
+.ama__people-listing-card {
+  background-color: $gray-7;
+  width: 100%;
+
+  .ama__image {
+    width: 100%;
+  }
+
+  &__bio a {
+    @include gutter($padding-bottom-half...);
+    display: block;
+  }
+
+  &__bio__heading {
+    @include gutter-all($padding-all-half...);
+  }
+
+  &__bio .address-one {
+    margin-bottom: 0;
+  }
+
+  &__details {
+    @include gutter-all($padding-all-half...);
+    border-top: 1px solid $gray-50;
+  }
+
+  &__details {
+    .ama__link--icon{
+      @extend .ama__type--small;
+    }
+  }
+
+  .ama__button--secondary {
+    width: 100%;
+  }
+
+  @include breakpoint($bp-small){
+    width: 281px;
+  }
+}
