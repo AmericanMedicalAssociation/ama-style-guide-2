@@ -64,6 +64,7 @@
     </section>
     <section id="downloads">
       {% for download in tabs[2].tabContent.downloads %}
+        <div id="ama__resource--downloads-{{ loop.index }}">
         {% set heading = download.heading %}
         {% include '@atoms/heading/heading.twig' %}
 
@@ -78,6 +79,7 @@
         {% if download.subtext %}
           <p class="ama__type--small">{{ link.subtext }}</p>
         {% endif %}
+      </div>
       {% endfor %}
 
       {% set membership = tabs[2].tabContent.membership %}
@@ -113,12 +115,14 @@
     </section>
     <section id="schedules">
       {% for schedule in tabs[4].tabContent.schedules %}
+      <div id="ama__resource--schedules-{{ loop.index }}">
         {% set heading = schedule.heading %}
         {% include '@atoms/heading/heading.twig' %}
         {% set heading = schedule.subheading %}
         {% include '@atoms/heading/heading.twig' %}
         {% set table = schedule.table %}
         {% include '@atoms/table.twig' %}
+      </div>
       {% endfor %}
 
       {% set membership = tabs[4].tabContent.membership %}
