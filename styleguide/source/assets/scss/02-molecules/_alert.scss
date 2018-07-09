@@ -1,0 +1,30 @@
+.ama__alert {
+  background-image: url('../icons/svg/icon-homepage-alert.svg');
+  background-repeat: no-repeat;
+  background-color: $homepagePurple;
+  background-position: 20px 50%;
+  padding: $gutter / 2;
+  color: $white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-left: 50px;
+    @include breakpoint($bp-med) {
+      flex: 1;
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0 auto;
+
+    @include breakpoint($bp-med) {
+      align-self: flex-end;
+    }
+  }
+}
