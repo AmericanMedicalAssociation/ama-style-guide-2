@@ -1,0 +1,34 @@
+.ama__hero-story {
+  display: flex;
+  flex-flow: column nowrap;
+  background: $gray-7;
+
+  &__text {
+    margin: -$gutter $gutter ($gutter * 2);
+    background: $white;
+    padding: $gutter / 2;
+  }
+
+  &__featured-quote {
+    line-height: 1.2em;
+
+    &:before,
+    &:after {
+      content: '"'
+    }
+  }
+
+  .ama__button {
+    display: table;
+    margin: $gutter auto;
+  }
+
+  .ama__image {
+    @include gutter($margin-top-full...);
+    order: -1;
+  }
+
+  &__member-name--purple {
+    color: $homepagePurple;
+  }
+}
