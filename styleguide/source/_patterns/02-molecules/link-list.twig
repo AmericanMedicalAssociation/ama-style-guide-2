@@ -1,0 +1,26 @@
+<div class="ama__link-list">
+  {% set heading = linkList.heading %}
+  {% include "@atoms/heading/heading.twig" %}
+  <ul>
+    {% for link in linkList.links %}
+      <li>
+        {% include "@atoms/link/link.twig" %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{#Mobile version#}
+<div id="accordion" class="ama__link-list--mobile ama__accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+  {% set heading = linkList.heading %}
+  {% include "@atoms/heading/heading.twig" %}
+  <div>
+    <ul>
+      {% for link in linkList.links %}
+        <li>
+          {% include "@atoms/link/link.twig" %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
