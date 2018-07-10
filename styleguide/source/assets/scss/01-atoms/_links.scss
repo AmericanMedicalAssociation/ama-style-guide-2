@@ -128,3 +128,52 @@ a {
     background-color: transparent;
   }
 }
+
+.ama__link--purple,
+%ama__link--purple {
+  @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
+
+  span {
+    text-decoration: none;
+  }
+
+  &:link,
+  &:visited {
+    color: $purple;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $purple;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}
+
+.ama__link--gray-50,
+%ama__link--gray-50 {
+  @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
+
+  span {
+    text-decoration: none;
+  }
+
+  &:link,
+  &:visited {
+    color: $gray-50;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $gray-50;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}
+
+
+
