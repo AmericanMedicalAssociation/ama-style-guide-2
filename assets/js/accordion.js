@@ -3,6 +3,7 @@
 (function($) {
     $( ".ama__accordion" ).accordion({
         heightStyle: "content",
-        collapsible: true
+        collapsible: true,
+        active: false
     });
 })(jQuery);
