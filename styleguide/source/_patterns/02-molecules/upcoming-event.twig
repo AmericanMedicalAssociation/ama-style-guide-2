@@ -1,0 +1,9 @@
+{%  set heading = event.heading|merge({
+    "level": 5,
+    "class": "ama__h5--purple--homepage ama__upcoming-event__title"
+  })
+%}
+
+<div class="ama__upcoming-event">
+  {% include "@atoms/heading/heading.twig" %}
+</div>
