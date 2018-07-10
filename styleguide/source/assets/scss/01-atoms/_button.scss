@@ -18,4 +18,12 @@ button {
   &--reset {
     @include ama-button("", "reset");
   }
+
+  &--homepage {
+    @include ama-button("", "homepage");
+
+    &--secondary {
+      @include ama-button("", "homepage-secondary");
+    }
+  }
 }

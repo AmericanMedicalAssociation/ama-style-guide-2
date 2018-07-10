@@ -27,6 +27,32 @@
       text-decoration: underline;
     }
   }
+  // homepage
+  @else if($style == "homepage") {
+    background-color: $homepagePurple;
+    border-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $hoverPurple;
+      border-color: transparent;
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+  // homepage secondary
+  @else if($style == "homepage-secondary") {
+    background-color: $white;
+    border-color: transparent;
+    color: $homepagePurple;
+
+    &:hover {
+      background-color: $white;
+      border-color: transparent;
+      color: $hoverPurple;
+      text-decoration: underline;
+    }
+  }
   @else {
     background-color: $purple;
     border-color: transparent;
