@@ -1,1 +1,6 @@
 {% extends '@templates/one-column.twig' %}
+
+{% block header %}
+  {% set alert = homepage.alert %}
+  {% include '@molecules/alert.twig' %}
+{% endblock %}
