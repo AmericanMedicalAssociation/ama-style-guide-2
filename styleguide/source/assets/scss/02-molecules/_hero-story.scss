@@ -4,7 +4,12 @@
   background: $gray-7;
 
   &__text {
-    margin: -$gutter $gutter ($gutter * 2);
+    @include breakpoint($bp-small max-width) {
+      margin: -$gutter $gutter ($gutter * 2);
+    }
+
+    display: flex;
+    flex-flow: column nowrap;
     background: $white;
     padding: $gutter / 2;
   }
@@ -19,13 +24,19 @@
   }
 
   .ama__button {
-    display: table;
-    margin: $gutter auto;
+    margin: $gutter auto ($gutter / 4);
+
+    @include breakpoint($bp-small) {
+      align-self: flex-end;
+      margin: ($gutter / 2) 0 ($gutter / 4);
+    }
   }
 
   .ama__image {
-    @include gutter($margin-top-full...);
-    order: -1;
+    @include breakpoint($bp-small max-width) {
+      @include gutter($margin-top-full...);
+      order: -1;
+    }
   }
 
   &__member-name--purple {
