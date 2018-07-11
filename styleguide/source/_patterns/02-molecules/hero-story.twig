@@ -1,4 +1,4 @@
-<div class="ama__hero-story">
+<div class="ama__hero-story {% if heroStory.video is not empty %}ama__hero-story--video{% endif %}">
   <div class="ama__hero-story__text">
     {% include '@atoms/heading/heading.twig' with { heading : heroStory.memberName } %}
     {% include '@atoms/heading/heading.twig' with { heading : heroStory.featuredQuote } %}

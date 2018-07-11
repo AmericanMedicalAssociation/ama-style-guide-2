@@ -3,6 +3,14 @@
   flex-flow: column nowrap;
   background: $gray-7;
 
+  &--video {
+    .ama__hero-story__text {
+      @include breakpoint($bp-small max-width) {
+        margin: 0 $gutter ($gutter * 2);
+      }
+    }
+  }
+
   &__text {
     @include breakpoint($bp-small max-width) {
       margin: -$gutter $gutter ($gutter * 2);
