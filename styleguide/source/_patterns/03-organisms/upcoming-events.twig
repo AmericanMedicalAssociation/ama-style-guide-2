@@ -1,9 +1,7 @@
 <section class="ama__upcoming-events">
-  <div class="ama__upcoming-events__header">
-    {% include "@atoms/section-title.twig" %}
-    {% include "@atoms/link/link.twig" %}
-  </div>
+  {% include "@atoms/section-title.twig" %}
   {% for event in events %}
     {% include "@molecules/upcoming-event.twig" %}
   {% endfor %}
+  {% include "@atoms/link/link.twig" %}
 </section>

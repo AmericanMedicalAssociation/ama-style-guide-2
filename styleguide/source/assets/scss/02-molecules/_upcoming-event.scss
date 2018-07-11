@@ -1,15 +1,21 @@
 .ama__upcoming-event {
   @include gutter($padding-bottom-half...);
   @include gutter($padding-top-full...);
-  display: flex;
+  @include gutter($padding-left-half...);
   border-top: 1px solid $gray-7;
 
-  &__title {
-    flex-grow: 2;
+  @include breakpoint($bp-med) {
+    display: flex;
+  }
 
+  &__title {
     svg {
-      @include gutter($margin-left-half...);
+      display: none;
       @include gutter($margin-right-full...);
+    }
+
+    @include breakpoint($bp-med) {
+      flex-grow: 1;
     }
   }
 
@@ -17,6 +23,11 @@
     color: $gray-50;
     line-height: 1.222em;
     display: flex;
+
+    p {
+      @include gutter($margin-right-full...);
+      @include font-size($small-font-sizes);
+    }
   }
 }
 
@@ -26,10 +37,14 @@
   }
 
   .ama__section-title {
-    flex-grow: 1;
+    @include breakpoint($bp-med) {
+      flex-grow: 1;
+    }
   }
 
   &__view-all-link {
-    align-self: flex-end;
+    @include gutter($margin-right-full...);
+    @include font-size($small-font-sizes);
+    float: right;
   }
 }
