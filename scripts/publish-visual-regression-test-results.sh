@@ -46,3 +46,11 @@ git commit --message "Travis build: ${TRAVIS_BUILD_ID}" --quiet
 echo "Deploying to ${git_deploy_branch}."
 # Force push in case there were artifacts for this PR / branch before.
 git push -f origin ${git_deploy_branch}
+
+# Print a link to the HTML report.
+# strip the @github.com/ from the start.
+github_deploy_path="${GITHUB_TOKEN_REPO/#@github.com\//}"
+# strip the .git from the end
+github_deploy_path="${github_deploy_path/%.git/}"
+
+echo "You can review the generated visual regression testing report in a browser at http://htmlpreview.github.io/?https://github.com/${github_deploy_path}/blob/${git_deploy_branch}/html_report/index.html"
