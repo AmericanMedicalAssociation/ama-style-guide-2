@@ -15,21 +15,6 @@ a {
  }
 }
 
-.ama__link--icon {
-  text-decoration: none;
-
-  svg {
-    max-height: 22px;
-    max-width: 22px;
-    vertical-align: middle;
-  }
-
-  span {
-    margin-right: $gutter/4;
-    text-decoration: underline;
-  }
-}
-
 .sg-pattern svg {
   max-height: 22px;
   max-width: 22px;
@@ -51,6 +36,37 @@ a {
     color: $black;
     text-decoration: underline;
     background-color: transparent;
+  }
+}
+
+.ama__link--icon {
+  text-decoration: none;
+
+  svg {
+    max-height: 22px;
+    max-width: 22px;
+    vertical-align: middle;
+  }
+
+  span {
+    margin-right: $gutter/4;
+    text-decoration: underline;
+  }
+
+  &:hover{
+    text-decoration: underline;
+  }
+
+  &.ama__link--no-underline{
+    span {
+      text-decoration: none;
+    }
+    &:active, &:hover{
+      text-decoration: none;
+      span{
+        text-decoration: underline;
+      }
+    }
   }
 }
 //
