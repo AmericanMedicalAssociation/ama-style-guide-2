@@ -4,6 +4,11 @@
   @include gutter($padding-left-half...);
   border-top: 1px solid $gray-7;
 
+  @include breakpoint($bp-small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   @include breakpoint($bp-med) {
     display: flex;
   }
@@ -11,7 +16,11 @@
   &__title {
     svg {
       display: none;
-      @include gutter($margin-right-full...);
+
+      @include breakpoint($bp-small) {
+        @include gutter($margin-right-full...);
+        display: inline-block;
+      }
     }
 
     @include breakpoint($bp-med) {
@@ -24,9 +33,17 @@
     line-height: 1.222em;
     display: flex;
 
+    @include breakpoint($bp-small) {
+      margin-left: 40px;
+    }
+
     p {
       @include gutter($margin-right-full...);
       @include font-size($small-font-sizes);
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
     }
   }
 }
@@ -46,5 +63,11 @@
     @include gutter($margin-right-full...);
     @include font-size($small-font-sizes);
     float: right;
+
+    @include breakpoint($bp-small) {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
   }
 }
