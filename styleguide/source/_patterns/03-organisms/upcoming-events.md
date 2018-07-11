@@ -5,35 +5,41 @@ title: "Upcoming Events"
 
 A collection of up to three upcoming events displayed in a column on the homepage.
 
-[EWL-4433](https://issues.ama-assn.org/browse/EWL-4434)
+[EWL-5462](https://issues.ama-assn.org/browse/EWL-5462)
 
 ### Use Case
-Contains a list of all the partners mentioned within a Press Release so visitors know the logo, contact info, and business/organization summary of all parties involved in the press release.
+Contains a list of upcoming events for promotion on the homepage, so that users can get a quick glance at the major details of any upcoming events or link over to the event page to get the full details.
 
 ### Variables
 ~~~
 {
-  "items": [
-    {
-      "patternLab": true,
-      "link": {
-        "title": string/optional
-        "href": string/required
-        "text": string/required
-        "class": "ama__link-black",
-        "target": "_self"
-      },
-      "image": {
-        "alt": string/required
-        "src": "string/required
-        "height": string/optional
-        "width": string/optional
-      },
-      "date": string/optional
-      "readtime": string/optional
+  sectionTitile: {
+    text: Upcoming Events
+  },
+  link: {
+    title: View all Events,
+    href: string,
+    text: View all Events,
+    target: _self,
+    class: ama__link--blue ama__upcoming-events__view-all-link
+  },
+  events: [
+  {
+    link: {
+      title: string,
+      href: string,
+      text: string,
+      target: _self,
+      class: ama__link--icon,
+      iconLeft: @atoms/media/icons/svg/icon-calendar.twig
     },
+    location: {
+      text: string,
+      class: ama__upcoming-event__location
+    },
+    date: string/optional
+  },
    ... # repeat for each item.
-    }
   ]
 }
 ~~~
