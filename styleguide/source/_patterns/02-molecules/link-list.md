@@ -1,5 +1,5 @@
 ---
-el: '.link-list
+el: '.link-list'
 title: 'Homepage Link List'
 ---
 A list of links for the homepage. The list switches to an accordion in mobile view 
