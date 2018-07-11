@@ -6,13 +6,15 @@
     </h5>
   {% endif %}
 
-  {% if event.date %}
-    {% set date = event.date %}
-    <p class="ama__upcoming-event__date">{{ date.month }} {{ date.day }}, {{ date.year }}</p>
-  {% endif %}
+  <div class="ama__upcoming-event__text">
+    {% if event.date %}
+      {% set date = event.date %}
+      <p class="ama__upcoming-event__date">{{ date.month }} {{ date.day }}, {{ date.year }}</p>
+    {% endif %}
 
-  {% if event.location %}
-    {% set paragraph = event.location %}
-    {% include "@atoms/paragraph.twig" %}
-  {% endif %}
+    {% if event.location %}
+      {% set paragraph = event.location %}
+      {% include "@atoms/paragraph.twig" %}
+    {% endif %}
+  </div>
 </div>

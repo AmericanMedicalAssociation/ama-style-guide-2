@@ -1,0 +1,21 @@
+.ama__upcoming-event {
+  @include gutter($padding-bottom-full...);
+  @include gutter($padding-top-full...);
+  display: flex;
+  border-top: 1px solid $gray-7;
+
+  &__title {
+    flex-grow: 2;
+
+    svg {
+      @include gutter($margin-left-half...);
+      @include gutter($margin-right-full...);
+    }
+  }
+
+  &__text {
+    color: $gray-50;
+    line-height: 1.222em;
+    display: flex;
+  }
+}
