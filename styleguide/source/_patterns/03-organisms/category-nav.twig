@@ -2,7 +2,7 @@
   <ul>
     {% for link in catNav.links %}
       <li>
-        <a href="{{ link.href }}">{{ link.text }}</a>
+        {% include "@atoms/link/link.twig" %}
       </li>
     {% endfor %}
   </ul>
