@@ -1,5 +1,8 @@
 {% extends '@templates/one-column.twig' %}
 
-{% block contentTop %}
-  {% include '@organisms/category-nav.twig' with { productNav : homepage.catNav } %}
+{% block pageContent %}
+  <div class="ama__homepage__navs">
+    {% include '@organisms/category-nav.twig' with { catNav : homepage.catNav } %}
+    {% include '@organisms/org-nav.twig' with { orgNav : homepage.orgNav } %}
+  </div>
 {% endblock %}
