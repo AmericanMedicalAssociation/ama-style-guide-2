@@ -30,11 +30,15 @@
 
   &__text {
     color: $gray-50;
-    line-height: 1.222em;
     display: flex;
 
     @include breakpoint($bp-small) {
       margin-left: 40px;
+    }
+
+    @include breakpoint($bp-med) {
+      margin-left: 0;
+      width: 40%;
     }
 
     p {
@@ -43,6 +47,11 @@
 
       @include breakpoint($bp-small) {
         width: 50%;
+      }
+
+      @include breakpoint($bp-med) {
+        @include font-size($p-font-sizes);
+        line-height: 1.222em;
       }
     }
   }
@@ -68,6 +77,12 @@
       position: absolute;
       top: 10px;
       right: 20px;
+    }
+
+    @include breakpoint($bp-med) {
+      font-size: .778em;
+      line-height: 1.571em;
+      top: 45px;
     }
   }
 }
