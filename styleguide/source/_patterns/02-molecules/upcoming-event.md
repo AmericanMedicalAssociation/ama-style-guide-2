@@ -7,8 +7,19 @@ A teaser of the event that will appear in a listing on the homepage.
 
 ### Variables
 ~~~
-event:
-    date: string,
+event: {
+  link: {
     title: string,
-    location: string
+    href: string,
+    text: string,
+    target: _self,
+    class: ama__link--icon,
+    iconLeft: @atoms/media/icons/svg/icon-calendar.twig
+  },
+  location: {
+    text: string,
+    class: ama__upcoming-event__location
+  },
+  date: string/optional
+}
 ~~~

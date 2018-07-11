@@ -159,5 +159,25 @@ a {
   }
 }
 
+.ama__link--homepage,
+%ama__link--homepage {
+  @include type($myriad-pro, $font-weight-regular);
+  text-decoration: none;
 
+  span {
+    text-decoration: none;
+  }
 
+  &:link,
+  &:visited {
+    color: $homepagePurple;
+  }
+  // if the default link style changes this will need to include color: black; text-decoration: none;
+  &:active,
+  &:hover,
+  &:focus {
+    color: $homepagePurple;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}
