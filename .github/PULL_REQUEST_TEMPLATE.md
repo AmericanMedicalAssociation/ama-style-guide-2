@@ -19,11 +19,17 @@ Explain the technical implementation of the work done.
 
 ## Visual Regressions
 
+_Please provide the pull request ID below. This will then reference the automated VRT report after it has been generated._
+
+A report is available [here](http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/visual-regression-testing-artifact/[PULL_REQUEST_ID]/html_report/index.html).
+
 **Before proceeding:** Run visual regression tests locally to ensure new work does not introduce new bugs.
 
-_If the new work does your work introduce visual regressions into existing work in the Style Guide (or in a Drupal 8 environment)_, either call these out here or address them before marking the PR as `ready for review`.
+_The visual regression tests always compare against the production version of the style guide. Changes and new work will show up as test failures. Please describe your work so that the report can be reviewed by the team._
 
-If you are creating or updating a pattern be sure you have created or updated the [scenario in `backstop.json`](ama-style-guide-2/styleguide/backstop.json) and have included a new or updated screenshot in [`bitmaps_reference`](ama-style-guide-2/styleguide/backstop_data/bitmaps_reference).
+If you are creating or updating a pattern be sure you have created or updated the [scenario in `backstop.json`](ama-style-guide-2/styleguide/backstop.json).
+
+_After changes in the report are documented and demonstrate your desired changes, please mark the pull request as `ready for review`.
 
 For more information on visual regression testing review the [How do I run tests?](https://issues.ama-assn.org:8446/confluence/pages/viewpage.action?pageId=23298568) document in Confluence.
 
