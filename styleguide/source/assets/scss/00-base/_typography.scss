@@ -103,6 +103,18 @@ h5,
     @include gutter($margin-bottom-half...);
     color: $purple;
     text-transform: uppercase;
+
+    &--homepage {
+      @include type($myriad-pro, $font-weight-semibold);
+      @include font-size($small-font-sizes--homepage);
+      color: $homepagePurple;
+    }
+  }
+
+  &--homepage {
+    @include type($myriad-pro, $font-weight-bold);
+    @include gutter($margin-bottom-half...);
+    color: $homepagePurple;
   }
 }
 
