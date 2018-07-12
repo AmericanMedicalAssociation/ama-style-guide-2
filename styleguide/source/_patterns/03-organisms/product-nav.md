@@ -14,12 +14,17 @@ As a user, I want to find quick links to the product I need.
 {
    "productNav": {
      "links": [
-       {
-         "text": 
-           string / required
-         "href": 
-           string / required (url)
-       },
+        "text": 
+          string / required ("JAMA Network")
+        "title": 
+          string / required ("JAMA Network")
+        "href": 
+          string / required (url)
+        "target": 
+          string / required ("_self")
+        "class": 
+          string / required ("ama__link--white")
+      },
        // repeat for each link.
      ]
    }
