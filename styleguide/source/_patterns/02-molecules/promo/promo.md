@@ -19,10 +19,15 @@ This pattern should only ever have a Secondary CTA button, and never a Primary o
 - [Promo With CTA](?p=molecules-promo-with-cta) - example including a CTA, causing the pattern to render as a `div` instead of a link.
 - [Promo With Image](?p=molecules-promo-with-image) - example including an image.
 - [Promo With Border](?p=molecules-promo-with-border) - example of this pattern when `"style:"` is set to `border`.`
+- [Promo As Inline](?p=molecules-promo-as-inline) - example of this pattern when `"style:"` is set to `inline`.`
+- [Promo As Homepage](?p=molecules-promo-as-homepage) - example of this pattern when `"style:"` is set to `homepage`.`
+
 
 ### Tickets
 [EWL-4185](https://issues.ama-assn.org/browse/EWL-4185)
 [EWL-4514](https://issues.ama-assn.org/browse/EWL-4514)
+[EWL-4514](https://issues.ama-assn.org/browse/EWL-5460)
+
 
 ### Use Case
 This produces a container for a "Promotional" Item meant for addtional information with a call to action button.
