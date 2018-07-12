@@ -13,15 +13,34 @@
 
   button {
     @include gutter($margin-top-half...);
-    background: $orange;
-    color: $black;
-    font-weight: 600;
     width: 100%;
+  }
 
-    &:hover {
-      background: $hoverOrange;
-      color: $black;
-      border: solid 1px transparent;
+  &--homepage {
+    @include gutter-all($padding-all-half...);
+    background: $gray-7;
+    color: $gray-64;
+
+    button {
+      @include gutter($margin-top-full...);
+      @include gutter($margin-right-half...);
+      width: auto;
+    }
+
+    &__feature-heading {
+      @include gutter($margin-bottom-half...);
+    }
+
+    &__heading,
+    &__promo-heading{
+      color: $gray-50;
+      font-weight: 400;
+      line-height: 1.25em;
+      margin-bottom: 0;
+    }
+
+    &__promo-heading{
+      color: $homepagePurple;
     }
   }
 }

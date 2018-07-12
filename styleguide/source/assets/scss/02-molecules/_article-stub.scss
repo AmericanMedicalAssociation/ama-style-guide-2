@@ -150,4 +150,25 @@
       padding-right: 0;
     }
   }
+
+  &--homepage {
+    .ama__article-stub__title {
+      padding: 0;
+    }
+
+    .ama__article-stub__copy {
+      padding: 0;
+    }
+
+    h5.ama__article-stub__title {
+      @include font-size($h5-font-sizes--homepage);
+    }
+    h2.ama__article-stub__title {
+      @include font-size($h1-font-sizes);
+
+      @include breakpoint($bp-small max-width) {
+        line-height: 26px;
+      }
+    }
+  }
 }

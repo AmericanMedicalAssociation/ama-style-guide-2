@@ -1,17 +1,20 @@
 {% set
-  style, link, button, image, paragraph, heading =
-  promo.style,
+  link, button, image, paragraph, heading =
   promo.link,
   promo.button,
   promo.image,
   promo.paragraph,
-  promo.heading ? promo.heading|merge({level: "2", class: "ama__h2"})
+  promo.heading
 %}
 
-{% set classes = "ama__promo--#{style}" %}
+{% if promo.style and promo.homepage %}
+  {% set classes = "ama__promo--homepage ama__promo--#{promo.style}" %}
+{% else %}
+  {% set classes = "ama__promo--#{promo.style}" %}
+{% endif %}
 
 {% if button %}
-<div {{ setAttributes(classes, attributes) }}>
+  <div {{ setAttributes(classes, attributes) }}>
     {% else %}
   <a href="{{ link }}" {{ setAttributes(classes, attributes) }}>
 {% endif %}
@@ -25,7 +28,10 @@
   {% endblock %}
 
   {% include '@atoms/heading/heading.twig' %}
-  {% include '@atoms/paragraph.twig' %}
+
+  {% if paragraph.text %}
+    {% include '@atoms/paragraph.twig' %}
+  {% endif %}
 
   {% if button %}
     {% include '@atoms/button/button.twig' %}
