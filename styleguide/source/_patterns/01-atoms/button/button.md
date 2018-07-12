@@ -9,6 +9,7 @@ This is the standard button pattern
 * [reset](./?p=atoms-button-as-reset)
 * [homepage](./?p=atoms-button-as-homepage)
 * [homepage secondary](./?p=atoms-button-as-homepage-secondary)
+* [promo](./?p=atoms-button-as-promo)
 
 ### Variables
 ~~~
