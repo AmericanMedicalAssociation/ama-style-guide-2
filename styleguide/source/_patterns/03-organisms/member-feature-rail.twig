@@ -1,0 +1,21 @@
+<div class="ama__member-feature-rail">
+  {#And I should see 3 "Article Stub as Homepage"#}
+  {% for articleStub in memberFeatureRail.articleStubs %}
+    {% if articleStub.hasVideo %}
+        <div class="ama__member-feature-rail__video-wrapper">
+        <span class="ama__member-feature-rail__video-wrapper__icon">
+          <span class="icon--triangle"></span>
+        </span>
+    {% endif %}
+    {% include '@molecules/article-stub/article-stub.twig' %}
+    {% if articleStub.hasVideo %}
+      </div>
+    {% endif %}
+  {% endfor %}
+  {#And I should see a "view all" link#}
+  {% include '@atoms/link/link.twig' with { link : memberFeatureRail.viewMoreLink } %}
+  {#When I resize to tablet#}
+  {#Then I should see two items vertically#}
+  {#When I resize to mobile#}
+  {#Then I should see two items stacked#}
+</div>
