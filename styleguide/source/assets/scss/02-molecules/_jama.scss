@@ -2,7 +2,7 @@
   clear: both;
 
   @include breakpoint($bp-med max-width) {
-    margin-bottom: $gutter;
+    @include gutter($margin-bottom-full...);
   }
 
   .logo img {
@@ -40,6 +40,10 @@
       margin-top: $gutter / 4;
       border-color: $hoverRed;
     }
+
+    &:last-of-type {
+      border-color: $hoverRed;
+    }
   }
 
   // Styles the Image Href with Text variant.
@@ -52,6 +56,35 @@
     &.ama__link--with-image {
       img {
         display: block;
+      }
+    }
+  }
+
+  &--homepage {
+    .ama__jama__links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ama__jama__links li {
+      @include gutter($margin-right-full...);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .ama__image-wrap {
+      display: none;
+    }
+
+    .ama__link--with-image:first-child a .ama__image__text {
+      padding: 0;
+    }
+
+    @include breakpoint($bp-small) {
+      .ama__jama__links {
+        flex-direction: row;
       }
     }
   }
@@ -155,3 +188,5 @@
     content: '\00ae';
   }
 }
+
+
