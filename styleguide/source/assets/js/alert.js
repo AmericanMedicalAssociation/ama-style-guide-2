@@ -10,8 +10,8 @@
  (function ($, Drupal) {
    Drupal.behaviors.alert = {
      attach: function (context, settings) {
-       Cookies.get('ama__alert--hide');
-       var alertCookie = $.Cookies('ama__alert--hide');
+       $.cookie('ama__alert--hide');
+       var alertCookie = $.cookie('ama__alert--hide');
        (function ($) {
          // If the 'hide cookie is not set we show the alert
          if (!alertCookie) {
@@ -23,7 +23,7 @@
          $('.ama__alert__close').click(function() {
            $('.ama__alert').fadeOut();
            // set the cookie
-           Cookies.set('ama__alert--hide', '1', { expires: 1});
+           $.cookie('ama__alert--hide', '1', { expires: 1});
            return false;
          });
        })(jQuery);
