@@ -1,0 +1,9 @@
+<div class="ama__category-nav">
+  <ul>
+    {% for link in catNav.links %}
+      <li>
+        {% include "@atoms/link/link.twig" %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

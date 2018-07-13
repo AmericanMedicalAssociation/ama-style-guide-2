@@ -1,5 +1,4 @@
 {% extends '@templates/one-column.twig' %}
-
 {% block header %}
   {% set alert = homepage.alert %}
   {% include '@molecules/alert.twig' %}
@@ -7,5 +6,9 @@
 {% endblock %}
 
 {% block pageContent %}
-  {% include '@organisms/upcoming-events.twig' %}
+  <div class="ama__homepage__navs">
+    {% include '@organisms/category-nav.twig' with { catNav : homepage.catNav } %}
+    {% include '@organisms/org-nav.twig' with { orgNav : homepage.orgNav } %}
+  </div>
+  {% include '@organisms/upcoming-events.twig' with { upcomingEvents : homepage.upcomingEvents } %}
 {% endblock %}
