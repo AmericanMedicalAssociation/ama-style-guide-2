@@ -53,6 +53,18 @@
       text-decoration: underline;
     }
   }
+  @else if($style == "promo") {
+    background-color: $orange;
+    border-color: transparent;
+    color: $black;
+
+    &:hover {
+      background-color: $hoverOrange;
+      border-color: transparent;
+      color: $black;
+      text-decoration: underline;
+    }
+  }
   @else {
     background-color: $purple;
     border-color: transparent;

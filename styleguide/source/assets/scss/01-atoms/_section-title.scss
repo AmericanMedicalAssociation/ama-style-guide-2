@@ -3,9 +3,12 @@
   @extend %ama__h2--homepage;
 
   @include breakpoint($bp-small max-width){
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
     background-color: $purple;
     color: $white;
     font-size: .9em;
     line-height: 1.5em;
+    display: inline-block;
   }
 }
