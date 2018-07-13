@@ -1,6 +1,19 @@
 .ama__member-feature-rail {
   @include child-top-gutters($gutter * 2);
   @include gutter-all($padding-all-full...);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: $gutter;
+
+  .ama__article-stub {
+    margin: 0;
+  }
+
+  .ama__member-feature-rail__view-all-link {
+    grid-column: 1/-1;
+    text-align: right;
+  }
 
   @include breakpoint($bp-med max-width) {
     .ama__article-stub:nth-child(3) {
@@ -8,21 +21,9 @@
     }
   }
 
-  @include breakpoint($bp-small $bp-med) {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: $gutter;
-
-    .ama__article-stub {
-      margin: 0;
-    }
-
-    .ama__member-feature-rail__view-all-link {
-      grid-column-start: 2;
-      grid-column-end: 2;
-      text-align: right;
-    }
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: column;
   }
 
   background: $gray-7;
