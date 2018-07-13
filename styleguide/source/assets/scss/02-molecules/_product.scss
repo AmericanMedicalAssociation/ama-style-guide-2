@@ -1,0 +1,16 @@
+.ama__product {
+  @include gutter($padding-top-half...);
+  border-top: 1px solid $gray-7;
+
+  &__image {
+    @include gutter($padding-right-half...);
+    display: none;
+    float: left;
+  }
+
+  &:nth-child(3n+3){
+    .ama__image {
+      display: inline-block;
+    }
+  }
+}
