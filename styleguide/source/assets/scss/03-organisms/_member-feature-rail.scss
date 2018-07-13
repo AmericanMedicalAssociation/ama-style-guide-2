@@ -1,9 +1,6 @@
 .ama__member-feature-rail {
   @include child-top-gutters($gutter * 2);
-  @include gutter($padding-top-full...);
-  @include gutter($padding-left-full...);
-  @include gutter($padding-right-full...);
-  @include gutter($padding-bottom-full...);
+  @include gutter-all($padding-all-full...);
 
   @include breakpoint($bp-med max-width) {
     .ama__article-stub:nth-child(3) {
@@ -61,9 +58,8 @@
 
   &__view-all-link {
     @include gutter($margin-top-full...);
-    @extend .ama__link--purple;
+    font-weight: 600;
     font-style: italic;
     display: inline-block;
   }
 }
-
