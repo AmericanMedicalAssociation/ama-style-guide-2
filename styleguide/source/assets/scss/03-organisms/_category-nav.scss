@@ -1,4 +1,10 @@
 .ama__category-nav {
+  display: none;
+  
+  @include breakpoint($bp-small) {
+    display block;
+  }
+  
   li {
     display: inline-block;
 
