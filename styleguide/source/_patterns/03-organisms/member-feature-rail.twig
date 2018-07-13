@@ -3,7 +3,9 @@
   {% for articleStub in memberFeatureRail.articleStubs %}
     {% if articleStub.hasVideo %}
         <div class="ama__member-feature-rail__video-wrapper">
-        <span class="ama__member-feature-rail__video-wrapper__icon">icon</span>
+        <span class="ama__member-feature-rail__video-wrapper__icon">
+          <span class="icon--triangle"></span>
+        </span>
     {% endif %}
     {% include '@molecules/article-stub/article-stub.twig' %}
     {% if articleStub.hasVideo %}

@@ -6,7 +6,7 @@
   @include gutter($padding-bottom-full...);
 
   @include breakpoint($bp-med max-width) {
-    .ama__article-stub:nth-child(2) {
+    .ama__article-stub:nth-child(3) {
       display: none;
     }
   }
@@ -46,6 +46,17 @@
     position: absolute;
     right: 0;
     background: $homepagePurple;
+    height: 40px;
+    width: 40px;
+
+    .icon--triangle {
+      background-size: 15px 15px;
+      min-height: 100%;
+      min-width: 100%;
+      background-position: center;
+      max-height: 100%;
+      max-width: 100%;
+    }
   }
 
   &__view-all-link {
