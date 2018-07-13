@@ -4,7 +4,8 @@
   articleStub.small ? "ama__article-stub--small",
   articleStub.image ? "ama__article-stub--image",
   articleStub.video ? "ama__article-stub--video",
-  articleStub.categoryPage ? "ama__article-stub--category"
+  articleStub.categoryPage ? "ama__article-stub--category",
+  articleStub.homepage ? "ama__article-stub--homepage"
 ] %}
 
 {% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
@@ -28,6 +29,11 @@
 
   {% if articleStub.categoryPage.heading %}
     {% set heading = articleStub.categoryPage.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %}
+
+  {% if articleStub.homepage.heading %}
+    {% set heading = articleStub.homepage.heading %}
     {% include "@atoms/heading/heading.twig" %}
   {% endif %}
 
