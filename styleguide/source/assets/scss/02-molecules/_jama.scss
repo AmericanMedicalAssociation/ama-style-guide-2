@@ -2,7 +2,7 @@
   clear: both;
 
   @include breakpoint($bp-med max-width) {
-    margin-bottom: $gutter;
+    @include gutter($margin-bottom-full...);
   }
 
   .logo img {
@@ -52,6 +52,36 @@
     &.ama__link--with-image {
       img {
         display: block;
+      }
+    }
+  }
+
+  &--homepage {
+    .ama__jama__links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ama__jama__links li {
+      @include gutter($margin-right-full...);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .ama__image-wrap {
+      display: none;
+      padding: 0;
+    }
+
+    .ama__link--with-image span {
+      padding-left: 0;
+    }
+
+    @include breakpoint($bp-small) {
+      .ama__jama__links {
+        flex-direction: row;
       }
     }
   }
@@ -155,3 +185,5 @@
     content: '\00ae';
   }
 }
+
+
