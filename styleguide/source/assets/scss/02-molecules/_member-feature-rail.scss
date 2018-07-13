@@ -1,34 +1,40 @@
 .ama__member-feature-rail {
   @include child-top-gutters($gutter * 2);
-  @include gutter($padding-top-full...);
-  @include gutter($padding-left-full...);
-  @include gutter($padding-right-full...);
-  @include gutter($padding-bottom-full...);
+  @include gutter-all($padding-all-full...);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: $gutter;
+  background: $gray-7;
 
-  @include breakpoint($bp-med max-width) {
-    .ama__article-stub:nth-child(3) {
+  .ama__article-stub {
+    margin-top: 0;
+
+    &:nth-child(3) {
       display: none;
     }
   }
 
-  @include breakpoint($bp-small $bp-med) {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: $gutter;
+  .ama__member-feature-rail__view-all-link {
+    grid-column: 1/-1;
+    text-align: right;
+  }
 
+  @include breakpoint($bp-small) {
     .ama__article-stub {
-      margin: 0;
-    }
+      @include gutter($margin-bottom-full...);
 
-    .ama__member-feature-rail__view-all-link {
-      grid-column-start: 2;
-      grid-column-end: 2;
-      text-align: right;
+      &:nth-child(3) {
+        display: block;
+        margin-bottom: 0;
+      }
     }
   }
 
-  background: $gray-7;
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: column;
+  }
 
   .ama__article-stub .ama__image {
     width: 100%;
@@ -61,9 +67,8 @@
 
   &__view-all-link {
     @include gutter($margin-top-full...);
-    @extend .ama__link--purple;
+    font-weight: 600;
     font-style: italic;
     display: inline-block;
   }
 }
-

@@ -13,59 +13,58 @@ RIGHT RAIL (3 articles)
   "memberFeatureRail": {
     "articleStubs": [
       {
-        "hasVideo": 
-          string / required ("true")
+        "hasVideo":
+          boolean / required ("true")
         "link": {
-          "title": 
+          "title":
             string / required
-          "href": 
+          "href":
             string / required (url)
-          "text": 
-            string / required 
+          "text":
+            string / required
         },
-        "image": 
+        "image":
           {
-          "alt": 
-            string / required 
-          "src": 
+          "alt":
+            string / required
+          "src":
             string / required (url)
-          "height": 
+          "height":
             "600",
-          "width": 
+          "width":
             "800"
         },
-        "headingLevel": 
-          string / required ("h5"),
-        "homepage": 
+        "headingLevel":
+          integer / required ("h5"),
+        "homepage":
           {
-          "heading": 
+          "heading":
             {
-            "level": 
-              string / required ("5")
-            "text": 
-              string / required 
-            "class": 
+            "level":
+              integer / required ("5")
+            "text":
+              string / required
+            "class":
               string / required  ("ama__h5 ama__h5--purple--homepage")
           }
         }
       },
       // Repeat for each link.
     ],
-    "viewMoreLink": 
+    "viewMoreLink":
       {
-      "title": 
-        string / required 
-      "href": 
+      "title":
+        string / required
+      "href":
         string / required (url)
-      "text": 
+      "text":
         string / required ("View more from this series")
-      "target": 
+      "target":
         string / required ("_self")
-      "class": 
+      "class":
         string / required ("ama__link ama__member-feature-rail__view-all-link")
     }
   }
 }
 
 ~~~~
-
