@@ -5,15 +5,13 @@
   width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
 
-  @include breakpoint($bp-med min-width) {
+  @include breakpoint($bp-med) {
     background-image: url('../icons/svg/icon-homepage-alert.svg');
     background-repeat: no-repeat;
     background-position: 20px 50%;
-  }
-
-  @include breakpoint($bp-small max-width) {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   &__text {
@@ -21,7 +19,7 @@
     margin-bottom: 0;
     margin-right: 25px;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       margin-right: 0;
       margin-left: 50px;
       flex: 1;
@@ -33,7 +31,7 @@
     font-weight: 900;
     margin: 0 auto;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       align-self: flex-end;
     }
   }
@@ -43,16 +41,17 @@
     width: 22px;
     overflow: hidden;
     margin-left: 25px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
 
     svg {
       fill: $white;
       vertical-align: inherit;
     }
 
-    @include breakpoint($bp-small max-width) {
-      position: absolute;
-      top: 10px;
-      right: 5px;
+    @include breakpoint($bp-med) {
+      position: static;
     }
   }
 }
