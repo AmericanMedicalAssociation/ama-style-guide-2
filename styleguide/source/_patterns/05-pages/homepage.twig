@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block pageContent %}
-  <div class="ama__homepage__jama">
-    {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
-  </div>
+  {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
+  {% include '@organisms/upcoming-events.twig' %}
 {% endblock %}

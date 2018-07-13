@@ -49,6 +49,25 @@
   .ama__button--secondary {
     width: 100%;
   }
+
+  //Hompage
+  &--homepage {
+    @include gutter-all($padding-all-full...);
+    background: $purple;
+    color: $white;
+
+    button {
+      display: block;
+      margin: $gutter auto;
+    }
+
+    @include breakpoint($bp-small){
+      button {
+        display: inline;
+        margin: 0;
+      }
+    }
+  }
 }
 
 a.ama__promo { // styling for when this pattern renders as a link.
