@@ -13,15 +13,16 @@
        $.cookie('ama__alert--hide');
        var alertCookie = $.cookie('ama__alert--hide');
        (function ($) {
+         console.log(alertCookie);
          // If the 'hide cookie is not set we show the alert
-         if (!alertCookie) {
-           $('.ama__alert').fadeIn("slow");
+         if (alertCookie != 1) {
+           $('.ama__alert__wrap').fadeIn("slow");
          }
 
          // Add the event that closes the popup and sets the cookie that tells us to
          // not show it again until one day has passed.
          $('.ama__alert__close').click(function() {
-           $('.ama__alert').fadeOut();
+           $('.ama__alert__wrap').fadeOut();
            // set the cookie
            $.cookie('ama__alert--hide', '1', { expires: 1});
            return false;
