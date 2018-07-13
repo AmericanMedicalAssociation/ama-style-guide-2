@@ -4,6 +4,9 @@
 {% endblock %}
 
 {% block pageContent %}
-  {% include '@organisms/category-nav.twig' with { catNav : homepage.catNav } %}
+  <div class="ama__homepage__navs">
+    {% include '@organisms/category-nav.twig' with { catNav : homepage.catNav } %}
+    {% include '@organisms/org-nav.twig' with { orgNav : homepage.orgNav } %}
+  </div>
   {% include '@organisms/upcoming-events.twig' with { upcomingEvents : homepage.upcomingEvents } %}
 {% endblock %}
