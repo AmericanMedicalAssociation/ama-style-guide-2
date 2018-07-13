@@ -3,3 +3,7 @@
 {% block header %}
   {% include '@organisms/product-nav.twig' with { productNav : homepage.productNav } %}
 {% endblock %}
+
+{% block pageContent %}
+  {% include '@organisms/your-products.twig' with { yourProducts : homepage.yourProducts } %}
+{% endblock %}
