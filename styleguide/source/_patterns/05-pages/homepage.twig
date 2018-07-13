@@ -19,6 +19,7 @@
     {% endfor %}
   </div>
   {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
+  {% include '@molecules/subscribe-promo.twig' with { subscribePromo : homepage.subscribePromo } %}
   {% include '@organisms/upcoming-events.twig' with { upcomingEvents : homepage.upcomingEvents } %}
   {% include '@organisms/your-products.twig' with { yourProducts : homepage.yourProducts } %}
 {% endblock %}
