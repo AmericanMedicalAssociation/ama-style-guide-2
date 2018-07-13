@@ -9,7 +9,7 @@ A listing of products to appear on the homepage.
 ### Variables
 ~~~
 {
-  sectionTitile: {
+  sectionTitle: {
     text: Your Products
   },
   link: {
