@@ -13,7 +13,6 @@
        $.cookie('ama__alert--hide');
        var alertCookie = $.cookie('ama__alert--hide');
        (function ($) {
-         console.log(alertCookie);
          // If the 'hide cookie is not set we show the alert
          if (alertCookie != 1) {
            $('.ama__alert__wrap').fadeIn("slow");
