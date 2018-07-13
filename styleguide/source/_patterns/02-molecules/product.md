@@ -11,9 +11,7 @@ As a user, I can find out more about AMA products and click to learn more about 
 product: {
   image: {
     alt: string,
-    src: string,
-    height: integer,
-    width: integer
+    src: string
   },
   heading: {
     level: integer,

@@ -7,7 +7,9 @@
     }
     %}
   {% endif %}
-  {% include '@atoms/heading/heading.twig' with { heading : product.heading }%}
-  {% include '@atoms/paragraph.twig' with { paragraph : product.paragraph }%}
-  {% include '@atoms/link/link.twig' with { link : product.link }%}
+  <div class="ama__product__text">
+    {% include '@atoms/heading/heading.twig' with { heading : product.heading }%}
+    {% include '@atoms/paragraph.twig' with { paragraph : product.paragraph }%}
+    {% include '@atoms/link/link.twig' with { link : product.link }%}
+  </div>
 </div>
