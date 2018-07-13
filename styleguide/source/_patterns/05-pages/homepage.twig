@@ -3,3 +3,7 @@
 {% block header %}
   {% include '@organisms/product-nav.twig' with { productNav : homepage.productNav } %}
 {% endblock %}
+
+{% block pageContent %}
+  {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
+{% endblock %}
