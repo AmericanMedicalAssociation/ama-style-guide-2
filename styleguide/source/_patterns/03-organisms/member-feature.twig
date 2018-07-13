@@ -1,0 +1,13 @@
+{#Given that I am viewing SG2#}
+{#When I click "Organisms"#}
+<div class="ama__member-feature">
+  {#Then I should see the "Section title" atom#}
+  {% include '@atoms/section-title.twig' with { sectionTitile : memberFeature.sectionTitle } %}
+  <div class="ama__member-feature__wrapper">
+    {#And I should see the "Hero story" molecule#}
+    {% include '@molecules/hero-story.twig' with { heroStory : memberFeature.heroStory } %}
+    {#And the "Hero Feature Rail" should be to the right of the "Hero Story"#}
+    {#And I should see the "Hero Feature rail" molecule#}
+    {% include '@organisms/member-feature-rail.twig' with { memberFeatureRail : memberFeature.memberFeatureRail } %}
+  </div>
+</div>
