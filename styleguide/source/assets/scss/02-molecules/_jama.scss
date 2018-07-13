@@ -76,10 +76,11 @@
 
     .ama__image-wrap {
       display: none;
+      padding: 0;
     }
 
-    .ama__link--with-image:first-child a .ama__image__text {
-      padding: 0;
+    .ama__link--with-image span {
+      padding-left: 0;
     }
 
     @include breakpoint($bp-small) {
