@@ -1,5 +1,5 @@
 <section class="ama__upcoming-events">
-  {% include "@atoms/section-title.twig" with { sectionTitile : upcomingEvents.sectionTitile } %}
+  {% include "@atoms/section-title.twig" with { sectionTitle : upcomingEvents.sectionTitle } %}
   {% for event in upcomingEvents.events %}
     {% include "@molecules/upcoming-event.twig" %}
   {% endfor %}
