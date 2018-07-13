@@ -21,7 +21,10 @@
   {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
   {% include '@molecules/subscribe-promo.twig' with { subscribePromo : homepage.subscribePromo } %}
   {% include '@organisms/member-feature.twig' with { memberFeature : homepage.memberFeature } %}
-  {% include '@molecules/partner-promo.twig' with { partnerPromo : homepage.partnerPromo } %}
+  <div class="ama__homepage__promos">
+    {% include '@molecules/partner-promo.twig' with { partnerPromo : homepage.partnerPromo } %}
+    {% include '@molecules/promo/promo.twig' with { promo : homepage.promo } %}
+  </div>
   {% include '@organisms/upcoming-events.twig' with { upcomingEvents : homepage.upcomingEvents } %}
   {% include '@organisms/your-products.twig' with { yourProducts : homepage.yourProducts } %}
   {% include '@organisms/upcoming-events.twig' %}
