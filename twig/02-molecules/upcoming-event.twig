@@ -1,0 +1,20 @@
+<div class="ama__upcoming-event">
+  {% if event.link %}
+    {% set link = event.link|merge({class: 'ama__link--homepage', target: 'self'}) %}
+    <h5 class="ama__h5 ama__h5--homepage ama__upcoming-event__title">
+      {% include "@atoms/link/link.twig" %}
+    </h5>
+  {% endif %}
+
+  <div class="ama__upcoming-event__text">
+    {% if event.date %}
+      {% set date = event.date %}
+      <p class="ama__upcoming-event__date">{{ date.month }} {{ date.day }}, {{ date.year }}</p>
+    {% endif %}
+
+    {% if event.location %}
+      {% set paragraph = event.location %}
+      {% include "@atoms/paragraph.twig" %}
+    {% endif %}
+  </div>
+</div>
