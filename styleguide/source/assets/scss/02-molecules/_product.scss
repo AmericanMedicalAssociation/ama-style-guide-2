@@ -9,6 +9,11 @@
     float: right;
   }
 
+  &__text {
+    &__header {
+      @include gutter($margin-bottom-half...);
+    }
+  }
 
   &__image {
     @include gutter($padding-right-half...);

@@ -37,7 +37,7 @@
       background-color: $hoverPurple;
       border-color: transparent;
       color: $white;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
   // homepage secondary
@@ -50,19 +50,20 @@
       background-color: $white;
       border-color: transparent;
       color: $hoverPurple;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
   @else if($style == "promo") {
     background-color: $orange;
     border-color: transparent;
     color: $black;
+    text-transform: uppercase;
 
     &:hover {
       background-color: $hoverOrange;
       border-color: transparent;
       color: $black;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
   @else {

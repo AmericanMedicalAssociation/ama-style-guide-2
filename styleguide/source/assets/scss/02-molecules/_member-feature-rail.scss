@@ -3,37 +3,38 @@
   @include gutter-all($padding-all-full...);
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: $gutter;
   background: $gray-7;
 
   .ama__article-stub {
+    @include gutter($margin-bottom-full...);
     margin-top: 0;
 
-    &:nth-child(3) {
+    &:last-child {
       display: none;
     }
   }
 
-  .ama__member-feature-rail__view-all-link {
+  &__view-all-link {
+    @include gutter($margin-top-full...);
+    @extend .ama__link--purple;
+    font-weight: 800;
     grid-column: 1/-1;
-    text-align: right;
+    font-style: italic;
+    display: inline-block;
   }
 
-  @include breakpoint($bp-small) {
-    .ama__article-stub {
-      @include gutter($margin-bottom-full...);
+  @include breakpoint($bp-med) {
+    grid-template-columns: 1fr 1fr;
+  }
 
-      &:nth-child(3) {
+  @include breakpoint($bp-med) {
+    .ama__article-stub {
+      &:last-child {
         display: block;
-        margin-bottom: 0;
       }
     }
-  }
-
-  @include breakpoint($bp-small) {
-    display: flex;
-    flex-direction: column;
   }
 
   .ama__article-stub .ama__image {
@@ -65,10 +66,8 @@
     }
   }
 
-  &__view-all-link {
-    @include gutter($margin-top-full...);
-    font-weight: 600;
-    font-style: italic;
-    display: inline-block;
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: column;
   }
 }

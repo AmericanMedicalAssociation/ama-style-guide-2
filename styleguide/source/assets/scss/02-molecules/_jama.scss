@@ -1,4 +1,5 @@
 .ama__jama {
+  @include gutter($margin-bottom-full...);
   clear: both;
 
   @include breakpoint($bp-med max-width) {
@@ -14,7 +15,7 @@
     display: block;
 
     &.ama__jama__link--sign-up {
-      margin-top: $gutter / 8;
+      @include gutter($margin-top-half...);
       color: $hoverRed;
 
       &:hover {
@@ -34,12 +35,8 @@
   }
 
   .ama__rule {
-    margin-top: $gutter * .75;
-
-    &:first-of-type {
-      margin-top: $gutter / 4;
-      border-color: $hoverRed;
-    }
+    @include gutter($margin-top-full...);
+    border-color: $gray-50;
   }
 
   // Styles the Image Href with Text variant.
@@ -111,6 +108,12 @@
   list-style-type: none;
 
   li {
+    border-top: 1px solid $gray-50;
+
+    &:hover {
+      border-color: $hoverRed;
+    }
+
     &:last-of-type a {
       padding-bottom: 0;
     }

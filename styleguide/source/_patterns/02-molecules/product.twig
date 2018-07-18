@@ -8,7 +8,9 @@
     %}
   {% endif %}
   <div class="ama__product__text">
-    {% include '@atoms/heading/heading.twig' with { heading : product.heading }%}
+    <a class="ama__link ama__link--purple" href="{{ product.link.href }}">
+      {% include '@atoms/heading/heading.twig' with { heading : product.heading }%}
+    </a>
     {% include '@atoms/paragraph.twig' with { paragraph : product.paragraph }%}
     {% include '@atoms/link/link.twig' with { link : product.link }%}
   </div>
