@@ -197,3 +197,17 @@ a {
     background-color: transparent;
   }
 }
+
+// Primarily used when looping through icons in D8
+// TODO: All link icon atoms should switch to using the <icon> element with appropriate class instead of hard coding the svg file
+.ama__link--icon,
+%ama__link--icon{
+  icon {
+    max-width: 22px;
+    max-height: 22px;
+    min-height: 22px;
+    vertical-align: middle;
+    min-width: 22px;
+    background-size: contain;
+  }
+}
