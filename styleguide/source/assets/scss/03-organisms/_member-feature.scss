@@ -5,12 +5,28 @@
   &__wrapper {
     @include gutter($margin-top-full...);
 
+    .ama__hero-story__media {
+      margin-top: 0;
+    }
+
     @include breakpoint($bp-small) {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-column-gap: $gutter;
       background: $gray-7;
 
+      .ama__hero-story {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      .ama__member-feature-rail {
+        grid-column-start: 4;
+        grid-column-end: 6;
+      }
+    }
+
+    @include breakpoint($bp-med) {
       .ama__hero-story {
         grid-column-start: 1;
         grid-column-end: 4;
