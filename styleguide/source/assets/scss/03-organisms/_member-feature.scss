@@ -6,6 +6,10 @@
     @include gutter($margin-top-full...);
 
     .ama__hero-story__media {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
       margin-top: 0;
     }
 
@@ -34,7 +38,6 @@
       }
       .ama__hero-story__media {
         margin-right: $gutter*-2;
-        display: flex;
 
         img {
           height: 100%;
