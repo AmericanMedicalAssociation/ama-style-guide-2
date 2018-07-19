@@ -16,15 +16,6 @@
     }
   }
 
-  &__view-all-link {
-    @include gutter($margin-top-full...);
-    @extend .ama__link--purple;
-    font-weight: 800;
-    grid-column: 1;
-    font-style: italic;
-    display: inline-block;
-  }
-
   @include breakpoint($bp-med) {
     grid-template-columns: 1fr 1fr;
   }

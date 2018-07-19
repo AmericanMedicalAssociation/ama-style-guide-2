@@ -14,12 +14,16 @@
   }
 
   &__title {
+    a {
+      display: flex;
+    }
+
     svg {
+      @include gutter($margin-right-half...);
       display: none;
 
       @include breakpoint($bp-small) {
-        @include gutter($margin-right-full...);
-        display: inline-block;
+        display: block;
       }
     }
 
