@@ -1,5 +1,10 @@
 <dt>
-  {{ contentWithLabel.dt }}
+  {% if contentWithLabel.dt.link %}
+    {% set link = contentWithLabel.dt.link %}
+    {% include '@atoms/link/link.twig' %}
+  {% else %}
+    {{ contentWithLabel.dt }}
+  {% endif %}
   {% if contentWithLabel.gated %}
     <span class="as-gated"></span>
   {% endif %}
