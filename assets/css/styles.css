@@ -2703,6 +2703,15 @@ a {
     text-decoration: underline;
     background-color: transparent; }
 
+.ama__link--icon icon {
+  display: inline-block;
+  max-width: 22px;
+  max-height: 22px;
+  min-height: 22px;
+  vertical-align: middle;
+  min-width: 22px;
+  background-size: contain; }
+
 .ui-multiselect {
   color: #000000;
   background: #ffffff;
@@ -3953,7 +3962,8 @@ dl {
 
 dt {
   font-weight: 600;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  margin-right: 7px; }
   dt .as-gated:before {
     content: "";
     height: 20px;
@@ -3964,7 +3974,7 @@ dt {
       display: none; } }
 
 dd {
-  margin: 0 0 14px; }
+  margin: 0; }
   dd span {
     display: block; }
   dd .as-gated {
@@ -3982,8 +3992,7 @@ dd {
     float: left;
     clear: left; }
   dd {
-    float: left;
-    margin-left: 7px; } }
+    float: left; } }
 
 .ama__event-stub {
   margin-bottom: 20px;
@@ -4975,6 +4984,10 @@ dd {
   .ama__product__image {
     padding-right: 10px;
     display: none;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    height: auto;
     max-width: 50%; }
     @media (min-width: 56.25em) {
       .ama__product__image {
@@ -6173,6 +6186,7 @@ a.ama__promo--border:hover {
       padding: 28px; }
   .ama__hub-hero__list {
     padding: 20px;
+    list-style-position: inside;
     margin: inherit; }
     .ama__hub-hero__list breakpoint($bp-med) {
       padding: 28px; }
@@ -8311,9 +8325,7 @@ section#related-links ul {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px; } }
+    grid-template-columns: 1fr 1fr 1fr 1fr; } }
   @media (min-width: 37.5em) and (min-width: 56.25em) {
     .ama__homepage__stubs {
       margin-bottom: 28px; } }
@@ -8322,6 +8334,19 @@ section#related-links ul {
       margin-top: 28px; } }
 
 @media (min-width: 37.5em) {
+    .ama__homepage__stubs .ama__article-stub {
+      -ms-grid-row: 2;
+      grid-row: 2;
+      margin-left: 15px; }
+    .ama__homepage__stubs .ama__article-stub--image {
+      -ms-grid-row: 1;
+      grid-row: 1; }
+    .ama__homepage__stubs .ama__article-stub:nth-child(even) {
+      -ms-grid-column: 3;
+      grid-column: 3; }
+    .ama__homepage__stubs .ama__article-stub:nth-child(odd) {
+      -ms-grid-column: 4;
+      grid-column: 4; }
     .ama__homepage__stubs .ama__article-stub:first-of-type {
       -ms-grid-column: 1;
       grid-column-start: 1;
@@ -8330,7 +8355,8 @@ section#related-links ul {
       -ms-grid-row: 1;
       grid-row-start: 1;
       -ms-grid-row-span: 2;
-      grid-row-end: 3; } }
+      grid-row-end: 3;
+      margin: 0; } }
 
 .ama__people-bio .ama__membership {
   margin-bottom: 20px; }
