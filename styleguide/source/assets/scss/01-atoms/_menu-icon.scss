@@ -1,11 +1,19 @@
 .ama__global-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
   text-align: center;
+  height: 70px;
 
   // The menu controlled by the burger
-  .burger-input {
+  &__burger-input {
     opacity: 0;
     cursor: pointer;
+    height: 0;
+    width: 0;
+    display: none;
 
     + label,
     + label.ui-state-active,
@@ -20,7 +28,6 @@
       display: block;
       padding: 0;
       cursor: pointer;
-      position: relative;
       background-color: transparent;
       border: 0;
       outline: none;
@@ -28,14 +35,14 @@
 
       &:after,
       &:before,
-      .burger {
+      .ama__global-menu__burger {
         content: '';
         width: 100%;
         height: 4px;
         display: block;
-        background-color: $purple;
+        background-color: $white;
         transition: all 200ms ease-in-out;
-        margin: 3px auto;
+        margin: 5px auto;
       }
 
       &:hover,
@@ -56,14 +63,14 @@
       + label {
 
         &:before {
-          transform: translateY(2px) rotate(135deg);
+          transform: translateY(5px) rotate(135deg);
         }
 
         &:after {
           transform: translateY(-12px) rotate(-135deg);
         }
 
-        .burger {
+        .ama__global-menu__burger {
           transform: scale(0);
         }
       }
@@ -76,42 +83,52 @@
           text-align: left;
         }
       }
+
+     ~ .menu-text {
+        display: none;
+      }
     }
   }
 
-  .menu-text {
+  &__menu-text {
     @include font-size($small-font-sizes--homepage);
     display: block;
-    color: $purple;
+    color: $white;
     width: 40px;
   }
 
-
   // Navigation styles
-  nav {
-    @include gutter($margin-top-full...);
+  &__nav {
+    background-color: $purple;
+    color: $white;
+    position: absolute;
+    top: 70px;
     max-height: 0;
     max-width: 285px;
     overflow: hidden;
-    transition:max-height 0.3s ease-out;
-  }
+    transition: max-height 0.3s ease-out;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    list-style: none;
-    text-align: center;
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      text-align: center;
 
-    a {
-      display: block;
-      padding: 10px 0;
-      color: $white;
-      background-color: $purple;
-      height: auto;
+      a {
+        @include gutter($padding-top-half...);
+        @include gutter($padding-bottom-half...);
+        @include gutter($padding-right-full...);
+        @include gutter($padding-left-half...);
+        display: block;
+        color: $white;
+        height: auto;
+        text-decoration: none;
+        text-align: left;
 
-      &:hover {
-        background-color: $purple;
+        &:hover {
+          background-color: $hoverPurple;
+        }
       }
     }
   }
