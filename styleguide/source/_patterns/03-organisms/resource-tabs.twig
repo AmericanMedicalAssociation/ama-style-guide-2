@@ -32,17 +32,19 @@
           {% set heading = mediaItem.heading %}
           {% include '@atoms/heading/heading.twig' %}
 
+          {% if mediaItem.link %}
+            {% set link = mediaItem.link %}
+            {% include '@atoms/link/link.twig' %}
+          {% endif %}
+
           {% if mediaItem.image %}
             {% set image = mediaItem.image %}
             {% include '@atoms/image/image.twig' %}
-          {% elseif mediaItem.link %}
-            {% set link = mediaItem.link %}
-            {% include '@atoms/link/link.twig' %}
+          {% endif %}
 
-            {% if mediaItem.video %}
-              {% set video = mediaItem.video %}
-              {% include '@atoms/video.twig' %}
-            {% endif %}
+          {% if mediaItem.video %}
+            {% set video = mediaItem.video %}
+            {% include '@atoms/video.twig' %}
           {% endif %}
 
           {% if mediaItem.subtext %}

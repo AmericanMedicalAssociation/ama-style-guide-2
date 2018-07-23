@@ -1,5 +1,6 @@
 <div class="ama__main-navigation">
   <div class="container">
+    {% include '@atoms/menu-icon.twig' with { menuIcon : mainNavigation.menuIcon } %}
     {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : mainNavigation.siteLogo } %}
   </div>
 </div>
