@@ -57,10 +57,12 @@
     .ama__jama__links {
       display: flex;
       flex-direction: column;
+      border-top: 0;
     }
 
     .ama__jama__links li {
       @include gutter($margin-right-full...);
+      border-top: 1px solid $gray-50;
 
       &:last-child {
         margin-right: 0;
@@ -106,9 +108,10 @@
 
 .ama__jama__links {
   list-style-type: none;
+  border-top: 1px solid $gray-50;
 
   li {
-    border-top: 1px solid $gray-50;
+
 
     &:hover {
       border-color: $hoverRed;

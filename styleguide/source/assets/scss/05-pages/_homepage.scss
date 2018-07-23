@@ -51,8 +51,9 @@
     @include gutter($margin-bottom-full...);
 
     .ama__article-stub {
-      @include gutter($margin-top-full...);
       @include gutter($margin-bottom-full...);
+      @include gutter($padding-bottom-full...);
+      border-bottom: 1px solid $gray-7;
 
       &:not(:first-child) {
         .ama__image {
@@ -72,6 +73,8 @@
         margin-left: 15px;
         position: relative;
         height: auto;
+        border-bottom: 0;
+        padding-bottom: 0;
 
         &:nth-last-child(2):before {
           content: "";
@@ -79,6 +82,12 @@
           position: absolute;
           top: -28px;
           width: 200%;
+        }
+
+        &:not(:first-child) {
+          .ama__image {
+            display: block;
+          }
         }
       }
 
@@ -111,7 +120,7 @@
   &__section-title {
     @include gutter($margin-bottom-full...);
 
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       margin-bottom: 0;
     }
   }
