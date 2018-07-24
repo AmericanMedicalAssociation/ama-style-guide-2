@@ -9,6 +9,13 @@
     padding-bottom: $gutter / 2;
   }
 
+  &__form {
+    .ama__button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   .ama__form-group {
     input {
       @include type($myriad-pro, $font-weight-regular);
@@ -53,9 +60,8 @@
         height: 49px;
       }
 
-
       @include breakpoint($bp-small min-width) {
-        button {
+        .ama__button {
           margin: 0 0 0 auto;
         }
       }
