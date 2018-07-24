@@ -1,0 +1,34 @@
+.ama__global-search {
+  &--desktop {
+    .ama__search__field--in-body {
+      display: flex;
+      margin-bottom: 0;
+      justify-content: flex-end;
+    }
+
+    .ama__search__field--in-body input {
+      display: none;
+
+      @include breakpoint($bp-small) {
+        display: block;
+      }
+    }
+    .ama__search__field__button {
+      border-left: 1px solid $gray-7 ;
+      border-right: 1px solid $gray-7 ;
+
+      @include breakpoint($bp-small) {
+        border: 0;
+      }
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    .ama__search__field__button {
+      text-transform: uppercase;
+      
+    }
+  }
+}
