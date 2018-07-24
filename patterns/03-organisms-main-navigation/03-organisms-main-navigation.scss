@@ -1,0 +1,37 @@
+.ama__main-navigation {
+  background-color: $purple;
+  color: $white;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .ama__global-menu {
+    @include gutter($margin-right-half...);
+  }
+
+  .ama__site-logo {
+    flex-grow: 1;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  &__button-container {
+    @include gutter($margin-left-full...);
+    @include gutter($margin-right-full...);
+    display: none;
+
+    @include breakpoint($bp-med min-width) {
+      display: block;
+    }
+  }
+
+  @include breakpoint($bp-med min-width) {
+    .ama__site-logo {
+      flex-grow: 0;
+      align-items: center;
+      text-align: left;
+    }
+  }
+}
