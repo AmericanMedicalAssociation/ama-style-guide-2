@@ -50,8 +50,7 @@
 
 .ama__products {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
 
   &__wrap {
     display: flex;
@@ -67,12 +66,13 @@
   &__view-all-link {
     @include font-size($small-font-sizes);
     @include gutter($margin-top-half...);
-    align-self: flex-end;
+    float: right;
 
     @include breakpoint($bp-small) {
       position: absolute;
       top: 0;
       margin-top: 0;
+      align-self: flex-end;
     }
 
     @include breakpoint($bp-med) {
