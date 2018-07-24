@@ -1,60 +1,52 @@
-.ama__member-feature__wrapper {
+.ama__member-feature {
   @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
 
-  @include breakpoint($bp-small) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: $gutter;
-    background: $gray-7;
+  &__wrapper {
+    @include gutter($margin-top-full...);
 
-    .ama__hero-story {
-      grid-column-start: 1;
-      grid-column-end: 4;
-    }
-    .ama__hero-story__media{
-      margin-right: $gutter*-2;
-      img{
-        max-width: unset;
-        width: 100%;
-      }
-    }
-
-    .ama__member-feature-rail {
-      grid-column-start: 4;
-    }
-  }
-
-  .ama__member-feature-rail {
-
-    @include breakpoint($bp-small max-width) {
-      display: grid;
-      grid-template-rows: auto auto;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: $gutter;
-
-      .ama__article-stub {
-        margin: 0;
-      }
-
-      .ama__member-feature-rail__view-all-link {
-        grid-column-start: 2;
-        grid-column-end: 2;
-      }
-    }
-    .ama__member-feature-rail__view-all-link {
-      text-align: right;
-      color: $purple;
-      text-decoration: none;
-      font-style: italic;
-      font-size: 12px;
-      text-align: right;
-      @include breakpoint($bp-small){
-        text-align: left;
-      }
+    .ama__hero-story__media {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 0;
     }
 
     @include breakpoint($bp-small) {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-column-gap: $gutter;
+      background: $gray-7;
+
+      .ama__hero-story {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      .ama__member-feature-rail {
+        grid-column-start: 4;
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      .ama__hero-story {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        justify-content: flex-end;
+      }
+      .ama__hero-story__media {
+        margin-right: $gutter*-2;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .ama__member-feature-rail {
+        grid-column-start: 4;
+      }
     }
   }
 }
