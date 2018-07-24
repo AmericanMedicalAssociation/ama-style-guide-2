@@ -21,7 +21,7 @@
       });
 
       $( window ).resize(function() {
-        switchSearch();
+        mobileSearch.hide();
       });
     }
   };
