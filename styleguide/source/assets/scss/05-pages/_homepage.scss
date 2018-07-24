@@ -1,4 +1,15 @@
 .ama__homepage {
+
+  .ama__layout--one-column__content-top {
+    display: none;
+  }
+
+  @include breakpoint($bp-small) {
+    .ama__layout--one-column__content-top {
+      display: block;
+    }
+  }
+
   &__navs {
     display: none;
 
@@ -23,11 +34,28 @@
       display: flex;
       align-items: center;
     }
+
+    @include breakpoint($bp-med) {
+      .ama__promo--homepage {
+        flex-basis: 60%;
+
+        &:last-child {
+          margin-left: -5%;
+        }
+      }
+    }
   }
 
   &__stubs {
-    @include breakpoint($bp-small max-width) {
-      .ama__article-stub:not(:first-child) {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+
+    .ama__article-stub {
+      @include gutter($margin-bottom-full...);
+      @include gutter($padding-bottom-full...);
+      border-bottom: 1px solid $gray-7;
+
+      &:not(:first-child) {
         .ama__image {
           display: none;
         }
@@ -43,6 +71,24 @@
       .ama__article-stub {
         grid-row: 2;
         margin-left: 15px;
+        position: relative;
+        height: auto;
+        border-bottom: 0;
+        padding-bottom: 0;
+
+        &:nth-last-child(2):before {
+          content: "";
+          border-top: 1px solid $gray-7;
+          position: absolute;
+          top: -28px;
+          width: 200%;
+        }
+
+        &:not(:first-child) {
+          .ama__image {
+            display: block;
+          }
+        }
       }
 
       .ama__article-stub--image {
@@ -65,5 +111,23 @@
         margin: 0;
       }
     }
+  }
+
+  .ama__jama__title {
+    display: none;
+  }
+
+  &__section-title {
+    @include gutter($margin-bottom-full...);
+
+    @include breakpoint($bp-med) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__mission-header {
+    color: $purple;
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
   }
 }

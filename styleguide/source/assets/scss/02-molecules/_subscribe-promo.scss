@@ -9,6 +9,13 @@
     padding-bottom: $gutter / 2;
   }
 
+  &__form {
+    .ama__button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   .ama__form-group {
     input {
       @include type($myriad-pro, $font-weight-regular);
@@ -17,19 +24,6 @@
 
     label {
       visibility: hidden;
-    }
-  }
-
-  button {
-    font-weight: 400;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-    height: 40px;
-    padding: 0 14px;
-
-    &:hover {
-      background: $hoverPurple;
     }
   }
 
@@ -66,13 +60,8 @@
         height: 49px;
       }
 
-      button {
-        @extend .ama__button--homepage;
-        height: 49px;
-      }
-
       @include breakpoint($bp-small min-width) {
-        button {
+        .ama__button {
           margin: 0 0 0 auto;
         }
       }

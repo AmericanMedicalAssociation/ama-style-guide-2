@@ -14,7 +14,8 @@
       background-color: $purple;
       color: $white;
     }
-  } //outline
+  }
+  //outline
   @else if($style == "reset") {
     background-color: transparent;
     border-color: transparent;
@@ -32,25 +33,27 @@
     background-color: $homepagePurple;
     border-color: transparent;
     color: $white;
+    text-transform: uppercase;
 
     &:hover {
       background-color: $hoverPurple;
       border-color: transparent;
       color: $white;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
   // homepage secondary
   @else if($style == "homepage-secondary") {
     background-color: $white;
     border-color: transparent;
-    color: $homepagePurple;
+    color: $purple;
+    text-transform: uppercase;
 
     &:hover {
       background-color: $white;
       border-color: transparent;
       color: $hoverPurple;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
   @else if($style == "promo") {
@@ -62,7 +65,7 @@
       background-color: $hoverOrange;
       border-color: transparent;
       color: $black;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
   @else {
@@ -75,7 +78,20 @@
     }
   }
 
-  @if($size == "small") {
+  @if($size == "small" and $style == "secondary") {
+    @include type($myriad-pro, $font-weight-regular);
+    @include font-size($button-font-sizes--menu);
+    padding: $gutter/6 $gutter/2;
+    background-color: $white;
+    border-color: $purple;
+    color: $purple;
+
+    &:hover {
+      background-color: $purple;
+      color: $white;
+    }
+  }
+  @else if($size == "small") {
     @include gutter-all($padding-all-half...);
   }
   @elseif ($size == "block") {

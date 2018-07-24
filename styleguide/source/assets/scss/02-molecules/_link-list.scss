@@ -15,7 +15,9 @@
       border-bottom: 0;
 
       span {
-        @extend .ama__type--italic;
+        @extend .ama__link--purple;
+        @include gutter($margin-top-full...);
+        font-style: italic;
         font-weight: 800;
       }
     }
@@ -39,7 +41,7 @@
       background-color: transparent;
       border-radius: 0;
       text-align: center;
-      margin-bottom: 0;
+      margin: 0;
 
       .ui-icon {
         display: none;
@@ -70,6 +72,8 @@
       }
     }
 
+
+
     .ui-accordion-content {
       border: 0;
       padding: 0;
@@ -89,11 +93,6 @@
 
       &:last-child {
         border-bottom: 0;
-
-        span {
-          @extend .ama__type--italic;
-          font-weight: 800;
-        }
       }
     }
   }

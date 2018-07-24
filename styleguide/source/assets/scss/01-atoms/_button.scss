@@ -21,10 +21,10 @@ button {
 
   &--homepage {
     @include ama-button("", "homepage");
+  }
 
-    &--secondary {
-      @include ama-button("", "homepage-secondary");
-    }
+  &--homepage-secondary {
+    @include ama-button("", "homepage-secondary");
   }
 
   &--promo {
@@ -34,4 +34,8 @@ button {
       @include ama-button("", "promo-secondary");
     }
   }
+}
+
+.ama__button--small.ama__button--secondary  {
+  @include ama-button("small", "secondary");
 }
