@@ -1,4 +1,10 @@
-<div class="ama__four-up-links">
+{% if homepage.fourUpLists %}
+  {% set classes = "ama__four-up-links ama__homepage__four-up-links" %}
+{% else %}
+  {% set classes = "ama__four-up-links neil" %}
+{% endif %}
+
+<div class="{{ classes }}">
   {% for linkList in fourUpLists %}
     {% include "@molecules/link-list.twig" %}
   {% endfor %}

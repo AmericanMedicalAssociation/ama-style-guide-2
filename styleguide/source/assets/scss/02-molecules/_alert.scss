@@ -1,11 +1,15 @@
 .ama__alert {
+  display: none;
   background-color: $homepagePurple;
   padding: $gutter / 2;
   color: $white;
   width: 100%;
-  display: flex;
   align-items: center;
   flex-direction: column;
+
+  @include breakpoint($bp-small) {
+    display: flex;
+  }
 
   @include breakpoint($bp-med) {
     background-image: url('../icons/svg/icon-homepage-alert.svg');

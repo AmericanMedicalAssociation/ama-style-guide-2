@@ -9,6 +9,11 @@
     float: right;
   }
 
+  &__text {
+    &__header {
+      @include gutter($margin-bottom-half...);
+    }
+  }
 
   &__image {
     @include gutter($padding-right-half...);
@@ -45,28 +50,35 @@
 
 .ama__products {
   position: relative;
-  
+  overflow: hidden;
+
   &__wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__view-all-link {
-    @include gutter($margin-right-full...);
     @include font-size($small-font-sizes);
-    align-self: flex-end;
+    @include gutter($margin-top-half...);
+    float: right;
 
     @include breakpoint($bp-small) {
       position: absolute;
-      top: 10px;
-      right: 20px;
+      top: 0;
+      margin-top: 0;
+      align-self: flex-end;
     }
 
     @include breakpoint($bp-med) {
+      top: 45px;
       font-size: .778em;
       line-height: 1.571em;
-      top: 45px;
     }
   }
 }

@@ -1,5 +1,10 @@
 .ama__product-nav {
+  display: none;
   background: $hoverBlack;
+
+  @include breakpoint($bp-small) {
+    display: block;
+  }
 
   li {
     display: inline-block;
