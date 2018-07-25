@@ -5,11 +5,11 @@
 
 <footer class="ama__footer">
   <div class="container ama__footer__container">
+    {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : footer.siteLogo } %}
     {% include "@atoms/heading/heading.twig" %}
+    {% include "@molecules/social-share.twig" %}
 
     <div class="ama__footer__menu-container">
-      {% include "@molecules/social-share.twig" %}
-
       <div class="ama__rule ama__rule--horizontal"></div>
 
       {% block menus %}
@@ -27,9 +27,8 @@
       {% endblock menus %}
 
     </div>
-
-    {% include "@atoms/copyright.twig" %}
-
+  </div>
+  <div class="container ama__footer__bottom">
     {% block utility %}
       <ul class="ama__footer__menu-utility">
         {% for link in menus.utility %}
@@ -39,5 +38,6 @@
         {% endfor %}
       </ul>
     {% endblock %}
+    {% include "@atoms/copyright.twig" %}
   </div>
 </footer>
