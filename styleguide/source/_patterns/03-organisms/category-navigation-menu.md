@@ -1,6 +1,6 @@
 ---
 el: ".ama__category-navigation-menu"
-title: "Category naviagtion menu"
+title: "Category navigation menu"
 ---
 
 A global menu that shows links to various portions of AMA One

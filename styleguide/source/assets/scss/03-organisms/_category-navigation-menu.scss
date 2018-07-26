@@ -1,4 +1,6 @@
 .ama_category_navigation_menu {
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
   color: $white;
   min-width: 200px;
@@ -6,36 +8,112 @@
   background-color: $purple;
   display: flex;
   flex-direction: column;
-
-  ul {
-    padding: 0;
-
-    li {
-      list-style: none;
-
-      a {
-        padding: $gutter/4 $gutter;
-        display: block;
-
-        &:hover {
-          background-color: $hoverPurple;
-          text-decoration: none;
-        }
-      }
-    }
-  }
+  width: 250px;
 
   &__group {
     @include gutter($padding-top-half...);
     @include gutter($padding-bottom-half...);
     border-bottom: 1px solid $gray-50;
+    padding: 0;
+    width: 250px;
 
     &:last-child {
       border-bottom: 0;
     }
   }
 
+  &__section {
+    position: relative;
+
+    a {
+      padding: $gutter/4 $gutter;
+      display: block;
+
+      &:hover {
+        background-color: $hoverPurple;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__flyout {
+    display: none;
+    position: absolute;
+    left: 220px;
+    top: -40px;
+    color: $black;
+    z-index: 1;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
+
+    &__caret {
+      position: absolute;
+      left: -9px;
+      top: 50px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right:10px solid $white;
+    }
+  }
+
+  &__flyout__container {
+    display: flex;
+  }
+
   &__submenu {
-    background-color: red;
+    border: 1px solid $purple;
+    background-color: $white;
+    width: 250px;
+
+    ul {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-half...);
+      list-style: none;
+
+      li {
+        a {
+          @include gutter($padding-left-half...);
+          @include gutter($padding-right-half...);
+          @include type($myriad-pro, $font-weight-semibold);
+          padding: $gutter/4 0;
+          text-decoration: none;
+
+          &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &__header {
+      @include gutter($margin-bottom-half...);
+      @include gutter($padding-left-half...);
+      @include gutter($padding-right-half...);
+      color: $hoverPurple;
+      text-transform: uppercase;
+    }
+  }
+
+  &__articles {
+    @include gutter-all($padding-all-full...);
+    background-color: $gray-7;
+    display: flex;
+    width: 650px;
+
+    .ama__article-stub {
+      @include gutter($margin-left-full...);
+      padding-bottom: 0;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        padding: 0;
+      }
+    }
   }
 }
+
