@@ -8,6 +8,7 @@
       display: flex;
       margin-bottom: 0;
       justify-content: flex-end;
+      align-items: center;
 
       @include breakpoint($bp-small) {
         justify-content: flex-start;
@@ -17,6 +18,7 @@
     .ama__search__field--in-body .ama__search__field__input {
       display: none;
       border: 0;
+      height: 45px;
       min-width: 250px;
 
       @include breakpoint($bp-small) {
@@ -32,6 +34,14 @@
 
       @include breakpoint($bp-small) {
         border: 2px solid $white;
+      }
+
+      svg {
+        background-size: 24px 26px;
+        min-height: 26px;
+        min-width: 24px;
+        max-height: 26px;
+        max-width: 24px;
       }
     }
   }
