@@ -4,14 +4,14 @@
   "class": "ama__h2 ama__footer__mission-statement" } %}
 
 <footer class="ama__footer">
-  <div class="container ama__footer__container">
+  <div class="container">
     {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : footer.siteLogo } %}
-    {% include "@atoms/heading/heading.twig" %}
-    {% include "@molecules/social-share.twig" %}
+    <div class="ama__footer__left">
+      {% include "@atoms/heading/heading.twig" %}
+      {% include "@molecules/social-share.twig" %}
+    </div>
 
-    <div class="ama__footer__menu-container">
-      <div class="ama__rule ama__rule--horizontal"></div>
-
+    <div class="ama__footer__right">
       {% block menus %}
         <div class="ama__footer__menu-secondary-user">
           {% for column in menus.secondaryUser %}
@@ -25,19 +25,21 @@
           {% endfor %}
         </div>
       {% endblock menus %}
-
     </div>
   </div>
-  <div class="container ama__footer__bottom">
-    {% block utility %}
-      <ul class="ama__footer__menu-utility">
-        {% for link in menus.utility %}
-          <li>
-            {% include "@atoms/link/link.twig" %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endblock %}
-    {% include "@atoms/copyright.twig" %}
+
+  <div class="ama__footer__bottom">
+    <div class="container">
+      {% block utility %}
+        <ul class="ama__footer__menu-utility">
+          {% for link in menus.utility %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endblock %}
+      {% include "@atoms/copyright.twig" %}
+    </div>
   </div>
 </footer>

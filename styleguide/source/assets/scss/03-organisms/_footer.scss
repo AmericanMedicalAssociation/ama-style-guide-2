@@ -1,34 +1,26 @@
 .ama__footer {
-  @include gutter-all($padding-all-full...);
-  @include gutter($margin-top-full...);
   background-color: $homepagePurple;
   color: $white;
 
   @include breakpoint($bp-large min-width) {
-    > .container {
+    .container {
       display: flex;
-      flex-flow: row wrap;
+      flex-wrap: wrap;
+    }
+
+    &__left {
+      order: 1;
+      flex: 1 0px;
+    }
+
+    &__right {
+      order: 2;
+      width: calc(100% / 3 * 1);
     }
   }
 
   ul {
     list-style-type: none;
-  }
-
-  &__container {
-    @include child-top-gutters($gutter);
-  }
-
-  &__menu-container {
-    @include gutter($margin-top-half...);
-    @include child-top-gutters($gutter / 2);
-
-    @include breakpoint($bp-large min-width) {
-      width: calc(100% / 3 * 1);
-      > ul {
-        width: 100%;
-      }
-    }
   }
 
   &__menu-secondary-user {
@@ -60,15 +52,7 @@
     }
   }
 
-  &__mission-statement {
-    @include breakpoint($bp-large min-width) {
-      @include gutter($padding-right-full...);
-      width: calc(100% / 3 * 2);
-    }
-  }
-
-  // This is interesting...
-  .ama__rule--horizontal {
-    border-color: $gray-64;
+  &__bottom {
+    background: $purple;
   }
 }
