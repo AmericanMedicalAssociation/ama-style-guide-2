@@ -5,7 +5,6 @@
   flex-direction: column;
   position: relative;
   text-align: center;
-  height: 70px;
 
   // The menu controlled by the burger
   &__burger-input {
@@ -91,10 +90,14 @@
   }
 
   &__menu-text {
-    @include font-size($small-font-sizes--homepage);
-    display: block;
-    color: $white;
-    width: 40px;
+    display: none;
+
+    @include breakpoint($bp-small) {
+      @include font-size($small-font-sizes--homepage);
+      display: block;
+      color: $white;
+      width: 40px;
+    }
   }
 
   // Navigation styles
