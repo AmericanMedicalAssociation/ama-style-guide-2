@@ -1,0 +1,21 @@
+<div id="ama_category_navigation_menu" class="ama_category_navigation_menu">
+  {% for menuGroups in categoryNavigationMenu.menuGroups %}
+    <ul class="ama_category_navigation_menu__group">
+      {% for item in menuGroups.group %}
+        {% set link = item.link %}
+        <li>
+          {% include "@atoms/link/link.twig" %}
+          {#Submenu array#}
+            <ul class="ama_category_navigation_menu__submenu">
+              {% for subMenuitem in link.subMenu.group %}
+                {% set link = subMenuitem.link %}
+                <li>
+                  {% include "@atoms/link/link.twig" %}
+                </li>
+              {% endfor %}
+            </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
