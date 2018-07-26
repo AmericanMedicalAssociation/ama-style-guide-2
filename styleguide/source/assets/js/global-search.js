@@ -24,14 +24,24 @@
         mobileSearch.hide();
       });
 
-      $('#ama__sign-in-dropdown').click(function () {
-        var userMenu = $('.ama__sign-in-dropdown__menu');
-        if(userMenu.css('display') === 'none') {
-          $(userMenu).slideDown();
-        } else {
-          $(userMenu).slideUp();
-        }
-      });
+      var signInDropdown = $('#ama__sign-in-dropdown');
+      var signInDropdownMenu = $('.ama__sign-in-dropdown__menu');
+      var exploreMenu = $('#ama__explore-menu');
+      var exploreMenuDropdown = $('.ama__explore-menu__menu');
+
+      function dropdownDownMenu(parentElement, menuElement) {
+        parentElement.click(function () {
+          console.log('fads');
+          if(menuElement.css('display') === 'none') {
+            $(menuElement).slideDown();
+          } else {
+            $(menuElement).slideUp();
+          }
+        });
+      }
+
+      dropdownDownMenu(signInDropdown, signInDropdownMenu);
+      dropdownDownMenu(exploreMenu, exploreMenuDropdown);
     }
   };
 })(jQuery, Drupal);

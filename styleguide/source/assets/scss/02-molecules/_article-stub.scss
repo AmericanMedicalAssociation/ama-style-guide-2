@@ -171,4 +171,17 @@
       }
     }
   }
+
+  &--navigation {
+    @include gutter($padding-bottom-full...);
+    background-color: $gray-7;
+
+    .ama__article-stub__title a {
+      color: $purple;
+    }
+
+    .ama__article-stub__description p {
+      @include type($myriad-pro, $font-weight-bold);
+    }
+  }
 }
