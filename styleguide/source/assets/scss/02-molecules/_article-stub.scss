@@ -9,13 +9,12 @@
 
   &__title {
     padding: 0;
+    width: 100%;
 
     @include breakpoint($bp-med min-width) {
       @include gutter($padding-left-full...);
       @include gutter($padding-right-full...);
     }
-
-    width: 100%;
   }
 
   &__copy {
