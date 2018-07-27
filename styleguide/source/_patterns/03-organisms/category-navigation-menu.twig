@@ -5,6 +5,7 @@
         {% set link = item.link %}
         <div class="ama_category_navigation_menu__section">
           {% include "@atoms/link/link.twig" %}
+          <i class="ama_category_navigation_menu__section__caret"></i>
           {#Submenu array#}
           {% if link.subMenu %}
             <div class="ama_category_navigation_menu__flyout">
