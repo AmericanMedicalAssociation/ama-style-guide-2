@@ -8,11 +8,11 @@
   }
 
   &__title {
-    @include gutter($padding-left-full...);
-    @include gutter($padding-right-full...);
+    padding: 0;
 
     @include breakpoint($bp-med min-width) {
-      padding: 0;
+      @include gutter($padding-left-full...);
+      @include gutter($padding-right-full...);
     }
 
     width: 100%;
