@@ -2,10 +2,15 @@
   background-color: $purple;
   color: $white;
 
+  @include breakpoint($bp-small min-width) {
+    padding: $gutter/4 0;
+  }
+
   .container {
     display: flex;
     align-items: center;
   }
+
 
   .ama__global-menu {
     @include gutter($margin-right-half...);
