@@ -42,14 +42,18 @@
   }
 
   &__menu-utility {
-    @extend %ama__type--small;
     margin-top: 0;
+    line-height: 1.056em;
+    padding: $gutter / 2 0;
+    flex-grow: 2;
 
     li {
       display: inline-block;
 
       &:not(:last-child) {
-        content: "|";
+        border-right: 1px solid $white;
+        padding-right: $gutter / 4;
+        margin-right: $gutter / 4;
       }
     }
   }
@@ -77,11 +81,12 @@
     background: $purple;
     border-top: 1px solid $gray-50;
     color: $white;
-  }
 
-  &__mission {
-    @include breakpoint($bp-large min-width) {
-      max-width: 65%;
+    @include breakpoint($bp-large) {
+      .container {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -91,7 +96,7 @@
     }
   }
 
-  @include breakpoint($bp-large min-width) {
+  @include breakpoint($bp-large) {
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -110,6 +115,10 @@
     &__menu-products {
       order: 4;
       flex: 1 100%;
+    }
+
+    &__mission {
+      max-width: 65%;
     }
   }
 }
