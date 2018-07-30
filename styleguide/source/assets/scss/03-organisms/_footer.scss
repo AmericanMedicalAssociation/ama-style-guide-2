@@ -1,12 +1,12 @@
 .ama__footer {
+  @include gutter($padding-top-full...);
   background-color: $homepagePurple;
   color: $white;
-  padding-top: $gutter;
 
   a {
     color: $white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
 
     &:hover,
     &:focus {
@@ -16,8 +16,7 @@
 
   p,
   &__connect {
-    font-size: 1.333em;
-    line-height: 1.667em;
+    @include font-size($footer-font-sizes);
   }
 
   ul {
@@ -25,12 +24,14 @@
   }
 
   &__menu-secondary-user {
-    display: flex;
-    font-size: 1.333em;
-    line-height: 1.667em;
+    @include font-size($footer-font-sizes);
+    @include gutter($padding-bottom-half...);
+    @include gutter($margin-bottom-half...);
+    border-bottom: 1px solid $gray-50;
+    // display: flex;
 
     ul {
-      width: 50%;
+      // width: 50%;
 
       a {
         text-decoration: none;
@@ -44,41 +45,46 @@
 
   &__menu-utility {
     margin-top: 0;
-    line-height: 1.056em;
+    line-height: 1.5em;
+    // line-height: 1.056em;
     padding: $gutter / 2 0;
-    flex-grow: 2;
+    // flex-grow: 2;
 
     li {
       display: inline-block;
 
-      &:not(:last-child) {
-        border-right: 1px solid $white;
-        padding-right: $gutter / 4;
-        margin-right: $gutter / 4;
+      &:not(:last-child):after {
+        content: " | ";
+        // border-right: 1px solid $white;
+        // padding-right: $gutter / 4;
+        // margin-right: $gutter / 4;
       }
     }
   }
 
   &__menu-products {
-    border-top: 1px solid $gray-50;
+    @include font-size($footer-font-sizes--menu);
+    @include gutter($padding-bottom-half...);
+    // border-top: 1px solid $gray-50;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.111em;
-    line-height: 1em;
-    padding: $gutter / 2 0;
+    // padding: $gutter / 2 0;
 
     li {
       display: inline-block;
 
-      &:not(:last-child) {
-        border-right: 1px solid $white;
-        padding-right: $gutter / 4;
-        margin-right: $gutter / 4;
+      &:not(:last-child):after {
+        content: " | ";
+        // border-right: 1px solid $white;
+        // padding-right: $gutter / 4;
+        // margin-right: $gutter / 4;
       }
     }
   }
 
   &__bottom {
+    @include gutter($padding-bottom-full...);
+    text-align: center;
     background: $purple;
     border-top: 1px solid $gray-50;
     color: $white;
@@ -95,6 +101,12 @@
     p {
       line-height: 1.25em;
     }
+  }
+
+  .container > div:not(:last-child) {
+    @include gutter($padding-bottom-half...);
+    @include gutter($margin-bottom-half...);
+    border-bottom: 1px solid $gray-50;
   }
 
   @include breakpoint($bp-large) {
