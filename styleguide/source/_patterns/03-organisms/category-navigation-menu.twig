@@ -1,11 +1,16 @@
 <div id="ama_category_navigation_menu" class="ama_category_navigation_menu">
-  {% for menuGroups in categoryNavigationMenu.menuGroups %}
-    <div class="ama_category_navigation_menu__groups">
-      {% for item in menuGroups.group %}
-        {% set link = item.link %}
+  {% for menuGroup in categoryNavigationMenu.menuGroups %}
+    <div class="ama_category_navigation_menu__group">
+      {% for group in menuGroup.group %}
+        {% set link = group.link %}
+        {% set heading = group.heading %}
         <div class="ama_category_navigation_menu__section">
-          {% include "@atoms/link/link.twig" %}
-          <i class="ama_category_navigation_menu__section__caret"></i>
+          {% if heading %}
+            {% include "@atoms/heading/heading.twig" %}
+          {% else %}
+            {% include "@atoms/link/link.twig" %}
+            <i class="ama_category_navigation_menu__section__caret"></i>
+          {% endif %}
           {#Submenu array#}
           {% if link.subMenu %}
             <div class="ama_category_navigation_menu__flyout">
@@ -22,7 +27,7 @@
                   </ul>
                 </div>
                 {#article stubs#}
-                {% set link = item.link %}
+                {% set link = group.link %}
                 {% if link.articleStubs %}
                   <div class="ama_category_navigation_menu__articles">
                     {% for article in link.articleStubs %}

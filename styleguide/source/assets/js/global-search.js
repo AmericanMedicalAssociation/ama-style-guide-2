@@ -58,16 +58,22 @@
       dropdownDownMenu(exploreMenu, exploreMenuDropdown);
 
       // Category Menu
-      var categoryMenu = $('.ama_category_navigation_menu');
       var categoryMenuSection = $('.ama_category_navigation_menu__section');
       var categoryMenuSectionFlyout = '.ama_category_navigation_menu__flyout';
-
-      function hideCategoryMenuSectionFlyout(){
-        $(this).children(categoryMenuSectionFlyout).hide();
-      }
+      var categoryMenuCaret = '.ama_category_navigation_menu__section__caret';
 
       function flyOutStyle() {
+
+        // Show/hide carets
+        $(categoryMenuSection).each(function(){
+          if($(this).children(categoryMenuSectionFlyout).length > 0) {
+            $(this).find(categoryMenuCaret).show();
+          }
+        });
+
+        // Determines whether or not to use an accordion or flyout menu
         if($(categoryMenuSectionFlyout).css('position') === 'absolute') {
+          // When the flyout menu is absolute then use desktop style
           categoryMenuSection.mouseover(function () {
             $(this).children(categoryMenuSectionFlyout).show();
           });
@@ -76,6 +82,7 @@
             $(this).children(categoryMenuSectionFlyout).hide();
           });
         } else {
+          // If the flyout menu is not position absolute then it must be mobile. Use accordion
           categoryMenuSection.click(function() {
             $(this).toggleClass('active');
             $(this).children(categoryMenuSectionFlyout).slideToggle();
@@ -83,9 +90,11 @@
         }
       }
 
+      // Invoke the menu
       flyOutStyle();
 
       $(window).resize(function() {
+        // This is just so testers will be happy when resizing the window the method will check if what style of menu to use
         flyOutStyle();
       });
 
