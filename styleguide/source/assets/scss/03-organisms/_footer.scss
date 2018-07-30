@@ -2,21 +2,9 @@
   background-color: $homepagePurple;
   color: $white;
 
-  @include breakpoint($bp-large min-width) {
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    &__left {
-      order: 1;
-      flex: 1 0px;
-    }
-
-    &__right {
-      order: 2;
-      width: calc(100% / 3 * 1);
-    }
+  a {
+    color: $white;
+    text-decoration: none;
   }
 
   ul {
@@ -54,5 +42,38 @@
 
   &__bottom {
     background: $purple;
+    border-top: 1px solid $gray-50;
+    color: $white;
+  }
+
+  &__mission {
+    font-size: 1.333em;
+    line-height: 1.667em;
+
+    @include breakpoint($bp-large min-width) {
+      max-width: 65%;
+    }
+  }
+
+  @include breakpoint($bp-large min-width) {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__left {
+      order: 1;
+      flex: 1 0px;
+    }
+
+    &__right {
+      order: 2;
+      width: calc(100% / 3 * 1);
+    }
+
+    &__menu-products {
+      order: 4;
+      flex: 1 100%;
+    }
   }
 }
