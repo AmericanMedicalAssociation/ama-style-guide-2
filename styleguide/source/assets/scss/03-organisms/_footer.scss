@@ -28,11 +28,9 @@
     @include gutter($padding-bottom-half...);
     @include gutter($margin-bottom-half...);
     border-bottom: 1px solid $gray-50;
-    // display: flex;
 
     ul {
       // width: 50%;
-
       a {
         text-decoration: none;
       }
@@ -40,6 +38,10 @@
       a:hover {
         text-decoration: underline;
       }
+    }
+
+    @include breakpoint($bp-small) {
+      border: none;
     }
   }
 
@@ -91,6 +93,7 @@
 
     @include breakpoint($bp-large) {
       .container {
+        background: orange;
         display: flex;
         align-items: center;
       }
@@ -109,8 +112,8 @@
     border-bottom: 1px solid $gray-50;
   }
 
-  @include breakpoint($bp-large) {
-    .container {
+  @include breakpoint($bp-small) {
+    > .container {
       display: flex;
       flex-wrap: wrap;
     }
