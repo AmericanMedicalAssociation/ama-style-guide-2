@@ -11,7 +11,7 @@
   width: 100%;
 
   @include breakpoint($bp-small) {
-    width: 245px;
+    width: 250px;
   }
 
   &__group {
@@ -19,7 +19,6 @@
     @include gutter($padding-bottom-half...);
     border-bottom: 1px solid $gray-50;
     padding: 0;
-    width: 250px;
 
     &:last-child {
       border-bottom: 0;
@@ -154,17 +153,6 @@
       padding-bottom: 0;
       width: 100%;
 
-      &:nth-child(1):nth-last-child(2) {
-        margin-right: 12px;
-        width: 50%;
-      }
-
-      &:nth-child(2):nth-last-child(1) {
-        margin-left: 12px;
-        width: 50%;
-      }
-
-
       a,
       .ama__article-stub__title,
       .ama__article-stub__copy {
@@ -177,6 +165,16 @@
 
       @include breakpoint($bp-med) {
         @include gutter($margin-left-full...);
+
+        &:nth-child(1):nth-last-child(2) {
+          margin-right: 12px;
+          width: 50%;
+        }
+
+        &:nth-child(2):nth-last-child(1) {
+          margin-left: 12px;
+          width: 50%;
+        }
 
         &:first-child {
           margin-left: 0;
