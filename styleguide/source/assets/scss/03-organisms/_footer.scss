@@ -5,6 +5,18 @@
   a {
     color: $white;
     text-decoration: none;
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  p,
+  &__connect {
+    font-size: 1.333em;
+    line-height: 1.667em;
   }
 
   ul {
@@ -13,6 +25,8 @@
 
   &__menu-secondary-user {
     display: flex;
+    font-size: 1.333em;
+    line-height: 1.667em;
 
     ul {
       width: 50%;
@@ -47,11 +61,14 @@
   }
 
   &__mission {
-    font-size: 1.333em;
-    line-height: 1.667em;
-
     @include breakpoint($bp-large min-width) {
       max-width: 65%;
+    }
+  }
+
+  &__right {
+    p {
+      line-height: 1.25em;
     }
   }
 
