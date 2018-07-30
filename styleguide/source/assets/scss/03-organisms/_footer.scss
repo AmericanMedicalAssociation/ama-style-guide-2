@@ -48,8 +48,27 @@
     li {
       display: inline-block;
 
-      &:not(:last-child):after {
+      &:not(:last-child) {
         content: "|";
+      }
+    }
+  }
+
+  &__menu-products {
+    border-top: 1px solid $gray-50;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.111em;
+    line-height: 1em;
+    padding: $gutter / 2 0;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        border-right: 1px solid $white;
+        padding-right: $gutter / 4;
+        margin-right: $gutter / 4;
       }
     }
   }
