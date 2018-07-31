@@ -2,31 +2,39 @@
   position: relative;
   background-color: $purple;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   color: $white;
   height: 70px;
-  width: 40px;
+  width: 70px;
   align-items: center;
   border-left: 1px solid $gray-50;
 
   @include breakpoint($bp-small) {
+    justify-content: flex-end;
+    border-left: 0;
+  }
+
+  @include breakpoint($bp-med) {
     width: 200px;
     border-left: 0;
   }
 
   &__user-icon {
-    @include gutter($margin-left-half...);
     background-size: 24px 25px;
     min-height: 24px;
     min-width: 25px;
     max-height: 24px;
     max-width: 25px;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-half...);
+    }
   }
 
   &__text {
     display: none;
 
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-large) {
       @include gutter($margin-left-half...);
       display: flex;
       flex-grow: 1;
