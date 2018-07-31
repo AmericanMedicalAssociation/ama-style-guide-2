@@ -5,7 +5,8 @@ title: "Footer"
 
 The footer of the website. Includes the missions statement (static), social share, horizontal rule, footer menus, copyright and utility menu.
 
-[EWL-4215](https://issues.ama-assn.org/browse/EWL-4215)
+~[EWL-4215](https://issues.ama-assn.org/browse/EWL-4215)~
+[EWL-5608](https://issues.ama-assn.org/browse/EWL-5608)
 
 ### Use Case
 A global footer container for common links.
@@ -15,6 +16,12 @@ A global footer container for common links.
 {
   "menus": {
     "utility": [
+      {
+        "url": string/required (url),
+        "text": string/required
+      }
+    ],
+    "products": [
       {
         "url": string/required (url),
         "text": string/required
