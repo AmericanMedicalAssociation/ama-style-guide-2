@@ -45,11 +45,15 @@
   }
 
   &__join--links {
-    @include gutter($margin-left-full...);
-    @include gutter($margin-right-full...);
-    display: flex;
-    line-height: 1em;
-    width: 65px;
+    display: none;
+
+    @include breakpoint($bp-small min-width) {
+      @include gutter($margin-left-full...);
+      @include gutter($margin-right-full...);
+      display: flex;
+      line-height: 1em;
+      width: 65px;
+    }
 
     @include breakpoint($bp-large min-width) {
       display: none;
