@@ -82,6 +82,11 @@
       left: 230px;
       top: -38px;
       z-index: 1;
+      width: 550px;
+    }
+
+    @include breakpoint($bp-med) {
+      width: 900px;
     }
 
     &__caret {
@@ -97,9 +102,6 @@
     }
   }
 
-  &__flyout__container {
-    display: flex;
-  }
 
   &__submenu {
     background-color: $white;
@@ -109,6 +111,7 @@
       border: 1px solid $purple;
       box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
       width: 250px;
+      float: left;
     }
 
     ul {
@@ -145,6 +148,7 @@
     @include gutter-all($padding-all-full...);
     box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.2);
     background-color: $gray-7;
+    float: left;
     display: none;
 
     .ama__article-stub {
