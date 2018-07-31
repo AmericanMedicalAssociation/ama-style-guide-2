@@ -2,13 +2,18 @@
   background-color: $purple;
   color: $white;
 
-  @include breakpoint($bp-small min-width) {
+  @include breakpoint($bp-med min-width) {
     padding: $gutter/4 0;
   }
 
   .container {
     display: flex;
     align-items: center;
+    padding-right: 0;
+
+    @include breakpoint($bp-small min-width) {
+      @include gutter($padding-right-half...);
+    }
   }
 
 
@@ -17,26 +22,46 @@
   }
 
   .ama__site-logo {
-    flex-grow: 1;
     align-items: flex-start;
     text-align: center;
-  }
-
-  &__button-container {
-    @include gutter($margin-left-full...);
-    @include gutter($margin-right-full...);
-    display: none;
+    min-width: 125px;
+    flex-grow: 1;
 
     @include breakpoint($bp-med min-width) {
-      display: block;
-    }
-  }
-
-  @include breakpoint($bp-med min-width) {
-    .ama__site-logo {
       flex-grow: 0;
       align-items: center;
       text-align: left;
     }
+  }
+
+  &__join--buttons {
+    @include gutter($margin-left-full...);
+    @include gutter($margin-right-full...);
+    display: none;
+
+    @include breakpoint($bp-large min-width) {
+      display: block;
+    }
+  }
+
+  &__join--links {
+    display: none;
+
+    @include breakpoint($bp-small min-width) {
+      @include gutter($margin-left-full...);
+      @include gutter($margin-right-full...);
+      display: flex;
+      line-height: 1em;
+      width: 65px;
+    }
+
+    @include breakpoint($bp-large min-width) {
+      display: none;
+    }
+  }
+
+  .ama__sign-in-dropdown {
+    background-color: transparent;
+    align-self: flex-end;
   }
 }
