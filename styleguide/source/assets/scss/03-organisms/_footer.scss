@@ -29,13 +29,10 @@
     @include gutter($margin-bottom-half...);
     border-bottom: 1px solid $gray-50;
 
-    ul {
-      // width: 50%;
-      a {
-        text-decoration: none;
-      }
+    a {
+      text-decoration: none;
 
-      a:hover {
+      &:hover {
         text-decoration: underline;
       }
     }
@@ -43,57 +40,61 @@
     @include breakpoint($bp-small) {
       border: none;
     }
+
+    @include breakpoint($bp-large) {
+      display: flex;
+
+      ul {
+        width: 50%;
+      }
+    }
   }
 
   &__menu-utility {
     margin-top: 0;
     line-height: 1.5em;
-    // line-height: 1.056em;
     padding: $gutter / 2 0;
-    // flex-grow: 2;
 
     li {
       display: inline-block;
 
       &:not(:last-child):after {
         content: " | ";
-        // border-right: 1px solid $white;
-        // padding-right: $gutter / 4;
-        // margin-right: $gutter / 4;
       }
+    }
+
+    @include breakpoint($bp-large) {
+      flex-grow: 2;
     }
   }
 
   &__menu-products {
     @include font-size($footer-font-sizes--menu);
     @include gutter($padding-bottom-half...);
-    // border-top: 1px solid $gray-50;
     text-transform: uppercase;
     text-align: center;
-    // padding: $gutter / 2 0;
 
     li {
       display: inline-block;
 
       &:not(:last-child):after {
         content: " | ";
-        // border-right: 1px solid $white;
-        // padding-right: $gutter / 4;
-        // margin-right: $gutter / 4;
       }
     }
   }
 
   &__bottom {
     @include gutter($padding-bottom-full...);
+    @include font-size($footer-font-sizes--menu);
     text-align: center;
     background: $purple;
     border-top: 1px solid $gray-50;
     color: $white;
 
     @include breakpoint($bp-large) {
-      .container {
-        background: orange;
+      padding: 0;
+
+      > .container {
         display: flex;
         align-items: center;
       }
