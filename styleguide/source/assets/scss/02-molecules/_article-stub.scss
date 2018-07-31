@@ -8,25 +8,23 @@
   }
 
   &__title {
-    @include gutter($padding-left-full...);
-    @include gutter($padding-right-full...);
+    padding: 0;
+    width: 100%;
 
     @include breakpoint($bp-med min-width) {
-      padding: 0;
+      @include gutter($padding-left-full...);
+      @include gutter($padding-right-full...);
     }
-
-    width: 100%;
   }
 
   &__copy {
     @include gutter($padding-left-full...);
     @include gutter($padding-right-full...);
+    flex-grow: 1;
 
     @include breakpoint($bp-med min-width) {
       padding: 0;
     }
-
-    flex-grow: 1;
   }
 
   .ama__image,
@@ -37,16 +35,15 @@
   &--related {
     @include ama-rules(1px, '', solid, $gray-50);
     @include gutter($padding-top-half...);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 
     &:last-child {
       @include ama-rules(1px, 'bottom', solid, $gray-50);
       @include gutter($padding-bottom-half...);
     }
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
 
     .ama__image,
     .ama__video {
