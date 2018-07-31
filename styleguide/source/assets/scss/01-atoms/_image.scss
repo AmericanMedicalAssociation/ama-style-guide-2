@@ -9,3 +9,18 @@
     }
   }
 }
+
+.ama__image {
+
+  @include breakpoint($bp-small) {
+    &--left {
+      float: left;
+      @include gutter($margin-right-half...);
+    }
+
+    &--right {
+      @include gutter($margin-left-half...);
+      float: right;
+    }
+  }
+}
