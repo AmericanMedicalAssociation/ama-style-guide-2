@@ -2,9 +2,14 @@
   <div class="container">
     {% include '@atoms/menu-icon.twig' with { menuIcon : mainNavigation.menuIcon } %}
     {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : mainNavigation.siteLogo } %}
-    <div class="ama__main-navigation__button-container">
+    <div class="ama__main-navigation__join--buttons">
       {% include '@atoms/button/button.twig' with { button : mainNavigation.joinButton } %}
       {% include '@atoms/button/button.twig' with { button : mainNavigation.renewButton } %}
     </div>
+    <div class="ama__main-navigation__join--links">
+      {% include '@atoms/link/link.twig' with { link : mainNavigation.joinRenewLink } %}
+    </div>
+    {% include '@molecules/global-search.twig' with { globalSearch : mainNavigation.globalSearch } %}
+    {% include '@molecules/sign-in-dropdown.twig' with { signInDropdown : mainNavigation.signInDropdown } %}
   </div>
 </div>
