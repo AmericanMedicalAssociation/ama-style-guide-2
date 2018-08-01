@@ -1,73 +1,164 @@
 .ama__footer {
-  @include gutter-all($padding-all-full...);
-  @include gutter($margin-top-full...);
-  background-color: $gray-7;
+  @include gutter($padding-top-full...);
+  background-color: $homepagePurple;
+  color: $white;
 
-  @include breakpoint($bp-large min-width) {
-    > .container {
-      display: flex;
-      flex-flow: row wrap;
+  button {
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    font-weight: $font-weight-semibold;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
+  }
+
+  p,
+  &__connect {
+    @include font-size($footer-font-sizes);
   }
 
   ul {
     list-style-type: none;
   }
 
-  &__container {
-    @include child-top-gutters($gutter);
+  .ama__form-group {
+    flex-grow: 2;
+    input {
+      font-style: italic;
+    }
   }
 
-  &__menu-container {
-    @include gutter($margin-top-half...);
-    @include child-top-gutters($gutter / 2);
-
-    @include breakpoint($bp-large min-width) {
-      width: calc(100% / 3 * 1);
-      > ul {
-        width: 100%;
-      }
+  .ama__social-share {
+    a {
+      height: 50px;
+      width: 50px;
+      background-size: 50px;
     }
   }
 
   &__menu-secondary-user {
-    display: flex;
+    @include font-size($footer-font-sizes);
+    @include gutter($padding-bottom-half...);
+    @include gutter($margin-bottom-half...);
+    border-bottom: 1px solid $gray-50;
 
-    ul {
-      width: 50%;
+    a {
+      text-decoration: none;
 
-      a {
-        text-decoration: none;
-      }
-
-      a:hover {
+      &:hover {
         text-decoration: underline;
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      border: none;
+    }
+
+    @include breakpoint($bp-large) {
+      display: flex;
+
+      ul {
+        width: 50%;
       }
     }
   }
 
   &__menu-utility {
-    @extend %ama__type--small;
     margin-top: 0;
+    padding: $gutter / 2 0;
 
     li {
       display: inline-block;
 
       &:not(:last-child):after {
-        content: "|";
+        content: " | ";
+      }
+    }
+
+    @include breakpoint($bp-large) {
+      flex-grow: 2;
+      text-align: left;
+    }
+  }
+
+  &__menu-products {
+    @include font-size($footer-font-sizes--menu);
+    @include gutter($padding-bottom-half...);
+    text-transform: uppercase;
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child):after {
+        content: " | ";
       }
     }
   }
 
-  &__mission-statement {
-    @include breakpoint($bp-large min-width) {
-      @include gutter($padding-right-full...);
-      width: calc(100% / 3 * 2);
+  &__bottom {
+    @include gutter($padding-bottom-full...);
+    @include font-size($footer-font-sizes--menu);
+    text-align: center;
+    background: $purple;
+    border-top: 1px solid $gray-50;
+    color: $white;
+
+    @include breakpoint($bp-large) {
+      padding: 0;
+
+      > .container {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
-  // This is interesting...
-  .ama__rule--horizontal {
-    border-color: $gray-64;
+  &__right {
+    p {
+      line-height: 1.25em;
+    }
+  }
+
+  .container > div:not(:last-child) {
+    @include gutter($padding-bottom-half...);
+    @include gutter($margin-bottom-half...);
+    border-bottom: 1px solid $gray-50;
+  }
+
+  @include breakpoint($bp-small) {
+    > .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__left {
+      order: 1;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 66.666%;
+    }
+
+    &__right {
+      order: 2;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 33.333%;
+    }
+
+    &__menu-products {
+      order: 4;
+      flex: 1 100%;
+    }
+
+    &__mission {
+      max-width: 65%;
+    }
   }
 }
