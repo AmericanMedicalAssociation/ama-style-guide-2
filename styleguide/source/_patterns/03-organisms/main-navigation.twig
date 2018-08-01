@@ -1,15 +1,35 @@
-<div class="ama__main-navigation">
+{% set loggedIn = mainNavigation.loggedIn ? "ama__main-navigation--loggedIn" %}
+<div class="ama__main-navigation {{ loggedIn }}">
   <div class="container">
-    {% include '@atoms/menu-icon.twig' with { menuIcon : mainNavigation.menuIcon } %}
+    {% if mainNavigation.loggedIn %}
+      {% include '@molecules/explore-menu.twig' with { exploreMenu : mainNavigation.exploreMenu } %}
+    {% else %}
+      {% include '@atoms/menu-icon.twig' with { menuIcon : mainNavigation.menuIcon } %}
+    {% endif %}
+
+    {% include '@organisms/category-navigation-menu.twig' with { categoryNavigationMenu : mainNavigation.categoryNavigationMenu } %}
     {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : mainNavigation.siteLogo } %}
+
     <div class="ama__main-navigation__join--buttons">
       {% include '@atoms/button/button.twig' with { button : mainNavigation.joinButton } %}
       {% include '@atoms/button/button.twig' with { button : mainNavigation.renewButton } %}
+      {% if mainNavigation.memberSince and mainNavigation.loggedIn %}
+        {% include '@atoms/paragraph.twig' with { paragraph : mainNavigation.memberSince } %}
+      {% endif %}
     </div>
+
     <div class="ama__main-navigation__join--links">
       {% include '@atoms/link/link.twig' with { link : mainNavigation.joinRenewLink } %}
     </div>
-    {% include '@molecules/global-search.twig' with { globalSearch : mainNavigation.globalSearch } %}
+
+    {% if mainNavigation.loggedIn %}
+      <div class="ama__main-navigation__member-benefits-link">
+      {% include '@atoms/link/link.twig' with { link : mainNavigation.memberBenefitsLink } %}
+      </div>
+    {% else %}
+      {% include '@molecules/global-search.twig' with { globalSearch : mainNavigation.globalSearch } %}
+    {% endif %}
+
     {% include '@molecules/sign-in-dropdown.twig' with { signInDropdown : mainNavigation.signInDropdown } %}
   </div>
 </div>

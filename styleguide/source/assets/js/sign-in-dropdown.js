@@ -8,9 +8,10 @@
 
       function dropdownDownMenu(parentElement, menuElement) {
 
-        parentElement.click(function(){
+        parentElement.click(function(e){
+          e.stopPropagation();
           $(menuElement).slideToggle();
-        }).find(signInDropdownMenu).click(function(e) {
+        }).find(menuElement).click(function(e) {
           return false;
         });
 
