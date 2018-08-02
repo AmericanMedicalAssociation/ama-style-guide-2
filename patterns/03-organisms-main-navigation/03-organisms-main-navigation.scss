@@ -2,11 +2,8 @@
   background-color: $purple;
   color: $white;
 
-  @include breakpoint($bp-med min-width) {
-    padding: $gutter/4 0;
-  }
-
   .container {
+    position: relative;
     display: flex;
     align-items: center;
     padding-right: 0;
@@ -16,9 +13,15 @@
     }
   }
 
-
   .ama__global-menu {
     @include gutter($margin-right-half...);
+  }
+
+  .ama_category_navigation_menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
   }
 
   .ama__site-logo {
@@ -40,7 +43,8 @@
     display: none;
 
     @include breakpoint($bp-large min-width) {
-      display: block;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -50,7 +54,7 @@
     @include breakpoint($bp-small min-width) {
       @include gutter($margin-left-full...);
       @include gutter($margin-right-full...);
-      display: flex;
+      display: block;
       line-height: 1em;
       width: 65px;
     }
@@ -60,8 +64,33 @@
     }
   }
 
+  &__member-since {
+    @include gutter($margin-left-full...);
+    @extend %ama__type--14px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+  }
+
   .ama__sign-in-dropdown {
     background-color: transparent;
     align-self: flex-end;
+  }
+
+  &__member-benefits-link {
+    @include gutter($margin-left-full...);
+    @include gutter($margin-right-full...);
+  }
+
+
+  &--loggedIn {
+    .ama__main-navigation__join--buttons {
+      flex-grow: 1;
+    }
+
+    .ama__main-navigation__join--links {
+      flex-grow: 1;
+    }
   }
 }
