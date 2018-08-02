@@ -88,11 +88,10 @@
   }
 
   &__menu-products {
+    @include font-size($footer-font-sizes--menu);
     @include gutter($padding-bottom-half...);
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.111em;
-    line-height: 1em;
 
     li {
       display: inline-block;
@@ -100,6 +99,11 @@
       &:not(:last-child):after {
         content: " | ";
       }
+    }
+
+    @include breakpoint($bp-large) {
+      font-size: 1.111em;
+      line-height: 1em;
     }
   }
 
