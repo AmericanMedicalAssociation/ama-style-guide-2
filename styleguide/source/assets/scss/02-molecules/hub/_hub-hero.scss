@@ -13,8 +13,8 @@
     background-size: cover;
   }
 
-  &__heading {
-    @include gutter($padding-left-full...);
+  &__heading,
+  & .ama__h2 {
     @include gutter($padding-top-full...);
 
     &h1,
@@ -23,7 +23,8 @@
     }
   }
 
-  &__copy {
+  &__copy,
+  &__text {
     @include gutter-all($padding-all-full...);
   }
 
@@ -42,12 +43,18 @@
     display: flex;
     flex-basis: 100%;
     align-items: center;
+    padding: 0;
 
     @include breakpoint($bp-small) {
       flex-basis: 50%;
     }
 
     .ama__image {
+      display: flex;
+      width: 100%;
+    }
+
+    & > * {
       width: 100%;
     }
   }
@@ -67,14 +74,20 @@
   }
 
   &__description {
+    @include gutter-all($padding-all-full...);
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    margin: 0;
   }
 
   &__button-container {
     @include gutter-all($padding-all-full...);
     text-align: center;
+
+    a {
+      @extend %ama__button;
+    }
   }
 
   &--cta-only {
@@ -129,13 +142,21 @@
         width: 50%;
       }
     }
+
+    .ama__hub-hero__button-container {
+      text-align: left;
+      padding-left: 0;
+    }
   }
 
+  &--split-no-overlay,
   &--split-no-overlay {
     align-items: stretch;
 
-    .ama__hub-hero__description {
+    .ama__hub-hero__description,
+    .ama__hub-hero__description > div {
       flex: 1;
+      width: 100%;
     }
 
     .ama__hub-hero__copy {
@@ -157,7 +178,9 @@
     @extend .ama__hub-hero--split-no-overlay;
 
     .ama__hub-hero__heading,
-    .ama__hub-hero__copy {
+    .ama__h2,
+    .ama__hub-hero__copy,
+    p {
       @include gutter-all($padding-all-full...);
       background-color: rgba(255, 255, 255, 0.45);
     }
@@ -171,7 +194,8 @@
       flex-direction: row;
     }
 
-    .ama__hub-hero__description {
+    .ama__hub-hero__description,
+    article {
       background-color: rgba($white, 0.45);
       width: 100%;
       justify-content: center;
