@@ -1,8 +1,0 @@
-<ul class="ama__tags">
-  {% for tag in tags %}
-    {% set text, url = tag.text, tag.url %}
-    <li>
-      {% include "@atoms/tag.twig" %}
-    </li>
-  {% endfor %}
-</ul>
