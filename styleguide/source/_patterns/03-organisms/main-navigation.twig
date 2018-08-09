@@ -28,8 +28,6 @@
       {% include '@atoms/link/link.twig' with { link : mainNavigation.memberBenefitsLink } %}
     </div>
 
-    {% if mainNavigation.loggedIn %}
-      {% include '@molecules/sign-in-dropdown.twig' with { signInDropdown : mainNavigation.signInDropdown } %}
-    {% endif %}
+    {% include '@molecules/sign-in-dropdown.twig' with { signInDropdown : mainNavigation.signInDropdown } %}
   </div>
 </div>

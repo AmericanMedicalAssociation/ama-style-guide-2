@@ -47,7 +47,7 @@
       align-items: center;
 
       .ama__button {
-        padding: 2px $gutter;
+        padding: 2px $gutter/2;
       }
     }
   }
@@ -102,12 +102,11 @@
 
   .ama__sign-in-dropdown {
     background-color: transparent;
-    align-self: flex-end;
   }
 
   &__member-benefits-link {
-    @include gutter($margin-left-full...);
-    @include gutter($margin-right-full...);
+    @include gutter($margin-left-half...);
+    @include gutter($margin-right-half...);
     display: none;
 
     @include breakpoint($bp-med min-width) {
