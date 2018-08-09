@@ -27,13 +27,14 @@
   }
 
   &__section {
-    position: relative;
     list-style: none;
 
     a {
+      position: relative;
       display: block;
-      padding: $gutter/4 $gutter;
+      padding: $gutter/6 $gutter;
       text-decoration: none;
+      font-weight: 600;
 
       &:hover,
       &:active {
@@ -54,7 +55,26 @@
       }
 
       &.highlighted .sub-arrow {
-        transform:rotate(90deg);
+        transform: rotate(90deg);
+
+        @include breakpoint($bp-small) {
+          transform: none;
+        }
+      }
+
+      &.has-submenu.highlighted {
+        &:after {
+          content: "";
+          position: absolute;
+          right: -2px;
+          top: 11px;
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right:10px solid $white;
+          z-index: 99;
+        }
       }
     }
 
@@ -77,6 +97,7 @@
 
     @include breakpoint($bp-small) {
       position: absolute;
+      top: 0 !important;
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
@@ -85,18 +106,6 @@
     @include breakpoint($bp-med) {
       width: 900px !important;
       max-width: none !important;
-    }
-
-    &__caret {
-      position: absolute;
-      left: -9px;
-      top: 50px;
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-right:10px solid $white;
-      z-index: 2;
     }
   }
 
@@ -136,7 +145,7 @@
       @include gutter($margin-bottom-half...);
       @include gutter($padding-left-half...);
       @include gutter($padding-right-half...);
-      color: $hoverPurple;
+      color: $homepagePurple;
       text-transform: uppercase;
     }
   }
