@@ -8,12 +8,11 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-
+  
   &__heading,
   & .ama__h2 {
     @include gutter($margin-top-full...);
-    @include gutter($margin-bottom-half...);
-    margin: 0;
+    margin-bottom: 0;
   }
 
   &__description {
@@ -37,7 +36,7 @@
     flex-basis: 100%;
     align-items: center;
     margin: 0;
-    width: 100%;
+
 
     .ama__image {
       width: 100%;
