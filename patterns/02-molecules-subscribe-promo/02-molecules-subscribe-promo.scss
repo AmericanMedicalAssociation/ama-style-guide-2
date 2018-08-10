@@ -1,0 +1,90 @@
+.ama__subscribe-promo {
+  display: inline-block;
+  padding: $gutter / 2;
+  color: $white;
+  background: $purple;
+
+  &__subject-title {
+    @extend .ama__h4--white;
+    padding-bottom: $gutter / 2;
+  }
+
+  .ama__form-group {
+    input {
+      @include type($myriad-pro, $font-weight-regular);
+      font-style: italic;
+    }
+
+    label {
+      visibility: hidden;
+    }
+  }
+
+  button {
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    height: 40px;
+    padding: 0 14px;
+
+    &:hover {
+      background: $hoverPurple;
+    }
+  }
+
+  &--wide {
+    width: 100%;
+
+    .ama__subscribe-promo__container {
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint($bp-small min-width) {
+        flex-direction: row;
+      }
+    }
+
+    .ama__subscribe-promo__content {
+      flex: 1;
+    }
+
+    .ama__subscribe-promo__form {
+      display: flex;
+      flex-direction: column;
+
+      .ama__form-group {
+        margin: 0;
+      }
+
+      .ama__form-group label {
+        display: none;
+      }
+
+      .ama__form-group input {
+        @include gutter($margin-bottom-full...);
+        height: 49px;
+      }
+
+      button {
+        @extend .ama__button--homepage;
+        height: 49px;
+      }
+
+      @include breakpoint($bp-small min-width) {
+        button {
+          margin: 0 0 0 auto;
+        }
+      }
+
+      @include breakpoint($bp-med min-width) {
+        flex-direction: row;
+        height: 49px;
+
+        .ama__form-group input {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

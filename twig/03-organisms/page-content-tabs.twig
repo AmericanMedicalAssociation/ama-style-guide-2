@@ -1,0 +1,63 @@
+<div class="ama__tabs ama__tabs-page-content ama__events-tabs">
+  <ul class="ama__tabs-navigation">
+    {% for tab in pageTabs %}
+      <li class="ama__tab-title--page"><a href="#{{ tab.tabId }}">{{ tab.tabTitle }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <div class="ama__accordion">
+    <h3 class="ama__accordion-tab">{{ pageTabs[0].tabTitle }}</h3>
+    <div id="{{ pageTabs[0].tabId }}" class="ama__tabs--content">
+      {% set image = pageTabs[0].tabContent['image']  %}
+      {% include '@atoms/image/image.twig' %}
+
+      {% set paragraph = pageTabs[0].tabContent['paragraph'] %}
+      {% include '@atoms/paragraph.twig' %}
+
+      {% set articleStubAsInline = pageTabs[0].tabContent['articleStubAsInline'] %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
+
+      {% include '@atoms/paragraph.twig' %}
+    </div>
+
+    <h3 class="ama__accordion-tab">{{ pageTabs[1].tabTitle }}</h3>
+    <div id="{{ pageTabs[1].tabId }}" class="ama__tabs--content">
+
+      {% set agenda = pageTabs[1].tabContent['agenda1'] %}
+      {% include '@molecules/agenda.twig' %}
+
+      {% set articleStubAsInline = pageTabs[1].tabContent['articleStubAsInline'] %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
+
+      {% set agenda = pageTabs[1].tabContent['agenda2'] %}
+      {% include '@molecules/agenda.twig' %}
+    </div>
+
+    <h3 class="ama__accordion-tab">{{ pageTabs[2].tabTitle }}</h3>
+    <div id="{{ pageTabs[2].tabId }}" class="ama__tabs--content">
+
+      {% set eventSpeakers = pageTabs[2].tabContent['eventSpeakers'] %}
+      {% include '@organisms/event-speakers.twig' %}
+
+
+      {% set articleStubAsInline = pageTabs[2].tabContent['articleStubAsInline'] %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
+    </div>
+
+    <h3 class="ama__accordion-tab">{{ pageTabs[3].tabTitle }}</h3>
+    <div id="{{ pageTabs[3].tabId }}" class="ama__tabs--content">
+
+      {% set infoCard = pageTabs[3].tabContent['infoCard1'] %}
+      {% include '@molecules/info-card/info-card.twig' %}
+
+      {% set paragraph = pageTabs[3].tabContent['paragraph'] %}
+      {% include '@atoms/paragraph.twig' %}
+
+      {% set infoCard = pageTabs[3].tabContent['infoCard2'] %}
+      {% include '@molecules/info-card/info-card.twig' %}
+
+      {% set articleStubAsInline = pageTabs[3].tabContent['articleStubAsInline'] %}
+      {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
+    </div>
+  </div>
+</div>

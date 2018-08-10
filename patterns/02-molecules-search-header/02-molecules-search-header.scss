@@ -1,0 +1,86 @@
+.ama__search-header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  @include gutter($padding-left-full...);
+  @include gutter($padding-right-full...);
+
+  @include breakpoint($bp-small) {
+    flex-wrap: initial;
+    flex-direction: row;
+  }
+
+  @include breakpoint($bp-med) {
+    padding: 0;
+  }
+
+  &__results-num {
+    white-space: nowrap;
+    text-align: center;
+    order: 2;
+    flex: 1;
+
+    @include breakpoint($bp-small) {
+      order: initial;
+      flex: initial;
+    }
+  }
+
+  .ama__search__field {
+    width:100%;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+    }
+  }
+
+  &__options {
+    order: 4;
+
+    .ama__form-group {
+      margin: 0;
+
+      .ui-button {
+        line-height: unset;
+        min-width: 225px;
+
+        @include breakpoint($bp-small) {
+          vertical-align: initial;
+        }
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+      order: initial;
+    }
+
+    label {
+      @extend .is-vishidden;
+    }
+  }
+
+  &__results {
+    @include gutter($margin-top-half...);
+    @include gutter($margin-bottom-half...);
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+    color: $gray-50;
+    display: block;
+
+    @include breakpoint($bp-med) {
+      padding: 0;
+    }
+  }
+
+  &__clear {
+    @include gutter($margin-left-full...);
+    @extend %ama__link--no-underline;
+    display: inline-block;
+    font-size: .8em;
+
+    &:link {
+      color: $purple;
+    }
+  }
+}

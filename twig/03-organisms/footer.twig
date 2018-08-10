@@ -1,0 +1,43 @@
+{% set heading = {
+  "text": "The AMA promotes the art and science of medicine and the betterment of public health.",
+  "level": "2",
+  "class": "ama__h2 ama__footer__mission-statement" } %}
+
+<footer class="ama__footer">
+  <div class="container ama__footer__container">
+    {% include "@atoms/heading/heading.twig" %}
+
+    <div class="ama__footer__menu-container">
+      {% include "@molecules/social-share.twig" %}
+
+      <div class="ama__rule ama__rule--horizontal"></div>
+
+      {% block menus %}
+        <div class="ama__footer__menu-secondary-user">
+          {% for column in menus.secondaryUser %}
+            <ul>
+              {% for link in column %}
+                <li>
+                  {% include "@atoms/link/link.twig" %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        </div>
+      {% endblock menus %}
+
+    </div>
+
+    {% include "@atoms/copyright.twig" %}
+
+    {% block utility %}
+      <ul class="ama__footer__menu-utility">
+        {% for link in menus.utility %}
+          <li>
+            {% include "@atoms/link/link.twig" %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
+  </div>
+</footer>

@@ -1,0 +1,6 @@
+<div class="ama__column-teaser">
+  {% for item in colummnTeaser.items[0:3] %}
+    {% set articleStub = item %}
+    {% include "@molecules/article-stub/article-stub.twig" %}
+  {% endfor %}
+</div>

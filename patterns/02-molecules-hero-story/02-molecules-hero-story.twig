@@ -1,0 +1,14 @@
+<div class="ama__hero-story {% if heroStory.video is not empty %}ama__hero-story--video{% endif %}">
+  <div class="ama__hero-story__text">
+    {% include '@atoms/heading/heading.twig' with { heading : heroStory.memberName } %}
+    {% include '@atoms/heading/heading.twig' with { heading : heroStory.featuredQuote } %}
+    {% include '@atoms/button/button.twig' with { button : heroStory.button } %}
+  </div>
+  <div class="ama__hero-story__media">
+    {% if heroStory.video is not empty %}
+      {% include '@atoms/video.twig' with { video : heroStory.video } %}
+    {% else %}
+      {% include '@atoms/image/image.twig' with { image : heroStory.image } %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{% set image = subCatArticleStub.image %}
+
+<a class="ama__subcategory-page-article-stub" href="{{ subCatArticleStub.link.href }}">
+  <div class="ama__subcategory-page-article-stub__image">
+    {% include "@atoms/image/image.twig" %}
+  </div>
+  <div class="ama__subcategory-page-article-stub__text">
+    <p class="ama__subcategory-page-article-stub__subcategory">{{ subCatArticleStub.subcategory }}</p>
+    <h3 class="ama__subcategory-page-article-stub__heading ama__h3">{{ subCatArticleStub.link.text }}</h3>
+    <p class="ama__subcategory-page-article-stub__paragraph">{{ subCatArticleStub.paragraph }}</p>
+  </div>
+</a>

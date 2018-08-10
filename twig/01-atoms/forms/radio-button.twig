@@ -1,0 +1,6 @@
+{% set index =  radioButton.index ? radioButton.index : loop.index %}
+
+<div class="ama__radio">
+  <label for="radio-{{ index }}">{{ radioButton.name }}</label>
+  <input type="radio" name="{{ radioButton.name }}" id="radio-{{ index }}" value="{{ radioButton.value }}">
+</div>

@@ -1,0 +1,21 @@
+{% set homepage = jama.homepage ? "ama__jama--homepage" %}
+
+<div class="ama__jama {{ homepage }}">
+  {% include "@atoms/site-logo/site-logo-as-jama.twig" %}
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <span class="ama__jama__title">
+    {% if jama.title.icon is not empty %}
+      <icon class="ama__icon {{ jama.title.icon }}"></icon>
+    {% endif %}
+    {{ jama.title.text }}
+  </span>
+  <ul class="ama__jama__links">
+    {% for link in jama.links %}
+      <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
+        {% include "@atoms/image/image.twig" with { "image" : link } %}
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>

@@ -1,0 +1,16 @@
+<table class="ama__table-agenda">
+  <caption>{{ caption }}</caption>
+  <tbody>
+  {% for row in table.rows %}
+    <tr>
+      <td><div class="ama__h5">{{ row.date }}</div></td>
+      <td>
+        <div class="ama__h3">{{ row.title }}</div>
+        {% if row.body %}
+          <p>{{ row.body }}</p>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

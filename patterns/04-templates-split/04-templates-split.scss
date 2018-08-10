@@ -1,0 +1,40 @@
+.ama__layout--split {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  .ama__masthead {
+    margin-bottom: $gutter;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  &.container {
+    @include breakpoint($bp-small max-width) {
+      padding: 0;
+    }
+  }
+}
+
+.ama__layout--split__content-top {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.ama__layout--split__left {
+  display: none;
+  grid-row: 2;
+  @include breakpoint($bp-small) {
+    display: block;
+    grid-column: 1 / 2;
+    padding-right: $gutter / 2;
+  }
+}
+
+.ama__layout--split__right {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  @include breakpoint($bp-small) {
+    grid-column: 2 / 3;
+    border-left: solid 1px $gray-50;
+  }
+}

@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1533850416" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1533850416" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1532112587" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1532112587" media="all" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
@@ -24,8 +24,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1533850416" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1533850416" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1532112587" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1532112587" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -67,13 +67,12 @@
   <div class="sg-pattern-example">
     
 <div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+  <span class="logo logo-outer ">
+  <img src="../../assets/images/brand/logo-jama.svg"
+       class="logo"
+       alt="American Medical Association" />
+</span>
+  <div class="ama__rule ama__rule--horizontal"></div>
   <span class="ama__jama__title">
         
   </span>
@@ -166,7 +165,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-jama-as-content-bottom" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>*Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<p>&#42; <em>NOTE: Since the requirements stated to build a pattern that displays differently depending on where it appears in the layout, we did not create an encapsulated version of its styling here at the molecule level. See the \"News with JAMA Examples\" page pattern to preview.<\/em><\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5040<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom (this variant)&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    links {\n      {\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        text: \n          type: string \/ required      \n        src:\n          type: string (image url) \/ optional\n        width: \n          auto\n        height:\n          auto\n        alt: \n          type: string \/ optional\n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA as Content Bottom","patternPartial":"molecules-jama-as-content-bottom","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-site-logo-as-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>*Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<p>&#42; <em>NOTE: Since the requirements stated to build a pattern that displays differently depending on where it appears in the layout, we did not create an encapsulated version of its styling here at the molecule level. See the \"News with JAMA Examples\" page pattern to preview.<\/em><\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5040<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom (this variant)&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    links {\n      {\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        text: \n          type: string \/ required      \n        src:\n          type: string (image url) \/ optional\n        width: \n          auto\n        height:\n          auto\n        alt: \n          type: string \/ optional\n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA as Content Bottom","patternPartial":"molecules-jama-as-content-bottom","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="molecules-jama-as-three-up" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -191,13 +190,12 @@
   <div class="sg-pattern-example">
     
 <div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+  <span class="logo logo-outer ">
+  <img src="../../assets/images/brand/logo-jama.svg"
+       class="logo"
+       alt="American Medical Association" />
+</span>
+  <div class="ama__rule ama__rule--horizontal"></div>
   <span class="ama__jama__title">
         
   </span>
@@ -290,7 +288,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-jama-as-three-up" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>*Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<p>&#42; <em>NOTE: Since the requirements stated to build a pattern that displays differently depending on where it appears in the layout, we did not create an encapsulated version of its styling here at the molecule level. See the \"News with JAMA Examples\" page pattern to preview.<\/em><\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5041<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up (this variant)&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    links {\n      {\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        text: \n          type: string \/ required      \n        src:\n          type: string (image url) \/ optional\n        width: \n          auto\n        height:\n          auto\n        alt: \n          type: string \/ optional\n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA as Three Up","patternPartial":"molecules-jama-as-three-up","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-site-logo-as-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>*Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<p>&#42; <em>NOTE: Since the requirements stated to build a pattern that displays differently depending on where it appears in the layout, we did not create an encapsulated version of its styling here at the molecule level. See the \"News with JAMA Examples\" page pattern to preview.<\/em><\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5041<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up (this variant)&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    links {\n      {\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        text: \n          type: string \/ required      \n        src:\n          type: string (image url) \/ optional\n        width: \n          auto\n        height:\n          auto\n        alt: \n          type: string \/ optional\n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA as Three Up","patternPartial":"molecules-jama-as-three-up","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="molecules-jama" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -315,13 +313,12 @@
   <div class="sg-pattern-example">
     
 <div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+  <span class="logo logo-outer ">
+  <img src="../../assets/images/brand/logo-jama.svg"
+       class="logo"
+       alt="American Medical Association" />
+</span>
+  <div class="ama__rule ama__rule--horizontal"></div>
   <span class="ama__jama__title">
         
   </span>
@@ -414,7 +411,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-jama" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5039\">EWL-5039<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5040<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5041\">EWL-5041<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) (this variant) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    title: {\n        text: \n          type: string \/ optional\n        icon: \n          type: string (url) \/ optional\n      },\n    links {\n      {\n        subtitle:\n          type: string \/ optional\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        heading: [\n          level: \n            type: int \"3\"\n          text: \n            type: string \/ required       \n          class:\n            type: string \"ama__h3\"\n        ]      \n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA \/ JAMA as Sidebar","patternPartial":"molecules-jama","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-site-logo-as-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5039\">EWL-5039<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5040<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5041\">EWL-5041<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) (this variant) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    title: {\n        text: \n          type: string \/ optional\n        icon: \n          type: string (url) \/ optional\n      },\n    links {\n      {\n        subtitle:\n          type: string \/ optional\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        heading: [\n          level: \n            type: int \"3\"\n          text: \n            type: string \/ required       \n          class:\n            type: string \"ama__h3\"\n        ]      \n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA \/ JAMA as Sidebar","patternPartial":"molecules-jama","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="molecules-jama-as-homepage" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -439,13 +436,12 @@
   <div class="sg-pattern-example">
     
 <div class="ama__jama ama__jama--homepage">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+  <span class="logo logo-outer ">
+  <img src="../../assets/images/brand/logo-jama.svg"
+       class="logo"
+       alt="American Medical Association" />
+</span>
+  <div class="ama__rule ama__rule--horizontal"></div>
   <span class="ama__jama__title">
         
   </span>
@@ -538,7 +534,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-jama-as-homepage" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"","patternExtension":"twig","patternName":"jama as homepage","patternPartial":"molecules-jama-as-homepage","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-site-logo-as-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"","patternExtension":"twig","patternName":"jama as homepage","patternPartial":"molecules-jama-as-homepage","patternState":""}
   </script>
 </div><!--end .sg-pattern-->            </div> <!--end #sg-patterns-->
 </div><!--end .sg-main-->
@@ -578,10 +574,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1533850416">
+<script id="pl-js-polyfill-insert-1532112587">
   (function() {
     if (self != top) {
-      var cb = '1533850416';
+      var cb = '1532112587';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -591,10 +587,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1533850416">
+<script id="pl-js-insert-1532112587">
   (function() {
     if (self != top) {
-      var cb = '1533850416';
+      var cb = '1532112587';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

@@ -1,0 +1,35 @@
+{% set heading = infoCard.heading|merge({
+    "level": "3",
+    "text": "About the AMA",
+    "class": ""
+  })
+%}
+
+<article class="ama__partner">
+  {% if logo %}
+      {% set image = logo %}
+      {% include "@atoms/image/image.twig" with {
+        "class": "ama__partner__logo" }
+      %}
+  {% endif %}
+
+  {% if infoCard %}
+    {% set image, heading, link = infoCard.image, infoCard.heading, infoCard.link %}
+    {% include "@molecules/info-card/info-card.twig" %}
+  {% endif %}
+
+  {% if boilerplate %}
+    <div class="ama__partner__boilerplate">
+      {% set heading = boilerplate.heading|merge({
+          "level": "3",
+          "text": "About the AMA",
+          "class": ""
+        })
+      %}
+      {% include "@atoms/heading/heading.twig" %}
+
+      {% set paragraph = boilerplate.paragraph %}
+      {% include "@atoms/paragraph.twig" %}
+    </div>
+  {% endif %}
+</article>

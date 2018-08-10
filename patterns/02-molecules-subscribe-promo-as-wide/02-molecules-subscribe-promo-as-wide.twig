@@ -1,0 +1,17 @@
+{% set wide = subscribePromo.wide ? "ama__subscribe-promo--wide" : "" %}
+
+<div class="ama__subscribe-promo {{ wide }}">
+  {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.subjectTitle } %}
+  <div class="ama__subscribe-promo__container">
+    <div class="ama__subscribe-promo__content">
+      {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.heading } %}
+      {% include '@atoms/paragraph.twig' with { paragraph : subscribePromo.paragraph } %}
+      {% set email = subscribePromo.email %}
+    </div>
+    <div class="ama__subscribe-promo__form">
+      {% include '@atoms/forms/email-field.twig' %}
+      {% set button = subscribePromo.button %}
+      {% include '@atoms/button/button.twig' %}
+    </div>
+  </div>
+</div>
