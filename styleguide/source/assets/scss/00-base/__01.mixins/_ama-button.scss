@@ -15,6 +15,17 @@
       color: $white;
     }
   }
+
+  @else if($style == "tertiary") {
+    background-color: $white;
+    border-color: $purple;
+    color: $purple;
+
+    &:hover {
+      background-color: $hoverPurple;
+      color: $white;
+    }
+  }
   //outline
   @else if($style == "reset") {
     background-color: transparent;

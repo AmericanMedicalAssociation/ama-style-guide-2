@@ -7,6 +7,10 @@ button {
     @include ama-button("", "secondary");
   }
 
+  &--tertiary {
+    @include ama-button("", "tertiary");
+  }
+
   &--block {
     @include ama-button("block", "");
   }
@@ -36,6 +40,6 @@ button {
   }
 }
 
-.ama__button--small.ama__button--secondary  {
-  @include ama-button("small", "secondary");
+.ama__button--small.ama__button--tertiary  {
+  @include ama-button("small", "tertiary");
 }

@@ -10,15 +10,19 @@
   }
 
   // This has to be specific b/c it's so different.
-  &__input[type="text"],
-  &__input[type="text"]:focus,
-  &__input[type="text"]:active {
+  &__input[type="text"] {
+    font-style: italic;
     border: 0;
     border-bottom: 1px solid $light-blue;
-    font-style: italic;
     color: $gray-50;
     line-height: initial;
     padding: 1em 28px 3px 0;
+
+    &:focus,
+    &:active {
+      color: $black;
+      font-style: normal;
+    }
   }
 
   // This has to be specific b/c it's so different.
@@ -40,7 +44,6 @@
     .ama__search__field__input[type="text"]:focus,
     .ama__search__field__input[type="text"]:active {
       padding: 5px 10px;
-      border: solid 1px $purple;
     }
 
     .ama__search__field__button {
