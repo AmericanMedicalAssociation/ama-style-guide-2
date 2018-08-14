@@ -4,18 +4,28 @@
   display: flex;
   justify-content: center;
   color: $white;
-  height: 70px;
+  height: 60px;
   width: 70px;
   align-items: center;
   border-left: 1px solid $gray-50;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @include breakpoint($bp-small) {
     justify-content: flex-end;
     border-left: 0;
+    width: 100px;
   }
 
   @include breakpoint($bp-med) {
-    width: 200px;
+    min-width: 100px;
+    width: auto;
+  }
+
+  @include breakpoint($bp-med) {
+    min-width: 135px;
     border-left: 0;
   }
 
@@ -36,8 +46,12 @@
 
     @include breakpoint($bp-large) {
       @include gutter($margin-left-half...);
-      display: flex;
       flex-grow: 1;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
     }
   }
 
@@ -59,7 +73,7 @@
     @include gutter($padding-left-half...);
     @include gutter($padding-right-half...);
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 0;
     box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
     background-color: $white;

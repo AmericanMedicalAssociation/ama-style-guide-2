@@ -6,7 +6,9 @@
 
 <a class="ama__hub-card {{ hubCard.layout }}" href="#" style="{{ background }}">
   {% if hubCard.image.src is not empty %}
-    {% include "@atoms/image/image.twig" %}
+    <div class="ama__hub-card__image">
+      {% include "@atoms/image/image.twig" with { 'class': 'ama__hub-card__image' } %}
+    </div>
   {% endif %}
   <div class="ama__hub-card__description">
     {% include "@atoms/heading/heading.twig" %}
