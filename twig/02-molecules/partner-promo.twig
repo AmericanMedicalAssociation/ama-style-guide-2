@@ -1,7 +1,7 @@
 {% set image = partnerPromo.image %}
-{% set homepage = partnerPromo.homepage ? "ama__partner-promo--homepage" : "" %}
+{% set homepage = partnerPromo.homepage ? "ama__partner-promo ama__partner-promo--homepage" : "ama__partner-promo " %}
 
-<div class="ama__partner-promo {{ homepage }}">
+<div class="{{ homepage }}">
   {% if image.src is not empty %}
     <div class="ama__partner-promo__image">
       {% include '@atoms/image/image.twig' %}

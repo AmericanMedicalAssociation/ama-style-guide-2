@@ -1,0 +1,131 @@
+.ama__main-navigation {
+  background-color: $purple;
+  color: $white;
+
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+
+    @include breakpoint($bp-small min-width) {
+      @include gutter($padding-right-half...);
+    }
+  }
+
+  .ama__global-menu {
+    @include gutter($margin-right-half...);
+  }
+
+  .ama_category_navigation_menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .ama__site-logo {
+    align-items: flex-start;
+    text-align: center;
+    min-width: 125px;
+    flex-grow: 1;
+
+    @include breakpoint($bp-med min-width) {
+      flex-grow: 0;
+      align-items: center;
+      text-align: left;
+    }
+  }
+
+  &__join--buttons {
+    @include gutter($margin-left-full...);
+    @include gutter($margin-right-full...);
+    display: none;
+
+    @include breakpoint($bp-large min-width) {
+      display: flex;
+      align-items: center;
+
+      .ama__button {
+        padding: 2px $gutter/2;
+      }
+    }
+  }
+
+  &__join--links {
+    display: none;
+
+    @include breakpoint($bp-small min-width) {
+      @include gutter($margin-left-full...);
+      @include gutter($margin-right-full...);
+      display: block;
+      line-height: 1em;
+      width: 65px;
+    }
+
+    @include breakpoint($bp-large min-width) {
+      display: none;
+    }
+  }
+
+  .ama__global-search {
+    .ama__search__field__input,
+    .ama__search__field__button {
+      height: 55px;
+      width: 35px;
+
+      @include breakpoint($bp-small min-width) {
+        height: 30px;
+      }
+    }
+
+    .ama__search__field__button {
+      padding: 4px 5px 0;
+
+      svg {
+        background-size: 20px 20px;
+        min-height: 20px;
+        min-width: 20px;
+        max-height: 20px;
+        max-width: 20px;
+      }
+    }
+  }
+
+  &__member-since {
+    @include gutter($margin-left-full...);
+    @extend %ama__type--14px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-width: 70px;
+  }
+
+  .ama__sign-in-dropdown {
+    background-color: transparent;
+  }
+
+  &__member-benefits-link {
+    @include gutter($margin-left-half...);
+    @include gutter($margin-right-half...);
+    display: none;
+
+    @include breakpoint($bp-med min-width) {
+      display: block;
+      min-width: 130px;
+      flex-grow: 1;
+      text-align: right;
+    }
+  }
+
+
+  &--universal {
+    .ama__main-navigation__join--buttons {
+      flex-grow: 1;
+    }
+
+    .ama__main-navigation__join--links {
+      flex-grow: 1;
+    }
+  }
+}

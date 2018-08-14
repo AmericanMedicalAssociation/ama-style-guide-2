@@ -1,5 +1,8 @@
-<a href="{{ logo.href|default(link|first) }}" class="logo logo-outer {{ class }}">
-  <img src="{{ logo.image|default('../../assets/images/brand/logo.svg') }}"
-       class="logo"
-       alt="{{ logo.alt|default('American Medical Association') }}" />
+{% set logoSource = siteLogo.reversed ? siteLogo.reversed.src : siteLogo.src %}
+
+<a href="{{ siteLogo.href }}" class="{{ siteLogo.class }}">
+  <img src="{{ logoSource }}" class="{{ siteLogo.imageClass }}" alt="{{ siteLogo.alt }}" />
 </a>
+
+
+

@@ -17,24 +17,15 @@
     @include gutter($margin-bottom-full...);
     flex-grow: 1;
     flex-basis: 0;
-
-    @include breakpoint($bp-small $bp-med) {
-      &:nth-of-type(even) {
-        @include gutter($padding-left-quarter...);
-      }
-
-      &:nth-of-type(odd) {
-        @include gutter($padding-right-quarter...);
-      }
-    }
-
+    
     &__copy > h2 {
       @extend %ama__type--small;
     }
 
-    @include breakpoint($bp-med) {
-      @include gutter($padding-right-half...);
-      &:last-child {
+    @include breakpoint($bp-small) {
+      @include gutter($padding-left-half...);
+
+      &:first-child {
         padding: 0;
       }
     }
