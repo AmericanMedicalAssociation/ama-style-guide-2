@@ -8,24 +8,48 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-
-  &__heading {
-    @include gutter-all($padding-all-full...);
-    margin: 0;
+  
+  &__heading,
+  & .ama__h2 {
+    @include gutter($margin-top-full...);
+    margin-bottom: 0;
   }
 
   &__description {
     @include gutter-all($padding-all-full...);
+    margin: 0;
     max-width: none;
     width: auto;
   }
 
-  .ama__image {
-    width: 100%;
+  &__button-container {
+    @include gutter-all($padding-all-full...);
+    text-align: center;
+
+    a {
+      @extend %ama__button;
+    }
   }
 
-  &:hover {
-    background-color: darken($gray-7, 10%);
+  &__image {
+    margin: 0;
+    
+    .ama__image {
+      height: auto;
+      width: 100%;
+    }
+
+    & > * {
+      height: auto;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  @at-root {
+    a:hover#{&} {
+      background-color: darken($gray-7, 10%);
+    }
   }
 
   &--no-image {
@@ -44,9 +68,54 @@
   &--portrait {
     background-size: cover;
     background-position: center top;
+    background-repeat: no-repeat;
+
+    .ama__image {
+      display: none;
+    }
 
     .ama__hub-card__description {
       margin-top: auto;
+    }
+  }
+
+  &--fifty-fifty {
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__button-container {
+      text-align: left;
+    }
+
+    .ama__hub-card__image,
+    .ama__image {
+      flex-basis: 100%;
+    }
+
+    .ama__hub-card__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--fifty-fifty-left {
+    @extend .ama__hub-card--fifty-fifty;
+    flex-direction: column;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row-reverse;
     }
   }
 
@@ -106,6 +175,8 @@
   }
 
   @include breakpoint($bp-med) {
+    width: 100%;
+
     // 2-up layout
     // when there are three items it's 50:50
     &:nth-child(1):nth-last-child(2) {
