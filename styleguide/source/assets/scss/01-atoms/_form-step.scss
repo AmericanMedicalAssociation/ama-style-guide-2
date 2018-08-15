@@ -13,6 +13,7 @@
     font-weight: normal;
     border-radius: 0;
     padding: 0;
+    overflow: hidden;
 
     &.ui-state-active {
       display: flex;
@@ -34,7 +35,7 @@
   &__step:hover {
     cursor: pointer;
   }
-  
+
   &__icon-container {
     @include gutter($margin-right-full...);
     width: 40px;
@@ -99,6 +100,12 @@
       @include gutter($padding-right-full...);
       @extend %ama__h2;
       background-color: $white;
+    }
+  }
+
+  &__content {
+    @include breakpoint($bp-small) {
+      margin-left: 70px;
     }
   }
 }
