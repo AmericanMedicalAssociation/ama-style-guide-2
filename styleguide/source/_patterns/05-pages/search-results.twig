@@ -1,0 +1,12 @@
+{% extends '@templates/two-column-left.twig' %}
+{% set filter = searchResults.filter %}
+
+{% block sidebarPrimary %}
+  {% include "@organisms/filter.twig" %}
+{% endblock %}
+
+{% block pageContent %}
+  <!-- {% include '@organisms/event-list.twig' %} -->
+  {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
+  {% include "@molecules/pagination.twig" %}
+{% endblock %}
