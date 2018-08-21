@@ -4,4 +4,4 @@ A default search results page that shows what search results should look like wh
 #### User Story
 As a user, I want to see a search result page when I input terms into the search in the Main Navigation, so that I can review the content that matches my search terms.
 
-[EWL-5790 SG2 | Create "Search Results" page](https://issues.ama-assn.org/browse/EWL-5790)
+[EWL-5796 SG2 | Create "Search Results" page](https://issues.ama-assn.org/browse/EWL-5796)
