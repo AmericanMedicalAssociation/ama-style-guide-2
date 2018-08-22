@@ -3,6 +3,10 @@
     @extend %ama__h4--purple;
     font-weight: 600;
     margin: 0;
+
+    .ama__search-result--best-bet & {
+      display: none;
+    }
   }
 
   &__title {
@@ -13,6 +17,16 @@
       &:hover {
         text-decoration: underline;
       }
+
+      .ama__search-result--best-bet & {
+        color: $homepagePurple;
+      }
+    }
+  }
+
+  &--best-bet {
+    p {
+      line-height: 1.25em;
     }
   }
 }
