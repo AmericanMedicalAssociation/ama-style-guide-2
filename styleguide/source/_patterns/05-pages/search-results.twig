@@ -1,8 +1,7 @@
 {% extends '@templates/two-column-left.twig' %}
-{% set filter = searchResults.filter %}
 {% set partnerPromo, subscribePromo =
-  searchResults.promotionalRealEstate.partnerPromo,
-  searchResults.promotionalRealEstate.subscribePromo %}
+  promotionalRealEstate.partnerPromo,
+  promotionalRealEstate.subscribePromo %}
 
 {% block sidebarPrimary %}
   {% include "@organisms/filter.twig" %}
@@ -11,6 +10,7 @@
 {% endblock %}
 
 {% block pageContent %}
+  {% include "@organisms/search-result-list.twig" %}
   {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
   {% include "@molecules/pagination.twig" %}
 {% endblock %}
