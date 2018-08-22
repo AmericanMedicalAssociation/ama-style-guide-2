@@ -1,0 +1,18 @@
+.ama__search-result {
+  &__category {
+    @extend %ama__h4--purple;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__title {
+    a {
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
