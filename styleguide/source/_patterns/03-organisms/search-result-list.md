@@ -18,21 +18,11 @@ Contains a list of all the search results based on search and filter criteria. A
         "href": string/required
         "text": string/required
       },
-      "location": {
-        "text": string/optional
-        "level": "3"
-        "class": "ama__h3 ama__event-stub__location"
+      "category": {
+        "text": string/optional,
+        "class": "ama__search-result__category"
       },
-      "date": string/optional,
-      "image": {
-        "alt": string/required
-        "src": "string/required
-        "height": "180"
-        "width": "180"
-      },
-      "sticky": true/false
-      "cme": true/false
-      "discount": string/optional
+      "bestBet": true/false,
       "paragraph": string/optional
     },
    ... # repeat for each item.
