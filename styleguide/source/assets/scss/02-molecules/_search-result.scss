@@ -1,4 +1,6 @@
 .ama__search-result {
+  @include gutter($margin-bottom-half...);
+
   &__category {
     @extend %ama__h4--purple;
     font-weight: 600;
@@ -27,6 +29,12 @@
   &--best-bet {
     p {
       line-height: 1.25em;
+    }
+  }
+
+  &:not(.ama__search-result--best-bet) {
+    .ama__search-result__title {
+      @include font-size($h3-font-sizes);
     }
   }
 }
