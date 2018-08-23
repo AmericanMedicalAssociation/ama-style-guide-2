@@ -16,5 +16,9 @@
     @include breakpoint($bp-med) {
       display: block;
     }
+
+    > * {
+      @include gutter($margin-top-full...);
+    }
   }
 }
