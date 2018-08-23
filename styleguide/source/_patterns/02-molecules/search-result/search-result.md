@@ -1,5 +1,5 @@
 ### Description
-A Search Result molecule contains a title, a category/subcategory, and a description. 
+A Search Result molecule contains a title, a category/subcategory, and a description.
 
 Variants are managed by use of pseudo-patterns.
 
@@ -15,6 +15,17 @@ This produces a Search Result for use on the Search Results page. Entices a user
 ### Variables
 {
   "searchResult": {
+    "link": {
+      "title": string/optional
+      "href": string/required
+      "text": string/required
+    },
+    "category": {
+      "text": string/optional,
+      "class": "ama__search-result__category"
+    },
+    "bestBet": true/false,
+    "paragraph": string/optional
   }
 }
 ~~~
