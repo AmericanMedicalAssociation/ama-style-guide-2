@@ -1,0 +1,16 @@
+{% extends '@templates/two-column-left.twig' %}
+{% set filter = searchResults.filter %}
+{% set partnerPromo, subscribePromo =
+  searchResults.promotionalRealEstate.partnerPromo,
+  searchResults.promotionalRealEstate.subscribePromo %}
+
+{% block sidebarPrimary %}
+  {% include "@organisms/filter.twig" %}
+  {% include '@molecules/partner-promo.twig' %}
+  {% include '@molecules/subscribe-promo.twig' %}
+{% endblock %}
+
+{% block pageContent %}
+  {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
+  {% include "@molecules/pagination.twig" %}
+{% endblock %}
