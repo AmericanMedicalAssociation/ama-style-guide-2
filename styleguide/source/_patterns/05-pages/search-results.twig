@@ -11,8 +11,10 @@
 
 {% block sidebarPrimary %}
   {% include "@organisms/filter.twig" %}
-  {% include '@molecules/partner-promo.twig' %}
-  {% include '@molecules/subscribe-promo.twig' %}
+  <div class="ama__search-results__promos">
+    {% include '@molecules/partner-promo.twig' %}
+    {% include '@molecules/subscribe-promo.twig' %}
+  </div>
 {% endblock %}
 
 {% block pageContent %}
