@@ -1,0 +1,10 @@
+.ama__search-results__best-bet {
+  @include breakpoint($bp-med) {
+    display: grid;
+    grid-template-columns: 2.5fr 6fr;
+
+    .ama__search-result--best-bet {
+      grid-column-start: 2;
+    }
+  }
+}
