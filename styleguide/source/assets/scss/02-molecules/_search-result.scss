@@ -1,5 +1,8 @@
 .ama__search-result {
+  @include gutter($padding-bottom-half...);
   @include gutter($margin-bottom-half...);
+  display: flex;
+  border-bottom: 1px solid $gray-50;
 
   &__category {
     @extend %ama__h4--purple;
@@ -23,6 +26,15 @@
       .ama__search-result--best-bet & {
         color: $homepagePurple;
       }
+    }
+  }
+
+  &__image {
+    @include gutter($margin-left-full...);
+    display: none;
+
+    @include breakpoint($bp-small) {
+      display: block;
     }
   }
 

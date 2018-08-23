@@ -1,3 +1,4 @@
+{% set image = searchResult.image %}
 {% set link = searchResult.title %}
 {% set classes = [
   searchResult.bestBet ? "ama__search-result--best-bet"
@@ -7,21 +8,27 @@
 
 
 <div class="ama__search-result {{ classes|join(' ') }}">
-  {% if searchResult.category %}
-    {% include "@atoms/paragraph.twig" with { "paragraph" : searchResult.category } %}
-  {% endif %}
+  <div class="ama__search-result__text">
+    {% if searchResult.category %}
+      {% include "@atoms/paragraph.twig" with { "paragraph" : searchResult.category } %}
+    {% endif %}
 
-  {% if link %}
-    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
-    <h2 class="ama__h2 ama__search-result__title">
-      {% include "@atoms/link/link.twig" %}
-    </h2>
-  {% endif %}
+    {% if link %}
+      {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+      <h2 class="ama__h2 ama__search-result__title">
+        {% include "@atoms/link/link.twig" %}
+      </h2>
+    {% endif %}
 
-  {% if searchResult.paragraph %}
-    <div class="ama__search-result__description">
-      {% include "@atoms/paragraph.twig" with { "paragraph" : searchResult.paragraph } %}
+    {% if searchResult.paragraph %}
+      <div class="ama__search-result__description">
+        {% include "@atoms/paragraph.twig" with { "paragraph" : searchResult.paragraph } %}
+      </div>
+    {% endif %}
+  </div>
+  {% if image %}
+    <div class="ama__search-result__image">
+      {% include "@atoms/image/image.twig" %}
     </div>
   {% endif %}
-  <div class="ama__rule ama__rule--horizontal"></div>
 </div>
