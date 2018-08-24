@@ -3,6 +3,10 @@
   promotionalRealEstate.partnerPromo,
   promotionalRealEstate.subscribePromo %}
 
+{% block header %}
+  {% include "@molecules/search-header.twig" with { searchHeader : searchResultsHeader } %}
+{% endblock %}
+
 {% block contentTop %}
   <div class="ama__search-results__best-bet">
     {% include '@molecules/search-result/search-result.twig' with { searchResult : bestBet } %}
