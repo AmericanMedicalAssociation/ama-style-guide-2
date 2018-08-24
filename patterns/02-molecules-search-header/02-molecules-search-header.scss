@@ -83,4 +83,52 @@
       color: $purple;
     }
   }
+
+  &--results {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    @include gutter($margin-bottom-full...);
+    background: $gray-7;
+
+    .ama__search-header__results-num {
+      text-align: left;
+      color: $gray-50;
+    }
+
+    .ama__search__field {
+      @include gutter($margin-bottom-full...);
+      width: 100%;
+
+      &__input {
+        @include font-size($h1-font-sizes);
+        border-bottom: 1px solid $hoverBlue;
+        color: $purple;
+        font-style: normal;
+        font-weight: 600;
+        background: transparent;
+
+        &:focus {
+          border: none;
+          border-bottom: 1px solid $hoverBlue;
+        }
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      .ama__search-header__option-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      overflow: hidden;
+
+      .ama__search-header__options {
+        max-width: 250px;
+        float: right;
+      }
+    }
+  }
 }
