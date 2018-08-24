@@ -57,3 +57,29 @@ label {
   }
 }
 
+/**
+ * Webform classes.
+ */
+div[role=alert],
+.form-item--error-message {
+  @include font-size($small-font-sizes);
+  color: red;
+}
+
+.form-item h3 {
+  @include gutter($margin-top-half...);
+  @include gutter($margin-bottom-half...);
+  @include font-size($p-font-sizes);
+  color: $gray-50;
+}
+
+input.error {
+  background: url('/themes/custom/ama_one/icons/svg/icon-error.svg') no-repeat 99% center/20px;
+}
+
+input.webform-button--submit {
+  margin: 0 auto;
+  display: inherit;
+}
+
+
