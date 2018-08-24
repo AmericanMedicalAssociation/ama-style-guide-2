@@ -1,8 +1,13 @@
 {% extends '@templates/two-column-left.twig' %}
 {% set filter = searchResults.filter %}
+{% set searchHeader = searchResults.searchHeader %}
 {% set partnerPromo, subscribePromo =
   searchResults.promotionalRealEstate.partnerPromo,
   searchResults.promotionalRealEstate.subscribePromo %}
+
+{% block header %}
+  {% include "@molecules/search-header.twig" %}
+{% endblock %}
 
 {% block sidebarPrimary %}
   {% include "@organisms/filter.twig" %}
