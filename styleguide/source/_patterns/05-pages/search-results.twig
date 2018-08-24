@@ -2,8 +2,14 @@
 {% set filter = searchResults.filter %}
 {% set searchHeader = searchResults.searchHeader %}
 {% set partnerPromo, subscribePromo =
-  searchResults.promotionalRealEstate.partnerPromo,
-  searchResults.promotionalRealEstate.subscribePromo %}
+  promotionalRealEstate.partnerPromo,
+  promotionalRealEstate.subscribePromo %}
+
+{% block contentTop %}
+  <div class="ama__search-results__best-bet">
+    {% include '@molecules/search-result/search-result.twig' with { searchResult : bestBet } %}
+  </div>
+{% endblock %}
 
 {% block header %}
   {% include "@molecules/search-header.twig" %}
@@ -11,11 +17,14 @@
 
 {% block sidebarPrimary %}
   {% include "@organisms/filter.twig" %}
-  {% include '@molecules/partner-promo.twig' %}
-  {% include '@molecules/subscribe-promo.twig' %}
+  <div class="ama__search-results__promos">
+    {% include '@molecules/partner-promo.twig' %}
+    {% include '@molecules/subscribe-promo.twig' %}
+  </div>
 {% endblock %}
 
 {% block pageContent %}
+  {% include "@organisms/search-result-list.twig" %}
   {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
   {% include "@molecules/pagination.twig" %}
 {% endblock %}

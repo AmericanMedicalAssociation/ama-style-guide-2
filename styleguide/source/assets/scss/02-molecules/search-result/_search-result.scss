@@ -1,0 +1,52 @@
+.ama__search-result {
+  @include gutter($padding-bottom-half...);
+  @include gutter($margin-bottom-half...);
+  display: flex;
+  border-bottom: 1px solid $gray-50;
+
+  &__category {
+    @extend %ama__h4--purple;
+    font-weight: 600;
+    margin: 0;
+
+    .ama__search-result--best-bet & {
+      display: none;
+    }
+  }
+
+  &__title {
+    a {
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .ama__search-result--best-bet & {
+        color: $homepagePurple;
+      }
+    }
+  }
+
+  &__image {
+    @include gutter($margin-left-full...);
+    display: none;
+
+    @include breakpoint($bp-med) {
+      display: block;
+    }
+  }
+
+  &--best-bet {
+    p {
+      line-height: 1.25em;
+    }
+  }
+
+  &:not(.ama__search-result--best-bet) {
+    .ama__search-result__title {
+      @include font-size($h3-font-sizes);
+    }
+  }
+}
