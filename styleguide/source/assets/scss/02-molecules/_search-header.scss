@@ -83,4 +83,35 @@
       color: $purple;
     }
   }
+
+  &--results {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    background: $gray-7;
+
+    .ama__search-header__results-num {
+      text-align: left;
+      color: $gray-50;
+    }
+
+    .ama__search__field {
+      width: 100%;
+
+      &__input {
+        border-bottom: 1px solid $hoverBlue;
+        
+        &:focus {
+          border: none;
+          border-bottom: 1px solid $hoverBlue;
+        }
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      .ama__search-header__option-wrap {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
 }

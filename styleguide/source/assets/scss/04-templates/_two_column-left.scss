@@ -8,6 +8,10 @@
     grid-column: 1 / 5;
     grid-row: 1;
 
+    &:has(> div) {
+      background: hotpink;
+    }
+
     @include breakpoint($bp-small min-width) {
       grid-column: 1 / 5;
       grid-row: 1;
