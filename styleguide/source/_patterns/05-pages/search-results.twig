@@ -1,18 +1,16 @@
 {% extends '@templates/two-column-left.twig' %}
-{% set filter = searchResults.filter %}
-{% set searchHeader = searchResults.searchHeader %}
 {% set partnerPromo, subscribePromo =
   promotionalRealEstate.partnerPromo,
   promotionalRealEstate.subscribePromo %}
+
+{% block header %}
+  {% include "@molecules/search-header.twig" with { searchHeader : searchResultsHeader } %}
+{% endblock %}
 
 {% block contentTop %}
   <div class="ama__search-results__best-bet">
     {% include '@molecules/search-result/search-result.twig' with { searchResult : bestBet } %}
   </div>
-{% endblock %}
-
-{% block header %}
-  {% include "@molecules/search-header.twig" %}
 {% endblock %}
 
 {% block sidebarPrimary %}
