@@ -1,0 +1,24 @@
+.ama__search-results {
+  &__best-bet {
+    @include breakpoint($bp-med) {
+      display: grid;
+      grid-template-columns: 2.5fr 6fr;
+
+      .ama__search-result--best-bet {
+        grid-column-start: 2;
+      }
+    }
+  }
+
+  &__promos {
+    display: none;
+
+    @include breakpoint($bp-med) {
+      display: block;
+    }
+
+    > * {
+      @include gutter($margin-top-full...);
+    }
+  }
+}
