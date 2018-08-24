@@ -98,8 +98,12 @@
       width: 100%;
 
       &__input {
+        @include font-size($h1-font-sizes);
         border-bottom: 1px solid $hoverBlue;
-        
+        color: $purple;
+        font-style: normal;
+        font-weight: 600;
+
         &:focus {
           border: none;
           border-bottom: 1px solid $hoverBlue;
@@ -111,6 +115,7 @@
       .ama__search-header__option-wrap {
         display: flex;
         flex-direction: row;
+        align-items: baseline;
       }
     }
   }
