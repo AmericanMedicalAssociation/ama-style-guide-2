@@ -95,6 +95,7 @@
     }
 
     .ama__search__field {
+      @include gutter($margin-bottom-full...);
       width: 100%;
 
       &__input {
@@ -116,6 +117,15 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      overflow: hidden;
+
+      .ama__search-header__options {
+        max-width: 250px;
+        float: right;
       }
     }
   }
