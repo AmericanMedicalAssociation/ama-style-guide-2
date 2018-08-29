@@ -46,6 +46,11 @@ textarea {
   }
 }
 
+.fieldgroup {
+  border-width: 0;
+  padding: 0;
+}
+
 label {
   @extend %ama__type--small;
   font-weight: 700;
@@ -66,12 +71,26 @@ div[role=alert],
   color: red;
 }
 
-.form-item h3 {
-  @include gutter($margin-top-half...);
-  @include gutter($margin-bottom-half...);
-  @include font-size($p-font-sizes);
-  color: $gray-50;
+.form-item:not(.ama__radio):not(.ama__checkbox) {
+  @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
+
+  h3 {
+    @include gutter($margin-top-half...);
+    @include gutter($margin-bottom-half...);
+    @include font-size($p-font-sizes);
+    color: $gray-50;
+  }
 }
+
+.webform-section {
+}
+
+.webform-options-display-side-by-side > div {
+  display: inline-block;
+  margin-right: .5em;
+}
+
 
 input.error {
   background: url('/themes/custom/ama_one/icons/svg/icon-error.svg') no-repeat 99% center/20px;

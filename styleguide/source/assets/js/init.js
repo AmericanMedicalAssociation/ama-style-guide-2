@@ -28,7 +28,7 @@
 	Drupal.behaviors.jumpMenu = {
 		attach: function (context, settings) {
 			$('.js-dropdown-select').on('change', function () {
-				window.location = $(this).find(':selected').data('url');
+				//window.location = $(this).find(':selected').data('url');
 			});
 		}
 	};
