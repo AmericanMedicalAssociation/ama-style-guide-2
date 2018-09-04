@@ -1,10 +1,5 @@
 {% extends '@templates/three-column.twig' %}
 
-{% block header %}
-  {% include '@organisms/ribbon/ribbon.twig' %}
-  {% include '@organisms/wayfinder/wayfinder.twig' %}
-{% endblock %}
-
 {% block contentTop %}
   {% include '@atoms/page-title/page-title.twig' %}
 {% endblock %}
@@ -25,9 +20,4 @@
   {% include '@molecules/membership/membership.twig' %}
   {% set membership = membershipThree %}
   {% include '@molecules/membership/membership.twig' %}
-{% endblock %}
-
-{% block footer %}
-  {% set heading, menus, social = footer.heading, footer.menus, footer.social %}
-  {% include '@organisms/footer.twig' %}
 {% endblock %}
