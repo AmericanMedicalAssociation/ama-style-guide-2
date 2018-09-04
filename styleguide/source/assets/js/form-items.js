@@ -174,10 +174,12 @@
             $('#selectedItems').text(JSON.stringify(selection));
           }
 
-          $('#filterList').checkList({
-            listItems: dataModel,
-            onChange: selChange
-          });
+          if (typeof(jQuery.ui.checkList) != 'undefined'){
+            $('#filterList').checkList({
+              listItems: dataModel,
+              onChange: selChange
+            });
+          }
 
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
