@@ -1,10 +1,10 @@
 {% if not pageContentClass %}
-{% set pageContentClass = 'ama__layout--two-column--right__page-content' %}
+  {% set pageContentClass = 'ama__layout--two-column--right__page-content' %}
 {% endif %}
 
 {% block header %}
   {% include '@organisms/main-navigation/main-navigation.twig' %}
-{% endblock %}}
+{% endblock %}
 
 <div class="ama__layout--two-column--right container {{ class }}">
   {# Keeping tabindex for accessibility purposes #}
