@@ -174,7 +174,7 @@
             $('#selectedItems').text(JSON.stringify(selection));
           }
 
-          if (typeof(jQuery.ui.checkList)){
+          if (typeof(jQuery.ui.checkList) != 'undefined'){
             $('#filterList').checkList({
               listItems: dataModel,
               onChange: selChange
