@@ -1,0 +1,28 @@
+{% extends '@templates/two-column-left.twig' %}
+{% set partnerPromo, subscribePromo =
+  promotionalRealEstate.partnerPromo,
+  promotionalRealEstate.subscribePromo %}
+
+{% block header %}
+  {% include "@molecules/search-header.twig" with { searchHeader : searchResultsHeader } %}
+{% endblock %}
+
+{% block contentTop %}
+  <div class="ama__search-results__best-bet">
+    {% include '@molecules/search-result/search-result.twig' with { searchResult : bestBet } %}
+  </div>
+{% endblock %}
+
+{% block sidebarPrimary %}
+  {% include "@organisms/filter.twig" %}
+  <div class="ama__search-results__promos">
+    {% include '@molecules/partner-promo.twig' %}
+    {% include '@molecules/subscribe-promo.twig' %}
+  </div>
+{% endblock %}
+
+{% block pageContent %}
+  {% include "@organisms/search-result-list.twig" %}
+  {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
+  {% include "@molecules/pagination.twig" %}
+{% endblock %}
