@@ -15,6 +15,7 @@
 
     @include breakpoint($bp-med min-width) {
       display: block;
+      margin-bottom: 0;
     }
   }
 
@@ -30,7 +31,8 @@
     flex: 1;
     text-align: right;
     display: block;
-    text-decoration: none;
+    text-decoration: underline;
+    color: $purple;
   }
 
   &__tag {
@@ -43,4 +45,3 @@
     }
   }
 }
-
