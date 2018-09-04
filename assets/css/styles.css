@@ -3342,6 +3342,11 @@ a {
   background: #ffffff;
   font-weight: normal;
   color: #000000; }
+  .ama__search-header__options .ui-selectmenu-button, .ama__search-header__options
+  .ui-selectmenu-button:hover, .ama__search-header__options
+  .ui-selectmenu-button:active {
+    border: 1px solid #46166B;
+    color: #46166B; }
 
 .ui-selectmenu-button.ui-button {
   text-align: left;
@@ -3936,7 +3941,8 @@ figcaption {
     display: none; }
     @media (min-width: 56.25em) {
       .ama__applied-filters__label {
-        display: block; } }
+        display: block;
+        margin-bottom: 0; } }
   .ama__applied-filters__show-filters {
     display: block; }
     @media (min-width: 56.25em) {
@@ -3948,7 +3954,8 @@ figcaption {
     flex: 1;
     text-align: right;
     display: block;
-    text-decoration: none; }
+    text-decoration: underline;
+    color: #46166B; }
   .ama__applied-filters__tag {
     display: inline-block; }
     .ama__applied-filters__tag__remove {
@@ -6427,6 +6434,8 @@ a.ama__promo--border:hover {
   .ama__subscribe-promo__form .ama__button {
     display: block;
     margin: 0 auto; }
+    .ama__subscribe-promo__form .ama__button:hover {
+      background: #9073A6; }
   .ama__subscribe-promo .ama__form-group input {
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
     font-weight: 400;
@@ -7358,8 +7367,10 @@ a.ama__promo--border:hover {
     @media (min-width: 56.25em) {
       .ama__search-result__image {
         display: block; } }
-  .ama__search-result--best-bet p, .ama__search-result--best-bet .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__search-result--best-bet .ama__image__text__subtitle, .ama__search-result--best-bet .ama__resource-link--inline__text {
-    line-height: 1.25em; }
+  .ama__search-result--best-bet {
+    margin-bottom: 0; }
+    .ama__search-result--best-bet p, .ama__search-result--best-bet .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__search-result--best-bet .ama__image__text__subtitle, .ama__search-result--best-bet .ama__resource-link--inline__text {
+      line-height: 1.25em; }
   .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
     font-size: 1.1em;
     line-height: 1.182; }
@@ -9402,7 +9413,8 @@ section#related-links ul {
       -ms-grid-column: 1;
       grid-column: 1;
       -ms-grid-row: 2;
-      grid-row: 2; } }
+      grid-row: 2;
+      -ms-grid-column-span: 1; } }
   @media (min-width: 56.25em) and (min-width: 56.25em) {
     .ama__layout--two-column--left__sidebar--primary {
       padding-right: 28px; } }
@@ -10018,8 +10030,8 @@ section#related-links ul {
   .ama__search-results__best-bet {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2.5fr 6fr;
-    grid-template-columns: 2.5fr 6fr; }
+    -ms-grid-columns: 2.38fr 6fr;
+    grid-template-columns: 2.38fr 6fr; }
     .ama__search-results__best-bet .ama__search-result--best-bet {
       -ms-grid-column: 2;
       grid-column-start: 2; } }
