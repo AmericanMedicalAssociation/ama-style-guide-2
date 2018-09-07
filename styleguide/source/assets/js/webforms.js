@@ -14,6 +14,7 @@
     var $inputs = $('.webform-submission-form section *').filter(':input');
     var $iconElement = $('.ama__form-steps__icon');
     var errorSections = [];
+    var errorMessage = $('.form-item--error-message');
 
     $inputs.each(function(i, input) {
       $closestSection = $(this).closest('section').attr('data-drupal-selector').toString();
@@ -35,10 +36,30 @@
 
   function validateEmail(email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    return emailReg.test( email );
+    return emailReg.test(email);
   }
 
-  Drupal.behaviors.contactUsForm = {
+  function fieldIsRequired(input) {
+    input.addClass('error');
+    input.next().remove('.form-item--error-message');
+    input.after('<div class="form-item--error-message">Field is required.</div>');
+  }
+
+  function checkField(input) {
+    if (input.prop('required') && (input.val().length === 0 || input.val() === "")) {
+      fieldIsRequired(input);
+    }
+    else {
+      if (input.attr('type') === 'email' && !validateEmail(input.val())) {
+        fieldIsRequired(input);
+      }
+      else {
+        input.removeClass('error').next().remove('.form-item--error-message');
+      }
+    }
+  }
+
+  Drupal.behaviors.webForm = {
     attach: function (context, settings) {
       $contactForm = $('.webform-submission-form');
       $inputs = $('.webform-submission-form section *').filter(':input');
@@ -52,16 +73,11 @@
       $inputs.on('focus change keypress', function () {
         var iconClass = 'edit';
         $closestSection = $(this).closest('section');
+        $closestSectionInputs = $closestSection.find(':input');
         $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
-
-        if ($(this).prop('required') && $(this).val().length !== 0) {
-          if ($(this).attr('type') === 'email' && validateEmail($(this).val())) {
-            $(this).removeClass('error').next().remove('.form-item--error-message');
-          }
-          if ($(this).attr('type') !== 'email') {
-            $(this).removeClass('error').next().remove('.form-item--error-message');
-          }
-        }
+        $closestSectionInputs.each(function () {
+          checkField($(this));
+        });
       });
 
       $inputs.on('blur', function () {
@@ -72,10 +88,8 @@
 
         $closestSectionInputs.each(function () {
           if ($(this).prop('required') && $(this).val().length === 0) {
-            $(this).addClass('error');
-            $(this).next().remove('.form-item--error-message');
-            $(this).after('<div class="form-item--error-message">Field is required.</div>');
             $allFieldsReady = false;
+            iconClass = 'error';
           }
         });
 
@@ -86,4 +100,6 @@
       });
     }
   };
+
+
 })(jQuery, Drupal);
