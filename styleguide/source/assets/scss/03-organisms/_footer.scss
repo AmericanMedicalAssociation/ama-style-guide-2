@@ -29,7 +29,7 @@
 
   .ama__form-group {
     flex-grow: 2;
-    input {
+    input:not(:focus) {
       font-style: italic;
     }
   }
@@ -78,6 +78,7 @@
 
       &:not(:last-child):after {
         content: " | ";
+        padding: 0 7px;
       }
     }
 
@@ -98,6 +99,7 @@
 
       &:not(:last-child):after {
         content: " | ";
+        padding: 0 7px;
       }
     }
 
@@ -155,6 +157,10 @@
       flex-grow: 0;
       flex-shrink: 0;
       flex-basis: 33.333%;
+
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
+        margin: 0 auto;
+      }
     }
 
     &__menu-products {

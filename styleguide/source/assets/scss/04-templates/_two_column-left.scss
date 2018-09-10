@@ -51,9 +51,11 @@
     grid-row: 2 ;
 
     @include breakpoint($bp-med min-width) {
+      @include gutter($padding-right-full...);
+      @include gutter($padding-left-full...);
       grid-column: 1;
       grid-row: 2;
+      -ms-grid-column-span: 1;
     }
   } // end aside.secondary
 }
-
