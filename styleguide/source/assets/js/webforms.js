@@ -10,6 +10,7 @@
 (function ($, Drupal) {
 
   var verifyFields = function(form) {
+    console.log("hello");
     var $sections = form.find('section');
     var $inputs = $('.webform-submission-form section *').filter(':input');
     var $iconElement = $('.ama__form-steps__icon');
@@ -59,47 +60,50 @@
     }
   }
 
+  var initialLoad = true;
+
   Drupal.behaviors.webForm = {
     attach: function (context, settings) {
-      $contactForm = $('.webform-submission-form');
-      $inputs = $('.webform-submission-form section *').filter(':input');
-      $iconElement = $('.ama__form-steps__icon');
-      $submitBuutton = $('.webform-button--submit');
+      $(document).ready(function(e) {
+        $contactForm = $('.webform-submission-form');
+        $inputs = $('.webform-submission-form section *').filter(':input');
+        $iconElement = $('.ama__form-steps__icon');
+        $submitBuutton = $('.webform-button--submit');
 
-      //$('#edit-state-state-province').selectmenu();
-
-      if ($.active !== 0) {
-        verifyFields($contactForm);
-      }
-
-      $inputs.on('focus change keypress selectmenuchange', function () {
-        var iconClass = 'edit';
-        $closestSection = $(this).closest('section');
-        $closestSectionInputs = $closestSection.find(':input');
-        $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
-        $closestSectionInputs.each(function () {
-          checkField($(this));
-        });
-      });
-
-      $inputs.on('blur', function () {
-        var iconClass = 'edit';
-        $closestSection = $(this).closest('section');
-        $closestSectionInputs = $closestSection.find(':input');
-        $allFieldsReady = true;
-
-        $closestSectionInputs.each(function () {
-          checkField($(this));
-          if ($(this).prop('required') && $(this).val().length === 0) {
-            $allFieldsReady = false;
-            iconClass = 'error';
-          }
-        });
-
-        if ($allFieldsReady) {
-          iconClass = 'completed';
+        if (initialLoad === false) {
+          verifyFields($contactForm);
         }
-        $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
+
+        $inputs.on('focus change keypress selectmenuchange', function () {
+          var iconClass = 'edit';
+          $closestSection = $(this).closest('section');
+          $closestSectionInputs = $closestSection.find(':input');
+          $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
+          $closestSectionInputs.each(function () {
+            checkField($(this));
+          });
+        });
+
+        $inputs.on('focus blur', function () {
+          var iconClass = 'edit';
+          $closestSection = $(this).closest('section');
+          $closestSectionInputs = $closestSection.find(':input');
+          $allFieldsReady = true;
+
+          $closestSectionInputs.each(function () {
+            if ($(this).prop('required') && $(this).val().length === 0) {
+              $allFieldsReady = false;
+              iconClass = 'error';
+            }
+          });
+
+          if ($allFieldsReady) {
+            iconClass = 'completed';
+          }
+          $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
+        });
+
+        initialLoad = false;
       });
     }
   };
