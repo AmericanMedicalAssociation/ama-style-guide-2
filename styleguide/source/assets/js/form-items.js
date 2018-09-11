@@ -7,8 +7,9 @@
   Drupal.behaviors.formItems = {
     attach: function (context, settings) {
       (function ($) {
-        $(document).ready(function(){
+        $(document).ready(function() {
 
+          $('.ama__select-menu__select').selectmenu();
           $('.multiselect').multiselect();
 
           $('.ama__tooltip').tooltip({
@@ -168,21 +169,19 @@
             {text: '', value: ''}
           ];
 
-          function selChange(){
-            var selection = $('#myCheckList').checkList('getSelection');
-
-            $('#selectedItems').text(JSON.stringify(selection));
-          }
-
-          $('#filterList').checkList({
-            listItems: dataModel,
-            onChange: selChange
-          });
+          // I can't find where we're using this and it errors on Drupal end.
+          // function selChange(){
+          //   var selection = $('#myCheckList').checkList('getSelection');
+          //   $('#selectedItems').text(JSON.stringify(selection));
+          // }
+          //
+          // $('#filterList').checkList({
+          //   listItems: dataModel,
+          //   onChange: selChange
+          // });
 
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
-          $('.ama__select-menu__select').selectmenu();
-
 
           $('.textarea').keyup(function() {
             count_remaining_character();

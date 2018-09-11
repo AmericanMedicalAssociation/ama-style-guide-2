@@ -66,11 +66,13 @@
       $iconElement = $('.ama__form-steps__icon');
       $submitBuutton = $('.webform-button--submit');
 
+      //$('#edit-state-state-province').selectmenu();
+
       if ($.active !== 0) {
         verifyFields($contactForm);
       }
 
-      $inputs.on('focus change keypress', function () {
+      $inputs.on('focus change keypress selectmenuchange', function () {
         var iconClass = 'edit';
         $closestSection = $(this).closest('section');
         $closestSectionInputs = $closestSection.find(':input');
@@ -87,6 +89,7 @@
         $allFieldsReady = true;
 
         $closestSectionInputs.each(function () {
+          checkField($(this));
           if ($(this).prop('required') && $(this).val().length === 0) {
             $allFieldsReady = false;
             iconClass = 'error';
