@@ -1,5 +1,6 @@
 {% extends '@templates/one-column.twig' %}
 {% block header %}
+  {% include '@organisms/main-navigation/main-navigation.twig' %}
   {% set alert = homepage.alert %}
   {% include '@molecules/alert.twig' %}
   {% include '@organisms/product-nav.twig' with { productNav : homepage.productNav } %}
