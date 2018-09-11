@@ -4,6 +4,7 @@
   promotionalRealEstate.subscribePromo %}
 
 {% block header %}
+  {% include '@organisms/main-navigation/main-navigation.twig' %}
   {% include "@molecules/search-header.twig" with { searchHeader : searchResultsHeader } %}
 {% endblock %}
 

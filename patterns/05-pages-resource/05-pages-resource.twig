@@ -1,5 +1,8 @@
 {% extends '@templates/split.twig' %}
 
+{% block contentTop %}
+{% endblock %}
+
 {% block contentLeft %}
   {% set masthead = tabs[0].tabContent.masthead %}
   {% include '@organisms/masthead/masthead.twig' %}
@@ -18,7 +21,4 @@
 
 {% block contentRight %}
   {% include '@organisms/resource-tabs.twig' %}
-{% endblock %}
-
-{% block footer %}
 {% endblock %}
