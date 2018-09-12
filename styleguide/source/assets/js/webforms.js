@@ -10,7 +10,6 @@
 (function ($, Drupal) {
 
   var verifyFields = function(form) {
-    console.log("hello");
     var $sections = form.find('section');
     var $inputs = $('.webform-submission-form section *').filter(':input');
     var $iconElement = $('.ama__form-steps__icon');
