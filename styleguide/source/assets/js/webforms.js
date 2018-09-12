@@ -14,7 +14,6 @@
     var $inputs = $('.webform-submission-form section *').filter(':input');
     var $iconElement = $('.ama__form-steps__icon');
     var errorSections = [];
-    var errorMessage = $('.form-item--error-message');
 
     $inputs.each(function(i, input) {
       $closestSection = $(this).closest('section').attr('data-drupal-selector').toString();
