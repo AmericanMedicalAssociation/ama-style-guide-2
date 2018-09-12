@@ -72,6 +72,13 @@
           verifyFields($contactForm);
         }
 
+        $inputs.on('click', function () {
+          console.log($(this).closest('.form-item').siblings().find(this));
+          $(this).addClass('active').next().addClass('active');
+          $(this).closest('.ama__radio').siblings().find(':input').removeClass('active').next().removeClass('active');
+
+        });
+
         $inputs.on('focus change keypress selectmenuchange', function () {
           var iconClass = 'edit';
           $closestSection = $(this).closest('section');
