@@ -7,9 +7,8 @@
   Drupal.behaviors.formItems = {
     attach: function (context, settings) {
       (function ($) {
-        $(document).ready(function() {
+        $(document).ready(function(){
 
-          $('.ama__select-menu__select').selectmenu();
           $('.multiselect').multiselect();
 
           $('.ama__tooltip').tooltip({
@@ -169,19 +168,23 @@
             {text: '', value: ''}
           ];
 
-          // I can't find where we're using this and it errors on Drupal end.
-          // function selChange(){
-          //   var selection = $('#myCheckList').checkList('getSelection');
-          //   $('#selectedItems').text(JSON.stringify(selection));
-          // }
-          //
-          // $('#filterList').checkList({
-          //   listItems: dataModel,
-          //   onChange: selChange
-          // });
+          function selChange(){
+            var selection = $('#myCheckList').checkList('getSelection');
+
+            $('#selectedItems').text(JSON.stringify(selection));
+          }
+
+          if (typeof(jQuery.ui.checkList) != 'undefined'){
+            $('#filterList').checkList({
+              listItems: dataModel,
+              onChange: selChange
+            });
+          }
 
           $('[type=checkbox]').checkboxradio();
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
+          $('.ama__select-menu__select').selectmenu();
+
 
           $('.textarea').keyup(function() {
             count_remaining_character();
@@ -263,21 +266,21 @@
             };
 
             $(input).change( function () {
-                var filter = $(this).val();
-                if(filter) {
-                  // this finds all links in a list that contain the input,
-                  // and hide the ones not containing the input while showing the ones that do
-                  $(list).find("span:not(:Contains(" + filter + "))").parent().hide();
-                  $(list).find("span:Contains(" + filter + ")").parent().show();
-                } else {
-                  $(list).find("label").show();
-                }
-                return false;
-                // only show results after 3 characters are entered
-              }).keyup( function() {
-                if( this.value.length < 4 ) return;
-                  $(this).change();
-              });
+              var filter = $(this).val();
+              if(filter) {
+                // this finds all links in a list that contain the input,
+                // and hide the ones not containing the input while showing the ones that do
+                $(list).find("span:not(:Contains(" + filter + "))").parent().hide();
+                $(list).find("span:Contains(" + filter + ")").parent().show();
+              } else {
+                $(list).find("label").show();
+              }
+              return false;
+              // only show results after 3 characters are entered
+            }).keyup( function() {
+              if( this.value.length < 4 ) return;
+              $(this).change();
+            });
           }
 
           listFilter($("#ama__search__location"), $(".ama__form-group"));
