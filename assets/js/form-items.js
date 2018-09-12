@@ -266,21 +266,21 @@
             };
 
             $(input).change( function () {
-                var filter = $(this).val();
-                if(filter) {
-                  // this finds all links in a list that contain the input,
-                  // and hide the ones not containing the input while showing the ones that do
-                  $(list).find("span:not(:Contains(" + filter + "))").parent().hide();
-                  $(list).find("span:Contains(" + filter + ")").parent().show();
-                } else {
-                  $(list).find("label").show();
-                }
-                return false;
-                // only show results after 3 characters are entered
-              }).keyup( function() {
-                if( this.value.length < 4 ) return;
-                  $(this).change();
-              });
+              var filter = $(this).val();
+              if(filter) {
+                // this finds all links in a list that contain the input,
+                // and hide the ones not containing the input while showing the ones that do
+                $(list).find("span:not(:Contains(" + filter + "))").parent().hide();
+                $(list).find("span:Contains(" + filter + ")").parent().show();
+              } else {
+                $(list).find("label").show();
+              }
+              return false;
+              // only show results after 3 characters are entered
+            }).keyup( function() {
+              if( this.value.length < 4 ) return;
+              $(this).change();
+            });
           }
 
           listFilter($("#ama__search__location"), $(".ama__form-group"));
