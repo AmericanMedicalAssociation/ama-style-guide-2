@@ -36,13 +36,15 @@
         $('.ama__subcategory-exploration-with-images__view-less').hide();
         $('.ama__subcategory-exploration-with-images__view-all').show();
 
-        $('.viewAll').click(function() {
+        $('.viewAll').click(function(e) {
+          e.preventDefault();
           subcategory.fadeIn();
           $('.ama__subcategory-exploration-with-images__view-all').hide();
           $('.ama__subcategory-exploration-with-images__view-less').show();
         });
 
-        $('.viewLess').click(function() {
+        $('.viewLess').click(function(e) {
+          e.preventDefault();
           subcategory.hide();
           checkSize();
           $('.ama__subcategory-exploration-with-images__view-less').hide();
