@@ -1,5 +1,5 @@
 (function($) {
-  $('.ama__subcategory-featured-content-as-carousel .ama__category-page-article-stub__container').slick({
+  $('.ama__subcategory-featured-content-as-carousel .grid-container').slick({
     slidesToShow: 4,
     slidesToScroll: 2,
     infinite: false,
