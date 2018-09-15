@@ -11,7 +11,7 @@ Fields:
 2. Description
 
     * Max character length: 300
-    
+
 3. Button (optional)
 
     * Text (required)
