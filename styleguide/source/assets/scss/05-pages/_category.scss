@@ -35,6 +35,10 @@
     text-transform: uppercase;
   }
 
+  .ama__article-stub__title {
+    padding: 0;
+  }
+
   .ama__tools {
     padding: 0;
   }
@@ -55,11 +59,14 @@
     }
 
     @include breakpoint($bp-small) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto auto;
-      grid-column-gap: $gutter;
-      grid-row-gap: $gutter;
+      .grid-container {
+        @include gutter($margin-top-full...);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-column-gap: $gutter;
+        grid-row-gap: $gutter;
+      }
     }
   }
 
@@ -77,18 +84,14 @@
 
   &__article-stub-two-up {
     @include breakpoint($bp-small) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      grid-column-gap: $gutter;
-      grid-row-gap: $gutter;
 
-      .ama__content-grouping-header {
-        grid-row: 1 / 1;
-      }
-
-      .ama__article-stub {
-        grid-row: 2 / 2;
+      .grid-container {
+        @include gutter($margin-top-full...);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-column-gap: $gutter;
+        grid-row-gap: $gutter;
       }
     }
   }

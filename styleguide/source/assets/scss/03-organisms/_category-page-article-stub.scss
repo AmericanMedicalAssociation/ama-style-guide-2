@@ -1,22 +1,24 @@
 .ama__category-page-article-stub {
 
-  &__container {
+  .grid-container {
     @include gutter($margin-top-full...);
     display: flex;
     flex-direction: row;
-    margin-left: -20px;
     flex-wrap: wrap;
 
     @include breakpoint($bp-med min-width) {
       flex-wrap: nowrap;
-      margin-left: -28px;
     }
   }
 
   .ama__article-stub {
-    @include gutter($padding-left-full...);
+    @include gutter($margin-left-full...);
     @include gutter($margin-bottom-full...);
     width: 100%;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     @include breakpoint($bp-small min-width) {
       width: 47%;
