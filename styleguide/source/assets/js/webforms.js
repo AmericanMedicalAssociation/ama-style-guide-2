@@ -72,7 +72,7 @@
           verifyFields($contactForm);
         }
 
-        $inputs.on('click', function () {
+        $('#edit-i-am-a- *').filter(':input').on('click', function () {
           $(this).addClass('active').next().addClass('active');
           $(this).parent().siblings().find(':input').removeClass('active').next().removeClass('active');
         });
