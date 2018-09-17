@@ -72,6 +72,11 @@
           verifyFields($contactForm);
         }
 
+        $('#edit-i-am-a- *').filter(':input').on('click', function () {
+          $(this).addClass('active').next().addClass('active');
+          $(this).parent().siblings().find(':input').removeClass('active').next().removeClass('active');
+        });
+
         $inputs.on('focus change keypress selectmenuchange', function () {
           var iconClass = 'edit';
           $closestSection = $(this).closest('section');

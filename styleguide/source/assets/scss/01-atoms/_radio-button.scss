@@ -1,5 +1,5 @@
 .ama__radio {
-  .ui-checkboxradio-label {
+  label {
     @include gutter($margin-top-half...);
     @include gutter($margin-bottom-full...);
     color: $gray-64;
@@ -54,16 +54,22 @@
   }
 }
 
-.webform-submission-contact-us-form {
-  .ui-checkboxradio-label,
-  .ui-checkboxradio-label:hover {
+.webform-submission-contact-us-form .ama__radio {
+  label,
+  label:hover {
+    font-size: 1em;
+    cursor: pointer;
     border: 1px solid $purple;
     padding: 3px 20px;
     text-transform: none;
 
-    &.ui-state-active {
+    &.active {
       background-color: $purple;
       color: white;
     }
+  }
+
+  input {
+    @include is-vishidden;
   }
 }
