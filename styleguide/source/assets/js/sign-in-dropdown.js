@@ -8,10 +8,9 @@
 
       function dropdownDownMenu(parentElement, menuElement) {
 
-        parentElement.click(function(e){
+        parentElement.unbind('click').click(function(e){
           e.stopPropagation();
           $(menuElement).slideToggle();
-        }).find(menuElement).click(function(e) {
           return false;
         });
 
