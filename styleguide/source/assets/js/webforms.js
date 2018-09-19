@@ -3,12 +3,26 @@
     attach: function (context, settings) {
       (function ($) {
 
+        $.validator.addMethod(
+          "regex",
+          function(value, element, regexp) {
+            return this.optional(element) || regexp.test(value);
+          },
+          "Please check your input."
+        );
+
         // On webform submit check to see if all inputs are valid
         $('.webform-submission-form').validate({
           ignore: [],
           rules: {
             'email': {
               email: true
+            },
+            'telephone': {
+              'regex': /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
+            },
+            'birth_year': {
+              'regex': /^(19|20)\d{2}$/
             }
           },
           errorPlacement: function(error, element) {
@@ -26,6 +40,10 @@
             var errors = validator.numberOfInvalids();
             if (errors) {
               $('.progress-marker').addClass('error')
+            }
+
+            if($('.js-form-type-radio').find('label.error').length !== 0) {
+              $('.js-form-type-radio label.error').parents('.fieldset-wrapper').addClass('error');
             }
           }
         });

@@ -57,6 +57,11 @@
   color: $red;
 }
 
+.fieldset-wrapper.error {
+  @include gutter-all($padding-all-half...);
+  border: 1px solid $red;
+}
+
 div[role=alert] {
   @include gutter-all($padding-all-full...);
   @extend .ama__h5;
