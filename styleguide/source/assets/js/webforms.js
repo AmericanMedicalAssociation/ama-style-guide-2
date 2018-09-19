@@ -2,9 +2,15 @@
   Drupal.behaviors.formValidate = {
     attach: function (context, settings) {
       (function ($) {
+
         // On webform submit check to see if all inputs are valid
         $('.webform-submission-form').validate({
           ignore: [],
+          rules: {
+            'email': {
+              email: true
+            }
+          },
           errorPlacement: function(error, element) {
             if (element.attr("type") == "checkbox") {
               error.insertAfter(element.parent().siblings().last());
