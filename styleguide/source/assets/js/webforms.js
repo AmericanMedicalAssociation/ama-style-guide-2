@@ -8,9 +8,13 @@
           errorPlacement: function(error, element) {
             if (element.attr("type") == "checkbox") {
               error.insertAfter(element.parent().siblings().last());
-            } else if (element.is("select")) {
+            }
+            else if (element.is("select")) {
               error.insertAfter(element.next())
-            } else error.insertAfter(element);
+            }
+            else {
+              error.insertAfter(element);
+            }
           },
           invalidHandler: function(form, validator) {
             var errors = validator.numberOfInvalids();

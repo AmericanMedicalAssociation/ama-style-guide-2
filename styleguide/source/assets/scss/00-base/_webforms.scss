@@ -14,12 +14,23 @@
     display: flex;
     align-items: center;
 
+    &:hover {
+      .progress-marker {
+        background-color: transparent;
+      }
+    }
+
     .progress-marker {
       @extend .ama__form-steps__icon.edit;
       text-indent: -99px;
       position: relative;
       overflow: hidden;
       background-color: transparent;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
 
       &.error {
         @extend .ama__form-steps__icon.error;
