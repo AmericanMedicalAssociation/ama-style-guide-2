@@ -1,0 +1,123 @@
+.webform-progress-tracker {
+  margin: 0;
+  padding: 0;
+
+  .progress-step {
+    display: none;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .progress-step.is-active {
+    display: flex;
+    align-items: center;
+
+    .progress-marker {
+      @extend .ama__form-steps__icon.edit;
+      text-indent: -99px;
+      position: relative;
+      overflow: hidden;
+      background-color: transparent;
+
+      &.error {
+        @extend .ama__form-steps__icon.error;
+      }
+    }
+
+    .progress-text {
+      @extend .ama__form-steps__label;
+      text-align: left;
+      padding: 0;
+    }
+
+    .progress-title {
+      @extend .ama__form-steps__label__text;
+      display: inline;
+      text-align: left;
+    }
+  }
+}
+
+//Webform error states
+.form-item--error-message {
+  @include font-size($small-font-sizes);
+  color: $red;
+}
+
+div[role=alert] {
+  @include gutter-all($padding-all-full...);
+  @extend .ama__h5;
+  color: $red;
+  background-color: $gray-7;
+
+  .item-list__comma-list {
+    li {
+      @include gutter($margin-top-half...);
+      @include font-size($small-font-sizes);
+      display: block;
+      color: $red;
+    }
+
+    a {
+      color: $red;
+
+      &:after {
+        content: " is required";
+      }
+    }
+  }
+}
+
+
+.form-item:not(.ama__radio):not(.ama__checkbox){
+  @include gutter($margin-top-half...);
+  @include gutter($margin-bottom-half...);
+
+  h3 {
+    @include gutter($margin-top-half...);
+    @include gutter($margin-bottom-half...);
+    @include font-size($p-font-sizes);
+    color: $gray-50;
+  }
+}
+
+.webform-checkboxes-other .form-checkboxes,
+.webform-type-radios {
+  @include gutter($margin-top-half...);
+}
+
+.webform-options-display-side-by-side > div {
+  display: inline-block;
+  margin-right: .5em;
+}
+
+.form-actions {
+  @include gutter($margin-top-full...);
+}
+
+input.error {
+  background: url('/themes/custom/ama_one/icons/svg/icon-error.svg') no-repeat 99% center/20px;
+}
+
+input.webform-button--submit {
+  margin: 0 auto;
+  display: inherit;
+}
+
+.form-composite.webform-fieldset--title-inline legend {
+  float: none;
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+

@@ -3,6 +3,7 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
+          alert('fasd');
           $('#test-form').validate({
             rules: {
               textfield: "required",
