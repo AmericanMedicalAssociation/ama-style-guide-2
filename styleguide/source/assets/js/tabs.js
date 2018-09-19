@@ -27,13 +27,12 @@
 
       // Prevent jump onclick
       $('.ui-tabs-anchor').on('click', function (e) {
-        // Use e.currentTarget because e.target is sometimes the icon div
-        var url = new URL(e.currentTarget.href);
         // Store window y location so we can restore after changing the hash
-        // which would otherwise cause the window to jump down
+        // which would otherwise cause the window to jump down.
         var windowScrollY = window.scrollY;
-        // Update window hash location, and restore to previous y-position
-        window.location.hash = url.hash;
+        // Update window hash location, and restore to previous y-position.
+        // Use currentTarget because target is sometimes the icon div.
+        window.location.hash = e.currentTarget.hash;
         window.scroll({top: windowScrollY});
       });
 
