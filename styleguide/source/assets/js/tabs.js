@@ -27,8 +27,14 @@
 
       // Prevent jump onclick
       $('.ui-tabs-anchor').on('click', function (e) {
-        e.preventDefault();
-        return false;
+        // Use e.currentTarget because e.target is sometimes the icon div
+        var url = new URL(e.currentTarget.href);
+        // Store window y location so we can restore after changing the hash
+        // which would otherwise cause the window to jump down
+        var windowScrollY = window.scrollY;
+        // Update window hash location, and restore to previous y-position
+        window.location.hash = url.hash;
+        window.scroll({top: windowScrollY});
       });
 
       //Simulate click event on actual simpleTabs tab from mobile drop down.
