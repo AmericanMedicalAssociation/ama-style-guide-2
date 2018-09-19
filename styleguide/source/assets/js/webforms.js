@@ -30,16 +30,6 @@
           }
         });
 
-        // On webform submit check to see if all inputs are valid
-        $('.webform-submission-form').validate({
-          invalidHandler: function(form, validator) {
-            var errors = validator.numberOfInvalids();
-            if (errors) {
-              $('.progress-marker').addClass('error')
-            }
-          }
-        })
-
         // Check to see if inputs are valid
         $('.webform-submission-form input').keyup(function() {
           if($(this).valid()) {
@@ -58,7 +48,6 @@
             $(".webform-submission-form").validate().element(this);
           }
         });
-
       })(jQuery);
     }
   };
