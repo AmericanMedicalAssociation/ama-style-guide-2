@@ -49,12 +49,15 @@
         });
 
         // Check to see if inputs are valid
-        $('.webform-submission-form input').keyup(function() {
-          if($(this).valid()) {
-            $('.progress-marker').removeClass('error')
-          } else {
-            $('.progress-marker').addClass('error')
-          }
+        $('.webform-submission-form input').change(function() {
+          $('.webform-submission-form label.error').each(function() {
+            if( $(this).text() !== '') {
+              $('.ama__form-steps__icon').addClass('error')
+            }
+            else {
+              $('.ama__form-steps__icon').removeClass('error')
+            }
+          });
         });
         
         // Add validation to select dropdown menus using jQuery UI

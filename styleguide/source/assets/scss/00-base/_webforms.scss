@@ -1,53 +1,14 @@
-.webform-progress-tracker {
+.ama__webform-header {
   margin: 0;
   padding: 0;
 
-  .progress-step {
+  .is-inactive {
     display: none;
-
-    &:after {
-      display: none;
-    }
   }
 
-  .progress-step.is-active {
+  .is-active {
     display: flex;
     align-items: center;
-
-    &:hover {
-      .progress-marker {
-        background-color: transparent;
-      }
-    }
-
-    .progress-marker {
-      @extend .ama__form-steps__icon.edit;
-      text-indent: -99px;
-      position: relative;
-      overflow: hidden;
-      background-color: transparent;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
-
-      &.error {
-        @extend .ama__form-steps__icon.error;
-      }
-    }
-
-    .progress-text {
-      @extend .ama__form-steps__label;
-      text-align: left;
-      padding: 0;
-    }
-
-    .progress-title {
-      @extend .ama__form-steps__label__text;
-      display: inline;
-      text-align: left;
-    }
   }
 }
 
