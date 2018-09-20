@@ -26,11 +26,11 @@
             }
           },
           errorPlacement: function(error, element) {
-            if (element.attr("type") == "checkbox") {
+            if (element.attr("type") === "checkbox") {
               error.insertAfter(element.parent().siblings().last());
             }
             else if (element.is("select")) {
-              error.insertAfter(element.next())
+              error.insertAfter(element.next());
             }
             else {
               error.insertAfter(element);
@@ -39,7 +39,7 @@
           invalidHandler: function(form, validator) {
             var errors = validator.numberOfInvalids();
             if (errors) {
-              $('.progress-marker').addClass('error')
+              $('.progress-marker').addClass('error');
             }
 
             if($('.js-form-type-radio').find('label.error').length !== 0) {
@@ -52,10 +52,10 @@
         $('.webform-submission-form input').change(function() {
           $('.webform-submission-form label.error').each(function() {
             if( $(this).text() !== '') {
-              $('.ama__form-steps__icon').addClass('error')
+              $('.ama__form-steps__icon').addClass('error');
             }
             else {
-              $('.ama__form-steps__icon').removeClass('error')
+              $('.ama__form-steps__icon').removeClass('error');
             }
           });
         });
