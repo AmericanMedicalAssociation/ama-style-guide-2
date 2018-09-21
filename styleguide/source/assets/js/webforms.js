@@ -37,7 +37,7 @@
         invalidHandler: function(form, validator) {
           var errors = validator.numberOfInvalids();
           if (errors) {
-            $('.progress-marker').addClass('error');
+            $('.ama__form-steps__icon').addClass('error');
           }
 
           if($('.js-form-type-radio').find('label.error').length !== 0) {
