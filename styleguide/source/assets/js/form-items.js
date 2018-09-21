@@ -190,12 +190,6 @@
             count_remaining_character();
           });
 
-          // Go back to previous back is user clicks decline submit button
-          $('.ama__button--decline').click(function(e) {
-            e.preventDefault();
-            window.history.back();
-          });
-
           // Range Field
           var legend = $('.ama__range-field__legend');
           var handle = $( "#currentValue" );

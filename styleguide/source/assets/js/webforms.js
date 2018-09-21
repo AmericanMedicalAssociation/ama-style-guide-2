@@ -58,6 +58,17 @@
     }
   }
 
+  // Go back to previous back is user clicks decline submit button
+  $('.ama__button--decline').click(function(e) {
+    e.preventDefault();
+
+    if (document.referrer == "") {
+      document.location.href='/';
+    } else {
+      history.back()
+    }
+  });
+
   var initialLoad = true;
 
   Drupal.behaviors.webForm = {
