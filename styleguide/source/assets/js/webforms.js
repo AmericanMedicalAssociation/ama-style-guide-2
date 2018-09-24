@@ -1,14 +1,4 @@
-/**
- * @file
- * Contact us interactions.
- *
- * JavaScript should be made compatible with libraries other than jQuery by
- * wrapping it with an "anonymous closure". See:
- * - https://drupal.org/node/1446420
- * - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
- */
 (function ($, Drupal) {
-
   var verifyFields = function(form) {
     var $sections = form.find('section');
     var $inputs = $('.webform-submission-form section *').filter(':input');
@@ -74,49 +64,72 @@
 
   Drupal.behaviors.webForm = {
     attach: function (context, settings) {
-      $(document).ready(function(e) {
-        $contactForm = $('.webform-submission-form');
-        $inputs = $('.webform-submission-form section *').filter(':input');
-        $iconElement = $('.ama__form-steps__icon');
-        $submitBuutton = $('.webform-button--submit');
+      $.validator.addMethod(
+        "regex",
+        function(value, element, regexp) {
+          return this.optional(element) || regexp.test(value);
+        },
+        "Please check your input."
+      );
 
-        if (initialLoad === false) {
-          verifyFields($contactForm);
-        }
-
-        $inputs.on('focus change keypress selectmenuchange', function () {
-          var iconClass = 'edit';
-          $closestSection = $(this).closest('section');
-          $closestSectionInputs = $closestSection.find(':input');
-          $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
-          $closestSectionInputs.each(function () {
-            checkField($(this));
-          });
-        });
-
-        $inputs.on('focus blur', function () {
-          var iconClass = 'edit';
-          $closestSection = $(this).closest('section');
-          $closestSectionInputs = $closestSection.find(':input');
-          $allFieldsReady = true;
-
-          $closestSectionInputs.each(function () {
-            if ($(this).prop('required') && $(this).val().length === 0) {
-              $allFieldsReady = false;
-              iconClass = 'error';
-            }
-          });
-
-          if ($allFieldsReady) {
-            iconClass = 'completed';
+      // On webform submit check to see if all inputs are valid
+      $('.webform-submission-form').validate({
+        ignore: [],
+        rules: {
+          'email': {
+            email: true
+          },
+          'telephone': {
+            'regex': /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
+          },
+          'birth_year': {
+            'regex': /^(19|20)\d{2}$/
           }
-          $closestSection.find($iconElement).removeClass('edit error completed').addClass(iconClass);
-        });
+        },
+        errorPlacement: function(error, element) {
+          if (element.attr("type") === "checkbox") {
+            error.insertAfter(element.parent().siblings().last());
+          }
+          else if (element.is("select")) {
+            error.insertAfter(element.next());
+          }
+          else {
+            error.insertAfter(element);
+          }
+        },
+        invalidHandler: function(form, validator) {
+          var errors = validator.numberOfInvalids();
+          if (errors) {
+            $('.ama__form-steps__icon').addClass('error');
+          }
 
-        initialLoad = false;
+          if($('.js-form-type-radio').find('label.error').length !== 0) {
+            $('.js-form-type-radio label.error').parents('.fieldset-wrapper').addClass('error');
+          }
+        }
+      });
+
+      // Check to see if inputs are valid
+      $('.webform-submission-form input').change(function() {
+        $('.webform-submission-form label.error').each(function() {
+          if( $(this).text() !== '') {
+            $('.ama__form-steps__icon').addClass('error');
+          }
+          else {
+            $('.ama__form-steps__icon').removeClass('error');
+          }
+        });
+      });
+
+      // Add validation to select dropdown menus using jQuery UI
+      $('.webform-submission-form select').selectmenu({
+        style: 'dropdown',
+        transferClasses: true,
+        width: null,
+        change: function() {
+          $(".webform-submission-form").validate().element(this);
+        }
       });
     }
   };
-
-
 })(jQuery, Drupal);
