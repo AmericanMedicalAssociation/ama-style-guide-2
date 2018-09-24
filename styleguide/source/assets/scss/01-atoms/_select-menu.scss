@@ -1,6 +1,7 @@
 .ui-selectmenu-button,
 .ui-selectmenu-button:hover,
 .ui-selectmenu-button:active {
+  @include gutter($margin-top-half...);
   border: 1px solid $gray-7;
   border-radius: 0;
   background: $white;
@@ -11,6 +12,10 @@
     border: 1px solid $purple;
     color: $purple;
   }
+}
+
+.form-select.error + .ui-selectmenu-button {
+  border: 1px solid $red;
 }
 
 .ui-selectmenu-button.ui-button {
