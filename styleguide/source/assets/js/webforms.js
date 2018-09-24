@@ -64,8 +64,9 @@
 
     if (document.referrer == "") {
       document.location.href='/';
-    } else {
-      history.back()
+    }
+    else {
+      history.back();
     }
   });
 
