@@ -1,16 +1,3 @@
-%form-scroll {
-  @include gutter($margin-top-full...);
-  @include gutter-all($padding-all-full...);
-  overflow: hidden;
-  height: 300px;
-  overflow-y: scroll;
-  border: 1px solid $gray-7;
-
-  ul {
-    list-style-position: inside;
-  }
-}
-
 .ama__webform-header {
   margin: 0;
   padding: 0;
@@ -112,14 +99,14 @@ input.webform-button--submit {
 }
 
 .webform-scroll {
-  @extend %form-scroll;
+  @include form-scroll;
 }
 
 // Accept/Decline forms.
 .webform-submission-end-user-license-agreement-form,
 .webform-submission-policy-finder-form {
   &__message {
-    @extend %form-scroll;
+    @include form-scroll;
   }
 
   &__submit-buttons {
