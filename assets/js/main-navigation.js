@@ -1,6 +1,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.ama_mainNavigation = {
     attach: function (context, settings) {
+
       var categoryNavigationMenu = $('.ama_category_navigation_menu');
 
       // Hide/Show menu
