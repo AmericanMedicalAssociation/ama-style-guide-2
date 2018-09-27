@@ -56,17 +56,15 @@ $three-column: 3, 2, $gutter, $gutter*2;
   word-wrap: normal;
 }
 
-//Adds flex properties
-.ama__flex-container {
-  display: flex;
+@mixin form-scroll {
+  @include gutter($margin-top-full...);
+  @include gutter-all($padding-all-full...);
+  overflow: hidden;
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid $gray-7;
 
-  &--row {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &--column {
-    display: flex;
-    flex-direction: column;
+  ul {
+    list-style-position: inside;
   }
 }
