@@ -18,6 +18,7 @@
   &__group {
     @include gutter($padding-top-half...);
     @include gutter($padding-bottom-half...);
+    display: block;
     list-style: none;
     border-bottom: 1px solid $gray-50;
 
@@ -28,6 +29,8 @@
 
   &__section {
     list-style: none;
+    display: block;
+    position: relative;
 
     a {
       position: relative;
@@ -88,6 +91,13 @@
       @extend %ama__type--14px;
       padding: $gutter/4 $gutter;
     }
+
+    &__divider {
+      @extend %ama__type--14px;
+      @include gutter($margin-top-half...);
+      padding: $gutter/2 $gutter;
+      border-top: 1px solid $gray-50;
+    }
   }
 
   &__flyout {
@@ -97,7 +107,7 @@
 
     @include breakpoint($bp-small) {
       position: absolute;
-      top: 0 !important;
+      top: -50px !important;
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
