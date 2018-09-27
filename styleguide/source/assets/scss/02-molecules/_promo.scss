@@ -60,14 +60,15 @@
       font-weight: normal;
     }
 
-    button {
+    // Right now the style guide uses `buttons`, but eventually we want to switch these to `a` elements.
+    button, a {
       display: block;
       margin: $gutter auto;
     }
 
     @include breakpoint($bp-small){
-      button {
-        display: inline;
+      button, a {
+        display: inline-block;
         margin: 0;
       }
     }
