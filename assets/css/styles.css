@@ -526,6 +526,27 @@ label {
     content: "";
     display: table; }
 
+.ama__flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .ama__flex-container--row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .ama__flex-container--column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+
 .ama__placeholder {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
@@ -1203,6 +1224,7 @@ strong,
 
 .ama__type--14px,
 .ama_category_navigation_menu__section__heading,
+.ama_category_navigation_menu__section__divider,
 .ama__main-navigation__member-since {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
@@ -1211,43 +1233,24 @@ strong,
   @media screen and (min-width: 37.5em) {
     .ama__type--14px,
     .ama_category_navigation_menu__section__heading,
+    .ama_category_navigation_menu__section__divider,
     .ama__main-navigation__member-since {
       font-size: 0.778em;
       line-height: 1.072; } }
   @media screen and (min-width: 56.25em) {
     .ama__type--14px,
     .ama_category_navigation_menu__section__heading,
+    .ama_category_navigation_menu__section__divider,
     .ama__main-navigation__member-since {
       font-size: 0.778em;
       line-height: 1.072; } }
   @media screen and (min-width: 75em) {
     .ama__type--14px,
     .ama_category_navigation_menu__section__heading,
+    .ama_category_navigation_menu__section__divider,
     .ama__main-navigation__member-since {
       font-size: 0.778em;
       line-height: 1.072; } }
-
-.webform-submission-policy-finder-form__message {
-  margin-top: 20px;
-  padding: 20px;
-  overflow: hidden;
-  height: 300px;
-  overflow-y: scroll;
-  border: 1px solid #EDEDED; }
-  @media (min-width: 56.25em) {
-    .webform-submission-policy-finder-form__message {
-      margin-top: 28px; } }
-  .webform-submission-policy-finder-form__message breakpoint($bp-med) {
-    padding: 28px; }
-  .webform-submission-policy-finder-form__message ul {
-    list-style-position: inside; }
-
-.webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
-  margin-bottom: 20px;
-  width: 60%; }
-  @media (min-width: 56.25em) {
-    .webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
-      margin-bottom: 28px; } }
 
 .ama__webform-header {
   margin: 0;
@@ -1384,6 +1387,58 @@ input.webform-button--submit {
   padding: 0;
   position: absolute;
   width: 1px; }
+
+.webform-scroll {
+  margin-top: 20px;
+  padding: 20px;
+  overflow: hidden;
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #EDEDED; }
+  @media (min-width: 56.25em) {
+    .webform-scroll {
+      margin-top: 28px; } }
+  .webform-scroll breakpoint($bp-med) {
+    padding: 28px; }
+  .webform-scroll ul {
+    list-style-position: inside; }
+
+.general-public .webform-button--submit {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.webform-submission-end-user-license-agreement-form__message,
+.webform-submission-policy-finder-form__message {
+  margin-top: 20px;
+  padding: 20px;
+  overflow: hidden;
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #EDEDED; }
+  @media (min-width: 56.25em) {
+    .webform-submission-end-user-license-agreement-form__message,
+    .webform-submission-policy-finder-form__message {
+      margin-top: 28px; } }
+  .webform-submission-end-user-license-agreement-form__message breakpoint($bp-med),
+  .webform-submission-policy-finder-form__message breakpoint($bp-med) {
+    padding: 28px; }
+  .webform-submission-end-user-license-agreement-form__message ul,
+  .webform-submission-policy-finder-form__message ul {
+    list-style-position: inside; }
+
+.webform-submission-end-user-license-agreement-form__submit-buttons .webform-button--submit,
+.webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
+  margin-bottom: 20px;
+  width: 60%; }
+  @media (min-width: 56.25em) {
+    .webform-submission-end-user-license-agreement-form__submit-buttons .webform-button--submit,
+    .webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
+      margin-bottom: 28px; } }
 
 .ama__tabs .ama__agenda-date a.ui-tabs-anchor {
   padding: 10px 10px 3px;
@@ -5624,15 +5679,15 @@ dd {
     color: #5C5C5C; }
     .ama__partner-promo--homepage breakpoint($bp-med) {
       padding: 14px; }
-    .ama__partner-promo--homepage button {
+    .ama__partner-promo--homepage button, .ama__partner-promo--homepage a {
       margin-top: 20px;
       margin-right: 10px;
       width: auto; }
       @media (min-width: 56.25em) {
-        .ama__partner-promo--homepage button {
+        .ama__partner-promo--homepage button, .ama__partner-promo--homepage a {
           margin-top: 28px; } }
       @media (min-width: 56.25em) {
-        .ama__partner-promo--homepage button {
+        .ama__partner-promo--homepage button, .ama__partner-promo--homepage a {
           margin-right: 14px; } }
     .ama__partner-promo--homepage__feature-heading {
       margin-bottom: 10px; }
@@ -5894,12 +5949,12 @@ dd {
       padding: 28px; }
     .ama__promo--homepage .ama__h1 {
       font-weight: normal; }
-    .ama__promo--homepage button {
+    .ama__promo--homepage button, .ama__promo--homepage a {
       display: block;
       margin: 28px auto; }
     @media (min-width: 37.5em) {
-      .ama__promo--homepage button {
-        display: inline;
+      .ama__promo--homepage button, .ama__promo--homepage a {
+        display: inline-block;
         margin: 0; } }
 
 a.ama__promo--background:hover {
@@ -7707,6 +7762,7 @@ a.ama__promo--border:hover {
   .ama_category_navigation_menu__group {
     padding-top: 10px;
     padding-bottom: 10px;
+    display: block;
     list-style: none;
     border-bottom: 1px solid #7F7F7F; }
     @media (min-width: 56.25em) {
@@ -7718,7 +7774,9 @@ a.ama__promo--border:hover {
     .ama_category_navigation_menu__group:last-child {
       border-bottom: 0; }
   .ama_category_navigation_menu__section {
-    list-style: none; }
+    list-style: none;
+    display: block;
+    position: relative; }
     .ama_category_navigation_menu__section a {
       position: relative;
       display: block;
@@ -7762,6 +7820,13 @@ a.ama__promo--border:hover {
       display: none !important; }
     .ama_category_navigation_menu__section__heading {
       padding: 7px 28px; }
+    .ama_category_navigation_menu__section__divider {
+      margin-top: 10px;
+      padding: 14px 28px;
+      border-top: 1px solid #7F7F7F; }
+      @media (min-width: 56.25em) {
+        .ama_category_navigation_menu__section__divider {
+          margin-top: 14px; } }
   .ama_category_navigation_menu__flyout {
     display: none;
     color: #000000;
@@ -7769,7 +7834,7 @@ a.ama__promo--border:hover {
     @media (min-width: 37.5em) {
       .ama_category_navigation_menu__flyout {
         position: absolute;
-        top: 0 !important;
+        top: -50px !important;
         z-index: 1;
         width: 550px !important;
         max-width: none !important; } }
@@ -8351,7 +8416,9 @@ section.ama__page--event__speakers {
 
 .ama__main-navigation {
   background-color: #46166B;
-  color: #ffffff; }
+  color: #ffffff;
+  position: relative;
+  z-index: 99; }
   .ama__main-navigation .container {
     position: relative;
     display: -webkit-box;
@@ -8360,7 +8427,8 @@ section.ama__page--event__speakers {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding-right: 0; }
+    padding-right: 0;
+    min-height: 60px; }
     @media (min-width: 37.5em) {
       .ama__main-navigation .container {
         padding-right: 10px; } }

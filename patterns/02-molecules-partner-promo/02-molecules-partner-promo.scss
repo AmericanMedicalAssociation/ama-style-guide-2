@@ -21,7 +21,8 @@
     background: $gray-7;
     color: $gray-64;
 
-    button {
+    // Right now the style guide uses `buttons`, but eventually we want to switch these to `a` elements.
+    button, a {
       @include gutter($margin-top-full...);
       @include gutter($margin-right-half...);
       width: auto;
