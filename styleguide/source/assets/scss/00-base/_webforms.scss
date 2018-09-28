@@ -1,5 +1,6 @@
 .ama__webform-header {
-  margin: 0;
+  @include gutter($margin-top-half...);
+  @include gutter($margin-bottom-half...);
   padding: 0;
 
   .is-inactive {
@@ -25,6 +26,8 @@
 
 div[role=alert] {
   @include gutter-all($padding-all-full...);
+  @include gutter($margin-top-half...);
+  @include gutter($margin-bottom-half...);
   @extend .ama__h5;
   color: $red;
   background-color: $gray-7;
@@ -32,12 +35,13 @@ div[role=alert] {
   .item-list__comma-list {
     li {
       @include gutter($margin-top-half...);
-      @include font-size($small-font-sizes);
       display: block;
       color: $red;
     }
 
     a {
+      @include type($myriad-pro, $font-weight-regular);
+      @include font-size($font-sizes--14px);
       color: $red;
 
       &:after {

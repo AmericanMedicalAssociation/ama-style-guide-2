@@ -1,0 +1,40 @@
+.webform-submission-contact-us-form {
+
+  .please-select-one-of-the-following- > div {
+    .form-submit {
+      width: 100%;
+    }
+  }
+
+  .webform-options-display-side-by-side {
+    display: flex;
+    align-items: stretch;
+
+    & > div {
+      flex: 1;
+    }
+  }
+
+  .ui-checkboxradio-label,
+  .ui-checkboxradio-label:hover {
+    @include gutter-all($padding-all-half...);
+    border: 1px solid $purple;
+    border-radius: 0;
+    text-transform: none;
+    text-align: center;
+
+    &.ui-state-active {
+      background-color: $purple;
+      color: white;
+    }
+  }
+
+  .form-submit.ama__button {
+    @include gutter($margin-bottom-full...);
+  }
+
+  .reach-us-by-mail {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+  }
+}

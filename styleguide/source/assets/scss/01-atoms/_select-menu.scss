@@ -2,6 +2,8 @@
 .ui-selectmenu-button:hover,
 .ui-selectmenu-button:active {
   @include gutter($margin-top-half...);
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
   border: 1px solid $gray-7;
   border-radius: 0;
   background: $white;
@@ -33,7 +35,7 @@
 
   .ui-icon {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
     width: 0;
     height: 0;
