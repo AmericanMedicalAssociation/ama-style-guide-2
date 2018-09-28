@@ -1,12 +1,15 @@
 .ama__main-navigation {
   background-color: $purple;
   color: $white;
+  position: relative;
+  z-index: 99;
 
   .container {
     position: relative;
     display: flex;
     align-items: center;
     padding-right: 0;
+    min-height: 60px;
 
     @include breakpoint($bp-small min-width) {
       @include gutter($padding-right-half...);
@@ -22,6 +25,7 @@
     position: absolute;
     top: 60px;
     left: 0;
+    z-index: 500;
   }
 
   .ama__site-logo {
@@ -103,6 +107,7 @@
 
   .ama__sign-in-dropdown {
     background-color: transparent;
+    z-index: 500;
   }
 
   &__member-benefits-link {

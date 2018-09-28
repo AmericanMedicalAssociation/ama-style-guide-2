@@ -98,3 +98,26 @@ input.webform-button--submit {
   width: 1px;
 }
 
+.webform-scroll {
+  @include form-scroll;
+}
+
+// Hide submit on Contact us form for Public option.
+.general-public .webform-button--submit {
+  @include is-vishidden;
+}
+
+// Accept/Decline forms.
+.webform-submission-end-user-license-agreement-form,
+.webform-submission-policy-finder-form {
+  &__message {
+    @include form-scroll;
+  }
+
+  &__submit-buttons {
+    .webform-button--submit {
+      @include gutter($margin-bottom-full...);
+      width: 60%;
+    }
+  }
+}
