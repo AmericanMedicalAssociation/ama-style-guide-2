@@ -126,28 +126,6 @@ input.webform-button--submit {
   }
 }
 
-.webform-submission-form {
-  .ui-checkboxradio-label,
-  .ui-checkboxradio-label:hover {
-    @include gutter-all($padding-all-half...);
-    border: 1px solid $purple;
-    border-radius: 0;
-    text-transform: none;
-    text-align: center;
-
-    .ui-icon,
-    .ui-checkboxradio-icon-space {
-      display: none;
-    }
-
-    &.ui-state-active {
-      background-color: $purple;
-      color: white;
-    }
-  }
-
-  .form-submit {
-    @include gutter($margin-bottom-full...);
-  }
+.form-submit.ama__button {
+  @include gutter($margin-bottom-full...);
 }
-
