@@ -107,8 +107,11 @@ input.webform-button--submit {
 }
 
 // Hide submit on Contact us form for Public option.
-.general-public .webform-button--submit {
-  @include is-vishidden;
+.general-public {
+  .reach-us-by-mail,
+  .webform-button--submit {
+    @include is-vishidden;
+  }
 }
 
 // Accept/Decline forms.
