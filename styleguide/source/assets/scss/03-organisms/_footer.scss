@@ -27,13 +27,6 @@
     list-style-type: none;
   }
 
-  .ama__form-group {
-    flex-grow: 2;
-    input:not(:focus) {
-      font-style: italic;
-    }
-  }
-
   .ama__social-share {
     a {
       height: 50px;
@@ -69,12 +62,20 @@
     }
   }
 
-  .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-actions {
-    margin: 0;
-  }
+  .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+    .form-actions {
+      margin: 0;
+    }
 
-  .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
-    @extend %ama__button;
+     .ama__button {
+      @extend %ama__button;
+      text-transform: uppercase;
+    }
+
+    .ama__form-group {
+      display: flex;
+      flex-grow: 2;
+    }
   }
 
   &__menu-utility {
