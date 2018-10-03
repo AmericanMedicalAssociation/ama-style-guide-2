@@ -43,10 +43,10 @@
       });
 
       // Scroll to when there is no has change on resource page tab links
-      $('.ama____page--resources__page-content a[href^="#"]').on('click',function (e) {
-        if(lastHash == window.location.hash){
+      $('.ama____page--resources__page-content a[href^="#"]').on('click', function (e) {
+        if (lastHash == window.location.hash) {
           var hash = window.location.hash;
-          smoothScroll($('.ama__resource-tabs__nav'),$('.ama__resource-tabs__nav a[href="'+hash+'"]'));
+          smoothScroll($('.ama__resource-tabs__nav'), $('.ama__resource-tabs__nav a[href="' + hash + '"]'));
         }
       });
 
