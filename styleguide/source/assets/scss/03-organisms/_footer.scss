@@ -27,13 +27,6 @@
     list-style-type: none;
   }
 
-  .ama__form-group {
-    flex-grow: 2;
-    input:not(:focus) {
-      font-style: italic;
-    }
-  }
-
   .ama__social-share {
     a {
       height: 50px;
@@ -66,6 +59,22 @@
       ul {
         width: 50%;
       }
+    }
+  }
+
+  .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+    .form-actions {
+      margin: 0;
+    }
+
+     .ama__button {
+      @extend %ama__button;
+      text-transform: uppercase;
+    }
+
+    .ama__form-group {
+      display: flex;
+      flex-grow: 2;
     }
   }
 
@@ -133,12 +142,6 @@
     }
   }
 
-  .container > div:not(:last-child) {
-    @include gutter($padding-bottom-half...);
-    @include gutter($margin-bottom-half...);
-    border-bottom: 1px solid $gray-50;
-  }
-
   @include breakpoint($bp-small) {
     > .container {
       display: flex;
@@ -164,8 +167,11 @@
     }
 
     &__menu-products {
+      @include gutter($padding-top-half...);
+      @include gutter($margin-top-half...);
       order: 4;
       flex: 1 100%;
+      border-top: 1px solid $gray-50;
     }
 
     &__mission {
