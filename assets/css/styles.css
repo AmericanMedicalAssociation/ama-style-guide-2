@@ -50,8 +50,7 @@ textarea {
   /* stylelint-disable property-no-vendor-prefix */
   -webkit-appearance: none;
   /* stylelint-enable */
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   font-size: 20px;
   line-height: 1.389;
   outline: none;
@@ -62,42 +61,23 @@ textarea {
   width: 100%;
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400; }
-  @media (min-width: 56.25em) {
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="url"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="week"],
-    input[type="number"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    select,
-    textarea {
-      padding-left: 14px; } }
-  @media (min-width: 56.25em) {
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="url"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="week"],
-    input[type="number"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    select,
-    textarea {
-      padding-right: 14px; } }
+  input[type="text"] breakpoint($bp-med),
+  input[type="password"] breakpoint($bp-med),
+  input[type="email"] breakpoint($bp-med),
+  input[type="url"] breakpoint($bp-med),
+  input[type="date"] breakpoint($bp-med),
+  input[type="month"] breakpoint($bp-med),
+  input[type="time"] breakpoint($bp-med),
+  input[type="datetime"] breakpoint($bp-med),
+  input[type="datetime-local"] breakpoint($bp-med),
+  input[type="week"] breakpoint($bp-med),
+  input[type="number"] breakpoint($bp-med),
+  input[type="search"] breakpoint($bp-med),
+  input[type="tel"] breakpoint($bp-med),
+  input[type="color"] breakpoint($bp-med),
+  select breakpoint($bp-med),
+  textarea breakpoint($bp-med) {
+    padding: 14px; }
   @media screen and (min-width: 37.5em) {
     input[type="text"],
     input[type="password"],
@@ -1253,8 +1233,15 @@ strong,
       line-height: 1.072; } }
 
 .ama__webform-header {
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 0; }
+  @media (min-width: 56.25em) {
+    .ama__webform-header {
+      margin-top: 14px; } }
+  @media (min-width: 56.25em) {
+    .ama__webform-header {
+      margin-bottom: 14px; } }
   .ama__webform-header .is-inactive {
     display: none; }
   .ama__webform-header .is-active {
@@ -1289,32 +1276,43 @@ strong,
 
 div[role=alert] {
   padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #E90C26;
   background-color: #EDEDED; }
   div[role=alert] breakpoint($bp-med) {
     padding: 28px; }
+  @media (min-width: 56.25em) {
+    div[role=alert] {
+      margin-top: 14px; } }
+  @media (min-width: 56.25em) {
+    div[role=alert] {
+      margin-bottom: 14px; } }
   div[role=alert] .item-list__comma-list li {
     margin-top: 10px;
-    font-size: 0.7em;
-    line-height: 1.4;
     display: block;
     color: #E90C26; }
     @media (min-width: 56.25em) {
       div[role=alert] .item-list__comma-list li {
         margin-top: 14px; } }
-    @media screen and (min-width: 37.5em) {
-      div[role=alert] .item-list__comma-list li {
-        font-size: 0.7em;
-        line-height: 1.389; } }
-    @media screen and (min-width: 56.25em) {
-      div[role=alert] .item-list__comma-list li {
-        font-size: 0.556em;
-        line-height: 1.389; } }
-    @media screen and (min-width: 75em) {
-      div[role=alert] .item-list__comma-list li {
-        font-size: 0.556em; } }
   div[role=alert] .item-list__comma-list a {
+    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.778em;
+    line-height: 1.072;
     color: #E90C26; }
+    @media screen and (min-width: 37.5em) {
+      div[role=alert] .item-list__comma-list a {
+        font-size: 0.778em;
+        line-height: 1.072; } }
+    @media screen and (min-width: 56.25em) {
+      div[role=alert] .item-list__comma-list a {
+        font-size: 0.778em;
+        line-height: 1.072; } }
+    @media screen and (min-width: 75em) {
+      div[role=alert] .item-list__comma-list a {
+        font-size: 0.778em;
+        line-height: 1.072; } }
     div[role=alert] .item-list__comma-list a:after {
       content: " is required"; }
 
@@ -1392,7 +1390,7 @@ input.webform-button--submit {
   margin-top: 20px;
   padding: 20px;
   overflow: hidden;
-  height: 300px;
+  height: 100vh;
   overflow-y: scroll;
   border: 1px solid #EDEDED; }
   @media (min-width: 56.25em) {
@@ -1403,6 +1401,7 @@ input.webform-button--submit {
   .webform-scroll ul {
     list-style-position: inside; }
 
+.general-public .reach-us-by-mail,
 .general-public .webform-button--submit {
   position: absolute !important;
   overflow: hidden;
@@ -1412,32 +1411,44 @@ input.webform-button--submit {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px); }
 
+.webform-submission-end-user-license-agreement-cpt-form__message,
 .webform-submission-end-user-license-agreement-form__message,
 .webform-submission-policy-finder-form__message {
   margin-top: 20px;
   padding: 20px;
   overflow: hidden;
-  height: 300px;
+  height: 100vh;
   overflow-y: scroll;
   border: 1px solid #EDEDED; }
   @media (min-width: 56.25em) {
+    .webform-submission-end-user-license-agreement-cpt-form__message,
     .webform-submission-end-user-license-agreement-form__message,
     .webform-submission-policy-finder-form__message {
       margin-top: 28px; } }
+  .webform-submission-end-user-license-agreement-cpt-form__message breakpoint($bp-med),
   .webform-submission-end-user-license-agreement-form__message breakpoint($bp-med),
   .webform-submission-policy-finder-form__message breakpoint($bp-med) {
     padding: 28px; }
+  .webform-submission-end-user-license-agreement-cpt-form__message ul,
   .webform-submission-end-user-license-agreement-form__message ul,
   .webform-submission-policy-finder-form__message ul {
     list-style-position: inside; }
 
+.webform-submission-end-user-license-agreement-cpt-form__submit-buttons .webform-button--submit,
 .webform-submission-end-user-license-agreement-form__submit-buttons .webform-button--submit,
 .webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
   margin-bottom: 20px;
   width: 60%; }
   @media (min-width: 56.25em) {
+    .webform-submission-end-user-license-agreement-cpt-form__submit-buttons .webform-button--submit,
     .webform-submission-end-user-license-agreement-form__submit-buttons .webform-button--submit,
     .webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
+      margin-bottom: 28px; } }
+
+.form-submit.ama__button {
+  margin-bottom: 20px; }
+  @media (min-width: 56.25em) {
+    .form-submit.ama__button {
       margin-bottom: 28px; } }
 
 .ama__tabs .ama__agenda-date a.ui-tabs-anchor {
@@ -1448,7 +1459,7 @@ input.webform-button--submit {
 .ama__tabs .ama__agenda-date.ui-tabs-active a {
   border-bottom: solid 3px #5C5C5C; }
 
-.ama__hub-card__button-container a, .ama__hub-hero__button-container a,
+.ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
 .ama__button,
 button {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -1469,32 +1480,32 @@ button {
   color: #ffffff;
   display: inline-block; }
   @media screen and (min-width: 37.5em) {
-    .ama__hub-card__button-container a, .ama__hub-hero__button-container a,
+    .ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
     .ama__button,
     button {
       font-size: 20px; } }
   @media screen and (min-width: 56.25em) {
-    .ama__hub-card__button-container a, .ama__hub-hero__button-container a,
+    .ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
     .ama__button,
     button {
       font-size: 18px;
       line-height: 1.5; } }
   @media screen and (min-width: 75em) {
-    .ama__hub-card__button-container a, .ama__hub-hero__button-container a,
+    .ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
     .ama__button,
     button {
       font-size: 18px; } }
-  .ama__hub-card__button-container a breakpoint($bp-med), .ama__hub-hero__button-container a breakpoint($bp-med),
+  .ama__hub-card__button-container a breakpoint($bp-med), .ama__hub-hero__button-container a breakpoint($bp-med), .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button breakpoint($bp-med),
   .ama__button breakpoint($bp-med),
   button breakpoint($bp-med) {
     padding: 14px; }
-  .ama__hub-card__button-container a:hover, .ama__hub-hero__button-container a:hover,
+  .ama__hub-card__button-container a:hover, .ama__hub-hero__button-container a:hover, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button:hover,
   .ama__button:hover,
   button:hover {
     border-color: #46166B;
     background-color: #9073A6;
     color: #ffffff; }
-  .ama__hub-card__button-container a:hover, .ama__hub-hero__button-container a:hover,
+  .ama__hub-card__button-container a:hover, .ama__hub-hero__button-container a:hover, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button:hover,
   .ama__button:hover,
   button:hover {
     background-color: #9073A6; }
@@ -3434,16 +3445,6 @@ a {
       .ama__radio .ui-checkboxradio-label .ui-checkboxradio-icon-space {
         margin-left: 14px; } }
 
-.webform-submission-contact-us-form .ui-checkboxradio-label,
-.webform-submission-contact-us-form .ui-checkboxradio-label:hover {
-  border: 1px solid #46166B;
-  padding: 3px 20px;
-  text-transform: none; }
-  .webform-submission-contact-us-form .ui-checkboxradio-label.ui-state-active,
-  .webform-submission-contact-us-form .ui-checkboxradio-label:hover.ui-state-active {
-    background-color: #46166B;
-    color: white; }
-
 .ama__range-field.ui-widget.ui-widget-content {
   margin: 10px;
   margin-top: 20px;
@@ -3579,6 +3580,8 @@ a {
 .ui-selectmenu-button:hover,
 .ui-selectmenu-button:active {
   margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px solid #EDEDED;
   border-radius: 0;
   background: #ffffff;
@@ -3589,6 +3592,16 @@ a {
     .ui-selectmenu-button:hover,
     .ui-selectmenu-button:active {
       margin-top: 14px; } }
+  @media (min-width: 56.25em) {
+    .ui-selectmenu-button,
+    .ui-selectmenu-button:hover,
+    .ui-selectmenu-button:active {
+      padding-top: 14px; } }
+  @media (min-width: 56.25em) {
+    .ui-selectmenu-button,
+    .ui-selectmenu-button:hover,
+    .ui-selectmenu-button:active {
+      padding-bottom: 14px; } }
   .ama__search-header__options .ui-selectmenu-button, .ama__search-header__options
   .ui-selectmenu-button:hover, .ama__search-header__options
   .ui-selectmenu-button:active {
@@ -3610,7 +3623,7 @@ a {
     box-shadow: none; }
   .ui-selectmenu-button.ui-button .ui-icon {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 15px;
     width: 0;
     height: 0;
@@ -5667,11 +5680,13 @@ dd {
   .ama__partner-promo__heading {
     font-weight: 600;
     line-height: 1em; }
-  .ama__partner-promo button {
+  .ama__partner-promo button,
+  .ama__partner-promo .ama__button {
     margin-top: 10px;
     width: 100%; }
     @media (min-width: 56.25em) {
-      .ama__partner-promo button {
+      .ama__partner-promo button,
+      .ama__partner-promo .ama__button {
         margin-top: 14px; } }
   .ama__partner-promo--homepage {
     padding: 10px;
@@ -6725,7 +6740,8 @@ a.ama__promo--border:hover {
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1; }
-    .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -6733,27 +6749,34 @@ a.ama__promo--border:hover {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; }
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group {
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group,
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group {
         margin: 0; }
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group label {
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group label,
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group label {
         display: none; }
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input {
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
         margin-bottom: 20px;
         height: 49px; }
         @media (min-width: 56.25em) {
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input {
+          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
+          .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
             margin-bottom: 28px; } }
       @media (min-width: 37.5em) {
-        .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__button {
           margin: 0 0 0 auto; } }
       @media (min-width: 56.25em) {
-        .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form,
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form form {
           -webkit-box-orient: horizontal;
           -webkit-box-direction: normal;
           -ms-flex-direction: row;
           flex-direction: row;
           height: 49px; }
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input {
+          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
+          .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
             margin-bottom: 0; } }
 
 .ama__tags {
@@ -7994,6 +8017,51 @@ a.ama__promo--border:hover {
     .ama__column-teaser > * {
       margin-top: 14px; } }
 
+.webform-submission-contact-us-form .please-select-one-of-the-following- > div .form-submit {
+  width: 100%; }
+
+.webform-submission-contact-us-form .webform-options-display-side-by-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+  .webform-submission-contact-us-form .webform-options-display-side-by-side > div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+
+.webform-submission-contact-us-form .ui-checkboxradio-label,
+.webform-submission-contact-us-form .ui-checkboxradio-label:hover {
+  padding: 10px;
+  border: 1px solid #46166B;
+  border-radius: 0;
+  text-transform: none;
+  text-align: center; }
+  .webform-submission-contact-us-form .ui-checkboxradio-label breakpoint($bp-med),
+  .webform-submission-contact-us-form .ui-checkboxradio-label:hover breakpoint($bp-med) {
+    padding: 14px; }
+  .webform-submission-contact-us-form .ui-checkboxradio-label .ui-icon,
+  .webform-submission-contact-us-form .ui-checkboxradio-label .ui-checkboxradio-icon-space,
+  .webform-submission-contact-us-form .ui-checkboxradio-label:hover .ui-icon,
+  .webform-submission-contact-us-form .ui-checkboxradio-label:hover .ui-checkboxradio-icon-space {
+    display: none; }
+  .webform-submission-contact-us-form .ui-checkboxradio-label.ui-state-active,
+  .webform-submission-contact-us-form .ui-checkboxradio-label:hover.ui-state-active {
+    background-color: #46166B;
+    color: white; }
+
+.webform-submission-contact-us-form .reach-us-by-mail {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  @media (min-width: 56.25em) {
+    .webform-submission-contact-us-form .reach-us-by-mail {
+      margin-top: 28px; } }
+  @media (min-width: 56.25em) {
+    .webform-submission-contact-us-form .reach-us-by-mail {
+      margin-bottom: 28px; } }
+
 section.ama__page--event__speakers {
   display: -ms-grid;
   display: grid;
@@ -8075,12 +8143,6 @@ section.ama__page--event__speakers {
         line-height: 1.667; } }
   .ama__footer ul {
     list-style-type: none; }
-  .ama__footer .ama__form-group {
-    -webkit-box-flex: 2;
-    -ms-flex-positive: 2;
-    flex-grow: 2; }
-    .ama__footer .ama__form-group input:not(:focus) {
-      font-style: italic; }
   .ama__footer .ama__social-share a {
     height: 50px;
     width: 50px;
@@ -8123,6 +8185,17 @@ section.ama__page--event__speakers {
         display: flex; }
         .ama__footer__menu-secondary-user ul {
           width: 50%; } }
+  .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-actions {
+    margin: 0; }
+  .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
+    text-transform: uppercase; }
+  .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2; }
   .ama__footer__menu-utility {
     margin-top: 0;
     padding: 14px 0; }
@@ -8202,16 +8275,6 @@ section.ama__page--event__speakers {
           align-items: center; } }
   .ama__footer__right p, .ama__footer__right .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__footer__right .ama__image__text__subtitle, .ama__footer__right .ama__resource-link--inline__text {
     line-height: 1.25em; }
-  .ama__footer .container > div:not(:last-child) {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #7F7F7F; }
-    @media (min-width: 56.25em) {
-      .ama__footer .container > div:not(:last-child) {
-        padding-bottom: 14px; } }
-    @media (min-width: 56.25em) {
-      .ama__footer .container > div:not(:last-child) {
-        margin-bottom: 14px; } }
   @media (min-width: 37.5em) {
     .ama__footer > .container {
       display: -webkit-box;
@@ -8244,12 +8307,22 @@ section.ama__page--event__speakers {
       .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
         margin: 0 auto; }
     .ama__footer__menu-products {
+      padding-top: 10px;
+      margin-top: 10px;
       -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
       order: 4;
       -webkit-box-flex: 1;
       -ms-flex: 1 100%;
-      flex: 1 100%; }
+      flex: 1 100%;
+      border-top: 1px solid #7F7F7F; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .ama__footer__menu-products {
+      padding-top: 14px; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .ama__footer__menu-products {
+      margin-top: 14px; } }
+  @media (min-width: 37.5em) {
     .ama__footer__mission {
       max-width: 65%; } }
 
@@ -8687,11 +8760,11 @@ section.ama__page--event__speakers {
         grid-column-start: 1;
         -ms-grid-column-span: 3;
         grid-column-end: 4;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end; }
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start; }
       .ama__member-feature__wrapper .ama__hero-story__media {
-        margin-right: -56px; }
+        margin-right: -28px; }
         .ama__member-feature__wrapper .ama__hero-story__media img {
           height: 100%;
           width: 100%; }
@@ -8950,7 +9023,7 @@ li > [href='#media'] .ama__resource-tabs__nav__icon {
 li > [href='#downloads'] .ama__resource-tabs__nav__icon {
   background-image: url("../icons/svg/icon-resources-nav-downloads.svg"); }
 
-li > [href='#related-links'] .ama__resource-tabs__nav__icon {
+li > [href='#related_links'] .ama__resource-tabs__nav__icon {
   background-image: url("../icons/svg/icon-resources-nav-relatedlinks.svg"); }
 
 li > [href='#schedules'] .ama__resource-tabs__nav__icon {
@@ -8975,7 +9048,7 @@ li.ui-state-active > [href='#media'] .ama__resource-tabs__nav__icon {
 li.ui-state-active > [href='#downloads'] .ama__resource-tabs__nav__icon {
   background-image: url("../icons/svg/icon-resources-nav-downloads-active.svg"); }
 
-li.ui-state-active > [href='#related-links'] .ama__resource-tabs__nav__icon {
+li.ui-state-active > [href='#related_links'] .ama__resource-tabs__nav__icon {
   background-image: url("../icons/svg/icon-resources-nav-relatedlinks-active.svg"); }
 
 li.ui-state-active > [href='#schedules'] .ama__resource-tabs__nav__icon {
@@ -9021,9 +9094,9 @@ li.ui-state-active > [href='#contacts'] .ama__resource-tabs__nav__icon {
 .ama__layout--split__left .ama__masthead__content {
   border-bottom: solid 1px #7F7F7F; }
 
-section#related-links ul {
+section#related_links ul {
   list-style-type: none; }
-  section#related-links ul li {
+  section#related_links ul li {
     margin: 0; }
 
 .ama__ribbon {
@@ -9989,6 +10062,10 @@ section#related-links ul {
     .ama__category__article-stub-three-up .grid-container {
       margin-top: 28px; } }
 
+@media (min-width: 37.5em) {
+    .ama__category__article-stub-three-up .grid-container .ama__article-stub {
+      width: 100%; } }
+
 @media (max-width: 37.5em) {
   .ama__category .ama__article-stub--category .ama__h5, .ama__category .ama__article-stub--category div[role=alert] {
     padding-left: 20px; } }
@@ -10010,6 +10087,10 @@ section#related-links ul {
   @media (min-width: 37.5em) and (min-width: 56.25em) {
     .ama__category__article-stub-two-up .grid-container {
       margin-top: 28px; } }
+
+@media (min-width: 37.5em) {
+    .ama__category__article-stub-two-up .grid-container .ama__article-stub {
+      width: 100%; } }
 
 .ama__category .ama__subcategory-featured-content-as-carousel {
   overflow: hidden; }

@@ -7,9 +7,14 @@
  *
  * Licensed MIT
  */
-
-jQuery('.ama_category_navigation_menu__group').smartmenus({
-  mainMenuSubOffsetX: 250,
-  mainMenuSubOffsetY: 20,
-  keepInViewport: true
-});
+(function ($, Drupal) {
+  Drupal.behaviors.categoryMenu = {
+    attach: function (context, settings) {
+      $('.ama_category_navigation_menu__group').smartmenus({
+        mainMenuSubOffsetX: 250,
+        mainMenuSubOffsetY: 20,
+        keepInViewport: true
+      });
+    }
+  };
+})(jQuery, Drupal);
