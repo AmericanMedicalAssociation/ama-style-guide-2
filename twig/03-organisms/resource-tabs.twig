@@ -81,9 +81,9 @@
       {% set membership = tabs[2].tabContent.membership %}
       {% include '@molecules/membership/membership.twig' %}
     </section>
-    <section id="related-links">
+    <section id="related_links">
       {% for group in tabs[3].tabContent.relatedLinkGroups %}
-        <div id="ama__resource--related-links-{{ loop.index }}">
+        <div id="ama__resource--related_links-{{ loop.index }}">
           {% set heading = group.heading %}
           {% include '@atoms/heading/heading.twig' %}
 

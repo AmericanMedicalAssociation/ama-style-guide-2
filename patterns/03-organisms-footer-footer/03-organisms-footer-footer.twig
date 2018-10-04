@@ -32,15 +32,17 @@
         </div>
       {% endif %}
     </div>
+  </div>
 
+  <div class="container">
     {% block products %}
       <div class="ama__footer__menu-products">
         <ul>
-        {% for link in menus.products %}
-          <li>
-            {% include "@atoms/link/link.twig" %}
-          </li>
-        {% endfor %}
+          {% for link in menus.products %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
         </ul>
       </div>
     {% endblock %}
