@@ -11,7 +11,6 @@
         parentElement.unbind('click').click(function(e){
           e.stopPropagation();
           $(menuElement).slideToggle();
-          return false;
         });
 
         $(document).click(function(e) {
