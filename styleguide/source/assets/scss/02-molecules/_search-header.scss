@@ -34,7 +34,8 @@
     }
   }
 
-  &__options {
+  &__options,
+  .js-form-item-sort-by {
     order: 4;
 
     .ama__form-group {
@@ -97,15 +98,19 @@
 
     .ama__search__field {
       @include gutter($margin-bottom-full...);
+      margin-left: 0;
       width: 100%;
 
-      &__input {
+      &__input,
+      .ui-autocomplete-input {
         @include font-size($h1-font-sizes);
+        background: none;
+        padding-left: 0;
+        padding-right: 0;
         border-bottom: 1px solid $hoverBlue;
         color: $purple;
         font-style: normal;
         font-weight: 600;
-        background: transparent;
 
         &:focus {
           border: none;
@@ -117,6 +122,7 @@
     @include breakpoint($bp-med) {
       .ama__search-header__option-wrap {
         display: flex;
+        flex-grow: 2;
         flex-direction: row;
         align-items: baseline;
       }
