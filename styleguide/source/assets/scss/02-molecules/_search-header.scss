@@ -100,6 +100,16 @@
     .ama__search-header__results-num {
       text-align: left;
       color: $gray-50;
+
+      span,
+      a {
+        display: none;
+      }
+
+      .source-summary-count {
+        display: block;
+      }
+
     }
 
     .ama__search__field {
@@ -110,7 +120,7 @@
       &__input,
       .ui-autocomplete-input {
         @include font-size($h1-font-sizes);
-        background: none;
+        background: none !important; //only way to hide the Drupal throbber
         padding-left: 0;
         padding-right: 0;
         border-bottom: 1px solid $hoverBlue;

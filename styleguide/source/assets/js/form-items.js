@@ -234,7 +234,7 @@
             });
           }
 
-          if($(".ama__expand-list").find('.ui-checkboxradio-checked')) {
+          if($(".ama__expand-list").find('.ui-checkboxradio-checked').length) {
             expandListAccordion('.ama__expand-list', 0);
             $(".ama__expand-list").children('.ama__expand-list__header').addClass('active');
           } else {
