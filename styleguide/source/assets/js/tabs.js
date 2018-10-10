@@ -10,7 +10,7 @@
         defaultActiveTab = 1;
       }
 
-      $(".ama__tabs").tabs({
+      $(".ama__tabs, .ama__resource-tabs").tabs({
         active: defaultActiveTab
       });
 
