@@ -16,6 +16,13 @@
 
       // Prevent jump onclick
       $('.ui-tabs-anchor').on('click', function (e) {
+        // Store window y location so we can restore after changing the hash
+        // which would otherwise cause the window to jump down.
+        var windowScrollY = window.scrollY;
+        // Update window hash location, and restore to previous y-position.
+        // Use currentTarget because target is sometimes the icon div.
+        window.location.hash = e.currentTarget.hash;
+        window.scroll({top: windowScrollY});
         return false;
       });
 
@@ -28,6 +35,7 @@
 
       // When clicking an inline resource page link referencing a tab, open referenced tab.
       $('.ama__resource-link--inline, .ama__page--resource__resource-link').on('click', function (e) {
+        e.preventDefault();
         var $tabs = $('.ama__resource-tabs');
         var $clickedObj = $(this);
         var linkHash = this.getAttribute("href");
@@ -50,6 +58,7 @@
           $target.attr('tabindex', '-1');
           $target.focus();
         });
+        return false;
       }
 
       /*
@@ -67,6 +76,7 @@
         });
         // Scroll to top of ui tabs navigation
         smoothScroll($tabObj, $(widget.active[0]));
+        return false;
       }
     }
   };
