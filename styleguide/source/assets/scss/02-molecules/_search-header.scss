@@ -36,6 +36,7 @@
 
   &__options,
   .js-form-item-sort-by {
+    display: none;
     order: 4;
 
     .ama__form-group {
@@ -46,6 +47,7 @@
         min-width: 225px;
 
         @include breakpoint($bp-small) {
+          display: block;
           vertical-align: initial;
         }
       }
@@ -53,12 +55,16 @@
 
     @include breakpoint($bp-small) {
       @include gutter($margin-left-full...);
-      order: initial;
+      order: 4;
     }
 
     label {
       @extend .is-vishidden;
     }
+  }
+
+  .form-actions {
+    order: 2;
   }
 
   &__results {
@@ -123,8 +129,10 @@
       .ama__search-header__option-wrap {
         display: flex;
         flex-grow: 2;
+        order: 1;
         flex-direction: row;
         align-items: baseline;
+        position: relative;
       }
     }
 
