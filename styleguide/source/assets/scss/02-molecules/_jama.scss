@@ -57,38 +57,6 @@
       }
     }
   }
-
-  &--homepage {
-    .ama__jama__links {
-      display: flex;
-      flex-direction: column;
-      border-top: 0;
-    }
-
-    .ama__jama__links li {
-      @include gutter($margin-right-full...);
-      border-top: 1px solid $gray-50;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    .ama__image-wrap {
-      display: none;
-      padding: 0;
-    }
-
-    .ama__link--with-image span {
-      padding-left: 0;
-    }
-
-    @include breakpoint($bp-small) {
-      .ama__jama__links {
-        flex-direction: row;
-      }
-    }
-  }
 }
 
 .ama__jama a.ama__jama__header {
@@ -170,8 +138,41 @@
   }
 }
 
-.ama__page--news__teasers .ama__jama__links,
-.ama__page--press-release__teasers .ama__jama__links {
+.ama__jama--horizontal-homepage {
+  .ama__jama__links {
+    flex-direction: column;
+  
+    @include breakpoint($bp-small) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+  
+      li {
+        width: 25%;
+        @include gutter($margin-right-full...);
+        border-top: 1px solid $gray-50;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+  
+        &:hover {
+          border-color: $hoverRed;
+        }
+      }
+  
+      a {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .ama__rule {
+    border-color: $hoverRed;
+  }
+}
+
+.ama__jama--horizontal-images .ama__jama__links {
   @include breakpoint($bp-small) {
     display: flex;
     justify-content: space-between;
