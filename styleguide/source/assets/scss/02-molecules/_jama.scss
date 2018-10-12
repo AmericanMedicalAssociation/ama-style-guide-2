@@ -31,6 +31,12 @@
 
     a {
       display: flex;
+
+      // For this component, the image is on the right.
+      .ama__image__text {
+        padding-left: inherit;
+        padding-right: 14px;
+      }
     }
   }
 
@@ -87,11 +93,14 @@
   }
 }
 
-.ama__jama__header {
+.ama__jama a.ama__jama__header {
   color: $white;
   background-color: $hoverRed;
   padding: 0 7px;
   font-size: 27px;
+  min-width: 265px;
+  max-width: 100%;
+  display: inline-block;
 }
 
 .ama__jama__title {
