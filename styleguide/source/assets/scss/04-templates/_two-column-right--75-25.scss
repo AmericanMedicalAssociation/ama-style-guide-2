@@ -5,9 +5,7 @@
 
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-column-gap: $gutter;
   grid-template-rows: auto auto auto;
-  grid-row-gap: $gutter;
 
   &__top {
     @include breakpoint($bp-small max-width) {
@@ -20,11 +18,14 @@
   }
 
   &__left {
+    @include gutter($margin-right-half...);
     grid-column: 1 / 1;
     grid-row: 2 / 2;
   }
 
   &__right {
+    @include gutter($margin-left-half...);
+
     @include breakpoint($bp-small max-width) {
       grid-column: 1 / 1;
       grid-row: 3 / 3;
