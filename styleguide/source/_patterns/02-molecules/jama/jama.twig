@@ -1,8 +1,7 @@
 {% set homepage = jama.homepage ? "ama__jama--homepage" %}
 
 <div class="ama__jama {{ homepage }}">
-  {% set siteLogo = jama.siteLogo %}
-  {% include "@atoms/site-logo/site-logo.twig" %}
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
     {% if jama.title.icon is not empty %}
       <icon class="ama__icon {{ jama.title.icon }}"></icon>
