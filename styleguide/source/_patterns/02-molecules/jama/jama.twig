@@ -9,7 +9,7 @@
       <div class="ama__rule ama__rule--horizontal"></div>
       {% endif %}
       <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
-        {% include "@molecules/jama-stub/jama-stub.twig" with { "jamaStub" : link } %}
+        {% include "@molecules/jama-stub/jama-stub.twig" with { "jamaStub" : link, "style" : jama.style } %}
       </li>
     {% endfor %}
   </ul>
