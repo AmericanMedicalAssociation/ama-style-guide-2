@@ -16,10 +16,10 @@
   {% set promo = promoAsInline %}
   {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
-  {% include '@molecules/jama/jama.twig' with {jama : jamaAsThreeUp} %}
+  {% include '@molecules/jama/jama.twig' with {jama : jamaAsInline} %}
   {% include '@molecules/tags.twig' %}
   <section class="ama__page--news__teasers">
-    {% include '@molecules/jama/jama.twig' with {jama : jamaAsContentBottom} %}
+    {% include '@molecules/jama/jama.twig' with {jama : jamaAsBottom} %}
     {% include '@organisms/four-up-teaser.twig' %}
   </section>
 {% endblock %}
