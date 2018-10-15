@@ -11,7 +11,9 @@ There are two main layouts for the JAMA component, a horizontal and vertical lay
 
 The vertical layout can have images or not have images.
 
-The horizontal layout has a special style for the homepage. These layouts apply to the JAMA component as well as the JAMA stub for each link.
+There is also a special style for the homepage.
+
+These layouts apply to the JAMA component as well as the JAMA stub for each link.
 
 ### Variables
 ~~~
