@@ -7,6 +7,7 @@
   @include gutter($padding-bottom-full...);
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   flex: 1;
   
   &:last-child {
@@ -16,11 +17,14 @@
 
 .ama__tag {
   @include gutter($margin-right-half...);
+  @include gutter($margin-bottom-half...);
   @include gutter-all($padding-all-half...);
   text-decoration: none;
   display: block;
   background: $gray-7;
   color: $purple;
+  white-space: nowrap;
+
   &:hover{
     text-decoration: underline;
   }
