@@ -11,7 +11,7 @@
   <a
     href="{{ jamaStub.href }}"
     title="{{ jamaStub.info }}">
-    {% if style != "vertical-images" %}
+    {% if style != "vertical" %}
     {{ jamaStub.heading is not empty ? "<div class='ama__image-wrap'>" }}
       {{ jamaStub.src is not empty ? image|raw }}
     {{ jamaStub.heading is not empty ? "</div>" }}    
@@ -26,7 +26,7 @@
         {% include "@atoms/heading/heading.twig" with { "heading" : jamaStub.heading } %}
       </span>
     {% endif %}
-    {% if style == "vertical-images" %}
+    {% if style == "vertical" %}
     {{ jamaStub.heading is not empty ? "<div class='ama__image-wrap'>" }}
       {{ jamaStub.src is not empty ? image|raw }}
     {{ jamaStub.heading is not empty ? "</div>" }}    
