@@ -4,6 +4,14 @@
   display: flex;
   border-bottom: 1px solid $gray-50;
 
+  & > div {
+    width: 100%;
+  }
+
+  .views-row {
+    display: flex;
+  }
+
   &__category {
     @extend %ama__h4--purple;
     font-weight: 600;
@@ -29,9 +37,17 @@
     }
   }
 
+  &__text {
+    flex: 2;
+  }
+
   &__image {
     @include gutter($margin-left-full...);
     display: none;
+
+    .ama__image {
+      max-width: 234px;
+    }
 
     @include breakpoint($bp-med) {
       display: block;
