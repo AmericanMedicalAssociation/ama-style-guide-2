@@ -4,10 +4,12 @@
   display: flex;
   border-bottom: 1px solid $gray-50;
 
+  //Drupal adds divs that breaks layout
   & > div {
     width: 100%;
   }
 
+  //Because Drupal adds divs which breaks flexbox
   .views-row {
     display: flex;
   }
