@@ -53,6 +53,7 @@
   }
 
   &--no-image {
+    @include gutter($padding-bottom-full...);
     min-height: 0;
 
     .ama__hub-card__heading {
@@ -62,6 +63,13 @@
     .ama__hub-card__text {
       @include gutter($padding-top-half...);
       @include gutter($padding-bottom-half...);
+    }
+  }
+
+  &--image-text {
+    .ama__hub-card__image {
+      max-height: 180px;
+      overflow: hidden;
     }
   }
 
