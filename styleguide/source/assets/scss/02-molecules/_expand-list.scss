@@ -72,6 +72,10 @@
     width: 100%;
   }
 
+  &__panel {
+    display: none;
+  }
+
   .ui-accordion-content {
     display: flex;
     flex-direction: column;
@@ -79,6 +83,19 @@
     padding: 0;
     border: 0;
     border-radius: 0;
+
+    li {
+      @include gutter($margin-top-half...);
+      margin-bottom: 0;
+    }
+
+    li a {
+      text-decoration: none;
+
+      &:hover {
+        color: $hoverBlue;
+      }
+    }
   }
 
   .ui-accordion-content .ama__checkboxes {

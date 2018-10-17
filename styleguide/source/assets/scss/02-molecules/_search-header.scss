@@ -34,7 +34,9 @@
     }
   }
 
-  &__options {
+  &__options,
+  .js-form-item-sort-by {
+    display: none;
     order: 4;
 
     .ama__form-group {
@@ -45,6 +47,7 @@
         min-width: 225px;
 
         @include breakpoint($bp-small) {
+          display: block;
           vertical-align: initial;
         }
       }
@@ -52,12 +55,16 @@
 
     @include breakpoint($bp-small) {
       @include gutter($margin-left-full...);
-      order: initial;
+      order: 4;
     }
 
     label {
       @extend .is-vishidden;
     }
+  }
+
+  .form-actions {
+    order: 2;
   }
 
   &__results {
@@ -93,19 +100,33 @@
     .ama__search-header__results-num {
       text-align: left;
       color: $gray-50;
+
+      span,
+      a {
+        display: none;
+      }
+
+      .source-summary-count {
+        display: block;
+      }
+
     }
 
     .ama__search__field {
       @include gutter($margin-bottom-full...);
+      margin-left: 0;
       width: 100%;
 
-      &__input {
+      &__input,
+      .ui-autocomplete-input {
         @include font-size($h1-font-sizes);
+        background: none !important; //only way to hide the Drupal throbber
+        padding-left: 0;
+        padding-right: 0;
         border-bottom: 1px solid $hoverBlue;
         color: $purple;
         font-style: normal;
         font-weight: 600;
-        background: transparent;
 
         &:focus {
           border: none;
@@ -117,8 +138,11 @@
     @include breakpoint($bp-med) {
       .ama__search-header__option-wrap {
         display: flex;
+        flex-grow: 2;
+        order: 1;
         flex-direction: row;
         align-items: baseline;
+        position: relative;
       }
     }
 
