@@ -23,10 +23,12 @@
     color: $gray-64;
 
     // Right now the style guide uses `buttons`, but eventually we want to switch these to `a` elements.
-    button, a {
+    button, a, .ama__button {
       @include gutter($margin-top-full...);
       @include gutter($margin-right-half...);
       width: auto;
+      // Button should have a min width so that buttons with small words do not feel cramped
+      min-width: 150px;
     }
 
     &__feature-heading {
@@ -43,6 +45,11 @@
 
     &__promo-heading{
       color: $homepagePurple;
+    }
+    @include breakpoint($bp-med) {
+      flex: 0 0 70%;
+      max-width: 70%;
+      padding: 10px 5.5% 10px 10px;
     }
   }
 }

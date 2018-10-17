@@ -3,6 +3,9 @@
   .ama__layout--one-column__content-top {
     display: none;
   }
+  .ama__layout--split__right{
+    border-left: none;
+  }
 
   @include breakpoint($bp-small) {
     .ama__layout--one-column__content-top {
@@ -41,6 +44,13 @@
 
         &:last-child {
           margin-left: -5%;
+          flex: 0 0 35%;
+          max-width: 35%;
+
+          button{
+            // Button should have a min width so that buttons with small words do not feel cramped
+            min-width: 150px;
+          }
         }
       }
     }
