@@ -9,6 +9,10 @@
     margin-bottom: 0;
   }
 
+  .form-actions {
+    margin-left: -24px;
+  }
+
   // This has to be specific b/c it's so different.
   &__input[type="text"] {
     font-style: italic;
@@ -23,6 +27,30 @@
       color: $black;
       font-style: normal;
     }
+  }
+
+  .form-submit {
+    @extend .icon--search;
+    background-color: transparent;
+    background-size: 23px 25px;
+    width: 23px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    min-height: 25px;
+    min-width: 25px;
+    max-height: 25px;
+    max-width: 25px;
+    text-indent: -999px;
+    overflow: hidden;
+
+    &:hover {
+      border: 0;
+    }
+  }
+
+  .ama__applied-filters__remove {
+    display: none;
   }
 
   // This has to be specific b/c it's so different.
