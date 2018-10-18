@@ -1,18 +1,15 @@
-{% set homepage = jama.homepage ? "ama__jama--homepage" %}
-
-<div class="ama__jama {{ homepage }}">
-  {% set siteLogo = jama.siteLogo %}
-  {% include "@atoms/site-logo/site-logo.twig" %}
+<div class="ama__jama ama__jama--{{ jama.style }}">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
-    {% if jama.title.icon is not empty %}
-      <icon class="ama__icon {{ jama.title.icon }}"></icon>
-    {% endif %}
     {{ jama.title.text }}
   </span>
   <ul class="ama__jama__links">
     {% for link in jama.links %}
+      {% if ( loop.index != 1 and jama.style == "vertical-images" ) %}
+      <div class="ama__rule ama__rule--horizontal"></div>
+      {% endif %}
       <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
-        {% include "@atoms/image/image.twig" with { "image" : link } %}
+        {% include "@molecules/jama-stub/jama-stub.twig" with { "jamaStub" : link, "style" : jama.style } %}
       </li>
     {% endfor %}
   </ul>

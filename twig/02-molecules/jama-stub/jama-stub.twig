@@ -1,0 +1,37 @@
+{% set image = 
+    "<img
+      class=\"" ~ class ~ " ama__image\"
+      alt=\"" ~ jamaStub.alt ~ "\"
+      src=\"" ~ jamaStub.src ~ "\"
+      height=\"" ~ jamaStub.height ~ "\"
+      width=\"" ~ jamaStub.width ~ "\" />" 
+%}
+
+{% if jamaStub.href %}
+  <a
+    href="{{ jamaStub.href }}"
+    title="{{ jamaStub.info }}">
+    {% if style == "horizontal" %}
+    {{ jamaStub.heading is not empty ? "<div class='ama__image-wrap'>" }}
+      {{ jamaStub.src is not empty ? image|raw }}
+    {{ jamaStub.heading is not empty ? "</div>" }}    
+    {% endif %}
+    {% if jamaStub.heading %}
+      <span class="ama__image__text">
+        {% if jamaStub.subtitle %}
+          <span class="ama__image__text__subtitle">
+            {{ jamaStub.subtitle }}
+          </span>
+        {% endif %}
+        {% include "@atoms/heading/heading.twig" with { "heading" : jamaStub.heading } %}
+      </span>
+    {% endif %}
+    {% if style == "vertical-images" %}
+    {{ jamaStub.heading is not empty ? "<div class='ama__image-wrap'>" }}
+      {{ jamaStub.src is not empty ? image|raw }}
+    {{ jamaStub.heading is not empty ? "</div>" }}    
+    {% endif %}
+  </a>
+{% else %}
+  {{ jamaStub.src is not empty ? image|raw }}
+{% endif %}

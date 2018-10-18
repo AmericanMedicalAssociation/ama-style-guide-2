@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1539790295" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1539790295" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1539900947" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1539900947" media="all" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
@@ -24,8 +24,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1539790295" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1539790295" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1539900947" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1539900947" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -746,15 +746,15 @@ If no date is entered the date will default to the current month, day and year.<
     <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="text field" type="text" placeholder="Search Subcategory name" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-search-field-as-in-body" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/01-atoms-forms-search-field-as-in-body\/01-atoms-forms-search-field-as-in-body.html"},{"lineagePattern":"atoms-icon-search-white","lineagePath":"..\/..\/patterns\/01-atoms-forms-search-field-as-in-body\/01-atoms-forms-search-field-as-in-body.html"}],"lineageR":[{"lineagePattern":"molecules-global-search","lineagePath":"..\/..\/patterns\/02-molecules-global-search\/02-molecules-global-search.html"},{"lineagePattern":"organisms-subcategory-index","lineagePath":"..\/..\/patterns\/03-organisms-subcategory-index\/03-organisms-subcategory-index.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>Search field that appears in the Category\/Subcategory pages.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"searchField\": {\n     \"label\": type: string \/ optional\n     \"name\": type: string \/ optional\n     \"placeholder\": type: string \/ optional\n     \"helpText\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"search field as in body","patternPartial":"atoms-search-field-as-in-body","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/01-atoms-forms-search-field-as-in-body\/01-atoms-forms-search-field-as-in-body.html"}],"lineageR":[{"lineagePattern":"molecules-global-search","lineagePath":"..\/..\/patterns\/02-molecules-global-search\/02-molecules-global-search.html"},{"lineagePattern":"organisms-subcategory-index","lineagePath":"..\/..\/patterns\/03-organisms-subcategory-index\/03-organisms-subcategory-index.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"forms"},"patternDesc":"<h3>Description<\/h3>\n\n<p>Search field that appears in the Category\/Subcategory pages.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  \"searchField\": {\n     \"label\": type: string \/ optional\n     \"name\": type: string \/ optional\n     \"placeholder\": type: string \/ optional\n     \"helpText\": type: string \/ optional\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"search field as in body","patternPartial":"atoms-search-field-as-in-body","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-search-field" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -1030,7 +1030,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-heading" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[{"lineagePattern":"atoms-headings","lineagePath":"..\/..\/patterns\/01-atoms-heading-headings\/01-atoms-heading-headings.html"},{"lineagePattern":"atoms-headings-as-homepage","lineagePath":"..\/..\/patterns\/01-atoms-heading-headings-as-homepage\/01-atoms-heading-headings-as-homepage.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"},{"lineagePattern":"atoms-image-href-with-text","lineagePath":"..\/..\/patterns\/01-atoms-image-image-href-with-text\/01-atoms-image-image-href-with-text.html"},{"lineagePattern":"atoms-image-href","lineagePath":"..\/..\/patterns\/01-atoms-image-image-href\/01-atoms-image-image-href.html"},{"lineagePattern":"molecules-article-stub-as-inline-alt","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-inline-alt\/02-molecules-article-stub-article-stub-as-inline-alt.html"},{"lineagePattern":"molecules-article-stub-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-inline\/02-molecules-article-stub-article-stub-as-inline.html"},{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-explore-menu","lineagePath":"..\/..\/patterns\/02-molecules-explore-menu\/02-molecules-explore-menu.html"},{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-hub-section-header","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-section-header\/02-molecules-hub-hub-section-header.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-link-list","lineagePath":"..\/..\/patterns\/02-molecules-link-list\/02-molecules-link-list.html"},{"lineagePattern":"molecules-membership-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-membership-membership-with-cta\/02-molecules-membership-membership-with-cta.html"},{"lineagePattern":"molecules-membership","lineagePath":"..\/..\/patterns\/02-molecules-membership-membership\/02-molecules-membership-membership.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-subscribe-promo","lineagePath":"..\/..\/patterns\/02-molecules-subscribe-promo\/02-molecules-subscribe-promo.html"},{"lineagePattern":"molecules-subscribe-promo-as-wide","lineagePath":"..\/..\/patterns\/02-molecules-subscribe-promo-as-wide\/02-molecules-subscribe-promo-as-wide.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-category-navigation-menu","lineagePath":"..\/..\/patterns\/03-organisms-category-navigation-menu\/03-organisms-category-navigation-menu.html"},{"lineagePattern":"organisms-lead-news","lineagePath":"..\/..\/patterns\/03-organisms-lead-news\/03-organisms-lead-news.html"},{"lineagePattern":"organisms-masthead-with-subtitle","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-with-subtitle\/03-organisms-masthead-masthead-with-subtitle.html"},{"lineagePattern":"organisms-masthead","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead\/03-organisms-masthead-masthead.html"},{"lineagePattern":"organisms-masthead-as-indented","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-as-indented\/03-organisms-masthead-masthead-as-indented.html"},{"lineagePattern":"organisms-masthead-as-simplified","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-as-simplified\/03-organisms-masthead-masthead-as-simplified.html"},{"lineagePattern":"organisms-masthead-as-title-only","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-as-title-only\/03-organisms-masthead-masthead-as-title-only.html"},{"lineagePattern":"organisms-masthead-with-subtitle-as-indented","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-with-subtitle-as-indented\/03-organisms-masthead-masthead-with-subtitle-as-indented.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"},{"lineagePattern":"organisms-sidebar-articles","lineagePath":"..\/..\/patterns\/03-organisms-sidebar-articles\/03-organisms-sidebar-articles.html"},{"lineagePattern":"organisms-subcategory-exploration-as-with-images","lineagePath":"..\/..\/patterns\/03-organisms-subcategory-exploration-as-with-images\/03-organisms-subcategory-exploration-as-with-images.html"},{"lineagePattern":"organisms-tools","lineagePath":"..\/..\/patterns\/03-organisms-tools\/03-organisms-tools.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-as-gated","lineagePath":"..\/..\/patterns\/05-pages-news-news-as-gated\/05-pages-news-news-as-gated.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"pages-news","lineagePath":"..\/..\/patterns\/05-pages-news-news\/05-pages-news-news.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"heading"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This Pattern shows heading.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>heading {\n  level:\n    type: string \/ required\n  text:\n    type: string \/ required\n  class:\n    type: string \/ optional\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"heading","patternPartial":"atoms-heading","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"atoms-headings","lineagePath":"..\/..\/patterns\/01-atoms-heading-headings\/01-atoms-heading-headings.html"},{"lineagePattern":"atoms-headings-as-homepage","lineagePath":"..\/..\/patterns\/01-atoms-heading-headings-as-homepage\/01-atoms-heading-headings-as-homepage.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"},{"lineagePattern":"atoms-image-href-with-text","lineagePath":"..\/..\/patterns\/01-atoms-image-image-href-with-text\/01-atoms-image-image-href-with-text.html"},{"lineagePattern":"atoms-image-href","lineagePath":"..\/..\/patterns\/01-atoms-image-image-href\/01-atoms-image-image-href.html"},{"lineagePattern":"molecules-article-stub-as-inline-alt","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-inline-alt\/02-molecules-article-stub-article-stub-as-inline-alt.html"},{"lineagePattern":"molecules-article-stub-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-inline\/02-molecules-article-stub-article-stub-as-inline.html"},{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-explore-menu","lineagePath":"..\/..\/patterns\/02-molecules-explore-menu\/02-molecules-explore-menu.html"},{"lineagePattern":"molecules-form","lineagePath":"..\/..\/patterns\/02-molecules-form\/02-molecules-form.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-hub-section-header","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-section-header\/02-molecules-hub-hub-section-header.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-jama-stub","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub\/02-molecules-jama-stub-jama-stub.html"},{"lineagePattern":"molecules-jama-stub-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub-as-homepage\/02-molecules-jama-stub-jama-stub-as-homepage.html"},{"lineagePattern":"molecules-jama-stub-as-horizontal","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub-as-horizontal\/02-molecules-jama-stub-jama-stub-as-horizontal.html"},{"lineagePattern":"molecules-jama-stub-as-vertical-with-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub-as-vertical-with-image\/02-molecules-jama-stub-jama-stub-as-vertical-with-image.html"},{"lineagePattern":"molecules-link-list","lineagePath":"..\/..\/patterns\/02-molecules-link-list\/02-molecules-link-list.html"},{"lineagePattern":"molecules-membership-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-membership-membership-with-cta\/02-molecules-membership-membership-with-cta.html"},{"lineagePattern":"molecules-membership","lineagePath":"..\/..\/patterns\/02-molecules-membership-membership\/02-molecules-membership-membership.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-subscribe-promo","lineagePath":"..\/..\/patterns\/02-molecules-subscribe-promo\/02-molecules-subscribe-promo.html"},{"lineagePattern":"molecules-subscribe-promo-as-wide","lineagePath":"..\/..\/patterns\/02-molecules-subscribe-promo-as-wide\/02-molecules-subscribe-promo-as-wide.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-category-navigation-menu","lineagePath":"..\/..\/patterns\/03-organisms-category-navigation-menu\/03-organisms-category-navigation-menu.html"},{"lineagePattern":"organisms-lead-news","lineagePath":"..\/..\/patterns\/03-organisms-lead-news\/03-organisms-lead-news.html"},{"lineagePattern":"organisms-masthead-with-subtitle","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-with-subtitle\/03-organisms-masthead-masthead-with-subtitle.html"},{"lineagePattern":"organisms-masthead","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead\/03-organisms-masthead-masthead.html"},{"lineagePattern":"organisms-masthead-as-indented","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-as-indented\/03-organisms-masthead-masthead-as-indented.html"},{"lineagePattern":"organisms-masthead-as-simplified","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-as-simplified\/03-organisms-masthead-masthead-as-simplified.html"},{"lineagePattern":"organisms-masthead-as-title-only","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-as-title-only\/03-organisms-masthead-masthead-as-title-only.html"},{"lineagePattern":"organisms-masthead-with-subtitle-as-indented","lineagePath":"..\/..\/patterns\/03-organisms-masthead-masthead-with-subtitle-as-indented\/03-organisms-masthead-masthead-with-subtitle-as-indented.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"},{"lineagePattern":"organisms-sidebar-articles","lineagePath":"..\/..\/patterns\/03-organisms-sidebar-articles\/03-organisms-sidebar-articles.html"},{"lineagePattern":"organisms-subcategory-exploration-as-with-images","lineagePath":"..\/..\/patterns\/03-organisms-subcategory-exploration-as-with-images\/03-organisms-subcategory-exploration-as-with-images.html"},{"lineagePattern":"organisms-tools","lineagePath":"..\/..\/patterns\/03-organisms-tools\/03-organisms-tools.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-as-gated","lineagePath":"..\/..\/patterns\/05-pages-news-news-as-gated\/05-pages-news-news-as-gated.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"pages-news","lineagePath":"..\/..\/patterns\/05-pages-news-news\/05-pages-news-news.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"heading"},"patternDesc":"<h3>Description<\/h3>\n\n<p>This Pattern shows heading.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>heading {\n  level:\n    type: string \/ required\n  text:\n    type: string \/ required\n  class:\n    type: string \/ optional\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"heading","patternPartial":"atoms-heading","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-headings" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -1139,7 +1139,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-image" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"}],"lineageR":[{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-category-hero","lineagePath":"..\/..\/patterns\/02-molecules-category-hero\/02-molecules-category-hero.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-jama-as-content-bottom","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-content-bottom\/02-molecules-jama-jama-as-content-bottom.html"},{"lineagePattern":"molecules-jama-as-three-up","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-three-up\/02-molecules-jama-jama-as-three-up.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-press-release-logos","lineagePath":"..\/..\/patterns\/02-molecules-press-release-logos\/02-molecules-press-release-logos.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-search-result","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result\/02-molecules-search-result-search-result.html"},{"lineagePattern":"molecules-search-result-as-best-bet","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result-as-best-bet\/02-molecules-search-result-search-result-as-best-bet.html"},{"lineagePattern":"molecules-subcategory-hero","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-hero\/02-molecules-subcategory-hero.html"},{"lineagePattern":"molecules-subcategory-page-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-page-article-stub\/02-molecules-subcategory-page-article-stub.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-page-content-tabs","lineagePath":"..\/..\/patterns\/03-organisms-page-content-tabs\/03-organisms-page-content-tabs.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"image"},"patternDesc":"<h3>Description<\/h3>\n\n<p>Displays an image using the image HTML element<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>image {\n  alt:\n    type: string \/ required\n  src:\n    type: string (url) \/ required\n  height:\n    type: string \/ required\n  width:\n    type: string \/ required\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"image","patternPartial":"atoms-image","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"}],"lineageR":[{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-category-hero","lineagePath":"..\/..\/patterns\/02-molecules-category-hero\/02-molecules-category-hero.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-press-release-logos","lineagePath":"..\/..\/patterns\/02-molecules-press-release-logos\/02-molecules-press-release-logos.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-search-result","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result\/02-molecules-search-result-search-result.html"},{"lineagePattern":"molecules-search-result-as-best-bet","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result-as-best-bet\/02-molecules-search-result-search-result-as-best-bet.html"},{"lineagePattern":"molecules-subcategory-hero","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-hero\/02-molecules-subcategory-hero.html"},{"lineagePattern":"molecules-subcategory-page-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-page-article-stub\/02-molecules-subcategory-page-article-stub.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-page-content-tabs","lineagePath":"..\/..\/patterns\/03-organisms-page-content-tabs\/03-organisms-page-content-tabs.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"image"},"patternDesc":"<h3>Description<\/h3>\n\n<p>Displays an image using the image HTML element<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>image {\n  alt:\n    type: string \/ required\n  src:\n    type: string (url) \/ required\n  height:\n    type: string \/ required\n  width:\n    type: string \/ required\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"image","patternPartial":"atoms-image","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-image-href-with-text" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -1181,7 +1181,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-image-href-with-text" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"}],"lineageR":[{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-category-hero","lineagePath":"..\/..\/patterns\/02-molecules-category-hero\/02-molecules-category-hero.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-jama-as-content-bottom","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-content-bottom\/02-molecules-jama-jama-as-content-bottom.html"},{"lineagePattern":"molecules-jama-as-three-up","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-three-up\/02-molecules-jama-jama-as-three-up.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-press-release-logos","lineagePath":"..\/..\/patterns\/02-molecules-press-release-logos\/02-molecules-press-release-logos.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-search-result","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result\/02-molecules-search-result-search-result.html"},{"lineagePattern":"molecules-search-result-as-best-bet","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result-as-best-bet\/02-molecules-search-result-search-result-as-best-bet.html"},{"lineagePattern":"molecules-subcategory-hero","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-hero\/02-molecules-subcategory-hero.html"},{"lineagePattern":"molecules-subcategory-page-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-page-article-stub\/02-molecules-subcategory-page-article-stub.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-page-content-tabs","lineagePath":"..\/..\/patterns\/03-organisms-page-content-tabs\/03-organisms-page-content-tabs.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"image"},"patternDesc":"","patternExtension":"twig","patternName":"image href with text","patternPartial":"atoms-image-href-with-text","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"}],"lineageR":[{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-category-hero","lineagePath":"..\/..\/patterns\/02-molecules-category-hero\/02-molecules-category-hero.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-press-release-logos","lineagePath":"..\/..\/patterns\/02-molecules-press-release-logos\/02-molecules-press-release-logos.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-search-result","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result\/02-molecules-search-result-search-result.html"},{"lineagePattern":"molecules-search-result-as-best-bet","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result-as-best-bet\/02-molecules-search-result-search-result-as-best-bet.html"},{"lineagePattern":"molecules-subcategory-hero","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-hero\/02-molecules-subcategory-hero.html"},{"lineagePattern":"molecules-subcategory-page-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-page-article-stub\/02-molecules-subcategory-page-article-stub.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-page-content-tabs","lineagePath":"..\/..\/patterns\/03-organisms-page-content-tabs\/03-organisms-page-content-tabs.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"image"},"patternDesc":"","patternExtension":"twig","patternName":"image href with text","patternPartial":"atoms-image-href-with-text","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-image-href" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -1220,7 +1220,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-image-href" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"}],"lineageR":[{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-category-hero","lineagePath":"..\/..\/patterns\/02-molecules-category-hero\/02-molecules-category-hero.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-jama-as-content-bottom","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-content-bottom\/02-molecules-jama-jama-as-content-bottom.html"},{"lineagePattern":"molecules-jama-as-three-up","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-three-up\/02-molecules-jama-jama-as-three-up.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-press-release-logos","lineagePath":"..\/..\/patterns\/02-molecules-press-release-logos\/02-molecules-press-release-logos.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-search-result","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result\/02-molecules-search-result-search-result.html"},{"lineagePattern":"molecules-search-result-as-best-bet","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result-as-best-bet\/02-molecules-search-result-search-result-as-best-bet.html"},{"lineagePattern":"molecules-subcategory-hero","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-hero\/02-molecules-subcategory-hero.html"},{"lineagePattern":"molecules-subcategory-page-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-page-article-stub\/02-molecules-subcategory-page-article-stub.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-page-content-tabs","lineagePath":"..\/..\/patterns\/03-organisms-page-content-tabs\/03-organisms-page-content-tabs.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"image"},"patternDesc":"","patternExtension":"twig","patternName":"image href","patternPartial":"atoms-image-href","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/01-atoms-image-image\/01-atoms-image-image.html"}],"lineageR":[{"lineagePattern":"molecules-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub\/02-molecules-article-stub-article-stub.html"},{"lineagePattern":"molecules-article-stub-as-for-navigation","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-for-navigation\/02-molecules-article-stub-article-stub-as-for-navigation.html"},{"lineagePattern":"molecules-article-stub-as-hero-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-hero-for-homepage\/02-molecules-article-stub-article-stub-as-hero-for-homepage.html"},{"lineagePattern":"molecules-article-stub-as-related-content","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related-content\/02-molecules-article-stub-article-stub-as-related-content.html"},{"lineagePattern":"molecules-article-stub-as-related","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-related\/02-molecules-article-stub-article-stub-as-related.html"},{"lineagePattern":"molecules-article-stub-as-title-only","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-title-only\/02-molecules-article-stub-article-stub-as-title-only.html"},{"lineagePattern":"molecules-article-stub-as-video","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-as-video\/02-molecules-article-stub-article-stub-as-video.html"},{"lineagePattern":"molecules-article-stub-for-category-page-title","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-title\/02-molecules-article-stub-article-stub-for-category-page-title.html"},{"lineagePattern":"molecules-article-stub-for-category-page-with-image","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page-with-image\/02-molecules-article-stub-article-stub-for-category-page-with-image.html"},{"lineagePattern":"molecules-article-stub-for-category-page","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-category-page\/02-molecules-article-stub-article-stub-for-category-page.html"},{"lineagePattern":"molecules-article-stub-for-homepage","lineagePath":"..\/..\/patterns\/02-molecules-article-stub-article-stub-for-homepage\/02-molecules-article-stub-article-stub-for-homepage.html"},{"lineagePattern":"molecules-category-hero","lineagePath":"..\/..\/patterns\/02-molecules-category-hero\/02-molecules-category-hero.html"},{"lineagePattern":"molecules-event-stub","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub\/02-molecules-event-stub-event-stub.html"},{"lineagePattern":"molecules-event-stub-as-sticky","lineagePath":"..\/..\/patterns\/02-molecules-event-stub-event-stub-as-sticky\/02-molecules-event-stub-event-stub-as-sticky.html"},{"lineagePattern":"molecules-hero-story","lineagePath":"..\/..\/patterns\/02-molecules-hero-story\/02-molecules-hero-story.html"},{"lineagePattern":"molecules-hero-story-as-video","lineagePath":"..\/..\/patterns\/02-molecules-hero-story-as-video\/02-molecules-hero-story-as-video.html"},{"lineagePattern":"molecules-hub-card","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card\/02-molecules-hub-hub-card.html"},{"lineagePattern":"molecules-hub-card-as-portrait","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-as-portrait\/02-molecules-hub-hub-card-as-portrait.html"},{"lineagePattern":"molecules-hub-card-with-no-image","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-no-image\/02-molecules-hub-hub-card-with-no-image.html"},{"lineagePattern":"molecules-hub-card-with-select","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-card-with-select\/02-molecules-hub-hub-card-with-select.html"},{"lineagePattern":"molecules-hub-hero","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero\/02-molecules-hub-hub-hero.html"},{"lineagePattern":"molecules-hub-hero-as-cta-only","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-cta-only\/02-molecules-hub-hub-hero-as-cta-only.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-left","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-left\/02-molecules-hub-hub-hero-as-fifty-fifty-left.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty-video","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty-video\/02-molecules-hub-hub-hero-as-fifty-fifty-video.html"},{"lineagePattern":"molecules-hub-hero-as-fifty-fifty","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-fifty-fifty\/02-molecules-hub-hub-hero-as-fifty-fifty.html"},{"lineagePattern":"molecules-hub-hero-as-hero-side","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-hero-side\/02-molecules-hub-hub-hero-as-hero-side.html"},{"lineagePattern":"molecules-hub-hero-as-side-right","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-side-right\/02-molecules-hub-hub-hero-as-side-right.html"},{"lineagePattern":"molecules-hub-hero-as-split-no-overlay","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split-no-overlay\/02-molecules-hub-hub-hero-as-split-no-overlay.html"},{"lineagePattern":"molecules-hub-hero-as-split","lineagePath":"..\/..\/patterns\/02-molecules-hub-hub-hero-as-split\/02-molecules-hub-hub-hero-as-split.html"},{"lineagePattern":"molecules-info-card-as-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-contact\/02-molecules-info-card-info-card-as-contact.html"},{"lineagePattern":"molecules-info-card-as-event-speaker","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-event-speaker\/02-molecules-info-card-info-card-as-event-speaker.html"},{"lineagePattern":"molecules-info-card-as-location","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-location\/02-molecules-info-card-info-card-as-location.html"},{"lineagePattern":"molecules-info-card","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card\/02-molecules-info-card-info-card.html"},{"lineagePattern":"molecules-info-card-as-media-contact","lineagePath":"..\/..\/patterns\/02-molecules-info-card-info-card-as-media-contact\/02-molecules-info-card-info-card-as-media-contact.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/02-molecules-inline-bio\/02-molecules-inline-bio.html"},{"lineagePattern":"molecules-partner-info","lineagePath":"..\/..\/patterns\/02-molecules-partner-info\/02-molecules-partner-info.html"},{"lineagePattern":"molecules-partner-promo","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo\/02-molecules-partner-promo.html"},{"lineagePattern":"molecules-partner-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-partner-promo-as-homepage\/02-molecules-partner-promo-as-homepage.html"},{"lineagePattern":"molecules-people-listing","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-people-listing-as-card-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card-with-cta\/02-molecules-people-listing-people-listing-as-card-with-cta.html"},{"lineagePattern":"molecules-people-listing-as-card","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing-as-card\/02-molecules-people-listing-people-listing-as-card.html"},{"lineagePattern":"molecules-press-release-logos","lineagePath":"..\/..\/patterns\/02-molecules-press-release-logos\/02-molecules-press-release-logos.html"},{"lineagePattern":"molecules-product","lineagePath":"..\/..\/patterns\/02-molecules-product\/02-molecules-product.html"},{"lineagePattern":"molecules-promo-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-homepage\/02-molecules-promo-promo-as-homepage.html"},{"lineagePattern":"molecules-promo-as-inline","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-as-inline\/02-molecules-promo-promo-as-inline.html"},{"lineagePattern":"molecules-promo-with-border","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-border\/02-molecules-promo-promo-with-border.html"},{"lineagePattern":"molecules-promo-with-cta","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-cta\/02-molecules-promo-promo-with-cta.html"},{"lineagePattern":"molecules-promo-with-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo-with-image\/02-molecules-promo-promo-with-image.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"molecules-search-result","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result\/02-molecules-search-result-search-result.html"},{"lineagePattern":"molecules-search-result-as-best-bet","lineagePath":"..\/..\/patterns\/02-molecules-search-result-search-result-as-best-bet\/02-molecules-search-result-search-result-as-best-bet.html"},{"lineagePattern":"molecules-subcategory-hero","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-hero\/02-molecules-subcategory-hero.html"},{"lineagePattern":"molecules-subcategory-page-article-stub","lineagePath":"..\/..\/patterns\/02-molecules-subcategory-page-article-stub\/02-molecules-subcategory-page-article-stub.html"},{"lineagePattern":"molecules-visual-subcategory","lineagePath":"..\/..\/patterns\/02-molecules-visual-subcategory\/02-molecules-visual-subcategory.html"},{"lineagePattern":"organisms-bio-image-with-body","lineagePath":"..\/..\/patterns\/03-organisms-bio-image-with-body\/03-organisms-bio-image-with-body.html"},{"lineagePattern":"organisms-page-content-tabs","lineagePath":"..\/..\/patterns\/03-organisms-page-content-tabs\/03-organisms-page-content-tabs.html"},{"lineagePattern":"organisms-resource-tabs","lineagePath":"..\/..\/patterns\/03-organisms-resource-tabs\/03-organisms-resource-tabs.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"image"},"patternDesc":"","patternExtension":"twig","patternName":"image href","patternPartial":"atoms-image-href","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="viewall-atoms-link" class="sg-subtype">
   <h2>
@@ -4340,12 +4340,13 @@ If no date is entered the date will default to the current month, day and year.<
   <div class="sg-pattern-extra" id="sg-pattern-extra-atoms-icon-search-white"></div>
     
   <div class="sg-pattern-example">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26">
+  <path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#ffffff"/></svg>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-icon-search-white" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[{"lineagePattern":"atoms-search-field-as-in-body","lineagePath":"..\/..\/patterns\/01-atoms-forms-search-field-as-in-body\/01-atoms-forms-search-field-as-in-body.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"media"},"patternDesc":"","patternExtension":"twig","patternName":"icon search white","patternPartial":"atoms-icon-search-white","patternState":""}
+    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"media"},"patternDesc":"","patternExtension":"twig","patternName":"icon search white","patternPartial":"atoms-icon-search-white","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-icon-search" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -5569,7 +5570,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-site-logo" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[{"lineagePattern":"base-style-guide-welcome","lineagePath":"..\/..\/patterns\/00-base-style-guide-welcome\/00-base-style-guide-welcome.html"},{"lineagePattern":"molecules-jama-as-content-bottom","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-content-bottom\/02-molecules-jama-jama-as-content-bottom.html"},{"lineagePattern":"molecules-jama-as-three-up","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-three-up\/02-molecules-jama-jama-as-three-up.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"organisms-footer","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer\/03-organisms-footer-footer.html"},{"lineagePattern":"organisms-footer-as-universal","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer-as-universal\/03-organisms-footer-footer-as-universal.html"},{"lineagePattern":"organisms-main-navigation","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation\/03-organisms-main-navigation-main-navigation.html"},{"lineagePattern":"organisms-main-navigation-as-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-member\/03-organisms-main-navigation-main-navigation-as-member.html"},{"lineagePattern":"organisms-main-navigation-as-non-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-non-member\/03-organisms-main-navigation-main-navigation-as-non-member.html"},{"lineagePattern":"organisms-main-navigation-as-off-AMAOne","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-off-AMAOne\/03-organisms-main-navigation-main-navigation-as-off-AMAOne.html"},{"lineagePattern":"organisms-wayfinder","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder\/03-organisms-wayfinder-wayfinder.html"},{"lineagePattern":"organisms-wayfinder-referred","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder-referred\/03-organisms-wayfinder-wayfinder-referred.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"site logo"},"patternDesc":"<h3>Description<\/h3>\n\n<p>A site wide logo<\/p>","patternExtension":"twig","patternName":"site logo","patternPartial":"atoms-site-logo","patternState":""}
+    {"lineage":[],"lineageR":[{"lineagePattern":"base-style-guide-welcome","lineagePath":"..\/..\/patterns\/00-base-style-guide-welcome\/00-base-style-guide-welcome.html"},{"lineagePattern":"organisms-footer","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer\/03-organisms-footer-footer.html"},{"lineagePattern":"organisms-footer-as-universal","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer-as-universal\/03-organisms-footer-footer-as-universal.html"},{"lineagePattern":"organisms-main-navigation","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation\/03-organisms-main-navigation-main-navigation.html"},{"lineagePattern":"organisms-main-navigation-as-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-member\/03-organisms-main-navigation-main-navigation-as-member.html"},{"lineagePattern":"organisms-main-navigation-as-non-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-non-member\/03-organisms-main-navigation-main-navigation-as-non-member.html"},{"lineagePattern":"organisms-main-navigation-as-off-AMAOne","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-off-AMAOne\/03-organisms-main-navigation-main-navigation-as-off-AMAOne.html"},{"lineagePattern":"organisms-wayfinder","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder\/03-organisms-wayfinder-wayfinder.html"},{"lineagePattern":"organisms-wayfinder-referred","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder-referred\/03-organisms-wayfinder-wayfinder-referred.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"site logo"},"patternDesc":"<h3>Description<\/h3>\n\n<p>A site wide logo<\/p>","patternExtension":"twig","patternName":"site logo","patternPartial":"atoms-site-logo","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-site-logo-as-jama" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -5603,7 +5604,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-site-logo-as-jama" class="sg-pattern-data">
-    {"lineage":false,"lineageR":[{"lineagePattern":"base-style-guide-welcome","lineagePath":"..\/..\/patterns\/00-base-style-guide-welcome\/00-base-style-guide-welcome.html"},{"lineagePattern":"molecules-jama-as-content-bottom","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-content-bottom\/02-molecules-jama-jama-as-content-bottom.html"},{"lineagePattern":"molecules-jama-as-three-up","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-three-up\/02-molecules-jama-jama-as-three-up.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"organisms-footer","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer\/03-organisms-footer-footer.html"},{"lineagePattern":"organisms-footer-as-universal","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer-as-universal\/03-organisms-footer-footer-as-universal.html"},{"lineagePattern":"organisms-main-navigation","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation\/03-organisms-main-navigation-main-navigation.html"},{"lineagePattern":"organisms-main-navigation-as-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-member\/03-organisms-main-navigation-main-navigation-as-member.html"},{"lineagePattern":"organisms-main-navigation-as-non-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-non-member\/03-organisms-main-navigation-main-navigation-as-non-member.html"},{"lineagePattern":"organisms-main-navigation-as-off-AMAOne","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-off-AMAOne\/03-organisms-main-navigation-main-navigation-as-off-AMAOne.html"},{"lineagePattern":"organisms-wayfinder","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder\/03-organisms-wayfinder-wayfinder.html"},{"lineagePattern":"organisms-wayfinder-referred","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder-referred\/03-organisms-wayfinder-wayfinder-referred.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"site logo"},"patternDesc":"","patternExtension":"twig","patternName":"site logo as jama","patternPartial":"atoms-site-logo-as-jama","patternState":""}
+    {"lineage":false,"lineageR":[{"lineagePattern":"base-style-guide-welcome","lineagePath":"..\/..\/patterns\/00-base-style-guide-welcome\/00-base-style-guide-welcome.html"},{"lineagePattern":"organisms-footer","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer\/03-organisms-footer-footer.html"},{"lineagePattern":"organisms-footer-as-universal","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer-as-universal\/03-organisms-footer-footer-as-universal.html"},{"lineagePattern":"organisms-main-navigation","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation\/03-organisms-main-navigation-main-navigation.html"},{"lineagePattern":"organisms-main-navigation-as-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-member\/03-organisms-main-navigation-main-navigation-as-member.html"},{"lineagePattern":"organisms-main-navigation-as-non-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-non-member\/03-organisms-main-navigation-main-navigation-as-non-member.html"},{"lineagePattern":"organisms-main-navigation-as-off-AMAOne","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-off-AMAOne\/03-organisms-main-navigation-main-navigation-as-off-AMAOne.html"},{"lineagePattern":"organisms-wayfinder","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder\/03-organisms-wayfinder-wayfinder.html"},{"lineagePattern":"organisms-wayfinder-referred","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder-referred\/03-organisms-wayfinder-wayfinder-referred.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"site logo"},"patternDesc":"","patternExtension":"twig","patternName":"site logo as jama","patternPartial":"atoms-site-logo-as-jama","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="atoms-site-logo-as-white" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -5637,7 +5638,7 @@ If no date is entered the date will default to the current month, day and year.<
   </div>
   
   <script type="text/json" id="sg-pattern-data-atoms-site-logo-as-white" class="sg-pattern-data">
-    {"lineage":false,"lineageR":[{"lineagePattern":"base-style-guide-welcome","lineagePath":"..\/..\/patterns\/00-base-style-guide-welcome\/00-base-style-guide-welcome.html"},{"lineagePattern":"molecules-jama-as-content-bottom","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-content-bottom\/02-molecules-jama-jama-as-content-bottom.html"},{"lineagePattern":"molecules-jama-as-three-up","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-three-up\/02-molecules-jama-jama-as-three-up.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"organisms-footer","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer\/03-organisms-footer-footer.html"},{"lineagePattern":"organisms-footer-as-universal","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer-as-universal\/03-organisms-footer-footer-as-universal.html"},{"lineagePattern":"organisms-main-navigation","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation\/03-organisms-main-navigation-main-navigation.html"},{"lineagePattern":"organisms-main-navigation-as-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-member\/03-organisms-main-navigation-main-navigation-as-member.html"},{"lineagePattern":"organisms-main-navigation-as-non-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-non-member\/03-organisms-main-navigation-main-navigation-as-non-member.html"},{"lineagePattern":"organisms-main-navigation-as-off-AMAOne","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-off-AMAOne\/03-organisms-main-navigation-main-navigation-as-off-AMAOne.html"},{"lineagePattern":"organisms-wayfinder","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder\/03-organisms-wayfinder-wayfinder.html"},{"lineagePattern":"organisms-wayfinder-referred","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder-referred\/03-organisms-wayfinder-wayfinder-referred.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"site logo"},"patternDesc":"","patternExtension":"twig","patternName":"site logo as white","patternPartial":"atoms-site-logo-as-white","patternState":""}
+    {"lineage":false,"lineageR":[{"lineagePattern":"base-style-guide-welcome","lineagePath":"..\/..\/patterns\/00-base-style-guide-welcome\/00-base-style-guide-welcome.html"},{"lineagePattern":"organisms-footer","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer\/03-organisms-footer-footer.html"},{"lineagePattern":"organisms-footer-as-universal","lineagePath":"..\/..\/patterns\/03-organisms-footer-footer-as-universal\/03-organisms-footer-footer-as-universal.html"},{"lineagePattern":"organisms-main-navigation","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation\/03-organisms-main-navigation-main-navigation.html"},{"lineagePattern":"organisms-main-navigation-as-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-member\/03-organisms-main-navigation-main-navigation-as-member.html"},{"lineagePattern":"organisms-main-navigation-as-non-member","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-non-member\/03-organisms-main-navigation-main-navigation-as-non-member.html"},{"lineagePattern":"organisms-main-navigation-as-off-AMAOne","lineagePath":"..\/..\/patterns\/03-organisms-main-navigation-main-navigation-as-off-AMAOne\/03-organisms-main-navigation-main-navigation-as-off-AMAOne.html"},{"lineagePattern":"organisms-wayfinder","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder\/03-organisms-wayfinder-wayfinder.html"},{"lineagePattern":"organisms-wayfinder-referred","lineagePath":"..\/..\/patterns\/03-organisms-wayfinder-wayfinder-referred\/03-organisms-wayfinder-wayfinder-referred.html"}],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"site logo"},"patternDesc":"","patternExtension":"twig","patternName":"site logo as white","patternPartial":"atoms-site-logo-as-white","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="" class="sg-subtype">
   <h2>
@@ -8261,11 +8262,21 @@ As a user I can control which content within the body of the page I want to see.
   <div class="sg-pattern-body">
     
   </div>
-</div>                        <div id="molecules-jama-as-content-bottom" class="sg-pattern">
+</div>                        <div id="viewall-molecules-jama-stub" class="sg-subtype">
+  <h2>
+    <a href="../../patterns/02-molecules-jama-stub/index.html" class="patternLink" data-patternpartial="viewall-molecules-jama-stub">
+      jama stub
+    </a>
+  </h2>
+  
+  <div class="sg-pattern-body">
+    
+  </div>
+</div>                        <div id="molecules-jama-stub" class="sg-pattern">
   <div class="sg-pattern-head">
     <h3 class="sg-pattern-title">
-      <a href="../../patterns/02-molecules-jama-jama-as-content-bottom/02-molecules-jama-jama-as-content-bottom.html" class="patternLink" data-patternpartial="molecules-jama-as-content-bottom" title="Link to Pattern">
-        JAMA as Content Bottom
+      <a href="../../patterns/02-molecules-jama-stub-jama-stub/02-molecules-jama-stub-jama-stub.html" class="patternLink" data-patternpartial="molecules-jama-stub" title="Link to Pattern">
+        jama stub
         
               </a>
     </h3>
@@ -8274,122 +8285,36 @@ As a user I can control which content within the body of the page I want to see.
       
     </div>
     
-    <a href="#" data-patternpartial="molecules-jama-as-content-bottom" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-as-content-bottom" class="sg-pattern-extra-toggle">
+    <a href="#" data-patternpartial="molecules-jama-stub" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-stub" class="sg-pattern-extra-toggle">
       <span>&#9660;</span>
     </a>
   </div>
   
-  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-as-content-bottom"></div>
+  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-stub"></div>
     
   <div class="sg-pattern-example">
     
-<div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
-  <span class="ama__jama__title">
-        
-  </span>
-  <ul class="ama__jama__links">
-          <li class="ama__link--with-image" >
-          <a
+  <a
     href="https://www.google.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
-      height="auto"
-      width="auto" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Surgery
           </span>
                 <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
       </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
-    href="https://www.aol.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Psychiatry
-          </span>
-                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
-      </span>
-      </a>
-      </li>
-          <li class="ama__link--with-image" >
-          <a
-    href="https://www.yahoo.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
-      height="auto"
-      width="auto" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Dermatology
-          </span>
-                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
-      </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
-    href="https://www.facebook.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Internal Medicine
-          </span>
-                <h3 class="ama__h3">More sunlight sought on spiking drug prices</h3>
-      </span>
-      </a>
-      </li>
-      </ul>
-  <div class="ama__rule ama__rule--horizontal"></div>
-  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
-</div>
+          </a>
 
   </div>
   
-  <script type="text/json" id="sg-pattern-data-molecules-jama-as-content-bottom" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>*Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<p>&#42; <em>NOTE: Since the requirements stated to build a pattern that displays differently depending on where it appears in the layout, we did not create an encapsulated version of its styling here at the molecule level. See the \"News with JAMA Examples\" page pattern to preview.<\/em><\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5040<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom (this variant)&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    links {\n      {\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        text: \n          type: string \/ required      \n        src:\n          type: string (image url) \/ optional\n        width: \n          auto\n        height:\n          auto\n        alt: \n          type: string \/ optional\n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA as Content Bottom","patternPartial":"molecules-jama-as-content-bottom","patternState":""}
+  <script type="text/json" id="sg-pattern-data-molecules-jama-stub" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub\/02-molecules-jama-stub-jama-stub.html"}],"lineageR":[{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-jama-as-horizontal","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-horizontal\/02-molecules-jama-jama-as-horizontal.html"},{"lineagePattern":"molecules-jama-as-vertical-with-images","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-vertical-with-images\/02-molecules-jama-jama-as-vertical-with-images.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"<h3>Description<\/h3>\n\n<p>A single JAMA Article link.<\/p>\n\n<h3>Use Case<\/h3>\n\n<p>Is used as part of a JAMA Component.<\/p>\n\n<pre><code>{\n  style:\n    type: string \/ required\n  jamaStub: {\n    subtitle:\n      type: string \/ optional\n    title: \n      type: string \/ required\n    href: \n      type: string (url) \/ required\n    src:\n      type: string (url) \/ optional\n    alt:\n      type: string \/ optional\n    heading: [\n      level: \n        type: int \"3\"\n      text: \n        type: string \/ required       \n      class:\n        type: string \"ama__h3\"\n    ]      \n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"jama stub","patternPartial":"molecules-jama-stub","patternState":""}
   </script>
-</div><!--end .sg-pattern-->                        <div id="molecules-jama-as-three-up" class="sg-pattern">
+</div><!--end .sg-pattern-->                        <div id="molecules-jama-stub-as-homepage" class="sg-pattern">
   <div class="sg-pattern-head">
     <h3 class="sg-pattern-title">
-      <a href="../../patterns/02-molecules-jama-jama-as-three-up/02-molecules-jama-jama-as-three-up.html" class="patternLink" data-patternpartial="molecules-jama-as-three-up" title="Link to Pattern">
-        JAMA as Three Up
+      <a href="../../patterns/02-molecules-jama-stub-jama-stub-as-homepage/02-molecules-jama-stub-jama-stub-as-homepage.html" class="patternLink" data-patternpartial="molecules-jama-stub-as-homepage" title="Link to Pattern">
+        jama stub as homepage
         
               </a>
     </h3>
@@ -8398,122 +8323,128 @@ As a user I can control which content within the body of the page I want to see.
       
     </div>
     
-    <a href="#" data-patternpartial="molecules-jama-as-three-up" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-as-three-up" class="sg-pattern-extra-toggle">
+    <a href="#" data-patternpartial="molecules-jama-stub-as-homepage" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-stub-as-homepage" class="sg-pattern-extra-toggle">
       <span>&#9660;</span>
     </a>
   </div>
   
-  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-as-three-up"></div>
+  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-stub-as-homepage"></div>
     
   <div class="sg-pattern-example">
     
-<div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
-  <span class="ama__jama__title">
-        
-  </span>
-  <ul class="ama__jama__links">
-          <li class="ama__link--with-image" >
-          <a
+  <a
     href="https://www.google.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
-      height="auto"
-      width="auto" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Surgery
           </span>
                 <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
       </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
-    href="https://www.aol.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Psychiatry
-          </span>
-                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
-      </span>
-      </a>
-      </li>
-          <li class="ama__link--with-image" >
-          <a
-    href="https://www.yahoo.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
-      height="auto"
-      width="auto" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Dermatology
-          </span>
-                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
-      </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
-    href="https://www.facebook.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Internal Medicine
-          </span>
-                <h3 class="ama__h3">More sunlight sought on spiking drug prices</h3>
-      </span>
-      </a>
-      </li>
-      </ul>
-  <div class="ama__rule ama__rule--horizontal"></div>
-  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
-</div>
+          </a>
 
   </div>
   
-  <script type="text/json" id="sg-pattern-data-molecules-jama-as-three-up" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>*Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<p>&#42; <em>NOTE: Since the requirements stated to build a pattern that displays differently depending on where it appears in the layout, we did not create an encapsulated version of its styling here at the molecule level. See the \"News with JAMA Examples\" page pattern to preview.<\/em><\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5041<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up (this variant)&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    links {\n      {\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        text: \n          type: string \/ required      \n        src:\n          type: string (image url) \/ optional\n        width: \n          auto\n        height:\n          auto\n        alt: \n          type: string \/ optional\n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA as Three Up","patternPartial":"molecules-jama-as-three-up","patternState":""}
+  <script type="text/json" id="sg-pattern-data-molecules-jama-stub-as-homepage" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub\/02-molecules-jama-stub-jama-stub.html"}],"lineageR":[{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-jama-as-horizontal","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-horizontal\/02-molecules-jama-jama-as-horizontal.html"},{"lineagePattern":"molecules-jama-as-vertical-with-images","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-vertical-with-images\/02-molecules-jama-jama-as-vertical-with-images.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"","patternExtension":"twig","patternName":"jama stub as homepage","patternPartial":"molecules-jama-stub-as-homepage","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="molecules-jama-stub-as-horizontal" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-molecules-jama-stub-jama-stub-as-horizontal/02-molecules-jama-stub-jama-stub-as-horizontal.html" class="patternLink" data-patternpartial="molecules-jama-stub-as-horizontal" title="Link to Pattern">
+        jama stub as horizontal
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="molecules-jama-stub-as-horizontal" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-stub-as-horizontal" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-stub-as-horizontal"></div>
+    
+  <div class="sg-pattern-example">
+    
+  <a
+    href="https://www.google.com"
+    title="">
+        <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+          </a>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-molecules-jama-stub-as-horizontal" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub\/02-molecules-jama-stub-jama-stub.html"}],"lineageR":[{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-jama-as-horizontal","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-horizontal\/02-molecules-jama-jama-as-horizontal.html"},{"lineagePattern":"molecules-jama-as-vertical-with-images","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-vertical-with-images\/02-molecules-jama-jama-as-vertical-with-images.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"","patternExtension":"twig","patternName":"jama stub as horizontal","patternPartial":"molecules-jama-stub-as-horizontal","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="molecules-jama-stub-as-vertical-with-image" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-molecules-jama-stub-jama-stub-as-vertical-with-image/02-molecules-jama-stub-jama-stub-as-vertical-with-image.html" class="patternLink" data-patternpartial="molecules-jama-stub-as-vertical-with-image" title="Link to Pattern">
+        jama stub as vertical with image
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="molecules-jama-stub-as-vertical-with-image" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-stub-as-vertical-with-image" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-stub-as-vertical-with-image"></div>
+    
+  <div class="sg-pattern-example">
+    
+  <a
+    href="https://www.google.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
+      </a>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-molecules-jama-stub-as-vertical-with-image" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-jama-stub-jama-stub\/02-molecules-jama-stub-jama-stub.html"}],"lineageR":[{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"molecules-jama-as-homepage","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-homepage\/02-molecules-jama-jama-as-homepage.html"},{"lineagePattern":"molecules-jama-as-horizontal","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-horizontal\/02-molecules-jama-jama-as-horizontal.html"},{"lineagePattern":"molecules-jama-as-vertical-with-images","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama-as-vertical-with-images\/02-molecules-jama-jama-as-vertical-with-images.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"","patternExtension":"twig","patternName":"jama stub as vertical with image","patternPartial":"molecules-jama-stub-as-vertical-with-image","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="molecules-jama" class="sg-pattern">
   <div class="sg-pattern-head">
     <h3 class="sg-pattern-title">
       <a href="../../patterns/02-molecules-jama-jama/02-molecules-jama-jama.html" class="patternLink" data-patternpartial="molecules-jama" title="Link to Pattern">
-        JAMA / JAMA as Sidebar
+        jama
         
               </a>
     </h3>
@@ -8530,98 +8461,50 @@ As a user I can control which content within the body of the page I want to see.
   <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama"></div>
     
   <div class="sg-pattern-example">
-    
-<div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+    <div class="ama__jama ama__jama--vertical">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
-        
+    
   </span>
   <ul class="ama__jama__links">
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.google.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Surgery
           </span>
                 <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.aol.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Psychiatry
           </span>
                 <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.yahoo.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Dermatology
           </span>
                 <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
       </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
-    href="https://www.facebook.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Internal Medicine
-          </span>
-                <h3 class="ama__h3">More sunlight sought on spiking drug prices</h3>
-      </span>
-      </a>
+          </a>
       </li>
       </ul>
   <div class="ama__rule ama__rule--horizontal"></div>
@@ -8631,7 +8514,7 @@ As a user I can control which content within the body of the page I want to see.
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-jama" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"<p>Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5039\">EWL-5039<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5040\">EWL-5040<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5041\">EWL-5041<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><strong>JAMA as Sidebar (base) (this variant) -<\/strong>  meant to be used in the right rail of an A1 page. The base pattern. Unless placed in a <code>.ama__foo__page-content<\/code> or <code>.ama__page-foo__teasers<\/code>, its styling is not restricted to any one content area.<\/li>\n<li><strong>JAMA as Content Bottom&#42; -<\/strong> variant that appears when this molecule is dropped into the \"Page Content\" section of a layout.<\/li>\n<li><strong>JAMA as Three Up&#42; -<\/strong> variant that appears when this molecule is displayed above the four-up teaser at the bottom of a News or Press Release page (dropped in <code>section.ama__page--foo__teasers<\/code> wrapper).<\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>  jama {\n    title: {\n        text: \n          type: string \/ optional\n        icon: \n          type: string (url) \/ optional\n      },\n    links {\n      {\n        subtitle:\n          type: string \/ optional\n        title: \n          type: string \/ required\n        href: \n          type: string (url) \/ required\n        heading: [\n          level: \n            type: int \"3\"\n          text: \n            type: string \/ required       \n          class:\n            type: string \"ama__h3\"\n        ]      \n      },\n      \/\/ add more links as needed.\n    }\n  }\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"JAMA \/ JAMA as Sidebar","patternPartial":"molecules-jama","patternState":""}
+    {"lineage":[{"lineagePattern":"molecules-jama-stub","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"<p>Appears differently depending on where it's placed in the layout: see <a href=\"\">News with JAMA Examples<\/a>.<\/p>\n\n<h3>Use Case<\/h3>\n\n<p>Provides links to relevant JAMA content, as well as a link that serves as a CTA for membership.<\/p>\n\n<h3>Variants<\/h3>\n\n<p>There are four main layouts for the JAMA component\n- vertical\n- vertical-images\n- horizontal\n- homepage<\/p>\n\n<p>These layouts apply to the JAMA component as well as the JAMA stub for each link.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  title: {\n      text: \n        type: string \/ optional\n      icon: \n        type: string (url) \/ optional\n    },\n  links jamaStub: {\n    {\n      subtitle:\n        type: string \/ optional\n      title: \n        type: string \/ required\n      href: \n        type: string (url) \/ required\n      heading: [\n        level: \n          type: int \"3\"\n        text: \n          type: string \/ required       \n        class:\n          type: string \"ama__h3\"\n      ]      \n    },\n    \/\/ add more links as needed.\n  }\n}\n\n<\/code><\/pre>","patternExtension":"twig","patternName":"jama","patternPartial":"molecules-jama","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="molecules-jama-as-homepage" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -8654,98 +8537,63 @@ As a user I can control which content within the body of the page I want to see.
   <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-as-homepage"></div>
     
   <div class="sg-pattern-example">
-    
-<div class="ama__jama ama__jama--homepage">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+    <div class="ama__jama ama__jama--homepage">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
-        
+    
   </span>
   <ul class="ama__jama__links">
-          <li class="" >
-          <a
-    href="https://www.google.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Surgery
-          </span>
-                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
-      </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
-    href="http://www.aol.com"
-    title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
-                  <span class="ama__image__text__subtitle">
-            JAMA Psychiatry
-          </span>
-                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
-      </span>
-      </a>
-      </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.yahoo.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Dermatology
           </span>
                 <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.yahoo.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
-            JAMA Internal Medicine
+            JAMA Dermatology
           </span>
-                <h3 class="ama__h3">More sunlight sought on spiking drug prices</h3>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
       </span>
-      </a>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+          </a>
       </li>
       </ul>
   <div class="ama__rule ama__rule--horizontal"></div>
@@ -8755,7 +8603,199 @@ As a user I can control which content within the body of the page I want to see.
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-jama-as-homepage" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-site-logo","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"},{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama"},"patternDesc":"","patternExtension":"twig","patternName":"jama as homepage","patternPartial":"molecules-jama-as-homepage","patternState":""}
+    {"lineage":[{"lineagePattern":"molecules-jama-stub","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"","patternExtension":"twig","patternName":"jama as homepage","patternPartial":"molecules-jama-as-homepage","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="molecules-jama-as-horizontal" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-molecules-jama-jama-as-horizontal/02-molecules-jama-jama-as-horizontal.html" class="patternLink" data-patternpartial="molecules-jama-as-horizontal" title="Link to Pattern">
+        jama as horizontal
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="molecules-jama-as-horizontal" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-as-horizontal" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-as-horizontal"></div>
+    
+  <div class="sg-pattern-example">
+    <div class="ama__jama ama__jama--horizontal">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
+  <span class="ama__jama__title">
+    
+  </span>
+  <ul class="ama__jama__links">
+                <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.google.com"
+    title="">
+        <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.aol.com"
+    title="">
+        <div class='ama__image-wrap'>
+      
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Psychiatry
+          </span>
+                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
+      </span>
+          </a>
+      </li>
+                <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+        <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+          </a>
+      </li>
+      </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-molecules-jama-as-horizontal" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"molecules-jama-stub","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"","patternExtension":"twig","patternName":"jama as horizontal","patternPartial":"molecules-jama-as-horizontal","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="molecules-jama-as-vertical-with-images" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/02-molecules-jama-jama-as-vertical-with-images/02-molecules-jama-jama-as-vertical-with-images.html" class="patternLink" data-patternpartial="molecules-jama-as-vertical-with-images" title="Link to Pattern">
+        jama as vertical with images
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="molecules-jama-as-vertical-with-images" title="View Pattern Info" id="sg-pattern-extra-toggle-molecules-jama-as-vertical-with-images" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-molecules-jama-as-vertical-with-images"></div>
+    
+  <div class="sg-pattern-example">
+    <div class="ama__jama ama__jama--vertical-images">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
+  <span class="ama__jama__title">
+    
+  </span>
+  <ul class="ama__jama__links">
+                <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.google.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
+      </a>
+      </li>
+                <div class="ama__rule ama__rule--horizontal"></div>
+            <li class="" >
+        
+  <a
+    href="https://www.aol.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Psychiatry
+          </span>
+                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      
+    </div>    
+      </a>
+      </li>
+                <div class="ama__rule ama__rule--horizontal"></div>
+            <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
+      </a>
+      </li>
+      </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-molecules-jama-as-vertical-with-images" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"molecules-jama-stub","lineagePath":"..\/..\/patterns\/02-molecules-jama-jama\/02-molecules-jama-jama.html"}],"lineageR":[{"lineagePattern":"organisms-category-article-three-up-jama","lineagePath":"..\/..\/patterns\/03-organisms-_category-article-three-up-jama\/03-organisms-_category-article-three-up-jama.html"},{"lineagePattern":"organisms-category-jama-article-stub-as-large","lineagePath":"..\/..\/patterns\/03-organisms-_category-jama-article-stub-as-large\/03-organisms-_category-jama-article-stub-as-large.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage\/05-pages-homepage.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"jama stub"},"patternDesc":"","patternExtension":"twig","patternName":"jama as vertical with images","patternPartial":"molecules-jama-as-vertical-with-images","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="" class="sg-subtype">
   <h2>
@@ -12712,24 +12752,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -13690,24 +13719,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -14667,24 +14685,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -15718,24 +15725,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -18382,24 +18378,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -20086,24 +20071,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -20309,77 +20283,70 @@ The promotional real estate sidebar can include any partner promos or the subscr
   
   </div>
   <p class=""> The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.</p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p></p>
-  
-<div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+  <div class="ama__jama ama__jama--vertical-images">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
-        
+    
   </span>
   <ul class="ama__jama__links">
-          <li class="ama__link--with-image" >
-          <a
+                <li class="ama__link--with-image" >
+        
+  <a
     href="https://www.google.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
-      height="auto"
-      width="auto" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Surgery
           </span>
                 <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
       </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
       </a>
       </li>
-          <li class="" >
-          <a
+                <div class="ama__rule ama__rule--horizontal"></div>
+            <li class="" >
+        
+  <a
     href="https://www.aol.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Psychiatry
           </span>
                 <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
       </span>
+            <div class='ama__image-wrap'>
+      
+    </div>    
       </a>
       </li>
-          <li class="ama__link--with-image" >
-          <a
+                <div class="ama__rule ama__rule--horizontal"></div>
+            <li class="ama__link--with-image" >
+        
+  <a
     href="https://www.yahoo.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
-      height="auto"
-      width="auto" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Dermatology
           </span>
                 <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
       </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
+      height="auto"
+      width="auto" />
+    </div>    
       </a>
       </li>
       </ul>
@@ -20407,78 +20374,69 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </li>
   </ul>
   <section class="ama__page--news__teasers">
-    
-<div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+    <div class="ama__jama ama__jama--horizontal">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
-        
+    
   </span>
   <ul class="ama__jama__links">
-          <li class="ama__link--with-image" >
-          <a
+                <li class="ama__link--with-image" >
+        
+  <a
     href="https://www.google.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
+        <div class='ama__image-wrap'>
+      <img
       class=" ama__image"
       alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
       height="auto"
       width="auto" />
-    </div>
-          <span class="ama__image__text">
+    </div>    
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Surgery
           </span>
                 <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.aol.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+        <div class='ama__image-wrap'>
+      
+    </div>    
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Psychiatry
           </span>
                 <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="ama__link--with-image" >
-          <a
+                <li class="ama__link--with-image" >
+        
+  <a
     href="https://www.yahoo.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
+        <div class='ama__image-wrap'>
+      <img
       class=" ama__image"
       alt="alt text"
-      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&amp;s=24"
+      src="https://ipsumimage.appspot.com/226x151?l=3:2|226x151&s=24"
       height="auto"
       width="auto" />
-    </div>
-          <span class="ama__image__text">
+    </div>    
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Dermatology
           </span>
                 <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
       </span>
-      </a>
+          </a>
       </li>
       </ul>
   <div class="ama__rule ama__rule--horizontal"></div>
@@ -20620,99 +20578,63 @@ The promotional real estate sidebar can include any partner promos or the subscr
   <aside id="sidebar-primary" class="ama__layout--two-column--right__sidebar--primary" role="complementary"></aside>
 
   <aside id="sidebar-secondary" class="ama__layout--two-column--right__sidebar--secondary" role="complementary">
-      
-<div class="ama__jama ">
-    
-<a href="#" class="">
-  <img src="../../assets/images/brand/logo-jama.svg" class="logo" alt="American Medical Association" />
-</a>
-
-
-
+      <div class="ama__jama ama__jama--vertical">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
   <span class="ama__jama__title">
-          <icon class="ama__icon icon--podcast-black"></icon>
-        Podcasts
+    Podcasts
   </span>
   <ul class="ama__jama__links">
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.google.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Surgery
           </span>
                 <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.aol.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Psychiatry
           </span>
                 <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.yahoo.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Dermatology
           </span>
                 <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
       </span>
-      </a>
+          </a>
       </li>
-          <li class="" >
-          <a
+                <li class="" >
+        
+  <a
     href="https://www.facebook.com"
     title="">
-    <div class='ama__image-wrap'>
-    <img
-      class=" ama__image"
-      alt=""
-      src=""
-      height=""
-      width="" />
-    </div>
-          <span class="ama__image__text">
+              <span class="ama__image__text">
                   <span class="ama__image__text__subtitle">
             JAMA Internal Medicine
           </span>
                 <h3 class="ama__h3">More sunlight sought on spiking drug prices</h3>
       </span>
-      </a>
+          </a>
       </li>
       </ul>
   <div class="ama__rule ama__rule--horizontal"></div>
@@ -21872,24 +21794,13 @@ The promotional real estate sidebar can include any partner promos or the subscr
     </div>
 
     <div class="ama__global-search">
-  <div class="ama__global-search--desktop">
-    <div class="ama__search__field ama__search__field--in-body">
+  <div class="ama__search__field ama__search__field--in-body">
   <label for="ama__search__label" class="is-vishidden">Search:</label>
   <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" width="24" height="26"><path d="M23.8 24.4l-6.7-7.9c1.4-1.7 2.3-4 2.3-6.4 0-5.5-4.4-10-9.7-10S0 4.5 0 10s4.3 10 9.7 10c2.3 0 4.3-.8 6-2.2l6.6 7.8c.2.2.5.4.8.4.2 0 .5-.1.6-.2.4-.4.4-1 .1-1.4M2 10c0-4.4 3.5-8 7.7-8s7.7 3.6 7.7 8-3.5 8-7.7 8S2 14.4 2 10" fill="#fff"/></svg>
-      </button>
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
 </div>
-  </div>
-  <div class="ama__global-search--mobile">
-    <div class="ama__search__field ama__search__field--in-body">
-  <label for="ama__search__label" class="is-vishidden">Search:</label>
-  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
-  <button class="ama__search__field__button" aria-label="Search button">
-                <p class=""> Search</p>
-      </button>
-</div>
-  </div>
 </div>
 
     <div class="ama__main-navigation__member-benefits-link">
@@ -22063,7 +21974,7 @@ The promotional real estate sidebar can include any partner promos or the subscr
   </section>
 
   <article class="ama__layout--two-column--right__page-content" role="article">
-      <p class=""> The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.</p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p><img class='ama__image ama__image--right' alt='placeholder image' src='https://ipsumimage.appspot.com/400x300x186?l=3:2|400x300&amp;s=36' height='300' width='400'/><p>"Our editorial goal is to publish the very best clinical research across all disciplines, serving the worldwide community of investigators and clinicians and meeting the evolving needs and requirements of authors and funders", Dr. Rivara and his co-authors wrote in an editorial published in JAMA. The editorial was co-written by JAMA Network Editor-in-Chief Howard Bauchner, MD, JAMA Network Publisher Thomas J. Easley, and Annette Flanagin, the executive managing editor of JAMA and JAMA Network.</p>
+      <p class=""> The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.<img class='ama__image ama__image--right' alt='placeholder image' src='https://ipsumimage.appspot.com/400x300x186?l=3:2|400x300&amp;s=36' height='300' width='400'/></p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p><p>"Our editorial goal is to publish the very best clinical research across all disciplines, serving the worldwide community of investigators and clinicians and meeting the evolving needs and requirements of authors and funders", Dr. Rivara and his co-authors wrote in an editorial published in JAMA. The editorial was co-written by JAMA Network Editor-in-Chief Howard Bauchner, MD, JAMA Network Publisher Thomas J. Easley, and Annette Flanagin, the executive managing editor of JAMA and JAMA Network.</p>
   
 <div class="ama__article-stub--inline">
   <h4 class="ama__article-stub--inline__label">Example Label Text for an Inline Article Stub</h4>
@@ -22094,7 +22005,7 @@ The promotional real estate sidebar can include any partner promos or the subscr
   </a>
   
   </div>
-  <p class=""> The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.</p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p><img class='ama__image ama__image--right' alt='placeholder image' src='https://ipsumimage.appspot.com/400x300x186?l=3:2|400x300&amp;s=36' height='300' width='400'/><p>"Our editorial goal is to publish the very best clinical research across all disciplines, serving the worldwide community of investigators and clinicians and meeting the evolving needs and requirements of authors and funders", Dr. Rivara and his co-authors wrote in an editorial published in JAMA. The editorial was co-written by JAMA Network Editor-in-Chief Howard Bauchner, MD, JAMA Network Publisher Thomas J. Easley, and Annette Flanagin, the executive managing editor of JAMA and JAMA Network.</p>
+  <p class=""> The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.<img class='ama__image ama__image--right' alt='placeholder image' src='https://ipsumimage.appspot.com/400x300x186?l=3:2|400x300&amp;s=36' height='300' width='400'/></p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p><p>"Our editorial goal is to publish the very best clinical research across all disciplines, serving the worldwide community of investigators and clinicians and meeting the evolving needs and requirements of authors and funders", Dr. Rivara and his co-authors wrote in an editorial published in JAMA. The editorial was co-written by JAMA Network Editor-in-Chief Howard Bauchner, MD, JAMA Network Publisher Thomas J. Easley, and Annette Flanagin, the executive managing editor of JAMA and JAMA Network.</p>
   <section class="ama__page--news__teasers">
     <ul class="ama__tags">
           <li>
@@ -23122,10 +23033,10 @@ The promotional real estate sidebar can include any partner promos or the subscr
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1539790295">
+<script id="pl-js-polyfill-insert-1539900947">
   (function() {
     if (self != top) {
-      var cb = '1539790295';
+      var cb = '1539900947';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -23135,10 +23046,10 @@ The promotional real estate sidebar can include any partner promos or the subscr
   })();
 </script>
 
-<script id="pl-js-insert-1539790295">
+<script id="pl-js-insert-1539900947">
   (function() {
     if (self != top) {
-      var cb = '1539790295';
+      var cb = '1539900947';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
