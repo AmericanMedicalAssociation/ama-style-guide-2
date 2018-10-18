@@ -48,6 +48,7 @@
         @include font-size($p-font-sizes);
         @include gutter($padding-right-half...);
         @include gutter($padding-left-half...);
+        display: block;
         border: 0;
         margin: -1px;
       }
@@ -56,6 +57,18 @@
       .ui-state-active {
         background: $purple;
         border: 0;
+      }
+
+      .search-api-autocomplete-suggestion {
+        &:focus,
+        &:active,
+        &:hover {
+          background: $purple;
+        }
+      }
+
+      &::selection {
+        background: $purple;
       }
     }
   }

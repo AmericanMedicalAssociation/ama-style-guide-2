@@ -216,22 +216,31 @@
           });
 
           // Expand list
-          $( ".ama__expand-list" ).accordion({
-            multiple: true,
-            icons: false,
-            heightStyle: "content",
-            collapsible: true,
-            active: false,
-            animate: 500,
-            activate : function (event, ui)
-            {
-              if($(ui.newPanel).hasClass('ui-accordion-content-active')) {
-                $(ui.newPanel).prev().addClass('active');
-              } else {
-                $(ui.oldPanel).prev().removeClass('active');
+          function expandListAccordion(element, open){
+            $(element).accordion({
+              multiple: true,
+              icons: false,
+              heightStyle: "content",
+              collapsible: true,
+              animate: 500,
+              active: open,
+              activate : function (event, ui) {
+                if($(ui.newPanel).hasClass('ui-accordion-content-active')) {
+                  $(ui.newPanel).prev().addClass('active');
+                } else {
+                  $(ui.oldPanel).prev().removeClass('active');
+                }
               }
-            }
-          });
+            });
+          }
+
+          if($(".ama__expand-list").find('.ui-checkboxradio-checked').length) {
+            expandListAccordion('.ama__expand-list', 0);
+            $(".ama__expand-list").children('.ama__expand-list__header').addClass('active');
+          } else {
+            expandListAccordion('.ama__expand-list', false);
+            $(".ama__expand-list").children('.ama__expand-list__header').removeClass('active');
+          }
 
           // Collapse all accordion panels
           $('.ama__filter__collapse-panels button').click(function(){
