@@ -58,11 +58,13 @@
       display: flex;
       flex-direction: column;
       border-top: 0;
+      list-style: none;
     }
 
     .ama__jama__links li {
       @include gutter($margin-right-full...);
       border-top: 1px solid $gray-50;
+      list-style: none;
 
       &:last-child {
         margin-right: 0;
@@ -106,12 +108,14 @@
   }
 }
 
+article[class*='__page-content'] .ama__jama__links,
 .ama__jama__links {
   list-style-type: none;
   border-top: 1px solid $gray-50;
 
   li {
-
+    list-style: none;
+    margin: 0;
 
     &:hover {
       border-color: $hoverRed;
@@ -123,7 +127,7 @@
 
     a {
       @extend .ama__link--hover-red;
-      display: block;
+      display: flex;
       padding: ($gutter / 4) 0;
       text-decoration: none;
 

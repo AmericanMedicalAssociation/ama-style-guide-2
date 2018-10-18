@@ -1,15 +1,21 @@
-.ama__tags {
+.ama__tags,
+article[class*='__page-content'] .ama__tags {
   @include ama-rules(1px, "", $gray-7, solid);
   @include ama-rules(1px, "bottom", $gray-7, solid);
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
   @include gutter($padding-top-full...);
   @include gutter($padding-bottom-full...);
-  list-style-type: none;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  
+
+  li {
+    margin-left: 0;
+    list-style: none;
+  }
+
   &:last-child {
     margin-right: 0;
   }
