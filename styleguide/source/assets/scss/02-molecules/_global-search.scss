@@ -1,78 +1,84 @@
 .ama__global-search {
+  height: 60px;
+  width: 70px;
+  border-left: 1px solid $gray-50;
+
   @include breakpoint($bp-small) {
     flex-grow: 1;
+    height: auto;
+    border: 0;
   }
 
-  &--desktop {
-    .ama__search__field--in-body {
-      display: flex;
-      margin-bottom: 0;
-      justify-content: flex-end;
-      align-items: center;
+  .ama__search__field--in-body {
+    display: flex;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    align-items: center;
 
-      @include breakpoint($bp-small) {
-        justify-content: flex-start;
-      }
+    @include breakpoint($bp-small) {
+      justify-content: flex-start;
+    }
+  }
+
+  input[type="text"],
+  .ama__search__field__input {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    background-image: none;
+    display: none;
+    border: 0;
+    max-height: 40px;
+    min-height: 40px;
+    min-width: 250px;
+    line-height: 0;
+
+    &:focus,
+    &:active {
+      color: $black;
+      font-style: normal;
     }
 
-    input[type="text"],
-    .ama__search__field__input {
-      @include gutter($padding-top-half...);
-      @include gutter($padding-bottom-half...);
-      background-image: none;
-      display: none;
-      border: 0;
-      max-height: 40px;
-      min-height: 40px;
-      min-width: 250px;
-      line-height: 0;
-
-      &:focus,
-      &:active {
-        color: $black;
-        font-style: normal;
-      }
-
-      &::placeholder {
-        font-style: italic;
-      }
-
-      @include breakpoint($bp-small) {
-        display: block;
-      }
+    &::placeholder {
+      font-style: italic;
     }
 
-    .ama__global-search__action {
+    @include breakpoint($bp-small) {
+      display: block;
+    }
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+
+  .ama__global-search__action .ama__button {
+    @extend .icon--search-white;
+    background-color: $purple;
+    background-size: 25px 25px;
+    background-position: 20px 15px;
+    min-height: 60px;
+    max-height: 60px;
+    max-width: 69px;
+    padding: 0;
+    margin: 0;
+    height: 60px;
+    width: 69px;
+    outline: none;
+    text-indent: -999px;
+    overflow: hidden;
+    min-width: 50px;
+    position: relative;
+
+    @include breakpoint($bp-small) {
       border: 2px solid $white;
-      height: 30px;
-
-      .form-actions {
-        margin: 0;
-      }
-
-      @include breakpoint($bp-small) {
-        border: 2px solid $white;
-        height: 40px;
-      }
-
-      .ama__button {
-        @extend .icon--search-white;
-        background-color: $purple;
-        background-size: 25px 25px;
-        background-position: 10px 5px;
-        min-height: 35px;
-        max-height: 35px;
-        max-width: 25px;
-        padding: 0;
-        margin: 0;
-        height: 35px;
-        width: 25px;
-        outline: none;
-        text-indent: -999px;
-        overflow: hidden;
-        min-width: 50px;
-        position: relative;
-      }
+      background-size: 25px 25px;
+      background-position: 10px 7px;
+      min-height: 40px;
+      max-height: 40px;
+      max-width: 39px;
+      height: 40px;
+      width: 39px;
     }
   }
 }
+
