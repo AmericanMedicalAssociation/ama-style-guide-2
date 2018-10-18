@@ -1,6 +1,10 @@
-{% set wide = subscribePromo.wide ? "ama__subscribe-promo--wide" : "" %}
+{% set classes = [
+    subscribePromo.wide ? "ama__subscribe-promo--wide" : "",
+    subscribePromo.homepage ? "ama__subscribe-promo--homepage" : ""
+  ]
+%}
 
-<div class="ama__subscribe-promo {{ wide }}">
+<div class="ama__subscribe-promo {{ classes }}">
   {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.subjectTitle } %}
   <div class="ama__subscribe-promo__container">
     <div class="ama__subscribe-promo__content">
