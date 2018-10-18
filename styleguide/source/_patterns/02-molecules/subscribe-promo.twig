@@ -1,10 +1,10 @@
 {% set classes = [
-    subscribePromo.wide ? "ama__subscribe-promo--wide" : "",
-    subscribePromo.homepage ? "ama__subscribe-promo--homepage" : ""
+    subscribePromo.wide ? "ama__subscribe-promo--wide",
+    subscribePromo.homepage ? "ama__subscribe-promo--homepage"
   ]
 %}
 
-<div class="ama__subscribe-promo {{ classes }}">
+<div class="ama__subscribe-promo {{ classes|join(' ') }}">
   {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.subjectTitle } %}
   <div class="ama__subscribe-promo__container">
     <div class="ama__subscribe-promo__content">
@@ -13,9 +13,11 @@
       {% set email = subscribePromo.email %}
     </div>
     <div class="ama__subscribe-promo__form">
-      {% include '@atoms/forms/email-field.twig' %}
-      {% set button = subscribePromo.button %}
-      {% include '@atoms/button/button.twig' %}
+      <form>
+        {% include '@atoms/forms/email-field.twig' %}
+        {% set button = subscribePromo.button %}
+        {% include '@atoms/button/button.twig' %}
+      </form>
     </div>
   </div>
 </div>
