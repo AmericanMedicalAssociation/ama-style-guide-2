@@ -31,17 +31,12 @@
 
     a {
       display: flex;
-
-      // For this component, the image is on the right.
-      .ama__image__text {
-        padding-left: inherit;
-        padding-right: 14px;
-      }
     }
   }
 
   .ama__rule {
     @include gutter($margin-top-full...);
+    border-color: $gray-50;
   }
 
   // Styles the Image Href with Text variant.
@@ -57,16 +52,40 @@
       }
     }
   }
-}
 
-.ama__jama a.ama__jama__header {
-  color: $white;
-  background-color: $hoverRed;
-  padding: 0 7px;
-  font-size: 27px;
-  min-width: 265px;
-  max-width: 100%;
-  display: inline-block;
+  &--homepage {
+    .ama__jama__links {
+      display: flex;
+      flex-direction: column;
+      border-top: 0;
+      list-style: none;
+    }
+
+    .ama__jama__links li {
+      @include gutter($margin-right-full...);
+      border-top: 1px solid $gray-50;
+      list-style: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .ama__image-wrap {
+      display: none;
+      padding: 0;
+    }
+
+    .ama__link--with-image span {
+      padding-left: 0;
+    }
+
+    @include breakpoint($bp-small) {
+      .ama__jama__links {
+        flex-direction: row;
+      }
+    }
+  }
 }
 
 .ama__jama__title {
@@ -89,11 +108,14 @@
   }
 }
 
+article[class*='__page-content'] .ama__jama__links,
 .ama__jama__links {
   list-style-type: none;
+  border-top: 1px solid $gray-50;
 
   li {
-
+    list-style: none;
+    margin: 0;
 
     &:hover {
       border-color: $hoverRed;
@@ -105,7 +127,7 @@
 
     a {
       @extend .ama__link--hover-red;
-      display: block;
+      display: flex;
       padding: ($gutter / 4) 0;
       text-decoration: none;
 
@@ -119,6 +141,15 @@
           color: $black;
         }
       }
+    }
+
+    .ama__image__text {
+      padding: 0;
+      flex: 1;
+    }
+
+    .ama__image-wrap {
+
     }
   }
 }
@@ -138,41 +169,8 @@
   }
 }
 
-.ama__jama--homepage {
-  .ama__jama__links {
-    flex-direction: column;
-  
-    @include breakpoint($bp-small) {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-  
-      li {
-        width: 25%;
-        @include gutter($margin-right-full...);
-        border-top: 1px solid $gray-50;
-  
-        &:last-child {
-          margin-right: 0;
-        }
-  
-        &:hover {
-          border-color: $hoverRed;
-        }
-      }
-  
-      a {
-        padding-bottom: 0;
-      }
-    }
-  }
-
-  .ama__rule {
-    border-color: $hoverRed;
-  }
-}
-
-.ama__jama--horizontal .ama__jama__links {
+.ama__page--news__teasers .ama__jama__links,
+.ama__page--press-release__teasers .ama__jama__links {
   @include breakpoint($bp-small) {
     display: flex;
     justify-content: space-between;
