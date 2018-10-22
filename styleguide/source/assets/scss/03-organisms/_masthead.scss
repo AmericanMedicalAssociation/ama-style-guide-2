@@ -2,8 +2,7 @@
   display: grid;
   display: -ms-grid;
   grid-template-columns: 1fr ;
-  @include gutter($padding-left-full...);
-  @include gutter($padding-right-full...);
+  @include gutter-all($padding-all-full...);
 
   @include breakpoint($bp-med min-width) {
     padding: 0;
@@ -66,6 +65,7 @@
 
     &__container {
       overflow: hidden;
+      display: grid;
     }
 
     .ama__h1 {
@@ -93,6 +93,10 @@
         grid-column: 4 / 5;
         grid-row: 3;
         display: block;
+      }
+
+      .ama__social-share {
+        justify-content: flex-end;
       }
     }
   }
