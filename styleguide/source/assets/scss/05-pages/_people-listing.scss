@@ -9,6 +9,9 @@
     @include gutter($padding-bottom-full...);
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    min-height: 100%;
+
 
     @include breakpoint($bp-small){
       @include grid_column_layout(4, 2, $gutter/2, $gutter/2);
