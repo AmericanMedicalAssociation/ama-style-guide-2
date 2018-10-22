@@ -1,8 +1,11 @@
 .ama__inline-bio {
-  border-bottom: 1px solid $gray-50;
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
+  border-bottom: 1px solid $gray-50;
 
+  @include breakpoint($bp-small) {
+    margin: 0 -15px;
+  }
 
   &__image {
     display: none;
