@@ -18,6 +18,10 @@
   &__row--no-border {
     border: 0;
     padding: 0;
+    //For D8, dynamically remove border on category page hero parent div placed via layout builder
+    &:first-of-type + * + .ama__layout--two-col-right--75-25 {
+      border: 0;
+    }
   }
 
   &__row--hidden-mobile {
