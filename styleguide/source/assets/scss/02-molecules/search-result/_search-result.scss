@@ -39,27 +39,30 @@
     }
   }
 
-  &__text {
-    flex: 2;
-  }
-
-  &__image {
-    @include gutter($margin-left-full...);
-    display: none;
-
-    .ama__image {
-      max-width: 234px;
-    }
-
-    @include breakpoint($bp-med) {
-      display: block;
-    }
-  }
 
   &--best-bet {
     margin-bottom: 0;
+
     p {
       line-height: 1.25em;
+    }
+
+    &__text {
+      width: unset;
+      flex: 2;
+    }
+
+    &__image {
+      @include gutter($margin-left-full...);
+      display: none;
+
+      .ama__image {
+        max-width: 234px;
+      }
+
+      @include breakpoint($bp-med) {
+        display: block;
+      }
     }
   }
 

@@ -29,6 +29,9 @@
             }
           }
 
+          // jQueryUI selectmenu method
+          $('.ama__select-menu__select').selectmenu();
+
           // Start search filter
 
           var availableTags = [

@@ -35,8 +35,8 @@
   }
 
   &__options,
-  .js-form-item-sort-by {
-    display: none;
+  .form-item.js-form-item-sort-by {
+    margin: 0;
     order: 4;
 
     .ama__form-group {
@@ -51,6 +51,10 @@
           vertical-align: initial;
         }
       }
+    }
+
+    .ui-selectmenu-button {
+      margin: 0;
     }
 
     @include breakpoint($bp-small) {
@@ -109,7 +113,6 @@
       .source-summary-count {
         display: block;
       }
-
     }
 
     .ama__search__field {
@@ -121,12 +124,11 @@
       .ui-autocomplete-input {
         @include font-size($h1-font-sizes);
         background: none !important; //only way to hide the Drupal throbber
-        padding-left: 0;
-        padding-right: 0;
         border-bottom: 1px solid $hoverBlue;
         color: $purple;
         font-style: normal;
         font-weight: 600;
+        line-height: 0;
 
         &:focus {
           border: none;
