@@ -1,40 +1,43 @@
 .ama__people-listing-card {
   background-color: $gray-7;
   width: 100%;
+  position: relative;
 
   .ama__image {
     width: 100%;
   }
 
-  &__bio a {
-    @include gutter($padding-bottom-half...);
-    display: block;
-  }
+  &__bio {
+    height: calc(100%  - 360px);
 
-  &__bio__heading {
-    @include gutter-all($padding-all-half...);
-  }
+    a {
+      @include gutter($padding-bottom-half...);
+      display: block;
+    }
 
-  &__bio .address-one {
-    margin-bottom: 0;
+    &__heading {
+      @include gutter-all($padding-all-half...);
+    }
+
+    .address-one {
+      margin-bottom: 0;
+    }
   }
 
   &__details {
     @include gutter-all($padding-all-half...);
     border-top: 1px solid $gray-50;
-  }
 
-  &__details {
-    .ama__link--icon{
+    .ama__link--icon {
       @extend .ama__type--small;
     }
   }
 
-  .ama__button--secondary {
-    width: 100%;
-  }
+  &__button-container {
+    @include gutter-all($padding-all-half...);
 
-  @include breakpoint($bp-small){
-    width: 281px;
+    .ama__button--secondary {
+      width: 100%;
+    }
   }
 }
