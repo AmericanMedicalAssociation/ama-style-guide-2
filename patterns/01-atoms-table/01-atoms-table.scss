@@ -46,6 +46,8 @@ thead {
     th {
       display: block;
       border: 1px solid $gray-50;
+      hyphens: auto;
+      vertical-align: top;
 
       @include breakpoint($bp-small) {
         display: table-cell;
@@ -78,6 +80,7 @@ tbody {
       display: block;
       padding: 2px 2px 2px 50%;
       position: relative;
+      hyphens: auto;
 
       @include breakpoint($bp-small) {
         display: table-cell;

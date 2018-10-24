@@ -40,11 +40,13 @@
           {% include "@molecules/content-with-label.twig" %}
         {% endif %}
       {% endfor %}
-      
-      {% if peopleListingCard.button %}
-        {% set button = peopleListingCard.button %}
-        {% include "@atoms/button/button.twig" %}
-      {% endif %}
     </div>
   </div>
+
+  {% if peopleListingCard.button %}
+    {% set button = peopleListingCard.button %}
+    <div class="ama__people-listing-card__button-container">
+      {% include "@atoms/button/button.twig" %}
+    </div>
+  {% endif %}
 </div>

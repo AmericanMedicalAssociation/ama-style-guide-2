@@ -1,23 +1,20 @@
 (function ($, Drupal) {
   Drupal.behaviors.ama_signInMenu = {
     attach: function (context, settings) {
-      var signInDropdown = $('.ama__sign-in-dropdown');
-      var signInDropdownMenu = $('.ama__sign-in-dropdown__menu');
-      var signInLink = $('.ama__sign-in-dropdown__text ');
-      var exploreMenu = $('.ama__explore-menu');
-      var exploreMenuDropdown = $('.ama__explore-menu__menu');
+      var $signInDropdown = $('.ama__sign-in-dropdown');
+      var $signInDropdownMenu = $('.ama__sign-in-dropdown__menu');
+      var $signInLink = $('.ama__sign-in-dropdown__text');
+      var $exploreMenu = $('.ama__explore-menu');
+      var $exploreMenuDropdown = $('.ama__explore-menu__menu');
 
       function dropdownDownMenu(parentElement, menuElement) {
-
-
-
-        parentElement.unbind('click').click(function(e){
+       parentElement.unbind('click').click(function(e){
           e.stopPropagation();
           $(menuElement).slideToggle();
         });
 
         // Stop link from firing
-        signInLink.click(function(e) {
+        $signInLink.click(function(e) {
           e.preventDefault();
         });
 
@@ -38,8 +35,8 @@
         });
       }
 
-      dropdownDownMenu(signInDropdown, signInDropdownMenu);
-      dropdownDownMenu(exploreMenu, exploreMenuDropdown);
+      dropdownDownMenu($signInDropdown, $signInDropdownMenu);
+      dropdownDownMenu($exploreMenu, $exploreMenuDropdown);
     }
   };
 })(jQuery, Drupal);
