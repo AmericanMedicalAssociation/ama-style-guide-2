@@ -39,15 +39,19 @@
     }
   }
 
-
   &--best-bet {
     margin-bottom: 0;
+
+    & > div {
+      width: auto;
+    }
 
     p {
       line-height: 1.25em;
     }
 
     &__text {
+      @include gutter($margin-right-half...);
       width: unset;
       flex: 2;
     }
@@ -57,7 +61,7 @@
       display: none;
 
       .ama__image {
-        max-width: 234px;
+        max-width: 283px;
       }
 
       @include breakpoint($bp-med) {
