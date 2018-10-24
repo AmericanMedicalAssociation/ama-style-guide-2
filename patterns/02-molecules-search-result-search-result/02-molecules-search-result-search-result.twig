@@ -1,14 +1,14 @@
 {% set image = searchResult.image %}
 {% set link = searchResult.title %}
 {% set classes = [
-  searchResult.bestBet ? "ama__search-result--best-bet"
+searchResult.bestBet ? "ama__search-result--best-bet"
 ] %}
 
 {% set link = searchResult.link %}
 
 
 <div class="ama__search-result {{ classes|join(' ') }}">
-  <div class="ama__search-result__text">
+  <div class="{{ searchResult.bestBet ? 'ama__search-result--best-bet__text' : 'ama__search-result__text' }}">
     {% if searchResult.category %}
       {% include "@atoms/paragraph.twig" with { "paragraph" : searchResult.category } %}
     {% endif %}
@@ -27,7 +27,7 @@
     {% endif %}
   </div>
   {% if image %}
-    <div class="ama__search-result__image">
+    <div class={{ searchResult.bestBet ? 'ama__search-result--best-bet__image' : 'ama__search-result__image' }}>
       {% include "@atoms/image/image.twig" %}
     </div>
   {% endif %}
