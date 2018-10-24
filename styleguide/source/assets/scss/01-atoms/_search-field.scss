@@ -19,11 +19,13 @@
     border: 0;
     border-bottom: 1px solid $light-blue;
     color: $gray-50;
-    line-height: initial;
+    line-height: 1.2;
     padding: 1em 28px 3px 0;
 
     &:focus,
     &:active {
+      border: 0;
+      border-bottom: 1px solid $light-blue;
       color: $black;
       font-style: normal;
     }
@@ -32,14 +34,15 @@
   .form-submit {
     @extend .icon--search;
     background-color: transparent;
-    background-size: 23px 25px;
+    background-size: 23px 45px;
+    background-position: 0 -10px;
     width: 23px;
-    height: 25px;
+    height: 45px;
     padding: 0;
     margin: 0;
     min-height: 25px;
     min-width: 25px;
-    max-height: 25px;
+    max-height: 30px;
     max-width: 25px;
     text-indent: -999px;
     overflow: hidden;
@@ -56,9 +59,12 @@
   // This has to be specific b/c it's so different.
   &__button {
     margin-left: -24px;
-    background: none;
+    background-color: transparent;
     border: none;
     padding: 0;
+    background-size: 25px 25px;
+    min-height: 25px;
+    max-height: 25px;
   }
 
   &--in-body {

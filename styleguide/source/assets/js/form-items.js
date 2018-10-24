@@ -29,6 +29,14 @@
             }
           }
 
+          // jQueryUI selectmenu method
+          $('.ama__select-menu__select').selectmenu();
+
+          // Submits the search form after a select menu items has been selected
+          $('.ama__select-menu__select').on('selectmenuchange', function() {
+            $('#block-exposedformacquia-searchpage').submit();
+          });
+
           // Start search filter
 
           var availableTags = [
@@ -291,7 +299,6 @@
           }
 
           listFilter($("#ama__search__location"), $(".ama__form-group"));
-
         });
       })(jQuery);
     }
