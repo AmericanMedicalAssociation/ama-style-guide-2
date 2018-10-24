@@ -47,7 +47,16 @@ $social-icons: (
   padding: 0;
   min-height: 38px;
 
+  li {
+    list-style: none;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
   li ~ li {
     margin-left: $gutter/2;
+    list-style: none;
   }
 }
