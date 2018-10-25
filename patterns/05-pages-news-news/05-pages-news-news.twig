@@ -2,7 +2,9 @@
 
 {% block contentTop %}
   {% include '@organisms/masthead/masthead.twig' %}
-  {% include "@molecules/inline-bio.twig" %}
+  <div class="container">
+    {% include "@molecules/inline-bio.twig" %}
+  </div>
 {% endblock %}
 
 {% block pageContent %}
