@@ -22,6 +22,11 @@
           e.preventDefault();
           $categorySearchInput.val('');
           $categorySearchInput.trigger('keyup');
+
+          $('.facets-widget-checkbox ul li [type=checkbox]').each( function() {
+            $(this).prop("checked", false);
+            $('#block-exposedformacquia-searchpage').submit();
+          });
         });
       }
 

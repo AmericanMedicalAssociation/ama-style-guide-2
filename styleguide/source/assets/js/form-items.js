@@ -189,7 +189,11 @@
             });
           }
 
-          $('[type=checkbox]').checkboxradio();
+          $('[type=checkbox]').each( function() {
+            $('[type=checkbox]').checkboxradio();
+          });
+
+
           $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
 
           $('.textarea').keyup(function() {
