@@ -16,10 +16,13 @@
 
   &__heading,
   & .ama__h2 {
+    @include gutter($padding-top-half...);
+    @include gutter($margin-bottom-half...);
+
     h1,
     h2 {
       @include gutter($padding-top-half...);
-      margin-bottom: 0;
+      @include gutter($margin-bottom-half...);
     }
   }
 
@@ -89,7 +92,6 @@
 
     a {
       @extend %ama__button;
-      display: block;
     }
   }
 
