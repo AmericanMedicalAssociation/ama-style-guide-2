@@ -48,6 +48,7 @@
     }
 
     + li {
+      list-style: none;
       padding-left: 4px;
     }
   }
@@ -68,6 +69,8 @@
 li {
   &.js--tab-start--mobile{
     display: block;
+    list-style: none;
+    
     @include breakpoint($bp-small) {
       display: none;
     }
@@ -201,8 +204,10 @@ li {
 }
 
 section#related_links ul {
-  list-style-type: none;
+  list-style: none;
+
   li {
+    list-style: none;
     margin: 0;
   }
 }
