@@ -67,6 +67,7 @@
   min-width: 265px;
   max-width: 100%;
   display: inline-block;
+  margin-bottom: $gutter / 2;
 }
 
 .ama__jama__title {
@@ -74,7 +75,6 @@
   text-transform: uppercase;
   font-weight: bold;
   display: flex;
-  margin-top: $gutter / 2;
   margin-bottom: $gutter / 4;
 
   .ama__icon {
@@ -152,7 +152,7 @@
         @include gutter($margin-right-full...);
         width: 25%;
         list-style: none;
-        border-top: 1px solid $gray-50;
+        border-top: 1px solid $gray-20;
 
         &:last-child {
           margin-right: 0;
