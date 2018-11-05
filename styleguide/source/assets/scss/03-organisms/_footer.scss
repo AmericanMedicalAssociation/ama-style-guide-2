@@ -145,7 +145,16 @@
     }
   }
 
+  &__left {
+    @include breakpoint(max-width $bp-small){
+      padding-bottom: $gutter-mobile;
+    }
+  }
   &__right {
+    @include breakpoint(max-width $bp-small){
+      border-top: 1px solid $gray-50;
+      padding-top: $gutter-mobile;
+    }
     p {
       line-height: 1.25em;
     }
