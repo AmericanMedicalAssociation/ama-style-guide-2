@@ -140,4 +140,14 @@
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
   }
+
+  // Do some ugly things for go/no-go launch fixes.
+  // Set the split container to initial padding from _grid.scss
+  .ama__layout--split {
+    &.container {
+      @include breakpoint($bp-small max-width) {
+        padding: 0 15px;
+      }
+    }
+  }
 }
