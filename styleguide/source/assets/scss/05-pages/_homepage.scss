@@ -3,8 +3,26 @@
   .ama__layout--one-column__content-top {
     display: none;
   }
+
+  .ama__layout--split__left, .ama__layout--split__right {
+    .ama__four-up-teaser {
+      margin: $gutter auto 0px;
+    }
+  }
+
   .ama__layout--split__right {
     border-left: none;
+
+    .ama__category__article-stub-two-up {
+      & + .ama__category__article-stub-two-up {
+        @include breakpoint($bp-small) {
+          border-top: solid $gray-20 1px;
+        }
+      }
+      .ama__article-stub {
+        margin-bottom: $gutter/2;
+      }
+    }
   }
 
   @include breakpoint($bp-small) {
@@ -47,7 +65,7 @@
           flex: 0 0 35%;
           max-width: 35%;
 
-          button{
+          button {
             // Button should have a min width so that buttons with small words do not feel cramped
             min-width: 150px;
           }
