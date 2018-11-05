@@ -145,6 +145,12 @@
     }
   }
 
+  .ama__subscribe-promo--wide .ama__subscribe-promo__form form{
+    @include breakpoint(max-width $bp-small){
+      flex-direction: row;
+    }
+  }
+
   &__left {
     @include breakpoint(max-width $bp-small){
       padding-bottom: $gutter-mobile;
