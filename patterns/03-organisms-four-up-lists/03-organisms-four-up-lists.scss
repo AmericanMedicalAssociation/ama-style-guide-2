@@ -23,10 +23,15 @@
       &--desktop {
         @include gutter($margin-bottom-full...);
         @include gutter($margin-left-full...);
+
+        @include breakpoint(max-width $bp-large){
+          &:nth-child(5){
+            margin-left: 0;
+          }
+        }
         width: calc(50% - 28px);
 
-        &:first-child,
-        &:nth-child(5){
+        &:first-child {
           margin-left: 0;
         }
 
