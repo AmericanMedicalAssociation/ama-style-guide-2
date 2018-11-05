@@ -12,14 +12,20 @@
   }
 
   &__text {
-    @include breakpoint($bp-small max-width) {
-      margin: -$gutter $gutter ($gutter * 2);
-    }
-
+    width: 85%;
     display: flex;
     flex-flow: column nowrap;
     background: $white;
     padding: $gutter;
+    margin: -$gutter $gutter ($gutter * 2);
+
+    @include breakpoint($bp-small) {
+      margin: 0;
+    }
+
+    @include breakpoint($bp-med) {
+      width: 100%;
+    }
   }
 
   &__featured-quote {
