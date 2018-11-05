@@ -103,8 +103,11 @@
     }
 
     .ama__subscribe-promo__form form {
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: nowrap;
+      @include breakpoint($bp-small){
+        flex-direction: row;
+      }
 
       .ama__form-group {
         flex: 1;
