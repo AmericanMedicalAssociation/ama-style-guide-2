@@ -71,6 +71,10 @@
         transition: all 0.21s ease-out;
       }
 
+      @include breakpoint($bp-small) {
+
+      }
+
       &.highlighted .sub-arrow {
         transform: rotate(90deg);
 
@@ -79,18 +83,20 @@
         }
       }
 
-      &.has-submenu.highlighted {
-        &:after {
-          content: "";
-          position: absolute;
-          right: -2px;
-          top: 11px;
-          width: 0;
-          height: 0;
-          border-top: 10px solid transparent;
-          border-bottom: 10px solid transparent;
-          border-right:10px solid $white;
-          z-index: 99;
+      @include breakpoint($bp-small) {
+        &.has-submenu.highlighted {
+          &:after {
+            content: "";
+            position: absolute;
+            right: -2px;
+            top: 11px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right:10px solid $white;
+            z-index: 99;
+          }
         }
       }
     }
