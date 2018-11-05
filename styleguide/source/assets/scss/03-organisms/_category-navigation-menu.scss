@@ -13,6 +13,20 @@
 
   @include breakpoint($bp-small) {
     width: 250px;
+
+    &__article-container {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+
+  @include breakpoint($bp-med) {
+    flex-direction: row;
+
+    &__article-container {
+      flex-direction: row;
+    }
   }
 
   &__group {
@@ -108,12 +122,14 @@
     @include breakpoint($bp-small) {
       position: absolute;
       top: -50px !important;
+      left: 40px !important;
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
     }
 
     @include breakpoint($bp-med) {
+      left: 0 !important;
       width: 900px !important;
       max-width: none !important;
     }
@@ -203,7 +219,7 @@
     @include breakpoint($bp-small) {
       display: flex;
       flex-direction: column;
-      width: 300px;
+      width: 250px;
     }
 
     @include breakpoint($bp-med) {

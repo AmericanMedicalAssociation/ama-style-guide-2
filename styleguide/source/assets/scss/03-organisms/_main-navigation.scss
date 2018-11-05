@@ -25,7 +25,12 @@
     position: absolute;
     top: 60px;
     left: 0;
+    width: 350px;
     z-index: 500;
+
+    @include breakpoint($bp-small min-width) {
+      width: 250px;
+    }
   }
 
   .ama__site-logo {
@@ -34,8 +39,13 @@
     min-width: 125px;
     flex-grow: 1;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-small min-width) {
+      @include gutter($margin-right-half...);
       flex-grow: 0;
+      min-width: 0;
+    }
+
+    @include breakpoint($bp-med min-width) {
       align-items: center;
       text-align: left;
     }
@@ -84,6 +94,10 @@
   .ama__sign-in-dropdown {
     background-color: transparent;
     z-index: 500;
+
+    @include breakpoint($bp-small min-width) {
+      width: auto;
+    }
   }
 
   &__member-benefits-link {
@@ -91,8 +105,11 @@
     @include gutter($margin-right-half...);
     display: none;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-small min-width) {
       display: block;
+    }
+
+    @include breakpoint($bp-med min-width) {
       min-width: 130px;
       text-align: right;
     }
