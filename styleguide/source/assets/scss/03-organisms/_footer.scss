@@ -76,6 +76,12 @@
       margin: 0;
     }
 
+    form{
+      @include breakpoint(max-width $bp-small){
+        flex-direction: row;
+      }
+    }
+
      .ama__button {
       @extend %ama__button;
       text-transform: uppercase;
@@ -142,12 +148,6 @@
         display: flex;
         align-items: center;
       }
-    }
-  }
-
-  .ama__subscribe-promo--wide .ama__subscribe-promo__form form{
-    @include breakpoint(max-width $bp-small){
-      flex-direction: row;
     }
   }
 
