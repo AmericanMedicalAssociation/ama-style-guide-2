@@ -28,6 +28,9 @@
   }
 
   .ama__social-share {
+    @include breakpoint(max-width $bp-small){
+        margin: $gutter-mobile auto;
+    }
     a {
       height: 50px;
       width: 50px;
