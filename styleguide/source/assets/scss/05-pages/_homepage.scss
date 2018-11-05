@@ -40,12 +40,12 @@
 
     @include breakpoint($bp-med) {
       .ama__promo--homepage {
-        flex-basis: 60%;
+        flex-basis: 50%;
 
         &:last-child {
           margin-left: -5%;
-          flex: 0 0 35%;
-          max-width: 35%;
+          flex: 0 0 50%;
+          max-width: 50%;
 
           button{
             // Button should have a min width so that buttons with small words do not feel cramped
@@ -139,5 +139,15 @@
     color: $purple;
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
+  }
+
+  // Do some ugly things for go/no-go launch fixes.
+  // Set the split container to initial padding from _grid.scss
+  .ama__layout--split {
+    &.container {
+      @include breakpoint($bp-small max-width) {
+        padding: 0 15px;
+      }
+    }
   }
 }
