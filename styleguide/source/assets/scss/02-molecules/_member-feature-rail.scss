@@ -1,15 +1,14 @@
 .ama__member-feature-rail {
+  display: none;
   @include child-top-gutters($gutter * 2);
   @include gutter-all($padding-all-full...);
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr;
-  grid-column-gap: $gutter;
+
   background: $gray-7;
 
   .ama__article-stub {
     @include gutter($margin-bottom-full...);
     margin-top: 0;
+    max-height: 300px;
 
     &:last-child {
       display: none;
