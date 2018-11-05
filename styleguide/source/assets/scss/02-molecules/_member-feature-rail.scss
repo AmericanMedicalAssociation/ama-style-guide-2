@@ -1,23 +1,25 @@
 .ama__member-feature-rail {
   @include child-top-gutters($gutter * 2);
   @include gutter-all($padding-all-full...);
+  margin-left: 0;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
   grid-column-gap: $gutter;
   background: $gray-7;
 
+  & > * {
+    margin-top: 0;
+  }
+
   .ama__article-stub {
     @include gutter($margin-bottom-full...);
     margin-top: 0;
-
-    &:last-child {
-      display: none;
-    }
   }
 
   @include breakpoint($bp-med) {
     grid-template-columns: 1fr 1fr;
+    margin-left: $gutter * 4;
   }
 
   @include breakpoint($bp-med) {
@@ -57,8 +59,18 @@
     }
   }
 
+  [data-ancestor-position = "3"] {
+    display: none;
+  }
+
   @include breakpoint($bp-small) {
     display: flex;
     flex-direction: column;
+  }
+
+  @include breakpoint($bp-med) {
+    [data-ancestor-position = "3"] {
+      display: block;
+    }
   }
 }
