@@ -110,7 +110,10 @@
       }
 
       .ama__form-group {
-        flex: 1;
+        flex: 0 0 auto;
+        @include breakpoint($bp-large){
+          flex: 1;
+        }
       }
 
       .ama__button {
