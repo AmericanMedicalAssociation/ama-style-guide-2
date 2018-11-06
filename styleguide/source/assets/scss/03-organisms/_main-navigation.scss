@@ -105,11 +105,8 @@
     @include gutter($margin-right-half...);
     display: none;
 
-    @include breakpoint($bp-small min-width) {
-      display: block;
-    }
-
     @include breakpoint($bp-med min-width) {
+      display: block;
       min-width: 130px;
       text-align: right;
     }
