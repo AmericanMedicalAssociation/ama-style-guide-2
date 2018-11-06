@@ -68,7 +68,15 @@
   }
 
   .form-actions {
-    order: 2;
+    position: absolute;
+    top: 0;
+    right: $gutter;
+
+    @include breakpoint($bp-small) {
+      position: relative;
+      right: 0;
+      order: 2;
+    }
   }
 
   &__results {
@@ -117,8 +125,14 @@
 
     .ama__search__field {
       @include gutter($margin-bottom-full...);
+      position: relative;
       margin-left: 0;
       width: 100%;
+      flex-direction: column;
+
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+      }
 
       &__input,
       .ui-autocomplete-input {
@@ -148,11 +162,17 @@
       }
     }
 
+    .ama__search-header__options {
+      @include gutter($margin-top-full...);
+      width: 100%;
+    }
+
     @include breakpoint($bp-small) {
       overflow: hidden;
 
       .ama__search-header__options {
         max-width: 250px;
+        margin-top: 0;
         float: right;
       }
     }
