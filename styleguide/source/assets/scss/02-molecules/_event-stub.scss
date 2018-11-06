@@ -1,7 +1,10 @@
 .ama__event-stub {
   @include gutter($margin-bottom-full...);
 
-
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
 
   a {
     @extend %ama__link--no-underline;
@@ -26,12 +29,12 @@
   &__copy {
     @include gutter($padding-left-full...);
     @include gutter($padding-right-full...);
+
     @include breakpoint($bp-med) {
       padding: 0;
     }
 
     justify-self: flex-start;
-    flex: 1;
     order: 2;
     position: relative;
   }
@@ -64,6 +67,7 @@
   .ama__rule {
     flex: 1 100%;
     order: 3;
+    width: 100%;
   }
 
   &--sticky {
