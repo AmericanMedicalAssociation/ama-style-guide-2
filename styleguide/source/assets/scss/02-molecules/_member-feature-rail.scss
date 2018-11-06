@@ -64,11 +64,20 @@
     display: none;
   }
 
+  .ama__link--homepage-viewall:link {
+    grid-column: 1/3;
+    text-align: right;
+  }
+
   @include breakpoint($bp-small) {
     grid-template-columns: 1fr;
     padding: 0 0 0 $gutter;
     display: flex;
     flex-direction: column;
+
+    .ama__link--homepage-viewall:link {
+      text-align: left;
+    }
   }
 
   @include breakpoint($bp-med) {
