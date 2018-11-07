@@ -1,4 +1,5 @@
 {% extends '@templates/two-column-right.twig' %}
+{% set pageContentClass = 'ama__layout--two-column--right__page-content ama__news' %}
 
 {% block contentTop %}
   {% include '@organisms/masthead/masthead.twig' %}
@@ -9,6 +10,7 @@
 
 {% block pageContent %}
   {% include '@atoms/paragraph.twig' %}
+  {% include '@atoms/ordered-list.twig' %}
   {% include '@molecules/article-stub/article-stub-as-inline.twig' %}
   {% set heading = heading|merge({
     "level": "1",
@@ -16,6 +18,7 @@
   }) %}
   {% include '@atoms/heading/heading.twig' %}
   {% set promo = promoAsInline %}
+  {% include '@atoms/unordered-list.twig' %}
   {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
   <section class="ama__page--news__teasers">

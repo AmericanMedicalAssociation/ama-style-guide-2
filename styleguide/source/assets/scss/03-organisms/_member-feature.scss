@@ -4,21 +4,46 @@
 
   &__wrapper {
     @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
 
     .ama__hero-story__media {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 70%;
       margin-top: 0;
+
+      & div a {
+        display: block;
+      }
+
+      @include breakpoint($bp-small) {
+        & div a {
+          display: flex;
+        }
+      }
     }
 
     @include breakpoint($bp-small) {
       display: grid;
-      grid-template-columns: 3fr 1fr;
       grid-column-gap: $gutter;
+      grid-template-columns: 2fr 1fr;
       background: $gray-7;
 
       .ama__hero-story {
-        grid-column-start: 1;
         grid-column-end: 2;
+        justify-content: flex-end;
+      }
+
+      .ama__hero-story__media {
+        margin-right: 0;
+
+        img {
+          height: 100%;
+          width: 100%;
+          max-width: 900px;
+        }
       }
 
       .ama__member-feature-rail {
@@ -34,12 +59,13 @@
       }
       .ama__hero-story__media {
         margin-right: $gutter*-1;
-        max-height: 450px;
+        max-height: 600px;
+        grid-column-end: 1;
+        justify-content: flex-start;
+      }
 
-        img {
-          height: 100%;
-          width: 100%;
-        }
+      .ama__hero-story__media {
+        margin-right: $gutter * -4;
       }
 
       .ama__member-feature-rail {

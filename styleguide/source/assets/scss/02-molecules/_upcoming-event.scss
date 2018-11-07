@@ -9,7 +9,7 @@
     padding-right: 0;
   }
 
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     display: flex;
   }
 
@@ -37,10 +37,10 @@
     display: flex;
 
     @include breakpoint($bp-small) {
-      margin-left: 40px;
+      margin-left: 30px;
     }
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       margin-left: 0;
       width: 40%;
     }
@@ -49,7 +49,7 @@
       @include gutter($margin-right-full...);
       @include font-size($small-font-sizes);
 
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-large) {
         width: 50%;
       }
 
