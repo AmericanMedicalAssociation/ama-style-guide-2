@@ -1,5 +1,37 @@
 .ama__category {
 
+  .ama__layout--two-col-right--75-25__left {
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint($bp-small) {
+      margin-right: 10px;
+      padding: initial;
+    }
+  }
+
+  .ama__layout--two-col-right--75-25__right {
+    margin: 0;
+    padding: 0 $gutter / 4;
+
+    .ama__tools {
+      @include gutter($margin-top-full...);
+      @include gutter($padding-top-full...);
+      border-top: solid 2px $gray-50;
+    }
+
+    @include breakpoint($bp-small) {
+      margin-right: 10px;
+      padding: initial;
+
+      .ama__tools {
+        margin: 0;
+        padding: 0;
+        border-top: 0;
+      }
+    }
+  }
+
   &__row {
     padding: $gutter 0;
     border-top: solid 2px $gray-50;

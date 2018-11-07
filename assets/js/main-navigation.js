@@ -24,6 +24,8 @@
           hideShow();
         }
       });
+
+
     }
   };
 })(jQuery, Drupal);
