@@ -68,25 +68,35 @@ tbody {
 
     @include breakpoint($bp-small) {
       display: table-row;
-    }
 
-    &.odd,
-    &:nth-child(odd)  {
-      background: $gray-7;
+      &.odd,
+      &:nth-child(odd)  {
+        background: $gray-7;
+      }
     }
 
     td {
       border: 1px solid $gray-7;
       display: block;
-      padding: 2px 2px 2px 50%;
+      padding: 2px;
       position: relative;
       hyphens: auto;
+
+      &.odd,
+      &:nth-child(odd)  {
+        background: $gray-7;
+      }
 
       @include breakpoint($bp-small) {
         display: table-cell;
         vertical-align: top;
         padding: 2px;
         border: 1px solid $gray-50;
+
+        &.odd,
+        &:nth-child(odd)  {
+          background: transparent;
+        }
       }
 
       &:before {
