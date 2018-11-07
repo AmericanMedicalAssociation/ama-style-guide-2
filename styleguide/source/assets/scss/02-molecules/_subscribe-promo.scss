@@ -14,7 +14,7 @@
       @extend .ama__button--homepage;
       display: block;
       margin: 0 auto;
-      padding:  $gutter / 2.2;
+      padding: $gutter / 2.2;
       border: 0;
       height: 49px;
 
@@ -56,6 +56,7 @@
     .ama__subscribe-promo__form form {
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       .ama__form-group,
       .form-actions {
@@ -103,11 +104,19 @@
     }
 
     .ama__subscribe-promo__form form {
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: nowrap;
+      @include breakpoint($bp-large) {
+        flex-direction: row;
+      }
 
       .ama__form-group {
-        flex: 1;
+        flex: 0 0 auto;
+        margin-bottom: $gutter-mobile/2;
+        @include breakpoint($bp-large){
+          flex: 1;
+          margin-bottom: auto;
+        }
       }
 
       .ama__button {

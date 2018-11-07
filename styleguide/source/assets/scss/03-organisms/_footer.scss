@@ -28,17 +28,26 @@
   }
 
   .ama__social-share {
+    @include breakpoint(max-width $bp-small){
+        margin: $gutter-mobile auto;
+    }
     a {
       height: 50px;
       width: 50px;
       background-size: 50px;
     }
   }
+  .ama__site-logo--footer img{
+    @include breakpoint(max-width $bp-small){
+      margin: auto;
+      display: block;
+    }
+  }
 
   &__menu-secondary-user {
     @include font-size($footer-font-sizes);
-    @include gutter($padding-bottom-half...);
-    @include gutter($margin-bottom-half...);
+    padding-bottom: $gutter-mobile;
+    margin-bottom: $gutter-mobile;
     border-bottom: 1px solid $gray-50;
 
     a {
@@ -65,6 +74,12 @@
   .ama__subscribe-promo--wide .ama__subscribe-promo__form {
     .form-actions {
       margin: 0;
+    }
+
+    form{
+      @include breakpoint(max-width $bp-small){
+        flex-direction: row;
+      }
     }
 
      .ama__button {
@@ -136,7 +151,16 @@
     }
   }
 
+  &__left {
+    @include breakpoint(max-width $bp-small){
+      padding-bottom: $gutter-mobile;
+    }
+  }
   &__right {
+    @include breakpoint(max-width $bp-small){
+      border-top: 1px solid $gray-50;
+      padding-top: $gutter-mobile;
+    }
     p {
       line-height: 1.25em;
     }

@@ -1,14 +1,27 @@
 .ama__people-listing-card {
   background-color: $gray-7;
   width: 100%;
+  margin: 1% 0;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  @include breakpoint($bp-small) {
+    width: 48.08%;
+  }
+
+  @include breakpoint($bp-med) {
+    width: 22.08%;
+  }
 
   .ama__image {
     width: 100%;
+    grid-row: 1;
   }
 
   &__bio {
-    height: calc(100%  - 360px);
+    grid-row: 2;
 
     a {
       @include gutter($padding-bottom-half...);
@@ -35,6 +48,9 @@
 
   &__button-container {
     @include gutter-all($padding-all-half...);
+    display: flex;
+    align-items: flex-end;
+    grid-row: 3;
 
     .ama__button--secondary {
       width: 100%;
