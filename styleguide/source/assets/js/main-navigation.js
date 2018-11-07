@@ -27,7 +27,7 @@
         }
       });
 
-      $($mobileSearchTrigger).click(function(e) {
+      $($mobileSearchTrigger).unbind('click').click(function(e) {
         $mobileSearch.slideToggle();
       });
     }
