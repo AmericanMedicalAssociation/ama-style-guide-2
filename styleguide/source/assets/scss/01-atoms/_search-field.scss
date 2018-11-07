@@ -70,6 +70,11 @@
   &--in-body {
     align-items: unset;
 
+    input[type="text"] {
+      border: 1px solid $purple;
+    }
+
+
     .ama__search__field__input[type="text"],
     .ama__search__field__input[type="text"]:focus,
     .ama__search__field__input[type="text"]:active {
@@ -77,9 +82,19 @@
     }
 
     .ama__search__field__button {
-      background: $purple;
+      background-color: $purple;
       margin: 0;
       padding: 5px 5px 0;
+    }
+
+    .subcategory_listing {
+      min-height: 34px;
+      max-height: 34px;
+
+      svg {
+        height: 24px;
+        width: 26px;
+      }
     }
   }
 }
