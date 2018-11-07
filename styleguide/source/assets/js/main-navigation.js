@@ -8,7 +8,7 @@
 
       // Hide/Show menu
       function hideShow() {
-        if($('#global-menu').prop('checked')) {
+        if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown();
         } else {
           $categoryNavigationMenu.slideUp();
