@@ -104,12 +104,34 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto;
-        grid-column-gap: $gutter;
-        grid-row-gap: $gutter;
 
         .ama__article-stub {
+          @include gutter($padding-right-full...);
           width: 100%;
+
+          &:nth-child(2) {
+            -ms-grid-column: 2;
+          }
+
+          &:nth-child(3) {
+            -ms-grid-column: 3;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+
+          h3 {
+            padding: 0;
+          }
+
+          .ama__image {
+            margin-bottom: 0;
+          }
+
         }
+
+
       }
     }
   }
