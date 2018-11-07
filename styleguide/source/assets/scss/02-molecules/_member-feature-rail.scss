@@ -1,8 +1,8 @@
 .ama__member-feature-rail {
-  display: none;
   @include child-top-gutters($gutter * 2);
   @include gutter($margin-bottom-full...);
   @include gutter-all($padding-all-full...);
+  display: grid;
   margin-left: 0;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
@@ -14,18 +14,17 @@
     max-height: 325px;
   }
 
-  @include breakpoint($bp-med) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-left: $gutter * 4;
-  }
 
   .ama__article-stub {
-    @include gutter($margin-bottom-half...);
+    @include gutter($margin-bottom-full...);
     margin-top: 0;
   }
 
   @include breakpoint($bp-med) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: $gutter * 4;
+
     .ama__article-stub {
 
       &:last-child {
