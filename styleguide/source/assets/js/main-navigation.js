@@ -2,14 +2,16 @@
   Drupal.behaviors.ama_mainNavigation = {
     attach: function (context, settings) {
 
-      var categoryNavigationMenu = $('.ama_category_navigation_menu');
+      var $categoryNavigationMenu = $('.ama_category_navigation_menu');
+      var $mobileSearchTrigger = $('.global-search-trigger');
+      var $mobileSearch = $('.ama__global-search');
 
       // Hide/Show menu
       function hideShow() {
         if($('#global-menu').prop('checked')) {
-          categoryNavigationMenu.slideDown();
+          $categoryNavigationMenu.slideDown();
         } else {
-          categoryNavigationMenu.slideUp();
+          $categoryNavigationMenu.slideUp();
         }
       }
 
@@ -19,13 +21,15 @@
       });
 
       $(document).click(function(e) {
-        if (!categoryNavigationMenu.is(e.target) && categoryNavigationMenu.has(e.target).length === 0) {
+        if (!$categoryNavigationMenu.is(e.target) && $categoryNavigationMenu.has(e.target).length === 0) {
           $('#global-menu').prop('checked',false);
           hideShow();
         }
       });
 
-
+      $($mobileSearchTrigger).click(function(e) {
+        $mobileSearch.slideToggle();
+      });
     }
   };
 })(jQuery, Drupal);
