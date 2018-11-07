@@ -19,7 +19,6 @@
 
       // If the unordered list outerHeight is greater than the parent container then show the show more link
       if ($subcategoryList.outerHeight() > $subcategoryListContainerHeight) {
-
         $subcategoryListExpander.show();
       }
 
