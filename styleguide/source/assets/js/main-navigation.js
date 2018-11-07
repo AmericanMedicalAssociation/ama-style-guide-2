@@ -10,7 +10,8 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown();
-        } else {
+        } 
+        else {
           $categoryNavigationMenu.slideUp();
         }
       }
