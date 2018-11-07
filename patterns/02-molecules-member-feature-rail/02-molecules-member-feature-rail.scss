@@ -2,8 +2,8 @@
   @include child-top-gutters($gutter * 2);
   @include gutter($margin-bottom-full...);
   @include gutter-all($padding-all-full...);
-  margin-left: 0;
   display: grid;
+  margin-left: 0;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: $gutter;
@@ -11,12 +11,9 @@
 
   & > * {
     margin-top: 0;
+    max-height: 325px;
   }
 
-  @include breakpoint($bp-med) {
-    grid-template-columns: 1fr 1fr;
-    margin-left: $gutter * 4;
-  }
 
   .ama__article-stub {
     @include gutter($margin-bottom-full...);
@@ -24,7 +21,12 @@
   }
 
   @include breakpoint($bp-med) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: $gutter * 4;
+
     .ama__article-stub {
+
       &:last-child {
         display: block;
       }
@@ -80,7 +82,7 @@
     }
   }
 
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     [data-ancestor-position = "3"] {
       display: block;
     }
