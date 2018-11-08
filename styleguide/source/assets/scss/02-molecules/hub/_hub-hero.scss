@@ -42,7 +42,8 @@
     }
   }
 
-  &__image {
+  &__image,
+  &__video {
     display: flex;
     flex-basis: 100%;
     align-items: center;
@@ -53,7 +54,8 @@
       flex-basis: 50%;
     }
 
-    .ama__image {
+    .ama__image,
+    .ama__video {
       display: flex;
       width: 100%;
     }
@@ -204,6 +206,7 @@
   &--fifty-fifty {
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
 
     @include breakpoint($bp-small) {
       flex-direction: row;
@@ -212,6 +215,7 @@
     .ama__hub-hero__description,
     article {
       background-color: rgba($white, 0.45);
+      min-height: 400px;
       width: 100%;
       justify-content: center;
       display: flex;
