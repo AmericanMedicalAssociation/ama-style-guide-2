@@ -70,11 +70,6 @@ tbody {
       display: table-row;
     }
 
-    &.odd,
-    &:nth-child(odd)  {
-      background: $gray-7;
-    }
-
     td {
       border: 1px solid $gray-7;
       display: block;
@@ -83,6 +78,11 @@ tbody {
       -webkit-hyphens: auto;
       -ms-hyphens: auto;
       hyphens: auto;
+
+      &.odd,
+      &:nth-child(odd)  {
+        background: $gray-7;
+      }
 
       @include breakpoint($bp-small) {
         display: table-cell;
