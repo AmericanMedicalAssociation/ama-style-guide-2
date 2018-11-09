@@ -2,8 +2,10 @@
   <caption>{{ table.caption }}</caption>
   <thead>
     <tr>
+      {% set title = [] %}
       {% for thead in table.thead %}
-        <th data-title="{{ thead.th }}">{{ thead.th }}</th>
+          {% set title = thead.th %}
+          <th data-title="{{ title }}">{{ title }}</th>
       {% endfor %}
     </tr>
   </thead>
@@ -11,7 +13,8 @@
     {% for tr in table.tbody %}
       <tr>
         {% for td in tr.td %}
-          <td>{{ td }}</td>
+            {# Removed `source/assets/js/tables.js` that was populating thead.th value for each td data-title attribute #}
+          <td data-title={{ title }}>{{ td }}</td>
         {% endfor %}
       </tr>
     {% endfor %}
