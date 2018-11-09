@@ -150,21 +150,6 @@
     }
   }
 
-  &--inline-banner {
-    @include gutter($padding-bottom-half...);
-    @include gutter($margin-bottom-full...);
-    border-bottom: 1px solid $gray-50;
-
-    @include breakpoint($bp-med) {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  &--inline-banner__link a {
-    @extend .ama__link--blue
-  }
-
   &--homepage {
     .ama__article-stub__title {
       padding: 0;
