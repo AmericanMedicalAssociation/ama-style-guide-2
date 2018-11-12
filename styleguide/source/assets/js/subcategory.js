@@ -12,54 +12,65 @@
     attach: function(context, settings) {
 
       function checkSize(){
-        var subcategoryWrapper = $('.ama__subcategory-exploration-with-images').outerWidth();
+        var $subcategory = $('.ama__subcategory-exploration__subcategory');
+        // We want the width minus padding so use width() instead of innerWidth().
+        var subcategoryExplorationWidth = $('.ama__subcategory-exploration-with-images').width();
+        var subcategoryItemWidth = $subcategory.outerWidth();
         var subcategoryTitle = $('.ama__subcategory-exploration-with-images__title').outerWidth();
-        subcategory = $('.ama__subcategory-exploration__subcategory');
-        subcategory.hide();
-
-        if (subcategoryWrapper > 0 && subcategoryWrapper < 290 && subcategoryTitle > 200 ) {
-          subcategory.slice(0, 2).css('display', 'block');
-        } else if (subcategoryWrapper > 290 && subcategoryWrapper < 600 && subcategoryTitle > 200 ) {
-          subcategory.slice(0, 3).css('display', 'block');
-        } else if ((subcategoryWrapper > 300 && subcategoryWrapper < 700) && subcategoryTitle < 200) {
-          subcategory.slice(0, 2).css('display', 'block');
-        } else if ((subcategoryWrapper > 700 && subcategoryWrapper < 1000) && subcategoryTitle < 200) {
-          subcategory.slice(0, 3).css('display', 'block');
-        } else if ((subcategoryWrapper > 1000 && subcategoryWrapper < 1200) && subcategoryTitle < 200) {
-          subcategory.slice(0, 4).css('display', 'block');
-        } else {
-          subcategory.slice(0, 5).css('display', 'block');
+        // Set subcategory row items to lowest that should display.
+        var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitle)/subcategoryItemWidth);
+        if(subcategoryItemsPerRow < 2) {
+          // The minimum subcategory items per row should be two. If the variable computed to less, manually correct it.
+          subcategoryItemsPerRow = 2;
         }
+
+        // Get the computed styles and set all items margins to the browser computed ones
+        var computedSubcatStyles = window.getComputedStyle($subcategory[0], null);
+        $subcategory.css({
+          'margin-left': computedSubcatStyles.marginLeft,
+          'margin-right': computedSubcatStyles.marginRight,
+
+        });
+
+        $subcategory.hide();
+        $subcategory.slice(0, subcategoryItemsPerRow).css('display', 'block');
+
+        viewMore($subcategory);
       }
 
-      function viewMore() {
-        $('.ama__subcategory-exploration-with-images__view-less').hide();
-        $('.ama__subcategory-exploration-with-images__view-all').show();
+      function viewMore($element) {
+        var $viewLess = $('.ama__subcategory-exploration-with-images__view-less');
+        var $viewMore = $('.ama__subcategory-exploration-with-images__view-all');
+        var $subcategoryContainer = $('.ama__subcategory-exploration-with-images__container');
+
+        $viewLess.hide();
+        $viewMore.show();
 
         $('.viewAll').click(function(e) {
           e.preventDefault();
-          subcategory.fadeIn();
-          $('.ama__subcategory-exploration-with-images__view-all').hide();
-          $('.ama__subcategory-exploration-with-images__view-less').show();
+          $element.fadeIn();
+          $viewMore.hide();
+          $subcategoryContainer.addClass('expanded');
+          $viewLess.show();
+
         });
 
         $('.viewLess').click(function(e) {
           e.preventDefault();
-          subcategory.hide();
+          $element.hide();
           checkSize();
-          $('.ama__subcategory-exploration-with-images__view-less').hide();
-          $('.ama__subcategory-exploration-with-images__view-all').show();
+          $viewLess.hide();
+          $subcategoryContainer.removeClass('expanded');
+          $viewMore.show();
         });
       }
 
       // run test on initial page load
       checkSize();
-      viewMore();
 
       // run test on resize of the window
       $( window ).resize(function() {
         checkSize();
-        viewMore();
       });
     }
   };

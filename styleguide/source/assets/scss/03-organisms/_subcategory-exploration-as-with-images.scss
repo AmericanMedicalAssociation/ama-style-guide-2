@@ -16,22 +16,42 @@
 
     & > * {
       @include gutter($padding-left-half...);
+      flex: 0 0 50%;
+      max-width: 50%;
+
+      @include breakpoint($bp-small) {
+        margin-left: auto;
+        margin-right: auto;
+        flex: 0 0 17%;
+        max-width: 17%;
+      }
     }
 
     @include breakpoint($bp-small) {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: flex-start;
+    }
+
+    &.expanded{
+      @include breakpoint($bp-small) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
     }
   }
 
   &__title {
     @include gutter($margin-top-full...);
-    width: 100%;
+    flex: 0 0 100%;
+    max-width: none;
 
     @include breakpoint($bp-small) {
-      width: 15%;
+      flex: 0 0 17%;
+      max-width: 17%;
     }
+
   }
 
   &__view-all,
