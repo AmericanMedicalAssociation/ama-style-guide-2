@@ -13,29 +13,36 @@
 
       function checkSize() {
         var $subcategory = $('.ama__subcategory-exploration__subcategory');
+        var $subcategoryTitle = $('.ama__subcategory-exploration-with-images__title');
         // We want the width minus padding so use width() instead of innerWidth().
         var subcategoryExplorationWidth = $('.ama__subcategory-exploration-with-images').width();
         var subcategoryItemWidth = $subcategory.outerWidth();
-        var subcategoryTitle = $('.ama__subcategory-exploration-with-images__title').outerWidth();
+        var subcategoryTitleWidth = $subcategoryTitle.outerWidth();
         // Set subcategory row items to lowest that should display.
-        var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitle) / subcategoryItemWidth);
+        var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitleWidth) / subcategoryItemWidth);
+
         if (subcategoryItemsPerRow < 2) {
           // The minimum subcategory items per row should be two. If the variable computed to less, manually correct it.
           subcategoryItemsPerRow = 2;
         }
 
-        // Get the computed styles and set all items margins to the browser computed ones
-        var computedSubcatStyles = window.getComputedStyle($subcategory[0], null);
-
-        $subcategory.css({
-          'margin-left': computedSubcatStyles.marginLeft,
-          'margin-right': computedSubcatStyles.marginRight,
-
-        });
-
+        // Update viewable subcategories.
         $subcategory.hide();
-        $subcategory.slice(0, subcategoryItemsPerRow).css('display', 'block');
+        $subcategory.slice(0, subcategoryItemsPerRow).css('display', 'inline-block');
 
+        // When more than 2 subcategory items per row the subcategory exploration title will act just as the as individual subcategory items. Calculate margins appropriately.
+        if (subcategoryItemsPerRow > 2) {
+          var appropriateMargin = calculateHorizontalMargins(subcategoryItemsPerRow + 1, subcategoryItemWidth, subcategoryExplorationWidth);
+          $subcategoryTitle.css({
+            'margin-left': appropriateMargin,
+            'margin-right': appropriateMargin,
+          });
+
+          $subcategory.css({
+            'margin-left': appropriateMargin,
+            'margin-right': appropriateMargin,
+          });
+        }
       }
 
       function viewMore() {
@@ -67,10 +74,16 @@
         });
       }
 
+      function calculateHorizontalMargins(columnCount, columnWidth, areaWidth) {
+        // Determine margins based on calculated widths.
+        var emptySpace = areaWidth - (columnWidth * columnCount);
+        var appropriateMargin = emptySpace / columnCount / 2;
+        return appropriateMargin;
+      }
+
       // run test on initial page load
       checkSize();
       viewMore();
-
 
       // run test on resize of the window
       $(window).resize(function () {

@@ -22,8 +22,9 @@
       @include breakpoint($bp-small) {
         margin-left: auto;
         margin-right: auto;
-        flex: 0 0 17%;
-        max-width: 17%;
+        padding-left: 0;
+        flex: 0 0 180px;
+        max-width: 180px;
       }
     }
 
@@ -45,11 +46,11 @@
   &__title {
     @include gutter($margin-top-full...);
     flex: 0 0 100%;
-    max-width: none;
+    max-width: 100%;
 
     @include breakpoint($bp-small) {
-      flex: 0 0 17%;
-      max-width: 17%;
+      flex: 0 0 180px;
+      max-width: 180px;
     }
 
   }
