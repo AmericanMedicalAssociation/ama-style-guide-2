@@ -9,17 +9,17 @@
  */
 (function ($, Drupal) {
   Drupal.behaviors.subcategories = {
-    attach: function(context, settings) {
+    attach: function (context, settings) {
 
-      function checkSize(){
+      function checkSize() {
         var $subcategory = $('.ama__subcategory-exploration__subcategory');
         // We want the width minus padding so use width() instead of innerWidth().
         var subcategoryExplorationWidth = $('.ama__subcategory-exploration-with-images').width();
         var subcategoryItemWidth = $subcategory.outerWidth();
         var subcategoryTitle = $('.ama__subcategory-exploration-with-images__title').outerWidth();
         // Set subcategory row items to lowest that should display.
-        var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitle)/subcategoryItemWidth);
-        if(subcategoryItemsPerRow < 2) {
+        var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitle) / subcategoryItemWidth);
+        if (subcategoryItemsPerRow < 2) {
           // The minimum subcategory items per row should be two. If the variable computed to less, manually correct it.
           subcategoryItemsPerRow = 2;
         }
@@ -47,7 +47,7 @@
         $viewLess.hide();
         $viewMore.show();
 
-        $('.viewAll').click(function(e) {
+        $('.viewAll').click(function (e) {
           e.preventDefault();
           checkSize();
           $subcategory.fadeIn();
@@ -57,9 +57,9 @@
 
         });
 
-        $('.viewLess').click(function(e) {
+        $('.viewLess').click(function (e) {
           e.preventDefault();
-          $element.hide();
+          $subcategory.hide();
           checkSize();
           $viewLess.hide();
           $subcategoryContainer.removeClass('expanded');
@@ -73,7 +73,7 @@
 
 
       // run test on resize of the window
-      $( window ).resize(function() {
+      $(window).resize(function () {
         checkSize();
       });
     }
