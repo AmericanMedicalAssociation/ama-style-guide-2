@@ -114,3 +114,49 @@ tfoot {
     display: table-header-group;
   }
 }
+
+table.table-list {
+  display: block;
+
+  caption {
+    display: block;
+  }
+
+  thead {
+    display: block;
+
+    tr {
+
+      @include breakpoint($bp-small) {
+        position: absolute;
+      }
+
+      th {
+        display: block;
+      }
+    }
+  }
+
+  tbody {
+    display: block;
+
+    tr {
+      display: block;
+    }
+
+    td {
+      display: block;
+      padding: 2px 2px 2px 50%;
+
+      &:before {
+        @include breakpoint($bp-small) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    display: block;
+  }
+}
