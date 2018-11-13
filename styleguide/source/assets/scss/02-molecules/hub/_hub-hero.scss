@@ -42,17 +42,20 @@
     }
   }
 
-  &__image {
+  &__image,
+  &__video {
     display: flex;
     flex-basis: 100%;
     align-items: center;
     padding: 0;
+    height: 100%;
 
     @include breakpoint($bp-small) {
       flex-basis: 50%;
     }
 
-    .ama__image {
+    .ama__image,
+    .ama__video {
       display: flex;
       width: 100%;
     }
@@ -66,12 +69,14 @@
     display: flex;
     flex-basis: 100%;
     align-items: center;
+    height: 100%;
 
     @include breakpoint($bp-small) {
       flex-basis: 50%;
     }
 
     .ama__video {
+      height: 100%;
       width: 100%;
     }
   }
@@ -201,6 +206,7 @@
   &--fifty-fifty {
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
 
     @include breakpoint($bp-small) {
       flex-direction: row;
@@ -209,6 +215,7 @@
     .ama__hub-hero__description,
     article {
       background-color: rgba($white, 0.45);
+      min-height: 400px;
       width: 100%;
       justify-content: center;
       display: flex;
