@@ -1,0 +1,9 @@
+{% set icon, text, type, size, link =
+  downloadLink.icon, downloadLink.text, downloadLink.type, downloadLink.size, downloadLink.link
+%}
+
+<a class="ama__download-link" href={{ link }}>
+  <icon class="ama__download-link__icon {{ icon }}"></icon>
+  <div class="ama__download-link__text">{{ text }}</div>
+  <div class="ama__download-link__details">{{ type }}, {{ size }}<icon class="icon--download"></icon></div>
+</a>

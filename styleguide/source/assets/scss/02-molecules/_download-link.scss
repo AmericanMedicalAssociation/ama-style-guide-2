@@ -1,0 +1,28 @@
+.ama__download-link {
+  display: inline-flex;
+  align-items: flex-end;
+
+  & > * {
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  &__text {
+    margin-right: 14px;
+  }
+
+  &__details {
+    text-decoration: none;
+  }
+  // Mimic current icon styles on a smaller scale
+  .icon--download {
+    $dimensions: .7em;
+    min-width: $dimensions;
+    min-height: $dimensions;
+    max-width: $dimensions;
+    max-height: $dimensions;
+    background-size: contain;
+    margin-left: 7px;
+  }
+}
+
