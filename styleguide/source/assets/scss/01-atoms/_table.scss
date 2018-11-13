@@ -69,6 +69,10 @@ tbody {
     @include breakpoint($bp-small) {
       display: table-row;
     }
+    &.odd,
+    &:nth-child(odd) {
+      background: $gray-7;
+    }
 
     td {
       border: 1px solid $gray-7;
@@ -79,16 +83,15 @@ tbody {
       -ms-hyphens: auto;
       hyphens: auto;
 
-      &.odd,
-      &:nth-child(odd)  {
-        background: $gray-7;
-      }
-
       @include breakpoint($bp-small) {
         display: table-cell;
         vertical-align: top;
         padding: 2px;
         border: 1px solid $gray-50;
+        &.odd,
+        &:nth-child(odd) {
+          background: none;
+        }
       }
 
       &:before {
@@ -99,6 +102,12 @@ tbody {
 
         @include breakpoint($bp-small) {
           display: none;
+        }
+      }
+      &:last-child {
+        border-bottom: 2px solid $black;
+        @include breakpoint($bp-small) {
+          border-bottom: none;
         }
       }
     }
