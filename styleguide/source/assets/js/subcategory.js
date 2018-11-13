@@ -26,6 +26,7 @@
 
         // Get the computed styles and set all items margins to the browser computed ones
         var computedSubcatStyles = window.getComputedStyle($subcategory[0], null);
+
         $subcategory.css({
           'margin-left': computedSubcatStyles.marginLeft,
           'margin-right': computedSubcatStyles.marginRight,
@@ -35,12 +36,12 @@
         $subcategory.hide();
         $subcategory.slice(0, subcategoryItemsPerRow).css('display', 'block');
 
-        viewMore($subcategory);
       }
 
-      function viewMore($element) {
+      function viewMore() {
         var $viewLess = $('.ama__subcategory-exploration-with-images__view-less');
         var $viewMore = $('.ama__subcategory-exploration-with-images__view-all');
+        var $subcategory = $('.ama__subcategory-exploration__subcategory');
         var $subcategoryContainer = $('.ama__subcategory-exploration-with-images__container');
 
         $viewLess.hide();
@@ -48,7 +49,8 @@
 
         $('.viewAll').click(function(e) {
           e.preventDefault();
-          $element.fadeIn();
+          checkSize();
+          $subcategory.fadeIn();
           $viewMore.hide();
           $subcategoryContainer.addClass('expanded');
           $viewLess.show();
@@ -67,6 +69,8 @@
 
       // run test on initial page load
       checkSize();
+      viewMore();
+
 
       // run test on resize of the window
       $( window ).resize(function() {
