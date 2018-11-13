@@ -68,7 +68,12 @@
   }
 
   &--in-body {
-    align-items: unset;
+    align-items: stretch;
+
+    input[type="text"] {
+      border: 1px solid $purple;
+    }
+
 
     .ama__search__field__input[type="text"],
     .ama__search__field__input[type="text"]:focus,
@@ -77,9 +82,19 @@
     }
 
     .ama__search__field__button {
-      background: $purple;
+      background-color: $purple;
       margin: 0;
       padding: 5px 5px 0;
+    }
+
+    .subcategory_listing {
+      min-height: 35px;
+      max-height: 35px;
+
+      svg {
+        height: 24px;
+        width: 26px;
+      }
     }
   }
 }
