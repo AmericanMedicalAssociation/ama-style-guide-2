@@ -1,18 +1,22 @@
 .ama__download-link {
-  display: inline-flex;
-  align-items: flex-end;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: $gutter/2;
 
   & > * {
     display: inline-block;
-    flex: 0 0 auto;
+  }
+  &__icon {
+    flex: 0 1 20%;
   }
 
   &__text {
-    margin-right: 14px;
+    flex: 0 1 80%;
+    margin-top: 20px;
   }
 
-  &__details {
-    text-decoration: none;
+  &__title {
+    margin-right: $gutter/2;
   }
   // Mimic current icon styles on a smaller scale
   .icon--download {
