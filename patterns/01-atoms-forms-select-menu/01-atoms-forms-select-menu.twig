@@ -3,7 +3,8 @@
   <select
     name="{{selectMenu.id}}"
     id="{{selectMenu.id}}"
-    class="ama__select-menu__select js-dropdown-select {{ selectMenu.required ? 'js-required' : '' }}">
+    class="ama__select-menu__select ama__jump_menu {{ selectMenu.required ? 'js-required' : '' }}">
+    {# The `ama__jump_menu` class and the `data-url` options should only be included if this is a jump menu. #}
     <option value="" selected disabled hidden>Select an option</option>
     {% for option in selectMenu.options %}
       <option data-url="{{option.value}}" value="{{option.value}}">{{ option.text }}</option>
