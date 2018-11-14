@@ -160,6 +160,20 @@ li {
   .ui-widget-content a.ama__button {
     color: $white;
   }
+
+  .ama_resource-subheader {
+    @include gutter($margin-bottom-half...);
+  }
+
+  .ama_resource-header + .ama_resource-header {
+    @include gutter($margin-bottom-half...);
+  }
+
+  .ama__resource--schedules div {
+    &:nth-child(1) {
+      @include gutter($margin-bottom-full...);
+    }
+  }
 }
 
 .ama__resource-tabs__nav__label {

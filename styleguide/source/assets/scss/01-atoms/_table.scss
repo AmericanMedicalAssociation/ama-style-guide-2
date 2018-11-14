@@ -1,116 +1,101 @@
-/**
- * @file
- * Define responsive table.
- *
- *
+/*
+ * jQuery Basic Table
+ * Author: Jerry Low
  */
 
 table {
-  display: block;
-  width: 100%;
+  background: $white;
   border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid $gray-64;
-  table-layout: fixed;
+  width: 100%;
+}
 
-  @include breakpoint($bp-small) {
-    display: table;
+table tr,
+table th,
+table td {
+  border: none;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: $gutter/4;
+
+}
+
+table th {
+  text-transform: uppercase;
+}
+
+table tr td {
+  background: $gray-20;
+}
+
+table tr:nth-of-type(2n+2) td {
+  background: $white;
+}
+
+table.bt tbody td {
+
+}
+
+table.bt thead {
+  display: none;
+}
+
+table.bt tbody td {
+  border: none;
+  display: block;
+  vertical-align: top;
+
+  &:before {
+    content: attr(data-th) ":";
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+
+  }
+
+  &:last-child {
+    @include gutter($padding-bottom-half...);
+
+  }
+
+  &:first-of-type:before,
+  &:first-of-type .bt-content {
+
+  }
+
+  &:last-of-type:before,
+  &:last-of-type .bt-content {
+  }
+
+  .bt-content {
+    vertical-align: top;
+    display: block;
+    hyphens: auto;
+  }
+
+  .bt-hide {
+    display: none;
   }
 }
+
+.bt-wrapper.active {
+  max-height: 310px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 
 caption {
-  display: block;
-
-  @include breakpoint($bp-small) {
-    display: table-caption;
-  }
+  text-align: left;
 }
 
-thead {
-  display: block;
 
-  @include breakpoint($bp-small) {
-    display: table-header-group;
-  }
 
-  tr {
-    text-transform: uppercase;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
 
-    @include breakpoint($bp-small) {
-      position: static;
-    }
 
-    th {
-      display: block;
-      border: 1px solid $gray-50;
-      hyphens: auto;
-      vertical-align: top;
 
-      @include breakpoint($bp-small) {
-        display: table-cell;
-      }
-    }
-  }
-}
 
-tbody {
-  display: block;
 
-  @include breakpoint($bp-small) {
-    display: table-row-group;
-  }
 
-  tr {
-    display: block;
-
-    @include breakpoint($bp-small) {
-      display: table-row;
-    }
-
-    &.odd,
-    &:nth-child(odd)  {
-      background: $gray-7;
-    }
-
-    td {
-      border: 1px solid $gray-7;
-      display: block;
-      padding: 2px 2px 2px 50%;
-      position: relative;
-      hyphens: auto;
-
-      @include breakpoint($bp-small) {
-        display: table-cell;
-        vertical-align: top;
-        padding: 2px;
-        border: 1px solid $gray-50;
-      }
-
-      &:before {
-        font-weight: bold;
-        text-transform: uppercase;
-        content: attr(data-title);
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        white-space: normal;
-
-        @include breakpoint($bp-small) {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-tfoot {
-  display: block;
-
-  @include breakpoint($bp-small) {
-    display: table-header-group;
-  }
-}

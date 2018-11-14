@@ -10,12 +10,12 @@
 (function ($, Drupal) {
   Drupal.behaviors.responsiveTables = {
     attach: function(context, settings) {
-      $("th", context).each(function () {
-        var eq = $(this).index();
-        var child = eq + 1;
-        var label = $(this).text();
-        $("td:nth-child(" + child + ")").append("&nbsp;").attr("data-title", label).addClass("responsive");
+      $('table').basictable();
+
+      $('.ama__resource--schedules table').each( function() {
+        $(this).basictable('start');
       });
+
     }
   };
 })(jQuery, Drupal);

@@ -110,7 +110,7 @@
     </section>
     <section id="schedules">
       {% for schedule in tabs[4].tabContent.schedules %}
-      <div id="ama__resource--schedules-{{ loop.index }}">
+      <div class="ama__resource--schedules" id="ama__resource--schedules-{{ loop.index }}">
         {% set heading = schedule.heading %}
         {% include '@atoms/heading/heading.twig' %}
         {% set heading = schedule.subheading %}
