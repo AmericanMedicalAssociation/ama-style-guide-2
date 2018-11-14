@@ -12,6 +12,7 @@
     attach: function(context, settings) {
       $('table').basictable();
 
+      // this forces tables inside of the .ama__resource--schedules div to have mobile look and feel
       $('.ama__resource--schedules table').each( function() {
         $(this).basictable('start');
       });
