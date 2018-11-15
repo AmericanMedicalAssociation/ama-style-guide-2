@@ -10,7 +10,9 @@
 (function ($, Drupal) {
   Drupal.behaviors.responsiveTables = {
     attach: function(context, settings) {
-      $('table').basictable();
+      $('table').basictable({
+        breakpoint: 1024
+      });
 
       // this forces tables inside of the .ama__resource--schedules div to have mobile look and feel
       $('.ama__resource--schedules table').each( function() {
