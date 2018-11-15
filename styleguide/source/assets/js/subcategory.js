@@ -16,7 +16,8 @@
         var $subcategoryTitle = $('.ama__subcategory-exploration-with-images__title');
         // We want the width minus padding so use width() instead of innerWidth().
         var subcategoryExplorationWidth = $('.ama__subcategory-exploration-with-images').width();
-        var subcategoryItemWidth = $subcategory.outerWidth();
+        // Subcategory items have max-width of 180px. This will be used for calculations instead of extracting it via jQuery calls.
+        var subcategoryItemWidth = 180;
         var subcategoryTitleWidth = $subcategoryTitle.outerWidth();
         // Set subcategory row items to lowest that should display.
         var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitleWidth) / subcategoryItemWidth);
