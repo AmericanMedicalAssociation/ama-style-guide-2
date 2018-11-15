@@ -115,8 +115,8 @@
   &__menu-products {
     @include font-size($footer-font-sizes--menu);
     @include gutter($padding-bottom-half...);
-    margin-top: $gutter-mobile;
-    padding-top: $gutter-mobile;
+    @include gutter($padding-top-half...);
+    @include gutter($margin-top-half...);
     text-transform: uppercase;
     text-align: center;
     border-top: 1px solid $gray-50;
