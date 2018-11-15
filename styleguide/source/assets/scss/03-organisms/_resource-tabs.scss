@@ -1,6 +1,10 @@
 .ama__resource-tabs {
-  @include gutter($margin-top-half...);
   height: 100%;
+  border: 0 !important;
+
+  @include breakpoint($bp-small) {
+    @include gutter($margin-top-half...);
+  }
 }
 
 .ama__resource-tabs__nav.ui-tabs-nav {

@@ -1,3 +1,13 @@
+.ama__page--resource {
+  .ama__layout--split__left {
+    display: none;
+
+    @include breakpoint($bp-small) {
+      display: block;
+    }
+  }
+}
+
 .ama__page--resource__resource-link {
   background: $bodyTextHoverPurple;
   text-decoration: none;
@@ -6,3 +16,4 @@
     text-decoration: underline;
   }
 }
+
