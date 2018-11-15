@@ -86,83 +86,83 @@
       "tabId": "media",
       "tabClasses": "js--tab-start--tablet",
       "tabContent": {
-          "media": [
-            {
-              "heading": {
-                "text": "Media 1",
-                "level": "3",
-                "class": "ama__h3"
-              },
-              "link": {
-                "href": "yahoo.biz",
-                "title": "a link to a thing",
-                "text": "Lorem ipsum audio.mp4",
-                "target": "_self",
-                "class": "ama__link--icon ama__link--no-underline",
-                "iconLeft": "@atoms/media/icons/svg/icon-audio.twig"
-              }
+        "media": [
+          {
+            "heading": {
+              "text": "Media 1",
+              "level": "3",
+              "class": "ama__h3"
             },
-            {
-              "heading": {
-                "text": "Media 2",
-                "level": "3",
-                "class": "ama__h3"
-              },
-              "link": {
-                "href": "aol.gov",
-                "title": "a link to a thing two",
-                "text": "Link to this video",
-                "class": "ama__link--icon ama__link--no-underline",
-                "iconLeft": "@atoms/media/icons/svg/icon-video.twig"
-              },
-              "video": {
-                "src": "https://player.vimeo.com/video/60673761"
-              },
-              "subtext": {
-                "text": "This is example subtext for a media type.",
-                "class": "ama__type--small"
-              }
-            },
-            {
-              "heading": {
-                "text": "Media 3",
-                "level": "3",
-                "class": "ama__h3"
-              },
-              "link": {
-                "href": "#",
-                "title": "a link to a thing three",
-                "text": "Link to this image",
-                "class": "ama__link--icon ama__link--no-underline",
-                "iconLeft": "@atoms/media/icons/svg/icon-image-gold.twig"
-              },
-              "image": {
-                "alt": "alt text",
-                "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
-                "height": "600",
-                "width": "800"
-              },
-              "subtext": {
-                "text": "This is example subtext for a media type.",
-                "class": "ama__type--small"
-              }
-            },
-            {
-              "heading": {
-                "text": "Media 4",
-                "level": "3",
-                "class": "ama__h3"
-              },
-              "link": {
-                "href": "askjeeves.org",
-                "title": "a link to a thing four",
-                "text": "The Best Podcast Ever",
-                "target": "_self",
-                "class": "ama__link--icon ama__link--no-underline",
-                "iconLeft": "@atoms/media/icons/svg/icon-podcast.twig"
-              }
+            "link": {
+              "href": "yahoo.biz",
+              "title": "a link to a thing",
+              "text": "Lorem ipsum audio.mp4",
+              "target": "_self",
+              "class": "ama__link--icon ama__link--no-underline",
+              "iconLeft": "@atoms/media/icons/svg/icon-audio.twig"
             }
-          ],
+          },
+          {
+            "heading": {
+              "text": "Media 2",
+              "level": "3",
+              "class": "ama__h3"
+            },
+            "link": {
+              "href": "aol.gov",
+              "title": "a link to a thing two",
+              "text": "Link to this video",
+              "class": "ama__link--icon ama__link--no-underline",
+              "iconLeft": "@atoms/media/icons/svg/icon-video.twig"
+            },
+            "video": {
+              "src": "https://player.vimeo.com/video/60673761"
+            },
+            "subtext": {
+              "text": "This is example subtext for a media type.",
+              "class": "ama__type--small"
+            }
+          },
+          {
+            "heading": {
+              "text": "Media 3",
+              "level": "3",
+              "class": "ama__h3"
+            },
+            "link": {
+              "href": "#",
+              "title": "a link to a thing three",
+              "text": "Link to this image",
+              "class": "ama__link--icon ama__link--no-underline",
+              "iconLeft": "@atoms/media/icons/svg/icon-image-gold.twig"
+            },
+            "image": {
+              "alt": "alt text",
+              "src": "https://ipsumimage.appspot.com/800x600x186?l=3:2|800x600&s=36",
+              "height": "600",
+              "width": "800"
+            },
+            "subtext": {
+              "text": "This is example subtext for a media type.",
+              "class": "ama__type--small"
+            }
+          },
+          {
+            "heading": {
+              "text": "Media 4",
+              "level": "3",
+              "class": "ama__h3"
+            },
+            "link": {
+              "href": "askjeeves.org",
+              "title": "a link to a thing four",
+              "text": "The Best Podcast Ever",
+              "target": "_self",
+              "class": "ama__link--icon ama__link--no-underline",
+              "iconLeft": "@atoms/media/icons/svg/icon-podcast.twig"
+            }
+          }
+        ],
         "membership": {
           "heading": {
             "text": "Title for Membership Block"
@@ -175,7 +175,7 @@
             "text": "This is CTA text."
           }
         }
-        }
+      }
     },
     {
       "tabTitle": "Downloads",
@@ -193,11 +193,9 @@
               "level": "5",
               "class": "ama__h5"
             },
-            "tool": {
+            "resourceDownloadLink": {
               "icon": "icon--audio",
-              "paragraph": {
-                "text": "Test Tool Audio"
-              },
+              "text": "Test Tool Audio",
               "type": ".AAC",
               "size": "12.5 MB",
               "link": "https://www.ama-assn.org"
@@ -210,11 +208,9 @@
               "level": "3",
               "class": "ama__h3"
             },
-            "tool": {
+            "resourceDownloadLink": {
               "icon": "icon--pdf",
-              "paragraph": {
-                "text": "Test Tool PDF"
-              },
+              "text": "Test Tool PDF",
               "type": ".PDF",
               "size": "12.5 MB",
               "link": "https://www.ama-assn.org"
@@ -226,11 +222,9 @@
               "level": "3",
               "class": "ama__h3"
             },
-            "tool": {
+            "resourceDownloadLink": {
               "icon": "icon--pdf",
-              "paragraph": {
-                "text": "Test Tool PDF"
-              },
+              "text": "Test Tool PDF",
               "type": ".PDF",
               "size": "12.5 MB",
               "link": "https://www.ama-assn.org"
@@ -303,13 +297,12 @@
       "tabTitle": "Schedules",
       "tabId": "schedules",
       "tabContent": {
-        "schedules":[
+        "schedules": [
           {
             "heading": {
               "level": "3",
               "class": "ama__h3",
               "text": "Schedule 1"
-
             },
             "subheading": {
               "level": "5",
