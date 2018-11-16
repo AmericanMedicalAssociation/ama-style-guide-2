@@ -1,6 +1,7 @@
 .ama__resource-tabs {
   height: 100%;
   border: 0 !important;
+  margin: 0;
 
   @include breakpoint($bp-small) {
     @include gutter($margin-top-half...);
@@ -8,6 +9,7 @@
 }
 
 .ama__resource-tabs__nav.ui-tabs-nav {
+  @include gutter($margin-top-half...);
   position: relative;
   width: 100%;
   background: $purple;
@@ -240,4 +242,8 @@ section#related_links ul {
     list-style: none;
     margin: 0;
   }
+}
+
+#downloads .ama__resource-tabs__item{
+  margin-bottom: $gutter-mobile;
 }
