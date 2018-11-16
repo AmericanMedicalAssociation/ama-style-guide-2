@@ -276,7 +276,8 @@ label {
 
 @media (min-width: 768px) {
   .container {
-    width: 750px; } }
+    width: 750px;
+    padding: 0; } }
 
 @media (min-width: 992px) {
   .container {
@@ -3848,97 +3849,82 @@ a {
   .ama__social-icons li {
     list-style: none; }
 
-/**
- * @file
- * Define responsive table.
- *
- *
+/*
+ * jQuery Basic Table
+ * Author: Jerry Low
  */
 table {
-  display: block;
-  width: 100%;
+  margin-bottom: 10px;
+  background: #ffffff;
   border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid #5C5C5C;
-  table-layout: fixed; }
-  @media (min-width: 37.5em) {
+  border: 1px solid #7F7F7F;
+  width: 100%; }
+  @media (min-width: 56.25em) {
     table {
-      display: table; } }
+      margin-bottom: 14px; } }
+
+table tr,
+table th,
+table td {
+  border: none; }
+
+table th,
+table td {
+  text-align: left;
+  padding: 7px;
+  border: 1px solid #7F7F7F; }
+
+table th {
+  text-transform: uppercase; }
+
+table tr td {
+  background: #CBCBCB; }
+
+table tr:nth-of-type(2n+2) td {
+  background: #ffffff; }
+
+table.bt tbody tr:last-child td {
+  border-bottom: 0; }
+
+table.bt thead {
+  display: none; }
+
+table.bt tbody tr:last-child {
+  border-bottom: 1px solid #7F7F7F; }
+
+table.bt tbody td {
+  border: 0 solid #CBCBCB;
+  display: block;
+  vertical-align: top; }
+  table.bt tbody td:before {
+    content: attr(data-th) ":";
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block; }
+  table.bt tbody td:first-child + table.bt tbody td:first-child {
+    border-top: 1px solid #7F7F7F; }
+  table.bt tbody td:last-child {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #7F7F7F; }
+    @media (min-width: 56.25em) {
+      table.bt tbody td:last-child {
+        padding-bottom: 14px; } }
+  table.bt tbody td .bt-content {
+    vertical-align: top;
+    display: block;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  table.bt tbody td .bt-hide {
+    display: none; }
+
+.bt-wrapper.active {
+  max-height: 310px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
 
 caption {
-  display: block; }
-  @media (min-width: 37.5em) {
-    caption {
-      display: table-caption; } }
-
-thead {
-  display: block; }
-  @media (min-width: 37.5em) {
-    thead {
-      display: table-header-group; } }
-  thead tr {
-    text-transform: uppercase;
-    position: absolute;
-    top: -9999px;
-    left: -9999px; }
-    @media (min-width: 37.5em) {
-      thead tr {
-        position: static; } }
-    thead tr th {
-      display: block;
-      border: 1px solid #7F7F7F;
-      -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto;
-      vertical-align: top; }
-      @media (min-width: 37.5em) {
-        thead tr th {
-          display: table-cell; } }
-
-tbody {
-  display: block; }
-  @media (min-width: 37.5em) {
-    tbody {
-      display: table-row-group; } }
-  tbody tr {
-    display: block; }
-    @media (min-width: 37.5em) {
-      tbody tr {
-        display: table-row; } }
-    tbody tr.odd, tbody tr:nth-child(odd) {
-      background: #EDEDED; }
-    tbody tr td {
-      border: 1px solid #EDEDED;
-      display: block;
-      padding: 2px 2px 2px 50%;
-      position: relative;
-      -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto; }
-      @media (min-width: 37.5em) {
-        tbody tr td {
-          display: table-cell;
-          vertical-align: top;
-          padding: 2px;
-          border: 1px solid #7F7F7F; } }
-      tbody tr td:before {
-        font-weight: bold;
-        text-transform: uppercase;
-        content: attr(data-title);
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        white-space: normal; }
-        @media (min-width: 37.5em) {
-          tbody tr td:before {
-            display: none; } }
-
-tfoot {
-  display: block; }
-  @media (min-width: 37.5em) {
-    tfoot {
-      display: table-header-group; } }
+  text-align: left; }
 
 .ama__tabs {
   border: none !important;
@@ -9663,7 +9649,16 @@ a.ama__membership {
       width: calc(33.33333% - 14px); } }
 
 .ama__resource-tabs {
-  margin: 0; }
+  height: 100%;
+  border: 0 !important;
+  margin: 0;
+  padding: 0; }
+  @media (min-width: 37.5em) {
+    .ama__resource-tabs {
+      margin-top: 10px; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .ama__resource-tabs {
+      margin-top: 14px; } }
 
 .ama__resource-tabs__nav.ui-tabs-nav {
   margin-top: 10px;
@@ -9782,6 +9777,43 @@ li.ui-state-active > [href='#contacts'] .ama__resource-tabs__nav__icon {
   position: relative; }
   .ama__resource-tabs__content .ui-widget-content a.ama__button {
     color: #ffffff; }
+  .ama__resource-tabs__content .ama_resource-subheader {
+    margin-bottom: 10px;
+    padding-left: 5px; }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama_resource-subheader {
+        margin-bottom: 14px; } }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama_resource-subheader {
+        padding-left: 7px; } }
+  .ama__resource-tabs__content .ama_resource-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px; }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama_resource-header {
+        margin-top: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama_resource-header {
+        margin-bottom: 14px; } }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama_resource-header {
+        padding-left: 7px; } }
+  .ama__resource-tabs__content .ama__resource--schedules div:nth-child(1) {
+    margin-bottom: 20px; }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama__resource--schedules div:nth-child(1) {
+        margin-bottom: 28px; } }
+  .ama__resource-tabs__content .ama__resource--schedules div caption,
+  .ama__resource-tabs__content .ama__resource--schedules div .ama__caption {
+    padding-left: 5px; }
+    @media (min-width: 56.25em) {
+      .ama__resource-tabs__content .ama__resource--schedules div caption,
+      .ama__resource-tabs__content .ama__resource--schedules div .ama__caption {
+        padding-left: 7px; } }
+  @media (min-width: 37.5em) {
+    .ama__resource-tabs__content .ama__resource--schedules div table.bt {
+      border-left: 0; } }
 
 .ama__resource-tabs__nav__label {
   display: none; }
@@ -9807,6 +9839,10 @@ li.ui-state-active > [href='#contacts'] .ama__resource-tabs__nav__icon {
   @media (min-width: 37.5em) {
     .ama__resource-tabs__content section#resources.ui-state-active {
       display: none; } }
+
+section#schedules {
+  margin: 0;
+  padding: 0; }
 
 .ama__layout--split__left .ama__masthead > * {
   padding-right: 14px; }
@@ -11122,6 +11158,12 @@ section#related_links ul {
 
 .ama__people-listing .ama__masthead {
   padding: 0; }
+
+.ama__page--resource .ama__layout--split__left {
+  display: none; }
+  @media (min-width: 37.5em) {
+    .ama__page--resource .ama__layout--split__left {
+      display: block; } }
 
 .ama__page--resource__resource-link {
   background: #DAD0E1;
