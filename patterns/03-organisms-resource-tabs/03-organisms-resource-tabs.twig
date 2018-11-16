@@ -69,8 +69,8 @@
           {% include '@atoms/heading/heading.twig' %}
         {% endif %}
 
-        {% set tool = download.tool %}
-        {% include '@molecules/tool/tool.twig' %}
+        {% set downloadLink = download.resourceDownloadLink %}
+        {% include '@molecules/download-link.twig' %}
 
         {% if download.subtext %}
           <p class="ama__type--small">{{ link.subtext }}</p>
