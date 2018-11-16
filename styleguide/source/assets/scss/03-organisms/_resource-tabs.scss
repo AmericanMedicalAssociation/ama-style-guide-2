@@ -167,15 +167,22 @@ li {
 
   .ama_resource-subheader {
     @include gutter($margin-bottom-half...);
+    padding: 0 $gutter/2;
   }
 
-  .ama_resource-header + .ama_resource-header {
+  .ama_resource-header {
+    @include gutter($margin-top-full...);
     @include gutter($margin-bottom-half...);
+    padding: 0 $gutter/2;
   }
 
   .ama__resource--schedules div {
     &:nth-child(1) {
       @include gutter($margin-bottom-full...);
+    }
+
+    .ama__caption {
+      padding: 0 $gutter/2;
     }
   }
 }
