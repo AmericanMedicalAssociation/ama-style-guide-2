@@ -116,7 +116,9 @@
         {% set heading = schedule.subheading %}
         {% include '@atoms/heading/heading.twig' %}
         {% set table = schedule.table %}
-        {% include '@atoms/table.twig' %}
+        <div>
+          {% include '@atoms/table.twig' %}
+        </div>
       </div>
       {% endfor %}
 

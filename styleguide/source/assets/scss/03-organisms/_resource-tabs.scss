@@ -2,6 +2,7 @@
   height: 100%;
   border: 0 !important;
   margin: 0;
+  padding: 0;
 
   @include breakpoint($bp-small) {
     @include gutter($margin-top-half...);
@@ -183,10 +184,10 @@ li {
       @include gutter($margin-bottom-full...);
     }
 
+    caption,
     .ama__caption {
       @include gutter($padding-left-quarter...);
     }
-
 
     table.bt {
       @include breakpoint($bp-small) {
