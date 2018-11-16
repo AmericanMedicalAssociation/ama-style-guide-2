@@ -1,5 +1,12 @@
 .ama__resource-tabs {
+  height: 100%;
+  border: 0 !important;
   margin: 0;
+  padding: 0;
+
+  @include breakpoint($bp-small) {
+    @include gutter($margin-top-half...);
+  }
 }
 
 .ama__resource-tabs__nav.ui-tabs-nav {
@@ -160,6 +167,34 @@ li {
   .ui-widget-content a.ama__button {
     color: $white;
   }
+
+  .ama_resource-subheader {
+    @include gutter($margin-bottom-half...);
+    @include gutter($padding-left-quarter...);
+  }
+
+  .ama_resource-header {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-half...);
+    @include gutter($padding-left-quarter...);
+  }
+
+  .ama__resource--schedules div {
+    &:nth-child(1) {
+      @include gutter($margin-bottom-full...);
+    }
+
+    caption,
+    .ama__caption {
+      @include gutter($padding-left-quarter...);
+    }
+
+    table.bt {
+      @include breakpoint($bp-small) {
+        border-left: 0;
+      }
+    }
+  }
 }
 
 .ama__resource-tabs__nav__label {
@@ -186,7 +221,6 @@ li {
   > * + * {
     margin-top: $gutter;
   }
-
 }
 
 .ama__resource-tabs__content section#resources.ui-state-active {
@@ -194,6 +228,11 @@ li {
   @include breakpoint($bp-small) {
     display: none;
   }
+}
+
+section#schedules {
+  margin: 0;
+  padding: 0;
 }
 
 .ama__layout--split__left .ama__masthead > * {
