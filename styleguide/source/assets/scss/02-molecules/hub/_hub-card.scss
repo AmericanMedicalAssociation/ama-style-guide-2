@@ -50,6 +50,19 @@
     }
   }
 
+  //IE11 hack becaue IE does not understand object-fit
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    //This targets all hub cards in IE11
+    &__image .ama__image {
+      max-height: 186px;
+    }
+    //This targets all hub hero images and prevents them from having a max-height
+    &.ama__hub-hero .ama__hub-card__image .ama__image {
+      max-height: none;
+    }
+  }
+
   @at-root {
     a:hover#{&} {
       background-color: darken($gray-7, 10%);
