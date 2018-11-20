@@ -49,6 +49,8 @@
         // Update viewable subcategories.
         $subcategory.hide();
         $subcategory.slice(0, subcategoryItemsPerRow).css('display', 'inline-block');
+
+        viewMore();
       }
 
       function viewMore() {
@@ -93,7 +95,6 @@
 
       // run test on initial page load
       checkSize();
-      viewMore();
 
       // run test on resize of the window
       $(window).resize(function () {
