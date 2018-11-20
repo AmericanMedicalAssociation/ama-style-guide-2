@@ -11,39 +11,44 @@
   Drupal.behaviors.subcategories = {
     attach: function (context, settings) {
 
+      // Create static var for subcategory item count. To be used for determining whether recalculations are needed.
+      var subcategoryExplorationColumns = 0;
+
       function checkSize() {
         var $subcategory = $('.ama__subcategory-exploration__subcategory');
+        var $subcategoryContainer = $('.ama__subcategory-exploration-with-images__container');
         var $subcategoryTitle = $('.ama__subcategory-exploration-with-images__title');
         // We want the width minus padding so use width() instead of innerWidth().
         var subcategoryExplorationWidth = $('.ama__subcategory-exploration-with-images').width();
         // Subcategory items have max-width of 180px. This will be used for calculations instead of extracting it via jQuery calls.
         var subcategoryItemWidth = 180;
         var subcategoryTitleWidth = $subcategoryTitle.outerWidth();
+        var totalGridItems = $subcategory.length + 1;
+        // Start column count as lowest possible.
+        var columnCount = 2;
         // Set subcategory row items to lowest that should display.
         var subcategoryItemsPerRow = Math.floor((subcategoryExplorationWidth - subcategoryTitleWidth) / subcategoryItemWidth);
 
         if (subcategoryItemsPerRow < 2) {
           // The minimum subcategory items per row should be two. If the variable computed to less, manually correct it.
           subcategoryItemsPerRow = 2;
+          totalGridItems = totalGridItems - 1;
+        } else {
+          columnCount = subcategoryItemsPerRow + 1;
+        }
+
+        // Determine if changes in column count has occurred and act accordingly
+        if (subcategoryExplorationColumns !== columnCount) {
+          // Determine additional "filler-box" needed to create complete row
+          var fillerBoxCount = columnCount - (totalGridItems % columnCount);
+          fillGridRow($subcategoryContainer, fillerBoxCount);
+          // Update persistent column count
+          subcategoryExplorationColumns = columnCount;
         }
 
         // Update viewable subcategories.
         $subcategory.hide();
         $subcategory.slice(0, subcategoryItemsPerRow).css('display', 'inline-block');
-
-        // When more than 2 subcategory items per row the subcategory exploration title will act just as the as individual subcategory items. Calculate margins appropriately.
-        if (subcategoryItemsPerRow > 2) {
-          var appropriateMargin = calculateHorizontalMargins(subcategoryItemsPerRow + 1, subcategoryItemWidth, subcategoryExplorationWidth);
-          $subcategoryTitle.css({
-            'margin-left': appropriateMargin,
-            'margin-right': appropriateMargin,
-          });
-
-          $subcategory.css({
-            'margin-left': appropriateMargin,
-            'margin-right': appropriateMargin,
-          });
-        }
       }
 
       function viewMore() {
@@ -57,7 +62,6 @@
 
         $('.viewAll').click(function (e) {
           e.preventDefault();
-          checkSize();
           $subcategory.fadeIn();
           $viewMore.hide();
           $subcategoryContainer.addClass('expanded');
@@ -75,11 +79,16 @@
         });
       }
 
-      function calculateHorizontalMargins(columnCount, columnWidth, areaWidth) {
-        // Determine margins based on calculated widths.
-        var emptySpace = areaWidth - (columnWidth * columnCount);
-        var appropriateMargin = emptySpace / columnCount / 2;
-        return appropriateMargin;
+
+      function fillGridRow($container, count) {
+        var fillerBox = '<div class="filler-box"></div>';
+        // clear out current filler boxes
+        var $fillerBoxes = $container.find('.filler-box');
+        $fillerBoxes.remove();
+        // fill out grid row
+        for (var i = 0; i < count; i++) {
+          $container.append(fillerBox);
+        }
       }
 
       // run test on initial page load

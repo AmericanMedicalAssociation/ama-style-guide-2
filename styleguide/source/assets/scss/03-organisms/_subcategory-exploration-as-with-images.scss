@@ -32,14 +32,14 @@
     @include breakpoint($bp-small) {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: space-around;
     }
 
     &.expanded {
       @include breakpoint($bp-small) {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
       }
     }
   }
