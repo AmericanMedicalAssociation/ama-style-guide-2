@@ -51,6 +51,10 @@
 
   //IE11 hack becaue IE does not understand object-fit
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Select only first child div without any classes.
+    > div:not([class]) {
+      flex-shrink: 0;
+    }
 
     //This targets all hub cards in IE11
     &__image {
