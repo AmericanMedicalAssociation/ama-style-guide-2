@@ -60,26 +60,6 @@
         text-decoration: none;
       }
 
-      .sub-arrow {
-        position: absolute;
-        right: 10px;
-        top: 15px;
-        width: 0;
-        height: 0;
-        border-left: 6px solid $white;
-        border-top: 6px solid transparent;
-        border-bottom: 6px solid transparent;
-        transition: all 0.21s ease-out;
-      }
-
-      &.highlighted .sub-arrow {
-        transform: rotate(90deg);
-
-        @include breakpoint($bp-small) {
-          transform: none;
-        }
-      }
-
       @include breakpoint($bp-small) {
         &.has-submenu.highlighted {
           &:after {
@@ -127,6 +107,7 @@
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
+      margin-left: 250px !important;
     }
 
     @include breakpoint($bp-large) {
