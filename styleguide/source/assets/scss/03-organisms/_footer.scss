@@ -28,13 +28,20 @@
   }
 
   .ama__social-share {
-    @include breakpoint(max-width $bp-small){
-        margin: $gutter-mobile auto;
-    }
     a {
       height: 50px;
       width: 50px;
       background-size: 50px;
+    }
+
+    @include breakpoint(max-width $bp-small){
+        margin: $gutter-mobile auto;
+
+        a {
+          height: 43px;
+          width: 43px;
+          background-size: 43px;
+        }
     }
   }
   .ama__site-logo--footer img{
