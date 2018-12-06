@@ -1,0 +1,11 @@
+.frieda {
+ .paragraph--type--wysiwyg-2-column {
+   @include breakpoint($bp-med) {
+     display: flex;
+
+     > div {
+       flex: 50%;
+     }
+   }
+ }
+}
