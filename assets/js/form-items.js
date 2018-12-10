@@ -37,6 +37,10 @@
             $('#block-exposedformacquia-searchpage').submit();
           });
 
+          $('.ama__select-menu__select').on('selectmenuchange', function() {
+            $(this).trigger('change');
+          });
+
           // Start search filter
 
           var availableTags = [
