@@ -50,6 +50,24 @@
     width: 100%;
   }
 
+  &--inline-banner {
+    @include gutter($padding-bottom-half...);
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+    padding-top: 0;
+    border-bottom: 1px solid $gray-50;
+
+    @include breakpoint($bp-med) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    a {
+      @extend .ama__link--blue;
+      @extend .ama__h2;
+    }
+  }
+
   //Hompage
   &--homepage {
     @include gutter-all($padding-all-full...);
