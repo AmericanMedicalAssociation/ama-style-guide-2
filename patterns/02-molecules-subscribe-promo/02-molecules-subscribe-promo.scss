@@ -11,6 +11,10 @@
 
   &__form {
     .ama__button {
+      // Fix appearance issues on Safari iOS.
+      -webkit-appearance: none;
+      border-radius: 0;
+
       @extend .ama__button--homepage;
       display: block;
       margin: 0 auto;

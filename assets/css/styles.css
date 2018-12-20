@@ -624,7 +624,7 @@ body {
     body {
       font-size: 18px; } }
 
-h1 a, .ama__h1 a, .ama__page-title a, h2.news a, .ama__h2 a, .ama__link-list--mobile .ui-accordion-header a, .ama__form-steps__label__text a, .ama__subtitle a, h3 a, .ama__expand-list .ui-accordion-header__text a, .ama__expand-list__header__text a, .ama__h3 a, .ama__category-hero__title a, .ama__subcategory-hero__title a, .ama__form-steps__step a, .ama__form-steps__step.ui-accordion-header a, .ama__form-steps__icon a, .ama__masthead__content .ama__subtitle a, h4 a, .ama__h4 a, .ama__tabs .ama__agenda-date a.ui-tabs-anchor a, .ama__accordion-tab.ui-state-default a, .ama__masthead__content__link a, h5 a, .ama__h5 a, div[role=alert] a {
+h1 a, .ama__h1 a, .ama__page-title a, h2.news a, .ama__h2 a, .ama__link-list--mobile .ui-accordion-header a, .ama__promo--inline-banner a a, .ama__form-steps__label__text a, .ama__subtitle a, h3 a, .ama__expand-list .ui-accordion-header__text a, .ama__expand-list__header__text a, .ama__h3 a, .ama__category-hero__title a, .ama__subcategory-hero__title a, .ama__form-steps__step a, .ama__form-steps__step.ui-accordion-header a, .ama__form-steps__icon a, .ama__masthead__content .ama__subtitle a, h4 a, .ama__h4 a, .ama__tabs .ama__agenda-date a.ui-tabs-anchor a, .ama__accordion-tab.ui-state-default a, .ama__masthead__content__link a, h5 a, .ama__h5 a, div[role=alert] a {
   font-weight: inherit;
   font-size: inherit; }
 
@@ -672,6 +672,7 @@ h1,
 h2.news,
 .ama__h2,
 .ama__link-list--mobile .ui-accordion-header,
+.ama__promo--inline-banner a,
 .ama__form-steps__label__text,
 .ama__subtitle {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -683,6 +684,7 @@ h2.news,
     h2.news,
     .ama__h2,
     .ama__link-list--mobile .ui-accordion-header,
+    .ama__promo--inline-banner a,
     .ama__form-steps__label__text,
     .ama__subtitle {
       font-size: 1.3em;
@@ -691,6 +693,7 @@ h2.news,
     h2.news,
     .ama__h2,
     .ama__link-list--mobile .ui-accordion-header,
+    .ama__promo--inline-banner a,
     .ama__form-steps__label__text,
     .ama__subtitle {
       font-size: 1.444em;
@@ -699,6 +702,7 @@ h2.news,
     h2.news,
     .ama__h2,
     .ama__link-list--mobile .ui-accordion-header,
+    .ama__promo--inline-banner a,
     .ama__form-steps__label__text,
     .ama__subtitle {
       font-size: 1.444em;
@@ -707,6 +711,7 @@ h2.news,
     h2.news,
     .ama__h2,
     .ama__link-list--mobile .ui-accordion-header,
+    .ama__promo--inline-banner a,
     .ama__form-steps__label__text,
     .ama__subtitle {
       margin-bottom: 14px; } }
@@ -3107,19 +3112,19 @@ a {
     text-decoration: underline;
     background-color: transparent; }
 
-.ama__link--blue, .ama__applied-filters__tag__remove,
+.ama__link--blue, .ama__applied-filters__tag__remove, .ama__promo--inline-banner a,
 .ama__masthead__content__link {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none; }
-  .ama__link--blue span, .ama__applied-filters__tag__remove span,
+  .ama__link--blue span, .ama__applied-filters__tag__remove span, .ama__promo--inline-banner a span,
   .ama__masthead__content__link span {
     text-decoration: none; }
-  .ama__link--blue:link, .ama__applied-filters__tag__remove:link, .ama__link--blue:visited, .ama__applied-filters__tag__remove:visited,
+  .ama__link--blue:link, .ama__applied-filters__tag__remove:link, .ama__promo--inline-banner a:link, .ama__link--blue:visited, .ama__applied-filters__tag__remove:visited, .ama__promo--inline-banner a:visited,
   .ama__masthead__content__link:link,
   .ama__masthead__content__link:visited {
     color: #027DBC; }
-  .ama__link--blue:active, .ama__applied-filters__tag__remove:active, .ama__link--blue:hover, .ama__applied-filters__tag__remove:hover, .ama__link--blue:focus, .ama__applied-filters__tag__remove:focus,
+  .ama__link--blue:active, .ama__applied-filters__tag__remove:active, .ama__promo--inline-banner a:active, .ama__link--blue:hover, .ama__applied-filters__tag__remove:hover, .ama__promo--inline-banner a:hover, .ama__link--blue:focus, .ama__applied-filters__tag__remove:focus, .ama__promo--inline-banner a:focus,
   .ama__masthead__content__link:active,
   .ama__masthead__content__link:hover,
   .ama__masthead__content__link:focus {
@@ -4673,11 +4678,11 @@ figcaption {
 
 .ama__page--news__teasers .ama__h5--purple {
   font-size: 12px;
-  font-weight: normal; }
+  font-weight: bold; }
 
 .ama__page--news__teasers .ama__article-stub__title {
   font-size: 12px;
-  font-weight: normal; }
+  font-weight: bold; }
 
 .ama__category-hero a {
   text-decoration: none; }
@@ -6332,6 +6337,25 @@ figcaption {
     height: auto; }
   .ama__promo .ama__button--secondary, .ama__promo--background .ama__button--secondary, .ama__promo--border .ama__button--secondary {
     width: 100%; }
+  .ama__promo--inline-banner {
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 0;
+    border-bottom: 1px solid #7F7F7F; }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline-banner {
+        padding-bottom: 14px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline-banner {
+        margin-top: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline-banner {
+        margin-bottom: 28px; } }
+    @media (min-width: 56.25em) {
+      .ama__promo--inline-banner {
+        padding-left: 0;
+        padding-right: 0; } }
   .ama__promo--homepage {
     padding: 20px;
     background: #46166B;
@@ -7159,6 +7183,8 @@ a.ama__promo--border:hover {
   .ama__subscribe-promo__subject-title {
     padding-bottom: 14px; }
   .ama__subscribe-promo__form .ama__button {
+    -webkit-appearance: none;
+    border-radius: 0;
     display: block;
     margin: 0 auto;
     padding: 12.72727px;
@@ -7612,14 +7638,18 @@ article[class*='__page-content'] .ama__tags {
   .ama__hub-card__heading,
   .ama__hub-card .ama__h2,
   .ama__hub-card .ama__link-list--mobile .ui-accordion-header,
-  .ama__link-list--mobile .ama__hub-card .ui-accordion-header {
+  .ama__link-list--mobile .ama__hub-card .ui-accordion-header,
+  .ama__hub-card .ama__promo--inline-banner a,
+  .ama__promo--inline-banner .ama__hub-card a {
     margin-top: 20px;
     margin-bottom: 0; }
     @media (min-width: 56.25em) {
       .ama__hub-card__heading,
       .ama__hub-card .ama__h2,
       .ama__hub-card .ama__link-list--mobile .ui-accordion-header,
-      .ama__link-list--mobile .ama__hub-card .ui-accordion-header {
+      .ama__link-list--mobile .ama__hub-card .ui-accordion-header,
+      .ama__hub-card .ama__promo--inline-banner a,
+      .ama__promo--inline-banner .ama__hub-card a {
         margin-top: 28px; } }
   .ama__hub-card__description {
     padding: 20px;
@@ -7638,8 +7668,7 @@ article[class*='__page-content'] .ama__tags {
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    height: 100%; }
+    display: flex; }
     .ama__hub-card__image .ama__image {
       height: auto;
       width: 100%;
@@ -7649,6 +7678,17 @@ article[class*='__page-content'] .ama__tags {
       height: auto;
       width: 100%;
       padding: 0; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .ama__hub-card > div:not([class]) {
+      -ms-flex-negative: 0;
+      flex-shrink: 0; }
+    .ama__hub-card__image {
+      height: auto; }
+      .ama__hub-card__image .ama__image {
+        max-height: 400px; }
+    .ama__hub-card.ama__hub-hero .ama__hub-card__image .ama__image {
+      max-width: 100%;
+      max-height: none; } }
   a:hover.ama__hub-card {
     background-color: #d4d4d4; }
   .ama__hub-card--no-image {
@@ -7862,29 +7902,39 @@ article[class*='__page-content'] .ama__tags {
   .ama__hub-hero__heading,
   .ama__hub-hero .ama__h2,
   .ama__hub-hero .ama__link-list--mobile .ui-accordion-header,
-  .ama__link-list--mobile .ama__hub-hero .ui-accordion-header {
+  .ama__link-list--mobile .ama__hub-hero .ui-accordion-header,
+  .ama__hub-hero .ama__promo--inline-banner a,
+  .ama__promo--inline-banner .ama__hub-hero a {
     padding-top: 10px;
     margin-bottom: 10px; }
     @media (min-width: 56.25em) {
       .ama__hub-hero__heading,
       .ama__hub-hero .ama__h2,
       .ama__hub-hero .ama__link-list--mobile .ui-accordion-header,
-      .ama__link-list--mobile .ama__hub-hero .ui-accordion-header {
+      .ama__link-list--mobile .ama__hub-hero .ui-accordion-header,
+      .ama__hub-hero .ama__promo--inline-banner a,
+      .ama__promo--inline-banner .ama__hub-hero a {
         padding-top: 14px; } }
     @media (min-width: 56.25em) {
       .ama__hub-hero__heading,
       .ama__hub-hero .ama__h2,
       .ama__hub-hero .ama__link-list--mobile .ui-accordion-header,
-      .ama__link-list--mobile .ama__hub-hero .ui-accordion-header {
+      .ama__link-list--mobile .ama__hub-hero .ui-accordion-header,
+      .ama__hub-hero .ama__promo--inline-banner a,
+      .ama__promo--inline-banner .ama__hub-hero a {
         margin-bottom: 14px; } }
     .ama__hub-hero__heading h1,
     .ama__hub-hero__heading h2,
     .ama__hub-hero .ama__h2 h1,
     .ama__hub-hero .ama__link-list--mobile .ui-accordion-header h1,
     .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h1,
+    .ama__hub-hero .ama__promo--inline-banner a h1,
+    .ama__promo--inline-banner .ama__hub-hero a h1,
     .ama__hub-hero .ama__h2 h2,
     .ama__hub-hero .ama__link-list--mobile .ui-accordion-header h2,
-    .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h2 {
+    .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h2,
+    .ama__hub-hero .ama__promo--inline-banner a h2,
+    .ama__promo--inline-banner .ama__hub-hero a h2 {
       padding-top: 10px;
       margin-bottom: 10px; }
       @media (min-width: 56.25em) {
@@ -7893,9 +7943,13 @@ article[class*='__page-content'] .ama__tags {
         .ama__hub-hero .ama__h2 h1,
         .ama__hub-hero .ama__link-list--mobile .ui-accordion-header h1,
         .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h1,
+        .ama__hub-hero .ama__promo--inline-banner a h1,
+        .ama__promo--inline-banner .ama__hub-hero a h1,
         .ama__hub-hero .ama__h2 h2,
         .ama__hub-hero .ama__link-list--mobile .ui-accordion-header h2,
-        .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h2 {
+        .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h2,
+        .ama__hub-hero .ama__promo--inline-banner a h2,
+        .ama__promo--inline-banner .ama__hub-hero a h2 {
           padding-top: 14px; } }
       @media (min-width: 56.25em) {
         .ama__hub-hero__heading h1,
@@ -7903,12 +7957,17 @@ article[class*='__page-content'] .ama__tags {
         .ama__hub-hero .ama__h2 h1,
         .ama__hub-hero .ama__link-list--mobile .ui-accordion-header h1,
         .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h1,
+        .ama__hub-hero .ama__promo--inline-banner a h1,
+        .ama__promo--inline-banner .ama__hub-hero a h1,
         .ama__hub-hero .ama__h2 h2,
         .ama__hub-hero .ama__link-list--mobile .ui-accordion-header h2,
-        .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h2 {
+        .ama__link-list--mobile .ama__hub-hero .ui-accordion-header h2,
+        .ama__hub-hero .ama__promo--inline-banner a h2,
+        .ama__promo--inline-banner .ama__hub-hero a h2 {
           margin-bottom: 14px; } }
   .ama__hub-hero__copy, .ama__hub-hero__text {
-    padding: 20px; }
+    padding: 20px;
+    width: 100%; }
     .ama__hub-hero__copy breakpoint($bp-med), .ama__hub-hero__text breakpoint($bp-med) {
       padding: 28px; }
   .ama__hub-hero__list {
@@ -8092,6 +8151,8 @@ article[class*='__page-content'] .ama__tags {
   .ama__hub-hero--split .ama__h2,
   .ama__hub-hero--split .ama__link-list--mobile .ui-accordion-header,
   .ama__link-list--mobile .ama__hub-hero--split .ui-accordion-header,
+  .ama__hub-hero--split .ama__promo--inline-banner a,
+  .ama__promo--inline-banner .ama__hub-hero--split a,
   .ama__hub-hero--split .ama__hub-hero__copy,
   .ama__hub-hero--split p,
   .ama__hub-hero--split .ama__jama .ama__image__text .ama__image__text__subtitle,
@@ -8103,6 +8164,8 @@ article[class*='__page-content'] .ama__tags {
     .ama__hub-hero--split .ama__h2 breakpoint($bp-med),
     .ama__hub-hero--split .ama__link-list--mobile .ui-accordion-header breakpoint($bp-med),
     .ama__link-list--mobile .ama__hub-hero--split .ui-accordion-header breakpoint($bp-med),
+    .ama__hub-hero--split .ama__promo--inline-banner a breakpoint($bp-med),
+    .ama__promo--inline-banner .ama__hub-hero--split a breakpoint($bp-med),
     .ama__hub-hero--split .ama__hub-hero__copy breakpoint($bp-med),
     .ama__hub-hero--split p breakpoint($bp-med),
     .ama__hub-hero--split .ama__jama .ama__image__text .ama__image__text__subtitle breakpoint($bp-med),
@@ -9975,10 +10038,24 @@ section#related_links ul {
     overflow: hidden;
     width: 100%; }
     .ama__subcategory-exploration-with-images__container > * {
-      padding-left: 10px; }
+      padding-left: 10px;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 10px;
+      padding-right: 10px; }
       @media (min-width: 56.25em) {
         .ama__subcategory-exploration-with-images__container > * {
           padding-left: 14px; } }
+      @media (min-width: 37.5em) {
+        .ama__subcategory-exploration-with-images__container > * {
+          margin-left: auto;
+          margin-right: auto;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 180px;
+          flex: 0 0 180px;
+          max-width: 180px; } }
     @media (min-width: 37.5em) {
       .ama__subcategory-exploration-with-images__container {
         display: -webkit-box;
@@ -9990,15 +10067,32 @@ section#related_links ul {
         flex-direction: row;
         -ms-flex-pack: distribute;
         justify-content: space-around; } }
+    @media (min-width: 37.5em) {
+      .ama__subcategory-exploration-with-images__container.expanded {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: distribute;
+        justify-content: space-around; } }
   .ama__subcategory-exploration-with-images__title {
     margin-top: 20px;
-    width: 100%; }
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%; }
     @media (min-width: 56.25em) {
       .ama__subcategory-exploration-with-images__title {
         margin-top: 28px; } }
     @media (min-width: 37.5em) {
       .ama__subcategory-exploration-with-images__title {
-        width: 15%; } }
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 180px;
+        flex: 0 0 180px;
+        max-width: 180px; } }
   .ama__subcategory-exploration-with-images__view-all, .ama__subcategory-exploration-with-images__view-less {
     clear: both;
     text-align: right;
