@@ -150,10 +150,17 @@
     }
 
     ol {
-      @include gutter-all($padding-all-half...);
+      padding: 10px 28px;
       list-style: none;
 
+      @include breakpoint($bp-small) {
+        @include gutter-all($padding-all-half...);
+      }
+
       li {
+        padding: 0px;
+        margin: 0px;
+
         a {
           @include gutter($padding-left-half...);
           @include gutter($padding-right-half...);
@@ -167,15 +174,18 @@
             text-decoration: underline;
           }
         }
-      }
-    }
 
-    &__header {
-      @include gutter($margin-bottom-half...);
-      @include gutter($padding-left-half...);
-      @include gutter($padding-right-half...);
-      color: $homepagePurple;
-      text-transform: uppercase;
+        &.ama_category_navigation_menu__submenu__header {
+
+          @include breakpoint($bp-small) {
+            @include gutter($margin-bottom-half...);
+            @include gutter($padding-left-half...);
+            @include gutter($padding-right-half...);
+          }
+          color: $homepagePurple;
+          text-transform: uppercase;
+        }
+      }
     }
   }
 
