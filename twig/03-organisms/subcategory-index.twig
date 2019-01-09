@@ -15,8 +15,10 @@
 {% block contentLeft %}
   <div class="ama__subcategory-index__stubs">
     {% for stub in subcategoryIndex.articleStubs %}
-      {% set subCatArticleStub = stub %}
-      {% include '@molecules/subcategory-page-article-stub.twig' %}
+      <div class="ama__subcategory-index__stub">
+        {% set subCatArticleStub = stub %}
+        {% include '@molecules/subcategory-page-article-stub.twig' %}
+      </div>
     {% endfor %}
   </div>
 

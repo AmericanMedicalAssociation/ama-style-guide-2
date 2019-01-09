@@ -1,10 +1,10 @@
 <nav id="ama_category_navigation_menu" class="ama_category_navigation_menu">
   {% for menuGroup in categoryNavigationMenu.menuGroups %}
-    <ul class="ama_category_navigation_menu__group">
+    <ul class="ama_category_navigation_menu__group sm sm-vertical">
       {% for group in menuGroup.group %}
         {% set link = group.link %}
         {% set heading = group.heading %}
-        <li class="ama_category_navigation_menu__section">
+        <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
           {% if heading %}
             {% include "@atoms/heading/heading.twig" %}
           {% else %}

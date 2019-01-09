@@ -10,7 +10,6 @@
 
 
 jQuery('.ama_category_navigation_menu__group').smartmenus({
-  mainMenuSubOffsetX: 250,
-  mainMenuSubOffsetY: 20,
-  keepInViewport: true
+  subMenusSubOffsetY: -28,
+  subIndicatorsPos: 'append'
 });

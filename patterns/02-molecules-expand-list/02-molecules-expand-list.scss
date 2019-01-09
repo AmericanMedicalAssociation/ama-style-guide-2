@@ -70,6 +70,9 @@
     @include gutter($padding-top-half...);
     @include gutter($padding-bottom-half...);
     width: 100%;
+
+    // Avoid overlapping on expand / contract.
+    min-height: 72px;
   }
 
   .ui-accordion-content {
