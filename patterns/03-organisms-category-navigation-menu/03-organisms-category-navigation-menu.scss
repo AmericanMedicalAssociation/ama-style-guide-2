@@ -21,7 +21,7 @@
     }
   }
 
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     flex-direction: row;
 
     &__article-container {
@@ -124,15 +124,13 @@
 
     @include breakpoint($bp-small) {
       position: absolute;
-      top: -50px !important;
-      left: 40px !important;
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
+      margin-left: 250px !important;
     }
 
-    @include breakpoint($bp-med) {
-      left: 0 !important;
+    @include breakpoint($bp-large) {
       width: 940px !important;
       max-width: none !important;
     }
@@ -150,10 +148,17 @@
     }
 
     ol {
-      @include gutter-all($padding-all-half...);
+      padding: 10px 28px;
       list-style: none;
 
+      @include breakpoint($bp-small) {
+        @include gutter-all($padding-all-half...);
+      }
+
       li {
+        padding: 0px;
+        margin: 0px;
+
         a {
           @include gutter($padding-left-half...);
           @include gutter($padding-right-half...);
@@ -167,15 +172,18 @@
             text-decoration: underline;
           }
         }
-      }
-    }
 
-    &__header {
-      @include gutter($margin-bottom-half...);
-      @include gutter($padding-left-half...);
-      @include gutter($padding-right-half...);
-      color: $homepagePurple;
-      text-transform: uppercase;
+        &.ama_category_navigation_menu__submenu__header {
+
+          @include breakpoint($bp-small) {
+            @include gutter($margin-bottom-half...);
+            @include gutter($padding-left-half...);
+            @include gutter($padding-right-half...);
+          }
+          color: $homepagePurple;
+          text-transform: uppercase;
+        }
+      }
     }
   }
 
@@ -204,7 +212,13 @@
         }
       }
 
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-small) {
+        &:nth-child(2):nth-last-child(1) {
+          @include gutter($margin-top-full...);
+        }
+      }
+
+      @include breakpoint($bp-large) {
         @include gutter($margin-left-full...);
 
         &:nth-child(1) {
@@ -213,6 +227,7 @@
         }
 
         &:nth-child(2):nth-last-child(1) {
+          margin-top: 0;
           margin-left: 12px;
           width: 50%;
         }
@@ -229,7 +244,7 @@
       width: 250px;
     }
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       flex-direction: row;
       width: 690px;
     }

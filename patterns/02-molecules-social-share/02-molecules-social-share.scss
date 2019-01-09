@@ -54,6 +54,10 @@ $social-icons: (
     &:first-child {
       margin-left: 0;
     }
+
+    @include breakpoint(max-width $bp-small){
+      flex-grow: 1;
+    }
   }
 
   li ~ li {

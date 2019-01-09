@@ -21,9 +21,6 @@
   }
 
   .ama__subcategory-page-article-stub {
-    &:first-child {
-      padding-top: 0;
-    }
 
     &:nth-child(n+7) {
       @include breakpoint($bp-small max-width) {
@@ -37,6 +34,14 @@
 
     padding: $gutter 0;
     border-bottom: solid 2px $gray-7;
+  }
+
+  .ama__subcategory-index__stub {
+
+    &:first-child .ama__subcategory-page-article-stub {
+      padding-top: 0;
+    }
+
   }
 
   .ama__subcategory-index__stubs__load-more {
