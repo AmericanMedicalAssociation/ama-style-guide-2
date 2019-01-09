@@ -268,20 +268,12 @@
           });
 
           // Open accordion panels for mobile
-          $('.ama__applied-filters__show-filters').click(function(){
-            $('.ama__expand-list, .ama__applied-filters__tags').slideDown();
-            $('.ama__filter__see-results').fadeIn();
-            $(this).fadeOut();
+          $('.ama__applied-filters__show-filters').once().click(function(){
+            $('.ama__expand-list, .ama__applied-filters__tags').slideToggle(function() {
+              $('.ama__applied-filters__show-filters').text($(this).is(':visible') ? 'Hide Filter' : 'Filter');
+            });
           });
 
-          // Close accordion panels
-          $('.ama__filter__see-results').click(function(){
-            $('.ama__expand-list, .ama__applied-filters__tags').slideUp();
-            $('.ama__applied-filters__show-filters').fadeIn();
-            $(this).fadeOut();
-          });
-
-          // search filter
           function listFilter(input, list) { // header is any element, list is an unordered list
             // custom css expression for a case-insensitive contains()
             jQuery.expr[':'].Contains = function(a,i,m){
