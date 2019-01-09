@@ -268,7 +268,7 @@
           });
 
           // Open accordion panels for mobile
-          $('.ama__applied-filters__show-filters').once().click(function(){
+          $('.ama__applied-filters__show-filters').unbind('click').click(function(){
             $('.ama__expand-list, .ama__applied-filters__tags').slideToggle(function() {
               $('.ama__applied-filters__show-filters').text($(this).is(':visible') ? 'Hide Filter' : 'Filter');
             });
