@@ -1,0 +1,55 @@
+<form id="bpCalculator" class="bp-calculator">
+  <table class="bpCalculator__table simpleTable">
+    <thead class="thead">
+      <tr>
+        <th class="bpCalculator__table__header bpCalculator__table__header--reading">BP Reading</th>
+        <th class="bpCalculator__table__header">Systolic BP</th>
+        <th class="bpCalculator__table__header">Diastolic BP</th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr>
+        <td class="bpCalculator__table__index">
+          <p>1</p>
+        </td>
+        <td>
+          <input name="bpCalculator__systolic-input" class="bpCalculator__systolic-input" type="number" value="" min="70" max="150" minlength="2" required>
+        </td>
+        <td>
+          <input name="bpCalculator__systolic-input-2" class="bpCalculator__diastolic-input" type="number" value="" minlength="2" min="50" max="91" required>
+        </td>
+      </tr>
+      <tr>
+        <td class="bpCalculator__table__index">
+          <p>2</p>
+        </td>
+        <td>
+          <input name="bpCalculator__systolic-input-2" class="bpCalculator__systolic-input" type="number" value="" minlength="2" min="70" max="150" >
+        </td>
+        <td>
+          <input name="bpCalculator__systolic-input-2"  class="bpCalculator__diastolic-input" type="number" value="" minlength="2" min="50" max="91">
+        </td>
+      </tr>
+    </tbody>
+    <tfoot class="tfoot">
+      <tr>
+        <td colspan="3">
+          <button class="add-bp-row ama__button--link">+ Add BP Reading</button>
+        </td>
+      </tr>
+      <tr class="bpCalculator__table__output">
+        <td class="bpCalculator__table__average">Average</td>
+        <td>
+          <input class="bpCalculator__systolic-output" type="number" readonly value="">
+        </td>
+        <td>
+          <input class="bpCalculator__diastolic-output" type="number" readonly value="">
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="bpCalculator__cta">
+    <button class="clear-restart ama__button--secondary">Clear/Restart</button>
+    <button class="calculate-bp ama__button--primary" type="submit">Calculate</button>
+  </div>
+</form>
