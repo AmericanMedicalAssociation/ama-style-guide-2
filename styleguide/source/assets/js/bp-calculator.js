@@ -80,14 +80,13 @@
         $('.bpCalculator__table__output').show();
       }
 
-      // Calculate BP when calculate is clicked
-
       // Validate BP Form
       $('#bpCalculator').validate({
         rules: {
         },
         messages: {
         },
+        // Calculate BP when calculate is clicked
         submitHandler: function(form) {
           var sysBpValue = $('.bpCalculator__systolic-input'),
             sysBpOutput = $('.bpCalculator__systolic-output');
