@@ -17,13 +17,20 @@
         e.preventDefault();
         var $tableBody = $('#bpCalculator table').find('tbody'),
           $trLast = $tableBody.find('tr:last'),
-          $trNew = $trLast.clone(),
-          $trInputClassName = $trLast.find('input').attr('class'),
-          $trInputClassIndex = $('#bpCalculator tbody>tr').length + 1;
-          // Add new name with index
-          $trLast.before($trNew).addClass('cloned').find('input').val('').attr('name', $trInputClassName + '-' + $trInputClassIndex);
+          $trNew = $trLast.clone();
 
-          $('td:eq(0)', $trLast).text($('#bpCalculator tbody>tr').length);
+        // Append new class name to cloned row
+        $trLast.before($trNew).addClass('cloned').find('input').val('');
+
+        // Add new name with index
+        $tableBody.find('tr:last input').each(function () {
+          var $trInputClassIndex = $('#bpCalculator tbody>tr').length + 1,
+              $trInputClassName = $(this).attr('class');
+
+          $(this).attr('name', $trInputClassName + '-' + $trInputClassIndex);
+        });
+
+        $('td:eq(0)', $trLast).text($('#bpCalculator tbody>tr').length);
         return false;
       });
 
@@ -31,13 +38,19 @@
       $('.clear-restart').click(function(e){
         e.preventDefault();
 
+        // Remove all cloned rows
         var $trCloned = $('.cloned');
         $trCloned.remove();
 
+        // Reset to intial values
         $('#bpCalculator input').each(function () {
           $(this).val('');
         });
 
+        // Reset form
+        $('#bpCalculator ').validate().resetForm();
+
+        // Hide output row
         $('.bpCalculator__table__output').hide();
 
         return false;
@@ -45,11 +58,12 @@
 
       // Calculate average BP
       function calculcateBP(bpValue, bpOutput) {
-        var bpInput = 0,
-          bpTotal = 0,
-          bpAverage;
+        var bpInput = 0, // row count
+          bpTotal = 0, // incremented input values
+          bpAverage; // averaged bpTotal / bpInput
 
         bpValue.each(function () {
+          // If Input values are greater than 0 then turn into a number and round
           var val = $(this).val() > 0 ? Math.round(parseInt($(this).val(), 10)) : false;
 
           if (val !== 0) {
@@ -58,6 +72,7 @@
           }
         });
 
+        // Calculate average
         bpAverage = bpTotal / bpInput > 0 ? bpTotal / bpInput : 0;
 
         bpOutput.val(bpAverage);
