@@ -1,4 +1,10 @@
 .bpCalculator {
+  @include gutter($margin-top-full...);
+
+  header {
+    border-bottom: 1px solid $gray-64;
+  }
+
   &__table {
     border-collapse: collapse;
     width: 100%;
@@ -83,8 +89,12 @@
     }
   }
 
-  &__intro,
+  &__intro {
+    @include gutter($margin-bottom-full...);
+  }
+
   &__description {
+    @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
   }
 }

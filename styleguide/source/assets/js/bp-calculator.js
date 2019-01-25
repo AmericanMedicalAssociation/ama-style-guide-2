@@ -13,7 +13,7 @@
     attach: function (context, settings) {
 
       // Clone last row of table
-      $('.add-bp-row').click(function(e){
+      $('.add-bp-row').unbind('click').click(function(e){
         e.preventDefault();
         var $tableBody = $('#bpCalculator table').find('tbody'),
           $trLast = $tableBody.find('tr:last'),
@@ -35,7 +35,7 @@
       });
 
       // When clear/restart button is clicked return table to initial state
-      $('.clear-restart').click(function(e){
+      $('.clear-restart').unbind('click').click(function(e){
         e.preventDefault();
 
         // Remove all cloned rows
@@ -59,8 +59,8 @@
       // Calculate average BP
       function calculcateBP(bpValue, bpOutput) {
         var bpInput = 0, // row count
-          bpTotal = 0, // incremented input values
-          bpAverage; // averaged bpTotal / bpInput
+            bpTotal = 0, // incremented input values
+            bpAverage; // averaged bpTotal / bpInput
 
         bpValue.each(function () {
           // If Input values are greater than 0 then turn into a number and round
@@ -73,7 +73,7 @@
         });
 
         // Calculate average
-        bpAverage = bpTotal / bpInput > 0 ? bpTotal / bpInput : 0;
+        bpAverage = bpTotal / bpInput > 0 ? Math.round(bpTotal / bpInput) : 0;
 
         bpOutput.val(bpAverage);
 
