@@ -18,6 +18,10 @@
       {% block contentLeft %}
         {% include '@base/placeholder.twig' with {'placeholder':{'text':'Left region content'}}%}
       {% endblock %}
+
+      {% block footer %}
+        {% include "@organisms/footer/footer.twig" %}
+      {% endblock %}
     </section>
 
     <section class="ama__layout--split__right">
@@ -27,9 +31,6 @@
     </section>
   </div>
 
-  {% block footer %}
-    {% include "@organisms/footer/footer.twig" %}
-  {% endblock %}
 
 {% if pageName %}
   </div>>

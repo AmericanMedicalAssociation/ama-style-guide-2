@@ -9,16 +9,21 @@
 }
 
 .ama__resource-tabs__nav.ui-tabs-nav {
-  @include gutter($margin-top-half...);
-  position: relative;
+  border-top: 14px solid $white;
   width: 100%;
   background: $purple;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
   padding: 0;
-  border: none;
   border-radius: unset;
+  z-index: 99;
+
+  @include breakpoint($bp-large) {
+    @include gutter($margin-left-half...);
+    position: fixed;
+    top: 60px;
+  }
 }
 
 .ama__resource-tabs__nav li{
@@ -193,6 +198,10 @@ li {
         border-left: 0;
       }
     }
+  }
+
+  @include breakpoint($bp-large) {
+    margin-top: 123px;
   }
 }
 

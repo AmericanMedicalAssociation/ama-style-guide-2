@@ -26,3 +26,32 @@
     }
   }
 }
+
+.ama__layout--split__left {
+  @include breakpoint($bp-large) {
+    overflow: auto;
+    clip: auto;
+    height: calc(100vh - 60px);
+    width: auto;
+    margin: 0;
+    border: none;
+    position: relative;
+
+    & .container {
+      width: auto;
+    }
+  }
+}
+
+.ama__layout--split__right {
+  @include breakpoint($bp-large) {
+    border-left: solid 1px $gray-64;
+    overflow-y: auto;
+    overflow-x: hidden;
+    clip: auto;
+    width: auto;
+    margin: 0;
+    position: relative;
+    height: calc(100vh - 60px);
+  }
+}
