@@ -11,7 +11,7 @@
     padding: 0;
     width: 100%;
   }
-
+  
   &__copy {
     @include gutter($padding-left-full...);
     @include gutter($padding-right-full...);
@@ -72,7 +72,7 @@
       width: 75%;
     }
   }
-  
+
   &--small {
     display: flex;
     flex-wrap: wrap;
@@ -182,4 +182,10 @@
     font-size: 12px;
     font-weight: bold;
   }
+}
+
+.ama__column-teaser {
+  @include breakpoint($bp-small max-width) {
+        @include gutter($padding-left-half...);
+      }
 }
