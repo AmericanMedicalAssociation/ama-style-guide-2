@@ -225,4 +225,87 @@
       max-width: 65%;
     }
   }
+
+
+  //Split Screen resource page override
+  &.split-screen {
+    .ama__social-share {
+      a {
+        height: 50px;
+        width: 50px;
+        background-size: 50px;
+      }
+    }
+
+    .ama__site-logo--footer img {
+      margin: auto;
+      display: block;
+    }
+
+    .ama__footer__menu-secondary-user {
+      @include font-size($footer-font-sizes);
+      display: block;
+      padding-bottom: $gutter-mobile;
+      margin-bottom: $gutter-mobile;
+      border-bottom: 1px solid $gray-50;
+
+      ul {
+        width: auto;
+      }
+    }
+
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+      flex-direction: column;
+    }
+
+    .ama__footer > .container {
+      display: inherit;
+      flex-wrap: inherit;
+    }
+
+    .ama__footer__left {
+      order: inherit;
+      flex-grow: inherit;
+      flex-shrink: inherit;
+      flex-basis: inherit;
+    }
+
+    .ama__footer__right {
+      order: inherit;
+      flex-grow: inherit;
+      flex-shrink: inherit;
+      flex-basis: inherit;
+
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+        input {
+          background-color: inherit;
+        }
+
+        .form-item--error-message,
+        label.error {
+          position: inherit;
+          bottom: inherit;
+        }
+
+        .ama__button {
+          margin: inherit;
+        }
+
+        div[role=alert] {
+          display: inherit;
+        }
+      }
+    }
+
+    .ama__footer__menu-products {
+      order: inherit;
+      flex: inherit;
+    }
+
+    .ama__footer__mission {
+      max-width: 100%;
+    }
+  }
 }
+
+
