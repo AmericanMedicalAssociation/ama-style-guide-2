@@ -96,7 +96,6 @@
           return false;
         }
       });
-
     }
   };
 })(jQuery, Drupal);
