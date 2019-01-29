@@ -858,16 +858,16 @@ h4,
     .ama__tabs .ama__agenda-date a.ui-tabs-anchor,
     .ama__accordion-tab.ui-state-default,
     .ama__masthead__content__link {
-      font-size: 1.556em;
-      line-height: 1.25; } }
+      font-size: 1.111em;
+      line-height: 1.6; } }
   @media screen and (min-width: 75em) {
     h4,
     .ama__h4,
     .ama__tabs .ama__agenda-date a.ui-tabs-anchor,
     .ama__accordion-tab.ui-state-default,
     .ama__masthead__content__link {
-      font-size: 1.556em;
-      line-height: 1.25; } }
+      font-size: 1.111em;
+      line-height: 1.6; } }
   h4--purple,
   .ama__h4--purple,
   .ama__subcategory-hero .ama__h4--purple,
@@ -2006,6 +2006,59 @@ button {
       .ama__button--promo--secondary:hover,
       button--promo--secondary:hover {
         background-color: #9073A6; }
+  
+  .ama__button--link,
+  button--link {
+    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.389;
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid #46166B;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: transparent;
+    border-color: transparent;
+    color: #027DBC;
+    display: inline-block; }
+    @media screen and (min-width: 37.5em) {
+      
+      .ama__button--link,
+      button--link {
+        font-size: 20px; } }
+    @media screen and (min-width: 56.25em) {
+      
+      .ama__button--link,
+      button--link {
+        font-size: 18px;
+        line-height: 1.5; } }
+    @media screen and (min-width: 75em) {
+      
+      .ama__button--link,
+      button--link {
+        font-size: 18px; } }
+    
+    .ama__button--link breakpoint($bp-med),
+    button--link breakpoint($bp-med) {
+      padding: 14px; }
+    
+    .ama__button--link:hover,
+    button--link:hover {
+      border-color: #46166B;
+      background-color: #9073A6;
+      color: #ffffff; }
+    
+    .ama__button--link:hover,
+    button--link:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: #3597C9;
+      text-decoration: underline; }
 
 .ama__button--small.ama__button--tertiary {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -3662,13 +3715,13 @@ a {
       font-style: normal; }
   .ama__search__field .form-submit {
     background-color: transparent;
-    background-size: 23px 45px;
-    background-position: 0 -10px;
-    width: 23px;
-    height: 45px;
+    background-size: 25px 30px;
+    background-position: 0 0;
+    width: 25px;
+    height: 30px;
     padding: 0;
     margin: 0;
-    min-height: 25px;
+    min-height: 30px;
     min-width: 25px;
     max-height: 30px;
     max-width: 25px;
@@ -4266,7 +4319,7 @@ figcaption {
 .ama__video__container {
   position: relative;
   width: 100%;
-  padding-top: 50%; }
+  padding-top: 56%; }
   .ama__video__container iframe {
     width: 100%;
     height: 100%;
@@ -4447,12 +4500,14 @@ figcaption {
       padding: 0; } }
 
 .ama__article-stub .ama__image,
-.ama__article-stub .ama__video {
+.ama__article-stub .ama__video,
+.ama__article-stub .ama__video__container {
   margin-bottom: 10px;
   width: 100%; }
   @media (min-width: 56.25em) {
     .ama__article-stub .ama__image,
-    .ama__article-stub .ama__video {
+    .ama__article-stub .ama__video,
+    .ama__article-stub .ama__video__container {
       margin-bottom: 14px; } }
 
 .ama__article-stub--related {
@@ -5756,7 +5811,8 @@ figcaption {
     -ms-flex-pack: justify;
     justify-content: space-between; }
     .ama__jama--horizontal .ama__jama__links li {
-      width: 32%; }
+      width: 32%;
+      padding-right: 10px; }
     .ama__jama--horizontal .ama__jama__links a {
       padding-bottom: 0; } }
 
@@ -8020,10 +8076,6 @@ article[class*='__page-content'] .ama__tags {
     -ms-flex-align: center;
     align-items: center;
     height: 100%; }
-    @media (min-width: 37.5em) {
-      .ama__hub-hero__video {
-        -ms-flex-preferred-size: 50%;
-        flex-basis: 50%; } }
     .ama__hub-hero__video .ama__video {
       height: 100%;
       width: 100%; }
@@ -8368,6 +8420,120 @@ article[class*='__page-content'] .ama__tags {
     @media (min-width: 56.25em) {
       .ama__bio-section__header {
         margin-bottom: 14px; } }
+
+.bpCalculator {
+  margin-top: 20px; }
+  @media (min-width: 56.25em) {
+    .bpCalculator {
+      margin-top: 28px; } }
+  .bpCalculator header {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    display: -ms-grid;
+    display: grid;
+    border-bottom: 1px solid #5C5C5C; }
+    .bpCalculator header span {
+      text-transform: uppercase;
+      font-size: 1.222em;
+      font-weight: 600;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 4;
+      grid-column: 1 / 5;
+      -ms-grid-row: 2;
+      grid-row: 2; }
+    .bpCalculator header .ama__masthead__content__share {
+      -ms-grid-row: 2;
+      grid-row: 2; }
+  .bpCalculator__table {
+    border-collapse: collapse;
+    width: 100%; }
+    .bpCalculator__table tr {
+      border-bottom: 1px solid #CBCBCB; }
+    .bpCalculator__table th,
+    .bpCalculator__table td {
+      border: 0;
+      text-align: center; }
+      .bpCalculator__table th input,
+      .bpCalculator__table td input {
+        text-align: center; }
+    .bpCalculator__table__header {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      background-color: #EDEDED; }
+      @media (min-width: 56.25em) {
+        .bpCalculator__table__header {
+          padding-top: 14px; } }
+      @media (min-width: 56.25em) {
+        .bpCalculator__table__header {
+          padding-bottom: 14px; } }
+      @media (min-width: 56.25em) {
+        .bpCalculator__table__header {
+          margin-bottom: 14px; } }
+      .bpCalculator__table__header--reading {
+        width: 20%; }
+    .bpCalculator__table__index {
+      width: 20%; }
+    .bpCalculator__table .tbody td {
+      background-color: #ffffff; }
+      .bpCalculator__table .tbody td + td {
+        width: 40%; }
+    .bpCalculator__table .tfoot td {
+      background-color: #ffffff; }
+    .bpCalculator__table__output {
+      display: none; }
+      .bpCalculator__table__output:nth-of-type(2n+2) td,
+      .bpCalculator__table__output td {
+        background-color: #EDEDED;
+        font-weight: 800; }
+      .bpCalculator__table__output .bpCalculator__systolic-output,
+      .bpCalculator__table__output .bpCalculator__diastolic-output {
+        padding: 10px;
+        color: #ffffff;
+        background-color: #7229D1;
+        font-weight: 800; }
+        .bpCalculator__table__output .bpCalculator__systolic-output breakpoint($bp-med),
+        .bpCalculator__table__output .bpCalculator__diastolic-output breakpoint($bp-med) {
+          padding: 14px; }
+    .bpCalculator__table__average {
+      width: 20%; }
+  .bpCalculator__cta {
+    margin-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    @media (min-width: 56.25em) {
+      .bpCalculator__cta {
+        margin-bottom: 14px; } }
+    .bpCalculator__cta button {
+      margin-left: 10px;
+      margin-right: 10px; }
+      @media (min-width: 56.25em) {
+        .bpCalculator__cta button {
+          margin-left: 14px; } }
+      @media (min-width: 56.25em) {
+        .bpCalculator__cta button {
+          margin-right: 14px; } }
+  .bpCalculator__intro {
+    margin-bottom: 20px; }
+    @media (min-width: 56.25em) {
+      .bpCalculator__intro {
+        margin-bottom: 28px; } }
+  .bpCalculator__description {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    @media (min-width: 56.25em) {
+      .bpCalculator__description {
+        margin-top: 28px; } }
+    @media (min-width: 56.25em) {
+      .bpCalculator__description {
+        margin-bottom: 28px; } }
 
 .ama__category-index .ama__layout--two-col-right--75-25__right > * + * {
   margin-top: 56px; }
@@ -9501,6 +9667,12 @@ section.ama__page--event__speakers {
       margin-top: 0; }
       .ama__member-feature__wrapper .ama__hero-story__media div a {
         display: block; }
+      .ama__member-feature__wrapper .ama__hero-story__media .ama__hub-hero__video {
+        width: 100%; }
+        .ama__member-feature__wrapper .ama__hero-story__media .ama__hub-hero__video .ama__video__container {
+          width: 100%;
+          height: 100%;
+          padding-bottom: 0; }
       @media (min-width: 37.5em) {
         .ama__member-feature__wrapper .ama__hero-story__media div a {
           display: -webkit-box;
