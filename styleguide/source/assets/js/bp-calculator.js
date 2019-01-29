@@ -75,7 +75,7 @@
         // Calculate average
         bpAverage = bpTotal / bpInput > 0 ? Math.round(bpTotal / bpInput) : 0;
 
-        bpOutput.val(bpAverage);
+        bpOutput.text(bpAverage);
 
         $('.bpCalculator__table__output').show();
       }

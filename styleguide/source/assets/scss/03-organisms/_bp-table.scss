@@ -78,8 +78,9 @@
         font-weight: 800;
       }
 
-      input,
-      input.valid {
+      .bpCalculator__systolic-output,
+      .bpCalculator__diastolic-output {
+        @include gutter-all($padding-all-half...);
         color: $white;
         background-color: $homepagePurple;
         font-weight: 800;
