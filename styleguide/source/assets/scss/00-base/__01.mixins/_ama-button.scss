@@ -39,6 +39,18 @@
       text-decoration: underline;
     }
   }
+  @else if($style == "link") {
+    background-color: transparent;
+    border-color: transparent;
+    color: $blue;
+
+    &:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: $hoverBlue;
+      text-decoration: underline;
+    }
+  }
   // homepage
   @else if($style == "homepage") {
     background-color: $homepagePurple;

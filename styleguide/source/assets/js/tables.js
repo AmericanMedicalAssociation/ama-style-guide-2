@@ -10,9 +10,12 @@
 (function ($, Drupal) {
   Drupal.behaviors.responsiveTables = {
     attach: function(context, settings) {
-      $('table').basictable({
-        breakpoint: 1024
-      });
+      // This conditional has been added to prevent basicTable plugin to selectively not run on tables
+      if (!$('table').hasClass('simpleTable')) {
+        $('table').basictable({
+          breakpoint: 1024
+        });
+      }
 
       // this forces tables inside of the .ama__resource--schedules div to have mobile look and feel
       $('.ama__resource--schedules table').each( function() {
