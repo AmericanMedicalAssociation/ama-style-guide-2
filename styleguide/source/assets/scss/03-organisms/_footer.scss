@@ -229,6 +229,7 @@
 
   //Split Screen resource page override
   &.split-screen {
+
     .ama__social-share {
       a {
         height: 50px;
@@ -250,12 +251,13 @@
       border-bottom: 1px solid $gray-50;
 
       ul {
-        width: auto;
-      }
-    }
+        list-style-type: none;
 
-    .ama__subscribe-promo--wide .ama__subscribe-promo__form {
-      flex-direction: column;
+        li {
+          list-style: none;
+          margin: 0;
+        }
+      }
     }
 
     .ama__footer > .container {
@@ -278,7 +280,9 @@
 
       .ama__subscribe-promo--wide .ama__subscribe-promo__form {
         input {
-          background-color: inherit;
+          @include gutter($margin-bottom-full...);
+          height: 49px;
+          background-color: $white;
         }
 
         .form-item--error-message,
@@ -288,7 +292,8 @@
         }
 
         .ama__button {
-          margin: inherit;
+          margin: 0 auto;
+          display: inline-block;
         }
 
         div[role=alert] {
@@ -300,6 +305,30 @@
     .ama__footer__menu-products {
       order: inherit;
       flex: inherit;
+    }
+
+    .ama__footer__menu-utility {
+      margin-top: 0;
+      padding: 14px 0;
+      text-align: center;
+
+      li {
+        display: inline-block;
+      }
+    }
+
+
+    .ama__footer__bottom {
+      @include gutter($padding-bottom-full...);
+      @include font-size($footer-font-sizes--menu);
+      text-align: center;
+      background: $purple;
+      border-top: 1px solid $gray-50;
+      color: $white;
+
+      & > .container {
+        display: block;
+      }
     }
 
     .ama__footer__mission {
