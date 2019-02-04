@@ -193,12 +193,11 @@
             });
           }
 
-          $('[type=checkbox]').each( function() {
+          $('form:not([class*="layout-builder"]) [type=checkbox]').each( function() {
             $('[type=checkbox]').checkboxradio();
           });
 
-
-          $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
+          $('form:not([class*="layout-builder"]) [type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
 
           $('.textarea').keyup(function() {
             count_remaining_character();
