@@ -20,7 +20,7 @@
       {% endblock %}
 
       {% block footer %}
-        {% include "@organisms/footer/footer.twig" %}
+        {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__page--resource__desktop-footer'}} %}
       {% endblock %}
     </section>
 
@@ -31,7 +31,8 @@
     </section>
   </div>
 
+  {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__page--resource__mobile-footer'}} %}
 
 {% if pageName %}
-  </div>>
+  </div>
 {% endif %}
