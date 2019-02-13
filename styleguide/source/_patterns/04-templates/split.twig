@@ -18,10 +18,6 @@
       {% block contentLeft %}
         {% include '@base/placeholder.twig' with {'placeholder':{'text':'Left region content'}}%}
       {% endblock %}
-
-      {% block footer %}
-        {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__page--resource__desktop-footer'}} %}
-      {% endblock %}
     </section>
 
     <section class="ama__layout--split__right">
@@ -31,7 +27,7 @@
     </section>
   </div>
 
-  {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__page--resource__mobile-footer'}} %}
+  {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__footer ama__resource-page__mobile-footer'}} %}
 
 {% if pageName %}
   </div>

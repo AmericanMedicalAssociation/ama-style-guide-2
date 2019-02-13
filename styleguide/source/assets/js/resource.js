@@ -1,6 +1,6 @@
 /**
  * @file
- * Responsive Tables.
+ * Sadly adds footer to left resource page column.
  *
  * JavaScript should be made compatible with libraries other than jQuery by
  * wrapping it with an "anonymous closure". See:
@@ -8,20 +8,12 @@
  * - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
  */
 (function ($, Drupal) {
-  Drupal.behaviors.responsiveTables = {
+  Drupal.behaviors.resourcePageFooter = {
     attach: function(context, settings) {
 
       $(function() {
-        $('table').basictable({
-          breakpoint: 1024
-        });
+        $('footer').clone().appendTo('.ama__layout--split__left').addClass('ama__footer ama__resource-page__desktop-footer');
       });
-
-      // this forces tables inside of the .ama__resource--schedules div to have mobile look and feel
-      $('.ama__resource--schedules table').each( function() {
-        $(this).basictable('start');
-      });
-
     }
   };
 })(jQuery, Drupal);

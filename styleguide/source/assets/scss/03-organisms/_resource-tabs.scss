@@ -7,6 +7,10 @@
     @include gutter($margin-top-half...);
     @include gutter($margin-left-half...);
   }
+
+  @include breakpoint($bp-med) {
+    position: absolute;
+  }
 }
 
 .ama__resource-tabs__nav.ui-tabs-nav {
@@ -19,11 +23,6 @@
   padding: 0;
   border-radius: unset;
   z-index: 9;
-
-  @include breakpoint($bp-large) {
-    position: fixed;
-    top: 60px;
-  }
 }
 
 .ama__resource-tabs__nav li{
@@ -163,6 +162,16 @@ li {
 .ama__resource-tabs__content {
   position: relative;
 
+  @include breakpoint($bp-large) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clip: auto;
+    width: auto;
+    margin: 0;
+    position: relative;
+    height: calc(100vh - 260px);
+  }
+
   a:not(.ama__tool):not(.ama__button) {
     @extend %ama__link--no-underline;
   }
@@ -198,10 +207,6 @@ li {
         border-left: 0;
       }
     }
-  }
-
-  @include breakpoint($bp-large) {
-    margin-top: 123px;
   }
 }
 
