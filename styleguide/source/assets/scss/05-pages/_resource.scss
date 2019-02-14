@@ -36,7 +36,7 @@
     @include breakpoint($bp-large) {
       overflow: auto;
       clip: auto;
-      height: calc(100vh - 120px);
+      height: 100vh;
       width: auto;
       margin: 0;
       border: none;
@@ -51,6 +51,7 @@
   .ama__layout--split__right {
     @include breakpoint($bp-large) {
       border-left: solid 1px $gray-64;
+      position: relative;
     }
   }
 
