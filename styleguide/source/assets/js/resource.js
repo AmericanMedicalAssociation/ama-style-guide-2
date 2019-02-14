@@ -13,7 +13,7 @@
 
       $(function() {
         if ($('body.ama__resource-page').length) {
-          $('footer', context).one('clone').appendTo('.ama__layout--split__left').addClass('ama__footer ama__resource-page__desktop-footer');
+          $('footer', context).clone().appendTo('.ama__layout--split__left').addClass('ama__footer ama__resource-page__desktop-footer');
         }
       });
     }

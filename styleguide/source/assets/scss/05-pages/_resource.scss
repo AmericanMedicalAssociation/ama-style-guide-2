@@ -63,7 +63,13 @@
     }
   }
 
-  &__desktop-footer {
+  @include breakpoint($bp-large) {
+    .ama__footer {
+      display: none;
+    }
+  }
+
+  &__desktop-footer.ama__footer {
     display: none;
 
     @include breakpoint($bp-large) {
@@ -134,6 +140,7 @@
         .ama__button {
           margin: 0 auto;
           display: inline-block;
+          background: $purple;
         }
 
         div[role=alert] {
