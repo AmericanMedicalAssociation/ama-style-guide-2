@@ -29,6 +29,12 @@
     width: 100%;
   }
 
+  .ama__image img {
+    @include breakpoint($bp-small max-width) {
+      width: 100%;
+    }
+  }
+
   &--related {
     @include ama-rules(1px, '', solid, $gray-50);
     @include gutter($padding-top-half...);
