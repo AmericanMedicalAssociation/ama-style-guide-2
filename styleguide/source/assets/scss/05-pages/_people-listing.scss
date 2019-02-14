@@ -6,11 +6,19 @@
   &__card-container {
     @include gutter($padding-top-full...);
     @include gutter($padding-bottom-full...);
-    display: flex;
-    flex-wrap: wrap;
+
     height: 100%;
     min-height: 100%;
-    justify-content: space-between;
+
+    @include breakpoint($bp-small) {
+      margin-left: calc(-12.08% * .1);
+      margin-right: calc(-12.08% * .1);
+    }
+
+    @include breakpoint($bp-large) {
+      margin-left: calc(-22.08% * .1);
+      margin-right: calc(-22.08% * .1);
+    }
 
     &:after {
       content: '';
