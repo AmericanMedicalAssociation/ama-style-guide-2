@@ -193,12 +193,11 @@
             });
           }
 
-          $('[type=checkbox]').each( function() {
+          $('form:not([class*="layout-builder"]) [type=checkbox]').each( function() {
             $('[type=checkbox]').checkboxradio();
           });
 
-
-          $('[type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
+          $('form:not([class*="layout-builder"]) [type=radio]').checkboxradio().buttonset().find('label').css('width', '19.4%');
 
           $('.textarea').keyup(function() {
             count_remaining_character();
@@ -244,7 +243,7 @@
                 if($(ui.newPanel).hasClass('ui-accordion-content-active')) {
                   $(ui.newPanel).prev().addClass('active');
                 } else {
-                  $(ui.oldPanel).prev().removeClass('active');
+                  $(ui.oldPanel).siblings().removeClass('active');
                 }
               }
             });
@@ -252,7 +251,7 @@
 
           if($(".ama__expand-list").find('.ui-checkboxradio-checked').length) {
             expandListAccordion('.ama__expand-list', 0);
-            $(".ama__expand-list").children('.ama__expand-list__header').addClass('active');
+            $(".ama__expand-list .ama__expand-list__header").first().addClass('active');
           } else {
             expandListAccordion('.ama__expand-list', false);
             $(".ama__expand-list").children('.ama__expand-list__header').removeClass('active');

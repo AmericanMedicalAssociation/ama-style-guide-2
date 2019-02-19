@@ -1,9 +1,0 @@
-<section class="ama__products">
-  {% include "@atoms/section-title.twig" with { sectionTitle : yourProducts.sectionTitle } %}
-  <div class="ama__products__wrap">
-    {% for product in yourProducts.products %}
-      {% include "@molecules/product.twig" %}
-    {% endfor %}
-  </div>
-  {% include "@atoms/link/link.twig" with { link : yourProducts.link } %}
-</section>
