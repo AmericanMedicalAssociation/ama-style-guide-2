@@ -27,10 +27,8 @@
     </section>
   </div>
 
-  {% block footer %}
-    {% include "@organisms/footer/footer.twig" %}
-  {% endblock %}
+  {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__footer ama__resource-page__mobile-footer'}} %}
 
 {% if pageName %}
-  </div>>
+  </div>
 {% endif %}
