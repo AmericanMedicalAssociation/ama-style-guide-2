@@ -69,8 +69,6 @@
         $tabObj.tabs({
           active: tabIndex
         });
-        // Scroll to top of ui tabs navigation
-        smoothScroll($tabObj, $(widget.active[0]));
         // Stop bubbling and default actions
         return false;
       }
