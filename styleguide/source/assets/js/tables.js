@@ -10,6 +10,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.responsiveTables = {
     attach: function(context, settings) {
+
       // This conditional has been added to prevent basicTable plugin to selectively not run on tables
       if (!$('table').hasClass('simpleTable')) {
         $('table').basictable({
