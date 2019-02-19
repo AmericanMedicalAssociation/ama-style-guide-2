@@ -1,0 +1,7 @@
+<div class="ama__member-feature">
+  {% include '@atoms/section-title.twig' with { sectionTitle : memberFeature.sectionTitle } %}
+  <div class="ama__member-feature__wrapper">
+    {% include '@molecules/hero-story.twig' with { heroStory : memberFeature.heroStory } %}
+    {% include '@molecules/member-feature-rail.twig' with { memberFeatureRail : memberFeature.memberFeatureRail } %}
+  </div>
+</div>
