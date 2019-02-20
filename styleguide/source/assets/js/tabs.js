@@ -44,8 +44,8 @@
        * @param {jQuery Object} $target
        */
       function smoothScroll($tabNav, $target) {
-        var navCoords = $tabNav[0].getBoundingClientRect();
-        $('.ama__resource-tabs__content').animate({
+        var scrollTarget = window.innerWidth < 600 ? 'html,body' : '.ama__resource-tabs__content';
+        $(scrollTarget).animate({
           scrollTop: 0
         }, 850, function () {
           // update focus for keyboard only navigation
