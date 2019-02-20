@@ -45,8 +45,8 @@
        */
       function smoothScroll($tabNav, $target) {
         var navCoords = $tabNav[0].getBoundingClientRect();
-        $('html,body').animate({
-          scrollTop: window.scrollY + navCoords.top
+        $('.ama__resource-tabs__content').animate({
+          scrollTop: 0
         }, 850, function () {
           // update focus for keyboard only navigation
           $target.attr('tabindex', '-1');
@@ -69,6 +69,8 @@
         $tabObj.tabs({
           active: tabIndex
         });
+        // Scroll to top of ui tabs navigation
+        smoothScroll($tabObj, $(widget.active[0]));
         // Stop bubbling and default actions
         return false;
       }
