@@ -12,9 +12,7 @@
      attach: function (context, settings) {
        $.cookie('ama__alert--hide');
        var alertCookie = $.cookie('ama__alert--hide');
-
-       console.log( $.cookie('ama__alert--hide') );
-
+       
        (function ($) {
          // If the 'hide cookie is not set we show the alert
          if (alertCookie !== '1') {
