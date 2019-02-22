@@ -1,8 +1,16 @@
-if($('.ama__people-listing__card-container').length){
-  var $cardHeight = -1;
+(function ($, Drupal) {
+  Drupal.behaviors.peopeListing = {
+    attach: function (context, settings) {
+      if($('.ama__people-listing__card-container').length){
+        var $cardHeight = 0;
+        var $card = $('.ama__people-listing__card-container .ama__people-listing-card');
 
-  $('.ama__people-listing__card-container .ama__people-listing-card').each(function() {
-    $cardHeight = $cardHeight > $(this).height() ? $cardHeight : $(this).height();
-    $(this).height($cardHeight);
-  });
-}
+        $card.each(function() {
+          $cardHeight = $(this).height() > $cardHeight ? $(this).height() : $cardHeight;
+        });
+
+        $card.height($cardHeight);
+      }
+    }
+  };
+})(jQuery, Drupal);
