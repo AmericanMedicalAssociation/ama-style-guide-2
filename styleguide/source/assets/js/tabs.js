@@ -44,7 +44,7 @@
        * @param {jQuery Object} $target
        */
       function smoothScroll($tabNav, $target) {
-        var scrollTarget = window.innerWidth < 600 ? 'html,body' : '.ama__resource-tabs__content';
+        var scrollTarget = window.innerWidth >= 1200 ? '.ama__resource-tabs__content' : 'html,body';
         $(scrollTarget).animate({
           scrollTop: 0
         }, 850, function () {
