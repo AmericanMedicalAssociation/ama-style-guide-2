@@ -43,15 +43,38 @@
        * @param {jQuery Object} $tabNav
        * @param {jQuery Object} $target
        */
-      function smoothScroll($tabNav, $target) {
+      function smoothScroll($tabNav, tabHash, positionInTab) {
         var scrollTarget = window.innerWidth >= 1200 ? '.ama__resource-tabs__content' : 'html,body';
+
+        // Remove previous highlights, if any
+        $('.ama_resource-header--highlight').removeClass('ama_resource-header--highlight')
+
+        // Try to find target element offset, but default to zero
+        var scrollPosition = 0;
+        var $target;
+        if (positionInTab !== undefined) {
+          var tabElements = $(tabHash + ' .ama__resource-tabs__item');
+          if (tabElements.length) {
+            // If desired position is larger than the result set, use the last element
+            if (tabElements.length <= positionInTab) positionInTab = tabElements.length;
+            // Users are instructed to consider 1 as the first element
+            target = tabElements[positionInTab - 1];
+            scrollPosition = target.offsetTop;
+            // Add highlight to target
+            $target = $(target).find('.ama_resource-header'); // save for use in animate() callback
+            $target.addClass('ama_resource-header--highlight')
+          }
+        } else {
+          $target = $(tabHash);
+        }
+        
         $(scrollTarget).animate({
-          scrollTop: 0
+          scrollTop: scrollPosition
         }, 850, function () {
-          // update focus for keyboard only navigation
-          $target.attr('tabindex', '-1');
-          $target.focus();
+          // Update focus for keyboard only navigation
+          $target.attr('tabindex', '-1').focus();
         });
+
         // Stop bubbling and default actions
         return false;
       }
@@ -64,13 +87,17 @@
        */
       function switchTabs($tabObj, linkHash) {
         var widget = $tabObj.data('ui-tabs');
-        var tabIndex = widget._getIndex(linkHash);
+        var [tabHash, positionInTab] = linkHash.split('-');
 
+        // Ensure correct tab is active
+        var tabIndex = widget._getIndex(tabHash);
         $tabObj.tabs({
           active: tabIndex
         });
+
         // Scroll to top of ui tabs navigation
-        smoothScroll($tabObj, $(widget.active[0]));
+        smoothScroll($tabObj, tabHash, positionInTab);
+
         // Stop bubbling and default actions
         return false;
       }
