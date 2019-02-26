@@ -11,7 +11,8 @@
       }
 
       $(".ama__tabs, .ama__resource-tabs").tabs({
-        active: defaultActiveTab
+        active: defaultActiveTab,
+        activate: removeHighlights
       });
 
       // Prevent jump onclick
@@ -37,6 +38,10 @@
         return false;
       });
 
+      function removeHighlights() {
+        $('.ama_resource-header--highlight').removeClass('ama_resource-header--highlight')
+      }
+
       /*
        * This function animates the browser scroll action with attention to keyboard only accessibility concerns
        *
@@ -47,7 +52,7 @@
         var scrollTarget = window.innerWidth >= 1200 ? '.ama__resource-tabs__content' : 'html,body';
 
         // Remove previous highlights, if any
-        $('.ama_resource-header--highlight').removeClass('ama_resource-header--highlight')
+        removeHighlights();
 
         // Try to find target element offset, but default to zero
         var scrollPosition = 0;
