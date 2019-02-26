@@ -87,7 +87,13 @@
        */
       function switchTabs($tabObj, linkHash) {
         var widget = $tabObj.data('ui-tabs');
-        var [tabHash, positionInTab] = linkHash.split('-');
+
+        var tabHash, positionInTab;
+        var parts = linkHash.split('-');
+        tabHash = parts[0];
+        if (parts.length > 1) {
+          positionInTab = parts[1];
+        }
 
         // Ensure correct tab is active
         var tabIndex = widget._getIndex(tabHash);
