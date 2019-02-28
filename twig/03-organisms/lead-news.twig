@@ -1,0 +1,9 @@
+{% set heading = leadNews.heading %}
+
+<div class="ama__lead-news">
+  {% include "@atoms/heading/heading.twig" %}
+  {% for article in leadNews.articles %}
+    {% set articleStub = article %}
+    {% include "@molecules/article-stub/article-stub.twig" %}
+  {% endfor %}
+</div>

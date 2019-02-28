@@ -1,0 +1,18 @@
+<div class="ama__jama ama__jama--{{ jama.style }}">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
+  <span class="ama__jama__title">
+    {{ jama.title.text }}
+  </span>
+  <ul class="ama__jama__links">
+    {% for link in jama.links %}
+      {% if ( loop.index != 1 and jama.style == "vertical-images" ) %}
+      <div class="ama__rule ama__rule--horizontal"></div>
+      {% endif %}
+      <li class="{{ link.src is not empty ? "ama__link--with-image" }}" >
+        {% include "@molecules/jama-stub/jama-stub.twig" with { "jamaStub" : link, "style" : jama.style } %}
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>
