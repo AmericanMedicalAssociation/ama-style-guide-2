@@ -28,7 +28,7 @@
     </section>
     <section id="media">
       {% for mediaItem in tabs[1].tabContent.media %}
-        <div id="ama__resource--media-{{ loop.index }}">
+        <div id="ama__resource--media-{{ loop.index }}" class="ama__resource-tabs__item">
           {% set heading = mediaItem.heading %}
           {% include '@atoms/heading/heading.twig' %}
 
@@ -60,7 +60,7 @@
     </section>
     <section id="downloads">
       {% for download in tabs[2].tabContent.downloads %}
-        <div id="ama__resource--downloads-{{ loop.index }}">
+        <div id="ama__resource--downloads-{{ loop.index }}" class="ama__resource-tabs__item">
         {% set heading = download.heading %}
         {% include '@atoms/heading/heading.twig' %}
 
@@ -83,7 +83,7 @@
     </section>
     <section id="related_links">
       {% for group in tabs[3].tabContent.relatedLinkGroups %}
-        <div id="ama__resource--related_links-{{ loop.index }}">
+        <div id="ama__resource--related_links-{{ loop.index }}" class="ama__resource-tabs__item">
           {% set heading = group.heading %}
           {% include '@atoms/heading/heading.twig' %}
 
@@ -110,7 +110,7 @@
     </section>
     <section id="schedules">
       {% for schedule in tabs[4].tabContent.schedules %}
-      <div class="ama__resource--schedules" id="ama__resource--schedules-{{ loop.index }}">
+      <div class="ama__resource--schedules ama__resource-tabs__item" id="ama__resource--schedules-{{ loop.index }}">
         {% set heading = schedule.heading %}
         {% include '@atoms/heading/heading.twig' %}
         {% set heading = schedule.subheading %}
@@ -130,7 +130,9 @@
       {% include '@atoms/heading/heading.twig' %}
 
       {% for table in tabs[5].tabContent.tables %}
-        {% include '@atoms/table.twig' %}
+        <div id="ama__resource--tables--{{ loop.index }}" class="ama__resource-tabs__item">
+          {% include '@atoms/table.twig' %}
+        </div>
       {% endfor %}
 
       {% set membership = tabs[5].tabContent.membership %}
@@ -141,10 +143,12 @@
       {% include '@atoms/heading/heading.twig' %}
 
       {% for group in tabs[6].tabContent.contactGroups %}
-        {% set heading = group.heading %}
-        {% include '@atoms/heading/heading.twig' %}
-        {% set infoCard = group.infoCard %}
-        {% include '@molecules/info-card/info-card.twig' %}
+        <div id="ama__resource--contacts--{{ loop.index }}" class="ama__resource-tabs__item">
+          {% set heading = group.heading %}
+          {% include '@atoms/heading/heading.twig' %}
+          {% set infoCard = group.infoCard %}
+          {% include '@molecules/info-card/info-card.twig' %}
+        </div>
       {% endfor %}
     </section>
   </div>

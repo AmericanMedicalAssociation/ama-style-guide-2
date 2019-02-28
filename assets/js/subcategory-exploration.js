@@ -14,7 +14,7 @@
       var $subcategoryListContainer = $('.ama__subcategory-exploration__list');
       var $subcategoryList  = $('.ama__subcategory-exploration__list ul');
       var $subcategoryListExpander = $('.ama__subcategory-exploration__show-more');
-      var $subcategoryListContainerHeight = $subcategoryListContainer.outerHeight() + 1;
+      var $subcategoryListContainerHeight = $subcategoryListContainer.outerHeight() + 3;
       var $subcategoryListLinkText = $('.ama__subcategory-exploration__text');
 
       // If the unordered list outerHeight is greater than the parent container then show the show more link
