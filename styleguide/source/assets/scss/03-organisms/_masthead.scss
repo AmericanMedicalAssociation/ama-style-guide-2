@@ -69,6 +69,13 @@
       grid-template-columns: 4fr 1fr;
     }
 
+    .content-moderation-entity-moderation-form {
+      @include gutter($margin-top-half...);
+      grid-column: 1 / 5;
+      -ms-grid-column-span: 5;
+      grid-row: 1;
+    }
+
     .ama__h1 {
       @include gutter($margin-bottom-half...);
       grid-column: 1 / 5;
