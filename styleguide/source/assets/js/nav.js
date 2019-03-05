@@ -3,7 +3,7 @@
  * Ribbon nav user interactions.
  *
  * JavaScript should be made compatible with libraries other than jQuery by
- * wrapping it with an "anonymous closure". See:
+ * wrapping it with an 'anonymous closure'. See:
  * - https://drupal.org/node/1446420
  * - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
  */
@@ -11,6 +11,13 @@
 
   Drupal.behaviors.ribbonnav = {
     attach: function (context, settings) {
+      if($(window).width() > 768) {
+        $('.ama__main-navigation').sticky({ zIndex: 501 });
+      } else if($('#toolbar-bar').length) {
+        $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 39 });
+      } else {
+        $('.ama__main-navigation ').sticky({ zIndex: 501 });
+      }
 
       $('.ama__ribbon__dropdown').each(function () {
         var class_active = 'is-active';
