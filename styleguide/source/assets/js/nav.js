@@ -11,13 +11,20 @@
 
   Drupal.behaviors.ribbonnav = {
     attach: function (context, settings) {
-      if($(window).width() > 768) {
-        $('.ama__main-navigation').sticky({ zIndex: 501 });
-      } else if($('#toolbar-bar').length) {
-        $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 39 });
-      } else {
-        $('.ama__main-navigation ').sticky({ zIndex: 501 });
-      }
+
+      // Needs doc ready because the admin toolbar needs to get loaded to determine the top spacing for sticky nav
+      $(function() {
+        if($(window).width() < 768) { // If less than tablet
+          $('.ama__main-navigation').sticky({zIndex: 501});
+        } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
+          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 72 });
+        } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
+          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 39 });
+        } else {
+          $('.ama__main-navigation ').sticky({ zIndex: 501 });
+        }
+      });
+
 
       $('.ama__ribbon__dropdown').each(function () {
         var class_active = 'is-active';
