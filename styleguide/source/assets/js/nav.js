@@ -29,11 +29,12 @@
 
             var $layoutPosition = 0;
             var $socialIcons = $('.ama__masthead__content__share');
+            var $article = $('.layout__region').length  ? $('.layout__region') : $('article');
 
             if(typeof layoutPositionUpdate !== 'undefined'){
               $layoutPosition = layoutPositionUpdate;
             } else {
-              $layoutPosition = $('.layout__region').offset().left - 130;
+              $layoutPosition = $article.offset().left - 130;
             }
 
             if ($layoutPosition < 0) {
