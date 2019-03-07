@@ -64,4 +64,19 @@ $social-icons: (
     margin-left: $gutter/2;
     list-style: none;
   }
+
+  &--fixed {
+    display: flex;
+    position: fixed;
+    margin-top: 20%;
+    width: 31px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    li ~ li {
+      @include gutter($padding-top-half...);
+      margin-left: 0;
+    }
+  }
 }
