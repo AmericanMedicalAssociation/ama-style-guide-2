@@ -20,11 +20,19 @@
     @include gutter($margin-right-half...);
   }
 
-  .ama_category_navigation_menu {
-    display: none;
+  .ama_category_navigation_wrapper {
+    overflow: auto;
+    -ms-overflow-style: none;
+    width: 110%;
     position: absolute;
     top: 60px;
     left: 0;
+    z-index: 500;
+  }
+
+  .ama_category_navigation_menu {
+    display: none;
+    flex-direction: column;
     width: calc(100vw - 70px);
     z-index: 500;
 

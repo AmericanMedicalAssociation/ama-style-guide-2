@@ -118,6 +118,7 @@
   }
 
   &__flyout {
+    @include gutter($padding-bottom-full...);
     display: none;
     color: $black;
     list-style: none;
@@ -145,6 +146,7 @@
       box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
       width: 250px;
       float: left;
+      overflow-y: auto;
     }
 
     ol {
@@ -213,6 +215,8 @@
       }
 
       @include breakpoint($bp-small) {
+        overflow: auto;
+
         &:nth-child(2):nth-last-child(1) {
           @include gutter($margin-top-full...);
         }
