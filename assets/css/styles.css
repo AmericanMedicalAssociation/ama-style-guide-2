@@ -1388,7 +1388,8 @@ div[role=alert] {
 input.error {
   background: url("/themes/custom/ama_one/icons/svg/icon-error.svg") no-repeat 99% center/20px; }
 
-input.webform-button--submit {
+input.webform-button--submit,
+a.webform-button--submit {
   margin: 0 auto;
   display: inherit; }
 
@@ -4473,16 +4474,6 @@ figcaption {
 .ama__article-stub__title {
   padding: 0;
   width: 100%; }
-  @media (min-width: 56.25em) {
-    .ama__article-stub__title {
-      padding-left: 20px;
-      padding-right: 20px; } }
-  @media (min-width: 56.25em) and (min-width: 56.25em) {
-    .ama__article-stub__title {
-      padding-left: 28px; } }
-  @media (min-width: 56.25em) and (min-width: 56.25em) {
-    .ama__article-stub__title {
-      padding-right: 28px; } }
 
 .ama__article-stub__copy {
   padding-left: 20px;
@@ -4511,6 +4502,10 @@ figcaption {
     .ama__article-stub .ama__video__container {
       margin-bottom: 14px; } }
 
+@media (max-width: 37.5em) {
+  .ama__article-stub .ama__image img {
+    width: 100%; } }
+
 .ama__article-stub--related {
   border-top: 1px #7F7F7F solid;
   padding-top: 10px;
@@ -4537,14 +4532,9 @@ figcaption {
         padding-bottom: 14px; } }
   .ama__article-stub--related .ama__image,
   .ama__article-stub--related .ama__video {
-    padding-right: 10px;
     -ms-flex-item-align: start;
     align-self: flex-start;
     margin-bottom: 0; }
-    @media (min-width: 56.25em) {
-      .ama__article-stub--related .ama__image,
-      .ama__article-stub--related .ama__video {
-        padding-right: 14px; } }
     .ama__article-stub--related .ama__image > div,
     .ama__article-stub--related .ama__video > div {
       display: -webkit-box;
@@ -4564,26 +4554,8 @@ figcaption {
     padding-top: 0;
     -ms-flex-item-align: start;
     align-self: start; }
-  .ama__article-stub--related .ama__video + .ama__article-stub__title,
-  .ama__article-stub--related .ama__image + .ama__article-stub__title {
-    width: 75%; }
   .ama__article-stub--related .ama__article-stub__copy {
     width: 75%; }
-
-.ama__article-stub--related + .ama__article-stub--image .ama__image,
-.ama__article-stub--related + .ama__article-stub--image .ama__video,
-.ama__article-stub--related + .ama__article-stub--video .ama__image,
-.ama__article-stub--related + .ama__article-stub--video .ama__video {
-  padding-left: 10px;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1; }
-  @media (min-width: 56.25em) {
-    .ama__article-stub--related + .ama__article-stub--image .ama__image,
-    .ama__article-stub--related + .ama__article-stub--image .ama__video,
-    .ama__article-stub--related + .ama__article-stub--video .ama__image,
-    .ama__article-stub--related + .ama__article-stub--video .ama__video {
-      padding-left: 14px; } }
 
 .ama__article-stub--small {
   display: -webkit-box;
@@ -4740,6 +4712,17 @@ figcaption {
 .ama__page--news__teasers .ama__article-stub__title {
   font-size: 12px;
   font-weight: bold; }
+
+@media (max-width: 37.5em) {
+  .ama__column-teaser {
+    padding-left: 10px;
+    padding-right: 10px; } }
+  @media (max-width: 37.5em) and (min-width: 56.25em) {
+    .ama__column-teaser {
+      padding-left: 14px; } }
+  @media (max-width: 37.5em) and (min-width: 56.25em) {
+    .ama__column-teaser {
+      padding-right: 14px; } }
 
 .ama__category-hero a {
   text-decoration: none; }
@@ -6147,20 +6130,23 @@ figcaption {
 .ama__people-listing-card {
   background-color: #EDEDED;
   width: 100%;
+  height: 100%;
   margin: 1% 0;
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  -ms-grid-rows: auto 1fr auto;
-  grid-template-rows: auto 1fr auto; }
+  display: inline-block;
+  vertical-align: top; }
   @media (min-width: 37.5em) {
     .ama__people-listing-card {
       width: 48.08%; } }
   @media (min-width: 56.25em) {
     .ama__people-listing-card {
       width: 22.08%; } }
+  @media (min-width: 37.5em) {
+    .ama__people-listing-card:nth-child(1n+1) {
+      margin-left: calc(12.08% * .1); } }
+  @media (min-width: 75em) {
+    .ama__people-listing-card:nth-child(1n+1) {
+      margin-left: calc(22.08% * .1); } }
   .ama__people-listing-card .ama__image {
     width: 100%;
     -ms-grid-row: 1;
@@ -8864,20 +8850,20 @@ article[class*='__page-content'] .ama__tags {
       flex-wrap: nowrap; } }
 
 .ama__category-page-article-stub .ama__article-stub {
-  margin-left: 20px;
-  margin-bottom: 20px;
   width: 100%; }
-  @media (min-width: 56.25em) {
-    .ama__category-page-article-stub .ama__article-stub {
-      margin-left: 28px; } }
-  @media (min-width: 56.25em) {
-    .ama__category-page-article-stub .ama__article-stub {
-      margin-bottom: 28px; } }
   .ama__category-page-article-stub .ama__article-stub:first-child {
     margin-left: 0; }
   @media (min-width: 37.5em) {
     .ama__category-page-article-stub .ama__article-stub {
+      margin-left: 20px;
+      margin-bottom: 20px;
       width: 47%; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .ama__category-page-article-stub .ama__article-stub {
+      margin-left: 28px; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .ama__category-page-article-stub .ama__article-stub {
+      margin-bottom: 28px; } }
   @media (min-width: 56.25em) {
     .ama__category-page-article-stub .ama__article-stub {
       width: 25%; } }
@@ -11474,26 +11460,22 @@ section#related_links ul {
 .ama__people-listing__card-container {
   padding-top: 20px;
   padding-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   height: 100%;
-  min-height: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  min-height: 100%; }
   @media (min-width: 56.25em) {
     .ama__people-listing__card-container {
       padding-top: 28px; } }
   @media (min-width: 56.25em) {
     .ama__people-listing__card-container {
       padding-bottom: 28px; } }
-  .ama__people-listing__card-container::after {
-    content: "";
-    display: block;
-    margin-left: 48.38%; }
+  @media (min-width: 37.5em) {
+    .ama__people-listing__card-container {
+      margin-left: calc(-12.08% * .1);
+      margin-right: calc(-12.08% * .1); } }
+  @media (min-width: 75em) {
+    .ama__people-listing__card-container {
+      margin-left: calc(-22.08% * .1);
+      margin-right: calc(-22.08% * .1); } }
 
 .ama__people-listing .ama__masthead {
   padding: 0; }
