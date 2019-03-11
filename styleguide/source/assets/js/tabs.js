@@ -32,8 +32,7 @@
       $('.ama__resource-link--inline, .ama__page--resource__resource-link').on('click', function (e) {
         e.preventDefault();
         var $tabs = $('.ama__resource-tabs');
-        var linkHash = this.getAttribute("href");
-        switchTabs($tabs, linkHash);
+        switchTabs($tabs, this);
         // Stop bubbling and default actions
         return false;
       });
@@ -90,7 +89,9 @@
        * @param {jQuery Object} $tabObj The element which has the .tab() function attached.
        * @param {string} linkHash
        */
-      function switchTabs($tabObj, linkHash) {
+      function switchTabs($tabObj, link) {
+
+        var linkHash = link.getAttribute("href");
         var widget = $tabObj.data('ui-tabs');
 
         var tabHash, positionInTab;
@@ -98,6 +99,13 @@
         tabHash = parts[0];
         if (parts.length > 1) {
           positionInTab = parts[1];
+        } else {
+          // If old link, try to determine position from link text
+          var text = link.innerText;
+          var matches = link.innerText.match(/([0-9]+)/g);
+          if (matches) {
+            positionInTab = matches.shift();
+          }
         }
 
         // Ensure correct tab is active
