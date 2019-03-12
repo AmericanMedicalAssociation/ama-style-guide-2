@@ -10090,7 +10090,11 @@ li.ui-state-active > [href='#contacts'] .ama__resource-tabs__nav__icon {
   background: #ffffff;
   padding: 14px 0; }
   .ama__resource-tabs__content section.ui-tabs-panel.ui-state-active {
+    outline: none;
     display: block; }
+  .ama__resource-tabs__content section.ui-tabs-panel:focus,
+  .ama__resource-tabs__content section.ui-tabs-panel:focus * {
+    outline: none; }
   .ama__resource-tabs__content section.ui-tabs-panel > * + * {
     margin-top: 28px; }
 
