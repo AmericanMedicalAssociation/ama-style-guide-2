@@ -24,12 +24,12 @@
         {% if subtitle %}
           {% include "@atoms/subtitle.twig" %}
         {% endif %}
+      </div>
+      {% if button %}
+        <div class="ama__masthead__content__event__button">
+          {% include "@atoms/button/button.twig" %}
         </div>
-        {% if button %}
-          <div class="ama__masthead__content__event__button">
-            {% include "@atoms/button/button.twig" %}
-          </div>
-        {% endif %}
+      {% endif %}
     </div>
 
     <div class="ama__masthead__content__container">
