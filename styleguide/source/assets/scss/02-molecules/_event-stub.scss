@@ -1,11 +1,14 @@
 .ama__event-stub {
   @include gutter($margin-bottom-full...);
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
   &:first-child {
     border-top: 1px solid #7F7F7F;
   }
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding-top: $gutter-mobile/2;
   border-bottom: 1px solid #7F7F7F;
@@ -68,6 +71,7 @@
     width: 100%;
     min-width: 180px;
     height: auto;
+    margin-bottom: 10px;
 
     @include breakpoint($bp-small) {
       @include gutter($margin-right-full...);
