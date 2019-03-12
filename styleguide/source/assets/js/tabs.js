@@ -101,7 +101,6 @@
           positionInTab = parts[1];
         } else {
           // If old link, try to determine position from link text
-          var text = link.innerText;
           var matches = link.innerText.match(/([0-9]+)/g);
           if (matches) {
             positionInTab = matches.shift();
