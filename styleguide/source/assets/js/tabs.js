@@ -87,7 +87,7 @@
        * This function opens referenced tabs from inline links
        *
        * @param {jQuery Object} $tabObj The element which has the .tab() function attached.
-       * @param {string} linkHash
+       * @param {Element} link
        */
       function switchTabs($tabObj, link) {
 
