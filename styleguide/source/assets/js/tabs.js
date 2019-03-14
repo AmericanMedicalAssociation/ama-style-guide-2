@@ -30,7 +30,9 @@
 
       // When clicking an inline resource page link referencing a tab, open referenced tab.
       $('.ama__resource-link--inline, .ama__page--resource__resource-link').on('click', function (e) {
+
         e.preventDefault();
+
         var $tabs = $('.ama__resource-tabs');
         var linkHash = this.getAttribute("href");
         switchTabs($tabs, linkHash);
@@ -39,7 +41,7 @@
       });
 
       function removeHighlights() {
-        $('.ama_resource-header--highlight').removeClass('ama_resource-header--highlight')
+        $('.ama_resource-header--highlight').removeClass('ama_resource-header--highlight');
       }
 
       /*
@@ -61,13 +63,15 @@
           var tabElements = $(tabHash + ' .ama__resource-tabs__item');
           if (tabElements.length) {
             // If desired position is larger than the result set, use the last element
-            if (tabElements.length <= positionInTab) positionInTab = tabElements.length;
+            if (tabElements.length <= positionInTab) {
+              positionInTab = tabElements.length;
+            }
             // Users are instructed to consider 1 as the first element
-            target = tabElements[positionInTab - 1];
+            var target = tabElements[positionInTab - 1];
             scrollPosition = target.offsetTop;
             // Add highlight to target
             $target = $(target).find('.ama_resource-header'); // save for use in animate() callback
-            $target.addClass('ama_resource-header--highlight')
+            $target.addClass('ama_resource-header--highlight');
           }
         } else {
           $target = $(tabHash);
