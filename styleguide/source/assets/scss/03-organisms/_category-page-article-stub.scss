@@ -12,7 +12,7 @@
   }
 
   .ama__article-stub {
-    @include gutter($margin-left-full...);
+    margin-left: 0;
     @include gutter($margin-bottom-full...);
     width: 100%;
 
@@ -25,6 +25,7 @@
     }
 
     @include breakpoint($bp-med min-width) {
+      @include gutter($margin-left-full...);
       width: 25%;
     }
   }
