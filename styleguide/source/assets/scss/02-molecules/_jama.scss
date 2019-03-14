@@ -26,10 +26,15 @@
 
   .ama__link--with-image {
     img {
-      display: none;
+      @include breakpoint($bp-xs max-width) {
+        width: 100%;
+      }
     }
 
     a {
+      @include breakpoint($bp-xs max-width) {
+        flex-direction: column;
+      }
       display: flex;
 
       // For this component, the image is on the right.
@@ -39,6 +44,9 @@
         padding-right: 14px;
       }
       .ama__image-wrap {
+        @include breakpoint($bp-xs max-width) {
+          margin-left: 0;
+        }
         margin-left: auto;
       }
     }
