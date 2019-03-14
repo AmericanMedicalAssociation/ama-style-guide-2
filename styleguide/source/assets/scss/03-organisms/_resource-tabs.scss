@@ -232,8 +232,14 @@ li {
   padding: $gutter / 2 0;
 
   &.ui-state-active {
-    //z-index: 10;
+    outline: none;
     display: block;
+
+  }
+
+  &:focus,
+  &:focus  * {
+    outline: none;
   }
 
   > * + * {

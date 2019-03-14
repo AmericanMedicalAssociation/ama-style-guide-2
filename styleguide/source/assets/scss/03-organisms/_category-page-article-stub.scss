@@ -21,6 +21,8 @@
     }
 
     @include breakpoint($bp-small min-width) {
+      @include gutter($margin-left-full...);
+      @include gutter($margin-bottom-full...);
       width: 47%;
     }
 
