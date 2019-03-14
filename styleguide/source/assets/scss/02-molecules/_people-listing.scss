@@ -1,11 +1,11 @@
 .ama__people-listing-card {
   background-color: $gray-7;
   width: 100%;
+  height: 100%;
   margin: 1% 0;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  display: inline-block;
+  vertical-align: top;
 
   @include breakpoint($bp-small) {
     width: 48.08%;
@@ -13,6 +13,16 @@
 
   @include breakpoint($bp-med) {
     width: 22.08%;
+  }
+
+  &:nth-child(1n+1) {
+    @include breakpoint($bp-small) {
+      margin-left:calc(12.08% * .1);
+    }
+
+    @include breakpoint($bp-large) {
+      margin-left:calc(22.08% * .1);
+    }
   }
 
   .ama__image {

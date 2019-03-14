@@ -10,11 +10,6 @@
   &__title {
     padding: 0;
     width: 100%;
-
-    @include breakpoint($bp-med min-width) {
-      @include gutter($padding-left-full...);
-      @include gutter($padding-right-full...);
-    }
   }
 
   &__copy {
@@ -34,6 +29,12 @@
     width: 100%;
   }
 
+  .ama__image img {
+    @include breakpoint($bp-small max-width) {
+      width: 100%;
+    }
+  }
+
   &--related {
     @include ama-rules(1px, '', solid, $gray-50);
     @include gutter($padding-top-half...);
@@ -50,7 +51,6 @@
     .ama__image,
     .ama__video {
       @extend .col-xs-3;
-      @include gutter($padding-right-half...);
       align-self: flex-start;
       margin-bottom: 0;
 
@@ -67,23 +67,8 @@
       align-self: start;
     }
 
-    // Only if we have an image, do we set a width on things...
-    .ama__video + .ama__article-stub__title,
-    .ama__image + .ama__article-stub__title {
-      width: 75%;
-    }
-
     .ama__article-stub__copy {
       width: 75%;
-    }
-  }
-
-  &--related + &--image,
-  &--related + &--video {
-    .ama__image,
-    .ama__video {
-      @include gutter($padding-left-half...);
-      order: 1;
     }
   }
 
@@ -196,4 +181,11 @@
     font-size: 12px;
     font-weight: bold;
   }
+}
+
+.ama__column-teaser {
+  @include breakpoint($bp-small max-width) {
+        @include gutter($padding-left-half...);
+        @include gutter($padding-right-half...);
+      }
 }
