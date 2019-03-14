@@ -34,7 +34,7 @@
   .form-submit {
     @extend .icon--search;
     background-color: transparent;
-    background-size: 25px 30px;
+    background-size: contain;
     background-position: 0 0;
     width: 25px;
     height: 30px;
@@ -46,6 +46,7 @@
     max-width: 25px;
     text-indent: -999px;
     overflow: hidden;
+    padding-bottom: calc(100% * 3 / 4);
 
     &:hover {
       border: 0;
