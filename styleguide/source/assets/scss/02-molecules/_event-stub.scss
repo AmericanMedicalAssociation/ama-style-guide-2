@@ -4,14 +4,14 @@
     flex-direction: row;
   }
   &:first-child {
-    border-top: 1px solid #7F7F7F;
+    border-top: 1px solid $gray-50;
   }
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: $gutter-mobile/2;
-  border-bottom: 1px solid #7F7F7F;
+  border-bottom: 1px solid $gray-50;
 
   a {
     @extend %ama__link--no-underline;
@@ -68,11 +68,10 @@
   }
 
   .ama__image {
+    @include gutter($margin-bottom-full...);
     width: 100%;
     min-width: 180px;
     height: auto;
-    @include gutter($margin-bottom-full...);
-
     @include breakpoint($bp-small) {
       @include gutter($margin-right-full...);
       max-width: 180px;
