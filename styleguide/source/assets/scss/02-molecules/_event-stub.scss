@@ -29,7 +29,7 @@
 
   &__banner {
     background-color: $purple;
-    padding: 3px 6px;
+    padding: $gutter-mobile/20 $gutter/4;
     width: 180px;
     color: #fff;
     margin-bottom: $gutter-mobile/2;
@@ -71,7 +71,7 @@
     width: 100%;
     min-width: 180px;
     height: auto;
-    margin-bottom: 10px;
+    @include gutter($margin-bottom-full...);
 
     @include breakpoint($bp-small) {
       @include gutter($margin-right-full...);
