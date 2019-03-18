@@ -25,21 +25,14 @@
   }
 
   .ama__link--with-image {
-    img {
-      @include breakpoint($bp-xs max-width) {
-        width: 100%;
-      }
-    }
-
     a {
-      @include breakpoint($bp-xs max-width) {
-        flex-direction: column;
+      @include breakpoint($bp-small) {
+        width: auto;
       }
       display: flex;
 
       // For this component, the image is on the right.
       .ama__image__text {
-        width: 100%;
         padding-left: inherit;
         padding-right: 14px;
       }
