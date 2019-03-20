@@ -42,11 +42,11 @@
         // Calculate the visible height of article
         var $el = $('article'),
             scrollTop = $(this).scrollTop(),
-            scrollBot = scrollTop + $(this).height(),
+            scrollBottom = scrollTop + $(this).height(),
             elTop = $el.offset().top,
             elBottom = elTop + $el.outerHeight(),
             visibleTop = elTop < scrollTop ? scrollTop : elTop,
-            visibleBottom = elBottom > scrollBot ? scrollBot : elBottom,
+            visibleBottom = elBottom > scrollBottom ? scrollBottom : elBottom,
             viewportHeight =  visibleBottom - visibleTop;
 
         $('.ama_category_navigation_menu ul li').each(function () {
