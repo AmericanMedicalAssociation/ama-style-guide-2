@@ -3,16 +3,16 @@
   Drupal.behaviors.ama_mainNavigation = {
     attach: function (context, settings) {
 
-      var $categoryNavWrapper = $('.ama_category_navigation_wrapper');
-      var $categoryNavigationMenu = $('.ama_category_navigation_menu');
-      var $mobileSearchTrigger = $('.global-search-trigger');
-      var $mobileSearch = $('.ama__global-search');
-      var $mainNav = $('.ama__main-navigation ');
-      var $productNav = $('.ama__product-nav');
-      var $productNavHeight = $productNav.length ? $productNav.outerHeight() : 0;
-      var viewportHeight = $(window).innerHeight() - $productNavHeight;
-      var categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight() ;
-      var categoryNavMenuMResizedHeight = 0;
+      var $categoryNavWrapper = $('.ama_category_navigation_wrapper'),
+          $categoryNavigationMenu = $('.ama_category_navigation_menu'),
+          $mobileSearchTrigger = $('.global-search-trigger'),
+          $mobileSearch = $('.ama__global-search'),
+          $mainNav = $('.ama__main-navigation '),
+          $productNav = $('.ama__product-nav'),
+          $productNavHeight = $productNav.length ? $productNav.outerHeight() : 0,
+          viewportHeight = 0,
+          categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
+          categoryNavMenuMResizedHeight = 0;
 
       // Calculate whether or not the category nav should have scrollbars
       function categoryNavHeight($resizeViewportHeight) {
@@ -33,10 +33,21 @@
       }
 
       function submMenuFlyoutResize() {
+
+        // Calculate the visible height of article
+        var $el = $('article'),
+            scrollTop = $(this).scrollTop(),
+            scrollBot = scrollTop + $(this).height(),
+            elTop = $el.offset().top,
+            elBottom = elTop + $el.outerHeight(),
+            visibleTop = elTop < scrollTop ? scrollTop : elTop,
+            visibleBottom = elBottom > scrollBot ? scrollBot : elBottom,
+            viewportHeight =  visibleBottom - visibleTop;
+
         $('.ama_category_navigation_menu ul li').each(function () {
           $(this).hover(function () {
             if ($(this).find('.ama_category_navigation_menu__flyout').length) {
-              if($(this).find('.ama_category_navigation_menu__flyout').outerHeight() > viewportHeight - 100) {
+              if($(this).find('.ama_category_navigation_menu__flyout').outerHeight() > viewportHeight) {
                 $('.ama_category_navigation_menu__group').on('activate.smapi', function (e, item) {
                   $(item).next().addClass('pinned').outerHeight(viewportHeight);
                 });
