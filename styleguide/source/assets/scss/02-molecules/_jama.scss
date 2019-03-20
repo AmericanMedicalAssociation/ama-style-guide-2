@@ -25,17 +25,21 @@
   }
 
   .ama__link--with-image {
-    img {
-      display: none;
-    }
-
     a {
+      @include breakpoint($bp-small) {
+        width: auto;
+      }
       display: flex;
 
       // For this component, the image is on the right.
       .ama__image__text {
         padding-left: inherit;
         padding-right: 14px;
+      }
+      .ama__image-wrap {
+        @include breakpoint($bp-xs) {
+          margin-left: auto;
+        }
       }
     }
   }
