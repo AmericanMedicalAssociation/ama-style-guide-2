@@ -129,11 +129,16 @@
       width: 550px !important;
       max-width: none !important;
       margin-left: 250px !important;
+      overflow: auto;
     }
 
     @include breakpoint($bp-large) {
       width: 940px !important;
       max-width: none !important;
+    }
+
+    &.pinned {
+      margin-top: -65px !important;
     }
   }
 
