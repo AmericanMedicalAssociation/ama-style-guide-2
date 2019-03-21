@@ -4888,24 +4888,38 @@ figcaption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  padding-top: 10px;
+  border-bottom: 1px solid #7F7F7F; }
   @media (min-width: 56.25em) {
     .ama__event-stub {
       margin-bottom: 28px; } }
+  @media (min-width: 37.5em) {
+    .ama__event-stub {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; } }
+  .ama__event-stub:first-child {
+    border-top: 1px solid #7F7F7F; }
   .ama__event-stub__cme {
     position: absolute;
     top: 0;
     right: 0; }
     .ama__event-stub__cme svg {
       fill: #46166B; }
+  .ama__event-stub__banner {
+    background-color: #46166B;
+    padding: 1px 7px;
+    width: 180px;
+    color: #fff;
+    margin-bottom: 10px; }
   .ama__event-stub__title {
     width: 100%;
     font-weight: 600;
@@ -4935,8 +4949,13 @@ figcaption {
     font-style: italic;
     color: #46166B; }
   .ama__event-stub .ama__image {
+    margin-bottom: 20px;
     width: 100%;
+    min-width: 180px;
     height: auto; }
+    @media (min-width: 56.25em) {
+      .ama__event-stub .ama__image {
+        margin-bottom: 28px; } }
     @media (min-width: 37.5em) {
       .ama__event-stub .ama__image {
         margin-right: 20px;
@@ -5676,15 +5695,19 @@ figcaption {
           margin-top: 14px; } }
       .ama__jama a.ama__jama__link--sign-up:hover {
         text-decoration: underline; }
-  .ama__jama .ama__link--with-image img {
-    display: none; }
   .ama__jama .ama__link--with-image a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media (min-width: 37.5em) {
+      .ama__jama .ama__link--with-image a {
+        width: auto; } }
     .ama__jama .ama__link--with-image a .ama__image__text {
       padding-left: inherit;
       padding-right: 14px; }
+    @media (min-width: 25em) {
+      .ama__jama .ama__link--with-image a .ama__image-wrap {
+        margin-left: auto; } }
   .ama__jama .ama__rule {
     margin-top: 20px; }
     @media (min-width: 56.25em) {
@@ -8850,7 +8873,12 @@ article[class*='__page-content'] .ama__tags {
       flex-wrap: nowrap; } }
 
 .ama__category-page-article-stub .ama__article-stub {
+  margin-left: 0;
+  margin-bottom: 20px;
   width: 100%; }
+  @media (min-width: 56.25em) {
+    .ama__category-page-article-stub .ama__article-stub {
+      margin-bottom: 28px; } }
   .ama__category-page-article-stub .ama__article-stub:first-child {
     margin-left: 0; }
   @media (min-width: 37.5em) {
@@ -8866,7 +8894,11 @@ article[class*='__page-content'] .ama__tags {
       margin-bottom: 28px; } }
   @media (min-width: 56.25em) {
     .ama__category-page-article-stub .ama__article-stub {
+      margin-left: 20px;
       width: 25%; } }
+  @media (min-width: 56.25em) and (min-width: 56.25em) {
+    .ama__category-page-article-stub .ama__article-stub {
+      margin-left: 28px; } }
 
 .ama__category-page-article-stub .ama__article-stub__title {
   padding: 0; }
@@ -9548,6 +9580,16 @@ section.ama__page--event__speakers {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-column: 1 / 5; }
+    .ama__masthead__content__title__container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding-top: 28px; }
+    .ama__masthead__content__title {
+      width: 100%; }
+    .ama__masthead__content__event__button {
+      width: 200px;
+      text-align: right; }
     @media (min-width: 37.5em) {
       .ama__masthead__content--indented {
         -ms-grid-column: 2;
@@ -10093,7 +10135,7 @@ li.ui-state-active > [href='#contacts'] .ama__resource-tabs__nav__icon {
     outline: none;
     display: block; }
   .ama__resource-tabs__content section.ui-tabs-panel:focus,
-  .ama__resource-tabs__content section.ui-tabs-panel:focus * {
+  .ama__resource-tabs__content section.ui-tabs-panel *:focus {
     outline: none; }
   .ama__resource-tabs__content section.ui-tabs-panel > * + * {
     margin-top: 28px; }
