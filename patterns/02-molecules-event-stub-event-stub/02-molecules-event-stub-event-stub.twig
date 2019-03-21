@@ -26,6 +26,12 @@
       </div>
     {% endif %}
 
+    {% if eventStub.hostedBy %}
+      <div class="ama__event-stub__banner">
+        AMA Event
+      </div>
+    {% endif %}
+
     {% if link %}
       {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
       <h2 class="ama__h2 ama__event-stub__title">
@@ -57,5 +63,4 @@
     {% endif %}
 
   </div>
-  <div class="ama__rule ama__rule--horizontal"></div>
 </div>
