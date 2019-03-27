@@ -1,0 +1,9 @@
+<div class="ama__sales-landing-page__header">
+  {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : salesLandingPage.siteLogo } %}
+
+  <div class="ama__sales-landing-page__header__contact">
+    <p class="info">{{ salesLandingPage.header.contact }}</p>
+    {% set button = salesLandingPage.header.button %}
+    {% include '@atoms/button/button.twig' %}
+  </div>
+</div>
