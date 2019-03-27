@@ -12,13 +12,16 @@
     }
   }
 
-  &__header .ama__site-logo .logo {
-    @include gutter($margin-bottom-full...);
-    height: 70px;
-    width: 159px;
+  &__header .ama__site-logo {
+    height: auto;
 
-    @include breakpoint($bp-small min-width) {
-      margin-bottom: 0;
+    .logo {
+      height: 70px;
+      width: 159px;
+
+      @include breakpoint($bp-small min-width) {
+        margin-bottom: 0;
+      }
     }
   }
 
