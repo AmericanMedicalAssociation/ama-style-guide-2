@@ -1,0 +1,37 @@
+.ama__sales-landing-page-hero {
+  @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
+
+  .ama__image {
+    border: 1px solid $gray-20;
+  }
+
+  &__content {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-left-full...);
+    @include gutter($margin-right-full...);
+
+    @include breakpoint($bp-small) {
+      margin-top: 0;
+      width: 60%;
+    }
+
+    .description {
+      @include gutter($margin-bottom-full...);
+    }
+
+    .ama__button {
+      width: 100%;
+
+      @include breakpoint($bp-small) {
+        width: auto;
+      }
+    }
+  }
+}
