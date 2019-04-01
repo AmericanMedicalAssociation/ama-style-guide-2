@@ -2,6 +2,8 @@
   &__cta {
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
+    @include gutter($padding-top-full...);
+    @include gutter($padding-bottom-full...);
 
     .ama__button {
       display: block;
@@ -14,7 +16,19 @@
   }
 
   &__form {
-    @include gutter($margin-top-full...);
+    @include gutter($padding-top-full...);
     @include gutter($margin-bottom-full...);
+
+    h1 {
+      display: none;
+    }
+
+    form {
+      padding: 0;
+    }
+
+    &__heading {
+      @include gutter($padding-top-full...);
+    }
   }
 }
