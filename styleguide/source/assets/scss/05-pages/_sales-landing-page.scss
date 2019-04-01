@@ -1,0 +1,20 @@
+.ama__sales-landing-page {
+  &__cta {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+
+    .ama__button {
+      display: block;
+      margin: 0 auto;
+
+      @include breakpoint($bp-small min-width) {
+        width: 25%;
+      }
+    }
+  }
+
+  &__form {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+  }
+}
