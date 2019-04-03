@@ -1,6 +1,7 @@
 .ama__sales-landing-page-hero {
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+
   display: flex;
   flex-direction: column;
 
@@ -14,10 +15,10 @@
 
   &__content {
     @include gutter($margin-top-full...);
-    @include gutter($margin-left-full...);
-    @include gutter($margin-right-full...);
 
     @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+      @include gutter($margin-right-full...);
       margin-top: 0;
       width: 60%;
     }

@@ -1,0 +1,34 @@
+.ama__sales-landing-page {
+  &__cta {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+    @include gutter($padding-top-full...);
+    @include gutter($padding-bottom-full...);
+
+    .ama__button {
+      display: block;
+      margin: 0 auto;
+
+      @include breakpoint($bp-small min-width) {
+        width: 25%;
+      }
+    }
+  }
+
+  &__form {
+    @include gutter($padding-top-full...);
+    @include gutter($margin-bottom-full...);
+
+    h1 {
+      display: none;
+    }
+
+    form {
+      padding: 0;
+    }
+
+    &__heading {
+      @include gutter($padding-top-full...);
+    }
+  }
+}
