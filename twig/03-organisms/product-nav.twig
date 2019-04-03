@@ -1,0 +1,9 @@
+<div class="ama__product-nav">
+  <ul>
+    {% for link in productNav.links %}
+      <li>
+        {% include '@atoms/link/link.twig' %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
