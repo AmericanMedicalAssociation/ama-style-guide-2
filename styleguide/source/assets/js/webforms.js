@@ -63,14 +63,17 @@
   var initialLoad = true;
 
   Drupal.behaviors.webForm = {
+    detach: function (context, settings, trigger) {
+      if (trigger === 'serialize') {
+        initialLoad = false;
+      }
+    },
     attach: function (context, settings) {
-
-      $(".ama__sales-landing-page__form form").validate({
-        success: function(element) {
+      if (!initialLoad) {
+        if (!context.innerText.match("Error message")) {
           $('.ama__sales-landing-page__form__heading').hide();
         }
-      });
-
+      }
 
       $.validator.addMethod(
         "regex",
