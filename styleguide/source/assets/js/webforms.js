@@ -52,7 +52,7 @@
   $('.ama__button--decline').click(function(e) {
     e.preventDefault();
 
-    if (document.referrer == "") {
+    if (document.referrer === "") {
       document.location.href='/';
     }
     else {
@@ -63,7 +63,18 @@
   var initialLoad = true;
 
   Drupal.behaviors.webForm = {
+    detach: function (context, settings, trigger) {
+      if (trigger === 'serialize') {
+        initialLoad = false;
+      }
+    },
     attach: function (context, settings) {
+      if (!initialLoad) {
+        if (!context.innerText.match("Error message")) {
+          $('.ama__sales-landing-page__form__heading').hide();
+        }
+      }
+
       $.validator.addMethod(
         "regex",
         function(value, element, regexp) {
