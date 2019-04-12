@@ -10304,7 +10304,11 @@ section#related_links ul {
       -ms-flex-direction: row;
       flex-direction: row; } }
   .ama__sales-landing-page-hero .ama__image {
-    border: 1px solid #CBCBCB; }
+    border: 1px solid #CBCBCB;
+    float: none; }
+    @media (min-width: 37.5em) {
+      .ama__sales-landing-page-hero .ama__image {
+        float: right; } }
   .ama__sales-landing-page-hero__content {
     margin-top: 20px; }
     @media (min-width: 56.25em) {
@@ -11836,6 +11840,9 @@ section#related_links ul {
   .ama__resource-page__desktop-footer.ama__footer .ama__footer__mission {
     max-width: 100%; }
 
+.ama__sales-landing-page__section {
+  overflow: hidden; }
+
 .ama__sales-landing-page__cta {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -11860,6 +11867,10 @@ section#related_links ul {
       .ama__sales-landing-page__cta .ama__button {
         width: 25%; } }
 
+@media (min-width: 37.5em) {
+  .ama__sales-landing-page .webform-button--submit {
+    width: 50%; } }
+
 .ama__sales-landing-page__form {
   padding-top: 20px;
   margin-bottom: 20px; }
@@ -11872,7 +11883,9 @@ section#related_links ul {
   .ama__sales-landing-page__form h1 {
     display: none; }
   .ama__sales-landing-page__form form {
-    padding: 0; }
+    padding: 0;
+    margin: 0;
+    max-width: 556px; }
   .ama__sales-landing-page__form__heading {
     padding-top: 20px; }
     @media (min-width: 56.25em) {
@@ -11885,6 +11898,9 @@ section#related_links ul {
 .ama__sales-landing-page__form .webform-confirmation h1 {
   display: block;
   text-align: center; }
+
+.ama__sales-landing-page .webform-confirmation {
+  max-width: 100%; }
 
 @media (min-width: 56.25em) {
   .ama__search-results__best-bet {
@@ -11906,6 +11922,9 @@ section#related_links ul {
     @media (min-width: 56.25em) {
       .ama__search-results__promos > * {
         margin-top: 28px; } }
+
+.ama__specialty-landing .ama__event-stub:first-child {
+  border-top: 0; }
 
 /* Slider */
 .slick-slider {
