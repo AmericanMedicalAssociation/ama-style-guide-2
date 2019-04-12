@@ -11,6 +11,11 @@
 
   .ama__image {
     border: 1px solid $gray-20;
+    float: none;
+
+    @include breakpoint($bp-small) {
+      float: right;
+    }
   }
 
   &__content {

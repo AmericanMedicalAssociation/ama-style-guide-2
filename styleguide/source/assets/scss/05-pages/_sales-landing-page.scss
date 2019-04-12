@@ -19,6 +19,12 @@
     }
   }
 
+.webform-button--submit {
+  @include breakpoint($bp-small min-width) {
+    width: 50%;
+  }
+}
+
   &__form {
     @include gutter($padding-top-full...);
     @include gutter($margin-bottom-full...);
