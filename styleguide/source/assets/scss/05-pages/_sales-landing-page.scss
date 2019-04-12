@@ -1,4 +1,8 @@
 .ama__sales-landing-page {
+  &__section {
+    overflow: hidden;
+  }
+
   &__cta {
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
@@ -15,6 +19,12 @@
     }
   }
 
+.webform-button--submit {
+  @include breakpoint($bp-small min-width) {
+    width: 50%;
+  }
+}
+
   &__form {
     @include gutter($padding-top-full...);
     @include gutter($margin-bottom-full...);
@@ -25,6 +35,8 @@
 
     form {
       padding: 0;
+      margin: 0;
+      max-width: 556px;
     }
 
     &__heading {
@@ -35,13 +47,17 @@
   .paragraph {
     overflow: hidden;
   }
-}
 
-.ama__sales-landing-page__form {
-  .webform-confirmation {
-    h1 {
-      display: block;
-      text-align: center;
+  &__form {
+    .webform-confirmation {
+      h1 {
+        display: block;
+        text-align: center;
+      }
     }
+  }
+
+  .webform-confirmation {
+    max-width: 100%;
   }
 }
