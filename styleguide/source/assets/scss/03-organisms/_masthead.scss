@@ -30,6 +30,10 @@
       grid-column: 1 / 5;
 
     &__title__container {
+      @include breakpoint($bp-med min-width) {
+        flex-direction: row;
+      }
+      flex-direction: column-reverse;
       display: flex;
       padding-top: $gutter;
     }
@@ -39,7 +43,11 @@
     }
     
     &__event__button {
-      width: 200px;
+      @include breakpoint($bp-med min-width) {
+        width: 200px;
+      }
+      margin-bottom: $gutter/2;
+      width: 100%;
       text-align: right;
     }
 
