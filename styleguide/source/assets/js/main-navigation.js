@@ -10,20 +10,20 @@
           $mainNav = $('.ama__main-navigation '),
           $productNav = $('.ama__product-nav'),
           viewportHeight = 0,
-          $productNavHeight = 0,
+          productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuMResizedHeight = 0;
 
 
       if($productNav.length){
-        $productNavHeight = $productNav.outerHeight();
+        productNavHeight = $productNav.outerHeight();
       }
 
         // Calculate whether or not the category nav should have scrollbars
       function categoryNavHeight($resizeViewportHeight) {
 
         if(typeof $resizeViewportHeight !== 'undefined') {
-          viewportHeight = $resizeViewportHeight - $productNavHeight;
+          viewportHeight = $resizeViewportHeight - productNavHeight;
         } else {
           viewportHeight = $(window).innerHeight();
         }
@@ -102,7 +102,7 @@
         $mobileSearch.slideToggle();
       });
     }
-  }
+  };
 })(jQuery, Drupal);
 
 
