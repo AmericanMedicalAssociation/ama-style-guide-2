@@ -46,7 +46,7 @@
         $(document).click( function(){
           $('.ama__ribbon__dropdown__trigger', this).removeClass(class_active).children().removeClass(class_active);
         });
-      })
+      });
     }
-  }
+  };
 })(jQuery, Drupal);
