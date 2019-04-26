@@ -40,14 +40,14 @@
       function submMenuFlyoutResize() {
 
         // Calculate the visible height of article
-        var $el = $('article'),
+        var $el = $('.layout-container'),
             scrollTop = $(this).scrollTop(),
             scrollBottom = scrollTop + $(this).height(),
             elTop = $el.offset().top,
             elBottom = elTop + $el.outerHeight(),
             visibleTop = elTop < scrollTop ? scrollTop : elTop,
             visibleBottom = elBottom > scrollBottom ? scrollBottom : elBottom,
-            viewportHeight =  visibleBottom - visibleTop;
+            viewportHeight =  visibleBottom - visibleTop - $mainNav.outerHeight() - productNavHeight ;
 
         $('.ama_category_navigation_menu ul li').each(function () {
           $(this).hover(function () {
