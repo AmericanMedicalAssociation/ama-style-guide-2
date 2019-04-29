@@ -103,26 +103,32 @@
       });
 
       function moveSocialSharePosition(){
-        var mainNavPosition = $('.ama__main-navigation .container').offset().left - 100;
-        var $socialIcons = $('.ama__masthead__content__share');
+        var mainNavPosition = $('.ama__main-navigation .container').offset().left;
+        var categoryNavWrapperHeight = $(window).height();
 
-        if($('.ama__masthead__content__share').length && $(window).width() > 768) {
-          $socialIcons.sticky({
-            wrapperClassName: 'ama__masthead__content__share-wrapper',
-            zIndex: 501
-          });
+        if(mainNavPosition > 50) {
+          mainNavPosition = mainNavPosition - 100;
 
-          $socialIcons.on('sticky-start', function () {
-            $('.ama__social-share').addClass('ama__social-share--fixed').css('left', mainNavPosition).hide().fadeTo('slow', 1);
-          });
+          var $socialIcons = $('.ama__masthead__content__share');
 
-          $socialIcons.on('sticky-update', function () {
-            $('.ama__social-share').addClass('ama__social-share--fixed').hide().fadeTo('slow', 1);
-          });
+          if($('.ama__masthead__content__share').length && $(window).width() > 1400 && categoryNavWrapperHeight > 850) {
+            $socialIcons.sticky({
+              wrapperClassName: 'ama__masthead__content__share-wrapper',
+              zIndex: 501
+            });
 
-          $socialIcons.on('sticky-end', function () {
-            $('.ama__social-share--fixed').removeClass('ama__social-share--fixed');
-          });
+            $socialIcons.on('sticky-start', function () {
+              $('.ama__social-share').addClass('ama__social-share--fixed').css('left', mainNavPosition).hide().fadeTo('slow', 1);
+            });
+
+            $socialIcons.on('sticky-update', function () {
+              $('.ama__social-share').addClass('ama__social-share--fixed').hide().fadeTo('slow', 1);
+            });
+
+            $socialIcons.on('sticky-end', function () {
+              $('.ama__social-share--fixed').removeClass('ama__social-share--fixed');
+            });
+          }
         }
       }
 
