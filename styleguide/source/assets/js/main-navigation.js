@@ -111,7 +111,7 @@
 
           var $socialIcons = $('.ama__masthead__content__share');
 
-          if($('.ama__masthead__content__share').length && $(window).width() > 1400 && categoryNavWrapperHeight > 850) {
+          if($('.ama__masthead__content__share').length && $(window).width() > 1400) {
             $socialIcons.sticky({
               wrapperClassName: 'ama__masthead__content__share-wrapper',
               zIndex: 501
@@ -134,6 +134,33 @@
 
       // Initialize getSocialShare()
       moveSocialSharePosition();
+
+
+      // Onscroll check to see if social icon position is greater than footer position
+      var debounce_timer;
+
+      $(window).scroll(function() {
+        if(debounce_timer) {
+          window.clearTimeout(debounce_timer);
+        }
+        debounce_timer = window.setTimeout(function() {
+          var socialIconPosition = $('.ama__masthead__content__share .ama__social-share').offset().top - $(window).scrollTop();
+          var footerPosition = $('footer').offset().top - $(window).scrollTop() - 80;
+          var socialIconPositionUpdate = 0;
+
+          if(socialIconPosition > 0) {
+            socialIconPositionUpdate = socialIconPosition;
+          } else {
+            socialIconPositionUpdate = 0;
+          }
+
+          if(socialIconPositionUpdate > footerPosition) {
+            $('.ama__masthead__content__share').fadeOut('fast');
+          } else {
+            $('.ama__masthead__content__share').fadeIn('fast');
+          }
+        }, 50);
+      });
 
       //Checks the layout position of article on window resize and moves the social icons accordingly
       $( window ).resize(function() {
