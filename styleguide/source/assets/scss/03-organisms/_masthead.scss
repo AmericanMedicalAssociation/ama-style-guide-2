@@ -100,14 +100,17 @@
       grid-row: 3;
     }
 
-    &__share {
+    &__share,
+    &__share-wrapper {
       display: none;
 
       @include breakpoint($bp-small) {
-        @include gutter($padding-top-full...);
         grid-column: 4 / 5;
         grid-row: 3;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 66px;
       }
 
       .ama__social-share {
