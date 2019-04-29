@@ -23,6 +23,22 @@
   .ama_category_navigation_wrapper {
     overflow: auto;
     -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 0;
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      height: 0;
+      width: 0;
+    }
+
     width: 110%;
     position: absolute;
     top: 60px;
