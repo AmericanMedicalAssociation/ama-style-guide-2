@@ -101,6 +101,42 @@
       $($mobileSearchTrigger).unbind('click').click(function () {
         $mobileSearch.slideToggle();
       });
+
+      function moveSocialSharePosition(){
+        var mainNavPosition = $('.ama__main-navigation .container').offset().left - 100;
+        var $socialIcons = $('.ama__masthead__content__share');
+
+        if($('.ama__masthead__content__share').length && $(window).width() > 768) {
+          $socialIcons.sticky({
+            wrapperClassName: 'ama__masthead__content__share-wrapper',
+            zIndex: 501
+          });
+
+          $socialIcons.on('sticky-start', function () {
+            $('.ama__social-share').addClass('ama__social-share--fixed').css('left', mainNavPosition).hide().fadeTo('slow', 1);
+          });
+
+          $socialIcons.on('sticky-update', function () {
+            $('.ama__social-share').addClass('ama__social-share--fixed').hide().fadeTo('slow', 1);
+          });
+
+          $socialIcons.on('sticky-end', function () {
+            $('.ama__social-share--fixed').removeClass('ama__social-share--fixed');
+          });
+        }
+      }
+
+      // Initialize getSocialShare()
+      moveSocialSharePosition();
+
+      //Checks the layout position of article on window resize and moves the social icons accordingly
+      $( window ).resize(function() {
+
+        var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
+
+        $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
+
+      });
     }
   };
 })(jQuery, Drupal);

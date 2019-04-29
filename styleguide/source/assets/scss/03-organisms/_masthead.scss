@@ -105,16 +105,36 @@
       display: none;
 
       @include breakpoint($bp-small) {
+        left: 0;
         grid-column: 4 / 5;
         grid-row: 3;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 66px;
+        min-width: 50px;
+
+
+        &.is-sticky {
+        }
       }
 
       .ama__social-share {
         justify-content: flex-end;
+
+        &--fixed {
+          top: 0;
+          left: 0;
+          position: absolute;
+          transform: rotate(90deg);
+          margin-top: 250px;
+          width: 50px;
+
+          li {
+            transform: rotate(-90deg);
+          }
+
+        }
       }
     }
   }
