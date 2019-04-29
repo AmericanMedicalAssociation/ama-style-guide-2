@@ -68,14 +68,14 @@
 
       // Hide/Show menu
       function hideShow() {
-        categoryNavHeight();
-        submMenuFlyoutResize();
-
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown();
+          categoryNavHeight();
+          submMenuFlyoutResize();
         }
         else {
           $categoryNavigationMenu.slideUp();
+          categoryNavHeight(0);
         }
       }
 
