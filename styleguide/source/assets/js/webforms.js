@@ -48,6 +48,12 @@
     }
   }
 
+  // Submits first page of Contact Us form on radio button selection
+  var $webform_buttons = $('#webform-submission-contact-us-add-form input[type="radio"]');
+  $webform_buttons.click(function(e) {
+    $('#webform-submission-contact-us-add-form').submit();
+  });
+
   // Go back to previous back is user clicks decline submit button
   $('.ama__button--decline').click(function(e) {
     e.preventDefault();
