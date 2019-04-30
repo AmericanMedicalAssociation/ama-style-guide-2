@@ -140,13 +140,19 @@
       var debounce_timer;
 
       $(window).scroll(function() {
+        var socialIconPosition = $('.ama__masthead__content__share .ama__social-share').offset().top - $(window).scrollTop();
+        var footerPosition = $('footer').offset().top - $(window).scrollTop() - 200 > 0 ? $('footer').offset().top - $(window).scrollTop() - 200 : -245;
+        var socialIconPositionUpdate = 0;
+
         if(debounce_timer) {
           window.clearTimeout(debounce_timer);
         }
+
+        if($(window).height() < 745) {
+          $('.ama__masthead__content__share').hide();
+        }
+
         debounce_timer = window.setTimeout(function() {
-          var socialIconPosition = $('.ama__masthead__content__share .ama__social-share').offset().top - $(window).scrollTop();
-          var footerPosition = $('footer').offset().top - $(window).scrollTop() - 80;
-          var socialIconPositionUpdate = 0;
 
           if(socialIconPosition > 0) {
             socialIconPositionUpdate = socialIconPosition;
@@ -154,7 +160,7 @@
             socialIconPositionUpdate = 0;
           }
 
-          if(socialIconPositionUpdate > footerPosition) {
+          if(socialIconPositionUpdate >= footerPosition) {
             $('.ama__masthead__content__share').fadeOut('fast');
           } else {
             $('.ama__masthead__content__share').fadeIn('fast');
