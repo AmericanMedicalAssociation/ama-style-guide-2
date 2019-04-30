@@ -133,7 +133,7 @@
     }
 
     @include breakpoint($bp-large) {
-      width: 940px !important;
+      width: 980px !important;
       max-width: none !important;
     }
   }
@@ -148,6 +148,18 @@
       width: 250px;
       float: left;
       overflow-y: auto;
+    }
+
+
+    &__header {
+
+      @include breakpoint($bp-small) {
+        @include gutter($margin-bottom-half...);
+        @include gutter($padding-left-half...);
+        @include gutter($padding-right-half...);
+      }
+      color: $homepagePurple;
+      text-transform: uppercase;
     }
 
     ol {
@@ -174,17 +186,6 @@
             background-color: transparent;
             text-decoration: underline;
           }
-        }
-
-        &.ama_category_navigation_menu__submenu__header {
-
-          @include breakpoint($bp-small) {
-            @include gutter($margin-bottom-half...);
-            @include gutter($padding-left-half...);
-            @include gutter($padding-right-half...);
-          }
-          color: $homepagePurple;
-          text-transform: uppercase;
         }
       }
     }
