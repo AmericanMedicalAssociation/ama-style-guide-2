@@ -119,17 +119,18 @@
         justify-content: flex-end;
 
         &--fixed {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           top: 0;
           left: 0;
           position: absolute;
-          transform: rotate(90deg);
           margin-top: 250px;
           width: 50px;
 
           li {
-            transform: rotate(-90deg);
+            margin: 0 0 $gutter/2 0 ;
           }
-
         }
       }
     }
