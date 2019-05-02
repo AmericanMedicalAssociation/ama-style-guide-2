@@ -150,7 +150,7 @@
         }
 
         if($(window).height() < 745) {
-          $('.ama__masthead__content__share').hide();
+          $('.ama__social-share.ama__social-share--fixed').hide();
         }
 
         debounce_timer = window.setTimeout(function() {
