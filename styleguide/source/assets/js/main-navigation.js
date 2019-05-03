@@ -12,83 +12,99 @@
           viewportHeight = 0,
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
-          categoryNavMenuMResizedHeight = 0;
+          categoryNavMenuResizedHeight = 0;
 
 
       if($productNav.length){
-        productNavHeight = $productNav.outerHeight();
+        productNavHeight = $productNav.height();
       }
 
         // Calculate whether or not the category nav should have scrollbars
       function categoryNavHeight($resizeViewportHeight) {
-
+        // Check to see if viewport height is passed back when the window gets resized
         if(typeof $resizeViewportHeight !== 'undefined') {
           viewportHeight = $resizeViewportHeight - productNavHeight;
         } else {
+          // Window height is used by default
           viewportHeight = $(window).innerHeight();
         }
 
-        categoryNavMenuMResizedHeight = viewportHeight - $mainNav.outerHeight();
+        // Subtract the navigation height from window height to assess content height
+        categoryNavMenuResizedHeight = viewportHeight - $mainNav.outerHeight();
 
+        // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight > viewportHeight) {
-          $categoryNavWrapper.outerHeight(categoryNavMenuMResizedHeight);
-        } else {
-          $categoryNavWrapper.outerHeight(viewportHeight);
+          // Set the menu dropdown the same as viewport to enable scrolling
+          $categoryNavWrapper.outerHeight(categoryNavMenuResizedHeight);
+          $categoryNavWrapper.addClass('scroll');
+
+          // Scoll main menu and fix body to prevent it from scrolling
+          $categoryNavWrapper.bind('mousewheel',function(ev, delta) {
+            var scrollTop = $(this).scrollTop();
+            // Initializes the mousewheel plugin
+            $(this).scrollTop(scrollTop - Math.round(delta));
+
+            // Prevents the document scrolling while the main menu is scrolling
+            $('body').css('overflow', 'hidden');
+            // Listen to when the scroll stops
+            clearTimeout($.data(this, 'timer'));
+            $.data(this, 'timer', setTimeout(function () {
+            // Renables document scroll
+              $('body').css('overflow', 'auto');
+            }, 200));
+          });
         }
       }
+      // When mouse enters main nav div then enable scrolling and menu height resize
+      // Uses the smartmenu API for mouseleave
+      $categoryNavWrapper.on('mouseenter.smapi', function() {
+        categoryNavHeight();
+      });
 
-      function submMenuFlyoutResize() {
+      // Prevent main menu from scrolling while the submenu is shown
+      // Uses the smartmenu API for mouseleave
+      $categoryNavWrapper.on('mouseleave.smapi', function() {
+        $categoryNavWrapper.removeClass('scroll');
+      });
 
-        // Calculate the visible height of article
-        var $el = $('.layout-container'),
-            scrollTop = $(this).scrollTop(),
-            scrollBottom = scrollTop + $(this).height(),
-            elTop = $el.offset().top,
-            elBottom = elTop + $el.outerHeight(),
-            visibleTop = elTop < scrollTop ? scrollTop : elTop,
-            visibleBottom = elBottom > scrollBottom ? scrollBottom : elBottom,
-            viewportHeight =  visibleBottom - visibleTop - $mainNav.outerHeight() - productNavHeight ;
-
-        $('.ama_category_navigation_menu ul li').each(function () {
-          $(this).hover(function () {
-            if ($(this).find('.ama_category_navigation_menu__flyout').length) {
-              if($(this).find('.ama_category_navigation_menu__flyout').outerHeight() > viewportHeight) {
-                $('.ama_category_navigation_menu__group').on('activate.smapi', function (e, item) {
-                  $(item).next().addClass('pinned').outerHeight(viewportHeight);
-                });
-              } else {
-                $('.ama_category_navigation_menu__group').on('activate.smapi', function (e, item) {
-                  $(item).next().removeClass('pinned');
-                });
-              }
-            }
-          });
+      // Prevent main menu from scrolling while the submenu is shown
+      // Uses the smartmenu API for mouseenter
+      $('.ama_category_navigation_menu__flyout').on('mouseenter.smapi', function() {
+        $categoryNavWrapper.removeClass('scroll');
+        // Temp disables mousewheel plugin
+        $categoryNavWrapper.unbind("mousewheel", function(){
+          return false;
         });
-      }
+      });
+
+      // Returns scroll functionality to main menu when the submenu goes away
+      $('.ama_category_navigation_menu__flyout').on('mouseleave.smapi', function(e, item) {
+        $categoryNavWrapper.addClass('scroll');
+        categoryNavHeight();
+      });
+
 
       // Hide/Show menu
       function hideShow() {
         categoryNavHeight();
-        submMenuFlyoutResize();
 
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown();
         }
         else {
           $categoryNavigationMenu.slideUp();
+          categoryNavHeight(0);
         }
       }
 
       $(window).resize(function () {
-        var $resizeViewportHeight = $(window).innerHeight()
+        var $resizeViewportHeight = $(window).innerHeight();
         categoryNavHeight($resizeViewportHeight);
-
-        submMenuFlyoutResize();
       });
 
       $('.ama__global-menu').click(function (e) {
-        e.stopPropagation();
         hideShow();
+        e.stopPropagation();
       });
 
       $(document).click(function (e) {
