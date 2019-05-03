@@ -60,7 +60,7 @@
 
       // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
       $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
-        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight();
+        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() + 50;
         viewportHeight = $(window).innerHeight();
 
         if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
@@ -101,7 +101,9 @@
       // Hide/Show menu
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
-          $categoryNavigationMenu.slideDown();
+          $categoryNavigationMenu.slideDown(function () {
+            $(this).parent().height('100%');
+          });
         }
         else {
           $categoryNavigationMenu.slideUp(function () {
