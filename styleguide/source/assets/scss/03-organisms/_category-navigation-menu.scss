@@ -128,13 +128,16 @@
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
-      margin-left: 250px !important;
       overflow: auto;
     }
 
     @include breakpoint($bp-large) {
       width: 980px !important;
       max-width: none !important;
+    }
+
+    &--reposition_margin {
+      margin-top: -50px !important;
     }
   }
 

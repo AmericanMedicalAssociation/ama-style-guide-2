@@ -1,3 +1,10 @@
+.noscroll {
+  top: 0;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 .ama__main-navigation {
   background-color: $purple;
   color: $white;
@@ -36,7 +43,7 @@
     display: none;
     flex-direction: column;
     width: calc(100vw - 70px);
-    z-index: 500;
+    z-index: 501;
 
     @include breakpoint($bp-small min-width) {
       width: 250px;

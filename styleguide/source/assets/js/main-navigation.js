@@ -45,16 +45,31 @@
             $(this).scrollTop(scrollTop - Math.round(delta));
 
             // Prevents the document scrolling while the main menu is scrolling
-            $('body').css('overflow', 'hidden');
+            if ($(document).height() > $(window).height()) {
+              $('html').addClass('noscroll');
+            }
             // Listen to when the scroll stops
             clearTimeout($.data(this, 'timer'));
             $.data(this, 'timer', setTimeout(function () {
             // Renables document scroll
-              $('body').css('overflow', 'auto');
+              $('html').removeClass('noscroll');
             }, 200));
           });
         }
       }
+
+
+      // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
+      $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
+        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight();
+        viewportHeight = $(window).innerHeight();
+
+        if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
+          $(menu).addClass('ama_category_navigation_menu__flyout--reposition_margin');
+        }
+      });
+
+
       // When mouse enters main nav div then enable scrolling and menu height resize
       // Uses the smartmenu API for mouseleave
       $categoryNavWrapper.on('mouseenter.smapi', function() {
@@ -86,14 +101,16 @@
 
       // Hide/Show menu
       function hideShow() {
-        categoryNavHeight();
-
         if ($('#global-menu').prop('checked')) {
-          $categoryNavigationMenu.slideDown();
+          $categoryNavigationMenu.slideDown(function(){
+            categoryNavHeight();
+          });
         }
         else {
-          $categoryNavigationMenu.slideUp();
-          categoryNavHeight(0);
+          $categoryNavigationMenu.slideUp(function(){
+            categoryNavHeight(0);
+          });
+
         }
       }
 
