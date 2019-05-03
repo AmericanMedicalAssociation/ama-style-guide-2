@@ -58,7 +58,6 @@
         }
       }
 
-
       // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
       $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
         var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight();
@@ -102,15 +101,12 @@
       // Hide/Show menu
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
-          $categoryNavigationMenu.slideDown(function(){
-            categoryNavHeight();
-          });
+          $categoryNavigationMenu.slideDown();
         }
         else {
-          $categoryNavigationMenu.slideUp(function(){
-            categoryNavHeight(0);
+          $categoryNavigationMenu.slideUp(function () {
+            $(this).parent().height('0');
           });
-
         }
       }
 
