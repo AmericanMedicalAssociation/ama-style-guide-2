@@ -68,14 +68,14 @@
 
       // Hide/Show menu
       function hideShow() {
-        categoryNavHeight();
-        submMenuFlyoutResize();
-
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown();
+          categoryNavHeight();
+          submMenuFlyoutResize();
         }
         else {
           $categoryNavigationMenu.slideUp();
+          categoryNavHeight(0);
         }
       }
 
@@ -100,6 +100,71 @@
 
       $($mobileSearchTrigger).unbind('click').click(function () {
         $mobileSearch.slideToggle();
+      });
+
+      function moveSocialSharePosition(){
+        var mainNavPosition = $('.ama__main-navigation .container').offset().left;
+        var $amaSocialShare = $('.ama__social-share');
+
+        // Checks to see if there is enough for the sticky nav
+        if(mainNavPosition > 60) {
+
+          var socialStickyPosition = mainNavPosition - 60;
+          var $socialIcons = $('.ama__masthead__content__share');
+
+          // Check to see if viewport width is greater 850px then the social icons will be sticky
+          if($socialIcons.length && $(window).width() > 850) {
+            $socialIcons.sticky({
+              wrapperClassName: 'ama__masthead__content__share-wrapper',
+              zIndex: 501
+            });
+
+            $socialIcons.on('sticky-start', function () {
+              $amaSocialShare.addClass('ama__social-share--fixed').css('left', socialStickyPosition).hide().fadeTo('slow', 1);
+            });
+
+            $socialIcons.on('sticky-update', function () {
+              $amaSocialShare.addClass('ama__social-share--fixed').hide().fadeTo('slow', 1);
+            });
+
+            $socialIcons.on('sticky-end', function () {
+              $('.ama__social-share--fixed').removeClass('ama__social-share--fixed');
+            });
+          }
+        }
+      }
+
+      // Initialize getSocialShare()
+      moveSocialSharePosition();
+
+      // Onscroll check to see if social icon position is greater than footer position
+      var debounce_timer;
+
+      $(window).scroll(function() {
+        var $socialIcons = $('.ama__masthead__content__share .ama__social-share');
+        var socialIconPositionBottom = $socialIcons.offset().top + $socialIcons.outerHeight();
+        var footerPosition = $('footer').offset().top;
+
+        if(debounce_timer) {
+          window.clearTimeout(debounce_timer);
+        }
+
+        debounce_timer = window.setTimeout(function() {
+          if(socialIconPositionBottom > footerPosition) {
+            $('.ama__masthead__content__share').fadeOut('fast');
+          } else {
+            $('.ama__masthead__content__share').fadeIn('fast');
+          }
+        }, 50);
+      });
+
+      //Checks the layout position of article on window resize and moves the social icons accordingly
+      $( window ).resize(function() {
+
+        var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
+
+        $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
+
       });
     }
   };
