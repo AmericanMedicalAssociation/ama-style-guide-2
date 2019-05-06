@@ -39,3 +39,12 @@
     @include gutter($margin-bottom-full...);
   }
 }
+
+// Removes Next button on first page when Javascript is enabled
+html.js {
+  .webform-submission-contact-us-form {
+    input.webform-button--next {
+      display: none;
+    }
+  }
+}
