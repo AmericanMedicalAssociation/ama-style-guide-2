@@ -149,10 +149,6 @@
           window.clearTimeout(debounce_timer);
         }
 
-        if($(window).height() < 745) {
-          $('.ama__social-share.ama__social-share--fixed').hide();
-        }
-
         debounce_timer = window.setTimeout(function() {
           if(socialIconPositionBottom > footerPosition) {
             $('.ama__masthead__content__share').fadeOut('fast');
