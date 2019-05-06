@@ -8,11 +8,13 @@
           $mobileSearchTrigger = $('.global-search-trigger'),
           $mobileSearch = $('.ama__global-search'),
           $mainNav = $('.ama__main-navigation '),
+          $categoryMenuFlyout = $('.ama_category_navigation_menu__flyout'),
           $productNav = $('.ama__product-nav'),
           viewportHeight = 0,
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuResizedHeight = 0;
+
 
 
       if($productNav.length){
@@ -60,7 +62,7 @@
 
       // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
       $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
-        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() + 50;
+        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() + 100;
         viewportHeight = $(window).innerHeight();
 
         if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
@@ -83,7 +85,7 @@
 
       // Prevent main menu from scrolling while the submenu is shown
       // Uses the smartmenu API for mouseenter
-      $('.ama_category_navigation_menu__flyout').on('mouseenter.smapi', function() {
+      $categoryMenuFlyout.on('mouseenter.smapi', function() {
         $categoryNavWrapper.removeClass('scroll');
         // Temp disables mousewheel plugin
         $categoryNavWrapper.unbind("mousewheel", function(){
@@ -92,7 +94,7 @@
       });
 
       // Returns scroll functionality to main menu when the submenu goes away
-      $('.ama_category_navigation_menu__flyout').on('mouseleave.smapi', function(e, item) {
+      $categoryMenuFlyout.on('mouseleave.smapi', function() {
         $categoryNavWrapper.addClass('scroll');
         categoryNavHeight();
       });
