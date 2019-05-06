@@ -14,9 +14,7 @@
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuResizedHeight = 0;
-
-
-
+      
       if($productNav.length){
         productNavHeight = $productNav.height();
       }
