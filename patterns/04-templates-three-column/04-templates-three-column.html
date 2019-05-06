@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/weq1gkk.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1555104281" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1555104281" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1557180467" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1557180467" media="all" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
@@ -24,13 +24,14 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1555104281" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1555104281" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1557180467" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1557180467" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
 <body class="">
-  <div class="ama__main-navigation ">
+<div class="layout-container">
+      <div class="ama__main-navigation ">
   <div class="container">
           <div class="ama__global-menu">
   <input id="global-menu" class="ama__global-menu__burger-input" type="checkbox" />
@@ -40,8 +41,11 @@
   <span class="ama__global-menu__menu-text"></span>
                                                                           </div>
     
-    <nav id="ama_category_navigation_menu" class="ama_category_navigation_menu">
-  </nav>
+    <div class="ama_category_navigation_wrapper">
+  <nav id="ama_category_navigation_menu" class="ama_category_navigation_menu" role="navigation">
+      </nav>
+
+</div>
     
 <a href="" class="">
   <img src="" class="" alt="" />
@@ -97,35 +101,35 @@
 </div>
   </div>
 </div>
-
-<div class="ama__layout--three-column container ">
   
-  <section class="ama__layout--three-column__content-top">
-          <section class="ama__placeholder ">
+  <div class="ama__layout--three-column container ">
+    
+    <section class="ama__layout--three-column__content-top">
+              <section class="ama__placeholder ">
   Content Top region content
 </section>
-      </section>
+          </section>
 
-  <article class="ama__layout--three-column__page-content" role="article">
-                <section class="ama__placeholder ">
+    <article class="ama__layout--three-column__page-content" role="article">
+                      <section class="ama__placeholder ">
   Page main content
 </section>
-      </article>
+          </article>
 
-  <aside id="sidebar-primary" class="ama__layout--three-column__sidebar--primary" role="complementary">
-                <section class="ama__placeholder ">
+    <aside id="sidebar-primary" class="ama__layout--three-column__sidebar--primary" role="complementary">
+                      <section class="ama__placeholder ">
   Page sidebar primary content
 </section>
-      </aside>
+          </aside>
 
-  <aside id="sidebar-secondary" class="ama__layout--three-column__sidebar--secondary" role="complementary">
-                <section class="ama__placeholder ">
+    <aside id="sidebar-secondary" class="ama__layout--three-column__sidebar--secondary" role="complementary">
+                      <section class="ama__placeholder ">
   Page sidebar secondary content
 </section>
-      </aside>
-</div>
+          </aside>
+  </div>
 
-  <footer class="ama__footer ">
+      <footer class="ama__footer ">
   <div class="container">
     
 <a href="#" class="ama__site-logo--footer">
@@ -360,6 +364,7 @@
     </div>
   </div>
 </footer>
+  </div>
 
       <!--DO NOT REMOVE-->
       <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
@@ -397,10 +402,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1555104281">
+<script id="pl-js-polyfill-insert-1557180467">
   (function() {
     if (self != top) {
-      var cb = '1555104281';
+      var cb = '1557180467';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -410,10 +415,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1555104281">
+<script id="pl-js-insert-1557180467">
   (function() {
     if (self != top) {
-      var cb = '1555104281';
+      var cb = '1557180467';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
