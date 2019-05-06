@@ -100,7 +100,7 @@
 
     .scroll-up,
     .scroll-down {
-      display: none !important;
+      position: absolute;
     }
 
 
@@ -118,6 +118,7 @@
   }
 
   &__flyout {
+    @include gutter($padding-bottom-full...);
     display: none;
     color: $black;
     list-style: none;
@@ -127,12 +128,16 @@
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
-      margin-left: 250px !important;
+      overflow: auto;
     }
 
     @include breakpoint($bp-large) {
-      width: 940px !important;
+      width: 980px !important;
       max-width: none !important;
+    }
+
+    &--reposition_margin {
+      padding-top: 130px;
     }
   }
 
@@ -145,6 +150,19 @@
       box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
       width: 250px;
       float: left;
+      overflow-y: auto;
+    }
+
+
+    &__header {
+
+      @include breakpoint($bp-small) {
+        @include gutter($margin-bottom-half...);
+        @include gutter($padding-left-half...);
+        @include gutter($padding-right-half...);
+      }
+      color: $homepagePurple;
+      text-transform: uppercase;
     }
 
     ol {
@@ -172,17 +190,6 @@
             text-decoration: underline;
           }
         }
-
-        &.ama_category_navigation_menu__submenu__header {
-
-          @include breakpoint($bp-small) {
-            @include gutter($margin-bottom-half...);
-            @include gutter($padding-left-half...);
-            @include gutter($padding-right-half...);
-          }
-          color: $homepagePurple;
-          text-transform: uppercase;
-        }
       }
     }
   }
@@ -193,6 +200,7 @@
     background-color: $gray-7;
     float: left;
     display: none;
+    overflow: hidden;
 
     .ama__article-stub {
       padding-bottom: 0;
@@ -213,6 +221,8 @@
       }
 
       @include breakpoint($bp-small) {
+        overflow: auto;
+
         &:nth-child(2):nth-last-child(1) {
           @include gutter($margin-top-full...);
         }
