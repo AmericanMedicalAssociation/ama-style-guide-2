@@ -60,7 +60,7 @@
 
       // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
       $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
-        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() + 100;
+        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() + 60;
         viewportHeight = $(window).innerHeight();
 
         if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
