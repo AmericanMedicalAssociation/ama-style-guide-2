@@ -1,7 +1,7 @@
 <div class="ama_category_navigation_wrapper">
-  <nav id="ama_category_navigation_menu" class="ama_category_navigation_menu">
+  <nav id="ama_category_navigation_menu" class="ama_category_navigation_menu" role="navigation">
     {% for menuGroup in categoryNavigationMenu.menuGroups %}
-      <ul class="ama_category_navigation_menu__group sm sm-vertical">
+      <ul class="ama_category_navigation_menu__group sm sm-clean sm  sm-vertical">
         {% for group in menuGroup.group %}
           {% set link = group.link %}
           {% set heading = group.heading %}

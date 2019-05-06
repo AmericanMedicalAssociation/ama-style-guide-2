@@ -100,7 +100,7 @@
 
     .scroll-up,
     .scroll-down {
-      display: none !important;
+      position: absolute;
     }
 
 
@@ -128,13 +128,16 @@
       z-index: 1;
       width: 550px !important;
       max-width: none !important;
-      margin-left: 250px !important;
       overflow: auto;
     }
 
     @include breakpoint($bp-large) {
       width: 980px !important;
       max-width: none !important;
+    }
+
+    &--reposition_margin {
+      padding-top: 130px;
     }
   }
 
@@ -197,6 +200,7 @@
     background-color: $gray-7;
     float: left;
     display: none;
+    overflow: hidden;
 
     .ama__article-stub {
       padding-bottom: 0;

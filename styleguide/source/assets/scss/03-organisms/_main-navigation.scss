@@ -1,3 +1,10 @@
+.noscroll {
+  top: 0;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 .ama__main-navigation {
   background-color: $purple;
   color: $white;
@@ -21,38 +28,22 @@
   }
 
   .ama_category_navigation_wrapper {
-    overflow: auto;
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      height: 0;
-      width: 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      height: 0;
-      width: 0;
-    }
-
-    &::-webkit-scrollbar-track {
-      height: 0;
-      width: 0;
-    }
-
-    width: 110%;
     position: absolute;
     top: 60px;
     left: 0;
-    z-index: 500;
-    scrollbar-width: none;
+    z-index: 501;
+    width: 110%;
+
+    &.scroll {
+      overflow: hidden;
+    }
   }
 
   .ama_category_navigation_menu {
     display: none;
     flex-direction: column;
     width: calc(100vw - 70px);
-    z-index: 500;
+    z-index: 501;
 
     @include breakpoint($bp-small min-width) {
       width: 250px;
