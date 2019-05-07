@@ -35,8 +35,7 @@
         // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight > viewportHeight) {
           // Set the menu dropdown the same as viewport to enable scrolling
-          $categoryNavWrapper.outerHeight(categoryNavMenuResizedHeight);
-          $categoryNavWrapper.addClass('scroll');
+          $categoryNavWrapper.outerHeight(categoryNavMenuResizedHeight).addClass('scroll');
 
           // Scoll main menu and fix body to prevent it from scrolling
           $categoryNavWrapper.bind('mousewheel',function(ev, delta) {
@@ -60,14 +59,13 @@
 
       // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
       $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
-        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() + 60;
         viewportHeight = $(window).innerHeight();
+        var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() ;
 
         if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
-          $(menu).addClass('ama_category_navigation_menu__flyout--reposition_margin');
+          $(menu).css('top', $mainNav.position().top + $mainNav.outerHeight(true) + 30 + 'px');
         }
       });
-
 
       // When mouse enters main nav div then enable scrolling and menu height resize
       // Uses the smartmenu API for mouseleave
@@ -102,7 +100,7 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            $(this).parent().height('100%');
+            $(this).parent().height('auto');
           });
         }
         else {

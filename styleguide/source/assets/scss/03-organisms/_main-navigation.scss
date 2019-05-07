@@ -35,7 +35,15 @@
     width: 110%;
 
     &.scroll {
-      overflow: hidden;
+      overflow: initial;
+
+      @include breakpoint($bp-small min-width) {
+        overflow: auto;
+      }
+
+      @include breakpoint($bp-large min-width) {
+        overflow: hidden;
+      }
     }
   }
 
