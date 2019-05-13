@@ -49,6 +49,19 @@
       margin-bottom: $gutter/2;
       width: 100%;
       text-align: right;
+
+      .ama__button {
+        @include breakpoint($bp-med max-width) {
+          @include font-size($h5-font-sizes);
+          font-weight: $font-weight-regular;
+          border: none;
+          &:hover {
+            background-color: $white;
+            color: $purple;
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
     @include breakpoint($bp-small min-width) {
