@@ -14,7 +14,9 @@
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuResizedHeight = 0;
-      
+      $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+
+
       if($productNav.length){
         productNavHeight = $productNav.height();
       }
@@ -55,6 +57,11 @@
             }, 200));
           });
         }
+      }
+
+      // Only make the menu height same as viewport on mobile devices
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $categoryNavigationMenu.outerHeight($(window).innerHeight());
       }
 
       // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
@@ -185,6 +192,10 @@
             $('.ama__masthead__content__share').fadeIn('fast');
           }
         }, 50);
+
+        if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+          categoryNavHeight();
+        }
       });
 
       //Checks the layout position of article on window resize and moves the social icons accordingly
