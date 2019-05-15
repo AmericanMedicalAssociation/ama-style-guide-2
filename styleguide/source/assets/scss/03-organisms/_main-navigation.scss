@@ -35,11 +35,7 @@
     width: 110%;
 
     &.scroll {
-      overflow: initial;
-
-      @include breakpoint($bp-small min-width) {
-        overflow: auto;
-      }
+      overflow: auto;
 
       @include breakpoint($bp-large min-width) {
         overflow: hidden;
@@ -52,7 +48,6 @@
     flex-direction: column;
     width: calc(100vw - 70px);
     z-index: 501;
-    overflow: auto;
 
     @include breakpoint($bp-small min-width) {
       width: 250px;
