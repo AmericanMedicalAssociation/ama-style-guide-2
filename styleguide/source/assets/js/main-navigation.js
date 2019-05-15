@@ -118,19 +118,25 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            if (!agentID) {
+            if (agentID) {
+              $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight());
+            } else {
               $(this).parent().height('auto');
             }
           });
         }
         else {
           $categoryNavigationMenu.slideUp(function () {
-            if (!agentID) {
-              $(this).parent().height('0');
+            if (agentID) {
+              $categoryNavigationMenu.outerHeight(0);
+            } else {
+              $(this).parent().height('auto');
             }
           });
         }
       }
+
+      $('#global-menu').prop('checked', false);
 
       $('.ama__global-menu').click(function (e) {
         hideShow();
