@@ -15,10 +15,10 @@
       // Needs doc ready because the admin toolbar needs to get loaded to determine the top spacing for sticky nav
       $(function() {
         var $bodyFixed = $('body').css('overflow');
-        
+
         if($bodyFixed === 'hidden') {
           $('.ama__main-navigation').unstick();
-          return
+          return;
         } else if($(window).width() < 768 ) { // If less than tablet
           $('.ama__main-navigation').sticky({zIndex: 501});
         } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
