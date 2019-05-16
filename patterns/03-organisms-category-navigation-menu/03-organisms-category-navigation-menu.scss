@@ -126,6 +126,7 @@
     @include breakpoint($bp-small) {
       position: absolute;
       z-index: 1;
+      margin-left: 250px !important;
       width: 550px !important;
       max-width: none !important;
       overflow: auto;
@@ -134,10 +135,6 @@
     @include breakpoint($bp-large) {
       width: 980px !important;
       max-width: none !important;
-    }
-
-    &--reposition_margin {
-      padding-top: 130px;
     }
   }
 
@@ -152,7 +149,6 @@
       float: left;
       overflow-y: auto;
     }
-
 
     &__header {
 
@@ -174,8 +170,8 @@
       }
 
       li {
-        padding: 0px;
-        margin: 0px;
+        padding: 0;
+        margin: 0;
 
         a {
           @include gutter($padding-left-half...);
