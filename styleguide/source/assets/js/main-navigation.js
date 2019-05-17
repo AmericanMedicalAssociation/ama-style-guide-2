@@ -5,10 +5,10 @@
 
       var $categoryNavWrapper = $('.ama_category_navigation_wrapper'),
           $categoryNavigationMenu = $('.ama_category_navigation_menu'),
+          $categoryNavigationMenuGroup = $('.ama_category_navigation_menu__group'),
           $mobileSearchTrigger = $('.global-search-trigger'),
           $mobileSearch = $('.ama__global-search'),
           $mainNav = $('.ama__main-navigation '),
-          $categoryMenuFlyout = $('.ama_category_navigation_menu__flyout'),
           $productNav = $('.ama__product-nav'),
           viewportHeight = 0,
           productNavHeight = 0,
@@ -25,6 +25,7 @@
 
         // Calculate whether or not the category nav should have scrollbars
       function categoryNavHeight($resizeViewportHeight) {
+
         // Check to see if viewport height is passed back when the window gets resized
         if(typeof $resizeViewportHeight !== 'undefined') {
           viewportHeight = $resizeViewportHeight - productNavHeight;
@@ -34,103 +35,49 @@
         }
 
         // Subtract the navigation height from window height to assess content height
-        categoryNavMenuResizedHeight = viewportHeight - $mainNav.outerHeight();
+        categoryNavMenuResizedHeight = viewportHeight;
 
         // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight > viewportHeight) {
           // Set the menu dropdown the same as viewport to enable scrolling
-          $categoryNavWrapper.outerHeight(categoryNavMenuResizedHeight).addClass('scroll');
-
-          // Scoll main menu and fix body to prevent it from scrolling
-          $categoryNavWrapper.bind('mousewheel',function(ev, delta) {
-            var scrollTop = $(this).scrollTop();
-            // Initializes the mousewheel plugin
-            $(this).scrollTop(scrollTop - Math.round(delta));
-
-            // Prevents the document scrolling while the main menu is scrolling
-            if ($(document).height() > $(window).height()) {
-              $('html').addClass('noscroll');
-            }
-            // Listen to when the scroll stops
-            clearTimeout($.data(this, 'timer'));
-            $.data(this, 'timer', setTimeout(function () {
-            // Renables document scroll
-              $('html').removeClass('noscroll');
-            }, 200));
-          });
+          $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuResizedHeight - $mainNav.outerHeight());
+        } else {
+          $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
         }
       }
-
-      // Only make the menu height same as viewport on mobile devices
-      if (agentID) {
-        $categoryNavWrapper.outerHeight($(window).innerHeight()).addClass('scroll');
-
-        $(window).resize(function () {
-          $categoryNavWrapper.outerHeight($(window).innerHeight());
-        });
-      } else {
-        // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
-        $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
-          viewportHeight = $(window).innerHeight();
-          var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() ;
-
-          if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
-            $(menu).css('top', $mainNav.position().top + $mainNav.outerHeight(true) + 30 + 'px');
-          }
-        });
-
-        // When mouse enters main nav div then enable scrolling and menu height resize
-        // Uses the smartmenu API for mouseleave
-        $categoryNavWrapper.on('mouseenter.smapi', function() {
-          categoryNavHeight();
-        });
-
-        // Prevent main menu from scrolling while the submenu is shown
-        // Uses the smartmenu API for mouseleave
-        $categoryNavWrapper.on('mouseleave.smapi', function() {
-          $categoryNavWrapper.removeClass('scroll');
-        });
-
-        // Prevent main menu from scrolling while the submenu is shown
-        // Uses the smartmenu API for mouseenter
-        $categoryMenuFlyout.on('mouseenter.smapi', function() {
-          $categoryNavWrapper.removeClass('scroll');
-          // Temp disables mousewheel plugin
-          $categoryNavWrapper.unbind("mousewheel", function(){
-            return false;
-          });
-        });
-
-        // Returns scroll functionality to main menu when the submenu goes away
-        $categoryMenuFlyout.on('mouseleave.smapi', function() {
-          $categoryNavWrapper.addClass('scroll');
-          categoryNavHeight();
-        });
-
-        $(window).resize(function () {
-          var $resizeViewportHeight = $(window).innerHeight();
-          categoryNavHeight($resizeViewportHeight);
-        });
-      }
-
 
       // Hide/Show menu
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
+            categoryNavHeight();
             if (agentID) {
               $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight());
             } else {
               $(this).parent().height('auto');
             }
+
+            // Only make the menu height same as viewport on mobile devices
+            if (agentID) {
+              $categoryNavWrapper.outerHeight($(window).innerHeight()).addClass('scroll');
+
+              $(window).resize(function () {
+                $categoryNavWrapper.outerHeight($(window).innerHeight());
+              });
+            }
           });
         }
         else {
           $categoryNavigationMenu.slideUp(function () {
+            $(this).parent().height(0);
+
+            // Only make the menu height same as viewport on mobile devices
             if (agentID) {
-              $categoryNavigationMenu.outerHeight(0);
-            } else {
-              $(this).parent().height('auto');
+              $categoryNavWrapper.outerHeight(0).removeClass('scroll');
+
+              $(window).resize(function () {
+                $categoryNavWrapper.outerHeight(0);
+              });
             }
           });
         }
@@ -218,6 +165,9 @@
 
       //Checks the layout position of article on window resize and moves the social icons accordingly
       $( window ).resize(function() {
+
+        var $resizeViewportHeight = $(window).innerHeight()
+        categoryNavHeight($resizeViewportHeight);
 
         var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
 

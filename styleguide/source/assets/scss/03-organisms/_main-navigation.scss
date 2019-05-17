@@ -32,7 +32,6 @@
     top: 60px;
     left: 0;
     z-index: 501;
-    width: 110%;
 
     &.scroll {
       overflow: auto;
@@ -51,6 +50,16 @@
 
     @include breakpoint($bp-small min-width) {
       width: 250px;
+    }
+
+
+    ul.scroll {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    li {
+      position: static;
     }
   }
 
