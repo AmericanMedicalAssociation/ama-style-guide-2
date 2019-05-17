@@ -13,11 +13,12 @@
           viewportHeight = 0,
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
-          categoryNavMenuResizedHeight = 0;
+          categoryNavMenuResizedHeight = 0,
+          windowWidth = $(window).width();
 
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
-      var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/);
+      var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth > 768;
 
       if($productNav.length){
         productNavHeight = $productNav.height();
