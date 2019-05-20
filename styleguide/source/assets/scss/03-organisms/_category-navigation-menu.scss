@@ -1,7 +1,6 @@
 .ama_category_navigation_menu {
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
-  border-top: 1px solid $gray-50;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
   color: $white;
   min-width: 200px;
@@ -12,6 +11,7 @@
   width: 100%;
 
   @include breakpoint($bp-small) {
+    border-top: 1px solid $gray-50;
     width: 250px;
 
     &__article-container {

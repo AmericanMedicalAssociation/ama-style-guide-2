@@ -20,7 +20,7 @@
 
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
-      var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth > 768;
+      var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
 
       if($productNav.length){
         productNavHeight = $productNav.height();
@@ -59,16 +59,16 @@
 
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            categoryNavHeight();
 
             if (categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight > viewportHeight) {
               $('body').addClass('noscroll');
             }
 
             if (agentID) {
-              $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight());
+              $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight() + $mainNav.outerHeight() );
             } else {
               $(this).parent().height('auto');
+              categoryNavHeight();
             }
 
             // Only make the menu height same as viewport on mobile devices

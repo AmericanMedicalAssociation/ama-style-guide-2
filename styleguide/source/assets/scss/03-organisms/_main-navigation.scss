@@ -1,11 +1,10 @@
 .noscroll {
-  top: 0;
-  position: fixed;
-  overflow-y: scroll;
+  overflow-y: hidden;
   width: 100%;
 }
 
 .ama__main-navigation {
+  border-bottom: 1px solid $gray-50;
   background-color: $purple;
   color: $white;
   position: relative;
@@ -29,12 +28,13 @@
 
   .ama_category_navigation_wrapper {
     position: absolute;
-    top: 60px;
+    top: 61px;
     left: 0;
     z-index: 501;
 
     &.scroll {
       overflow: auto;
+      width: 100%;
 
       @include breakpoint($bp-large min-width) {
         overflow: hidden;
