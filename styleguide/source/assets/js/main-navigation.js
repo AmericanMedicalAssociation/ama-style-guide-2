@@ -83,7 +83,7 @@
             if (categoryNavMenuHeight > viewportHeight) {
               $('body').removeClass('noscroll');
             }
-            
+
             // Only make the menu height same as viewport on mobile devices
             if (agentID) {
               $categoryNavWrapper.outerHeight(0).removeClass('scroll');
@@ -181,12 +181,16 @@
       $( window ).resize(function() {
 
         var $resizeViewportHeight = $(window).innerHeight();
-        categoryNavHeight($resizeViewportHeight);
-
         var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
 
+        categoryNavHeight($resizeViewportHeight);
         $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
 
+        if ($('#global-menu').prop('checked') && categoryNavMenuHeight > viewportHeight) {
+          $('body').addClass('noscroll');
+        } else {
+          $('body').removeClass('noscroll');
+        }
       });
     }
   };
