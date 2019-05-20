@@ -45,8 +45,8 @@
           // Set the menu dropdown the same as viewport to enable scrolling
           var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
-          $subMenu.outerHeight(categoryNavMenuHeightResized - 80);
-          $subMenuArticle.outerHeight(categoryNavMenuHeightResized - 80);
+          $subMenu.outerHeight(categoryNavMenuHeightResized);
+          $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
         } else {
           $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
           $subMenu.outerHeight('auto');
