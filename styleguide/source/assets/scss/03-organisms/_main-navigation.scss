@@ -94,15 +94,15 @@
 
   &__join--links {
     text-align: right;
-    padding: 8px;
+    padding: $gutter;
     max-width: 90px;
     font-size: 14px;
+    line-height: 1em;
     flex-grow: 2;
 
     @include breakpoint($bp-small min-width) {
       @include gutter($margin-left-full...);
       display: block;
-      line-height: 1em;
       width: 65px;
     }
 
