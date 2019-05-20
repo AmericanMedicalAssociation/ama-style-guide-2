@@ -52,7 +52,6 @@
           $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
           $subMenu.outerHeight('auto');
           $subMenuArticle.outerHeight('auto');
-          $('body').removeClass('noscroll');
         }
       }
 
@@ -77,6 +76,7 @@
         else {
           $categoryNavigationMenu.slideUp(function () {
             $(this).parent().height(0);
+            $('body').removeClass('noscroll');
 
             // Only make the menu height same as viewport on mobile devices
             if (agentID) {
