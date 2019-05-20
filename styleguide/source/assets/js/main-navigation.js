@@ -45,8 +45,8 @@
           // Set the menu dropdown the same as viewport to enable scrolling
           var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
-          $subMenu.outerHeight(categoryNavMenuHeightResized);
-          $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
+          $subMenu.outerHeight(categoryNavMenuHeightResized - 73);
+          $subMenuArticle.outerHeight(categoryNavMenuHeightResized - 73);
         } else {
           $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
           $subMenu.outerHeight('auto');
@@ -56,11 +56,12 @@
 
       // Hide/Show menu
       function hideShow() {
+
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
             categoryNavHeight();
 
-            if (categoryNavMenuHeight > viewportHeight) {
+            if (categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight > viewportHeight) {
               $('body').addClass('noscroll');
             }
 
@@ -80,7 +81,7 @@
           $categoryNavigationMenu.slideUp(function () {
             $(this).parent().height(0);
 
-            if (categoryNavMenuHeight > viewportHeight) {
+            if (categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight > viewportHeight) {
               $('body').removeClass('noscroll');
             }
 
@@ -186,7 +187,7 @@
         categoryNavHeight($resizeViewportHeight);
         $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
 
-        if ($('#global-menu').prop('checked') && categoryNavMenuHeight > viewportHeight) {
+        if ($('#global-menu').prop('checked') && categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight) {
           $('body').addClass('noscroll');
         } else {
           $('body').removeClass('noscroll');
