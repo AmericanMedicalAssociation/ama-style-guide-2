@@ -47,7 +47,6 @@
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
           $subMenu.outerHeight(categoryNavMenuHeightResized - 80);
           $subMenuArticle.outerHeight(categoryNavMenuHeightResized - 80);
-          $('body').addClass('noscroll');
         } else {
           $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
           $subMenu.outerHeight('auto');
@@ -60,6 +59,10 @@
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
             categoryNavHeight();
+
+            if (categoryNavMenuHeight > viewportHeight) {
+              $('body').addClass('noscroll');
+            }
 
             if (agentID) {
               $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight());
@@ -76,8 +79,11 @@
         else {
           $categoryNavigationMenu.slideUp(function () {
             $(this).parent().height(0);
-            $('body').removeClass('noscroll');
 
+            if (categoryNavMenuHeight > viewportHeight) {
+              $('body').removeClass('noscroll');
+            }
+            
             // Only make the menu height same as viewport on mobile devices
             if (agentID) {
               $categoryNavWrapper.outerHeight(0).removeClass('scroll');
