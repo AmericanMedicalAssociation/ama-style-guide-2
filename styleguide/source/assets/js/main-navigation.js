@@ -10,6 +10,8 @@
           $mobileSearch = $('.ama__global-search'),
           $mainNav = $('.ama__main-navigation '),
           $productNav = $('.ama__product-nav'),
+          $subMenu = $('.ama_category_navigation_menu__submenu'),
+          $subMenuArticle = $('.ama_category_navigation_menu__articles'),
           viewportHeight = 0,
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
@@ -41,9 +43,16 @@
         // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight > viewportHeight) {
           // Set the menu dropdown the same as viewport to enable scrolling
-          $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuResizedHeight - $mainNav.outerHeight());
+          var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
+          $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
+          $subMenu.outerHeight(categoryNavMenuHeightResized - 80);
+          $subMenuArticle.outerHeight(categoryNavMenuHeightResized - 80);
+          $('body').addClass('noscroll');
         } else {
           $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
+          $subMenu.outerHeight('auto');
+          $subMenuArticle.outerHeight('auto');
+          $('body').removeClass('noscroll');
         }
       }
 
@@ -52,6 +61,7 @@
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
             categoryNavHeight();
+
             if (agentID) {
               $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight());
             } else {
@@ -61,10 +71,6 @@
             // Only make the menu height same as viewport on mobile devices
             if (agentID) {
               $categoryNavWrapper.outerHeight($(window).innerHeight()).addClass('scroll');
-
-              $(window).resize(function () {
-                $categoryNavWrapper.outerHeight($(window).innerHeight());
-              });
             }
           });
         }
@@ -139,7 +145,6 @@
 
       // Onscroll check to see if social icon position is greater than footer position
       var debounce_timer;
-
       if($('.ama__masthead__content__share .ama__social-share').is(':visible')) {
         $(window).scroll(function() {
           var $socialIcons = $('.ama__masthead__content__share .ama__social-share');
@@ -157,17 +162,19 @@
               $('.ama__masthead__content__share').fadeIn('fast');
             }
           }, 50);
-
-          if($(window).scrollTop() + $(window).height() >= $(document).height()) {
-            categoryNavHeight();
-          }
         });
       }
+
+
+      $(window).scroll(function() {
+        var $resizeViewportHeight = $(window).innerHeight();
+        categoryNavHeight($resizeViewportHeight);
+      });
 
       //Checks the layout position of article on window resize and moves the social icons accordingly
       $( window ).resize(function() {
 
-        var $resizeViewportHeight = $(window).innerHeight()
+        var $resizeViewportHeight = $(window).innerHeight();
         categoryNavHeight($resizeViewportHeight);
 
         var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
