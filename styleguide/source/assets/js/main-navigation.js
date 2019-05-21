@@ -16,8 +16,7 @@
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuResizedHeight = 0,
-          windowWidth = $(window).width(),
-          categoryNavigation = document.querySelector("#categoryNavigation");
+          windowWidth = $(window).width();
 
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
@@ -40,8 +39,11 @@
 
         // Subtract the navigation height from window height to assess content height
         categoryNavMenuResizedHeight = viewportHeight;
+
         // Check to see if main menu purple dropdown height is larger than viewport height
-        if (categoryNavMenuHeight > viewportHeight && !agentID) {
+        if (categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight && !agentID) {
+
+
           // Set the menu dropdown the same as viewport to enable scrolling
           var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
@@ -63,9 +65,8 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-
             if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight) {
-              bodyScrollLock.disableBodyScroll(categoryNavigation);
+              bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup);
             }
 
             if (agentID) {
