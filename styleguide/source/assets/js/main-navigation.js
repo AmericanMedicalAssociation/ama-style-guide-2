@@ -21,6 +21,7 @@
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
       var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
+      var iPad = deviceAgent.match(/(ipad)/);
 
       if($productNav.length){
         productNavHeight = $productNav.height();
@@ -43,7 +44,6 @@
         // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight && !agentID) {
 
-
           // Set the menu dropdown the same as viewport to enable scrolling
           var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
@@ -65,7 +65,7 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight) {
+            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight && !iPad) {
               bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup);
             }
 
