@@ -17,7 +17,7 @@
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuResizedHeight = 0,
           windowWidth = $(window).width(),
-          targetElement = document.querySelector("#amaCategoryNavigation");
+          categoryNavigation = document.querySelector("#categoryNavigation");
 
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
@@ -45,8 +45,13 @@
           // Set the menu dropdown the same as viewport to enable scrolling
           var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
-          $subMenu.outerHeight(categoryNavMenuHeightResized);
-          $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
+
+          $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
+            if($(menu).outerHeight() > categoryNavMenuHeightResized) {
+              $subMenu.outerHeight(categoryNavMenuHeightResized);
+              $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
+            }
+          });
         } else {
           $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
           $subMenu.outerHeight('auto');
@@ -60,7 +65,7 @@
           $categoryNavigationMenu.slideDown(function () {
 
             if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight) {
-              bodyScrollLock.enableBodyScroll(targetElement);
+              bodyScrollLock.disableBodyScroll(categoryNavigation);
             }
 
             if (agentID) {
