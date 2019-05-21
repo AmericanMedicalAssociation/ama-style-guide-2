@@ -1,8 +1,3 @@
-.noscroll {
-  overflow-y: hidden;
-  width: 100%;
-}
-
 .ama__main-navigation {
   border-bottom: 1px solid $gray-50;
   background-color: $purple;
@@ -38,6 +33,21 @@
 
       @include breakpoint($bp-large min-width) {
         overflow: hidden;
+      }
+
+      .ama_category_navigation_menu__group {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .ama_category_navigation_menu__flyout {
+          top: 0 !important;
+          margin-top: 0 !important;
+          overflow-y: auto;
+        }
+      }
+
+      li {
+        position: static;
       }
     }
   }
@@ -158,4 +168,8 @@
       flex-grow: 1;
     }
   }
+}
+
+.ui-autocomplete.ui-menu {
+  z-index: 502;
 }
