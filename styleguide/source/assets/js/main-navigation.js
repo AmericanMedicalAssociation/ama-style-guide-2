@@ -61,17 +61,27 @@
         }
       }
 
+
       // Hide/Show menu
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight && !agentID && !iPad) {
-              bodyScrollLock.disableBodyScroll($categoryNavWrapper);
+            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight) {
+              bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup, {
+                allowTouchMove: function allowTouchMove(el) {
+                  while (el && el !== document.body) {
+                    if (el.getAttribute('body-scroll-lock-ignore') !== null) {
+                      return true;
+                    }
+                    el = el.parentNode;
+                  }
+                }
+              });
             }
 
             if (agentID) {
               // Only make the menu height same as viewport on mobile devices
-              $categoryNavWrapper.outerHeight($(window).innerHeight() + $mainNav.outerHeight()).addClass('scroll');
+              $categoryNavWrapper.outerHeight($(window).innerHeight() - $mainNav.outerHeight()).addClass('scroll');
             } else {
               $(this).parent().height('auto');
               categoryNavHeight();
