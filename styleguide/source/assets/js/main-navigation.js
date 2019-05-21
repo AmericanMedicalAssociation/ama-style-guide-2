@@ -65,8 +65,8 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight && !iPad) {
-              bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup);
+            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight && !agentID && !iPad) {
+              bodyScrollLock.disableBodyScroll($categoryNavWrapper);
             }
 
             if (agentID) {
