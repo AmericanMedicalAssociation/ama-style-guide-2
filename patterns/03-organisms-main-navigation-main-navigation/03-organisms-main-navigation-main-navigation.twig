@@ -1,5 +1,5 @@
 {% set universal = mainNavigation.universal ? "ama__main-navigation--universal" %}
-<div class="ama__main-navigation {{ universal }}">
+<div id="amaCategoryNavigation" class="ama__main-navigation {{ universal }}">
   <div class="container">
     {% if mainNavigation.universal %}
       {% include '@molecules/explore-menu.twig' with { exploreMenu : mainNavigation.exploreMenu } %}

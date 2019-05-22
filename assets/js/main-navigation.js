@@ -5,112 +5,60 @@
 
       var $categoryNavWrapper = $('.ama_category_navigation_wrapper'),
           $categoryNavigationMenu = $('.ama_category_navigation_menu'),
+          $categoryNavigationMenuGroup = $('.ama_category_navigation_menu__group'),
           $mobileSearchTrigger = $('.global-search-trigger'),
           $mobileSearch = $('.ama__global-search'),
           $mainNav = $('.ama__main-navigation '),
-          $categoryMenuFlyout = $('.ama_category_navigation_menu__flyout'),
           $productNav = $('.ama__product-nav'),
+          $subMenu = $('.ama_category_navigation_menu__submenu'),
+          $subMenuArticle = $('.ama_category_navigation_menu__articles'),
           viewportHeight = 0,
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
-          categoryNavMenuResizedHeight = 0;
+          categoryNavMenuResizedHeight = 0,
+          windowWidth = $(window).width();
 
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
-      var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/);
+      var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
+      var iPad = deviceAgent.match(/(ipad)/);
 
       if($productNav.length){
         productNavHeight = $productNav.height();
       }
 
         // Calculate whether or not the category nav should have scrollbars
-      function categoryNavHeight($resizeViewportHeight) {
+      function categoryNavHeight(resizeViewportHeight) {
+
         // Check to see if viewport height is passed back when the window gets resized
-        if(typeof $resizeViewportHeight !== 'undefined') {
-          viewportHeight = $resizeViewportHeight - productNavHeight;
+        if(typeof resizeViewportHeight !== 'undefined') {
+          viewportHeight = resizeViewportHeight;
         } else {
           // Window height is used by default
           viewportHeight = $(window).innerHeight();
         }
 
         // Subtract the navigation height from window height to assess content height
-        categoryNavMenuResizedHeight = viewportHeight - $mainNav.outerHeight();
+        categoryNavMenuResizedHeight = viewportHeight;
 
         // Check to see if main menu purple dropdown height is larger than viewport height
-        if (categoryNavMenuHeight > viewportHeight) {
+        if (categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight && !agentID) {
+
           // Set the menu dropdown the same as viewport to enable scrolling
-          $categoryNavWrapper.outerHeight(categoryNavMenuResizedHeight).addClass('scroll');
+          var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
+          $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
 
-          // Scoll main menu and fix body to prevent it from scrolling
-          $categoryNavWrapper.bind('mousewheel',function(ev, delta) {
-            var scrollTop = $(this).scrollTop();
-            // Initializes the mousewheel plugin
-            $(this).scrollTop(scrollTop - Math.round(delta));
-
-            // Prevents the document scrolling while the main menu is scrolling
-            if ($(document).height() > $(window).height()) {
-              $('html').addClass('noscroll');
+          $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
+            if($(menu).outerHeight() > categoryNavMenuHeightResized) {
+              $subMenu.outerHeight(categoryNavMenuHeightResized);
+              $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
             }
-            // Listen to when the scroll stops
-            clearTimeout($.data(this, 'timer'));
-            $.data(this, 'timer', setTimeout(function () {
-            // Renables document scroll
-              $('html').removeClass('noscroll');
-            }, 200));
           });
+        } else {
+          $categoryNavigationMenuGroup.removeClass('scroll').outerHeight('auto');
+          $subMenu.outerHeight('auto');
+          $subMenuArticle.outerHeight('auto');
         }
-      }
-
-      // Only make the menu height same as viewport on mobile devices
-      if (agentID) {
-        $categoryNavWrapper.outerHeight($(window).innerHeight()).addClass('scroll');
-
-        $(window).resize(function () {
-          $categoryNavWrapper.outerHeight($(window).innerHeight());
-        });
-      } else {
-        // If the flyout submenu is larger than the viewport add class to prevent it from overlapping the purple banner
-        $('.ama_category_navigation_menu__group').on('show.smapi', function(e, menu) {
-          viewportHeight = $(window).innerHeight();
-          var categoryNavigationMenuFlyoutHeight = $(menu).outerHeight() + $mainNav.outerHeight() ;
-
-          if (categoryNavigationMenuFlyoutHeight > viewportHeight) {
-            $(menu).css('top', $mainNav.position().top + $mainNav.outerHeight(true) + 30 + 'px');
-          }
-        });
-
-        // When mouse enters main nav div then enable scrolling and menu height resize
-        // Uses the smartmenu API for mouseleave
-        $categoryNavWrapper.on('mouseenter.smapi', function() {
-          categoryNavHeight();
-        });
-
-        // Prevent main menu from scrolling while the submenu is shown
-        // Uses the smartmenu API for mouseleave
-        $categoryNavWrapper.on('mouseleave.smapi', function() {
-          $categoryNavWrapper.removeClass('scroll');
-        });
-
-        // Prevent main menu from scrolling while the submenu is shown
-        // Uses the smartmenu API for mouseenter
-        $categoryMenuFlyout.on('mouseenter.smapi', function() {
-          $categoryNavWrapper.removeClass('scroll');
-          // Temp disables mousewheel plugin
-          $categoryNavWrapper.unbind("mousewheel", function(){
-            return false;
-          });
-        });
-
-        // Returns scroll functionality to main menu when the submenu goes away
-        $categoryMenuFlyout.on('mouseleave.smapi', function() {
-          $categoryNavWrapper.addClass('scroll');
-          categoryNavHeight();
-        });
-
-        $(window).resize(function () {
-          var $resizeViewportHeight = $(window).innerHeight();
-          categoryNavHeight($resizeViewportHeight);
-        });
       }
 
 
@@ -118,24 +66,37 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
+            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight) {
+              bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup, {
+                allowTouchMove: function allowTouchMove(el) {
+                  while (el && el !== document.body) {
+                    if (el.getAttribute('body-scroll-lock-ignore') !== null) {
+                      return true;
+                    }
+                    el = el.parentNode;
+                  }
+                }
+              });
+            }
+
             if (agentID) {
-              $categoryNavigationMenu.outerHeight($('.ama_category_navigation_menu__group').outerHeight());
+              // Only make the menu height same as viewport on mobile devices
+              $categoryNavWrapper.outerHeight($(window).innerHeight() - $mainNav.outerHeight()).addClass('scroll');
             } else {
               $(this).parent().height('auto');
+              categoryNavHeight();
             }
           });
         }
         else {
           $categoryNavigationMenu.slideUp(function () {
-            if (agentID) {
-              $categoryNavigationMenu.outerHeight(0);
-            } else {
-              $(this).parent().height('auto');
-            }
+            $(this).parent().height(0);
+            bodyScrollLock.clearAllBodyScrollLocks();
           });
         }
       }
 
+      // Closes menu on doc load
       $('#global-menu').prop('checked', false);
 
       $('.ama__global-menu').click(function (e) {
@@ -143,6 +104,7 @@
         e.stopPropagation();
       });
 
+      // If a user clicks outside the menu then close it
       $(document).click(function (e) {
         if (!$categoryNavigationMenu.is(e.target) && $categoryNavigationMenu.has(e.target).length === 0) {
           $('#global-menu').prop('checked', false);
@@ -191,7 +153,6 @@
 
       // Onscroll check to see if social icon position is greater than footer position
       var debounce_timer;
-
       if($('.ama__masthead__content__share .ama__social-share').is(':visible')) {
         $(window).scroll(function() {
           var $socialIcons = $('.ama__masthead__content__share .ama__social-share');
@@ -209,20 +170,24 @@
               $('.ama__masthead__content__share').fadeIn('fast');
             }
           }, 50);
-
-          if($(window).scrollTop() + $(window).height() >= $(document).height()) {
-            categoryNavHeight();
-          }
         });
       }
 
+
+      $(window).scroll(function() {
+        var resizeViewportHeight = $(window).innerHeight();
+        categoryNavHeight(resizeViewportHeight);
+      });
+
       //Checks the layout position of article on window resize and moves the social icons accordingly
       $( window ).resize(function() {
+        if (!agentID) {
+          var resizeViewportHeight = $(window).innerHeight();
+          var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
 
-        var mainNavPositionUpdate = $('.ama__main-navigation .container').offset().left - 100;
-
-        $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
-
+          categoryNavHeight(resizeViewportHeight);
+          $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
+        }
       });
     }
   };
