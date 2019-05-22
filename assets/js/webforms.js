@@ -49,11 +49,15 @@
   }
 
   // Submits first page of Contact Us form on radio button selection
-  $( document ).ajaxComplete(function() {
+  $.fn.contactSubmit = function(){
     var $webform_buttons = $('.webform-submission-contact-us-form input[type="radio"]');
     $webform_buttons.bind('click', function(e) {
       $('.webform-submission-contact-us-form').submit();
     });
+  }
+  $.fn.contactSubmit();
+  $( document ).ajaxComplete(function() {
+    $.fn.contactSubmit();
   });
 
   // Go back to previous back is user clicks decline submit button
