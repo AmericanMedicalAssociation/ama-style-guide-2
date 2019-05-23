@@ -21,7 +21,6 @@
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
       var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
-      var iPad = deviceAgent.match(/(ipad)/);
 
       if($productNav.length && $productNav.is(':visible') ){
         productNavHeight = $productNav.height();
@@ -37,7 +36,7 @@
           viewportHeight = resizeViewportHeight;
         } else {
           // Window height is used by default
-          viewportHeight = $(window).innerHeight();
+          viewportHeight = window.innerHeight ? window.innerHeight : $(window).height();
         }
 
         // Subtract the navigation height from window height to assess content height
@@ -51,9 +50,12 @@
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
 
           $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
-            if($(menu).outerHeight() > categoryNavMenuHeightResized) {
-              $subMenu.outerHeight(categoryNavMenuHeightResized);
-              $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
+            if($('.ama_category_navigation_menu__submenu', menu).outerHeight() > categoryNavMenuHeightResized) {
+              $('.ama_category_navigation_menu__submenu', menu).outerHeight(categoryNavMenuHeightResized);
+            }
+
+            if($('.ama_category_navigation_menu__articles', menu).outerHeight() > categoryNavMenuHeightResized) {
+              $('.ama_category_navigation_menu__articles', menu).outerHeight(categoryNavMenuHeightResized);
             }
           });
         } else {
