@@ -23,8 +23,10 @@
       var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
       var iPad = deviceAgent.match(/(ipad)/);
 
-      if($productNav.length){
+      if($productNav.length && $productNav.is(':visible') ){
         productNavHeight = $productNav.height();
+      } else {
+        productNavHeight = 0;
       }
 
         // Calculate whether or not the category nav should have scrollbars
@@ -81,7 +83,8 @@
 
             if (agentID) {
               // Only make the menu height same as viewport on mobile devices
-              $categoryNavWrapper.outerHeight($(window).innerHeight() - $mainNav.outerHeight()).addClass('scroll');
+              var mobileHeight = window.innerHeight ? window.innerHeight : $(window).height();
+              $categoryNavWrapper.height(mobileHeight).addClass('scroll');
             } else {
               $(this).parent().height('auto');
               categoryNavHeight();
