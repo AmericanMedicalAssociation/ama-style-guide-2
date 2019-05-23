@@ -41,7 +41,6 @@
 
         // Subtract the navigation height from window height to assess content height
         categoryNavMenuResizedHeight = viewportHeight;
-
         // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight && !agentID) {
 
@@ -87,6 +86,13 @@
               // Only make the menu height same as viewport on mobile devices
               var mobileHeight = window.innerHeight ? window.innerHeight : $(window).height();
               $categoryNavWrapper.height(mobileHeight).addClass('scroll');
+
+              $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
+                if($(menu).outerHeight() > mobileHeight) {
+                  $(menu).outerHeight(mobileHeight);
+                }
+
+              });
             } else {
               $(this).parent().height('auto');
               categoryNavHeight();
@@ -180,7 +186,7 @@
 
 
       $(window).scroll(function() {
-        var resizeViewportHeight = $(window).innerHeight();
+        var resizeViewportHeight = window.innerHeight ? window.innerHeight : $(window).height();
         categoryNavHeight(resizeViewportHeight);
       });
 

@@ -4,7 +4,10 @@
   color: $white;
   position: relative;
   z-index: 501;
-  height: 61px;
+
+  @include breakpoint($bp-small min-width) {
+    height: 61px;
+  }
 
   .container {
     position: relative;
@@ -39,11 +42,6 @@
       .ama_category_navigation_menu__group {
         overflow-x: hidden;
         overflow-y: auto;
-
-        .ama_category_navigation_menu__flyout {
-          top: 0 !important;
-          margin-top: 0 !important;
-        }
       }
 
       li {
@@ -55,7 +53,7 @@
   .ama_category_navigation_menu {
     display: none;
     flex-direction: column;
-    width: calc(100vw - 42px);
+    width: calc(100vw - 70px);
     z-index: 501;
 
     @include breakpoint($bp-small min-width) {
