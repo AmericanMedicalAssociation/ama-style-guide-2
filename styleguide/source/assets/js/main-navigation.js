@@ -50,11 +50,11 @@
 
           $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
             if($('.ama_category_navigation_menu__submenu', menu).outerHeight() > categoryNavMenuHeightResized) {
-              $('.ama_category_navigation_menu__submenu', menu).outerHeight(categoryNavMenuHeightResized);
+              $('.ama_category_navigation_menu__submenu', menu).outerHeight(categoryNavMenuHeightResized - 100);
             }
 
             if($('.ama_category_navigation_menu__articles', menu).outerHeight() > categoryNavMenuHeightResized) {
-              $('.ama_category_navigation_menu__articles', menu).outerHeight(categoryNavMenuHeightResized);
+              $('.ama_category_navigation_menu__articles', menu).outerHeight(categoryNavMenuHeightResized - 100).addClass('one_article');
             }
           });
         } else {
