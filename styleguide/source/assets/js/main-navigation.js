@@ -21,10 +21,11 @@
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
       var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
-      var iPad = deviceAgent.match(/(ipad)/);
 
-      if($productNav.length){
+      if($productNav.length && $productNav.is(':visible') ){
         productNavHeight = $productNav.height();
+      } else {
+        productNavHeight = 0;
       }
 
         // Calculate whether or not the category nav should have scrollbars
@@ -35,12 +36,11 @@
           viewportHeight = resizeViewportHeight;
         } else {
           // Window height is used by default
-          viewportHeight = $(window).innerHeight();
+          viewportHeight = window.innerHeight ? window.innerHeight : $(window).height();
         }
 
         // Subtract the navigation height from window height to assess content height
         categoryNavMenuResizedHeight = viewportHeight;
-
         // Check to see if main menu purple dropdown height is larger than viewport height
         if (categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight && !agentID) {
 
@@ -49,9 +49,12 @@
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
 
           $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
-            if($(menu).outerHeight() > categoryNavMenuHeightResized) {
-              $subMenu.outerHeight(categoryNavMenuHeightResized);
-              $subMenuArticle.outerHeight(categoryNavMenuHeightResized);
+            if($('.ama_category_navigation_menu__submenu', menu).outerHeight() > categoryNavMenuHeightResized) {
+              $('.ama_category_navigation_menu__submenu', menu).outerHeight(categoryNavMenuHeightResized);
+            }
+
+            if($('.ama_category_navigation_menu__articles', menu).outerHeight() > categoryNavMenuHeightResized) {
+              $('.ama_category_navigation_menu__articles', menu).outerHeight(categoryNavMenuHeightResized).addClass('one_article');
             }
           });
         } else {
@@ -81,7 +84,15 @@
 
             if (agentID) {
               // Only make the menu height same as viewport on mobile devices
-              $categoryNavWrapper.outerHeight($(window).innerHeight() - $mainNav.outerHeight()).addClass('scroll');
+              var mobileHeight = window.innerHeight ? window.innerHeight : $(window).height();
+              $categoryNavWrapper.height(mobileHeight).addClass('scroll');
+
+              $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
+                if($(menu).outerHeight() > mobileHeight) {
+                  $(menu).outerHeight(mobileHeight);
+                }
+
+              });
             } else {
               $(this).parent().height('auto');
               categoryNavHeight();
@@ -175,7 +186,7 @@
 
 
       $(window).scroll(function() {
-        var resizeViewportHeight = $(window).innerHeight();
+        var resizeViewportHeight = window.innerHeight ? window.innerHeight : $(window).height();
         categoryNavHeight(resizeViewportHeight);
       });
 

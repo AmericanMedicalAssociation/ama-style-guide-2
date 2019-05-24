@@ -5,12 +5,16 @@
   position: relative;
   z-index: 501;
 
+  @include breakpoint($bp-small min-width) {
+    height: 61px;
+  }
+
   .container {
     position: relative;
     display: flex;
     align-items: center;
     padding-right: 0;
-    min-height: 60px;
+    min-height: 61px;
 
     @include breakpoint($bp-small min-width) {
       @include gutter($padding-right-half...);
@@ -38,12 +42,6 @@
       .ama_category_navigation_menu__group {
         overflow-x: hidden;
         overflow-y: auto;
-
-        .ama_category_navigation_menu__flyout {
-          top: 0 !important;
-          margin-top: 0 !important;
-          overflow-y: auto;
-        }
       }
 
       li {
@@ -70,7 +68,13 @@
       .ama_category_navigation_menu__flyout {
         top: 0 !important;
         margin-top: 0 !important;
-        overflow-y: auto;
+        transform: none !important;
+
+        .one_article {
+          .ama__article-stub:nth-child(2n) {
+            display: none;
+          }
+        }
       }
     }
 
@@ -114,7 +118,7 @@
 
   &__join--links {
     text-align: right;
-    padding: $gutter;
+    padding: 0 $gutter;
     max-width: 90px;
     font-size: 14px;
     line-height: 1em;
@@ -124,6 +128,7 @@
       @include gutter($margin-left-full...);
       display: block;
       width: 65px;
+      padding: 0 $gutter;
     }
 
     @include breakpoint($bp-large min-width) {
