@@ -2,8 +2,16 @@
   display: flex;
   flex-flow: column wrap;
 
+  .hero-evergreen__mobile-image {
+    display: block;
+  }
+
   @include breakpoint($bp-med) {
     flex-flow: row nowrap;
+
+    .hero-evergreen__mobile-image {
+      display: none;
+    }
   }
 
   .hero-evergreen__aside {
@@ -14,7 +22,6 @@
   }
   .hero-evergreen__background {
     flex-basis: 66.66%;
-    padding: $gutter;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,8 +29,16 @@
 
     .hero-evergreen__buttons {
       display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-evenly;
+      background: $white;
+      padding-top: $gutter;
+      padding-bottom: $gutter;
+      flex-flow: column wrap;
+
+      @include breakpoint($bp-med) {
+        background: none;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+      }
     }
   }
 

@@ -10,6 +10,9 @@
         {% include '@atoms/paragraph.twig' with { paragraph : heroEvergreen.paragraph } %}
     </div>
     <div class="hero-evergreen__background" style="{{ background }}">
+        <div class="hero-evergreen__mobile-image">
+            {% include '@atoms/image/image.twig' with { image : heroEvergreen.image } %}
+        </div>
         <div class="hero-evergreen__buttons">
             {% if heroEvergreen.button1.exists %}
                 {% include '@atoms/button/button.twig' with { button : heroEvergreen.button1 } %}
