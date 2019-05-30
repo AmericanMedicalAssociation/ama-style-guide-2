@@ -1,6 +1,10 @@
 .hero-evergreen {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
+
+  @include breakpoint($bp-med) {
+    flex-flow: row nowrap;
+  }
 
   .hero-evergreen__aside {
     background: $purple;
