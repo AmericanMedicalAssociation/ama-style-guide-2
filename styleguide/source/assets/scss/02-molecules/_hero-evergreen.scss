@@ -1,0 +1,26 @@
+.hero-evergreen {
+  display: flex;
+  flex-flow: row nowrap;
+
+  .hero-evergreen__aside {
+    background: $purple;
+    flex-basis: 33.33%;
+    padding: $gutter;
+    color: $white;
+  }
+  .hero-evergreen__background {
+    flex-basis: 66.66%;
+    padding: $gutter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .hero-evergreen__buttons {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+    }
+  }
+
+}

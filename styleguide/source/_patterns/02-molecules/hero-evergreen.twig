@@ -1,0 +1,22 @@
+{% set image, heading, paragraph, button1, button2 = heroEvergreen.image, heroEvergreen.heading, heroEvergreen.paragraph, heroEvergreen.button1, heroEvergreen.button2 %}
+
+ {% if heroEvergreen.image.exists %}
+   {% set background = "background-image: url( #{heroEvergreen.image.src} );" %}
+ {% endif %}
+
+<div class="hero-evergreen">
+    <div class="hero-evergreen__aside">
+        {% include '@atoms/heading/heading.twig' with { heading : heroEvergreen.heading } %}
+        {% include '@atoms/paragraph.twig' with { paragraph : heroEvergreen.paragraph } %}
+    </div>
+    <div class="hero-evergreen__background" style="{{ background }}">
+        <div class="hero-evergreen__buttons">
+            {% if heroEvergreen.button1.exists %}
+                {% include '@atoms/button/button.twig' with { button : heroEvergreen.button1 } %}
+            {% endif %}
+            {% if heroEvergreen.button2.exists %}
+                 {% include '@atoms/button/button.twig' with { button : heroEvergreen.button2 } %}
+            {% endif %}
+        </div>
+    </div>
+</div>
