@@ -8,7 +8,8 @@
 
   @include breakpoint($bp-med) {
     flex-flow: row nowrap;
-
+  }
+  @incluse breakpoint($bp-small) {
     .hero-evergreen__mobile-image {
       display: none;
     }
@@ -19,6 +20,10 @@
     flex-basis: 33.33%;
     padding: $gutter;
     color: $white;
+
+    &--full-width {
+      flex-basis: 100%;
+    }
   }
   .hero-evergreen__background {
     flex-basis: 66.66%;
@@ -35,9 +40,11 @@
       flex-flow: column wrap;
 
       @include breakpoint($bp-med) {
-        background: none;
         flex-flow: row nowrap;
         justify-content: space-evenly;
+      }
+      @include breakpoint($bp-small) {
+        background: none;
       }
     }
   }
