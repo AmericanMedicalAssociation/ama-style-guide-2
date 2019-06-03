@@ -1,5 +1,6 @@
 {%  set
-  indented, link, heading, subtitle, date, social =
+  centered, indented, link, heading, subtitle, date, social =
+  masthead.centered ? "ama__masthead__content__title--centered" : "",
   masthead.indented ? "ama__masthead__content--indented" : "",
   masthead.link,
   masthead.heading|merge({
@@ -15,7 +16,7 @@
   <div class="ama__masthead__sidebar" role="complementary"></div>
   <div class="ama__masthead__content {{ indented }}" role="complementary">
     <div class="ama__masthead__content__title__container">
-      <div class="ama__masthead__content__title">
+      <div class="ama__masthead__content__title {{ centered }}">
         {% if masthead.link.title %}
           {% include "@atoms/link/link.twig" %}
         {% endif %}
