@@ -169,14 +169,6 @@
       @include type($myriad-pro, $font-weight-bold);
     }
   }
-
-  &--add-padding {
-    padding: $gutter 0;
-
-    @include  breakpoint($bp-small) {
-      padding: 0;
-    }
-  }
 }
 
 .ama__page--news__teasers {
@@ -197,4 +189,12 @@
         @include gutter($padding-right-half...);
       }
 }
+.ama__category__article-stub-three-up {
+  .ama__article-stub {
+    padding: $gutter 0;
 
+    @include  breakpoint($bp-small) {
+      padding: 0;
+    }
+  }
+}
