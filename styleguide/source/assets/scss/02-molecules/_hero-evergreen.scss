@@ -56,10 +56,14 @@
         flex-flow: row nowrap;
         align-self: unset;
         align-items: center;
+        min-height: auto;
 
         &--stacked {
           flex-flow: column nowrap;
           flex-grow: .2;
+          min-height: 300px;
+          align-self: center;
+          align-items: unset;
         }
       }
     }
