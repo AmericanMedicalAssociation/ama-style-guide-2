@@ -2,35 +2,36 @@
   display: flex;
   flex-flow: column wrap;
 
-  .hero-evergreen__mobile-image {
-    display: block;
-  }
-
   @include breakpoint($bp-med) {
     flex-flow: row nowrap;
   }
-  @incluse breakpoint($bp-small) {
-    .hero-evergreen__mobile-image {
+
+  &__mobile-image {
+    display: block;
+
+    @include breakpoint($bp-small) {
       display: none;
     }
   }
 
-  .hero-evergreen__aside {
+  &__aside {
+    @include gutter-all(padding, $gutter / 2, $gutter-mobile / 2);
     background: $purple;
     flex-basis: 33.33%;
-    padding: $gutter;
     color: $white;
 
     &--full-width {
       flex-basis: 100%;
     }
   }
-  .hero-evergreen__background {
+
+  &__background {
     flex-basis: 66.66%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    background-size: cover;
 
     .hero-evergreen__buttons {
       display: flex;
@@ -38,15 +39,29 @@
       padding-top: $gutter;
       padding-bottom: $gutter;
       flex-flow: column wrap;
+      justify-content: space-evenly;
+      min-height: 200px;
+      padding-top: 15px;
+      align-self: auto;
+
+      @include breakpoint($bp-small) {
+        background: none;
+        min-height: 300px;
+        padding-top: 150px;
+        align-self: center;
+        align-items: unset;
+      }
 
       @include breakpoint($bp-med) {
         flex-flow: row nowrap;
-        justify-content: space-evenly;
-      }
-      @include breakpoint($bp-small) {
-        background: none;
+        align-self: unset;
+        align-items: center;
+
+        &--stacked {
+          flex-flow: column nowrap;
+          flex-grow: .2;
+        }
       }
     }
   }
-
 }
