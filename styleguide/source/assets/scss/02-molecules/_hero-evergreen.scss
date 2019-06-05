@@ -44,6 +44,19 @@
       padding-top: 15px;
       align-self: auto;
 
+      //Fix for overriding jquery widget
+      .ama__button {
+        color: $white;
+
+        &--secondary {
+          color: $purple;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+
       @include breakpoint($bp-small) {
         background: none;
         min-height: 300px;
