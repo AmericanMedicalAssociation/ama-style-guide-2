@@ -5,7 +5,7 @@
  {% endif %}
 
 <div class="hero-evergreen">
-    <div class="hero-evergreen__aside{% if not heroEvergreen.image %} hero-evergreen__aside--full-width{% endif %}">
+    <div class="hero-evergreen__aside{% if not heroEvergreen.image %} hero-evergreen__aside--full-width {% endif %}">
         {% include '@atoms/heading/heading.twig' with { heading : heroEvergreen.heading } %}
         {% include '@atoms/paragraph.twig' with { paragraph : heroEvergreen.paragraph } %}
     </div>
