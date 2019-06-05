@@ -33,6 +33,10 @@
     justify-content: flex-end;
     background-size: cover;
 
+    @include breakpoint($bp-small max-width) {
+      background: none !important;
+    }
+
     .hero-evergreen__buttons {
       display: flex;
       background: $white;
