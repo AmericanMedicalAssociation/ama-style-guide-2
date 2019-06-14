@@ -2,6 +2,7 @@
 
  {% if heroEvergreen.image %}
    {% set background = "background-image: url( #{heroEvergreen.image.src} );" %}
+     <style> .hero-evergreen__background { {{ background }} } </style>
  {% endif %}
 
 <div class="hero-evergreen">
@@ -10,7 +11,7 @@
         {% include '@atoms/paragraph.twig' with { paragraph : heroEvergreen.paragraph } %}
     </div>
     {% if heroEvergreen.image %}
-        <div class="hero-evergreen__background" style="{{ background }}">
+        <div class="hero-evergreen__background">
             <div class="hero-evergreen__mobile-image">
                 {% include '@atoms/image/image.twig' with { image : heroEvergreen.image } %}
             </div>

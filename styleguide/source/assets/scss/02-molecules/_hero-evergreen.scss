@@ -33,19 +33,14 @@
     justify-content: flex-end;
     background-size: cover;
 
-    @include breakpoint($bp-small max-width) {
-      background: none !important;
-    }
-
     .hero-evergreen__buttons {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-full...);
       display: flex;
       background: $white;
-      padding-top: $gutter;
-      padding-bottom: $gutter;
       flex-flow: column wrap;
       justify-content: space-evenly;
       min-height: 200px;
-      padding-top: 15px;
       align-self: auto;
 
       //Fix for overriding jquery widget
@@ -78,7 +73,7 @@
         flex-flow: row nowrap;
         align-self: unset;
         align-items: center;
-        min-height: auto;
+        min-height: 0;
 
         &--stacked {
           flex-flow: column nowrap;
@@ -87,6 +82,19 @@
           align-self: center;
           align-items: unset;
         }
+      }
+    }
+  }
+}
+
+.hero-evergreen {
+
+  .hero-evergreen {
+
+    &__background {
+
+      @include breakpoint($bp-small max-width) {
+        background-image: none;
       }
     }
   }
