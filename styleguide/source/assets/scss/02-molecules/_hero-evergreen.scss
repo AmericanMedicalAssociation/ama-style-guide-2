@@ -1,0 +1,101 @@
+.hero-evergreen {
+  display: flex;
+  flex-flow: column wrap;
+
+  @include breakpoint($bp-med) {
+    flex-flow: row nowrap;
+  }
+
+  &__mobile-image {
+    display: block;
+
+    @include breakpoint($bp-small) {
+      display: none;
+    }
+  }
+
+  &__aside {
+    @include gutter-all(padding, $gutter / 2, $gutter-mobile / 2);
+    background: $purple;
+    flex-basis: 33.33%;
+    color: $white;
+
+    &--full-width {
+      flex-basis: 100%;
+    }
+  }
+
+  &__background {
+    flex-basis: 66.66%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+
+    .hero-evergreen__buttons {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-full...);
+      display: flex;
+      background: $white;
+      flex-flow: column wrap;
+      justify-content: space-evenly;
+      min-height: 200px;
+      align-self: auto;
+
+      //Fix for overriding jquery widget
+      .ama__button {
+        @include gutter($padding-right-double...);
+        @include gutter($padding-left-double...);
+        @include gutter($padding-bottom-quarter...);
+        @include gutter($padding-top-quarter...);
+        color: $white;
+        font-weight: 400;
+
+        &--secondary {
+          color: $purple;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+
+      @include breakpoint($bp-small) {
+        background: none;
+        min-height: 300px;
+        padding-top: 150px;
+        align-self: center;
+        align-items: unset;
+      }
+
+      @include breakpoint($bp-med min-width) {
+        flex-flow: row nowrap;
+        align-self: unset;
+        align-items: center;
+        min-height: 0;
+
+        &--stacked {
+          flex-flow: column nowrap;
+          flex-grow: .2;
+          min-height: 300px;
+          align-self: center;
+          align-items: unset;
+        }
+      }
+    }
+  }
+}
+
+.hero-evergreen {
+
+  .hero-evergreen {
+
+    &__background {
+
+      @include breakpoint($bp-small max-width) {
+        background-image: none;
+      }
+    }
+  }
+}
