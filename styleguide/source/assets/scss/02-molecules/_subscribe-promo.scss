@@ -73,7 +73,14 @@
 
       .ama__form-group input {
         @include gutter($margin-bottom-full...);
+        max-width: 100%;
         height: 49px;
+        @include breakpoint($bp-small min-width) {
+          max-width: 275px;
+        }
+        @include breakpoint($bp-med min-width) {
+          max-width: 220px;
+        }
       }
 
       @include breakpoint($bp-small min-width) {
