@@ -32,6 +32,7 @@
     flex-direction: column;
     justify-content: flex-end;
     background-size: cover;
+    min-height: 366px;
 
     .hero-evergreen__buttons {
       @include gutter($padding-top-half...);
@@ -69,7 +70,7 @@
         align-items: unset;
       }
 
-      @include breakpoint($bp-med min-width) {
+      @include breakpoint($bp-small min-width) {
         flex-flow: row nowrap;
         align-self: unset;
         align-items: center;
