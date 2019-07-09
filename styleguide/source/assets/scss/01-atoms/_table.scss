@@ -48,46 +48,43 @@ table.bt tbody tr:last-child {
   border-bottom: 1px solid $gray-50;
 }
 
-table.bt tbody td {
-  border: 0 solid $gray-20;
-  display: block;
-  vertical-align: top;
+table.bt {
+  &:not(.ama__table-agenda) {
+    tbody td {
+      &:before {
+        content: attr(data-th) ":";
+        font-weight: 900;
+        text-transform: uppercase;
+        display: inline-block;
 
-  &:before {
-    content: attr(data-th) ":";
-    font-weight: 900;
-    text-transform: uppercase;
-    display: inline-block;
-
+      }
+    }
   }
-
-
-  &:first-child + &:first-child {
-    border-top: 1px solid $gray-50;
-  }
-
-  &:last-child {
-    @include gutter($padding-bottom-half...);
-    border-bottom: 1px solid $gray-50;
-
-  }
-
-  &:first-of-type:before,
-  &:first-of-type .bt-content {
-  }
-
-  &:last-of-type:before,
-  &:last-of-type .bt-content {
-  }
-
-  .bt-content {
-    vertical-align: top;
+  tbody td {
+    border: 0 solid $gray-20;
     display: block;
-    hyphens: auto;
-  }
+    vertical-align: top;
 
-  .bt-hide {
-    display: none;
+
+    &:first-child + &:first-child {
+      border-top: 1px solid $gray-50;
+    }
+
+    &:last-child {
+      @include gutter($padding-bottom-half...);
+      border-bottom: 1px solid $gray-50;
+
+    }
+
+    .bt-content {
+      vertical-align: top;
+      display: block;
+      hyphens: auto;
+    }
+
+    .bt-hide {
+      display: none;
+    }
   }
 }
 
