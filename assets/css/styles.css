@@ -3972,15 +3972,16 @@ table.bt thead {
 table.bt tbody tr:last-child {
   border-bottom: 1px solid #7F7F7F; }
 
+table.bt:not(.ama__table-agenda) tbody td:before {
+  content: attr(data-th) ":";
+  font-weight: 900;
+  text-transform: uppercase;
+  display: inline-block; }
+
 table.bt tbody td {
   border: 0 solid #CBCBCB;
   display: block;
   vertical-align: top; }
-  table.bt tbody td:before {
-    content: attr(data-th) ":";
-    font-weight: 900;
-    text-transform: uppercase;
-    display: inline-block; }
   table.bt tbody td:first-child + table.bt tbody td:first-child {
     border-top: 1px solid #7F7F7F; }
   table.bt tbody td:last-child {
@@ -5585,6 +5586,7 @@ figcaption {
         padding-left: 40px;
         padding-bottom: 5px;
         padding-top: 5px;
+        margin: 20px;
         color: #ffffff;
         font-weight: 400; }
         @media (min-width: 56.25em) {
@@ -5599,6 +5601,8 @@ figcaption {
         @media (min-width: 56.25em) {
           .hero-evergreen__background .hero-evergreen__buttons .ama__button {
             padding-top: 7px; } }
+        .hero-evergreen__background .hero-evergreen__buttons .ama__button breakpoint($bp-med) {
+          margin: 28px; }
         .hero-evergreen__background .hero-evergreen__buttons .ama__button--secondary {
           color: #46166B; }
           .hero-evergreen__background .hero-evergreen__buttons .ama__button--secondary:hover {
