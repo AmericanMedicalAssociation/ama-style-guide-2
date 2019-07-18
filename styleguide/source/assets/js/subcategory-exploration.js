@@ -45,7 +45,7 @@
           }
 
           showHideMoreLink();
-          $(window).resize(checkWidth);
+          $(window).resize(showHideMoreLink);
       });
 
 
