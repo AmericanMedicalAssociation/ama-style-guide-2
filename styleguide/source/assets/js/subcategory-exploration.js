@@ -20,31 +20,31 @@
 
       // Determine when to show link based on window size.
       $(document).ready(function () {
-          function showHideMoreLink () {
-              // Set intial window width to 1024 pixel.
-              // @todo: Check if this is an issue to set 1024 width limit.
-	          if ($initialWindowWidth <= 1024) {
-		          // If the unordered list outerHeight is greater than the parent container then show the show more link,
-		          // hide otherwise.
-		          if ($subcategoryList.outerHeight() > $subcategoryListContainerHeight) {
-			          $subcategoryListExpander.show();
-		          }
-		          if ($subcategoryList.outerHeight() < $subcategoryListContainerHeight) {
-			          $subcategoryListExpander.hide();
-		          }
-	          }
-              if ($initialWindowWidth !== $(window).width()) {
-                  // If the unordered list outerHeight is greater than the parent container then show the show more link
-                  if ($subcategoryList.outerHeight() > $subcategoryListContainerHeight) {
-                      $subcategoryListExpander.show();
-
-                  } else {
-                      $subcategoryListExpander.hide();
-                  }
-              }
+        function showHideMoreLink () {
+          // Set intial window width to 1024 pixel.
+          // @todo: Check if this is an issue to set 1024 width limit.
+          if ($initialWindowWidth <= 1024) {
+            // If the unordered list outerHeight is greater than the parent container then show the show more link,
+            // hide otherwise.
+            if ($subcategoryList.outerHeight() > $subcategoryListContainerHeight) {
+              $subcategoryListExpander.show();
+            }
+            if ($subcategoryList.outerHeight() < $subcategoryListContainerHeight) {
+              $subcategoryListExpander.hide();
+            }
           }
+          if ($initialWindowWidth !== $(window).width()) {
+            // If the unordered list outerHeight is greater than the parent container then show the show more link
+            if ($subcategoryList.outerHeight() > $subcategoryListContainerHeight) {
+              $subcategoryListExpander.show();
 
-          showHideMoreLink();
+            } else {
+              $subcategoryListExpander.hide();
+            }
+          }
+        }
+
+        showHideMoreLink();
           $(window).resize(showHideMoreLink);
       });
 
