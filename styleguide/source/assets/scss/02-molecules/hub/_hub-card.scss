@@ -37,7 +37,12 @@
     display: flex;
 
     .ama__image {
+      @include breakpoint($bp-xs) {
+        height: 100%;
+        object-position: top;
+      }
       height: auto;
+      object-position: center;
       width: 100%;
       object-fit: cover;
     }
@@ -93,7 +98,15 @@
 
   &--image-text {
     .ama__hub-card__image {
-      max-height: 180px;
+      @include breakpoint($bp-xs) {
+        max-height: 280px;
+      }
+      @include breakpoint($bp-med) {
+        max-height: 147px;
+      }
+      @include breakpoint($bp-large) {
+        max-height: 180px;
+      }
       overflow: hidden;
     }
   }
