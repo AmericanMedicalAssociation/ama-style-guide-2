@@ -110,8 +110,12 @@
 
     &__container {
       overflow: hidden;
-      display: grid;
+      display: block;
       grid-template-columns: 4fr 1fr;
+
+      @include breakpoint($bp-small) {
+        display: grid;
+      }
     }
 
     .ama__h1 {
@@ -133,7 +137,8 @@
 
     &__share,
     &__share-wrapper {
-      display: none;
+      display: flex;
+      justify-content: flex-end;
 
       @include breakpoint($bp-small) {
         left: 0;
@@ -165,5 +170,19 @@
         }
       }
     }
+  }
+}
+
+// Exceptions for social share icons
+.ama__news-article, .ama__resource-page {
+  .ama__masthead__content__share {
+    display: none;
+  }
+}
+.ama__masthead__content__share.is-sticky {
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: flex;
   }
 }
