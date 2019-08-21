@@ -177,6 +177,9 @@
 .ama__news-article, .ama__resource-page {
   .ama__masthead__content__share {
     display: none;
+    @include breakpoint($bp-small) {
+      display: flex;
+    }
   }
 }
 .ama__masthead__content__share.is-sticky {
