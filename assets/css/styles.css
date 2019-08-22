@@ -9929,10 +9929,13 @@ section.ama__page--event__speakers {
           grid-row: 1; } }
     .ama__masthead__content__container {
       overflow: hidden;
-      display: -ms-grid;
-      display: grid;
+      display: block;
       -ms-grid-columns: 4fr 1fr;
       grid-template-columns: 4fr 1fr; }
+      @media (min-width: 37.5em) {
+        .ama__masthead__content__container {
+          display: -ms-grid;
+          display: grid; } }
     .ama__masthead__content .ama__h1 {
       margin-bottom: 10px;
       -ms-grid-column: 1;
@@ -9954,7 +9957,12 @@ section.ama__page--event__speakers {
         .ama__masthead__content__date {
           padding-top: 28px; } }
     .ama__masthead__content__share, .ama__masthead__content__share-wrapper {
-      display: none; }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
       @media (min-width: 37.5em) {
         .ama__masthead__content__share, .ama__masthead__content__share-wrapper {
           left: 0;
@@ -9996,6 +10004,22 @@ section.ama__page--event__speakers {
           width: 50px; }
           .ama__masthead__content__share .ama__social-share--fixed li, .ama__masthead__content__share-wrapper .ama__social-share--fixed li {
             margin: 0 0 14px 0; }
+
+.ama__news-article .ama__masthead__content__share, .ama__resource-page .ama__masthead__content__share {
+  display: none; }
+  @media (min-width: 37.5em) {
+    .ama__news-article .ama__masthead__content__share, .ama__resource-page .ama__masthead__content__share {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+
+.ama__masthead__content__share.is-sticky {
+  display: none; }
+  @media (min-width: 37.5em) {
+    .ama__masthead__content__share.is-sticky {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
 
 .ama__member-feature {
   margin-top: 20px;
