@@ -3076,7 +3076,8 @@ button {
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    float: right; } }
+    float: right;
+    width: 100%; } }
   @media (min-width: 37.5em) and (min-width: 56.25em) {
     .ama__image--right {
       margin-left: 14px; } }
@@ -3292,6 +3293,70 @@ a {
   vertical-align: middle;
   min-width: 22px;
   background-size: contain; }
+
+.listicle {
+  counter-reset: ama-listicle;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  @media (min-width: 56.25em) {
+    .listicle {
+      padding-top: 14px; } }
+  @media (min-width: 56.25em) {
+    .listicle {
+      padding-bottom: 14px; } }
+  .listicle__item {
+    counter-increment: ama-listicle;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px; }
+    @media (min-width: 56.25em) {
+      .listicle__item {
+        margin-bottom: 14px; } }
+    @media (min-width: 56.25em) {
+      .listicle__item {
+        margin-top: 14px; } }
+    .listicle__item::before {
+      content: counter(ama-listicle);
+      position: absolute;
+      background: #7229D1;
+      color: #ffffff;
+      width: 21px;
+      height: 19px;
+      top: 5px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -1.78px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    .listicle__item-sub {
+      list-style: none;
+      margin-left: 55px;
+      padding-left: 0; }
+      .listicle__item-sub-item {
+        margin-bottom: 20px;
+        margin-top: 20px; }
+        @media (min-width: 56.25em) {
+          .listicle__item-sub-item {
+            margin-bottom: 28px; } }
+        @media (min-width: 56.25em) {
+          .listicle__item-sub-item {
+            margin-top: 28px; } }
+  .listicle__title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 55px; }
+    .listicle__title a {
+      font-weight: inherit;
+      color: inherit; }
 
 .ama__global-menu {
   display: -webkit-box;
