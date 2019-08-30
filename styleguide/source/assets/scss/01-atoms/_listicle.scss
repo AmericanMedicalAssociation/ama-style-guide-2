@@ -1,0 +1,54 @@
+.listicle {
+  counter-reset: ama-listicle;
+  list-style: none;
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
+
+  &__item {
+
+    counter-increment: ama-listicle;
+    position: relative;
+    @include gutter($margin-bottom-half...);
+    @include gutter($margin-top-half...);
+
+    &::before {
+      content: counter(ama-listicle);
+      position: absolute;
+      background: $homepagePurple;
+      color: $white;
+      width: 21px;
+      height: 19px;
+      top: 5px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -1.78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-sub {
+      list-style: none;
+      margin-left: 55px;
+      padding-left: 0;
+
+      &-item {
+        @include gutter($margin-bottom-full...);
+        @include gutter($margin-top-full...);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 55px;
+
+    a {
+      font-weight: inherit;
+      color: inherit;
+    }
+  }
+}
+
