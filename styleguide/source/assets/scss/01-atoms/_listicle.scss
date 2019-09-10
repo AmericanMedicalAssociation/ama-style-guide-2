@@ -8,6 +8,7 @@
 
     counter-increment: ama-listicle;
     position: relative;
+    margin-left: 43px;
     @include gutter($margin-bottom-half...);
     @include gutter($margin-top-half...);
 
@@ -16,9 +17,9 @@
       position: absolute;
       background: $homepagePurple;
       color: $white;
-      width: 21px;
-      height: 19px;
-      top: 5px;
+      width: 25px;
+      height: 25px;
+      top: 4px;
       text-align: center;
       font-size: 22px;
       font-weight: 600;
@@ -26,16 +27,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      left: -43px
     }
 
     &-sub {
       list-style: none;
-      margin-left: 55px;
       padding-left: 0 !important;
 
       &-item {
-        @include gutter($margin-bottom-full...);
-        @include gutter($margin-top-full...);
+        @include gutter($margin-bottom-half...);
+        @include gutter($margin-top-half...);
       }
     }
   }
@@ -43,7 +44,7 @@
   &__title {
     font-size: 22px;
     font-weight: 600;
-    margin-left: 55px;
+    @include gutter($margin-bottom-full...);
 
     a {
       font-weight: inherit;
