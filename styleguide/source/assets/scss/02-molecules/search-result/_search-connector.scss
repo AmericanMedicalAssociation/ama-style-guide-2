@@ -58,11 +58,20 @@
     display: flex;
     align-items: center;
     width: 100%;
-    overflow-x: auto;
+    overflow: hidden;
     @include breakpoint($bp-med min-width) {
-      overflow-x: hidden;
       float: none;
       display: block;
+    }
+    &:after{
+      content: '';
+      padding-right: 25%;
+      height: 1px;
+      @include breakpoint($bp-med min-width) {
+        content: '';
+        padding-right: 0;
+        height: 0;
+      }
     }
   }
 }
