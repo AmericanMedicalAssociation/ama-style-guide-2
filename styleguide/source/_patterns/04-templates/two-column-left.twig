@@ -22,6 +22,12 @@
         {% include '@base/placeholder.twig' with {'placeholder':{'text':'Primary Sidebar region content'}}%}
       {% endblock %}
     </aside>
+
+    <aside id="sidebar-secondary" class="ama__layout--two-column--left__sidebar--secondary" role="complementary">
+        {% block sidebarSecondary %}
+            {% include '@base/placeholder.twig' with {'placeholder':{'text':'Secondary Sidebar region content'}}%}
+        {% endblock %}
+    </aside>
   </div>
 
   {% block footer %}
