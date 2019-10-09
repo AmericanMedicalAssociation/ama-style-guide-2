@@ -16,14 +16,24 @@
 
 {% block sidebarPrimary %}
   {% include "@organisms/filter.twig" %}
-  <div class="ama__search-results__promos">
-    {% include '@molecules/partner-promo.twig' %}
-    {% include '@molecules/subscribe-promo.twig' %}
-  </div>
+  <aside class="ama__layout--two-column--left__sidebar--primary">
+    <div class="ama__search-results__promos">
+      {% include '@molecules/partner-promo.twig' %}
+      {% include '@molecules/subscribe-promo.twig' %}
+    </div>
+  </aside>
+{% endblock %}
+
+{% block sidebarSecondary %}
+  <aside class="ama__layout--two-column--left__sidebar--secondary">
+    {% include '@molecules/search-result/search-connector.twig' %}
+  </aside>
 {% endblock %}
 
 {% block pageContent %}
-  {% include "@organisms/search-result-list.twig" %}
-  {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
-  {% include "@molecules/pagination.twig" %}
+  <article class="ama__layout--two-column--left__page-content">
+    {% include "@organisms/search-result-list.twig" %}
+    {% include "@molecules/article-stub/article-stub-as-inline-alt.twig" %}
+    {% include "@molecules/pagination.twig" %}
+  </article>
 {% endblock %}
