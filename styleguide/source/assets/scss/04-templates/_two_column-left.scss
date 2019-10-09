@@ -38,6 +38,21 @@
       grid-row: 2 / 4;
     }
   }
+  &__sidebar--secondary{
+    @include child-top-gutters($gutter);
+    @include gutter($padding-top-full...);
+    grid-column: 1 / 5;
+    grid-row: 4;
+    overflow-x: hidden;
+    @include breakpoint($bp-med min-width) {
+      @include gutter($padding-right-full...);
+      @include gutter($padding-left-full...);
+      overflow-x: hidden;
+      grid-column: 1;
+      grid-row: 3;
+      -ms-grid-column-span: 1;
+    }
+  }
 } // end article
 
 .ama__layout--two-column--left__sidebar {
