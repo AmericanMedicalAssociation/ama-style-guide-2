@@ -2,6 +2,8 @@ blockquote,
 .blockquote {
   position: relative;
   margin-left: 9.2%;
+  @include gutter($margin-bottom-half...);
+  @include gutter($margin-top-half...);
 
   &:before {
     content: '';
