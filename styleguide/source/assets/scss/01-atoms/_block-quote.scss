@@ -14,7 +14,12 @@ blockquote,
 
   &__text {
     margin-left: 1.6%;
-    max-width: 59%;
+
+    max-width: 100%;
+
+    @include breakpoint($bp-small) {
+      max-width: 59%;
+    }
   }
 
   * {
