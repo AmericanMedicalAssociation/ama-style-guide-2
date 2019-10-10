@@ -1,0 +1,23 @@
+blockquote,
+.blockquote {
+  position: relative;
+  margin-left: 9.2%;
+
+  &:before {
+    content: '';
+    height: 100%;
+    background-color: $purple;
+    position: absolute;
+    width: 5px;
+
+  }
+
+  &__text {
+    margin-left: 1.6%;
+    max-width: 59%;
+  }
+
+  * {
+    margin-left: 25px;
+  }
+}
