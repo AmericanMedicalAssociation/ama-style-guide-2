@@ -8,7 +8,7 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-  
+
   &__heading,
   & .ama__h2 {
     @include gutter($margin-top-full...);
@@ -99,13 +99,19 @@
   &--image-text {
     .ama__hub-card__image {
       @include breakpoint($bp-xs) {
-        max-height: 280px;
+        max-height: 400px;
+      }
+      @include breakpoint($bp-small) {
+        max-height: 240px;
       }
       @include breakpoint($bp-med) {
-        max-height: 147px;
+        max-height: 300px;
       }
       @include breakpoint($bp-large) {
-        max-height: 180px;
+        max-height: 370px;
+      }
+      @include breakpoint($bp-xl) {
+        max-height: 370px;
       }
       overflow: hidden;
     }
