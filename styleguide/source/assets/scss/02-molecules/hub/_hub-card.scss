@@ -26,8 +26,16 @@
     @include gutter-all($padding-all-full...);
     text-align: center;
 
+    .ama__button--secondary {
+      @extend %ama__button--secondary;
+    }
+
     a {
       @extend %ama__button;
+    }
+
+    a:nth-child(2) {
+      margin-left: 16px;
     }
   }
 
