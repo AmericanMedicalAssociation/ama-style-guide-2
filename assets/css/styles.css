@@ -1486,6 +1486,39 @@ a.webform-button--submit {
 .ama__tabs .ama__agenda-date.ui-tabs-active a {
   border-bottom: solid 3px #5C5C5C; }
 
+blockquote,
+.blockquote {
+  position: relative;
+  margin-left: 9.2%;
+  margin-bottom: 10px;
+  margin-top: 10px; }
+  @media (min-width: 56.25em) {
+    blockquote,
+    .blockquote {
+      margin-bottom: 14px; } }
+  @media (min-width: 56.25em) {
+    blockquote,
+    .blockquote {
+      margin-top: 14px; } }
+  blockquote:before,
+  .blockquote:before {
+    content: '';
+    height: 100%;
+    background-color: #46166B;
+    position: absolute;
+    width: 5px; }
+  blockquote__text,
+  .blockquote__text {
+    margin-left: 1.6%;
+    max-width: 100%; }
+    @media (min-width: 37.5em) {
+      blockquote__text,
+      .blockquote__text {
+        max-width: 59%; } }
+  blockquote *,
+  .blockquote * {
+    margin-left: 25px; }
+
 .ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
 .ama__button,
 button {
@@ -8063,13 +8096,19 @@ article[class*='__page-content'] .ama__tags {
     overflow: hidden; }
     @media (min-width: 25em) {
       .ama__hub-card--image-text .ama__hub-card__image {
-        max-height: 280px; } }
+        max-height: 400px; } }
+    @media (min-width: 37.5em) {
+      .ama__hub-card--image-text .ama__hub-card__image {
+        max-height: 240px; } }
     @media (min-width: 56.25em) {
       .ama__hub-card--image-text .ama__hub-card__image {
-        max-height: 147px; } }
+        max-height: 300px; } }
     @media (min-width: 75em) {
       .ama__hub-card--image-text .ama__hub-card__image {
-        max-height: 180px; } }
+        max-height: 370px; } }
+    @media (min-width: 87.5em) {
+      .ama__hub-card--image-text .ama__hub-card__image {
+        max-height: 370px; } }
   .ama__hub-card--portrait {
     background-size: cover;
     background-position: center top;
@@ -8253,7 +8292,9 @@ article[class*='__page-content'] .ama__tags {
   flex-direction: column;
   text-align: center;
   background-color: #EDEDED;
-  background-size: contain; }
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 350px; }
   @media (min-width: 37.5em) {
     .ama__hub-hero {
       background-position: center;
@@ -8405,8 +8446,7 @@ article[class*='__page-content'] .ama__tags {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: #EDEDED;
-    min-height: 0; }
+    background-color: #EDEDED; }
   .ama__hub-hero--side-right {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

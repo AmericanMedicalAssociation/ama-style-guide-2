@@ -7,7 +7,9 @@
   flex-direction: column;
   text-align: center;
   background-color: $gray-7;
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 350px;
 
   @include breakpoint($bp-small) {
     background-position: center;
@@ -100,8 +102,7 @@
   &--cta-only {
     flex-direction: column;
     justify-content: center;
-    background: $gray-7;
-    min-height: 0;
+    background-color: $gray-7;
   }
 
   &--side-right {
