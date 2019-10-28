@@ -8,7 +8,7 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-  
+
   &__heading,
   & .ama__h2 {
     @include gutter($margin-top-full...);
@@ -36,6 +36,40 @@
 
     a:nth-child(2) {
       margin-left: 16px;
+    }
+    &.text-only {
+      @include breakpoint($bp-xs) {
+        width: 100%;
+      }
+      @include breakpoint($bp-med) {
+        width: 50%;
+      }
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__button-flex {
+    @include breakpoint($bp-xs) {
+      flex-direction: column;
+      a {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      a:nth-child(2) {
+        margin: 0;
+      }
+    }
+    @include breakpoint($bp-med) {
+      display: flex;
+      flex-direction: row;
+      a {
+        width: 49%;
+        margin-bottom: 0;
+      }
+      a:nth-child(2) {
+        margin: 0 0 0 16px;
+      }
     }
   }
 
