@@ -1486,39 +1486,30 @@ a.webform-button--submit {
 .ama__tabs .ama__agenda-date.ui-tabs-active a {
   border-bottom: solid 3px #5C5C5C; }
 
-blockquote,
+/*blockquote,
 .blockquote {
   position: relative;
   margin-left: 9.2%;
-  margin-bottom: 10px;
-  margin-top: 10px; }
-  @media (min-width: 56.25em) {
-    blockquote,
-    .blockquote {
-      margin-bottom: 14px; } }
-  @media (min-width: 56.25em) {
-    blockquote,
-    .blockquote {
-      margin-top: 14px; } }
-  blockquote:before,
-  .blockquote:before {
+  @include gutter($margin-bottom-half...);
+  @include gutter($margin-top-half...);
+  &:before {
     content: '';
     height: 100%;
-    background-color: #46166B;
+    background-color: $purple;
     position: absolute;
-    width: 5px; }
-  blockquote__text,
-  .blockquote__text {
+    width: 5px;
+  }
+  &__text {
     margin-left: 1.6%;
-    max-width: 100%; }
-    @media (min-width: 37.5em) {
-      blockquote__text,
-      .blockquote__text {
-        max-width: 59%; } }
-  blockquote *,
-  .blockquote * {
-    margin-left: 25px; }
-
+    max-width: 100%;
+    @include breakpoint($bp-small) {
+      max-width: 59%;
+    }
+  }
+  * {
+    margin-left: 25px;
+  }
+}*/
 .ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
 .ama__button,
 button {
