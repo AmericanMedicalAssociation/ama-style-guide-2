@@ -26,8 +26,56 @@
     @include gutter-all($padding-all-full...);
     text-align: center;
 
+    .ama__button--secondary {
+      @extend %ama__button--secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     a {
       @extend %ama__button;
+    }
+
+    a:nth-child(2) {
+      margin-left: 16px;
+    }
+    &.text-only {
+      @include breakpoint($bp-xs) {
+        width: 100%;
+      }
+      @include breakpoint($bp-med) {
+        width: 50%;
+      }
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__button-flex {
+    @include breakpoint($bp-xs) {
+      flex-direction: column;
+      a {
+        width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a:nth-child(2) {
+        margin: 0;
+      }
+    }
+    @include breakpoint($bp-med) {
+      display: flex;
+      flex-direction: row;
+      a {
+        width: 49%;
+        margin-bottom: 0;
+      }
+      a:nth-child(2) {
+        margin: 0 0 0 16px;
+      }
     }
   }
 
