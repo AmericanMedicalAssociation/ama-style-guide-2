@@ -1,24 +1,49 @@
-/*blockquote,
-.blockquote {
+blockquote {
   position: relative;
-  margin-left: 9.2%;
-  @include gutter($margin-bottom-half...);
-  @include gutter($margin-top-half...);
-  &:before {
-    content: '';
-    height: 100%;
-    background-color: $purple;
-    position: absolute;
-    width: 5px;
+  @include breakpoint($bp-xs) {
+    padding-left: 30px;
   }
-  &__text {
-    margin-left: 1.6%;
-    max-width: 100%;
-    @include breakpoint($bp-small) {
-      max-width: 59%;
+  @include breakpoint($bp-med) {
+    padding-left: 13px;
+  }
+  @include breakpoint($bp-large) {
+    padding-left: 26px;
+  }
+  p,
+  a,
+  li,
+  ol,
+  table,
+  img,
+  span,
+  h1, h2, h3, h4, h5, h6,
+  div {
+    text-align: left;
+  }
+  ol {
+    margin-left: 20px;
+    @include breakpoint($bp-xs) {
+      margin-left: 4px;
     }
   }
-  * {
-    margin-left: 25px;
+  ul {
+    @include breakpoint($bp-xs) {
+      margin-left: 4px;
+    }
+    @include breakpoint($bp-med) {
+      margin-left: -5px;
+    }
+    @include breakpoint($bp-large) {
+      margin-left: -5px;
+    }
   }
-}*/
+  &::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $purple;
+    width: 5px;
+    height: 100%;
+  }
+}
