@@ -46,3 +46,20 @@ figure.embedded-entity.align-right {
   margin-left: $gutter / 2;
   margin-bottom: $gutter / 2;
 }
+
+// Inline Images using ckeditor.
+
+.embedded-entity {
+
+  &.align-right {
+    
+    @include gutter($margin-left-half...);
+    float: right;
+    width: auto;;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+  
+}
