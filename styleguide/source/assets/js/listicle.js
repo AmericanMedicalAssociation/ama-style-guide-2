@@ -18,6 +18,12 @@
           });
         });
       }
+      if($('.ama__promo--inline ~ .listicle')) {
+        var length = $('.ama__promo--inline').first().nextUntil('.listicle').addBack().length;
+        if (length <= 5) {
+          $('.ama__promo--inline').addClass('listicle-margin');
+        }
+      }
     }
   };
 })(jQuery, Drupal);
