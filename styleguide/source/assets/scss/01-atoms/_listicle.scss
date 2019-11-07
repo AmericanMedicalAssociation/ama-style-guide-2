@@ -39,15 +39,14 @@
         @include gutter($margin-top-half...);
       }
     }
-
-    h3 {
-      display: inline;
-    }
   }
 
-  &__title {
+  &__title,
+  h3,
+  h2 {
     font-size: 22px;
     font-weight: 600;
+    display: inline;
     @include gutter($margin-bottom-full...);
 
     a {
@@ -56,4 +55,3 @@
     }
   }
 }
-
