@@ -1,8 +1,6 @@
 blockquote {
   position: relative;
-  @include breakpoint($bp-xs) {
-    padding-left: 30px;
-  }
+  padding-left: 30px;
   @include breakpoint($bp-med) {
     padding-left: 13px;
   }
@@ -21,7 +19,8 @@ blockquote {
     text-align: left;
   }
   ol {
-    margin-left: 20px;
+    list-style-position: inside;
+    margin-left: 0px;
     @include breakpoint($bp-xs) {
       margin-left: 4px;
     }
