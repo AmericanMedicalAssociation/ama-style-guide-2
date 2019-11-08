@@ -39,6 +39,21 @@
         @include gutter($margin-top-half...);
       }
     }
+    figure {
+      float: right;
+      margin-bottom: 19px;
+      @include breakpoint($bp-xs) {
+        width: 100%;
+        margin-left: 0;
+        img {
+          width: 100%;
+        }
+      }
+      @include breakpoint($bp-med) {
+        width: auto;
+        margin-left: 1rem;
+      }
+    }
   }
 
   &__title,

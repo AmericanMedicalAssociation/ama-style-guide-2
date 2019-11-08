@@ -24,6 +24,12 @@
           $('.ama__promo--inline').addClass('listicle-margin');
         }
       }
+      if($('.listicle__item > img')) {
+        $('.listicle__item > img').each(function() {
+
+          $(this).parent().css("background-color", "red")
+        })
+      }
     }
   };
 })(jQuery, Drupal);
