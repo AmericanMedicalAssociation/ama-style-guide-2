@@ -42,16 +42,18 @@
     figure {
       float: right;
       margin-bottom: 19px;
-      @include breakpoint($bp-xs) {
-        width: 100%;
-        margin-left: 0;
-        img {
-          width: 100%;
+      img {
+        &.no-margin {
+          margin-left: 0
         }
-      }
-      @include breakpoint($bp-med) {
-        width: auto;
-        margin-left: 1rem;
+        @include breakpoint($bp-xs) {
+          width: 100%;
+          margin-left: 0;
+        }
+        @include breakpoint($bp-med) {
+          width: auto;
+          margin-left: 1rem;
+        }
       }
     }
   }
@@ -68,5 +70,10 @@
       font-weight: inherit;
       color: inherit;
     }
+  }
+  .clearfix {
+    width: 100%;
+    height: 1px;
+    clear: both;
   }
 }
