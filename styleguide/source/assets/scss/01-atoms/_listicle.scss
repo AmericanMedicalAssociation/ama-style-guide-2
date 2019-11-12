@@ -9,7 +9,7 @@
     counter-increment: ama-listicle;
     position: relative;
     margin-left: 43px;
-    @include gutter($margin-bottom-half...);
+    margin-bottom: 19px;
     @include gutter($margin-top-half...);
 
     &::before {
@@ -19,7 +19,7 @@
       color: $white;
       width: 30px;
       height: 30px;
-      top: 4px;
+      top: 0;
       text-align: center;
       font-size: 22px;
       font-weight: 600;
@@ -36,7 +36,37 @@
 
       &-item {
         @include gutter($margin-bottom-half...);
-        @include gutter($margin-top-half...);
+        margin-top: 0;
+      }
+    }
+    figure {
+      float: right;
+      margin-bottom: 19px;
+      figcaption {
+        margin-left: 1rem;
+      }
+      &.no-margin {
+        float: none;
+        display: block;
+        width: 100%;
+        figcaption {
+          margin-left: 0rem;
+          display: block;
+        }
+      }
+      img {
+        margin-top: 7px;
+        &.no-margin {
+          margin-left: 0
+        }
+        @include breakpoint($bp-xs) {
+          width: 100%;
+          margin-left: 0;
+        }
+        @include breakpoint($bp-med) {
+          width: auto;
+          margin-left: 1rem;
+        }
       }
     }
   }
@@ -47,11 +77,17 @@
     font-size: 22px;
     font-weight: 600;
     display: inline;
+    width: 100%;
     @include gutter($margin-bottom-full...);
 
     a {
       font-weight: inherit;
       color: inherit;
     }
+  }
+  .clearfix {
+    width: 100%;
+    height: 1px;
+    clear: both;
   }
 }
