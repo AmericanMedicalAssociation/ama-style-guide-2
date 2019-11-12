@@ -2,12 +2,12 @@ section ul,
 article ul,
 .ama__list {
   @include gutter($margin-bottom-half...);
-  display: table;
 
   li {
     @include gutter($margin-left-full...);
     padding: 0;
     list-style: disc;
+    list-style-position: inside;
 
     ul {
       @include gutter($margin-left-full...);
@@ -20,4 +20,3 @@ article ul,
     list-style: none;
   }
 }
-
