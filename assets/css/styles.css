@@ -1487,10 +1487,8 @@ a.webform-button--submit {
   border-bottom: solid 3px #5C5C5C; }
 
 blockquote {
-  position: relative; }
-  @media (min-width: 25em) {
-    blockquote {
-      padding-left: 30px; } }
+  position: relative;
+  padding-left: 30px; }
   @media (min-width: 56.25em) {
     blockquote {
       padding-left: 13px; } }
@@ -1508,7 +1506,8 @@ blockquote {
   blockquote div {
     text-align: left; }
   blockquote ol {
-    margin-left: 20px; }
+    list-style-position: inside;
+    margin-left: 0px; }
     @media (min-width: 25em) {
       blockquote ol {
         margin-left: 4px; } }
@@ -3146,6 +3145,17 @@ figure.embedded-entity.align-right {
   margin-left: 14px;
   margin-bottom: 14px; }
 
+.embedded-entity.align-right {
+  margin-left: 10px;
+  float: right;
+  width: auto; }
+  @media (min-width: 56.25em) {
+    .embedded-entity.align-right {
+      margin-left: 14px; } }
+
+.embedded-entity.align-center {
+  text-align: center; }
+
 /* Links */
 a {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -3353,57 +3363,97 @@ a {
     counter-increment: ama-listicle;
     position: relative;
     margin-left: 43px;
-    margin-bottom: 10px;
+    margin-bottom: 19px;
     margin-top: 10px; }
-    @media (min-width: 56.25em) {
-      .listicle__item {
-        margin-bottom: 14px; } }
     @media (min-width: 56.25em) {
       .listicle__item {
         margin-top: 14px; } }
     .listicle__item::before {
       content: counter(ama-listicle);
-      position: absolute;
+      position: relative;
       background: #7229D1;
       color: #ffffff;
       width: 30px;
       height: 30px;
-      top: 4px;
+      top: 0;
       text-align: center;
       font-size: 22px;
       font-weight: 600;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      left: -43px; }
+      left: -43px;
+      margin-right: -35px; }
     .listicle__item-sub {
       list-style: none;
       padding-left: 0 !important; }
       .listicle__item-sub-item {
         margin-bottom: 10px;
-        margin-top: 10px; }
+        margin-top: 0; }
         @media (min-width: 56.25em) {
           .listicle__item-sub-item {
             margin-bottom: 14px; } }
+    .listicle__item figure {
+      float: right;
+      margin-bottom: 19px; }
+      .listicle__item figure figcaption {
+        margin-left: 1rem; }
+      .listicle__item figure.no-margin {
+        float: none;
+        display: block;
+        width: 100%; }
+        .listicle__item figure.no-margin figcaption {
+          margin-left: 0rem;
+          display: block; }
+      .listicle__item figure img {
+        margin-top: 7px; }
+        .listicle__item figure img.no-margin {
+          margin-left: 0; }
+        @media (min-width: 25em) {
+          .listicle__item figure img {
+            width: 100%;
+            margin-left: 0; } }
         @media (min-width: 56.25em) {
-          .listicle__item-sub-item {
-            margin-top: 14px; } }
-  .listicle__title {
+          .listicle__item figure img {
+            width: auto;
+            margin-left: 1rem; } }
+  .listicle__title,
+  .listicle h3,
+  .listicle .ama__expand-list .ui-accordion-header__text,
+  .ama__expand-list .listicle .ui-accordion-header__text,
+  .listicle .ama__expand-list__header__text,
+  .listicle h2 {
     font-size: 22px;
     font-weight: 600;
+    display: inline;
+    width: 100%;
     margin-bottom: 20px; }
     @media (min-width: 56.25em) {
-      .listicle__title {
+      .listicle__title,
+      .listicle h3,
+      .listicle .ama__expand-list .ui-accordion-header__text,
+      .ama__expand-list .listicle .ui-accordion-header__text,
+      .listicle .ama__expand-list__header__text,
+      .listicle h2 {
         margin-bottom: 28px; } }
-    .listicle__title a {
+    .listicle__title a,
+    .listicle h3 a,
+    .listicle .ama__expand-list .ui-accordion-header__text a,
+    .ama__expand-list .listicle .ui-accordion-header__text a,
+    .listicle .ama__expand-list__header__text a,
+    .listicle h2 a {
       font-weight: inherit;
       color: inherit; }
+  .listicle .clearfix {
+    width: 100%;
+    height: 1px;
+    clear: both; }
 
 .ama__global-menu {
   display: -webkit-box;
@@ -3681,6 +3731,14 @@ a {
       background-color: #46166B;
       background-image: url("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-icons_ffffff_256x240.png");
       background-position: -63px -143px; }
+
+section ol,
+article ol {
+  margin-bottom: 10px; }
+  @media (min-width: 56.25em) {
+    section ol,
+    article ol {
+      margin-bottom: 14px; } }
 
 .ama__page-title {
   padding-top: 20px; }
@@ -6680,6 +6738,8 @@ figcaption {
     @media (min-width: 37.5em) {
       .ama__promo--inline {
         float: left; } }
+    .ama__promo--inline.listicle-margin {
+      margin-right: 60px; }
   .ama__promo > *, .ama__promo--background > *, .ama__promo--border > *, a.ama__promo--background > *, a.ama__promo--border > * {
     margin-bottom: 0; }
   .ama__promo .ama__image, .ama__promo--background .ama__image, .ama__promo--border .ama__image,
