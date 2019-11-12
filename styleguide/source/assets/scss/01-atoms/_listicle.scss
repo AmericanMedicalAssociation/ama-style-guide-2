@@ -36,13 +36,26 @@
 
       &-item {
         @include gutter($margin-bottom-half...);
-        @include gutter($margin-top-half...);
+        margin-top: 0;
       }
     }
     figure {
       float: right;
       margin-bottom: 19px;
+      figcaption {
+        margin-left: 1rem;
+      }
+      &.no-margin {
+        float: none;
+        display: block;
+        width: 100%;
+        figcaption {
+          margin-left: 0rem;
+          display: block;
+        }
+      }
       img {
+        margin-top: 7px;
         &.no-margin {
           margin-left: 0
         }
@@ -64,6 +77,7 @@
     font-size: 22px;
     font-weight: 600;
     display: inline;
+    width: 100%;
     @include gutter($margin-bottom-full...);
 
     a {
