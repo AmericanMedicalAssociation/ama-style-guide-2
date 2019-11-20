@@ -23,7 +23,6 @@
   }
 
   &__button-container {
-    @include gutter-all($padding-all-full...);
     text-align: center;
 
     .ama__button--secondary {
@@ -53,11 +52,11 @@
   }
 
   &__button-flex {
-    @include breakpoint($bp-xs) {
+    @media(min-width: 320px) and (max-width:$bp-med) {
       flex-direction: column;
       a {
         width: 100%;
-        margin-bottom: 15px;
+        margin: 0 auto 15px auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -71,7 +70,7 @@
       flex-direction: row;
       a {
         width: 49%;
-        margin-bottom: 0;
+        margin: 0 auto;
       }
       a:nth-child(2) {
         margin: 0 0 0 16px;
@@ -189,6 +188,7 @@
 
     .ama__hub-hero__button-container {
       text-align: left;
+      padding: 20px 0;
     }
 
     .ama__hub-card__image,
