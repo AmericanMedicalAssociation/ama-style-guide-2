@@ -55,7 +55,6 @@
     @media(min-width: 320px) and (max-width:$bp-med) {
       flex-direction: column;
       a {
-        width: 100%;
         margin: 0 auto 15px auto;
         display: flex;
         justify-content: center;
@@ -68,9 +67,16 @@
     @include breakpoint($bp-med) {
       display: flex;
       flex-direction: row;
+      padding: 20px 0;
+      text-align: center;
+      justify-content: center;
+
       a {
-        width: 49%;
-        margin: 0 auto;
+        flex-basis: 50%;
+        max-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       a:nth-child(2) {
         margin: 0 0 0 16px;
