@@ -22,12 +22,14 @@ article ul,
 article {
     .text-body {
         ul {
-            display: flex;
-            flex-direction: column;
-
-            li {
-                margin-left: 18px;
-            }
+            list-style: outside disc;
+            margin-left: 1em;
+        }
+        ul li {
+            position: relative;
+            left: 1em;
+            padding-right: 1em;
+            margin-left: -1em;
         }
     }
 }
