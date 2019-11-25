@@ -22,24 +22,12 @@ article ul,
 article {
     .text-body {
         ul {
-            width: 100%;
-        }
-        ul li {
             display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-            width: 100%;
+            flex-direction: column;
 
-            &:before {
-                 display: inline-block;
-                 content: "•";
-                 width: 8px;
-                 margin-right: 15px;
-                 font-size: 31px;
-                 line-height: 18px;
-                 align-self: baseline;
-                 margin-top: 3px;
-             }
+            li {
+                margin-left: 18px;
+            }
         }
     }
 }
