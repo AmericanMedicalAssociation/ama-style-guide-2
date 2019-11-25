@@ -22,24 +22,14 @@ article ul,
 article {
     .text-body {
         ul {
-            width: 100%;
+            list-style: outside disc;
+            margin-left: 1.1em;
         }
         ul li {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-            width: 100%;
-
-            &:before {
-                 display: inline-block;
-                 content: "•";
-                 width: 8px;
-                 margin-right: 15px;
-                 font-size: 31px;
-                 line-height: 18px;
-                 align-self: baseline;
-                 margin-top: 3px;
-             }
+            position: relative;
+            left: 1em;
+            padding-right: 1em;
+            margin-left: -1em;
         }
     }
 }

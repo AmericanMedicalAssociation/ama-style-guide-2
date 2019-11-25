@@ -4502,26 +4502,14 @@ article ul,
         margin-left: 28px; } }
 
 article .text-body ul {
-  width: 100%; }
+  list-style: outside disc;
+  margin-left: 1.1em; }
 
 article .text-body ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin: 0;
-  width: 100%; }
-  article .text-body ul li:before {
-    display: inline-block;
-    content: "•";
-    width: 8px;
-    margin-right: 15px;
-    font-size: 31px;
-    line-height: 18px;
-    -ms-flex-item-align: baseline;
-    align-self: baseline;
-    margin-top: 3px; }
+  position: relative;
+  left: 1em;
+  padding-right: 1em;
+  margin-left: -1em; }
 
 img,
 video,
