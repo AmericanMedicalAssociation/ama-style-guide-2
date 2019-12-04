@@ -1,10 +1,14 @@
 .ama__membership {
   background: $gray-7;
-  @include gutter($padding-top-half...);
-  @include gutter($padding-right-half...);
-  @include gutter($padding-bottom-half...);
-  @include gutter($padding-left-half...);
+  @include gutter($padding-top-full...);
+  @include gutter($padding-right-full...);
+  @include gutter($padding-bottom-full...);
+  @include gutter($padding-left-full...);
   @include child-top-gutters($gutter / 2);
+
+  &.bottom-margin {
+    @include gutter($margin-bottom-full...);
+  }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
   & > * {
