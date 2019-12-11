@@ -26,6 +26,23 @@
         background: $hoverPurple;
       }
     }
+
+    .form-item--error-message,
+    label.error {
+      background: url('/themes/custom/ama_one/icons/svg/icon-error.svg') no-repeat left;
+      background-size: 15px;
+      padding-left: 24px;
+      text-transform: none;
+      font-size: 18px;
+      font-style: italic;
+      color: #ededed;
+      margin-bottom: 14px;
+      height: 15px;
+      line-height: 15px;
+    }
+    .ama__checkbox span {
+      color: $white;
+    }
   }
 
   .ama__form-group {
@@ -58,28 +75,37 @@
 
     .ama__subscribe-promo__form,
     .ama__subscribe-promo__form form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+
+      .ama__subscribe-promo__email-subscribe-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
 
       .ama__form-group,
       .form-actions {
         margin: 0;
+        margin-bottom: 14px;
       }
 
-      .ama__form-group label {
-        display: none;
-      }
+      .ama__form-group {
+        input {
+          @include gutter($margin-bottom-full...);
+          max-width: 100%;
+          height: 49px;
+          font-style: italic;
 
-      .ama__form-group input {
-        @include gutter($margin-bottom-full...);
-        max-width: 100%;
-        height: 49px;
-        @include breakpoint($bp-small min-width) {
-          max-width: 275px;
+          &.error {
+            background-image: none;
+          }
         }
-        @include breakpoint($bp-med min-width) {
-          max-width: 220px;
+
+        &.form-item-email.form-item--error {
+          margin-bottom: 22px;
+        }
+
+        label {
+          display: none;
         }
       }
 
@@ -121,7 +147,6 @@
       }
 
       .ama__form-group {
-        flex: 0 0 auto;
         margin-bottom: $gutter-mobile/2;
         @include breakpoint($bp-large){
           flex: 1;
