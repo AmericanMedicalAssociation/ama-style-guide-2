@@ -13,8 +13,18 @@
       background-color: rgba(70, 22, 107, 0.05);
       padding: $gutter-mobile/2;
       margin: $gutter-mobile/4;
-      width: 360px;
+      width: 49vh;
       height: 190px;
+
+      @include breakpoint(359px max-width) {
+        width: 46vh;
+      }
+      @include breakpoint($bp-xs max-width) {
+        width: 47vh;
+      }
+      @include breakpoint($bp-xs min-width) {
+        width: 49vh;
+      }
       @include breakpoint($bp-med min-width) {
         width: auto;
         height: auto;
@@ -30,6 +40,10 @@
       }
       .search-result-item-subtitle {
         @include font-size($h5-font-sizes);
+        width: 85%;
+        @include breakpoint($bp-med min-width) {
+          width: auto;
+        }
       }
     }
   }
