@@ -153,11 +153,6 @@
           $(".webform-submission-form").validate().element(this);
         }
       });
-
-      // Copies email input values from email subscription and inserts into the other email subscription form on page
-      // $('.webform-submission-email-subscription-form').find('input[name=email]').keyup(function(e) {
-      //   $('.webform-submission-email-subscription-form').find('input[name=email]').val($(this).val());
-      // });
     }
   };
 })(jQuery, Drupal);
