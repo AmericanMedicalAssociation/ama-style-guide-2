@@ -96,7 +96,7 @@
 
     .ama__form-group {
       display: flex;
-      width: 100%;
+      flex-grow: 2;
     }
   }
 
@@ -198,13 +198,16 @@
       .ama__subscribe-promo--wide .ama__subscribe-promo__form {
         input {
           background-color: $white;
-          &.error {
-            background-image: none;
-          }
+        }
+
+        .form-item--error-message,
+        label.error {
+         position: absolute;
+          bottom: -14px;
         }
 
         .ama__button {
-          margin: 0;
+          margin: 0 auto;
         }
 
         div[role=alert] {
