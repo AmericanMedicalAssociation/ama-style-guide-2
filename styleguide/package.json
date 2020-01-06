@@ -48,7 +48,8 @@
     "run-sequence": "^2.2.0"
   },
   "scripts": {
-    "prepare": "patch-package"
+    "prepare": "patch-package",
+    "preinstall": "npx npm-force-resolutions"
   },
   "author": "Avi Schwab",
   "license": "ISC",
@@ -76,5 +77,8 @@
       "selector-max-id": 1,
       "string-quotes": "double"
     }
+  },
+  "resolutions": {
+    "natives": "1.1.6"
   }
 }
