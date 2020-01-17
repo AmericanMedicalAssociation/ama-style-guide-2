@@ -7644,6 +7644,18 @@ a.ama__promo--border:hover {
     height: 49px; }
     .ama__subscribe-promo__form .ama__button:hover {
       background: #9073A6; }
+  .ama__subscribe-promo__form .form-item--error-message,
+  .ama__subscribe-promo__form label.error {
+    background: url("/themes/custom/ama_one/icons/svg/icon-error.svg") no-repeat left;
+    background-size: 15px;
+    padding-left: 24px;
+    text-transform: none;
+    font-size: 18px;
+    font-style: italic;
+    color: #ededed;
+    margin-bottom: 14px; }
+  .ama__subscribe-promo__form .ama__checkbox span {
+    color: #ffffff; }
   .ama__subscribe-promo .ama__form-group input {
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
     font-weight: 400;
@@ -7674,55 +7686,52 @@ a.ama__promo--border:hover {
       @media (min-width: 56.25em) {
         .ama__subscribe-promo--wide .ama__subscribe-promo__content {
           margin-right: 28px; } }
-    .ama__subscribe-promo--wide .ama__subscribe-promo__form,
-    .ama__subscribe-promo--wide .ama__subscribe-promo__form form {
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__subscribe-promo__email-subscribe-container,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__subscribe-promo__email-subscribe-container {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: vertical;
+      -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
+      -ms-flex-direction: row;
+      flex-direction: row;
       width: 100%; }
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group,
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-actions,
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group,
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .form-actions {
-        margin: 0; }
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group label,
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group label {
-        display: none; }
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
-      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
-        margin-bottom: 20px;
-        max-width: 100%;
-        height: 49px; }
-        @media (min-width: 56.25em) {
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
-            margin-bottom: 28px; } }
-        @media (min-width: 37.5em) {
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
-            max-width: 275px; } }
-        @media (min-width: 56.25em) {
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
-            max-width: 220px; } }
-      @media (min-width: 37.5em) {
-        .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
-        .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__button {
-          margin: 0 0 0 auto; } }
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-actions,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form .form-actions {
+      margin: 0;
+      margin-bottom: 14px; }
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
+      margin-bottom: 20px;
+      max-width: 100%;
+      height: 49px;
+      font-style: italic; }
       @media (min-width: 56.25em) {
-        .ama__subscribe-promo--wide .ama__subscribe-promo__form,
-        .ama__subscribe-promo--wide .ama__subscribe-promo__form form {
-          -webkit-box-orient: horizontal;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-          flex-direction: row; }
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
-          .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
-            margin-bottom: 0; } }
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
+          margin-bottom: 28px; } }
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input.error,
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input.error {
+        background-image: none; }
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group label,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group label {
+      display: none; }
+    @media (min-width: 37.5em) {
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__button {
+        margin: 0 0 0 auto; } }
+    @media (min-width: 56.25em) {
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form,
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form form {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; }
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
+          margin-bottom: 0; } }
   .ama__subscribe-promo--homepage .ama__subscribe-promo__form {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -7749,9 +7758,6 @@ a.ama__promo--border:hover {
         -ms-flex-direction: row;
         flex-direction: row; } }
     .ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__form-group {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-      flex: 0 0 auto;
       margin-bottom: 10px; }
       @media (min-width: 75em) {
         .ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__form-group {
@@ -7761,6 +7767,30 @@ a.ama__promo--border:hover {
           margin-bottom: auto; } }
     .ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__button {
       margin: 0 auto; }
+
+.ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form {
+  position: relative;
+  padding-bottom: 63px; }
+  .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-item-us-citizen {
+    width: 100%; }
+  .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions {
+    position: absolute;
+    text-align: center;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    margin: auto; }
+    .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions .ajax-progress-throbber {
+      position: absolute;
+      top: 8px;
+      right: 0; }
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+      .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions {
+        margin-top: 80px; } }
+    .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions .webform-button--submit {
+      display: inline-block;
+      margin: 0 auto;
+      width: 100%; }
 
 .ama__tags,
 article[class*='__page-content'] .ama__tags {
@@ -9779,9 +9809,7 @@ section.ama__page--event__speakers {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 2;
-    -ms-flex-positive: 2;
-    flex-grow: 2; }
+    width: 100%; }
   .ama__footer__menu-utility {
     margin-top: 0;
     padding: 14px 0; }
@@ -9908,12 +9936,10 @@ section.ama__page--event__speakers {
       flex-basis: 33.333%; }
       .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form input {
         background-color: #ffffff; }
-      .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-item--error-message,
-      .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form label.error {
-        position: absolute;
-        bottom: -14px; }
+        .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form input.error {
+          background-image: none; }
       .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
-        margin: 0 auto; }
+        margin: 0; }
       .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form div[role=alert] {
         display: none; }
     .ama__footer__menu-products {
