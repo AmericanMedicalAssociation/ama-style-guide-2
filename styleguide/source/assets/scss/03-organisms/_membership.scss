@@ -20,6 +20,9 @@
   }
 
   ul {
+    left: 0;
+    width: 100%;
+    margin-left: 20px;
     @include breakpoint($bp-small) {
       font-size: 20px;
     }
@@ -27,24 +30,13 @@
       font-size: 18px;
     }
     li {
-      list-style: outside none;
+      list-style: outside disc;
       width: 100%;
       margin-bottom: 13px;
       clear: both;
       position: relative;
-      padding-left: 15px;
       &:last-child {
         margin-bottom: 0;
-      }
-      &:before {
-        content: "";
-        position: absolute;
-        background-color: $black;
-        border-radius: 100%;
-        width: 8px;
-        height: 8px;
-        left: 1px;
-        top: 10px;
       }
     }
   }
