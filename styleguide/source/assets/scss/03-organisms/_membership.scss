@@ -18,28 +18,7 @@
   .ama__button {
     width: 100%;
   }
-
-  ul {
-    left: 0;
-    width: 100%;
-    margin-left: 20px;
-    @include breakpoint($bp-small) {
-      font-size: 20px;
-    }
-    @include breakpoint($bp-med) {
-      font-size: 18px;
-    }
-    li {
-      list-style: outside disc;
-      width: 100%;
-      margin-bottom: 13px;
-      clear: both;
-      position: relative;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
+  @include left-justified-list-w-padding();
 }
 
 a.ama__membership {

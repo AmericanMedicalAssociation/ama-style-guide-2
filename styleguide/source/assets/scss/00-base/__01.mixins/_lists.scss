@@ -1,0 +1,86 @@
+/**
+* List mixins for none node-body lists.
+*/
+
+@mixin list() {
+  ul {
+    position:relative;
+    width: calc(100% - 50px);
+    @include breakpoint($bp-small) {
+      font-size: 20px;
+    }
+    @include breakpoint($bp-med) {
+      font-size: 18px;
+    }
+    li {
+      list-style-type: none;
+      width: 100%;
+      clear: both;
+      position: relative;
+      padding-left: 18px;
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: $black;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        left: 1px;
+        top: 9px;
+      }
+      ul {
+        left: 0;
+        width: calc(100% - 71px);
+        li {
+          list-style-type: none;
+          position: relative;
+          left: 0;
+          padding-left: 16px;
+          &:before {
+            content: "";
+            border:1px solid $black;
+            position: absolute;
+            background-color: transparent;
+            border-radius: 100%;
+            width: 6px;
+            height: 6px;
+            left: 1px;
+            top: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin left-justified-list-w-padding() {
+  @include list();
+  ul {
+    left: 0;
+    width: 100%;
+    li {
+      line-height: 1.3em;
+      margin-bottom: 13px;
+      ul {
+        left: 0;
+      }
+    }
+  }
+}
+@mixin left-justified-list() {
+  @include list();
+  ul {
+    left: 0;
+  }
+}
+@mixin indented-list {
+  @include list();
+  ul {
+    left: 30px;
+    li {
+      ul {
+        left: 0;
+      }
+    }
+  }
+}
