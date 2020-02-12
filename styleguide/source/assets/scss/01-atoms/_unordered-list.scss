@@ -1,35 +1,22 @@
 section ul,
 article ul,
+.text-body ul,
 .ama__list {
+  position:relative;
+  left:50px;
+  width: calc(100% - 50px);
   @include gutter($margin-bottom-half...);
-
   li {
-    @include gutter($margin-left-full...);
-    padding: 0;
-    list-style: disc;
-
+    list-style: outside disc;
     ul {
-      @include gutter($margin-left-full...);
-      list-style-position: outside;
+      left: 0;
+      width: calc(100% - 71px);
+      margin-bottom: 0;
+      li {
+        list-style: outside circle;
+        position: relative;
+        left: 21px;
+      }
     }
   }
-
-  ul {
-    @include gutter($margin-left-full...);
-    list-style: none;
-  }
-}
-article {
-    .text-body {
-        ul {
-            list-style: outside disc;
-            margin-left: 1.2em;
-        }
-        ul li {
-            position: relative;
-            left: 1em;
-            padding-right: 1em;
-            margin-left: -1em;
-        }
-    }
 }

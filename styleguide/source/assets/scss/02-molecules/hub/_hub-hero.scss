@@ -88,6 +88,7 @@
     margin: 0;
     max-width: none;
     width: auto;
+    @include indented-list();
   }
 
   &__button-container {
@@ -234,5 +235,11 @@
       flex-direction: row-reverse;
     }
   }
+}
 
+/**
+* WYSIWYG Hub card styles.
+*/
+.paragraph--type--wysiwyg {
+  @include indented-list();
 }
