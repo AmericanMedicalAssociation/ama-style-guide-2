@@ -6,6 +6,7 @@
   ul {
     position:relative;
     width: calc(100% - 50px);
+    @include gutter($margin-bottom-half...);
     @include breakpoint($bp-small) {
       font-size: 20px;
     }
@@ -29,6 +30,7 @@
         top: 9px;
       }
       ul {
+        margin-bottom: 0;
         left: 0;
         width: calc(100% - 71px);
         li {
@@ -58,6 +60,7 @@
   ul {
     left: 0;
     width: 100%;
+    margin-bottom: 0;
     li {
       line-height: 1.3em;
       margin-bottom: 13px;
@@ -76,6 +79,7 @@
 @mixin indented-list {
   @include list();
   ul {
+    margin-bottom: 0;
     left: 30px;
     li {
       ul {
