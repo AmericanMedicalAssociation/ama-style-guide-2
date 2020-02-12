@@ -1,20 +1,13 @@
 <section>
   <ul>
-    <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-    <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-      <ul>
-        <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-        <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-        <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-      </ul>
-    </li>
-    <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-    <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-      <ul>
-        <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-        <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-        <li>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</li>
-      </ul>
-    </li>
+    {% for list in unordered_list %}
+      <li> {{list.text }}
+          <ul>
+            <li>
+              {{ list.text }}
+            </li>
+          </ul>
+      </li>
+    {% endfor %}
   </ul>
 </section>
