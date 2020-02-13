@@ -10,6 +10,9 @@
   width: 1px;
   word-wrap: normal; }
 
+/**
+* List mixins for none node-body lists.
+*/
 .ama__hero,
 .ama__related-articles-block {
   margin-top: 20px; }
@@ -4462,54 +4465,37 @@ textarea {
 
 section ul,
 article ul,
+.text-body ul,
 .ama__list {
+  position: relative;
+  left: 50px;
+  width: calc(100% - 50px);
   margin-bottom: 10px; }
   @media (min-width: 56.25em) {
     section ul,
     article ul,
+    .text-body ul,
     .ama__list {
       margin-bottom: 14px; } }
   section ul li,
   article ul li,
+  .text-body ul li,
   .ama__list li {
-    margin-left: 20px;
-    padding: 0;
-    list-style: disc; }
-    @media (min-width: 56.25em) {
-      section ul li,
-      article ul li,
-      .ama__list li {
-        margin-left: 28px; } }
+    list-style: outside disc; }
     section ul li ul,
     article ul li ul,
+    .text-body ul li ul,
     .ama__list li ul {
-      margin-left: 20px;
-      list-style-position: outside; }
-      @media (min-width: 56.25em) {
-        section ul li ul,
-        article ul li ul,
-        .ama__list li ul {
-          margin-left: 28px; } }
-  section ul ul,
-  article ul ul,
-  .ama__list ul {
-    margin-left: 20px;
-    list-style: none; }
-    @media (min-width: 56.25em) {
-      section ul ul,
-      article ul ul,
-      .ama__list ul {
-        margin-left: 28px; } }
-
-article .text-body ul {
-  list-style: outside disc;
-  margin-left: 1.2em; }
-
-article .text-body ul li {
-  position: relative;
-  left: 1em;
-  padding-right: 1em;
-  margin-left: -1em; }
+      left: 0;
+      width: calc(100% - 71px);
+      margin-bottom: 0; }
+      section ul li ul li,
+      article ul li ul li,
+      .text-body ul li ul li,
+      .ama__list li ul li {
+        list-style: outside circle;
+        position: relative;
+        left: 21px; }
 
 img,
 video,
@@ -6746,6 +6732,62 @@ figcaption {
     @media (min-width: 56.25em) {
       .ama__promo--inline {
         margin-bottom: 28px; } }
+    .ama__promo--inline ul {
+      position: relative;
+      width: calc(100% - 50px);
+      margin-bottom: 10px; }
+      @media (min-width: 56.25em) {
+        .ama__promo--inline ul {
+          margin-bottom: 14px; } }
+      @media (min-width: 37.5em) {
+        .ama__promo--inline ul {
+          font-size: 20px; } }
+      @media (min-width: 56.25em) {
+        .ama__promo--inline ul {
+          font-size: 18px; } }
+      .ama__promo--inline ul li {
+        list-style-type: none;
+        width: 100%;
+        clear: both;
+        position: relative;
+        padding-left: 18px; }
+        .ama__promo--inline ul li:before {
+          content: "";
+          position: absolute;
+          background-color: #000000;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
+        .ama__promo--inline ul li ul {
+          margin-bottom: 0;
+          left: 0;
+          width: calc(100% - 71px); }
+          .ama__promo--inline ul li ul li {
+            list-style-type: none;
+            position: relative;
+            left: 0;
+            padding-left: 16px; }
+            .ama__promo--inline ul li ul li:before {
+              content: "";
+              border: 1px solid #000000;
+              position: absolute;
+              background-color: transparent;
+              border-radius: 100%;
+              width: 6px;
+              height: 6px;
+              left: 1px;
+              top: 9px; }
+    .ama__promo--inline ul {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0; }
+      .ama__promo--inline ul li {
+        line-height: 1.3em;
+        margin-bottom: 13px; }
+        .ama__promo--inline ul li ul {
+          left: 0; }
     @media (min-width: 37.5em) {
       .ama__promo--inline {
         float: left; } }
@@ -7654,7 +7696,8 @@ a.ama__promo--border:hover {
     .ama__subscribe-promo__form .ama__button:hover {
       background: #9073A6; }
   .ama__subscribe-promo__form .us-verify {
-    font-size: 10px; }
+    font-size: 10px;
+    text-transform: initial; }
   .ama__subscribe-promo__form .ui-checkboxradio-icon {
     margin-top: 1px; }
   .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label {
@@ -8537,6 +8580,8 @@ article[class*='__page-content'] .ama__tags {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 350px; }
+  .ama__hub-hero > div:first-child {
+    width: 100%; }
   @media (min-width: 37.5em) {
     .ama__hub-hero {
       background-position: center;
@@ -8631,7 +8676,8 @@ article[class*='__page-content'] .ama__tags {
     -ms-flex-align: center;
     align-items: center;
     padding: 0;
-    height: 100%; }
+    height: 100%;
+    width: 100%; }
     @media (min-width: 37.5em) {
       .ama__hub-hero__image, .ama__hub-hero__video {
         -ms-flex-preferred-size: 50%;
@@ -8675,6 +8721,58 @@ article[class*='__page-content'] .ama__tags {
     width: auto; }
     .ama__hub-hero__description breakpoint($bp-med) {
       padding: 28px; }
+    .ama__hub-hero__description ul {
+      position: relative;
+      width: calc(100% - 50px);
+      margin-bottom: 10px; }
+      @media (min-width: 56.25em) {
+        .ama__hub-hero__description ul {
+          margin-bottom: 14px; } }
+      @media (min-width: 37.5em) {
+        .ama__hub-hero__description ul {
+          font-size: 20px; } }
+      @media (min-width: 56.25em) {
+        .ama__hub-hero__description ul {
+          font-size: 18px; } }
+      .ama__hub-hero__description ul li {
+        list-style-type: none;
+        width: 100%;
+        clear: both;
+        position: relative;
+        padding-left: 18px; }
+        .ama__hub-hero__description ul li:before {
+          content: "";
+          position: absolute;
+          background-color: #000000;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
+        .ama__hub-hero__description ul li ul {
+          margin-bottom: 0;
+          left: 0;
+          width: calc(100% - 71px); }
+          .ama__hub-hero__description ul li ul li {
+            list-style-type: none;
+            position: relative;
+            left: 0;
+            padding-left: 16px; }
+            .ama__hub-hero__description ul li ul li:before {
+              content: "";
+              border: 1px solid #000000;
+              position: absolute;
+              background-color: transparent;
+              border-radius: 100%;
+              width: 6px;
+              height: 6px;
+              left: 1px;
+              top: 9px; }
+    .ama__hub-hero__description ul {
+      margin-bottom: 0;
+      left: 30px; }
+      .ama__hub-hero__description ul li ul {
+        left: 0; }
   .ama__hub-hero__button-container {
     padding: 20px 0;
     text-align: center; }
@@ -8869,6 +8967,63 @@ article[class*='__page-content'] .ama__tags {
         -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse; } }
+
+/**
+* WYSIWYG Hub card styles.
+*/
+.paragraph--type--wysiwyg ul {
+  position: relative;
+  width: calc(100% - 50px);
+  margin-bottom: 10px; }
+  @media (min-width: 56.25em) {
+    .paragraph--type--wysiwyg ul {
+      margin-bottom: 14px; } }
+  @media (min-width: 37.5em) {
+    .paragraph--type--wysiwyg ul {
+      font-size: 20px; } }
+  @media (min-width: 56.25em) {
+    .paragraph--type--wysiwyg ul {
+      font-size: 18px; } }
+  .paragraph--type--wysiwyg ul li {
+    list-style-type: none;
+    width: 100%;
+    clear: both;
+    position: relative;
+    padding-left: 18px; }
+    .paragraph--type--wysiwyg ul li:before {
+      content: "";
+      position: absolute;
+      background-color: #000000;
+      border-radius: 100%;
+      width: 8px;
+      height: 8px;
+      left: 1px;
+      top: 9px; }
+    .paragraph--type--wysiwyg ul li ul {
+      margin-bottom: 0;
+      left: 0;
+      width: calc(100% - 71px); }
+      .paragraph--type--wysiwyg ul li ul li {
+        list-style-type: none;
+        position: relative;
+        left: 0;
+        padding-left: 16px; }
+        .paragraph--type--wysiwyg ul li ul li:before {
+          content: "";
+          border: 1px solid #000000;
+          position: absolute;
+          background-color: transparent;
+          border-radius: 100%;
+          width: 6px;
+          height: 6px;
+          left: 1px;
+          top: 9px; }
+
+.paragraph--type--wysiwyg ul {
+  margin-bottom: 0;
+  left: 30px; }
+  .paragraph--type--wysiwyg ul li ul {
+    left: 0; }
 
 .ama__hub-section-header {
   padding-top: 20px;
@@ -10639,11 +10794,61 @@ section.ama__page--event__speakers {
   .ama__membership .ama__button {
     width: 100%; }
   .ama__membership ul {
-    list-style-position: outside;
-    margin-left: 20px; }
+    position: relative;
+    width: calc(100% - 50px);
+    margin-bottom: 10px; }
     @media (min-width: 56.25em) {
       .ama__membership ul {
-        margin-left: 28px; } }
+        margin-bottom: 14px; } }
+    @media (min-width: 37.5em) {
+      .ama__membership ul {
+        font-size: 20px; } }
+    @media (min-width: 56.25em) {
+      .ama__membership ul {
+        font-size: 18px; } }
+    .ama__membership ul li {
+      list-style-type: none;
+      width: 100%;
+      clear: both;
+      position: relative;
+      padding-left: 18px; }
+      .ama__membership ul li:before {
+        content: "";
+        position: absolute;
+        background-color: #000000;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        left: 1px;
+        top: 9px; }
+      .ama__membership ul li ul {
+        margin-bottom: 0;
+        left: 0;
+        width: calc(100% - 71px); }
+        .ama__membership ul li ul li {
+          list-style-type: none;
+          position: relative;
+          left: 0;
+          padding-left: 16px; }
+          .ama__membership ul li ul li:before {
+            content: "";
+            border: 1px solid #000000;
+            position: absolute;
+            background-color: transparent;
+            border-radius: 100%;
+            width: 6px;
+            height: 6px;
+            left: 1px;
+            top: 9px; }
+  .ama__membership ul {
+    left: 0;
+    width: 100%;
+    margin-bottom: 0; }
+    .ama__membership ul li {
+      line-height: 1.3em;
+      margin-bottom: 13px; }
+      .ama__membership ul li ul {
+        left: 0; }
 
 a.ama__membership {
   display: block;

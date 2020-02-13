@@ -1,0 +1,13 @@
+<section class="ama__promo--inline">
+  <ul>
+    {% for list in unordered_list_presentation %}
+      <li> {{list.text }}
+          <ul>
+            <li>
+              {{ list.text }}
+            </li>
+          </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
