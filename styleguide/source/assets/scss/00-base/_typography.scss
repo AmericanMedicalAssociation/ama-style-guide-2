@@ -30,7 +30,8 @@ h1,
   }
 }
 
-h2.news,
+h2,
+.news,
 .ama__h2,
 %ama__h2 {
   @include type($myriad-pro, $font-weight-semibold);
@@ -119,6 +120,12 @@ h5,
 }
 
 p {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($p-font-sizes);
+  @include gutter($margin-bottom-half...);
+}
+
+ul {
   @include type($myriad-pro, $font-weight-regular);
   @include font-size($p-font-sizes);
   @include gutter($margin-bottom-half...);
