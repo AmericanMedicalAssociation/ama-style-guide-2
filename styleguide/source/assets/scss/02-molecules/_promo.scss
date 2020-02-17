@@ -4,7 +4,7 @@
   @include gutter($padding-bottom-half...);
   @include gutter($padding-left-half...);
   @include child-top-gutters($gutter / 2);
-  @include left-justified-list();
+  @include list($left-justified, $one-level);
   display: block;
   font-weight: $font-weight-semibold;
   text-decoration: none;
@@ -27,7 +27,7 @@
     @include gutter($padding-bottom-full...);
     @include gutter($margin-right-full...);
     @include gutter($margin-bottom-full...);
-    @include left-justified-list-w-padding();
+    @include list($left-justified-w-padding, $two-levels);
     @include breakpoint($bp-small) {
       float: left;
     }

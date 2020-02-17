@@ -1,8 +1,13 @@
 /**
 * List mixins for none node-body lists.
 */
+$one-level: "one-level";
+$two-levels: "two-levels";
+$left-justified: "left-justified";
+$left-justified-w-padding: "left-justified-w-padding";
+$indented: "indented";
 
-@mixin list() {
+@mixin list($indent: "", $depth: "") {
   ul {
     position:relative;
     width: calc(100% - 50px);
@@ -12,6 +17,30 @@
     }
     @include breakpoint($bp-med) {
       font-size: 18px;
+    }
+    @if($indent == "left-justified") {
+      left: 0;
+    }
+    @if($indent == "indented") {
+      margin-bottom: 0;
+      left: 30px;
+      li {
+        ul {
+          left: 0;
+        }
+      }
+    }
+    @if($indent == "left-justified-w-padding") {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0;
+      li {
+        line-height: 1.3em;
+        margin-bottom: 13px;
+        ul {
+          left: 0;
+        }
+      }
     }
     li {
       list-style-type: none;
@@ -29,25 +58,52 @@
         left: 1px;
         top: 9px;
       }
-      ul {
-        margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px);
-        li {
-          list-style-type: none;
-          position: relative;
+      @if($depth == "one-level") {
+        ul {
           left: 0;
-          padding-left: 16px;
-          &:before {
-            content: "";
-            border:1px solid currentColor;
-            position: absolute;
-            background-color: transparent;
-            border-radius: 100%;
-            width: 6px;
-            height: 6px;
-            left: 1px;
-            top: 9px;
+          width:100%;
+          li {
+            left: 0;
+            &:before {
+              content: "";
+              position: absolute;
+              background-color: currentColor;
+              border-radius: 100%;
+              width: 8px;
+              height: 8px;
+              left: 1px;
+              top: 9px;
+            }
+          }
+        }
+
+      }
+      @if($depth == "two-levels") {
+        ul {
+          margin-bottom: 0;
+          left: 0;
+          width: calc(100% - 71px);
+          li {
+            list-style-type: none;
+            position: relative;
+            left: 0;
+            padding-left: 16px;
+            &:before {
+              content: "";
+              border:1px solid currentColor;
+              position: absolute;
+              background-color: transparent;
+              border-radius: 100%;
+              width: 6px;
+              height: 6px;
+              left: 1px;
+              top: 9px;
+            }
+            ul {
+              li {
+                left: 0;
+              }
+            }
           }
         }
       }
@@ -64,40 +120,6 @@
       li:before {
         height: 0px;
         width: 0px;
-      }
-    }
-  }
-}
-
-@mixin left-justified-list-w-padding() {
-  @include list();
-  ul {
-    left: 0;
-    width: 100%;
-    margin-bottom: 0;
-    li {
-      line-height: 1.3em;
-      margin-bottom: 13px;
-      ul {
-        left: 0;
-      }
-    }
-  }
-}
-@mixin left-justified-list() {
-  @include list();
-  ul {
-    left: 0;
-  }
-}
-@mixin indented-list {
-  @include list();
-  ul {
-    margin-bottom: 0;
-    left: 30px;
-    li {
-      ul {
-        left: 0;
       }
     }
   }
