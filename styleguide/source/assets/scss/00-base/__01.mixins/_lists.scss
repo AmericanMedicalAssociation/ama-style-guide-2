@@ -53,6 +53,20 @@
       }
     }
   }
+  .contextual,
+  .contextual-region,
+  .contextual-links,
+  ul.contextual-links {
+    ul {
+      width: 100%;
+      left:0;
+      list-style-type: none;
+      li:before {
+        height: 0px;
+        width: 0px;
+      }
+    }
+  }
 }
 
 @mixin left-justified-list-w-padding() {
