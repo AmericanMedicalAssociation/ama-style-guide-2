@@ -11,7 +11,7 @@
   word-wrap: normal; }
 
 /**
-* List mixins for none node-body lists.
+* List mixins for non node-body lists.
 */
 .ama__hero,
 .ama__related-articles-block {
@@ -4220,6 +4220,12 @@ caption {
     margin: 0;
     border-radius: 0;
     display: none; }
+    .ama__tabs .ama__tabs-navigation ul {
+      position: static;
+      width: 100%; }
+      .ama__tabs .ama__tabs-navigation ul li {
+        position: static;
+        width: 100%; }
     @media (min-width: 37.5em) {
       .ama__tabs .ama__tabs-navigation {
         display: block; } }
@@ -4492,39 +4498,107 @@ textarea {
   .character-count.error {
     color: #E90C26; }
 
-section ul,
-article ul,
-.text-body ul,
-.ama__list {
-  position: relative;
+/**
+* Accepted list.
+* This is a list of selectors that should have default list formatting whithin them.
+*/
+.ama__list ul,
+.text-body ul {
+  margin-bottom: 10px;
   left: 50px;
   width: calc(100% - 50px);
+  position: relative;
   margin-bottom: 10px; }
   @media (min-width: 56.25em) {
-    section ul,
-    article ul,
-    .text-body ul,
-    .ama__list {
+    .ama__list ul,
+    .text-body ul {
       margin-bottom: 14px; } }
-  section ul li,
-  article ul li,
-  .text-body ul li,
-  .ama__list li {
+  @media (min-width: 37.5em) {
+    .ama__list ul,
+    .text-body ul {
+      font-size: 20px; } }
+  @media (min-width: 56.25em) {
+    .ama__list ul,
+    .text-body ul {
+      font-size: 18px; } }
+  @media (min-width: 56.25em) {
+    .ama__list ul,
+    .text-body ul {
+      margin-bottom: 14px; } }
+  .ama__list ul li ul,
+  .text-body ul li ul {
     list-style: outside disc; }
-    section ul li ul,
-    article ul li ul,
-    .text-body ul li ul,
-    .ama__list li ul {
+    .ama__list ul li ul li,
+    .text-body ul li ul li {
+      width: 100%;
+      position: relative;
+      padding-left: 18px; }
+  .ama__list ul li ul,
+  .text-body ul li ul {
+    left: 0;
+    width: calc(100% - 71px);
+    margin-bottom: 0; }
+    .ama__list ul li ul li,
+    .text-body ul li ul li {
+      position: relative;
+      left: 21px; }
+      .ama__list ul li ul li li,
+      .text-body ul li ul li li {
+        list-style-type: none;
+        left: 0;
+        padding-left: 16px; }
+        .ama__list ul li ul li li:before,
+        .text-body ul li ul li li:before {
+          content: "";
+          border: 1px solid currentColor;
+          position: absolute;
+          background-color: transparent;
+          border-radius: 100%;
+          width: 6px;
+          height: 6px;
+          left: 1px;
+          top: 9px; }
+      .ama__list ul li ul li ul li,
+      .text-body ul li ul li ul li {
+        left: 0; }
+  .ama__list ul li ul,
+  .text-body ul li ul {
+    margin-bottom: 0;
+    left: 0;
+    width: calc(100% - 71px); }
+    .ama__list ul li ul li,
+    .text-body ul li ul li {
+      list-style-type: none;
       left: 0;
-      width: calc(100% - 71px);
-      margin-bottom: 0; }
-      section ul li ul li,
-      article ul li ul li,
-      .text-body ul li ul li,
-      .ama__list li ul li {
-        list-style: outside circle;
-        position: relative;
-        left: 21px; }
+      padding-left: 16px; }
+      .ama__list ul li ul li:before,
+      .text-body ul li ul li:before {
+        content: "";
+        border: 1px solid currentColor;
+        position: absolute;
+        background-color: transparent;
+        border-radius: 100%;
+        width: 6px;
+        height: 6px;
+        left: 1px;
+        top: 9px; }
+    .ama__list ul li ul li ul li,
+    .text-body ul li ul li ul li {
+      left: -16px; }
+
+/**
+* Exclusion list.
+* These are all of the uls that need to be excluded from special styling.
+* The list covers excluded uls contained within a parent, or uls that have a class directly on them.
+*/
+ul.ul-standard {
+  width: auto;
+  left: 0;
+  position: static;
+  list-style-type: none; }
+  ul.ul-standard li:before {
+    height: 0;
+    width: 0; }
 
 img,
 video,
@@ -6447,9 +6521,8 @@ figcaption {
   .ama__partner-promo__text {
     padding: 14px; }
     .ama__partner-promo__text ul {
-      position: relative;
-      width: calc(100% - 50px);
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      left: 0; }
       @media (min-width: 56.25em) {
         .ama__partner-promo__text ul {
           margin-bottom: 14px; } }
@@ -6462,52 +6535,39 @@ figcaption {
       .ama__partner-promo__text ul li {
         list-style-type: none;
         width: 100%;
-        clear: both;
         position: relative;
         padding-left: 18px; }
         .ama__partner-promo__text ul li:before {
           content: "";
           position: absolute;
+          border: none;
           background-color: currentColor;
           border-radius: 100%;
           width: 8px;
           height: 8px;
           left: 1px;
           top: 9px; }
-        .ama__partner-promo__text ul li ul {
-          margin-bottom: 0;
-          left: 0;
-          width: calc(100% - 71px); }
-          .ama__partner-promo__text ul li ul li {
-            list-style-type: none;
-            position: relative;
-            left: 0;
-            padding-left: 16px; }
-            .ama__partner-promo__text ul li ul li:before {
-              content: "";
-              border: 1px solid currentColor;
-              position: absolute;
-              background-color: transparent;
-              border-radius: 100%;
-              width: 6px;
-              height: 6px;
-              left: 1px;
-              top: 9px; }
-    .ama__partner-promo__text .contextual ul,
-    .ama__partner-promo__text .contextual-region ul,
-    .ama__partner-promo__text .contextual-links ul,
-    .ama__partner-promo__text ul.contextual-links ul {
-      width: 100%;
-      left: 0;
-      list-style-type: none; }
-      .ama__partner-promo__text .contextual ul li:before,
-      .ama__partner-promo__text .contextual-region ul li:before,
-      .ama__partner-promo__text .contextual-links ul li:before,
-      .ama__partner-promo__text ul.contextual-links ul li:before {
-        height: 0px;
-        width: 0px; }
-    .ama__partner-promo__text ul {
-      left: 0; }
+      .ama__partner-promo__text ul li ul {
+        left: 0;
+        width: 100%;
+        margin-bottom: 0; }
+        .ama__partner-promo__text ul li ul li {
+          list-style-type: none;
+          width: 100%;
+          position: relative;
+          padding-left: 18px; }
+          .ama__partner-promo__text ul li ul li:before {
+            content: "";
+            position: absolute;
+            border: none;
+            background-color: currentColor;
+            border-radius: 100%;
+            width: 8px;
+            height: 8px;
+            left: 1px;
+            top: 9px; }
+        .ama__partner-promo__text ul li ul li {
+          left: -18px; }
   .ama__partner-promo__heading {
     font-weight: 600;
     line-height: 1em; }
@@ -6677,9 +6737,8 @@ figcaption {
   .ama__product__link {
     float: right; }
   .ama__product__text ul {
-    position: relative;
-    width: calc(100% - 50px);
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    left: 0; }
     @media (min-width: 56.25em) {
       .ama__product__text ul {
         margin-bottom: 14px; } }
@@ -6692,52 +6751,39 @@ figcaption {
     .ama__product__text ul li {
       list-style-type: none;
       width: 100%;
-      clear: both;
       position: relative;
       padding-left: 18px; }
       .ama__product__text ul li:before {
         content: "";
         position: absolute;
+        border: none;
         background-color: currentColor;
         border-radius: 100%;
         width: 8px;
         height: 8px;
         left: 1px;
         top: 9px; }
-      .ama__product__text ul li ul {
-        margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px); }
-        .ama__product__text ul li ul li {
-          list-style-type: none;
-          position: relative;
-          left: 0;
-          padding-left: 16px; }
-          .ama__product__text ul li ul li:before {
-            content: "";
-            border: 1px solid currentColor;
-            position: absolute;
-            background-color: transparent;
-            border-radius: 100%;
-            width: 6px;
-            height: 6px;
-            left: 1px;
-            top: 9px; }
-  .ama__product__text .contextual ul,
-  .ama__product__text .contextual-region ul,
-  .ama__product__text .contextual-links ul,
-  .ama__product__text ul.contextual-links ul {
-    width: 100%;
-    left: 0;
-    list-style-type: none; }
-    .ama__product__text .contextual ul li:before,
-    .ama__product__text .contextual-region ul li:before,
-    .ama__product__text .contextual-links ul li:before,
-    .ama__product__text ul.contextual-links ul li:before {
-      height: 0px;
-      width: 0px; }
-  .ama__product__text ul {
-    left: 0; }
+    .ama__product__text ul li ul {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0; }
+      .ama__product__text ul li ul li {
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        padding-left: 18px; }
+        .ama__product__text ul li ul li:before {
+          content: "";
+          position: absolute;
+          border: none;
+          background-color: currentColor;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
+      .ama__product__text ul li ul li {
+        left: -18px; }
   .ama__product__text__header {
     margin-bottom: 10px; }
     @media (min-width: 56.25em) {
@@ -6857,9 +6903,8 @@ figcaption {
       .ama__promo > *, .ama__promo--background > *, .ama__promo--border > *, a.ama__promo--background > *, a.ama__promo--border > * {
         margin-top: 14px; } }
   .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
-    position: relative;
-    width: calc(100% - 50px);
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    left: 0; }
     @media (min-width: 56.25em) {
       .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
         margin-bottom: 14px; } }
@@ -6872,64 +6917,39 @@ figcaption {
     .ama__promo ul li, .ama__promo--background ul li, .ama__promo--border ul li {
       list-style-type: none;
       width: 100%;
-      clear: both;
       position: relative;
       padding-left: 18px; }
       .ama__promo ul li:before, .ama__promo--background ul li:before, .ama__promo--border ul li:before {
         content: "";
         position: absolute;
+        border: none;
         background-color: currentColor;
         border-radius: 100%;
         width: 8px;
         height: 8px;
         left: 1px;
         top: 9px; }
-      .ama__promo ul li ul, .ama__promo--background ul li ul, .ama__promo--border ul li ul {
-        margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px); }
-        .ama__promo ul li ul li, .ama__promo--background ul li ul li, .ama__promo--border ul li ul li {
-          list-style-type: none;
-          position: relative;
-          left: 0;
-          padding-left: 16px; }
-          .ama__promo ul li ul li:before, .ama__promo--background ul li ul li:before, .ama__promo--border ul li ul li:before {
-            content: "";
-            border: 1px solid currentColor;
-            position: absolute;
-            background-color: transparent;
-            border-radius: 100%;
-            width: 6px;
-            height: 6px;
-            left: 1px;
-            top: 9px; }
-  .ama__promo .contextual ul, .ama__promo--background .contextual ul, .ama__promo--border .contextual ul,
-  .ama__promo .contextual-region ul,
-  .ama__promo--background .contextual-region ul,
-  .ama__promo--border .contextual-region ul,
-  .ama__promo .contextual-links ul,
-  .ama__promo--background .contextual-links ul,
-  .ama__promo--border .contextual-links ul,
-  .ama__promo ul.contextual-links ul,
-  .ama__promo--background ul.contextual-links ul,
-  .ama__promo--border ul.contextual-links ul {
-    width: 100%;
-    left: 0;
-    list-style-type: none; }
-    .ama__promo .contextual ul li:before, .ama__promo--background .contextual ul li:before, .ama__promo--border .contextual ul li:before,
-    .ama__promo .contextual-region ul li:before,
-    .ama__promo--background .contextual-region ul li:before,
-    .ama__promo--border .contextual-region ul li:before,
-    .ama__promo .contextual-links ul li:before,
-    .ama__promo--background .contextual-links ul li:before,
-    .ama__promo--border .contextual-links ul li:before,
-    .ama__promo ul.contextual-links ul li:before,
-    .ama__promo--background ul.contextual-links ul li:before,
-    .ama__promo--border ul.contextual-links ul li:before {
-      height: 0px;
-      width: 0px; }
-  .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
-    left: 0; }
+    .ama__promo ul li ul, .ama__promo--background ul li ul, .ama__promo--border ul li ul {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0; }
+      .ama__promo ul li ul li, .ama__promo--background ul li ul li, .ama__promo--border ul li ul li {
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        padding-left: 18px; }
+        .ama__promo ul li ul li:before, .ama__promo--background ul li ul li:before, .ama__promo--border ul li ul li:before {
+          content: "";
+          position: absolute;
+          border: none;
+          background-color: currentColor;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
+      .ama__promo ul li ul li, .ama__promo--background ul li ul li, .ama__promo--border ul li ul li {
+        left: -18px; }
   .ama__promo--background {
     background: #EDEDED; }
   .ama__promo--border {
@@ -6960,9 +6980,10 @@ figcaption {
       .ama__promo--inline {
         margin-bottom: 28px; } }
     .ama__promo--inline ul {
-      position: relative;
-      width: calc(100% - 50px);
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      left: 0;
+      width: 100%;
+      margin-bottom: 0; }
       @media (min-width: 56.25em) {
         .ama__promo--inline ul {
           margin-bottom: 14px; } }
@@ -6973,61 +6994,30 @@ figcaption {
         .ama__promo--inline ul {
           font-size: 18px; } }
       .ama__promo--inline ul li {
-        list-style-type: none;
-        width: 100%;
-        clear: both;
-        position: relative;
-        padding-left: 18px; }
-        .ama__promo--inline ul li:before {
-          content: "";
-          position: absolute;
-          background-color: currentColor;
-          border-radius: 100%;
-          width: 8px;
-          height: 8px;
-          left: 1px;
-          top: 9px; }
-        .ama__promo--inline ul li ul {
-          margin-bottom: 0;
-          left: 0;
-          width: calc(100% - 71px); }
-          .ama__promo--inline ul li ul li {
-            list-style-type: none;
-            position: relative;
-            left: 0;
-            padding-left: 16px; }
-            .ama__promo--inline ul li ul li:before {
-              content: "";
-              border: 1px solid currentColor;
-              position: absolute;
-              background-color: transparent;
-              border-radius: 100%;
-              width: 6px;
-              height: 6px;
-              left: 1px;
-              top: 9px; }
-    .ama__promo--inline .contextual ul,
-    .ama__promo--inline .contextual-region ul,
-    .ama__promo--inline .contextual-links ul,
-    .ama__promo--inline ul.contextual-links ul {
-      width: 100%;
-      left: 0;
-      list-style-type: none; }
-      .ama__promo--inline .contextual ul li:before,
-      .ama__promo--inline .contextual-region ul li:before,
-      .ama__promo--inline .contextual-links ul li:before,
-      .ama__promo--inline ul.contextual-links ul li:before {
-        height: 0px;
-        width: 0px; }
-    .ama__promo--inline ul {
-      left: 0;
-      width: 100%;
-      margin-bottom: 0; }
-      .ama__promo--inline ul li {
         line-height: 1.3em;
         margin-bottom: 13px; }
         .ama__promo--inline ul li ul {
           left: 0; }
+      .ama__promo--inline ul li ul {
+        margin-bottom: 0;
+        left: 0;
+        width: calc(100% - 71px); }
+        .ama__promo--inline ul li ul li {
+          list-style-type: none;
+          left: 0;
+          padding-left: 16px; }
+          .ama__promo--inline ul li ul li:before {
+            content: "";
+            border: 1px solid currentColor;
+            position: absolute;
+            background-color: transparent;
+            border-radius: 100%;
+            width: 6px;
+            height: 6px;
+            left: 1px;
+            top: 9px; }
+        .ama__promo--inline ul li ul li ul li {
+          left: -16px; }
     @media (min-width: 37.5em) {
       .ama__promo--inline {
         float: left; } }
@@ -7825,9 +7815,7 @@ a.ama__promo--border:hover {
   display: flex;
   margin: 0;
   padding: 0;
-  min-height: 38px;
-  left: 0;
-  width: 100%; }
+  min-height: 38px; }
   .ama__social-share li {
     list-style: none; }
     .ama__social-share li:first-child {
@@ -7926,9 +7914,8 @@ a.ama__promo--border:hover {
   color: #ffffff;
   background: #46166B; }
   .ama__subscribe-promo ul {
-    position: relative;
-    width: calc(100% - 50px);
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    left: 0; }
     @media (min-width: 56.25em) {
       .ama__subscribe-promo ul {
         margin-bottom: 14px; } }
@@ -7941,52 +7928,39 @@ a.ama__promo--border:hover {
     .ama__subscribe-promo ul li {
       list-style-type: none;
       width: 100%;
-      clear: both;
       position: relative;
       padding-left: 18px; }
       .ama__subscribe-promo ul li:before {
         content: "";
         position: absolute;
+        border: none;
         background-color: currentColor;
         border-radius: 100%;
         width: 8px;
         height: 8px;
         left: 1px;
         top: 9px; }
-      .ama__subscribe-promo ul li ul {
-        margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px); }
-        .ama__subscribe-promo ul li ul li {
-          list-style-type: none;
-          position: relative;
-          left: 0;
-          padding-left: 16px; }
-          .ama__subscribe-promo ul li ul li:before {
-            content: "";
-            border: 1px solid currentColor;
-            position: absolute;
-            background-color: transparent;
-            border-radius: 100%;
-            width: 6px;
-            height: 6px;
-            left: 1px;
-            top: 9px; }
-  .ama__subscribe-promo .contextual ul,
-  .ama__subscribe-promo .contextual-region ul,
-  .ama__subscribe-promo .contextual-links ul,
-  .ama__subscribe-promo ul.contextual-links ul {
-    width: 100%;
-    left: 0;
-    list-style-type: none; }
-    .ama__subscribe-promo .contextual ul li:before,
-    .ama__subscribe-promo .contextual-region ul li:before,
-    .ama__subscribe-promo .contextual-links ul li:before,
-    .ama__subscribe-promo ul.contextual-links ul li:before {
-      height: 0px;
-      width: 0px; }
-  .ama__subscribe-promo ul {
-    left: 0; }
+    .ama__subscribe-promo ul li ul {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0; }
+      .ama__subscribe-promo ul li ul li {
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        padding-left: 18px; }
+        .ama__subscribe-promo ul li ul li:before {
+          content: "";
+          position: absolute;
+          border: none;
+          background-color: currentColor;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
+      .ama__subscribe-promo ul li ul li {
+        left: -18px; }
   .ama__subscribe-promo__subject-title {
     padding-bottom: 14px; }
   .ama__subscribe-promo__form .ama__button {
@@ -9028,9 +9002,9 @@ article[class*='__page-content'] .ama__tags {
     .ama__hub-hero__description breakpoint($bp-med) {
       padding: 28px; }
     .ama__hub-hero__description ul {
-      position: relative;
-      width: calc(100% - 50px);
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      margin-bottom: 0;
+      left: 40px; }
       @media (min-width: 56.25em) {
         .ama__hub-hero__description ul {
           margin-bottom: 14px; } }
@@ -9043,55 +9017,38 @@ article[class*='__page-content'] .ama__tags {
       .ama__hub-hero__description ul li {
         list-style-type: none;
         width: 100%;
-        clear: both;
         position: relative;
         padding-left: 18px; }
         .ama__hub-hero__description ul li:before {
           content: "";
           position: absolute;
+          border: none;
           background-color: currentColor;
           border-radius: 100%;
           width: 8px;
           height: 8px;
           left: 1px;
           top: 9px; }
-        .ama__hub-hero__description ul li ul {
-          margin-bottom: 0;
-          left: 0;
-          width: calc(100% - 71px); }
-          .ama__hub-hero__description ul li ul li {
-            list-style-type: none;
-            position: relative;
-            left: 0;
-            padding-left: 16px; }
-            .ama__hub-hero__description ul li ul li:before {
-              content: "";
-              border: 1px solid currentColor;
-              position: absolute;
-              background-color: transparent;
-              border-radius: 100%;
-              width: 6px;
-              height: 6px;
-              left: 1px;
-              top: 9px; }
-    .ama__hub-hero__description .contextual ul,
-    .ama__hub-hero__description .contextual-region ul,
-    .ama__hub-hero__description .contextual-links ul,
-    .ama__hub-hero__description ul.contextual-links ul {
-      width: 100%;
-      left: 0;
-      list-style-type: none; }
-      .ama__hub-hero__description .contextual ul li:before,
-      .ama__hub-hero__description .contextual-region ul li:before,
-      .ama__hub-hero__description .contextual-links ul li:before,
-      .ama__hub-hero__description ul.contextual-links ul li:before {
-        height: 0px;
-        width: 0px; }
-    .ama__hub-hero__description ul {
-      margin-bottom: 0;
-      left: 30px; }
       .ama__hub-hero__description ul li ul {
-        left: 0; }
+        margin-bottom: 0;
+        left: 0;
+        width: calc(100% - 71px); }
+        .ama__hub-hero__description ul li ul li {
+          list-style-type: none;
+          left: 0;
+          padding-left: 16px; }
+          .ama__hub-hero__description ul li ul li:before {
+            content: "";
+            border: 1px solid currentColor;
+            position: absolute;
+            background-color: transparent;
+            border-radius: 100%;
+            width: 6px;
+            height: 6px;
+            left: 1px;
+            top: 9px; }
+        .ama__hub-hero__description ul li ul li ul li {
+          left: -16px; }
   .ama__hub-hero__button-container {
     padding: 20px 0;
     text-align: center; }
@@ -9291,9 +9248,9 @@ article[class*='__page-content'] .ama__tags {
 * WYSIWYG Hub card styles.
 */
 .paragraph--type--wysiwyg ul {
-  position: relative;
-  width: calc(100% - 50px);
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-bottom: 0;
+  left: 40px; }
   @media (min-width: 56.25em) {
     .paragraph--type--wysiwyg ul {
       margin-bottom: 14px; } }
@@ -9306,57 +9263,38 @@ article[class*='__page-content'] .ama__tags {
   .paragraph--type--wysiwyg ul li {
     list-style-type: none;
     width: 100%;
-    clear: both;
     position: relative;
     padding-left: 18px; }
     .paragraph--type--wysiwyg ul li:before {
       content: "";
       position: absolute;
+      border: none;
       background-color: currentColor;
       border-radius: 100%;
       width: 8px;
       height: 8px;
       left: 1px;
       top: 9px; }
-    .paragraph--type--wysiwyg ul li ul {
-      margin-bottom: 0;
-      left: 0;
-      width: calc(100% - 71px); }
-      .paragraph--type--wysiwyg ul li ul li {
-        list-style-type: none;
-        position: relative;
-        left: 0;
-        padding-left: 16px; }
-        .paragraph--type--wysiwyg ul li ul li:before {
-          content: "";
-          border: 1px solid currentColor;
-          position: absolute;
-          background-color: transparent;
-          border-radius: 100%;
-          width: 6px;
-          height: 6px;
-          left: 1px;
-          top: 9px; }
-
-.paragraph--type--wysiwyg .contextual ul,
-.paragraph--type--wysiwyg .contextual-region ul,
-.paragraph--type--wysiwyg .contextual-links ul,
-.paragraph--type--wysiwyg ul.contextual-links ul {
-  width: 100%;
-  left: 0;
-  list-style-type: none; }
-  .paragraph--type--wysiwyg .contextual ul li:before,
-  .paragraph--type--wysiwyg .contextual-region ul li:before,
-  .paragraph--type--wysiwyg .contextual-links ul li:before,
-  .paragraph--type--wysiwyg ul.contextual-links ul li:before {
-    height: 0px;
-    width: 0px; }
-
-.paragraph--type--wysiwyg ul {
-  margin-bottom: 0;
-  left: 30px; }
   .paragraph--type--wysiwyg ul li ul {
-    left: 0; }
+    margin-bottom: 0;
+    left: 0;
+    width: calc(100% - 71px); }
+    .paragraph--type--wysiwyg ul li ul li {
+      list-style-type: none;
+      left: 0;
+      padding-left: 16px; }
+      .paragraph--type--wysiwyg ul li ul li:before {
+        content: "";
+        border: 1px solid currentColor;
+        position: absolute;
+        background-color: transparent;
+        border-radius: 100%;
+        width: 6px;
+        height: 6px;
+        left: 1px;
+        top: 9px; }
+    .paragraph--type--wysiwyg ul li ul li ul li {
+      left: -16px; }
 
 .ama__hub-section-header {
   padding-top: 20px;
@@ -10286,20 +10224,31 @@ section.ama__page--event__speakers {
       .ama__footer__menu-secondary-user {
         font-size: 1.333em;
         line-height: 1.667; } }
+    .ama__footer__menu-secondary-user ul {
+      margin-bottom: 0; }
     .ama__footer__menu-secondary-user a {
       text-decoration: none; }
       .ama__footer__menu-secondary-user a:hover {
         text-decoration: underline; }
+    @media (min-width: 25em) {
+      .ama__footer__menu-secondary-user ul {
+        font-size: 1em;
+        line-height: 1.25; } }
     @media (min-width: 37.5em) {
       .ama__footer__menu-secondary-user {
-        border: none; } }
+        border: none;
+        padding-bottom: 8px; } }
     @media (min-width: 75em) {
       .ama__footer__menu-secondary-user {
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        border: none;
+        padding-bottom: 20px; }
         .ama__footer__menu-secondary-user ul {
-          width: 50%; } }
+          width: 50%;
+          font-size: 1em;
+          line-height: 1.667; } }
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-actions {
     margin: 0; }
   @media (max-width: 37.5em) {
@@ -10359,13 +10308,26 @@ section.ama__page--event__speakers {
     @media (min-width: 56.25em) {
       .ama__footer__menu-products {
         margin-top: 14px; } }
+    .ama__footer__menu-products ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      line-height: 1.05em;
+      font-size: 1em; }
     .ama__footer__menu-products li {
       display: inline-block; }
       .ama__footer__menu-products li:not(:last-child):after {
         content: " | ";
         padding: 0 7px; }
+    @media (min-width: 25em) {
+      .ama__footer__menu-products ul {
+        font-size: 1em;
+        line-height: 1.5em; } }
+    @media (min-width: 37.5em) {
+      .ama__footer__menu-products ul {
+        font-size: 1em;
+        line-height: 1.25; } }
     @media (min-width: 75em) {
-      .ama__footer__menu-products {
+      .ama__footer__menu-products ul {
         font-size: 1.111em;
         line-height: 1em; } }
   .ama__footer__bottom {
@@ -10391,9 +10353,21 @@ section.ama__page--event__speakers {
       .ama__footer__bottom {
         font-size: 1em;
         line-height: 1.056; } }
+    .ama__footer__bottom ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      line-height: 1.05em;
+      font-size: 1em; }
+    @media (min-width: 25em) {
+      .ama__footer__bottom ul {
+        font-size: 1em;
+        line-height: 1.5em; } }
     @media (min-width: 75em) {
       .ama__footer__bottom {
         padding: 0; }
+        .ama__footer__bottom ul {
+          font-size: 1em;
+          line-height: 1.056em; }
         .ama__footer__bottom > .container {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -11127,9 +11101,8 @@ section.ama__page--event__speakers {
   .ama__membership .ama__button {
     width: 100%; }
   .ama__membership ul {
-    position: relative;
-    width: calc(100% - 50px);
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    left: 0; }
     @media (min-width: 56.25em) {
       .ama__membership ul {
         margin-bottom: 14px; } }
@@ -11142,59 +11115,39 @@ section.ama__page--event__speakers {
     .ama__membership ul li {
       list-style-type: none;
       width: 100%;
-      clear: both;
       position: relative;
       padding-left: 18px; }
       .ama__membership ul li:before {
         content: "";
         position: absolute;
+        border: none;
         background-color: currentColor;
         border-radius: 100%;
         width: 8px;
         height: 8px;
         left: 1px;
         top: 9px; }
-      .ama__membership ul li ul {
-        margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px); }
-        .ama__membership ul li ul li {
-          list-style-type: none;
-          position: relative;
-          left: 0;
-          padding-left: 16px; }
-          .ama__membership ul li ul li:before {
-            content: "";
-            border: 1px solid currentColor;
-            position: absolute;
-            background-color: transparent;
-            border-radius: 100%;
-            width: 6px;
-            height: 6px;
-            left: 1px;
-            top: 9px; }
-  .ama__membership .contextual ul,
-  .ama__membership .contextual-region ul,
-  .ama__membership .contextual-links ul,
-  .ama__membership ul.contextual-links ul {
-    width: 100%;
-    left: 0;
-    list-style-type: none; }
-    .ama__membership .contextual ul li:before,
-    .ama__membership .contextual-region ul li:before,
-    .ama__membership .contextual-links ul li:before,
-    .ama__membership ul.contextual-links ul li:before {
-      height: 0px;
-      width: 0px; }
-  .ama__membership ul {
-    left: 0;
-    width: 100%;
-    margin-bottom: 0; }
-    .ama__membership ul li {
-      line-height: 1.3em;
-      margin-bottom: 13px; }
-      .ama__membership ul li ul {
-        left: 0; }
+    .ama__membership ul li ul {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0; }
+      .ama__membership ul li ul li {
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        padding-left: 18px; }
+        .ama__membership ul li ul li:before {
+          content: "";
+          position: absolute;
+          border: none;
+          background-color: currentColor;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
+      .ama__membership ul li ul li {
+        left: -18px; }
 
 a.ama__membership {
   display: block;
@@ -11300,6 +11253,8 @@ a.ama__membership {
   @media (min-width: 37.5em) {
     .ama__product-nav {
       display: block; } }
+  .ama__product-nav ul {
+    margin-bottom: 0; }
   .ama__product-nav li {
     display: inline-block; }
     .ama__product-nav li a {
@@ -12185,9 +12140,8 @@ section#related_links .ama__membership ul {
       .ama__layout--one-column .ama__promo-group {
         padding-bottom: 28px; } }
     .ama__layout--one-column .ama__promo-group ul {
-      position: relative;
-      width: calc(100% - 50px);
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      left: 0; }
       @media (min-width: 56.25em) {
         .ama__layout--one-column .ama__promo-group ul {
           margin-bottom: 14px; } }
@@ -12200,52 +12154,39 @@ section#related_links .ama__membership ul {
       .ama__layout--one-column .ama__promo-group ul li {
         list-style-type: none;
         width: 100%;
-        clear: both;
         position: relative;
         padding-left: 18px; }
         .ama__layout--one-column .ama__promo-group ul li:before {
           content: "";
           position: absolute;
+          border: none;
           background-color: currentColor;
           border-radius: 100%;
           width: 8px;
           height: 8px;
           left: 1px;
           top: 9px; }
-        .ama__layout--one-column .ama__promo-group ul li ul {
-          margin-bottom: 0;
-          left: 0;
-          width: calc(100% - 71px); }
-          .ama__layout--one-column .ama__promo-group ul li ul li {
-            list-style-type: none;
-            position: relative;
-            left: 0;
-            padding-left: 16px; }
-            .ama__layout--one-column .ama__promo-group ul li ul li:before {
-              content: "";
-              border: 1px solid currentColor;
-              position: absolute;
-              background-color: transparent;
-              border-radius: 100%;
-              width: 6px;
-              height: 6px;
-              left: 1px;
-              top: 9px; }
-    .ama__layout--one-column .ama__promo-group .contextual ul,
-    .ama__layout--one-column .ama__promo-group .contextual-region ul,
-    .ama__layout--one-column .ama__promo-group .contextual-links ul,
-    .ama__layout--one-column .ama__promo-group ul.contextual-links ul {
-      width: 100%;
-      left: 0;
-      list-style-type: none; }
-      .ama__layout--one-column .ama__promo-group .contextual ul li:before,
-      .ama__layout--one-column .ama__promo-group .contextual-region ul li:before,
-      .ama__layout--one-column .ama__promo-group .contextual-links ul li:before,
-      .ama__layout--one-column .ama__promo-group ul.contextual-links ul li:before {
-        height: 0px;
-        width: 0px; }
-    .ama__layout--one-column .ama__promo-group ul {
-      left: 0; }
+      .ama__layout--one-column .ama__promo-group ul li ul {
+        left: 0;
+        width: 100%;
+        margin-bottom: 0; }
+        .ama__layout--one-column .ama__promo-group ul li ul li {
+          list-style-type: none;
+          width: 100%;
+          position: relative;
+          padding-left: 18px; }
+          .ama__layout--one-column .ama__promo-group ul li ul li:before {
+            content: "";
+            position: absolute;
+            border: none;
+            background-color: currentColor;
+            border-radius: 100%;
+            width: 8px;
+            height: 8px;
+            left: 1px;
+            top: 9px; }
+        .ama__layout--one-column .ama__promo-group ul li ul li {
+          left: -18px; }
 
 .ama__layout--split {
   display: -ms-grid;
