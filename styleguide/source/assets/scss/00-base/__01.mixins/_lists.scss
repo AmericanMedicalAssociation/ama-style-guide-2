@@ -1,16 +1,23 @@
 /**
 * List mixins for none node-body lists.
 */
+
+//nesting levels
 $one-level: "one-level";
 $two-levels: "two-levels";
+//list style
 $left-justified: "left-justified";
 $left-justified-w-padding: "left-justified-w-padding";
 $indented: "indented";
+$body-copy: "body-copy";
+//Bullet Styles
+$default: "default";
+$presentation: "presentation";
+$sublist: "sublist";
 
 @mixin list($indent: "", $depth: "") {
   ul {
-    position:relative;
-    width: calc(100% - 50px);
+    //default UL styles
     @include gutter($margin-bottom-half...);
     @include breakpoint($bp-small) {
       font-size: 20px;
@@ -18,15 +25,42 @@ $indented: "indented";
     @include breakpoint($bp-med) {
       font-size: 18px;
     }
+
+    @if($indent == "body-copy") {
+      left: 50px;
+      width: calc(100% - 50px);
+      position:relative;
+      @include gutter($margin-bottom-half...);
+      li {
+        @include list-style($default);
+        ul {
+          left: 0;
+          width: calc(100% - 71px);
+          margin-bottom: 0;
+          li {
+            @include list-style($sublist);
+            position: relative;
+            left: 21px;
+            ul {
+              li {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
     @if($indent == "left-justified") {
       left: 0;
+      @include list-style($presentation);
     }
     @if($indent == "indented") {
       margin-bottom: 0;
-      left: 30px;
+      left: 40px;
+      @include list-style($presentation);
       li {
         ul {
-          left: 0;
+
         }
       }
     }
@@ -43,65 +77,27 @@ $indented: "indented";
       }
     }
     li {
-      list-style-type: none;
-      width: 100%;
-      clear: both;
-      position: relative;
-      padding-left: 18px;
-      &:before {
-        content: "";
-        position: absolute;
-        background-color: currentColor;
-        border-radius: 100%;
-        width: 8px;
-        height: 8px;
-        left: 1px;
-        top: 9px;
-      }
       @if($depth == "one-level") {
         ul {
           left: 0;
           width:100%;
+          margin-bottom: 6px;
+          @include list-style($presentation);
           li {
-            left: 0;
-            &:before {
-              content: "";
-              position: absolute;
-              background-color: currentColor;
-              border-radius: 100%;
-              width: 8px;
-              height: 8px;
-              left: 1px;
-              top: 9px;
-            }
+            left: -18px;
           }
         }
-
       }
       @if($depth == "two-levels") {
         ul {
           margin-bottom: 0;
           left: 0;
           width: calc(100% - 71px);
+          @include list-style(sublist);
           li {
-            list-style-type: none;
-            position: relative;
-            left: 0;
-            padding-left: 16px;
-            &:before {
-              content: "";
-              border:1px solid currentColor;
-              position: absolute;
-              background-color: transparent;
-              border-radius: 100%;
-              width: 6px;
-              height: 6px;
-              left: 1px;
-              top: 9px;
-            }
             ul {
               li {
-                left: 0;
+                left: -16px;
               }
             }
           }
@@ -109,17 +105,53 @@ $indented: "indented";
       }
     }
   }
-  .contextual,
-  .contextual-region,
-  .contextual-links,
-  ul.contextual-links {
+}
+
+@mixin list-style($style: "") {
+  @if($style == "default") {
     ul {
-      width: 100%;
-      left:0;
+      list-style: outside disc;
+      li {
+        width: 100%;
+        position: relative;
+        padding-left: 18px;
+      }
+    }
+  }
+  @if($style == "presentation") {
+    li {
       list-style-type: none;
-      li:before {
-        height: 0px;
-        width: 0px;
+      width: 100%;
+      position: relative;
+      padding-left: 18px;
+      &:before {
+        content: "";
+        position: absolute;
+        border: none;
+        background-color: currentColor;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        left: 1px;
+        top: 9px;
+      }
+    }
+  }
+  @if($style == "sublist") {
+    li {
+      list-style-type: none;
+      left: 0;
+      padding-left: 16px;
+      &:before {
+        content: "";
+        border:1px solid currentColor;
+        position: absolute;
+        background-color: transparent;
+        border-radius: 100%;
+        width: 6px;
+        height: 6px;
+        left: 1px;
+        top: 9px;
       }
     }
   }

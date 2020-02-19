@@ -1,27 +1,18 @@
-section ul,
-article ul,
-.text-body ul,
+.text-body,
 .ama__list {
-  position:relative;
-  left:50px;
-  width: calc(100% - 50px);
-  @include gutter($margin-bottom-half...);
-  li {
-    list-style: outside disc;
-    ul {
-      left: 0;
-      width: calc(100% - 71px);
-      margin-bottom: 0;
-      li {
-        list-style: outside circle;
-        position: relative;
-        left: 21px;
-        ul {
-          li {
-            left: 0;
-          }
-        }
-      }
+  @include list($body-copy, $two-levels);
+}
+.contextual,
+.contextual-links,
+.ama__homepage__navs {
+  ul,
+  ul.contextual-links {
+    width: 100%;
+    left: 0;
+    list-style-type: none;
+    li:before {
+      height: 0px;
+      width: 0px;
     }
   }
 }
