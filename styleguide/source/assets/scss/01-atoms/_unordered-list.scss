@@ -1,18 +1,40 @@
-.text-body,
-.ama__list {
+/**
+* Accepted list.
+* This is a list of selectors that should have default list formatting whithin them.
+*/
+.ama__list,
+.text-body {
   @include list($body-copy, $two-levels);
 }
+/**
+* Exclusion list.
+* These are all of the uls that need to be excluded from special styling.
+* The list covers excluded uls contained within a parent, or uls that have a class directly on them.
+*/
+.ama__homepage__navs,
 .contextual,
 .contextual-links,
-.ama__homepage__navs {
-  ul,
-  ul.contextual-links {
+ul.contextual-links,
+ul.ul-standard {
+  width: 100%;
+  left: 0;
+  position: static;
+  list-style-type: none;
+
+  li:before {
+    height: 0;
+    width: 0;
+  }
+
+  ul {
     width: 100%;
     left: 0;
+    position: static;
     list-style-type: none;
+
     li:before {
-      height: 0px;
-      width: 0px;
+      height: 0;
+      width: 0;
     }
   }
 }
