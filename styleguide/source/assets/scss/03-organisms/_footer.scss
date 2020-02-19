@@ -56,6 +56,11 @@
     padding-bottom: $gutter-mobile;
     margin-bottom: $gutter-mobile;
     border-bottom: 1px solid $gray-50;
+    ul {
+      font-size: 1em;
+      line-height: 1.667;
+      margin-bottom: 0;
+    }
 
     a {
       text-decoration: none;
@@ -127,6 +132,12 @@
     text-transform: uppercase;
     text-align: center;
     border-top: 1px solid $gray-50;
+    ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      line-height: 1.05em;
+      font-size: 1em;
+    }
 
     li {
       display: inline-block;
@@ -150,6 +161,12 @@
     background: $purple;
     border-top: 1px solid $gray-50;
     color: $white;
+    ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      line-height: 1.05em;
+      font-size: 1em;
+    }
 
     @include breakpoint($bp-large) {
       padding: 0;
@@ -223,5 +240,3 @@
     }
   }
 }
-
-
