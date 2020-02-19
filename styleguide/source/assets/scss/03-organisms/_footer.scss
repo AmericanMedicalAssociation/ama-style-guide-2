@@ -57,8 +57,6 @@
     margin-bottom: $gutter-mobile;
     border-bottom: 1px solid $gray-50;
     ul {
-      font-size: 1em;
-      line-height: 1.667;
       margin-bottom: 0;
     }
 
@@ -70,15 +68,24 @@
       }
     }
 
+    @include breakpoint($bp-xs) {
+      ul {
+        font-size: 1em;
+        line-height: 1.25;
+      }
+    }
     @include breakpoint($bp-small) {
       border: none;
+      padding-bottom: 8px;
     }
-
     @include breakpoint($bp-large) {
       display: flex;
-
+      border: none;
+      padding-bottom: 20px;
       ul {
         width: 50%;
+        font-size: 1em;
+        line-height: 1.667;
       }
     }
   }
@@ -147,10 +154,23 @@
         padding: 0 7px;
       }
     }
-
+    @include breakpoint($bp-xs) {
+      ul {
+        font-size: 1em;
+        line-height: 1.5em;
+      }
+    }
+    @include breakpoint($bp-small) {
+      ul {
+        font-size: 1em;
+        line-height: 1.25;
+      }
+    }
     @include breakpoint($bp-large) {
-      font-size: 1.111em;
-      line-height: 1em;
+      ul {
+        font-size: 1.111em;
+        line-height: 1em;
+      }
     }
   }
 
@@ -167,7 +187,12 @@
       line-height: 1.05em;
       font-size: 1em;
     }
-
+    @include breakpoint($bp-xs) {
+      ul {
+        font-size: 1em;
+        line-height: 1.5em;
+      }
+    }
     @include breakpoint($bp-large) {
       padding: 0;
 
