@@ -6,32 +6,3 @@
 .text-body {
   @include list($body-copy, $two-levels);
 }
-/**
-* Exclusion list.
-* These are all of the uls that need to be excluded from special styling.
-* The list covers excluded uls contained within a parent, or uls that have a class directly on them.
-*/
-.ama__homepage__navs,
-ul.ul-standard {
-  width: auto;
-  left: 0;
-  position: static;
-  list-style-type: none;
-
-  li:before {
-    height: 0;
-    width: 0;
-  }
-  ul {
-    width: auto;
-    left: 0;
-    position: static;
-    list-style-type: none;
-    font-size: initial;
-
-    li:before {
-      height: 0;
-      width: 0;
-    }
-  }
-}
