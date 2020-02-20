@@ -4527,7 +4527,7 @@ textarea {
       margin-bottom: 14px; } }
   .ama__list ul li ul,
   .text-body ul li ul {
-    list-style: outside disc; }
+    list-style: inside disc; }
     .ama__list ul li ul li,
     .text-body ul li ul li {
       width: 100%;
@@ -4538,53 +4538,23 @@ textarea {
     left: 0;
     width: calc(100% - 71px);
     margin-bottom: 0; }
-    .ama__list ul li ul li,
-    .text-body ul li ul li {
-      position: relative;
-      left: 21px; }
-      .ama__list ul li ul li li,
-      .text-body ul li ul li li {
-        list-style-type: none;
-        left: 0;
-        padding-left: 16px; }
-        .ama__list ul li ul li li:before,
-        .text-body ul li ul li li:before {
-          content: "";
-          border: 1px solid currentColor;
-          position: absolute;
-          background-color: transparent;
-          border-radius: 100%;
-          width: 6px;
-          height: 6px;
-          left: 1px;
-          top: 9px; }
-      .ama__list ul li ul li ul li,
-      .text-body ul li ul li ul li {
-        left: 0; }
-  .ama__list ul li ul,
-  .text-body ul li ul {
-    margin-bottom: 0;
-    left: 0;
-    width: calc(100% - 71px); }
-    .ama__list ul li ul li,
-    .text-body ul li ul li {
-      list-style-type: none;
-      left: 0;
-      padding-left: 16px; }
-      .ama__list ul li ul li:before,
-      .text-body ul li ul li:before {
-        content: "";
-        border: 1px solid currentColor;
-        position: absolute;
-        background-color: transparent;
-        border-radius: 100%;
-        width: 6px;
-        height: 6px;
-        left: 1px;
-        top: 9px; }
+    .ama__list ul li ul li li,
+    .text-body ul li ul li li {
+      list-style: outside circle; }
+    .ama__list ul li ul li ul li li,
+    .text-body ul li ul li ul li li {
+      list-style: outside circle; }
+  .ama__list ul li ul li,
+  .text-body ul li ul li {
+    list-style: outside circle; }
+  .ama__list ul li ul li,
+  .text-body ul li ul li {
+    position: relative;
+    left: 41px;
+    margin-left: -20px; }
     .ama__list ul li ul li ul li,
     .text-body ul li ul li ul li {
-      left: -16px; }
+      left: 2px; }
 
 /**
 * Exclusion list.
