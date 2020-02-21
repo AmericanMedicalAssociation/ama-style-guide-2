@@ -21,3 +21,24 @@ ul.ul-standard {
     width: 0;
   }
 }
+
+nav ul,
+.ama__list {
+  @include gutter($margin-bottom-half...);
+
+  li {
+    @include gutter($margin-left-full...);
+    padding: 0;
+    list-style: disc;
+
+    ul {
+      @include gutter($margin-left-full...);
+      list-style-position: outside;
+    }
+  }
+
+  ul {
+    @include gutter($margin-left-full...);
+    list-style: none;
+  }
+}
