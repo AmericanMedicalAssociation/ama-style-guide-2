@@ -4484,18 +4484,17 @@ textarea {
 .text-body ul {
   margin-bottom: 10px;
   left: 50px;
-  width: calc(100% - 50px);
   position: relative;
   margin-bottom: 10px; }
   @media (min-width: 56.25em) {
     .ama__list ul,
     .text-body ul {
       margin-bottom: 14px; } }
-  @media (min-width: 37.5em) {
+  @media (min-width: 25em) {
     .ama__list ul,
     .text-body ul {
       font-size: 20px; } }
-  @media (min-width: 56.25em) {
+  @media (min-width: 37.5em) {
     .ama__list ul,
     .text-body ul {
       font-size: 18px; } }
@@ -4513,11 +4512,34 @@ textarea {
   .ama__list ul li ul,
   .text-body ul li ul {
     left: 0;
-    width: calc(100% - 71px);
     margin-bottom: 0; }
     .ama__list ul li ul li li,
     .text-body ul li ul li li {
       list-style: outside circle; }
+  @media (min-width: 320px) {
+    .ama__list ul,
+    .text-body ul {
+      position: static;
+      margin-left: 35px;
+      max-width: 100%; }
+      .ama__list ul li ul,
+      .text-body ul li ul {
+        position: static;
+        margin-right: 10px;
+        margin-left: 0;
+        max-width: 100%; } }
+  @media (min-width: 768px) {
+    .ama__list ul,
+    .text-body ul {
+      position: relative;
+      width: calc(100% - 80px);
+      margin-left: 0; }
+      .ama__list ul li ul,
+      .text-body ul li ul {
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0; } }
   .ama__list ul li ul li,
   .text-body ul li ul li {
     list-style: outside circle; }
@@ -6501,14 +6523,15 @@ figcaption {
     padding: 14px; }
     .ama__partner-promo__text ul {
       margin-bottom: 10px;
-      left: 0; }
+      left: 0;
+      margin-left: 0; }
       @media (min-width: 56.25em) {
         .ama__partner-promo__text ul {
           margin-bottom: 14px; } }
-      @media (min-width: 37.5em) {
+      @media (min-width: 25em) {
         .ama__partner-promo__text ul {
           font-size: 20px; } }
-      @media (min-width: 56.25em) {
+      @media (min-width: 37.5em) {
         .ama__partner-promo__text ul {
           font-size: 18px; } }
       .ama__partner-promo__text ul li {
@@ -6529,7 +6552,8 @@ figcaption {
       .ama__partner-promo__text ul li ul {
         left: 0;
         width: 100%;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        margin-left: 0; }
         .ama__partner-promo__text ul li ul li {
           list-style-type: none;
           width: 100%;
@@ -6717,14 +6741,15 @@ figcaption {
     float: right; }
   .ama__product__text ul {
     margin-bottom: 10px;
-    left: 0; }
+    left: 0;
+    margin-left: 0; }
     @media (min-width: 56.25em) {
       .ama__product__text ul {
         margin-bottom: 14px; } }
-    @media (min-width: 37.5em) {
+    @media (min-width: 25em) {
       .ama__product__text ul {
         font-size: 20px; } }
-    @media (min-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__product__text ul {
         font-size: 18px; } }
     .ama__product__text ul li {
@@ -6745,7 +6770,8 @@ figcaption {
     .ama__product__text ul li ul {
       left: 0;
       width: 100%;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      margin-left: 0; }
       .ama__product__text ul li ul li {
         list-style-type: none;
         width: 100%;
@@ -6883,14 +6909,15 @@ figcaption {
         margin-top: 14px; } }
   .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
     margin-bottom: 10px;
-    left: 0; }
+    left: 0;
+    margin-left: 0; }
     @media (min-width: 56.25em) {
       .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
         margin-bottom: 14px; } }
-    @media (min-width: 37.5em) {
+    @media (min-width: 25em) {
       .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
         font-size: 20px; } }
-    @media (min-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__promo ul, .ama__promo--background ul, .ama__promo--border ul {
         font-size: 18px; } }
     .ama__promo ul li, .ama__promo--background ul li, .ama__promo--border ul li {
@@ -6911,7 +6938,8 @@ figcaption {
     .ama__promo ul li ul, .ama__promo--background ul li ul, .ama__promo--border ul li ul {
       left: 0;
       width: 100%;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      margin-left: 0; }
       .ama__promo ul li ul li, .ama__promo--background ul li ul li, .ama__promo--border ul li ul li {
         list-style-type: none;
         width: 100%;
@@ -6962,16 +6990,32 @@ figcaption {
       margin-bottom: 10px;
       left: 0;
       width: 100%;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      margin-left: 0; }
       @media (min-width: 56.25em) {
         .ama__promo--inline ul {
           margin-bottom: 14px; } }
-      @media (min-width: 37.5em) {
+      @media (min-width: 25em) {
         .ama__promo--inline ul {
           font-size: 20px; } }
-      @media (min-width: 56.25em) {
+      @media (min-width: 37.5em) {
         .ama__promo--inline ul {
           font-size: 18px; } }
+      .ama__promo--inline ul li {
+        list-style-type: none;
+        width: 100%;
+        position: relative;
+        padding-left: 18px; }
+        .ama__promo--inline ul li:before {
+          content: "";
+          position: absolute;
+          border: none;
+          background-color: currentColor;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          left: 1px;
+          top: 9px; }
       .ama__promo--inline ul li {
         line-height: 1.3em;
         margin-bottom: 13px; }
@@ -6979,8 +7023,7 @@ figcaption {
           left: 0; }
       .ama__promo--inline ul li ul {
         margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px); }
+        left: 0; }
         .ama__promo--inline ul li ul li {
           list-style-type: none;
           left: 0;
@@ -7894,14 +7937,15 @@ a.ama__promo--border:hover {
   background: #46166B; }
   .ama__subscribe-promo ul {
     margin-bottom: 10px;
-    left: 0; }
+    left: 0;
+    margin-left: 0; }
     @media (min-width: 56.25em) {
       .ama__subscribe-promo ul {
         margin-bottom: 14px; } }
-    @media (min-width: 37.5em) {
+    @media (min-width: 25em) {
       .ama__subscribe-promo ul {
         font-size: 20px; } }
-    @media (min-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__subscribe-promo ul {
         font-size: 18px; } }
     .ama__subscribe-promo ul li {
@@ -7922,7 +7966,8 @@ a.ama__promo--border:hover {
     .ama__subscribe-promo ul li ul {
       left: 0;
       width: 100%;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      margin-left: 0; }
       .ama__subscribe-promo ul li ul li {
         list-style-type: none;
         width: 100%;
@@ -8981,14 +9026,15 @@ article[class*='__page-content'] .ama__tags {
     .ama__hub-hero__description ul {
       margin-bottom: 10px;
       margin-bottom: 0;
-      left: 40px; }
+      left: 40px;
+      margin-left: 0; }
       @media (min-width: 56.25em) {
         .ama__hub-hero__description ul {
           margin-bottom: 14px; } }
-      @media (min-width: 37.5em) {
+      @media (min-width: 25em) {
         .ama__hub-hero__description ul {
           font-size: 20px; } }
-      @media (min-width: 56.25em) {
+      @media (min-width: 37.5em) {
         .ama__hub-hero__description ul {
           font-size: 18px; } }
       .ama__hub-hero__description ul li {
@@ -9008,8 +9054,7 @@ article[class*='__page-content'] .ama__tags {
           top: 9px; }
       .ama__hub-hero__description ul li ul {
         margin-bottom: 0;
-        left: 0;
-        width: calc(100% - 71px); }
+        left: 0; }
         .ama__hub-hero__description ul li ul li {
           list-style-type: none;
           left: 0;
@@ -9227,14 +9272,15 @@ article[class*='__page-content'] .ama__tags {
 .paragraph--type--wysiwyg ul {
   margin-bottom: 10px;
   margin-bottom: 0;
-  left: 40px; }
+  left: 40px;
+  margin-left: 0; }
   @media (min-width: 56.25em) {
     .paragraph--type--wysiwyg ul {
       margin-bottom: 14px; } }
-  @media (min-width: 37.5em) {
+  @media (min-width: 25em) {
     .paragraph--type--wysiwyg ul {
       font-size: 20px; } }
-  @media (min-width: 56.25em) {
+  @media (min-width: 37.5em) {
     .paragraph--type--wysiwyg ul {
       font-size: 18px; } }
   .paragraph--type--wysiwyg ul li {
@@ -9254,8 +9300,7 @@ article[class*='__page-content'] .ama__tags {
       top: 9px; }
   .paragraph--type--wysiwyg ul li ul {
     margin-bottom: 0;
-    left: 0;
-    width: calc(100% - 71px); }
+    left: 0; }
     .paragraph--type--wysiwyg ul li ul li {
       list-style-type: none;
       left: 0;
@@ -11043,14 +11088,15 @@ section.ama__page--event__speakers {
     width: 100%; }
   .ama__membership ul {
     margin-bottom: 10px;
-    left: 0; }
+    left: 0;
+    margin-left: 0; }
     @media (min-width: 56.25em) {
       .ama__membership ul {
         margin-bottom: 14px; } }
-    @media (min-width: 37.5em) {
+    @media (min-width: 25em) {
       .ama__membership ul {
         font-size: 20px; } }
-    @media (min-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__membership ul {
         font-size: 18px; } }
     .ama__membership ul li {
@@ -11071,7 +11117,8 @@ section.ama__page--event__speakers {
     .ama__membership ul li ul {
       left: 0;
       width: 100%;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      margin-left: 0; }
       .ama__membership ul li ul li {
         list-style-type: none;
         width: 100%;
@@ -12082,14 +12129,15 @@ section#related_links .ama__membership ul {
         padding-bottom: 28px; } }
     .ama__layout--one-column .ama__promo-group ul {
       margin-bottom: 10px;
-      left: 0; }
+      left: 0;
+      margin-left: 0; }
       @media (min-width: 56.25em) {
         .ama__layout--one-column .ama__promo-group ul {
           margin-bottom: 14px; } }
-      @media (min-width: 37.5em) {
+      @media (min-width: 25em) {
         .ama__layout--one-column .ama__promo-group ul {
           font-size: 20px; } }
-      @media (min-width: 56.25em) {
+      @media (min-width: 37.5em) {
         .ama__layout--one-column .ama__promo-group ul {
           font-size: 18px; } }
       .ama__layout--one-column .ama__promo-group ul li {
@@ -12110,7 +12158,8 @@ section#related_links .ama__membership ul {
       .ama__layout--one-column .ama__promo-group ul li ul {
         left: 0;
         width: 100%;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        margin-left: 0; }
         .ama__layout--one-column .ama__promo-group ul li ul li {
           list-style-type: none;
           width: 100%;
