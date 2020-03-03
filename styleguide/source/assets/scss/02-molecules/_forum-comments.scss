@@ -1,0 +1,134 @@
+section, section .indented {
+  > .ama__comment {
+    padding: 18px;
+    background-color: $white;
+    border: 1px solid #e2e2e2;
+    border-bottom: 0;
+    border-left: 6px solid $purple;
+    margin: 42px;
+    margin-bottom: 0;
+
+    .ama__comment-header {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @include breakpoint($bp-med) {
+        flex-direction: row;
+      }
+
+      .ama__comment--info {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint($bp-small) {
+          flex-direction: row;
+        }
+
+        .ama__comment--author-info {
+          margin-right: 30px;
+        }
+
+        .ama__comment-date {
+          color: $gray-64;
+          margin-right: 30px;
+        }
+
+        mark.ama__comment-status {
+          background-color: #fff;
+          color: #7234ce;
+          font-weight: 600;
+        }
+      }
+
+      .ama__comment-link {
+        display: flex;
+
+        > a:after {
+          content: "|";
+          color: #e2e2e2;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+
+        .votingapi-widgets.flag .flag-rating {
+          height: auto;
+        }
+
+        .form-item {
+          margin: 0;
+        }
+      }
+    }
+
+    .ama__comment-body {
+      h3 {
+        margin-top: 18px;
+      }
+    }
+
+    .ama__comment-footer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      icon.icon--next {
+        transform: rotate(-90deg);
+        margin-right: 7px;
+        min-width: .8em;
+        min-height: .8em;
+        background-size: contain;
+        background-position: bottom;
+      }
+
+      ul.links.inline {
+        display: flex;
+
+        li {
+          list-style-type: none;
+          margin-right: 15px;
+        }
+      }
+    }
+
+    a.ama__link--blue {
+      font-weight: 600;
+    }
+  }
+}
+section {
+  margin-bottom: 42px;
+
+  > div:last-child {
+    border-bottom: 1px solid #e2e2e2;
+  }
+  .indented {
+    padding-left: 0;
+    margin-left: 42px;
+    margin-right: 42px;
+    border-left: 6px solid $purple;
+
+    h3 {
+      display: none;
+    }
+
+    .ama__comment-header {
+      margin-bottom: 30px;
+    }
+
+    .indented {
+      border-left: 6px solid #d1c5da;
+      margin-right: 0;
+      margin-left: 28px;
+    }
+
+    > .ama__comment {
+      border-left: 6px solid #d1c5da;
+      border-bottom: transparent;
+      margin: 0 0 0 28px;
+    }
+  }
+  section {
+    margin-bottom: 80px;
+  }
+}
