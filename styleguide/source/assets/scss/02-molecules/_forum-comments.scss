@@ -3,10 +3,13 @@ section, section .indented {
     padding: 18px;
     background-color: $white;
     border: 1px solid #e2e2e2;
-    border-bottom: 0;
-    border-left: 6px solid $purple;
     margin: 42px;
+    margin-right: 0;
+    margin-left: 0;
     margin-bottom: 0;
+    position: relative;
+    margin-left: 6px;
+
 
     .ama__comment-header {
       display: flex;
@@ -16,52 +19,56 @@ section, section .indented {
       @include breakpoint($bp-med) {
         flex-direction: row;
       }
+      .ama__comment {
+        &--info {
+          display: flex;
+          flex-direction: column;
 
-      .ama__comment--info {
-        display: flex;
-        flex-direction: column;
+          @include breakpoint($bp-small) {
+            flex-direction: row;
+          }
 
-        @include breakpoint($bp-small) {
-          flex-direction: row;
+          .ama__comment {
+            &--author-info {
+              margin-right: 30px;
+            }
+
+            &-date {
+              color: $gray-64;
+              margin-right: 30px;
+            }
+          }
+
+          mark.ama__comment-status {
+            background-color: #fff;
+            color: #7234ce;
+            font-weight: 600;
+          }
+
         }
 
-        .ama__comment--author-info {
-          margin-right: 30px;
-        }
+        &-link {
+          display: flex;
 
-        .ama__comment-date {
-          color: $gray-64;
-          margin-right: 30px;
-        }
+          .fa-flag {
+            color: #027dbc;
+            margin-right: 5px;
+          }
 
-        mark.ama__comment-status {
-          background-color: #fff;
-          color: #7234ce;
-          font-weight: 600;
-        }
-      }
+          > div:after {
+            content: "|";
+            color: #e2e2e2;
+            margin-right: 5px;
+            margin-left: 5px;
+          }
 
-      .ama__comment-link {
-        display: flex;
+          .votingapi-widgets.flag .flag-rating {
+            height: auto;
+          }
 
-        .fa-flag {
-          color: #027dbc;
-          margin-right:5px;
-        }
-
-        > div:after {
-          content: "|";
-          color: #e2e2e2;
-          margin-right: 5px;
-          margin-left: 5px;
-        }
-
-        .votingapi-widgets.flag .flag-rating {
-          height: auto;
-        }
-
-        .form-item {
-          margin: 0;
+          .form-item {
+            margin: 0;
+          }
         }
       }
     }
@@ -102,16 +109,37 @@ section, section .indented {
   }
 }
 section {
-  margin-bottom: 42px;
+  margin: 42px;
+  position: relative;
+
+  &:after {
+    content: " ";
+    height: 100%;
+    width: 6px;
+    background-color: #000;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
 
   > div:last-child {
     border-bottom: 1px solid #e2e2e2;
   }
+  > .indented {
+    margin-left: 6px;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+      margin-top: -1px;
+    }
+  }
   .indented {
     padding-left: 0;
-    margin-left: 42px;
-    margin-right: 42px;
-    border-left: 6px solid $purple;
 
     h3 {
       display: none;
