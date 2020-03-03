@@ -14,10 +14,10 @@
         <mark class="ama__comment-status" data-comment-timestamp="1582930056">New</mark>
       </div>
       <div class="ama__comment-link">
+        {% set link = forumComments.flag %}
+        <div><i class="far fa-flag"></i>{% include "@atoms/link/link.twig" %}</div>
         {% set link = forumComments.permalink %}
         {% include "@atoms/link/link.twig" %}
-        {% set link = forumComments.flag %}
-        <div>{% include "@atoms/link/link.twig" %}</div>
       </div>
     </div>
     <div class="ama__comment-body">
@@ -55,6 +55,7 @@
     </ul>
     <div class="forum-jump-links">
       {% set link = forumComments.top %}
+      <i class="fas fa-long-arrow-alt-up"></i>
       {% include "@atoms/link/link.twig" %}
     </div>
   </div>
@@ -73,10 +74,10 @@
           </div>
         </div>
         <div class="ama__comment-link">
+          {% set link = forumComments.flag %}
+          <div><i class="far fa-flag"></i>{% include "@atoms/link/link.twig" %}</div>
           {% set link = forumComments.permalink %}
           {% include "@atoms/link/link.twig" %}
-          {% set link = forumComments.flag %}
-          <div>{% include "@atoms/link/link.twig" %}</div>
         </div>
       </div>
       <div class="ama__comment-body">
@@ -114,6 +115,7 @@
         </ul>
         <div class="forum-jump-links">
           {% set link = forumComments.top %}
+          <i class="fas fa-long-arrow-alt-up"></i>
           {% include "@atoms/link/link.twig" %}
         </div>
       </div>
@@ -131,10 +133,10 @@
             </div>
           </div>
           <div class="ama__comment-link">
+            {% set link = forumComments.flag %}
+            <div><i class="far fa-flag"></i>{% include "@atoms/link/link.twig" %}</div>
             {% set link = forumComments.permalink %}
             {% include "@atoms/link/link.twig" %}
-            {% set link = forumComments.flag %}
-            <div>{% include "@atoms/link/link.twig" %}</div>
           </div>
         </div>
         <div class="ama__comment-body">
@@ -172,6 +174,7 @@
           </ul>
           <div class="forum-jump-links">
             {% set link = forumComments.top %}
+            <i class="fas fa-long-arrow-alt-up"></i>
             {% include "@atoms/link/link.twig" %}
           </div>
         </div>

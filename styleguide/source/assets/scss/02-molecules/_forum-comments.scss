@@ -44,7 +44,12 @@ section, section .indented {
       .ama__comment-link {
         display: flex;
 
-        > a:after {
+        .fa-flag {
+          color: #027dbc;
+          margin-right:5px;
+        }
+
+        > div:after {
           content: "|";
           color: #e2e2e2;
           margin-right: 5px;
@@ -72,13 +77,13 @@ section, section .indented {
       display: flex;
       justify-content: space-between;
 
-      icon.icon--next {
-        transform: rotate(-90deg);
-        margin-right: 7px;
-        min-width: .8em;
-        min-height: .8em;
+      .fa-long-arrow-alt-up {
+        margin-right: 0;
+        width: .5em;
+        height: .8em;
         background-size: contain;
-        background-position: bottom;
+        background-position: top;
+        color: #027dbc;
       }
 
       ul.links.inline {
