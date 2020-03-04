@@ -1,0 +1,5 @@
+{% set paragraph = blockquote.paragraph %}
+
+<blockquote {% if blockquote.class %} class="{{ blockquote.class }}" {% endif %} >
+  {% include '@atoms/paragraph.twig' %}
+</blockquote>

@@ -45,4 +45,15 @@ blockquote {
     width: 5px;
     height: 100%;
   }
+  &.blockquote__forum-comment {
+    &::before {
+      content: "\201C";
+      font-size: 42px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: transparent;
+      width: 30px;
+    }
+  }
 }
