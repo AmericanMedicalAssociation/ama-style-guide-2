@@ -1,4 +1,5 @@
-section.ama__forum_comments, section.ama__forum_comments .indented {
+section.ama__forum_comments, section.ama__forum_comments .indented,
+#block-ama-one-forums-content, #block-ama-one-forums-content .indented {
   > .ama__comment {
     padding: 18px;
     background-color: $white;
@@ -122,71 +123,85 @@ section.ama__forum_comments, section.ama__forum_comments .indented {
     }
   }
 }
-section.ama__forum_comments {
-  margin: 42px;
-  position: relative;
+section.ama__forum_comments, #block-ama-one-forums-content {
+   margin: 42px;
+   position: relative;
 
-  > .ama__comment {
-    &:after {
-      content: " ";
-      height: 100%;
-      width: 6px;
-      margin-left: -6px;
-      background-color: $purple;
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
+   > .ama__comment {
+     &:after {
+       content: " ";
+       height: 100%;
+       width: 6px;
+       margin-left: -6px;
+       background-color: $purple;
+       display: inline-block;
+       position: absolute;
+       top: 0;
+       left: 0;
+     }
+   }
 
+   > .indented {
+     border-bottom: 1px solid #e2e2e2;
+     position: relative;
+     margin-top: -1px;
+
+     &:before {
+       content: " ";
+       position: absolute;
+       width: 100%;
+       height: 2px;
+       background-color: #fff;
+       margin-top: -1px;
+     }
+   }
+
+   .indented {
+     padding-left: 0;
+
+     &:after {
+       content: " ";
+       height: 100%;
+       width: 6px;
+       margin-left: -6px;
+       background-color: $purple;
+       display: inline-block;
+       position: absolute;
+       top: 0;
+       left: 0;
+     }
+
+     h3 {
+       display: none;
+     }
+
+     .ama__comment-header {
+       margin-bottom: 30px;
+     }
+
+     .indented {
+       border-left: 6px solid #d1c5da;
+       margin-right: 0;
+       margin-left: 28px;
+     }
+
+     > .ama__comment {
+       border-left: 6px solid #d1c5da;
+       border-bottom: transparent;
+       margin: 0 0 0 28px;
+     }
+   }
+ }
+#block-ama-one-forums-content {
   > .indented {
-    border-bottom: 1px solid #e2e2e2;
-    position: relative;
-    margin-top: -1px;
+    border: 1px solid #e2e2e2;
 
     &:before {
-      content: " ";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
-      margin-top: -1px;
-    }
-  }
-  .indented {
-    padding-left: 0;
-
-    &:after {
-      content: " ";
-      height: 100%;
-      width: 6px;
-      margin-left: -6px;
-      background-color: $purple;
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    h3 {
       display: none;
     }
 
-    .ama__comment-header {
-      margin-bottom: 30px;
-    }
-
-    .indented {
-      border-left: 6px solid #d1c5da;
-      margin-right: 0;
-      margin-left: 28px;
-    }
-
     > .ama__comment {
-      border-left: 6px solid #d1c5da;
-      border-bottom: transparent;
-      margin: 0 0 0 28px;
+      border: none;
     }
   }
 }
