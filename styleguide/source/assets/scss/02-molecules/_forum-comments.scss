@@ -90,13 +90,21 @@ section.ama__forum_comments, section.ama__forum_comments .indented {
       display: flex;
       justify-content: space-between;
 
-      .fa-long-arrow-alt-up {
+      .fa-long-arrow-alt-up, .fa-long-arrow-up {
         margin-right: 0;
         width: .5em;
         height: .8em;
         background-size: contain;
         background-position: top;
         color: #027dbc;
+      }
+
+      .fa-long-arrow-up {
+        font-size: .8em;
+        margin-top: 1px;
+        position: relative;
+        top: -1px;
+        margin-right: 5px;
       }
 
       ul.links.inline {
