@@ -1,6 +1,14 @@
 blockquote {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding-left: 30px;
+  * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  margin-bottom: 1em;
   @include breakpoint($bp-med) {
     padding-left: 13px;
   }
