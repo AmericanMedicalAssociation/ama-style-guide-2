@@ -106,7 +106,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
         margin-top: 1px;
         position: relative;
         top: -1px;
-        margin-right: 5px;
+        margin-right: 6px;
       }
 
       ul.links.inline {
@@ -114,7 +114,19 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
 
         li {
           list-style-type: none;
-          margin-right: 15px;
+          margin-right: 10px;
+
+          &:before {
+            content: "|";
+            color: #e2e2e2;
+            margin-right: 8px;
+            font-weight: 600;
+          }
+        }
+        li:first-child {
+          &:before {
+            content: "";
+          }
         }
       }
     }
