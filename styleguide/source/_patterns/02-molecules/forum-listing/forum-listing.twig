@@ -1,5 +1,6 @@
 <div class="ama__forum-table-wrap">
     <table>
+        {% if forumListing.showHeader %}
         <thead>
             <tr>
                 <th class="tl-forum-title">{{ forumListing.toplevelForum.title }}</th>
@@ -8,6 +9,7 @@
                 <th class="forum-table-heading">Last post</th>
             </tr>
         </thead>
+        {% endif %}
         <tbody>
         <tr>
             <td data-th="Forum">
