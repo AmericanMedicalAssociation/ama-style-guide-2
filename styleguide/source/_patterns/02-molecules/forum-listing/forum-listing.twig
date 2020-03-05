@@ -1,0 +1,18 @@
+<tr>
+    <td{% if forums[tid].is_container == true %} colspan="4"{% endif %}>
+        <div><a href="{{ forums[tid].link }}">{{ forums[tid].label }}</a></div>
+        {% if aggTitles is not empty %}
+            <div>Subforums: {{ aggTitles|join(', ')|raw }}</div>
+        {% endif %}
+    </td>
+
+    {% if forums[tid].is_container == false %}
+        <td class="ama__column-centered">{{ forums[tid].num_topics + aggTopics }}</td>
+        <td class="ama__column-centered">{{ forums[tid].num_posts + aggPosts }}</td>
+        <td>{{ forums[tid].last_reply }}</td>
+    {% endif %}
+</tr>
+{% else %}
+<tr>
+    <td>No subforums available at this time.</td>
+</tr>
