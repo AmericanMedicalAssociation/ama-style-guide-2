@@ -1502,59 +1502,6 @@ a.webform-button--submit {
 .ama__tabs .ama__agenda-date.ui-tabs-active a {
   border-bottom: solid 3px #5C5C5C; }
 
-blockquote {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 1em; }
-  blockquote *:last-child {
-    margin-bottom: 0; }
-  @media (min-width: 56.25em) {
-    blockquote {
-      padding-left: 13px; } }
-  @media (min-width: 75em) {
-    blockquote {
-      padding-left: 26px; } }
-  blockquote p, blockquote .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text blockquote .ama__image__text__subtitle, blockquote .ama__resource-link--inline__text,
-  blockquote a,
-  blockquote li,
-  blockquote ol,
-  blockquote table,
-  blockquote img,
-  blockquote span,
-  blockquote h1, blockquote h2, blockquote h3, blockquote .ama__expand-list .ui-accordion-header__text, .ama__expand-list blockquote .ui-accordion-header__text, blockquote .ama__expand-list__header__text, blockquote h4, blockquote h5, blockquote h6,
-  blockquote div {
-    text-align: left; }
-  blockquote ol {
-    list-style-position: inside;
-    margin-left: 0px; }
-    @media (min-width: 25em) {
-      blockquote ol {
-        margin-left: 4px; } }
-  @media (min-width: 25em) {
-    blockquote ul {
-      margin-left: 4px; } }
-  @media (min-width: 56.25em) {
-    blockquote ul {
-      margin-left: -5px; } }
-  @media (min-width: 75em) {
-    blockquote ul {
-      margin-left: -5px; } }
-  blockquote::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #46166B;
-    width: 5px;
-    height: 100%; }
-
 .ama__hub-card__button-container a, .ama__hub-hero__button-container a, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
 .ama__button,
 button {
@@ -5032,6 +4979,87 @@ figcaption {
     .ama__category__article-stub-three-up .ama__article-stub {
       padding: 0; } }
 
+blockquote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 1em; }
+  blockquote *:last-child {
+    margin-bottom: 0; }
+  @media (min-width: 56.25em) {
+    blockquote {
+      padding-left: 13px; } }
+  @media (min-width: 75em) {
+    blockquote {
+      padding-left: 26px; } }
+  blockquote p, blockquote .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text blockquote .ama__image__text__subtitle, blockquote .ama__resource-link--inline__text,
+  blockquote a,
+  blockquote li,
+  blockquote ol,
+  blockquote table,
+  blockquote img,
+  blockquote span,
+  blockquote h1, blockquote h2, blockquote h3, blockquote .ama__expand-list .ui-accordion-header__text, .ama__expand-list blockquote .ui-accordion-header__text, blockquote .ama__expand-list__header__text, blockquote h4, blockquote h5, blockquote h6,
+  blockquote div {
+    text-align: left; }
+  blockquote ol {
+    list-style-position: inside;
+    margin-left: 0px; }
+    @media (min-width: 25em) {
+      blockquote ol {
+        margin-left: 4px; } }
+  @media (min-width: 25em) {
+    blockquote ul {
+      margin-left: 4px; } }
+  @media (min-width: 56.25em) {
+    blockquote ul {
+      margin-left: -5px; } }
+  @media (min-width: 75em) {
+    blockquote ul {
+      margin-left: -5px; } }
+  blockquote::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #46166B;
+    width: 5px;
+    height: 100%; }
+
+#block-ama-one-forums-content blockquote {
+  color: #5c5c5c;
+  padding: 14px 31px 16px 42px;
+  border: 1px solid #e2e2e2;
+  border-left: 6px solid #b3b3b3;
+  background-color: #f7f7f7; }
+  #block-ama-one-forums-content blockquote::before, #block-ama-one-forums-content blockquote:after {
+    font-size: 42px;
+    position: absolute;
+    background-color: transparent;
+    width: 30px;
+    color: #b3b3b3;
+    line-height: 1em;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 600; }
+  #block-ama-one-forums-content blockquote:before {
+    content: "\201C";
+    left: 0;
+    top: 0;
+    margin-left: 6px;
+    line-height: 1em; }
+  #block-ama-one-forums-content blockquote:after {
+    content: "\201D";
+    right: 0;
+    bottom: 0;
+    margin-right: 6px;
+    line-height: .4em; }
+
 .ama__category-hero a {
   text-decoration: none; }
   .ama__category-hero a:hover {
@@ -5660,7 +5688,7 @@ figcaption {
 
 section.ama__forum_comments > .ama__comment, section.ama__forum_comments .indented > .ama__comment,
 #block-ama-one-forums-content > .ama__comment, #block-ama-one-forums-content .indented > .ama__comment {
-  padding: 18px;
+  padding: 18px 30px;
   background-color: #ffffff;
   border: 1px solid #e2e2e2;
   border-left: 0;
@@ -5803,9 +5831,9 @@ section.ama__forum_comments > .ama__comment, section.ama__forum_comments .indent
     font-weight: 600; }
 
 section.ama__forum_comments, #block-ama-one-forums-content {
-  padding: 42px;
-  padding-top: 15px;
-  position: relative; }
+  padding: 0;
+  position: relative;
+  padding-left: 6px; }
   section.ama__forum_comments h2, #block-ama-one-forums-content h2 {
     padding-top: 15px; }
   section.ama__forum_comments > .ama__comment:after, #block-ama-one-forums-content > .ama__comment:after {
@@ -5849,11 +5877,23 @@ section.ama__forum_comments, #block-ama-one-forums-content {
     section.ama__forum_comments .indented .indented, #block-ama-one-forums-content .indented .indented {
       border-left: 6px solid #d1c5da;
       margin-right: 0;
-      margin-left: 28px; }
+      margin-left: 0; }
+      @media (min-width: 56.25em) {
+        section.ama__forum_comments .indented .indented, #block-ama-one-forums-content .indented .indented {
+          margin: 0 0 0 28px; } }
     section.ama__forum_comments .indented > .ama__comment, #block-ama-one-forums-content .indented > .ama__comment {
       border-left: 6px solid #d1c5da;
       border-bottom: transparent;
-      margin: 0 0 0 28px; }
+      margin: 0; }
+      @media (min-width: 56.25em) {
+        section.ama__forum_comments .indented > .ama__comment, #block-ama-one-forums-content .indented > .ama__comment {
+          margin: 0 0 0 28px; } }
+
+section.ama__forum_comments {
+  padding: 15px 0 15px 6px; }
+  @media (min-width: 56.25em) {
+    section.ama__forum_comments {
+      padding: 15px 42px; } }
 
 #block-ama-one-forums-content > .indented {
   border: 1px solid #e2e2e2; }
@@ -5864,6 +5904,197 @@ section.ama__forum_comments, #block-ama-one-forums-content {
 
 section.ama__forum_comments {
   background-color: #f4f4f4; }
+
+.ama__forum-table-wrap table {
+  border-collapse: separate;
+  border-spacing: 0 0.5em;
+  border: none; }
+  .ama__forum-table-wrap table thead,
+  .ama__forum-table-wrap table th {
+    border: none; }
+  .ama__forum-table-wrap table th {
+    border-bottom: solid 1px black; }
+    .ama__forum-table-wrap table th.forum-table-heading {
+      font-weight: normal; }
+  .ama__forum-table-wrap table tr {
+    border: none;
+    border-top: 1px solid #cecece; }
+    .ama__forum-table-wrap table tr .forum-title {
+      font-size: 22px; }
+    .ama__forum-table-wrap table tr .subforum-listing {
+      margin-left: 2em; }
+  .ama__forum-table-wrap table td {
+    border: none;
+    background: none;
+    border-bottom: 1px solid #cecece; }
+  .ama__forum-table-wrap table .forum-heading {
+    width: 70%; }
+  .ama__forum-table-wrap table .ama__column-centered {
+    text-align: center; }
+
+.ama__forum-table-wrap table {
+  border-collapse: separate;
+  border-spacing: 0 0.5em;
+  border: none; }
+  .ama__forum-table-wrap table thead,
+  .ama__forum-table-wrap table th {
+    border: none; }
+  .ama__forum-table-wrap table th {
+    border-bottom: solid 1px black; }
+    .ama__forum-table-wrap table th.forum-table-heading {
+      font-weight: normal; }
+  .ama__forum-table-wrap table tr {
+    border: none;
+    border-top: 1px solid #cecece; }
+    .ama__forum-table-wrap table tr .forum-title {
+      font-size: 22px; }
+      .ama__forum-table-wrap table tr .forum-title span {
+        font-weight: 600; }
+    .ama__forum-table-wrap table tr .subforum-listing {
+      margin-left: 2em;
+      padding: 14px 0px 23px 0px; }
+      .ama__forum-table-wrap table tr .subforum-listing a {
+        font-weight: 600; }
+    .ama__forum-table-wrap table tr [data-th="Topics"] span,
+    .ama__forum-table-wrap table tr [data-th="Posts"] span,
+    .ama__forum-table-wrap table tr [data-th="Last post"] span {
+      position: relative;
+      bottom: 34px; }
+  .ama__forum-table-wrap table td {
+    border: none;
+    background: none;
+    border-bottom: 1px solid #cecece;
+    padding-bottom: 0em; }
+
+@media (min-width: 25em) {
+  #ama__forums #block-pagetitle h1 {
+    margin-top: 1.5rem;
+    margin-bottom: .75rem; } }
+
+@media (min-width: 37.5em) {
+  #ama__forums #block-pagetitle h1 {
+    margin-bottom: 3.5rem;
+    margin-top: 4rem; } }
+
+.ama__topic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 28px; }
+  .ama__topic-header {
+    padding: 7px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%; }
+    @media (min-width: 25em) {
+      .ama__topic-header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    @media (min-width: 37.5em) {
+      .ama__topic-header {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; } }
+  .ama__topic-author {
+    margin-right: 12px;
+    -ms-flex-item-align: start;
+    align-self: flex-start; }
+    .ama__topic-author a {
+      color: #027DBC;
+      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+      font-weight: 600;
+      text-decoration: none; }
+  .ama__topic-date {
+    color: #5C5C5C; }
+  .ama__topic-print {
+    margin-left: auto; }
+    @media (min-width: 25em) {
+      .ama__topic-print {
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1; } }
+    @media (min-width: 37.5em) {
+      .ama__topic-print {
+        -webkit-box-ordinal-group: inherit;
+        -ms-flex-order: inherit;
+        order: inherit; } }
+    .ama__topic-print a {
+      position: relative;
+      padding-right: 2.2em;
+      text-decoration: none;
+      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+      font-weight: 600;
+      color: #46166B; }
+      .ama__topic-print a svg {
+        position: relative;
+        height: 23px;
+        width: 26px;
+        top: 6px; }
+      .ama__topic-print a .icon {
+        content: " ";
+        background-image: url("../icons/svg/icon-print.svg");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+        height: 23px;
+        width: 26px;
+        position: absolute;
+        right: 0;
+        top: 0; }
+  @media (min-width: 25em) {
+    .ama__topic-body {
+      margin-bottom: 0; } }
+  @media (min-width: 37.5em) {
+    .ama__topic-body {
+      margin-bottom: 1em; } }
+  .ama__topic-body ol {
+    margin: 0 0 2em 1em; }
+    .ama__topic-body ol:last-child {
+      margin-bottom: 0; }
+    .ama__topic-body ol li {
+      margin-bottom: 1em; }
+      .ama__topic-body ol li ol {
+        list-style-type: lower-alpha;
+        padding-left: 0;
+        margin-top: 1rem;
+        margin-bottom: 2em; }
+        .ama__topic-body ol li ol li {
+          margin-bottom: 1em; }
+  .ama__topic-resolution {
+    font-weight: bold;
+    margin-bottom: .5em; }
+  .ama__topic-downloads {
+    margin-bottom: 1.5em; }
+    .ama__topic-downloads a {
+      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+      font-weight: 900;
+      color: #027DBC;
+      text-decoration: none; }
+    .ama__topic-downloads svg {
+      position: relative;
+      top: 6px; }
+  .ama__topic-comment a {
+    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    font-weight: 900;
+    color: #027DBC;
+    text-decoration: none; }
+
+.new-comment {
+  top: -120px;
+  position: relative; }
+  .new-comment.is_admin {
+    top: -180px; }
 
 .global-search-trigger {
   position: relative;
