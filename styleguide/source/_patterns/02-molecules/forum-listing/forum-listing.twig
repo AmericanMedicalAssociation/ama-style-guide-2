@@ -1,14 +1,17 @@
+{% if forumListing.showHeader %}
+
 <div class="ama__forum-table-wrap">
     <table>
         <thead>
-            <tr>
-                <th class="tl-forum-title">{{ forumListing.toplevelForum.title }}</th>
-                <th class="ama__column-centered forum-table-heading">Topics</th>
-                <th class="ama__column-centered forum-table-heading">Posts</th>
-                <th class="forum-table-heading">Last post</th>
-            </tr>
+        <tr>
+            <th class="tl-forum-title">{{ forumListing.toplevelForum.title }}</th>
+            <th class="ama__column-centered forum-table-heading">Topics</th>
+            <th class="ama__column-centered forum-table-heading">Posts</th>
+            <th class="forum-table-heading">Last post</th>
+        </tr>
         </thead>
         <tbody>
+        {% endif %}
         <tr>
             <td data-th="Forum">
                 <span class="bt-content">
@@ -32,6 +35,8 @@
             <td class="ama__column-centered" data-th="Posts"><span class="bt-content">4</span></td>
             <td data-th="Last post"><span class="bt-content">n/a</span></td>
         </tr>
+        {% if forumListing.showHeader %}
         </tbody>
     </table>
 </div>
+{% endif %}
