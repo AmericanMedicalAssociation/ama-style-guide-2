@@ -136,18 +136,10 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
     }
   }
 }
-#block-ama-one-forums-content {
-  padding: 0;
-}
-section.ama__forum_comments {
-   padding: 15px 0 15px;
+section.ama__forum_comments, #block-ama-one-forums-content {
+   padding: 0;
    position: relative;
    padding-left: 6px;
-
-  @include breakpoint($bp-med) {
-    padding: 42px;
-  }
-
 
   h2 {
     padding-top: 15px;
@@ -209,16 +201,32 @@ section.ama__forum_comments {
      .indented {
        border-left: 6px solid #d1c5da;
        margin-right: 0;
-       margin-left: 28px;
+       margin-left: 0;
+
+       @include breakpoint($bp-med) {
+         margin: 0 0 0 28px;
+       }
      }
 
      > .ama__comment {
        border-left: 6px solid #d1c5da;
        border-bottom: transparent;
-       margin: 0 0 0 28px;
+       margin: 0;
+
+       @include breakpoint($bp-med) {
+         margin: 0 0 0 28px;
+       }
+
      }
    }
  }
+section.ama__forum_comments {
+  padding: 15px 0 15px 6px;
+
+  @include breakpoint($bp-med) {
+    padding: 15px 42px;
+  }
+}
 #block-ama-one-forums-content {
   > .indented {
     border: 1px solid #e2e2e2;
