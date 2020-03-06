@@ -62,7 +62,7 @@
         top: 6px;
       }
       .icon {
-        content: " . ";
+        content: " ";
         background-image: url("../icons/svg/icon-print.svg");
         background-repeat: no-repeat;
         background-position: 0 0;
@@ -104,12 +104,7 @@
   }
   &-resolution {
     font-weight: bold;
-    @include breakpoint($bp-xs) {
-      margin-bottom: .5em;
-    }
-    @include breakpoint($bp-small) {
-      margin-bottom: .5em;
-    }
+    margin-bottom: .5em;
   }
   &-downloads {
     margin-bottom: 1.5em;
