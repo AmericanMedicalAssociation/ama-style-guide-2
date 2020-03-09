@@ -1,4 +1,5 @@
-.ama__forum-table-wrap {
+.ama__forum-table-wrap,
+.ama__topic-table-wrap {
   table {
     border-collapse: separate;
     border-spacing: 0 0.5em;
@@ -47,6 +48,9 @@
       [data-th="Last post"] span {
         position: relative;
         bottom: 34px;
+      }
+      [data-th="Last post"] span span {
+        bottom: 0;
       }
     }
 
