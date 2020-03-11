@@ -240,6 +240,14 @@ section.ama__forum_comments {
     }
   }
 }
-section.ama__forum_comments {
+.ama__forum_comments {
   background-color: #f4f4f4;
+
+  &__form {
+    margin-top: 60px;
+  }
+}
+
+.forum-reply .form-item.form-item-subject-0-value {
+  @extend .is-hidden;
 }
