@@ -47,14 +47,22 @@
         }
       }
 
-      [data-th="Topics"] span,
-      [data-th="Posts"] span,
-      [data-th="Last post"] span {
-        position: relative;
-        bottom: 34px;
+      [data-th="Topics"],
+      [data-th="Posts"],
+      [data-th^="Resolution"],
+      [data-th="Replies"],
+      [data-th="Last post"],
+      [data-th="Last reply"] {
+        span {
+          position: relative;
+          bottom: 34px;
+        }
       }
-      [data-th="Last post"] span span {
-        bottom: 0;
+      [data-th="Last post"],
+      [data-th="Last reply"] {
+        span span {
+          top: 13px;
+        }
       }
     }
 
@@ -110,11 +118,13 @@
 }
 
 #block-ama-one-forums-content {
-  .action-links.ama__button--secondary a {
-    color: #46166B;
-    text-decoration: none;
+  .action-links.ama__button--secondary {
+    a {
+      color: #46166B;
+      text-decoration: none;
+    }
 
-    &:hover {
+    &:hover a {
       color: white;
     }
   }
