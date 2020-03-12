@@ -5,6 +5,10 @@
     border-spacing: 0 0.5em;
     border: none;
 
+    tr:last-child td {
+      border-bottom: none;
+    }
+
     thead,
     th {
       border: none;
@@ -58,17 +62,28 @@
       border: none;
       background: none;
       border-bottom: 1px solid #cecece;
-      height: 126px;
+      height: min-content;
       padding-bottom: 0em;
+
+      @include breakpoint($bp-small) {
+        height: 126px;
+      }
     }
 
   }
 }
 
 .ama__topic-table-wrap {
+  table {
+    tr {
+      border-top: 1px solid #979797;
+    }
+  }
+
   th a {
     font-weight: normal;
     font-size: 20px;
+    color: black;
   }
 
   th:first-child a {
@@ -80,7 +95,7 @@
   th:nth-child(2) a {
     display: flex;
     flex-direction: row;
-    width: 7em;
+    width: 6em;
   }
 
   th:nth-child(2) a span {
