@@ -128,4 +128,31 @@
       color: white;
     }
   }
+
+  a.print_forum_link {
+    position:relative;
+    padding-right: 1.7em;
+    text-decoration: none;
+    @include type($myriad-pro, $font-weight-semibold);
+    color: $purple;
+    svg {
+      position: relative;
+      height: 23px;
+      width:26px;
+      top: 6px;
+    }
+  }
+
+  a.print_forum_link:after {
+    content: " ";
+    background-image: url("../icons/svg/icon-print.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    height: 23px;
+    width: 26px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
