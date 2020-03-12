@@ -483,7 +483,7 @@ label {
  * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 /* Completely remove from the flow and screen readers. */
-.is-hidden {
+.is-hidden, .forum-reply .form-item.form-item-subject-0-value {
   display: none !important;
   visibility: hidden !important; }
 
@@ -5686,6 +5686,78 @@ blockquote {
     .ama__form__section, .ama__form__section.ui-accordion-content {
       margin-left: 75px; } }
 
+/**
+ * Styles for the Forum Topic Node Creation Form, exposed to most user roles.
+ */
+.node-forum-form h1 {
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 900;
+  margin-top: .75em; }
+
+#node-forum-form .form-item-body-0-value {
+  margin-bottom: 0; }
+
+#node-forum-form #edit-body-0-format {
+  border: none; }
+  #node-forum-form #edit-body-0-format #edit-body-0-format-help-about {
+    color: #027DBC;
+    text-decoration: none;
+    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    font-weight: 600; }
+    #node-forum-form #edit-body-0-format #edit-body-0-format-help-about:after {
+      background: transparent url("../icons/svg/icon-question.svg");
+      top: 4px; }
+
+#node-forum-form .form-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: inherit 0; }
+  @media (max-width: 56.25em) {
+    #node-forum-form .form-actions {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      #node-forum-form .form-actions .button {
+        width: 100%;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%; } }
+  @media (min-width: 56.25em) {
+    #node-forum-form .form-actions {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      #node-forum-form .form-actions .button {
+        width: 220px; }
+        #node-forum-form .form-actions .button:last-child {
+          margin-left: 1em; } }
+
+#node-forum-form .text-summary-wrapper {
+  display: block; }
+
+#node-forum-form .field--type-text-with-summary .form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  #node-forum-form .field--type-text-with-summary .form-item .form-item-body-0-value {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1; }
+  #node-forum-form .field--type-text-with-summary .form-item .filter-wrapper {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1; }
+  #node-forum-form .field--type-text-with-summary .form-item .form-item-body-0-summary {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
+
 section.ama__forum_comments > .ama__comment, section.ama__forum_comments .indented > .ama__comment,
 #block-ama-one-forums-content > .ama__comment, #block-ama-one-forums-content .indented > .ama__comment {
   padding: 18px 30px;
@@ -5902,8 +5974,10 @@ section.ama__forum_comments {
   #block-ama-one-forums-content > .indented > .ama__comment {
     border: none; }
 
-section.ama__forum_comments {
+.ama__forum_comments {
   background-color: #f4f4f4; }
+  .ama__forum_comments__form {
+    margin-top: 60px; }
 
 .ama__forum-table-wrap table {
   border-collapse: separate;
