@@ -6006,39 +6006,175 @@ section.ama__forum_comments {
   .ama__forum-table-wrap table .ama__column-centered {
     text-align: center; }
 
-.ama__forum-table-wrap table {
+.ama__forum-table-wrap table,
+.ama__topic-table-wrap table {
   border-collapse: separate;
   border-spacing: 0 0.5em;
   border: none; }
+  .ama__forum-table-wrap table tr:last-child td,
+  .ama__topic-table-wrap table tr:last-child td {
+    border-bottom: none; }
   .ama__forum-table-wrap table thead,
-  .ama__forum-table-wrap table th {
+  .ama__forum-table-wrap table th,
+  .ama__topic-table-wrap table thead,
+  .ama__topic-table-wrap table th {
     border: none; }
-  .ama__forum-table-wrap table th {
+  .ama__forum-table-wrap table th,
+  .ama__topic-table-wrap table th {
     border-bottom: solid 1px black; }
-    .ama__forum-table-wrap table th.forum-table-heading {
-      font-weight: normal; }
-  .ama__forum-table-wrap table tr {
+    .ama__forum-table-wrap table th.forum-table-heading,
+    .ama__topic-table-wrap table th.forum-table-heading {
+      font-weight: normal;
+      font-size: 20px; }
+    .ama__forum-table-wrap table th.tl-forum-title,
+    .ama__topic-table-wrap table th.tl-forum-title {
+      text-transform: uppercase;
+      font-size: 26px; }
+  .ama__forum-table-wrap table tr,
+  .ama__topic-table-wrap table tr {
     border: none;
     border-top: 1px solid #cecece; }
-    .ama__forum-table-wrap table tr .forum-title {
+    .ama__forum-table-wrap table tr .forum-title,
+    .ama__topic-table-wrap table tr .forum-title {
       font-size: 22px; }
-      .ama__forum-table-wrap table tr .forum-title span {
+      .ama__forum-table-wrap table tr .forum-title span,
+      .ama__topic-table-wrap table tr .forum-title span {
         font-weight: 600; }
-    .ama__forum-table-wrap table tr .subforum-listing {
+    .ama__forum-table-wrap table tr .subforum-listing,
+    .ama__topic-table-wrap table tr .subforum-listing {
       margin-left: 2em;
       padding: 14px 0px 23px 0px; }
-      .ama__forum-table-wrap table tr .subforum-listing a {
+      .ama__forum-table-wrap table tr .subforum-listing a,
+      .ama__topic-table-wrap table tr .subforum-listing a {
         font-weight: 600; }
     .ama__forum-table-wrap table tr [data-th="Topics"] span,
     .ama__forum-table-wrap table tr [data-th="Posts"] span,
-    .ama__forum-table-wrap table tr [data-th="Last post"] span {
+    .ama__forum-table-wrap table tr [data-th^="Resolution"] span,
+    .ama__forum-table-wrap table tr [data-th="Replies"] span,
+    .ama__forum-table-wrap table tr [data-th="Last post"] span,
+    .ama__forum-table-wrap table tr [data-th="Last reply"] span,
+    .ama__topic-table-wrap table tr [data-th="Topics"] span,
+    .ama__topic-table-wrap table tr [data-th="Posts"] span,
+    .ama__topic-table-wrap table tr [data-th^="Resolution"] span,
+    .ama__topic-table-wrap table tr [data-th="Replies"] span,
+    .ama__topic-table-wrap table tr [data-th="Last post"] span,
+    .ama__topic-table-wrap table tr [data-th="Last reply"] span {
       position: relative;
-      bottom: 34px; }
-  .ama__forum-table-wrap table td {
+      bottom: 0px; }
+      @media (min-width: 37.5em) {
+        .ama__forum-table-wrap table tr [data-th="Topics"] span,
+        .ama__forum-table-wrap table tr [data-th="Posts"] span,
+        .ama__forum-table-wrap table tr [data-th^="Resolution"] span,
+        .ama__forum-table-wrap table tr [data-th="Replies"] span,
+        .ama__forum-table-wrap table tr [data-th="Last post"] span,
+        .ama__forum-table-wrap table tr [data-th="Last reply"] span,
+        .ama__topic-table-wrap table tr [data-th="Topics"] span,
+        .ama__topic-table-wrap table tr [data-th="Posts"] span,
+        .ama__topic-table-wrap table tr [data-th^="Resolution"] span,
+        .ama__topic-table-wrap table tr [data-th="Replies"] span,
+        .ama__topic-table-wrap table tr [data-th="Last post"] span,
+        .ama__topic-table-wrap table tr [data-th="Last reply"] span {
+          bottom: 34px; } }
+    .ama__forum-table-wrap table tr [data-th^="Resolution"],
+    .ama__forum-table-wrap table tr [data-th="Replies"],
+    .ama__topic-table-wrap table tr [data-th^="Resolution"],
+    .ama__topic-table-wrap table tr [data-th="Replies"] {
+      text-align: center; }
+    .ama__forum-table-wrap table tr [data-th="Last post"] span span,
+    .ama__forum-table-wrap table tr [data-th="Last reply"] span span,
+    .ama__topic-table-wrap table tr [data-th="Last post"] span span,
+    .ama__topic-table-wrap table tr [data-th="Last reply"] span span {
+      top: 13px; }
+  .ama__forum-table-wrap table td,
+  .ama__topic-table-wrap table td {
     border: none;
     background: none;
     border-bottom: 1px solid #cecece;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
     padding-bottom: 0em; }
+    @media (min-width: 37.5em) {
+      .ama__forum-table-wrap table td,
+      .ama__topic-table-wrap table td {
+        height: 126px; } }
+    .ama__forum-table-wrap table td .time,
+    .ama__topic-table-wrap table td .time {
+      display: block; }
+    .ama__forum-table-wrap table td .author a,
+    .ama__topic-table-wrap table td .author a {
+      font-weight: normal; }
+
+.ama__topic-table-wrap table tr {
+  border-top: 1px solid #979797; }
+
+.ama__topic-table-wrap th a {
+  font-weight: normal;
+  font-size: 20px;
+  color: black; }
+
+.ama__topic-table-wrap th:first-child {
+  font-weight: 600;
+  font-size: 26px;
+  text-transform: uppercase; }
+
+.ama__topic-table-wrap th:nth-child(2) a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 6em; }
+
+.ama__topic-table-wrap th:nth-child(2) a span {
+  position: relative;
+  top: 8px; }
+
+.ama__topic-table-wrap th:nth-child(4) {
+  min-width: 11em; }
+
+.ama__topic-table-wrap .forum__title div:first-child {
+  font-size: 22px;
+  font-weight: normal; }
+
+.ama__topic-table-wrap table tr [data-th="Topics"] span {
+  position: relative;
+  bottom: 0px; }
+
+#block-ama-one-forums-content .action-links.ama__button--secondary a {
+  color: #46166B;
+  text-decoration: none;
+  padding: 0px 40px; }
+
+#block-ama-one-forums-content .action-links.ama__button--secondary:hover a {
+  color: white; }
+
+#block-ama-one-forums-content a.print_forum_link {
+  position: relative;
+  padding-right: 1.7em;
+  text-decoration: none;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #46166B; }
+  #block-ama-one-forums-content a.print_forum_link svg {
+    position: relative;
+    height: 23px;
+    width: 26px;
+    top: 6px; }
+
+#block-ama-one-forums-content a.print_forum_link:after {
+  content: " ";
+  background-image: url("../icons/svg/icon-print.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  height: 23px;
+  width: 26px;
+  position: absolute;
+  right: 0;
+  top: 0; }
 
 @media (min-width: 25em) {
   #ama__forums #block-pagetitle h1 {
