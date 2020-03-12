@@ -1,8 +1,13 @@
-.ama__forum-table-wrap {
+.ama__forum-table-wrap,
+.ama__topic-table-wrap {
   table {
     border-collapse: separate;
     border-spacing: 0 0.5em;
     border: none;
+
+    tr:last-child td {
+      border-bottom: none;
+    }
 
     thead,
     th {
@@ -14,6 +19,12 @@
 
       &.forum-table-heading {
         font-weight: normal;
+        font-size: 20px;
+      }
+
+      &.tl-forum-title {
+        text-transform: uppercase;
+        font-size: 26px;
       }
     }
 
@@ -36,11 +47,33 @@
         }
       }
 
-      [data-th="Topics"] span,
-      [data-th="Posts"] span,
-      [data-th="Last post"] span {
-        position: relative;
-        bottom: 34px;
+      [data-th="Topics"],
+      [data-th="Posts"],
+      [data-th^="Resolution"],
+      [data-th="Replies"],
+      [data-th="Last post"],
+      [data-th="Last reply"] {
+
+        span {
+          position: relative;
+          bottom: 0px;
+
+          @include breakpoint($bp-small) {
+            bottom: 34px;
+          }
+        }
+      }
+
+      [data-th^="Resolution"],
+      [data-th="Replies"] {
+        text-align: center;
+      }
+      
+      [data-th="Last post"],
+      [data-th="Last reply"] {
+        span span {
+          top: 13px;
+        }
       }
     }
 
@@ -48,8 +81,109 @@
       border: none;
       background: none;
       border-bottom: 1px solid #cecece;
+      height: min-content;
       padding-bottom: 0em;
+
+      @include breakpoint($bp-small) {
+        height: 126px;
+      }
+
+      .time {
+        display: block;
+      }
+
+      .author a {
+        font-weight: normal;
+      }
     }
 
+  }
+}
+
+.ama__topic-table-wrap {
+  table {
+    tr {
+      border-top: 1px solid #979797;
+    }
+  }
+
+  th a {
+    font-weight: normal;
+    font-size: 20px;
+    color: black;
+  }
+
+  th:first-child {
+    font-weight: 600;
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+
+  th:nth-child(2) a {
+    display: flex;
+    flex-direction: row;
+    width: 6em;
+  }
+
+  th:nth-child(2) a span {
+    position: relative;
+    top: 8px;
+  }
+
+  th:nth-child(4) {
+    min-width: 11em;
+  }
+
+  .forum__title div:first-child {
+    font-size: 22px;
+    font-weight: normal;
+  }
+
+  table tr [data-th="Topics"] {
+    span {
+      position: relative;
+      bottom: 0px;
+    }
+  }
+}
+
+#block-ama-one-forums-content {
+  .action-links.ama__button--secondary {
+    a {
+      color: #46166B;
+      text-decoration: none;
+      padding: 0px 40px;
+    }
+
+    &:hover a {
+      color: white;
+    }
+  }
+
+  a.print_forum_link {
+    position:relative;
+    padding-right: 1.7em;
+    text-decoration: none;
+    @include type($myriad-pro, $font-weight-semibold);
+    color: $purple;
+    svg {
+      position: relative;
+      height: 23px;
+      width:26px;
+      top: 6px;
+    }
+  }
+
+  a.print_forum_link:after {
+    content: " ";
+    background-image: url("../icons/svg/icon-print.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    height: 23px;
+    width: 26px;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
