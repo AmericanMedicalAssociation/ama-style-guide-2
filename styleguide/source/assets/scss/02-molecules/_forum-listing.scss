@@ -76,6 +76,14 @@
       @include breakpoint($bp-small) {
         height: 126px;
       }
+
+      .time {
+        display: block;
+      }
+
+      .author a {
+        font-weight: normal;
+      }
     }
 
   }
@@ -111,12 +119,16 @@
     top: 8px;
   }
 
+  th:nth-child(4) {
+    min-width: 11em;
+  }
+
   .forum__title div:first-child {
     font-size: 22px;
     font-weight: normal;
   }
 
-  [data-th="Topics"] {
+  table tr [data-th="Topics"] {
     span {
       position: relative;
       bottom: 0px;
@@ -129,6 +141,7 @@
     a {
       color: #46166B;
       text-decoration: none;
+      padding: 0px 40px;
     }
 
     &:hover a {
