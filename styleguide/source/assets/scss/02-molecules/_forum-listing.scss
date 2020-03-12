@@ -53,11 +53,22 @@
       [data-th="Replies"],
       [data-th="Last post"],
       [data-th="Last reply"] {
+
         span {
           position: relative;
-          bottom: 34px;
+          bottom: 0px;
+
+          @include breakpoint($bp-small) {
+            bottom: 34px;
+          }
         }
       }
+
+      [data-th^="Resolution"],
+      [data-th="Replies"] {
+        text-align: center;
+      }
+      
       [data-th="Last post"],
       [data-th="Last reply"] {
         span span {
