@@ -68,11 +68,14 @@
       [data-th="Replies"] {
         text-align: center;
       }
-      
+
       [data-th="Last post"],
       [data-th="Last reply"] {
         span span {
           top: 13px;
+          span {
+            top: 0px;
+          }
         }
       }
     }
@@ -132,6 +135,10 @@
 
   th:nth-child(4) {
     min-width: 11em;
+  }
+
+  .forum__topic {
+    width: 70%;
   }
 
   .forum__title div:first-child {
