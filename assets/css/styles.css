@@ -5894,7 +5894,8 @@ section.ama__forum_comments > .ama__comment, section.ama__forum_comments .indent
           font-weight: 600; }
       section.ama__forum_comments > .ama__comment .ama__comment-footer ul.links.inline li:first-child:before, section.ama__forum_comments .indented > .ama__comment .ama__comment-footer ul.links.inline li:first-child:before,
       #block-ama-one-forums-content > .ama__comment .ama__comment-footer ul.links.inline li:first-child:before, #block-ama-one-forums-content .indented > .ama__comment .ama__comment-footer ul.links.inline li:first-child:before {
-        content: ""; }
+        content: "";
+        margin-right: 0; }
   section.ama__forum_comments > .ama__comment a.ama__link--blue, section.ama__forum_comments > .ama__comment a.ama__applied-filters__tag__remove, section.ama__forum_comments > .ama__comment .ama__promo--inline-banner a, .ama__promo--inline-banner section.ama__forum_comments > .ama__comment a, section.ama__forum_comments .indented > .ama__comment a.ama__link--blue, section.ama__forum_comments .indented > .ama__comment a.ama__applied-filters__tag__remove, section.ama__forum_comments .indented > .ama__comment .ama__promo--inline-banner a, .ama__promo--inline-banner section.ama__forum_comments .indented > .ama__comment a,
   #block-ama-one-forums-content > .ama__comment a.ama__link--blue,
   #block-ama-one-forums-content > .ama__comment a.ama__applied-filters__tag__remove,
@@ -6085,6 +6086,11 @@ section.ama__forum_comments {
     .ama__topic-table-wrap table tr [data-th="Last post"] span span,
     .ama__topic-table-wrap table tr [data-th="Last reply"] span span {
       top: 13px; }
+      .ama__forum-table-wrap table tr [data-th="Last post"] span span span,
+      .ama__forum-table-wrap table tr [data-th="Last reply"] span span span,
+      .ama__topic-table-wrap table tr [data-th="Last post"] span span span,
+      .ama__topic-table-wrap table tr [data-th="Last reply"] span span span {
+        top: 0px; }
   .ama__forum-table-wrap table td,
   .ama__topic-table-wrap table td {
     border: none;
@@ -6134,6 +6140,9 @@ section.ama__forum_comments {
 
 .ama__topic-table-wrap th:nth-child(4) {
   min-width: 11em; }
+
+.ama__topic-table-wrap .forum__topic {
+  width: 70%; }
 
 .ama__topic-table-wrap .forum__title div:first-child {
   font-size: 22px;
