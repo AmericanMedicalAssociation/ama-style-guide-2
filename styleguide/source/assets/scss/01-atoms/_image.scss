@@ -52,14 +52,18 @@ figure.embedded-entity.align-right {
 .embedded-entity {
 
   &.align-right {
-    
+
     @include gutter($margin-left-half...);
     float: right;
-    width: auto;;
+    width: auto;
   }
 
   &.align-center {
     text-align: center;
   }
-  
+
+  &.align-left {
+    @include gutter($margin-right-half...);
+    width: auto;
+  }
 }
