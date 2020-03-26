@@ -1,10 +1,14 @@
 .ama__bio-image-with-body {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 
   &__image {
     min-width: 280px;
     max-width: 280px;
+    img {
+      border-radius: 50%;
+    }
   }
 
   &__copy {
