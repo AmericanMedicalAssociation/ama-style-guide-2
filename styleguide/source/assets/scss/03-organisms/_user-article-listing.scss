@@ -2,10 +2,24 @@
   border-bottom: 1px solid #ededed;
   display: flex;
   padding: 30px 0;
+  flex-direction: column-reverse;
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
 
   &__image {
-    margin: 0 0 15px 15px;
+    margin: 0 0 15px 0;
     min-width: 179px;
+
+    img {
+      width: 100%;
+    }
+
+    @include breakpoint($bp-small) {
+      margin: 0 0 15px 15px;
+      width: 179px;
+    }
   }
 }
 .article-listing__link {
