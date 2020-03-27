@@ -1,21 +1,64 @@
 .ama__bio-image-with-body {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  .ama__link--icon svg {
+    max-height: 45px;
+    max-width: 45px;
+  }
 
   &__image {
+    min-width: 0;
+    max-width: 0;
     min-width: 280px;
     max-width: 280px;
+    margin: 0 auto;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   &__copy {
     flex-grow: 1;
   }
 
-  @include breakpoint($bp-small min-width) {
+  dt, dd {
+    display: block;
+    width: 100%;
+  }
+
+  @include breakpoint($bp-small) {
     flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    text-align: center;
+
+    &__image {
+      margin: 0 auto;
+    }
+  }
+
+  @include breakpoint($bp-med) {
+    flex-direction: row;
+    justify-content: left;
+    text-align: left;
+    flex-wrap: nowrap;
+
+    dt, dd {
+      width: auto;
+    }
 
     &__copy {
       @include gutter($margin-left-full...);
+    }
+
+    &__image {
+      min-width: 280px;
+      max-width: 280px;
     }
   }
 }

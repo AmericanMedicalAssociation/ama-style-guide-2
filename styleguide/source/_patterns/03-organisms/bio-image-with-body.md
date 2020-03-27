@@ -23,6 +23,14 @@ Paragraph atoms
       width:
         type: string / required
     },
+    "heading": {
+      "level": "1",
+      "text": "Dr. John P. Doe, MD, MA",
+      "class": "ama__h1"
+    },
+    "subtitle": {
+      "text": "Primary Position/Title, <a href=\"#\">AMA Affiliation</a>"
+    },
     "bioSections": [
       {
         "heading": type: string / optional
