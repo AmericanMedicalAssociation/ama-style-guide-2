@@ -3129,6 +3129,13 @@ figure.embedded-entity.align-right {
 .embedded-entity.align-center {
   text-align: center; }
 
+.embedded-entity.align-left {
+  margin-right: 10px;
+  width: auto; }
+  @media (min-width: 56.25em) {
+    .embedded-entity.align-left {
+      margin-right: 14px; } }
+
 /* Links */
 a {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -6767,11 +6774,14 @@ section.ama__forum_comments {
     .ama__inline-bio__text > :first-child {
       color: #000000; }
   .ama__inline-bio__link {
-    font-size: 1.5em;
     display: block;
-    margin-top: -20px;
-    margin-left: -5px;
-    margin-bottom: 15px; }
+    font-weight: 600; }
+    .ama__inline-bio__link--full {
+      font-size: 1.5em;
+      margin-top: -20px;
+      margin-left: -5px;
+      margin-bottom: 15px;
+      font-weight: 400; }
     .ama__inline-bio__link svg {
       fill: #027DBC; }
 
@@ -11670,6 +11680,9 @@ section.ama__page--event__speakers {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; } }
+
+article.ama__people-bio a.ama__masthead__content__link {
+  padding-bottom: 0; }
 
 .ama__member-feature {
   margin-top: 20px;
