@@ -6767,11 +6767,11 @@ section.ama__forum_comments {
     .ama__inline-bio__text > :first-child {
       color: #000000; }
   .ama__inline-bio__link {
-    font-size: 1em;
+    font-size: 1.5em;
     display: block;
-    margin-top: 6px;
-    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-    font-weight: 600; }
+    margin-top: -20px;
+    margin-left: -5px;
+    margin-bottom: 15px; }
     .ama__inline-bio__link svg {
       fill: #027DBC; }
 
@@ -10225,37 +10225,81 @@ article[class*='__page-content'] .ama__tags {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center; }
+  .ama__bio-image-with-body .ama__link--icon svg {
+    max-height: 45px;
+    max-width: 45px; }
   .ama__bio-image-with-body__image {
+    min-width: 0;
+    max-width: 0;
     min-width: 280px;
-    max-width: 280px; }
+    max-width: 280px;
+    margin: 0 auto; }
+    .ama__bio-image-with-body__image img {
+      border-radius: 50%; }
   .ama__bio-image-with-body__copy {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
+  .ama__bio-image-with-body dt, .ama__bio-image-with-body dd {
+    display: block;
+    width: 100%; }
   @media (min-width: 37.5em) {
     .ama__bio-image-with-body {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
-      flex-direction: row; }
+      flex-direction: row;
+      -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      text-align: center; }
+      .ama__bio-image-with-body__image {
+        margin: 0 auto; } }
+  @media (min-width: 56.25em) {
+    .ama__bio-image-with-body {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: left;
+      -ms-flex-pack: left;
+      justify-content: left;
+      text-align: left;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
+      .ama__bio-image-with-body dt, .ama__bio-image-with-body dd {
+        width: auto; }
       .ama__bio-image-with-body__copy {
         margin-left: 20px; } }
-    @media (min-width: 37.5em) and (min-width: 56.25em) {
+    @media (min-width: 56.25em) and (min-width: 56.25em) {
       .ama__bio-image-with-body__copy {
         margin-left: 28px; } }
+  @media (min-width: 56.25em) {
+      .ama__bio-image-with-body__image {
+        min-width: 280px;
+        max-width: 280px; } }
 
 .ama__bio-section {
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
   @media (min-width: 56.25em) {
     .ama__bio-section {
-      margin-bottom: 28px; } }
+      margin-bottom: 14px; } }
   .ama__bio-section__header {
-    margin-bottom: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
     display: block; }
     @media (min-width: 56.25em) {
       .ama__bio-section__header {
-        margin-bottom: 14px; } }
+        padding-bottom: 7px; } }
 
 .bpCalculator {
   margin-top: 20px; }
@@ -11472,6 +11516,8 @@ section.ama__page--event__speakers {
           flex-direction: row; } }
     .ama__masthead__content__title {
       width: 100%; }
+      .ama__masthead__content__title--empty > a {
+        padding-bottom: 0; }
       .ama__masthead__content__title--centered .ama__subtitle {
         font-size: 18px;
         font-weight: normal; }
@@ -12683,6 +12729,35 @@ section#related_links .ama__membership ul {
       .ama__tools h3, .ama__tools .ama__expand-list .ui-accordion-header__text, .ama__expand-list .ama__tools .ui-accordion-header__text, .ama__tools .ama__expand-list__header__text {
         padding-bottom: 7px; } }
 
+.ama__user-article-listing {
+  border-bottom: 1px solid #ededed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse; }
+  @media (min-width: 37.5em) {
+    .ama__user-article-listing {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; } }
+  .ama__user-article-listing__image {
+    margin: 0 0 15px 0;
+    min-width: 179px; }
+    .ama__user-article-listing__image img {
+      width: 100%; }
+    @media (min-width: 37.5em) {
+      .ama__user-article-listing__image {
+        margin: 0 0 15px 15px;
+        width: 179px; } }
+
+.article-listing__link {
+  text-decoration: none; }
+
 .ama__wayfinder {
   border-bottom: solid 1px #7F7F7F; }
   .ama__wayfinder__grid {
@@ -13754,6 +13829,15 @@ section#related_links .ama__membership ul {
   @media (min-width: 56.25em) {
     .ama__people-bio .ama__membership {
       margin-bottom: 28px; } }
+
+.ama__people-bio .user-article-listing-view > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 60px; }
 
 .ama__people-listing .ama__people-listing__card-container {
   display: -webkit-box;
