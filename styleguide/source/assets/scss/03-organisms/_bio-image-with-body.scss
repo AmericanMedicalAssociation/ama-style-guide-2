@@ -5,35 +5,21 @@
   justify-content: center;
   text-align: center;
 
-  .ama__link--icon svg {
-    max-height: 45px;
-    max-width: 45px;
-  }
-
-  &__image {
-
-    img {
-      border-radius: 50%;
-    }
-  }
-
-  &__copy {
-    flex-grow: 1;
-  }
-
-  dt, dd {
-    display: block;
-    width: 100%;
-  }
-
-  @include breakpoint($bp-small) {
-    flex-direction: row;
+  @include breakpoint($bp-xs) {
+    flex-direction: column;
     flex-wrap: no-wrap;
     justify-content: center;
     text-align: center;
+    align-items: center;
 
     &__image {
-      margin: 0 15px 0 0;
+      margin: 0;
+      align-self: center;
+    }
+
+    dt, dd {
+      display: block;
+      width: 100%;
     }
   }
 
@@ -50,16 +36,25 @@
     &__image {
       width: auto;
       min-width: 0;
-      max-width: 210px;
       margin: 0 15px 0 0;
     }
   }
-}
-.ama__people-bio {
-  .ama__bio-image-with-body {
-    &__image {
-      min-width: 0;
-      max-width: 210px;
+
+  .ama__link--icon svg {
+    max-height: 45px;
+    max-width: 45px;
+  }
+
+  &__image {
+    min-width: 0;
+    max-width: 210px;
+    align-self: center;
+    img {
+      border-radius: 50%;
     }
+  }
+
+  &__copy {
+    flex-grow: 1;
   }
 }
