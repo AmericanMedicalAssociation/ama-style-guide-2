@@ -1,17 +1,17 @@
 .ama__search-result {
-  @include gutter($padding-bottom-half...);
   @include gutter($margin-bottom-half...);
-  display: flex;
   border-bottom: 1px solid $gray-50;
-
-  //Drupal adds divs that breaks layout
-  & > div {
-    width: 100%;
-  }
 
   //Because Drupal adds divs which breaks flexbox
   .views-row {
     display: flex;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    @include gutter($padding-bottom-half...);
+    width: 100%;
   }
 
   &__category {
@@ -25,26 +25,21 @@
   }
 
   &__title {
-    a {
-      text-decoration: none;
 
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
-
-      .ama__search-result--best-bet & {
-        color: $homepagePurple;
-      }
+    .ama__search-result--best-bet & {
+      color: $homepagePurple;
     }
   }
 
-  &--best-bet {
-    margin-bottom: 0;
+  &:hover .ama__search-result__title {
+    text-decoration: underline;
+  }
 
-    & > div {
-      width: auto;
-    }
+  &--best-bet {
+    display: flex;
+    margin-bottom: 0;
+    margin-left: 0;
+    @include gutter($padding-bottom-half...);
 
     p {
       line-height: 1.25em;
@@ -71,6 +66,8 @@
   }
 
   &:not(.ama__search-result--best-bet) {
+    @include gutter($padding-bottom-half...);
+
     .ama__search-result__title {
       @include font-size($h3-font-sizes);
     }
