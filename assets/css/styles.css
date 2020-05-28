@@ -10155,85 +10155,81 @@ article[class*='__page-content'] .ama__tags {
           padding-right: 0;
           height: 0; } }
 
-.ama__search-result {
-  margin-bottom: 10px;
+.ama__search-result .views-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.ama__search-result__link {
+  display: block;
+  text-decoration: none;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
   border-bottom: 1px solid #767676; }
   @media (min-width: 56.25em) {
-    .ama__search-result {
-      margin-bottom: 14px; } }
-  .ama__search-result .views-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .ama__search-result__link {
-    display: block;
-    text-decoration: none;
-    padding-bottom: 10px;
-    width: 100%; }
+    .ama__search-result__link {
+      padding-bottom: 14px; } }
+  @media (min-width: 56.25em) {
+    .ama__search-result__link {
+      padding-top: 14px; } }
+
+.ama__search-result__category {
+  font-weight: 600;
+  margin: 0; }
+  .ama__search-result--best-bet .ama__search-result__category {
+    display: none; }
+
+.ama__search-result--best-bet .ama__search-result__title {
+  color: #7229D1; }
+
+.ama__search-result:hover .ama__search-result__title {
+  text-decoration: underline; }
+
+.ama__search-result--best-bet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  margin-left: 0; }
+  .ama__search-result--best-bet p, .ama__search-result--best-bet .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__search-result--best-bet .ama__image__text__subtitle, .ama__search-result--best-bet .ama__resource-link--inline__text {
+    line-height: 1.25em; }
+  .ama__search-result--best-bet__text {
+    margin-right: 10px;
+    width: unset;
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
+    flex: 2; }
     @media (min-width: 56.25em) {
-      .ama__search-result__link {
-        padding-bottom: 14px; } }
-  .ama__search-result__category {
-    font-weight: 600;
-    margin: 0; }
-    .ama__search-result--best-bet .ama__search-result__category {
-      display: none; }
-  .ama__search-result--best-bet .ama__search-result__title {
-    color: #7229D1; }
-  .ama__search-result:hover .ama__search-result__title {
-    text-decoration: underline; }
-  .ama__search-result--best-bet {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding-bottom: 10px; }
+      .ama__search-result--best-bet__text {
+        margin-right: 14px; } }
+  .ama__search-result--best-bet__image {
+    margin-left: 20px;
+    display: none; }
     @media (min-width: 56.25em) {
-      .ama__search-result--best-bet {
-        padding-bottom: 14px; } }
-    .ama__search-result--best-bet p, .ama__search-result--best-bet .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__search-result--best-bet .ama__image__text__subtitle, .ama__search-result--best-bet .ama__resource-link--inline__text {
-      line-height: 1.25em; }
-    .ama__search-result--best-bet__text {
-      margin-right: 10px;
-      width: unset;
-      -webkit-box-flex: 2;
-      -ms-flex: 2;
-      flex: 2; }
-      @media (min-width: 56.25em) {
-        .ama__search-result--best-bet__text {
-          margin-right: 14px; } }
-    .ama__search-result--best-bet__image {
-      margin-left: 20px;
-      display: none; }
-      @media (min-width: 56.25em) {
-        .ama__search-result--best-bet__image {
-          margin-left: 28px; } }
-      .ama__search-result--best-bet__image .ama__image {
-        max-width: 283px; }
-      @media (min-width: 56.25em) {
-        .ama__search-result--best-bet__image {
-          display: block; } }
-  .ama__search-result:not(.ama__search-result--best-bet) {
-    padding-bottom: 10px; }
+      .ama__search-result--best-bet__image {
+        margin-left: 28px; } }
+    .ama__search-result--best-bet__image .ama__image {
+      max-width: 283px; }
     @media (min-width: 56.25em) {
-      .ama__search-result:not(.ama__search-result--best-bet) {
-        padding-bottom: 14px; } }
+      .ama__search-result--best-bet__image {
+        display: block; } }
+
+.ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
+  font-size: 1.1em;
+  line-height: 1.182; }
+  @media screen and (min-width: 37.5em) {
     .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
       font-size: 1.1em;
-      line-height: 1.182; }
-      @media screen and (min-width: 37.5em) {
-        .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
-          font-size: 1.1em;
-          line-height: 1.182; } }
-      @media screen and (min-width: 56.25em) {
-        .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
-          font-size: 1.222em;
-          line-height: 1.182; } }
-      @media screen and (min-width: 75em) {
-        .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
-          font-size: 1.222em;
-          line-height: 1.182; } }
+      line-height: 1.182; } }
+  @media screen and (min-width: 56.25em) {
+    .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
+      font-size: 1.222em;
+      line-height: 1.182; } }
+  @media screen and (min-width: 75em) {
+    .ama__search-result:not(.ama__search-result--best-bet) .ama__search-result__title {
+      font-size: 1.222em;
+      line-height: 1.182; } }
 
 .ama__bio-image-with-body {
   display: -webkit-box;
@@ -13242,6 +13238,9 @@ section#related_links .ama__membership ul {
   @media (min-width: 56.25em) and (min-width: 56.25em) {
     .ama__layout--two-column--left__sidebar--primary {
       padding-left: 28px; } }
+
+body.search-results .ama__layout--two-column--left__page-content {
+  padding-top: 0; }
 
 .ama__layout--two-column--right {
   display: -ms-grid;

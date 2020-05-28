@@ -1,6 +1,4 @@
 .ama__search-result {
-  @include gutter($margin-bottom-half...);
-  border-bottom: 1px solid $gray-50;
 
   //Because Drupal adds divs which breaks flexbox
   .views-row {
@@ -11,7 +9,9 @@
     display: block;
     text-decoration: none;
     @include gutter($padding-bottom-half...);
+    @include gutter($padding-top-half...);
     width: 100%;
+    border-bottom: 1px solid $gray-50;
   }
 
   &__category {
@@ -39,7 +39,6 @@
     display: flex;
     margin-bottom: 0;
     margin-left: 0;
-    @include gutter($padding-bottom-half...);
 
     p {
       line-height: 1.25em;
@@ -66,8 +65,6 @@
   }
 
   &:not(.ama__search-result--best-bet) {
-    @include gutter($padding-bottom-half...);
-
     .ama__search-result__title {
       @include font-size($h3-font-sizes);
     }
