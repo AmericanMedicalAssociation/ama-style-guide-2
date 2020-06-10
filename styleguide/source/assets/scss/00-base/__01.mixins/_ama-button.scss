@@ -26,6 +26,18 @@
       color: $white;
     }
   }
+  
+  @else if($style == "subscribe") {
+    background-color: $orange-medium !important;
+    color: $black !important;
+
+    &:hover {
+      border-color: transparent !important;
+      background-color: $orange-light !important;
+      color: $gray-64 !important;
+    }
+  }
+
   //outline
   @else if($style == "reset") {
     background-color: transparent;

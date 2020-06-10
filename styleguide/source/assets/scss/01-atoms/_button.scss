@@ -23,6 +23,10 @@ button {
     @include ama-button("", "reset");
   }
 
+  &--subscribe {
+    @include ama-button("", "subscribe");
+  }
+
   &--homepage {
     @include ama-button("", "homepage");
   }
@@ -38,9 +42,12 @@ button {
       @include ama-button("", "promo-secondary");
     }
   }
+
   &--link {
     @include ama-button("", "link");
   }
+
+
 }
 
 .ama__button--small.ama__button--tertiary  {
