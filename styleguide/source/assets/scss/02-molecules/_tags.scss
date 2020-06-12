@@ -23,14 +23,20 @@ article[class*='__page-content'] .ama__tags {
 .ama__tag {
   @include gutter($margin-right-half...);
   @include gutter($margin-bottom-half...);
-  @include gutter-all($padding-all-half...);
+  font-size: 14px;
   text-decoration: none;
   display: block;
   background: $gray-7;
-  color: $purple;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: $black !important;
   white-space: nowrap;
+  height: 34px;
+  padding: 5px 15px 4px 14px;
 
   &:hover{
-    text-decoration: underline;
+    background-color: $white;
+    border: 1px solid $gray-30;
+    text-decoration: none;
   }
 }
