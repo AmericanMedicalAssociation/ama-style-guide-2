@@ -1,25 +1,36 @@
 {% set
-  link, button, paragraph, heading =
+  link, button, paragraph, siteLogo, image, heading =
   membership.link,
   membership.button,
   membership.paragraph,
+  membership.siteLogo,
+  membership.image,
   membership.heading|merge({
     "level": "2",
     "class": "ama__h2"
   })
 %}
 
-{% if button %}
+  {% if button %}
     <div {{ setAttributes('ama__membership', attributes) }}>
   {% else %}
     <a href="{{ link }}" class="ama__membership">
   {% endif %}
-
+      <div class="ama__membership_logo-container">
+        {% set siteLogo = membership.siteLogo %}
+        {% if siteLogo %}
+          {% include '@atoms/site-logo/site-logo.twig' with {"nolink": true} %}
+        {% endif %}
+      </div>
+  <div class="membership_image">
+    {% include '@atoms/image/image.twig' %}
+  </div>
   {% include '@atoms/heading/heading.twig' %}
   {% include '@atoms/paragraph.twig' %}
 
   {% if button %}
-      {% include '@atoms/button/button.twig' with {"style" : "primary"} %}
+      {% set button = membership.button %}
+      {% include '@atoms/button/button.twig' %}
   {% endif %}
 
 {{ button ? "</div>"|raw : "</a>"|raw }}
