@@ -24,7 +24,7 @@
   &__icon {
     @include gutter($padding-right-half...);
     display: none;
-
+    
     @include breakpoint($bp-med min-width) {
       display: block;
     }
@@ -56,4 +56,27 @@
 
 #downloads .ama__tool {
   border-top: none;
+}
+
+// Content-type Specific Overrides
+.ama__news-article,
+.ama__event-detail,
+.ama__evergreen-page,
+.ama__press-release {
+  .ama__tool {
+     border-top: none;
+     flex: 0 1 50%;
+  
+     @include breakpoint($bp-med max-width) {
+       flex: 0 1 100%;
+     }
+  
+     &:last-of-type {
+      border-bottom: none;
+     }
+
+     &__icon {
+       display: inline-block;
+     }
+  } 
 }
