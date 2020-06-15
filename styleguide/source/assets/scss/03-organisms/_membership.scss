@@ -24,10 +24,15 @@
     min-height: 28px;
     display: flex;
 
-    .membership_image {
+    .ama__membership_logo {
       margin-top: 4px;
       margin-bottom: 4px;
       max-height: 40px;
+
+      img {
+        height: 40px;
+        width: auto;
+      }
     }
   }
 
@@ -54,6 +59,6 @@ a.ama__membership {
 
   &:hover {
     color: $black;
-    background: darken($gray-7, 8%); // from UX - #d9d9d9
+    background: darken(#DAD5DE, 8%);
   }
 }

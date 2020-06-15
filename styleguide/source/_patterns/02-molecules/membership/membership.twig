@@ -17,10 +17,12 @@
     <a href="{{ link }}" class="ama__membership">
   {% endif %}
       <div class="ama__membership_logo-container">
-        {% set siteLogo = membership.siteLogo %}
-        {% if siteLogo %}
-          {% include '@atoms/site-logo/site-logo.twig' with {"nolink": true} %}
-        {% endif %}
+        <div class="ama__membership_logo">
+          {% set siteLogo = membership.siteLogo %}
+          {% if siteLogo %}
+            {% include '@atoms/site-logo/site-logo.twig' with {"nolink": true} %}
+          {% endif %}
+        </div>
       </div>
   <div class="membership_image">
     {% include '@atoms/image/image.twig' %}
