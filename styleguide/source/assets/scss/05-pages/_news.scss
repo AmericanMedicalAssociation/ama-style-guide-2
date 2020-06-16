@@ -22,6 +22,7 @@
       }
     }
   }
+
   .ama__news-heading {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -37,10 +38,10 @@
     }
     .heading-right {
       padding-left:28px;
-
     }
 
     &__content {
+
       &__link {
         @extend %ama__link--blue;
         @extend %ama__h4;
@@ -62,6 +63,7 @@
         @include breakpoint($bp-med) {
           margin-bottom: 20px;
         }
+
         &.ama__h3 {
           @include breakpoint($bp-xs) {
             margin-bottom: 15px;
@@ -71,6 +73,7 @@
           }
         }
       }
+
       .ama__h3 {
         margin-bottom:15px;;
         @include breakpoint($bp-xs) {
@@ -80,6 +83,7 @@
           font-size: 22px;
         }
       }
+
       &__date {
         @include breakpoint($bp-xs) {
           padding-top:0;
