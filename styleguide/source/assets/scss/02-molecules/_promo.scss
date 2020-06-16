@@ -24,67 +24,24 @@
     @extend .col-sm-4;
     @include gutter($padding-top-full...);
     @include gutter($padding-right-full...);
-    @include gutter($padding-left-full...);
     @include gutter($padding-bottom-full...);
     @include gutter($margin-right-full...);
     @include gutter($margin-bottom-full...);
     @include list($left-justified-w-padding, $two-levels);
+    @include breakpoint($bp-small) {
+      float: left;
+    }
     z-index: 500;
-    overflow: auto;
     .ama__button {
       z-index: 500;
     }
-    h2 {
-      @include breakpoint($bp-large) {
-        float: none;
-        width: 100%;
-        flex-basis: 1;
-      }
-      @include breakpoint($bp-med) {
-        width: 60%;
-        float: left;
-      }
-    }
-    div[data-layout-content-preview-placeholder-label='"Body" field'] {
-      p {
-        font-size: 20px;
-      }
-      @include breakpoint($bp-large) {
-        float: none;
-        width: 100%;
-      }
-      @include breakpoint($bp-med) {
-        width: 60%;
-        float: left;
-      }
-    }
 
-    a.ama__button--secondary {
-      color: $black;
-      border: 1px solid $ctaOrange;
-      position: relative;
-      top: 30%;
-      @include breakpoint($bp-large) {
-        float: none;
-        width: auto;
-      }
-      @include breakpoint($bp-med) {
-        width:33%;
-        float: right;
-      }
-      &:hover {
-        background: $ctaOrange;
-        color: $white;
-      }
-    }
-    background-color: $bg-gray;
+    border-top: solid 1px $gray-50;
+    border-bottom: solid 1px $gray-50;
     padding-left: 0;
-    width: 100%;
+
     &.listicle-margin {
       margin-right: 60px;
-    }
-    &--purple {
-
     }
   }
 
