@@ -5,32 +5,76 @@ article[class*='__page-content'] .ama__tags {
   @include gutter($margin-bottom-full...);
   @include gutter($padding-top-full...);
   @include gutter($padding-bottom-full...);
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  flex: 1;
+  align-items: flex-start;
+  flex-direction: column;
+  
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
 
-  li {
-    margin-left: 0;
+  &-text {
+
+    font-weight: bold;
+    margin-right: 5px;
+    @include gutter($padding-bottom-quarter...);
+
+    @include breakpoint($bp-small) {
+      padding: initial;
+    }
+  }
+  
+  &-list {
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column;
+    padding-top: initial;
     list-style: none;
+    align-items: flex-start;
+    
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+    
+    
+    li {
+      @include gutter($margin-bottom-full...);
+      margin-left: 0;
+      list-style: none;
+      
+      @include breakpoint($bp-small) {
+        margin: initial;
+      }
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  
   }
 
-  &:last-child {
-    margin-right: 0;
+  .ama__tag {
+    @include gutter($margin-right-half...);
+    @include gutter($margin-bottom-half...);
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    background: $gray-7;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    color: $black !important;
+    white-space: nowrap;
+    height: 34px;
+    padding: 5px 15px 4px 14px;
+  
+    &:hover{
+      background-color: $white;
+      border: 1px solid $gray-30;
+      text-decoration: none;
+    }
   }
 }
 
-.ama__tag {
-  @include gutter($margin-right-half...);
-  @include gutter($margin-bottom-half...);
-  @include gutter-all($padding-all-half...);
-  text-decoration: none;
-  display: block;
-  background: $gray-7;
-  color: $purple;
-  white-space: nowrap;
 
-  &:hover{
-    text-decoration: underline;
-  }
-}
