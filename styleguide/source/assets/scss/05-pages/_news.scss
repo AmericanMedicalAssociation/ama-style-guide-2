@@ -114,9 +114,11 @@
     .share-region {
       @include breakpoint($bp-xs) {
         visibility: hidden;
+        height: 0;
       }
       @include breakpoint($bp-small) {
         visibility: visible;
+        height: auto;
       }
       grid-column: 4/5;
       .ama__masthead__content__share {
