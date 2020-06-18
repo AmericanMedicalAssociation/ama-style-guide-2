@@ -26,7 +26,29 @@
       color: $white;
     }
   }
-  
+  @else if($style == "complementary") {
+    background-color: $complementary;
+    border-color: $complementary;
+    color: $black;
+
+    &:hover {
+      background-color: $hoverComplementary;
+      border-color: $hoverComplementary;
+      color: $gray-64;
+    }
+  }
+
+  @else if($style == "complementary-secondary") {
+    background-color: $white;
+    border-color: $complementary;
+    color: $black;
+
+    &:hover {
+      background-color: $hoverComplementary;
+      border-color: $complementary;
+      color: $gray-64;
+    }
+  }
   @else if($style == "subscribe") {
     background-color: $orange-medium !important;
     color: $black !important;
