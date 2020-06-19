@@ -13,3 +13,142 @@
     height: 2px;
   }
 }
+
+.ama__news-article {
+  //give the content column of the news article a tob border
+  .ama__layout--two-column--right {
+    .layout__region--main {
+      @include breakpoint($bp-xs) {
+        border-top: none;
+        padding-top: 10px;
+      }
+      @include breakpoint($bp-small) {
+        border-top: 8px solid $purple;
+        padding-top: 25px;
+      }
+    }
+  }
+
+  .ama__news-heading {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 6fr 2.5fr;
+
+    .heading-left {
+      @include breakpoint($bp-xs) {
+        grid-column: 1/5;
+      }
+      @include breakpoint($bp-med) {
+        grid-column: 1/3;
+      }
+    }
+    .heading-right {
+      padding-left:28px;
+    }
+
+    &__content {
+
+      &__link {
+        @extend %ama__link--blue;
+        @extend %ama__h4;
+        text-transform: uppercase;
+        padding: $gutter-mobile 0 $gutter-mobile/2;
+        display: block;
+        @include breakpoint($bp-xs) {
+          margin-bottom: 20px;
+          @include gutter($margin-bottom-half...);
+        }
+        @include breakpoint($bp-med) {
+          padding: $gutter-mobile*1.4 0 5px;
+        }
+      }
+      .ama__h1 {
+        @include breakpoint($bp-xs) {
+          margin-bottom: 15px;
+        }
+        @include breakpoint($bp-med) {
+          margin-bottom: 20px;
+        }
+
+        &.ama__h3 {
+          @include breakpoint($bp-xs) {
+            margin-bottom: 15px;
+          }
+          @include breakpoint($bp-med) {
+            margin-bottom: 0px;
+          }
+        }
+      }
+
+      .ama__h3 {
+        margin-bottom:15px;;
+        @include breakpoint($bp-xs) {
+          font-size: 22px;
+        }
+        @include breakpoint($bp-med) {
+          font-size: 22px;
+        }
+      }
+
+      &__date {
+        @include breakpoint($bp-xs) {
+          padding-top:0;
+          padding-bottom: 10px;
+        }
+        @include breakpoint($bp-small) {
+          @include gutter($padding-top-half...);
+        }
+        color: $gray-50;
+        .date-block {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .ama__inline-bio__image {
+    margin-bottom: 0;
+  }
+  .ama__inline-bio__text {
+    @include breakpoint($bp-xs) {
+      margin-bottom:0;
+    }
+    @include breakpoint($bp-small) {
+      margin-bottom:0;
+    }
+  }
+
+  &__share-row {
+    display: grid;
+    .share-region {
+      @include breakpoint($bp-xs) {
+        visibility: hidden;
+        height: 0;
+      }
+      @include breakpoint($bp-small) {
+        visibility: visible;
+        height: auto;
+      }
+      grid-column: 4/5;
+      .ama__masthead__content__share {
+        margin-left: auto;
+        .ama__social-share {
+          margin-left: auto;
+        }
+      }
+    }
+    .date-region {
+      .date-block {
+        margin-bottom: 0;
+      }
+      @include breakpoint($bp-xs) {
+        grid-column: 1/5;
+      }
+      @include breakpoint($bp-small) {
+        grid-column: 1/3;
+      }
+    }
+    .ama__date {
+    }
+  }
+}
