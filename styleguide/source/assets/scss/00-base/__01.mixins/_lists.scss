@@ -29,13 +29,11 @@ $presentation-nested: "presentation-nested";
     }
 
     @if($indent == "body-copy") {
-      left: 50px;
-      position:relative;
+
       @include gutter($margin-bottom-half...);
       li {
         @include list-style($default);
         ul {
-          left: 0;
           margin-bottom: 0;
           li {
             @include list-style($default-nested);
@@ -43,28 +41,22 @@ $presentation-nested: "presentation-nested";
         }
       }
       @media (min-width: 320px) {
-        position: static;
         margin-left: 35px;
         max-width: 100%;
         li {
           ul {
-            position:static;
-            margin-right: 10px;
-            margin-left: 0;
+            margin-left: 5px;
             max-width: 100%;
           }
         }
       }
       @media (min-width: 768px) {
         position: relative;
-        width: calc(100% - 80px);
-        margin-left: 0;
+        margin-left: 50px;
         li {
           ul {
-            position:relative;
             width: 100%;
             margin-left: 0;
-            margin-right: 0;
           }
         }
       }

@@ -1,34 +1,44 @@
 .ama__inline-bio {
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
-  border-bottom: 1px solid $gray-50;
-
-  @include breakpoint($bp-small) {
-    margin: 0 -15px;
-  }
-
   &__image {
     display: none;
+    margin-bottom:35px;
 
     @include breakpoint($bp-small) {
       vertical-align: top;
       display: inline-block;
-      max-width: 85px;
-      max-height: 85px;
-      margin-right: 30px;
+      width: 80px;
+      height: 80px;
+      margin-right: 22px;
+      border-radius: 50%;
     }
   }
 
   &__text {
-    @include type($myriad-pro, $font-weight-semibold);
-    @include gutter($padding-left-full...);
-    @include gutter($padding-right-full...);
-
-    color: $gray-64;
+    @include type($myriad-pro, $font-weight-regular);
+    font-ize: 20px;
+    color: $black;
     display: block;
+    margin-top: -4px;
 
+    .ama__h3 {
+      @include type($myriad-pro, $font-weight-regular);
+      font-size: 20px;
+      line-height: 27px;
+    }
+    .ama__h1.ama__h3 a {
+      text-decoration: none;
+      font-size: 22px;
+      line-height: 26px;
+    }
+    @include breakpoint($bp-med) {
+      @include gutter($padding-left-full...);
+      @include gutter($padding-right-full...);
+    }
     @include breakpoint($bp-small) {
-      padding: 0;
+      padding-left: 0;
+      padding-right: 0;
       display: inline-block;
     }
 
@@ -55,6 +65,10 @@
 
     svg {
       fill: $blue;
+      max-width: 100%;
+      max-height: 100%;
+      width: 35px;
+      height:auto;
     }
   }
 }
