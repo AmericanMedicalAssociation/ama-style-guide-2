@@ -177,14 +177,14 @@
   &:before {
     content: '';
     position: absolute;
-    height: 3px;
+    height: 4px;
     background-color: $purple;
     left: 0;
     right: 0;
   }
-  
+
   @include breakpoint($bp-small) {
-    border-top: 3px solid $purple;
+    border-top: 4px solid $purple;
 
     &:before {
       content: initial;
@@ -195,21 +195,21 @@
     line-height: 2.5;
     text-transform: uppercase;
     font-weight: $font-weight-semibold;
-    font-size: 18px;
-
-    @include breakpoint($bp-small) {
-      @include font-size($h2-font-sizes);
-    }
   }
 
   .ama__h5--purple {
     font-size: 14px;
-    font-weight: bold;    
+    font-weight: bold;
   }
 
   .ama__article-stub__title {
-    font-size: 18px;
     font-weight: bold;
+    @include breakpoint($bp-xs) {
+      font-size: 22px;
+    }
+    @include breakpoint($bp-small) {
+      font-size: 18px;
+    }
   }
 
   .ama__four-up-teaser {
