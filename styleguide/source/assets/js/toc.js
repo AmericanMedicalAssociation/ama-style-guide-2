@@ -2,7 +2,7 @@
   Drupal.behaviors.ama_toc = {
     attach: function (context, settings) {
       $(document).ready(function() {
-        $('.toc a').bind('click', function(e) {
+        $('.ama--news-toc a').bind('click', function(e) {
             e.preventDefault(); // prevent hard jump, the default behavior
 
             var target = $(this).attr("href"); // Set the target as variable
