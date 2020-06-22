@@ -94,6 +94,7 @@
       @include breakpoint($bp-xs) {
         grid-column: 1/5;
         justify-content: center;
+        width: auto;
       }
       @include breakpoint($bp-small) {
         justify-content: left;
@@ -101,10 +102,14 @@
       @include breakpoint($bp-large) {
         grid-column: 3/5;
         justify-content: center;
+        margin-left: 14px;
+        .ama__button {
+          width: 100%;
+        }
       }
-    }
-    .ama__button {
-      min-width: 33%;
+      .ama__button {
+        min-width: 33%;
+      }
     }
     &.promo-as-inline-gray {
       background-color: $bg-gray;
