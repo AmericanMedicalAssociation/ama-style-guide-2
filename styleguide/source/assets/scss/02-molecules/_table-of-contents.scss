@@ -1,0 +1,28 @@
+.ama--news-toc {
+  padding: 15px 28px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid $gray-50;
+
+  > p {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      &:not(:last-child) {
+        &:after {
+          content: "|";
+          color: $black;
+          display: inline-block;
+          font-weight: 300;
+          font-size: 16px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
