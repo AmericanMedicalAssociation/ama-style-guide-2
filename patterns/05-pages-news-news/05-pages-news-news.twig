@@ -21,6 +21,8 @@
   {% include '@atoms/unordered-list.twig' %}
   {% include '@molecules/promo/promo.twig' %}
   {% include '@atoms/paragraph.twig' %}
+  {% set image = modalImages %}
+  {% include '@molecules/modal.twig' %}
   <section class="ama__page--news__teasers">
     {% include '@molecules/tags.twig' %}
     {% include '@organisms/four-up-teaser.twig' %}
