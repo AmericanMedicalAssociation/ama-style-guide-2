@@ -11,6 +11,14 @@ button {
     @include ama-button("", "tertiary");
   }
 
+  &--complementary {
+    @include ama-button("", "complementary");
+  }
+
+  &--complementary-secondary {
+    @include ama-button("", "complementary-secondary");
+  }
+
   &--block {
     @include ama-button("block", "");
   }
@@ -21,6 +29,10 @@ button {
 
   &--reset {
     @include ama-button("", "reset");
+  }
+
+  &--subscribe {
+    @include ama-button("", "subscribe");
   }
 
   &--homepage {
@@ -38,9 +50,12 @@ button {
       @include ama-button("", "promo-secondary");
     }
   }
+
   &--link {
     @include ama-button("", "link");
   }
+
+
 }
 
 .ama__button--small.ama__button--tertiary  {
