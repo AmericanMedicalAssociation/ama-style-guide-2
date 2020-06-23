@@ -2,15 +2,29 @@
   padding: 15px 28px;
   margin-bottom: 15px;
   border-bottom: 2px solid $gray-50;
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: block;
+  }
 
   > p {
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
   }
-  ol {
+  ol, ul {
     display: flex;
     flex-wrap: wrap;
+
+    &:not(.none) {
+      li {
+        list-style-type: none;
+        a {
+          padding-right: 5px;
+        }
+      }
+    }
 
     li {
       &:not(:last-child) {
