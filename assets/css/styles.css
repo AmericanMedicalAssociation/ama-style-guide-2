@@ -3382,23 +3382,20 @@ figure.embedded-entity.align-right {
   margin-left: 14px;
   margin-bottom: 14px; }
 
-.embedded-entity.align-right {
-  margin-left: 10px;
-  float: right;
-  width: auto; }
-  @media (min-width: 56.25em) {
-    .embedded-entity.align-right {
-      margin-left: 14px; } }
+@media (min-width: 25em) {
+  .embedded-entity.align-right, .embedded-entity.align-center, .embedded-entity.align-left {
+    width: 100%;
+    clear: both;
+    margin-left: 0; } }
 
-.embedded-entity.align-center {
-  float: right; }
-
-.embedded-entity.align-left {
-  float: right;
-  margin-left: 10px;
-  width: auto; }
-  @media (min-width: 56.25em) {
-    .embedded-entity.align-left {
+@media (min-width: 37.5em) {
+  .embedded-entity.align-right, .embedded-entity.align-center, .embedded-entity.align-left {
+    width: auto;
+    clear: none;
+    margin-left: 10px;
+    float: right; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .embedded-entity.align-right, .embedded-entity.align-center, .embedded-entity.align-left {
       margin-left: 14px; } }
 
 /* Links */
@@ -5224,13 +5221,45 @@ figcaption {
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
     font-weight: 900; }
 
-.ama__page--news__teasers .ama__h5--purple {
-  font-size: 12px;
-  font-weight: bold; }
-
-.ama__page--news__teasers .ama__article-stub__title {
-  font-size: 12px;
-  font-weight: bold; }
+.ama__page--news__teasers {
+  padding-top: 18px; }
+  .ama__page--news__teasers:before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: #46166B;
+    left: 0;
+    right: 0; }
+  @media (min-width: 37.5em) {
+    .ama__page--news__teasers {
+      border-top: 4px solid #46166B; }
+      .ama__page--news__teasers:before {
+        content: initial; } }
+  .ama__page--news__teasers-heading {
+    font-size: 26px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 600; }
+  .ama__page--news__teasers .ama__h5--purple {
+    font-size: 14px;
+    font-weight: bold; }
+  .ama__page--news__teasers .ama__article-stub__title {
+    font-weight: bold;
+    font-size: 22px; }
+    @media (min-width: 37.5em) {
+      .ama__page--news__teasers .ama__article-stub__title {
+        font-size: 18px; } }
+    @media (min-width: 75em) {
+      .ama__page--news__teasers .ama__article-stub__title {
+        font-size: 22px; } }
+  .ama__page--news__teasers .ama__four-up-teaser {
+    margin-top: initial; }
+    @media (min-width: 37.5em) {
+      .ama__page--news__teasers .ama__four-up-teaser {
+        margin-top: 10px; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
+    .ama__page--news__teasers .ama__four-up-teaser {
+      margin-top: 14px; } }
 
 @media (max-width: 37.5em) {
   .ama__column-teaser {
@@ -7422,6 +7451,52 @@ section.ama__forum_comments {
     .ama__member-feature-rail [data-ancestor-position="3"] {
       display: block; } }
 
+.ama__image_popup__wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+  @media (min-width: 25em) {
+    .ama__image_popup__wrapper {
+      width: 100%;
+      clear: both;
+      margin: 14px 0; } }
+  @media (min-width: 37.5em) {
+    .ama__image_popup__wrapper {
+      clear: none;
+      width: auto;
+      margin: 14px; } }
+
+@media (min-width: 25em) {
+  .ama__image_popup__image {
+    width: 100%; } }
+
+@media (min-width: 37.5em) {
+  .ama__image_popup__image {
+    width: auto; } }
+
+@media (min-width: 25em) {
+  .ama__image_popup__image img {
+    width: 100%; } }
+
+@media (min-width: 37.5em) {
+  .ama__image_popup__image img {
+    width: auto; } }
+
+.ama__image_popup__modal-link-wrapper {
+  width: 2.6em;
+  padding: 0 0.5em;
+  position: relative; }
+  @media (min-width: 25em) {
+    .ama__image_popup__modal-link-wrapper {
+      display: none; } }
+  @media (min-width: 37.5em) {
+    .ama__image_popup__modal-link-wrapper {
+      display: block; } }
+
+.ama__image_popup__icon {
+  position: absolute;
+  bottom: 0; }
+
 .ama__pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9110,6 +9185,39 @@ a.ama__promo--border:hover {
       display: inline-block;
       margin: 0 auto;
       width: 100%; }
+
+.ama--news-toc {
+  padding: 15px 28px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #767676;
+  display: none; }
+  @media (min-width: 56.25em) {
+    .ama--news-toc {
+      display: block; } }
+  .ama--news-toc > p, .ama__jama .ama__image__text .ama--news-toc > .ama__image__text__subtitle, .ama--news-toc > .ama__resource-link--inline__text {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase; }
+  .ama--news-toc ol, .ama--news-toc ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .ama--news-toc ol:not(.none) li, .ama--news-toc ul:not(.none) li {
+      list-style-type: none; }
+      .ama--news-toc ol:not(.none) li a, .ama--news-toc ul:not(.none) li a {
+        padding-right: 5px; }
+    .ama--news-toc ol li:not(:last-child):after, .ama--news-toc ul li:not(:last-child):after {
+      content: "|";
+      color: #000000;
+      display: inline-block;
+      font-weight: 300;
+      font-size: 16px;
+      margin-right: 5px; }
+
+.toc-responsive .toc-tree {
+  display: none; }
 
 .ama__tags,
 article[class*='__page-content'] .ama__tags {
@@ -11172,8 +11280,7 @@ article[class*='__page-content'] .ama__tags {
   padding: 0; }
 
 .ama__column-teaser-wrapper {
-  border: solid #46166B;
-  border-width: 4px 0px;
+  border-top: solid 4px #46166B;
   padding: 28px 0em; }
   .ama__column-teaser-wrapper .ama__column-teaser {
     display: -webkit-box;
@@ -11407,7 +11514,7 @@ section.ama__page--event__speakers {
       -ms-flex-direction: row;
       flex-direction: row; } }
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
-    text-transform: uppercase; }
+    text-transform: capitalize; }
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group {
     display: -webkit-box;
     display: -ms-flexbox;
