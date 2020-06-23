@@ -172,14 +172,55 @@
 }
 
 .ama__page--news__teasers {
+  padding-top: 18px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: $purple;
+    left: 0;
+    right: 0;
+  }
+
+  @include breakpoint($bp-small) {
+    border-top: 4px solid $purple;
+
+    &:before {
+      content: initial;
+    }
+  }
+
+  &-heading {
+    font-size: 26px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: $font-weight-semibold;
+  }
+
   .ama__h5--purple {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
   }
 
   .ama__article-stub__title {
-    font-size: 12px;
     font-weight: bold;
+    font-size: 22px;
+
+    @include breakpoint($bp-small) {
+      font-size: 18px;
+    }
+    @include breakpoint($bp-large) {
+      font-size: 22px;
+    }
+  }
+
+  .ama__four-up-teaser {
+    margin-top: initial;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-top-half...);
+    }
   }
 }
 
