@@ -50,22 +50,19 @@ figure.embedded-entity.align-right {
 // Inline Images using ckeditor.
 
 .embedded-entity {
-
-  &.align-right {
-
-    @include gutter($margin-left-half...);
-    float: right;
-    width: auto;
-  }
-//  overrides for legacy entities.
-//  Right and center aligned blocks and images have been retired, permenantly 🕶️.
-  &.align-center {
-    float: right;
-  }
-
+  &.align-right,
+  &.align-center,
   &.align-left {
-    float: right;
-    @include gutter($margin-left-half...);
-    width: auto;
+    @include breakpoint($bp-xs) {
+      width: 100%;
+      clear: both;
+      margin-left:0;
+    }
+    @include breakpoint($bp-small) {
+      width: auto;
+      clear: none;
+      @include gutter($margin-left-half...);
+      float: right;
+    }
   }
 }

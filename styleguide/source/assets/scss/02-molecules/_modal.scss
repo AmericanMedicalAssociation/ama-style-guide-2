@@ -1,0 +1,46 @@
+.ama__image_popup {
+  &__wrapper {
+    display: inline-flex;
+    @include breakpoint($bp-xs) {
+      width:100%;
+      clear: both;
+      margin: $gutter/2 0;
+    }
+    @include breakpoint($bp-small) {
+      clear: none;
+      width:auto;
+      margin: $gutter/2;
+    }
+  }
+  &__image {
+    @include breakpoint($bp-xs) {
+      width:100%;
+    }
+    @include breakpoint($bp-small) {
+      width:auto;
+    }
+    img {
+      @include breakpoint($bp-xs) {
+        width:100%;
+      }
+      @include breakpoint($bp-small) {
+        width:auto;
+      }
+    }
+  }
+  &__modal-link-wrapper{
+    width: 2.6em;
+    padding: 0 0.5em;
+    position: relative;
+    @include breakpoint($bp-xs) {
+      display: none;
+    }
+    @include breakpoint($bp-small) {
+      display:block;
+    }
+  }
+  &__icon {
+    position: absolute;
+    bottom: 0;
+  }
+}
