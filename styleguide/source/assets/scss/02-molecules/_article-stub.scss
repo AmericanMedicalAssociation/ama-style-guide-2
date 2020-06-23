@@ -192,6 +192,7 @@
   }
 
   &-heading {
+    font-size: 26px;
     line-height: 2.5;
     text-transform: uppercase;
     font-weight: $font-weight-semibold;
@@ -204,11 +205,13 @@
 
   .ama__article-stub__title {
     font-weight: bold;
-    @include breakpoint($bp-xs) {
-      font-size: 22px;
-    }
+    font-size: 22px;
+
     @include breakpoint($bp-small) {
       font-size: 18px;
+    }
+    @include breakpoint($bp-large) {
+      font-size: 22px;
     }
   }
 
