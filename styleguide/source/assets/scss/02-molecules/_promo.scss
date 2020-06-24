@@ -20,28 +20,106 @@
   }
 
   &--inline {
-    @extend .col-xs-12;
-    @extend .col-sm-4;
     @include gutter($padding-top-full...);
     @include gutter($padding-right-full...);
+    @include gutter($padding-left-full...);
     @include gutter($padding-bottom-full...);
     @include gutter($margin-right-full...);
     @include gutter($margin-bottom-full...);
     @include list($left-justified-w-padding, $two-levels);
-    @include breakpoint($bp-small) {
-      float: left;
-    }
     z-index: 500;
-    .ama__button {
-      z-index: 500;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 6fr 2.5fr;
+
+    &.align-right,
+    &.align-left,
+    &.align-center {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
     }
 
-    border-top: solid 1px $gray-50;
-    border-bottom: solid 1px $gray-50;
-    padding-left: 0;
+    .heading-left {
+      @include breakpoint($bp-xs) {
+        grid-column: 1/5;
+      }
+      @include breakpoint($bp-med) {
+        grid-column: 1/3;
+      }
+    }
 
     &.listicle-margin {
       margin-right: 60px;
+    }
+
+    h2 {
+      grid-row: auto / span 1;
+      order: 1;
+      margin-bottom: 0;
+      @include breakpoint($bp-xs) {
+        grid-column: 1/5;
+      }
+      @include breakpoint($bp-large) {
+        grid-column: 1/3;
+      }
+    }
+
+    & > div {
+      grid-row: auto / span 1;
+      order: 2;
+      p {
+        font-size: 20px;
+      }
+      @include gutter($padding-top-half...);
+      @include breakpoint($bp-xs) {
+        grid-column: 1/5;
+        @include gutter($padding-bottom-half...);
+      }
+      @include breakpoint($bp-large) {
+        grid-column: 1/3;
+        padding-bottom: 0;
+      }
+    }
+    .inline-cta {
+      grid-row: auto / span 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      order: 3;
+      padding: 0;
+      @include breakpoint($bp-xs) {
+        grid-column: 1/5;
+        justify-content: center;
+        width: auto;
+      }
+      @include breakpoint($bp-small) {
+        justify-content: left;
+      }
+      @include breakpoint($bp-large) {
+        grid-column: 3/5;
+        justify-content: center;
+        margin-left: 14px;
+        .ama__button {
+          width: 100%;
+        }
+      }
+      .ama__button {
+        min-width: 33%;
+        @include gutter($padding-right-full...);
+        @include gutter($padding-left-full...);
+      }
+    }
+    &.promo-as-inline-gray {
+      background-color: $bg-gray;
+      .ama__button {
+        @extend .ama__button--complementary-secondary;
+      }
+    }
+    &.promo-as-inline-purple {
+      background-color: $bg-purple;
     }
   }
 
@@ -54,10 +132,6 @@
   .ama__image img {
     max-width: 100%;
     height: auto;
-  }
-
-  .ama__button--secondary {
-    width: 100%;
   }
 
   &--inline-banner {
