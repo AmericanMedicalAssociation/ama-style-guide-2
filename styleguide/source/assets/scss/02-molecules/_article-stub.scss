@@ -172,30 +172,16 @@
 }
 
 .ama__page--news__teasers {
-  padding-top: 18px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: $purple;
-    left: 0;
-    right: 0;
-  }
-
-  @include breakpoint($bp-small) {
-    border-top: 4px solid $purple;
-
-    &:before {
-      content: initial;
-    }
-  }
+  border-top: 4px solid $purple;
 
   &-heading {
     font-size: 26px;
     line-height: 1;
     text-transform: uppercase;
+    display: block;
+    padding: 18px 0 14px 0;
     font-weight: $font-weight-semibold;
+    width: 100%;
   }
 
   .ama__h5--purple {
@@ -212,14 +198,6 @@
     }
     @include breakpoint($bp-large) {
       font-size: 22px;
-    }
-  }
-
-  .ama__four-up-teaser {
-    margin-top: initial;
-
-    @include breakpoint($bp-small) {
-      @include gutter($margin-top-half...);
     }
   }
 }
