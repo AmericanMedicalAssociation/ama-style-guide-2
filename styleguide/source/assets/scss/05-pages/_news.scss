@@ -38,9 +38,7 @@
     grid-template-columns: 1fr 6fr 2.5fr;
 
     .heading-left {
-      @include breakpoint($bp-xs) {
-        grid-column: 1/5;
-      }
+      grid-column: 1/5;
       @include breakpoint($bp-med) {
         grid-column: 1/3;
       }
@@ -122,36 +120,36 @@
   }
 
   &__share-row {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
     .share-region {
-      @include breakpoint($bp-xs) {
-        visibility: hidden;
-        height: 0;
+      .ama__masthead__content__share {
+        display: inline-block;
+        @include breakpoint($bp-small) {
+          grid-column: none;
+          grid-row: none;
+          display: flex;
+          justify-content: left;
+          align-items: left;
+          height: 66px;
+          min-width: 50px;
+        }
       }
+      visibility: hidden;
+      height: 0;
       @include breakpoint($bp-small) {
         visibility: visible;
         height: auto;
-      }
-      grid-column: 4/5;
-      .ama__masthead__content__share {
         margin-left: auto;
-        .ama__social-share {
-          margin-left: auto;
-        }
       }
     }
     .date-region {
       .date-block {
         margin-bottom: 0;
       }
-      @include breakpoint($bp-xs) {
-        grid-column: 1/5;
-      }
-      @include breakpoint($bp-small) {
-        grid-column: 1/3;
-      }
-    }
-    .ama__date {
     }
   }
 }
