@@ -31,6 +31,9 @@
       text-decoration: none;
       font-size: 22px;
       line-height: 26px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     @include breakpoint($bp-med) {
       @include gutter($padding-left-full...);
@@ -63,12 +66,14 @@
       font-weight: 400;
     }
 
-    svg {
-      fill: $blue;
-      max-width: 100%;
-      max-height: 100%;
-      width: 35px;
-      height:auto;
+    &.ama__link--icon {
+      svg {
+        fill: $blue;
+        width: 35px;
+        height:35px;
+        max-height: none;
+        max-width: none;
+      }
     }
   }
 }
