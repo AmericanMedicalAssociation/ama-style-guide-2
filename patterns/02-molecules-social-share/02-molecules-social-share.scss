@@ -42,6 +42,24 @@ $social-icons: (
   }
 }
 
+footer {
+  @each $name in $social-icons {
+    .social--#{$name} {
+      display: inline-block;
+      background-image: url("../icons/svg/icon-" + $name + "-purple.svg");
+      background-repeat: no-repeat;
+      background-size: 31px;
+      height: 31px;
+      width: 31px;
+
+      &:hover {
+        background: url("../icons/svg/icon-" + $name + "-hover.svg");
+        background-size: 31px;
+      }
+    }
+  }
+}
+
 .ama__social-share {
   list-style: none;
   display: flex;
