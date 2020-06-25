@@ -173,24 +173,8 @@
 
 .ama__page--news__teasers {
   padding-top: 18px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: $purple;
-    left: 0;
-    right: 0;
-  }
-
-  @include breakpoint($bp-small) {
-    border-top: 4px solid $purple;
-
-    &:before {
-      content: initial;
-    }
-  }
-
+  border-top: 4px solid $purple;
+  
   &-heading {
     font-size: 26px;
     line-height: 1;
