@@ -49,20 +49,20 @@ figure.embedded-entity.align-right {
 
 // Inline Images using ckeditor.
 
-.embedded-entity {
-  &.align-right,
-  &.align-center,
-  &.align-left {
-    @include breakpoint($bp-xs) {
-      width: 100%;
+[data-entity-type="media"],
+[data-entity-type="media"] .align-right,
+[data-entity-type="media"] .align-center,
+[data-entity-type="media"] .align-left {
+    img {
       clear: both;
-      margin-left:0;
-    }
-    @include breakpoint($bp-small) {
-      width: auto;
-      clear: none;
-      @include gutter($margin-left-half...);
-      float: right;
+      width:100%;
+      margin:0;
+      @include breakpoint($bp-med) {
+        width: auto;
+        clear: none;
+        float: right;
+        @include gutter($margin-left-half...);
+        @include gutter($margin-bottom-half...);
+      }
     }
   }
-}
