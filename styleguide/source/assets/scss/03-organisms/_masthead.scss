@@ -2,16 +2,11 @@
   display: grid;
   display: -ms-grid;
   grid-template-columns: 1fr ;
-  @include gutter-all($padding-all-full...);
-
-  @include breakpoint($bp-med min-width) {
-    padding: 0;
-  }
-
+  padding-top: 20px;
+  padding-bottom: 20px;
   @include breakpoint($bp-large min-width) {
     grid-template-columns: 1fr 6fr 2.5fr;
     -ms-grid-columns: 1fr 6fr 2.5fr;
-    padding: 0;
   }
 
 
