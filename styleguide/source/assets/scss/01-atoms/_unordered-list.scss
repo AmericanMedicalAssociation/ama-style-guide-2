@@ -4,7 +4,6 @@
 */
 
 // Bullet styles
-
 .solid-disc {
   li {
     list-style-type: none;
@@ -29,7 +28,7 @@
     position: relative;
     &:before {
       content: "";
-      border:1px solid currentColor;
+      border: 1px solid currentColor;
       position: absolute;
       background-color: transparent;
       border-radius: 100%;
@@ -41,9 +40,19 @@
   }
 }
 
+// Empty <p> fix.
+.remove-empty {
+  p:empty {
+    display: none;
+  }
+}
+
 // 2 Level Indented list - (body copy list)
 .body-list {
   ul {
+    @extend .remove-empty;
+    margin-left: 13px;
+    margin-bottom: 14px;
     @include breakpoint($bp-med) {
       margin-left: 32px;
     }
@@ -55,7 +64,8 @@
       padding-left: 18px;
       // Second level.
       ul {
-        margin-left:0;
+        margin-left: 0;
+        margin-bottom: 0;
         @extend .outlined-disc;
         li {
           // All levels below.
@@ -71,6 +81,7 @@
 // 2 Level flush left list.
 .body-list-flush {
   ul {
+    @extend .remove-empty;
     margin-left: 0;
     @extend .solid-disc;
     li {
@@ -87,9 +98,10 @@
   }
 }
 
-// Single level flush left - (for blocks).
+// Single level flush left.
 .display-list {
   ul {
+    @extend .remove-empty;
     margin-left: 0;
     @extend .solid-disc;
     li {
@@ -102,13 +114,10 @@
   }
 }
 
-
 .ama__list,
 .text-body {
   @extend .body-list;
 }
-
-
 
 /**
 * Exclusion list.
