@@ -25,10 +25,10 @@
     grid-column: 1 / 4;
   }
 
-  .ama__promo-group{
+  .ama__promo-group {
     @include gutter($padding-top-double...);
     @include gutter($padding-bottom-full...);
     border-top: solid 1px $black;
-    @include list($left-justified, $one-level);
+    @extend .display-list;
   }
 }// end article
