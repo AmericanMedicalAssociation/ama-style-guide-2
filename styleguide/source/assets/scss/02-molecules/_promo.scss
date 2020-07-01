@@ -32,6 +32,7 @@
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr 6fr 2.5fr;
+    background-color: $bg-gray;
 
     &.align-right,
     &.align-left,
@@ -105,16 +106,8 @@
         min-width: 33%;
         @include gutter($padding-right-full...);
         @include gutter($padding-left-full...);
-      }
-    }
-    &.promo-as-inline-gray {
-      background-color: $bg-gray;
-      .ama__button {
         @extend .ama__button--complementary-secondary;
       }
-    }
-    &.promo-as-inline-purple {
-      background-color: $bg-purple;
     }
   }
 
