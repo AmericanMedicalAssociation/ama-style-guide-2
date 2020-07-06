@@ -2,13 +2,12 @@
 article[class*='__page-content'] .ama__tags {
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
-  @include gutter($padding-top-full...);
-  @include gutter($padding-bottom-full...);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   list-style: none;
-  
+
+ 
   @include breakpoint($bp-small) {
     flex-direction: row;
   }
@@ -40,12 +39,13 @@ article[class*='__page-content'] .ama__tags {
     
     
     li {
-      @include gutter($margin-bottom-full...);
+      padding-bottom: 21px;
       margin-left: 0;
       list-style: none;
       
       @include breakpoint($bp-small) {
         margin: initial;
+        padding-bottom: 18px;
       }
     }
     
