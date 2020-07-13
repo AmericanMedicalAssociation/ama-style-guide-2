@@ -39,25 +39,38 @@ article[class*='__page-content'] .ama__tags {
     
     
     li {
-      padding-bottom: 21px;
       margin-left: 0;
       list-style: none;
-      
+      padding-bottom: 14px;
+      padding-right: 18px;
+
+      &:nth-last-of-type(-n+3) {
+        padding-bottom: initial;
+      }
+
+      &:nth-last-of-type(2) {
+        @media only screen and (min-width: 991px) and (max-width: 1199px) {
+          padding-bottom: 14px;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 990px) {
+          padding-bottom: 14px;
+        }
+      }
+
+      &:nth-last-of-type(-n+2) {
+        @media only screen and (min-width: 200px) and(max-width: $bp-small) {
+          padding-top: 14px;
+        }
+      }
+
       @include breakpoint($bp-small) {
         margin: initial;
-        padding-bottom: 18px;
       }
     }
-    
-    &:last-child {
-      margin-right: 0;
-    }
-  
   }
 
   .ama__tag {
-    @include gutter($margin-right-half...);
-    @include gutter($margin-bottom-half...);
     font-size: 14px;
     text-decoration: none;
     display: block;
