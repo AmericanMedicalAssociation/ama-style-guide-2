@@ -14,8 +14,10 @@
     margin-bottom: 0;
 
     &:not(.membership_image) {
-      @include gutter($padding-left-full...);
-      @include gutter($padding-right-full...);
+      &:not(.ama__button) {
+        @include gutter($padding-left-full...);
+        @include gutter($padding-right-full...);
+      }
     }
   }
 
