@@ -24,7 +24,6 @@ article ol {
   li {
     position: relative;
     counter-increment: inst;
-    padding-left: 30px;
     &::before {
       position: absolute;
       left: 0;
@@ -42,12 +41,14 @@ article ol {
   ol {
     @extend .default-list;
     li {
+      padding-left: 30px;
       &::before {
         content: counter(inst, decimal) " )";
       }
       // Second level.
       ol {
         li {
+          padding-left: 25px;
           &::before {
             content:"" counter(inst, lower-alpha) ".";
           }
@@ -71,12 +72,14 @@ article ol {
   ol.cme-list {
     @extend .default-list;
     li {
+      padding-left: 30px;
       &::before {
         content:"(" counter(inst, lower-alpha) ")";
       }
      // Second level.
       ol {
         li {
+          padding-left: 30px;
           &::before {
             content:"(" counter(inst, lower-roman) ")";
           }
