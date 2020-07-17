@@ -70,16 +70,14 @@
  */
 
 (function ($, Drupal) {
-  closeIcon = ''
 	function alterModal (context) {
 		$('.ama-image-popup-modal .ui-dialog-title').hide();
 		$('.ama-image-popup-modal .ui-button-icon-only .ui-icon').hide();
 	}
 
 	function closeModal (context) {
-		let closeIcon = '.ui-icon-closethick';
-		$(closeIcon).unbind('click.close');
-		$(closeIcon).trigger('click');
+		$('.ui-icon-closethick').unbind('click.close');
+		$('.ui-icon-closethick').trigger('click');
 	}
 
 	Drupal.behaviors.ama_image_popup = {
