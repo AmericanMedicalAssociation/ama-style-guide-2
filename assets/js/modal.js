@@ -70,6 +70,7 @@
  */
 
 (function ($, Drupal) {
+  closeIcon = ''
 	function alterModal (context) {
 		$('.ama-image-popup-modal .ui-dialog-title').hide();
 		$('.ama-image-popup-modal .ui-button-icon-only .ui-icon').hide();
