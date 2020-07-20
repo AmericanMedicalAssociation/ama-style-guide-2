@@ -6,8 +6,8 @@ article[class*='__page-content'] .ama__tags {
   align-items: flex-start;
   flex-direction: column;
   list-style: none;
+  clear: both;
 
- 
   @include breakpoint($bp-small) {
     flex-direction: row;
   }
@@ -22,9 +22,9 @@ article[class*='__page-content'] .ama__tags {
       padding: initial;
     }
   }
-  
+
   &-list {
-    
+
     display: flex;
     flex-wrap: wrap;
     flex: 1;
@@ -32,12 +32,12 @@ article[class*='__page-content'] .ama__tags {
     padding-top: initial;
     list-style: none;
     align-items: flex-start;
-    
+
     @include breakpoint($bp-small) {
       flex-direction: row;
     }
-    
-    
+
+
     li {
       margin-left: 0;
       list-style: none;
@@ -81,7 +81,7 @@ article[class*='__page-content'] .ama__tags {
     white-space: nowrap;
     height: 34px;
     padding: 5px 15px 4px 14px;
-  
+
     &:hover{
       background-color: $white;
       border: 1px solid $gray-30;
@@ -89,5 +89,3 @@ article[class*='__page-content'] .ama__tags {
     }
   }
 }
-
-
