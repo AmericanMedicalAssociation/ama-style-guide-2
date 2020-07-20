@@ -9619,7 +9619,8 @@ article[class*='__page-content'] .ama__tags {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  list-style: none; }
+  list-style: none;
+  clear: both; }
   @media (min-width: 56.25em) {
     .ama__tags,
     article[class*='__page-content'] .ama__tags {
@@ -9957,6 +9958,83 @@ article[class*='__page-content'] .ama__tags {
         line-height: 1.571em;
         top: 45px;
         right: 20px; } }
+
+.rate-widget-thumbs-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 28px;
+  margin-left: 28px;
+  clear: both; }
+  .rate-widget-thumbs-up .thumbs {
+    fill: #aaa; }
+  .rate-widget-thumbs-up .thumbs-active {
+    fill: #46166B; }
+  .rate-widget-thumbs-up:hover .rate-score,
+  .rate-widget-thumbs-up:hover .rate-score.voted,
+  .rate-widget-thumbs-up:hover .thumbs,
+  .rate-widget-thumbs-up:hover .thumbs-active {
+    color: #B5A1C3;
+    fill: #B5A1C3; }
+  .rate-widget-thumbs-up .rate-score {
+    margin: 19px 10px 10px 10px;
+    color: #aaa;
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+    right: 40px;
+    bottom: 16px; }
+    .rate-widget-thumbs-up .rate-score.voted {
+      color: #46166B;
+      right: 0; }
+  .rate-widget-thumbs-up .ajax-progress {
+    display: none; }
+  .rate-widget-thumbs-up .rate-thumbs-up-btn-up {
+    width: 40px;
+    height: 55px;
+    background: none;
+    position: relative;
+    right: 0; }
+    .rate-widget-thumbs-up .rate-thumbs-up-btn-up.use-ajax {
+      position: relative;
+      right: 40px; }
+    .rate-widget-thumbs-up .rate-thumbs-up-btn-up .thumbs-active {
+      display: block;
+      position: relative;
+      right: 0;
+      bottom: 16px; }
+
+@-webkit-keyframes popup {
+  0% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); } }
+
+@keyframes popup {
+  0% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); } }
+      .rate-widget-thumbs-up .rate-thumbs-up-btn-up .thumbs-active #Layer_6 {
+        -webkit-animation: popup 1s ease;
+        animation: popup 1s ease; }
+    .rate-widget-thumbs-up .rate-thumbs-up-btn-up .rate-undo.use-ajax {
+      display: block;
+      width: 40px;
+      height: 55px;
+      position: relative;
+      right: 0;
+      bottom: 55px; }
 
 .ama__subcategory-exploration__subcategory {
   margin-bottom: 21px;
