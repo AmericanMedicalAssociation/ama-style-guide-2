@@ -64,3 +64,30 @@
 	});
 })(jQuery, Drupal);
 
+/**
+ * @file
+ * Attaches AMA Image Popup library.
+ */
+
+(function ($, Drupal) {
+	function alterModal (context) {
+		$('.ama-image-popup-modal .ui-dialog-title').hide();
+		$('.ama-image-popup-modal .ui-button-icon-only .ui-icon').hide();
+	}
+
+	function closeModal (context) {
+		$('.ui-icon-closethick').unbind('click.close');
+		$('.ui-icon-closethick').trigger('click');
+	}
+
+	Drupal.behaviors.ama_image_popup = {
+		attach: function (context) {
+			$(document).on("dialogopen", ".ui-dialog", function(event, ui) {
+				alterModal();
+			});
+			$(document).on("click", ".ui-widget-overlay", function(event, ui) {
+				closeModal();
+			});
+		}
+	}
+})(jQuery, Drupal);

@@ -2,18 +2,18 @@ blockquote {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-left: 30px;
+  padding-left: 26px;
+  margin-left: initial;
+ 
   * {
     &:last-child {
       margin-bottom: 0;
     }
   }
   margin-bottom: 1em;
-  @include breakpoint($bp-med) {
-    padding-left: 13px;
-  }
-  @include breakpoint($bp-large) {
-    padding-left: 26px;
+  @include breakpoint($bp-small) {
+    margin-right: 30px;
+    margin-left: 30px;
   }
   p,
   a,
