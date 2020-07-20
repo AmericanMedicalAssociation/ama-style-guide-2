@@ -3,10 +3,20 @@
    margin-top: 28px;
    margin-left: 28px;
 
+   .thumbs {
+     fill: #aaa;
+   }
+   .thumbs-active {
+     fill: #46166B;
+   }
+
    &:hover {
      .rate-score,
-     .rate-thumbs-up-btn-up {
+     .rate-score.voted,
+     .thumbs,
+     .thumbs-active {
        color: #B5A1C3;
+       fill: #B5A1C3;
      }
    }
 
