@@ -32,6 +32,7 @@
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr 6fr 2.5fr;
+    background-color: $bg-gray;
 
     &.align-right,
     &.align-left,
@@ -77,6 +78,8 @@
       @include breakpoint($bp-large) {
         grid-column: 1/3;
         padding-bottom: 0;
+        margin-right: 38px;
+        max-width: 566px;
       }
     }
     .inline-cta {
@@ -87,7 +90,7 @@
       padding: 0;
       grid-column: 1/5;
       justify-content: center;
-      width: auto;
+      margin-right: 0;
       order: 3;
       @include breakpoint($bp-small) {
         justify-content: left;
@@ -95,26 +98,18 @@
       @include breakpoint($bp-large) {
         grid-column: 3/5;
         justify-content: center;
-        margin-left: 14px;
         order: 1;
-        .ama__button {
+      }
+      .ama__button {
+        @extend .ama__button--complementary-secondary;
+        min-width: 220px;
+        max-width: 100%;
+        @include breakpoint($bp-large) {
+          min-width: 0;
+          max-width: 220px;
           width: 100%;
         }
       }
-      .ama__button {
-        min-width: 33%;
-        @include gutter($padding-right-full...);
-        @include gutter($padding-left-full...);
-      }
-    }
-    &.promo-as-inline-gray {
-      background-color: $bg-gray;
-      .ama__button {
-        @extend .ama__button--complementary-secondary;
-      }
-    }
-    &.promo-as-inline-purple {
-      background-color: $bg-purple;
     }
   }
 

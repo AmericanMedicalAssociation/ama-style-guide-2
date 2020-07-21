@@ -8,39 +8,95 @@
     }
     @include breakpoint($bp-small) {
       clear: none;
-      width:auto;
+      width: auto;
       margin: $gutter/2;
     }
   }
   &__image {
     @include breakpoint($bp-xs) {
-      width:100%;
+      width: 100%;
     }
     @include breakpoint($bp-small) {
-      width:auto;
+      width: auto;
     }
     img {
-      @include breakpoint($bp-xs) {
-        width:100%;
-      }
-      @include breakpoint($bp-small) {
-        width:auto;
-      }
+      margin: 0;
     }
   }
   &__modal-link-wrapper{
-    width: 2.6em;
-    padding: 0 0.5em;
+    width: 79px;
+    padding: 0 0 0 0.5em;
     position: relative;
-    @include breakpoint($bp-xs) {
-      display: none;
-    }
-    @include breakpoint($bp-small) {
+    display: none;
+    @include breakpoint($bp-med) {
       display:block;
     }
   }
   &__icon {
     position: absolute;
     bottom: 0;
+    margin: 0;
   }
+}
+#drupal-modal {
+  overflow: initial;
+
+  img {
+    max-height: 80vh;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+.ama-image-popup-modal {
+  z-index: 502;
+}
+.ama-image-popup-modal.ui-widget.ui-widget-content {
+  border: 0;
+}
+
+.embed-entity--caption div[data-entity-embed-display="view_mode:media.modal"] + figcaption {
+  margin: 0 14px 14px 14px;
+}
+
+.ama-image-popup-modal .ui-dialog-title,
+.ama-image-popup-modal .ui-button-icon-only .ui-icon,
+.ama-image-popup-modal-wrapper .modal-link .ajax-progress-throbber .throbber,
+.ama-image-popup-modal-wrapper .modal-link .ajax-progress {
+  display: none;
+}
+
+.ama-image-popup-modal .ui-widget-header {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.ui-widget-overlay {
+  background: #7f7f7f;
+  opacity: 0.81;
+  z-index: 501;
+}
+
+.ama-image-popup-modal .ui-dialog-titlebar-close {
+  background: url('../images/close.svg');
+  border: none;
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  height: 28px;
+  width: 28px;
+  padding: 0;
+}
+
+.ama-image-popup-modal .ui-dialog-titlebar-close:focus {
+  outline: none;
+}
+
+.ama-image-popup-icon {
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  background: url('../images/expand.svg') no-repeat 0px 0px;
+  background-size: cover;
+  bottom: 5px;
 }
