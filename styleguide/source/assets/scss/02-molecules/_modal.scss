@@ -43,12 +43,16 @@
 
   img {
     max-height: 80vh;
+    max-width: 95vw;
     width: auto;
     margin: 0 auto;
   }
 }
 .ama-image-popup-modal {
   z-index: 502;
+}
+.ui-dialog-content {
+  padding: .5em .5em !important;
 }
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0;
@@ -90,6 +94,12 @@
 
 .ama-image-popup-modal .ui-dialog-titlebar-close:focus {
   outline: none;
+}
+
+div[data-entity-embed-display="view_mode:media.modal"] {
+  .ama__type--small {
+    margin-left: 14px;
+  }
 }
 
 .ama-image-popup-icon {
