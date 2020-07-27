@@ -1,4 +1,109 @@
-section ol, 
+section ol,
 article ol {
   @include gutter($margin-bottom-half...);
+}
+
+.remove-empty {
+  p:empty {
+    display: none;
+  }
+}
+
+.default-list {
+  @extend .remove-empty;
+  margin-left: 13px;
+  margin-bottom: 14px;
+  counter-reset: inst;
+  list-style: none;
+  @include breakpoint($bp-med) {
+    margin-left: 32px;
+  }
+  @include breakpoint($bp-large) {
+    margin-left: 30px;
+  }
+  li {
+    position: relative;
+    counter-increment: inst;
+    &::before {
+      position: absolute;
+      left: 0;
+    }
+    // Second level.
+    ol {
+      margin-left: -18px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+  // Code of Medical Ethics list style.
+.text-body {
+  ol:not(.listicle):not(.listicle__item-sub) {
+    @extend .default-list;
+    li {
+      padding-left: 30px;
+      &::before {
+        content: counter(inst, decimal) " )";
+      }
+      // Second level.
+      ol {
+        li {
+          padding-left: 25px;
+          &::before {
+            content:"" counter(inst, lower-alpha) ".";
+          }
+          // Everything Below.
+          ol {
+            margin-left: -49px;
+            li {
+              &::before {
+                content:"" counter(inst, lower-alpha) ".";
+              }
+              ol {
+                counter-reset: inner;
+                counter-increment: inner;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ol.cme-list {
+    @extend .default-list;
+    li {
+      padding-left: 30px;
+      &::before {
+        content:"(" counter(inst, lower-alpha) ")";
+      }
+     // Second level.
+      ol {
+        li {
+          padding-left: 30px;
+          &::before {
+            content:"(" counter(inst, lower-roman) ")";
+          }
+          // Third Level.
+          ol {
+            margin-left: -18px;
+            li {
+              padding-left:24px;
+              &::before {
+                content: counter(inst, lower-alpha) ".";
+              }
+              // Everything Below.
+              ol {
+                margin-left: -43px;
+                li {
+                  &::before {
+                    content: counter(inst, lower-alpha) ".";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
