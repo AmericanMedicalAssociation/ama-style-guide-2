@@ -24,6 +24,14 @@
   }
 
   &__right {
+    > div {
+      margin-top:0;
+      margin-bottom: $gutter;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     @include gutter($margin-left-half...);
 
     @include breakpoint($bp-small max-width) {

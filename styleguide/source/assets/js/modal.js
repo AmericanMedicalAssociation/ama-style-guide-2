@@ -46,22 +46,6 @@
 		}
 	};
 
-	$(".ama__image_popup__modal-link").click(function() {
-		$(".ama__image_popup__expand__image").dialog({
-			"title": "",
-			"width": "auto",
-			"show": "fadeIn",
-			"hide": "fadeOut",
-			"position": {
-				"top": "auto",
-				"left": "auto"
-			},
-			"modal": true,
-			"dynamic": false,
-			"resizable": false,
-			"fluid": false
-		});
-	});
 })(jQuery, Drupal);
 
 /**

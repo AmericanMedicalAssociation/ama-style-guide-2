@@ -21,13 +21,21 @@
     }
 
     @include breakpoint($bp-small) {
-      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 0;
       padding: initial;
 
       .ama__tools {
         margin: 0;
         padding: 0;
         border-top: 0;
+      }
+    }
+    @include breakpoint($bp-med) {
+      margin-right: 0;
+      margin-top: 14px;
+      .ama__tools {
+        margin-bottom: $gutter;
       }
     }
   }
@@ -92,11 +100,9 @@
   .ama__tools {
     padding: 0;
   }
-
   .ama__membership {
     margin: ($gutter / 2) 0 0;
   }
-
   .ama__layout--split__right .ama__article-stub--category {
     padding: 0 ($gutter / 2);
   }
