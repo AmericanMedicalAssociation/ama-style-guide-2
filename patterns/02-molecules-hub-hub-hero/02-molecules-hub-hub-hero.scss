@@ -93,7 +93,7 @@
     margin: 0;
     max-width: none;
     width: auto;
-    @include list($indented, $two-levels);
+    @extend .body-list-flush;
   }
 
   &__button-container {
@@ -245,5 +245,5 @@
 * WYSIWYG Hub card styles.
 */
 .paragraph--type--wysiwyg {
-  @include list($indented, $two-levels);
+  @extend .body-list-flush;
 }
