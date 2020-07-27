@@ -100,7 +100,9 @@
   .ama__tools {
     padding: 0;
   }
-
+  .ama__membership {
+    margin: ($gutter / 2) 0 0;
+  }
   .ama__layout--split__right .ama__article-stub--category {
     padding: 0 ($gutter / 2);
   }
@@ -120,32 +122,23 @@
         -ms-grid-columns: 1fr $gutter 1fr $gutter 1fr;
         grid-gap: $gutter;
         grid-template-rows: auto auto;
-
         .ama__article-stub {
-
           &:nth-child(1) {
             -ms-grid-column: 1;
           }
-
           &:nth-child(2) {
             -ms-grid-column: 3;
           }
-
           &:nth-child(3) {
             -ms-grid-column: 5;
           }
-
           h3 {
             padding: 0;
           }
-
           .ama__image {
             margin-bottom: 0;
           }
-
         }
-
-
       }
     }
   }
@@ -172,7 +165,6 @@
         grid-template-rows: auto auto;
         grid-column-gap: $gutter;
         grid-row-gap: $gutter;
-
         .ama__article-stub {
           width: 100%;
         }

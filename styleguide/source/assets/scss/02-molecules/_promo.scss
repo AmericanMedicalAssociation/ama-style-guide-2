@@ -4,7 +4,7 @@
   @include gutter($padding-bottom-half...);
   @include gutter($padding-left-half...);
   @include child-top-gutters($gutter / 2);
-  @include list($left-justified, $one-level);
+  @extend .display-list;
   display: block;
   font-weight: $font-weight-semibold;
   text-decoration: none;
@@ -26,7 +26,7 @@
     @include gutter($padding-bottom-full...);
     @include gutter($margin-right-full...);
     @include gutter($margin-bottom-full...);
-    @include list($left-justified-w-padding, $two-levels);
+    @extend .body-list-flush;
     z-index: 500;
     width: 100%;
     display: grid;
