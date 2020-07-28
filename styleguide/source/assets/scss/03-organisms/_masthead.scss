@@ -144,6 +144,7 @@
 
       @include breakpoint($bp-small) {
         left: 0;
+        margin-left: auto;
         grid-column: 4 / 5;
         grid-row: 3;
         display: flex;
@@ -174,6 +175,124 @@
     }
   }
 }
+
+// Masthead styling for 75% 25% two column masthead
+
+.ama__75-25__masthead {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 6fr 2.5fr;
+
+  .heading-left {
+    grid-column: 1/5;
+    @include breakpoint($bp-med) {
+      grid-column: 1/3;
+    }
+    &.border {
+      @include ama-rules(2px, "bottom", $gray-64, solid);
+    }
+  }
+  .heading-right {
+    padding-left:28px;
+  }
+
+  &__content {
+    .link {
+      @extend %ama__link--blue;
+      @extend %ama__h4;
+      text-transform: uppercase;
+      padding: $gutter-mobile 0 $gutter-mobile/2;
+      display: block;
+      @include breakpoint($bp-xs) {
+        margin-bottom: 20px;
+        @include gutter($margin-bottom-half...);
+      }
+      @include breakpoint($bp-med) {
+        padding: $gutter-mobile*1.4 0 5px;
+      }
+    }
+    .ama__h1 {
+      @include breakpoint($bp-xs) {
+        margin-bottom: 15px;
+      }
+      @include breakpoint($bp-med) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .share-row {
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+        visibility:visible
+      }
+      .share-region {
+        display: inline-block;
+        visibility: hidden;
+        height: 0;
+        grid-column: none;
+        grid-row: none;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        min-width: 50px;
+        @include breakpoint($bp-small) {
+          visibility: visible;
+          height: auto;
+          margin-left: auto;
+        }
+      }
+      .date-region {
+        .date {
+          @include breakpoint($bp-xs) {
+            padding-top:0;
+            padding-bottom: 10px;
+          }
+          @include breakpoint($bp-small) {
+            @include gutter($padding-top-half...);
+          }
+          color: $gray-50;
+          .date-block {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .bio-row {
+      .ama__inline-bio__image {
+        margin-bottom: 0;
+      }
+      .ama__inline-bio__text {
+        .ama__h1 {
+          @include breakpoint($bp-xs) {
+            margin-bottom: 15px;
+          }
+          @include breakpoint($bp-med) {
+            margin-bottom: 20px;
+          }
+          &.ama__h3 {
+            @include breakpoint($bp-xs) {
+              margin-bottom: 15px;
+            }
+            @include breakpoint($bp-med) {
+              margin-bottom: 0px;
+            }
+          }
+        }
+        @include breakpoint($bp-xs) {
+          margin-bottom:0;
+        }
+        @include breakpoint($bp-small) {
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+}
+
+
 
 // Exceptions for social share icons
 .ama__news-article, .ama__resource-page {
