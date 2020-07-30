@@ -38,7 +38,37 @@ article ol {
   }
 }
 
+.layout__region--rail_right,
+.ama__membership {
+  ol:not([class]) {
+    @extend .default-list;
+    margin-left: 0;
+    > li {
+      padding-left: 30px;
+
+      &::before {
+        content: counter(inst, decimal) " )";
+      }
+      // Second level.
+      > ol {
+        counter-reset: inner;
+        counter-increment: inner;
+        margin-left: 0;
+        > li {
+          padding-left: 25px;
+          margin-left: -44px;
+
+
+        }
+      }
+    }
+  }
+}
+
 .text-body,
+.ama__hub-card,
+.ama__hub-hero-row,
+.paragraph,
 .paragraph--type--wysiwyg {
   // Rather than hacking ckeditor to put a default class on all ols,
   // negate any ols that have classes added by the user, then follow strict inheritance.
