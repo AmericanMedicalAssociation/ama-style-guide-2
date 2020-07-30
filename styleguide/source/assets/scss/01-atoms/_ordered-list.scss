@@ -11,6 +11,7 @@ article ol {
 
 .default-list {
   @extend .remove-empty;
+  list-style-position: inside;
   margin-left: 13px;
   margin-bottom: 14px;
   counter-reset: inst;
@@ -30,38 +31,44 @@ article ol {
     }
     // Second level.
     ol {
-      margin-left: -18px;
+      padding-left: 1em;
+      margin-left: -15px;
       margin-bottom: 0;
     }
   }
 }
 
-  // Code of Medical Ethics list style.
+
 .text-body {
-  ol:not(.listicle):not(.listicle__item-sub) {
+  // Rather than hacking ckeditor to put a default class on all ols,
+  // negate any ols that have classes added by the user.
+  ol:not([class]) {
     @extend .default-list;
-    li {
+    > li {
       padding-left: 30px;
       &::before {
         content: counter(inst, decimal) " )";
       }
       // Second level.
-      ol {
-        li {
+      > ol {
+        > li {
           padding-left: 25px;
           &::before {
             content:"" counter(inst, lower-alpha) ".";
           }
           // Everything Below.
-          ol {
-            margin-left: -49px;
-            li {
+          > ol {
+            // Any lists below 2nd level follow the numbering of the above lists,
+            // making them appear to be the same list.
+            margin-left: -44px;
+            counter-reset: inner;
+            counter-increment: inner;
+            > li {
               &::before {
                 content:"" counter(inst, lower-alpha) ".";
               }
               ol {
-                counter-reset: inner;
-                counter-increment: inner;
+                margin-left: -42px;
               }
             }
           }
@@ -69,32 +76,37 @@ article ol {
       }
     }
   }
+  // Code of Medical Ethics list style.
   ol.cme-list {
     @extend .default-list;
-    li {
+    > li {
       padding-left: 30px;
       &::before {
         content:"(" counter(inst, lower-alpha) ")";
       }
      // Second level.
-      ol {
-        li {
+      > ol {
+        > li {
           padding-left: 30px;
           &::before {
             content:"(" counter(inst, lower-roman) ")";
           }
           // Third Level.
-          ol {
-            margin-left: -18px;
-            li {
+          > ol {
+            margin-left: -15px;
+            > li {
               padding-left:24px;
               &::before {
                 content: counter(inst, lower-alpha) ".";
               }
               // Everything Below.
-              ol {
-                margin-left: -43px;
-                li {
+              > ol {
+                // Any lists below 3rd level follow the numbering of the above lists,
+                // making them appear to be the same list.
+                counter-reset: inner;
+                counter-increment: inner;
+                margin-left: -40px;
+                > li {
                   &::before {
                     content: counter(inst, lower-alpha) ".";
                   }
