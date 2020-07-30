@@ -1,0 +1,39 @@
+.description-wrapper {
+  position:relative;
+  .fulltext {
+    .more {
+      color: $blue;
+      cursor:pointer;
+    }
+  }
+  .visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  .more {
+    color: $blue;
+    cursor:pointer;
+    opacity: 0;
+    transition: opacity .3s;
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity .3s;
+    }
+  }
+  .truncated {
+    display:none;
+  }
+  .less {
+    color: #0176a5;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .3s;
+    &.visible {
+      display: block;
+      opacity: 1;
+      transition: all .3s;
+    }
+  }
+}
