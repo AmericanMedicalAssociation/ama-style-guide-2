@@ -38,11 +38,10 @@ article ol {
   }
 }
 
-
 .text-body,
 .paragraph--type--wysiwyg {
   // Rather than hacking ckeditor to put a default class on all ols,
-  // negate any ols that have classes added by the user.
+  // negate any ols that have classes added by the user, then follow strict inheritance.
   ol:not([class]) {
     @extend .default-list;
     > li {
@@ -59,8 +58,8 @@ article ol {
           }
           // Everything Below.
           > ol {
-            // Any lists below 2nd level follow the numbering of the above lists,
-            // making them appear to be the same list.
+            // Any lists below 2nd level follow the numbering of the parent list,
+            // making them appear to be the same list level.
             margin-left: -44px;
             counter-reset: inner;
             counter-increment: inner;
@@ -102,8 +101,8 @@ article ol {
               }
               // Everything Below.
               > ol {
-                // Any lists below 3rd level follow the numbering of the above lists,
-                // making them appear to be the same list.
+                // Any lists below 3rd level follow the numbering of the parent list,
+                // making them appear to be the same list level.
                 counter-reset: inner;
                 counter-increment: inner;
                 margin-left: -40px;
