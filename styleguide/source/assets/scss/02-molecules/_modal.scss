@@ -1,19 +1,3 @@
-// Style right floated modals differently
-div[data-entity-embed-display="view_mode:media.modal"] {
-  &.align-right {
-    max-width: auto;
-    @include breakpoint($bp-xs) {
-      clear: both;
-      width: 100%;
-    }
-    @include breakpoint($bp-large) {
-      width: auto;
-      margin-left: $gutter;
-      max-width: 50%;
-    }
-  }
-}
-
 // General
 .ama__image_popup {
   &__wrapper {
@@ -51,6 +35,45 @@ div[data-entity-embed-display="view_mode:media.modal"] {
     }
   }
 }
+
+// Style right floated modals differently
+div[data-entity-embed-display="view_mode:media.modal"] {
+  &.align-right {
+    max-width: auto;
+    @include breakpoint($bp-xs) {
+      clear: both;
+      width: 100%;
+    }
+    @include breakpoint($bp-large) {
+      width: auto;
+      margin-left: $gutter;
+      max-width: 50%;
+    }
+  }
+}
+
+// Style full width modals differently.
+div[data-entity-embed-display="view_mode:media.modal"] {
+  .ama__type--small {
+    margin-left: 14px;
+  }
+  &:not(.align-right) {
+    .ama__image_popup__wrapper {
+      @include breakpoint($bp-small) {
+        padding: $gutter 50px $gutter 23px;
+      }
+      @include breakpoint($bp-med) {
+        padding: $gutter 45px;
+      }
+      @include breakpoint($bp-large) {
+        padding: $gutter 69px;
+      }
+    }
+  }
+}
+
+
+// Modal Window
 #drupal-modal {
   overflow: initial;
   img {
@@ -106,34 +129,4 @@ div[data-entity-embed-display="view_mode:media.modal"] {
 
 .ama-image-popup-modal .ui-dialog-titlebar-close:focus {
   outline: none;
-}
-
-// Style full width modals differently.
-div[data-entity-embed-display="view_mode:media.modal"] {
-  .ama__type--small {
-    margin-left: 14px;
-  }
-  &:not(.align-right) {
-    .ama__image_popup__wrapper {
-      @include breakpoint($bp-small) {
-        padding: $gutter 50px $gutter 23px;
-      }
-      @include breakpoint($bp-med) {
-        padding: $gutter 45px;
-      }
-      @include breakpoint($bp-large) {
-        padding: $gutter 69px;
-      }
-    }
-  }
-}
-
-.ama-image-popup-icon {
-  position: absolute;
-  width: 41px;
-  height: 41px;
-  background: url('../images/expand.svg') no-repeat 0px 0px;
-  background-size: cover;
-  bottom: 33px;
-  right:0;
 }
