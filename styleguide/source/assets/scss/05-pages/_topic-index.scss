@@ -1,39 +1,43 @@
-.description-wrapper {
-  position:relative;
-  .fulltext {
-    .more {
-      color: $blue;
-      cursor:pointer;
+.description {
+  .desc-display {
+    position: relative;
+    padding-bottom: $gutter;
+    overflow: hidden;
+    .less {
+      cursor: default;
+      visibility: hidden;
+    }
+    &.summary {
+      max-height: 300px;
+      @include breakpoint($bp-med) {
+        max-height: 200px;
+      }
+      @include breakpoint($bp-large) {
+        max-height: 120px;
+      }
+      .more {
+        cursor:pointer;
+        color: $blue;
+      }
+    }
+    &.full {
+      @include breakpoint($bp-med) {
+        max-height: 2000px;
+      }
+      @include breakpoint($bp-large) {
+        max-height: 1000px;
+      }
+     .less {
+        color: $blue;
+        cursor: pointer;
+        position: absolute;
+        visibility: visible;
+        left: 0;
+      }
     }
   }
-  .visible {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity .3s;
-  }
-  .more {
-    color: $blue;
-    cursor:pointer;
-    opacity: 0;
-    transition: opacity .3s;
-    &.visible {
-      visibility: visible;
-      opacity: 1;
-      transition: opacity .3s;
-    }
-  }
+  .fulltext,
   .truncated {
-    display:none;
-  }
-  .less {
-    color: #0176a5;
-    opacity: 0;
-    cursor: pointer;
-    transition: all .3s;
-    &.visible {
-      display: block;
-      opacity: 1;
-      transition: all .3s;
-    }
+    display: none;
   }
 }
