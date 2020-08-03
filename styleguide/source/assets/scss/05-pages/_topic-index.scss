@@ -1,9 +1,6 @@
 .description {
   position: relative;
-  padding-bottom: $gutter;
-  @include breakpoint($bp-small) {
-    padding-bottom: 0;
-  }
+  margin-bottom: $gutter / 2;
   .desc-display {
     position: relative;
     overflow: hidden;
@@ -24,9 +21,6 @@
     }
     &.summary {
       transition: height .5s ease-in-out;
-      @include breakpoint($bp-med) {
-        padding-bottom: 0;
-      }
       .more {
         cursor: pointer;
         color: $blue;
