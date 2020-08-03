@@ -1,9 +1,12 @@
 .description {
   position: relative;
   padding-bottom: $gutter;
+  @include breakpoint($bp-small) {
+    padding-bottom: 0;
+  }
   .desc-display {
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
     .less {
       cursor: default;
       visibility: hidden;
@@ -21,12 +24,11 @@
     }
     &.summary {
       transition: height .5s ease-in-out;
-      padding-bottom: 28px;
       @include breakpoint($bp-med) {
         padding-bottom: 0;
       }
       .more {
-        cursor:pointer;
+        cursor: pointer;
         color: $blue;
       }
     }
@@ -34,13 +36,9 @@
   .fulltext,
   .truncated {
     visibility: hidden;
-    position:absolute;
-    top:0;
+    position: absolute;
+    top: 0;
     z-index: -999999999;
     opacity: 0;
-
-  }
-  .fulltext {
-
   }
 }
