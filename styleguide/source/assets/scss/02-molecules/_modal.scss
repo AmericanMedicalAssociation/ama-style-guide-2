@@ -27,11 +27,20 @@
   }
   &__modal-link-wrapper{
     position: absolute;
-    bottom: 0;
+    bottom: 28px;
     right: 0;
+    height: 41px;
+    width: 41px;
     display: none;
     @include breakpoint($bp-small) {
       display:block;
+    }
+    .ama-image-popup-icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('../images/expand.svg') no-repeat 0px 0px;
+      background-size: cover;
     }
   }
 }
@@ -44,10 +53,12 @@ div[data-entity-embed-display="view_mode:media.modal"] {
       clear: both;
       width: 100%;
     }
+    @include breakpoint($bp-med) {
+      max-width: 50%;
+    }
     @include breakpoint($bp-large) {
       width: auto;
       margin-left: $gutter;
-      max-width: 50%;
     }
   }
 }
