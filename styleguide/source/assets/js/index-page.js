@@ -51,7 +51,7 @@
         // Swap the truncated copy into the display div.
         desc.html(truncated).append(moreHtml)
         // Scroll to top.
-        $('html, body').animate({ scrollTop: 0 }, 500)
+        $('html, body').animate({ scrollTop: 0 }, 500, 'swing')
       })
     }
   }
