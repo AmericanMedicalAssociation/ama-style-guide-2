@@ -1,32 +1,16 @@
 .description {
+  position: relative;
+  padding-bottom: $gutter;
   .desc-display {
     position: relative;
-    padding-bottom: $gutter;
-    overflow: hidden;
+    overflow:hidden;
     .less {
       cursor: default;
       visibility: hidden;
     }
-    &.summary {
-      max-height: 300px;
-      @include breakpoint($bp-med) {
-        max-height: 200px;
-      }
-      @include breakpoint($bp-large) {
-        max-height: 120px;
-      }
-      .more {
-        cursor:pointer;
-        color: $blue;
-      }
-    }
     &.full {
-      @include breakpoint($bp-med) {
-        max-height: 2000px;
-      }
-      @include breakpoint($bp-large) {
-        max-height: 1000px;
-      }
+      transition: height .5s ease-in-out;
+      padding-bottom: $gutter;
      .less {
         color: $blue;
         cursor: pointer;
@@ -35,9 +19,28 @@
         left: 0;
       }
     }
+    &.summary {
+      transition: height .5s ease-in-out;
+      padding-bottom: 28px;
+      @include breakpoint($bp-med) {
+        padding-bottom: 0;
+      }
+      .more {
+        cursor:pointer;
+        color: $blue;
+      }
+    }
   }
   .fulltext,
   .truncated {
-    display: none;
+    visibility: hidden;
+    position:absolute;
+    top:0;
+    z-index: -999999999;
+    opacity: 0;
+
+  }
+  .fulltext {
+
   }
 }

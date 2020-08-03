@@ -2,38 +2,51 @@
   Drupal.behaviors.index = {
     attach: function (context, settings) {
 
+      var full = $('.fulltext')
+      var trunc = $('.truncated')
+      var desc = $('.desc-display')
       var fullText = $('.fulltext').html()
       var truncated = $('.truncated').html()
-      var desc = $('.desc-display')
-      var test = $('.ama__category-index .ama__layout--two-col-right--75-25__left')
-      var content = test.html()
-      var temp = $('.temp-div')
-      var tempHeight = ''
+      var fullHeight = ''
       var truncHeight = ''
+      var moreHtml = '<span class="more"> ...Read More</span>'
+      var lessHtml = '<span class="less">Hide Content</span>'
+      var resizeFull = ''
+      var resizeTrunc = ''
 
       $('.desc-display', context).once('getHeight').each(function () {
-        test.html(content).append('<div class="temp-div">' + fullText + '</div>')
-        truncHeight = desc.height()
-        tempHeight = temp.height()
-        truncHeight = desc.height()
-        console.log(tempHeight)
-        desc.css('height', truncHeight + 28 + 'px')
-        temp.remove()
+        truncHeight = trunc.height()
+        fullHeight = full.height() + 35
+        desc.css('height', truncHeight + 'px')
+      })
+
+      $(window).on('resize', function () {
+        if (desc.hasClass('full')) {
+          resizeFull = full.height() + 35
+          desc.css('height', resizeFull + 'px')
+        } else if (desc.hasClass('summary')) {
+          resizeTrunc = trunc.height()
+          desc.css('height', resizeTrunc + 'px')
+        }
       })
 
       desc.on('click', '.more', function () {
+        truncHeight = trunc.height()
+        fullHeight = full.height() + 35
+        desc.css('height', fullHeight + 'px')
         desc.addClass('full')
         desc.removeClass('summary')
-        desc.css('height', tempHeight + 'px')
-        desc.html(fullText).append('<span class="less">Hide Content</span>')
+        desc.html(fullText).append(lessHtml)
       })
       desc.on('click', '.less', function () {
-        desc.removeClass('full')
+        truncHeight = trunc.height()
+        fullHeight = full.height() + 35
         desc.css('height', truncHeight + 'px')
+        desc.removeClass('full')
         desc.addClass('summary')
-        desc.html(truncated).append('<span class="more"> ...Read More</span>')
+        desc.html(truncated).append(moreHtml)
+        $('html, body').animate({ scrollTop: 0 }, 500)
       })
-
     }
   }
 })(jQuery, Drupal)
