@@ -1,0 +1,38 @@
+.description {
+  position: relative;
+  margin-bottom: $gutter / 2;
+  .desc-display {
+    position: relative;
+    overflow: hidden;
+    .less {
+      cursor: default;
+      visibility: hidden;
+    }
+    &.full {
+      transition: height .5s ease-in-out;
+      padding-bottom: $gutter;
+     .less {
+        color: $blue;
+        cursor: pointer;
+        position: absolute;
+        visibility: visible;
+        left: 0;
+      }
+    }
+    &.summary {
+      transition: height .5s ease-in-out;
+      .more {
+        cursor: pointer;
+        color: $blue;
+      }
+    }
+  }
+  .fulltext,
+  .truncated {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    z-index: -999999999;
+    opacity: 0;
+  }
+}
