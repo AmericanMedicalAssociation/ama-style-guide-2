@@ -15,7 +15,7 @@
       function getDimensions () {
         fullHeight = full.height() + 35
         truncHeight = trunc.height()
-      }
+      };
 
       /*
         * Animate the height of a dynamic height object? SIMPLE!
@@ -28,7 +28,7 @@
       $('.desc-display', context).once('getHeight').each(function () {
         getDimensions()
         desc.css('height', truncHeight + 'px')
-      })
+      });
 
       // Set the height again on window resize.
       $(window).on('resize', function () {
@@ -38,7 +38,7 @@
         } else if (desc.hasClass('summary')) {
           desc.css('height', truncHeight + 'px')
         }
-      })
+      });
 
       // On click, set the height to trigger css transition.
       desc.on('click', '.more', function () {
@@ -47,7 +47,7 @@
         desc.addClass('full').removeClass('summary')
         // Swap the full copy into the display div.
         desc.html(fullText).append(lessHtml)
-      })
+      });
       desc.on('click', '.less', function () {
         getDimensions()
         desc.css('height', truncHeight + 'px')
@@ -56,7 +56,7 @@
         desc.html(truncated).append(moreHtml)
         // Scroll to top.
         $('html, body').animate({ scrollTop: 0 }, 500, 'swing')
-      })
+      });
     }
-  }
-})(jQuery, Drupal)
+  };
+})(jQuery, Drupal);
