@@ -42,36 +42,35 @@
     margin-bottom: 4px;
   }
 
-  span {
-    &.title {
+
+  .title {
       font-weight: $font-weight-semibold;
+      margin-right: $gutter / 4;
+  }
+
+  a {
+    margin: 0 8px 0 0;
+    position: relative;
+    font-size:18px;
+    display: inline-block;
+
+    &:after {
+      position: absolute;
+      content: "|";
+      font-size: 24px;
+      bottom:-5px;;
+      right: -9px;
     }
-    &:not(.title) {
-      display:inline-block;
-      position:relative;
-      margin: 0 8px 0 0;
-      &:last-child {
-        a {
-          &:after {
-            content: "";
-          }
-          margin: 0;
-        }
+    text-decoration: none;
+      border-bottom: 1px solid $gray-50;
+    @include breakpoint($bp-small) {
+      border-bottom: 2px solid $gray-50;
+    }
+    &:last-child {
+      &:after {
+        content: "";
       }
-      a {
-        position: relative;
-        &:after {
-          position: absolute;
-          content: "|";
-          right: -8px;
-          display: inline;
-        }
-        text-decoration: none;
-          border-bottom: 1px solid $gray-50;
-        @include breakpoint($bp-small) {
-          border-bottom: 2px solid $gray-50;
-        }
-      }
+      margin: 0;
     }
   }
 }
