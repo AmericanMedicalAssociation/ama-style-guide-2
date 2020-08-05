@@ -12,7 +12,7 @@
       transition: height .5s ease-in-out;
       padding-bottom: $gutter;
      .less {
-        color: $blue;
+        color: $description-blue;
         cursor: pointer;
         position: absolute;
         visibility: visible;
@@ -23,7 +23,7 @@
       transition: height .5s ease-in-out;
       .more {
         cursor: pointer;
-        color: $blue;
+        color: $description-blue;
       }
     }
   }
@@ -34,5 +34,44 @@
     top: 0;
     z-index: -999999999;
     opacity: 0;
+  }
+}
+.index-page__related-topics {
+  margin-bottom: 21px;
+  @include breakpoint($bp-small) {
+    margin-bottom: 4px;
+  }
+
+  span {
+    &.title {
+      font-weight: $font-weight-semibold;
+    }
+    &:not(.title) {
+      display:inline-block;
+      position:relative;
+      margin: 0 8px 0 0;
+      &:last-child {
+        a {
+          &:after {
+            content: "";
+          }
+          margin: 0;
+        }
+      }
+      a {
+        position: relative;
+        &:after {
+          position: absolute;
+          content: "|";
+          right: -8px;
+          display: inline;
+        }
+        text-decoration: none;
+          border-bottom: 1px solid $gray-50;
+        @include breakpoint($bp-small) {
+          border-bottom: 2px solid $gray-50;
+        }
+      }
+    }
   }
 }
