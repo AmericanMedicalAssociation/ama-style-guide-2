@@ -16,7 +16,7 @@
   &__image {
     @include breakpoint($bp-xs) {
       width: 100%;
-      max-width:100%;
+      max-width: 100%;
     }
     @include breakpoint($bp-small) {
       max-width: 100%;
@@ -27,14 +27,18 @@
   }
   &__modal-link-wrapper{
     position: absolute;
-    bottom: 28px;
+    bottom: 34px;
     right: 0;
     height: 41px;
     width: 41px;
     display: none;
     @include breakpoint($bp-small) {
-      display:block;
+      display: block;
     }
+    @include breakpoint($bp-med) {
+      bottom: $gutter;
+    }
+
     .ama-image-popup-icon {
       position: absolute;
       width: 100%;
@@ -84,6 +88,20 @@ div[data-entity-embed-display="view_mode:media.modal"] {
 }
 
 
+.embed-entity--caption div[data-entity-embed-display="view_mode:media.modal"] + figcaption {
+  margin: 0 0 $gutter;
+  @include breakpoint($bp-small) {
+    padding: 0 $gutter 0;
+    margin: -20px 0 $gutter;
+  }
+  @include breakpoint($bp-med) {
+    padding: 0 45px;
+  }
+  @include breakpoint($bp-large) {
+    padding: 0 69px;
+  }
+}
+
 // Modal Window
 #drupal-modal {
   overflow: initial;
@@ -104,9 +122,6 @@ div[data-entity-embed-display="view_mode:media.modal"] {
   border: 0;
 }
 
-.embed-entity--caption div[data-entity-embed-display="view_mode:media.modal"] + figcaption {
-  margin: 0 $gutter/2 $gutter/2 $gutter/2;
-}
 
 .ama-image-popup-modal .ui-dialog-title,
 .ama-image-popup-modal .ui-button-icon-only .ui-icon,
