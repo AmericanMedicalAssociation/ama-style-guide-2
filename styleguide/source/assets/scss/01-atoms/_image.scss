@@ -14,7 +14,7 @@
 
   @include breakpoint($bp-small) {
     &--left {
-      float: right;
+
       @include gutter($margin-right-half...);
     }
 
@@ -22,47 +22,44 @@
       @include gutter($margin-left-half...);
       @include gutter($margin-top-half...);
       @include gutter($margin-bottom-half...);
-      float: right;
+
       width: 100%;
     }
   }
 }
 //embedded image with caption - wrap caption
-figure.embed-entity--caption {
-  display: table;
 
+.media-full-caption,
+.media-thumbnail-caption {
+  display: table;
   figcaption {
     display: table-caption;
     caption-side: bottom;
   }
+  &.align-left,
+  .align-right {
+    margin-left: $gutter / 2;
+    margin-bottom: $gutter / 2;
+  }
 }
 
-figure.embedded-entity.align-left {
-  margin-left: $gutter / 2;
-  margin-bottom: $gutter / 2;
-}
-
-figure.embedded-entity.align-right {
-  margin-left: $gutter / 2;
-  margin-bottom: $gutter / 2;
-}
 
 // Inline Images using ckeditor.
 
-[data-entity-type="media"],
-[data-entity-type="media"] .align-right,
-[data-entity-type="media"] .align-center,
-[data-entity-type="media"] .align-left {
-    img {
-      clear: both;
-      width:100%;
-      margin:0;
-      @include breakpoint($bp-med) {
-        width: auto;
-        clear: none;
-        float: right;
-        @include gutter($margin-left-half...);
-        @include gutter($margin-bottom-half...);
-      }
+.media-thumbnail,
+.media-modal {
+  &.align-right,
+  .align-center,
+  .align-left {
+    clear: both;
+    width:100%;
+    margin:0;
+    @include breakpoint($bp-med) {
+      width: auto;
+      clear: none;
+      float: right;
+      @include gutter($margin-left-half...);
+      @include gutter($margin-bottom-half...);
     }
   }
+}

@@ -1,157 +1,98 @@
 // General
-div[data-entity-embed-display="view_mode:media.modal"] {
-  max-width: 100%;
-  background: green;
-  clear: both;
-  margin-bottom: $gutter;
-  &+ figcaption {
-    margin-bottom: $gutter;
-    padding-right:0;
-    margin-top: -$gutter;
+.ama__image_popup {
+  &__wrapper {
+    position: relative;
+    padding: 0;
     @include breakpoint($bp-small) {
-      padding-right: 50px;
+
+      padding: $gutter 50px $gutter 0;
     }
   }
+  &__image {
+    width: 100%;
+    max-width:100%;
+    img {
+      width: 100%;
+      max-width:100%;
+    }
+  }
+  &__modal-link-wrapper{
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    height: 41px;
+    width: 41px;
+    display: none;
+    @include breakpoint($bp-small) {
+      display:block;
+    }
+    .ama-image-popup-icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('../images/expand.svg') no-repeat 0px 0px;
+      background-size: cover;
+    }
+  }
+}
+
+// Style right floated modals differently
+.media-modal {
+  margin-bottom: $gutter;
+  &.align-right {
+    max-width: 100%;
+    @include breakpoint($bp-med) {
+      max-width: 50%;
+      margin-left: $gutter;
+    }
+    // right aligned modals need to override the full width padding
+    .ama__image_popup__wrapper {
+      @include breakpoint($bp-small) {
+        padding: 0 50px 0 0;
+      }
+      @include breakpoint($bp-med) {
+        padding: 0 50px 0 0;
+      }
+      @include breakpoint($bp-large) {
+        padding: 0 50px 0 0;
+      }
+    }
+    .media-caption {
+      padding: 0;
+      display:block;
+      @include breakpoint($bp-small) {
+        padding: 0 50px 0 0;
+      }
+    }
+  }
+  // full width modals need padding
   .ama__image_popup__wrapper {
-    padding: 0;
     @include breakpoint($bp-small) {
       padding: 0 50px 0 23px;
     }
     @include breakpoint($bp-med) {
-      padding: 0 45px;
+      padding: 0 50px 0 45px;
     }
     @include breakpoint($bp-large) {
       padding: 0 69px;
     }
-    .ama__image_popup__modal-link-wrapper {
-      @include breakpoint($bp-med) {
-        bottom: 0;
-      }
-    }
   }
-  &.align-right {
-    margin-left: 0;
-    max-width: 100%;
-    clear:both;
-    float: none;
-    @include breakpoint($bp-med) {
-      max-width: 50%;
-      clear:none;
-      float: right;
-      margin-left: $gutter;
-    }
-    .ama__image_popup__wrapper {
-      padding: 0;
-      @include breakpoint($bp-small) {
-        padding: 0 50px 0 0;
-      }
-      @include breakpoint($bp-med) {
-        padding: 0 50px 0 0;
-      }
-      @include breakpoint($bp-large) {
-        padding: 0px 50px 0px 0px;
-      }
-      .ama__image-popup__modal-link-wrapper {
-        @include breakpoint($bp-med) {
-          bottom: 0;
-        }
-      }
-    }
-  }
-  .ama__image_popup {
-    &__wrapper {
-      display: inline-flex;
-      position: relative;
-    }
-    &__image {
-      @include breakpoint($bp-xs) {
-        width: 100%;
-        max-width: 100%;
-      }
-      @include breakpoint($bp-small) {
-        max-width: 100%;
-      }
-      img {
-        margin: 0;
-      }
-    }
-    &__modal-link-wrapper {
-      position: absolute;
-      right: 0;
-      height: 41px;
-      width: 41px;
-      display: none;
-      @include breakpoint($bp-small) {
-        display: block;
-      }
-
-      .ama-image-popup-icon {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url('../images/expand.svg') no-repeat 0px 0px;
-        background-size: cover;
-      }
-    }
-  }
-}
-figure.embed-entity--caption {
-
-  margin-bottom: $gutter;
-  max-width: 100%;
-    div[data-entity-embed-display="view_mode:media.modal"] {
-      margin-bottom: 0;
-    }
-    figcaption {
-
-      margin: 0 0 $gutter;
-      @include breakpoint($bp-small) {
-        padding: 0 $gutter 0;
-        margin: 0 0 $gutter;
-      }
-      @include breakpoint($bp-med) {
-        padding: 0 45px;
-      }
-      @include breakpoint($bp-large) {
-        padding: 0 69px;
-      }
-    }
-    .ama__type--small {
-      margin-left: 14px;
-    }
-  &.align-right {
-    max-width: 100%;
-    float: none;
+  //the caption needs to mirror this padding
+  .media-caption {
+    padding: 0;
+    display:block;
     @include breakpoint($bp-small) {
-      max-width: 50%;
-      float: right;
-      margin-left: $gutter;
+      padding: 0 50px 0 23px;
     }
-    .ama__image_popup__wrapper {
-      padding: 0;
-      @include breakpoint($bp-small) {
-        padding: 0 50px 0 0;
-      }
-      @include breakpoint($bp-med) {
-        padding: 0 50px 0 0;
-      }
-      @include breakpoint($bp-large) {
-        padding: 0 50px 0 0;
-      }
-      .ama__image_popup__modal-link-wrapper {
-        @include breakpoint($bp-med) {
-          bottom: 0;
-        }
-      }
+    @include breakpoint($bp-med) {
+      padding: 0 50px 0 45px;
     }
-    figcaption {
-      clear: right;
-      max-width: 100%;
-      padding: 0;
-      @include breakpoint($bp-small) {
-        padding: 0 50px 0 0;
-      }
+    @include breakpoint($bp-large) {
+      padding: 0 69px;
     }
+  }
+  &.caption {
+    display:block;
   }
 }
 
@@ -174,7 +115,6 @@ figure.embed-entity--caption {
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0;
 }
-
 
 .ama-image-popup-modal .ui-dialog-title,
 .ama-image-popup-modal .ui-button-icon-only .ui-icon,
