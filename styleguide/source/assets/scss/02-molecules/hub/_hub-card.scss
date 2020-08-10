@@ -9,6 +9,10 @@
   min-height: 400px;
   width: 100%;
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { 
+    display: block;
+  }
+
   &__heading,
   & .ama__h2 {
     @include gutter($margin-top-full...);
