@@ -8,10 +8,15 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-
+  
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { 
     display: block;
+
+    &--no-image {
+      display: flex;
+    }
   }
+  
 
   &__heading,
   & .ama__h2 {
