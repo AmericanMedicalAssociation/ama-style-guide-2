@@ -1,12 +1,7 @@
 // General
 .ama__image_popup {
   &__wrapper {
-    position: relative;
     padding: 0;
-    @include breakpoint($bp-small) {
-
-      padding: $gutter 50px $gutter 0;
-    }
   }
   &__image {
     width: 100%;
@@ -30,23 +25,25 @@
       position: absolute;
       width: 100%;
       height: 100%;
+      right: 0;
       background: url('../images/expand.svg') no-repeat 0px 0px;
       background-size: cover;
     }
   }
 }
 
-// Style right floated modals differently
+.embedded-entity.media {
+  margin-bottom: $gutter /2 ;
+}
+
 .media-modal {
-  margin-bottom: $gutter;
+  &:not(.align-right) {
+    clear: both;
+  }
   &.align-right {
-    max-width: 100%;
-    @include breakpoint($bp-med) {
-      max-width: 50%;
-      margin-left: $gutter;
-    }
     // right aligned modals need to override the full width padding
-    .ama__image_popup__wrapper {
+    .media-caption,
+    .media-entity {
       @include breakpoint($bp-small) {
         padding: 0 50px 0 0;
       }
@@ -57,16 +54,10 @@
         padding: 0 50px 0 0;
       }
     }
-    .media-caption {
-      padding: 0;
-      display:block;
-      @include breakpoint($bp-small) {
-        padding: 0 50px 0 0;
-      }
-    }
   }
   // full width modals need padding
-  .ama__image_popup__wrapper {
+  .media-caption,
+  .media-entity {
     @include breakpoint($bp-small) {
       padding: 0 50px 0 23px;
     }
@@ -77,41 +68,29 @@
       padding: 0 69px;
     }
   }
-  //the caption needs to mirror this padding
-  .media-caption {
-    padding: 0;
-    display:block;
-    @include breakpoint($bp-small) {
-      padding: 0 50px 0 23px;
-    }
-    @include breakpoint($bp-med) {
-      padding: 0 50px 0 45px;
-    }
-    @include breakpoint($bp-large) {
-      padding: 0 69px;
-    }
-  }
-  &.caption {
-    display:block;
+  .media-entity {
+    position: relative;
   }
 }
 
 // Modal Window
 #drupal-modal {
   overflow: initial;
-  img {
-    max-height: 80vh;
-    max-width: 95vw;
+  width:100% !important;
+  @include breakpoint($bp-med) {
     width: auto;
-    margin: 0 auto;
   }
 }
 .ama-image-popup-modal {
-  z-index: 502;
+  z-index:501;
+  position: fixed;
+  max-width: 90%;
+  max-height:80%;
 }
 .ui-dialog-content {
   padding: .5em .5em !important;
 }
+
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0;
 }
@@ -130,9 +109,8 @@
 }
 
 .ui-widget-overlay {
-  background: #7f7f7f;
+  background: $gray-50;
   opacity: 0.81;
-  z-index: 501;
 }
 
 .ama-image-popup-modal .ui-dialog-titlebar-close {

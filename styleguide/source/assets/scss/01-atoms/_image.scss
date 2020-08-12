@@ -2,7 +2,6 @@
 .ama__link--with-image {
   a {
     display: flex;
-
     .ama__image__text {
       display: block;
       padding-left: $gutter / 2;
@@ -10,56 +9,53 @@
   }
 }
 
-.ama__image {
-
-  @include breakpoint($bp-small) {
-    &--left {
-
-      @include gutter($margin-right-half...);
-    }
-
-    &--right {
-      @include gutter($margin-left-half...);
-      @include gutter($margin-top-half...);
-      @include gutter($margin-bottom-half...);
-
-      width: 100%;
-    }
-  }
-}
-//embedded image with caption - wrap caption
-
-.media-full-caption,
-.media-thumbnail-caption {
-  display: table;
-  figcaption {
-    display: table-caption;
-    caption-side: bottom;
-  }
-  &.align-left,
-  .align-right {
-    margin-left: $gutter / 2;
-    margin-bottom: $gutter / 2;
-  }
-}
-
-
 // Inline Images using ckeditor.
+// Embedded thumbnails are always aligned right with a max width.
+.media-thumbnail {
+  clear: both;
+  width: 100%;
+  @include breakpoint($bp-small) {
+    max-width: $inline-image-width;
+    margin:0 0 $gutter / 2 $gutter / 2;
+    clear: right;
+    float: right;
+  }
+}
 
-.media-thumbnail,
-.media-modal {
-  &.align-right,
-  .align-center,
-  .align-left {
+// "Full" images are always aligned right and have a max width, but videos are full width.
+.media-full {
+  &.video {
+    max-width: 100%;
     clear: both;
-    width:100%;
-    margin:0;
-    @include breakpoint($bp-med) {
-      width: auto;
-      clear: none;
+  }
+  &.image {
+    clear: both;
+    width: 100%;
+    @include breakpoint($bp-small) {
+      max-width: $inline-image-width;
+      margin:0 0 $gutter / 2 $gutter / 2;
+      clear: right;
       float: right;
-      @include gutter($margin-left-half...);
-      @include gutter($margin-bottom-half...);
     }
   }
+}
+
+// All aligned media elements should display aligned right with a max-width
+.media.align-right,
+.media.align-center,
+.media.align-left {
+  clear: both;
+  width: 100%;
+  @include breakpoint($bp-small) {
+    max-width: $inline-image-width;
+    margin:0 0 $gutter / 2 $gutter / 2;
+    clear: right;
+    float: right;
+  }
+}
+
+// Style Image/Video captions
+.caption {
+  display: block;
+  font-style: italic;
 }
