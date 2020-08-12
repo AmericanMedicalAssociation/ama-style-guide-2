@@ -86,11 +86,18 @@
   position: fixed;
   max-width: 90%;
   max-height:80%;
+  display: table;
 }
 .ui-dialog-content {
   padding: .5em .5em !important;
 }
 
+.ui-widget-content {
+  display: table-row;
+  img {
+    display: table-cell;
+  }
+}
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0;
 }
