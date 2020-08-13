@@ -13,17 +13,23 @@
       padding-bottom: $gutter;
      .less {
         color: $description-blue;
-        cursor: pointer;
         position: absolute;
         visibility: visible;
+        text-decoration: none;
         left: 0;
+        &:visited {
+          color: $description-blue-visited;
+        }
       }
     }
     &.summary {
       transition: height .5s ease-in-out;
       .more {
-        cursor: pointer;
+        text-decoration:none;
         color: $description-blue;
+        &:visited {
+          color: $description-blue-visited;
+        }
       }
     }
   }

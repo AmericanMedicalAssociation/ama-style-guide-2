@@ -9,12 +9,18 @@
       var truncated = $('.truncated').html()
       var fullHeight = ''
       var truncHeight = ''
-      var moreHtml = '<span class="more"> ...Read More</span>'
-      var lessHtml = '<span class="less">Hide Content</span>'
+      var width = ''
+      var moreHtml = '<a href="#" class="more"> ...Read More</a>'
+      var lessHtml = '<a href="#" class="less">Hide Content</a>'
 
       function getDimensions () {
         fullHeight = full.height() + 35
-        truncHeight = trunc.height()
+        width = $(window).width()
+        if (width < 400) {
+          truncHeight = trunc.height() + 25
+        } else {
+          truncHeight = trunc.height()
+        }
       };
 
       /*
