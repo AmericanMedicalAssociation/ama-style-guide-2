@@ -7660,7 +7660,7 @@ section.ama__forum_comments {
 
 .ama__image_popup__modal-link-wrapper {
   position: absolute;
-  bottom: 28px;
+  bottom: 32px;
   right: 0;
   height: 41px;
   width: 41px;
@@ -7674,6 +7674,32 @@ section.ama__forum_comments {
     height: 100%;
     background: url("../images/expand.svg") no-repeat 0px 0px;
     background-size: cover; }
+
+figure.align-right {
+  float: none;
+  clear: both;
+  width: 100%; }
+  @media (min-width: 37.5em) {
+    figure.align-right {
+      max-width: 50%;
+      margin: 0 0 14px 14px;
+      float: right;
+      clear: right; } }
+  figure.align-right .ama__image_popup__wrapper {
+    padding: 0 !important;
+    clear: both;
+    width: 100%; }
+    @media (min-width: 37.5em) {
+      figure.align-right .ama__image_popup__wrapper {
+        padding: 0 50px 0 0 !important; } }
+    @media (min-width: 56.25em) {
+      figure.align-right .ama__image_popup__wrapper {
+        padding: 0 50px 0 0 !important; } }
+    @media (min-width: 75em) {
+      figure.align-right .ama__image_popup__wrapper {
+        padding: 0 50px 0 0 !important; } }
+    figure.align-right .ama__image_popup__wrapper .ama__image_popup__modal-link-wrapper {
+      bottom: 0; }
 
 div[data-entity-embed-display="view_mode:media.modal"].align-right {
   max-width: auto; }
@@ -7704,19 +7730,23 @@ div[data-entity-embed-display="view_mode:media.modal"] .ama__type--small, div[da
   div[data-entity-embed-display="view_mode:media.modal"]:not(.align-right) .ama__image_popup__wrapper {
     padding: 28px 69px; } }
 
-#drupal-modal {
-  overflow: initial; }
-  #drupal-modal img {
-    max-height: 80vh;
-    max-width: 95vw;
-    width: auto;
-    margin: 0 auto; }
-
 .ama-image-popup-modal {
-  z-index: 502; }
-
-.ui-dialog-content {
-  padding: .5em .5em !important; }
+  z-index: 502;
+  display: table;
+  max-width: 95%;
+  max-height: 90%;
+  padding: .5em .5em 0; }
+  .ama-image-popup-modal .ui-dialog-content {
+    padding: 0;
+    display: table-row; }
+    .ama-image-popup-modal .ui-dialog-content #drupal-modal {
+      overflow: initial; }
+      .ama-image-popup-modal .ui-dialog-content #drupal-modal img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        margin: 0 auto;
+        display: table-cell; }
 
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0; }
@@ -9606,7 +9636,7 @@ div.ama__category-index__stubs.ama__topic-index__stubs.ama__category-index a.ama
 .ama__tags,
 article[class*='__page-content'] .ama__tags {
   margin-top: 21px;
-  margin-bottom: 21px;
+  margin-bottom: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9623,10 +9653,6 @@ article[class*='__page-content'] .ama__tags {
     .ama__tags,
     article[class*='__page-content'] .ama__tags {
       margin-top: 28px; } }
-  @media (min-width: 56.25em) {
-    .ama__tags,
-    article[class*='__page-content'] .ama__tags {
-      margin-bottom: 28px; } }
   @media (min-width: 37.5em) {
     .ama__tags,
     article[class*='__page-content'] .ama__tags {
@@ -9679,25 +9705,6 @@ article[class*='__page-content'] .ama__tags {
       list-style: none;
       padding-bottom: 14px;
       padding-right: 18px; }
-      .ama__tags-list li:nth-last-of-type(-n+3),
-      article[class*='__page-content'] .ama__tags-list li:nth-last-of-type(-n+3) {
-        padding-bottom: initial; }
-      @media only screen and (min-width: 991px) and (max-width: 1199px) {
-        .ama__tags-list li:nth-last-of-type(2),
-        article[class*='__page-content'] .ama__tags-list li:nth-last-of-type(2) {
-          padding-bottom: 14px; } }
-      @media only screen and (min-width: 768px) and (max-width: 990px) {
-        .ama__tags-list li:nth-last-of-type(2),
-        article[class*='__page-content'] .ama__tags-list li:nth-last-of-type(2) {
-          padding-bottom: 14px; } }
-      @media only screen and (min-width: 200px) and (max-width: 37.5em) {
-        .ama__tags-list li:nth-last-of-type(-n+2),
-        article[class*='__page-content'] .ama__tags-list li:nth-last-of-type(-n+2) {
-          padding-top: 14px; } }
-      @media (min-width: 37.5em) {
-        .ama__tags-list li,
-        article[class*='__page-content'] .ama__tags-list li {
-          margin: initial; } }
   .ama__tags .ama__tag,
   article[class*='__page-content'] .ama__tags .ama__tag {
     font-size: 14px;
@@ -12551,7 +12558,7 @@ section.ama__page--event__speakers {
   grid-template-rows: auto auto auto;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr; }
-  @media (min-width: 56.25em) {
+  @media (min-width: 37.5em) {
     .ama__75-25__masthead {
       -ms-grid-columns: 3fr 1fr;
       grid-template-columns: 3fr 1fr; } }
@@ -15154,16 +15161,21 @@ body.search-results .ama__layout--two-column--left__page-content {
       padding-bottom: 28px; }
       .description .desc-display.full .less {
         color: #02aaec;
-        cursor: pointer;
         position: absolute;
         visibility: visible;
-        left: 0; }
+        text-decoration: none;
+        left: 0;
+        bottom: 0; }
+        .description .desc-display.full .less:visited {
+          color: #0176a5; }
     .description .desc-display.summary {
       -webkit-transition: height .5s ease-in-out;
       transition: height .5s ease-in-out; }
       .description .desc-display.summary .more {
-        cursor: pointer;
+        text-decoration: none;
         color: #02aaec; }
+        .description .desc-display.summary .more:visited {
+          color: #0176a5; }
   .description .fulltext,
   .description .truncated {
     visibility: hidden;
@@ -15182,20 +15194,15 @@ body.search-results .ama__layout--two-column--left__page-content {
     margin-right: 7px; }
   .index-page__related-topics a {
     margin: 0 8px 0 0;
-    position: relative;
     font-size: 18px;
-    display: inline-block;
-    text-decoration: none;
-    border-bottom: 1px solid #767676; }
+    outline: 0; }
     .index-page__related-topics a:after {
-      position: absolute;
       content: "|";
-      font-size: 24px;
-      bottom: -5px;
-      right: -9px; }
-    @media (min-width: 37.5em) {
-      .index-page__related-topics a {
-        border-bottom: 2px solid #767676; } }
+      display: inline-block;
+      font-weight: 300;
+      font-size: 16px;
+      margin-right: 1px;
+      margin-left: 5px; }
     .index-page__related-topics a:last-child {
       margin: 0; }
       .index-page__related-topics a:last-child:after {
