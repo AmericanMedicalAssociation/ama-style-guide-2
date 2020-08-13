@@ -57,22 +57,18 @@
 
   a {
     margin: 0 8px 0 0;
-    position: relative;
     font-size:18px;
-    display: inline-block;
+    outline: 0;
 
     &:after {
-      position: absolute;
       content: "|";
-      font-size: 24px;
-      bottom:-5px;;
-      right: -9px;
+      display: inline-block;
+      font-weight: 300;
+      font-size: 16px;
+      margin-right: 1px;
+      margin-left: 5px;
     }
-    text-decoration: none;
-      border-bottom: 1px solid $gray-50;
-    @include breakpoint($bp-small) {
-      border-bottom: 2px solid $gray-50;
-    }
+
     &:last-child {
       &:after {
         content: "";
