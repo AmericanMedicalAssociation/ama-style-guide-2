@@ -27,7 +27,7 @@
   }
   &__modal-link-wrapper{
     position: absolute;
-    bottom: 28px;
+    bottom: 32px;
     right: 0;
     height: 41px;
     width: 41px;
@@ -41,6 +41,36 @@
       height: 100%;
       background: url('../images/expand.svg') no-repeat 0px 0px;
       background-size: cover;
+    }
+  }
+}
+
+figure.align-right {
+  float:none;
+  clear:both;
+  width: 100%;
+  @include breakpoint($bp-small) {
+    max-width: 50%;
+    margin: 0 0 $gutter /2 $gutter /2;
+    float:right;
+    clear:right;
+  }
+  .ama__image_popup__wrapper {
+    padding: 0!important;
+      clear: both;
+      width: 100%;
+
+    @include breakpoint($bp-small) {
+      padding: 0 50px 0 0 !important;
+    }
+    @include breakpoint($bp-med) {
+      padding: 0 50px 0 0 !important;
+    }
+    @include breakpoint($bp-large) {
+      padding: 0 50px 0 0 !important;
+    }
+    .ama__image_popup__modal-link-wrapper{
+      bottom: 0;
     }
   }
 }
@@ -85,24 +115,28 @@ div[data-entity-embed-display="view_mode:media.modal"] {
 
 
 // Modal Window
-#drupal-modal {
-  overflow: initial;
-  img {
-    max-height: 80vh;
-    max-width: 95vw;
-    width: auto;
-    margin: 0 auto;
-    display: table-cell;
-  }
-}
 .ama-image-popup-modal {
   z-index: 502;
-  max-width: 95% !important;
   display: table;
+  max-width: 95%;
+  max-height:90%;
+  padding: .5em .5em 0;
+  .ui-dialog-content {
+    padding: 0;
+    display: table-row;
+    #drupal-modal {
+      overflow: initial;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        margin: 0 auto;
+        display: table-cell;
+      }
+    }
+  }
 }
-.ui-dialog-content {
-  padding: .5em .5em !important;
-}
+
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0;
 }
