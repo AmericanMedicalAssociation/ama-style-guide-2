@@ -10144,6 +10144,13 @@ article[class*='__page-content'] .ama__tags {
   @media (min-width: 56.25em) {
     .ama__hub-card {
       margin-bottom: 14px; } }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .ama__hub-card {
+      display: block; }
+      .ama__hub-card--no-image {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
   .ama__hub-card__heading,
   .ama__hub-card .ama__h2,
   .ama__hub-card .ama__link-list--mobile .ui-accordion-header,
