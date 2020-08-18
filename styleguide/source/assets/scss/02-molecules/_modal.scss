@@ -123,7 +123,7 @@ div[data-entity-embed-display="view_mode:media.modal"] {
   padding: .5em .5em 0;
   .ui-dialog-content {
     padding: 0;
-    display: table-row;
+    max-height:100vh !important;
     #drupal-modal {
       overflow: initial;
       img {
@@ -131,7 +131,6 @@ div[data-entity-embed-display="view_mode:media.modal"] {
         max-width: 100%;
         width: auto;
         margin: 0 auto;
-        display: table-cell;
       }
     }
   }
@@ -168,8 +167,8 @@ div[data-entity-embed-display="view_mode:media.modal"] {
   background: url('../images/close.svg');
   border: none;
   position: absolute;
-  right: -20px;
-  top: -10px;
+  right: -24px;
+  top: -14px;
   height: $gutter;
   width: $gutter;
   padding: 0;
