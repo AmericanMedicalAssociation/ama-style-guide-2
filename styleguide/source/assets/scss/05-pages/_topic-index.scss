@@ -1,6 +1,9 @@
 .description {
   position: relative;
   margin-bottom: $gutter / 2;
+  @include breakpoint($bp-small max-width) {
+    margin-bottom: 21px;
+  }
   .desc-display {
     position: relative;
     overflow: hidden;
