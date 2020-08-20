@@ -2,14 +2,8 @@
 .ama__image_popup {
   &__wrapper {
     padding: 0;
-  }
-  &__image {
-    width: 100%;
-    max-width:100%;
-    img {
-      width: 100%;
-      max-width:100%;
-    }
+    display: inline-flex;
+    position: relative;
   }
   &__modal-link-wrapper{
     position: absolute;
@@ -75,12 +69,14 @@
 
 // Modal Window
 .ama-image-popup-modal {
-  z-index:501;
-  position: fixed;
+  z-index:502;
+  display: table;
   max-width: 95%;
-  max-height:92vh;
+  max-height: 92vh !important;
+  padding: .5em .5em 0;
   .ui-dialog-content {
-    padding: .5em .5em !important;
+    padding: 0;
+    max-height:100vh !important;
     img {
       max-height: 90vh;
       max-width: 100%;
