@@ -41,6 +41,11 @@
 }
 
 // All aligned media elements should display aligned right with a max-width
+.media:not(.align-right):not(.align-left):not(.align-center) {
+  float:none;
+  display:block;
+  margin: 0 0 $gutter /2 0;
+}
 .media.align-right,
 .media.align-center,
 .media.align-left {

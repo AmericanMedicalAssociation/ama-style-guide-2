@@ -11,6 +11,7 @@
       var truncHeight = ''
       var moreHtml = '<span class="more"> ...Read More</span>'
       var lessHtml = '<span class="less">Hide Content</span>'
+      var width = ''
 
       function getDimensions () {
         width = $(window).width()

@@ -13,7 +13,7 @@
   }
   &__modal-link-wrapper{
     position: absolute;
-    bottom: 32px;
+    bottom: $gutter /4;
     right: 0;
     height: 41px;
     width: 41px;
@@ -74,30 +74,22 @@
 }
 
 // Modal Window
-#drupal-modal {
-  overflow: initial;
-  width:100% !important;
-  @include breakpoint($bp-med) {
-    width: auto;
-  }
-}
 .ama-image-popup-modal {
   z-index:501;
   position: fixed;
-  max-width: 90%;
-  max-height:80%;
-  display: table;
-}
-.ui-dialog-content {
-  padding: .5em .5em !important;
-}
-
-.ui-widget-content {
-  display: table-row;
-  img {
-    display: table-cell;
+  max-width: 95%;
+  max-height:92vh;
+  .ui-dialog-content {
+    padding: .5em .5em !important;
+    img {
+      max-height: 90vh;
+      max-width: 100%;
+      width: auto;
+      margin: 0 auto;
+    }
   }
 }
+
 .ama-image-popup-modal.ui-widget.ui-widget-content {
   border: 0;
 }
