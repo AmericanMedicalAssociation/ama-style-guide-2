@@ -13,8 +13,14 @@
       var lessHtml = '<span class="less">Hide Content</span>'
 
       function getDimensions () {
-        fullHeight = full.height() + 35
-        truncHeight = trunc.height()
+        width = $(window).width()
+        if (width < 400) {
+          truncHeight = trunc.height() + 25
+          fullHeight = full.height() + 15
+        } else {
+          truncHeight = trunc.height()
+          fullHeight = full.height() + 35
+        }
       };
 
       /*
