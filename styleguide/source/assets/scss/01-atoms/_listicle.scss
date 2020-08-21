@@ -38,36 +38,6 @@
         margin-top: 0;
       }
     }
-    figure {
-      float: right;
-      margin-bottom: 19px;
-      figcaption {
-        margin-left: 1rem;
-      }
-      &.no-margin {
-        float: none;
-        display: block;
-        width: 100%;
-        figcaption {
-          margin-left: 0rem;
-          display: block;
-        }
-      }
-      img {
-        margin-top: 7px;
-        &.no-margin {
-          margin-left: 0
-        }
-        @include breakpoint($bp-xs) {
-          width: 100%;
-          margin-left: 0;
-        }
-        @include breakpoint($bp-med) {
-          width: auto;
-          margin-left: 1rem;
-        }
-      }
-    }
   }
 
   &__title,
