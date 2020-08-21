@@ -12,30 +12,23 @@
 // Inline Images using ckeditor.
 
 .media {
-  &:not(.align-right),
-  &:not(.align-left),
-  &:not(.align-center) {
-    float: none;
-    clear: both;
-    display:block;
-    max-width: 100%;
-    margin: 0 0 $gutter /2 0;
-    @include breakpoint($bp-small) {
-      margin: 0 0 $gutter /2 0;
-    }
-  }
-}
-
-.media.align-right,
-.media.align-center,
-.media.align-left {
+  float: none;
   clear: both;
-  width: 100%;
+  display:block;
+  max-width: 100%;
+  margin: 0 0 $gutter /2 0;
   @include breakpoint($bp-small) {
-    max-width: $inline-image-width;
-    margin:0 0 $gutter / 2 $gutter / 2;
-    clear: right;
-    float: right;
+    margin: 0 0 $gutter /2 0;
+  }
+  &.align-right,
+  &.align-center,
+  &.align-left {
+    @include breakpoint($bp-small) {
+      max-width: $inline-image-width;
+      margin:0 0 $gutter / 2 $gutter / 2;
+      clear: right;
+      float: right;
+    }
   }
 }
 
