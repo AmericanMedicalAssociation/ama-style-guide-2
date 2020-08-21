@@ -11,22 +11,6 @@
 
 // Inline Images using ckeditor.
 
-.media-thumbnail {
-  @include breakpoint($bp-small) {
-    max-width: $inline-image-width;
-  }
-}
-
-.media-full {
-  &.video {
-  }
-  &.image {
-    @include breakpoint($bp-small) {
-      max-width: $inline-image-width;
-    }
-  }
-}
-
 .media {
   &:not(.align-right),
   &:not(.align-left),
