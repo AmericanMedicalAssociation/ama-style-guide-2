@@ -2,7 +2,6 @@
 .ama__link--with-image {
   a {
     display: flex;
-
     .ama__image__text {
       display: block;
       padding-left: $gutter / 2;
@@ -10,59 +9,31 @@
   }
 }
 
-.ama__image {
-
-  @include breakpoint($bp-small) {
-    &--left {
-      float: right;
-      @include gutter($margin-right-half...);
-    }
-
-    &--right {
-      @include gutter($margin-left-half...);
-      @include gutter($margin-top-half...);
-      @include gutter($margin-bottom-half...);
-      float: right;
-      width: 100%;
-    }
-  }
-}
-//embedded image with caption - wrap caption
-figure.embed-entity--caption {
-  display: table;
-
-  figcaption {
-    display: table-caption;
-    caption-side: bottom;
-  }
-}
-
-figure.embedded-entity.align-left {
-  margin-left: $gutter / 2;
-  margin-bottom: $gutter / 2;
-}
-
-figure.embedded-entity.align-right {
-  margin-left: $gutter / 2;
-  margin-bottom: $gutter / 2;
-}
-
 // Inline Images using ckeditor.
 
-[data-entity-type="media"],
-[data-entity-type="media"] .align-right,
-[data-entity-type="media"] .align-center,
-[data-entity-type="media"] .align-left {
-    img {
-      clear: both;
-      width:100%;
-      margin:0;
-      @include breakpoint($bp-med) {
-        width: auto;
-        clear: none;
-        float: right;
-        @include gutter($margin-left-half...);
-        @include gutter($margin-bottom-half...);
-      }
+.media {
+  float: none;
+  clear: both;
+  display:block;
+  max-width: 100%;
+  margin: 0 0 $gutter /2 0;
+  @include breakpoint($bp-small) {
+    margin: 0 0 $gutter /2 0;
+  }
+  &.align-right,
+  &.align-center,
+  &.align-left {
+    @include breakpoint($bp-small) {
+      max-width: $inline-image-width;
+      margin:0 0 $gutter / 2 $gutter / 2;
+      clear: right;
+      float: right;
     }
   }
+}
+
+// Style Image/Video captions
+.caption {
+  display: block;
+  font-style: italic;
+}
