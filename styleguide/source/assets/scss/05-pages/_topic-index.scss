@@ -1,82 +1,88 @@
-.description {
-  position: relative;
-  margin-bottom: $gutter / 2;
-  @include breakpoint($bp-small max-width) {
-    margin-bottom: 21px;
+.index-page {
+  h1 {
+    font-weight: $font-weight-truebold;
   }
-  .desc-display {
+  .description {
     position: relative;
-    overflow: hidden;
-    .less {
-      cursor: default;
+    margin-bottom: $gutter / 2;
+    @include breakpoint($bp-small max-width) {
+      margin-bottom: 21px;
+    }
+    .desc-display {
+      position: relative;
+      overflow: hidden;
+      .less {
+        cursor: default;
+        visibility: hidden;
+      }
+      &.full {
+        transition: height .5s ease-in-out;
+        padding-bottom: $gutter;
+       .less {
+          color: $description-blue;
+          position: absolute;
+          visibility: visible;
+          text-decoration: none;
+          left: 0;
+          bottom: 0;
+          &:visited {
+            color: $description-blue-visited;
+          }
+        }
+      }
+      &.summary {
+        transition: height .5s ease-in-out;
+        .more {
+          text-decoration:none;
+          color: $description-blue;
+          &:visited {
+            color: $description-blue-visited;
+          }
+        }
+      }
+    }
+    .fulltext,
+    .truncated {
       visibility: hidden;
-    }
-    &.full {
-      transition: height .5s ease-in-out;
-      padding-bottom: $gutter;
-     .less {
-        color: $description-blue;
-        position: absolute;
-        visibility: visible;
-        text-decoration: none;
-        left: 0;
-        bottom: 0;
-        &:visited {
-          color: $description-blue-visited;
-        }
-      }
-    }
-    &.summary {
-      transition: height .5s ease-in-out;
-      .more {
-        text-decoration:none;
-        color: $description-blue;
-        &:visited {
-          color: $description-blue-visited;
-        }
-      }
+      position: absolute;
+      top: 0;
+      z-index: -999999999;
+      opacity: 0;
     }
   }
-  .fulltext,
-  .truncated {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    z-index: -999999999;
-    opacity: 0;
-  }
-}
-.index-page__related-topics {
-  margin-bottom: 21px;
-  @include breakpoint($bp-small) {
-    margin-bottom: 4px;
-  }
-
-
-  .title {
-      font-weight: $font-weight-semibold;
-      margin-right: $gutter / 4;
-  }
-
-  a {
-    margin: 0;
-    font-size:18px;
-    outline: 0;
-
-    &:after {
-      content: "|";
-      display: inline-block;
-      font-weight: 300;
-      font-size: 16px;
-      margin-right: 1px;
-      margin-left: 5px;
+  .index-page__related-topics {
+    margin-bottom: 21px;
+    @include breakpoint($bp-small) {
+      margin-bottom: 4px;
     }
 
-    &:last-child {
-      &:after {
-        content: "";
-      }
+
+    .title {
+        font-weight: $font-weight-semibold;
+        margin-right: $gutter / 4;
+    }
+
+    a {
       margin: 0;
+      font-size:18px;
+      outline: 0;
+
+      &:after {
+        content: "|";
+        display: inline-block;
+        font-weight: 300;
+        font-size: 16px;
+        margin-right: 1px;
+        margin-left: 5px;
+      }
+
+      &:last-child {
+        &:after {
+          content: "";
+        }
+        margin: 0;
+      }
     }
   }
+
 }
