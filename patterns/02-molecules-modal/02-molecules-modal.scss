@@ -1,33 +1,11 @@
 // General
 .ama__image_popup {
   &__wrapper {
-    display: inline-flex;
-    position: relative;
-    @include breakpoint($bp-xs) {
-      width: 100%;
-      clear: both;
-      padding: none;
-    }
-    @include breakpoint($bp-small) {
-      clear: none;
-      padding: $gutter 50px $gutter 0;
-    }
-  }
-  &__image {
-    @include breakpoint($bp-xs) {
-      width: 100%;
-      max-width:100%;
-    }
-    @include breakpoint($bp-small) {
-      max-width: 100%;
-    }
-    img {
-      margin: 0;
-    }
+    padding: 0;
   }
   &__modal-link-wrapper{
     position: absolute;
-    bottom: 32px;
+    bottom: $gutter /4;
     right: 0;
     height: 41px;
     width: 41px;
@@ -39,87 +17,60 @@
       position: absolute;
       width: 100%;
       height: 100%;
+      right: 0;
       background: url('../images/expand.svg') no-repeat 0px 0px;
       background-size: cover;
     }
   }
 }
 
-figure.align-right {
-  float:none;
-  clear:both;
-  width: 100%;
-  @include breakpoint($bp-small) {
-    max-width: 50%;
-    margin: 0 0 $gutter /2 $gutter /2;
-    float:right;
-    clear:right;
-  }
-  .ama__image_popup__wrapper {
-    padding: 0!important;
-      clear: both;
-      width: 100%;
-
-    @include breakpoint($bp-small) {
-      padding: 0 50px 0 0 !important;
-    }
-    @include breakpoint($bp-med) {
-      padding: 0 50px 0 0 !important;
-    }
-    @include breakpoint($bp-large) {
-      padding: 0 50px 0 0 !important;
-    }
-    .ama__image_popup__modal-link-wrapper{
-      bottom: 0;
-    }
-  }
+.embedded-entity.media {
+  margin-bottom: $gutter /2 ;
 }
 
-// Style right floated modals differently
-div[data-entity-embed-display="view_mode:media.modal"] {
-  &.align-right {
-    max-width: auto;
-    @include breakpoint($bp-xs) {
-      clear: both;
-      width: 100%;
-    }
-    @include breakpoint($bp-med) {
-      max-width: 50%;
-    }
-    @include breakpoint($bp-large) {
-      width: auto;
-      margin-left: $gutter;
-    }
-  }
-}
-
-// Style full width modals differently.
-div[data-entity-embed-display="view_mode:media.modal"] {
-  .ama__type--small {
-    margin-left: 14px;
-  }
+.media-modal {
   &:not(.align-right) {
-    .ama__image_popup__wrapper {
+    clear: both;
+  }
+  &.align-right {
+    // right aligned modals need to override the full width padding
+    .media-caption,
+    .media-entity {
       @include breakpoint($bp-small) {
-        padding: $gutter 50px $gutter 23px;
+        padding: 0 50px 0 0;
       }
       @include breakpoint($bp-med) {
-        padding: $gutter 45px;
+        padding: 0 50px 0 0;
       }
       @include breakpoint($bp-large) {
-        padding: $gutter 69px;
+        padding: 0 50px 0 0;
       }
     }
   }
+  // full width modals need padding
+  .media-caption,
+  .media-entity {
+    @include breakpoint($bp-small) {
+      padding: 0 50px 0 23px;
+    }
+    @include breakpoint($bp-med) {
+      padding: 0 50px 0 45px;
+    }
+    @include breakpoint($bp-large) {
+      padding: 0 69px;
+    }
+  }
+  .media-entity {
+    position: relative;
+  }
 }
-
 
 // Modal Window
 .ama-image-popup-modal {
-  z-index: 502;
+  z-index:502;
   display: table;
   max-width: 95%;
-  max-height: 92vh;
+  max-height: 92vh !important;
   padding: .5em .5em 0;
   .ui-dialog-content {
     padding: 0;
@@ -137,10 +88,6 @@ div[data-entity-embed-display="view_mode:media.modal"] {
   border: 0;
 }
 
-.embed-entity--caption div[data-entity-embed-display="view_mode:media.modal"] + figcaption {
-  margin: 0 $gutter/2 $gutter/2 $gutter/2;
-}
-
 .ama-image-popup-modal .ui-dialog-title,
 .ama-image-popup-modal .ui-button-icon-only .ui-icon,
 .ama-image-popup-modal-wrapper .modal-link .ajax-progress-throbber .throbber,
@@ -155,9 +102,8 @@ div[data-entity-embed-display="view_mode:media.modal"] {
 }
 
 .ui-widget-overlay {
-  background: #7f7f7f;
+  background: $gray-50;
   opacity: 0.81;
-  z-index: 501;
 }
 
 .ama-image-popup-modal .ui-dialog-titlebar-close {
