@@ -20,9 +20,17 @@
   @include breakpoint($bp-small) {
     margin: 0 0 $gutter /2 0;
   }
+
   &.align-right,
   &.align-center,
-  &.align-left {
+  &.align-left,
+  &.align-legacy {
+    &.video {
+      width: 100%;
+      @include breakpoint($bp-small) {
+        width: $inline-image-width;
+      }
+    }
     @include breakpoint($bp-small) {
       max-width: $inline-image-width;
       margin:0 0 $gutter / 2 $gutter / 2;
