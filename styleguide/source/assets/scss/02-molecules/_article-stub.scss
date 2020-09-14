@@ -179,9 +179,12 @@
     line-height: 1;
     text-transform: uppercase;
     display: block;
-    padding: 18px 0 14px 0;
+    padding: 21px 0 14px 0;
     font-weight: $font-weight-semibold;
     width: 100%;
+    @include breakpoint($bp-small) {
+      padding: 28px 0 14px 0;
+    }
   }
 
   .ama__h5--purple {
