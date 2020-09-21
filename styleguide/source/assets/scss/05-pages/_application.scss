@@ -1,0 +1,18 @@
+.ama__application {
+  .app_description {
+    @include type($myriad-pro, $font-weight-regular);
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .app_article {
+    margin-top: 28px;
+    @include breakpoint($bp-med) {
+      max-width: 880px;
+
+      h1 {
+        line-height: 1.16;
+        font-weight: bold;
+      }
+    }
+  }
+}
