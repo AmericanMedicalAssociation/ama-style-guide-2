@@ -47,4 +47,50 @@
       }
     }
   }
+
+  .views-field-field-featured-topics {
+    margin: 1px 10px 28px;
+    display: block;
+    list-style: none;
+    clear: both;
+
+    @include breakpoint($bp-small) {
+      margin: 1px 0 28px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    .explore_topic_label {
+      display: block;
+      font-weight: $font-weight-semibold;
+      line-height: 27px;
+      float: left;
+
+      @include breakpoint($bp-small) {
+        float: none;
+      }
+    }
+    .explore_topic_content {
+      list-style: none;
+      align-items: flex-start;
+
+      @include breakpoint($bp-small) {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-direction: row;
+      }
+
+      a {
+        font-weight: $font-weight-light;
+        text-decoration: none;
+        line-height: 27px;
+        padding: 0 4px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
