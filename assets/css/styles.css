@@ -3356,8 +3356,13 @@ button {
   @media (min-width: 37.5em) {
     .media {
       margin: 0 0 14px 0; } }
+  .media.align-right.video, .media.align-center.video, .media.align-left.video, .media.align-legacy.video {
+    width: 100%; }
+    @media (min-width: 37.5em) {
+      .media.align-right.video, .media.align-center.video, .media.align-left.video, .media.align-legacy.video {
+        width: 350px; } }
   @media (min-width: 37.5em) {
-    .media.align-right, .media.align-center, .media.align-left {
+    .media.align-right, .media.align-center, .media.align-left, .media.align-legacy {
       max-width: 350px;
       margin: 0 0 14px 14px;
       clear: right;
@@ -13880,6 +13885,19 @@ section#related_links .ama__membership ul {
     @media (min-width: 56.25em) {
       .ama__layout--one-column .ama__promo-group {
         padding-bottom: 28px; } }
+  .ama__layout--one-column.left-aligned {
+    -ms-grid-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr; }
+    .ama__layout--one-column.left-aligned .ama__layout--one-column__content-top {
+      text-align: left;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      grid-column: 1 / 4; }
+      @media (min-width: 56.25em) {
+        .ama__layout--one-column.left-aligned .ama__layout--one-column__content-top {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 1;
+          grid-column: 1 / 2; } }
 
 .ama__layout--split {
   display: -ms-grid;
