@@ -3356,8 +3356,13 @@ button {
   @media (min-width: 37.5em) {
     .media {
       margin: 0 0 14px 0; } }
+  .media.align-right.video, .media.align-center.video, .media.align-left.video, .media.align-legacy.video {
+    width: 100%; }
+    @media (min-width: 37.5em) {
+      .media.align-right.video, .media.align-center.video, .media.align-left.video, .media.align-legacy.video {
+        width: 350px; } }
   @media (min-width: 37.5em) {
-    .media.align-right, .media.align-center, .media.align-left {
+    .media.align-right, .media.align-center, .media.align-left, .media.align-legacy {
       max-width: 350px;
       margin: 0 0 14px 14px;
       clear: right;
@@ -4320,7 +4325,7 @@ article ol {
       padding: 5px 5px 0; }
     .ama__search__field--in-body .subcategory_listing {
       min-height: 37px;
-      max-height: 37px; }
+      max-height: 40px; }
       .ama__search__field--in-body .subcategory_listing svg {
         height: 24px;
         width: 26px; }
@@ -5347,9 +5352,12 @@ object {
     line-height: 1;
     text-transform: uppercase;
     display: block;
-    padding: 18px 0 14px 0;
+    padding: 21px 0 14px 0;
     font-weight: 600;
     width: 100%; }
+    @media (min-width: 37.5em) {
+      .ama__page--news__teasers-heading {
+        padding: 28px 0 14px 0; } }
   .ama__page--news__teasers .ama__h5--purple {
     font-size: 14px;
     font-weight: bold; }
@@ -10953,6 +10961,73 @@ article[class*='__page-content'] .ama__tags {
       font-size: 1.222em;
       line-height: 1.182; } }
 
+.application-header #block-accountnav {
+  margin-right: 40px; }
+
+.application-header .account_nav_trigger {
+  display: block;
+  width: 90px;
+  height: 30px;
+  border: 1px solid #ffffff;
+  padding: 0 0 0 9px;
+  margin: 15px 0; }
+  .application-header .account_nav_trigger span {
+    font-size: 16px;
+    line-height: 1; }
+  .application-header .account_nav_trigger:hover {
+    cursor: pointer;
+    background: #9073a6; }
+  .application-header .account_nav_trigger.is-active {
+    background: #9073a6; }
+
+.application-header .ama__main-navigation__member-benefits-link {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.application-header .ama__account__dropdown__trigger__icon {
+  display: inline-block;
+  margin-left: 0.2em;
+  fill: #ffffff; }
+
+.application-header .ama__account__dropdown__trigger__icon__arrow svg {
+  width: 8px; }
+
+.application-header .account_nav_dropdown {
+  background: #46166B;
+  position: absolute;
+  top: 99%;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+  min-width: 15.8em; }
+  .application-header .account_nav_dropdown.is-active {
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px #7229d1;
+    max-height: 600px;
+    -webkit-transition: max-height 0.3s ease-in;
+    transition: max-height 0.3s ease-in; }
+  .application-header .account_nav_dropdown ul {
+    list-style: none;
+    padding: 20px 0 24px 0; }
+    .application-header .account_nav_dropdown ul li a {
+      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.7;
+      padding-left: 18px;
+      color: #ffffff;
+      text-decoration: none; }
+    .application-header .account_nav_dropdown ul li:hover {
+      background: #9073a6; }
+      .application-header .account_nav_dropdown ul li:hover a {
+        text-decoration: none; }
+
+.application-header .global-search-trigger {
+  display: none; }
+
 .ama__bio-image-with-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13810,6 +13885,19 @@ section#related_links .ama__membership ul {
     @media (min-width: 56.25em) {
       .ama__layout--one-column .ama__promo-group {
         padding-bottom: 28px; } }
+  .ama__layout--one-column.left-aligned {
+    -ms-grid-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr; }
+    .ama__layout--one-column.left-aligned .ama__layout--one-column__content-top {
+      text-align: left;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      grid-column: 1 / 4; }
+      @media (min-width: 56.25em) {
+        .ama__layout--one-column.left-aligned .ama__layout--one-column__content-top {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 1;
+          grid-column: 1 / 2; } }
 
 .ama__layout--split {
   display: -ms-grid;
@@ -14412,6 +14500,21 @@ body.search-results .ama__layout--two-column--left__page-content {
           -ms-grid-row: 2;
           grid-row: 2; } }
 
+.ama__application .app_description {
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px; }
+
+.ama__application .app_article {
+  margin-top: 28px; }
+  @media (min-width: 56.25em) {
+    .ama__application .app_article {
+      max-width: 880px; }
+      .ama__application .app_article h1 {
+        line-height: 1.16;
+        font-weight: bold; } }
+
 .ama__category .ama__layout--two-col-right--75-25__left {
   margin: 0;
   padding: 0; }
@@ -14469,6 +14572,9 @@ body.search-results .ama__layout--two-column--left__page-content {
 .ama__category__row--no-border-with-padding {
   border: 0;
   padding: 21px 0; }
+  @media (min-width: 37.5em) {
+    .ama__category__row--no-border-with-padding {
+      padding: 28px 0; } }
   .ama__category__row--no-border-with-padding:first-of-type + * + .ama__layout--two-col-right--75-25 {
     border: 0; }
 
@@ -14786,6 +14892,9 @@ body.search-results .ama__layout--two-column--left__page-content {
 
 .ama__news-article .ama__layout--two-column--right__sidebar--secondary {
   padding-top: 0; }
+
+.no-toc .ama__news .toc-responsive {
+  display: none; }
 
 .ama__people-bio .ama__membership {
   margin-bottom: 21px; }
@@ -15144,6 +15253,9 @@ body.search-results .ama__layout--two-column--left__page-content {
       margin: 0; }
       .index-page .index-page__related-topics a:last-child:after {
         content: ""; }
+
+.index-page .ama__75-25__masthead .border {
+  border-bottom: 1px solid #b4b4b4; }
 
 /* Slider */
 .slick-slider {
