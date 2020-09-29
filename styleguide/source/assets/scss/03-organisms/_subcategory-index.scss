@@ -62,8 +62,8 @@
     }
 
     .explore_topic_label {
+      @include type($myriad-pro, $font-weight-semibold);
       display: block;
-      font-weight: $font-weight-semibold;
       line-height: 27px;
       float: left;
 
@@ -83,10 +83,14 @@
       }
 
       a {
-        font-weight: $font-weight-light;
+        @include type($myriad-pro, $font-weight-light);
         text-decoration: none;
         line-height: 27px;
         padding: 0 4px;
+        font-size: 20px;
+        @include breakpoint($bp-med) {
+          font-size: 18px;
+        }
         &:hover {
           text-decoration: underline;
         }
