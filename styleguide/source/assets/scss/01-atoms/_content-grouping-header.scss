@@ -5,3 +5,20 @@
   font-weight: $font-weight-regular;
   padding: ($gutter / 4) $gutter ($gutter / 4) ($gutter / 2);
 }
+
+//Subcat specific header styling
+.js-layout-builder-block.ama__category-page-article-stub .ama_article-stub-header,
+.ama__subcategory-index .ama_article-stub-header {
+  display: block;
+  background: none;
+  color: black;
+  padding: 0;
+  font-weight: $font-weight-semibold;
+  font-size: 26px;
+  line-height: 31px;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+  @include breakpoint($bp-med min-width) {
+    margin-bottom: 28px;
+  }
+}
