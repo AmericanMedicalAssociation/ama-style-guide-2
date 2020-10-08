@@ -1,4 +1,5 @@
-.index-page {
+.index-page,
+.ama__subcategory-index {
   h1 {
     font-weight: $font-weight-truebold;
   }
@@ -18,9 +19,10 @@
       &.full {
         transition: height .5s ease-in-out;
         padding-bottom: $gutter;
-       .less {
+        .less {
           color: $description-blue;
           position: absolute;
+          cursor: pointer;
           visibility: visible;
           text-decoration: none;
           left: 0;
@@ -33,6 +35,7 @@
       &.summary {
         transition: height .5s ease-in-out;
         .more {
+          cursor: pointer;
           text-decoration:none;
           color: $description-blue;
           &:visited {
