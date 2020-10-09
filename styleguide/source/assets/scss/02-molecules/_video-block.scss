@@ -1,0 +1,37 @@
+.video-block-wrapper {
+  display:flex;
+  flex-direction: column-reverse;
+  padding: 21px 0;
+  margin: 21px 0;
+  align-items: center;
+  justify-content: center;
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
+  &.left {
+    @include breakpoint($bp-small) {
+      flex-direction: row-reverse;
+    }
+  }
+  &.border-top {
+    border-top: 2px solid $gray-40;
+  }
+  &.border-bottom {
+    border-bottom: 2px solid $gray-40;
+  }
+  .video {
+    flex: 1;
+    width: 100%;
+    > div {
+      width: 100%;
+    }
+  }
+  .description {
+    flex: 1;
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}
