@@ -34,6 +34,8 @@
       @include breakpoint($bp-small) {
         padding-left: 4%;
         padding-right: 0;
+      }
+      @include breakpoint($bp-med) {
         align-self: auto;
       }
     }
@@ -58,14 +60,13 @@
   }
   .description {
     flex: 1;
-    font-size: 22px;
-    font-weight: $font-weight-bold;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
+    font-size: 22px;
+    font-weight: $font-weight-bold;
     padding-right: 0;
     padding-bottom: $gutter/4;
-    align-self: stretch;
     text-decoration: none;
     padding-top: $gutter/2;
     &:hover {
