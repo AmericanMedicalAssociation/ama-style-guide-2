@@ -1,16 +1,41 @@
 .video-block-wrapper {
   display:flex;
+  flex-wrap: wrap;
   flex-direction: column-reverse;
-  padding: 21px 0;
-  margin: 21px 0;
+  padding: $gutter/4*3 0;
+  margin: $gutter/3 15px;
   align-items: center;
   justify-content: center;
+  align-items: stretch;
   @include breakpoint($bp-small) {
     flex-direction: row;
+    margin: $gutter/3 0;
+    padding: $gutter/2 7%;
+  }
+  @include breakpoint($bp-med) {
+
+  }
+  @include breakpoint($bp-large) {
+    padding: $gutter/4*3 7%;
   }
   &.left {
     @include breakpoint($bp-small) {
       flex-direction: row-reverse;
+    }
+    .video {
+      @include breakpoint($bp-small) {
+        padding-right: 4%;
+        padding-left: 0;
+      }
+    }
+    .description {
+      padding-top: $gutter/2;
+      align-self: flex-start;
+      @include breakpoint($bp-small) {
+        padding-left: 4%;
+        padding-right: 0;
+        align-self: auto;
+      }
     }
   }
   &.border-top {
@@ -21,7 +46,12 @@
   }
   .video {
     flex: 1;
+    display: flex;
     width: 100%;
+    padding-left: 0;
+    @include breakpoint($bp-small) {
+      padding-left: 4%;
+    }
     > div {
       width: 100%;
     }
@@ -33,5 +63,21 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    padding-right: 0;
+    padding-bottom: $gutter/4;
+    align-self: stretch;
+    text-decoration: none;
+    padding-top: $gutter/2;
+    &:hover {
+      text-decoration: underline;
+    }
+    @include breakpoint($bp-small) {
+      padding-right: 4%;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
+}
+html,body {
+  height:100%;
 }
