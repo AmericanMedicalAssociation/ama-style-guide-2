@@ -4,16 +4,12 @@
   flex-direction: column-reverse;
   padding: $gutter/4*3 0;
   margin: $gutter/3 15px;
-  align-items: center;
   justify-content: center;
   align-items: stretch;
   @include breakpoint($bp-small) {
     flex-direction: row;
     margin: $gutter/3 0;
     padding: $gutter/2 7%;
-  }
-  @include breakpoint($bp-med) {
-
   }
   @include breakpoint($bp-large) {
     padding: $gutter/4*3 7%;
@@ -64,10 +60,10 @@
     align-items: center;
     justify-content: center;
     font-size: 22px;
+    text-decoration: none;
     font-weight: $font-weight-bold;
     padding-right: 0;
     padding-bottom: $gutter/4;
-    text-decoration: none;
     padding-top: $gutter/2;
     &:hover {
       text-decoration: underline;
@@ -78,7 +74,4 @@
       padding-top: 0;
     }
   }
-}
-html,body {
-  height:100%;
 }
