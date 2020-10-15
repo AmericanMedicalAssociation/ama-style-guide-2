@@ -22,3 +22,12 @@
     margin-bottom: 28px;
   }
 }
+
+//Remove mobile top padding from first article stub item
+.ama__category__article-stub-three-up .grid-container {
+  .ama__article-stub:first-of-type {
+    @include breakpoint($bp-med max-width) {
+      padding-top: 0;
+    }
+  }
+}
