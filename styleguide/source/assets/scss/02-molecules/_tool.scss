@@ -62,7 +62,8 @@
 .ama__news-article,
 .ama__event-detail,
 .ama__evergreen-page,
-.ama__press-release {
+.ama__press-release,
+.ama__subcategory-index {
   .ama__tool {
      border-top: none;
      flex: 0 1 50%;
@@ -78,5 +79,21 @@
      &__icon {
        display: inline-block;
      }
+  } 
+}
+
+.ama__subcategory-index {
+  .ama__tool {
+    flex: 0 1 33%;
+    @include breakpoint($bp-med max-width) {
+      flex: 0 1 100%;
+    }
+  }
+}
+
+//If tools list in sidebar
+.ama__subcategory-index .ama__layout--two-col-right--75-25__right {
+  .ama__tool {
+     flex: 0 1 100%;
   } 
 }
