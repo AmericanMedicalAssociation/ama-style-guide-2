@@ -1,7 +1,5 @@
-.index-page {
-  h1 {
-    font-weight: $font-weight-truebold;
-  }
+.index-page,
+.ama__subcategory-index {
   .description {
     position: relative;
     margin-bottom: $gutter / 2;
@@ -14,13 +12,16 @@
       .less {
         cursor: default;
         visibility: hidden;
+        width: 100%;
+        background: $white;
       }
       &.full {
         transition: height .5s ease-in-out;
         padding-bottom: $gutter;
-       .less {
+        .less {
           color: $description-blue;
           position: absolute;
+          cursor: pointer;
           visibility: visible;
           text-decoration: none;
           left: 0;
@@ -33,6 +34,7 @@
       &.summary {
         transition: height .5s ease-in-out;
         .more {
+          cursor: pointer;
           text-decoration:none;
           color: $description-blue;
           &:visited {
@@ -89,4 +91,9 @@
     border-bottom: 1px solid #b4b4b4;
   }
 
+}
+.index-page {
+  h1 {
+    font-weight: $font-weight-truebold;
+  }
 }
