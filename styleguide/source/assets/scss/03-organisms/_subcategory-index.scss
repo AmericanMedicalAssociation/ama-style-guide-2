@@ -93,6 +93,9 @@
         @include breakpoint($bp-med) {
           font-size: 18px;
         }
+        &:last-child {
+          padding-right: 0;
+        }
         &:hover {
           text-decoration: underline;
         }
@@ -102,6 +105,9 @@
           position: absolute;
           top: 0;
           right: 3px;
+        }
+        &:last-child:after {
+          content: '';
         }
       }
     }
