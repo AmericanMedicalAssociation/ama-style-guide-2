@@ -1,1 +1,34 @@
-No scss available for this pattern.
+.ama__subcategory-index {
+  .heading-left {
+    margin-right: 0 !important;
+  }
+  .ama__subcategory__row {
+    margin: 0 15px $gutter /4 15px;
+    @include breakpoint($bp-small) {
+      margin: 0 0 $gutter /4 0;
+    }
+    .ama__masthead__content__link {
+      display: block;
+      font-size: 20px;
+      padding-top: $gutter/2;
+      @include breakpoint($bp-small) {
+        padding-top: $gutter/4*3;
+      }
+      @include breakpoint($bp-small) {
+        padding-top: $gutter;
+      }
+    }
+    border-bottom: 1px solid $gray-border;
+    .ama__masthead__content {
+      border-bottom: none;
+    }
+    .share-row {
+      height: 0;
+      visibility: hidden;
+      @include breakpoint($bp-small) {
+        visibility: visible;
+        height: auto;
+      }
+    }
+  }
+}
