@@ -88,9 +88,6 @@
         line-height: 27px;
         font-size: 20px;
         position: relative;
-        @include breakpoint($bp-small) {
-          padding-right: 10px;
-        }
         @include breakpoint($bp-med) {
           font-size: 18px;
         }
@@ -103,13 +100,6 @@
         &:after {
           content: '|';
           padding: 0 7px;
-          @include breakpoint($bp-small) {
-            padding: 0;
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 3px;
-          }
         }
         &:last-child:after {
           content: '';
