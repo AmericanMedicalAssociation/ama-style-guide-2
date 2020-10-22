@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  padding-bottom: 28px;
+  padding-bottom: 0;
 
   @include breakpoint($bp-xs) {
     flex-direction: column;
@@ -23,6 +23,9 @@
       width: 100%;
     }
   }
+  @include breakpoint($bp-small) {
+    padding-bottom: $gutter;
+  }
 
   @include breakpoint($bp-med) {
     flex-direction: row;
@@ -39,11 +42,6 @@
       min-width: 0;
       margin: 0 15px 0 0;
     }
-  }
-
-  .ama__link--icon svg {
-    max-height: 45px;
-    max-width: 45px;
   }
 
   &__image {
