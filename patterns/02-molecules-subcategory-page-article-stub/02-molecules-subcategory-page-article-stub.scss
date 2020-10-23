@@ -1,18 +1,28 @@
 .ama__subcategory-page-article-stub {
   display: flex;
   text-decoration: none;
+  @include breakpoint($bp-small max-width) {
+    flex-wrap: wrap;
+  }
 
   &__image {
-    display: none;
+    display: block;
 
-    @include breakpoint($bp-small) {
-      display: block;
+    @include breakpoint($bp-small max-width) {
+      order: 1;
+      .ama__bio-image-with-body__image {
+        max-width: 100%;
+        max-height: unset;
+      } 
     }
   }
 
   &__text {
     @include breakpoint($bp-small) {
       padding: 0 ($gutter / 2);
+    }
+    @include breakpoint($bp-small max-width) {
+      order: 2;
     }
   }
 
