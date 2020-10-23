@@ -1,4 +1,27 @@
 .ama__people-bio {
+  header {
+    padding-bottom: 0;
+  }
+
+  .ama__layout--two-col-right--full-width__top {
+    margin-bottom: 0;
+    .ama__masthead {
+
+      .ama__masthead__content {
+        padding-bottom:15px;
+      }
+      .ama__masthead__content__container {
+        .ama__masthead__content__share {
+          visibility: hidden;
+          height: 0;
+          @include breakpoint($bp-small) {
+            visibility: visible;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
   .ama__membership {
     @include gutter($margin-bottom-full...);
   }
