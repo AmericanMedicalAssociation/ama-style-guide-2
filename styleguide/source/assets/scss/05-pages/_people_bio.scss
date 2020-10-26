@@ -26,10 +26,20 @@
     @include gutter($margin-bottom-full...);
   }
   .user-article-listing-view {
+    border-top: solid 2px #ededed;
     > ul > li {
       display: flex;
       justify-content: center;
       padding-top: 60px;
+    }
+    .article-listing__link:first-of-type > .ama__user-article-listing {
+      //Spacing override for horizontal rule line above
+      @include breakpoint($bp-large max-width) {
+        padding-top: 37px;
+      }
+      @include breakpoint($bp-med max-width) {
+        padding-top: 36px;
+      }
     }
   }
 }
