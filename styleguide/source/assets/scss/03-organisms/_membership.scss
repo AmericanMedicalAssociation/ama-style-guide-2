@@ -15,10 +15,16 @@
 
     &:not(.membership_image) {
       &:not(.ama__button) {
-        @include gutter($padding-left-full...);
-        @include gutter($padding-right-full...);
+        &:not(.ama__membership_cta_container) {
+          @include gutter($padding-left-full...);
+          @include gutter($padding-right-full...);
+        }
       }
     }
+  }
+
+  .ama__h2 {
+    margin-bottom: 0;
   }
 
   &_logo-container {
@@ -48,9 +54,16 @@
     }
   }
 
-  .ama__button {
-    @include gutter($margin-left-full...);
-    @include gutter($margin-right-full...);
+  .ama__membership_cta_container {
+    display: block;
+    margin: 0 28px;
+    @include breakpoint($bp-med min-width) {
+      margin-top: 14px;
+    }
+    .ama__button {
+      margin: 0;
+      width: 100%;
+    }
   }
   @extend .display-list;
 }
@@ -65,12 +78,19 @@ a.ama__membership {
   }
 }
 
-.subcat-membership-block {
+//Hide ama logo in membership block in all instances besides below
+.ama__membership_logo-container .logo {
+  display: none;
+}
+
+//Slim Membership Block styling
+.layout--ama-page-section-one-col .ama__membership {
   background: #ece7f0;
   width: 100%;
   height: 210px;
   margin: 0 0 35px;
   position: relative;
+  padding-bottom: 0;
   @include breakpoint($bp-small min-width) {
     height: unset;
     display: flex;
@@ -82,11 +102,30 @@ a.ama__membership {
     align-items: center;
   }
 
+  // Remove margins on child elements so that we can set consistent spacing elsewhere.
+  & > * {
+    margin-bottom: 0;
+
+    &:not(.membership_image) {
+      &:not(.ama__button) {
+        &:not(.ama__membership_cta_container) {
+          padding: unset;
+        }
+      }
+    }
+  }
+
+  //hide description
+  .membership-body {
+    display: none;
+  }
+
   .ama__membership_logo-container {
     display: block;
     width: 100%;
     height: 40px;
     position: relative;
+    padding: 0;
     @include breakpoint($bp-small min-width) {
       width: 102px;
       height: 44px;
@@ -97,6 +136,7 @@ a.ama__membership {
     }
 
     .logo {
+      display: block;
       height: 31px;
       width: 76px;
       position: absolute;
@@ -135,10 +175,7 @@ a.ama__membership {
       -webkit-box-flex: 2;
       -ms-flex: 2;
       flex: 2.28;
-      flex-grow: 4;
-    }
-    @include breakpoint($bp-med min-width) {
-      flex-grow: 4;
+      flex-grow: 6;
     }
   }
   .ama__membership_cta_container {
@@ -165,20 +202,19 @@ a.ama__membership {
       bottom: 0;
     }
     @include breakpoint($bp-med min-width) {
-      text-align: center;
       flex-grow: 3;
     }
     @include breakpoint($bp-large min-width) {
       flex-grow: 2;
     }
   }
-  h2 {
+  h2.ama__h2 {
     margin-top: 14px;
     margin-bottom: 0;
     padding-left: 16%;
     padding-right: 16%;
     text-align: center;
-    font-size: 20px;
+    font-size: 26px;
     @include breakpoint($bp-small min-width) {
       margin-top: 0;
       padding: 0;
@@ -193,6 +229,8 @@ a.ama__membership {
     height: 50px;
     line-height: 50px;
     font-size: 20px;
+    width: unset;
+    overflow: hidden;
     @include breakpoint($bp-small min-width) {
       display: inline-block;
       margin: 0;
@@ -205,6 +243,7 @@ a.ama__membership {
       font-size: 20px;
       height: 50px;
       line-height: 50px;
+      margin-right: 28px;
     }
   }
 }
