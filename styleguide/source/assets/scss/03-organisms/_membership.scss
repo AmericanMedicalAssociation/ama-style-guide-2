@@ -57,6 +57,9 @@
   .ama__membership_cta_container {
     display: block;
     margin: 0 28px;
+    @include breakpoint($bp-med min-width) {
+      margin-top: 14px;
+    }
     .ama__button {
       margin: 0;
       width: 100%;
@@ -172,10 +175,7 @@ a.ama__membership {
       -webkit-box-flex: 2;
       -ms-flex: 2;
       flex: 2.28;
-      flex-grow: 4;
-    }
-    @include breakpoint($bp-med min-width) {
-      flex-grow: 4;
+      flex-grow: 6;
     }
   }
   .ama__membership_cta_container {
@@ -202,7 +202,6 @@ a.ama__membership {
       bottom: 0;
     }
     @include breakpoint($bp-med min-width) {
-      text-align: center;
       flex-grow: 3;
     }
     @include breakpoint($bp-large min-width) {
@@ -215,7 +214,7 @@ a.ama__membership {
     padding-left: 16%;
     padding-right: 16%;
     text-align: center;
-    font-size: 20px;
+    font-size: 26px;
     @include breakpoint($bp-small min-width) {
       margin-top: 0;
       padding: 0;
@@ -231,6 +230,7 @@ a.ama__membership {
     line-height: 50px;
     font-size: 20px;
     width: unset;
+    overflow: hidden;
     @include breakpoint($bp-small min-width) {
       display: inline-block;
       margin: 0;
@@ -243,6 +243,7 @@ a.ama__membership {
       font-size: 20px;
       height: 50px;
       line-height: 50px;
+      margin-right: 28px;
     }
   }
 }
