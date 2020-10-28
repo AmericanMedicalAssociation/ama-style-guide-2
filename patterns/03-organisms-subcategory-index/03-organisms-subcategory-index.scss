@@ -56,13 +56,13 @@
   }
 
   .views-field-field-featured-topics {
-    margin: 1px 10px 28px;
+    margin: 21px 10px 28px;
     display: block;
     list-style: none;
     clear: both;
 
     @include breakpoint($bp-small) {
-      margin: 1px 0 28px;
+      margin: 21px 0 28px;
       display: flex;
       align-items: flex-start;
       flex-direction: row;
@@ -73,10 +73,9 @@
       display: block;
       line-height: 27px;
       float: left;
-
+      padding-right: 4px;
       @include breakpoint($bp-small) {
         float: none;
-        padding-right: 4px;
       }
     }
     .explore_topic_content {
@@ -94,7 +93,6 @@
         @include type($myriad-pro, $font-weight-light);
         text-decoration: none;
         line-height: 27px;
-        padding-right: 10px;
         font-size: 20px;
         position: relative;
         @include breakpoint($bp-med) {
@@ -107,11 +105,8 @@
           text-decoration: underline;
         }
         &:after {
-          display: block;
           content: '|';
-          position: absolute;
-          top: 0;
-          right: 3px;
+          padding: 0 7px;
         }
         &:last-child:after {
           content: '';

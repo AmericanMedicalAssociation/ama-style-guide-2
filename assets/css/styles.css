@@ -9563,6 +9563,9 @@ div.ama__category-index__stubs.ama__topic-index__stubs.ama__category-index a.ama
     position: absolute;
     left: 0px;
     top: -60px; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .ama-toc-link .dupe h2 {
+        padding-top: 61px; } }
 
 body.toolbar-horizontal .ama-toc-link .dupe {
   top: -140px; }
@@ -12327,7 +12330,8 @@ section.ama__page--event__speakers {
   z-index: 501; }
   @media (min-width: 37.5em) {
     .ama__main-navigation {
-      height: 61px; } }
+      height: 61px;
+      min-height: 61px; } }
   .ama__main-navigation .container {
     position: relative;
     display: -webkit-box;
@@ -12495,6 +12499,10 @@ section.ama__page--event__speakers {
 
 .ui-autocomplete.ui-menu {
   z-index: 502; }
+
+.sticky-wrapper.is-sticky {
+  min-height: 61px;
+  height: 61px; }
 
 .ama__masthead {
   display: grid;
@@ -12937,15 +12945,17 @@ article.ama__people-bio a.ama__masthead__content__link {
         margin-bottom: 28px; } }
   .ama__membership > * {
     margin-bottom: 0; }
-    .ama__membership > *:not(.membership_image):not(.ama__button) {
+    .ama__membership > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container) {
       padding-left: 21px;
       padding-right: 21px; }
       @media (min-width: 56.25em) {
-        .ama__membership > *:not(.membership_image):not(.ama__button) {
+        .ama__membership > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container) {
           padding-left: 28px; } }
       @media (min-width: 56.25em) {
-        .ama__membership > *:not(.membership_image):not(.ama__button) {
+        .ama__membership > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container) {
           padding-right: 28px; } }
+  .ama__membership .ama__h2, .ama__membership .ama__link-list--mobile .ui-accordion-header, .ama__link-list--mobile .ama__membership .ui-accordion-header, .ama__membership .ama__promo--inline-banner a, .ama__promo--inline-banner .ama__membership a {
+    margin-bottom: 0; }
   .ama__membership_logo-container {
     background-color: #46166b;
     min-height: 28px;
@@ -12965,15 +12975,15 @@ article.ama__people-bio a.ama__masthead__content__link {
       width: 100%;
       height: auto;
       margin-top: 0; }
-  .ama__membership .ama__button {
-    margin-left: 21px;
-    margin-right: 21px; }
+  .ama__membership .ama__membership_cta_container {
+    display: block;
+    margin: 0 28px; }
     @media (min-width: 56.25em) {
-      .ama__membership .ama__button {
-        margin-left: 28px; } }
-    @media (min-width: 56.25em) {
-      .ama__membership .ama__button {
-        margin-right: 28px; } }
+      .ama__membership .ama__membership_cta_container {
+        margin-top: 14px; } }
+    .ama__membership .ama__membership_cta_container .ama__button {
+      margin: 0;
+      width: 100%; }
 
 a.ama__membership {
   display: block;
@@ -12982,14 +12992,18 @@ a.ama__membership {
     color: #000000;
     background: #c6becc; }
 
-.subcat-membership-block {
+.ama__membership_logo-container .logo {
+  display: none; }
+
+.layout--ama-page-section-one-col .ama__membership {
   background: #ece7f0;
   width: 100%;
   height: 210px;
   margin: 0 0 35px;
-  position: relative; }
+  position: relative;
+  padding-bottom: 0; }
   @media (min-width: 37.5em) {
-    .subcat-membership-block {
+    .layout--ama-page-section-one-col .ama__membership {
       height: unset;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -13003,48 +13017,56 @@ a.ama__membership {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; } }
-  .subcat-membership-block .ama__membership_logo-container {
+  .layout--ama-page-section-one-col .ama__membership > * {
+    margin-bottom: 0; }
+    .layout--ama-page-section-one-col .ama__membership > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container) {
+      padding: unset; }
+  .layout--ama-page-section-one-col .ama__membership .membership-body {
+    display: none; }
+  .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container {
     display: block;
     width: 100%;
     height: 40px;
-    position: relative; }
+    position: relative;
+    padding: 0; }
     @media (min-width: 37.5em) {
-      .subcat-membership-block .ama__membership_logo-container {
+      .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container {
         width: 102px;
         height: 44px; } }
     @media (min-width: 56.25em) {
-      .subcat-membership-block .ama__membership_logo-container {
+      .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container {
         width: 200px;
         height: 70px; } }
-    .subcat-membership-block .ama__membership_logo-container .logo {
+    .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container .logo {
+      display: block;
       height: 31px;
       width: 76px;
       position: absolute;
       top: 15%;
       left: 2.3%; }
       @media (min-width: 37.5em) {
-        .subcat-membership-block .ama__membership_logo-container .logo {
+        .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container .logo {
           left: 12%; } }
       @media (min-width: 56.25em) {
-        .subcat-membership-block .ama__membership_logo-container .logo {
+        .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container .logo {
           top: 20%;
           left: 25%;
           height: 42px;
           width: 105px; } }
-    .subcat-membership-block .ama__membership_logo-container .ama__site-logo {
+    .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container .ama__site-logo {
       display: block;
       position: relative;
       height: 44px; }
       @media (min-width: 56.25em) {
-        .subcat-membership-block .ama__membership_logo-container .ama__site-logo {
+        .layout--ama-page-section-one-col .ama__membership .ama__membership_logo-container .ama__site-logo {
           height: 70px; } }
-  .subcat-membership-block .ama__membership_title_container {
+  .layout--ama-page-section-one-col .ama__membership .ama__membership_title_container {
     display: block;
     padding-left: 0;
     padding-right: 0;
     margin: 0; }
     @media (min-width: 37.5em) {
-      .subcat-membership-block .ama__membership_title_container {
+      .layout--ama-page-section-one-col .ama__membership .ama__membership_title_container {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -13052,15 +13074,10 @@ a.ama__membership {
         -webkit-box-flex: 2;
         -ms-flex: 2;
         flex: 2.28;
-        -webkit-box-flex: 4;
-        -ms-flex-positive: 4;
-        flex-grow: 4; } }
-    @media (min-width: 56.25em) {
-      .subcat-membership-block .ama__membership_title_container {
-        -webkit-box-flex: 4;
-        -ms-flex-positive: 4;
-        flex-grow: 4; } }
-  .subcat-membership-block .ama__membership_cta_container {
+        -webkit-box-flex: 6;
+        -ms-flex-positive: 6;
+        flex-grow: 6; } }
+  .layout--ama-page-section-one-col .ama__membership .ama__membership_cta_container {
     margin: 0 auto;
     display: block;
     max-width: 75%;
@@ -13070,7 +13087,7 @@ a.ama__membership {
     left: 0;
     right: 0; }
     @media (min-width: 37.5em) {
-      .subcat-membership-block .ama__membership_cta_container {
+      .layout--ama-page-section-one-col .ama__membership .ama__membership_cta_container {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -13086,38 +13103,39 @@ a.ama__membership {
         position: relative;
         bottom: 0; } }
     @media (min-width: 56.25em) {
-      .subcat-membership-block .ama__membership_cta_container {
-        text-align: center;
+      .layout--ama-page-section-one-col .ama__membership .ama__membership_cta_container {
         -webkit-box-flex: 3;
         -ms-flex-positive: 3;
         flex-grow: 3; } }
     @media (min-width: 75em) {
-      .subcat-membership-block .ama__membership_cta_container {
+      .layout--ama-page-section-one-col .ama__membership .ama__membership_cta_container {
         -webkit-box-flex: 2;
         -ms-flex-positive: 2;
         flex-grow: 2; } }
-  .subcat-membership-block h2 {
+  .layout--ama-page-section-one-col .ama__membership h2.ama__h2, .layout--ama-page-section-one-col .ama__membership .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .layout--ama-page-section-one-col .ama__membership h2.ui-accordion-header {
     margin-top: 14px;
     margin-bottom: 0;
     padding-left: 16%;
     padding-right: 16%;
     text-align: center;
-    font-size: 20px; }
+    font-size: 26px; }
     @media (min-width: 37.5em) {
-      .subcat-membership-block h2 {
+      .layout--ama-page-section-one-col .ama__membership h2.ama__h2, .layout--ama-page-section-one-col .ama__membership .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .layout--ama-page-section-one-col .ama__membership h2.ui-accordion-header {
         margin-top: 0;
         padding: 0; } }
     @media (min-width: 56.25em) {
-      .subcat-membership-block h2 {
+      .layout--ama-page-section-one-col .ama__membership h2.ama__h2, .layout--ama-page-section-one-col .ama__membership .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .layout--ama-page-section-one-col .ama__membership h2.ui-accordion-header {
         font-size: 1.444em; } }
-  .subcat-membership-block a.ama__button {
+  .layout--ama-page-section-one-col .ama__membership a.ama__button {
     padding: 0 22px;
     font-size: 18px;
     height: 50px;
     line-height: 50px;
-    font-size: 20px; }
+    font-size: 20px;
+    width: unset;
+    overflow: hidden; }
     @media (min-width: 37.5em) {
-      .subcat-membership-block a.ama__button {
+      .layout--ama-page-section-one-col .ama__membership a.ama__button {
         display: inline-block;
         margin: 0;
         padding: 0 12px;
@@ -13125,10 +13143,11 @@ a.ama__membership {
         line-height: 44px;
         font-size: 15px; } }
     @media (min-width: 56.25em) {
-      .subcat-membership-block a.ama__button {
+      .layout--ama-page-section-one-col .ama__membership a.ama__button {
         font-size: 20px;
         height: 50px;
-        line-height: 50px; } }
+        line-height: 50px;
+        margin-right: 28px; } }
 
 .ama__org-nav {
   -webkit-box-flex: 0;
@@ -14019,13 +14038,13 @@ section#related_links .ama__membership ul {
         width: 33%; } }
 
 .ama__subcategory-index .views-field-field-featured-topics {
-  margin: 1px 10px 28px;
+  margin: 21px 10px 28px;
   display: block;
   list-style: none;
   clear: both; }
   @media (min-width: 37.5em) {
     .ama__subcategory-index .views-field-field-featured-topics {
-      margin: 1px 0 28px;
+      margin: 21px 0 28px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -14041,11 +14060,11 @@ section#related_links .ama__membership ul {
     font-weight: 600;
     display: block;
     line-height: 27px;
-    float: left; }
+    float: left;
+    padding-right: 4px; }
     @media (min-width: 37.5em) {
       .ama__subcategory-index .views-field-field-featured-topics .explore_topic_label {
-        float: none;
-        padding-right: 4px; } }
+        float: none; } }
   .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content {
     list-style: none;
     -webkit-box-align: start;
@@ -14070,7 +14089,6 @@ section#related_links .ama__membership ul {
       font-weight: 300;
       text-decoration: none;
       line-height: 27px;
-      padding-right: 10px;
       font-size: 20px;
       position: relative; }
       @media (min-width: 56.25em) {
@@ -14081,11 +14099,8 @@ section#related_links .ama__membership ul {
       .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content a:hover {
         text-decoration: underline; }
       .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content a:after {
-        display: block;
         content: '|';
-        position: absolute;
-        top: 0;
-        right: 3px; }
+        padding: 0 7px; }
       .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content a:last-child:after {
         content: ''; }
 
@@ -15699,6 +15714,9 @@ body.search-results .ama__layout--two-column--left__page-content {
         .index-page .description .desc-display.full .less:visited,
         .ama__subcategory-index .description .desc-display.full .less:visited {
           color: #0176a5; }
+      .index-page .description .desc-display.full span,
+      .ama__subcategory-index .description .desc-display.full span {
+        display: inline-block; }
     .index-page .description .desc-display.summary,
     .ama__subcategory-index .description .desc-display.summary {
       -webkit-transition: height .5s ease-in-out;
@@ -15711,6 +15729,9 @@ body.search-results .ama__layout--two-column--left__page-content {
         .index-page .description .desc-display.summary .more:visited,
         .ama__subcategory-index .description .desc-display.summary .more:visited {
           color: #0176a5; }
+  .index-page .description .fulltext span,
+  .ama__subcategory-index .description .fulltext span {
+    display: inline-block; }
   .index-page .description .fulltext,
   .index-page .description .truncated,
   .ama__subcategory-index .description .fulltext,
