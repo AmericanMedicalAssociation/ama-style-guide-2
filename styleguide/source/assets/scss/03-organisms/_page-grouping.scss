@@ -1,0 +1,75 @@
+.ama__page-grouping {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 2em;
+  background: $light-blue;
+}
+
+.ama__page-grouping__image {
+  display: none;
+
+  @include breakpoint($bp-med) {
+    display: block;
+    float: left;
+    min-width: 142px;
+    background: $medium-blue;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+.ama__page-grouping__title {
+  @include type($myriad-pro, $font-weight-semibold);
+  font-size: 20px;
+}
+
+.ama__page-grouping__wrapper {
+  margin: 0.75em 0 0.75em 0.75em;
+
+  @include breakpoint($bp-med) {
+    float: left;
+    margin: 0.5em 0 0.5em 0.5em;
+  }
+}
+
+.ama__page-grouping__navigation {
+  @include type($myriad-pro, $font-weight-regular);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.ama__page-grouping__navigation-title {
+  float: left;
+  @include type($myriad-pro, $font-weight-semibold);
+  font-size: 14px;
+
+  &:after {
+    content: "|";
+    margin: 0 0.25em;
+  }
+}
+
+.ama__page-grouping__navigation-item {
+  float: left;
+  @include type($myriad-pro, $font-weight-regular);
+
+  &:after {
+    margin: 0 0.25em;
+    content: "|";
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

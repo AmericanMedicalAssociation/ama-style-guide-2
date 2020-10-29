@@ -1,0 +1,14 @@
+<div class="ama__page-grouping">
+  <div class="ama__page-grouping__image">
+    <img src="{{ pageGrouping.image }}" />
+  </div>
+  <div class="ama__page-grouping__wrapper">
+    <h4 class="ama__page-grouping__title">{{ pageGrouping.title }}</h4>
+    <div class="ama__page-grouping__navigation">
+      <span class="ama__page-grouping__navigation-title">{{ pageGrouping.updateSection.title }}</span>
+      {% for update in pageGrouping.updateSection.updates %}
+        <span class="ama__page-grouping__navigation-item"><a href="{{ update.url }}">{{ update.title }}</a></span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
