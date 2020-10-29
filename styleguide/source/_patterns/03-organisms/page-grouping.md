@@ -3,12 +3,12 @@ el: ".ama__page-grouping"
 title: "Page Grouping"
 ---
 
-A collection of up to three articles displayed in a column (meant for use in a sidebar). Displays an image (optional) and title.
+A collection of pages related to this page to be shown at the top of news stories.
 
 [EWL-8301](https://issues.ama-assn.org/browse/EWL-8301)
 
 ### Use Case
-Contains a list of all the partners mentioned within a Press Release so visitors know the logo, contact info, and business/organization summary of all parties involved in the press release.
+Displays a group of articles, and a title to group them by, to increase engagement metrics on news articles.
 
 ### Variables
 ~~~
