@@ -1,14 +1,66 @@
 .ama_page_grouping {
-    background-color: rgba(2,170,236,0.5);
+    background-color: $pg-lt-blue;
+    height: 271px;
+    display: flex;
 
     .links {
-        width: 84%;
         margin-left: 8%;
-        display: inline-block;
-  
+        flex: 1 1 auto;
+        background-color: $pg-xtra-lt-blue;
+        border-left: solid 21px $pg-blue;
+        padding: $gutter;
+
+        @include breakpoint($bp-med max-width) {
+             margin-left: calc(25% - 21px);
+             margin-right: 25%;
+        }
+
+        @include breakpoint($bp-small max-width) {
+             margin: 0;
+        } 
+
         .ama_page_grouping_title {
             font-size: 22px;
             font-weight: 600;
+        }
+
+        .ama_page_grouping_link {
+            display: flex;
+            line-height: 1.19;
+            text-transform: uppercase;
+            padding: 9px 0px;
+
+            a {
+                display: inline-block;
+                width: 20em;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            svg {
+                position: relative;
+                top: 0.5em;
+            }
+        }
+
+        .ama_page_grouping_icon.icon--arrow-right {
+            margin-left: 50%;
+            min-height: initial;
+        }
+    }
+
+    .ama_page_grouping_image {
+        margin-right: 8%;
+
+        img {
+            max-height: 271px;
+        }
+
+        @include breakpoint($bp-med max-width) {
+            display: none;
         }
     }
 }
