@@ -247,3 +247,14 @@ a.ama__membership {
     }
   }
 }
+
+.layout__region--rail_right {
+  .ama__membership {
+    @include breakpoint($bp-med min-width) {
+      margin-bottom: 56px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
