@@ -33,12 +33,9 @@
       padding-top: 60px;
     }
     .article-listing__link:first-of-type > .ama__user-article-listing {
-      //Spacing override for horizontal rule line above
-      @include breakpoint($bp-large max-width) {
-        padding-top: 37px;
-      }
-      @include breakpoint($bp-med max-width) {
-        padding-top: 36px;
+      padding-top: 36px;
+      @include breakpoint($bp-small) {
+        padding-top: $gutter;
       }
     }
   }
