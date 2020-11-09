@@ -1,5 +1,4 @@
 .ama__search__field {
-  @include gutter($margin-bottom-full...);
   display: flex;
   align-items: center;
 
@@ -112,11 +111,9 @@
     font-size: 20px;
     line-height: 25px;
     font-style: italic;
-    @include breakpoint($bp-small min-width) {
-      padding-top: 21px;
-    }
+    padding: 21px 0;
     @include breakpoint($bp-med min-width) {
-      padding-top: 7px;
+      padding: 7px 0 14px 0;
       font-size: 18px;
       line-height: 27px;
     }

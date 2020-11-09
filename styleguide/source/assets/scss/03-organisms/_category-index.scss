@@ -5,11 +5,13 @@
     }
   }
 
-  .ama__display-switch-menu {
-    margin-top: 21px;
-    @include breakpoint($bp-med min-width) {
-      margin-top: 0;
-    }
+  .ama__display-switch-menu,
+  form.views-exposed-form .form-item-subcategory-terms {
+    margin-top: 0;
+  }
+
+  form.views-exposed-form .js-form-type-textfield {
+    margin-bottom: 0;
   }
 
   .views-exposed-form .js-form-type-textfield {
