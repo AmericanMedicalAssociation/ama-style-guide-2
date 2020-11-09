@@ -112,7 +112,9 @@
     font-size: 20px;
     line-height: 25px;
     font-style: italic;
-    padding-top: 21px;
+    @include breakpoint($bp-small min-width) {
+      padding-top: 21px;
+    }
     @include breakpoint($bp-med min-width) {
       padding-top: 7px;
       font-size: 18px;

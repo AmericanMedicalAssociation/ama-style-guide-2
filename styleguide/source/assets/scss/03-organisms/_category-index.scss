@@ -6,7 +6,16 @@
   }
 
   .ama__display-switch-menu {
-    margin-top: $gutter;
+    margin-top: 21px;
+    @include breakpoint($bp-med min-width) {
+      margin-top: 0;
+    }
+  }
+
+  .views-exposed-form .js-form-type-textfield {
+    @include breakpoint($bp-med max-width) {
+      margin: 0;
+    }
   }
 
   .ama__subcategory-page-article-stub {
