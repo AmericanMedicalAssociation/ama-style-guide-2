@@ -19,24 +19,13 @@
     }
 
     dt, dd {
-      display: inline;
+      display: block;
       width: 100%;
     }
-
-    dd a {
-      text-decoration: none;
-    }
-
-    dt {
-      font-weight: normal;
-      margin-right: 0;
-    }
   }
+
   @include breakpoint($bp-small) {
     padding-bottom: $gutter;
-  }
-
-  @include breakpoint($bp-med) {
     flex-direction: row;
     justify-content: left;
     text-align: left;
@@ -53,6 +42,22 @@
     }
   }
 
+  @include breakpoint($bp-med max-width) {
+    dt, dd {
+      display: inline;
+      width: 100%;
+    }
+
+    dd a {
+      text-decoration: none;
+    }
+
+    dt {
+      font-weight: normal;
+      margin-right: 0;
+    }
+  }
+
   &__image {
     min-width: 0;
     max-width: 210px;
@@ -65,7 +70,7 @@
 
   &__copy {
     flex-grow: 1;
-    @include breakpoint($bp-small max-width) {
+    @include breakpoint($bp-med max-width) {
       margin-top: 14px;
     }
   }
