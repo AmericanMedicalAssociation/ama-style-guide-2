@@ -7692,6 +7692,57 @@ section.ama__forum_comments {
 .ama-image-popup-modal .ui-dialog-titlebar-close:focus {
   outline: none; }
 
+.ama_page_grouping {
+  background-color: #80d4f5;
+  height: 271px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .ama_page_grouping .links {
+    margin-left: 8%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    background-color: #cceefb;
+    border-left: solid 21px #02aaec;
+    padding: 28px; }
+    @media (max-width: 56.25em) {
+      .ama_page_grouping .links {
+        margin-left: calc(25% - 21px);
+        margin-right: 25%; } }
+    @media (max-width: 37.5em) {
+      .ama_page_grouping .links {
+        margin: 0; } }
+    .ama_page_grouping .links .ama_page_grouping_title {
+      font-size: 22px;
+      font-weight: 600; }
+    .ama_page_grouping .links .ama_page_grouping_link {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      line-height: 1.19;
+      text-transform: uppercase;
+      padding: 9px 0px; }
+      .ama_page_grouping .links .ama_page_grouping_link a {
+        display: inline-block;
+        width: 20em;
+        text-decoration: none; }
+        .ama_page_grouping .links .ama_page_grouping_link a:hover {
+          text-decoration: underline; }
+      .ama_page_grouping .links .ama_page_grouping_link svg {
+        position: relative;
+        top: 0.5em; }
+    .ama_page_grouping .links .ama_page_grouping_icon.icon--arrow-right {
+      margin-left: 50%;
+      min-height: initial; }
+  .ama_page_grouping .ama_page_grouping_image {
+    margin-right: 8%; }
+    .ama_page_grouping .ama_page_grouping_image img {
+      max-height: 271px; }
+    @media (max-width: 56.25em) {
+      .ama_page_grouping .ama_page_grouping_image {
+        display: none; } }
+
 .ama__pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9573,7 +9624,7 @@ body.toolbar-horizontal .ama-toc-link .dupe {
 .ama__tags,
 article[class*='__page-content'] .ama__tags {
   margin-top: 21px;
-  margin-bottom: 14px;
+  margin-bottom: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11803,7 +11854,8 @@ article[class*='__page-content'] .ama__tags {
       .ama__column-teaser-wrapper .ama__column-teaser div:last-child {
         margin-right: 0px; }
       .ama__column-teaser-wrapper .ama__column-teaser div:hover {
-        background-color: #ccd7e2; }
+        background-color: #ccd7e2;
+        border-color: #ccd7e2; }
         .ama__column-teaser-wrapper .ama__column-teaser div:hover a {
           color: black; }
       @media (max-width: 37.5em) {
@@ -13149,6 +13201,12 @@ a.ama__membership {
         line-height: 50px;
         margin-right: 28px; } }
 
+@media (min-width: 56.25em) {
+  .layout__region--rail_right .ama__membership {
+    margin-bottom: 56px; }
+    .layout__region--rail_right .ama__membership:last-of-type {
+      margin-bottom: 0; } }
+
 .ama__org-nav {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 34%;
@@ -14198,7 +14256,7 @@ section#related_links .ama__membership ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 30px 0;
+  padding: 28px 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
   -ms-flex-direction: column-reverse;
@@ -15366,14 +15424,21 @@ body.search-results .ama__layout--two-column--left__page-content {
     .ama__people-bio .ama__membership {
       margin-bottom: 28px; } }
 
-.ama__people-bio .user-article-listing-view > ul > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-top: 60px; }
+.ama__people-bio .user-article-listing-view {
+  border-top: solid 2px #ededed; }
+  .ama__people-bio .user-article-listing-view > ul > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 60px; }
+  .ama__people-bio .user-article-listing-view .article-listing__link:first-of-type > .ama__user-article-listing {
+    padding-top: 36px; }
+    @media (min-width: 37.5em) {
+      .ama__people-bio .user-article-listing-view .article-listing__link:first-of-type > .ama__user-article-listing {
+        padding-top: 28px; } }
 
 .ama__people-listing .ama__people-listing__card-container {
   display: -webkit-box;
