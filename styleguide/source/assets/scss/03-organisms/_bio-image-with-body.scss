@@ -19,8 +19,17 @@
     }
 
     dt, dd {
-      display: block;
+      display: inline;
       width: 100%;
+    }
+
+    dd a {
+      text-decoration: none;
+    }
+
+    dt {
+      font-weight: normal;
+      margin-right: 0;
     }
   }
   @include breakpoint($bp-small) {
@@ -56,5 +65,8 @@
 
   &__copy {
     flex-grow: 1;
+    @include breakpoint($bp-small max-width) {
+      margin-top: 14px;
+    }
   }
 }
