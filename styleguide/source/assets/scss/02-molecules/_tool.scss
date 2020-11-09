@@ -87,7 +87,11 @@
     flex: 0 1 33%;
 
     &__text {
-      padding-right: 21px;
+      padding-right: initial;
+
+      @include breakpoint($bp-small) {
+        padding-right: 21px;
+      }
     }
 
     @include breakpoint($bp-med max-width) {
