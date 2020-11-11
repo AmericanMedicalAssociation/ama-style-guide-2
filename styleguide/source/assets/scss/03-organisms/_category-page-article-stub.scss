@@ -9,6 +9,10 @@
     @include breakpoint($bp-med min-width) {
       flex-wrap: nowrap;
     }
+
+    & + .grid-container {
+      margin-top: 0;
+    }
   }
 
   .ama__article-stub {
@@ -29,6 +33,12 @@
     @include breakpoint($bp-med min-width) {
       @include gutter($margin-left-full...);
       width: 25%;
+    }
+
+    @include breakpoint($bp-med max-width) {
+      &:nth-of-type(3) {
+        margin-left: 0;
+      }
     }
   }
 
