@@ -37,28 +37,22 @@
 
 //Rules for embedded Article Stub Lists
 .ama__article-stub-list--inline {
-  margin-top: 28px;
-  margin-bottom: 17px;
-  @include breakpoint($bp-med min-width) {
-    margin-bottom: 52px;
-  }
+  margin-top: $gutter;
+  margin-bottom: $gutter;
   @include breakpoint($bp-small min-width) {
-    margin-bottom: 31px;
+    margin-bottom: 59px;
+  }
+  @include breakpoint($bp-med min-width) {
+    margin-bottom: 17px;
   }
   .ama_article-stub-header {
-    margin-bottom: 14px;
-    @include breakpoint($bp-med min-width) {
-      margin-bottom: 14px;
-    }
-    @include breakpoint($bp-small min-width) {
-      margin-bottom: 13px;
-    }
+    margin-bottom: $gutter / 2;
   }
   .ama__h5--purple {
-    font-size: 14px;
+    font-size: $gutter / 2;
     font-weight: normal;
     line-height: normal;
-    margin-top: 14px;
+    margin-top: $gutter / 2;
   }
   .ama__article-stub__title {
     padding: 0;
@@ -70,6 +64,12 @@
   }
   .ama__image {
     display: block;
+  }
+  .ama__news__article-stub-three-up .ama__article-stub {
+    padding-bottom: 0;
+    @include breakpoint($bp-small) {
+      padding-bottom: inherit;
+    }
   }
 }
 
