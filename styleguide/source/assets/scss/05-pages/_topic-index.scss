@@ -30,6 +30,9 @@
             color: $description-blue-visited;
           }
         }
+        span {
+          display: inline-block;
+        }
       }
       &.summary {
         transition: height .5s ease-in-out;
@@ -41,6 +44,11 @@
             color: $description-blue-visited;
           }
         }
+      }
+    }
+    .fulltext {
+      span {
+        display: inline-block;
       }
     }
     .fulltext,
@@ -95,5 +103,8 @@
 .index-page {
   h1 {
     font-weight: $font-weight-truebold;
+  }
+  .ama__topic-index__stubs .views-exposed-form .form-actions {
+    margin-top: 0;
   }
 }
