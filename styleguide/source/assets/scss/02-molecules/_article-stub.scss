@@ -13,9 +13,11 @@
   }
 
   &__copy {
-    @include gutter($padding-left-full...);
-    @include gutter($padding-right-full...);
     flex-grow: 1;
+    @include breakpoint($bp-small min-width) {
+      @include gutter($padding-left-full...);
+      @include gutter($padding-right-full...);
+    }
 
     @include breakpoint($bp-med min-width) {
       padding: 0;
@@ -214,4 +216,14 @@
         @include gutter($padding-left-half...);
         @include gutter($padding-right-half...);
       }
+}
+
+.ama__category__article-stub-three-up {
+  .ama__article-stub {
+    padding: $gutter ($gutter / 2);
+
+    @include  breakpoint($bp-small) {
+      padding: 0;
+    }
+  }
 }

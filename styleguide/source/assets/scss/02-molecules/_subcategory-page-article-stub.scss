@@ -85,11 +85,12 @@ div.ama__category-index__stubs.ama__topic-index__stubs.ama__category-index a.ama
 }
 .ama__topic-index__stubs.ama__category-index {
   .form-item-title {
-    margin: 0 0 21px 0;
-    @include breakpoint($bp-small) {
-      margin: 0 0 28px 0;
+    margin: 0;
+  }
+  .form-actions {
+    @include breakpoint($bp-med) {
+      margin-top: 0;
     }
-
   }
   .views-infinite-scroll-content-wrapper {
     div:first-child {

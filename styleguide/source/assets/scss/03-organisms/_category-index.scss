@@ -5,8 +5,19 @@
     }
   }
 
-  .ama__display-switch-menu {
-    margin-top: $gutter;
+  .ama__display-switch-menu,
+  form.views-exposed-form .form-item-subcategory-terms {
+    margin-top: 0;
+  }
+
+  form.views-exposed-form .js-form-type-textfield {
+    margin-bottom: 0;
+  }
+
+  .views-exposed-form .js-form-type-textfield {
+    @include breakpoint($bp-med max-width) {
+      margin: 0;
+    }
   }
 
   .ama__subcategory-page-article-stub {
