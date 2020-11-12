@@ -23,11 +23,9 @@
       width: 100%;
     }
   }
+
   @include breakpoint($bp-small) {
     padding-bottom: $gutter;
-  }
-
-  @include breakpoint($bp-med) {
     flex-direction: row;
     justify-content: left;
     text-align: left;
@@ -41,6 +39,25 @@
       width: auto;
       min-width: 0;
       margin: 0 15px 0 0;
+      @include breakpoint($bp-small) {
+        margin: 0 $gutter 0 0;
+      }
+    }
+  }
+
+  @include breakpoint($bp-med max-width) {
+    dt, dd {
+      display: inline;
+      width: 100%;
+    }
+
+    dd a {
+      text-decoration: none;
+    }
+
+    dt {
+      font-weight: normal;
+      margin-right: 0;
     }
   }
 
@@ -56,5 +73,8 @@
 
   &__copy {
     flex-grow: 1;
+    @include breakpoint($bp-med max-width) {
+      margin-top: 14px;
+    }
   }
 }
