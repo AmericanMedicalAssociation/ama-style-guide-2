@@ -12,12 +12,15 @@
   display: block;
   background: none;
   color: black;
-  padding: 0;
+  padding-bottom: 0;
   font-weight: $font-weight-semibold;
   font-size: 26px;
   line-height: 31px;
   text-transform: uppercase;
   margin-bottom: 21px;
+  @include breakpoint($bp-small min-width) {
+    padding: 0;
+  }
   @include breakpoint($bp-med min-width) {
     margin-bottom: 28px;
   }
