@@ -28,16 +28,27 @@
       @include gutter($margin-left-full...);
       @include gutter($margin-bottom-full...);
       width: 47%;
+      &.five-up {
+        width: 30%;
+      }
     }
 
     @include breakpoint($bp-med min-width) {
       @include gutter($margin-left-full...);
       width: 25%;
-    }
-
-    @include breakpoint($bp-med max-width) {
       &:nth-of-type(3) {
         margin-left: 0;
+        &.five-up {
+          margin-left: $gutter*.75;
+        }
+      }
+      &.five-up {
+        width: 33%;
+      }
+    }
+    @include breakpoint($bp-large min-width) {
+      &.five-up {
+        width: 32%;
       }
     }
   }
@@ -49,4 +60,21 @@
   .ama__article-stub__copy {
     padding: 0;
   }
+  .grid-container {
+    &:last-child {
+      .seven-up {
+        width: auto;
+        @include breakpoint($bp-small min-width) {
+          width: 47%;
+        }
+        @include breakpoint($bp-med min-width) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.ama__category__article-stub-three-up {
+  margin-bottom: $gutter;
 }
