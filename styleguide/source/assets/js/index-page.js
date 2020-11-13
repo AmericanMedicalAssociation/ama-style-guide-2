@@ -2,16 +2,18 @@
   Drupal.behaviors.index = {
     attach: function (context, settings) {
 
-      var full = $('.fulltext')
-      var trunc = $('.truncated')
-      var desc = $('.desc-display')
-      var fullText = $.parseHTML($('.fulltext').html())[0]['data']
-      var truncated = $.parseHTML($('.truncated').html())[0]['data']
-      var fullHeight = ''
-      var truncHeight = ''
-      var moreHtml = '<a href="#" class="more"> ...Read More</a>'
-      var lessHtml = '<a href="#" class="less">Hide Content</a>'
-      var width = ''
+  if ( $('.desc-display').length ) {
+
+    var full = $('.fulltext');
+    var trunc = $('.truncated')
+    var desc = $('.desc-display')
+    var fullText = $.parseHTML($('.fulltext').html())[0]['data']
+    var truncated = $.parseHTML($('.truncated').html())[0]['data']
+    var fullHeight = ''
+    var truncHeight = ''
+    var moreHtml = '<a href="#" class="more"> ...Read More</a>'
+    var lessHtml = '<a href="#" class="less">Hide Content</a>'
+    var width = ''
 
       function getDimensions () {
         width = $(window).width()
@@ -64,6 +66,8 @@
         // Scroll to top.
         $('html, body').animate({ scrollTop: 0 }, 500, 'swing')
       });
+    }
+
     }
   };
 })(jQuery, Drupal);
