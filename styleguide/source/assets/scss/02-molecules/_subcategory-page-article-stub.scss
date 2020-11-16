@@ -85,11 +85,12 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 }
 .ama__category-index {
   .form-item-title {
-    margin: 0 0 21px 0;
-    @include breakpoint($bp-small) {
-      margin: 0 0 28px 0;
+    margin: 0;
+  }
+  .form-actions {
+    @include breakpoint($bp-med) {
+      margin-top: 0;
     }
-
   }
   .ama__category-index__stubs:not(.ama__menu-listing) {
     .views-infinite-scroll-content-wrapper {
