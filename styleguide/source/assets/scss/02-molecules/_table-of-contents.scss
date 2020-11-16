@@ -52,6 +52,12 @@
     position: absolute;
     left: 0px;
     top: -60px;
+    //IE Override
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      h2 {
+        padding-top: 61px;
+      }
+    }
   }
 }
 body.toolbar-horizontal .ama-toc-link .dupe {
