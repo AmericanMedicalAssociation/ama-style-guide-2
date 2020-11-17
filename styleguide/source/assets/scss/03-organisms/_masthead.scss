@@ -175,11 +175,10 @@
 // Masthead styling for 75% 25% two column masthead
 
 .ama__75-25__masthead {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr;
-
+  display: block;
   @include breakpoint($bp-small) {
+    display: grid;
+    grid-template-rows: auto auto auto;
     grid-template-columns: 3fr 1fr;
   }
 
