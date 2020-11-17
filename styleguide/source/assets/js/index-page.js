@@ -7,8 +7,8 @@
     var full = $('.fulltext');
     var trunc = $('.truncated')
     var desc = $('.desc-display')
-    var fullText = $.parseHTML($('.fulltext').html())[0]['data']
-    var truncated = $.parseHTML($('.truncated').html())[0]['data']
+    var fullText = $.parseHTML(full.html())[0]['data']
+    var truncated = trunc.html()
     var fullHeight = ''
     var truncHeight = ''
     var moreHtml = '<a href="#" class="more"> ...Read More</a>'
