@@ -30,6 +30,15 @@
     }
   }
 
+
+  &__text {
+    padding-right: initial;
+
+    @include breakpoint($bp-small) {
+      padding-right: 21px;
+    }
+  }
+
   &__text p {
     margin-bottom: 0;
   }
@@ -85,14 +94,6 @@
 .ama__subcategory-index {
   .ama__tool {
     flex: 0 1 33%;
-
-    &__text {
-      padding-right: initial;
-
-      @include breakpoint($bp-small) {
-        padding-right: 21px;
-      }
-    }
 
     @include breakpoint($bp-med max-width) {
       flex: 0 1 100%;
