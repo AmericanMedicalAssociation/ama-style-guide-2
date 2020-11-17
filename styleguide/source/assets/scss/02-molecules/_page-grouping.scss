@@ -2,24 +2,38 @@
   background-color: $pg-lt-blue;
   min-height: 271px;
   display: flex;
-  margin-bottom: $gutter;
-  padding: 0 8%;
+  margin: 0 15px $gutter;
+  padding: 0;
+  @include breakpoint($bp-small) {
+    padding: 0 25% 0 calc(25% - 21px);
+    margin: 0;
+  }
+  @include breakpoint($bp-med) {
+    padding: 0 8%;
+    margin: 0;
+  }
+  @include breakpoint($bp-large) {
+
+  }
 
   .links {
     background-color: $pg-xtra-lt-blue;
-    border-left: solid 21px $pg-blue;
-    padding: $gutter;
-    flex: 50%;
+    border-left: solid $gutter / 2 $pg-blue;
+    padding: $gutter / 2 $gutter / 4;
+    @include breakpoint($bp-small) {
+      padding: $gutter;
+      border-left: solid $gutter * .75 $pg-blue;
+    }
+    flex: 100%;
     margin: 0;
-
-    @include breakpoint($bp-med max-width) {
-      margin-left: calc(25% - 21px);
-      margin-right: 25%;
+    @include breakpoint($bp-med) {
+      flex: 50%;
     }
 
     .ama_page_grouping_title {
       font-size: 22px;
       font-weight: 600;
+      margin-bottom: $gutter / 2;
     }
 
     .link-list {
@@ -35,21 +49,34 @@
           display: block;
           text-decoration: none;
           position: relative;
-          padding-right: 20%;
+          padding-right: 25px;
+          @include breakpoint($bp-small) {
+            padding-right: 20%;
+          }
           white-space: normal;
 
           &:hover {
             text-decoration: underline;
+            &::after {
+              border-bottom: 1px solid $black;
+            }
           }
 
           &::after {
             content: " ";
+            border-bottom: none;
             position: absolute;
-            right: 18%;
-            top: 0;
+            right: 0;
+            top: 30%;
             width: 17px;
             height: 11px;
             background: url('../images/arrow-right.svg') no-repeat 0px 0px;
+            @include breakpoint($bp-small) {
+              right: 12%;
+            }
+            @include breakpoint($bp-med) {
+              right: 15%;
+            }
           }
         }
       }
@@ -57,13 +84,13 @@
   }
 
   .ama_page_grouping_image {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    flex: 50%;
-
-    @include breakpoint($bp-med max-width) {
-      display: none;
+    display: none;
+    @include breakpoint($bp-med) {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      flex: 50%;
+      display: block;
     }
   }
 }
