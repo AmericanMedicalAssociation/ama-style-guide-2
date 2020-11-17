@@ -1,67 +1,69 @@
 .ama_page_grouping {
-    background-color: $pg-lt-blue;
-    height: 271px;
-    display: flex;
-    margin-bottom: $gutter;
+  background-color: $pg-lt-blue;
+  min-height: 271px;
+  display: flex;
+  margin-bottom: $gutter;
+  padding: 0 8%;
 
-    .links {
-        margin-left: 8%;
-        flex: 1 1 auto;
-        background-color: $pg-xtra-lt-blue;
-        border-left: solid 21px $pg-blue;
-        padding: $gutter;
+  .links {
+    background-color: $pg-xtra-lt-blue;
+    border-left: solid 21px $pg-blue;
+    padding: $gutter;
+    flex: 50%;
+    margin: 0;
 
-        @include breakpoint($bp-med max-width) {
-             margin-left: calc(25% - 21px);
-             margin-right: 25%;
-        }
-
-        @include breakpoint($bp-small max-width) {
-             margin: 0;
-        } 
-
-        .ama_page_grouping_title {
-            font-size: 22px;
-            font-weight: 600;
-        }
-
-        .ama_page_grouping_link {
-            display: flex;
-            line-height: 1.19;
-            text-transform: uppercase;
-            padding: 9px 0px;
-
-            a {
-                display: inline-block;
-                width: 20em;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-
-            svg {
-                position: relative;
-                top: 0.5em;
-            }
-        }
-
-        .ama_page_grouping_icon.icon--arrow-right {
-            margin-left: 50%;
-            min-height: initial;
-        }
+    @include breakpoint($bp-med max-width) {
+      margin-left: calc(25% - 21px);
+      margin-right: 25%;
     }
 
-    .ama_page_grouping_image {
-        margin-right: 8%;
-
-        img {
-            max-height: 271px;
-        }
-
-        @include breakpoint($bp-med max-width) {
-            display: none;
-        }
+    .ama_page_grouping_title {
+      font-size: 22px;
+      font-weight: 600;
     }
+
+    .link-list {
+      list-style-type: none;
+
+      .ama_page_grouping_link {
+        display: block;
+        line-height: 1.19;
+        text-transform: uppercase;
+        padding: 9px 0;
+
+        a {
+          display: block;
+          text-decoration: none;
+          position: relative;
+          padding-right: 20%;
+          white-space: normal;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &::after {
+            content: " ";
+            position: absolute;
+            right: 18%;
+            top: 0;
+            width: 17px;
+            height: 11px;
+            background: url('../images/arrow-right.svg') no-repeat 0px 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .ama_page_grouping_image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    flex: 50%;
+
+    @include breakpoint($bp-med max-width) {
+      display: none;
+    }
+  }
 }
