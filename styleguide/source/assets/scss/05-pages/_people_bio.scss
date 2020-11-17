@@ -26,10 +26,17 @@
     @include gutter($margin-bottom-full...);
   }
   .user-article-listing-view {
+    border-top: solid 2px #ededed;
     > ul > li {
       display: flex;
       justify-content: center;
       padding-top: 60px;
+    }
+    .article-listing__link:first-of-type > .ama__user-article-listing {
+      padding-top: 36px;
+      @include breakpoint($bp-small) {
+        padding-top: $gutter;
+      }
     }
   }
 }

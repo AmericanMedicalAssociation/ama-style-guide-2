@@ -15,10 +15,16 @@
   }
 
   &__aside {
-    @include gutter-all(padding, $gutter / 2, $gutter-mobile / 2);
+    padding: $gutter / 2;
+    @include breakpoint($bp-med) {
+      padding: $gutter;
+    }
     background: $purple;
     flex-basis: 33.33%;
     color: $white;
+    h5 {
+      font-weight: $font-weight-regular;
+    }
 
     &--full-width {
       flex-basis: 100%;
@@ -98,6 +104,15 @@
       @include breakpoint($bp-small max-width) {
         background-image: none;
       }
+    }
+  }
+}
+
+.ama__news-article {
+  margin-bottom: $gutter * .75;
+  .hero-evergreen {
+    @include breakpoint($bp-small) {
+      margin-bottom: $gutter;
     }
   }
 }
