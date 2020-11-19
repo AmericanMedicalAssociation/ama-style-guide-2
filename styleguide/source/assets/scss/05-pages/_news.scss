@@ -9,20 +9,24 @@
 
 .ama__news-article {
   //give the content column of the news article a tob border
-  .ama__layout--two-column--right {
-    .layout__region--main {
-      @include breakpoint($bp-xs) {
-        border-top: none;
-        padding-top: 10px;
-      }
+  .ama__layout--two-column--right__page-content {
+    &.border {
+      border-top: none;
+      padding-top: 10px;
+      margin-top: 0;
       @include breakpoint($bp-small) {
         border-top: 8px solid $purple;
-        padding-top: 25px;
+        padding-top: $gutter;
+        margin-top: $gutter
       }
     }
-    &__sidebar--secondary {
-      padding-top:0;
+    &.border-none {
+      padding-top: none;
+      border-top: 0;
     }
+  }
+  &__sidebar--secondary {
+    padding-top:0;
   }
 }
 
