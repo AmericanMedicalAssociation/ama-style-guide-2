@@ -1,12 +1,14 @@
 .thirty-seventy-block {
   display: flex;
   flex-flow: column wrap;
+  flex-direction: column;
 
   @include breakpoint($bp-med) {
     flex-flow: row nowrap;
+    flex-direction: column;
   }
 
-  &__aside {
+  .aside {
     padding: $gutter / 2;
     @include breakpoint($bp-med) {
       padding: $gutter;
@@ -19,7 +21,7 @@
     }
   }
 
-  &__background {
+  .background {
     flex-basis: 66.66%;
     position: relative;
     display: flex;
@@ -28,7 +30,7 @@
     background-size: cover;
     min-height: 366px;
 
-    &__buttons {
+    .buttons {
       @include gutter($padding-top-half...);
       @include gutter($padding-bottom-full...);
       display: flex;
@@ -71,7 +73,7 @@
         align-items: center;
         min-height: 0;
 
-        &--stacked {
+        .stacked {
           flex-flow: column nowrap;
           flex-grow: .2;
           min-height: 300px;
