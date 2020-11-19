@@ -7,8 +7,8 @@
     var full = $('.fulltext');
     var trunc = $('.truncated')
     var desc = $('.desc-display')
-    var fullText = $.parseHTML($('.fulltext').html())[0]['data']
-    var truncated = $.parseHTML($('.truncated').html())[0]['data']
+    var fullText = $('.fulltext').html()
+    var truncated = $('.truncated').html()
     var fullHeight = ''
     var truncHeight = ''
     var moreHtml = '<a href="#" class="more"> ...Read More</a>'
@@ -55,14 +55,14 @@
         desc.css('height', fullHeight + 'px')
         desc.addClass('full').removeClass('summary')
         // Swap the full copy into the display div.
-        desc.html(fullText).append(lessHtml)
+        desc.html($.parseHTML(fullText)).append(lessHtml)
       });
       desc.on('click', '.less', function () {
         getDimensions()
         desc.css('height', truncHeight + 'px')
         desc.addClass('summary').removeClass('full')
         // Swap the truncated copy into the display div.
-        desc.html(truncated).append(moreHtml)
+        desc.html($.parseHTML(truncated)).append(moreHtml)
         // Scroll to top.
         $('html, body').animate({ scrollTop: 0 }, 500, 'swing')
       });
