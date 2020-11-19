@@ -17,10 +17,11 @@
       padding-top: 0;
       &.border {
         border-top: none;
-        padding-top: 10px;
+        padding-top: 0;
         margin-top: 0;
         @include breakpoint($bp-small) {
           border-top: 8px solid $purple;
+          padding-top: $gutter / 2
         }
       }
       &.border-none {
@@ -34,8 +35,8 @@
     margin-bottom: $gutter * .75;
     padding-bottom: 0;
     @include breakpoint($bp-small) {
-      margin-bottom: $gutter / 2;
-      padding-bottom: 10.5px;
+      margin-bottom: $gutter * 1.25;
+      padding-bottom: 0;
     }
   }
 }
