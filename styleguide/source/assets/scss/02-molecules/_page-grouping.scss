@@ -87,3 +87,114 @@
     }
   }
 }
+
+//News Article Page Grouping Block
+
+.ama_page_grouping_news {
+  background-color: $pg-lt-blue;
+  min-height: 80px;
+  display: flex;
+  margin: 0 0 $gutter;
+  padding: 0;
+  @include breakpoint($bp-small) {
+    margin: 0;
+  }
+
+  &.bottom-border {
+    display: block;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    min-height: 0;
+    height: 0;
+    margin: 0 15px 10px;
+    @include breakpoint($bp-small) {
+      height: 8px;
+      background: $purple;
+      margin: $gutter 0 $gutter / 2;
+    }
+  }
+
+  .links {
+    background-color: $pg-xtra-lt-blue;
+    padding: $gutter / 2;
+    flex: 100%;
+    @include breakpoint($bp-small) {
+      padding: $gutter / 2 $gutter $gutter / 2  $gutter / 2;
+    }
+
+    .ama_page_grouping_title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: $gutter /2;
+      @include breakpoint($bp-small) {
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+    }
+
+    .link-list {
+      list-style-type: none;
+      .ama_page_grouping_link {
+        line-height: 1.3;
+        display:inline-block;
+        text-transform: uppercase;
+        font-size: 16px;
+        @include breakpoint($bp-small) {
+          font-size: 14px;
+        }
+
+        &.heading {
+          font-weight: $font-weight-bold;
+          padding-right: $gutter / 4;
+          position: relative;
+          &::after {
+            content: "|";
+            font-size: 13px;
+            font-weight: $font-weight-regular;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          position: relative;
+          padding-right: $gutter / 4;
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &::after {
+            content: "|";
+            font-size: 13px;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        }
+
+        &:last-child {
+          a {
+            padding-right: 0;
+            &::after {
+              content: "";
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  .ama_page_grouping_image {
+    display: none;
+    line-height: 0;
+    background-color: $pg-lt-blue;
+    @include breakpoint($bp-small) {
+      width: 150px;
+      display: initial;
+    }
+  }
+}

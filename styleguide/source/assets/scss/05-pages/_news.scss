@@ -10,18 +10,33 @@
 .ama__news-article {
   //give the content column of the news article a tob border
   .ama__layout--two-column--right {
-    .layout__region--main {
-      @include breakpoint($bp-xs) {
-        border-top: none;
-        padding-top: 10px;
-      }
-      @include breakpoint($bp-small) {
-        border-top: 8px solid $purple;
-        padding-top: 25px;
-      }
-    }
     &__sidebar--secondary {
       padding-top:0;
+    }
+    &__page-content {
+      padding-top: 0;
+      &.border {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+        @include breakpoint($bp-small) {
+          border-top: 8px solid $purple;
+          padding-top: $gutter / 2
+        }
+      }
+      &.border-none {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+  }
+
+  .ama__inline-bio {
+    margin-bottom: $gutter * .75;
+    padding-bottom: 0;
+    @include breakpoint($bp-small) {
+      margin-bottom: $gutter * 1.25;
+      padding-bottom: 0;
     }
   }
 }
