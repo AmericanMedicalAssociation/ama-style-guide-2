@@ -102,16 +102,16 @@
 
   &.bottom-border {
     display: block;
-    padding: none;
+    padding: 0;
     width: 100%;
-    background-color: none;
+    background-color: transparent;
     min-height: 0;
     height: 0;
     margin: 0 15px 10px;
     @include breakpoint($bp-small) {
       height: 8px;
       background: $purple;
-      margin: $gutter 0 0;
+      margin: $gutter 0 $gutter / 2;
     }
   }
 
