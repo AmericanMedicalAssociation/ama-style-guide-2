@@ -158,21 +158,28 @@
           }
         }
 
-        a {
+        a,
+        &.active {
           text-decoration: none;
           position: relative;
           padding-right: $gutter / 4;
-          &:hover {
-            text-decoration: underline;
-          }
 
           &::after {
             content: "|";
+            font-weight: $font-weight-regular;
             font-size: 13px;
             position: absolute;
             top: 0;
             right: 0;
           }
+        }
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &.active {
+          font-weight: $font-weight-bold;
         }
 
         &:last-child {
@@ -198,3 +205,4 @@
     }
   }
 }
+
