@@ -5,7 +5,7 @@
 
   @include breakpoint($bp-med) {
     flex-flow: row nowrap;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .aside {
@@ -14,7 +14,7 @@
       padding: $gutter;
     }
     background: $purple;
-    flex-basis: 33.33%;
+    flex-basis: 30%;
     color: $white;
     h5 {
       font-weight: $font-weight-regular;
@@ -22,23 +22,36 @@
   }
 
   .background {
-    flex-basis: 66.66%;
+    flex-basis: 70%;
     position: relative;
     display: flex;
+    background-repeat: no-repeat;
+    background-position: center center;
     flex-direction: column;
-    justify-content: flex-end;
     background-size: cover;
+    align-content:center;
+    justify-content: flex-end;
     min-height: 366px;
 
     .buttons {
       @include gutter($padding-top-half...);
       @include gutter($padding-bottom-full...);
       display: flex;
-      background: $white;
-      flex-flow: column wrap;
-      justify-content: space-evenly;
-      min-height: 200px;
-      align-self: auto;
+      flex-flow: column;
+      align-self: center;
+      padding-top: 150px;
+      @include breakpoint($bp-med) {
+        flex-flow: row wrap;
+        align-items: center;
+      }
+
+      &.stacked {
+        flex-flow: column;
+        align-items: center;
+        .ama__button {
+          width:100%;
+        }
+      }
 
       //Fix for overriding jquery widget
       .ama__button {
@@ -56,29 +69,6 @@
           &:hover {
             color: $white;
           }
-        }
-      }
-
-      @include breakpoint($bp-small) {
-        background: none;
-        min-height: 300px;
-        padding-top: 150px;
-        align-self: center;
-        align-items: unset;
-      }
-
-      @include breakpoint($bp-small min-width) {
-        flex-flow: row nowrap;
-        align-self: unset;
-        align-items: center;
-        min-height: 0;
-
-        .stacked {
-          flex-flow: column nowrap;
-          flex-grow: .2;
-          min-height: 300px;
-          align-self: center;
-          align-items: unset;
         }
       }
     }
