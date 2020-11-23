@@ -38,6 +38,7 @@
     flex-direction: column;
     justify-content: flex-end;
     background-size: cover;
+    background-position: center center;
     min-height: 366px;
 
     .hero-evergreen__buttons {
@@ -117,15 +118,19 @@
   }
 }
 
-@include breakpoint($bp-small min-width) {
-  .thirty-seventy-block {
-    .hero-evergreen {
-      .hero-evergreen__buttons {
-        background: transparent;
-        position: absolute;
-        width: 100%;
-        align-content: center;
-      }
+
+.thirty-seventy-block {
+  margin-bottom: $gutter * .75;
+  @include breakpoint($bp-small) {
+    margin-bottom: $gutter * .75;
+  }
+  .hero-evergreen {
+    .hero-evergreen__buttons {
+      background: transparent;
+      background-repeat: none;
+      position: absolute;
+      width: 100%;
+      align-content: center;
     }
   }
 }
