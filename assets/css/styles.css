@@ -7047,6 +7047,14 @@ section.ama__forum_comments {
     .ama__news-article .hero-evergreen {
       margin-bottom: 28px; } }
 
+@media (min-width: 37.5em) {
+  .thirty-seventy-block .hero-evergreen .hero-evergreen__buttons {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    -ms-flex-line-pack: center;
+    align-content: center; } }
+
 .ama__hero-story {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7861,18 +7869,21 @@ section.ama__forum_comments {
             position: absolute;
             top: 0;
             right: 0; }
-        .ama_page_grouping_news .links .link-list .ama_page_grouping_link a {
+        .ama_page_grouping_news .links .link-list .ama_page_grouping_link a, .ama_page_grouping_news .links .link-list .ama_page_grouping_link.active {
           text-decoration: none;
           position: relative;
           padding-right: 7px; }
-          .ama_page_grouping_news .links .link-list .ama_page_grouping_link a:hover {
-            text-decoration: underline; }
-          .ama_page_grouping_news .links .link-list .ama_page_grouping_link a::after {
+          .ama_page_grouping_news .links .link-list .ama_page_grouping_link a::after, .ama_page_grouping_news .links .link-list .ama_page_grouping_link.active::after {
             content: "|";
+            font-weight: 400;
             font-size: 13px;
             position: absolute;
             top: 0;
             right: 0; }
+        .ama_page_grouping_news .links .link-list .ama_page_grouping_link a:hover {
+          text-decoration: underline; }
+        .ama_page_grouping_news .links .link-list .ama_page_grouping_link.active {
+          font-weight: 600; }
         .ama_page_grouping_news .links .link-list .ama_page_grouping_link:last-child a {
           padding-right: 0; }
           .ama_page_grouping_news .links .link-list .ama_page_grouping_link:last-child a::after {
