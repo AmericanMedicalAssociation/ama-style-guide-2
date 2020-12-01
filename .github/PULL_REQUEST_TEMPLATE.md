@@ -4,7 +4,7 @@
 **Do not** submit a Pull Request without a relevant JIRA ticket or Github issue! If you are creating a new pattern or feature, create an issue describing the need for this feature in Github **first** and then link to it below.
 
 **Github Issue**
-- [Issue XXX: Issue Title](https://github.com/AmericanMedicalAssociation/AMA-style-guide/issues/XXX)
+- [Issue XXX: Issue Title](https://github.com/american-medical-association/AMA-style-guide/issues/XXX)
 
 **Jira Ticket**
 - [EWL-XXXX: Ticket Title](https://issues.ama-assn.org/browse/EWL-XXXX)
@@ -21,7 +21,7 @@ Explain the technical implementation of the work done.
 
 _Please provide the pull request ID below. This will then reference the automated VRT report after it has been generated._
 
-A report is available [here](http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/visual-regression-testing-artifact/[PULL_REQUEST_ID]/html_report/index.html).
+A report is available [here](http://htmlpreview.github.io/?https://github.com/american-medical-association/ama-style-guide-2/blob/visual-regression-testing-artifact/[PULL_REQUEST_ID]/html_report/index.html).
 
 **Before proceeding:** Run visual regression tests locally to ensure new work does not introduce new bugs.
 
@@ -39,7 +39,7 @@ Use something like [Skitch](https://evernote.com/skitch/) or [GIPHY Capture](htt
 
 
 ## Remaining Tasks
-Things relevant to here may be updating [The Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary?src=contextnavpagetreemode) with the latest naming changes or review of the relative [D8](https://github.com/AmericanMedicalAssociation/ama-d8) work.
+Things relevant to here may be updating [The Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary?src=contextnavpagetreemode) with the latest naming changes or review of the relative [D8](https://github.com/american-medical-association/ama-d8) work.
 
 
 ## Additional Notes

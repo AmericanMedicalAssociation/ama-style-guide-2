@@ -36,7 +36,7 @@ If you would like to include commits from a different branch that has not been m
 * If you create a branch you own it; no one else must modify it without your permission.
 * If you wish to make a change to someone else's PR, either suggest it in a comment or ask the PR owner to meet with you for a pair programming session/discussion. Talking first can solve the problem sooner and increase knowledge sharing which is important to our team.
 * All pull requests must include any creation or updates to relevant visual regression tests. For more infomration on how to do this please see the [How do I run tests?](https://issues.ama-assn.org:8446/confluence/pages/viewpage.action?pageId=23298568) document in Confluence.
-* Travis will run visual regression tests against `gh-pages` on commits. The BackstopJS report from the latest Travis run can be seen on the `visual-regression-testing-artifact/[PULL_REQUEST_ID]` branch. Users can also view the test results in browser by filling in the Travis ID, `http://htmlpreview.github.io/?https://github.com/AmericanMedicalAssociation/ama-style-guide-2/blob/visual-regression-testing-artifact/[PULL_REQUEST_ID]/html_report/index.html`.
+* Travis will run visual regression tests against `gh-pages` on commits. The BackstopJS report from the latest Travis run can be seen on the `visual-regression-testing-artifact/[PULL_REQUEST_ID]` branch. Users can also view the test results in browser by filling in the Travis ID, `http://htmlpreview.github.io/?https://github.com/american-medical-association/ama-style-guide-2/blob/visual-regression-testing-artifact/[PULL_REQUEST_ID]/html_report/index.html`.
 
 ## Git Commit Guidelines
 
