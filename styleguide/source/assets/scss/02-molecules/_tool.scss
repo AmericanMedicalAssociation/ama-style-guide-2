@@ -85,6 +85,7 @@
 .ama__subcategory-index {
   .ama__tool {
     flex: 0 1 33%;
+
     @include breakpoint($bp-med max-width) {
       flex: 0 1 100%;
     }
@@ -96,4 +97,17 @@
   .ama__tool {
      flex: 0 1 100%;
   } 
+}
+
+// Adding specific padding rules for not sidebar tools.
+.ama__layout--two-col-right--75-25__left,
+.layout__region--main {
+  .ama__tool {
+    &__text {
+      padding-right: initial;
+      @include breakpoint($bp-small) {
+        padding-right: 21px;
+      }
+    }
+  }
 }
