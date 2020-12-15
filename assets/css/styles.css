@@ -11492,15 +11492,16 @@ article[class*='__page-content'] .ama__tags {
     min-width: 0;
     max-width: 210px;
     max-height: 210px;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center; }
+    -ms-flex-item-align: start;
+    align-self: flex-start; }
     .ama__bio-image-with-body__image img {
       border-radius: 50%; }
   .ama__bio-image-with-body__copy {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1; }
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0; }
     @media (max-width: 56.25em) {
       .ama__bio-image-with-body__copy {
         margin-top: 14px; } }
@@ -14251,7 +14252,8 @@ section#related_links .ama__membership ul {
       display: inline-block; }
 
 .ama__subcategory-explore-topics {
-  display: inline; }
+  display: inline-block;
+  padding: 21px 0px 28px; }
   @media (min-width: 37.5em) {
     .ama__subcategory-explore-topics {
       display: -webkit-box;
