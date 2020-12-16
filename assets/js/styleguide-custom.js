@@ -99,7 +99,7 @@
 
           // Submits the search form after a select menu items has been selected
           $('.ama__select-menu__select').on('selectmenuchange', function() {
-            $('#block-exposedformacquia-searchpage').submit();
+            $('#block-exposedformacquia-search-solrpage').submit();
           });
 
           $('.ama__select-menu__select').on('selectmenuchange', function() {
@@ -1223,7 +1223,7 @@ jQuery('.ama_category_navigation_menu__group').smartmenus({
 
           $('.facets-widget-checkbox ul li [type=checkbox]').each( function() {
             $(this).prop("checked", false);
-            $('#block-exposedformacquia-searchpage').submit();
+            $('#block-exposedformacquia-search-solrpage').submit();
           });
         });
       }
