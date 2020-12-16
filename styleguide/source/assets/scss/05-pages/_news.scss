@@ -11,7 +11,9 @@
   //give the content column of the news article a tob border
   .ama__layout--two-column--right {
     &__sidebar--secondary {
-      padding-top:0;
+      @include breakpoint($bp-med min-width) {
+        padding-top:0;
+      }
     }
     &__page-content {
       padding-top: 0;
