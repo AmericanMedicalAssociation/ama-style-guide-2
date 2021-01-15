@@ -54,6 +54,10 @@
   }
 
   &--location {
+    //Unset container height to prevent extra spacing
+    .layout__region--main {
+      min-height: unset !important;
+    }
     .ama__info-card__wrap {
       @include breakpoint($bp-small) {
         display: flex;
