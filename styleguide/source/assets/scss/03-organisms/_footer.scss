@@ -187,14 +187,19 @@
       order: 1;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: 66.666%;
+      flex-basis: 50%;
+
+      .ama__footer__mission {
+        max-width: 95%;
+      }
     }
 
     &__right {
       order: 2;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: 33.333%;
+      flex-basis: 50%;
+      padding-left: 15px;
 
       .ama__subscribe-promo--wide .ama__subscribe-promo__form {
         input {
@@ -221,6 +226,19 @@
 
     &__mission {
       max-width: 65%;
+    }
+  }
+  @include breakpoint($bp-large){
+    &__right {
+      flex-basis: 33.333%;
+      padding-left: 0;
+    }
+    &__left {
+      flex-basis: 66.666%;
+
+      .ama__footer__mission {
+        max-width: 65%;
+      }
     }
   }
 }
