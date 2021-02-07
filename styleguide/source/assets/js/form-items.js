@@ -12,8 +12,6 @@
           // Do not execute in the layout builder edit dialog
           if ($('.js-off-canvas-dialog-open').length < 0) {
 
-
-
             $('.multiselect').multiselect();
 
             $('.ama__tooltip').tooltip({
