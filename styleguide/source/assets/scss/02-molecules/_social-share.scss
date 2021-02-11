@@ -67,6 +67,10 @@ footer {
   padding: 0;
   min-height: 20px;
 
+  @include breakpoint(max-width $bp-small) {
+    margin-bottom: $gutter / 2;
+  }
+
   li {
     list-style: none;
 
