@@ -256,9 +256,15 @@ a.ama__membership {
     }
     @include breakpoint($bp-large min-width) {
       margin-bottom: 56px;
-      &:last-of-type {
-        margin-bottom: 0;
+      &:last-of-type { margin-bottom: 0;
       }
     }
+  }
+}
+
+@include breakpoint(max-width $bp-small) {
+  .contextual-region.container.index-page .ama__layout--two-col-right--75-25__right {
+    margin: 0 -15px;
+    padding: 0;
   }
 }
