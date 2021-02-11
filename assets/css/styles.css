@@ -7199,12 +7199,14 @@ section.ama__forum_comments {
         width: 50%; } }
 
 .ama__inline-bio {
-  padding-top: 10.5px;
-  padding-bottom: 10.5px; }
+  padding-top: 10.5px; }
   @media (min-width: 56.25em) {
     .ama__inline-bio {
       padding-top: 14px; } }
-  @media (min-width: 56.25em) {
+  @media (min-width: 37.5em) {
+    .ama__inline-bio {
+      padding-bottom: 10.5px; } }
+  @media (min-width: 37.5em) and (min-width: 56.25em) {
     .ama__inline-bio {
       padding-bottom: 14px; } }
   .ama__inline-bio__image {
@@ -8253,6 +8255,8 @@ section.ama__forum_comments {
     background: #EDEDED; }
   .ama__promo--border {
     border: solid 1px #767676; }
+  .ama__promo--stub-body {
+    min-height: 210px; }
   .ama__promo--inline {
     padding-top: 21px;
     padding-right: 21px;
@@ -8438,6 +8442,15 @@ a.ama__promo--background:hover {
 a.ama__promo--border:hover {
   background: #EDEDED;
   color: black; }
+
+.paragraph--type--promo-stub.paragraph--view-mode--default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 .ama__radio-buttons {
   padding-top: 10.5px;
@@ -11672,6 +11685,9 @@ article[class*='__page-content'] .ama__tags {
       .ama__category-index .ama__category-index__stubs__load-more button {
         width: 33%; } }
 
+.ama__category-index form.views-exposed-form .form-item.form-topic-search {
+  margin-top: 0; }
+
 .ama__category-nav {
   display: none; }
   @media (min-width: 37.5em) {
@@ -13028,22 +13044,17 @@ section.ama__page--event__speakers {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    visibility: hidden;
-    height: 0; }
+    flex-direction: column; }
     @media (min-width: 37.5em) {
       .ama__75-25__masthead__content .share-row {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
-        visibility: visible;
         height: auto; } }
     .ama__75-25__masthead__content .share-row .share-region {
-      visibility: hidden;
-      height: 0;
-      grid-column: none;
-      grid-row: none;
+      height: auto;
+      margin-left: auto;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -13054,17 +13065,11 @@ section.ama__page--event__speakers {
       -ms-flex-align: left;
       align-items: left;
       min-width: 50px; }
-      @media (min-width: 37.5em) {
-        .ama__75-25__masthead__content .share-row .share-region {
-          visibility: visible;
-          height: auto;
-          margin-left: auto; } }
     .ama__75-25__masthead__content .share-row .date-region .date {
       color: #767676; }
       @media (min-width: 25em) {
         .ama__75-25__masthead__content .share-row .date-region .date {
-          padding-top: 0;
-          padding-bottom: 10px; } }
+          padding-top: 0; } }
       @media (min-width: 37.5em) {
         .ama__75-25__masthead__content .share-row .date-region .date {
           padding-top: 10.5px; } }
@@ -13073,6 +13078,11 @@ section.ama__page--event__speakers {
       padding-top: 14px; } }
       .ama__75-25__masthead__content .share-row .date-region .date .date-block {
         font-weight: 400; }
+      .ama__75-25__masthead__content .share-row .date-region .date .date-block {
+        margin-bottom: 0 !important; }
+        @media (min-width: 37.5em) {
+          .ama__75-25__masthead__content .share-row .date-region .date .date-block {
+            margin-bottom: 14px; } }
   .ama__75-25__masthead__content .bio-row .ama__inline-bio__image {
     margin-bottom: 0; }
   @media (min-width: 25em) {
@@ -13266,7 +13276,7 @@ article.ama__people-bio a.ama__masthead__content__link {
       margin-top: 0; }
   .ama__membership .ama__membership_cta_container {
     display: block;
-    margin: 0 28px; }
+    margin: 14px 28px 0px 28px; }
     @media (min-width: 56.25em) {
       .ama__membership .ama__membership_cta_container {
         margin-top: 14px; } }
