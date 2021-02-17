@@ -260,6 +260,35 @@
       }
     }
     .bio-row {
+      display: flex;
+      align-items: center;
+      .print-region {
+        display:none;
+        max-width: 170px;
+        margin-left: auto;
+        @include breakpoint($bp-med) {
+          display: flex;
+        }
+        a.print {
+          justify-self: flex-end;
+          padding-left: 38px;
+          position: relative;
+          font-size: 14px;
+          text-transform: uppercase;
+          text-decoration: none;
+          margin-right: 92px;
+          &::after {
+            background: url('../icons/print-icon.png') no-repeat left top;
+            background-size: contain;
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            width: 26px;
+            height: 24px;
+          }
+        }
+      }
       .ama__inline-bio__image {
         margin-bottom: 0;
       }
