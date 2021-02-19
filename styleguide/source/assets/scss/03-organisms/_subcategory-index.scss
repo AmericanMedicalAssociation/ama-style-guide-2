@@ -1,5 +1,14 @@
 .ama__subcategory-index {
 
+  @include breakpoint($bp-small max-width) {
+    .ama__layout--two-col-right--75-25__left {
+      margin: 0;
+    }
+    .ama__subcategory-page-article-stub {
+      margin: 0 15px;
+    }
+  }
+
   &.container {
     @include breakpoint($bp-small max-width) {
       padding: 0;
