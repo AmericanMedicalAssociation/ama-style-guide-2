@@ -264,19 +264,17 @@
       align-items: center;
       .print-region {
         display:none;
-        max-width: 170px;
+        width: 166px;
         margin-left: auto;
         @include breakpoint($bp-med) {
           display: flex;
         }
         a.print {
-          justify-self: flex-end;
           padding-left: 38px;
           position: relative;
           font-size: 14px;
           text-transform: uppercase;
           text-decoration: none;
-          margin-right: 92px;
           &::after {
             background: url('../icons/print-icon.png') no-repeat left top;
             background-size: contain;
@@ -342,4 +340,3 @@ article.ama__people-bio {
     padding-bottom: 0;
   }
 }
-
