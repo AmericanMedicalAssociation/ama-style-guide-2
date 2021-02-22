@@ -56,7 +56,7 @@
 
   .ama__membership_cta_container {
     display: block;
-    margin: 0 28px;
+    margin: 14px 28px 0px 28px;
     @include breakpoint($bp-med min-width) {
       margin-top: 14px;
     }
@@ -260,5 +260,12 @@ a.ama__membership {
         margin-bottom: 0;
       }
     }
+  }
+}
+
+@include breakpoint(max-width $bp-small) {
+  .contextual-region.container.index-page .ama__layout--two-col-right--75-25__right {
+    margin: 0 -15px;
+    padding: 0;
   }
 }
