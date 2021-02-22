@@ -34,8 +34,20 @@
     .ui-checkboxradio-icon {
       margin-top: 1px;
     }
-    .ama__checkbox.ui-checkboxradio-label {
+    .ama__checkbox.form-item {
       align-items:flex-start;
+      display: flex;
+
+      > input#edit-mr-us-citizen, input#edit-us-citizen {
+        margin-right: 7px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-radius: 0;
+        border: 1px solid #EDEDED;
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+      }
     }
     .form-item--error-message,
     label.error {
