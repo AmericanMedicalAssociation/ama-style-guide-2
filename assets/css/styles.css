@@ -1497,7 +1497,12 @@ a.webform-button--submit {
 
 .webform-options-display-buttons-label {
   font-size: 18px;
-  font-weight: 400; }
+  font-weight: 400;
+  text-transform: initial;
+  font-family: Arial, sans-serif; }
+
+html.js iframe[src="javascript:false"] {
+  display: none; }
 
 .ama__tabs .ama__agenda-date a.ui-tabs-anchor {
   padding: 10px 10px 3px;
@@ -1516,6 +1521,9 @@ button {
   line-height: 1.389;
   padding: 10.5px;
   border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid #46166B;
   cursor: pointer;
   display: inline-block;
@@ -1566,6 +1574,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1617,6 +1628,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1668,6 +1682,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1721,6 +1738,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1779,6 +1799,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1830,6 +1853,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1884,6 +1910,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1937,6 +1966,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -1946,6 +1978,8 @@ button {
     vertical-align: middle;
     background-color: #FF9E1B !important;
     color: #000000 !important;
+    padding-bottom: 12.5px;
+    right: 2px;
     display: inline-block; }
     @media screen and (min-width: 37.5em) {
       
@@ -1989,6 +2023,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -2049,6 +2086,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -2103,6 +2143,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -2156,6 +2199,9 @@ button {
       line-height: 1.389;
       padding: 10.5px;
       border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       border: 1px solid #46166B;
       cursor: pointer;
       display: inline-block;
@@ -2206,6 +2252,9 @@ button {
     line-height: 1.389;
     padding: 10.5px;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: 1px solid #46166B;
     cursor: pointer;
     display: inline-block;
@@ -2258,6 +2307,9 @@ button {
   line-height: 1.389;
   padding: 10.5px;
   border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid #46166B;
   cursor: pointer;
   display: inline-block;
@@ -5201,11 +5253,11 @@ object {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
   -ms-flex-line-pack: start;
-  align-content: flex-start; }
+  align-content: start; }
   @media (min-width: 56.25em) {
     .ama__article-stub--related {
       padding-top: 14px; } }
@@ -7048,10 +7100,10 @@ section.ama__forum_comments {
   .hero-evergreen .hero-evergreen__background {
     background-image: none; } }
 
-.ama__news-article {
+.ama__news-article:not(body) {
   margin-bottom: 21px; }
   @media (min-width: 37.5em) {
-    .ama__news-article .hero-evergreen {
+    .ama__news-article:not(body) .hero-evergreen {
       margin-bottom: 28px; } }
 
 .thirty-seventy-block {
@@ -9545,8 +9597,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   flex-direction: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 18px 0; }
+  justify-content: space-between; }
   @media (min-width: 37.5em) {
     div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-page-article-stub--topics {
       -webkit-box-orient: horizontal;
@@ -9573,12 +9624,6 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 @media (min-width: 56.25em) {
   .ama__category-index .form-actions {
     margin-top: 0; } }
-
-.ama__category-index .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
-  border-top: solid 2px #EDEDED; }
-
-.ama__category-index .ama__category-index__stubs:not(.ama__menu-listing) .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
-  margin-top: 22px; }
 
 .ama__category-index .ama__category-index__stubs__load-more {
   padding: 35px 14px; }
@@ -11676,7 +11721,7 @@ article[class*='__page-content'] .ama__tags {
 
 .ama__category-index .ama__subcategory-page-article-stub {
   padding: 28px 0;
-  border-bottom: solid 2px #EDEDED; }
+  border-bottom: solid 2px #CBCBCB; }
   @media (max-width: 37.5em) {
     .ama__category-index .ama__subcategory-page-article-stub:nth-child(n+4) {
       display: none; } }
@@ -11693,6 +11738,13 @@ article[class*='__page-content'] .ama__tags {
     @media (min-width: 37.5em) {
       .ama__category-index .ama__category-index__stubs__load-more button {
         width: 33%; } }
+
+.ama__category-index .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
+  border-top: solid 2px #CBCBCB;
+  padding-top: 19px; }
+
+.ama__category-index .ama__category-index__stubs:not(.ama__menu-listing) .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
+  margin-top: 22px; }
 
 .ama__category-index form.views-exposed-form .form-item.form-topic-search {
   margin-top: 0; }
@@ -12452,7 +12504,9 @@ section.ama__page--event__speakers {
       flex-basis: 50%;
       padding-left: 15px; }
       .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form input {
-        background-color: #ffffff; }
+        background-color: #ffffff;
+        text-decoration: none;
+        font-weight: 600; }
         .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form input.error {
           background-image: none; }
       .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
@@ -13114,7 +13168,7 @@ section.ama__page--event__speakers {
     align-items: center; }
     .ama__75-25__masthead__content .bio-row .print-region {
       display: none;
-      max-width: 170px;
+      width: 166px;
       margin-left: auto; }
       @media (min-width: 56.25em) {
         .ama__75-25__masthead__content .bio-row .print-region {
@@ -13122,13 +13176,11 @@ section.ama__page--event__speakers {
           display: -ms-flexbox;
           display: flex; } }
       .ama__75-25__masthead__content .bio-row .print-region a.print {
-        justify-self: flex-end;
         padding-left: 38px;
         position: relative;
         font-size: 14px;
         text-transform: uppercase;
-        text-decoration: none;
-        margin-right: 92px; }
+        text-decoration: none; }
         .ama__75-25__masthead__content .bio-row .print-region a.print::after {
           background: url("../icons/print-icon.png") no-repeat left top;
           background-size: contain;
@@ -14373,6 +14425,12 @@ section#related_links .ama__membership ul {
         padding-bottom: 28px; } }
 
 @media (max-width: 37.5em) {
+  .ama__subcategory-index .ama__layout--two-col-right--75-25__left {
+    margin: 0; }
+  .ama__subcategory-index .ama__subcategory-page-article-stub {
+    margin: 0 15px; } }
+
+@media (max-width: 37.5em) {
   .ama__subcategory-index.container {
     padding: 0; } }
 
@@ -14391,16 +14449,13 @@ section#related_links .ama__membership ul {
 
 .ama__subcategory-index .ama__subcategory-page-article-stub {
   padding: 28px 0;
-  border-bottom: solid 2px #EDEDED; }
+  border-bottom: solid 2px #CBCBCB; }
   @media (max-width: 37.5em) {
     .ama__subcategory-index .ama__subcategory-page-article-stub:nth-child(n+7) {
       display: none; } }
   @media (max-width: 37.5em) {
     .ama__subcategory-index .ama__subcategory-page-article-stub {
       padding: 14px; } }
-
-.ama__subcategory-index .ama__subcategory-index__stub:first-child .ama__subcategory-page-article-stub {
-  padding-top: 0; }
 
 .ama__subcategory-index .ama__subcategory-index__stubs__load-more {
   text-align: center;
@@ -14478,6 +14533,10 @@ section#related_links .ama__membership ul {
         padding: 0 7px; }
       .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content a:last-child:after {
         content: ''; }
+
+.ama__subcategory-index .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
+  border-top: solid 2px #CBCBCB;
+  padding-top: 19px; }
 
 .ama__tools {
   padding-left: 21px;
