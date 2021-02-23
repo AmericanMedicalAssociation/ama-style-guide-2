@@ -9657,10 +9657,22 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     text-transform: initial; }
   .ama__subscribe-promo__form .ui-checkboxradio-icon {
     margin-top: 1px; }
-  .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label {
+  .ama__subscribe-promo__form .ama__checkbox.form-item {
     -webkit-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start; }
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .ama__subscribe-promo__form .ama__checkbox.form-item > input#edit-mr-us-citizen, .ama__subscribe-promo__form .ama__checkbox.form-item input#edit-us-citizen {
+      margin-right: 7px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: 0;
+      border: 1px solid #EDEDED;
+      width: 20px;
+      min-width: 20px;
+      height: 20px; }
   .ama__subscribe-promo__form .form-item--error-message,
   .ama__subscribe-promo__form label.error {
     background: url("/themes/custom/ama_one/icons/svg/icon-error.svg") no-repeat left;
