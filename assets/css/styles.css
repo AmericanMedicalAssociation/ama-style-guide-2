@@ -13138,10 +13138,9 @@ section.ama__page--event__speakers {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
-        flex-direction: row;
-        height: auto; } }
+        flex-direction: row; } }
     .ama__75-25__masthead__content .share-row .share-region {
-      height: auto;
+      height: 0;
       margin-left: auto;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -13153,6 +13152,9 @@ section.ama__page--event__speakers {
       -ms-flex-align: left;
       align-items: left;
       min-width: 50px; }
+      @media (min-width: 37.5em) {
+        .ama__75-25__masthead__content .share-row .share-region {
+          height: auto; } }
     .ama__75-25__masthead__content .share-row .date-region .date {
       color: #767676; }
       @media (min-width: 25em) {
@@ -13180,8 +13182,12 @@ section.ama__page--event__speakers {
     align-items: center; }
     .ama__75-25__masthead__content .bio-row .print-region {
       display: none;
-      width: 166px;
-      margin-left: auto; }
+      width: 164px;
+      margin-left: auto;
+      margin-bottom: 35px; }
+      .ama__75-25__masthead__content .bio-row .print-region.print-region.w-bio {
+        margin-bottom: 0;
+        padding-top: 32px; }
       @media (min-width: 56.25em) {
         .ama__75-25__masthead__content .bio-row .print-region {
           display: -webkit-box;
