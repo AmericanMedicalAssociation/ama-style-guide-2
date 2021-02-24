@@ -18,7 +18,7 @@
 
   &__content {
     @include ama-rules(1px, "bottom", $gray-50, solid);
-      grid-column: 1 / 5;
+    grid-column: 1 / 5;
 
     &__title__container {
       @include breakpoint($bp-med min-width) {
@@ -225,18 +225,19 @@
     .share-row {
       display: flex;
       flex-direction: column;
-
       @include breakpoint($bp-small) {
         flex-direction: row;
-        height: auto;
       }
       .share-region {
-        height: auto;
+        height: 0;
         margin-left: auto;
         display: flex;
         justify-content: left;
         align-items: left;
         min-width: 50px;
+        @include breakpoint($bp-small) {
+          height: auto;
+        }
       }
       .date-region {
         .date {
@@ -264,8 +265,13 @@
       align-items: center;
       .print-region {
         display:none;
-        width: 166px;
+        width: 164px;
         margin-left: auto;
+        margin-bottom: $gutter;
+        &.print-region.w-bio {
+          margin-bottom: 0;
+          padding-top:32px;
+        }
         @include breakpoint($bp-med) {
           display: flex;
         }
@@ -340,3 +346,4 @@ article.ama__people-bio {
     padding-bottom: 0;
   }
 }
+
