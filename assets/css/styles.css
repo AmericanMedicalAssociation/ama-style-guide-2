@@ -5854,6 +5854,8 @@ blockquote {
     -ms-flex: 1;
     flex: 1;
     margin-bottom: 0; }
+  .ama__expand-list .ui-accordion-header .ui-accordion-header-icon, .ama__expand-list__header .ui-accordion-header-icon {
+    display: none; }
   .ama__expand-list .ui-accordion-header__icon, .ama__expand-list__header__icon {
     position: relative;
     width: 16px;
@@ -5880,12 +5882,12 @@ blockquote {
       width: 100%;
       height: 2px;
       margin-top: -1px; }
-  .ama__expand-list .ui-accordion-header.active .ama__expand-list__header__icon, .ama__expand-list__header.active .ama__expand-list__header__icon {
+  .ama__expand-list .ui-accordion-header.ui-state-active .ama__expand-list__header__icon, .ama__expand-list__header.ui-state-active .ama__expand-list__header__icon {
     cursor: pointer; }
-    .ama__expand-list .ui-accordion-header.active .ama__expand-list__header__icon:before, .ama__expand-list__header.active .ama__expand-list__header__icon:before {
+    .ama__expand-list .ui-accordion-header.ui-state-active .ama__expand-list__header__icon:before, .ama__expand-list__header.ui-state-active .ama__expand-list__header__icon:before {
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg); }
-    .ama__expand-list .ui-accordion-header.active .ama__expand-list__header__icon:after, .ama__expand-list__header.active .ama__expand-list__header__icon:after {
+    .ama__expand-list .ui-accordion-header.ui-state-active .ama__expand-list__header__icon:after, .ama__expand-list__header.ui-state-active .ama__expand-list__header__icon:after {
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg); }
 
@@ -5915,6 +5917,20 @@ blockquote {
   padding: 0;
   border: 0;
   border-radius: 0; }
+  .ama__expand-list .ui-accordion-content label {
+    font-size: 20px;
+    line-height: 1.389;
+    font-weight: 100; }
+    @media screen and (min-width: 37.5em) {
+      .ama__expand-list .ui-accordion-content label {
+        font-size: 20px; } }
+    @media screen and (min-width: 56.25em) {
+      .ama__expand-list .ui-accordion-content label {
+        font-size: 18px;
+        line-height: 1.5; } }
+    @media screen and (min-width: 75em) {
+      .ama__expand-list .ui-accordion-content label {
+        font-size: 18px; } }
   .ama__expand-list .ui-accordion-content li {
     margin-top: 10.5px;
     margin-bottom: 0; }
@@ -5926,7 +5942,7 @@ blockquote {
     .ama__expand-list .ui-accordion-content li a:hover {
       color: #3597C9; }
 
-.ama__expand-list .ui-accordion-content .ama__checkboxes {
+.ama__expand-list .ui-accordion-content input[type=checkbox] {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -5934,7 +5950,7 @@ blockquote {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   @media (min-width: 75em) {
-    .ama__expand-list .ui-accordion-content .ama__checkboxes {
+    .ama__expand-list .ui-accordion-content input[type=checkbox] {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;

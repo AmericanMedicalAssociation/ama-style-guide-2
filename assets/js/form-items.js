@@ -8,10 +8,9 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
-
+   
           // Do not execute in the layout builder edit dialog
-          if ($('.js-off-canvas-dialog-open').length < 0) {
-
+          if (!$('.js-off-canvas-dialog-open').length) {
             $('.multiselect').multiselect();
 
             $('.ama__tooltip').tooltip({
@@ -34,6 +33,8 @@
 
             // jQueryUI selectmenu method
             $('.ama__select-menu__select').selectmenu();
+            
+         
 
             // Submits the search form after a select menu items has been selected
             $('.ama__select-menu__select').on('selectmenuchange', function() {
