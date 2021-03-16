@@ -263,9 +263,12 @@ a.ama__membership {
   }
 }
 
-@include breakpoint(max-width $bp-small) {
-  .contextual-region.container.index-page .ama__layout--two-col-right--75-25__right {
-    margin: 0 -15px;
-    padding: 0;
+@include breakpoint($bp-small max-width) {
+  .ama__category-index, .ama__subcategory-index {
+    .ama__membership {
+      position: relative;
+      right: 5.5px;
+      margin: 0px -34px;
+    }
   }
 }
