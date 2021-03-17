@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block contentRight %}
-  {% include '@molecules/membership/membership.twig' %}
+  {% include '@molecules/membership/membership.twig' with { siteLogo : trendingIndex.siteLogo } %}
   {% include '@molecules/partner-promo.twig' %}
   {% include '@molecules/subscribe-promo.twig' %}
 
