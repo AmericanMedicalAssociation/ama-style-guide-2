@@ -1,7 +1,12 @@
 .ama__trending {
+  margin-top: 28px;
   .ama__masthead__content__title__container,
   .ama__masthead {
     padding-top: 0;
+  }
+
+  .ama__masthead__content__container {
+    grid-template-columns: 1fr 0fr;
   }
 
   .ama__masthead__content {
@@ -46,4 +51,12 @@
  .ama__subcategory-page-article-stub__subcategory {
   margin: 0 0 7px 0;
  }
+
+ @include breakpoint($bp-small max-width) {
+  .ama__category-index {
+    .ama__membership {
+      margin-bottom: 28px;
+    }
+  }
+}
 }
