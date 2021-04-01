@@ -1,0 +1,22 @@
+{% extends '@templates/one-column.twig' %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="ama__trending">
+    <div class="container">
+      {#Then I should see the heading "Category Title" in the masthead (h2)#}
+      {#And I should see the title "Subcategory" in the masthead#}
+      {#And I should see the "Social share" in the masthead#}
+      {% set masthead = trending.masthead %}
+      {% include "@organisms/masthead/masthead.twig" %}
+    </div>
+
+    {#And I should see the "Trending Page Index"#}
+    <div class="container">
+      {% set trendingIndex = trending.trendingIndex %}
+      {% include '@organisms/trending-index.twig' %}
+    </div>
+  </div>
+{% endblock %}
