@@ -4,7 +4,6 @@
   &__header.trending-icon {
     width: 100%;
     height: 34px;
-    text-align: center;
     text-transform: uppercase;
     padding: 4px 0 6px;
     span {
@@ -36,6 +35,7 @@
       position: relative;
       padding-left: 47px;
       counter-increment: inst;
+      list-style: none;
       &::before {
         color: $purple;
         text-align: center;
@@ -79,8 +79,6 @@
     display: block;
     position: relative;
     text-align: right;
-    margin: 11px 24px 20px 0;
-    color: $blue;
     text-decoration: none;
     &::after {
       content: " ";
@@ -91,6 +89,59 @@
       height: 8px;
       background: url('../images/arrow-right-blue.png') no-repeat 0px 0px;
       background-size: contain;
+    }
+  }
+  &__vertical {
+    .ama__trending-block__view-all {
+      margin: 11px 24px 20px 0;
+      color: $blue;
+    }
+  }
+
+  &__horizontal {
+    max-width: unset;
+    .ama__trending-block__header.trending-icon {
+      text-align: left;
+      padding-left: 31px;
+    }
+    .ama__trending-block__inner {
+      padding: 15px 0;
+    }
+    .ama__trending-block__view-all {
+      float: right;
+      color: $white;
+      margin-right: 31px;
+      text-transform: none;
+      &::after {
+        content: " ";
+        position: absolute;
+        right: -20px;
+        top: 10px;
+        width: 13px;
+        height: 8px;
+        background: url('../images/arrow-right-white.png') no-repeat 0px 0px;
+        background-size: contain;
+      }
+    }
+    ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      li {
+        width: 20%;
+        margin-top: 0;
+        &::before {
+          color: $white;
+          background: $purple;
+        }
+      }
     }
   }
 }
