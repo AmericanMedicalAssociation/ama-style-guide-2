@@ -1,21 +1,38 @@
 .ama__trending-block {
-  max-width: 280px;
+  @include breakpoint($bp-med) {
+    max-width: 280px;
+  }
 
   &__header.trending-icon {
     width: 100%;
     height: 34px;
-    text-transform: uppercase;
     padding: 4px 0 6px;
+    text-align: center;
+    text-transform: uppercase;
+    @include breakpoint($bp-small) {
+      padding: 4px 0 6px 38px;
+      text-align: left;
+      text-transform: none;
+    }
+    @include breakpoint($bp-med) {
+      padding: 4px 0 6px;
+      text-align: center;
+      text-transform: uppercase;
+    }
     span {
       font-size: 22px;
       font-weight: 600;
       margin: 0;
       line-height: 1.18;
       &::before {
-        top: 6px;
-        left: -24px;
-        width: 18px;
-        height: 18px;
+        width: 0;
+        height: 0;
+        @include breakpoint($bp-small) {
+          top: 6px;
+          left: -24px;
+          width: 18px;
+          height: 18px;
+        }
       }
       &::after {
         background: none;
@@ -30,6 +47,13 @@
   }
 
   &__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     > li {
       margin-top: 18px;
       position: relative;
@@ -40,7 +64,7 @@
         color: $purple;
         text-align: center;
         position: absolute;
-        top: 6px;
+        top: 0px;
         left: 17px;
         display: inline-block;
         width: 23px;
@@ -51,6 +75,9 @@
         content: counter(inst, decimal);
         border: solid 1px $purple;
         border-radius: 50%;
+        @include breakpoint($bp-med) {
+          top: 2px;
+        }
       }
     }
     > li:first-child {
@@ -68,9 +95,13 @@
     }
 
     .ama__rule {
-      max-width: 249px;
+      width: 92%;
       margin: 18px auto 0;
       border-color: $gray-20;
+      @include breakpoint($bp-med) {
+        width: 100%;
+        max-width: 249px;
+      }
     }
   }
 
@@ -91,56 +122,73 @@
       background-size: contain;
     }
   }
-  &__vertical {
-    .ama__trending-block__view-all {
-      margin: 11px 24px 20px 0;
-      color: $blue;
-    }
+
+  .ama__trending-block__view-all {
+    margin: 11px 24px 20px 0;
+    color: $blue;
   }
 
   &__horizontal {
-    max-width: unset;
-    .ama__trending-block__header.trending-icon {
-      text-align: left;
-      padding-left: 31px;
-    }
-    .ama__trending-block__inner {
-      padding: 15px 0;
-    }
     .ama__trending-block__view-all {
-      float: right;
-      color: $white;
-      margin-right: 31px;
-      text-transform: none;
-      &::after {
-        content: " ";
-        position: absolute;
-        right: -20px;
-        top: 10px;
-        width: 13px;
-        height: 8px;
-        background: url('../images/arrow-right-white.png') no-repeat 0px 0px;
-        background-size: contain;
+      display: none;
+      &.horizontal {
+        display: block;
       }
     }
-    ul {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      li {
-        width: 20%;
-        margin-top: 0;
-        &::before {
-          color: $white;
-          background: $purple;
+    @include breakpoint($bp-med) {
+      max-width: unset;
+      .ama__trending-block__header.trending-icon {
+        text-align: left;
+        padding-left: 31px;
+        span {
+          text-transform: none;
+          right: -5px;
         }
+      }
+      .ama__trending-block__inner {
+        padding: 15px 0;
+      }
+      .ama__trending-block__view-all {
+        display: block;
+        float: right;
+        color: $white;
+        margin: 0 31px 0 0;
+        text-transform: none;
+        &.horizontal {
+          display: none;
+        }
+        &::after {
+          content: " ";
+          position: absolute;
+          right: -20px;
+          top: 10px;
+          width: 13px;
+          height: 8px;
+          background: url('../images/arrow-right-white.png') no-repeat 0px 0px;
+          background-size: contain;
+        }
+      }
+      ul {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        li {
+          width: 20%;
+          margin-top: 0;
+          padding-left: 40px;
+          &::before {
+            color: $white;
+            background: $purple;
+            left: 7px;
+          }
+        }
+      }
+      .ama__rule {
+        display: none;
       }
     }
   }
