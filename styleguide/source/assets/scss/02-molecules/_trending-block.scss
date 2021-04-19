@@ -1,6 +1,11 @@
 .ama__trending-block {
+  margin-bottom: 21px;
   @include breakpoint($bp-med) {
     max-width: 280px;
+    margin-bottom: 35px;
+  }
+  @include breakpoint($bp-large) {
+    margin-bottom: 0;
   }
 
   &__header.trending-icon {
