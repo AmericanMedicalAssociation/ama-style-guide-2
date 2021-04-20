@@ -156,6 +156,31 @@
   }
 
   // Override for article stub w/ trending block
+  .stublist_block {
+    @include breakpoint($bp-med)  {
+      display: grid;
+      -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+    }
+
+    .ama__four-up-teaser {
+      @include breakpoint($bp-small) {
+        flex-direction: column;
+      }
+      .ama__article-stub {
+        padding: 0;
+      }
+    }
+
+    #block-views-block-trending-trending-block-vertical {
+      margin: 21px auto;
+      @include breakpoint($bp-med) {
+        padding-left: 14px;
+      }
+    }
+  }
+
+  //homepage-with-vertical-trending styling
   &__stubs.trending {
     @include breakpoint($bp-small) {
       grid-template-rows: 31% auto 49%;
