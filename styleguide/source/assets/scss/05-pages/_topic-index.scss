@@ -107,4 +107,9 @@
   .ama__topic-index__stubs .views-exposed-form .form-actions {
     margin-top: 0;
   }
+  .share-row {
+    @include breakpoint($bp-small max-width) {
+      display: none;
+    }
+  }
 }
