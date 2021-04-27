@@ -1,5 +1,5 @@
 {%  set
-  centered, indented, link, heading, subtitle, date, social, description =
+  centered, indented, link, heading, subtitle, date, social =
   masthead.centered ? "ama__masthead__content__title--centered" : "",
   masthead.indented ? "ama__masthead__content--indented" : "",
   masthead.link,
@@ -9,8 +9,7 @@
   }),
   masthead.subtitle,
   masthead.date,
-  masthead.social,
-  masthead.description
+  masthead.social
 %}
 
 <header class="ama__masthead">
@@ -26,9 +25,6 @@
         {% endif %}
         {% if subtitle %}
           {% include "@atoms/subtitle.twig" %}
-        {% endif %}
-        {% if description %}
-          {% include "@atoms/description.twig" %}
         {% endif %}
       </div>
       {% if button %}

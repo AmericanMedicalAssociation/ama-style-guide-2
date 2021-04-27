@@ -4,13 +4,13 @@
 {% if button.href %}
   <a
     href="{{ button.href }}"
-    class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}}"
+    class="ama__button {{ buttonSize }} {{buttonStyle}}"
     title="{{ button.info }}">
       {{ button.text }}
   </a>
 {% else %}
   <button type="{{ button.type }}"
-          class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ class }}"
+          class="ama__button {{ buttonSize }} {{buttonStyle}} {{ class }}"
           aria-label="{{ button.info }}">
     {{ button.text }}
   </button>
