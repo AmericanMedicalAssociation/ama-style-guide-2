@@ -28,9 +28,6 @@
       @include gutter($margin-left-full...);
       @include gutter($margin-bottom-full...);
       width: 47%;
-      &:nth-of-type(3) {
-        margin-left: 0;
-      }
       &.five-up {
         width: 30%;
       }
@@ -40,7 +37,6 @@
       @include gutter($margin-left-full...);
       width: 25%;
       &:nth-of-type(3) {
-        @include gutter($margin-left-full...);
         &.five-up {
           margin-left: $gutter*.75;
         }
