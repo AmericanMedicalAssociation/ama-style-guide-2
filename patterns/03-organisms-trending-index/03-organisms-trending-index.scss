@@ -1,0 +1,35 @@
+.ama__trending-index {
+  div.views-row:first-child .ama__trending-stub {
+    border-top: solid 2px #CBCBCB;
+  }
+
+  .views-exposed-form .js-form-type-textfield {
+    margin-top: 0;
+  }
+
+  .ama__trending-stub {
+    padding: 28px 0;
+    border-bottom: solid 2px #CBCBCB;
+    &.ama__subcategory-page-article-stub {
+      webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      @include breakpoint($bp-small) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .ama__trending-index__stubs__load-more {
+    text-align: center;
+    padding: 28px 14px;
+    a.ama__button {
+      font-size: 20px;
+      font-weight: 400;
+      padding: 10px 45px;
+    }
+  }
+}
