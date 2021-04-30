@@ -17,12 +17,10 @@
     display: flex;
     flex-wrap: wrap;
 
-    &:not(.none) {
-      li {
-        list-style-type: none;
-        a {
-          padding-right: 5px;
-        }
+    li {
+      list-style-type: none;
+      a {
+        padding-right: 5px;
       }
     }
 
@@ -41,6 +39,7 @@
   }
 }
 .toc-responsive {
+  display: none;
   .toc-tree {
     display: none;
   }
