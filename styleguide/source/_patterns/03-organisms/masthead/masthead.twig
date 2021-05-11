@@ -1,7 +1,8 @@
 {%  set
-  centered, indented, link, heading, subtitle, date, social, description =
+  centered, indented, series_subscribe, link, heading, subtitle, date, social, description =
   masthead.centered ? "ama__masthead__content__title--centered" : "",
   masthead.indented ? "ama__masthead__content--indented" : "",
+  masthead.series_subscribe ? "ama__masthead__series--subscribe" : "",
   masthead.link,
   masthead.heading|merge({
     "level": "1",
@@ -50,5 +51,8 @@
         </div>
       {% endif %}
     </div>
+    {% if series_subscribe %}
+      <span class="subscribe-series">Subscribe to series</span>
+    {% endif %}
   </div>
 </header>
