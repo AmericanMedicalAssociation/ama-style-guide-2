@@ -6,7 +6,7 @@
   }
 
   .series-icon {
-    background: $homepagePurple;    
+    background: $purple;    
     color: $white;
     display: inline-block;
     @include type($myriad-pro, $font-weight-regular);
@@ -41,6 +41,12 @@
       position: relative;
       top: 5px;
       left: 7px;
+    }
+    &:hover {
+      &:after {
+        background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+        background-size: contain;
+      }
     }
   }
 
@@ -83,7 +89,7 @@
 
   .ama__search__field__clear-button {
     span {
-      color: $homepagePurple;
+      color: $purple;
     }
   }
 
@@ -143,7 +149,7 @@
       margin: 0px;
     }
     &__subcategory {
-      color: $homepagePurple;
+      color: $purple;
       margin: 0 0 7px 0;
     }
     &__image {
