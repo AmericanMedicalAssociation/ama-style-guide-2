@@ -9849,16 +9849,16 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase; }
+  .ama--news-toc li {
+    list-style-type: none; }
   .ama--news-toc ol, .ama--news-toc ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
-    .ama--news-toc ol li, .ama--news-toc ul li {
-      list-style-type: none; }
-      .ama--news-toc ol li a, .ama--news-toc ul li a {
-        padding-right: 5px; }
+    .ama--news-toc ol li a, .ama--news-toc ul li a {
+      padding-right: 5px; }
     .ama--news-toc ol li:not(:last-child):after, .ama--news-toc ul li:not(:last-child):after {
       content: "|";
       color: #000000;
@@ -10155,7 +10155,7 @@ article[class*='__page-content'] .ama__tags {
   .ama__trending-block__inner {
     border: solid 1px #ff9e1b;
     border-top: none;
-    padding-top: 13px; }
+    padding-top: 14px; }
   .ama__trending-block__links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -10218,14 +10218,15 @@ article[class*='__page-content'] .ama__tags {
       content: " ";
       position: absolute;
       right: -20px;
-      top: 10px;
+      top: 6px;
       width: 13px;
       height: 8px;
       background: url("../images/arrow-right-blue.png") no-repeat 0px 0px;
       background-size: contain; }
   .ama__trending-block .ama__trending-block__view-all {
-    margin: 11px 24px 20px 0;
-    color: #027DBC; }
+    margin: 14px 24px 14px 0;
+    color: #027DBC;
+    line-height: 1; }
   .ama__trending-block__horizontal .ama__trending-block__view-all {
     display: none; }
     .ama__trending-block__horizontal .ama__trending-block__view-all.horizontal {
@@ -11202,7 +11203,8 @@ article[class*='__page-content'] .ama__tags {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 100%; }
+    height: 100%;
+    margin-bottom: 14px; }
     .ama__hub-hero__video .ama__video {
       height: 100%;
       width: 100%; }
