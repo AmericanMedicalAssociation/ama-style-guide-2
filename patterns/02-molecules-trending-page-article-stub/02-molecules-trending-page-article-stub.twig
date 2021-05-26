@@ -7,7 +7,9 @@
     <h3 class="ama__subcategory-page-article-stub__heading ama__h3">{{ trendingArticleStub.link.text }}</h3>
     <p class="ama__subcategory-page-article-stub__paragraph">{{ trendingArticleStub.paragraph }}</p>
   </div>
+  {% if image %}
   <div class="ama__subcategory-page-article-stub__image">
     {% include "@atoms/image/image.twig" %}
   </div>
+  {% endif %}
 </a>
