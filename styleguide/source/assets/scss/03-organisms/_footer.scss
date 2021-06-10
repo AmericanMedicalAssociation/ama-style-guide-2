@@ -170,10 +170,16 @@
     }
   }
   &__right {
+    .ama__subscribe-promo__form .ama__applied-filters__remove {
+      font-weight: $font-weight-semibold;
+      text-decoration: none;
+    }
+    
     @include breakpoint(max-width $bp-small){
       border-top: 1px solid $gray-50;
       padding-top: $gutter-mobile;
     }
+
     p {
       line-height: 1.25em;
     }
