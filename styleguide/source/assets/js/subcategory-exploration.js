@@ -21,9 +21,8 @@
       // Determine when to show link based on window size.
       $(document).ready(function () {
         function showHideMoreLink () {
-          // Set intial window width to 1024 pixel.
-          // @todo: Check if this is an issue to set 1024 width limit.
-          if ($initialWindowWidth <= 1024) {
+          // Set intial window width to 900 pixel.
+          if ($initialWindowWidth <= 900) {
             // If the unordered list outerHeight is greater than the parent container then show the show more link,
             // hide otherwise.
             if ($subcategoryList.outerHeight() > $subcategoryListContainerHeight) {
@@ -54,16 +53,18 @@
         e.stopPropagation();
         e.preventDefault();
 
-        // Checks to see if the container has been expand or not by comparing initial outerHeight to current outerHeight
-        if($subcategoryListContainer.outerHeight() > $subcategoryListContainerHeight) {
+        // Checks to see if the container has been expanded or not by checking the class
+        if($subcategoryListContainer.hasClass('ama__subcategory-exploration__list--expanded')) {
           $subcategoryListContainer.removeClass('ama__subcategory-exploration__list--expanded');
           $(this).removeClass('ama__subcategory-exploration__show-more--expanded');
           $subcategoryListLinkText.text('View all subcategories');
+          console.log('explore hidden');
         }
         else {
           $subcategoryListContainer.addClass('ama__subcategory-exploration__list--expanded');
           $(this).addClass('ama__subcategory-exploration__show-more--expanded');
           $subcategoryListLinkText.text('View fewer subcategories');
+          console.log('explore shown');
         }
       });
     }

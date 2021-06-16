@@ -93,6 +93,8 @@
      .ama__button {
       @extend %ama__button;
       text-transform: capitalize;
+      color: $black;
+      background: $orange-medium;
     }
 
     .ama__form-group {
@@ -168,10 +170,16 @@
     }
   }
   &__right {
+    .ama__subscribe-promo__form .ama__applied-filters__remove {
+      font-weight: $font-weight-semibold;
+      text-decoration: none;
+    }
+    
     @include breakpoint(max-width $bp-small){
       border-top: 1px solid $gray-50;
       padding-top: $gutter-mobile;
     }
+
     p {
       line-height: 1.25em;
     }
@@ -187,18 +195,25 @@
       order: 1;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: 66.666%;
+      flex-basis: 50%;
+
+      .ama__footer__mission {
+        max-width: 95%;
+      }
     }
 
     &__right {
       order: 2;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: 33.333%;
+      flex-basis: 50%;
+      padding-left: 15px;
 
       .ama__subscribe-promo--wide .ama__subscribe-promo__form {
         input {
           background-color: $white;
+          text-decoration: none;
+          font-weight: 600;
           &.error {
             background-image: none;
           }
@@ -221,6 +236,19 @@
 
     &__mission {
       max-width: 65%;
+    }
+  }
+  @include breakpoint($bp-large){
+    &__right {
+      flex-basis: 33.333%;
+      padding-left: 0;
+    }
+    &__left {
+      flex-basis: 66.666%;
+
+      .ama__footer__mission {
+        max-width: 65%;
+      }
     }
   }
 }

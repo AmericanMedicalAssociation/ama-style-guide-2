@@ -18,7 +18,7 @@
 
   &__content {
     @include ama-rules(1px, "bottom", $gray-50, solid);
-      grid-column: 1 / 5;
+    grid-column: 1 / 5;
 
     &__title__container {
       @include breakpoint($bp-med min-width) {
@@ -225,33 +225,24 @@
     .share-row {
       display: flex;
       flex-direction: column;
-      visibility: hidden;
-      height: 0;
       @include breakpoint($bp-small) {
         flex-direction: row;
-        visibility:visible;
-        height: auto;
       }
       .share-region {
-        visibility: hidden;
         height: 0;
-        grid-column: none;
-        grid-row: none;
+        margin-left: auto;
         display: flex;
         justify-content: left;
         align-items: left;
         min-width: 50px;
         @include breakpoint($bp-small) {
-          visibility: visible;
           height: auto;
-          margin-left: auto;
         }
       }
       .date-region {
         .date {
           @include breakpoint($bp-xs) {
             padding-top:0;
-            padding-bottom: 10px;
           }
           @include breakpoint($bp-small) {
             @include gutter($padding-top-half...);
@@ -260,10 +251,48 @@
           .date-block {
             font-weight: $font-weight-regular;
           }
+          .date-block {
+            margin-bottom: 0 !important;
+            @include breakpoint($bp-small) {
+              margin-bottom: $gutter /2;
+            }
+          }
         }
       }
     }
     .bio-row {
+      display: flex;
+      align-items: center;
+      .print-region {
+        display:none;
+        width: 164px;
+        margin-left: auto;
+        margin-bottom: 35px;
+        &.print-region.w-bio {
+          margin-bottom: 0;
+          padding-top:32px;
+        }
+        @include breakpoint($bp-med) {
+          display: flex;
+        }
+        a.print {
+          padding-left: 38px;
+          position: relative;
+          font-size: 14px;
+          text-transform: uppercase;
+          text-decoration: none;
+          &::after {
+            background: url('../icons/print-icon.png') no-repeat left top;
+            background-size: contain;
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            width: 26px;
+            height: 24px;
+          }
+        }
+      }
       .ama__inline-bio__image {
         margin-bottom: 0;
       }
@@ -295,8 +324,6 @@
   }
 }
 
-
-
 // Exceptions for social share icons
 .ama__news-article, .ama__resource-page {
   .ama__masthead__content__share {
@@ -319,3 +346,4 @@ article.ama__people-bio {
     padding-bottom: 0;
   }
 }
+

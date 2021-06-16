@@ -11,7 +11,9 @@
   //give the content column of the news article a tob border
   .ama__layout--two-column--right {
     &__sidebar--secondary {
-      padding-top:0;
+      @include breakpoint($bp-med min-width) {
+        padding-top:0;
+      }
     }
     &__page-content {
       padding-top: 0;
@@ -45,6 +47,15 @@
 .no-toc {
   .ama__news {
     .toc-responsive {
+      display: none;
+    }
+  }
+}
+
+//Rule to hide trending article tag if Skip Promotion field is selected
+.no-trending {
+  .ama__news {
+    .trending-icon {
       display: none;
     }
   }

@@ -136,6 +136,7 @@
     .link-list {
       list-style-type: none;
       .ama_page_grouping_link {
+
         line-height: 1.3;
         display:inline-block;
         text-transform: uppercase;
@@ -183,6 +184,11 @@
         }
 
         &:last-child {
+          &.active {
+            &::after {
+              content: "";
+            }
+          }
           a {
             padding-right: 0;
             &::after {

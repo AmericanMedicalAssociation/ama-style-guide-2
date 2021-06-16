@@ -80,11 +80,12 @@
   } // end aside.primary
 
   &--secondary {
-    @include gutter($padding-top-full...);
+    padding-top: $gutter;
     grid-column: 1 / 5;
     grid-row: 3 / 4;
 
     @include breakpoint($bp-med min-width) {
+      @include gutter($padding-top-full...);
       @include gutter($padding-left-full...);
       grid-column: 3;
       grid-row: 2 / auto;

@@ -56,7 +56,7 @@
 
   .ama__membership_cta_container {
     display: block;
-    margin: 0 28px;
+    margin: 14px 28px 0px 28px;
     @include breakpoint($bp-med min-width) {
       margin-top: 14px;
     }
@@ -86,12 +86,12 @@ a.ama__membership {
 //Slim Membership Block styling
 .layout--ama-page-section-one-col .ama__membership {
   background: #ece7f0;
-  width: 100%;
   height: 210px;
   margin: 0 0 35px;
   position: relative;
   padding-bottom: 0;
   @include breakpoint($bp-small min-width) {
+    width: 100%;
     height: unset;
     display: flex;
     -webkit-box-orient: horizontal;
@@ -251,7 +251,7 @@ a.ama__membership {
 .layout__region--rail_right {
   .ama__membership {
     margin-bottom: 21px;
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-small min-width) {
       margin-bottom: 28px;
     }
     @include breakpoint($bp-large min-width) {
@@ -259,6 +259,30 @@ a.ama__membership {
       &:last-of-type {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+@include breakpoint($bp-small max-width) {
+  .ama__layout--two-col-right--75-25__right {
+    .ama__membership {
+      position: relative;
+      margin-left: -25px;
+      margin-right: -14px;
+    }
+  }
+  .ama__category-index.ama__layout--two-col-right--75-25 {
+    .ama__membership {
+      position: relative;
+      margin-left: -22px;
+      margin-right: -22px;
+    }
+  }
+  .ama__category-index.ama__category__row--no-border-with-padding {
+    .ama__membership {
+      position: relative;
+      margin-left: -40px;
+      margin-right: -30px;
     }
   }
 }

@@ -19,6 +19,10 @@
     border: solid 1px $gray-50;
   }
 
+  &--stub-body {
+    min-height: 210px;
+  }
+
   &--inline {
     @include gutter($padding-top-full...);
     @include gutter($padding-right-full...);
@@ -183,4 +187,9 @@ a.ama__promo { // styling for when this pattern renders as a link.
       color: black;
     }
   }
+}
+
+.paragraph--type--promo-stub.paragraph--view-mode--default {
+  display: flex;
+  flex-direction: column;
 }

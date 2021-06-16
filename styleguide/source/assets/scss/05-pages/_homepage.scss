@@ -145,6 +145,75 @@
     }
   }
 
+  &__trending {
+    margin-bottom: 21px;
+    @include breakpoint($bp-small) {
+      margin-bottom: 35px;
+    }
+    @include breakpoint($bp-med) {
+      margin-bottom: 45px;
+    }
+  }
+
+  // Override for article stub w/ trending block
+  .stublist_block {
+    @include breakpoint($bp-med)  {
+      display: grid;
+      -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+    }
+
+    .ama__four-up-teaser {
+      @include breakpoint($bp-small) {
+        flex-direction: column;
+      }
+      .ama__article-stub {
+        padding: 0;
+      }
+    }
+
+    #block-views-block-trending-trending-block-vertical {
+      margin: 21px auto;
+      @include breakpoint($bp-med) {
+        padding-left: 14px;
+      }
+    }
+  }
+
+  //homepage-with-vertical-trending styling
+  &__stubs.trending {
+    @include breakpoint($bp-small) {
+      grid-template-rows: 31% auto 49%;
+      .ama__article-stub:nth-child(3) {
+        grid-column: 3;
+        grid-row: 2;
+      }
+      .ama__homepage__trending {
+        grid-column: span 12;
+        grid-row: 3;
+      }
+    }
+    @include breakpoint($bp-med) {
+      .ama__article-stub:nth-child(2) {
+        height: 270px;
+      }
+
+      .ama__homepage__trending {
+        margin-left: 20px;
+        grid-column: 4;
+        grid-row: 1;
+      }
+    }
+    @include breakpoint($bp-large) {
+      grid-template-rows: 54% auto 20%;
+    }
+
+    .ama__article-stub:nth-child(4),
+    .ama__article-stub:nth-child(5) {
+      display: none;
+    }
+  }
+
   .ama__jama__title {
     display: none;
   }

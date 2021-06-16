@@ -13,16 +13,18 @@
     font-weight: $font-weight-semibold;
     text-transform: uppercase;
   }
+
+  li {
+    list-style-type: none;
+  }
+
   ol, ul {
     display: flex;
     flex-wrap: wrap;
 
-    &:not(.none) {
-      li {
-        list-style-type: none;
-        a {
-          padding-right: 5px;
-        }
+    li {
+      a {
+        padding-right: 5px;
       }
     }
 
@@ -41,6 +43,7 @@
   }
 }
 .toc-responsive {
+  display: none;
   .toc-tree {
     display: none;
   }
