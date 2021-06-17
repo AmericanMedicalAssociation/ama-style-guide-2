@@ -8912,6 +8912,55 @@ a.ama__promo--border:hover {
           margin-top: 0;
           float: right; } }
 
+.series-tag {
+  line-height: 1;
+  margin-top: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+  @media (max-width: 37.5em) {
+    .series-tag {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
+  .series-tag__label {
+    position: relative;
+    background: #7b55d9;
+    width: 120px;
+    height: 26px;
+    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    color: #ffffff;
+    padding: 5px 0px;
+    text-align: center;
+    text-transform: uppercase; }
+  .series-tag__arrow-right {
+    content: '';
+    position: absolute;
+    right: -13px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 13px solid #7b55d9;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent; }
+  .series-tag a {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    margin-left: 17px;
+    line-height: 1.8; }
+
 .ama__sign-in-dropdown {
   position: relative;
   background-color: #46166B;
@@ -12699,6 +12748,9 @@ section.ama__page--event__speakers {
   @media (max-width: 37.5em) {
     .ama__footer__left {
       padding-bottom: 21px; } }
+  .ama__footer__right .ama__subscribe-promo__form .ama__applied-filters__remove {
+    font-weight: 600;
+    text-decoration: none; }
   @media (max-width: 37.5em) {
     .ama__footer__right {
       border-top: 1px solid #767676;
