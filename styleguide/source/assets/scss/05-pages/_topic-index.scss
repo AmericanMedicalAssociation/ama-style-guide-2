@@ -17,7 +17,6 @@
       }
       &.full {
         transition: height .5s ease-in-out;
-        padding-bottom: $gutter;
         .less {
           color: $description-blue;
           position: absolute;
@@ -26,6 +25,7 @@
           text-decoration: none;
           left: 0;
           bottom: 0;
+          line-height: 1;
           &:visited {
             color: $description-blue-visited;
           }
@@ -110,6 +110,17 @@
   .share-row {
     @include breakpoint($bp-small max-width) {
       display: none;
+    }
+  }
+}
+
+.description {
+  .desc-display {
+    &.full {
+      div p, 
+      > p:last-of-type {
+        margin-bottom: 14px;
+      }
     }
   }
 }
