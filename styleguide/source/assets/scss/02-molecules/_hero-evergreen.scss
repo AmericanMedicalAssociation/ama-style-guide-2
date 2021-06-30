@@ -122,8 +122,12 @@
   .hero-evergreen {
     &__buttons .ama__button {
       border: solid 1px #471b6d;
-      background-color: #ffffff;
+      background-color: $white;
       color: #46166b;
+      &:hover {
+        background-color: #46166b;
+        color: $white;
+      }
     }
   }
 }
