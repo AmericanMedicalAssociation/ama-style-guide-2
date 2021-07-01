@@ -21,7 +21,7 @@
           truncHeight = trunc.height() + 25
           fullHeight = full.height() + 20
         } else if (width < 900) {
-            truncHeight = trunc.height()
+            truncHeight = trunc.height() + 25
             fullHeight = full.height() + 20
         } else {
           truncHeight = trunc.height()
