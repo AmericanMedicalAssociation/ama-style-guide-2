@@ -2619,6 +2619,10 @@ button {
   .ama__gate a {
     color: #027DBC; }
 
+.ama_gated_form_wrapper {
+  max-width: 1260px;
+  margin: 0 auto; }
+
 /* Define the Sassy Map called $icons */
 /* For each key in the map, created an own class */
 /* If you need to add a new icon add it to arraw above */
@@ -5109,7 +5113,7 @@ object {
       -ms-flex-direction: row;
       flex-direction: row; } }
   .ama__alert__wrap {
-    display: none; }
+    opacity: 0; }
   .ama__alert__text {
     font-weight: 600;
     margin-bottom: 0;
@@ -7121,6 +7125,14 @@ section.ama__forum_comments {
   @media (min-width: 37.5em) {
     .ama__news-article:not(body) .hero-evergreen {
       margin-bottom: 28px; } }
+
+.ama__news-article .hero-evergreen__buttons .ama__button {
+  border: solid 1px #471b6d;
+  background-color: #ffffff;
+  color: #46166b; }
+  .ama__news-article .hero-evergreen__buttons .ama__button:hover {
+    background-color: #46166b;
+    color: #ffffff; }
 
 .thirty-seventy-block {
   margin-bottom: 21px; }
@@ -16927,8 +16939,7 @@ body.search-results .ama__layout--two-column--left__page-content {
     .index-page .description .desc-display.full,
     .ama__subcategory-index .description .desc-display.full {
       -webkit-transition: height .5s ease-in-out;
-      transition: height .5s ease-in-out;
-      padding-bottom: 28px; }
+      transition: height .5s ease-in-out; }
       .index-page .description .desc-display.full .less,
       .ama__subcategory-index .description .desc-display.full .less {
         color: #02aaec;
@@ -16937,7 +16948,8 @@ body.search-results .ama__layout--two-column--left__page-content {
         visibility: visible;
         text-decoration: none;
         left: 0;
-        bottom: 0; }
+        bottom: 0;
+        line-height: 1; }
         .index-page .description .desc-display.full .less:visited,
         .ama__subcategory-index .description .desc-display.full .less:visited {
           color: #0176a5; }
@@ -17013,6 +17025,13 @@ body.search-results .ama__layout--two-column--left__page-content {
 @media (max-width: 37.5em) {
   .index-page .share-row {
     display: none; } }
+
+.description .desc-display.full div p, .description .desc-display.full div .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .description .desc-display.full div .ama__image__text__subtitle, .description .desc-display.full div .ama__resource-link--inline__text,
+.description .desc-display.full > p:last-of-type,
+.description .ama__jama .ama__image__text .desc-display.full > .ama__image__text__subtitle:last-of-type,
+.ama__jama .ama__image__text .description .desc-display.full > .ama__image__text__subtitle:last-of-type,
+.description .desc-display.full > .ama__resource-link--inline__text:last-of-type {
+  margin-bottom: 14px; }
 
 .ama__trending {
   margin-top: 28px; }
