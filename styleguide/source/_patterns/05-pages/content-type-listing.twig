@@ -1,0 +1,20 @@
+{% extends '@templates/one-column.twig' %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="ama__content-type">
+    <div class="container">
+      {#And I should see the "Social share" in the masthead#}
+      {% set masthead = contenttype.masthead %}
+      {% include "@organisms/masthead/masthead.twig" %}
+    </div>
+
+    {#And I should see the "Content Type Page Index"#}
+    <div class="container">
+      {% set contentTypeIndex = contenttype.contentTypeIndex %}
+      {% include '@organisms/content-type-index.twig' %}
+    </div>
+  </div>
+{% endblock %}
