@@ -9768,7 +9768,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
       width: 20px;
       min-width: 20px;
       height: 20px; }
-  .ama__subscribe-promo__form .form-item--error-message,
+  .ama__subscribe-promo__form .form-item--error-message.active-error,
   .ama__subscribe-promo__form label.error {
     background: url("/themes/custom/ama_one/icons/svg/icon-error.svg") no-repeat left;
     background-size: 15px;
@@ -9819,13 +9819,20 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row;
-      width: 100%; }
+      width: 100%;
+      margin-bottom: 21px; }
+      @media (min-width: 56.25em) {
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__subscribe-promo__email-subscribe-container,
+        .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__subscribe-promo__email-subscribe-container {
+          margin-bottom: 14px; } }
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-item-page-mr-email,
+    .ama__subscribe-promo--wide .ama__subscribe-promo__form form .form-item-page-mr-email {
+      margin: 0; }
     .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group,
     .ama__subscribe-promo--wide .ama__subscribe-promo__form .form-actions,
     .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group,
     .ama__subscribe-promo--wide .ama__subscribe-promo__form form .form-actions {
-      margin: 0;
-      margin-bottom: 14px; }
+      margin: 0; }
     .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__form-group input,
     .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__form-group input {
       margin-bottom: 21px;
@@ -9892,26 +9899,28 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     .ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__button {
       margin: 0 auto; }
 
-.ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form {
+.ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page {
   position: relative;
   padding-bottom: 63px; }
-  .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-item-us-citizen {
+  .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page .form-item-us-citizen {
     width: 100%; }
-  .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions {
+  .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page .form-item-page-mr-us-citizen {
+    margin-bottom: 14px; }
+  .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page .form-actions {
     position: absolute;
     text-align: center;
     bottom: 14px;
     left: 0;
     right: 0;
     margin: auto; }
-    .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions .ajax-progress-throbber {
+    .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page .form-actions .ajax-progress-throbber {
       position: absolute;
       top: 8px;
       right: 0; }
     @media only screen and (min-width: 601px) and (max-width: 768px) {
-      .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions {
+      .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page .form-actions {
         margin-top: 80px; } }
-    .ama__layout--two-col-right--75-25__right form.webform-submission-email-subscription-form .form-actions .webform-button--submit {
+    .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page .form-actions .form-submit {
       display: inline-block;
       margin: 0 auto;
       width: 100%; }
