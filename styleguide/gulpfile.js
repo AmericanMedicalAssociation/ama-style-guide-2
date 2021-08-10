@@ -16,7 +16,7 @@ var gulp      = require('gulp'),
   tagversion  = require('gulp-tag-version'),
   uglify      = require('gulp-uglify'),
   ghPages     = require('gulp-gh-pages'),
-  runSequence = require('run-sequence'),
+  runSequence = require('gulp4-run-sequence'),
   glob        = require('glob'),
   sourcemaps  = require('gulp-sourcemaps'),
   prefix      = require('gulp-autoprefixer'),
@@ -37,25 +37,73 @@ var production;
 // Task: Clean:before
 // Description: Removing assets files before running other tasks
 gulp.task('clean:before', function () {
-  return gulp.src(
-    config.assets.dest
-  )
+  return gulp.src(config.assets.dest, {allowEmpty: true})
     .pipe(clean({
       force: true
     }))
 });
 
+// Task: Sass Linting
+// Description: lint sass files
+gulp.task('scss-lint', function() {
+  return gulp.src(config.scss.files, {allowEmpty: true})
+    .pipe(stylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
+});
+
 // Task: Clean:publish
 // Description: Removing temp dir from git deploy
 gulp.task('clean:publish', function () {
-  return gulp.src( '.publish' )
+  return gulp.src( '.publish' , {allowEmpty: true})
     .pipe(clean({ force: true }))
+});
+
+// Task: Watch files
+gulp.task('watch', function(){
+
+  // Watch Pattern Lab files
+  gulp.watch(
+    config.patternlab.files,
+    gulp.series('patternlab', 'default')
+  );
+
+  // Watch scripts
+  gulp.watch(
+    config.scripts.files,
+    gulp.series('scripts')
+  );
+
+  // Watch media
+  gulp.watch(
+    config.images.files,
+    gulp.series('images')
+  );
+
+  // Watch sass
+  gulp.watch(
+    config.scss.watch,
+    gulp.series('sass')
+  );
+
+  // Watch fonts
+  gulp.watch(
+    config.fonts.files,
+    gulp.series('fonts')
+  );
+
+  gulp.watch(
+    config.twigsource.files,
+    gulp.series('cleanTwig')
+  );
 });
 
 // Task: Handle scripts
 gulp.task('scripts', function () {
   // Package up all of the custom stuff for Drupal to consume
-  var ds = gulp.src(config.scripts.drupalfiles)
+  var ds = gulp.src(config.scripts.drupalfiles, {allowEmpty: true})
   // unminified for development
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -64,7 +112,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(config.scripts.dest));
 
   // Package up everything for use by Pattern Lab
-  return gulp.src(config.scripts.files)
+  return gulp.src(config.scripts.files, {allowEmpty: true})
   // unminified for development
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -84,7 +132,7 @@ gulp.task('scripts', function () {
 
 // Task: Handle fonts
 gulp.task('fonts', function () {
-  return gulp.src(config.fonts.files)
+  return gulp.src(config.fonts.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(gulp.dest(
       config.fonts.dest
@@ -97,7 +145,7 @@ gulp.task('fonts', function () {
 
 // Task: Handle media
 gulp.task('images', function () {
-  return gulp.src(config.images.files)
+  return gulp.src(config.images.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(gulpif(production, imagemin()))
     .pipe(gulp.dest(
@@ -114,14 +162,14 @@ gulp.task('images', function () {
 // We have to do this in a few steps until
 // https://github.com/filamentgroup/gulpicon/issues/1 is resolved
 gulp.task('minifyIcons', function() {
-  return gulp.src(config.icons.files)
+  return gulp.src(config.icons.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(svgmin())
     .pipe(gulp.dest(config.icons.min));
 });
 
-gulp.task('sass', ['scss-lint'], function () {
-  return gulp.src(config.scss.files)
+gulp.task('sass', gulp.series('scss-lint', function(){
+  return gulp.src(config.scss.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
@@ -140,12 +188,12 @@ gulp.task('sass', ['scss-lint'], function () {
       stream:true,
       notify:false
     }));
-});
+}));
 
 // Task: patternlab
 // Description: Build static Pattern Lab files via PHP script
 gulp.task('patternlab', function () {
-  return gulp.src('', {read: false})
+  return gulp.src('.', {read: false, allowEmpty: true})
     .pipe(plumber())
     .pipe(shell([
       'php core/console --generate'
@@ -159,7 +207,7 @@ gulp.task('patternlab', function () {
 // Task: styleguide
 // Description: Copy Styleguide-Folder from core/ to public
 gulp.task('styleguide', function() {
-  return gulp.src(config.patternlab.styleguide.files)
+  return gulp.src(config.patternlab.styleguide.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(gulp.dest(config.patternlab.styleguide.dest));
 });
@@ -173,25 +221,13 @@ gulp.task('browser-sync', function() {
     },
     notify: false,
     ghostMode: true,
-    open: "local"
+    open: false
   });
 });
 
 gulp.task('exit', function() {
   process.exit();
 });
-
-// Task: Sass Linting
-// Description: lint sass files
-gulp.task('scss-lint', function() {
-  return gulp.src(config.scss.files)
-    .pipe(stylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
-});
-
 
 // copy files settings
 var svg2twig = {
@@ -202,7 +238,7 @@ var svg2twig = {
 
 /* copy files */
 gulp.task("svg2twig", function() {
-  return gulp.src(svg2twig.src, { base: svg2twig.base })
+  return gulp.src(svg2twig.src, { base: svg2twig.base, allowEmpty: true })
     .pipe(plumber())
     .pipe(rename({
       extname: ".twig"
@@ -210,31 +246,31 @@ gulp.task("svg2twig", function() {
     .pipe(gulp.dest(svg2twig.dest))
 });
 
-gulp.task('cleanTwig', ['clean:before'], function (callback) {
+gulp.task('cleanTwig', gulp.series('clean:before', function(callback){
   runSequence(
     'patternlab',
     'copyTwigFiles',
     callback
   );
-});
+}));
 
 // Copy twig files from source
 /* copy files */
 gulp.task("copyTwigFiles", function() {
-  return gulp.src(config.twigsource.files)
+  return gulp.src(config.twigsource.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(gulp.dest(config.twigsource.dest))
 });
 
 // Create reference screenshots from `gh-pages` and `referenceUrl`
 gulp.task( 'reference', function () {
-  return gulp.src('')
+  return gulp.src('', {allowEmpty: true})
     .pipe(shell(['backstop reference']))
 });
 
 // Run backstop to run tests
 gulp.task( 'backstop', function () {
-  return gulp.src('')
+  return gulp.src('', {allowEmpty: true})
     .pipe(shell(['backstop test']))
     .on('error', function () {
       // For now, we do not want to stop when tests fail since we are 
@@ -244,48 +280,9 @@ gulp.task( 'backstop', function () {
     });
 });
 
-// Task: Watch files
-gulp.task('watch', function () {
-
-  // Watch Pattern Lab files
-  gulp.watch(
-    config.patternlab.files,
-    ['patternlab', 'default']
-  );
-
-  // Watch scripts
-  gulp.watch(
-    config.scripts.files,
-    ['scripts']
-  );
-
-  // Watch media
-  gulp.watch(
-    config.images.files,
-    ['images']
-  );
-
-  // Watch sass
-  gulp.watch(
-    config.scss.watch,
-    ['sass']
-  );
-
-  // Watch fonts
-  gulp.watch(
-    config.fonts.files,
-    ['fonts']
-  );
-
-  gulp.watch(
-    config.twigsource.files,
-    ['cleanTwig']
-  );
-});
-
 // Task: Default
 // Description: Build all stuff of the project once
-gulp.task('default', ['clean:before'], function (callback) {
+gulp.task('default', gulp.series('clean:before', function(callback){
   production = false;
 
   // We need to re-run sass last to make sure the latest styles.css gets loaded
@@ -299,7 +296,7 @@ gulp.task('default', ['clean:before'], function (callback) {
     'scripts',
     callback
   );
-});
+}));
 
 // gulp.task('default', runSequence(['scripts', 'fonts', 'images', 'sass', 'patternlab', 'styleguide']));
 
@@ -310,7 +307,6 @@ gulp.task('serve', function () {
 
   runSequence(
     'default',
-    'browser-sync',
     'watch'
   );
 });
@@ -330,16 +326,16 @@ gulp.task('test', function () {
 
 // Task: Publish static content
 // Description: Publish static content using rsync shell command
-gulp.task('publish', ['clean:publish'], function () {
-  return gulp.src(config.deployment.local.path)
+gulp.task('publish', gulp.series('clean:publish', function(){
+  return gulp.src(config.deployment.local.path, {allowEmpty: true})
     .pipe(ghPages({ branch: config.deployment.branch}));
-});
+}));
 
 // Task: Deploy to GitHub pages
 // Description: Build the public code and deploy it to GitHub pages
 gulp.task('deploy', function () {
   // make sure to use the gulp from node_modules and not a different version
-  runSequence = require('run-sequence').use(gulp);
+  runSequence = require('gulp4-run-sequence').use(gulp);
   // run default to build the code and then publish it GitHub pages
   runSequence('default', 'publish');
 });
@@ -348,7 +344,7 @@ gulp.task('deploy', function () {
 // Description: Build the public code and deploy it to be consumed by Drupal
 gulp.task('drupal-deploy', function () {
   // make sure to use the gulp from node_modules and not a different version
-  runSequence = require('run-sequence').use(gulp);
+  runSequence = require('gulp4-run-sequence').use(gulp);
   // Change the deploy branch
   config.deployment.branch = "dev-assets";
   // run default to build the code and then publish it to our branch
@@ -367,7 +363,7 @@ gulp.task('set-master', function (callback) {
 // pushes the same code to master, then tags master.
 gulp.task('release', function (callback) {
   // make sure to use the gulp from node_modules and not a different version
-  runSequence = require('run-sequence').use(gulp);
+  runSequence = require('gulp4-run-sequence').use(gulp);
   // Build the style guide, publish to gh-pages, set the branch to master,
   // publish to master, then tag master.
   runSequence('default', 'publish', 'set-master', callback);
