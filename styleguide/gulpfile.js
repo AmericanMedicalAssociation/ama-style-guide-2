@@ -26,11 +26,11 @@ var gulp      = require('gulp'),
   gutil       = require('gulp-util'),
   pWaitFor    = require('p-wait-for'),
   pathExists  = require('path-exists'),
-  plumber     = require('gulp-plumber');
+  plumber     = require('gulp-plumber'),
+  log         = require('fancy-log');
 
 // Config
 var config = require('./build.config.json');
-
 
 // Trigger
 var production;
@@ -59,45 +59,6 @@ gulp.task('scss-lint', function() {
 gulp.task('clean:publish', function () {
   return gulp.src( '.publish' , {allowEmpty: true})
     .pipe(clean({ force: true }))
-});
-
-// Task: Watch files
-gulp.task('watch', function(){
-
-  // Watch Pattern Lab files
-  gulp.watch(
-    config.patternlab.files,
-    gulp.series('patternlab', 'default')
-  );
-
-  // Watch scripts
-  gulp.watch(
-    config.scripts.files,
-    gulp.series('scripts')
-  );
-
-  // Watch media
-  gulp.watch(
-    config.images.files,
-    gulp.series('images')
-  );
-
-  // Watch sass
-  gulp.watch(
-    config.scss.watch,
-    gulp.series('sass')
-  );
-
-  // Watch fonts
-  gulp.watch(
-    config.fonts.files,
-    gulp.series('fonts')
-  );
-
-  gulp.watch(
-    config.twigsource.files,
-    gulp.series('cleanTwig')
-  );
 });
 
 // Task: Handle scripts
@@ -168,7 +129,7 @@ gulp.task('minifyIcons', function() {
     .pipe(gulp.dest(config.icons.min));
 });
 
-gulp.task('sass', gulp.series('scss-lint', function(){
+gulp.task('sass', gulp.series('scss-lint', function (){
   return gulp.src(config.scss.files, {allowEmpty: true})
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -214,7 +175,7 @@ gulp.task('styleguide', function() {
 
 // task: BrowserSync
 // Description: Run BrowserSync server with disabled ghost mode
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function(done) {
   browserSync({
     server: {
       baseDir: config.root
@@ -223,6 +184,7 @@ gulp.task('browser-sync', function() {
     ghostMode: true,
     open: false
   });
+  done();
 });
 
 gulp.task('exit', function() {
@@ -302,13 +264,15 @@ gulp.task('default', gulp.series('clean:before', function(callback){
 
 // Task: Start your production-process
 // Description: Type 'gulp' in the terminal
-gulp.task('serve', function () {
+gulp.task('serve', function (callback) {
   production = false;
 
   runSequence(
     'default',
+    'browser-sync',
     'watch'
   );
+  callback();
 });
 
 // Task: Run visual regression tests
@@ -356,7 +320,58 @@ gulp.task('set-master', function (callback) {
   gutil.log('Setting branch to master.');
   config.deployment.branch = "master";
   callback();
-})
+});
+
+
+// Task: Watch files
+gulp.task('watch', function(done){
+  // log(config.scss.watch);
+  // Watch Pattern Lab files
+  // gulp.watch(
+  //   config.patternlab.files, function(callback) {
+  //     gulp.series('patternlab', 'default');
+  //     callback();
+  //   }
+  // );
+
+  // Watch sass
+  var watcher_sass = gulp.watch(config.scss.watch, {interval: 1000, usePolling: true});
+  watcher_sass.on('all', gulp.series('sass'));
+
+  // gulp.watch(
+  //   config.scripts.files, function() {
+  //     'scripts'
+  //   }
+  // );
+
+  // // Watch media
+  // gulp.watch(
+  //   config.images.files, function() {
+  //     'images'
+  //   }
+  // );
+
+  // // Watch sass
+  // gulp.watch(
+  //   config.scss.watch, function() {
+  //     'sass'
+  //   }
+  // );
+
+  // // Watch fonts
+  // gulp.watch(
+  //   config.fonts.files, function() {
+  //     'fonts'
+  //   }
+  // );
+
+  // gulp.watch(
+  //   config.twigsource.files, function() {
+  //    'cleanTwig'
+  //   }
+  // );
+  done();
+});
 
 // Task: Release the code
 // Description: Release runs deploy to build to gh-pages,
