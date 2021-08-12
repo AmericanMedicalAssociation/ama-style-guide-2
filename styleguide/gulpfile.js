@@ -326,50 +326,26 @@ gulp.task('set-master', function (callback) {
 // Task: Watch files
 gulp.task('watch', function(done){
   // log(config.scss.watch);
+
   // Watch Pattern Lab files
-  // gulp.watch(
-  //   config.patternlab.files, function(callback) {
-  //     gulp.series('patternlab', 'default');
-  //     callback();
-  //   }
-  // );
+  var watcher_patternlab = gulp.watch(config.patternlab.files, {interval: 1000, usePolling: true});
+  watcher_patternlab.on('all', gulp.series('patternlab', 'default'));
 
   // Watch sass
   var watcher_sass = gulp.watch(config.scss.watch, {interval: 1000, usePolling: true});
   watcher_sass.on('all', gulp.series('sass'));
 
-  // gulp.watch(
-  //   config.scripts.files, function() {
-  //     'scripts'
-  //   }
-  // );
+  // Watch media
+  var watcher_media = gulp.watch(config.images.files, {interval: 1000, usePolling: true});
+  watcher_media.on('all', gulp.series('images'));
 
-  // // Watch media
-  // gulp.watch(
-  //   config.images.files, function() {
-  //     'images'
-  //   }
-  // );
+  // Watch fonts
+  var watcher_fonts = gulp.watch(config.fonts.files, {interval: 1000, usePolling: true});
+  watcher_fonts.on('all', gulp.series('fonts'));
 
-  // // Watch sass
-  // gulp.watch(
-  //   config.scss.watch, function() {
-  //     'sass'
-  //   }
-  // );
+  var watcher_twig = gulp.watch(config.twigsource.files, {interval: 1000, usePolling: true});
+  watcher_twig.on('all', gulp.series('cleanTwig'));
 
-  // // Watch fonts
-  // gulp.watch(
-  //   config.fonts.files, function() {
-  //     'fonts'
-  //   }
-  // );
-
-  // gulp.watch(
-  //   config.twigsource.files, function() {
-  //    'cleanTwig'
-  //   }
-  // );
   done();
 });
 
