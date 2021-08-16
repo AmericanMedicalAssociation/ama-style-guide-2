@@ -235,8 +235,8 @@ gulp.task( 'backstop', function () {
   return gulp.src('', {allowEmpty: true})
     .pipe(shell(['backstop test']))
     .on('error', function () {
-      // For now, we do not want to stop when tests fail since we are 
-      // using them only for reporting. Swap `0` for `1` in the code below to 
+      // For now, we do not want to stop when tests fail since we are
+      // using them only for reporting. Swap `0` for `1` in the code below to
       // trigger a failure.
       process.exit(0)
     });
@@ -327,6 +327,10 @@ gulp.task('set-master', function (callback) {
 // Task: Watch files
 gulp.task('watch', function(done){
   // log(config.scss.watch);
+
+  // Watch Pattern Lab files
+  var watcher_patternlab = gulp.watch(config.scripts.files, {interval: 1000, usePolling: true});
+  watcher_patternlab.on('all', gulp.series('scripts'));
 
   // Watch Pattern Lab files
   var watcher_patternlab = gulp.watch(config.patternlab.files, {interval: 1000, usePolling: true});
