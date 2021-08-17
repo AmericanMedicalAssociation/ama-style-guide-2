@@ -27,7 +27,6 @@ var gulp      = require('gulp'),
   pWaitFor    = require('p-wait-for'),
   pathExists  = require('path-exists'),
   plumber     = require('gulp-plumber'),
-  log         = require('fancy-log');
 
 // Config
 var config = require('./build.config.json');
@@ -326,11 +325,10 @@ gulp.task('set-master', function (callback) {
 
 // Task: Watch files
 gulp.task('watch', function(done){
-  // log(config.scss.watch);
 
   // Watch Pattern Lab files
-  var watcher_patternlab = gulp.watch(config.scripts.files, {interval: 1000, usePolling: true});
-  watcher_patternlab.on('all', gulp.series('scripts'));
+  var watcher_scripts = gulp.watch(config.scripts.files, {interval: 1000, usePolling: true});
+  watcher_scripts.on('all', gulp.series('scripts'));
 
   // Watch Pattern Lab files
   var watcher_patternlab = gulp.watch(config.patternlab.files, {interval: 1000, usePolling: true});
