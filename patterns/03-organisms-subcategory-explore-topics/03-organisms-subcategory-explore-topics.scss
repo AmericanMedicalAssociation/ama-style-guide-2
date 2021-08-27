@@ -1,5 +1,6 @@
 .ama__subcategory-explore-topics {
-  display: inline;
+  display: inline-block;
+  padding: 21px 0px $gutter;
 
   @include breakpoint($bp-small) {
     display: flex;
@@ -40,6 +41,13 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.layout--ama-page-section-one-col .ama__subcategory-explore-topics {
+  padding: 21px 15px 28px;;
+  @include breakpoint($bp-small) {
+    padding: 21px 0px 28px;
   }
 }
 

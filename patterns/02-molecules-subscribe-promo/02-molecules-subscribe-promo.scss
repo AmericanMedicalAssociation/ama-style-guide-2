@@ -34,10 +34,22 @@
     .ui-checkboxradio-icon {
       margin-top: 1px;
     }
-    .ama__checkbox.ui-checkboxradio-label {
+    .ama__checkbox.form-item {
       align-items:flex-start;
+      display: flex;
+
+      > input#edit-mr-us-citizen, input#edit-us-citizen {
+        margin-right: 7px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-radius: 0;
+        border: 1px solid #EDEDED;
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+      }
     }
-    .form-item--error-message,
+    .form-item--error-message.active-error,
     label.error {
       background: url('/themes/custom/ama_one/icons/svg/icon-error.svg') no-repeat left;
       background-size: 15px;
@@ -88,12 +100,17 @@
         display: flex;
         flex-direction: row;
         width: 100%;
+        margin-bottom: 21px;
+        @include breakpoint($bp-med) {
+          margin-bottom: 14px;
+        }
       }
-
+      .form-item-page-mr-email {
+        margin: 0;
+      }
       .ama__form-group,
       .form-actions {
         margin: 0;
-        margin-bottom: 14px;
       }
 
       .ama__form-group {
@@ -166,11 +183,14 @@
 }
 
 .ama__layout--two-col-right--75-25__right {
-  form.webform-submission-email-subscription-form {
+  form.ama__subscribe-promo__form_page {
     position: relative;
     padding-bottom: 63px;
     .form-item-us-citizen {
       width: 100%;
+    }
+    .form-item-page-mr-us-citizen {
+      margin-bottom: 14px;
     }
     .form-actions {
       position: absolute;
@@ -187,7 +207,7 @@
       @media only screen and (min-width: 601px) and (max-width: 768px) {
         margin-top: 80px;
       }
-      .webform-button--submit {
+      .form-submit {
         display:inline-block;
         margin: 0 auto;
         width: 100%;
