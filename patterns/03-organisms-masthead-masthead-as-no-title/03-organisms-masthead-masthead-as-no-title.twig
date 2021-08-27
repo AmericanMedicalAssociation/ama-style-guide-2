@@ -1,7 +1,8 @@
 {%  set
-  centered, indented, link, heading, subtitle, date, social =
+  centered, indented, series_subscribe, link, heading, subtitle, date, social, description =
   masthead.centered ? "ama__masthead__content__title--centered" : "",
   masthead.indented ? "ama__masthead__content--indented" : "",
+  masthead.series_subscribe ? "ama__masthead__series--subscribe" : "",
   masthead.link,
   masthead.heading|merge({
     "level": "1",
@@ -9,7 +10,8 @@
   }),
   masthead.subtitle,
   masthead.date,
-  masthead.social
+  masthead.social,
+  masthead.description
 %}
 
 <header class="ama__masthead">
@@ -25,6 +27,9 @@
         {% endif %}
         {% if subtitle %}
           {% include "@atoms/subtitle.twig" %}
+        {% endif %}
+        {% if description %}
+          {% include "@atoms/description.twig" %}
         {% endif %}
       </div>
       {% if button %}
@@ -46,5 +51,9 @@
         </div>
       {% endif %}
     </div>
+    {% if series_subscribe %}
+      <span class="subscribe-series">Subscribe to series</span>
+      <div class="ama__rule ama__rule--horizontal"></div>
+    {% endif %}
   </div>
 </header>

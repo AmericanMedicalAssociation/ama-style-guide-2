@@ -32,7 +32,7 @@
     }
 
     padding: $gutter 0;
-    border-bottom: solid 2px $gray-7;
+    border-bottom: solid 2px $gray-20;
   }
 
   .ama__category-index__stubs__load-more {
@@ -47,5 +47,25 @@
         width: 33%;
       }
     }
+  }
+  .views-infinite-scroll-content-wrapper {
+    div:first-child {
+      .ama__subcategory-page-article-stub--topics {
+        border-top: solid 2px $gray-20;
+        padding-top: 19px;
+      }
+    }
+  }
+  .ama__category-index__stubs:not(.ama__menu-listing) {
+    .views-infinite-scroll-content-wrapper {
+      div:first-child {
+        .ama__subcategory-page-article-stub--topics {
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+  form.views-exposed-form .form-item.form-topic-search {
+    margin-top: 0;
   }
 }

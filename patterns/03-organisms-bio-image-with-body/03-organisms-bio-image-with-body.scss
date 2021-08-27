@@ -6,16 +6,31 @@
   text-align: center;
   padding-bottom: 0;
 
+  &__image {
+    min-width: 0;
+    max-width: 210px;
+    max-height: 210px;
+    align-self: center;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__copy {
+    flex-grow: 1;
+    flex-basis: 0;
+    @include breakpoint($bp-med max-width) {
+      margin-top: 14px;
+    }
+  }
+
   @include breakpoint($bp-xs) {
-    flex-direction: column;
     flex-wrap: no-wrap;
     justify-content: center;
-    text-align: center;
     align-items: center;
 
     &__image {
       margin: 0;
-      align-self: center;
     }
 
     dt, dd {
@@ -39,6 +54,7 @@
       width: auto;
       min-width: 0;
       margin: 0 15px 0 0;
+      align-self: flex-start;
       @include breakpoint($bp-small) {
         margin: 0 $gutter 0 0;
       }
@@ -58,23 +74,6 @@
     dt {
       font-weight: normal;
       margin-right: 0;
-    }
-  }
-
-  &__image {
-    min-width: 0;
-    max-width: 210px;
-    max-height: 210px;
-    align-self: center;
-    img {
-      border-radius: 50%;
-    }
-  }
-
-  &__copy {
-    flex-grow: 1;
-    @include breakpoint($bp-med max-width) {
-      margin-top: 14px;
     }
   }
 }
