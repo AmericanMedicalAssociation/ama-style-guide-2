@@ -1,0 +1,110 @@
+.annual-interim {
+  min-height: 140px;
+  @include breakpoint($bp-small) {
+    display: flex;
+  }
+
+  p.annual-interim__text {
+    font-size: 18x;
+    line-height: 22px;
+    margin-bottom: 28px;
+  }
+
+  &__left {
+    background: #3f2378;
+    background-image: url('../images/dot_pattern_web.svg');
+    background-image: linear-gradient(20deg, rgba(50, 62, 148, .75), rgba(63, 35, 120, .75), #371256 80%), url('../images/dot_pattern_web.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0, 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 14px;
+    color: $white;
+
+    @include breakpoint($bp-med) {
+      width: 100vw;
+      max-width: 380px;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: $white;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    .active_info {
+      margin-top: 48px;
+    }
+  }
+
+  &__right {
+    padding-left: 16px;
+    padding-top: 10px;
+
+    .meeting_information {
+      h3 {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 8px;
+      }
+
+      a.annual-interim__link {
+        display: block;
+        margin-bottom: 14px;
+      }
+    }
+
+    .active_links-rod {
+      height: 246px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      a.annual-interim__link {
+        @include breakpoint($bp-large) {
+          flex: 1 1 30px;
+        }
+      }
+    }
+
+    @include breakpoint($bp-large) {
+      .meeting_information {
+        .mg {
+          min-width: 381px;
+        }
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      padding-left: 20px;
+      .meeting_information {
+        display: flex;
+
+        .mg {
+          margin-left: 35px;
+        }
+      }
+    }
+
+    .fg {
+      padding-top: 7px;
+      border-top: 1px solid #cbcbcb;
+      h4 {
+        font-size: 18px;
+        line-height: 20px;
+        display: inline-block;
+      }
+      a.annual-interim__link {
+        display: inline-block;
+        margin-left: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
