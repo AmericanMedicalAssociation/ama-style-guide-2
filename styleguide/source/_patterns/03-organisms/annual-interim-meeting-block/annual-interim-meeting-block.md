@@ -1,6 +1,6 @@
 ---
-el: '.annual-interim_right'
-title: 'Annual/Interim Information'
+el: '.annual-interim'
+title: 'Annual/Interim Meeting Block'
 ---
 A text/containing elment that is part of a home page custom block to promote AMA's Annual, Interim, and Special Meetings.
 
