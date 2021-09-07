@@ -1,0 +1,76 @@
+.homepage-social-module {
+  display: block;
+  padding: 8px;
+
+  .profile_two,
+  .profile_three {
+    .profile--image {
+      max-width: 177px;
+      margin: 0 auto 14px;
+      img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+    .profile--content {
+      width: 100%;
+    }
+  }
+
+  .profile_two {
+    margin-bottom: 35px;
+  }
+
+  .profile_container {
+    flex-direction: column;
+  }
+
+  .profile {
+    margin-bottom: 40px;
+    .profile--image > img {
+      width: 100%;
+    }
+  }
+
+  a {
+    position: relative;
+    &::after {
+      content: " ";
+      position: absolute;
+      right: -25px;
+      top: 8px;
+      width: 18px;
+      height: 11px;
+      background: url('../images/arrow-right-blue.png') no-repeat 0px 0px;
+      background-size: contain;
+    }
+  }
+
+
+  @include breakpoint($bp-small) {
+    display: flex;
+
+    .profile {
+      width: 50%;
+      max-width: 580px;
+      padding-right: 20px;
+    }
+
+    .profile_container {
+      width: 50%;
+    }
+
+    .profile_two,
+    .profile_three {
+      display: flex;
+      .profile--image {
+        width: 16%;
+        max-width: 80px;
+        margin-right: 4%
+      }
+      .profile--content {
+        width: 84%;
+      }
+    }
+  }
+}

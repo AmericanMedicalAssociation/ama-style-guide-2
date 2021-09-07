@@ -1,0 +1,26 @@
+<div class="homepage-social-module">
+  <div class="profile">
+    <div class="profile--image">
+      {% set image = profile_1.image %}
+      {% include "@atoms/image/image.twig" %}
+    </div>
+    <div class="profile--content">
+      {% include "@atoms/heading/heading.twig"  with { heading : profile_1.heading } %}
+      {% include '@atoms/paragraph.twig' with { paragraph : profile_1.paragraph_location } %}
+      {% set link = profile_1.link %}
+      {% include "@atoms/link/link.twig" with { link : profile_1.link } %}
+    </div>
+  </div>
+  <div class="profile">
+    <div class="profile--image">
+      {% set image = profile_2.image %}
+      {% include "@atoms/image/image.twig" %}
+    </div>
+    <div class="profile--content">
+      {% include "@atoms/heading/heading.twig"  with { heading : profile_2.heading } %}
+      {% include '@atoms/paragraph.twig' with { paragraph : profile_2.paragraph_location } %}
+      {% set link = profile_2.link %}
+      {% include "@atoms/link/link.twig" with { link : profile_2.link } %}
+    </div>
+  </div>
+</div>
