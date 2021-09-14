@@ -1,11 +1,13 @@
 .annual-interim {
+  display: block;
   min-height: 140px;
+  margin-bottom: 28px;
   @include breakpoint($bp-small) {
     display: flex;
   }
 
   p.annual-interim__text {
-    font-size: 18x;
+    font-size: 18px;
     line-height: 22px;
     margin-bottom: 28px;
   }
@@ -21,8 +23,11 @@
     padding: 14px;
     color: $white;
 
+    @include breakpoint($bp-small) {
+      max-width: 272px;
+    }
+
     @include breakpoint($bp-med) {
-      width: 100vw;
       max-width: 380px;
     }
 
@@ -34,13 +39,29 @@
       color: $white;
     }
 
+    a.annual-interim__link {
+      &.event_info {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 48px;
+      }
+    }
+
     p {
       font-size: 20px;
       line-height: 27px;
     }
 
     .active_info {
-      margin-top: 48px;
+      p {
+        margin: 0;
+      }
+      a {
+        font-size: 20px;
+        @include breakpoint($bp-large) {
+          font-size: 18px;
+        }
+      }
     }
   }
 
@@ -61,32 +82,28 @@
       }
     }
 
-    .active_links-rod {
-      height: 246px;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
+    .active_links-rod,
+    .active_links-mg {
+      @include breakpoint($bp-med) {
+        height: 246px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
       a.annual-interim__link {
-        @include breakpoint($bp-large) {
-          flex: 1 1 30px;
+        @include breakpoint($bp-med) {
+          flex: 0 1 30px;
         }
       }
     }
 
     @include breakpoint($bp-large) {
-      .meeting_information {
-        .mg {
-          min-width: 381px;
-        }
-      }
-    }
-
-    @include breakpoint($bp-med) {
       padding-left: 20px;
       .meeting_information {
         display: flex;
 
         .mg {
+          min-width: 315px;
           margin-left: 35px;
         }
       }
