@@ -74,8 +74,25 @@
     }
   } // end aside.secondary
 }
+//Search page style overrides
 body.search-results {
   .ama__layout--two-column--left__page-content {
     padding-top: 0;
+    #block-ama-one-content {
+      border-top: 1px solid $gray-20;
+      @include breakpoint($bp-small max-width) {
+        padding-top: 10px;
+      }
+    }
+  }
+  .ama__layout--two-column--left__sidebar--primary {
+    padding-top: 0;
+    padding-left: 0;
+    .ama__filter {
+      border-top: 1px solid $gray-20;
+      @include breakpoint($bp-small max-width) {
+        padding-top: 10px;
+      }
+    }
   }
 }
