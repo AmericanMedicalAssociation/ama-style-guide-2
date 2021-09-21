@@ -200,6 +200,19 @@
           $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
         }
       });
+
+      //Prevents search from submitting and highlights placeholder text if nothing is entered into search field
+      var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
+
+      $(searchForm, this).submit(function() {
+          var searchInput = $(this).find("input[name*='search']");
+
+          if ($.trim(searchInput.val()) === "") {
+            console.log('No search term entered');
+            searchInput.attr("style", "font-weight:bold");
+            return false;
+          }
+      });
     }
   };
 })(jQuery, Drupal);
