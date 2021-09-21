@@ -201,7 +201,8 @@
         }
       });
 
-      //Prevents search from submitting and highlights placeholder text if nothing is entered into search field
+      //If empty or invalid entry (no letters/numbers) entered into search field
+      //prevent search from submitting and highlights placeholder text
       var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
 
       $(searchForm, this).submit(function() {
@@ -209,9 +210,17 @@
 
           if ($.trim(searchInput.val()) === "") {
             console.log('No search term entered');
-            searchInput.attr("style", "font-weight:bold");
+            searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
             return false;
-          }
+          } else if ($.trim(searchInput.val()) != "") {
+            var regx = /^[A-Za-z0-9-]+$/;
+
+            if (!regx.test(searchInput.val())) {
+              console.log('Invalid search term entered');
+              searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
+              return false;
+            }
+          } 
       });
     }
   };
