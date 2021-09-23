@@ -1,0 +1,43 @@
+{% set link = articleStub.title %}
+{% set classes = [
+  articleStub.video ? "ama__article-stub--video",
+] %}
+
+{% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
+
+{% macro mediaType(articleStub) %}
+  {% if articleStub.video.src %}
+    {% if articleStub.video %}
+      {% set video = articleStub.video %}
+      {% include "@atoms/video.twig" %}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+<div class="ama__hero-video ama__article-stub {{ classes|join(' ') }}">
+  {% block articleStub_media %}
+    {{ _self.mediaType(articleStub) }}
+  {% endblock %}
+
+  <div class="ama__hero-video-info">
+    <span class="series-icon">AMA Series</span>
+    {% if articleStub.homepage.heading %}
+      {% set heading = articleStub.homepage.heading %}
+      {% include "@atoms/heading/heading.twig" %}
+    {% endif %}
+
+    {% if link %}
+      {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+      {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
+      <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
+        {% include "@atoms/link/link.twig" %}
+      </{{ headingLevel }}>
+    {% endif %}
+
+    {% if metadata %}
+      <div class="ama__article-stub__metadata">
+        {% include "@molecules/article-stub/article-stub-metadata.twig" %}
+      </div>
+    {% endif %}
+  </div>
+</div>
