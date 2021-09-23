@@ -158,11 +158,13 @@
     }
   }
   .form-submit {
-    &:focus-visible {
-      background: $complementary;
+    &:focus-visible, &.ama__link--blue:focus {
+      background: $homepagePurple;
       color: $white;
       border-radius: 0;
-      border-color: transparent;
+      border: transparent;
+      outline: 0;
+      text-decoration: none;
     }
   }
 
