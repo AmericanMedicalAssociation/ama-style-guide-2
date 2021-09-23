@@ -4,7 +4,8 @@
     {% include "@atoms/image/image.twig" %}
   </div>
   <div class="ama__bio-image-with-body__copy">
-    <h1 class="ama__h1">Dr. John P. Doe, MD, MA</h1>
+    <h1 class="ama__h1 pronouns">Dr. John P. Doe, MD, MA</h1>
+    <div class="pronouns-wrapper">(she/her/hers)</div>
     {%  set count = 1 %}
     {% for bioSection in bioImageWithBody.bioSections %}
       {% include "@organisms/bio-section.twig" %}

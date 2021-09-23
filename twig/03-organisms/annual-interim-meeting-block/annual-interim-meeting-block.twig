@@ -1,0 +1,64 @@
+{% if left.links %}
+  {% set link = left.link %}
+{% endif %}
+
+{% if right.links_rod %}
+  {% set link = right.link %}
+{% endif %}
+
+{% if right.links_mg %}
+  {% set link = right.link %}
+{% endif %}
+
+<div class="annual-interim">
+  <div class="annual-interim__left">
+    {% include "@atoms/heading/heading.twig"  with { heading : left.heading } %}
+
+    {% if left.links %}
+      {% for link in left.links %}
+        {% include "@atoms/link/link.twig" %}
+      {% endfor %}
+        <div class="active_info">
+          {% include '@atoms/paragraph.twig' with { paragraph : left.paragraph_active_location } %}
+          {% include '@atoms/paragraph.twig' with { paragraph : left.paragraph_active_location_two } %}
+        </div>
+        {% set link_active = left.link_active %}
+        {% include "@atoms/link/link.twig" with { link : left.link_active } %}
+    {% else %}
+      {% include '@atoms/paragraph.twig' with { paragraph : left.paragraph_location } %}
+    {% endif %}
+  </div>
+  <div class="annual-interim__right">
+    <div class="meeting_information">
+      <div class="hod">
+        {% include "@atoms/heading/heading.twig"  with { heading : right.heading_rod } %}
+        {% include '@atoms/paragraph.twig' with { paragraph : right.paragraph_rod } %}
+
+        {% if right.links_rod %}
+          <div class="active_links-rod">
+            {% for link in right.links_rod %}
+              {% include "@atoms/link/link.twig" %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="mg">
+        {% include "@atoms/heading/heading.twig"  with { heading : right.heading_mg } %}
+        {% include '@atoms/paragraph.twig' with { paragraph : right.paragraph_mg } %}
+
+        {% if right.links_mg %}
+          <div class="active_links-mg">
+            {% for link in right.links_mg %}
+              {% include "@atoms/link/link.twig" %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="fg">
+      {% include "@atoms/heading/heading.twig"  with { heading : right.heading_fm } %}
+      {% set info_link = right.info_link %}
+      {% include '@atoms/link/link.twig' with { link : right.info_link } %}
+    </div>
+  </div>
+</div>
