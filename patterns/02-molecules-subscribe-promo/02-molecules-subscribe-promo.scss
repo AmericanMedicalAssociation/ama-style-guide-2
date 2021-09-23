@@ -75,9 +75,21 @@
       visibility: hidden;
     }
   }
+  .ajax-progress {
+    &.ajax-progress-throbber {
+      display:block;
+      margin: 40px auto 0;
+    }
+  }
 
   &--wide {
     width: 100%;
+    .ajax-progress {
+      &.ajax-progress-throbber {
+        display:inline;
+        margin: 0;
+      }
+    }
 
     .ama__subscribe-promo__container {
       display: flex;
@@ -143,6 +155,16 @@
           margin-bottom: 0;
         }
       }
+    }
+  }
+  .form-submit {
+    &:focus-visible, &.ama__link--blue:focus {
+      background: $homepagePurple;
+      color: $white;
+      border-radius: 0;
+      border: transparent;
+      outline: 0;
+      text-decoration: none;
     }
   }
 

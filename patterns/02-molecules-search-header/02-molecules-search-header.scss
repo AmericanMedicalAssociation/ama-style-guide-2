@@ -54,7 +54,13 @@
     }
 
     .ui-selectmenu-button {
+      padding: 9px 12px;
       margin: 0;
+
+      .ui-selectmenu-text {
+        font-size: 20px;
+        line-height: 1;
+      }
     }
 
     @include breakpoint($bp-small) {
@@ -69,11 +75,12 @@
 
   .form-actions {
     position: absolute;
-    top: 0;
-    right: $gutter;
+    top: -10px;
+    right: 10px;
 
     @include breakpoint($bp-small) {
       position: relative;
+      top: 0;
       right: 0;
       order: 2;
     }
@@ -104,10 +111,9 @@
   }
 
   &--results {
-    @include gutter($padding-top-half...);
     @include gutter($padding-bottom-half...);
-    @include gutter($margin-bottom-full...);
-    background: $gray-7;
+    margin-bottom: 21px;
+    padding-top: 33px;
 
     .ama__search-header__results-num {
       text-align: left;
@@ -124,11 +130,11 @@
     }
 
     .ama__search__field {
-      @include gutter($margin-bottom-full...);
       position: relative;
       margin-left: 0;
       width: 100%;
       flex-direction: column;
+      max-width: 1080px;
 
       @include breakpoint($bp-small) {
         flex-direction: row;
@@ -147,6 +153,12 @@
           border: none;
           border-bottom: 1px solid $hoverBlue;
         }
+      }
+
+      input[type="text"] {
+        border: none;
+        border-bottom: 2px solid $gray-40;
+        padding: 7px 2px;
       }
     }
 
@@ -170,7 +182,7 @@
       overflow: hidden;
 
       .ama__search-header__options {
-        max-width: 250px;
+        max-width: 180px;
         margin-top: 0;
         float: right;
       }
