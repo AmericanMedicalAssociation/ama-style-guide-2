@@ -26,7 +26,7 @@ var gulp      = require('gulp'),
   gutil       = require('gulp-util'),
   pWaitFor    = require('p-wait-for'),
   pathExists  = require('path-exists'),
-  plumber     = require('gulp-plumber'),
+  plumber     = require('gulp-plumber');
 
 // Config
 var config = require('./build.config.json');
