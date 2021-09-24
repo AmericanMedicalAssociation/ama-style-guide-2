@@ -1,34 +1,34 @@
-{% set link = articleStub.title %}
+{% set link = videoStub.title %}
 {% set classes = [
-  articleStub.video ? "ama__article-stub--video",
+  videoStub.video ? "ama__article-stub--video",
 ] %}
 
-{% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
+{% set related, link, headingLevel, paragraph, metadata = videoStub.related, videoStub.link, videoStub.headingLevel, videoStub.paragraph, videoStub.metadata %}
 
-{% macro mediaType(articleStub) %}
-  {% if articleStub.video.src %}
-    {% if articleStub.video %}
-      {% set video = articleStub.video %}
+{% macro mediaType(videoStub) %}
+  {% if videoStub.video.src %}
+    {% if videoStub.video %}
+      {% set video = videoStub.video %}
       {% include "@atoms/video.twig" %}
     {% endif %}
   {% endif %}
 {% endmacro %}
 
 <div class="ama__hero-video ama__article-stub {{ classes|join(' ') }}">
-  {% block articleStub_media %}
-    {{ _self.mediaType(articleStub) }}
+  {% block videoStub_media %}
+    {{ _self.mediaType(videoStub) }}
   {% endblock %}
 
   <div class="ama__hero-video-info">
     <span class="series-icon">AMA Series</span>
-    {% if articleStub.homepage.heading %}
-      {% set heading = articleStub.homepage.heading %}
+    {% if videoStub.homepage.heading %}
+      {% set heading = videoStub.homepage.heading %}
       {% include "@atoms/heading/heading.twig" %}
     {% endif %}
 
     {% if link %}
       {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
-      {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
+      {% set  headingLevel = videoStub.categoryPage.headingLevel ? videoStub.categoryPage.headingLevel : videoStub.headingLevel%}
       <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
         {% include "@atoms/link/link.twig" %}
       </{{ headingLevel }}>

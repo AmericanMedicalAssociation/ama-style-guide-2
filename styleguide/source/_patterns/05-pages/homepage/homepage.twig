@@ -20,6 +20,11 @@
   {% else %}
   <div class="ama__homepage__stubs">
   {% endif %}
+
+    {% if videoStub in homepage.videoStub %}
+      {% include '@molecules/homepage-hero-video-stub/homepage-hero-video-stub.twig' with { videoStub : homepage.videoStub } %}
+    {% endif %}
+
     {% for articleStub in homepage.articleStubs %}
       {% include '@molecules/article-stub/article-stub.twig' %}
     {% endfor %}
