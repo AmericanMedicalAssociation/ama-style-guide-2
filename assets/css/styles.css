@@ -4505,7 +4505,7 @@ article ol {
     box-shadow: none; }
   .ui-selectmenu-button.ui-button .ui-icon {
     position: absolute;
-    top: 20px;
+    top: 16px;
     right: 15px;
     width: 0;
     height: 0;
@@ -13109,6 +13109,108 @@ section.ama__page--event__speakers {
     @media (min-width: 37.5em) {
         .ama__four-up-teaser .ama__article-stub:first-child {
           padding: 0; } }
+
+.homepage-social-module {
+  display: block;
+  padding: 0px;
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto 35px; }
+  .homepage-social-module__container {
+    display: block; }
+    @media (min-width: 37.5em) {
+      .homepage-social-module__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-column-gap: 20px;
+        column-gap: 20px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+    .homepage-social-module__container .profile_container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+    .homepage-social-module__container .profile_two .profile--image,
+    .homepage-social-module__container .profile_three .profile--image {
+      max-width: 177px;
+      margin: 0 auto 14px; }
+      .homepage-social-module__container .profile_two .profile--image img,
+      .homepage-social-module__container .profile_three .profile--image img {
+        border-radius: 50%;
+        width: 100%; }
+    .homepage-social-module__container .profile_two .profile--content,
+    .homepage-social-module__container .profile_three .profile--content {
+      width: 100%; }
+    .homepage-social-module__container .profile_two {
+      margin-bottom: 42px; }
+      @media (min-width: 37.5em) {
+        .homepage-social-module__container .profile_two {
+          margin-bottom: 35px; } }
+    .homepage-social-module__container .profile {
+      margin-bottom: 20px; }
+      .homepage-social-module__container .profile .profile--image > img {
+        width: 100%; }
+    @media (max-width: 37.5em) {
+      .homepage-social-module__container .profile:nth-child(1) {
+        margin-bottom: 40px; }
+      .homepage-social-module__container .profile_container {
+        margin-bottom: 20px; } }
+    @media (min-width: 37.5em) {
+      .homepage-social-module__container .profile {
+        width: 50%;
+        max-width: 580px; }
+      .homepage-social-module__container .profile_container {
+        width: 50%; }
+      .homepage-social-module__container .profile_two,
+      .homepage-social-module__container .profile_three {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .homepage-social-module__container .profile_two .profile--image,
+        .homepage-social-module__container .profile_three .profile--image {
+          width: 16%;
+          max-width: 80px;
+          margin-right: 4%; }
+        .homepage-social-module__container .profile_two .profile--content,
+        .homepage-social-module__container .profile_three .profile--content {
+          width: 84%; } }
+  .homepage-social-module.no-feature .profile--image {
+    max-width: 177px;
+    margin: 0 auto 14px; }
+    .homepage-social-module.no-feature .profile--image img {
+      border-radius: 50%;
+      width: 100%; }
+  .homepage-social-module a {
+    position: relative; }
+    .homepage-social-module a.ama__link--blue::after, .homepage-social-module a.ama__applied-filters__tag__remove::after, .homepage-social-module .ama__promo--inline-banner a::after, .ama__promo--inline-banner .homepage-social-module a::after {
+      content: " ";
+      position: absolute;
+      right: -25px;
+      top: 8px;
+      width: 18px;
+      height: 11px;
+      background: url("../images/arrow-right-blue.png") no-repeat 0px 0px;
+      background-size: contain; }
+    @media (max-width: 37.5em) {
+      .homepage-social-module a {
+        font-size: 16px;
+        line-height: 22px; } }
+  .homepage-social-module .hs_message {
+    max-width: 380px;
+    margin-bottom: 20px; }
+    @media (min-width: 37.5em) {
+      .homepage-social-module .hs_message {
+        text-align: right;
+        float: right;
+        word-break: break-all; } }
+    .homepage-social-module .hs_message p, .homepage-social-module .hs_message .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .homepage-social-module .hs_message .ama__image__text__subtitle, .homepage-social-module .hs_message .ama__resource-link--inline__text {
+      font-size: 14px; }
+    .homepage-social-module .hs_message a {
+      color: #027DBC;
+      text-decoration: none; }
 
 .ama__hub-card-row {
   display: -webkit-box;
