@@ -28,10 +28,11 @@
     }
 
     @include breakpoint($bp-med) {
-      max-width: 380px;
+      min-width: 380px;
     }
 
     h2 {
+      line-height: 31px;
       margin-bottom: 8px;
     }
 
@@ -43,6 +44,7 @@
       &.event_info {
         display: block;
         font-size: 20px;
+        line-height: 27px;
         margin-bottom: 48px;
       }
     }
@@ -66,13 +68,16 @@
   }
 
   &__right {
-    padding-left: 16px;
+    padding-left: 0px;
     padding-top: 10px;
+    @include breakpoint($bp-small) {
+      padding-left: 16px;
+    }
 
     .meeting_information {
       h3 {
         font-size: 20px;
-        line-height: 32px;
+        line-height: 31px;
         margin-bottom: 8px;
       }
 
@@ -84,15 +89,16 @@
 
     .active_links-rod,
     .active_links-mg {
-      @include breakpoint($bp-med) {
-        max-height: 246px;
+      @include breakpoint($bp-small) {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      a.annual-interim__link {
-        @include breakpoint($bp-med) {
-          flex: 0 1 30px;
+        .quick_link_column {
+          flex: 1;
+
+          &:nth-child(1) {
+            a {
+              padding-right: 7.65%;
+            }
+          }
         }
       }
     }
@@ -103,8 +109,7 @@
         display: flex;
 
         .mg {
-          min-width: 315px;
-          margin-left: 35px;
+          margin-left: 34px;
         }
       }
     }
