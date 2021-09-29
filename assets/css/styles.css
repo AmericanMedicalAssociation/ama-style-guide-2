@@ -11785,10 +11785,6 @@ article[class*='__page-content'] .ama__tags {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; } }
-  .annual-interim p.annual-interim__text, .annual-interim .ama__jama .ama__image__text .annual-interim__text.ama__image__text__subtitle, .ama__jama .ama__image__text .annual-interim .annual-interim__text.ama__image__text__subtitle, .annual-interim .annual-interim__text.ama__resource-link--inline__text {
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 28px; }
   .annual-interim__left {
     background: #3f2378;
     background-image: url("../images/dot_pattern_web.svg");
@@ -11797,21 +11793,25 @@ article[class*='__page-content'] .ama__tags {
     background-position: 0 0, 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 14px;
+    padding: 14px 0 14px 14px;
     color: #ffffff; }
     @media (min-width: 37.5em) {
       .annual-interim__left {
-        max-width: 272px; } }
-    @media (min-width: 56.25em) {
-      .annual-interim__left {
-        max-width: 380px; } }
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        margin-right: 20px; } }
     .annual-interim__left h2 {
+      line-height: 31px;
       margin-bottom: 8px; }
     .annual-interim__left a {
       color: #ffffff; }
+    .annual-interim__left .active_info {
+      padding-right: 14px; }
     .annual-interim__left a.annual-interim__link.event_info {
       display: block;
       font-size: 20px;
+      line-height: 27px;
       margin-bottom: 48px; }
     .annual-interim__left p, .annual-interim__left .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .annual-interim__left .ama__image__text__subtitle, .annual-interim__left .ama__resource-link--inline__text {
       font-size: 20px;
@@ -11824,44 +11824,80 @@ article[class*='__page-content'] .ama__tags {
         .annual-interim__left .active_info a {
           font-size: 18px; } }
   .annual-interim__right {
-    padding-left: 16px;
+    padding-left: 0px;
     padding-top: 10px; }
-    .annual-interim__right .meeting_information h3, .annual-interim__right .meeting_information .ama__expand-list .ui-accordion-header__text, .ama__expand-list .annual-interim__right .meeting_information .ui-accordion-header__text, .annual-interim__right .meeting_information .ama__expand-list__header__text {
-      font-size: 20px;
-      line-height: 32px;
-      margin-bottom: 8px; }
-    .annual-interim__right .meeting_information a.annual-interim__link {
-      display: block;
-      margin-bottom: 14px; }
-    @media (min-width: 56.25em) {
-      .annual-interim__right .active_links-rod,
-      .annual-interim__right .active_links-mg {
-        max-height: 246px;
+    @media (min-width: 37.5em) {
+      .annual-interim__right {
+        -webkit-box-flex: 2;
+        -ms-flex: 2;
+        flex: 2; } }
+    @media (min-width: 75em) {
+      .annual-interim__right .meeting_information {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+      .annual-interim__right .hod, .annual-interim__right .mg {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1; }
+      .annual-interim__right .active_links-rod {
+        padding-right: 15px; } }
+    .annual-interim__right .meeting_heading.desktop {
+      display: none; }
+    .annual-interim__right .meeting_heading.mobile {
+      display: block; }
+    @media (min-width: 75em) {
+      .annual-interim__right .meeting_heading.desktop {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap; } }
-    @media (min-width: 56.25em) {
-      .annual-interim__right .active_links-rod a.annual-interim__link,
-      .annual-interim__right .active_links-mg a.annual-interim__link {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 1 30px;
-        flex: 0 1 30px; } }
-    @media (min-width: 75em) {
-      .annual-interim__right {
-        padding-left: 20px; }
-        .annual-interim__right .meeting_information {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex; }
-          .annual-interim__right .meeting_information .mg {
-            min-width: 315px;
-            margin-left: 35px; } }
+        position: relative;
+        margin-bottom: 21px; }
+        .annual-interim__right .meeting_heading.desktop h3, .annual-interim__right .meeting_heading.desktop .ama__expand-list .ui-accordion-header__text, .ama__expand-list .annual-interim__right .meeting_heading.desktop .ui-accordion-header__text, .annual-interim__right .meeting_heading.desktop .ama__expand-list__header__text {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          margin-bottom: 29px; }
+        .annual-interim__right .meeting_heading.desktop p.annual-interim__text, .annual-interim__right .meeting_heading.desktop .ama__jama .ama__image__text .annual-interim__text.ama__image__text__subtitle, .ama__jama .ama__image__text .annual-interim__right .meeting_heading.desktop .annual-interim__text.ama__image__text__subtitle, .annual-interim__right .meeting_heading.desktop .annual-interim__text.ama__resource-link--inline__text {
+          position: absolute;
+          margin: 0;
+          bottom: 0; }
+          .annual-interim__right .meeting_heading.desktop p.annual-interim__text:nth-child(4), .annual-interim__right .meeting_heading.desktop .ama__jama .ama__image__text .annual-interim__text.ama__image__text__subtitle:nth-child(4), .ama__jama .ama__image__text .annual-interim__right .meeting_heading.desktop .annual-interim__text.ama__image__text__subtitle:nth-child(4), .annual-interim__right .meeting_heading.desktop .annual-interim__text.ama__resource-link--inline__text:nth-child(4) {
+            left: 50%; }
+      .annual-interim__right .meeting_heading.mobile {
+        display: none; } }
+    .annual-interim__right p.annual-interim__text, .annual-interim__right .ama__jama .ama__image__text .annual-interim__text.ama__image__text__subtitle, .ama__jama .ama__image__text .annual-interim__right .annual-interim__text.ama__image__text__subtitle, .annual-interim__right .annual-interim__text.ama__resource-link--inline__text {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 21px; }
+      @media (min-width: 56.25em) {
+        .annual-interim__right p.annual-interim__text, .annual-interim__right .ama__jama .ama__image__text .annual-interim__text.ama__image__text__subtitle, .ama__jama .ama__image__text .annual-interim__right .annual-interim__text.ama__image__text__subtitle, .annual-interim__right .annual-interim__text.ama__resource-link--inline__text {
+          margin-bottom: 14px; } }
+    .annual-interim__right .meeting_information h3, .annual-interim__right .meeting_information .ama__expand-list .ui-accordion-header__text, .ama__expand-list .annual-interim__right .meeting_information .ui-accordion-header__text, .annual-interim__right .meeting_information .ama__expand-list__header__text {
+      font-size: 20px;
+      line-height: 31px;
+      margin-bottom: 8px; }
+    .annual-interim__right .meeting_information a.annual-interim__link {
+      display: block;
+      margin-bottom: 14px;
+      line-height: 21px; }
+    @media (min-width: 37.5em) {
+      .annual-interim__right .active_links-rod,
+      .annual-interim__right .active_links-mg {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .annual-interim__right .active_links-rod .quick_link_column,
+        .annual-interim__right .active_links-mg .quick_link_column {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1; }
+          .annual-interim__right .active_links-rod .quick_link_column:nth-child(1) a,
+          .annual-interim__right .active_links-mg .quick_link_column:nth-child(1) a {
+            padding-right: 15px; } }
+    @media (max-width: 37.5em) {
+      .annual-interim__right .hod {
+        margin-bottom: 35px; } }
     .annual-interim__right .fg {
       padding-top: 7px;
       border-top: 1px solid #cbcbcb; }
@@ -13207,7 +13243,8 @@ section.ama__page--event__speakers {
         float: right;
         word-break: break-all; } }
     .homepage-social-module .hs_message p, .homepage-social-module .hs_message .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .homepage-social-module .hs_message .ama__image__text__subtitle, .homepage-social-module .hs_message .ama__resource-link--inline__text {
-      font-size: 14px; }
+      font-size: 14px;
+      word-break: keep-all; }
     .homepage-social-module .hs_message a {
       color: #027DBC;
       text-decoration: none; }
