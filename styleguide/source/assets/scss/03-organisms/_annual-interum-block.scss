@@ -6,12 +6,6 @@
     display: flex;
   }
 
-  p.annual-interim__text {
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 28px;
-  }
-
   &__left {
     background: #3f2378;
     background-image: url('../images/dot_pattern_web.svg');
@@ -20,15 +14,12 @@
     background-position: 0 0, 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 14px;
+    padding: 14px 0 14px 14px;
     color: $white;
 
     @include breakpoint($bp-small) {
-      max-width: 272px;
-    }
-
-    @include breakpoint($bp-med) {
-      min-width: 380px;
+      flex: 1;
+      margin-right: 20px;
     }
 
     h2 {
@@ -38,6 +29,10 @@
 
     a {
       color: $white;
+    }
+
+    .active_info {
+      padding-right: 14px;
     }
 
     a.annual-interim__link {
@@ -71,7 +66,63 @@
     padding-left: 0px;
     padding-top: 10px;
     @include breakpoint($bp-small) {
-      padding-left: 16px;
+      flex: 2;
+    }
+
+    @include breakpoint($bp-large) {
+      .meeting_information {
+        display: flex;
+      }
+
+      .hod, .mg {
+        flex: 1;
+      }
+
+      .active_links-rod {
+        padding-right: 15px;
+      }
+    }
+
+    .meeting_heading {
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+      @include breakpoint($bp-large) {
+        &.desktop {
+          display: flex;
+          position: relative;
+          margin-bottom: 21px;
+
+          h3 {
+            flex: 1;
+            margin-bottom: 29px;
+          }
+    
+          p.annual-interim__text {
+            position: absolute;
+            margin: 0;
+            bottom: 0;
+            &:nth-child(4) {
+              left: 50%;
+            }
+          }
+        }
+        &.mobile {
+          display: none;
+        }
+      }
+    }
+
+    p.annual-interim__text {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 21px;
+      @include breakpoint($bp-med) {
+        margin-bottom: 14px;
+      }
     }
 
     .meeting_information {
@@ -84,6 +135,7 @@
       a.annual-interim__link {
         display: block;
         margin-bottom: 14px;
+        line-height: 21px;
       }
     }
 
@@ -96,21 +148,16 @@
 
           &:nth-child(1) {
             a {
-              padding-right: 7.65%;
+              padding-right: 15px;
             }
           }
         }
       }
     }
 
-    @include breakpoint($bp-large) {
-      padding-left: 20px;
-      .meeting_information {
-        display: flex;
-
-        .mg {
-          margin-left: 34px;
-        }
+    @include breakpoint($bp-small max-width) {
+      .hod {
+        margin-bottom: 35px;
       }
     }
 
