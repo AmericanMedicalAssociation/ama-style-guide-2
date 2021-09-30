@@ -2,14 +2,9 @@
   display: block;
   min-height: 140px;
   margin-bottom: 28px;
+  margin-top: 35px;
   @include breakpoint($bp-small) {
     display: flex;
-  }
-
-  p.annual-interim__text {
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 28px;
   }
 
   &__left {
@@ -20,18 +15,16 @@
     background-position: 0 0, 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 14px;
+    padding: 14px 0 14px 14px;
     color: $white;
 
     @include breakpoint($bp-small) {
-      max-width: 272px;
-    }
-
-    @include breakpoint($bp-med) {
-      max-width: 380px;
+      flex: 1;
+      margin-right: 20px;
     }
 
     h2 {
+      line-height: 31px;
       margin-bottom: 8px;
     }
 
@@ -39,10 +32,15 @@
       color: $white;
     }
 
+    .active_info {
+      padding-right: 14px;
+    }
+
     a.annual-interim__link {
       &.event_info {
         display: block;
         font-size: 20px;
+        line-height: 27px;
         margin-bottom: 48px;
       }
     }
@@ -66,46 +64,101 @@
   }
 
   &__right {
-    padding-left: 16px;
+    padding-left: 0px;
     padding-top: 10px;
+    @include breakpoint($bp-small) {
+      flex: 2;
+    }
+
+    @include breakpoint($bp-large) {
+      .meeting_information {
+        display: flex;
+      }
+
+      .hod, .mg {
+        flex: 1;
+      }
+
+      .active_links-rod {
+        padding-right: 15px;
+      }
+    }
+
+    .meeting_heading {
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+      @include breakpoint($bp-large) {
+        &.desktop {
+          display: flex;
+          position: relative;
+          margin-bottom: 21px;
+
+          h3 {
+            flex: 1;
+            margin-bottom: 29px;
+          }
+    
+          p.annual-interim__text {
+            position: absolute;
+            margin: 0;
+            bottom: 0;
+            &:nth-child(4) {
+              left: 50%;
+            }
+          }
+        }
+        &.mobile {
+          display: none;
+        }
+      }
+    }
+
+    p.annual-interim__text {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 21px;
+      @include breakpoint($bp-med) {
+        margin-bottom: 14px;
+      }
+    }
 
     .meeting_information {
       h3 {
         font-size: 20px;
-        line-height: 32px;
+        line-height: 31px;
         margin-bottom: 8px;
       }
 
       a.annual-interim__link {
         display: block;
         margin-bottom: 14px;
+        line-height: 21px;
       }
     }
 
     .active_links-rod,
     .active_links-mg {
-      @include breakpoint($bp-med) {
-        max-height: 246px;
+      @include breakpoint($bp-small) {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      a.annual-interim__link {
-        @include breakpoint($bp-med) {
-          flex: 0 1 30px;
+        .quick_link_column {
+          flex: 1;
+
+          &:nth-child(1) {
+            a {
+              padding-right: 15px;
+            }
+          }
         }
       }
     }
 
-    @include breakpoint($bp-large) {
-      padding-left: 20px;
-      .meeting_information {
-        display: flex;
-
-        .mg {
-          min-width: 315px;
-          margin-left: 35px;
-        }
+    @include breakpoint($bp-small max-width) {
+      .hod {
+        margin-bottom: 35px;
       }
     }
 

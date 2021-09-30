@@ -213,7 +213,7 @@
             searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
             return false;
           } else if ($.trim(searchInput.val()) != "") {
-            var regx = /^[A-Za-z0-9-]+$/;
+            var regx = /^[A-Za-z0-9- ]+$/;
 
             if (!regx.test(searchInput.val())) {
               console.log('Invalid search term entered');
