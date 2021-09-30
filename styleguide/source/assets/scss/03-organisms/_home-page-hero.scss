@@ -1,7 +1,7 @@
 .ama__hero {
   &-video {
     display: block;
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       display: flex;
       max-height: 385px;
       flex-flow: row-reverse;
@@ -9,7 +9,7 @@
     }
 
     .ama__hero-video-info {
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-large) {
         max-width: 280px;
         width: 31%;
         margin-right: 20px;
@@ -18,8 +18,12 @@
       h1 {
         margin-bottom: 14px;
         a {
-          font-size: 38px;
-          line-height: 42px;
+          font-size: 28px;
+          line-height: 32px;
+          @include breakpoint($bp-small) {
+            font-size: 38px;
+            line-height: 42px;
+          }
         }
       }
 
@@ -27,6 +31,7 @@
         font-size: 14px;
         color: $gray-64;
         margin-bottom: 14px;
+        text-transform: uppercase;
       }
 
       .series-icon {
@@ -38,10 +43,11 @@
       }
     }
     .ama__video__container {
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-large) {
         max-width: 580px;
         height: auto;
         padding-top: 26%;
+        margin: 0;
       }
     }
   }

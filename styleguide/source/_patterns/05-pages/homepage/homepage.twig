@@ -16,16 +16,15 @@
     {% include '@organisms/org-nav.twig' with { orgNav : homepage.orgNav } %}
   </div>
 
-    {% if videoStub in homepage.videoStub %}
-      {% include '@molecules/homepage-hero-video-stub.twig' with { videoStub : homepage.videoStub } %}
-    {% endif %}
-
   {% if trendStyle == "vertical" %}
   <div class="ama__homepage__stubs trending">
   {% else %}
   <div class="ama__homepage__stubs">
   {% endif %}
 
+    {% if videoStub in homepage.videoStub %}
+      {% include '@molecules/homepage-hero-video-stub.twig' with { videoStub : homepage.videoStub } %}
+    {% endif %}
 
     {% for articleStub in homepage.articleStubs %}
       {% include '@molecules/article-stub/article-stub.twig' %}
@@ -36,6 +35,7 @@
         {% include '@organisms/trending-block/trending-block.twig' with { trendingBlock : homepage.trendingBlock } %}
       </div>
     {% endif %}
+
   </div>
 
   {% if trendStyle == "horizontal" %}
