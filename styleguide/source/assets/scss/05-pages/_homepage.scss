@@ -106,7 +106,7 @@
       @include gutter($margin-bottom-full...);
       @include gutter($margin-top-full...);
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 
       .ama__article-stub {
         grid-row: 2;
@@ -189,6 +189,7 @@
 
   //homepage-with-vertical-trending styling
   &__stubs.trending {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     .ama__homepage__trending {
       grid-column: span 12;
       grid-row: 3;
@@ -210,6 +211,10 @@
         margin-left: 20px;
       }
       grid-template-columns: 285px 285px 285px 285px;
+      .ama__hero-video-info {
+        max-width: 280px;
+        width: 31%;
+      }
     }
   }
 
