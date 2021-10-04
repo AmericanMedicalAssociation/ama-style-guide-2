@@ -10,39 +10,12 @@
 {% endblock %}
 
 {% block pageContent %}
-  {% set trendStyle = homepage.trendingBlock.style %}
   <div class="ama__homepage__navs">
     {% include '@organisms/category-nav.twig' with { catNav : homepage.catNav } %}
     {% include '@organisms/org-nav.twig' with { orgNav : homepage.orgNav } %}
   </div>
 
-  {% if trendStyle == "vertical" %}
-  <div class="ama__homepage__stubs trending">
-  {% else %}
-  <div class="ama__homepage__stubs">
-  {% endif %}
-
-    {% if videoStub in homepage.videoStub %}
-      {% include '@molecules/homepage-hero-video-stub.twig' with { videoStub : homepage.videoStub } %}
-    {% endif %}
-
-    {% for articleStub in homepage.articleStubs %}
-      {% include '@molecules/article-stub/article-stub.twig' %}
-    {% endfor %}
-
-    {% if trendStyle == "vertical" %}
-      <div class="ama__homepage__trending">
-        {% include '@organisms/trending-block/trending-block.twig' with { trendingBlock : homepage.trendingBlock } %}
-      </div>
-    {% endif %}
-
-  </div>
-
-  {% if trendStyle == "horizontal" %}
-    <div class="ama__homepage__trending">
-      {% include '@organisms/trending-block/trending-block.twig' with { trendingBlock : homepage.trendingBlock } %}
-    </div>
-  {% endif %}
+  {% include '@organisms/homepage-hero-module.twig' with { heroModule : homepage.heroModule } %}
 
 
   {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
