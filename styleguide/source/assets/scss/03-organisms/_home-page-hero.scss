@@ -1,0 +1,53 @@
+.ama__hero {
+  &-video {
+    display: block;
+    @include breakpoint($bp-large) {
+      display: flex;
+      max-height: 385px;
+      flex-flow: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .ama__hero-video-info {
+      @include breakpoint($bp-large) {
+
+        margin-right: 20px;
+      }
+
+      h1 {
+        margin-bottom: 14px;
+        a {
+          font-size: 28px;
+          line-height: 32px;
+          @include breakpoint($bp-small) {
+            font-size: 38px;
+            line-height: 42px;
+          }
+        }
+      }
+
+      h5.ama__h5 {
+        font-size: 14px;
+        color: $gray-64;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+      }
+
+      .series-icon {
+        background-color: #3d1660;
+      }
+
+      .ama__article-stub__metadata {
+        font-size: 14px;
+      }
+    }
+    .ama__video__container {
+      @include breakpoint($bp-large) {
+        max-width: 580px;
+        height: auto;
+        padding-top: 26%;
+        margin: 0;
+      }
+    }
+  }
+}
