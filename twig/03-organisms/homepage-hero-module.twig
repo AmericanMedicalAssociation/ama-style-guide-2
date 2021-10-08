@@ -1,0 +1,16 @@
+{% set trendStyle = heroModule.trendingBlock.style %}
+<div class="ama__homepage__stubs trending">
+  {% if videoStub in heroModule.videoStub %}
+    {% include '@molecules/homepage-hero-video-stub.twig' with { videoStub : heroModule.videoStub } %}
+  {% endif %}
+
+  {% for articleStub in heroModule.articleStubs %}
+    {% include '@molecules/article-stub/article-stub.twig' %}
+  {% endfor %}
+
+  {% if trendStyle == "vertical" %}
+    <div class="ama__homepage__trending">
+      {% include '@organisms/trending-block/trending-block.twig' with { trendingBlock : heroModule.trendingBlock } %}
+    </div>
+  {% endif %}
+</div>
