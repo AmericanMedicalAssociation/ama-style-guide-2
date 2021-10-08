@@ -6,7 +6,8 @@
   articleStub.video ? "ama__article-stub--video",
   articleStub.categoryPage ? "ama__article-stub--category",
   articleStub.homepage ? "ama__article-stub--homepage",
-  articleStub.navigation ? "ama__article-stub--navigation"
+  articleStub.navigation ? "ama__article-stub--navigation",
+  articleStub.series ? "ama__article-stub--series"
 ] %}
 
 {% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
@@ -24,6 +25,10 @@
 {% endmacro %}
 
 <div class="ama__article-stub {{ classes|join(' ') }}">
+{% if articleStub.series %}
+  <span class="series-icon">AMA Series</span>
+{% endif %}
+
   {% block articleStub_media %}
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
