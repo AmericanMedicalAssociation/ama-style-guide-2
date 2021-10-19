@@ -4,7 +4,6 @@
       display: block;
       @include breakpoint($bp-large) {
         display: flex;
-        max-height: 385px;
         flex-flow: row-reverse;
         justify-content: flex-end;
       }
@@ -59,6 +58,14 @@
     }
     .series-icon {
       background-color: #3d1660;
+    }
+    &.ama__article-stub--video {
+      .ama__bio-image-with-body__image {
+          max-width: unset;
+          width: 100%;
+          height: auto;
+          max-height: unset;
+      }
     }
     &.ama__article-stub--image {
       .ama__image {
