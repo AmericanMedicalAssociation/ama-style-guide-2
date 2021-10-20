@@ -1489,6 +1489,15 @@ a.webform-button--submit {
     .webform-submission-policy-finder-form__submit-buttons .webform-button--submit {
       margin-bottom: 28px; } }
 
+.webform-submission-ama-secure-data-change-form-form .form-actions input {
+  padding: 5px 70px; }
+
+.webform-submission-ama-secure-data-change-form-form .form-actions .webform-button--next {
+  background-color: #46166B;
+  color: #ffffff; }
+  .webform-submission-ama-secure-data-change-form-form .form-actions .webform-button--next:hover {
+    background-color: #9073A6; }
+
 .form-submit.ama__button {
   margin-bottom: 21px; }
   @media (min-width: 56.25em) {
@@ -12755,6 +12764,13 @@ article[class*='__page-content'] .ama__tags {
 
 .webform-submission-contact-us-form .form-actions {
   display: inline-block; }
+  .webform-submission-contact-us-form .form-actions input {
+    padding: 5px 70px; }
+  .webform-submission-contact-us-form .form-actions .webform-button--submit {
+    background-color: #46166B;
+    color: #ffffff; }
+    .webform-submission-contact-us-form .form-actions .webform-button--submit:hover {
+      background-color: #9073A6; }
 
 html.js .webform-submission-contact-us-form input.webform-button--next {
   display: none; }
@@ -13185,14 +13201,13 @@ section.ama__page--event__speakers {
         .ama__four-up-teaser .ama__article-stub:first-child {
           padding: 0; } }
 
-.ama__hero-video {
+.ama__homepage__stubs > .ama__hero-video {
   display: block; }
   @media (min-width: 75em) {
-    .ama__hero-video {
+    .ama__homepage__stubs > .ama__hero-video {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      max-height: 385px;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: reverse;
       -ms-flex-flow: row-reverse;
@@ -13201,32 +13216,67 @@ section.ama__page--event__speakers {
       -ms-flex-pack: end;
       justify-content: flex-end; } }
   @media (min-width: 75em) {
-    .ama__hero-video .ama__hero-video-info {
+    .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info {
       margin-right: 20px; } }
-  .ama__hero-video .ama__hero-video-info h1 {
+  .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title {
     margin-bottom: 14px; }
-    .ama__hero-video .ama__hero-video-info h1 a {
+    .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3 a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title a {
       font-size: 28px;
       line-height: 32px; }
       @media (min-width: 37.5em) {
-        .ama__hero-video .ama__hero-video-info h1 a {
+        .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3 a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title a {
           font-size: 38px;
           line-height: 42px; } }
-  .ama__hero-video .ama__hero-video-info h5.ama__h5 {
-    font-size: 14px;
-    color: #5C5C5C;
-    margin-bottom: 14px;
-    text-transform: uppercase; }
-  .ama__hero-video .ama__hero-video-info .series-icon {
-    background-color: #3d1660; }
-  .ama__hero-video .ama__hero-video-info .ama__article-stub__metadata {
+  .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__article-stub__metadata {
     font-size: 14px; }
+  .ama__homepage__stubs > .ama__hero-video .ama__video__container .series-icon {
+    display: none; }
   @media (min-width: 75em) {
-    .ama__hero-video .ama__video__container {
+    .ama__homepage__stubs > .ama__hero-video .ama__video__container {
       max-width: 580px;
       height: auto;
       padding-top: 26%;
       margin: 0; } }
+
+.ama__homepage__stubs .ama__article-stub h5.ama__h5 {
+  font-size: 14px;
+  line-height: normal;
+  color: #5C5C5C;
+  margin-bottom: 14px;
+  text-transform: uppercase; }
+
+.ama__homepage__stubs .ama__article-stub .ama__video__container {
+  position: relative;
+  padding-top: 0; }
+
+.ama__homepage__stubs .ama__article-stub .series-icon {
+  background-color: #3d1660; }
+
+.ama__homepage__stubs .ama__article-stub.ama__article-stub--video .ama__bio-image-with-body__image {
+  max-width: unset;
+  width: 100%;
+  height: auto;
+  max-height: unset; }
+
+.ama__homepage__stubs .ama__article-stub.ama__article-stub--image .ama__image img {
+  max-width: unset;
+  width: 100%; }
+
+.ama__homepage__stubs .ama__article-stub.ama__article-stub--image .ama__video__container {
+  max-width: unset;
+  width: 100%; }
+  .ama__homepage__stubs .ama__article-stub.ama__article-stub--image .ama__video__container .series-icon {
+    position: absolute;
+    z-index: 1; }
+  .ama__homepage__stubs .ama__article-stub.ama__article-stub--image .ama__video__container img {
+    max-width: unset;
+    width: 100%; }
+
+.ama__homepage__stubs .ama__article-stub.ama__article-stub--image .ama__hero-video-info {
+  max-width: unset;
+  width: 100%; }
+  .ama__homepage__stubs .ama__article-stub.ama__article-stub--image .ama__hero-video-info .series-icon {
+    display: none; }
 
 .homepage-social-module {
   display: block;
@@ -16037,7 +16087,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
