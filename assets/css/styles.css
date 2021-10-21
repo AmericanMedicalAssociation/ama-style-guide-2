@@ -8376,6 +8376,9 @@ section.ama__forum_comments {
     @media (min-width: 56.25em) {
       .ama__promo > *, .ama__promo--background > *, .ama__promo--border > *, a.ama__promo--background > *, a.ama__promo--border > * {
         margin-top: 14px; } }
+  .ama__promo .ama__bio-image-with-body__image, .ama__promo--background .ama__bio-image-with-body__image, .ama__promo--border .ama__bio-image-with-body__image {
+    max-height: unset;
+    max-width: 100%; }
   .ama__promo--background {
     background: #EDEDED; }
   .ama__promo--border {
@@ -12039,8 +12042,7 @@ article[class*='__page-content'] .ama__tags {
   padding-bottom: 0; }
   .ama__bio-image-with-body__image {
     min-width: 0;
-    max-width: 210px;
-    max-height: 210px;
+    max-width: 100%;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center; }
