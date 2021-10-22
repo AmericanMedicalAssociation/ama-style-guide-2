@@ -200,6 +200,28 @@
           $('.ama__social-share.ama__social-share--fixed').css('left', mainNavPositionUpdate);
         }
       });
+
+      //If empty or invalid entry (no letters/numbers) entered into search field
+      //prevent search from submitting and highlights placeholder text
+      var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
+
+      $(searchForm, this).submit(function() {
+          var searchInput = $(this).find("input[name*='search']");
+
+          if ($.trim(searchInput.val()) === "") {
+            console.log('No search term entered');
+            searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
+            return false;
+          } else if ($.trim(searchInput.val()) != "") {
+            var regx = /^[a-zA-Z0-9_]+(?:\W+[a-zA-Z0-9_]+)*\W*$/;
+
+            if (!regx.test(searchInput.val())) {
+              console.log('Invalid search term entered');
+              searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
+              return false;
+            }
+          } 
+      });
     }
   };
 })(jQuery, Drupal);

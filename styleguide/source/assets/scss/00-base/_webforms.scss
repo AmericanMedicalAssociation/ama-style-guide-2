@@ -130,6 +130,21 @@ a.webform-button--submit {
     }
   }
 }
+// Secure Data Webform.
+.webform-submission-ama-secure-data-change-form-form {
+  .form-actions {
+    input {
+      padding: 5px 70px;
+    }
+    .webform-button--next {
+      background-color: $purple;
+      color: $white;
+      &:hover {
+        background-color: $hoverPurple;
+      }
+    }
+  }
+}
 
 .form-submit.ama__button {
   @include gutter($margin-bottom-full...);

@@ -41,3 +41,38 @@
     line-height: 1.8;
   }
 }
+
+.paragraph--type--series-related-article {
+  .views-row {
+    position: relative;
+  }
+  .series-tag__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $purple;
+    z-index: 1;
+    width: 100px;
+    height: 28px;
+    padding: 7px 0;
+  }
+  .no-image {
+    position: relative;
+    height: 42px;
+  }
+}
+
+.series-icon {
+  background: $homepagePurple;
+  color: $white;
+  display: inline-block;
+  @include type($myriad-pro, $font-weight-regular);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.36;
+  letter-spacing: 0.3px;
+  margin-bottom: 14px;
+  padding: 6px 9px;
+  text-align: center;
+  text-transform: uppercase;
+}

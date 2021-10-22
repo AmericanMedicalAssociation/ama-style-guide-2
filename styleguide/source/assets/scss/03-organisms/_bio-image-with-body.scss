@@ -8,8 +8,7 @@
 
   &__image {
     min-width: 0;
-    max-width: 210px;
-    max-height: 210px;
+    max-width: 100%;
     align-self: center;
     img {
       border-radius: 50%;
@@ -74,6 +73,19 @@
     dt {
       font-weight: normal;
       margin-right: 0;
+    }
+  }
+  .ama__h1 {
+    &.pronouns {
+      margin-bottom: 0;
+    }
+  }
+  .pronouns-wrapper {
+    margin-bottom: $gutter * .75;
+    margin-top: $gutter * .25;
+    font-size: 20px;
+    @include breakpoint($bp-med) {
+      font-size: 18px;
     }
   }
 }

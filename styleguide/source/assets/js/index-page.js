@@ -19,10 +19,13 @@
         width = $(window).width()
         if (width < 400) {
           truncHeight = trunc.height() + 25
-          fullHeight = full.height() + 15
+          fullHeight = full.height() + 20
+        } else if (width < 900) {
+            truncHeight = trunc.height() + 25
+            fullHeight = full.height() + 20
         } else {
           truncHeight = trunc.height()
-          fullHeight = full.height() + 35
+          fullHeight = full.height() + 14
         }
       };
 

@@ -1,0 +1,131 @@
+.homepage-social-module {
+  display: block;
+  padding: 0px;
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto 35px;
+
+  &__container {
+    display: block;
+    @include breakpoint($bp-small) {
+      display: flex;
+      column-gap: 20px;
+      justify-content: center;
+    }
+
+    .profile_container {
+      flex-direction: column;
+    }
+
+    .profile_two,
+    .profile_three {
+      .profile--image {
+        max-width: 177px;
+        margin: 0 auto 14px;
+        img {
+          border-radius: 50%;
+          width: 100%;
+        }
+      }
+      .profile--content {
+        width: 100%;
+      }
+    }
+
+    .profile_two {
+      margin-bottom: 42px;
+      @include breakpoint($bp-small) {
+        margin-bottom: 35px;
+      }
+    }
+  
+    .profile {
+      margin-bottom: 20px;
+      .profile--image > img {
+        width: 100%;
+      }
+    }
+  
+    @include breakpoint($bp-small max-width) {
+      .profile:nth-child(1) {
+        margin-bottom: 40px;
+      }
+
+      .profile_container {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      .profile {
+        width: 50%;
+        max-width: 580px;
+      }
+  
+      .profile_container {
+        width: 50%;
+      }
+  
+      .profile_two,
+      .profile_three {
+        display: flex;
+        .profile--image {
+          width: 16%;
+          max-width: 80px;
+          margin-right: 4%
+        }
+        .profile--content {
+          width: 84%;
+        }
+      }
+    }
+  }
+
+  &.no-feature {
+    .profile--image {
+      max-width: 177px;
+      margin: 0 auto 14px;
+      img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+  }
+
+  a {
+    position: relative;
+    &.ama__link--blue::after {
+      content: " ";
+      position: absolute;
+      right: -25px;
+      top: 8px;
+      width: 18px;
+      height: 11px;
+      background: url('../images/arrow-right-blue.png') no-repeat 0px 0px;
+      background-size: contain;
+    }
+
+    @include breakpoint($bp-small max-width) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .hs_message {
+    max-width: 380px;
+    margin-bottom: 20px;
+    @include breakpoint($bp-small) {
+      text-align: right;
+      float: right;
+      word-break: break-all;
+    }
+    p {
+      font-size: 14px;
+      word-break: keep-all;
+    }
+    a {
+      color: #027DBC;
+      text-decoration: none;
+    }
+  }
+}

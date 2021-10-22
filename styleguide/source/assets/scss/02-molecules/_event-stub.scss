@@ -72,7 +72,7 @@
   .ama__bio-image-with-body__image {
     @include gutter($margin-bottom-full...);
     width: 100%;
-    min-width: 180px;
+    max-width: 180px;
     height: auto;
     @include breakpoint($bp-small) {
       @include gutter($margin-right-full...);
@@ -80,6 +80,10 @@
       align-self: flex-start;
       margin-bottom: 0;
     }
+  }
+  .ama__image {
+    max-width: 180px;
+    margin-right: $gutter;
   }
 
   .ama__rule {

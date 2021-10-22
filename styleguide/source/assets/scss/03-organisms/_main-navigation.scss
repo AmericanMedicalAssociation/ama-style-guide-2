@@ -183,7 +183,14 @@
   z-index: 502;
 }
 
-.sticky-wrapper.is-sticky {
-  min-height: 61px;
-  height: 61px;
+.sticky-wrapper {
+  height: 61px !important;
+  .is-sticky {
+    min-height: 61px;
+    height: 61px;
+  }
+
+  &.is-sticky .ama__main-navigation {
+    z-index: 502 !important;
+  }
 }
