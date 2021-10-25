@@ -161,7 +161,12 @@
 
       // Initialize getSocialShare()
       moveSocialSharePosition();
-      var stickyStartPosition = 280;
+      if($(".toolbar-administration") !== null) {
+        var stickyStartPosition = 320;
+      }
+      else {
+        var stickyStartPosition = 280;
+      }
       var stickyEndPosition = $('footer').offset().top - 300;
       $(window).scroll(function() {
         var scroll = $(window).scrollTop();
@@ -228,7 +233,7 @@
               searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
               return false;
             }
-          } 
+          }
       });
     }
   };
