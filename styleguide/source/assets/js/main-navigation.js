@@ -161,6 +161,19 @@
 
       // Initialize getSocialShare()
       moveSocialSharePosition();
+      if($(".toolbar-administration") !== null) {
+        var stickyStartPosition = 320;
+      }
+      else {
+        var stickyStartPosition = 280;
+      }
+      var stickyEndPosition = $('footer').offset().top - 300;
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= stickyStartPosition && scroll <= stickyEndPosition) {
+          $(".ama__social-share").addClass("ama__social-share--fixed");
+        }
+      });
 
       // Onscroll check to see if social icon position is greater than footer position
       var debounce_timer;
@@ -204,6 +217,7 @@
       //NOTE: Temporarily rolling this back so business can research empty search behavior and performance
       //If empty or invalid entry (no letters/numbers) entered into search field
       //prevent search from submitting and highlights placeholder text
+      
       // var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
 
       // $(searchForm, this).submit(function() {
