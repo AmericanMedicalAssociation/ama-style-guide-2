@@ -11363,9 +11363,9 @@ article[class*='__page-content'] .ama__tags {
     display: flex;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     height: 100%;
     margin-bottom: 14px; }
     .ama__hub-hero__video .ama__video {
@@ -13218,27 +13218,100 @@ section.ama__page--event__speakers {
       -ms-flex-pack: end;
       justify-content: flex-end; } }
   @media (min-width: 75em) {
-    .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info {
+    .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy {
       margin-right: 20px; } }
-  .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title {
+  .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__h3,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__category-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__category-hero__title.ui-accordion-header__text,
+  .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ui-accordion-header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ama__expand-list__header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__h3.ui-accordion-header__text,
+  .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ui-accordion-header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title,
+  .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ui-accordion-header__text.ama__subcategory-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ama__expand-list__header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list__header__text.ama__subcategory-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__subcategory-hero__title {
     margin-bottom: 14px; }
-    .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3 a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title a {
+    .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3 a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__h3 a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__category-hero__title a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a,
+    .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ui-accordion-header__text a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ama__expand-list__header__text a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__h3.ui-accordion-header__text a,
+    .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ui-accordion-header__text a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a,
+    .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ui-accordion-header__text.ama__subcategory-hero__title a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ama__expand-list__header__text a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list__header__text.ama__subcategory-hero__title a,
+    .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__subcategory-hero__title a {
       font-size: 28px;
       line-height: 32px; }
       @media (min-width: 37.5em) {
-        .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3 a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title a {
+        .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__h3 a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__category-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__category-hero__title.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ama__h3.ui-accordion-header__text a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ui-accordion-header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__expand-list .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ui-accordion-header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__h3.ama__expand-list__header__text a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__expand-list__header__text.ama__subcategory-hero__title a, .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info h3.ama__subcategory-hero__title a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__h3 a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__category-hero__title a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__category-hero__title.ui-accordion-header__text a,
+        .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ui-accordion-header__text a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ama__expand-list__header__text a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__h3.ui-accordion-header__text a,
+        .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ui-accordion-header__text a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title a,
+        .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ui-accordion-header__text.ama__subcategory-hero__title a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ama__expand-list__header__text a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list__header__text.ama__subcategory-hero__title a,
+        .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__subcategory-hero__title a {
           font-size: 38px;
           line-height: 42px; } }
-  .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__article-stub__metadata {
+  .ama__homepage__stubs > .ama__hero-video .ama__hero-video-info .ama__article-stub__metadata,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__article-stub__metadata {
     font-size: 14px; }
-  .ama__homepage__stubs > .ama__hero-video .ama__video__container .series-icon {
+  .ama__homepage__stubs > .ama__hero-video .ama__video__container .series-icon,
+  .ama__homepage__stubs > .ama__hero-video > .ama__image .series-icon {
     display: none; }
   @media (min-width: 75em) {
-    .ama__homepage__stubs > .ama__hero-video .ama__video__container {
+    .ama__homepage__stubs > .ama__hero-video .ama__video__container,
+    .ama__homepage__stubs > .ama__hero-video > .ama__image {
       max-width: 580px;
       height: auto;
       padding-top: 26%;
       margin: 0; } }
+  
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__h3,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__category-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__category-hero__title.ui-accordion-header__text,
+  .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ui-accordion-header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ama__expand-list__header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__h3.ui-accordion-header__text,
+  .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ui-accordion-header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title,
+  .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ui-accordion-header__text.ama__subcategory-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ama__expand-list__header__text,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list__header__text.ama__subcategory-hero__title,
+  .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__subcategory-hero__title {
+    font-size: 28px;
+    line-height: 32px; }
+    @media (min-width: 37.5em) {
+      
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__h3,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__category-hero__title,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__category-hero__title.ui-accordion-header__text,
+      .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ui-accordion-header__text,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__category-hero__title.ama__expand-list__header__text,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ama__h3.ui-accordion-header__text,
+      .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ui-accordion-header__text,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list .ui-accordion-header__text.ama__subcategory-hero__title,
+      .ama__expand-list .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ui-accordion-header__text.ama__subcategory-hero__title,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__h3.ama__expand-list__header__text,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy .ama__expand-list__header__text.ama__subcategory-hero__title,
+      .ama__homepage__stubs > .ama__hero-video > .ama__article-stub__copy h3.ama__subcategory-hero__title {
+        font-size: 38px;
+        line-height: 42px; } }
+  .ama__homepage__stubs > .ama__hero-video > .ama__image {
+    padding-top: 0; }
 
 .ama__homepage__stubs .ama__article-stub h5.ama__h5 {
   font-size: 14px;
@@ -16089,7 +16162,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
@@ -16793,7 +16866,8 @@ body.search-results .ama__layout--two-column--left {
       grid-template-columns: 285px 285px 285px 285px; }
       .ama__homepage__stubs.trending .ama__homepage__trending {
         margin-left: 20px; }
-      .ama__homepage__stubs.trending .ama__hero-video-info {
+      .ama__homepage__stubs.trending .ama__hero-video-info,
+      .ama__homepage__stubs.trending .ama__hero-video .ama__article-stub__copy {
         max-width: 280px;
         width: 31%; } }
 
