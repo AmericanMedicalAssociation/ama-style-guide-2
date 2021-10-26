@@ -152,6 +152,42 @@
     }
   }
 
+  //Layout builder styling
+  &__stubs.trending.layout-builder-block {
+    @include breakpoint($bp-small) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .ama__article-stub:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        margin: 0 0 21px 0;
+        padding-bottom: 21px;
+        border-bottom: 1px solid $gray-7;
+        height: unset;
+      }
+
+      .ama__article-stub:nth-child(3) {
+        grid-column: 1;
+      }
+
+      .ama__article-stub:nth-child(4) {
+        grid-column: 2;
+        justify-self: center;
+      }
+
+      .ama__article-stub:nth-child(5) {
+        grid-column: 3;
+        justify-self: end;
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      .ama__article-stub:nth-child(3) {
+        height: 270px;
+      }
+    }
+  }
+
   &__trending {
     margin-bottom: 21px;
     @include breakpoint($bp-small) {
