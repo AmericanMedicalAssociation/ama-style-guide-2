@@ -131,7 +131,10 @@ a.webform-button--submit {
   }
 }
 // Secure Data Webform.
-.webform-submission-ama-secure-data-change-form-form {
+.webform-submission-ama-secure-data-change-form-form,
+.webform-submission-gov-council-action-item-request-form,
+.webform-submission-mercedes-benz-incentive-form-form,
+.webform-submission-mas-membership-registration-form {
   .form-actions {
     input {
       padding: 5px 70px;
@@ -141,6 +144,27 @@ a.webform-button--submit {
       color: $white;
       &:hover {
         background-color: $hoverPurple;
+      }
+    }
+  }
+}
+
+.webform-submission-policy-finder-form {
+  input.webform-button--submit {
+    background-color: $purple;
+    color: $white;
+    &:hover {
+      background-color: $hoverPurple;
+    }
+  }
+  #edit-decline-button {
+    a {
+      background-color: $white;
+      color: $purple;
+      border: 1px solid $purple;
+      &:hover {
+        background-color: $purple;
+        color: $white;
       }
     }
   }
