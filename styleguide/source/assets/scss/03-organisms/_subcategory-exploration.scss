@@ -112,6 +112,9 @@
         min-width: 14px;
         max-height: 14px;
         max-width: 14px;
+        @include breakpoint($bp-small max-width) {
+          background-position: 0 5px;
+        }
       }
     }
 
