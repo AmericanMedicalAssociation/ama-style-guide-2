@@ -3,7 +3,7 @@
   padding: 0px;
   position: relative;
   max-width: 1170px;
-  margin: 0 auto 35px;
+  margin: 0 auto;
 
   &__container {
     display: block;
@@ -110,11 +110,16 @@
       line-height: 22px;
     }
   }
+}
 
+.hs_parent_container {
+  display: block;
+  overflow: auto;
   .hs_message {
     max-width: 380px;
     margin-bottom: 20px;
     @include breakpoint($bp-small) {
+      margin-bottom: 0px;
       text-align: right;
       float: right;
       word-break: break-all;
