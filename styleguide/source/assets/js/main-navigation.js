@@ -201,29 +201,19 @@
         }
       });
 
-      //NOTE: Temporarily rolling this back so business can research empty search behavior and performance
-      //If empty or invalid entry (no letters/numbers) entered into search field
-      //prevent search from submitting and highlights placeholder text
-      
-      // var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
+      //If empty or otherwise unpopulated search field (i.e spaces only)
+      //prevent search from submitting and reload current page
+      var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
 
-      // $(searchForm, this).submit(function() {
-      //     var searchInput = $(this).find("input[name*='search']");
+      $(searchForm, this).submit(function() {
+          var searchInput = $(this).find("input[name*='search']");
 
-      //     if ($.trim(searchInput.val()) === "") {
-      //       console.log('No search term entered');
-      //       searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
-      //       return false;
-      //     } else if ($.trim(searchInput.val()) != "") {
-      //       var regx = /^[a-zA-Z0-9_]+(?:\W+[a-zA-Z0-9_]+)*\W*$/;
-
-      //       if (!regx.test(searchInput.val())) {
-      //         console.log('Invalid search term entered');
-      //         searchInput.val('').attr("style", "font-weight:bold").attr("placeholder", "Enter Search Term");
-      //         return false;
-      //       }
-      //     } 
-      // });
+          //Trim and check if search input has any value
+          if ($.trim(searchInput.val()).length < 2) {
+            console.log('No search term entered');
+            location.reload();
+          }
+      });
     }
   };
 })(jQuery, Drupal);
