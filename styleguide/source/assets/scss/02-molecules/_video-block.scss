@@ -2,11 +2,10 @@
   display:flex;
   flex-wrap: wrap;
   flex-direction: column-reverse;
-  padding: $gutter/4*3 0;
-  margin: $gutter/3 15px;
+  padding: 21px 0;
+  margin: 0 15px;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 35px;
   @include breakpoint($bp-small) {
     flex-direction: row;
     margin: $gutter/3 0;
@@ -14,7 +13,8 @@
     margin-bottom: 42px;
   }
   @include breakpoint($bp-large) {
-    padding: $gutter/4*3 7%;
+    padding: 28px 7%;
+    margin: 0;
   }
   &.left {
     @include breakpoint($bp-small) {
@@ -75,5 +75,13 @@
       padding-bottom: 0;
       padding-top: 0;
     }
+  }
+}
+
+//Spacing for video block wrapper on category pages
+.layout--ama-page-section-one-col .video-block-wrapper + .ama__membership {
+  margin-top: 21px;
+  @include breakpoint($bp-small) {
+    margin-top: 28px;
   }
 }
