@@ -5393,7 +5393,7 @@ object {
   padding-bottom: 21px;
   margin-top: 21px;
   margin-bottom: 21px;
-  border: solid #eee;
+  border: solid #CBCBCB;
   border-width: 1px 0;
   clear: both; }
   @media (min-width: 56.25em) {
@@ -9042,7 +9042,7 @@ a.ama__promo--border:hover {
   position: relative; }
 
 .paragraph--type--series-related-article .series-tag__label {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   background: #46166B;
@@ -10096,7 +10096,7 @@ article[class*='__page-content'] .ama__tags {
   .ama__tags-text,
   article[class*='__page-content'] .ama__tags-text {
     font-weight: bold;
-    margin-right: 8px;
+    margin-right: 7px;
     padding-bottom: 5.25px; }
     @media (min-width: 56.25em) {
       .ama__tags-text,
@@ -10724,14 +10724,13 @@ article[class*='__page-content'] .ama__tags {
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
   padding: 21px 0;
-  margin: 9.33333px 15px;
+  margin: 0 15px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  align-items: stretch;
-  margin-bottom: 35px; }
+  align-items: stretch; }
   @media (min-width: 37.5em) {
     .video-block-wrapper {
       -webkit-box-orient: horizontal;
@@ -10743,7 +10742,8 @@ article[class*='__page-content'] .ama__tags {
       margin-bottom: 42px; } }
   @media (min-width: 75em) {
     .video-block-wrapper {
-      padding: 21px 7%; } }
+      padding: 28px 7%;
+      margin: 0; } }
   @media (min-width: 37.5em) {
     .video-block-wrapper.left {
       -webkit-box-orient: horizontal;
@@ -10811,6 +10811,12 @@ article[class*='__page-content'] .ama__tags {
         padding-right: 4%;
         padding-bottom: 0;
         padding-top: 0; } }
+
+.layout--ama-page-section-one-col .video-block-wrapper + .ama__membership {
+  margin-top: 21px; }
+  @media (min-width: 37.5em) {
+    .layout--ama-page-section-one-col .video-block-wrapper + .ama__membership {
+      margin-top: 28px; } }
 
 .ama__subcategory-exploration__subcategory {
   margin-bottom: 21px;
@@ -16900,10 +16906,10 @@ body.search-results .ama__layout--two-column--left {
 .ama__homepage .stublist_block .ama__four-up-teaser .ama__article-stub {
   padding: 0; }
 
-.ama__homepage .stublist_block #block-views-block-trending-trending-block-vertical {
+.ama__homepage .stublist_block #block-views-block-trending-listings-trending-listings-block-vertical {
   margin: 21px auto; }
   @media (min-width: 56.25em) {
-    .ama__homepage .stublist_block #block-views-block-trending-trending-block-vertical {
+    .ama__homepage .stublist_block #block-views-block-trending-listings-trending-listings-block-vertical {
       padding-left: 14px; } }
 
 .ama__homepage__stubs.trending {
@@ -16993,6 +16999,13 @@ body.search-results .ama__layout--two-column--left {
     .ama__news-article .ama__inline-bio {
       margin-bottom: 35px;
       padding-bottom: 0; } }
+
+.ama__news-article .embedded-entity.media {
+  padding-top: 14px; }
+  .ama__news-article .embedded-entity.media + .ama-toc-link {
+    padding-top: 14px; }
+  .ama__news-article .embedded-entity.media + br {
+    display: none; }
 
 .no-toc .ama__news .toc-responsive {
   display: none; }
@@ -17180,6 +17193,10 @@ body.search-results .ama__layout--two-column--left {
     @media (min-width: 37.5em) {
       .ama__people-bio .user-article-listing-view .article-listing__link:first-of-type > .ama__user-article-listing {
         padding-top: 28px; } }
+
+@media (min-width: 56.25em) {
+  .ama__people-bio .ama__masthead__content__share-wrapper {
+    display: block; } }
 
 .ama__people-listing .ama__people-listing__card-container {
   display: -webkit-box;
