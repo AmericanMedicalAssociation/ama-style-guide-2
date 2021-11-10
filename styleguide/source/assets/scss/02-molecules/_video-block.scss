@@ -6,15 +6,15 @@
   margin: 0 15px;
   justify-content: center;
   align-items: stretch;
+  margin-bottom: 21px;
   @include breakpoint($bp-small) {
     flex-direction: row;
     margin: $gutter/3 0;
     padding: $gutter/2 7%;
-    margin-bottom: 42px;
+    margin-bottom: 28px;
   }
   @include breakpoint($bp-large) {
     padding: 28px 7%;
-    margin: 0;
   }
   &.left {
     @include breakpoint($bp-small) {
@@ -79,9 +79,16 @@
 }
 
 //Spacing for video block wrapper on category pages
+.layout--ama-page-section-one-col .video-block-wrapper,
 .layout--ama-page-section-one-col .video-block-wrapper + .ama__membership {
   margin-top: 21px;
   @include breakpoint($bp-small) {
     margin-top: 28px;
+  }
+}
+
+.layout--ama-page-section-one-col .video-block-wrapper + .video-block-wrapper {
+  @include breakpoint($bp-small) {
+    margin: 0;
   }
 }
