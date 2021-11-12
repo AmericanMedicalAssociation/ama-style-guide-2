@@ -10730,7 +10730,8 @@ article[class*='__page-content'] .ama__tags {
   justify-content: center;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  align-items: stretch; }
+  align-items: stretch;
+  margin-bottom: 21px; }
   @media (min-width: 37.5em) {
     .video-block-wrapper {
       -webkit-box-orient: horizontal;
@@ -10739,11 +10740,10 @@ article[class*='__page-content'] .ama__tags {
       flex-direction: row;
       margin: 9.33333px 0;
       padding: 14px 7%;
-      margin-bottom: 42px; } }
+      margin-bottom: 28px; } }
   @media (min-width: 75em) {
     .video-block-wrapper {
-      padding: 28px 7%;
-      margin: 0; } }
+      padding: 28px 7%; } }
   @media (min-width: 37.5em) {
     .video-block-wrapper.left {
       -webkit-box-orient: horizontal;
@@ -10812,11 +10812,17 @@ article[class*='__page-content'] .ama__tags {
         padding-bottom: 0;
         padding-top: 0; } }
 
+.layout--ama-page-section-one-col .video-block-wrapper,
 .layout--ama-page-section-one-col .video-block-wrapper + .ama__membership {
   margin-top: 21px; }
   @media (min-width: 37.5em) {
+    .layout--ama-page-section-one-col .video-block-wrapper,
     .layout--ama-page-section-one-col .video-block-wrapper + .ama__membership {
       margin-top: 28px; } }
+
+@media (min-width: 37.5em) {
+  .layout--ama-page-section-one-col .video-block-wrapper + .video-block-wrapper {
+    margin: 0; } }
 
 .ama__subcategory-exploration__subcategory {
   margin-bottom: 21px;
@@ -11392,11 +11398,10 @@ article[class*='__page-content'] .ama__tags {
     display: flex;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    height: 100%;
-    margin-bottom: 14px; }
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%; }
     .ama__hub-hero__video .ama__video {
       height: 100%;
       width: 100%; }
@@ -16199,7 +16204,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
