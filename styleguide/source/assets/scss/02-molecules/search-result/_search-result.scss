@@ -69,4 +69,21 @@
       @include font-size($h3-font-sizes);
     }
   }
+
+  &__icon_container {
+    display: flex;
+    margin: 14px 0 0 14px;
+    height: 25px;
+  }
+
+  &__icon {
+    display: inline-block;
+    max-width: 25px;
+    margin-right: 14px;
+    &> div {
+      &> div {
+        height: 25px;
+      }
+    }
+  }
 }
