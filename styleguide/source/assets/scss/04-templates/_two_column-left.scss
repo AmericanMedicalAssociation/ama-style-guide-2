@@ -88,6 +88,8 @@ body.search-results {
   .ama__layout--two-column--left__sidebar--primary {
     padding-top: 0;
     padding-left: 0;
+    padding-right: 20px;
+    max-width: 280px;
     .ama__filter {
       border-top: 1px solid $gray-20;
       border-bottom: 1px solid $gray-20;
@@ -98,5 +100,7 @@ body.search-results {
   }
   .ama__layout--two-column--left {
     min-height: auto;
+    display: flex;
+    flex-direction: row-reverse;
   }
 }

@@ -1,17 +1,20 @@
 .ama__search-result {
-
   //Because Drupal adds divs which breaks flexbox
   .views-row {
     display: flex;
   }
 
   &__link {
-    display: block;
+    display: flex;
     text-decoration: none;
     @include gutter($padding-bottom-half...);
     @include gutter($padding-top-half...);
     width: 100%;
     border-bottom: 1px solid $gray-20;
+  }
+
+  .ama__search-featured-stub__image {
+    max-width: 280px;
   }
 
   &__category {
