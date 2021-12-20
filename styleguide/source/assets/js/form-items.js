@@ -253,13 +253,13 @@
               });
             }
 
-            // if($(".ama__expand-list").find('.ui-checkboxradio-checked').length) {
-            //   expandListAccordion('.ama__expand-list', 0);
-            //   $(".ama__expand-list .ama__expand-list__header").first().addClass('active');
-            // } else {
-            //   expandListAccordion('.ama__expand-list', false);
-            //   $(".ama__expand-list").children('.ama__expand-list__header').removeClass('active');
-            // }
+            if($(".ama__expand-list").find('.ui-checkboxradio-checked').length) {
+              expandListAccordion('.ama__expand-list', 0);
+              $(".ama__expand-list .ama__expand-list__header").first().addClass('active');
+            } else {
+              expandListAccordion('.ama__expand-list', false);
+              $(".ama__expand-list").children('.ama__expand-list__header').removeClass('active');
+            }
 
             // Collapse all accordion panels
             $('.ama__filter__collapse-panels button').click(function(){
