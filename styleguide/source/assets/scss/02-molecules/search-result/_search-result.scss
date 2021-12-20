@@ -6,6 +6,7 @@
 
   &__link {
     display: flex;
+    flex-direction: row-reverse;
     text-decoration: none;
     @include gutter($padding-bottom-half...);
     @include gutter($padding-top-half...);
@@ -13,8 +14,12 @@
     border-bottom: 1px solid $gray-20;
   }
 
-  .ama__search-featured-stub__image {
+  &__image {
     max-width: 280px;
+  }
+
+  &__text {
+    flex-grow: 1;
   }
 
   &__category {
