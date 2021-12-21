@@ -5,13 +5,16 @@
   }
 
   &__link {
-    display: flex;
-    flex-direction: row-reverse;
+    display: block;
     text-decoration: none;
     @include gutter($padding-bottom-half...);
     @include gutter($padding-top-half...);
     width: 100%;
     border-bottom: 1px solid $gray-20;
+    @include breakpoint($bp-med) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
 
   &__image {
@@ -20,6 +23,13 @@
 
   &__text {
     flex-grow: 1;
+  }
+
+  @include breakpoint($bp-med) {
+    .ama__search-result__image + .ama__search-result__text {
+      width: 66%;
+      padding-right: 20px;
+    }
   }
 
   &__category {
