@@ -1,6 +1,19 @@
 <div class="ama__podcast-player">
-  <ul>
-    {% for link in podcastLinks.links %}
+
+  <div class="ama__podcast-player__heading">
+    {% if podcastPlayer.heading %}
+      {% set heading = podcastPlayer.heading %}
+      {% include "@atoms/heading/heading.twig" %}
+    {% endif %}
+
+    <div class="date">
+    {% set paragraph = podcastPlayer.paragraph %}
+    {% include "@atoms/paragraph.twig" %}
+    </div>
+  </div>
+
+  <ul class="ama__podcast-player__links">
+    {% for link in podcastPlayer.podcastLinks.links %}
       <li>
         {% include "@atoms/link/link.twig" %}
       </li>
