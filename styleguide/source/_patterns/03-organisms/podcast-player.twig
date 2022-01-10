@@ -1,0 +1,9 @@
+<div class="ama__podcast-player">
+  <ul>
+    {% for link in podcastLinks.links %}
+      <li>
+        {% include "@atoms/link/link.twig" %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
