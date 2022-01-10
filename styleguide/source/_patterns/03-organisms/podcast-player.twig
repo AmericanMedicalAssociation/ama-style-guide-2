@@ -1,6 +1,8 @@
 <div class="ama__podcast-player">
 
-  <div class="ama__podcast-player__heading">
+  {% include '@atoms/heading/heading.twig' with { heading : podcastPlayer.podcastTitle } %}
+
+  <div class="ama__podcast-player__episode_info">
     {% if podcastPlayer.heading %}
       {% set heading = podcastPlayer.heading %}
       {% include "@atoms/heading/heading.twig" %}
