@@ -1,4 +1,5 @@
 .ama__podcast-player {
+  max-width: 966px;
   h3 {
     margin-bottom: 6px;
   }
@@ -6,5 +7,77 @@
     @include type($myriad-pro, $font-weight-semibold);
     font-size: 12px;
     color: #a1a1a4;
+  }
+
+  ul.ama__podcast-player__links {
+    justify-content: space-between;
+    list-style: none;
+    @include breakpoint($bp-small) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include breakpoint($bp-med) {
+      flex-direction: row;
+    }
+    li {
+      border: 1px solid #512d6d;
+      color: #512d6d;
+      text-align: center;
+      margin-bottom: 28px;
+      width: 100%;
+      @include breakpoint($bp-small) {
+        width: 45.65%;
+        margin-right: 4.35%;
+      }
+      @include breakpoint($bp-med) {
+        flex: 1;
+        margin-bottom: 0;
+        width: 25%;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      @include breakpoint($bp-med max-width) {
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+      }
+      a {
+        @include type($myriad-pro, $font-weight-light);
+        font-size: 14px;
+        line-height: 10px;
+        text-decoration: none;
+        color: #512d6d;
+        position: relative;
+        span {
+          @include type($myriad-pro, $font-weight-regular);
+          font-size: 18px;
+          line-height: 18px;
+        }
+        // &::after {
+        //   content: '';
+        //   border-bottom: none;
+        //   position: absolute;
+        //   padding-left: 12px;
+        //   top: 15%;
+        //   width: 14px;
+        //   height: 14px;
+        //   background: url('../images/arrow-right.svg') no-repeat center center;
+        //   background-size: contain;
+        // }
+      }
+    }
+  }
+}
+
+#sg-viewport {
+  .ama__podcast-player {
+    //Placeholder for image in styleguide
+    img.ama__image {
+      background: purple;
+      display: block;
+      height: 144px;
+      width: 144px;
+    }
   }
 }
