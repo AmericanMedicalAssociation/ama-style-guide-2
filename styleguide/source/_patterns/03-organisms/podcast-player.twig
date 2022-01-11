@@ -1,10 +1,11 @@
 <div class="ama__podcast-player">
 
+  <div class="ama__podcast-player__episode_info">
+
   {% include '@atoms/heading/heading.twig' with { heading : podcastPlayer.podcastTitle } %}
 
   <iframe height="52px" width="100%" frameborder="no" scrolling="no" seamless="" src="https://player.simplecast.com/f256bf1e-4424-4502-ae3d-05ac1d07bed9?dark=false"></iframe>
 
-  <div class="ama__podcast-player__episode_info">
     {% if podcastPlayer.heading %}
       {% set heading = podcastPlayer.heading %}
       {% include "@atoms/heading/heading.twig" %}
@@ -14,13 +15,13 @@
     {% include "@atoms/paragraph.twig" %}
   </div>
 
-  {% include "@atoms/image/image.twig"  with { 'class': 'ama__image' } %}
-
-  <ul class="ama__podcast-player__links">
-    {% for podcastlink in podcastPlayer.podcastLinks.links %}
-      <li>
-        {% include "@atoms/podcast-link.twig" %}
-      </li>
-    {% endfor %}
-  </ul>
+  {% include "@atoms/image/image.twig"  with { 'class': 'ama__placeholder-image' } %}
 </div>
+
+<ul class="ama__podcast-player__links">
+  {% for podcastlink in podcastPlayer.podcastLinks.links %}
+    <li>
+      {% include "@atoms/podcast-link.twig" %}
+    </li>
+  {% endfor %}
+</ul>
