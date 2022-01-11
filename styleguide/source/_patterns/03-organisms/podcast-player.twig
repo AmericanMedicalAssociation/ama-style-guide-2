@@ -4,7 +4,9 @@
 
   {% include '@atoms/heading/heading.twig' with { heading : podcastPlayer.podcastTitle } %}
 
-  <iframe height="52px" width="100%" frameborder="no" scrolling="no" seamless="" src="https://player.simplecast.com/f256bf1e-4424-4502-ae3d-05ac1d07bed9?dark=false"></iframe>
+  <div class="podcast-container">
+    <iframe height="52px" width="100%" frameborder="no" scrolling="no" seamless="" src="https://player.simplecast.com/f256bf1e-4424-4502-ae3d-05ac1d07bed9?dark=false"></iframe>
+  </div>
 
     {% if podcastPlayer.heading %}
       {% set heading = podcastPlayer.heading %}
