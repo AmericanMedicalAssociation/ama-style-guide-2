@@ -17,7 +17,7 @@
         var width = $(document).width();
 
         if (width < 600) {
-          podcastPlayer.insertBefore('div.ama__podcast-player + .ama__podcast-player__links');
+          podcastPlayer.insertAfter('div.ama__podcast-player');
         } else if (width > 600) {
           podcastPlayer.insertAfter('div.ama__podcast-player__episode_info h4');
         }

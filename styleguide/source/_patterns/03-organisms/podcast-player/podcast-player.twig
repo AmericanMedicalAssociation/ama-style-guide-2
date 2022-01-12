@@ -19,11 +19,17 @@
 
   {% include "@atoms/image/image.twig"  with { 'class': 'ama__placeholder-image' } %}
 </div>
-
-<ul class="ama__podcast-player__links">
+{% set podcast_class = podcastPlayer.podcastLinks.class %}
+{% if podcastPlayer.podcastLinks.oddLinks %}
+  <ul class="ama__podcast-player__links odd_links">
+{% else %}
+  <ul class="ama__podcast-player__links">
+{% endif %}
   {% for podcastlink in podcastPlayer.podcastLinks.links %}
+    {% if podcastlink is not empty %}
     <li>
       {% include "@atoms/podcast-link.twig" %}
     </li>
+    {% endif %}
   {% endfor %}
 </ul>
