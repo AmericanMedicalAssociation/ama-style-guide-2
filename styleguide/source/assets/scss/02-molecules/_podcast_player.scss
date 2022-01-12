@@ -10,9 +10,11 @@
   }
   &__date {
     @include type($myriad-pro, $font-weight-semibold);
-    font-size: 12px;
     color: #a1a1a4;
     margin-bottom: 0;
+    @include breakpoint($bp-small) {
+      font-size: 12px;
+    }
   }
 
   img.ama__image {
