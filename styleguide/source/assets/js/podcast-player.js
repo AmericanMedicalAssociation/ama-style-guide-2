@@ -13,13 +13,13 @@
       });
 
       function playerPlacement() {
-        var podcastPlayer = $('div.podcast-container');
+        var podcastImage = $('div.ama__podcast-player .ama__image');
         var width = $(document).width();
-
+        console.log(width);
         if (width < 600) {
-          podcastPlayer.insertAfter('div.ama__podcast-player');
+          podcastImage.insertBefore('div.podcast-container');
         } else if (width > 600) {
-          podcastPlayer.insertAfter('div.ama__podcast-player__episode_info h4');
+          podcastImage.insertAfter('div.ama__podcast-player__episode_info');
         }
       }
     }

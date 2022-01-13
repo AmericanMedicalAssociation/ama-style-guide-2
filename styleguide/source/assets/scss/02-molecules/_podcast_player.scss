@@ -7,9 +7,6 @@
   }
   h3 {
     margin-bottom: 6px;
-    @include breakpoint($bp-small max-width) {
-      display: none;
-    }
   }
   @include breakpoint($bp-small max-width) {
     h4 {
@@ -20,11 +17,10 @@
   &__date {
     @include type($myriad-pro, $font-weight-semibold);
     color: #a1a1a4;
-    margin-bottom: 0;
-    display: none;
+    margin-bottom: 30px;
+    font-size: 12px;
     @include breakpoint($bp-small) {
-      font-size: 12px;
-      display: block;
+      margin-bottom: 0px;
     }
   }
 
@@ -48,7 +44,8 @@
 ul.ama__podcast-player__links {
   max-width: 966px;
   justify-content: space-between;
-  list-style: none;
+  margin-left: 0;
+  margin-bottom: 45px;
   @include breakpoint($bp-small) {
     display: flex;
     flex-wrap: wrap;
@@ -57,12 +54,14 @@ ul.ama__podcast-player__links {
     flex-direction: row;
   }
   li {
+    list-style: none;
     border: 1px solid #512d6d;
     color: #512d6d;
     text-align: center;
     margin-bottom: 28px;
     width: 100%;
     display: flex;
+    padding: 0;
     @include breakpoint($bp-small) {
       width: 45.65%;
       margin-right: 4.35%;
@@ -72,8 +71,6 @@ ul.ama__podcast-player__links {
       flex: 1;
       margin-bottom: 0;
       width: 25%;
-      padding-right: 10px;
-      padding-left: 10px;
       white-space: nowrap;
       &:last-child {
         margin-right: 0;
@@ -84,6 +81,9 @@ ul.ama__podcast-player__links {
         margin-right: 0;
       }
     }
+    &:before {
+      display: none;
+    }
     a {
       @include type($myriad-pro, $font-weight-light);
       font-size: 14px;
@@ -93,7 +93,7 @@ ul.ama__podcast-player__links {
       position: relative;
       width: 100%;
       display: block;
-      padding: 8.5px 0;
+      padding: 8.5px 10px;
       span {
         @include type($myriad-pro, $font-weight-regular);
         font-size: 18px;
@@ -105,6 +105,13 @@ ul.ama__podcast-player__links {
         padding-left: 8px;
         width: 14px;
         height: 14px;
+      }
+      &:hover {
+        color: $white;
+        background: #512d6d;
+        &::after {
+          content: url('../images/arrow-right-white.svg');
+        }
       }
     }
   }
