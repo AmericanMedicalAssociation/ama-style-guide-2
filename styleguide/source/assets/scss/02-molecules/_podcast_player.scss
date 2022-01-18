@@ -45,19 +45,20 @@ ul.ama__podcast-player__links {
   max-width: 966px;
   justify-content: space-between;
   margin-left: 0;
-  margin-bottom: 45px;
+  margin-bottom: 32px;
   @include breakpoint($bp-small) {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
   }
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     flex-direction: row;
+    margin-bottom: 32px;
   }
   li {
     list-style: none;
     border: 1px solid #512d6d;
     color: #512d6d;
-    text-align: center;
     margin-bottom: 28px;
     width: 100%;
     display: flex;
@@ -67,16 +68,17 @@ ul.ama__podcast-player__links {
       margin-right: 4.35%;
       flex-grow: 1;
     }
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       flex: 1;
       margin-bottom: 0;
       width: 25%;
       white-space: nowrap;
+      margin-right: 3.35%;
       &:last-child {
         margin-right: 0;
       }
     }
-    @include breakpoint($bp-med max-width) {
+    @include breakpoint($bp-large max-width) {
       &:nth-child(even) {
         margin-right: 0;
       }
@@ -90,21 +92,45 @@ ul.ama__podcast-player__links {
       line-height: 10px;
       text-decoration: none;
       color: #512d6d;
-      position: relative;
       width: 100%;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 8.5px 10px;
       span {
         @include type($myriad-pro, $font-weight-regular);
         font-size: 18px;
         line-height: 18px;
+        &:first-child {
+          font-size: 14px;
+          line-height: 10px;
+          @include type($myriad-pro, $font-weight-light);
+        }
+        &:last-child {
+          padding-left: 6px;
+        }
+        @include breakpoint($bp-large) {
+          &:first-child {
+            flex-basis: auto;
+            white-space: normal;
+            text-align: right;
+          }
+          &:last-child {
+            flex-basis: auto;
+          }
+        }
       }
       &::after {
         content: url('../images/arrow-right-purple.svg');
         border-bottom: none;
         padding-left: 8px;
         width: 14px;
-        height: 14px;
+        height: 10px;
+        align-self: center;
+        @include breakpoint($bp-large) {
+          display: block;
+          flex-basis: auto;
+        }
       }
       &:hover {
         color: $white;
@@ -118,7 +144,7 @@ ul.ama__podcast-player__links {
   //Custom styling for when an odd number of podcast links present
   &.odd_links {
     li {
-      @include breakpoint($bp-med max-width) {
+      @include breakpoint($bp-large max-width) {
         &:first-child {
           margin-right: 0;
           width: 100%;
