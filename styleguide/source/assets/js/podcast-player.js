@@ -30,7 +30,6 @@
         var count = $("ul.ama__podcast-player__links li").length;
         var linkContainer = $("ul.ama__podcast-player__links");
 
-        console.log('Amount of podcast links: ' + count);
         if (count == 3 || count == 1) {
           linkContainer.addClass('odd_links');
         }
