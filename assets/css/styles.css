@@ -3493,7 +3493,11 @@ button {
     .media {
       margin: 0 0 14px 0; } }
   .media.align-right.video, .media.align-center.video, .media.align-left.video, .media.align-legacy.video {
-    width: 100%; }
+    width: 100%;
+    z-index: 999;
+    position: relative; }
+    .media.align-right.video:hover, .media.align-center.video:hover, .media.align-left.video:hover, .media.align-legacy.video:hover {
+      cursor: pointer; }
     @media (min-width: 37.5em) {
       .media.align-right.video, .media.align-center.video, .media.align-left.video, .media.align-legacy.video {
         width: 350px; } }
@@ -17755,6 +17759,10 @@ body.search-results .ama__layout--two-column--left {
   .ama__series .ama__subcategory-page-article-stub__text {
     padding-left: 0;
     padding-right: 0; }
+    @media (min-width: 37.5em) {
+      .ama__series .trending-index,
+      .ama__series .ama__subcategory-page-article-stub__text {
+        padding-right: 19px; } }
   .ama__series .ama__layout--two-col-right--75-25__left {
     margin-right: 0; }
   .ama__series .ama__layout--two-col-right--75-25__top {
