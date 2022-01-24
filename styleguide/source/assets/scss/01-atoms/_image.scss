@@ -27,6 +27,11 @@
   &.align-legacy {
     &.video {
       width: 100%;
+      z-index: 999;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
       @include breakpoint($bp-small) {
         width: $inline-image-width;
       }
