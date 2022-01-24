@@ -18,7 +18,7 @@
       function playerPlacement() {
         var podcastImage = $('div.ama__podcast-player .ama__image');
         var width = $(document).width();
-        console.log(width);
+
         if (width < 600) {
           podcastImage.insertBefore('div.podcast-container');
         } else if (width > 600) {
