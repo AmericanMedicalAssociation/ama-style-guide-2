@@ -26,10 +26,6 @@
 
   .subscribe-series {
     display: none;
-    // Undo this when its time to implement this functionality
-    // @include breakpoint($bp-med) {
-    //   display: inline-block;
-    // }
     position: relative;
     top: -30px;
     @include type($myriad-pro, $font-weight-regular);
@@ -136,6 +132,9 @@
   .ama__subcategory-page-article-stub__text {
     padding-left: 0;
     padding-right: 0;
+    @include breakpoint($bp-small) {
+      padding-right: 19px;
+    }
   }
 
   .ama__layout--two-col-right--75-25__left {
