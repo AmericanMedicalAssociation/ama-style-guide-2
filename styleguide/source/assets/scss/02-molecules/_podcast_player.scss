@@ -7,6 +7,7 @@
   }
   h3 {
     margin-bottom: 6px;
+    padding: 0;
   }
   @include breakpoint($bp-small max-width) {
     h4 {
@@ -19,6 +20,7 @@
     color: #a1a1a4;
     margin-bottom: 30px;
     font-size: 12px;
+    padding: 0;
     @include breakpoint($bp-small) {
       margin-bottom: 0px;
     }
@@ -38,6 +40,11 @@
 
   &__episode_info {
     flex: 1;
+    padding: 0;
+    .ama__h4--purple,
+    .podcast-container {
+      padding: 0;
+    }
   }
 }
 
@@ -46,6 +53,7 @@ ul.ama__podcast-player__links {
   justify-content: space-between;
   margin-left: 0;
   margin-bottom: 32px;
+  padding: 0;
   @include breakpoint($bp-small) {
     display: flex;
     flex-wrap: wrap;
