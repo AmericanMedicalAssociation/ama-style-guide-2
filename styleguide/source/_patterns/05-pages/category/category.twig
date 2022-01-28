@@ -1,9 +1,18 @@
 {% extends '@templates/one-column.twig' %}
 
+{% block header %}
+  {% if alertBanner %}
+    {% set alert = alert %}
+    {% include '@molecules/alert.twig' %}
+  {% endif %}
+  {% include '@organisms/main-navigation/main-navigation.twig' %}
+{% endblock %}
+
 {% block contentTop %}
 {% endblock %}
 
 {% block pageContent %}
+
   <div class="ama__category container">
     {#Then I should see the "Masthead as Title Only"#}
     <div class="container ama__category__row ama__category__row--no-border">
