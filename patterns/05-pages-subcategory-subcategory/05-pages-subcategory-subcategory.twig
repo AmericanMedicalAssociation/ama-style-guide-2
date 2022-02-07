@@ -1,5 +1,13 @@
 {% extends '@templates/one-column.twig' %}
 
+{% block header %}
+  {% if alertBanner %}
+    {% set alert = alert %}
+    {% include '@molecules/alert.twig' %}
+  {% endif %}
+  {% include '@organisms/main-navigation/main-navigation.twig' %}
+{% endblock %}
+
 {% block contentTop %}
 {% endblock %}
 
