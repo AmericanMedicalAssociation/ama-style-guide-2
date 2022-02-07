@@ -1,25 +1,23 @@
 .ama__alert {
-  display: none;
+  display: flex;
   background-color: $homepagePurple;
   padding: $gutter / 2;
   color: $white;
   width: 100%;
   align-items: center;
   flex-direction: column;
+  background-image: url('../icons/svg/icon-homepage-alert.svg');
+  background-repeat: no-repeat;
+  background-position: 20px 50%;
+  position: relative;
 
   @include breakpoint($bp-small) {
-    display: flex;
-  }
-
-  @include breakpoint($bp-med) {
-    background-image: url('../icons/svg/icon-homepage-alert.svg');
-    background-repeat: no-repeat;
-    background-position: 20px 50%;
     flex-direction: row;
   }
 
   &__wrap {
     opacity: 0;
+    min-height: unset;
   }
 
   &__text {
@@ -27,20 +25,41 @@
     margin-bottom: 0;
     margin-right: 25px;
 
+    &.mobile {
+      padding-left: 40px;
+      a {
+        color: $white;
+      }
+    }
+
     @include breakpoint($bp-med) {
       margin-right: 0;
       margin-left: 50px;
       flex: 1;
+
+      &.mobile {
+        display: none;
+      }
+    }
+
+    @include breakpoint($bp-med max-width) {
+      &.desktop {
+        display: none
+      }
     }
   }
 
-  button {
+  .ama__button {
     text-transform: uppercase;
     font-weight: $font-weight-bold;
     margin: 0 auto;
 
     @include breakpoint($bp-med) {
       align-self: flex-end;
+    }
+
+    @include breakpoint($bp-med max-width) {
+      display: none;
     }
   }
 
@@ -60,6 +79,10 @@
 
     @include breakpoint($bp-med) {
       position: static;
+    }
+
+    @include breakpoint($bp-med max-width) {
+      top: 35%;
     }
   }
 }
