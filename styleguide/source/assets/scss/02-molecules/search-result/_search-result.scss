@@ -50,13 +50,6 @@
     margin-bottom: 14px;
   }
 
-  &__title {
-
-    .ama__search-result--best-bet & {
-      color: $homepagePurple;
-    }
-  }
-
   &:hover .ama__search-result__title {
     text-decoration: underline;
   }
@@ -112,5 +105,12 @@
         height: 25px;
       }
     }
+  }
+}
+
+.ama__search-results__best-bet {
+  border-top: 1px solid $gray-20;
+  .ama__search-result__link {
+    flex-direction: row;
   }
 }

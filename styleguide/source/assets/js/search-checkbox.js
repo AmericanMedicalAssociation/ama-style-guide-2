@@ -25,7 +25,7 @@
 
           $('.facets-widget-checkbox ul li [type=checkbox]').each( function() {
             $(this).prop("checked", false);
-            $('#block-exposedformacquia-searchpage').submit();
+            $('#block-exposedformacquia-search-solrpage-2').submit();
           });
         });
       }
