@@ -78,6 +78,9 @@
 body.search-results {
   .ama__layout--two-column--left__page-content {
     padding-top: 0;
+    @include breakpoint($bp-large) {
+      min-width: 880px;
+    }
     #block-ama-one-content {
       border-top: 1px solid $gray-20;
       @include breakpoint($bp-small max-width) {

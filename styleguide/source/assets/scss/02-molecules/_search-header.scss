@@ -142,17 +142,10 @@
 
       &__input,
       .ui-autocomplete-input {
-        @include font-size($h1-font-sizes);
+        font-size: 18px;
+        line-height: 27px;
         background: none !important; //only way to hide the Drupal throbber
-        border-bottom: 1px solid $hoverBlue;
-        color: $purple;
         font-style: normal;
-        font-weight: $font-weight-semibold;
-
-        &:focus {
-          border: none;
-          border-bottom: 1px solid $hoverBlue;
-        }
       }
 
       input[type="text"] {
