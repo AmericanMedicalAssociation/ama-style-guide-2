@@ -203,13 +203,13 @@
 
       //If empty or otherwise unpopulated search field (i.e spaces only)
       //prevent search from submitting and reload current page
-      var searchForm = $("form[id^='block-exposedformacquia-searchpage']");
+      var searchForm = $("form[id^='block-exposedformacquia-search-solrpage']");
 
       $(searchForm, this).submit(function(e) {
           var searchInput = $(this).find("input[name*='search']");
 
           //Trim and check if search input has any value
-          if ($.trim(searchInput.val()).length < 2) {
+          if ($.trim(searchInput.val()).length < 1) {
             e.preventDefault();
             console.log('No search term entered');
             location.reload();
