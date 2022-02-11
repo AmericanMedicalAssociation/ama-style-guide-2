@@ -209,7 +209,7 @@
           var searchInput = $(this).find("input[name*='search']");
 
           //Trim and check if search input has any value
-          if ($.trim(searchInput.val()).length < 2) {
+          if ($.trim(searchInput.val()).length < 1) {
             e.preventDefault();
             console.log('No search term entered');
             location.reload();
