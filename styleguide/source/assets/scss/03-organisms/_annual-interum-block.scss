@@ -91,6 +91,13 @@
       &.mobile {
         display: block;
       }
+      .col.col-first {
+        flex: 1;
+      }
+      .col.col-second {
+        padding-left: 34px;
+        flex: 1;
+      }
       h3 a {
         color: $purple;
         text-decoration: none;
@@ -168,6 +175,13 @@
             }
           }
         }
+      }
+    }
+
+    .active_links-mg {
+      padding-left: 0;
+      @include breakpoint($bp-large) {
+        padding-left: 19px;
       }
     }
 
