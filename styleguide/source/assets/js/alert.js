@@ -18,7 +18,7 @@
          // If the 'hide cookie is not set we show the alert
          if (alertCookie !== '1') {
            $('.ama__alert__wrap').css({
-            "transition": "opacity 2s",
+             "transition": "opacity .15s",
              "opacity": "1"
             });
          } else {
