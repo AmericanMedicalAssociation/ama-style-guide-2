@@ -7977,6 +7977,8 @@ section.ama__forum_comments {
         height: 8px;
         background: #46166B;
         margin: 28px 0 14px; } }
+  .ama_page_grouping_news ul.link-list {
+    margin-top: 4px; }
   .ama_page_grouping_news .links {
     background-color: #cceefb;
     padding: 14px;
@@ -7986,6 +7988,9 @@ section.ama__forum_comments {
     @media (min-width: 37.5em) {
       .ama_page_grouping_news .links {
         padding: 14px 28px 14px 14px; } }
+    @media (min-width: 56.25em) {
+      .ama_page_grouping_news .links {
+        padding: 10px 28px 10px 14px; } }
     .ama_page_grouping_news .links .ama_page_grouping_title {
       font-size: 22px;
       font-weight: 600;
@@ -8042,8 +8047,11 @@ section.ama__forum_comments {
     background-color: #80d4f5; }
     @media (min-width: 37.5em) {
       .ama_page_grouping_news .ama_page_grouping_image {
-        width: 150px;
-        display: initial; } }
+        display: initial;
+        width: 200px; } }
+    @media (min-width: 56.25em) {
+      .ama_page_grouping_news .ama_page_grouping_image {
+        width: 150px; } }
 
 .ama__pagination {
   display: -webkit-box;
@@ -16383,7 +16391,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
