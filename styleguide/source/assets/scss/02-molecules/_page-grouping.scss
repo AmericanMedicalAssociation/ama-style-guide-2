@@ -115,12 +115,19 @@
     }
   }
 
+  ul.link-list {
+    margin-top: 4px;
+  }
+
   .links {
     background-color: $pg-xtra-lt-blue;
     padding: $gutter / 2;
     flex: 100%;
     @include breakpoint($bp-small) {
       padding: $gutter / 2 $gutter $gutter / 2  $gutter / 2;
+    }
+    @include breakpoint($bp-med) {
+      padding: 10px 28px 10px 14px;
     }
 
     .ama_page_grouping_title {
@@ -206,8 +213,11 @@
     line-height: 0;
     background-color: $pg-lt-blue;
     @include breakpoint($bp-small) {
-      width: 150px;
       display: initial;
+      width: 200px;
+    }
+    @include breakpoint($bp-med) {
+      width: 150px;
     }
   }
 }
