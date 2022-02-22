@@ -107,6 +107,15 @@
       }
     }
   }
+  [data-bundle="event_detail"] {
+    .ama__search-result__image {
+      img {
+        @include breakpoint($bp-small) {
+          margin: 0;
+        }
+      }
+    }
+  }
 }
 
 .ama__search-results__best-bet {
