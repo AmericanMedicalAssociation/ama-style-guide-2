@@ -10,4 +10,13 @@
       @include gutter($margin-top-full...);
     }
   }
+  [data-bundle="event_detail"] {
+    .ama__search-result__image {
+      img {
+        @include breakpoint($bp-small) {
+          margin: 0;
+        }
+      }
+    }
+  }
 }
