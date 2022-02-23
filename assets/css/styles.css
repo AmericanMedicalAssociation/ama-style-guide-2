@@ -5146,7 +5146,7 @@ object {
       padding-left: 40px; }
       .ama__alert__text.mobile a {
         color: #ffffff; }
-    @media (min-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__alert__text {
         margin-right: 0;
         margin-left: 50px;
@@ -5155,20 +5155,21 @@ object {
         flex: 1; }
         .ama__alert__text.mobile {
           display: none; } }
-    @media (max-width: 56.25em) {
+    @media (max-width: 37.5em) {
       .ama__alert__text.desktop {
         display: none; } }
   .ama__alert .ama__button {
     text-transform: uppercase;
     font-weight: 600;
-    margin: 0 auto; }
-    @media (min-width: 56.25em) {
+    margin: 0 auto;
+    display: none; }
+    @media (min-width: 37.5em) {
       .ama__alert .ama__button {
         -ms-flex-item-align: end;
         align-self: flex-end; } }
-    @media (max-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__alert .ama__button {
-        display: none; } }
+        display: block; } }
   .ama__alert__close {
     height: 22px;
     width: 22px;
@@ -5180,10 +5181,10 @@ object {
     .ama__alert__close svg {
       fill: #ffffff;
       vertical-align: inherit; }
-    @media (min-width: 56.25em) {
+    @media (min-width: 37.5em) {
       .ama__alert__close {
         position: static; } }
-    @media (max-width: 56.25em) {
+    @media (max-width: 37.5em) {
       .ama__alert__close {
         top: 35%; } }
 
