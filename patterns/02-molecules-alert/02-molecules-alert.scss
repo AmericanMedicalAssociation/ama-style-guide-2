@@ -32,7 +32,7 @@
       }
     }
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-small) {
       margin-right: 0;
       margin-left: 50px;
       flex: 1;
@@ -42,7 +42,7 @@
       }
     }
 
-    @include breakpoint($bp-med max-width) {
+    @include breakpoint($bp-small max-width) {
       &.desktop {
         display: none
       }
@@ -53,13 +53,14 @@
     text-transform: uppercase;
     font-weight: $font-weight-bold;
     margin: 0 auto;
+    display: none;
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-small) {
       align-self: flex-end;
     }
 
-    @include breakpoint($bp-med max-width) {
-      display: none;
+    @include breakpoint($bp-small) {
+      display: block;
     }
   }
 
@@ -77,11 +78,11 @@
       vertical-align: inherit;
     }
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-small) {
       position: static;
     }
 
-    @include breakpoint($bp-med max-width) {
+    @include breakpoint($bp-small max-width) {
       top: 35%;
     }
   }
