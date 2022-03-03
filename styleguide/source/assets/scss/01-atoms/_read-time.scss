@@ -1,0 +1,21 @@
+.read_time {
+  h3 {
+    color: $gray-50;
+    font-weight: $font-weight-regular;
+  }
+}
+
+//For date and read time display
+.date + .read_time {
+  display: inline-block;
+  position: relative;
+  h3 {
+    &:before {
+      content: " . ";
+      font-size: 40px;
+      position: relative;
+      top: -5px;
+      left: 2px;
+    }
+  }
+}
