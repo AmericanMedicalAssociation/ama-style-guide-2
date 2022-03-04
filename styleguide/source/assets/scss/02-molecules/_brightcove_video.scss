@@ -1,0 +1,33 @@
+// Styling for right aligned brightcove videos
+@include breakpoint($bp-small) {
+  div[data-entity-type=media] {
+    &.align-right {
+      .ama__brightcove-video {
+        max-width: 350px !important;
+        .bc-player-default_default.vjs-fluid {
+          padding-top: 0;
+        }
+        .video-js.vjs-fluid {
+          width: unset;
+          height: unset;
+        }
+        .video-js .vjs-tech {
+          position: relative;
+          width: unset;
+          height: auto;
+        }
+        .vjs-poster {
+          background-position: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($bp-small max-width) {
+  div[eid*=brightcove_video] {
+    &.align-right {
+      float: unset;
+    }
+  }
+}
