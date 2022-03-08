@@ -4350,6 +4350,20 @@ article ol {
   top: -30px;
   left: -15px; }
 
+.read_time h3 {
+  color: #767676;
+  font-weight: 400; }
+
+.date + .read_time {
+  display: inline-block;
+  position: relative; }
+  .date + .read_time h3:before {
+    content: " . ";
+    font-size: 40px;
+    position: relative;
+    top: -5px;
+    left: 2px; }
+
 
 .ama__rule {
   border-top: 1px solid #767676; }
@@ -5617,6 +5631,25 @@ blockquote {
     bottom: 0;
     margin-right: 6px;
     line-height: .4em; }
+
+@media (min-width: 37.5em) {
+  div[data-entity-type=media].align-right .ama__brightcove-video {
+    max-width: 350px !important; }
+    div[data-entity-type=media].align-right .ama__brightcove-video .bc-player-default_default.vjs-fluid {
+      padding-top: 0; }
+    div[data-entity-type=media].align-right .ama__brightcove-video .video-js.vjs-fluid {
+      width: unset;
+      height: unset; }
+    div[data-entity-type=media].align-right .ama__brightcove-video .video-js .vjs-tech {
+      position: relative;
+      width: unset;
+      height: auto; }
+    div[data-entity-type=media].align-right .ama__brightcove-video .vjs-poster {
+      background-position: 100%; } }
+
+@media (max-width: 37.5em) {
+  div[eid*=brightcove_video].align-right {
+    float: unset; } }
 
 .ama__category-hero a {
   text-decoration: none; }
@@ -8242,7 +8275,8 @@ section.ama__forum_comments {
       width: 100%; }
 
 .ama__podcast-player {
-  max-width: 966px; }
+  max-width: 966px;
+  margin-top: 8px; }
   @media (min-width: 37.5em) {
     .ama__podcast-player {
       display: -webkit-box;
@@ -8252,7 +8286,11 @@ section.ama__forum_comments {
       -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
       flex-direction: row-reverse;
+      margin-top: 24px;
       margin-bottom: 30px; } }
+  @media (min-width: 56.25em) {
+    .ama__podcast-player {
+      margin-top: 27px; } }
   .ama__podcast-player h3 {
     margin-bottom: 6px;
     padding: 0; }
@@ -8295,7 +8333,7 @@ ul.ama__podcast-player__links {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-left: 0;
-  margin-bottom: 32px;
+  margin-bottom: 21px;
   padding: 0; }
   @media (min-width: 37.5em) {
     ul.ama__podcast-player__links {
@@ -8304,14 +8342,14 @@ ul.ama__podcast-player__links {
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-      margin-bottom: 20px; } }
+      margin-bottom: 26px; } }
   @media (min-width: 75em) {
     ul.ama__podcast-player__links {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row;
-      margin-bottom: 32px; } }
+      margin-bottom: 29px; } }
   ul.ama__podcast-player__links li {
     list-style: none;
     border: 1px solid #512d6d;
@@ -8408,9 +8446,20 @@ ul.ama__podcast-player__links {
       margin-right: 0;
       width: 100%; }
     ul.ama__podcast-player__links.odd_links li:nth-child(even) {
-      margin-right: 4.35%; }
+      margin-right: 4.35%;
+      margin-bottom: 0; }
     ul.ama__podcast-player__links.odd_links li:last-child {
-      margin-right: 0; } }
+      margin-right: 0;
+      margin-bottom: 0; } }
+  @media (max-width: 37.5em) {
+    ul.ama__podcast-player__links.odd_links li:nth-child(even) {
+      margin-bottom: 28px; } }
+  @media (max-width: 75em) {
+    ul.ama__podcast-player__links.full_links li:nth-child(3), ul.ama__podcast-player__links.full_links li:nth-child(4) {
+      margin-bottom: 0; } }
+  @media (max-width: 37.5em) {
+    ul.ama__podcast-player__links.full_links li:nth-child(3) {
+      margin-bottom: 28px; } }
 
 .ama__podcast-player img.ama__placeholder-image.ama__image {
   background: purple;
@@ -14176,7 +14225,8 @@ section.ama__page--event__speakers {
         .ama__75-25__masthead__content .share-row .share-region {
           height: auto; } }
     .ama__75-25__masthead__content .share-row .date-region .date {
-      color: #767676; }
+      color: #767676;
+      display: inline-block; }
       @media (min-width: 25em) {
         .ama__75-25__masthead__content .share-row .date-region .date {
           padding-top: 0; } }
