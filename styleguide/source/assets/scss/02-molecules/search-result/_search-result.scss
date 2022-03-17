@@ -17,13 +17,15 @@
     }
   }
 
-  &__image img {
-    max-width: 180px;
-    max-height: 120px;
-  }
-
   &__text {
     flex-grow: 1;
+  }
+
+  @include breakpoint($bp-small) {
+    &__image img {
+      max-width: 180px;
+      max-height: 120px;
+    }
   }
 
   @include breakpoint($bp-med) {
