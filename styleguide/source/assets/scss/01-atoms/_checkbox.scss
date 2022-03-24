@@ -14,6 +14,12 @@
     text-align: left;
     padding: 0;
 
+    &.ui-checkboxradio-checked {
+      .facet-item__count {
+        display: none;
+      }
+    }
+
     &:focus,
     &:active,
     &:hover {
@@ -58,5 +64,8 @@
     .facet-item__count {
       margin-left: $gutter/4;
     }
+  }
+  &.hidden-facet {
+    display: none;
   }
 }
