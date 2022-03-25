@@ -17,13 +17,15 @@
     }
   }
 
-  &__image img {
-    max-width: 280px;
-    max-height: 186px;
-  }
-
   &__text {
     flex-grow: 1;
+  }
+
+  @include breakpoint($bp-small) {
+    &__image img {
+      max-width: 180px;
+      max-height: 120px;
+    }
   }
 
   @include breakpoint($bp-med) {
@@ -46,6 +48,7 @@
   .stub-date {
     display: block;
     font-size: 14px;
+    text-transform: uppercase;
     line-height: normal;
     color: $gray-50;
     margin-bottom: 14px;
