@@ -3,7 +3,7 @@
   margin-top: 8px;
   @include breakpoint($bp-small) {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     margin-top: 24px;
     margin-bottom: 30px;
   }
@@ -44,11 +44,28 @@
   }
 
   &__episode_info {
+    display: flex;
     flex: 1;
+    flex-direction: column;
     padding: 0;
-    .ama__h4--purple,
+    h4.ama__h4--purple,
     .podcast-container {
       padding: 0;
+      overflow: auto;
+    }
+    h4.ama__h4--purple {
+      order: -1;
+    }
+    @include breakpoint($bp-small) {
+      display: block;
+      flex-direction: row;
+      h4.ama__h4--purple,
+      .podcast-container {
+        order: 0;
+      }
+      img.ama__image {
+        float: left;
+      }
     }
   }
 }
