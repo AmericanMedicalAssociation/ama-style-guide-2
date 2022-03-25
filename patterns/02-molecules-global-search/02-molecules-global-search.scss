@@ -39,7 +39,7 @@
     padding-left: 0;
     top: 0;
     flex-grow: 1;
-    height: 32px;
+    height: 34px;
     border: 0;
     width: 70px;
   }
@@ -68,8 +68,8 @@
     @include breakpoint($bp-small) {
       padding: 0 $gutter/4;
       display: block;
-      max-height: 32px;
-      min-height: 32px;
+      max-height: 34px;
+      min-height: 34px;
     }
 
     &:focus,
@@ -104,13 +104,17 @@
       background-color: $purple;
       background-size: 22px 22px;
       background-position: 5px 4px;
-      min-height: 32px;
-      max-height: 32px;
-      max-width: 39px;
-      height: 30px;
+      min-height: 34px;
+      max-height: 34px;
+      min-width: 34px;
+      max-width: 34px;
+      height: 34px;
       width: 39px;
       text-indent: -999px;
-      min-width: 30px;
+    }
+
+    &:hover {
+      background-color: $hoverPurple;
     }
   }
 }
