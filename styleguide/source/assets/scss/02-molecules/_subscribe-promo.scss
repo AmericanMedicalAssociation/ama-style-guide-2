@@ -21,7 +21,6 @@
       margin: 0 auto;
       padding: $gutter / 2.2;
       border: 0;
-      height: 50px;
 
       &:hover {
         background: $hoverPurple;
@@ -199,6 +198,14 @@
 
       .ama__button {
         margin: 0 auto;
+      }
+    }
+  }
+  .ama__subscribe-promo__email-subscribe-container {
+    .ama__button {
+      height: 50.7px;
+      @include breakpoint($bp-large min-width) {
+        height: 50px;
       }
     }
   }
