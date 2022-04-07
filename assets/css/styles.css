@@ -8861,8 +8861,10 @@ a.ama__promo--border:hover {
   -ms-flex-direction: column;
   flex-direction: column; }
 
-.ama_events-tabs .ama_promo--inline.listicle-margin {
+.ama__events-tabs .ama__promo--inline {
   margin-right: 0; }
+  .ama__events-tabs .ama__promo--inline.listicle-margin {
+    margin-right: 0; }
 
 .ama__radio-buttons {
   padding-top: 10.5px;
@@ -10063,8 +10065,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     display: block;
     margin: 0 auto;
     padding: 12.72727px;
-    border: 0;
-    height: 50px; }
+    border: 0; }
     .ama__subscribe-promo__form .ama__button:hover {
       background: #9073A6; }
   .ama__subscribe-promo__form .us-verify {
@@ -10231,6 +10232,11 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
           margin-bottom: auto; } }
     .ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__button {
       margin: 0 auto; }
+  .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .ama__button {
+    height: 50.7px; }
+    @media (min-width: 75em) {
+      .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .ama__button {
+        height: 50px; } }
 
 .ama__layout--two-col-right--75-25__right form.ama__subscribe-promo__form_page {
   position: relative;
@@ -16527,7 +16533,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
