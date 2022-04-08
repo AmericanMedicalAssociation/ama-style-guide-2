@@ -112,6 +112,20 @@
       display: none;
     }
   }
+  .ama__layout--one-column__page-content {
+    .article_stub-list {
+      margin: 28px 0 0;
+      @include breakpoint($bp-small) {
+        margin-right: 14px;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 3fr 1fr;
+      }
+      .ama__four-up-teaser {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .description {
