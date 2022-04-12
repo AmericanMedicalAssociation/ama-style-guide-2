@@ -1,0 +1,131 @@
+.ama__subcategory-index {
+
+  @include breakpoint($bp-small max-width) {
+    .ama__layout--two-col-right--75-25__left {
+      margin: 0;
+    }
+    .ama__subcategory-page-article-stub {
+      margin: 0 15px;
+    }
+  }
+
+  &.container {
+    @include breakpoint($bp-small max-width) {
+      padding: 0;
+    }
+  }
+
+  .ama__display-switch-menu,
+  form.views-exposed-form .form-item-subcategory-terms {
+    margin-top: 0;
+  }
+
+  form.views-exposed-form .js-form-type-textfield {
+    margin-bottom: 0;
+  }
+
+  .ama__category-page-article-stub {
+    padding: 0 15px;
+    @include breakpoint($bp-small) {
+      padding: 0;
+    }
+
+  }
+  .ama__subcategory-page-article-stub {
+
+    &:nth-child(n+7) {
+      @include breakpoint($bp-small max-width) {
+        display: none;
+      }
+    }
+
+    @include breakpoint($bp-small max-width) {
+      padding: $gutter / 2;
+    }
+
+    padding: $gutter 0;
+    border-bottom: solid 2px $gray-20;
+  }
+
+  .ama__subcategory-index__stubs__load-more {
+    text-align: center;
+    padding: $gutter ($gutter / 2);
+
+    button {
+      width: 100%;
+      font-weight: $font-weight-regular;
+
+      @include breakpoint($bp-small min-width) {
+        width: 33%;
+      }
+    }
+  }
+
+  .views-field-field-featured-topics {
+    margin: 21px 15px 28px;
+    display: block;
+    list-style: none;
+    clear: both;
+
+    @include breakpoint($bp-small) {
+      margin: 21px 0 28px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    .explore_topic_label {
+      @include type($myriad-pro, $font-weight-semibold);
+      display: block;
+      line-height: 27px;
+      float: left;
+      padding-right: 4px;
+      @include breakpoint($bp-small) {
+        float: none;
+      }
+    }
+    .explore_topic_content {
+      list-style: none;
+      align-items: flex-start;
+
+      @include breakpoint($bp-small) {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-direction: row;
+      }
+
+      a {
+        @include type($myriad-pro, $font-weight-light);
+        text-decoration: none;
+        line-height: 27px;
+        font-size: 20px;
+        position: relative;
+        @include breakpoint($bp-med) {
+          font-size: 18px;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+        &:after {
+          content: '|';
+          padding: 0 7px;
+        }
+        &:last-child:after {
+          content: '';
+        }
+      }
+    }
+  }
+  .views-infinite-scroll-content-wrapper {
+    div:first-child {
+      .ama__subcategory-page-article-stub--topics {
+        border-top: solid 2px $gray-20;
+        padding-top: 19px;
+      }
+    }
+  }
+}

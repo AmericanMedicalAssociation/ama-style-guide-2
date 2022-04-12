@@ -1,0 +1,37 @@
+.ama__content-grouping-header {
+  display: inline-block;
+  background: $purple;
+  color: $white;
+  font-weight: $font-weight-regular;
+  padding: ($gutter / 4) $gutter ($gutter / 4) ($gutter / 2);
+}
+
+//Subcat specific header styling, also inline article stub lists on news articles.
+.js-layout-builder-block.ama__category-page-article-stub .ama_article-stub-header,
+.ama__subcategory-index .ama_article-stub-header,
+.ama__article-stub-list--inline .ama_article-stub-header  {
+  display: block;
+  background: none;
+  color: black;
+  padding-bottom: 0;
+  font-weight: $font-weight-semibold;
+  font-size: 26px;
+  line-height: 31px;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+  @include breakpoint($bp-small min-width) {
+    padding: 0;
+  }
+  @include breakpoint($bp-med min-width) {
+    margin-bottom: 28px;
+  }
+}
+
+//Remove mobile top padding from first article stub item
+.ama__category__article-stub-three-up .grid-container {
+  .ama__article-stub:first-of-type {
+    @include breakpoint($bp-med max-width) {
+      padding-top: 0;
+    }
+  }
+}

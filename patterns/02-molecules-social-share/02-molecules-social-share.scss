@@ -1,0 +1,90 @@
+/* Define the Sassy Map called $icons */
+$social-icons: (
+    external,
+    external-site,
+    facebook,
+    googleplus,
+    linkedin,
+    podcast,
+    previous,
+    twitter,
+    youtube,
+    email,
+    facebook-gray,
+    twitter-gray,
+    youtube-gray,
+    linkedin-gray,
+    googleplus-gray,
+    facebook-white,
+    googleplus-white,
+    twitter-white,
+    linkedin-white,
+    youtube-white,
+    instagram-white
+);
+
+/* For each key in the map, created an own class */
+/* If you need to add a new icon add it to arraw above */
+
+@each $name in $social-icons {
+  .social--#{$name} {
+    display: inline-block;
+    background-image: url("../icons/svg/icon-" + $name + "-brand.svg");
+    background-repeat: no-repeat;
+    background-size: 31px;
+    height: 31px;
+    width: 31px;
+
+    &:hover {
+      background: url("../icons/svg/icon-" + $name + "-brand-hover.svg");
+      background-size: 31px;
+    }
+  }
+}
+
+footer {
+  @each $name in $social-icons {
+    .social--#{$name} {
+      display: inline-block;
+      background-image: url("../icons/svg/icon-" + $name + "-purple.svg");
+      background-repeat: no-repeat;
+      background-size: 31px;
+      height: 31px;
+      width: 31px;
+
+      &:hover {
+        background: url("../icons/svg/icon-" + $name + "-hover.svg");
+        background-size: 31px;
+      }
+    }
+  }
+}
+
+.ama__social-share {
+  list-style: none;
+  display: flex;
+  margin: 0 0 0 auto;
+  padding: 0;
+  min-height: 20px;
+
+  @include breakpoint(max-width $bp-small) {
+    margin-bottom: $gutter / 2;
+  }
+
+  li {
+    list-style: none;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @include breakpoint(max-width $bp-small){
+      flex-grow: 1;
+    }
+  }
+
+  li ~ li {
+    margin-left: $gutter/2;
+    list-style: none;
+  }
+}

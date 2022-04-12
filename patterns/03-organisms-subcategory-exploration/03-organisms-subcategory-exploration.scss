@@ -1,0 +1,134 @@
+.ama__subcategory-exploration {
+  border-bottom: solid 1px $gray-50;
+  overflow: hidden;
+  padding: 0 0 $gutter/4 0;
+
+  @include breakpoint($bp-small) {
+    padding: $gutter/2 0;
+  }
+
+  &__list {
+    overflow: hidden;
+    height: 60px;
+
+    @include breakpoint($bp-small) {
+      height: 95px;
+    }
+
+    @include breakpoint($bp-med) {
+      height: auto;
+    }
+
+    &--expanded {
+      height: auto;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 0;
+
+      &:last-child a:after {
+          content: "";
+          padding: 0;
+        }
+      }
+
+    a,
+    h2 {
+      text-decoration: none;
+      padding: 0;
+      font-weight: $font-weight-semibold;
+      font-size: 18px;
+      display: inline;
+
+      @include breakpoint($bp-small) {
+        font-weight: $font-weight-semibold;
+        font-size: 26px;
+      }
+
+      &:hover h2,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+
+    a:after {
+      content: "|";
+      padding: 0 $gutter / 5;
+    }
+
+
+    h2 {
+      line-height: 14px;
+
+      @include breakpoint($bp-small) {
+        line-height: 32px;
+      }
+    }
+  }
+
+  &__show-more {
+    @include font-size($h3-font-sizes);
+    width: 100%;
+    display: none;
+
+    @include breakpoint($bp-small max-width) {
+      font-size: 18px;
+    }
+
+    @include breakpoint($bp-small) {
+      margin-top: $gutter / 2;
+      line-height: 42px;
+    }
+
+    &--close {
+      display: none;
+
+      i {
+        background-size: 14px 8px;
+        background-position: 0 6px;
+        min-height: 14px;
+        min-width: 14px;
+        max-height: 14px;
+        max-width: 14px;
+      }
+    }
+
+    &--open {
+      display: inline-block;
+
+      i {
+        background-size: 14px 8px;
+        background-position: 0 0;
+        min-height: 14px;
+        min-width: 14px;
+        max-height: 14px;
+        max-width: 14px;
+        @include breakpoint($bp-small max-width) {
+          background-position: 0 5px;
+        }
+      }
+    }
+
+    &--expanded {
+      .ama__subcategory-exploration__show-more--open {
+        display: none;
+      }
+
+      .ama__subcategory-exploration__show-more--close {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+
