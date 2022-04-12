@@ -1,0 +1,270 @@
+.ama_category_navigation_menu {
+  @include gutter($padding-top-half...);
+  @include gutter($padding-bottom-half...);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
+  color: $white;
+  min-width: 200px;
+  position: relative;
+  background-color: $purple;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__article-container {
+    .ama__article-stub:nth-child(2n) {
+      display: none;
+    }
+  }
+
+  @include breakpoint($bp-small) {
+    width: 250px;
+
+    &__article-container {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+
+  @include breakpoint($bp-med) {
+    &__article-container {
+      .ama__article-stub:nth-child(2n) {
+        display: block;
+      }
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    flex-direction: row;
+
+    &__article-container {
+      flex-direction: row;
+      max-width: 654px;
+    }
+  }
+
+  &__group {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    display: block;
+    list-style: none;
+    border-bottom: 1px solid $gray-50;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__section {
+    list-style: none;
+    display: block;
+    position: relative;
+
+    a {
+      position: relative;
+      display: block;
+      padding: $gutter/6 $gutter;
+      text-decoration: none;
+      font-weight: $font-weight-semibold;
+
+      &:hover,
+      &:active {
+        background-color: $hoverPurple;
+        text-decoration: none;
+      }
+
+      .sub-arrow {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid $white;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        transition: all 0.21s ease-out;
+      }
+
+      &.highlighted .sub-arrow {
+        transform: rotate(90deg);
+
+        @include breakpoint($bp-small) {
+          transform: none;
+        }
+      }
+
+      @include breakpoint($bp-small) {
+        &.has-submenu.highlighted {
+          &:after {
+            content: "";
+            position: absolute;
+            right: -2px;
+            top: 11px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right:10px solid $white;
+            z-index: 99;
+          }
+        }
+      }
+    }
+
+    .scroll-up,
+    .scroll-down {
+      position: absolute;
+    }
+
+
+    &__heading {
+      @extend %ama__type--14px;
+      padding: $gutter/4 $gutter;
+    }
+
+    &__divider {
+      @extend %ama__type--14px;
+      @include gutter($margin-top-half...);
+      padding: $gutter/2 $gutter;
+      border-top: 1px solid $gray-50;
+    }
+  }
+
+  &__flyout {
+    @include gutter($padding-bottom-full...);
+    display: none;
+    color: $black;
+    list-style: none;
+
+    @include breakpoint($bp-small) {
+      position: absolute;
+      z-index: 1;
+      margin-left: 250px !important;
+      width: 550px !important;
+      max-width: none !important;
+    }
+
+    @include breakpoint($bp-large) {
+      width: 980px !important;
+      max-width: none !important;
+    }
+  }
+
+  &__submenu {
+    background-color: $white;
+    width: 100%;
+
+    @include breakpoint($bp-small) {
+      border: 1px solid $purple;
+      box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
+      width: 250px;
+      float: left;
+      overflow-y: auto;
+    }
+
+    &__header {
+
+      @include breakpoint($bp-small) {
+        @include gutter($margin-bottom-half...);
+        @include gutter($padding-left-half...);
+        @include gutter($padding-right-half...);
+      }
+      color: $homepagePurple;
+      text-transform: uppercase;
+    }
+
+    ol {
+      padding: 10px 28px;
+      list-style: none;
+
+      @include breakpoint($bp-small) {
+        @include gutter-all($padding-all-half...);
+      }
+
+      li {
+        padding: 0;
+        margin: 0;
+
+        a {
+          @include gutter($padding-left-half...);
+          @include gutter($padding-right-half...);
+          @include type($myriad-pro, $font-weight-semibold);
+          padding: $gutter/4 0;
+          margin-bottom: 0;
+          text-decoration: none;
+
+          &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__articles {
+    @include gutter-all($padding-all-full...);
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.2);
+    background-color: $gray-7;
+    float: left;
+    display: none;
+    overflow-y: auto;
+
+    .ama__article-stub {
+      padding-bottom: 0;
+      width: 100%;
+
+      a,
+      .ama__article-stub__title,
+      .ama__article-stub__copy {
+        padding: 0;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        p {
+          font-weight: $font-weight-regular;
+        }
+      }
+
+      @include breakpoint($bp-small) {
+        overflow: auto;
+
+        &:nth-child(2):nth-last-child(1) {
+          @include gutter($margin-top-full...);
+        }
+      }
+
+      @include breakpoint($bp-large) {
+        @include gutter($margin-left-full...);
+
+        &:nth-child(1) {
+          margin-right: 12px;
+          width: 50%;
+        }
+
+        &:nth-child(2):nth-last-child(1) {
+          margin-top: 0;
+          margin-left: 12px;
+          width: 50%;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+    }
+
+    @include breakpoint($bp-large) {
+      flex-direction: row;
+      width: 690px;
+    }
+  }
+}

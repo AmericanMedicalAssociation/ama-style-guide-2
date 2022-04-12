@@ -1,0 +1,69 @@
+.ama__tags,
+article[class*='__page-content'] .ama__tags {
+  @include gutter($margin-top-full...);
+  margin-bottom: $gutter / 2;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  list-style: none;
+  clear: both;
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
+
+  &-text {
+
+    font-weight: bold;
+    margin-right: 7px;
+    @include gutter($padding-bottom-quarter...);
+
+    @include breakpoint($bp-small) {
+      padding: initial;
+    }
+  }
+
+  &-list {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column;
+    padding-top: initial;
+    list-style: none;
+    align-items: flex-start;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+
+    li {
+      margin-left: 0;
+      list-style: none;
+      padding-bottom: 14px;
+      padding-right: 14px;
+
+
+    }
+  }
+
+  .ama__tag {
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    background: $gray-7;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    color: $black !important;
+    white-space: nowrap;
+    height: 34px;
+    padding: 5px 15px 4px 14px;
+
+    &:hover{
+      background-color: $white;
+      border: 1px solid $gray-30;
+      text-decoration: none;
+    }
+  }
+}

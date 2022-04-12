@@ -1,0 +1,184 @@
+.ama__search-header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  @include gutter($padding-left-full...);
+  @include gutter($padding-right-full...);
+
+  @include breakpoint($bp-small) {
+    flex-wrap: initial;
+    flex-direction: row;
+  }
+
+  @include breakpoint($bp-med) {
+    padding: 0;
+  }
+
+  &__results-num {
+    white-space: nowrap;
+    text-align: center;
+    order: 2;
+    flex: 1;
+
+    @include breakpoint($bp-small) {
+      order: initial;
+      flex: initial;
+    }
+  }
+
+  .ama__search__field {
+    width:100%;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+    }
+  }
+
+  &__options,
+  .form-item.js-form-item-sort-by {
+    margin: 0;
+    order: 4;
+
+    .ama__form-group {
+      margin: 0;
+
+      .ui-button {
+        line-height: unset;
+        min-width: 225px;
+
+        @include breakpoint($bp-small) {
+          display: block;
+          vertical-align: initial;
+        }
+      }
+    }
+
+    .ui-selectmenu-button {
+      padding: 9px 12px;
+      margin: 0;
+
+      .ui-selectmenu-text {
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-full...);
+      order: 4;
+    }
+
+    label {
+      @extend .is-vishidden;
+    }
+  }
+
+  .form-actions {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+
+    @include breakpoint($bp-small) {
+      position: relative;
+      top: 0;
+      right: 0;
+      order: 2;
+    }
+  }
+
+  &__results {
+    @include gutter($margin-top-half...);
+    @include gutter($margin-bottom-half...);
+    @include gutter($padding-left-full...);
+    @include gutter($padding-right-full...);
+    color: $gray-50;
+    display: block;
+
+    @include breakpoint($bp-med) {
+      padding: 0;
+    }
+  }
+
+  &__clear {
+    @include gutter($margin-left-full...);
+    @extend %ama__link--no-underline;
+    display: inline-block;
+    font-size: .8em;
+
+    &:link {
+      color: $purple;
+    }
+  }
+
+  &--results {
+    @include gutter($padding-bottom-half...);
+    margin-bottom: 21px;
+    padding-top: 33px;
+
+    .ama__search-header__results-num {
+      text-align: left;
+      color: $gray-50;
+
+      span,
+      a {
+        display: none;
+      }
+
+      .source-summary-count {
+        display: block;
+      }
+    }
+
+    .ama__search__field {
+      position: relative;
+      margin-left: 0;
+      width: 100%;
+      flex-direction: column;
+      max-width: 1080px;
+
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+      }
+
+      &__input,
+      .ui-autocomplete-input {
+        font-size: 18px;
+        line-height: 27px;
+        background: none !important; //only way to hide the Drupal throbber
+        font-style: normal;
+      }
+
+      input[type="text"] {
+        border: none;
+        border-bottom: 2px solid $gray-40;
+        padding: 7px 2px;
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      .ama__search-header__option-wrap {
+        display: flex;
+        flex-grow: 2;
+        order: 1;
+        flex-direction: row;
+        align-items: baseline;
+        position: relative;
+      }
+    }
+
+    .ama__search-header__options {
+      @include gutter($margin-top-full...);
+      width: 100%;
+    }
+
+    @include breakpoint($bp-small) {
+      overflow: hidden;
+
+      .ama__search-header__options {
+        max-width: 180px;
+        margin-top: 0;
+        float: right;
+      }
+    }
+  }
+}

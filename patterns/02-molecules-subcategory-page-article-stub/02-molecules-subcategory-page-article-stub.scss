@@ -1,0 +1,106 @@
+.ama__subcategory-page-article-stub {
+  display: flex;
+  text-decoration: none;
+  @include breakpoint($bp-small max-width) {
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    display: block;
+
+    @include breakpoint($bp-small max-width) {
+      order: 1;
+      .ama__bio-image-with-body__image {
+        max-width: 100%;
+        max-height: unset;
+      }
+    }
+  }
+
+  &__text {
+    @include breakpoint($bp-small) {
+      padding: 0 ($gutter / 2);
+    }
+    @include breakpoint($bp-small max-width) {
+      order: 2;
+    }
+  }
+
+  &__subcategory {
+    @extend .ama__h4--purple;
+    font-weight: $font-weight-semibold;
+    font-size: 0.78em;
+    margin: 0 0 ($gutter / 2) 0;
+    .stub-date {
+      @include type($myriad-pro, $font-weight-regular);
+      text-transform: uppercase;
+      display: block;
+      color: $gray-50;
+      line-height:.9em;
+      padding-bottom: ($gutter / 2.5);
+    }
+    &--topics {
+      .stub-date {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &:hover {
+    .ama__subcategory-page-article-stub__heading {
+      text-decoration: underline;
+    }
+  }
+}
+div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-page-article-stub--topics {
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakpoint($bp-small) {
+    flex-direction: row-reverse;
+  }
+  .ama__subcategory-page-article-stub__image {
+    display: block;
+    max-width: 180px;
+  }
+
+  .ama__bio-image-with-body__image {
+    margin: 0;
+    max-width: 100%;
+    @include breakpoint($bp-small) {
+      max-width: 180px;
+    }
+  }
+
+  .ama__subcategory-page-article-stub__text {
+    padding-left: 0;
+  }
+
+  &__subcategory {
+    .stub-date {
+      padding-bottom: 0;
+    }
+  }
+}
+.ama__category-index {
+  .form-item-title {
+    margin: 0;
+  }
+  .form-actions {
+    @include breakpoint($bp-med) {
+      margin-top: 0;
+    }
+  }
+  .ama__category-index__stubs__load-more {
+    padding: 35px 14px;
+    @include breakpoint($bp-small) {
+      padding: 35px 14px 0 14px;
+    }
+
+    a.ama__button {
+      font-size: 20px;
+      font-weight: 400;
+      padding: 10px 45px;
+    }
+  }
+}

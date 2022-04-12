@@ -1,0 +1,63 @@
+.ama__category-hero {
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    @extend .ama__h3;
+    @include gutter($padding-left-half...);
+    @include gutter($padding-right-half...);
+    margin-bottom: 0;
+
+    @include breakpoint($bp-small) {
+      background: $purple;
+      padding: 1em .25em 1em 1em;
+
+      a {
+        @include type($myriad-pro, $font-weight-semibold);
+        //@include font-size($h1-font-sizes);
+        font-size: 38px;
+        line-height: 44.2px;
+        color: $white;
+        display: block;
+      }
+    }
+
+    width: 100%;
+  }
+
+  &__copy {
+    @include gutter($padding-left-half...);
+    @include gutter($padding-right-half...);
+    flex-grow: 1;
+  }
+
+  .ama__h4--purple {
+    @include gutter($padding-left-half...);
+    @include gutter($padding-right-half...);
+    text-transform: uppercase;
+    color: $purple;
+    font-size: 14px;
+  }
+
+  .ama__category-hero__metadata {
+    @extend .ama__type--small;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  @include breakpoint($bp-small) {
+    .ama__category-hero__eyebrow,
+    .ama__category-hero__metadata {
+      display: none;
+    }
+  }
+
+}
+
