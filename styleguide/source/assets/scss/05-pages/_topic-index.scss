@@ -116,13 +116,23 @@
     .article_stub-list {
       margin: 28px 0 0;
       @include breakpoint($bp-small) {
-        margin-right: 14px;
         display: grid;
         grid-template-rows: auto auto auto;
         grid-template-columns: 3fr 1fr;
       }
-      .ama__four-up-teaser {
-        margin: 0;
+      .ama__rule.ama__rule--horizontal {
+        border-color: $gray-border;
+      }
+      > div {
+        margin-right: 14px;
+      }
+    }
+  }
+  .ama__series {
+    .article_stub-list {
+      margin-right: 0;
+      > div {
+        margin-right: 0;
       }
     }
   }
