@@ -1,6 +1,0 @@
-<div class="ama__hub-hero-row">
-  {% for hubHero in hubHeroes %}
-    {% set heading, paragraph, image, video, unorderedList, button = hubHero.heading, hubHero.paragraph, hubHero.image, hubHero.video, hubHero.unorderedList, hubHero.button %}
-    {% include "@molecules/hub/hub-hero.twig" %}
-  {% endfor %}
-</div>

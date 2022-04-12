@@ -16540,7 +16540,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
@@ -18114,15 +18114,21 @@ body.search-results .ama__layout--two-column--left {
   margin: 28px 0 0; }
   @media (min-width: 37.5em) {
     .index-page .ama__layout--one-column__page-content .article_stub-list {
-      margin-right: 14px;
       display: -ms-grid;
       display: grid;
       -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
       -ms-grid-columns: 3fr 1fr;
       grid-template-columns: 3fr 1fr; } }
-  .index-page .ama__layout--one-column__page-content .article_stub-list .ama__four-up-teaser {
-    margin: 0; }
+  .index-page .ama__layout--one-column__page-content .article_stub-list .ama__rule.ama__rule--horizontal {
+    border-color: #b4b4b4; }
+  .index-page .ama__layout--one-column__page-content .article_stub-list > div {
+    margin-right: 14px; }
+
+.index-page .ama__series .article_stub-list {
+  margin-right: 0; }
+  .index-page .ama__series .article_stub-list > div {
+    margin-right: 0; }
 
 .description .desc-display.full div p, .description .desc-display.full div .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .description .desc-display.full div .ama__image__text__subtitle, .description .desc-display.full div .ama__resource-link--inline__text,
 .description .desc-display.full > p:last-of-type,

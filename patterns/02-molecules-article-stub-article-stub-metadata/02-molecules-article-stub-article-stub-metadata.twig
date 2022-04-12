@@ -1,7 +1,0 @@
-{% if metadata.date %}
-  <span class="ama__article-stub__metadata__date">{{ metadata.date|default('Jul 28, 2017') }}</span>
-{% endif %}
-{% if metadata.readtime %}
-  {% if metadata.date and metadata.readtime %} | {% endif %}
-  <span class="ama__article-stub__metadata__read-time">{{ metadata.readtime|default("5 min read") }}</span>
-{% endif %}
