@@ -30,19 +30,41 @@
     @extend .ama__h4--purple;
     font-weight: $font-weight-semibold;
     font-size: 0.78em;
+    line-height: 1;
     margin: 0 0 ($gutter / 2) 0;
-    .stub-date {
-      @include type($myriad-pro, $font-weight-regular);
-      text-transform: uppercase;
-      display: block;
-      color: $gray-50;
-      line-height:.9em;
-      padding-bottom: ($gutter / 2.5);
-    }
     &--topics {
       .stub-date {
         padding-bottom: 0;
       }
+    }
+  }
+
+  &__date-time {
+    font-weight: $font-weight-regular;
+    font-size: 20px;
+    line-height: 23px;
+    color: $gray-50;
+    text-transform: uppercase;
+    @include breakpoint($bp-small) {
+      font-size: 0.78em;
+      line-height: .9em;
+    }
+    .stub-date {
+      @include type($myriad-pro, $font-weight-regular);
+      padding-bottom: ($gutter / 2.5);
+      display: inline-block;
+    }
+    span {
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 1px;
+      padding-right: 3px;
+      position: relative;
+      bottom: 0px;
+    }
+    .read_time {
+      padding-bottom: 11.2px;
+      display: inline-block;
     }
   }
 
