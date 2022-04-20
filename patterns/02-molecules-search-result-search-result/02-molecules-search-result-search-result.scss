@@ -46,12 +46,31 @@
   }
 
   .stub-date {
-    display: block;
+    display: inline-block;
     font-size: 14px;
     text-transform: uppercase;
     line-height: normal;
     color: $gray-50;
     margin-bottom: 14px;
+  }
+
+  .stub-date + span {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: $gray-50;
+    padding-left: 1px;
+    padding-right: 3px;
+    position: relative;
+    bottom: 0px;
+  }
+  .read_time {
+    font-weight: $font-weight-regular;
+    font-size: 14px;
+    color: $gray-50;
+    text-transform: uppercase;
+    padding-bottom: 11.2px;
+    display: inline-block;
   }
 
   &:hover .ama__search-result__title {
