@@ -4366,12 +4366,6 @@ article ol {
 .date + .read_time {
   display: inline-block;
   position: relative; }
-  .date + .read_time h3:before {
-    content: " . ";
-    font-size: 40px;
-    position: relative;
-    top: -5px;
-    left: 2px; }
 
 
 .ama__rule {
@@ -5533,7 +5527,7 @@ object {
     font-size: 14px;
     font-weight: bold; }
   .ama__page--news__teasers .ama__article-stub__title {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 22px; }
     @media (min-width: 37.5em) {
       .ama__page--news__teasers .ama__article-stub__title {
@@ -9993,17 +9987,37 @@ footer .social--instagram-white {
   .ama__subcategory-page-article-stub__subcategory {
     font-weight: 600;
     font-size: 0.78em;
+    line-height: 1;
     margin: 0 0 14px 0; }
-    .ama__subcategory-page-article-stub__subcategory .stub-date {
-      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-      font-weight: 400;
-      text-transform: uppercase;
-      display: block;
-      color: #767676;
-      line-height: .9em;
-      padding-bottom: 11.2px; }
     .ama__subcategory-page-article-stub__subcategory--topics .stub-date {
       padding-bottom: 0; }
+  .ama__subcategory-page-article-stub__date-time {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #767676;
+    text-transform: uppercase; }
+    @media (min-width: 37.5em) {
+      .ama__subcategory-page-article-stub__date-time {
+        font-size: 0.78em;
+        line-height: .9em; } }
+    .ama__subcategory-page-article-stub__date-time .stub-date {
+      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+      font-weight: 400;
+      padding-bottom: 11.2px;
+      display: inline-block; }
+    .ama__subcategory-page-article-stub__date-time span {
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 1px;
+      padding-right: 3px;
+      position: relative;
+      bottom: 0px; }
+    .ama__subcategory-page-article-stub__date-time .read_time {
+      padding-bottom: 11.2px;
+      display: inline-block; }
+  .ama__subcategory-page-article-stub__paragraph {
+    margin-bottom: 0; }
   .ama__subcategory-page-article-stub:hover .ama__subcategory-page-article-stub__heading {
     text-decoration: underline; }
 
@@ -10347,7 +10361,7 @@ article[class*='__page-content'] .ama__tags {
       flex-direction: row; } }
   .ama__tags-text,
   article[class*='__page-content'] .ama__tags-text {
-    font-weight: bold;
+    font-weight: 600;
     margin-right: 7px;
     padding-bottom: 5.25px; }
     @media (min-width: 56.25em) {
@@ -12086,12 +12100,30 @@ article[class*='__page-content'] .ama__tags {
     display: none; }
 
 .ama__search-result .stub-date {
-  display: block;
+  display: inline-block;
   font-size: 14px;
   text-transform: uppercase;
   line-height: normal;
   color: #767676;
   margin-bottom: 14px; }
+
+.ama__search-result .stub-date + span {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #767676;
+  padding-left: 1px;
+  padding-right: 3px;
+  position: relative;
+  bottom: 0px; }
+
+.ama__search-result .read_time {
+  font-weight: 400;
+  font-size: 14px;
+  color: #767676;
+  text-transform: uppercase;
+  padding-bottom: 11.2px;
+  display: inline-block; }
 
 .ama__search-result:hover .ama__search-result__title {
   text-decoration: underline; }
@@ -16957,15 +16989,6 @@ body.search-results .ama__layout--two-column--left {
     @media (max-width: 56.25em) {
       .ama__content-type .views-infinite-scroll-content-wrapper .ama__subcategory-page-article-stub {
         padding: 14px 0; } }
-  .ama__content-type .stub-date {
-    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-    display: block;
-    color: #767676;
-    line-height: .9em;
-    padding-bottom: 14px; }
   .ama__content-type .ama__subcategory-index__stub .ama__subcategory-page-article-stub {
     border-bottom: solid 1px #CBCBCB; }
     @media (max-width: 37.5em) {
@@ -17927,15 +17950,6 @@ body.search-results .ama__layout--two-column--left {
   .ama__series .ama__membership button.ama__button {
     margin-left: 28px;
     margin-right: 28px; }
-  .ama__series .stub-date {
-    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-    display: block;
-    color: #767676;
-    line-height: .9em;
-    padding-bottom: 14px; }
   @media (max-width: 37.5em) {
     .ama__series .ama__subcategory-index__stub .ama__subcategory-page-article-stub {
       padding: 14px 0;
@@ -18161,17 +18175,6 @@ body.search-results .ama__layout--two-column--left {
   .ama__trending .ama__membership button.ama__button {
     margin-left: 28px;
     margin-right: 28px; }
-  .ama__trending .stub-date {
-    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-    display: block;
-    color: #767676;
-    line-height: .9em;
-    padding-bottom: 11.2px; }
-  .ama__trending .ama__subcategory-page-article-stub__subcategory {
-    margin: 0 0 7px 0; }
   @media (max-width: 37.5em) {
     .ama__trending .ama__category-index .ama__membership {
       margin-bottom: 28px; } }
