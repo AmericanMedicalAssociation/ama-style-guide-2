@@ -1,4 +1,8 @@
 #ama-search-connector {
+  display:none;
+  @include breakpoint($bp-med) {
+    display: block;
+  }
   padding-bottom: $gutter * 2;
   a {
     margin-bottom: $gutter/2;

@@ -1,4 +1,8 @@
 .ama__filter {
+  display:none;
+  @include breakpoint($bp-med) {
+    display: block;
+  }
   .ama__applied-filters__tags,
   .ama__expand-list {
     display: none;
@@ -62,7 +66,7 @@
     }
     .facet-item {
       list-style-type: none;
-      
+
       label {
         line-height: 1.6em;
       }
