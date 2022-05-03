@@ -3,12 +3,27 @@
 
 pushboxcontainer {
   color: #000000;
+  animation: none;
   * {
     font-family: "myriad-pro","Helvetica","Arial","Open Sans",sans-serif;
   }
   pushbox {
+    width: 450px;
+    animation: none;
+    &:hover {
+      noticon {
+        animation: none;
+      }
+    }
     pushbox-cta {
-
+      &:hover {
+        animation: none;
+      }
+      &:hover {
+        noticon {
+          animation: none;
+        }
+      }
       noticlose {
 
       }
@@ -17,17 +32,33 @@ pushboxcontainer {
       }
       notibody {
         teaser {
-          font-size: 18px;
+          font-size: 16px;
         }
         teaser-byline {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
       noticlose {
 
       }
       noticon {
-
+        &._aimtellBell {
+          min-width: 75px;
+          min-height:75px;
+          background: url('https://cdn.aimtell.io/user/uploads/18086-1628183021.png');
+          background-repeat: no-repeat;
+          background-size: 75px 75px;
+          background-position: top center;
+          a {
+            display: none;
+          }
+          img {
+            display: none;
+          }
+        }
+        &:hover {
+          animation: none;
+        }
       }
       notibody {
         teaser {
@@ -43,7 +74,7 @@ pushboxcontainer {
             background: white;
             color: #46166B;
             border: #46166B solid 1px;
-            font-size: 16pt;
+            font-size: 14px;
             &:hover {
               border: #907306 1px solid;
               background: #907306;
@@ -53,7 +84,7 @@ pushboxcontainer {
         }
         button-deny {
           &._aimtellPromptDeny {
-            font-size: 16pt;
+            font-size: 14px;
             color: #848387;
             background: #fcfafa;
           }
