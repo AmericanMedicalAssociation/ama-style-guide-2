@@ -1,0 +1,67 @@
+// Aimtell opt-in notification styles.
+// Empty structure left intact for easier tweaking.
+
+pushboxcontainer {
+  color: #000000;
+  * {
+    font-family: "myriad-pro","Helvetica","Arial","Open Sans",sans-serif;
+  }
+  pushbox {
+    pushbox-cta {
+
+      noticlose {
+
+      }
+      noticon {
+
+      }
+      notibody {
+        teaser {
+          font-size: 18px;
+        }
+        teaser-byline {
+          font-size: 16px;
+        }
+      }
+      noticlose {
+
+      }
+      noticon {
+
+      }
+      notibody {
+        teaser {
+
+        }
+        teaser-byline {
+
+        }
+      }
+      buttons {
+        button-approve {
+          &._aimtellPromptApprove {
+            background: white;
+            color: #46166B;
+            border: #46166B solid 1px;
+            font-size: 16pt;
+            &:hover {
+              border: #907306 1px solid;
+              background: #907306;
+              color: white;
+            }
+          }
+        }
+        button-deny {
+          &._aimtellPromptDeny {
+            font-size: 16pt;
+            color: #848387;
+            background: #fcfafa;
+          }
+        }
+        powered {
+          display:none;
+        }
+      }
+    }
+  }
+}
