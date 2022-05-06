@@ -214,6 +214,13 @@
             console.log('No search term entered');
             location.reload();
           }
+
+          //Ensure no spaces before or after query are counted in search
+          $(this).find(searchInput).each(function(){
+            //Submit trimmed value
+            $(this).val($.trim($(this).val()));
+          });   
+          
       });
     }
   };
