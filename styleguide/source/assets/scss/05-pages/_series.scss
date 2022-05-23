@@ -178,7 +178,9 @@
 
 //Subscribe to series button styling
 .subscribe-series {
+  display: block;
   position: relative;
+  text-decoration: none;
   top: -30px;
   @include type($myriad-pro, $font-weight-semibold);
   text-transform: uppercase;
@@ -238,4 +240,10 @@
       display: none;
     }
   }
+}
+
+//Subscribe to series button styling on articles
+.series-tag + .subscribe-series {
+  top: 0;
+  margin-top: 28px;
 }
