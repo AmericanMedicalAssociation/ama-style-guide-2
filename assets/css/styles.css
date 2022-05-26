@@ -7255,7 +7255,8 @@ section.ama__forum_comments {
 
 @media (max-width: 37.5em) {
   .hero-evergreen .hero-evergreen__background {
-    background-image: none; } }
+    background-image: none !important;
+    min-height: unset; } }
 
 .ama__news-article:not(body) {
   margin-bottom: 21px; }
@@ -9294,7 +9295,7 @@ a.ama__promo--border:hover {
       align-items: center; } }
   .series-tag__label {
     position: relative;
-    background: #7b55d9;
+    background: #46166B;
     width: 120px;
     height: 26px;
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -9312,7 +9313,7 @@ a.ama__promo--border:hover {
     bottom: 0;
     width: 0;
     height: 0;
-    border-left: 13px solid #7b55d9;
+    border-left: 13px solid #46166B;
     border-top: 13px solid transparent;
     border-bottom: 13px solid transparent; }
   .series-tag a {
@@ -17904,30 +17905,6 @@ body.search-results .ama__layout--two-column--left {
       display: flex; }
       .ama__series .index-page .share-row .share-region {
         height: unset; } }
-  .ama__series .subscribe-series {
-    display: none;
-    position: relative;
-    top: -30px;
-    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 15px;
-    color: #4d4d4d; }
-    .ama__series .subscribe-series:after {
-      display: inline-block;
-      content: '';
-      width: 18px;
-      height: 18px;
-      background: url(../icons/svg/subscribe.svg) no-repeat 0 0;
-      background-size: contain;
-      position: relative;
-      top: 5px;
-      left: 7px; }
-    .ama__series .subscribe-series:hover {
-      cursor: pointer; }
-      .ama__series .subscribe-series:hover:after {
-        background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
-        background-size: contain; }
   .ama__series .ama__masthead__content__title__container,
   .ama__series .ama__masthead {
     padding-top: 0;
@@ -17954,7 +17931,7 @@ body.search-results .ama__layout--two-column--left {
     border-bottom: none; }
     .ama__series .ama__masthead__content .subscribe-series {
       display: block;
-      text-align: right;
+      text-align: left;
       top: -5px; }
       @media (min-width: 37.5em) {
         .ama__series .ama__masthead__content .subscribe-series {
@@ -18029,6 +18006,65 @@ body.search-results .ama__layout--two-column--left {
       font-weight: 400;
       padding: 10px 45px;
       margin: 28px 0; }
+
+.subscribe-series {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  top: -30px;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 2;
+  width: 182px;
+  color: #ffffff;
+  background: #7229D1;
+  padding-left: 20px; }
+  @media (min-width: 37.5em) {
+    .subscribe-series {
+      width: 168px;
+      padding-left: 8px; } }
+  .subscribe-series:after {
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+    background-size: contain;
+    position: relative;
+    top: 3px;
+    left: 8px;
+    z-index: 1; }
+  .subscribe-series:hover {
+    cursor: pointer;
+    background: #46166B; }
+    .subscribe-series:hover .triangle-right {
+      border-left: 12px solid #46166B; }
+  .subscribe-series .triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 12px solid #7229D1;
+    position: absolute;
+    top: 0;
+    right: -12px;
+    z-index: 1; }
+  .subscribe-series.subscribed {
+    color: #46166B;
+    background: #ffffff;
+    border: 1px solid #46166B;
+    text-align: center !important;
+    padding: 0; }
+    .subscribe-series.subscribed:after {
+      content: none; }
+    .subscribe-series.subscribed .triangle-right {
+      display: none; }
+
+.series-tag + .subscribe-series {
+  top: 0;
+  margin-top: 28px; }
 
 .ama__specialty-landing .ama__event-stub:first-child {
   border-top: 0; }
