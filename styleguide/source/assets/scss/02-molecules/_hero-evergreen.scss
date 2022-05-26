@@ -103,7 +103,8 @@
     &__background {
 
       @include breakpoint($bp-small max-width) {
-        background-image: none;
+        background-image: none !important;
+        min-height: unset;
       }
     }
   }
