@@ -24,6 +24,34 @@
     }
   }
 
+  .subscribe-series {
+    display: none;
+    position: relative;
+    top: -30px;
+    @include type($myriad-pro, $font-weight-regular);
+    font-style: italic;
+    font-size: 15px;
+    color: #4d4d4d;
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 18px;
+      height: 18px;
+      background: url(../icons/svg/subscribe.svg) no-repeat 0 0;
+      background-size: contain;
+      position: relative;
+      top: 5px;
+      left: 7px;
+    }
+    &:hover {
+      cursor: pointer;
+      &:after {
+        background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+        background-size: contain;
+      }
+    }
+  }
+
   .ama__masthead__content__title__container,
   .ama__masthead {
     padding-top: 0;
@@ -53,7 +81,7 @@
     //for styleguide only
     .subscribe-series {
       display: block;
-      text-align: left;
+      text-align: right;
       top: -5px;
       @include breakpoint($bp-small) {
         display: inline-block;
@@ -174,76 +202,4 @@
     margin: 28px 0;
    }
  }
-}
-
-//Subscribe to series button styling
-.subscribe-series {
-  display: block;
-  position: relative;
-  text-decoration: none;
-  top: -30px;
-  @include type($myriad-pro, $font-weight-semibold);
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 2;
-  width: 182px;
-  color: $white;
-  background: $homepagePurple;
-  padding-left: 20px;
-  @include breakpoint($bp-small) {
-    width: 168px;
-    padding-left: 8px;
-  }
-  &:after {
-    display: inline-block;
-    content: '';
-    width: 18px;
-    height: 18px;
-    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
-    background-size: contain;
-    position: relative;
-    top: 3px;
-    left: 8px;
-    z-index: 1;
-  }
-  &:hover {
-    cursor: pointer;
-    background: $purple;
-    .triangle-right {
-      border-left: 12px solid $purple;
-    }
-  }
-
-  .triangle-right {
-    width: 0; 
-    height: 0; 
-    border-top: 14px solid transparent;
-    border-bottom: 14px solid transparent;
-    border-left: 12px solid $homepagePurple;
-    position: absolute;
-    top: 0;
-    right: -12px;
-    z-index: 1;
-  }
-
-  &.subscribed {
-    color: $purple;
-    background: $white;
-    border: 1px solid $purple;
-    text-align: center !important;
-    padding: 0;
-    &:after {
-      content: none;
-    }
-
-    .triangle-right {
-      display: none;
-    }
-  }
-}
-
-//Subscribe to series button styling on articles
-.series-tag + .subscribe-series {
-  top: 0;
-  margin-top: 28px;
 }
