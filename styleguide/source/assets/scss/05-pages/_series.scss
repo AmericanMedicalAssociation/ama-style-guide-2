@@ -174,14 +174,32 @@
     margin: 28px 0;
    }
  }
+
+ //Taxonomy specific subscribe series styling
+ .salesforce-subscribe-form {
+    top: -30px;
+    border: none;
+    line-height: 0;
+ }
+}
+
+@mixin trianle-right {
+  width: 0; 
+  height: 0; 
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 12px solid $homepagePurple;
+  position: absolute;
+  top: 0;
+  right: -12px;
+  z-index: 1;
 }
 
 //Subscribe to series button styling
-.subscribe-series {
-  display: none !important;
+.subscribe-series,
+.salesforce-subscribe-form input.form-submit {
   position: relative;
   text-decoration: none;
-  top: -30px;
   @include type($myriad-pro, $font-weight-semibold);
   text-transform: uppercase;
   font-size: 14px;
@@ -215,15 +233,7 @@
   }
 
   .triangle-right {
-    width: 0; 
-    height: 0; 
-    border-top: 14px solid transparent;
-    border-bottom: 14px solid transparent;
-    border-left: 12px solid $homepagePurple;
-    position: absolute;
-    top: 0;
-    right: -12px;
-    z-index: 1;
+    @include trianle-right();
   }
 
   &.subscribed {
@@ -242,8 +252,30 @@
   }
 }
 
+//Undo form and button styling
+.salesforce-subscribe-form input.form-submit,
+.salesforce-subscribe-form .form-actions {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.salesforce-subscribe-form {
+  width: 168px;
+  position: relative;
+  .triangle-right {
+    @include trianle-right();
+  }
+  &:hover {
+    .triangle-right {
+      border-left: 12px solid $purple;
+    }
+  }
+} 
+
 //Subscribe to series button styling on articles
-.series-tag + .subscribe-series {
+.series-tag + .subscribe-series,
+.series-tag + .salesforce-subscribe-form {
   top: 0;
   margin-top: 28px;
 }
