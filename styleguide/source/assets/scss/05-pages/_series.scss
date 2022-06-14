@@ -183,7 +183,7 @@
  }
 }
 
-@mixin trianle-right {
+@mixin triangle-right {
   width: 0; 
   height: 0; 
   border-top: 14px solid transparent;
@@ -196,6 +196,12 @@
 }
 
 //Subscribe to series button styling
+a.subscribe-series {
+  display: block;
+  min-height: 28px;
+  top: -30px;
+}
+
 .subscribe-series,
 .salesforce-subscribe-form input.form-submit {
   position: relative;
@@ -238,7 +244,7 @@
   }
 
   .triangle-right {
-    @include trianle-right();
+    @include triangle-right();
   }
 
   &.subscribed {
@@ -270,7 +276,7 @@
   width: 168px;
   position: relative;
   .triangle-right {
-    @include trianle-right();
+    @include triangle-right();
   }
   &:hover {
     .triangle-right {
