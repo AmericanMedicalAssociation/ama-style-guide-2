@@ -201,6 +201,7 @@
   position: relative;
   text-decoration: none;
   @include type($myriad-pro, $font-weight-semibold);
+  text-align: left;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 2;
@@ -227,6 +228,10 @@
   &:hover {
     cursor: pointer;
     background: $purple;
+    input.form-submit {
+      cursor: pointer;
+      background-color: $purple;
+    }
     .triangle-right {
       border-left: 12px solid $purple;
     }
@@ -256,7 +261,8 @@
 .salesforce-subscribe-form input.form-submit,
 .salesforce-subscribe-form .form-actions {
   margin: 0;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   border: none;
 }
 
@@ -269,6 +275,21 @@
   &:hover {
     .triangle-right {
       border-left: 12px solid $purple;
+    }
+  }
+
+  .form-actions {
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 18px;
+      height: 18px;
+      background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+      background-size: contain;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 1;
     }
   }
 } 
