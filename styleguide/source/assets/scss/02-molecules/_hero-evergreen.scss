@@ -119,7 +119,9 @@
   }
 }
 
-.ama__news-article {
+.ama__news-article,
+.js-layout-builder-block,
+.layout__region {
   .hero-evergreen {
     &__buttons .ama__button {
       border: solid 1px #471b6d;
@@ -129,6 +131,24 @@
         background-color: #46166b;
         color: $white;
       }
+    }
+  }
+}
+
+.js-layout-builder-block,
+.layout.section:not(.ama__category__row) {
+  .hero-evergreen {
+    margin-bottom: $gutter * .75;
+    @include breakpoint($bp-small) {
+      margin-bottom: $gutter;
+    }
+  }
+}
+
+.ama__layout--two-col-right--75-25__top {
+  .hero-evergreen {
+    @include breakpoint($bp-small) {
+      margin-right: 10px;
     }
   }
 }
