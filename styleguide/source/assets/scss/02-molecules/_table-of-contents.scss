@@ -2,7 +2,7 @@
   padding: 0 28px 15px 0;
   margin-bottom: 15px;
   border-bottom: 2px solid $gray-50;
-  display: none;
+  display: block;
 
   @include breakpoint($bp-med) {
     display: block;
@@ -25,6 +25,9 @@
     li {
       a {
         padding-right: 5px;
+        &:hover {
+          color: #027DBC;
+        }
       }
     }
 
