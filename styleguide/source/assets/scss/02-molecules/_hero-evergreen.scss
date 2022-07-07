@@ -42,14 +42,17 @@
     min-height: 366px;
 
     .hero-evergreen__buttons {
-      @include gutter($padding-top-half...);
-      @include gutter($padding-bottom-full...);
       display: flex;
-      background: $white;
       flex-flow: column wrap;
       justify-content: space-evenly;
-      min-height: 200px;
+      min-height: 150px;
       align-self: auto;
+      @include breakpoint($bp-small) {
+        min-height: 200px;
+        background: $white;
+        @include gutter($padding-top-half...);
+        @include gutter($padding-bottom-full...);
+      }
 
       //Fix for overriding jquery widget
       .ama__button {
@@ -103,8 +106,7 @@
     &__background {
 
       @include breakpoint($bp-small max-width) {
-        background-image: none !important;
-        min-height: unset;
+
       }
     }
   }
