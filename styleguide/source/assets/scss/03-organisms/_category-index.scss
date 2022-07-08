@@ -69,3 +69,14 @@
     margin-top: 0;
   }
 }
+
+.ama__category__row {
+  .ama__layout--two-col-right--75-25__top {
+    .ama__category-hero-block {
+      @include breakpoint($bp-small max-width) {
+        margin-right: 0;
+      }
+      margin-right: 14px;
+    }
+  }
+}
