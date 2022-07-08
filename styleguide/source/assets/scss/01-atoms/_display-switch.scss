@@ -20,4 +20,35 @@
   }
 }
 
+  //Event listing checkbox styling
+.event-switch-menu {
+  .ama__display-switch {
+    border: none;
+    padding: 0;
+    margin-right: $gutter / 4;
+    margin-bottom: $gutter / 4;
+    .ui-checkboxradio-icon {
+      display: none;
+    }
+  
+    label.js-form-type-checkbox {
+      margin-bottom: 0;
+      border: solid 1px $purple;
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-weight: $font-weight-semibold;
+      span {
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      &.ui-state-active {
+        background: $purple;
+        span {
+          color: $white;
+        }
+      }
+    }
+  }
+}
 
