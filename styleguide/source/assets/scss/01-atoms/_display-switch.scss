@@ -33,7 +33,7 @@
     padding: 0;
     line-height: 1;
     margin-right: 5px;
-    .ui-corner-all {
+    label {
       font-size: 18px;
       line-height: 1.5;
       font-weight: 600;
@@ -42,7 +42,7 @@
       text-transform: capitalize;
       border: none;
       background: none;
-      .ui-checkboxradio-icon {
+      span {
         display: none;
       }
     }
@@ -51,25 +51,6 @@
       background: #46166B;
       color: #ffffff;
       margin-right: 0;
-    }
-  
-    label.js-form-type-checkbox {
-      margin-bottom: 0;
-      border: solid 1px $purple;
-      border-radius: 5px;
-      padding: 1px 5px;
-      font-weight: $font-weight-semibold;
-      span {
-        font-weight: 600;
-        line-height: 1.5;
-      }
-
-      &.ui-state-active {
-        background: $purple;
-        span {
-          color: $white;
-        }
-      }
     }
   }
 }
