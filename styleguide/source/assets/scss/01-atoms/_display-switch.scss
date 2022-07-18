@@ -21,32 +21,36 @@
 }
 
   //Event listing checkbox styling
-.event-switch-menu {
+#views-exposed-form-event-type-listing-event-listing-block {
+  .js-form-type-textfield + .form-actions {
+    margin-top: 14px;
+  }
+  .fieldgroup {
+    margin-top: 0;
+  }
   .ama__display-switch {
-    border: none;
+    font-family: $myriad-pro;
     padding: 0;
-    margin-right: $gutter / 4;
-    margin-bottom: $gutter / 4;
-    .ui-checkboxradio-icon {
-      display: none;
+    line-height: 1;
+    margin-right: 5px;
+    input[checked="checked"] + label,
+    input:focus + label {
+      background: #46166B;
+      color: #ffffff;
     }
-  
-    label.js-form-type-checkbox {
-      margin-bottom: 0;
-      border: solid 1px $purple;
-      border-radius: 5px;
+    label {
+      font-family: $myriad-pro;
+      color: $black;
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 600;
+      margin-right: 0;
       padding: 1px 5px;
-      font-weight: $font-weight-semibold;
+      text-transform: capitalize;
+      border: none;
+      background: none;
       span {
-        font-weight: 600;
-        line-height: 1.5;
-      }
-
-      &.ui-state-active {
-        background: $purple;
-        span {
-          color: $white;
-        }
+        display: none;
       }
     }
   }
