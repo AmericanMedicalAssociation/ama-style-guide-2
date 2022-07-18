@@ -33,6 +33,11 @@
     padding: 0;
     line-height: 1;
     margin-right: 5px;
+    input[checked="checked"] + label,
+    input:focus + label {
+      background: #46166B;
+      color: #ffffff;
+    }
     label {
       font-size: 18px;
       line-height: 1.5;
@@ -45,12 +50,6 @@
       span {
         display: none;
       }
-    }
-
-    .ui-state-active {
-      background: #46166B;
-      color: #ffffff;
-      margin-right: 0;
     }
   }
 }
