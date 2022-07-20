@@ -2534,13 +2534,19 @@ button {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   padding: 0;
   line-height: 1;
-  margin-right: 5px; }
+  margin-right: 5px;
+  border: none;
+  border-radius: unset; }
   #views-exposed-form-event-type-listing-event-listing-block .ama__display-switch input[checked="checked"] + label,
   #views-exposed-form-event-type-listing-event-listing-block .ama__display-switch input:focus + label {
     background: #46166B;
     color: #ffffff; }
+  #views-exposed-form-event-type-listing-event-listing-block .ama__display-switch input {
+    display: none; }
   #views-exposed-form-event-type-listing-event-listing-block .ama__display-switch label {
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    border: solid 1px #46166B;
+    border-radius: 5px;
     color: #000000;
     font-size: 18px;
     line-height: 1.5;
@@ -2548,7 +2554,6 @@ button {
     margin-right: 0;
     padding: 1px 5px;
     text-transform: capitalize;
-    border: none;
     background: none; }
     #views-exposed-form-event-type-listing-event-listing-block .ama__display-switch label span {
       display: none; }
