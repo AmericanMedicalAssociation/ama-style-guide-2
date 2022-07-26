@@ -49,10 +49,17 @@
   .embedded-entity.media {
     padding-top: 14px;
 
-    &.align-right {
+    .media-caption {
+      word-wrap: break-word;
+    }
+    &.align-right.media-full {
       .media-caption {
         max-width: 320px;
-        word-wrap: break-word;
+      }
+    }
+    &.align-right.media-thumbnail {
+      .media-caption {
+        max-width: 220px;
       }
     }
 
