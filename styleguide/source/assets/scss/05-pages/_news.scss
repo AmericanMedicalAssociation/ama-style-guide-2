@@ -49,9 +49,11 @@
   .embedded-entity.media {
     padding-top: 14px;
 
-    .media-caption {
-      width: 220px;
-      word-wrap: break-word;
+    &.align-right {
+      .media-caption {
+        max-width: 320px;
+        word-wrap: break-word;
+      }
     }
 
     + .ama-toc-link {
