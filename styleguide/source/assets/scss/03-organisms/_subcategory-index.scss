@@ -2,7 +2,7 @@
 
   @include breakpoint($bp-small max-width) {
     .ama__layout--two-col-right--75-25__left {
-      margin: 0;
+      margin: 0 15px 7px 15px;
     }
     .ama__subcategory-page-article-stub {
       margin: 0 15px;
@@ -47,7 +47,8 @@
     border-bottom: solid 2px $gray-20;
   }
 
-  .ama__subcategory-index__stubs__load-more {
+  .ama__subcategory-index__stubs__load-more,
+  .ama__category-index__stubs__load-more {
     text-align: center;
     padding: $gutter ($gutter / 2);
 
