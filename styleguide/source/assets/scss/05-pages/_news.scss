@@ -50,8 +50,12 @@
     padding-top: 14px;
 
     .media-caption {
-      width: 220px;
       word-wrap: break-word;
+    }
+    &.align-right {
+      .media-caption {
+        max-width: fit-content;
+      }
     }
 
     + .ama-toc-link {
