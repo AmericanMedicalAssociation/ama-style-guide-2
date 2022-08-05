@@ -50,8 +50,12 @@
     padding-top: 14px;
 
     .media-caption {
-      width: 220px;
       word-wrap: break-word;
+    }
+    &.align-right {
+      .media-caption {
+        max-width: fit-content;
+      }
     }
 
     + .ama-toc-link {
@@ -96,6 +100,18 @@
       text-align: center;
       display: inline-block;
       text-transform: capitalize;
+    }
+    .article-event-address {
+      margin-top: -5px;
+      margin-bottom: 15px;
+      p,
+      span{
+        font-size: 24px;
+      }
+      p {
+        margin-bottom: 0;
+        line-height: 1.4;
+      }
     }
   }
 }
