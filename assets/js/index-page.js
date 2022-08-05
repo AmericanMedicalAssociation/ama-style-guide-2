@@ -12,7 +12,7 @@
     var fullHeight = ''
     var truncHeight = ''
     var moreHtml = '<a href="#" class="more"> ...Read More</a>'
-    var lessHtml = '<a href="#" class="less">Hide Content</a>'
+    var lessHtml = '<a href="#" class="less">Show Less</a>'
     var width = ''
 
       function getDimensions () {
