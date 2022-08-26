@@ -1,0 +1,113 @@
+/*  Glossary Page Styles. */
+
+.ama__glossary-page {
+  .glossary-view {
+
+    /*  Alphabetical Filters List */
+    #views-exposed-form-glossary-terms-topic-term-glossary {
+      overflow: hidden;
+      max-width:100%;
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        @include breakpoint($bp-small) {
+          list-style-type: none;
+          display: flex;
+          flex-display: row;
+          flex-wrap: wrap;
+        }
+
+        li {
+          margin-right: 15px;
+          margin-bottom: 15px;
+          text-align: center;
+
+          &:first-child {
+            display: none;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            background: $white;
+            border: 1px solid $purple;
+            display: block;
+            width: 50px;
+            height: 50px;
+            color: $purple;
+            font-size: 32px;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: none;
+            }
+
+            &.bef-link--selected {
+              background: #46166b;
+              color: $white;
+
+              &:hover {
+                background: #46166b;
+                color: $white;
+              }
+            }
+
+            &:hover {
+              background-color: #a28ab5;
+              color: $purple;
+            }
+          }
+        }
+      }
+    }
+    h3 {
+      font-size: 38px;
+    }
+    .output-wrapper {
+      column-count: 1;
+      column-width: auto;
+      column-gap: none;
+      @include breakpoint($bp-med) {
+        column-count: 2;
+        column-gap: 10%;
+      }
+
+      .grouping-row {
+        a {
+          color: #46166b;
+          font-size: 18px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    nav {
+      text-align: center;
+      ul {
+        list-style-type: none;
+        li {
+          display:inline-block;
+          color: #46166b;
+          a {
+            color: #46166b;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  /*  Term Results Display */
+
+}
