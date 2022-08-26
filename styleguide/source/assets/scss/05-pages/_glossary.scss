@@ -1,13 +1,25 @@
 /*  Glossary Page Styles. */
 
 .ama__glossary-page {
+  .ama__h1 {
+    margin-bottom: 21px;
+  }
+  .ama__subtitle {
+    font-size: 18px;
+    font-weight: normal;
+  }
   .glossary-view {
+    padding-bottom: 30px;
+    margin-bottom:28px;
+    border-bottom: 4px solid $purple;
 
     /*  Alphabetical Filters List */
     #views-exposed-form-glossary-terms-topic-term-glossary {
       overflow: hidden;
-      max-width:100%;
-
+      max-width: 100%;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #b4b4b4;
+      margin-bottom: 28px;
       ul {
         list-style-type: none;
         display: flex;
@@ -19,7 +31,6 @@
           flex-display: row;
           flex-wrap: wrap;
         }
-
         li {
           margin-right: 15px;
           margin-bottom: 15px;
@@ -28,15 +39,12 @@
           &:first-child {
             display: none;
           }
-
           &:last-child {
             margin-right: 0;
           }
-
           &:last-child {
             margin-right: 0;
           }
-
           a {
             background: $white;
             border: 1px solid $purple;
@@ -46,21 +54,17 @@
             color: $purple;
             font-size: 32px;
             text-decoration: none;
-
             &:hover {
               text-decoration: none;
             }
-
             &.bef-link--selected {
               background: #46166b;
               color: $white;
-
               &:hover {
                 background: #46166b;
                 color: $white;
               }
             }
-
             &:hover {
               background-color: #a28ab5;
               color: $purple;
@@ -69,6 +73,50 @@
         }
       }
     }
+    /* Search Box */
+    .searchbar-wrapper {
+      position: relative;
+      margin-bottom: 28px;
+      margin-left: 10px;
+      margin-right: 10px;
+      @include breakpoint($bp-small) {
+        margin-left: 65px;
+        margin-right: 89px;
+      }
+      &::after {
+        display:block;
+        visibility: visible;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 7px;
+        height: 25px;
+        width: 25px;
+        background-color: $purple;
+        content: url("../icons/svg/icon-search-white.svg");
+      }
+    }
+    #edit-search--2 {
+      border: 1px solid $purple;
+      padding: 5px 10px;
+      &::placeholder {
+        font-style: italic;
+      }
+      &::after {
+        display:block;
+        position: absolute;
+        right: 0;
+        top: -1px;
+        bottom: 0;
+        height: 50px;
+        width: 50px;
+        background-color: $purple;
+
+        content: url("../icon-search-white.svg");
+
+      }
+    }
+    /*  Term Results Display */
     h3 {
       font-size: 38px;
     }
@@ -76,11 +124,11 @@
       column-count: 1;
       column-width: auto;
       column-gap: none;
+      margin-bottom: 50px;
       @include breakpoint($bp-med) {
         column-count: 2;
         column-gap: 10%;
       }
-
       .grouping-row {
         a {
           color: #46166b;
@@ -92,12 +140,13 @@
         }
       }
     }
+    /* pager */
     nav {
       text-align: center;
       ul {
         list-style-type: none;
         li {
-          display:inline-block;
+          display: inline-block;
           color: #46166b;
           a {
             color: #46166b;
@@ -107,7 +156,13 @@
       }
     }
   }
-
-  /*  Term Results Display */
-
+  /* layout tweaks */
+  .ama__layout--two-col-right--75-25__right {
+    padding-top: 15px;
+  }
+  .heading-left {
+    margin-right: 0;
+    border-bottom: 1px solid #b4b4b4;
+    padding-top: 21px;
+  }
 }
