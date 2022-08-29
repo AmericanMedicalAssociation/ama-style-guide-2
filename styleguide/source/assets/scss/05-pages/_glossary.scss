@@ -157,12 +157,47 @@
     }
   }
   /* layout tweaks */
-  .ama__layout--two-col-right--75-25__right {
-    padding-top: 15px;
+
+git a
+
+  .ama__75-25__masthead {
+
+    .heading-left {
+      margin-right: 0;
+      border-bottom: 1px solid #b4b4b4;
+      padding-top: 21px;
+    }
   }
-  .heading-left {
-    margin-right: 0;
-    border-bottom: 1px solid #b4b4b4;
-    padding-top: 21px;
+
+  /* Curated Topics Block */
+  .curated-topics {
+    h2 {
+      font-weight: $font-weight-bold;
+      margin-bottom:$gutter;
+    }
+    .topic-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      a {
+        background-color: $white;
+        border: 1px solid $purple;
+        border-radius: 30px;
+        padding: 6px 18px;
+        font-size: 14px;
+        margin-right: 12px;
+        margin-bottom: 14px;
+        text-decoration: none;
+        color: #333;
+        &:hover {
+          background: $purple;
+          color: white;
+          text-decoration: none;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
