@@ -1,0 +1,232 @@
+/*  Glossary Page Styles. */
+
+.ama__glossary-page {
+  .ama__h1 {
+    margin-bottom: 21px;
+  }
+  .ama__subtitle {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .glossary-view {
+    padding-bottom: 30px;
+    margin-bottom:28px;
+    border-bottom: 4px solid $purple;
+
+    /*  Alphabetical Filters List */
+    #views-exposed-form-glossary-terms-topic-term-glossary {
+      overflow: hidden;
+      max-width: 100%;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #b4b4b4;
+      margin-bottom: 28px;
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        @include breakpoint($bp-small) {
+          list-style-type: none;
+          display: flex;
+          flex-display: row;
+          flex-wrap: wrap;
+        }
+        li {
+          margin-right: 15px;
+          margin-bottom: 15px;
+          text-align: center;
+
+          &:first-child {
+            display: none;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            background: $white;
+            border: 1px solid $purple;
+            display: block;
+            width: 50px;
+            height: 50px;
+            color: $purple;
+            font-size: 32px;
+            text-decoration: none;
+            &:hover {
+              text-decoration: none;
+            }
+            &.bef-link--selected {
+              background: #46166b;
+              color: $white;
+              &:hover {
+                background: #46166b;
+                color: $white;
+              }
+            }
+            &:hover {
+              background-color: #a28ab5;
+              color: $purple;
+            }
+          }
+        }
+      }
+    }
+    /* Search Box */
+    .searchbar-wrapper {
+      position: relative;
+      margin-bottom: 28px;
+      margin-left: 10px;
+      margin-right: 10px;
+      @include breakpoint($bp-small) {
+        margin-left: 65px;
+        margin-right: 89px;
+      }
+      &::after {
+        display:block;
+        visibility: visible;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 7px;
+        height: 25px;
+        width: 25px;
+        background-color: $purple;
+        content: url("../icons/svg/icon-search-white.svg");
+      }
+    }
+    #edit-search--2 {
+      border: 1px solid $purple;
+      padding: 5px 10px;
+      &::placeholder {
+        font-style: italic;
+      }
+      &::after {
+        display:block;
+        position: absolute;
+        right: 0;
+        top: -1px;
+        bottom: 0;
+        height: 50px;
+        width: 50px;
+        background-color: $purple;
+
+        content: url("../icon-search-white.svg");
+
+      }
+    }
+    /*  Term Results Display */
+    h3 {
+      font-size: 38px;
+    }
+    .output-wrapper {
+      column-count: 1;
+      column-width: auto;
+      column-gap: none;
+      margin-bottom: 50px;
+      @include breakpoint($bp-med) {
+        column-count: 2;
+        column-gap: 10%;
+      }
+      .grouping-row {
+        a {
+          color: #46166b;
+          font-size: 18px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    /* pager */
+    nav {
+      text-align: center;
+      ul {
+        list-style-type: none;
+        li {
+          display: inline-block;
+          color: #46166b;
+          a {
+            color: #46166b;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  ///* layout tweaks */
+  //.ama__layout--two-col-right--75-25 {
+  //  grid-template-columns: 1fr;
+  //  @include breakpoint($bp-large) {
+  //    grid-template-columns: 3fr 1fr;
+  //  }
+  //
+  //  &__top {
+  //    grid-row: 1 / 2;
+  //    grid-column: 1 / 1;
+  //    @include breakpoint($bp-large max-width) {
+  //      grid-row: 1 / 1;
+  //      grid-column: 1 / 2;
+  //    }
+  //  }
+  //
+  //  &__right {
+  //    padding-top: 15px;
+  //    grid-column: 1 / 1;
+  //    grid-row: 2 / 2;
+  //    display: block;
+  //    @include breakpoint($bp-large max-width) {
+  //      display: none;
+  //      grid-row: 2 / 2;
+  //      grid-column: 1 / 3;
+  //      padding: 0 ($gutter / 2);
+  //    }
+  //  }
+  //}
+
+  .ama__75-25__masthead {
+    .heading-left {
+      margin-right: 0;
+      border-bottom: 1px solid #b4b4b4;
+      padding-top: 21px;
+    }
+  }
+
+  /* Curated Topics Block */
+  .curated-topics {
+    h2 {
+      font-weight: $font-weight-bold;
+      margin-bottom:$gutter;
+    }
+    .topic-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      a {
+        background-color: $white;
+        border: 1px solid $purple;
+        border-radius: 30px;
+        display: inline-block;
+        padding: 6px 18px;
+        font-size: 14px;
+        margin-right: 12px;
+        margin-bottom: 14px;
+        text-decoration: none;
+        color: #333;
+        &:hover {
+          background: $purple;
+          color: white;
+          text-decoration: none;
+        }
+        &:last-child {
+          a {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
