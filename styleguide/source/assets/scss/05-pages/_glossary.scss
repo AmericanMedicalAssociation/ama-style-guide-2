@@ -227,6 +227,37 @@
           }
         }
       }
+      .label {
+        flex-basis: 100%;
+      }
     }
   }
+  .autosuggestions-wrapper {
+    color: $purple;
+    h2 {
+      color: $purple;
+    }
+    a {
+      color: $purple;
+      text-decoration: none;
+    }
+    ul.ui-autocomplete {
+      padding-bottom: 180px;
+      .ui-state-active {
+        background: transparent;
+        text-decoration: none;
+      }
+      .topic-wrapper {
+        position:absolute;
+        bottom:10px ;
+        width: 100%;
+        .topic:nth-of-type(1n+5) {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+
 }
