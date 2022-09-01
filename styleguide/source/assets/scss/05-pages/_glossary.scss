@@ -10,7 +10,7 @@
   }
   .glossary-view {
     padding-bottom: 30px;
-    margin-bottom:28px;
+    margin-bottom: 28px;
     border-bottom: 4px solid $purple;
 
     /*  Alphabetical Filters List */
@@ -20,61 +20,75 @@
       padding-bottom: 8px;
       border-bottom: 1px solid #b4b4b4;
       margin-bottom: 28px;
-      ul {
-        list-style-type: none;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        @include breakpoint($bp-small) {
+
+      div[name="name"] {
+        ul {
           list-style-type: none;
           display: flex;
-          flex-display: row;
-          flex-wrap: wrap;
-        }
-        li {
-          margin-right: 15px;
-          margin-bottom: 15px;
-          text-align: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          @include breakpoint($bp-small) {
+            list-style-type: none;
+            display: flex;
+            flex-display: row;
+            flex-wrap: wrap;
+          }
 
-          &:first-child {
-            display: none;
-          }
-          &:last-child {
-            margin-right: 0;
-          }
-          &:last-child {
-            margin-right: 0;
-          }
-          a {
-            background: $white;
-            border: 1px solid $purple;
-            display: block;
-            width: 50px;
-            height: 50px;
-            color: $purple;
-            font-size: 32px;
-            text-decoration: none;
-            &:hover {
-              text-decoration: none;
+          li {
+            margin-right: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+
+            &:first-child {
+              display: none;
             }
-            &.bef-link--selected {
-              background: #46166b;
-              color: $white;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            a {
+              background: $white;
+              border: 1px solid $purple;
+              display: block;
+              width: 50px;
+              height: 50px;
+              color: $purple;
+              font-size: 32px;
+              text-decoration: none;
+
               &:hover {
+                text-decoration: none;
+              }
+
+              &.bef-link--selected {
                 background: #46166b;
                 color: $white;
+
+                &:hover {
+                  background: #46166b;
+                  color: $white;
+                }
               }
-            }
-            &:hover {
-              background-color: #a28ab5;
-              color: $purple;
+
+              &:hover {
+                background-color: #a28ab5;
+                color: $purple;
+              }
             }
           }
         }
       }
     }
+
     /* Search Box */
     .searchbar-wrapper {
+      .searchbar-inner {
+
       position: relative;
       margin-bottom: 28px;
       margin-left: 10px;
@@ -83,8 +97,9 @@
         margin-left: 65px;
         margin-right: 89px;
       }
+
       &::after {
-        display:block;
+        display: block;
         visibility: visible;
         position: absolute;
         right: 0;
@@ -96,14 +111,17 @@
         content: url("../icons/svg/icon-search-white.svg");
       }
     }
+
     #edit-search--2 {
       border: 1px solid $purple;
       padding: 5px 10px;
+
       &::placeholder {
         font-style: italic;
       }
+
       &::after {
-        display:block;
+        display: block;
         position: absolute;
         right: 0;
         top: -1px;
@@ -116,6 +134,7 @@
 
       }
     }
+  }
     /*  Term Results Display */
     h3 {
       font-size: 38px;
@@ -251,13 +270,38 @@
         position:absolute;
         bottom:10px ;
         width: 100%;
-        .topic:nth-of-type(1n+5) {
-          display: none;
-        }
+        //.topic:nth-of-type(1n+5) {
+        //  display: none;
+        //}
       }
     }
   }
 
+/*  .searchbar-wrapper {
+    position:relative;
+    &:hover {
+      .autosuggest-wrapper {
+        display: flex;
+      }
+    }
+    .searchbar-inner {
+    }
+    .autosuggest-wrapper {
+      position:absolute;
 
+      background: $white;
+      display: none;
+      flex-direction: column-reverse;
+      .topic-wrapper-autocomplete {
+
+
+      }
+      .ui-autocomplete {
+        position: relative !important;
+        display: block !important;
+
+      }
+    }
+  }*/
 
 }
