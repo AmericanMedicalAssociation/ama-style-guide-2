@@ -10525,12 +10525,26 @@ article[class*='__page-content'] .ama__tags {
     background: #EDEDED;
     border: 1px solid transparent;
     border-radius: 16px;
-    color: #000000 !important;
+    color: #000000;
     white-space: nowrap;
     height: 34px;
     padding: 5px 15px 4px 14px; }
     .ama__tags .ama__tag:hover,
     article[class*='__page-content'] .ama__tags .ama__tag:hover {
+      background-color: #ffffff;
+      border: 1px solid #979797;
+      text-decoration: none; }
+  .ama__tags .ama__link--purple.ama__link--catalog, .ama__tags .ama__link-list ul li:last-child span.ama__link--catalog, .ama__link-list ul li:last-child .ama__tags span.ama__link--catalog,
+  article[class*='__page-content'] .ama__tags .ama__link--purple.ama__link--catalog,
+  article[class*='__page-content'] .ama__tags .ama__link-list ul li:last-child span.ama__link--catalog,
+  .ama__link-list ul li:last-child article[class*='__page-content'] .ama__tags span.ama__link--catalog {
+    color: #ffffff;
+    background: #46166B; }
+    .ama__tags .ama__link--purple.ama__link--catalog:hover, .ama__tags .ama__link-list ul li:last-child span.ama__link--catalog:hover, .ama__link-list ul li:last-child .ama__tags span.ama__link--catalog:hover,
+    article[class*='__page-content'] .ama__tags .ama__link--purple.ama__link--catalog:hover,
+    article[class*='__page-content'] .ama__tags .ama__link-list ul li:last-child span.ama__link--catalog:hover,
+    .ama__link-list ul li:last-child article[class*='__page-content'] .ama__tags span.ama__link--catalog:hover {
+      color: #000000;
       background-color: #ffffff;
       border: 1px solid #979797;
       text-decoration: none; }
@@ -15893,6 +15907,8 @@ section#related_links .ama__membership ul {
         padding: 0 7px; }
       .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content a:last-child:after {
         content: ''; }
+      .ama__subcategory-index .views-field-field-featured-topics .explore_topic_content a.ama__link--catalog {
+        color: #027DBC; }
 
 .ama__subcategory-index .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
   border-top: solid 2px #CBCBCB;
@@ -16696,7 +16712,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
@@ -17182,6 +17198,186 @@ body.search-results .ama__layout--two-column--left {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+/*  Glossary Page Styles. */
+.ama__glossary-page {
+  /* Curated Topics Block */ }
+  .ama__glossary-page .ama__h1 {
+    margin-bottom: 21px; }
+  .ama__glossary-page .ama__subtitle {
+    font-size: 18px;
+    font-weight: normal; }
+  .ama__glossary-page .glossary-view {
+    padding-bottom: 30px;
+    margin-bottom: 28px;
+    border-bottom: 4px solid #46166B;
+    /*  Alphabetical Filters List */
+    /* Search Box */
+    /*  Term Results Display */
+    /* pager */ }
+    .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary {
+      overflow: hidden;
+      max-width: 100%;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #b4b4b4;
+      margin-bottom: 28px; }
+      .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul {
+        list-style-type: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap; }
+        @media (min-width: 37.5em) {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul {
+            list-style-type: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-display: row;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
+        .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li {
+          margin-right: 15px;
+          margin-bottom: 15px;
+          text-align: center; }
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li:first-child {
+            display: none; }
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li:last-child {
+            margin-right: 0; }
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li:last-child {
+            margin-right: 0; }
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a {
+            background: #ffffff;
+            border: 1px solid #46166B;
+            display: block;
+            width: 50px;
+            height: 50px;
+            color: #46166B;
+            font-size: 32px;
+            text-decoration: none; }
+            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a:hover {
+              text-decoration: none; }
+            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a.bef-link--selected {
+              background: #46166b;
+              color: #ffffff; }
+              .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a.bef-link--selected:hover {
+                background: #46166b;
+                color: #ffffff; }
+            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a:hover {
+              background-color: #a28ab5;
+              color: #46166B; }
+    .ama__glossary-page .glossary-view .searchbar-wrapper {
+      position: relative;
+      margin-bottom: 28px;
+      margin-left: 10px;
+      margin-right: 10px; }
+      @media (min-width: 37.5em) {
+        .ama__glossary-page .glossary-view .searchbar-wrapper {
+          margin-left: 65px;
+          margin-right: 89px; } }
+      .ama__glossary-page .glossary-view .searchbar-wrapper::after {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 7px;
+        height: 25px;
+        width: 25px;
+        background-color: #46166B;
+        content: url("../icons/svg/icon-search-white.svg"); }
+    .ama__glossary-page .glossary-view #edit-search--2 {
+      border: 1px solid #46166B;
+      padding: 5px 10px; }
+      .ama__glossary-page .glossary-view #edit-search--2::-webkit-input-placeholder {
+        font-style: italic; }
+      .ama__glossary-page .glossary-view #edit-search--2:-ms-input-placeholder {
+        font-style: italic; }
+      .ama__glossary-page .glossary-view #edit-search--2::-ms-input-placeholder {
+        font-style: italic; }
+      .ama__glossary-page .glossary-view #edit-search--2::placeholder {
+        font-style: italic; }
+      .ama__glossary-page .glossary-view #edit-search--2::after {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -1px;
+        bottom: 0;
+        height: 50px;
+        width: 50px;
+        background-color: #46166B;
+        content: url("../icon-search-white.svg"); }
+    .ama__glossary-page .glossary-view h3 {
+      font-size: 38px; }
+    .ama__glossary-page .glossary-view .output-wrapper {
+      -webkit-column-count: 1;
+      column-count: 1;
+      -webkit-column-width: auto;
+      column-width: auto;
+      -webkit-column-gap: none;
+      column-gap: none;
+      margin-bottom: 50px; }
+      @media (min-width: 56.25em) {
+        .ama__glossary-page .glossary-view .output-wrapper {
+          -webkit-column-count: 2;
+          column-count: 2;
+          -webkit-column-gap: 10%;
+          column-gap: 10%; } }
+      .ama__glossary-page .glossary-view .output-wrapper .grouping-row a {
+        color: #46166b;
+        font-size: 18px;
+        text-decoration: none; }
+        .ama__glossary-page .glossary-view .output-wrapper .grouping-row a:hover {
+          text-decoration: underline; }
+    .ama__glossary-page .glossary-view nav {
+      text-align: center; }
+      .ama__glossary-page .glossary-view nav ul {
+        list-style-type: none; }
+        .ama__glossary-page .glossary-view nav ul li {
+          display: inline-block;
+          color: #46166b; }
+          .ama__glossary-page .glossary-view nav ul li a {
+            color: #46166b;
+            text-decoration: none; }
+  .ama__glossary-page .ama__75-25__masthead .heading-left {
+    margin-right: 0;
+    border-bottom: 1px solid #b4b4b4;
+    padding-top: 21px; }
+  .ama__glossary-page .curated-topics h2 {
+    font-weight: 600;
+    margin-bottom: 28px; }
+  .ama__glossary-page .curated-topics .topic-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .ama__glossary-page .curated-topics .topic-wrapper a {
+      background-color: #ffffff;
+      border: 1px solid #46166B;
+      border-radius: 30px;
+      display: inline-block;
+      padding: 6px 18px;
+      font-size: 14px;
+      margin-right: 12px;
+      margin-bottom: 14px;
+      text-decoration: none;
+      color: #333; }
+      .ama__glossary-page .curated-topics .topic-wrapper a:hover {
+        background: #46166B;
+        color: white;
+        text-decoration: none; }
+      .ama__glossary-page .curated-topics .topic-wrapper a:last-child a {
+        margin-right: 0; }
 
 .ama__homepage .ama__layout--one-column__content-top {
   display: none; }
@@ -18308,6 +18504,11 @@ body.search-results .ama__layout--two-column--left {
       .ama__category .index-page__related-topics a:last-child:after,
       .ama__subcategory-index .index-page__related-topics a:last-child:after {
         content: ""; }
+    .index-page .index-page__related-topics a.ama__link--purple.ama__link--catalog,
+    .ama__category .index-page__related-topics a.ama__link--purple.ama__link--catalog,
+    .ama__subcategory-index .index-page__related-topics a.ama__link--purple.ama__link--catalog {
+      color: #027DBC;
+      text-decoration: underline; }
 
 .index-page .ama__75-25__masthead .border,
 .ama__category .ama__75-25__masthead .border,
