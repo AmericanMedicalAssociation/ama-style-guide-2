@@ -109,38 +109,38 @@
     .searchbar-wrapper {
       .searchbar-inner {
 
-      position: relative;
-      margin-bottom: 28px;
-      margin-left: 10px;
-      margin-right: 10px;
-      @include breakpoint($bp-small) {
-        margin-left: 65px;
-        margin-right: 89px;
+        position: relative;
+        margin-bottom: 28px;
+        margin-left: 10px;
+        margin-right: 10px;
+        @include breakpoint($bp-small) {
+          margin-left: 65px;
+          margin-right: 89px;
+        }
+
+        &::after {
+          display: block;
+          visibility: visible;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          padding: 7px;
+          height: 25px;
+          width: 25px;
+          background-color: $purple;
+          content: url("../icons/svg/icon-search-white.svg");
+        }
       }
 
-      &::after {
-        display: block;
-        visibility: visible;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding: 7px;
-        height: 25px;
-        width: 25px;
-        background-color: $purple;
-        content: url("../icons/svg/icon-search-white.svg");
+      #edit-search--2 {
+        border: 1px solid $purple;
+        padding: 5px 10px;
+
+        &::placeholder {
+          font-style: italic;
+        }
       }
     }
-
-    #edit-search--2 {
-      border: 1px solid $purple;
-      padding: 5px 10px;
-
-      &::placeholder {
-        font-style: italic;
-      }
-    }
-  }
     /*  Term Results Display */
     h3 {
       font-size: 38px;
@@ -214,11 +214,11 @@
 
 
   /* Curated Topics Block */
+  h2.curated-topics-header {
+    font-weight: $font-weight-bold;
+    margin-bottom:$gutter;
+  }
   .curated-topics {
-    h2 {
-      font-weight: $font-weight-bold;
-      margin-bottom:$gutter;
-    }
     .topic-wrapper {
       display: flex;
       flex-direction: row;
