@@ -23,6 +23,20 @@
         overflow:hidden;
         width:85vw;
         overflow-x: scroll;
+        scrollbar-width: thin;          /* "auto" or "thin" */
+        scrollbar-color: $purple;   /* scroll thumb and track */
+        &::-webkit-scrollbar {
+          width: 14px;               /* width of the entire scrollbar */
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #ece7f0;
+          border-radius: 20px;  /* color of the tracking area */
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $purple;    /* color of the scroll thumb */
+          border-radius: 20px;       /* roundness of the scroll thumb *//* creates padding around scroll thumb */
+        }
         @include breakpoint($bp-med) {
           width: auto;
           overflow: auto;
@@ -227,7 +241,7 @@
         margin-right: 12px;
         margin-bottom: 14px;
         text-decoration: none;
-        color: #333;
+        color: $black;
         &:hover {
           background: $purple;
           color: white;
