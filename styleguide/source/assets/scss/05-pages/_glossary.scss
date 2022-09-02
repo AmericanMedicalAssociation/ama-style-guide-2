@@ -24,18 +24,18 @@
         width:85vw;
         overflow-x: scroll;
         scrollbar-width: thin;          /* "auto" or "thin" */
-        scrollbar-color: $purple;   /* scroll thumb and track */
+        scrollbar-color: $purple;
         &::-webkit-scrollbar {
-          width: 14px;               /* width of the entire scrollbar */
+          width: 14px;
         }
 
         &::-webkit-scrollbar-track {
           background: #ece7f0;
-          border-radius: 20px;  /* color of the tracking area */
+          border-radius: 20px;
         }
         &::-webkit-scrollbar-thumb {
-          background-color: $purple;    /* color of the scroll thumb */
-          border-radius: 20px;       /* roundness of the scroll thumb *//* creates padding around scroll thumb */
+          background-color: $purple;
+          border-radius: 20px;
         }
         @include breakpoint($bp-med) {
           width: auto;
@@ -139,20 +139,6 @@
       &::placeholder {
         font-style: italic;
       }
-
-      &::after {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: -1px;
-        bottom: 0;
-        height: 50px;
-        width: 50px;
-        background-color: $purple;
-
-        content: url("../icon-search-white.svg");
-
-      }
     }
   }
     /*  Term Results Display */
@@ -170,7 +156,7 @@
       }
       .grouping-row {
         a {
-          color: #46166b;
+          color: $purple;
           font-size: 18px;
           text-decoration: none;
           &:hover {
@@ -186,14 +172,20 @@
         list-style-type: none;
         li {
           display: inline-block;
-          color: #46166b;
+          color: $purple;
           a {
-            color: #46166b;
+            color: $purple;
             text-decoration: none;
           }
         }
       }
     }
+  }
+
+  .description {
+    padding: 28px 0 14px;
+    border-bottom: 1px solid #b4b4b4;
+    margin-bottom: 28px;
   }
 
   .ama__75-25__masthead {
@@ -244,7 +236,7 @@
         color: $black;
         &:hover {
           background: $purple;
-          color: white;
+          color: $white;
           text-decoration: none;
         }
         &:last-child {
@@ -255,31 +247,6 @@
       }
       .label {
         flex-basis: 100%;
-      }
-    }
-  }
-  .autosuggestions-wrapper {
-    color: $purple;
-    h2 {
-      color: $purple;
-    }
-    a {
-      color: $purple;
-      text-decoration: none;
-    }
-    ul.ui-autocomplete {
-      padding-bottom: 180px;
-      .ui-state-active {
-        background: transparent;
-        text-decoration: none;
-      }
-      .topic-wrapper {
-        position:absolute;
-        bottom:10px ;
-        width: 100%;
-        //.topic:nth-of-type(1n+5) {
-        //  display: none;
-        //}
       }
     }
   }
