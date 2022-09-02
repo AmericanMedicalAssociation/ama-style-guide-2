@@ -17216,12 +17216,37 @@ body.search-results .ama__layout--two-column--left {
     /*  Term Results Display */
     /* pager */ }
     .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary {
-      overflow: hidden;
       max-width: 100%;
       padding-bottom: 8px;
       border-bottom: 1px solid #b4b4b4;
       margin-bottom: 28px; }
-      .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul {
+      .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div#edit-name--2 {
+        overflow: hidden;
+        width: 85vw;
+        overflow-x: scroll;
+        scrollbar-width: thin;
+        /* "auto" or "thin" */
+        scrollbar-color: #46166B;
+        /* scroll thumb and track */ }
+        .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div#edit-name--2::-webkit-scrollbar {
+          width: 14px;
+          /* width of the entire scrollbar */ }
+        .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div#edit-name--2::-webkit-scrollbar-track {
+          background: #ece7f0;
+          border-radius: 20px;
+          /* color of the tracking area */ }
+        .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div#edit-name--2::-webkit-scrollbar-thumb {
+          background-color: #46166B;
+          /* color of the scroll thumb */
+          border-radius: 20px;
+          /* roundness of the scroll thumb */
+          /* creates padding around scroll thumb */ }
+        @media (min-width: 56.25em) {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div#edit-name--2 {
+            width: auto;
+            overflow: auto;
+            overflow-x: auto; } }
+      .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul {
         list-style-type: none;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -17232,26 +17257,21 @@ body.search-results .ama__layout--two-column--left {
         flex-direction: row;
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap; }
-        @media (min-width: 37.5em) {
-          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul {
-            list-style-type: none;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            flex-display: row;
+        @media (min-width: 56.25em) {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul {
             -ms-flex-wrap: wrap;
             flex-wrap: wrap; } }
-        .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li {
+        .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li {
           margin-right: 15px;
           margin-bottom: 15px;
           text-align: center; }
-          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li:first-child {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li:first-child {
             display: none; }
-          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li:last-child {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li:last-child {
             margin-right: 0; }
-          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li:last-child {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li:last-child {
             margin-right: 0; }
-          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a {
+          .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li a {
             background: #ffffff;
             border: 1px solid #46166B;
             display: block;
@@ -17260,27 +17280,27 @@ body.search-results .ama__layout--two-column--left {
             color: #46166B;
             font-size: 32px;
             text-decoration: none; }
-            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a:hover {
+            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li a:hover {
               text-decoration: none; }
-            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a.bef-link--selected {
+            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li a.bef-link--selected {
               background: #46166b;
               color: #ffffff; }
-              .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a.bef-link--selected:hover {
+              .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li a.bef-link--selected:hover {
                 background: #46166b;
                 color: #ffffff; }
-            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary ul li a:hover {
+            .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary div[name="name"] ul li a:hover {
               background-color: #a28ab5;
               color: #46166B; }
-    .ama__glossary-page .glossary-view .searchbar-wrapper {
+    .ama__glossary-page .glossary-view .searchbar-wrapper .searchbar-inner {
       position: relative;
       margin-bottom: 28px;
       margin-left: 10px;
       margin-right: 10px; }
       @media (min-width: 37.5em) {
-        .ama__glossary-page .glossary-view .searchbar-wrapper {
+        .ama__glossary-page .glossary-view .searchbar-wrapper .searchbar-inner {
           margin-left: 65px;
           margin-right: 89px; } }
-      .ama__glossary-page .glossary-view .searchbar-wrapper::after {
+      .ama__glossary-page .glossary-view .searchbar-wrapper .searchbar-inner::after {
         display: block;
         visibility: visible;
         position: absolute;
@@ -17291,18 +17311,18 @@ body.search-results .ama__layout--two-column--left {
         width: 25px;
         background-color: #46166B;
         content: url("../icons/svg/icon-search-white.svg"); }
-    .ama__glossary-page .glossary-view #edit-search--2 {
+    .ama__glossary-page .glossary-view .searchbar-wrapper #edit-search--2 {
       border: 1px solid #46166B;
       padding: 5px 10px; }
-      .ama__glossary-page .glossary-view #edit-search--2::-webkit-input-placeholder {
+      .ama__glossary-page .glossary-view .searchbar-wrapper #edit-search--2::-webkit-input-placeholder {
         font-style: italic; }
-      .ama__glossary-page .glossary-view #edit-search--2:-ms-input-placeholder {
+      .ama__glossary-page .glossary-view .searchbar-wrapper #edit-search--2:-ms-input-placeholder {
         font-style: italic; }
-      .ama__glossary-page .glossary-view #edit-search--2::-ms-input-placeholder {
+      .ama__glossary-page .glossary-view .searchbar-wrapper #edit-search--2::-ms-input-placeholder {
         font-style: italic; }
-      .ama__glossary-page .glossary-view #edit-search--2::placeholder {
+      .ama__glossary-page .glossary-view .searchbar-wrapper #edit-search--2::placeholder {
         font-style: italic; }
-      .ama__glossary-page .glossary-view #edit-search--2::after {
+      .ama__glossary-page .glossary-view .searchbar-wrapper #edit-search--2::after {
         display: block;
         position: absolute;
         right: 0;
@@ -17344,10 +17364,29 @@ body.search-results .ama__layout--two-column--left {
           .ama__glossary-page .glossary-view nav ul li a {
             color: #46166b;
             text-decoration: none; }
-  .ama__glossary-page .ama__75-25__masthead .heading-left {
-    margin-right: 0;
-    border-bottom: 1px solid #b4b4b4;
-    padding-top: 21px; }
+  .ama__glossary-page .ama__75-25__masthead {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr; }
+    @media (min-width: 75em) {
+      .ama__glossary-page .ama__75-25__masthead {
+        -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr; } }
+    .ama__glossary-page .ama__75-25__masthead .heading-left {
+      margin-right: 0;
+      border-bottom: 1px solid #b4b4b4;
+      padding-top: 21px; }
+  .ama__glossary-page .ama__layout--two-col-right--75-25 {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr; }
+    @media (min-width: 75em) {
+      .ama__glossary-page .ama__layout--two-col-right--75-25 {
+        -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr; } }
+    .ama__glossary-page .ama__layout--two-col-right--75-25 .ama__layout--two-col-right--75-25__right {
+      display: none; }
+      @media (min-width: 75em) {
+        .ama__glossary-page .ama__layout--two-col-right--75-25 .ama__layout--two-col-right--75-25__right {
+          display: block; } }
   .ama__glossary-page .curated-topics h2 {
     font-weight: 600;
     margin-bottom: 28px; }
@@ -17371,13 +17410,32 @@ body.search-results .ama__layout--two-column--left {
       margin-right: 12px;
       margin-bottom: 14px;
       text-decoration: none;
-      color: #333; }
+      color: #000000; }
       .ama__glossary-page .curated-topics .topic-wrapper a:hover {
         background: #46166B;
         color: white;
         text-decoration: none; }
       .ama__glossary-page .curated-topics .topic-wrapper a:last-child a {
         margin-right: 0; }
+    .ama__glossary-page .curated-topics .topic-wrapper .label {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+  .ama__glossary-page .autosuggestions-wrapper {
+    color: #46166B; }
+    .ama__glossary-page .autosuggestions-wrapper h2 {
+      color: #46166B; }
+    .ama__glossary-page .autosuggestions-wrapper a {
+      color: #46166B;
+      text-decoration: none; }
+    .ama__glossary-page .autosuggestions-wrapper ul.ui-autocomplete {
+      padding-bottom: 180px; }
+      .ama__glossary-page .autosuggestions-wrapper ul.ui-autocomplete .ui-state-active {
+        background: transparent;
+        text-decoration: none; }
+      .ama__glossary-page .autosuggestions-wrapper ul.ui-autocomplete .topic-wrapper {
+        position: absolute;
+        bottom: 10px;
+        width: 100%; }
 
 .ama__homepage .ama__layout--one-column__content-top {
   display: none; }
