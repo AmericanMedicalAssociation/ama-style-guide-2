@@ -220,4 +220,16 @@
       grid-template-areas: 'content_below sidebar';
     }
   }
+
+  .ama__subtitle{
+    .description {
+      @include type($myriad-pro, $font-weight-regular);
+      font-size: 20px;
+      line-height: 1.389;
+      @include breakpoint($bp-small) {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+  }
 }

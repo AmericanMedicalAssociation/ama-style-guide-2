@@ -54,12 +54,23 @@ article[class*='__page-content'] .ama__tags {
     background: $gray-7;
     border: 1px solid transparent;
     border-radius: 16px;
-    color: $black !important;
+    color: $black;
     white-space: nowrap;
     height: 34px;
     padding: 5px 15px 4px 14px;
 
     &:hover{
+      background-color: $white;
+      border: 1px solid $gray-30;
+      text-decoration: none;
+    }
+  }
+
+  .ama__link--purple.ama__link--catalog {
+    color: $white;
+    background: $purple;
+    &:hover {
+      color: $black;
       background-color: $white;
       border: 1px solid $gray-30;
       text-decoration: none;

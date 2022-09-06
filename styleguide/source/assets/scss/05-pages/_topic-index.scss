@@ -1,4 +1,5 @@
 .index-page,
+.ama__category,
 .ama__subcategory-index {
   .description {
     position: relative;
@@ -39,7 +40,7 @@
         .more {
           cursor: pointer;
           text-decoration:none;
-          color: $description-blue;
+          color: $blue;
           &:visited {
             color: $description-blue-visited;
           }
@@ -91,6 +92,11 @@
           content: "";
         }
         margin: 0;
+      }
+
+      &.ama__link--purple.ama__link--catalog {
+        color: $blue;
+        text-decoration: underline;
       }
     }
   }
