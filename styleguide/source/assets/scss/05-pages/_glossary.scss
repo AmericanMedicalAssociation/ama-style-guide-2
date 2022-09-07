@@ -12,6 +12,9 @@
     padding-bottom: 30px;
     margin-bottom: 28px;
     border-bottom: 4px solid $purple;
+    span.result-total[data-total="0"] ~ nav.pager {
+      display: none;
+    }
 
     /*  Alphabetical Filters List */
     #views-exposed-form-glossary-terms-topic-term-glossary {
@@ -107,7 +110,7 @@
 
     /* Search Box */
     .searchbar-wrapper {
-      
+
       .searchbar-inner {
 
         position: relative;
@@ -174,6 +177,10 @@
         li {
           display: inline-block;
           color: $purple;
+          &.is-active {
+            border-bottom: 1px solid $black;
+            line-height: 1;
+          }
           a {
             color: $purple;
             text-decoration: none;
