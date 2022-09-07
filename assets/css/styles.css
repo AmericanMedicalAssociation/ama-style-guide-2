@@ -16721,7 +16721,7 @@ body.search-results .ama__layout--two-column--left {
   -ms-grid-rows: max-content auto auto;
   grid-template-rows: -webkit-max-content auto auto;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
+  grid-template-areas: 'content sidebar' 'content_below sidebar'; }
   @media (max-width: 37.5em) {
     .ama__layout--two-col-right--75-25 {
       -ms-grid-columns: 1fr;
@@ -17224,6 +17224,8 @@ body.search-results .ama__layout--two-column--left {
     /* Search Box */
     /*  Term Results Display */
     /* pager */ }
+    .ama__glossary-page .glossary-view span.result-total[data-total="0"] ~ nav.pager {
+      display: none; }
     .ama__glossary-page .glossary-view #views-exposed-form-glossary-terms-topic-term-glossary {
       max-width: 100%;
       padding-bottom: 8px;
@@ -17354,6 +17356,9 @@ body.search-results .ama__layout--two-column--left {
         .ama__glossary-page .glossary-view nav ul li {
           display: inline-block;
           color: #46166B; }
+          .ama__glossary-page .glossary-view nav ul li.is-active {
+            border-bottom: 1px solid #000000;
+            line-height: 1; }
           .ama__glossary-page .glossary-view nav ul li a {
             color: #46166B;
             text-decoration: none; }
