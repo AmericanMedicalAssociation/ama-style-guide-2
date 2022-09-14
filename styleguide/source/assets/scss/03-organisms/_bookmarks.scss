@@ -36,6 +36,7 @@
     }
   }
   .flag {
+    margin-top: 0;
     @include breakpoint($bp-small max-width) {
       position: absolute;
       bottom: 35px;
@@ -48,6 +49,7 @@
 .flag {
   text-align: center;
   border: 1px solid #a28ab5;
+  margin-top: 35px;
   @include breakpoint($bp-small max-width) {
     width: 87px;
     a {
@@ -56,6 +58,7 @@
   }
   @include breakpoint($bp-small) {
     min-width: 180px;
+    max-width: 180px;
   }
   a {
     color: #310f4a;
