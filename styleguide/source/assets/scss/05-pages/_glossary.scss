@@ -8,6 +8,9 @@
     font-size: 18px;
     font-weight: normal;
   }
+  .viewsreference--view-title {
+    display: none;
+  }
   .glossary-view {
     padding-bottom: 30px;
     margin-bottom: 28px;
@@ -258,6 +261,34 @@
       }
       .label {
         flex-basis: 100%;
+      }
+    }
+  }
+
+  /* Suggested Listings */
+  h3.suggested-listing-title {
+    font-weight: $font-weight-bold;
+    padding-top: $gutter;
+    margin-bottom: $gutter/2;
+    text-transform: uppercase;
+    border-top: 4px solid $purple;
+  }
+  .suggested-listings {
+    display: flex;
+    column-gap: 29px;
+    a {
+      display: block;
+      flex: 1;
+      font-weight: $font-weight-bold;
+      padding: 6px 14px 39px;
+      text-decoration: none;
+      &:nth-of-type(odd) {
+        background-color: $darkBlue;
+        color: $white;
+      }
+      &:nth-of-type(even) {
+        background-color: $hoverGrayBlue;
+        color: $black;
       }
     }
   }
