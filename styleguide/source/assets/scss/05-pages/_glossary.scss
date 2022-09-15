@@ -8,6 +8,9 @@
     font-size: 18px;
     font-weight: normal;
   }
+  .viewsreference--view-title {
+    display: none;
+  }
   .glossary-view {
     padding-bottom: 30px;
     margin-bottom: 28px;
@@ -122,21 +125,24 @@
           margin-right: 89px;
         }
 
-        &::after {
+        .topic-search-button {
           display: block;
           visibility: visible;
           position: absolute;
           right: 0;
           bottom: 0;
           padding: 7px;
-          height: 25px;
-          width: 25px;
-          background-color: $purple;
-          content: url("../icons/svg/icon-search-white.svg");
+          height: 39px;
+          width: 39px;
+          background: $purple url("../icons/svg/icon-search-white.svg") no-repeat;
+          background-position: 5px 5px;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
 
-      #edit-search--2 {
+      #edit-topic--2 {
         border: 1px solid $purple;
         padding: 5px 10px;
 
@@ -255,6 +261,34 @@
       }
       .label {
         flex-basis: 100%;
+      }
+    }
+  }
+
+  /* Suggested Listings */
+  h3.suggested-listing-title {
+    font-weight: $font-weight-bold;
+    padding-top: $gutter;
+    margin-bottom: $gutter/2;
+    text-transform: uppercase;
+    border-top: 4px solid $purple;
+  }
+  .suggested-listings {
+    display: flex;
+    column-gap: 29px;
+    a {
+      display: block;
+      flex: 1;
+      font-weight: $font-weight-bold;
+      padding: 6px 14px 39px;
+      text-decoration: none;
+      &:nth-of-type(odd) {
+        background-color: $darkBlue;
+        color: $white;
+      }
+      &:nth-of-type(even) {
+        background-color: $hoverGrayBlue;
+        color: $black;
       }
     }
   }

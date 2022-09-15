@@ -1,0 +1,139 @@
+// Bookmark teaser styling
+.ama_book_mark {
+  border-bottom: solid 1px $gray-20;
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .ama_bookmark_left {
+    border-bottom: none;
+    padding-bottom: 96px;
+    @include breakpoint($bp-small) {
+      padding-bottom: 56px;
+    }
+  }
+  .ama_bookmark_right {
+    padding: $gutter/2 0;
+    @include breakpoint($bp-small) {
+      padding-bottom: 56px;
+    }
+    &:not(.ama__search-result__image) {
+      display: flex;
+      padding: 28px 0 56px;
+      .flag {
+        align-self: flex-end;
+      }
+    }
+  }
+  &.ama__search-result:hover {
+    .ama__search-result__title {
+      text-decoration: none;
+    }
+  }
+  .ama__search-result__text:hover {
+    .ama__search-result__title {
+      text-decoration: underline;
+    }
+  }
+  .flag {
+    margin-top: 0;
+    @include breakpoint($bp-small max-width) {
+      position: absolute;
+      bottom: 35px;
+      right: 0;
+    }
+  }
+}
+
+// Flag/bookmark styling
+.flag {
+  text-align: center;
+  border: 1px solid #a28ab5;
+  margin-top: 35px;
+  @include breakpoint($bp-small max-width) {
+    width: 87px;
+    a {
+      font-size: 14px;
+    }
+  }
+  @include breakpoint($bp-small) {
+    min-width: 180px;
+    max-width: 180px;
+  }
+  a {
+    color: #310f4a;
+    text-decoration: none;
+    position: relative;
+    @include breakpoint($bp-small) {
+      padding: 9px 0 8px;
+      display: block;
+    }
+    &::before {
+      display: block;
+      width: 19px;
+      height: 19px;
+      margin: 4px auto -8px;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      @include breakpoint($bp-small) {
+        padding-left: 5px;
+        width: 21px;
+        height: 26px;
+        margin: 0 auto;
+        position: absolute;
+        left: 35px;
+        top: 10px;
+      }
+    }
+  }
+  &.action-flag {
+    @include breakpoint($bp-small) {
+      a {
+        padding-left: 27px;
+      }
+    }
+    a::before {
+      background-image: url('../images/BookmarkIcon_Locker.svg');
+    }
+    a:hover {
+      &::before {
+        background-image: url('../images/BookmarkHoverIcon_Locker.svg');
+      }
+    }
+  }
+  &.action-unflag {
+    @include breakpoint($bp-small) {
+      a {
+        padding-left: 16px;
+      }
+    }
+    a::before {
+      background-image: url('../images/RemoveIcon_Locker.svg');
+    }
+    a:hover {
+      &::before {
+        background-image: url('../images/RemoveHoverIcon_Locker.svg');
+      }
+    }
+  }
+  .ajax-progress, 
+  .ajax-progress-throbber {
+    display: none;
+  }
+  p.js-flag-message {
+    display: none;
+  }
+}
+
+// My bookmark view styling
+.view-my-bookmark {
+  .views-infinite-scroll-content-wrapper {
+    .views-row:last-child {
+      .ama_book_mark {
+        border-bottom: none;
+      }
+    }
+  }
+}
