@@ -155,6 +155,14 @@
   }
   .flag {
     margin-top: 0;
+    &.action-unflag {
+      a::before {
+        background-image: url('../images/FollowHoverIcon_Locker.svg');
+        @include breakpoint($bp-small) {
+          left: 25px;
+        }
+      }
+    }
   }
   .flag-wrapper {
     display: flex;
@@ -165,6 +173,39 @@
     padding-bottom: 18px;
     @include breakpoint($bp-med) {
       align-items: right;
+    }
+  }
+}
+
+.index-page {
+  .flag.action-unflag {
+    a {
+      pointer-events: none;
+    }
+  }
+}
+
+.flag-topic {
+  &.action-flag {
+    a::before {
+      background-image: url('../images/FollowIcon_Locker@1x.svg');
+      @include breakpoint($bp-small) {
+        left: 25px;
+      }
+    }
+    a:hover {
+      text-decoration: underline;
+      &::before {
+        background-image: url('../images/FollowHoverIcon_Locker.svg');
+      }
+    }
+  }
+  &.action-unflag {
+    a::before {
+      background-image: url('../images/FollowingIcon_Locker.svg');
+      @include breakpoint($bp-small) {
+        left: 25px;
+      }
     }
   }
 }
