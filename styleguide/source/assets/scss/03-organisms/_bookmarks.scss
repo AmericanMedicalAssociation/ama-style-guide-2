@@ -150,7 +150,7 @@
       }
     }
   }
-  .ajax-progress, 
+  .ajax-progress,
   .ajax-progress-throbber {
     display: none;
   }
@@ -201,5 +201,36 @@
 .hub-page {
   .flag {
     margin-bottom: 14px;
+  }
+}
+
+//  My Topics view styling.
+.topic-search {
+  margin-top: 28px !important;
+  border-bottom: 1px solid #CBCBCB;
+}
+.my-topic-listing {
+  flex-direction: row;
+  .text {
+    padding-right: 14px;
+    h2 {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .flag {
+    margin-top: 0;
+  }
+  .flag-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    align-items: flex-end;
+    padding-bottom: 18px;
+    @include breakpoint($bp-med) {
+      align-items: right;
+    }
   }
 }
