@@ -28,7 +28,8 @@
     }
 
     @include breakpoint($bp-med) {
-      flex-grow: 1;
+      @include gutter($padding-right-full...);
+      flex-basis: 50%;
     }
   }
 
@@ -42,7 +43,7 @@
 
     @include breakpoint($bp-large) {
       margin-left: 0;
-      width: 40%;
+      flex-basis: 50%;
     }
 
     p {
