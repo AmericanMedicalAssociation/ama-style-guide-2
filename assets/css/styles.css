@@ -10938,9 +10938,12 @@ article[class*='__page-content'] .ama__tags {
         display: block; } }
   @media (min-width: 56.25em) {
     .ama__upcoming-event__title {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1; } }
+      padding-right: 21px;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; } }
+  @media (min-width: 56.25em) and (min-width: 56.25em) {
+    .ama__upcoming-event__title {
+      padding-right: 28px; } }
   .ama__upcoming-event__text {
     color: #767676;
     display: -webkit-box;
@@ -10952,7 +10955,8 @@ article[class*='__page-content'] .ama__tags {
     @media (min-width: 75em) {
       .ama__upcoming-event__text {
         margin-left: 0;
-        width: 40%; } }
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%; } }
     .ama__upcoming-event__text p, .ama__upcoming-event__text .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__upcoming-event__text .ama__image__text__subtitle, .ama__upcoming-event__text .ama__resource-link--inline__text {
       margin-right: 21px;
       font-size: 0.7em;
@@ -12677,10 +12681,12 @@ article[class*='__page-content'] .ama__tags {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse; } }
+      flex-direction: row-reverse;
+      padding-top: 14px; } }
   .ama_book_mark .ama_bookmark_left {
     border-bottom: none;
-    padding-bottom: 96px; }
+    padding-bottom: 96px;
+    padding-top: 0; }
     @media (min-width: 37.5em) {
       .ama_book_mark .ama_bookmark_left {
         padding-bottom: 56px; } }
@@ -12688,12 +12694,40 @@ article[class*='__page-content'] .ama__tags {
     padding: 14px 0; }
     @media (min-width: 37.5em) {
       .ama_book_mark .ama_bookmark_right {
-        padding-bottom: 56px; } }
+        padding-bottom: 56px; }
+        .ama_book_mark .ama_bookmark_right.ama__search-result__image {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column; }
+          .ama_book_mark .ama_bookmark_right.ama__search-result__image > div {
+            -webkit-box-flex: 1;
+            -ms-flex: auto;
+            flex: auto;
+            -ms-flex-item-align: start;
+            align-self: flex-start; }
+          .ama_book_mark .ama_bookmark_right.ama__search-result__image .flag {
+            -webkit-box-flex: 1;
+            -ms-flex: auto;
+            flex: auto;
+            -ms-flex-item-align: end;
+            align-self: flex-end; }
+        .ama_book_mark .ama_bookmark_right .flag a::before {
+          left: 35px; }
+        .ama_book_mark .ama_bookmark_right .flag.action-unflag a::before {
+          background-image: url("../images/RemoveIcon_Locker.svg"); }
+        .ama_book_mark .ama_bookmark_right .flag.action-unflag a:hover::before {
+          background-image: url("../images/RemoveHoverIcon_Locker.svg"); } }
     .ama_book_mark .ama_bookmark_right:not(.ama__search-result__image) {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex;
-      padding: 28px 0 56px; }
+      display: flex; }
+      @media (min-width: 37.5em) {
+        .ama_book_mark .ama_bookmark_right:not(.ama__search-result__image) {
+          padding: 28px 0 56px; } }
       .ama_book_mark .ama_bookmark_right:not(.ama__search-result__image) .flag {
         -ms-flex-item-align: end;
         align-self: flex-end; }
@@ -12721,7 +12755,8 @@ article[class*='__page-content'] .ama__tags {
   @media (min-width: 37.5em) {
     .flag {
       min-width: 180px;
-      max-width: 180px; } }
+      max-width: 180px;
+      max-height: 46px; } }
   .flag a {
     color: #310f4a;
     text-decoration: none;
@@ -12746,30 +12781,117 @@ article[class*='__page-content'] .ama__tags {
           height: 26px;
           margin: 0 auto;
           position: absolute;
-          left: 35px;
+          left: 20px;
           top: 10px; } }
   @media (min-width: 37.5em) {
     .flag.action-flag a {
       padding-left: 27px; } }
   .flag.action-flag a::before {
-    background-image: url("../images/BookmarkIcon_Locker.svg"); }
+    background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
   .flag.action-flag a:hover::before {
-    background-image: url("../images/BookmarkHoverIcon_Locker.svg"); }
+    background-image: url("../images/BookmarkedIcon_Locker.svg"); }
   @media (min-width: 37.5em) {
     .flag.action-unflag a {
       padding-left: 16px; } }
   .flag.action-unflag a::before {
-    background-image: url("../images/RemoveIcon_Locker.svg"); }
+    background-image: url("../images/BookmarkedIcon_Locker.svg"); }
   .flag.action-unflag a:hover::before {
-    background-image: url("../images/RemoveHoverIcon_Locker.svg"); }
+    background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
   .flag .ajax-progress,
   .flag .ajax-progress-throbber {
     display: none; }
   .flag p.js-flag-message, .flag .ama__jama .ama__image__text .js-flag-message.ama__image__text__subtitle, .ama__jama .ama__image__text .flag .js-flag-message.ama__image__text__subtitle, .flag .js-flag-message.ama__resource-link--inline__text {
     display: none; }
 
+.view-my-bookmark .views-exposed-form {
+  margin-top: 28px; }
+  .view-my-bookmark .views-exposed-form .form-actions {
+    margin-top: 7px; }
+
+.view-my-bookmark .views-infinite-scroll-content-wrapper .views-row:first-child .ama_book_mark {
+  border-top: 1px solid #a28ab5; }
+
 .view-my-bookmark .views-infinite-scroll-content-wrapper .views-row:last-child .ama_book_mark {
   border-bottom: none; }
+
+.view-my-bookmark li.pager__item {
+  text-align: center; }
+
+.no-bookmarks {
+  border-top: 2px solid #CBCBCB;
+  border-bottom: 1px solid #CBCBCB;
+  padding: 14px 0; }
+
+.ama__basic .flag {
+  margin-bottom: 27px; }
+
+.hub-page .flag {
+  margin-bottom: 14px; }
+
+.app_description .flag {
+  margin-bottom: 34px; }
+
+.topic-search {
+  margin-top: 28px !important;
+  border-bottom: 1px solid #CBCBCB; }
+
+.my-topic-listing {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+  .my-topic-listing .text {
+    padding-right: 14px; }
+    .my-topic-listing .text h2 a {
+      text-decoration: none; }
+  .my-topic-listing .flag {
+    margin-top: 0; }
+    .my-topic-listing .flag.action-unflag a::before {
+      background-image: url("../images/FollowHoverIcon_Locker.svg"); }
+      @media (min-width: 37.5em) {
+        .my-topic-listing .flag.action-unflag a::before {
+          left: 25px; } }
+  .my-topic-listing .flag-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    padding-bottom: 18px; }
+    @media (min-width: 56.25em) {
+      .my-topic-listing .flag-wrapper {
+        -webkit-box-align: right;
+        -ms-flex-align: right;
+        align-items: right; } }
+
+.index-page .flag.action-unflag a {
+  pointer-events: none; }
+
+.flag-topic.action-flag a::before {
+  background-image: url("../images/FollowIcon_Locker@1x.svg"); }
+  @media (min-width: 37.5em) {
+    .flag-topic.action-flag a::before {
+      left: 25px; } }
+
+.flag-topic.action-flag a:hover {
+  text-decoration: underline; }
+  .flag-topic.action-flag a:hover::before {
+    background-image: url("../images/FollowHoverIcon_Locker.svg"); }
+
+.flag-topic.action-unflag a::before {
+  background-image: url("../images/FollowingIcon_Locker.svg"); }
+  @media (min-width: 37.5em) {
+    .flag-topic.action-unflag a::before {
+      left: 25px; } }
 
 .bpCalculator {
   margin-top: 21px; }
@@ -14471,6 +14593,8 @@ section.ama__page--event__speakers {
       @media (min-width: 56.25em) {
         .ama__masthead__content__date {
           padding-top: 28px; } }
+    .ama__masthead__content__date .flag {
+      margin-top: 0; }
     .ama__masthead__content__share, .ama__masthead__content__share-wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
