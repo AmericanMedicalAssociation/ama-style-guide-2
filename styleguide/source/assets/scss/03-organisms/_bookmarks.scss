@@ -4,10 +4,12 @@
   @include breakpoint($bp-small) {
     display: flex;
     flex-direction: row-reverse;
+    padding-top: 14px;
   }
   .ama_bookmark_left {
     border-bottom: none;
     padding-bottom: 96px;
+    padding-top: 0;
     @include breakpoint($bp-small) {
       padding-bottom: 56px;
     }
@@ -16,10 +18,39 @@
     padding: $gutter/2 0;
     @include breakpoint($bp-small) {
       padding-bottom: 56px;
+      &.ama__search-result__image {
+        display: flex;
+        flex-direction: column;
+        &> div { 
+          flex: auto;
+          align-self: flex-start;
+        }
+        .flag {
+          flex: auto;
+          align-self: flex-end;
+        }
+      }
+      .flag {
+        a::before {
+          left: 35px;
+        }
+        &.action-unflag {
+          a::before {
+            background-image: url('../images/RemoveIcon_Locker.svg');
+          }
+          a:hover {
+            &::before {
+              background-image: url('../images/RemoveHoverIcon_Locker.svg');
+            }
+          }
+        }
+      }
     }
     &:not(.ama__search-result__image) {
       display: flex;
-      padding: 28px 0 56px;
+      @include breakpoint($bp-small) {
+        padding: 28px 0 56px;
+      }
       .flag {
         align-self: flex-end;
       }
@@ -59,6 +90,7 @@
   @include breakpoint($bp-small) {
     min-width: 180px;
     max-width: 180px;
+    max-height: 46px;
   }
   a {
     color: #310f4a;
@@ -83,7 +115,7 @@
         height: 26px;
         margin: 0 auto;
         position: absolute;
-        left: 35px;
+        left: 20px;
         top: 10px;
       }
     }
@@ -95,11 +127,11 @@
       }
     }
     a::before {
-      background-image: url('../images/BookmarkIcon_Locker.svg');
+      background-image: url('../images/BookmarksMenuIcon_Locker.svg');
     }
     a:hover {
       &::before {
-        background-image: url('../images/BookmarkHoverIcon_Locker.svg');
+        background-image: url('../images/BookmarkedIcon_Locker.svg');
       }
     }
   }
@@ -110,11 +142,11 @@
       }
     }
     a::before {
-      background-image: url('../images/RemoveIcon_Locker.svg');
+      background-image: url('../images/BookmarkedIcon_Locker.svg');
     }
     a:hover {
       &::before {
-        background-image: url('../images/RemoveHoverIcon_Locker.svg');
+        background-image: url('../images/BookmarksMenuIcon_Locker.svg');
       }
     }
   }
@@ -129,12 +161,52 @@
 
 // My bookmark view styling
 .view-my-bookmark {
+  .views-exposed-form {
+    margin-top: 28px;
+    .form-actions {
+      margin-top: 7px;
+    }
+  }
   .views-infinite-scroll-content-wrapper {
+    .views-row:first-child {
+      .ama_book_mark {
+        border-top: 1px solid #a28ab5;
+      }
+    }
     .views-row:last-child {
       .ama_book_mark {
         border-bottom: none;
       }
     }
+  }
+  li.pager__item {
+    text-align: center;
+  }
+}
+
+// Empty bookmark styling
+.no-bookmarks {
+  border-top: 2px solid $gray-20;
+  border-bottom: 1px solid $gray-20;
+  padding: 14px 0;
+}
+
+// Layout overrides
+.ama__basic {
+  .flag {
+    margin-bottom: 27px;
+  }
+}
+
+.hub-page {
+  .flag {
+    margin-bottom: 14px;
+  }
+}
+
+.app_description {
+  .flag {
+    margin-bottom: 34px;
   }
 }
 
