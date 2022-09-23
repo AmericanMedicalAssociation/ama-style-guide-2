@@ -1,0 +1,90 @@
+// Flag/bookmark styling
+.ama_locker_navigation {
+  display: flex;
+  justify-content: end;
+  background-color: $white;
+  a {
+    position: relative;
+    width: 101px;
+    height: 44px;
+    border: 1px solid #a28ab5;
+    padding: 2px 0 0;
+    font-size: 14px;
+    color: #310f4a;
+    text-decoration: none;
+    text-align: center;
+    @include breakpoint($bp-small) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 162px;
+      font-size: 18px;
+    }
+    &::before {
+      display: block;
+      width: 24px;
+      height: 21px;
+      margin: 0 auto;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      @include breakpoint($bp-small) {
+      }
+    }
+    &.subscriptions {
+      @include breakpoint($bp-small) {
+        padding: 9px 11px 8px;
+      }
+      &::before {
+        background-image: url('../images/SubscriptionsMenuIcon_Locker.svg');
+        @include breakpoint($bp-small) {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      &:hover {
+        &::before {
+          background-image: url('../images/SubscribedIcon_Locker.svg');
+        }
+      }
+    }
+    &.topics {
+      @include breakpoint($bp-small) {
+        width: 155px;
+        padding: 9px 37px 8px 36px;
+      }
+      &::before {
+        width: 23px;
+        background-image: url('../images/TopicsMenuIcon_Locker.svg');
+        @include breakpoint($bp-small) {
+          width: 27px;
+          height: 27px;
+        }
+      }
+      &:hover {
+        &::before {
+          background-image: url('../images/FollowingIcon_Locker.svg');
+        }
+      }
+    }
+    &.bookmarks {
+      @include breakpoint($bp-small) {
+        padding: 9px 23px 8px 25px;
+      }
+      &::before {
+        width: 22px;
+        background-image: url('../images/BookmarksMenuIcon_Locker.svg');
+        @include breakpoint($bp-small) {
+          width: 32px;
+          height: 26px;
+        }
+      }
+      &:hover {
+        &::before {
+          background-image: url('../images/BookmarkedIcon_Locker.svg');
+        }
+      }
+    }
+  }
+}
