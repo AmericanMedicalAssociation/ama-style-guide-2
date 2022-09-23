@@ -1,0 +1,37 @@
+{% set universal = mainNavigation.universal ? "ama__main-navigation--universal" %}
+<div id="amaCategoryNavigation" class="ama__main-navigation {{ universal }}">
+  <div class="container">
+    {% if mainNavigation.universal %}
+      {% include '@molecules/explore-menu.twig' with { exploreMenu : mainNavigation.exploreMenu } %}
+    {% else %}
+      {% include '@atoms/menu-icon.twig' with { menuIcon : mainNavigation.menuIcon } %}
+    {% endif %}
+
+    {% include '@organisms/category-navigation-menu.twig' with { categoryNavigationMenu : mainNavigation.categoryNavigationMenu } %}
+    {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : mainNavigation.siteLogo } %}
+
+    <div class="ama__main-navigation__join--buttons">
+      {% if mainNavigation.joinButton.text %}
+        {% include '@atoms/button/button.twig' with { button : mainNavigation.joinButton } %}
+      {% endif %}
+
+      {% if mainNavigation.renewButton.text %}
+        {% include '@atoms/button/button.twig' with { button : mainNavigation.renewButton } %}
+      {% endif %}
+
+      {% if mainNavigation.memberSince %}
+        {% include '@atoms/paragraph.twig' with { paragraph : mainNavigation.memberSince } %}
+      {% endif %}
+    </div>
+
+    <div class="ama__main-navigation__join--links">
+      {% include '@atoms/link/link.twig' with { link : mainNavigation.joinRenewLink } %}
+    </div>
+
+    <div class="ama__main-navigation__member-benefits-link">
+      {% include '@atoms/link/link.twig' with { link : mainNavigation.memberBenefitsLink } %}
+    </div>
+
+    {% include '@molecules/sign-in-dropdown.twig' with { signInDropdown : mainNavigation.signInDropdown } %}
+  </div>
+</div>
