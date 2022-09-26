@@ -1,0 +1,120 @@
+.ama-dr-finder__search__field {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 0;
+  }
+
+  .form-actions {
+    margin-left: -24px;
+  }
+
+  // This has to be specific b/c it's so different.
+  &__input[type="text"] {
+    font-style: italic;
+    border: 0;
+    border-bottom: 1px solid $pg-blue;
+    color: $gray-50;
+    line-height: 1.2;
+    padding: 1em 28px 3px 0;
+
+    &:focus,
+    &:active {
+      border: 0;
+      border-bottom: 1px solid $light-blue;
+      color: $black;
+      font-style: normal;
+    }
+  }
+
+  .form-submit {
+    @extend .icon--search-purple;
+    background-color: transparent;
+    background-size: contain;
+    background-position: 0 0;
+    width: 25px;
+    height: 30px;
+    padding:0;
+    margin: 0;
+    min-height: 30px;
+    min-width: 25px;
+    max-height: 30px;
+    max-width: 25px;
+    text-indent: -999px;
+    overflow: hidden;
+    padding-bottom: calc(100% * 3 / 4);
+
+    &:hover {
+      border: 0;
+    }
+  }
+
+  .ama__applied-filters__remove {
+    display: none;
+  }
+
+  // This has to be specific b/c it's so different.
+  &__button {
+    margin-left: -24px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    background-size: 25px 25px;
+    min-height: 25px;
+    max-height: 25px;
+  }
+
+  &--in-body {
+    align-items: stretch;
+
+    input[type="text"] {
+      border: 1px solid $purple;
+      margin: 0;
+
+      &:active,
+      &:focus {
+        border: 1px solid $purple;
+      }
+    }
+
+
+    .ama__search__field__input[type="text"],
+    .ama__search__field__input[type="text"]:focus,
+    .ama__search__field__input[type="text"]:active {
+      padding: 5px 10px;
+    }
+
+    .ama__search__field__button {
+      background-color: $purple;
+      margin: 0;
+      padding: 5px 5px 0;
+    }
+
+    .subcategory_listing {
+      min-height: 37px;
+      max-height: 40px;
+
+      svg {
+        height: 24px;
+        width: 26px;
+      }
+    }
+  }
+
+  &__clear-button {
+    color: $purple;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 25px;
+    font-style: italic;
+    padding: 21px 0;
+    @include breakpoint($bp-med min-width) {
+      padding: 7px 0 14px 0;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+}
