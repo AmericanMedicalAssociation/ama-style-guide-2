@@ -1,0 +1,11 @@
+<div class="ama-dr-finder__search__field ama-dr-finder__search__field--in-body">
+  <label for="ama-dr-finder__search__label" class="is-vishidden">{{ searchField.label }}:</label>
+  <input id="{{ searchField.id }}" class="ama-dr-finder__search__field__input" name="{{ searchField.name }}" type="text" placeholder="{{ searchField.placeholder }}" required="" aria-required="true">
+  <div class="ama-dr-finder__global-search__action" aria-label="Search button">
+    <button type="{{ button.type }}"
+            class="ama-dr-finder__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ class }}"
+            aria-label="{{ button.info }}">
+      {% include '@atoms/media/icons/svg/icon-search-white.twig' %}
+    </button>
+  </div>
+</div>
