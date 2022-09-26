@@ -30,32 +30,6 @@
     }
   }
 
-  .form-submit {
-    @extend .icon--search-purple;
-    background-color: transparent;
-    background-size: contain;
-    background-position: 0 0;
-    width: 25px;
-    height: 30px;
-    padding:0;
-    margin: 0;
-    min-height: 30px;
-    min-width: 25px;
-    max-height: 30px;
-    max-width: 25px;
-    text-indent: -999px;
-    overflow: hidden;
-    padding-bottom: calc(100% * 3 / 4);
-
-    &:hover {
-      border: 0;
-    }
-  }
-
-  .ama__applied-filters__remove {
-    display: none;
-  }
-
   // This has to be specific b/c it's so different.
   &__button {
     margin-left: -24px;
@@ -81,26 +55,16 @@
     }
 
 
-    .ama__search__field__input[type="text"],
-    .ama__search__field__input[type="text"]:focus,
-    .ama__search__field__input[type="text"]:active {
+    .ama-dr-finder__search__field__input[type="text"],
+    .ama-dr-finder__search__field__input[type="text"]:focus,
+    .ama-dr-finder__search__field__input[type="text"]:active {
       padding: 5px 10px;
     }
 
-    .ama__search__field__button {
+    .ama-dr-finder__search__field__button {
       background-color: $purple;
       margin: 0;
       padding: 5px 5px 0;
-    }
-
-    .subcategory_listing {
-      min-height: 37px;
-      max-height: 40px;
-
-      svg {
-        height: 24px;
-        width: 26px;
-      }
     }
   }
 
