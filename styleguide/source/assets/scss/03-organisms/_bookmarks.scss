@@ -35,12 +35,21 @@
           left: 35px;
         }
         &.action-unflag {
+          a {
+            pointer-events: all;
+          }
           a::before {
             background-image: url('../images/RemoveIcon_Locker.svg');
           }
           a:hover {
             &::before {
               background-image: url('../images/RemoveHoverIcon_Locker.svg');
+            }
+          }
+          // When re-flagging unflagged bookmarks
+          &:not(.flag-glossary) {
+            a::before {
+              left: 20px;
             }
           }
         }
@@ -136,17 +145,18 @@
     }
   }
   &.action-unflag {
-    @include breakpoint($bp-small) {
-      a {
+    a {
+      pointer-events: none;
+      @include breakpoint($bp-small) {
         padding-left: 16px;
       }
-    }
-    a::before {
-      background-image: url('../images/BookmarkedIcon_Locker.svg');
-    }
-    a:hover {
       &::before {
-        background-image: url('../images/BookmarksMenuIcon_Locker.svg');
+        background-image: url('../images/BookmarkedIcon_Locker.svg');
+      }
+      &:hover {
+        &::before {
+          background-image: url('../images/BookmarksMenuIcon_Locker.svg');
+        }
       }
     }
   }
@@ -228,6 +238,9 @@
   .flag {
     margin-top: 0;
     &.action-unflag {
+      a {
+        pointer-events: all;
+      }
       a::before {
         background-image: url('../images/FollowHoverIcon_Locker.svg');
         @include breakpoint($bp-small) {
