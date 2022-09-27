@@ -1,84 +1,34 @@
-.ama-dr-finder__search__field {
+.ama-dr-finder-search-field {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+}
 
-  @include breakpoint($bp-small) {
-    flex-direction: row;
-    align-items: baseline;
-    margin-bottom: 0;
-  }
+.ama-dr-finder-search-field__label {
+  width: 100%;
+  color: $purple;
+  font-size: inherit;
+  text-transform: inherit;
+}
 
-  .form-actions {
-    margin-left: -24px;
-  }
+.ama-dr-finder-search-field__input[type="text"] {
+  flex: 1;
+  font-style: italic;
+  border: 1px solid $purple;
+  color: $gray-50;
+  line-height: 1.2;
 
-  // This has to be specific b/c it's so different.
-  &__input[type="text"] {
-    font-style: italic;
-    border: 0;
-    border-bottom: 1px solid $pg-blue;
-    color: $gray-50;
-    line-height: 1.2;
-    padding: 1em 28px 3px 0;
-
-    &:focus,
-    &:active {
-      border: 0;
-      border-bottom: 1px solid $light-blue;
-      color: $black;
-      font-style: normal;
-    }
-  }
-
-  // This has to be specific b/c it's so different.
-  &__button {
-    margin-left: -24px;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    background-size: 25px 25px;
-    min-height: 25px;
-    max-height: 25px;
-  }
-
-  &--in-body {
-    align-items: stretch;
-
-    input[type="text"] {
-      border: 1px solid $purple;
-      margin: 0;
-
-      &:active,
-      &:focus {
-        border: 1px solid $purple;
-      }
-    }
-
-
-    .ama-dr-finder__search__field__input[type="text"],
-    .ama-dr-finder__search__field__input[type="text"]:focus,
-    .ama-dr-finder__search__field__input[type="text"]:active {
-      padding: 5px 10px;
-    }
-
-    .ama-dr-finder__search__field__button {
-      background-color: $purple;
-      margin: 0;
-      padding: 5px 5px 0;
-    }
-  }
-
-  &__clear-button {
-    color: $purple;
-    display: inline-block;
-    font-size: 20px;
-    line-height: 25px;
-    font-style: italic;
-    padding: 21px 0;
-    @include breakpoint($bp-med min-width) {
-      padding: 7px 0 14px 0;
-      font-size: 18px;
-      line-height: 27px;
-    }
+  &:focus,
+  &:active {
+    border: 1px solid $purple;
+    color: $black;
+    font-style: normal;
   }
 }
+
+.ama-dr-finder-search-field__button {
+  background-color: $purple;
+  margin: 0;
+  padding: 10px 15px;
+}
+
+
