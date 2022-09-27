@@ -1,7 +1,10 @@
 // Flag/bookmark styling
 .ama_locker_navigation {
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  @include breakpoint($bp-small) {
+    justify-content: end;
+  }
   a {
     position: relative;
     width: 101px;
@@ -29,8 +32,6 @@
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: cover;
-      @include breakpoint($bp-small) {
-      }
     }
     &.subscriptions {
       @include breakpoint($bp-small) {
