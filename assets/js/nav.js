@@ -21,12 +21,16 @@
           return;
         } else if($(window).width() < 768 ) { // If less than tablet
           $('.ama__main-navigation').sticky({zIndex: 501});
+          $('.ama_locker_navigation').sticky({zIndex: 501});
         } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
           $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 72 });
+          $('.ama_locker_navigation').sticky({ zIndex: 501, topSpacing: 132 });
         } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
           $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 39 });
+          $('.ama_locker_navigation').sticky({ zIndex: 501, topSpacing: 99 });
         } else {
           $('.ama__main-navigation ').sticky({ zIndex: 501 });
+          $('.ama_locker_navigation').sticky({zIndex: 501});
         }
       });
 

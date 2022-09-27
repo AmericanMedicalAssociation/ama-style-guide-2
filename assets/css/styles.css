@@ -12717,10 +12717,14 @@ article[class*='__page-content'] .ama__tags {
             align-self: flex-end; }
         .ama_book_mark .ama_bookmark_right .flag a::before {
           left: 35px; }
+        .ama_book_mark .ama_bookmark_right .flag.action-unflag a {
+          pointer-events: all; }
         .ama_book_mark .ama_bookmark_right .flag.action-unflag a::before {
           background-image: url("../images/RemoveIcon_Locker.svg"); }
         .ama_book_mark .ama_bookmark_right .flag.action-unflag a:hover::before {
-          background-image: url("../images/RemoveHoverIcon_Locker.svg"); } }
+          background-image: url("../images/RemoveHoverIcon_Locker.svg"); }
+        .ama_book_mark .ama_bookmark_right .flag.action-unflag:not(.flag-glossary) a::before {
+          left: 20px; } }
     .ama_book_mark .ama_bookmark_right:not(.ama__search-result__image) {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -12790,13 +12794,15 @@ article[class*='__page-content'] .ama__tags {
     background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
   .flag.action-flag a:hover::before {
     background-image: url("../images/BookmarkedIcon_Locker.svg"); }
-  @media (min-width: 37.5em) {
-    .flag.action-unflag a {
-      padding-left: 16px; } }
-  .flag.action-unflag a::before {
-    background-image: url("../images/BookmarkedIcon_Locker.svg"); }
-  .flag.action-unflag a:hover::before {
-    background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
+  .flag.action-unflag a {
+    pointer-events: none; }
+    @media (min-width: 37.5em) {
+      .flag.action-unflag a {
+        padding-left: 16px; } }
+    .flag.action-unflag a::before {
+      background-image: url("../images/BookmarkedIcon_Locker.svg"); }
+    .flag.action-unflag a:hover::before {
+      background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
   .flag .ajax-progress,
   .flag .ajax-progress-throbber {
     display: none; }
@@ -12846,6 +12852,8 @@ article[class*='__page-content'] .ama__tags {
       text-decoration: none; }
   .my-topic-listing .flag {
     margin-top: 0; }
+    .my-topic-listing .flag.action-unflag a {
+      pointer-events: all; }
     .my-topic-listing .flag.action-unflag a::before {
       background-image: url("../images/FollowHoverIcon_Locker.svg"); }
       @media (min-width: 37.5em) {
@@ -14275,6 +14283,88 @@ section.ama__page--event__speakers {
   @media (min-width: 75em) {
     .ama__hub-card-row .ama__hub-card:nth-child(1):nth-last-child(4).ama__hub-card-portrait, .ama__hub-card-row .ama__hub-card:nth-child(2):nth-last-child(3).ama__hub-card-portrait, .ama__hub-card-row .ama__hub-card:nth-child(3):nth-last-child(2).ama__hub-card-portrait, .ama__hub-card-row .ama__hub-card:nth-child(4):nth-last-child(1).ama__hub-card-portrait {
       min-height: 423px; } }
+
+.ama_locker_navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  @media (min-width: 37.5em) {
+    .ama_locker_navigation {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: end; } }
+  .ama_locker_navigation a {
+    position: relative;
+    width: 101px;
+    height: 44px;
+    border: 1px solid #a28ab5;
+    padding: 2px 0 0;
+    font-size: 14px;
+    color: #310f4a;
+    text-decoration: none;
+    text-align: center;
+    background-color: #ffffff; }
+    @media (min-width: 37.5em) {
+      .ama_locker_navigation a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 162px;
+        font-size: 18px; } }
+    .ama_locker_navigation a::before {
+      display: block;
+      width: 24px;
+      height: 21px;
+      margin: 0 auto;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover; }
+    @media (min-width: 37.5em) {
+      .ama_locker_navigation a.subscriptions {
+        padding: 9px 11px 8px; } }
+    .ama_locker_navigation a.subscriptions::before {
+      background-image: url("../images/SubscriptionsMenuIcon_Locker.svg"); }
+      @media (min-width: 37.5em) {
+        .ama_locker_navigation a.subscriptions::before {
+          width: 32px;
+          height: 32px; } }
+    .ama_locker_navigation a.subscriptions:hover::before {
+      background-image: url("../images/SubscribedIcon_Locker.svg"); }
+    @media (min-width: 37.5em) {
+      .ama_locker_navigation a.topics {
+        width: 155px;
+        padding: 9px 37px 8px 36px; } }
+    .ama_locker_navigation a.topics::before {
+      width: 23px;
+      background-image: url("../images/TopicsMenuIcon_Locker.svg"); }
+      @media (min-width: 37.5em) {
+        .ama_locker_navigation a.topics::before {
+          width: 27px;
+          height: 27px; } }
+    .ama_locker_navigation a.topics:hover::before {
+      background-image: url("../images/FollowingIcon_Locker.svg"); }
+    @media (min-width: 37.5em) {
+      .ama_locker_navigation a.bookmarks {
+        padding: 9px 23px 8px 25px; } }
+    .ama_locker_navigation a.bookmarks::before {
+      width: 22px;
+      background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
+      @media (min-width: 37.5em) {
+        .ama_locker_navigation a.bookmarks::before {
+          width: 32px;
+          height: 26px; } }
+    .ama_locker_navigation a.bookmarks:hover::before {
+      background-image: url("../images/BookmarkedIcon_Locker.svg"); }
 
 .ama__main-navigation {
   border-bottom: 1px solid #767676;
