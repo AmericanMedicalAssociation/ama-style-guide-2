@@ -9,7 +9,6 @@ Search field that appears in the Doctor Finder pages.
      "label": type: string / optional
      "name": type: string / optional
      "placeholder": type: string / optional
-     "helpText": type: string / optional
   }
 }
 ~~~
