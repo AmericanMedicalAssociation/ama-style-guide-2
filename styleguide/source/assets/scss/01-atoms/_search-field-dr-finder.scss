@@ -1,0 +1,35 @@
+.ama-dr-finder-search-field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// This label needs to be on top of input.
+.ama-dr-finder-search-field__label {
+  width: 100%;
+  color: $purple;
+  font-size: inherit;
+  text-transform: inherit;
+}
+
+.ama-dr-finder-search-field__input[type="text"] {
+  flex-grow : 1;
+  flex-shrink : 1;
+  flex-basis : 0;
+  font-style: italic;
+  border: 1px solid $purple;
+  color: $gray-50;
+  line-height: 1.2;
+
+  &:focus,
+  &:active {
+    border: 1px solid $purple;
+    color: $black;
+    font-style: normal;
+  }
+}
+
+.ama-dr-finder-search-field__button {
+  background-color: $purple;
+  margin: 0;
+  padding: 10px 20px;
+}
