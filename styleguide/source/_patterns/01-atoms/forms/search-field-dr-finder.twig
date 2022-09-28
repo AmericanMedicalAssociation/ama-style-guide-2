@@ -1,0 +1,28 @@
+{#
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder search field with label.
+#}
+
+<div class="ama-dr-finder-search-field">
+  <label
+    for="{{ searchFieldDrFinder.id }}"
+    class="ama-dr-finder-search-field__label"
+  >{{ searchFieldDrFinder.label }}
+  </label>
+  <input
+    id="{{ searchFieldDrFinder.id }}"
+    class="ama-dr-finder-search-field__input"
+    name="{{ searchFieldDrFinder.name }}"
+    type="text"
+    placeholder="{{ searchFieldDrFinder.placeholder }}"
+    required="{{ searchFieldDrFinder.required }}"
+    aria-required="{{ searchFieldDrFinder.required }}"
+  >
+  <button
+    type="{{ searchFieldDrFinder.button.type }}"
+    class="ama-dr-finder-search-field__button"
+    aria-label="{{ searchFieldDrFinder.button.ariaLabel }}"
+  >
+    {% include '@atoms/media/icons/svg/icon-search-white.twig' %}
+  </button>
+</div>
