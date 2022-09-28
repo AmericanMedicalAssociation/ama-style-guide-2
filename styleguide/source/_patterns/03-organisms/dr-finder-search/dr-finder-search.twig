@@ -1,5 +1,11 @@
 {# @copyright Copyright (c) 2022 Palantir.net #}
+
 <div class="dr-finder-search">
-{# Include the dr finder search fields #}
-    <h{{ drFinderSearch.heading.level }} class="{{ drFinderSearch.heading.class }}"> {{ drFinderSearch.heading.text|raw }} </h{{ drFinderSearch.heading.level }}>
+  <div class="dr-finder-search__search-field">
+    {# include '@atoms/forms/search-field-dr-finder.twig' #}
+  </div>
+  <div class="dr-finder-search__quick-finder">
+    {# include '@molecules/forms/quick-finder-dr-finder.twig' TO BE CREATED IN THE FUTURE #}
+  </div>
+  <div class="dr-finder-search__cta"> {{ drFinderSearch.cta.text|raw }} </div>
 </div>
