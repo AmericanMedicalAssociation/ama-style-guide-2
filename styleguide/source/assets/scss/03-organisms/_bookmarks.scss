@@ -106,6 +106,24 @@
   }
 }
 
+.my-topic-listing {
+  .title-removed,
+  .description-removed {
+    display: none;
+  }
+  &.flag-removed {
+    .ama__search-result__description {
+      display: none;
+    }
+    .title-removed {
+      display: inline;
+    }
+    .description-removed {
+      display: block;
+    }
+  }
+}
+
 // Flag/bookmark styling
 .flag {
   text-align: center;
