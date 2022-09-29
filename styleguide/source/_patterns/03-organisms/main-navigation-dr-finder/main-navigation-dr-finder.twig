@@ -1,7 +1,10 @@
-<div id="amaCategoryNavigation" class="ama__main-navigation">
+<div id="amaCategoryNavigation" class="ama__main-navigation ama__main-navigation--dr-finder">
   <div class="container">
-    {% include '@molecules/explore-menu.twig' with { exploreMenu : drFinderMainNavigation.exploreMenu } %}
+    {% include '@molecules/explore-menu-dr-finder.twig' with { exploreMenu : drFinderMainNavigation.exploreMenu } %}
     {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : drFinderMainNavigation.siteLogo } %}
     {% include '@molecules/sign-in-dropdown.twig' with { signInDropdown : drFinderMainNavigation.signInDropdown } %}
+    {% include "@atoms/heading/heading.twig"  with { heading : exploreMenu.heading } %}
+{#    {% include '@organisms/category-navigation-menu-dr-finder.twig' with { categoryNavigationMenu : mainNavigation.categoryNavigationMenu } %}#}
+
   </div>
 </div>
