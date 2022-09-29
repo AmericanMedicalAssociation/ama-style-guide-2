@@ -21,7 +21,7 @@
       &.ama__search-result__image {
         display: flex;
         flex-direction: column;
-        &> div { 
+        &> div {
           flex: auto;
           align-self: flex-start;
         }
@@ -169,6 +169,19 @@
   }
 }
 
+.view-my-topic {
+  .my-topic-listing:first-child {
+    border-top: 1px solid #a28ab5;
+  }
+  .my-topic-listing:last-child {
+    border-bottom: none;
+    margin-bottom:56px;
+  }
+  li.pager__item {
+    text-align: center;
+  }
+}
+
 // My bookmark view styling
 .view-my-bookmark {
   .views-exposed-form {
@@ -223,7 +236,7 @@
 //  My Topics view styling.
 .topic-search {
   margin-top: 28px !important;
-  border-bottom: 1px solid #CBCBCB;
+  margin-bototm: 14px;
 }
 .my-topic-listing {
   flex-direction: row;
