@@ -269,6 +269,14 @@
 .app_description {
   .flag {
     margin-bottom: 34px;
+    @include breakpoint($bp-small) {
+      a {
+        padding-left: 25px;
+        &::before {
+          width: 23px;
+        }
+      }
+    }
   }
 }
 
