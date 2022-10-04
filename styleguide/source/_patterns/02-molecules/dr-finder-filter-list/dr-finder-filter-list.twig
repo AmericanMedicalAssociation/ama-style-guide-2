@@ -1,0 +1,19 @@
+<div class="dr-finder-filter-list">
+  {% for filter in drFinderFilterList %}
+    <div class="dr-finder-filter-list__menu-item">
+      <button class="dr-finder-filter-list__menu-button">{{ filter.title }}
+        {% include '@atoms/media/icons/svg/icon-triangle.twig' %}
+      </button>
+      <div class="dr-finder-filter-list__submenu">
+        <div class="dr-finder-filter-list__submenu-scroll">
+          {% for checkbox in filter.checkboxes %}
+            <div class="dr-finder-filter-list__submenu-item">
+              {% include '@atoms/forms/checkbox.twig' %}
+            </div>
+          {% endfor %}
+        </div>
+        <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
+      </div>
+    </div>
+  {% endfor %}
+ </div>

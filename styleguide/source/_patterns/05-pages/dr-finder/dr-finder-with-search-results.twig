@@ -5,7 +5,7 @@
     {% set alert = alert %}
     {% include '@molecules/alert.twig' %}
   {% endif %}
-  {% include '@organisms/main-navigation/main-navigation.twig' %}
+  {% include '@organisms/dr-finder-main-navigation/dr-finder-main-navigation.twig' %}
 {% endblock %}
 
 {% block contentTop %}
@@ -20,5 +20,6 @@
     {% include '@atoms/heading/heading.twig' %}
     {{ subheading|raw }}
     {% include '@organisms/dr-finder-search/dr-finder-search.twig' %}
+    {% include '@molecules/dr-finder-filter-list/dr-finder-filter-list.twig' %}
   </div>
 {% endblock %}
