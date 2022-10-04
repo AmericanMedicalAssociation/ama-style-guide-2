@@ -1,0 +1,24 @@
+{% extends '@templates/one-column.twig' %}
+
+{% block header %}
+  {% if alertBanner %}
+    {% set alert = alert %}
+    {% include '@molecules/alert.twig' %}
+  {% endif %}
+  {% include '@organisms/dr-finder-main-navigation/dr-finder-main-navigation.twig' %}
+{% endblock %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="ama__dr-finder container">
+    {% set heading = heading|merge({
+      "level": "1",
+      "class": "ama__h1"
+    }) %}
+    {% include '@atoms/heading/heading.twig' %}
+    {{ subheading|raw }}
+    {% include '@organisms/dr-finder-search/dr-finder-search.twig' %}
+  </div>
+{% endblock %}
