@@ -127,6 +127,23 @@
       text-decoration: none;
     }
   }
+  // pill
+  @else if($style == "pill") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+  }
+  @else if($style == "pill-secondary") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+    color: $purple;
+    background-color: transparent;
+
+    &:hover {
+      color: $purple;
+    }
+  }
   @else {
     background-color: $purple;
     border-color: transparent;

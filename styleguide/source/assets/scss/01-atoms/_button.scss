@@ -4,7 +4,7 @@ button {
   @include ama-button();
 
   &--secondary {
-    @include ama-button("", "secondary");
+      @include ama-button("", "secondary");
   }
 
   &--tertiary {
@@ -55,7 +55,13 @@ button {
     @include ama-button("", "link");
   }
 
+  &--pill {
+    @include ama-button("", "pill");
+  }
 
+  &--pill-secondary {
+    @include ama-button("", "pill-secondary");
+  }
 }
 
 .ama__button--small.ama__button--tertiary  {
