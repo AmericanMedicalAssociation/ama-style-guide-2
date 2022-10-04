@@ -8,13 +8,7 @@
         <div class="filter-list-dr-finder__submenu-scroll">
           {% for checkbox in filter.checkboxes %}
             <div class="filter-list-dr-finder__submenu-item">
-{#                {% include '@atoms/forms/checkbox.twig' %}#}
-                <div>
-                  <input type="checkbox" id="{{checkboxes.index}}" name="{{ checkbox.name }}" value="{{ checkbox.value }}" >
-                  <label for="checkbox.index }">
-                    <span>{{ checkbox.label }}</span>
-                    </label>
-                </div>
+              {% include '@atoms/forms/checkbox.twig' %}
             </div>
           {% endfor %}
         </div>
