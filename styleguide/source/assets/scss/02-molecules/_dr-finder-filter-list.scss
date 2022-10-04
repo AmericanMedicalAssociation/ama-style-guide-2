@@ -1,18 +1,18 @@
-.filter-list-dr-finder {
+.dr-finder-filter-list {
   @include breakpoint($bp-small) {
     display: inline-flex;
     gap: 10px;
   }
 }
 
-.filter-list-dr-finder__menu-item {
+.dr-finder-filter-list__menu-item {
   @include breakpoint($bp-small) {
     width: fit-content;
     background: $white;
   }
 }
 
-.filter-list-dr-finder__menu-item label {
+.dr-finder-filter-list__menu-item label {
   display: flex;
   color: $gray-64;
   font-size: 12px;
@@ -20,7 +20,7 @@
   justify-content: left;
 }
 
-.filter-list-dr-finder__submenu {
+.dr-finder-filter-list__submenu {
   display: none;
   border-radius: 10px;
   padding: 20px;
@@ -29,7 +29,7 @@
   box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
-.filter-list-dr-finder__submenu-scroll {
+.dr-finder-filter-list__submenu-scroll {
   overflow-y: auto;
   max-height: 112px;
 
@@ -52,7 +52,7 @@
   }
 }
 
-.filter-list-dr-finder__submenu:before {
+.dr-finder-filter-list__submenu:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -65,7 +65,7 @@
   top: -20px;
 }
 
-.filter-list-dr-finder__submenu:after {
+.dr-finder-filter-list__submenu:after {
   content: "";
   width: 0px;
   height: 0px;
@@ -78,7 +78,7 @@
   top: -19px;
 }
 
-.filter-list-dr-finder__menu-button {
+.dr-finder-filter-list__menu-button {
   font-size: 14px;
   width: fit-content;
   border-radius: 20px;
@@ -89,22 +89,22 @@
   color: $purple;
 }
 
-.filter-list-dr-finder__menu-button:hover {
+.dr-finder-filter-list__menu-button:hover {
   background-color: #dbc8e0;
   color: $purple;
 }
 
-.filter-list-dr-finder__menu-button.is-active + div {
+.dr-finder-filter-list__menu-button.is-active + div {
   display: block;
   position: absolute;
 }
 
-.filter-list-dr-finder__menu-button.is-active {
+.dr-finder-filter-list__menu-button.is-active {
   background-color: $purple;
   color: $white;
 }
 
-.filter-list-dr-finder__menu-button svg {
+.dr-finder-filter-list__menu-button svg {
   fill: $purple;
   transform: rotate(450deg);
   width: 11.5px;
@@ -112,19 +112,19 @@
   margin: 0 6px;
 }
 
-.filter-list-dr-finder__menu-button svg g{
+.dr-finder-filter-list__menu-button svg g{
   fill: $purple;
 }
 
-.filter-list-dr-finder__menu-button.is-active svg {
+.dr-finder-filter-list__menu-button.is-active svg {
   transform: rotate(450deg);
 }
 
-.filter-list-dr-finder__menu-button.is-active svg g {
+.dr-finder-filter-list__menu-button.is-active svg g {
   fill: $white;
 }
 
-.filter-list-dr-finder__menu-view-results {
+.dr-finder-filter-list__menu-view-results {
   display: block;
   padding-top: 20px;
   text-align: center;

@@ -12,10 +12,10 @@
   Drupal.behaviors.filterListDrFinder = {
     attach: function (context, settings) {
 
-      $('.filter-list-dr-finder__menu-item', context).each(function () {
+      $('.dr-finder-filter-list__menu-item', context).each(function () {
         const class_active = 'is-active';
-        const button = '.filter-list-dr-finder__menu-button';
-        const openMenu = $('.filter-list-dr-finder__submenu');
+        const button = '.dr-finder-filter-list__menu-button';
+        const openMenu = $('.dr-finder-filter-list__submenu');
 
         $(button, this).once().on('click', function(e) {
           e.stopPropagation();
