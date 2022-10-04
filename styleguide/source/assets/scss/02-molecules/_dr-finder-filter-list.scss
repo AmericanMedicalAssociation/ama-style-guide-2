@@ -1,20 +1,23 @@
 .filter-list-dr-finder {
-  @include breakpoint($bp-small){
+  @include breakpoint($bp-small) {
     display: inline-flex;
     gap: 10px;
   }
 }
 
 .filter-list-dr-finder__menu-item {
-  @include breakpoint($bp-small){
+  @include breakpoint($bp-small) {
     width: fit-content;
     background: $white;
   }
 }
 
 .filter-list-dr-finder__menu-item label {
+  display: flex;
   color: $gray-64;
   font-size: 12px;
+  flex-direction: row-reverse;
+  justify-content: left;
 }
 
 .filter-list-dr-finder__submenu {
@@ -28,7 +31,7 @@
 
 .filter-list-dr-finder__submenu-scroll {
   overflow-y: auto;
-  max-height: 150px;
+  max-height: 112px;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -82,8 +85,8 @@
   padding: 2px 10px 2px 12px;
   border: solid 1px $purple;
   margin: 0 9px 0 0;
-  background: white;
-  color:$purple
+  background: $white;
+  color: $purple;
 }
 
 .filter-list-dr-finder__menu-button:hover {
@@ -93,6 +96,7 @@
 
 .filter-list-dr-finder__menu-button.is-active + div {
   display: block;
+  position: absolute;
 }
 
 .filter-list-dr-finder__menu-button.is-active {
@@ -102,10 +106,10 @@
 
 .filter-list-dr-finder__menu-button svg {
   fill: $purple;
-  transform: rotate(210deg);
+  transform: rotate(450deg);
   width: 11.5px;
   height: 9px;
-  margin: 0 7px;
+  margin: 0 6px;
 }
 
 .filter-list-dr-finder__menu-button svg g{
@@ -113,7 +117,7 @@
 }
 
 .filter-list-dr-finder__menu-button.is-active svg {
-  transform: rotate(210deg);
+  transform: rotate(450deg);
 }
 
 .filter-list-dr-finder__menu-button.is-active svg g {
