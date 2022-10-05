@@ -1,0 +1,13 @@
+{#
+@copyright Copyright (c) 2022 Palantir.net
+AMA Dr Finder doctor edit header with no image.
+#}
+<div class="dr-finder-profile-header">
+    <div class="dr-finder-profile-header__image-url">{{ drFinderProfileHeader.imageUrl }}</div>
+    <div class="dr-finder-profile-header__doctor-info">
+        <div class="dr-finder-profile-header__doctor-info_name ama__h3">{{ drFinderProfileHeader.doctorInfo.name|raw }}</div>
+        <div class="dr-finder-profile-header__doctor-info_address ama__h5">{{ drFinderProfileHeader.doctorInfo.address|raw }}</div>
+        <div class="dr-finder-profile-header__doctor-info_number ama__h5">{{ drFinderProfileHeader.doctorInfo.phoneNumber }}</div>
+        <div class="dr-finder-profile-header__doctor-info_specialty">{{ drFinderProfileHeader.doctorInfo.specialty|raw }}</div>
+    </div>
+</div>
