@@ -1,37 +1,37 @@
-.dr-finder-edit-header {
-    display: flex;
-    flex-wrap: wrap;
-    border: none;
-    margin: 10px 0px 10px 0px;
-    flex-direction: row;
+.dr-finder-edit-header-no-image {
+  display: flex;
+  margin: 10px 0px 10px 0px;
+  flex-direction: row;
 }
 
-.dr-finder-edit-header__no-image {
+.dr-finder-edit-header-no-image__image-default {
   background: #d9d9d9;
+  border: none;
   border-radius: 50%;
-  width: 165px;
-  height: 165px;
+  width: 170px;
+  height: 170px;
 }
 
-.dr-finder-edit-header__doctor-info {
+.dr-finder-edit-header-no-image__doctor-info {
   padding: 10px;
-  margin:18px 20px 18px 50px ;
+  margin: 15px 0px 15px 45px;
+  width: 35%
 }
 
-.dr-finder-edit-header__doctor-info_name {
-  font-size: 18px;
+.dr-finder-edit-header-no-image__doctor-info_name {
+  color: $black;
+  margin: 5px 0px 7px 0px;
+}
+
+.dr-finder-edit-header-no-image__doctor-info_street,
+.dr-finder-edit-header-no-image__doctor-info_city,
+.dr-finder-edit-header-no-image__doctor-info_number {
+  font-size: .83em;
   color: $black;
 }
 
-.dr-finder-edit-header__doctor-info_street,
-.dr-finder-edit-header__doctor-info_city,
-.dr-finder-edit-header__doctor-info_number {
-  font-size: 14px;
-  color: $black;
-}
-
-.dr-finder-edit-header__doctor-info_specialty {
-  font-size: 14px;
-  margin: 2px 0px;
+.dr-finder-edit-header-no-image__doctor-info_specialty {
+  font-size: .83em;
+  margin: 3px 0px;
   color: $black;
 }
