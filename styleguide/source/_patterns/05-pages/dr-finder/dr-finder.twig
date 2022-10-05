@@ -20,5 +20,6 @@
     {% include '@atoms/heading/heading.twig' %}
     {{ subheading|raw }}
     {% include '@organisms/dr-finder-search/dr-finder-search.twig' %}
+    <div class="dr-finder-search__cta"> {{ drFinderSearch.cta.text|raw }} </div>
   </div>
 {% endblock %}
