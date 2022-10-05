@@ -1,6 +1,7 @@
 .dr-finder-profile-header {
   display: flex;
-  flex-direction: row;
+  padding: $gutter 0;
+  margin: $gutter 0;
 }
 
 .dr-finder-profile-header__image-url{
@@ -9,27 +10,19 @@
   border-radius: 50%;
   width: 170px;
   height: 170px;
+  margin: 0 $gutter;
 }
 
 .dr-finder-profile-header__doctor-info {
-  padding: 10px;
-  margin: 15px 0px 15px 45px;
-  width: 35%
+  .ama__h2 {
+    margin: 0;
+  }
 }
 
-.dr-finder-profile-header__doctor-info_name {
-  color: $black;
-  margin: 5px 0px 7px 0px;
+.dr-finder-profile-header__doctor-info__specialty {
+  font-weight: bold;
 }
 
-.dr-finder-profile-header__doctor-info_address,
-.dr-finder-profile-header__doctor-info_number {
-  font-size: .83em;
-  color: $black;
-}
-
-.dr-finder-profile-header__doctor-info_specialty {
-  font-size: .83em;
-  margin: 3px 0px;
-  color: $black;
+.dr-finder-profile-header__doctor-info__url a {
+  color: $blue;
 }

@@ -1,13 +1,15 @@
 {#
 @copyright Copyright (c) 2022 Palantir.net
-AMA Dr Finder doctor edit header with no image.
+AMA Dr Finder profile header.
 #}
 <div class="dr-finder-profile-header">
-    <div class="dr-finder-profile-header__image-url">{{ drFinderProfileHeader.imageUrl }}</div>
-    <div class="dr-finder-profile-header__doctor-info">
-        <div class="dr-finder-profile-header__doctor-info_name ama__h3">{{ drFinderProfileHeader.doctorInfo.name|raw }}</div>
-        <div class="dr-finder-profile-header__doctor-info_address ama__h5">{{ drFinderProfileHeader.doctorInfo.address|raw }}</div>
-        <div class="dr-finder-profile-header__doctor-info_number ama__h5">{{ drFinderProfileHeader.doctorInfo.phoneNumber }}</div>
-        <div class="dr-finder-profile-header__doctor-info_specialty">{{ drFinderProfileHeader.doctorInfo.specialty|raw }}</div>
-    </div>
-</div>
+  <div class="dr-finder-profile-header__image-url">{{ drFinderProfileHeader.imageUrl }}</div>
+  <div class="dr-finder-profile-header__doctor-info">
+    <h2 class="dr-finder-profile-header__doctor-info__name ama__h2">{{ drFinderProfileHeader.data.name|raw }}</h2>
+    <div class="dr-finder-profile-header__doctor-info__pronouns">{{ drFinderProfileHeader.data.pronouns|raw }}</div>
+    <div class="dr-finder-profile-header__doctor-info__address">{{ drFinderProfileHeader.data.address|raw }}</div>
+    <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
+    <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
+    <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
+  </div>
+</div>  
