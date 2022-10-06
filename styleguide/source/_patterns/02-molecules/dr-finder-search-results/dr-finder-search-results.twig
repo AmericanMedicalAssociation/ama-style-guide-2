@@ -1,0 +1,14 @@
+<div class="dr-finder-search-results">
+
+    <div class="dr-finder-search-results__image">
+        {% if drFinderSearchResults.imgUrl %}
+        <img src="{{drFinderSearchResults.imgUrl}}" alt="{{ drFinderSearchResults.data.name }}">
+        {% endif %}
+
+    </div>
+    <div class="dr-finder-search-results__content">
+        <div class="dr-finder-search-results__name ama__h2">{{ drFinderSearchResults.data.name|raw }}</div>
+        <div class="dr-finder-search-results__address">{{ drFinderSearchResults.data.address }}</div>
+        <div class="dr-finder-search-results__specialty">{{ drFinderSearchResults.data.specialty|raw }}</div>
+    </div>
+</div>
