@@ -1,14 +1,18 @@
-<div class="dr-finder-search-result-card">
-
-    <div class="dr-finder-search-result-card__image">
-        {% if drFinderSearchResultCard.imgUrl %}
-        <img src="{{drFinderSearchResultCard.imgUrl}}" alt="{{ drFinderSearchResultCard.data.name }}">
-        {% endif %}
-
-    </div>
-    <div class="dr-finder-search-result-card__content">
-        <div class="dr-finder-search-result-card__name ama__h2">{{ drFinderSearchResultCard.data.name|raw }}</div>
-        <div class="dr-finder-search-result_card__address">{{ drFinderSearchResultCard.data.address }}</div>
-        <div class="dr-finder-search-result_card__specialty">{{ drFinderSearchResultCard.data.specialty|raw }}</div>
-    </div>
+<div class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified": "" }} {{ drFinderSearchResultCard.member ? "member": "" }}">
+  <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imgUrl ? "with-image": "" }}">
+    {% if drFinderSearchResultCard.imgUrl %}
+      <img src="{{ drFinderSearchResultCard.imgUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
+    {% endif %}
+    {% if drFinderSearchResultCard.verified %}
+      {% include '@atoms/media/icons/svg/icon-completed.twig'%}
+    {% endif %}
+  </div>
+  <div class="dr-finder-search-result-card__content">
+    <div class="dr-finder-search-result-card__content__name ama__h2">{{ drFinderSearchResultCard.data.name|raw }}</div>
+    <div class="dr-finder-search-result-card__content__address">{{ drFinderSearchResultCard.data.address }}</div>
+    <div class="dr-finder-search-result-card__content__specialty">{{ drFinderSearchResultCard.data.specialty|raw }}</div>
+    {% if drFinderSearchResultCard.member %}
+      <div>Member</div>
+    {% endif %}
+  </div>
 </div>
