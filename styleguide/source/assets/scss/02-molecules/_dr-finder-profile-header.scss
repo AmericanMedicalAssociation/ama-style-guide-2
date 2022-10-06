@@ -4,9 +4,16 @@
   margin: $gutter 0;
 }
 
-.dr-finder-profile-header__image-url{
+.dr-finder-profile-header__image-url {
   background: $profileHeader-image;
   border: none;
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  margin: 0 $gutter;
+}
+
+.dr-finder-profile-header-with-image__image-url {
   border-radius: 50%;
   width: 170px;
   height: 170px;
@@ -25,4 +32,16 @@
 
 .dr-finder-profile-header__doctor-info__url a {
   color: $blue;
+}
+
+.dr-finder-profile-header-with-image__doctor-info__membership {
+  color: $white;
+  background: $purple;
+  width: 50%;
+  heigh: 15%;
+  text-align: center;
+}
+
+.dr-finder-profile-header-with-image__doctor-info__service {
+  font-weight: bold;
 }
