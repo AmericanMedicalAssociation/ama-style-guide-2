@@ -10,6 +10,18 @@ AMA Dr Finder profile header.
     <div class="dr-finder-profile-header__doctor-info__address">{{ drFinderProfileHeader.data.address|raw }}</div>
     <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
     <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
+    <div class="dr-finder-profile-header-with-image__doctor-info__membership">{{ drFinderProfileHeaderWithImage.data.membership|raw}}</div>
+    <div class="dr-finder-profile-header-with-image__doctor-info__service">{{ drFinderProfileHeaderWithImage.data.service|raw }}</div>
     <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
+    {% for data in drFinderProfileHeaderWithImage %}
+      <div class="dr-finder-profile-header-with-image__doctor-info__button">
+        <button
+          class="ama__button--pill-secondary {{ data.button.class }}"
+          type="{{ data.button.type }}"
+          aria-label="{{ data.button.ariaLabel }}">
+            {{ data.button.text }}
+        </button>
+      </div>
+    {% endfor %}
   </div>
 </div>  
