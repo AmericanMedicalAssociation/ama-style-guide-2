@@ -12,7 +12,7 @@
     <div class="dr-finder-search-result-card__content__address">{{ drFinderSearchResultCard.data.address }}</div>
     <div class="dr-finder-search-result-card__content__specialty">{{ drFinderSearchResultCard.data.specialty|raw }}</div>
     {% if drFinderSearchResultCard.member %}
-      <div>Member</div>
+      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig'%}</div>
     {% endif %}
   </div>
 </div>
