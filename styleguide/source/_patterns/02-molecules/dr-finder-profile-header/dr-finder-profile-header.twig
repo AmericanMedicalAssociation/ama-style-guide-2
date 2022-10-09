@@ -3,10 +3,24 @@
 AMA Dr Finder profile header.
 #}
 <div class="dr-finder-profile-header {{ drFinderProfileHeader.verified ? "verified": "" }} {{ drFinderProfileHeader.member ? "member": "" }}">
-  <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
-    {% if drFinderProfileHeader.imageUrl %}
-     <img src="{{ drFinderProfileHeader.imageUrl }}" />
-    {% endif %}
+  <div class="dr-finder-profile-header__column">
+    <div class="dr-finder-profile-header__container">
+      <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
+        {% if drFinderProfileHeader.imageUrl %}
+          <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
+        {% endif %}
+      </div>
+      <div class="dr-finder-profile-header__verified">
+        {% if drFinderProfileHeader.verified %}
+          {% include '@atoms/media/icons/svg/icon-completed.twig' %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="dr-finder-profile-header__upload-delete-button">
+      {%  for button in drFinderProfileHeader.actions %}
+        <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
+      {% endfor %}
+    </div>
   </div>
   <div class="dr-finder-profile-header__doctor-info">
     <h2 class="dr-finder-profile-header__doctor-info__name ama__h2">{{ drFinderProfileHeader.data.name|raw }}</h2>
@@ -14,11 +28,15 @@ AMA Dr Finder profile header.
     <div class="dr-finder-profile-header__doctor-info__address">{{ drFinderProfileHeader.data.address|raw }}</div>
     <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
     <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
-    <div class="dr-finder-profile-header-with-image__doctor-info__membership">{{ drFinderProfileHeader.data.membership|raw}}</div>
-    <div class="dr-finder-profile-header-with-image__doctor-info__service">{{ drFinderProfileHeader.data.service|raw }}</div>
+    {% if drFinderProfileHeader.member %}
+      <div class="dr-finder-profile-header__doctor-info__membership">{{ drFinderProfileHeader.membership|raw }}</div>
+    {% endif %}
+    <div class="dr-finder-profile-header__doctor-info__service">{{ drFinderProfileHeader.service|raw }}</div>
     <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
-    {%  for button in drFinderProfileHeader.actions %}
-      {% include '@atoms/button/button.twig' with { "button" : button } %}
-    {% endfor %}
+    <div class="dr-finder-profile-header__upload-delete-button">
+      {%  for button in drFinderProfileHeader.action %}
+        {% include '@atoms/button/button.twig' with { "button" : button } %}
+      {% endfor %}
+    </div>
   </div>
 </div>
