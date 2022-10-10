@@ -1,8 +1,8 @@
 {#
-@copyright Copyright (c) 2022 Palantir.net
-AMA Dr Finder profile header.
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder profile header.
 #}
-<div class="dr-finder-profile-header {{ drFinderProfileHeader.verified ? "verified": "" }} {{ drFinderProfileHeader.member ? "member": "" }}">
+<div class="dr-finder-profile-header {{ drFinderProfileHeader.verified ? "verified" : "" }} {{ drFinderProfileHeader.member ? "member" : "" }}">
   <div class="dr-finder-profile-header__image-column">
     <div class="dr-finder-profile-header__image-verified-container">
       <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
@@ -15,7 +15,7 @@ AMA Dr Finder profile header.
       {% endif %}
     </div>
     <div class="dr-finder-profile-header__upload-delete-button">
-      {%  for button in drFinderProfileHeader.actions %}
+      {% for button in drFinderProfileHeader.imageActions %}
         <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
       {% endfor %}
     </div>
@@ -27,12 +27,12 @@ AMA Dr Finder profile header.
     <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
     <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
     {% if drFinderProfileHeader.member %}
-      <div class="dr-finder-profile-header__doctor-info__membership">{{ drFinderProfileHeader.membership|raw }}</div>
+      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
     {% endif %}
     <div class="dr-finder-profile-header__doctor-info__service">{{ drFinderProfileHeader.service|raw }}</div>
     <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
     <div class="dr-finder-profile-header__upload-delete-button">
-      {%  for button in drFinderProfileHeader.action %}
+      {% for button in drFinderProfileHeader.actions %}
         {% include '@atoms/button/button.twig' with { "button" : button } %}
       {% endfor %}
     </div>
