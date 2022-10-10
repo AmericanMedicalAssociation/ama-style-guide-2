@@ -3,18 +3,16 @@
 AMA Dr Finder profile header.
 #}
 <div class="dr-finder-profile-header {{ drFinderProfileHeader.verified ? "verified": "" }} {{ drFinderProfileHeader.member ? "member": "" }}">
-  <div class="dr-finder-profile-header__column">
-    <div class="dr-finder-profile-header__container">
+  <div class="dr-finder-profile-header__image-column">
+    <div class="dr-finder-profile-header__image-verified-container">
       <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
         {% if drFinderProfileHeader.imageUrl %}
           <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
         {% endif %}
       </div>
-      <div class="dr-finder-profile-header__verified">
-        {% if drFinderProfileHeader.verified %}
-          {% include '@atoms/media/icons/svg/icon-completed.twig' %}
-        {% endif %}
-      </div>
+      {% if drFinderProfileHeader.verified %}
+        {% include '@atoms/media/icons/svg/icon-completed.twig' %}
+      {% endif %}
     </div>
     <div class="dr-finder-profile-header__upload-delete-button">
       {%  for button in drFinderProfileHeader.actions %}
