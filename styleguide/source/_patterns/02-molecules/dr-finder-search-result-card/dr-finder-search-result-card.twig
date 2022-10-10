@@ -1,5 +1,5 @@
-<div class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified": "" }} {{ drFinderSearchResultCard.member ? "member": "" }}">
-  <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imgUrl ? "with-image": "" }}">
+<div class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified" : "" }} {{ drFinderSearchResultCard.member ? "member" : "" }}">
+  <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imgUrl ? "with-image" : "" }}">
     {% if drFinderSearchResultCard.imgUrl %}
       <img src="{{ drFinderSearchResultCard.imgUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
     {% endif %}
@@ -12,6 +12,7 @@
     <div class="dr-finder-search-result-card__content__address">{{ drFinderSearchResultCard.data.address }}</div>
     <div class="dr-finder-search-result-card__content__specialty">{{ drFinderSearchResultCard.data.specialty|raw }}</div>
     {% if drFinderSearchResultCard.member %}
-      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig'%}</div>
+      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
     {% endif %}
   </div>
+</div>

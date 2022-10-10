@@ -2,9 +2,11 @@
   display: flex;
   padding: $gutter;
   margin-bottom: $gutter;
-  border: solid 1px;
   box-shadow: 0 1px 4px $gray-border;
-  &:hover {background-color: $bodyTextHoverPurple;}
+
+  &:hover {
+    background-color: $bodyTextHoverPurple;
+  }
 }
 
 .dr-finder-search-result-card__image {
@@ -14,15 +16,15 @@
   background-color: $profileHeader-image;
   margin-right: $gutter;
 
+  // Round off image corners.
   img {
     border-radius: 50%;
   }
 
   svg {
-    position: absolute;
     max-width: fit-content;
     max-height: fit-content;
-    transform: translate(244%, 205%);
+    transform: translate(213%, 205%);
   }
 }
 
