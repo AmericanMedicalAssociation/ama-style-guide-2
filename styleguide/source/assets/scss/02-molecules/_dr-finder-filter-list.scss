@@ -1,7 +1,10 @@
+// @copyright Copyright (c) 2022 Palantir.net
+
 .dr-finder-filter-list {
   margin-bottom: $gutter;
   padding-bottom: $gutter;
   border-bottom: 1px solid $purple;
+
   @include breakpoint($bp-small) {
     display: flex;
     gap: 10px;
@@ -55,8 +58,8 @@
 
 .dr-finder-filter-list__submenu:before {
   content: "";
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   position: absolute;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -68,8 +71,8 @@
 
 .dr-finder-filter-list__submenu:after {
   content: "";
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   position: absolute;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;

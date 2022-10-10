@@ -1,22 +1,29 @@
+// @copyright Copyright (c) 2022 Palantir.net
+
 .dr-finder-profile-header {
   display: flex;
   padding: $gutter 0;
   margin: $gutter 0;
 }
 
-.dr-finder-profile-header__image-url{
+.dr-finder-profile-header__doctor-info__name {
+  margin: 0;
+}
+
+.dr-finder-profile-header__image-url {
   background: $profileHeader-image;
   border: none;
   border-radius: 50%;
-  width: 170px;
-  height: 170px;
-  margin: 0 $gutter;
+  width: 220px;
+  height: 220px;
+
+  img {
+    border-radius: 50%;
+  }
 }
 
 .dr-finder-profile-header__doctor-info {
-  .ama__h2 {
-    margin: 0;
-  }
+  margin: 0 $gutter;
 }
 
 .dr-finder-profile-header__doctor-info__specialty {
@@ -25,4 +32,25 @@
 
 .dr-finder-profile-header__doctor-info__url a {
   color: $blue;
+}
+
+.dr-finder-profile-header__doctor-info__service {
+  font-weight: bold;
+}
+
+.dr-finder-profile-header__upload-delete-button {
+  padding: $gutter 0;
+}
+
+.dr-finder-profile-header__image-verified-container {
+  position: relative;
+
+  svg {
+    position: absolute;
+    max-width: fit-content;
+    max-height: fit-content;
+    transform: translate(244%,205%);
+    bottom: 110px;
+    left: 85px;
+  }
 }
