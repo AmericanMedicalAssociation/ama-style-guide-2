@@ -1,0 +1,50 @@
+{% extends '@templates/one-column.twig' %}
+
+{% block header %}
+  {% if alertBanner %}
+    {% set alert = alert %}
+    {% include '@molecules/alert.twig' %}
+  {% endif %}
+  {% include '@organisms/dr-finder-main-navigation/dr-finder-main-navigation.twig' %}
+{% endblock %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="ama__dr-finder profile container">
+    {% set heading = heading|merge({
+      "level": "1",
+      "class": "ama__h1"
+    }) %}
+    {% include '@atoms/heading/heading.twig' %}
+    {% include '@molecules/dr-finder-profile-header/dr-finder-profile-header.twig' %}
+    {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : pronouns} %}
+    {% include '@atoms/forms/text-field.twig' with {'textField' : practiceURL} %}
+    {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : newPatients} %}
+
+    <h2>Tell Us About Yourself</h2>
+    <p>Click the checkbox once to enable questions visibility, click again to hide the question and save your answer for further <editing class=""></editing></p>
+    <p>** Please select up to five questions</p>
+    
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : inspiration} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : moveMeds} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : career} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : community} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : future} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    <div class="dr-finder-profile__actions">
+      {% include '@atoms/button/button.twig' with { "button" : save } %}
+      {% include '@atoms/button/button.twig' with { "button" : cancel } %}
+    </div>
+  </div>
+{% endblock %}
