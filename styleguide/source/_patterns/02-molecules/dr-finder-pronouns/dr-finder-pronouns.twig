@@ -1,0 +1,8 @@
+{#
+@copyright Copyright (c) 2022 Palantir.net
+AMA Dr Finder main navigation.
+#}
+
+    {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : pronounsData.pronouns} %}
+    {% include '@atoms/forms/text-field.twig' with {'textField' : pronounsData.textField} %}
+    {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : pronounsData.newPatients} %}
