@@ -11,7 +11,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.autoCompleteStates = {
     attach: function (context, settings) {
-      // Add bold characters to the results set.
+      // Add bold characters in result item.
       $.ui.autocomplete.prototype._renderItem = function (ul, item) {
         item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
         return $("<li></li>")
