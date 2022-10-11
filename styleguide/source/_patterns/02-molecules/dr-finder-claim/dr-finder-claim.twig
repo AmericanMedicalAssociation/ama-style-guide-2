@@ -1,0 +1,6 @@
+<div class="dr-finder-claim">
+  <div class="dr-finder-claim__question ama__h3">{{ drFinderClaim.question|raw }}</div>
+  {% for button in drFinderClaim.actions %}
+    {% include '@atoms/button/button.twig' with { "button" : button } %}
+  {% endfor %}
+</div>
