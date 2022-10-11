@@ -145,6 +145,20 @@
       color: $purple;
     }
   }
+  // pill-claim
+  @else if($style == "pill-claim") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+    color: $purple;
+    background-color: #e4d3e7;
+    border: none;
+
+    &:hover {
+      background-color: $purple;
+      color:$white;
+    }
+  }
   // icon
   @else if($style == "icon") {
     font-weight: normal;
