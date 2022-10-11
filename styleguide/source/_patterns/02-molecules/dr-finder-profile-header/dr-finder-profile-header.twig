@@ -37,9 +37,10 @@
       {% endfor %}
     </div>
   </div>
-  <div class="dr-finder-profile-header__claim">
-    {% if drFinderProfileHeader.claimed == false %}
-      {% include '@molecules/dr-finder-claim/dr-finder-claim.twig'  with { "drFinderClaim" : drFinderProfileHeader.drFinderClaim } %}
-    {% endif %}
-  </div>
+  {# If this account has not been claimed and is eligable to be claimed, show claim button. #}
+  {% if not drFinderProfileHeader.claimed %}
+    <div class="dr-finder-profile-header__claim">
+      {% include '@molecules/dr-finder-claim/dr-finder-claim.twig' with { "drFinderClaim" : drFinderProfileHeader.drFinderClaim } %}
+    </div>
+  {% endif %}
 </div>
