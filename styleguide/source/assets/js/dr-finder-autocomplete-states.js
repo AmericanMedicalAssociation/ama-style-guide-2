@@ -11,9 +11,20 @@
 (function ($, Drupal) {
   Drupal.behaviors.autoCompleteStates = {
     attach: function (context, settings) {
+      // Add bold characters to the results set.
+      $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+        item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+        return $("<li></li>")
+          .data("item.autocomplete", item)
+          .append("<b>" + item.label + "</b>")
+          .appendTo(ul);
+      };
+
       const states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
       $( "#autoCompleteStates" ).autocomplete({
-        source: states
+        minLength: 2,
+        autoFocus: true,
+        source: states,
       });
     }
   };
