@@ -6,18 +6,16 @@ AMA Dr Finder main navigation.
 <p>Click the checkbox once to enable questions visibility, click again to hide the question and save your answer for further <editing class=""></editing></p>
 <p>** Please select up to five questions</p>
 
+<div class="dr-finder-interview-questions">
 {# Member fields, if claimed, verified, and a memeber. #}
-  {% include '@atoms/forms/textarea.twig' with {'textArea' : inspiration} %}
-  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
-
-  {% include '@atoms/forms/textarea.twig' with {'textArea' : moveMeds} %}
-  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
-
-  {% include '@atoms/forms/textarea.twig' with {'textArea' : career} %}
-  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
-
-  {% include '@atoms/forms/textarea.twig' with {'textArea' : community} %}
-  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
-
-  {% include '@atoms/forms/textarea.twig' with {'textArea' : future} %}
-  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.inspiration} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.moveMeds} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.career} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.community} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.future} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+</div>
