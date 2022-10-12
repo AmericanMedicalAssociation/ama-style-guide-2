@@ -18,8 +18,35 @@
       "class": "ama__h1"
     }) %}
     {% include '@atoms/heading/heading.twig' %}
-    {{ subheading|raw }}
-    {% include '@organisms/dr-finder-search/dr-finder-search.twig' %}
+    {% include '@molecules/dr-finder-profile-header/dr-finder-profile-header.twig' %}
+
+    {# Profile fields, if claimed and verified. #}
+    {% include '@molecules/dr-finder-profile-fields/dr-finder-profile-fields.twig' %}
+
+    <div class="ama__h2">Tell Us About Yourself</div>
+    <p>Click the checkbox once to enable questions visibility, click again to hide the question and save your answer for further <editing class=""></editing></p>
+    <p>** Please select up to five questions</p>
+
+    {# Member fields, if claimed, verified, and a memeber. #}
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : inspiration} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : moveMeds} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : career} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : community} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    {% include '@atoms/forms/textarea.twig' with {'textArea' : future} %}
+    {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
+
+    <div class="dr-finder-profile__actions">
+      {% include '@atoms/button/button.twig' with { "button" : save } %}
+      {% include '@atoms/button/button.twig' with { "button" : cancel } %}
+    </div>
     {% include '@molecules/dr-finder-modal/dr-finder-modal.twig' %}
   </div>
 {% endblock %}

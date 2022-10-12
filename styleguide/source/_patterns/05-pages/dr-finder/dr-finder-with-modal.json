@@ -111,31 +111,99 @@
       ]
     }
   },
-  "drFinderSearch": {
-    "searchFieldDrFinder": {
-      "fieldFirst": {
-        "label": "Name",
-        "id": "ama-dr-finder-search-field__input-first",
-        "name": "ama-dr-finder-search-field__name-first",
-        "placeholder": "First Last"
-      },
-      "fieldSecond": {
-        "label": "State, city, or zip code",
-        "id": "ama-dr-finder-search-field__input-second",
-        "name": "ama-dr-finder-search-field__name-second",
-        "placeholder": "Chicago"
-      },
-      "button": {
-        "text": "Search",
-        "type": "button",
-        "ariaLabel": "Search button",
-        "class": "search-location"
-      }
+  "drFinderProfileHeader": {
+    "imageUrl": "/assets/images/sample-doc-image.png",
+    "claimed": true,
+    "member": true,
+    "verified":  true,
+    "service": "Accepting new patients",
+    "data": {
+      "name": "Henry Jackson, MD",
+      "pronouns": "(He\/Him\/His)",
+      "address": "330 N.Wabash Ave <br/> Chicago,IL 60611",
+      "phoneNumber": "(312) 922-3815",
+      "specialty": "Cardiology",
+      "url": "<a href=\"#\">https://www.nm.org/doctors</a>"
     },
-    "cta": {
-      "text": "Looking for credentialing products? Visit the <a href='https://commerce.ama-assn.org/amaprofiles/'> AMA Profiles HUB.</a>"
+    "imageActions": [
+      {
+        "href": "",
+        "info": "alt",
+        "text": "Upload New Picture",
+        "type": "button",
+        "style": "pill-secondary",
+        "size": ""
+      },
+      {
+        "href": "",
+        "info": "alt",
+        "text": "Delete Picture",
+        "type": "button",
+        "style": "pill-secondary",
+        "size": ""
+      }
+    ]
+  },
+  "drFinderProfileFields": {
+    "pronouns": {
+      "legend": "Pronouns",
+      "radios": [
+        {
+          "label": "He/Him/His",
+          "name": "pronouns",
+          "id": "he-him-his",
+          "value": "he-him-his"
+        },
+        {
+          "label": "She/Her/Hers",
+          "name": "pronouns",
+          "id": "she-her-hers",
+          "value": "she-her-hers"
+        },
+        {
+          "label": "They/Them/Theirs",
+          "name": "pronouns",
+          "id": "they-them-theirs",
+          "value": "they-them-theirs"
+        },
+        {
+          "label": "No Answer",
+          "name": "pronouns",
+          "id": "no-answer",
+          "value": "no-answer"
+        }
+      ]
+    },
+    "practiceURL": {
+      "label": "Practice URL",
+      "name": "Practice URL",
+      "placeholder": "",
+      "helpText": "Practice URL"
+    },
+    "newPatients": {
+      "legend": "Accepting New Patients",
+      "radios": [
+        {
+          "label": "Yes",
+          "name": "newPatients",
+          "id": "yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "name": "newPatients",
+          "id": "no",
+          "value": "no"
+        },
+        {
+          "label": "No Answer",
+          "name": "pronouns",
+          "id": "no-answer",
+          "value": "no-answer"
+        }
+      ]
     }
-  } ,
+  },
   "footer": {
     "siteLogo": {
       "src": "../../assets/images/brand/logo.svg",
@@ -370,6 +438,53 @@
       }
     }
   ],
+  "visible": {
+    "name": "visible",
+    "value": "visible",
+    "label": "question visible on profile",
+    "index": 1
+  },
+  "inspiration": {
+    "label": "What inspired me to pursue a career in medicine?",
+    "name": "inspiration",
+    "placeholder": ""
+  },
+  "moveMeds": {
+    "label": "How do I Move Medicine?",
+    "name": "moveMeds",
+    "placeholder": ""
+  },
+  "career": {
+    "label": "What advice would I give to those interested in pursuing a career in medicine?",
+    "name": "career",
+    "placeholder": ""
+  },
+  "community": {
+    "label": "How do I give back to the community?",
+    "name": "community",
+    "placeholder": ""
+  },
+  "future": {
+    "label": "What is my hope for a future of medicine?",
+    "name": "future",
+    "placeholder": ""
+  },
+  "save": {
+    "href": "",
+    "info": "alt",
+    "text": "Save & Publish",
+    "type": "button",
+    "style": "pill",
+    "size": ""
+  },
+  "cancel": {
+    "href": "",
+    "info": "alt",
+    "text": "Cancel",
+    "type": "button",
+    "style": "pill",
+    "size": ""
+  },
   "modal": {
     "heading": {
       "text": "Discard Changes"
