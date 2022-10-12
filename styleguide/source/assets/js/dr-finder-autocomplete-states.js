@@ -13,31 +13,20 @@
     attach: function (context, settings) {
       // Add bold characters in result item.
       $.ui.autocomplete.prototype._renderItem = function (ul, item) {
-        item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
-        return $("<li></li>")
-          .data("item.autocomplete", item)
-          .append("<b>" + item.label + "</b>")
-          .appendTo(ul);
+        item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<b>$1</b>");
+        return $("<li>")
+            .attr("data-value", item.value)
+            .append(item.label)
+            .appendTo(ul);
       };
-
-      const statesAndCities = {
-        'Alabama': [
-          "Birmingham",
-          "Montgomery",
-          "Mobile",
-          "Huntsville",
-          "Tuscaloosa",
-        ],
-        'Alaska': [
-          "Anchorage",
-          "Fairbanks"
-        ],
-      }
-
+      const statesAndMajorUSCities = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'Aurora', 'Boston', 'Buffalo', 'California', 'Chicago', 'Cincinnati', 'Cleveland', 'Colorado', 'Columbus', 'Connecticut', 'Dallas', 'Delaware', 'Detroit', 'Florida', 'Georgia', 'Hawaii', 'Houston', 'Idaho', 'Illinois', 'Indiana', 'Indianapolis', 'Iowa', 'Jacksonville', 'Kansas', 'Kentucky', 'Los Angeles', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Miami', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Orlando', 'Pennsylvania', 'Phoenix', 'Philadelphia', 'Pittsburgh', 'Rockford', 'Rhode Island', 'Rochester', 'San Diego', 'San Antonio', 'San Jose', 'Seattle', 'South Carolina', 'South Dakota', 'Tampa', 'Tennessee', 'Texas', 'Tucson', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+      // The id of the textfield.
       $( "#autoCompleteStates" ).autocomplete({
+        classes: {
+          "ui-autocomplete" : "dr-finder-autocomplete",
+        },
         minLength: 2,
-        autoFocus: true,
-        source: statesAndCities,
+        source: statesAndMajorUSCities,
       });
     }
   };
