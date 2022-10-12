@@ -19,14 +19,15 @@
     }) %}
     {% include '@atoms/heading/heading.twig' %}
     {% include '@molecules/dr-finder-profile-header/dr-finder-profile-header.twig' %}
-    {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : pronouns} %}
-    {% include '@atoms/forms/text-field.twig' with {'textField' : practiceURL} %}
-    {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : newPatients} %}
 
-    <h2>Tell Us About Yourself</h2>
+    {# Profile fields, if claimed and verified. #}
+    {% include '@molecules/dr-finder-profile-fields/dr-finder-profile-fields.twig' %}
+
+    <div class="ama__h2">Tell Us About Yourself</div>
     <p>Click the checkbox once to enable questions visibility, click again to hide the question and save your answer for further <editing class=""></editing></p>
     <p>** Please select up to five questions</p>
-    
+
+    {# Member fields, if claimed, verified, and a memeber. #}
     {% include '@atoms/forms/textarea.twig' with {'textArea' : inspiration} %}
     {% include '@atoms/forms/checkbox.twig' with {'checkbox' : visible} %}
 
