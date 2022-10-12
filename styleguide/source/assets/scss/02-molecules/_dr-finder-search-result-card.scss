@@ -12,6 +12,7 @@
 }
 
 .dr-finder-search-result-card__image {
+  position: relative;
   height: 125px;
   width: 125px;
   border-radius: 50%;
@@ -24,9 +25,11 @@
   }
 
   svg {
-    max-width: fit-content;
-    max-height: fit-content;
-    transform: translate(213%, 205%);
+    max-height: initial;
+    max-width: initial;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 

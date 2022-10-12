@@ -3,9 +3,9 @@
   AMA Dr Finder search result card.
 #}
 <div class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified" : "" }} {{ drFinderSearchResultCard.member ? "member" : "" }}">
-  <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imgUrl ? "with-image" : "" }}">
-    {% if drFinderSearchResultCard.imgUrl %}
-      <img src="{{ drFinderSearchResultCard.imgUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
+  <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imageUrl ? "with-image" : "" }}">
+    {% if drFinderSearchResultCard.imageUrl %}
+      <img src="{{ drFinderSearchResultCard.imageUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
     {% endif %}
     {% if drFinderSearchResultCard.verified %}
       {% include '@atoms/media/icons/svg/icon-completed.twig'%}
