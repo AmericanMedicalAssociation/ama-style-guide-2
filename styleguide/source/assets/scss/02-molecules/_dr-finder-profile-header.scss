@@ -30,7 +30,9 @@
 
   @include breakpoint($bp-small) {
     margin: 0 $gutter;
-    width: 40%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
   }
 }
 
