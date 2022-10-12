@@ -1,9 +1,12 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-profile-header {
-  display: flex;
   padding: $gutter 0;
   margin: $gutter 0;
+
+  @include breakpoint($bp-small) {
+    display: flex;
+  }
 }
 
 // We don't need the space below this header.
@@ -24,8 +27,11 @@
 }
 
 .dr-finder-profile-header__doctor-info {
-  margin: 0 $gutter;
-  width: 40%;
+
+  @include breakpoint($bp-small) {
+    margin: 0 $gutter;
+    width: 40%;
+  }
 }
 
 .dr-finder-profile-header__doctor-info__specialty {
