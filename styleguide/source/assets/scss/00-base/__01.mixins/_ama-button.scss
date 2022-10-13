@@ -3,9 +3,9 @@
 //
 
 @mixin ama-button ($size:"", $style:"") {
-  @include ama-button-base;
+@include ama-button-base;
 
-  @if($style == "secondary") {
+  @if ($style == "secondary") {
     background-color: $white;
     border-color: $purple;
     color: $purple;
@@ -14,9 +14,7 @@
       background-color: $purple;
       color: $white;
     }
-  }
-
-  @else if($style == "tertiary") {
+  } @else if ($style == "tertiary") {
     background-color: $white;
     border-color: $purple;
     color: $purple;
@@ -25,8 +23,7 @@
       background-color: $hoverPurple;
       color: $white;
     }
-  }
-  @else if($style == "complementary") {
+  } @else if ($style == "complementary") {
     background-color: $complementary;
     border-color: $complementary;
     color: $black;
@@ -36,9 +33,7 @@
       border-color: $hoverComplementary;
       color: $gray-64;
     }
-  }
-
-  @else if($style == "complementary-secondary") {
+  } @else if ($style == "complementary-secondary") {
     background-color: $white;
     border-color: $complementary;
     color: $black;
@@ -48,8 +43,7 @@
       border-color: $complementary;
       color: $gray-64;
     }
-  }
-  @else if($style == "subscribe") {
+  } @else if ($style == "subscribe") {
     background-color: $orange-medium !important;
     color: $black !important;
     padding-bottom: 12.5px;
@@ -62,8 +56,8 @@
     }
   }
 
-  //outline
-  @else if($style == "reset") {
+    //outline
+  @else if ($style == "reset") {
     background-color: transparent;
     border-color: transparent;
     color: $purple;
@@ -74,8 +68,7 @@
       color: $hoverPurple;
       text-decoration: underline;
     }
-  }
-  @else if($style == "link") {
+  } @else if ($style == "link") {
     background-color: transparent;
     border-color: transparent;
     color: $blue;
@@ -87,8 +80,8 @@
       text-decoration: underline;
     }
   }
-  // homepage
-  @else if($style == "homepage") {
+    // homepage
+  @else if ($style == "homepage") {
     background-color: $homepagePurple;
     border-color: transparent;
     color: $white;
@@ -101,8 +94,8 @@
       text-decoration: none;
     }
   }
-  // homepage secondary
-  @else if($style == "homepage-secondary") {
+    // homepage secondary
+  @else if ($style == "homepage-secondary") {
     background-color: $white;
     border-color: transparent;
     color: $purple;
@@ -114,8 +107,7 @@
       color: $hoverPurple;
       text-decoration: none;
     }
-  }
-  @else if($style == "promo") {
+  } @else if ($style == "promo") {
     background-color: $orange;
     border-color: transparent;
     color: $black;
@@ -127,13 +119,12 @@
       text-decoration: none;
     }
   }
-  // pill
-  @else if($style == "pill") {
+    // pill
+  @else if ($style == "pill") {
     font-weight: normal;
     border-radius: 25px;
     padding: 0 $gutter;
-  }
-  @else if($style == "pill-secondary") {
+  } @else if ($style == "pill-secondary") {
     font-weight: normal;
     border-radius: 25px;
     padding: 0 $gutter;
@@ -145,8 +136,8 @@
       color: $purple;
     }
   }
-  // pill-claim
-  @else if($style == "pill-claim") {
+    // pill-claim
+  @else if ($style == "pill-claim") {
     font-weight: normal;
     border-radius: 25px;
     padding: 0 $gutter;
@@ -156,11 +147,11 @@
 
     &:hover {
       background-color: $purple;
-      color:$white;
+      color: $white;
     }
   }
-  // icon
-  @else if($style == "icon") {
+    // icon
+  @else if ($style == "icon") {
     font-weight: normal;
     border-radius: 25px;
     padding: 0 $gutter;
@@ -171,8 +162,7 @@
       background-color: #dbc8e0;
       color: $purple;
     }
-  }
-  @else {
+  } @else {
     background-color: $purple;
     border-color: transparent;
     color: $white;
@@ -182,7 +172,7 @@
     }
   }
 
-  @if($size == "small" and $style == "secondary") {
+  @if ($size == "small" and $style == "secondary") {
     @include type($myriad-pro, $font-weight-regular);
     @include font-size($button-font-sizes--menu);
     padding: $gutter/6 $gutter/2;
@@ -194,15 +184,24 @@
       background-color: $purple;
       color: $white;
     }
-  }
-  @else if($size == "small") {
+  } @else if ($size == "small") {
     @include gutter-all($padding-all-half...);
-  }
-  @elseif ($size == "block") {
+  } @else if ($size == "block") {
     display: block;
     width: 100%;
   }
-  @else {
-   display: inline-block;
+
+  // filter-reset
+@else if($style == "filter-reset") {
+  font-weight: normal;
+  color: $purple;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    background-color: white;
+    color: $purple;
+    }
   }
 }
