@@ -48,14 +48,17 @@
   }
 }
 
-.ui-autocomplete.ui-menu .ui-menu-item b.ui-menu-item-wrapper {
-  display: inline;
-  margin: 0;
-  padding: 0;
+// Fighting jquery.
+.dr-finder-autocomplete b.ui-menu-item-wrapper {
+  display: inline !important;
+  color: $gray-30;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.ui-menu-item-wrapper {
-  color: $gray-30;
+// Fighting jquery.
+.dr-finder-autocomplete .ui-menu-item::selection {
+  background: transparent !important;
 }
 
 .dr-finder-autocomplete {

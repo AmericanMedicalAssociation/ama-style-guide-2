@@ -1,6 +1,6 @@
 /**
  * @file
- * Autocomplete.
+ * Autocomplete for Dr. Finder.
  *
  * JavaScript should be made compatible with libraries other than jQuery by
  * wrapping it with an 'anonymous closure'. See:
@@ -15,9 +15,9 @@
       $.ui.autocomplete.prototype._renderItem = function (ul, item) {
         item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<b>$1</b>");
         return $("<li>")
-            .attr("data-value", item.value)
-            .append(item.label)
-            .appendTo(ul);
+          .attr("data-value", item.value)
+          .append(item.label)
+          .appendTo(ul);
       };
       const statesAndMajorUSCities = ['Alabama', 'Alaska', 'Arizona','Arlington', 'Arkansas','Atlanta', 'Aurora', 'Boston', 'Buffalo', 'Boise', 'Birmingham', 'California', 'Chicago', 'Cincinnati', 'Cleveland', 'Colorado', 'Columbus', 'Connecticut', 'Dallas', 'Delaware', 'Detroit', 'Denver', 'Enid', 'Everett', 'Florida', 'Fort Collins', 'Fullerton', 'Georgia', 'Glendale', 'Grand Rapids', 'Hawaii', 'Houston', 'Idaho', 'Illinois', 'Indiana', 'Indianapolis', 'Iowa', 'Jacksonville', 'Jersey City', 'Joliet', 'Kansas', 'Kentucky', 'Knoxville', 'Los Angeles', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Miami', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma','Oklahoma City','Omaha', 'Oregon', 'Orlando', 'Pennsylvania', 'Phoenix', 'Philadelphia', 'Pittsburgh', 'Rockford', 'Rhode Island', 'Rochester', 'San Diego', 'San Antonio', 'San Jose', 'Seattle', 'South Carolina', 'South Dakota', 'Tampa', 'Tennessee', 'Texas', 'Tucson', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
       // The id of the textfield.
