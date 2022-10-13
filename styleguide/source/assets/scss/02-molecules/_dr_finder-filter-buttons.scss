@@ -1,0 +1,33 @@
+// @copyright Copyright (c) 2022 Palantir.net
+
+.dr-finder-filter-buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: $gutter;
+  padding-bottom: $gutter;
+}
+
+.dr-finder-filter-buttons__filters {
+  width: 66%;
+  color: $black;
+  margin-bottom: 0;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+      fill: $purple;
+      width: 10px;
+    }
+  }
+}
+
+.dr-finder-filter-buttons__clear {
+  width: 33%;
+  text-align: right;
+  a {
+    color: $purple;
+  }
+}
