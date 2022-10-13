@@ -1,6 +1,6 @@
 /**
  * @file
- * Autocomplete.
+ * Autocomplete for Dr. Finder.
  *
  * JavaScript should be made compatible with libraries other than jQuery by
  * wrapping it with an 'anonymous closure'. See:
@@ -13,18 +13,20 @@
     attach: function (context, settings) {
       // Add bold characters in result item.
       $.ui.autocomplete.prototype._renderItem = function (ul, item) {
-        item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
-        return $("<li></li>")
-          .data("item.autocomplete", item)
-          .append("<b>" + item.label + "</b>")
+        item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<b>$1</b>");
+        return $("<li>")
+          .attr("data-value", item.value)
+          .append(item.label)
           .appendTo(ul);
       };
-
-      const states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+      const statesAndMajorUSCities = ['Alabama', 'Alaska', 'Arizona','Arlington', 'Arkansas','Atlanta', 'Aurora', 'Boston', 'Buffalo', 'Boise', 'Birmingham', 'California', 'Chicago', 'Cincinnati', 'Cleveland', 'Colorado', 'Columbus', 'Connecticut', 'Dallas', 'Delaware', 'Detroit', 'Denver', 'Enid', 'Everett', 'Florida', 'Fort Collins', 'Fullerton', 'Georgia', 'Glendale', 'Grand Rapids', 'Hawaii', 'Houston', 'Idaho', 'Illinois', 'Indiana', 'Indianapolis', 'Iowa', 'Jacksonville', 'Jersey City', 'Joliet', 'Kansas', 'Kentucky', 'Knoxville', 'Los Angeles', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Miami', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma','Oklahoma City','Omaha', 'Oregon', 'Orlando', 'Pennsylvania', 'Phoenix', 'Philadelphia', 'Pittsburgh', 'Rockford', 'Rhode Island', 'Rochester', 'San Diego', 'San Antonio', 'San Jose', 'Seattle', 'South Carolina', 'South Dakota', 'Tampa', 'Tennessee', 'Texas', 'Tucson', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+      // The id of the textfield.
       $( "#autoCompleteStates" ).autocomplete({
+        classes: {
+          "ui-autocomplete" : "dr-finder-autocomplete",
+        },
         minLength: 2,
-        autoFocus: true,
-        source: states,
+        source: statesAndMajorUSCities,
       });
     }
   };
