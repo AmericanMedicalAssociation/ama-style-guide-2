@@ -16,16 +16,33 @@
     var width = ''
 
       function getDimensions () {
-        width = $(window).width()
-        if (width < 400) {
-          truncHeight = trunc.height() + 25
-          fullHeight = full.height() + 20
-        } else if (width < 900) {
+
+        // If closest parent indicates category.
+        // Adjust hieght values.
+        if (desc.closest('div.ama__category')) {
+          width = $(window).width()
+          if (width < 400) {
             truncHeight = trunc.height() + 25
             fullHeight = full.height() + 20
+          } else if (width < 900) {
+              truncHeight = trunc.height() + 51
+              fullHeight = full.height() + 20
+          } else {
+            truncHeight = trunc.height() + 26
+            fullHeight = full.height() + 14
+          }
         } else {
-          truncHeight = trunc.height()
-          fullHeight = full.height() + 14
+          width = $(window).width()
+          if (width < 400) {
+            truncHeight = trunc.height() + 25
+            fullHeight = full.height() + 20
+          } else if (width < 900) {
+              truncHeight = trunc.height() + 25
+              fullHeight = full.height() + 20
+          } else {
+            truncHeight = trunc.height()
+            fullHeight = full.height() + 14
+          }
         }
       };
 
