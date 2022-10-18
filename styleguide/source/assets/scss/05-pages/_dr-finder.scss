@@ -37,3 +37,15 @@
   font-size: 10px;
   text-transform: initial;
 }
+
+// Since our Drupal menu is not split into two ULs, lets split with CSS.
+.dr-finder-footer-adjustments {
+  ul {
+    column-count: 2;
+    width: 100%;
+
+    a {
+      white-space: nowrap;
+    }
+  }
+}
