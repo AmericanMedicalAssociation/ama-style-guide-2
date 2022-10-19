@@ -1,3 +1,26 @@
+@mixin subscribeIcon {
+  &::before {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 0px auto -15px;
+    content: "";
+    background-image: url('../images/SubscribeIcon_Locker.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    @include breakpoint($bp-small) {
+      padding-left: 5px;
+      width: 21px;
+      height: 26px;
+      margin: 0 auto;
+      position: absolute;
+      left: 34px;
+      top: 10px;
+    }
+  }
+}
+
 .ama__series {
   margin-top: 0;
 
@@ -177,9 +200,91 @@
 
  //Taxonomy specific subscribe series styling
  .salesforce-subscribe-form {
-    top: -30px;
+    display: inline-block;
     border: none;
     line-height: 0;
+    position: relative;
+    @include breakpoint($bp-small max-width) {
+      height: 44px;
+    }
+    @include subscribeIcon();
+    .form-actions {
+      margin: 0;
+    }
+    input.form-submit {
+      border: 1px solid #a28ab5;
+      background: none;
+      color: #310f4a;
+      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+      font-weight: 400;
+      margin-bottom: 0;
+      padding: 15px 0 0 0;
+      @include breakpoint($bp-small max-width) {
+        width: 87px;
+        height: 44px;
+        font-size: 14px;
+        line-height: 2;
+        top: -8px;
+      }
+      @include breakpoint($bp-small) {
+        min-width: 180px;
+        max-width: 180px;
+        max-height: 46px;
+        padding: 9px 0 8px 25px;
+        margin-bottom: 5px;
+      }
+    }
+    &:hover {
+      &::before {
+        background-image: url('../images/SubscribeHoverIcon_Locker.svg');
+      }
+      input.form-submit {
+        text-decoration: underline;
+      }
+    }
+    + .flag {
+      display: inline-block;
+      margin-top: 0;
+    }
+ }
+
+ //Taxonomy specific subscribed series styling
+ .subscribe-series.subscribed {
+    display: inline-block;
+    border: 1px solid #a28ab5;
+    background: none;
+    color: #310f4a;
+    margin-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 0 0 0;
+    position: relative;
+    top: 0;
+    @include breakpoint($bp-small max-width) {
+      width: 87px;
+      height: 44px;
+      font-size: 14px;
+      line-height: 2;
+      top: -8px;
+    }
+    @include breakpoint($bp-small) {
+      min-width: 180px;
+      max-width: 180px;
+      max-height: 46px;
+      padding: 9px 0 8px 25px;
+      margin-bottom: 5px;
+    }
+    + .flag {
+      display: inline-block;
+      margin-top: 0;
+    }
+    @include subscribeIcon();
+    &::before {
+      background-image: url('../images/SubscribedIcon_Locker.svg');
+      @include breakpoint($bp-small) {
+        left: 28px;
+      }
+    }
  }
 }
 
@@ -190,7 +295,7 @@
   border-bottom: 14px solid transparent;
   border-left: 12px solid $homepagePurple;
   position: absolute;
-  top: 0;
+  top: 2px;
   right: -12px;
   z-index: 1;
 }
@@ -202,8 +307,8 @@ a.subscribe-series {
   top: -30px;
 }
 
-.subscribe-series,
-.salesforce-subscribe-form input.form-submit {
+.series-tag + .subscribe-series,
+.series-tag + .salesforce-subscribe-form input.form-submit {
   position: relative;
   text-decoration: none;
   @include type($myriad-pro, $font-weight-semibold);
@@ -263,18 +368,13 @@ a.subscribe-series {
   }
 }
 
-//Undo form and button styling
-.salesforce-subscribe-form input.form-submit,
-.salesforce-subscribe-form .form-actions {
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border: none;
-}
-
-.salesforce-subscribe-form {
+//Subscribe to series button styling on articles
+.series-tag + .subscribe-series,
+.series-tag + .salesforce-subscribe-form {
   width: 168px;
   position: relative;
+  top: 0;
+  margin-top: 28px;
   .triangle-right {
     @include triangle-right();
   }
@@ -284,7 +384,18 @@ a.subscribe-series {
     }
   }
 
+  input.form-submit {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+
   .form-actions {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
     &:after {
       display: inline-block;
       content: '';
@@ -298,11 +409,4 @@ a.subscribe-series {
       z-index: 1;
     }
   }
-} 
-
-//Subscribe to series button styling on articles
-.series-tag + .subscribe-series,
-.series-tag + .salesforce-subscribe-form {
-  top: 0;
-  margin-top: 28px;
 }
