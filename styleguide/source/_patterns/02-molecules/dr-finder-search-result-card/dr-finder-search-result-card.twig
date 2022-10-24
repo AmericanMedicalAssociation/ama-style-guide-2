@@ -2,7 +2,7 @@
   @copyright Copyright (c) 2022 Palantir.net
   AMA Dr Finder search result card.
 #}
-<div class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified" : "" }} {{ drFinderSearchResultCard.member ? "member" : "" }}">
+<a href="{{ drFinderSearchResultCard.canonicalUrl }}" class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified" : "" }} {{ drFinderSearchResultCard.member ? "member" : "" }}">
   <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imageUrl ? "with-image" : "" }}">
     {% if drFinderSearchResultCard.imageUrl %}
       <img src="{{ drFinderSearchResultCard.imageUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
@@ -19,4 +19,4 @@
       {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
     {% endif %}
   </div>
-</div>
+</a>
