@@ -13,7 +13,11 @@
 
 .dr-finder-filter-list__menu-item {
   background: $white;
-  margin: 2px
+  margin: $gutter-mobile 0;
+
+  @include breakpoint($bp-small) {
+    margin: 0;
+  }
 }
 
 .dr-finder-filter-list__menu-item label {
