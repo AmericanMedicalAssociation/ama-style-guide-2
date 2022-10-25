@@ -29,7 +29,9 @@
     {% if drFinderProfileHeader.member %}
       {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
     {% endif %}
-    <div class="dr-finder-profile-header__doctor-info__service">{{ drFinderProfileHeader.service|raw }}</div>
+    {% if drFinderProfileHeader.service %}
+      <div class="dr-finder-profile-header__doctor-info__service">Accepting new patients</div>
+    {% endif %}
     <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
     {% if drFinderProfileHeader.claimed %}
       <div class="dr-finder-profile-header__upload-actions">
