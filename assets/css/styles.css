@@ -5505,6 +5505,12 @@ pushboxcontainer {
       .ama__article-stub--small .ama__video__container {
         margin-bottom: 14px; } }
 
+.ama__article-stub--image img.ama__bio-image-with-body__image {
+  margin-bottom: 10.5px; }
+  @media (min-width: 56.25em) {
+    .ama__article-stub--image img.ama__bio-image-with-body__image {
+      margin-bottom: 14px; } }
+
 .ama__article-stub--inline {
   padding-top: 21px;
   padding-bottom: 21px;
@@ -9361,7 +9367,7 @@ a.ama__promo--border:hover {
       align-items: center; } }
   .series-tag__label {
     position: relative;
-    background: #7b55d9;
+    background: #46166B;
     width: 120px;
     height: 26px;
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -9379,7 +9385,7 @@ a.ama__promo--border:hover {
     bottom: 0;
     width: 0;
     height: 0;
-    border-left: 13px solid #7b55d9;
+    border-left: 13px solid #46166B;
     border-top: 13px solid transparent;
     border-bottom: 13px solid transparent; }
   .series-tag a {
@@ -17804,20 +17810,42 @@ body.search-results .ama__layout--two-column--left {
     margin-bottom: 14px;
     text-transform: uppercase;
     border-top: 4px solid #46166B; }
+    @media (max-width: 37.5em) {
+      .ama__glossary-page h3.suggested-listing-title {
+        margin-top: 28px; } }
   .ama__glossary-page .suggested-listings {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-column-gap: 29px;
-    column-gap: 29px; }
+    column-gap: 29px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    @media (min-width: 37.5em) {
+      .ama__glossary-page .suggested-listings {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; } }
     .ama__glossary-page .suggested-listings a {
       display: block;
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
+      font-size: 16px;
+      line-height: 23px;
       font-weight: 600;
-      padding: 6px 14px 39px;
-      text-decoration: none; }
+      padding: 12px 20px 20px 20px;
+      text-decoration: none;
+      margin-bottom: 21px; }
+      @media (min-width: 37.5em) {
+        .ama__glossary-page .suggested-listings a {
+          font-size: 18px;
+          line-height: 25px;
+          margin-bottom: 0;
+          padding: 6px 14px 39px; } }
       .ama__glossary-page .suggested-listings a:nth-of-type(odd) {
         background-color: #003a70;
         color: #ffffff; }
@@ -18670,30 +18698,6 @@ body.search-results .ama__layout--two-column--left {
       display: flex; }
       .ama__series .index-page .share-row .share-region {
         height: unset; } }
-  .ama__series .subscribe-series {
-    display: none;
-    position: relative;
-    top: -30px;
-    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 15px;
-    color: #4d4d4d; }
-    .ama__series .subscribe-series:after {
-      display: inline-block;
-      content: '';
-      width: 18px;
-      height: 18px;
-      background: url(../icons/svg/subscribe.svg) no-repeat 0 0;
-      background-size: contain;
-      position: relative;
-      top: 5px;
-      left: 7px; }
-    .ama__series .subscribe-series:hover {
-      cursor: pointer; }
-      .ama__series .subscribe-series:hover:after {
-        background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
-        background-size: contain; }
   .ama__series .ama__masthead__content__title__container,
   .ama__series .ama__masthead {
     padding-top: 0;
@@ -18720,7 +18724,7 @@ body.search-results .ama__layout--two-column--left {
     border-bottom: none; }
     .ama__series .ama__masthead__content .subscribe-series {
       display: block;
-      text-align: right;
+      text-align: left;
       top: -5px; }
       @media (min-width: 37.5em) {
         .ama__series .ama__masthead__content .subscribe-series {
@@ -18795,6 +18799,121 @@ body.search-results .ama__layout--two-column--left {
       font-weight: 400;
       padding: 10px 45px;
       margin: 28px 0; }
+  .ama__series .salesforce-subscribe-form {
+    top: -30px;
+    border: none;
+    line-height: 0; }
+
+a.subscribe-series {
+  display: block;
+  min-height: 28px;
+  top: -30px; }
+
+.subscribe-series,
+.salesforce-subscribe-form input.form-submit {
+  position: relative;
+  text-decoration: none;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 2;
+  width: 182px;
+  color: #ffffff;
+  background: #7229D1;
+  padding-left: 20px; }
+  @media (min-width: 37.5em) {
+    .subscribe-series,
+    .salesforce-subscribe-form input.form-submit {
+      width: 168px;
+      padding-left: 8px; } }
+  .subscribe-series:after,
+  .salesforce-subscribe-form input.form-submit:after {
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+    background-size: contain;
+    position: relative;
+    top: 3px;
+    left: 8px;
+    z-index: 1; }
+  .subscribe-series:hover,
+  .salesforce-subscribe-form input.form-submit:hover {
+    cursor: pointer;
+    background: #46166B; }
+    .subscribe-series:hover input.form-submit,
+    .salesforce-subscribe-form input.form-submit:hover input.form-submit {
+      cursor: pointer;
+      background-color: #46166B; }
+    .subscribe-series:hover .triangle-right,
+    .salesforce-subscribe-form input.form-submit:hover .triangle-right {
+      border-left: 12px solid #46166B; }
+  .subscribe-series .triangle-right,
+  .salesforce-subscribe-form input.form-submit .triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 12px solid #7229D1;
+    position: absolute;
+    top: 0;
+    right: -12px;
+    z-index: 1; }
+  .subscribe-series.subscribed,
+  .salesforce-subscribe-form input.form-submit.subscribed {
+    color: #46166B;
+    background: #ffffff;
+    border: 1px solid #46166B;
+    text-align: center !important;
+    padding: 0; }
+    .subscribe-series.subscribed:after,
+    .salesforce-subscribe-form input.form-submit.subscribed:after {
+      content: none; }
+    .subscribe-series.subscribed .triangle-right,
+    .salesforce-subscribe-form input.form-submit.subscribed .triangle-right {
+      display: none; }
+
+.salesforce-subscribe-form input.form-submit,
+.salesforce-subscribe-form .form-actions {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none; }
+
+.salesforce-subscribe-form {
+  width: 168px;
+  position: relative; }
+  .salesforce-subscribe-form .triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 12px solid #7229D1;
+    position: absolute;
+    top: 0;
+    right: -12px;
+    z-index: 1; }
+  .salesforce-subscribe-form:hover .triangle-right {
+    border-left: 12px solid #46166B; }
+  .salesforce-subscribe-form .form-actions:after {
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+    background-size: contain;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1; }
+
+.series-tag + .subscribe-series,
+.series-tag + .salesforce-subscribe-form {
+  top: 0;
+  margin-top: 28px; }
 
 .ama__specialty-landing .ama__event-stub:first-child {
   border-top: 0; }
