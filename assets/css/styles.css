@@ -18811,6 +18811,7 @@ a.subscribe-series {
 
 .subscribe-series,
 .salesforce-subscribe-form input.form-submit {
+  display: none;
   position: relative;
   text-decoration: none;
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -18861,7 +18862,8 @@ a.subscribe-series {
     position: absolute;
     top: 0;
     right: -12px;
-    z-index: 1; }
+    z-index: 1;
+    display: none; }
   .subscribe-series.subscribed,
   .salesforce-subscribe-form input.form-submit.subscribed {
     color: #46166B;
@@ -18895,7 +18897,8 @@ a.subscribe-series {
     position: absolute;
     top: 0;
     right: -12px;
-    z-index: 1; }
+    z-index: 1;
+    display: none; }
   .salesforce-subscribe-form:hover .triangle-right {
     border-left: 12px solid #46166B; }
   .salesforce-subscribe-form .form-actions:after {
