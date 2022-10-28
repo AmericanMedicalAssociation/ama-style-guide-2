@@ -13,6 +13,10 @@
     @include breakpoint($bp-small) {
       padding-bottom: 56px;
     }
+
+    .ama__search-result__description {
+      line-height: 1.5;
+    }
   }
   .ama_bookmark_right {
     padding: $gutter/2 0;
@@ -107,6 +111,9 @@
 }
 
 .my-topic-listing {
+  .ama__search-result__description {
+    line-height: 1.5;
+  }
   .title-removed,
   .description-removed {
     display: none;
