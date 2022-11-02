@@ -142,11 +142,13 @@
   }
   a {
     color: #310f4a;
+    font-size: 10px;
     text-decoration: none;
     position: relative;
     @include breakpoint($bp-small) {
-      padding: 9px 0 8px;
       display: block;
+      font-size: 16px;
+      padding: 9px 0 8px;
     }
     &::before {
       display: block;
@@ -164,7 +166,7 @@
         margin: 0 auto;
         position: absolute;
         left: 20px;
-        top: 10px;
+        top: 8px;
       }
     }
   }
@@ -175,11 +177,12 @@
       }
     }
     a::before {
-      background-image: url('../images/BookmarksMenuIcon_Locker.svg');
+      background-image: url('../images/BookmarkIcon_Locker.svg');
     }
     a:hover {
+      text-decoration: underline;
       &::before {
-        background-image: url('../images/BookmarkedIcon_Locker.svg');
+        background-image: url('../images/BookmarkHoverIcon_Locker.svg');
       }
     }
   }
@@ -190,6 +193,7 @@
         padding-left: 16px;
       }
       &::before {
+        left: 45px;
         background-image: url('../images/BookmarkedIcon_Locker.svg');
       }
       &:hover {
