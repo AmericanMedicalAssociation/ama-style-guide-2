@@ -1,21 +1,30 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-search-results-header {
-  display: flex;
-  align-items: center;
   border-bottom: 1px solid $purple;
   margin-bottom: $gutter;
   padding-bottom: $gutter;
+
+  @include breakpoint($bp-small) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .dr-finder-search-results-header__results-text {
-  width: 66%;
   color: $black;
   margin-bottom: 0;
+
+  @include breakpoint($bp-small) {
+    width: 66%;
+  }
 }
 
 .dr-finder-search-results-header__results {
-  width: 33%;
-  text-align: right;
   color: $purple;
+
+  @include breakpoint($bp-small) {
+    width: 33%;
+    text-align: right;
+  }
 }
