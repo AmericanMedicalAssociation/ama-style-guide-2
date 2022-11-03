@@ -14,7 +14,8 @@
         if($('body').hasClass('toolbar-tray-open')) {
           $('.ama__main-navigation--dr-finder').unstick().css("margin-top","8px");
         }else{
-          $('.ama__main-navigation--dr-finder').sticky();
+          // Add sticky to the Nav bar for profile users without admin toolbar.
+          $('.ama__main-navigation--dr-finder').sticky({zIndex: 501});
         }
       });
 
