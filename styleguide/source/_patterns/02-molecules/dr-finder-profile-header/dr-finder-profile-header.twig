@@ -9,10 +9,10 @@
         {% if drFinderProfileHeader.imageUrl %}
           <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
         {% endif %}
+        {% if drFinderProfileHeader.verified %}
+          {% include '@atoms/media/icons/svg/icon-completed.twig' %}
+        {% endif %}
       </div>
-      {% if drFinderProfileHeader.verified %}
-        {% include '@atoms/media/icons/svg/icon-completed.twig' %}
-      {% endif %}
     </div>
     <div class="dr-finder-profile-header__upload-actions">
       {% for button in drFinderProfileHeader.imageActions %}
