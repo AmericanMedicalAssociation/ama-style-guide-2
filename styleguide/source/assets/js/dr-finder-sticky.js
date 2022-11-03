@@ -11,14 +11,14 @@
 
       $(function () {
         // If we logged in as admin, we have to unstick the nav bar for admin role be able to manage the site.
-        if($('body').hasClass('toolbar-tray-open')) {
+        if ($('body').hasClass('toolbar-tray-open')) {
           $('.ama__main-navigation--dr-finder').unstick().css("margin-top","8px");
-        }else{
+        }
+        else {
           // Add sticky to the Nav bar for profile users without admin toolbar.
           $('.ama__main-navigation--dr-finder').sticky({zIndex: 501});
         }
       });
-
     }
   };
 })(jQuery, Drupal);
