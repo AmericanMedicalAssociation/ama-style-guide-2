@@ -8,10 +8,13 @@
   }
   .ama_bookmark_left {
     border-bottom: none;
-    padding-bottom: 96px;
-    padding-top: 0;
+    padding: 0 0 96px;
     @include breakpoint($bp-small) {
-      padding-bottom: 56px;
+      padding-bottom: 17px;
+      padding-right: 17px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 20px;
     }
   }
   .ama_bookmark_right {
@@ -285,12 +288,18 @@
 //  My Topics view styling.
 .topic-search {
   margin-top: 28px !important;
-  margin-bototm: 14px;
+  margin-bottom: 14px;
 }
 .my-topic-listing {
   flex-direction: row;
   .text {
-    padding-right: 14px;
+    padding-right: 0;
+    @include breakpoint($bp-small) {
+      padding-right: 17px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 20px;
+    }
     h2 {
       a {
         text-decoration: none;
