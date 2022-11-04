@@ -24,7 +24,7 @@
     {% if drFinderProfileHeader.data.name %}
       <h2 class="dr-finder-profile-header__doctor-info__name ama__h2">{{ drFinderProfileHeader.data.name|raw }}</h2>
     {% endif %}
-    {% if drFinderProfileHeader.data.pronouns %}
+    {% if drFinderProfileHeader.data.pronouns and profile.claimedProfile.value == true %}
       <div class="dr-finder-profile-header__doctor-info__pronouns">{{ drFinderProfileHeader.data.pronouns|raw }}</div>
     {% endif %}
     {% if drFinderProfileHeader.data.address %}
@@ -39,10 +39,10 @@
     {% if drFinderProfileHeader.member %}
       {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
     {% endif %}
-    {% if drFinderProfileHeader.service %}
+    {% if drFinderProfileHeader.service and profile.claimedProfile.value == true %}
       <div class="dr-finder-profile-header__doctor-info__service">Accepting new patients</div>
     {% endif %}
-    {% if drFinderProfileHeader.data.url %}
+    {% if drFinderProfileHeader.data.url and profile.claimedProfile.value == true %}
       <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
     {% endif %}
     {% if drFinderProfileHeader.claimed %}
