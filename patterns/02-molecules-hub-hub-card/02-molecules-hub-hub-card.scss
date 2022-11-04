@@ -8,15 +8,15 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-  
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { 
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     display: block;
 
     &--no-image {
       display: flex;
     }
   }
-  
+
 
   &__heading,
   & .ama__h2 {
@@ -325,13 +325,12 @@
     &:nth-child(3):nth-last-child(2),
     &:nth-child(4):nth-last-child(1) {
       @include gutter($margin-right-half...);
-      width: calc(25% - 14px);
+      width: calc(25% - 10.5px);
     }
 
     // last of three doesn't have right padding
     &:nth-child(4):nth-last-child(1) {
       margin-right: 0;
-      width: 25%;
     }
   }
 }
