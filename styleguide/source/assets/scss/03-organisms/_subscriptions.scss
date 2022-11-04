@@ -1,0 +1,97 @@
+// My Subscriptions view styling
+.view-my-subscription {
+  .views-exposed-form {
+    margin-top: 28px;
+    .form-actions {
+      margin-top: 7px;
+    }
+  }
+  .ama_subscription:first-child {
+    border-top: 1px solid #a28ab5;
+  }
+  .ama_subscription:last-child {
+    border-bottom: none;
+    margin-bottom:56px;
+  }
+  li.pager__item {
+    text-align: center;
+  }
+}
+
+// My Subscriptions row styling
+.ama_subscription {
+  position: relative;
+  border-bottom: solid 1px $gray-20;
+  @include breakpoint($bp-small) {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 14px;
+  }
+  .title-removed,
+  .description-removed {
+    display: none;
+  }
+  .ama_subscription_left {
+    border-bottom: none;
+    padding-bottom: 96px;
+    padding-top: 0;
+    @include breakpoint($bp-small) {
+      padding-bottom: 56px;
+    }
+    .ama__search-result__text {
+      @include breakpoint($bp-small) {
+        padding-right: 20px;
+      }
+    }
+  }
+  .ama_subscription_right {
+    @include breakpoint($bp-small max-width) {
+      padding: 14px 0;
+    }
+    @include breakpoint($bp-small) {
+      padding-bottom: 56px;
+      &.ama__search-result__image {
+        display: flex;
+        flex-direction: column;
+        &> div {
+          flex: auto;
+          align-self: flex-start;
+        }
+        .ama__image {
+          margin-bottom: 14px;
+        }
+        .flag {
+          flex: auto;
+          align-self: flex-end;
+        }
+      }
+    }
+    &:not(.ama__search-result__image) {
+      display: flex;
+      @include breakpoint($bp-small) {
+        padding: 28px 0 56px;
+      }
+      .salesforce-subscribe-form {
+        align-self: flex-end;
+      }
+    }
+  }
+  &.ama__search-result:hover {
+    .ama__search-result__title {
+      text-decoration: none;
+    }
+  }
+  .ama__search-result__text:hover {
+    .ama__search-result__title {
+      text-decoration: underline;
+    }
+  }
+  .subscription-form {
+    margin-top: 0;
+    @include breakpoint($bp-small max-width) {
+      position: absolute;
+      bottom: 35px;
+      right: 0;
+    }
+  }
+}

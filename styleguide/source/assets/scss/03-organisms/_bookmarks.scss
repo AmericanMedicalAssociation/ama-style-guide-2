@@ -8,10 +8,17 @@
   }
   .ama_bookmark_left {
     border-bottom: none;
-    padding-bottom: 96px;
-    padding-top: 0;
+    padding: 0 0 96px;
     @include breakpoint($bp-small) {
-      padding-bottom: 56px;
+      padding-bottom: 17px;
+      padding-right: 17px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 20px;
+    }
+
+    .ama__search-result__description {
+      line-height: 1.5;
     }
   }
   .ama_bookmark_right {
@@ -107,6 +114,9 @@
 }
 
 .my-topic-listing {
+  .ama__search-result__description {
+    line-height: 1.5;
+  }
   .title-removed,
   .description-removed {
     display: none;
@@ -131,8 +141,10 @@
   margin-top: 35px;
   @include breakpoint($bp-small max-width) {
     width: 87px;
+    height: 44px;
     a {
       font-size: 14px;
+      line-height: 2;
     }
   }
   @include breakpoint($bp-small) {
@@ -287,12 +299,18 @@
 //  My Topics view styling.
 .topic-search {
   margin-top: 28px !important;
-  margin-bototm: 14px;
+  margin-bottom: 14px;
 }
 .my-topic-listing {
   flex-direction: row;
   .text {
-    padding-right: 14px;
+    padding-right: 0;
+    @include breakpoint($bp-small) {
+      padding-right: 17px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 20px;
+    }
     h2 {
       a {
         text-decoration: none;
