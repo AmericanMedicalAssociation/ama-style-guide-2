@@ -1,9 +1,11 @@
 // Flag/bookmark styling
 .ama_locker_navigation {
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  padding-right: 10px;
   @include breakpoint($bp-small) {
     justify-content: flex-end;
+    padding-right: 0;
   }
   a {
     position: relative;
@@ -75,11 +77,8 @@
       }
       &::before {
         width: 22px;
+        height: 23px;
         background-image: url('../images/BookmarksMenuIcon_Locker.svg');
-        @include breakpoint($bp-small) {
-          width: 32px;
-          height: 26px;
-        }
       }
       &:hover {
         &::before {
