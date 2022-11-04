@@ -5507,9 +5507,9 @@ pushboxcontainer {
 
 .ama__article-stub--image img.ama__bio-image-with-body__image {
   margin-bottom: 10.5px; }
-  @media (min-width: 56.25em) {
-    .ama__article-stub--image img.ama__bio-image-with-body__image {
-      margin-bottom: 14px; } }
+
+.ama__article-stub--image .ama__image {
+  margin-bottom: 7px; }
 
 .ama__article-stub--inline {
   padding-top: 21px;
@@ -11656,14 +11656,13 @@ article[class*='__page-content'] .ama__tags {
         width: 33.333%; }
       .ama__hub-card:nth-child(1):nth-last-child(4), .ama__hub-card:nth-child(2):nth-last-child(3), .ama__hub-card:nth-child(3):nth-last-child(2), .ama__hub-card:nth-child(4):nth-last-child(1) {
         margin-right: 10.5px;
-        width: calc(25% - 14px); } }
+        width: calc(25% - 10.5px); } }
     @media (min-width: 56.25em) and (min-width: 56.25em) {
       .ama__hub-card:nth-child(1):nth-last-child(4), .ama__hub-card:nth-child(2):nth-last-child(3), .ama__hub-card:nth-child(3):nth-last-child(2), .ama__hub-card:nth-child(4):nth-last-child(1) {
         margin-right: 14px; } }
   @media (min-width: 56.25em) {
       .ama__hub-card:nth-child(4):nth-last-child(1) {
-        margin-right: 0;
-        width: 25%; } }
+        margin-right: 0; } }
 
 .ama__hub-hero-row {
   display: -webkit-box;
@@ -12700,11 +12699,16 @@ article[class*='__page-content'] .ama__tags {
       padding-top: 14px; } }
   .ama_book_mark .ama_bookmark_left {
     border-bottom: none;
-    padding-bottom: 96px;
-    padding-top: 0; }
+    padding: 0 0 96px; }
     @media (min-width: 37.5em) {
       .ama_book_mark .ama_bookmark_left {
-        padding-bottom: 56px; } }
+        padding-bottom: 17px;
+        padding-right: 17px; } }
+    @media (min-width: 56.25em) {
+      .ama_book_mark .ama_bookmark_left {
+        padding-right: 20px; } }
+    .ama_book_mark .ama_bookmark_left .ama__search-result__description {
+      line-height: 1.5; }
   .ama_book_mark .ama_bookmark_right {
     padding: 14px 0; }
     @media (min-width: 37.5em) {
@@ -12775,6 +12779,9 @@ article[class*='__page-content'] .ama__tags {
 .ama_book_mark .ama_bookmark_right.flag-removed + .ama_bookmark_left .description-removed {
   display: block; }
 
+.my-topic-listing .ama__search-result__description {
+  line-height: 1.5; }
+
 .my-topic-listing .title-removed,
 .my-topic-listing .description-removed {
   display: none; }
@@ -12794,9 +12801,11 @@ article[class*='__page-content'] .ama__tags {
   margin-top: 35px; }
   @media (max-width: 37.5em) {
     .flag {
-      width: 87px; }
+      width: 87px;
+      height: 44px; }
       .flag a {
-        font-size: 14px; } }
+        font-size: 14px;
+        line-height: 2; } }
   @media (min-width: 37.5em) {
     .flag {
       min-width: 180px;
@@ -12804,12 +12813,14 @@ article[class*='__page-content'] .ama__tags {
       max-height: 46px; } }
   .flag a {
     color: #310f4a;
+    font-size: 10px;
     text-decoration: none;
     position: relative; }
     @media (min-width: 37.5em) {
       .flag a {
-        padding: 9px 0 8px;
-        display: block; } }
+        display: block;
+        font-size: 16px;
+        padding: 9px 0 8px; } }
     .flag a::before {
       display: block;
       width: 19px;
@@ -12827,23 +12838,24 @@ article[class*='__page-content'] .ama__tags {
           margin: 0 auto;
           position: absolute;
           left: 20px;
-          top: 10px; } }
+          top: 8px; } }
   @media (min-width: 37.5em) {
     .flag.action-flag a {
       padding-left: 27px; } }
   .flag.action-flag a::before {
-    background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
-  .flag.action-flag a:hover::before {
+    background-image: url("../images/BookmarkIcon_Locker.svg"); }
+  .flag.action-flag a:hover {
+    text-decoration: underline; }
+    .flag.action-flag a:hover::before {
+      background-image: url("../images/BookmarkHoverIcon_Locker.svg"); }
+  @media (min-width: 37.5em) {
+    .flag.action-unflag a {
+      padding-left: 16px; } }
+  .flag.action-unflag a::before {
+    left: 45px;
     background-image: url("../images/BookmarkedIcon_Locker.svg"); }
-  .flag.action-unflag a {
-    pointer-events: none; }
-    @media (min-width: 37.5em) {
-      .flag.action-unflag a {
-        padding-left: 16px; } }
-    .flag.action-unflag a::before {
-      background-image: url("../images/BookmarkedIcon_Locker.svg"); }
-    .flag.action-unflag a:hover::before {
-      background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
+  .flag.action-unflag a:hover::before {
+    background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
   .flag .ajax-progress,
   .flag .ajax-progress-throbber {
     display: none; }
@@ -12895,7 +12907,7 @@ article[class*='__page-content'] .ama__tags {
 
 .topic-search {
   margin-top: 28px !important;
-  margin-bototm: 14px; }
+  margin-bottom: 14px; }
 
 .my-topic-listing {
   -webkit-box-orient: horizontal;
@@ -12903,7 +12915,13 @@ article[class*='__page-content'] .ama__tags {
   -ms-flex-direction: row;
   flex-direction: row; }
   .my-topic-listing .text {
-    padding-right: 14px; }
+    padding-right: 0; }
+    @media (min-width: 37.5em) {
+      .my-topic-listing .text {
+        padding-right: 17px; } }
+    @media (min-width: 56.25em) {
+      .my-topic-listing .text {
+        padding-right: 20px; } }
     .my-topic-listing .text h2 a {
       text-decoration: none; }
   .my-topic-listing .flag {
@@ -14344,14 +14362,16 @@ section.ama__page--event__speakers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  padding-right: 10px; }
   @media (min-width: 37.5em) {
     .ama_locker_navigation {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
-      justify-content: end; } }
+      justify-content: flex-end;
+      padding-right: 0; } }
   .ama_locker_navigation a {
     position: relative;
     width: 101px;
@@ -14414,11 +14434,8 @@ section.ama__page--event__speakers {
         padding: 9px 23px 8px 25px; } }
     .ama_locker_navigation a.bookmarks::before {
       width: 22px;
+      height: 23px;
       background-image: url("../images/BookmarksMenuIcon_Locker.svg"); }
-      @media (min-width: 37.5em) {
-        .ama_locker_navigation a.bookmarks::before {
-          width: 32px;
-          height: 26px; } }
     .ama_locker_navigation a.bookmarks:hover::before {
       background-image: url("../images/BookmarkedIcon_Locker.svg"); }
 
@@ -15859,6 +15876,263 @@ section#related_links .ama__membership ul {
         .ama__sales-landing-page-hero__content .ama__button {
           width: auto; } }
 
+.ama__series .salesforce-subscribe-form,
+.ama__trending .salesforce-subscribe-form {
+  display: inline-block;
+  border: none;
+  line-height: 0;
+  position: relative; }
+  @media (max-width: 37.5em) {
+    .ama__series .salesforce-subscribe-form,
+    .ama__trending .salesforce-subscribe-form {
+      height: 44px; } }
+  .ama__series .salesforce-subscribe-form::before,
+  .ama__trending .salesforce-subscribe-form::before {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 0px auto -15px;
+    content: "";
+    background-image: url("../images/SubscribeIcon_Locker.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover; }
+    @media (min-width: 37.5em) {
+      .ama__series .salesforce-subscribe-form::before,
+      .ama__trending .salesforce-subscribe-form::before {
+        padding-left: 5px;
+        width: 21px;
+        height: 26px;
+        margin: 0 auto;
+        position: absolute;
+        left: 34px;
+        top: 10px; } }
+  .ama__series .salesforce-subscribe-form .form-actions,
+  .ama__trending .salesforce-subscribe-form .form-actions {
+    margin: 0; }
+  .ama__series .salesforce-subscribe-form input.form-submit,
+  .ama__trending .salesforce-subscribe-form input.form-submit {
+    border: 1px solid #a28ab5;
+    background: none;
+    color: #310f4a;
+    font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 15px 0 0 0; }
+    @media (max-width: 37.5em) {
+      .ama__series .salesforce-subscribe-form input.form-submit,
+      .ama__trending .salesforce-subscribe-form input.form-submit {
+        width: 87px;
+        height: 44px;
+        font-size: 14px;
+        line-height: 2;
+        top: -8px; } }
+    @media (min-width: 37.5em) {
+      .ama__series .salesforce-subscribe-form input.form-submit,
+      .ama__trending .salesforce-subscribe-form input.form-submit {
+        min-width: 180px;
+        max-width: 180px;
+        max-height: 46px;
+        padding: 9px 0 8px 25px;
+        margin-bottom: 5px; } }
+  .ama__series .salesforce-subscribe-form:hover::before,
+  .ama__trending .salesforce-subscribe-form:hover::before {
+    background-image: url("../images/SubscribeHoverIcon_Locker.svg"); }
+  .ama__series .salesforce-subscribe-form:hover input.form-submit,
+  .ama__trending .salesforce-subscribe-form:hover input.form-submit {
+    text-decoration: underline; }
+  .ama__series .salesforce-subscribe-form + .flag,
+  .ama__trending .salesforce-subscribe-form + .flag {
+    display: inline-block;
+    margin-top: 0; }
+
+.ama__series .subscribe-series,
+.ama__trending .subscribe-series {
+  display: inline-block;
+  border: 1px solid #a28ab5;
+  background: none;
+  color: #310f4a;
+  margin-bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 0 0 0;
+  position: relative;
+  top: 0; }
+  @media (max-width: 37.5em) {
+    .ama__series .subscribe-series,
+    .ama__trending .subscribe-series {
+      width: 87px;
+      height: 44px;
+      font-size: 14px;
+      line-height: 2;
+      top: -8px; } }
+  @media (min-width: 37.5em) {
+    .ama__series .subscribe-series,
+    .ama__trending .subscribe-series {
+      min-width: 180px;
+      max-width: 180px;
+      max-height: 46px;
+      padding: 9px 0 8px 25px;
+      margin-bottom: 5px; } }
+  .ama__series .subscribe-series + .flag,
+  .ama__trending .subscribe-series + .flag {
+    display: inline-block;
+    margin-top: 0; }
+  .ama__series .subscribe-series:hover,
+  .ama__trending .subscribe-series:hover {
+    text-decoration: underline; }
+    .ama__series .subscribe-series:hover::before,
+    .ama__trending .subscribe-series:hover::before {
+      background-image: url("../images/SubscribeHoverIcon_Locker.svg"); }
+  .ama__series .subscribe-series::before,
+  .ama__trending .subscribe-series::before {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 0px auto -15px;
+    content: "";
+    background-image: url("../images/SubscribeIcon_Locker.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover; }
+    @media (min-width: 37.5em) {
+      .ama__series .subscribe-series::before,
+      .ama__trending .subscribe-series::before {
+        padding-left: 5px;
+        width: 21px;
+        height: 26px;
+        margin: 0 auto;
+        position: absolute;
+        left: 34px;
+        top: 10px; } }
+  .ama__series .subscribe-series.subscribed::before,
+  .ama__trending .subscribe-series.subscribed::before {
+    background-image: url("../images/SubscribedIcon_Locker.svg"); }
+    @media (min-width: 37.5em) {
+      .ama__series .subscribe-series.subscribed::before,
+      .ama__trending .subscribe-series.subscribed::before {
+        left: 28px; } }
+
+a.subscribe-series {
+  display: block;
+  min-height: 28px;
+  top: -30px; }
+
+.series-tag + .subscribe-series,
+.series-tag + .salesforce-subscribe-form input.form-submit {
+  position: relative;
+  text-decoration: none;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 2;
+  width: 182px;
+  color: #ffffff;
+  background: #7229D1;
+  padding-left: 20px; }
+  @media (min-width: 37.5em) {
+    .series-tag + .subscribe-series,
+    .series-tag + .salesforce-subscribe-form input.form-submit {
+      width: 168px;
+      padding-left: 8px; } }
+  .series-tag + .subscribe-series:after,
+  .series-tag + .salesforce-subscribe-form input.form-submit:after {
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+    background-size: contain;
+    position: relative;
+    top: 3px;
+    left: 8px;
+    z-index: 1; }
+  .series-tag + .subscribe-series:hover,
+  .series-tag + .salesforce-subscribe-form input.form-submit:hover {
+    cursor: pointer;
+    background: #46166B; }
+    .series-tag + .subscribe-series:hover input.form-submit,
+    .series-tag + .salesforce-subscribe-form input.form-submit:hover input.form-submit {
+      cursor: pointer;
+      background-color: #46166B; }
+    .series-tag + .subscribe-series:hover .triangle-right,
+    .series-tag + .salesforce-subscribe-form input.form-submit:hover .triangle-right {
+      border-left: 12px solid #46166B; }
+  .series-tag + .subscribe-series .triangle-right,
+  .series-tag + .salesforce-subscribe-form input.form-submit .triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 12px solid #7229D1;
+    position: absolute;
+    top: 0px;
+    right: -12px;
+    z-index: 1; }
+  .series-tag + .subscribe-series.subscribed,
+  .series-tag + .salesforce-subscribe-form input.form-submit.subscribed {
+    color: #46166B;
+    background: #ffffff;
+    border: 1px solid #46166B;
+    text-align: center !important;
+    padding: 0; }
+    .series-tag + .subscribe-series.subscribed:after,
+    .series-tag + .salesforce-subscribe-form input.form-submit.subscribed:after {
+      content: none; }
+    .series-tag + .subscribe-series.subscribed .triangle-right,
+    .series-tag + .salesforce-subscribe-form input.form-submit.subscribed .triangle-right {
+      display: none; }
+
+.series-tag + .subscribe-series,
+.series-tag + .salesforce-subscribe-form {
+  width: 168px;
+  position: relative;
+  top: 0;
+  margin-top: 28px; }
+  .series-tag + .subscribe-series .triangle-right,
+  .series-tag + .salesforce-subscribe-form .triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 12px solid #7229D1;
+    position: absolute;
+    top: 0px;
+    right: -12px;
+    z-index: 1; }
+  .series-tag + .subscribe-series:hover .triangle-right,
+  .series-tag + .salesforce-subscribe-form:hover .triangle-right {
+    border-left: 12px solid #46166B; }
+  .series-tag + .subscribe-series input.form-submit,
+  .series-tag + .salesforce-subscribe-form input.form-submit {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none; }
+  .series-tag + .subscribe-series .form-actions,
+  .series-tag + .salesforce-subscribe-form .form-actions {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none; }
+    .series-tag + .subscribe-series .form-actions:after,
+    .series-tag + .salesforce-subscribe-form .form-actions:after {
+      display: inline-block;
+      content: '';
+      width: 18px;
+      height: 18px;
+      background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
+      background-size: contain;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 1; }
+
+.series-tag + .salesforce-subscribe-form .triangle-right {
+  top: 2px; }
+
 .ama__sidebar-articles > * {
   margin-top: 14px; }
   .ama__sidebar-articles > *:first-child {
@@ -16299,6 +16573,97 @@ section#related_links .ama__membership ul {
 .ama__subcategory-index .views-infinite-scroll-content-wrapper div:first-child .ama__subcategory-page-article-stub--topics {
   border-top: solid 2px #CBCBCB;
   padding-top: 19px; }
+
+.view-my-subscription .views-exposed-form {
+  margin-top: 28px; }
+  .view-my-subscription .views-exposed-form .form-actions {
+    margin-top: 7px; }
+
+.view-my-subscription .ama_subscription:first-child {
+  border-top: 1px solid #a28ab5; }
+
+.view-my-subscription .ama_subscription:last-child {
+  border-bottom: none;
+  margin-bottom: 56px; }
+
+.view-my-subscription li.pager__item {
+  text-align: center; }
+
+.ama_subscription {
+  position: relative;
+  border-bottom: solid 1px #CBCBCB; }
+  @media (min-width: 37.5em) {
+    .ama_subscription {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+      padding-top: 14px; } }
+  .ama_subscription .title-removed,
+  .ama_subscription .description-removed {
+    display: none; }
+  .ama_subscription .ama_subscription_left {
+    border-bottom: none;
+    padding-bottom: 96px;
+    padding-top: 0; }
+    @media (min-width: 37.5em) {
+      .ama_subscription .ama_subscription_left {
+        padding-bottom: 56px; } }
+    @media (min-width: 37.5em) {
+      .ama_subscription .ama_subscription_left .ama__search-result__text {
+        padding-right: 20px; } }
+  @media (max-width: 37.5em) {
+    .ama_subscription .ama_subscription_right {
+      padding: 14px 0; } }
+  @media (min-width: 37.5em) {
+    .ama_subscription .ama_subscription_right {
+      padding-bottom: 56px; }
+      .ama_subscription .ama_subscription_right.ama__search-result__image {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+        .ama_subscription .ama_subscription_right.ama__search-result__image > div {
+          -webkit-box-flex: 1;
+          -ms-flex: auto;
+          flex: auto;
+          -ms-flex-item-align: start;
+          align-self: flex-start; }
+        .ama_subscription .ama_subscription_right.ama__search-result__image .ama__image {
+          margin-bottom: 14px; }
+        .ama_subscription .ama_subscription_right.ama__search-result__image .flag {
+          -webkit-box-flex: 1;
+          -ms-flex: auto;
+          flex: auto;
+          -ms-flex-item-align: end;
+          align-self: flex-end; } }
+  .ama_subscription .ama_subscription_right:not(.ama__search-result__image) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media (min-width: 37.5em) {
+      .ama_subscription .ama_subscription_right:not(.ama__search-result__image) {
+        padding: 28px 0 56px; } }
+    .ama_subscription .ama_subscription_right:not(.ama__search-result__image) .salesforce-subscribe-form {
+      -ms-flex-item-align: end;
+      align-self: flex-end; }
+  .ama_subscription.ama__search-result:hover .ama__search-result__title {
+    text-decoration: none; }
+  .ama_subscription .ama__search-result__text:hover .ama__search-result__title {
+    text-decoration: underline; }
+  .ama_subscription .subscription-form {
+    margin-top: 0; }
+    @media (max-width: 37.5em) {
+      .ama_subscription .subscription-form {
+        position: absolute;
+        bottom: 35px;
+        right: 0; } }
 
 .ama__tools {
   padding-left: 21px;
@@ -18799,124 +19164,6 @@ body.search-results .ama__layout--two-column--left {
       font-weight: 400;
       padding: 10px 45px;
       margin: 28px 0; }
-  .ama__series .salesforce-subscribe-form {
-    top: -30px;
-    border: none;
-    line-height: 0; }
-
-a.subscribe-series {
-  display: block;
-  min-height: 28px;
-  top: -30px; }
-
-.subscribe-series,
-.salesforce-subscribe-form input.form-submit {
-  display: none;
-  position: relative;
-  text-decoration: none;
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 600;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 2;
-  width: 182px;
-  color: #ffffff;
-  background: #7229D1;
-  padding-left: 20px; }
-  @media (min-width: 37.5em) {
-    .subscribe-series,
-    .salesforce-subscribe-form input.form-submit {
-      width: 168px;
-      padding-left: 8px; } }
-  .subscribe-series:after,
-  .salesforce-subscribe-form input.form-submit:after {
-    display: inline-block;
-    content: '';
-    width: 18px;
-    height: 18px;
-    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
-    background-size: contain;
-    position: relative;
-    top: 3px;
-    left: 8px;
-    z-index: 1; }
-  .subscribe-series:hover,
-  .salesforce-subscribe-form input.form-submit:hover {
-    cursor: pointer;
-    background: #46166B; }
-    .subscribe-series:hover input.form-submit,
-    .salesforce-subscribe-form input.form-submit:hover input.form-submit {
-      cursor: pointer;
-      background-color: #46166B; }
-    .subscribe-series:hover .triangle-right,
-    .salesforce-subscribe-form input.form-submit:hover .triangle-right {
-      border-left: 12px solid #46166B; }
-  .subscribe-series .triangle-right,
-  .salesforce-subscribe-form input.form-submit .triangle-right {
-    width: 0;
-    height: 0;
-    border-top: 14px solid transparent;
-    border-bottom: 14px solid transparent;
-    border-left: 12px solid #7229D1;
-    position: absolute;
-    top: 0;
-    right: -12px;
-    z-index: 1;
-    display: none; }
-  .subscribe-series.subscribed,
-  .salesforce-subscribe-form input.form-submit.subscribed {
-    color: #46166B;
-    background: #ffffff;
-    border: 1px solid #46166B;
-    text-align: center !important;
-    padding: 0; }
-    .subscribe-series.subscribed:after,
-    .salesforce-subscribe-form input.form-submit.subscribed:after {
-      content: none; }
-    .subscribe-series.subscribed .triangle-right,
-    .salesforce-subscribe-form input.form-submit.subscribed .triangle-right {
-      display: none; }
-
-.salesforce-subscribe-form input.form-submit,
-.salesforce-subscribe-form .form-actions {
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border: none; }
-
-.salesforce-subscribe-form {
-  width: 168px;
-  position: relative; }
-  .salesforce-subscribe-form .triangle-right {
-    width: 0;
-    height: 0;
-    border-top: 14px solid transparent;
-    border-bottom: 14px solid transparent;
-    border-left: 12px solid #7229D1;
-    position: absolute;
-    top: 0;
-    right: -12px;
-    z-index: 1;
-    display: none; }
-  .salesforce-subscribe-form:hover .triangle-right {
-    border-left: 12px solid #46166B; }
-  .salesforce-subscribe-form .form-actions:after {
-    display: inline-block;
-    content: '';
-    width: 18px;
-    height: 18px;
-    background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
-    background-size: contain;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    z-index: 1; }
-
-.series-tag + .subscribe-series,
-.series-tag + .salesforce-subscribe-form {
-  top: 0;
-  margin-top: 28px; }
 
 .ama__specialty-landing .ama__event-stub:first-child {
   border-top: 0; }
