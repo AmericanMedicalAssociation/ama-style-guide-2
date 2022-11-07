@@ -1,8 +1,8 @@
 /**
  * @file
- * Dr Finder sticky.
+ * Dr Finder modal click.
  *
- * Since we're using a fraction of AMA JS, we need just this for sticky nav.
+ * Click on the X to close modal.
  */
 (function ($, Drupal) {
 
