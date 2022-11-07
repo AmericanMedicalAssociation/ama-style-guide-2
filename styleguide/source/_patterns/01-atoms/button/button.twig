@@ -10,7 +10,7 @@
   </a>
 {% else %}
   <button type="{{ button.type }}"
-          class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ class }}"
+          class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ button.class }}"
           aria-label="{{ button.info }}">
     {{ button.text }}
     {% if button.icon %}
