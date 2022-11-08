@@ -14,8 +14,8 @@
 
       $('.dr-finder-filter-buttons', context).each(function() {
         const class_active = 'is-active';
-        const button = '.dr-finder-filter-buttons__filters';
-        const openMenu = $('.dr-finder-filter-list__menu-item');
+        const button = '.dr-finder-filter-buttons__filters-mobile';
+        const openMenu = $('.dr-finder-filter-list');
 
         $(button, this).once().on('click', function(e) {
           e.stopPropagation();
