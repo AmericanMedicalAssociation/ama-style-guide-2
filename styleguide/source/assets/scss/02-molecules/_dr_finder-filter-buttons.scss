@@ -24,6 +24,27 @@
   }
 }
 
+.dr-finder-filter-buttons__filters-mobile {
+  width: 66%;
+  margin: 0;
+}
+
+.dr-finder-filter-buttons .dr-finder-filter-buttons__filters {
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: flex;
+  }
+}
+
+.dr-finder-filter-buttons .dr-finder-filter-buttons__filters-mobile {
+   display: flex;
+
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+}
+
 .dr-finder-filter-buttons__clear {
   width: 33%;
   text-align: right;
