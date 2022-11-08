@@ -21,3 +21,28 @@
     </div>
   {% endfor %}
  </div>
+
+<div class="dr-finder-filter-list-mobile">
+    <div class="dr-finder-filter-list-mobile-heading">Filter Your Results</div>
+    {% for filter in drFinderFilterList %}
+        <div class="dr-finder-filter-list__menu-item-mobile">
+            <div class="dr-finder-filter-list__menu-button-mobile">{{ filter.title }}
+                {% include '@atoms/media/icons/svg/icon-opendropdownsmall.twig' %}
+            </div>
+            <div class="dr-finder-filter-list__submenu-mobile">
+                <div class="dr-finder-filter-list__submenu-scroll-mobile">
+                    {% for checkbox in filter.checkboxes %}
+                        <div class="dr-finder-filter-list__submenu-item-mobile">
+                            {% include '@atoms/forms/checkbox.twig' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="dr-finder-filter-list__view-results">
+        {% for button in drFinderFilterListButtons.results %}
+            {% include '@atoms/button/button.twig' with { "button" : button } %}
+        {% endfor %}
+    </div>
+</div>
