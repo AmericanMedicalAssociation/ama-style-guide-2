@@ -16,7 +16,7 @@
 
 .dr-finder-profile-header__image-url {
   margin: auto;
-  display: flow-root;
+  position: relative;
   background: $profileHeader-image;
   border: none;
   border-radius: 50%;
@@ -61,10 +61,7 @@
 
   svg {
     position: absolute;
-    max-width: fit-content;
-    max-height: fit-content;
-    transform: translate(244%,205%);
-    bottom: 110px;
-    left: 85px;
+    bottom: 10px;
+    right: $gutter;
   }
 }
