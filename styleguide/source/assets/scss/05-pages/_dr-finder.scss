@@ -5,8 +5,14 @@
 }
 
 .ama__dr-finder.profile .ama__h1 {
-  padding-bottom: $gutter * 2;
+  color: $purple;
+  font-weight: lighter;
+  padding-bottom: $gutter;
   border-bottom: 1px solid $purple;
+
+  @include breakpoint($bp-small) {
+    padding-bottom: $gutter * 2;
+  }
 }
 
 .ama__dr-finder.profile .ama__h2 {
