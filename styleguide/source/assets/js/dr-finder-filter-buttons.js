@@ -11,7 +11,13 @@
 
   Drupal.behaviors.filterResultsDrFinder = {
     attach: function (context, settings) {
+      // All Filters button for mobile.
       $('.dr-finder-filter-buttons__filters-mobile').once().on('click', function (e) {
+        e.stopPropagation();
+        $('.dr-finder-filter-list').toggleClass('is-active');
+      });
+      // X button for mobile.
+      $('.dr-finder-filter-list-mobile-heading svg').once().on('click', function (e) {
         e.stopPropagation();
         $('.dr-finder-filter-list').toggleClass('is-active');
       });
