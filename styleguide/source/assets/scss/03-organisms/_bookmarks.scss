@@ -41,6 +41,11 @@
         a::before {
           left: 35px;
         }
+        &.action-flag {
+          a::before {
+            left: 25px;
+          }
+        }
         &.action-unflag {
           a {
             pointer-events: all;
@@ -51,12 +56,6 @@
           a:hover {
             &::before {
               background-image: url('../images/RemoveHoverIcon_Locker.svg');
-            }
-          }
-          // When re-flagging unflagged bookmarks
-          &:not(.flag-glossary) {
-            a::before {
-              left: 20px;
             }
           }
         }
