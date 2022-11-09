@@ -1,13 +1,27 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-filter-list {
-  margin-bottom: $gutter;
-  padding-bottom: $gutter;
-  border-bottom: 1px solid $purple;
+  //display: none;
+    width: 88%;
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    z-index: 9999;
+    background: $white;
+    border: 2px solid $filterList-hover;
 
+  &.is-active {
+    display: block;
+  }
   @include breakpoint($bp-small) {
+    width: 100%;
     display: flex;
     gap: 10px;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid $purple;
+    margin-bottom: $gutter;
+    padding-bottom: $gutter;
   }
 }
 
@@ -23,19 +37,27 @@
 .dr-finder-filter-list__menu-item label {
   display: flex;
   color: $gray-64;
-  font-size: 12px;
+  font-size: 14px;
   flex-direction: row-reverse;
   justify-content: left;
+  margin: $gutter/6 0;
 }
 
 .dr-finder-filter-list__submenu {
   display: none;
   border-radius: 10px;
-  padding: 20px;
-  margin: 8px auto;
+  margin: $gutter/4 $gutter/4;
   position: relative;
-  box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
   background: $white;
+
+  @include breakpoint($bp-small){
+    box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 8px auto;
+    position: relative;
+    background: $white;
+  }
 }
 
 .dr-finder-filter-list__submenu-scroll {
@@ -88,22 +110,36 @@
 }
 
 .dr-finder-filter-list__menu-button {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
   font-weight: normal;
-  border-radius: 20px;
-  padding: 0 20px 0 $gutter;
-  border: solid 1px $purple;
+  border: none;
+  padding:$gutter/4 0;
+  border-bottom: solid 2px $filterList-hover;
   background: $white;
-  color: $purple;
+  color: $black;
+  margin: $gutter/2 $gutter/4;
 
   @include breakpoint($bp-small) {
-    width: auto;
+    width: 100%;
+    font-weight: normal;
+    border-radius: 20px;
+    padding: 0 20px 0 $gutter;
+    border: solid 1px $purple;
+    background: $white;
+    color: $purple;
   }
 }
 
 .dr-finder-filter-list__menu-button:hover {
-  background-color: $filterList-hover;
-  color: $purple;
+  color: $black;
+  background-color:$white;
+
+  @include breakpoint($bp-small) {
+    background-color: $filterList-hover;
+    color: $purple;
+  }
 }
 
 .dr-finder-filter-list__menu-button.is-active + div {
@@ -125,7 +161,7 @@
   transform: rotate(450deg);
   width: 11.5px;
   height: 9px;
-  margin: 0 6px;
+  margin: 6px 6px;
 }
 
 .dr-finder-filter-list__menu-button svg g{
@@ -141,21 +177,14 @@
 }
 
 .dr-finder-filter-list__menu-view-results {
-  display: block;
-  padding-top: 20px;
-  text-align: center;
-  color: $purple;
-  font-size: 14px;
-}
-
-.dr-finder-filter-list-mobile {
-   width: 95%;
-   height: 100%;
-   border: 1px solid $purple;
-   gap: 10px;
+  display: none;
 
   @include breakpoint($bp-small) {
-    display: none;
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    color: $purple;
+    font-size: 14px;
   }
 }
 
@@ -163,66 +192,27 @@
   display: flex;
   justify-content: space-between;
   padding: $gutter/4 0;
-  margin: $gutter/2 $gutter/2;
+  margin: $gutter/4 $gutter/4;
   background: $white;
   color: $black;
+  width:88%;
 
   svg {
     width: 12px;
-    margin: $gutter/4 $gutter/2;
+    margin: $gutter/4 0;
+  }
+
+  @include breakpoint($bp-small) {
+    display: none;
   }
 }
 
-.dr-finder-filter-list__view-results {
+.dr-finder-filter-list-mobile__view-results {
   text-align: center;
   padding: $gutter/2 0;
   margin: $gutter;
-}
-
-.dr-finder-filter-list__menu-item-mobile {
-  background: $white;
-  margin: $gutter/2 0;
-}
-
-.dr-finder-filter-list__menu-button-mobile {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid $filterList-hover;
-  background: $white;
-  color: $black;
-  padding: $gutter/4 0;
-  margin: $gutter/2 $gutter/2;
 
   @include breakpoint($bp-small) {
-    width: auto;
+    display: none;
   }
 }
-
-.dr-finder-filter-list__menu-button-mobile:hover {
-  background-color: $filterList-hover;
-  color: $purple;
-}
-
-.dr-finder-filter-list__menu-button-mobile svg {
-  fill: $purple;
-  transform: rotate(270deg);
-  width: 12px;
-  height: 9px;
-  margin: $gutter/2 $gutter/2;
-}
-
-.dr-finder-filter-list__menu-item-mobile label {
-  display: flex;
-  color: $gray-64;
-  font-size: 12px;
-  flex-direction: row-reverse;
-  justify-content: left;
-  margin: $gutter/4 $gutter/2;
-}
-
-.dr-finder-filter-list__submenu-mobile {
-  margin: $gutter/4 auto;
-  position: relative;
-  background: $white;
-}
-
