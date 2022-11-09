@@ -11,10 +11,9 @@
 
   Drupal.behaviors.filterResultsDrFinder = {
     attach: function (context, settings) {
-
       $('.dr-finder-filter-buttons__filters-mobile').once().on('click', function (e) {
         e.stopPropagation();
-        $('.dr-finder-filter-list').toggleClass(class_active);
+        $('.dr-finder-filter-list').toggleClass('is-active');
       });
     }
   };
