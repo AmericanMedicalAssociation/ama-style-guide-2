@@ -12,13 +12,15 @@
 
   &.is-active {
     display: block;
+    box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
 
     // If we have an is-active on desktop, we still flex.
     @include breakpoint($bp-small) {
       display: flex;
+      box-shadow: none;
     }
   }
-  
+
   @include breakpoint($bp-small) {
     width: 100%;
     display: flex;
@@ -67,6 +69,7 @@
 }
 
 .dr-finder-filter-list__submenu-scroll {
+  width: 92%;
   overflow-y: auto;
   max-height: 112px;
 
@@ -86,6 +89,10 @@
     background-clip: padding-box;
     border-radius: 9999px;
     background-color: #dbc8e0;
+  }
+
+  @include breakpoint($bp-small) {
+    width: 100%;
   }
 }
 
