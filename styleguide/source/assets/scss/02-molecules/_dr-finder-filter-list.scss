@@ -1,7 +1,7 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-filter-list {
-  //display: none;
+    display: none;
     width: 88%;
     position: absolute;
     top: 30px;
@@ -153,8 +153,11 @@
 }
 
 .dr-finder-filter-list__menu-button.is-active {
-  background-color: $purple;
-  color: $white;
+
+  @include breakpoint($bp-small) {
+    background-color: $purple;
+    color: $white;
+  }
 }
 
 .dr-finder-filter-list__menu-button svg {
@@ -169,7 +172,7 @@
   }
 }
 
-.dr-finder-filter-list__menu-button svg g{
+.dr-finder-filter-list__menu-button svg g {
   fill: $purple;
 }
 
@@ -178,7 +181,10 @@
 }
 
 .dr-finder-filter-list__menu-button.is-active svg g {
-  fill: $white;
+
+  @include breakpoint($bp-small) {
+    fill: $white;
+  }
 }
 
 .dr-finder-filter-list__menu-view-results {
