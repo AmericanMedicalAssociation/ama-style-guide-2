@@ -1,11 +1,27 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-profile-header {
-  padding: $gutter 0;
-  margin: $gutter 0;
+  @include breakpoint($bp-small) {
+    padding-top: $gutter;
+    margin-top: $gutter;
+    display: flex;
+  }
+}
+
+// We're showing the Member badge in different areas so show/hide below.
+.dr-finder-profile-header__image-column .dr-finder-badge {
+  margin: $gutter auto;
 
   @include breakpoint($bp-small) {
-    display: flex;
+    display: none;
+  }
+}
+
+.dr-finder-profile-header__doctor-info .dr-finder-badge {
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: block;
   }
 }
 
@@ -15,7 +31,8 @@
 }
 
 .dr-finder-profile-header__image-url {
-  display: inline-block;
+  margin: auto;
+  position: relative;
   background: $profileHeader-image;
   border: none;
   border-radius: 50%;
@@ -46,13 +63,29 @@
   color: $blue;
 }
 
+.dr-finder-profile-header__upload-actions .ama__button {
+  width: 100%;
+}
+
+.dr-finder-profile-header__edit-actions .ama__button {
+  width: 100%;
+
+  @include breakpoint($bp-small) {
+    width: auto;
+  }
+}
+
 .dr-finder-profile-header__doctor-info__service {
   font-weight: bold;
 }
 
 .dr-finder-profile-header__edit-actions,
 .dr-finder-profile-header__upload-actions {
-  margin-top: $gutter;
+  margin: $gutter 0;
+
+  @include breakpoint($bp-small) {
+    margin-top: $gutter;
+  }
 }
 
 .dr-finder-profile-header__image-verified-container {
@@ -60,10 +93,7 @@
 
   svg {
     position: absolute;
-    max-width: fit-content;
-    max-height: fit-content;
-    transform: translate(244%,205%);
-    bottom: 110px;
-    left: 85px;
+    bottom: 10px;
+    right: $gutter;
   }
 }
