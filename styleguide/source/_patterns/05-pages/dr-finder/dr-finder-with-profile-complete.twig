@@ -18,12 +18,7 @@
       "class": "ama__h1"
     }) %}
     {% include '@atoms/heading/heading.twig' %}
-    <div class="dr-finder-back_link">
-      {%  for link in drFinderBackLink %}
-        {% include'@atoms/link/link.twig' with { "link" : link } %}
-      {%  endfor %}
-    </div>
-{#    <a href="">Search Back</a>#}
+    {% include '@atoms/link/link.twig' with { "link" : backLink } %}
     {% include '@molecules/dr-finder-profile-header/dr-finder-profile-header.twig' %}
     <h2 class="ama__h2">Getting to Know Henry</h2><br/>
     <h3 class="ama__h3">What inspired me to pursue a career in medicine</h3>
