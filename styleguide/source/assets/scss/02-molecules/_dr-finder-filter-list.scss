@@ -12,7 +12,13 @@
 
   &.is-active {
     display: block;
+
+    // If we have an is-active on desktop, we still flex.
+    @include breakpoint($bp-small) {
+      display: flex;
+    }
   }
+  
   @include breakpoint($bp-small) {
     width: 100%;
     display: flex;
