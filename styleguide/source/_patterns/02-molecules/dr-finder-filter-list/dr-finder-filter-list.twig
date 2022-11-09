@@ -23,7 +23,9 @@
  </div>
 
 <div class="dr-finder-filter-list-mobile">
-    <div class="dr-finder-filter-list-mobile-heading">Filter Your Results</div>
+    <div class="dr-finder-filter-list-mobile-heading">Filter Your Results
+        {% include '@atoms/media/icons/svg/icon-close.twig' %}
+    </div>
     {% for filter in drFinderFilterList %}
         <div class="dr-finder-filter-list__menu-item-mobile">
             <div class="dr-finder-filter-list__menu-button-mobile">{{ filter.title }}

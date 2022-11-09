@@ -160,8 +160,17 @@
 }
 
 .dr-finder-filter-list-mobile-heading {
+  display: flex;
+  justify-content: space-between;
   padding: $gutter/4 0;
   margin: $gutter/2 $gutter/2;
+  background: $white;
+  color: $black;
+
+  svg {
+    width: 12px;
+    margin: $gutter/4 $gutter/2;
+  }
 }
 
 .dr-finder-filter-list__view-results {
@@ -176,6 +185,8 @@
 }
 
 .dr-finder-filter-list__menu-button-mobile {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 2px solid $filterList-hover;
   background: $white;
   color: $black;
@@ -195,6 +206,23 @@
 .dr-finder-filter-list__menu-button-mobile svg {
   fill: $purple;
   transform: rotate(270deg);
-  width: 11px;
+  width: 12px;
   height: 9px;
+  margin: $gutter/2 $gutter/2;
 }
+
+.dr-finder-filter-list__menu-item-mobile label {
+  display: flex;
+  color: $gray-64;
+  font-size: 12px;
+  flex-direction: row-reverse;
+  justify-content: left;
+  margin: $gutter/4 $gutter/2;
+}
+
+.dr-finder-filter-list__submenu-mobile {
+  margin: $gutter/4 auto;
+  position: relative;
+  background: $white;
+}
+
