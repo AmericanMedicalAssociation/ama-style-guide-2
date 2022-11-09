@@ -12736,14 +12736,14 @@ article[class*='__page-content'] .ama__tags {
             align-self: flex-end; }
         .ama_book_mark .ama_bookmark_right .flag a::before {
           left: 35px; }
+        .ama_book_mark .ama_bookmark_right .flag.action-flag a::before {
+          left: 25px; }
         .ama_book_mark .ama_bookmark_right .flag.action-unflag a {
           pointer-events: all; }
         .ama_book_mark .ama_bookmark_right .flag.action-unflag a::before {
           background-image: url("../images/RemoveIcon_Locker.svg"); }
         .ama_book_mark .ama_bookmark_right .flag.action-unflag a:hover::before {
-          background-image: url("../images/RemoveHoverIcon_Locker.svg"); }
-        .ama_book_mark .ama_bookmark_right .flag.action-unflag:not(.flag-glossary) a::before {
-          left: 20px; } }
+          background-image: url("../images/RemoveHoverIcon_Locker.svg"); } }
     .ama_book_mark .ama_bookmark_right:not(.ama__search-result__image) {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -14405,17 +14405,20 @@ section.ama__page--event__speakers {
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: cover; }
-    @media (min-width: 37.5em) {
-      .ama_locker_navigation a.subscriptions {
-        padding: 9px 11px 8px; } }
-    .ama_locker_navigation a.subscriptions::before {
-      background-image: url("../images/SubscriptionsMenuIcon_Locker.svg"); }
+    .ama_locker_navigation a.subscriptions {
+      white-space: nowrap;
+      width: auto; }
       @media (min-width: 37.5em) {
-        .ama_locker_navigation a.subscriptions::before {
-          width: 32px;
-          height: 32px; } }
-    .ama_locker_navigation a.subscriptions:hover::before {
-      background-image: url("../images/SubscribedIcon_Locker.svg"); }
+        .ama_locker_navigation a.subscriptions {
+          padding: 9px 11px 8px; } }
+      .ama_locker_navigation a.subscriptions::before {
+        background-image: url("../images/SubscriptionsMenuIcon_Locker.svg"); }
+        @media (min-width: 37.5em) {
+          .ama_locker_navigation a.subscriptions::before {
+            width: 32px;
+            height: 32px; } }
+      .ama_locker_navigation a.subscriptions:hover::before {
+        background-image: url("../images/SubscribedIcon_Locker.svg"); }
     @media (min-width: 37.5em) {
       .ama_locker_navigation a.topics {
         width: 155px;
@@ -15918,7 +15921,9 @@ section#related_links .ama__membership ul {
     font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
     font-weight: 400;
     margin-bottom: 0;
-    padding: 15px 0 0 0; }
+    padding: 15px 0 0 0;
+    line-height: 1.5em;
+    font-size: 16px; }
     @media (max-width: 37.5em) {
       .ama__series .salesforce-subscribe-form input.form-submit,
       .ama__trending .salesforce-subscribe-form input.form-submit {
@@ -17958,6 +17963,7 @@ body.search-results .ama__layout--two-column--left {
     margin-bottom: 21px; }
   .ama__glossary-page .ama__subtitle {
     font-size: 18px;
+    line-height: 1.5;
     font-weight: normal; }
   .ama__glossary-page .viewsreference--view-title {
     display: none; }
