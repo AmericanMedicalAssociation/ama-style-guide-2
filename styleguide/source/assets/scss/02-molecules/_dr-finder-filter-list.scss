@@ -129,6 +129,7 @@
     border: solid 1px $purple;
     background: $white;
     color: $purple;
+    margin: 0;
   }
 }
 
@@ -162,6 +163,10 @@
   width: 11.5px;
   height: 9px;
   margin: 6px 6px;
+
+  @include breakpoint($bp-small) {
+    margin: 9px;
+  }
 }
 
 .dr-finder-filter-list__menu-button svg g{
