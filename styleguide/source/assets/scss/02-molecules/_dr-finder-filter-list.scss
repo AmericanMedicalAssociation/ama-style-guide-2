@@ -2,10 +2,10 @@
 
 .dr-finder-filter-list {
     display: none;
-    width: 88%;
+    width: 90%;
     position: absolute;
-    top: 30px;
-    left: 5px;
+    top: 0;
+    left: 0;
     z-index: 9999;
     background: $white;
     border: 2px solid $filterList-hover;
@@ -24,7 +24,6 @@
   @include breakpoint($bp-small) {
     width: 100%;
     display: flex;
-    gap: 10px;
     position: relative;
     border: none;
     border-bottom: 1px solid $purple;
@@ -45,7 +44,7 @@
 .dr-finder-filter-list__menu-item label {
   display: flex;
   color: $gray-64;
-  font-size: 14px;
+  font-size: 14.5px;
   flex-direction: row-reverse;
   justify-content: left;
   margin: $gutter/6 0;
@@ -72,6 +71,8 @@
   width: 92%;
   overflow-y: auto;
   max-height: 112px;
+  border-bottom: solid 2px $purple;
+  padding:  $gutter/2 0 ;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -93,6 +94,7 @@
 
   @include breakpoint($bp-small) {
     width: 100%;
+    border: none;
   }
 }
 
@@ -166,16 +168,21 @@
 }
 
 .dr-finder-filter-list__menu-button.is-active {
+  border: none;
+  padding: 0;
 
   @include breakpoint($bp-small) {
+    width:100%
     background-color: $purple;
     color: $white;
+    padding: 0 20px 0 $gutter;
+    margin: 0;
   }
 }
 
 .dr-finder-filter-list__menu-button svg {
   fill: $purple;
-  transform: rotate(450deg);
+  transform: rotate(355deg);
   width: 11.5px;
   height: 9px;
   margin: 6px 6px;
@@ -222,8 +229,9 @@
   width:88%;
 
   svg {
-    width: 12px;
+    width: 14px;
     margin: $gutter/4 0;
+    fill: $purple;
   }
 
   @include breakpoint($bp-small) {
