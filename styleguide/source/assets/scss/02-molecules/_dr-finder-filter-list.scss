@@ -25,6 +25,7 @@
     width: 100%;
     display: flex;
     position: relative;
+    gap: 10px;
     border: none;
     border-bottom: 1px solid $purple;
     margin-bottom: $gutter;
@@ -57,7 +58,7 @@
   position: relative;
   background: $white;
 
-  @include breakpoint($bp-small){
+  @include breakpoint($bp-small) {
     box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     padding: 20px;
@@ -72,7 +73,7 @@
   overflow-y: auto;
   max-height: 112px;
   border-bottom: solid 2px $purple;
-  padding:  $gutter/2 0 ;
+  padding: $gutter/4 0;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -130,7 +131,7 @@
   width: 90%;
   font-weight: normal;
   border: none;
-  padding:$gutter/4 0;
+  padding: $gutter/4 0;
   border-bottom: solid 2px $filterList-hover;
   background: $white;
   color: $black;
@@ -150,7 +151,7 @@
 
 .dr-finder-filter-list__menu-button:hover {
   color: $black;
-  background-color:$white;
+  background-color: $white;
 
   @include breakpoint($bp-small) {
     background-color: $filterList-hover;
@@ -172,7 +173,6 @@
   padding: 0;
 
   @include breakpoint($bp-small) {
-    width:100%
     background-color: $purple;
     color: $white;
     padding: 0 20px 0 $gutter;
@@ -226,7 +226,7 @@
   margin: $gutter/4 $gutter/4;
   background: $white;
   color: $black;
-  width:88%;
+  width: 88%;
 
   svg {
     width: 14px;
