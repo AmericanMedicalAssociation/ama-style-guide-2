@@ -3,6 +3,9 @@
   AMA Dr Finder filter list.
 #}
 <div class="dr-finder-filter-list">
+  <div class="dr-finder-filter-list-mobile-heading">Filter Your Results
+    {% include '@atoms/media/icons/svg/icon-close.twig' %}
+  </div>
   {% for filter in drFinderFilterList %}
     <div class="dr-finder-filter-list__menu-item">
       <button class="dr-finder-filter-list__menu-button">{{ filter.title }}
@@ -20,4 +23,9 @@
       </div>
     </div>
   {% endfor %}
- </div>
+  <div class="dr-finder-filter-list-mobile__view-results">
+    {% for button in drFinderFilterListButtons.results %}
+      {% include '@atoms/button/button.twig' with { "button" : button } %}
+    {% endfor %}
+  </div>
+</div>

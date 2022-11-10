@@ -1,13 +1,37 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-filter-list {
-  margin-bottom: $gutter;
-  padding-bottom: $gutter;
-  border-bottom: 1px solid $purple;
+  display: none;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: $white;
+  border: 2px solid $filterList-hover;
+  padding: $gutter $gutter/2;
+
+  &.is-active {
+    display: block;
+    box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
+
+    // If we have an is-active on desktop, we still flex.
+    @include breakpoint($bp-small) {
+      display: flex;
+      box-shadow: none;
+    }
+  }
 
   @include breakpoint($bp-small) {
+    width: 100%;
     display: flex;
+    position: relative;
     gap: 10px;
+    border: none;
+    border-bottom: 1px solid $purple;
+    margin: 0 0 $gutter 0;
+    padding: 0 0 $gutter 0;
+    z-index: unset;
   }
 }
 
@@ -23,24 +47,35 @@
 .dr-finder-filter-list__menu-item label {
   display: flex;
   color: $gray-64;
-  font-size: 12px;
+  font-size: 14.5px;
   flex-direction: row-reverse;
   justify-content: left;
+  margin: $gutter/6 0;
 }
 
 .dr-finder-filter-list__submenu {
   display: none;
   border-radius: 10px;
-  padding: 20px;
-  margin: 8px auto;
+  margin: 0;
   position: relative;
-  box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
   background: $white;
+
+  @include breakpoint($bp-small) {
+    box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 8px auto;
+    position: relative;
+    background: $white;
+  }
 }
 
 .dr-finder-filter-list__submenu-scroll {
   overflow-y: auto;
   max-height: 112px;
+  border-bottom: solid 2px $filterList-hover;
+  padding: $gutter/4 0;
+  margin-right: 4px;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -58,6 +93,12 @@
     background-clip: padding-box;
     border-radius: 9999px;
     background-color: #dbc8e0;
+  }
+
+  @include breakpoint($bp-small) {
+    margin: 0;
+    width: 100%;
+    border: none;
   }
 }
 
@@ -88,22 +129,39 @@
 }
 
 .dr-finder-filter-list__menu-button {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   font-weight: normal;
-  border-radius: 20px;
-  padding: 0 20px 0 $gutter;
-  border: solid 1px $purple;
+  border: none;
+  padding: $gutter/4 0;
+  border-bottom: solid 2px $filterList-hover;
   background: $white;
-  color: $purple;
+  color: $black;
+  margin: 0;
 
   @include breakpoint($bp-small) {
-    width: auto;
+    width: 100%;
+    font-weight: normal;
+    border-radius: 20px;
+    padding: 0 20px 0 $gutter;
+    border: solid 1px $purple;
+    background: $white;
+    color: $purple;
+    margin: 0;
   }
 }
 
 .dr-finder-filter-list__menu-button:hover {
-  background-color: $filterList-hover;
-  color: $purple;
+  border-color: $filterList-hover;
+  color: $black;
+  background-color: $white;
+
+  @include breakpoint($bp-small) {
+    border-color: $purple;
+    background-color: $filterList-hover;
+    color: $purple;
+  }
 }
 
 .dr-finder-filter-list__menu-button.is-active + div {
@@ -116,34 +174,80 @@
 }
 
 .dr-finder-filter-list__menu-button.is-active {
-  background-color: $purple;
-  color: $white;
+  border: none;
+  padding: 0;
+
+  @include breakpoint($bp-small) {
+    background-color: $purple;
+    color: $white;
+    padding: 0 20px 0 $gutter;
+    margin: 0;
+  }
 }
 
 .dr-finder-filter-list__menu-button svg {
   fill: $purple;
-  transform: rotate(450deg);
+  transform: rotate(0deg);
   width: 11.5px;
   height: 9px;
-  margin: 0 6px;
+  margin: 6px 6px;
+
+  @include breakpoint($bp-small) {
+    margin: 9px;
+    transform: rotate(90deg);
+  }
 }
 
-.dr-finder-filter-list__menu-button svg g{
+.dr-finder-filter-list__menu-button svg g {
   fill: $purple;
 }
 
 .dr-finder-filter-list__menu-button.is-active svg {
-  transform: rotate(450deg);
+  transform: rotate(90deg);
 }
 
 .dr-finder-filter-list__menu-button.is-active svg g {
-  fill: $white;
+
+  @include breakpoint($bp-small) {
+    fill: $white;
+  }
 }
 
 .dr-finder-filter-list__menu-view-results {
-  display: block;
-  padding-top: 20px;
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    color: $purple;
+    font-size: 14px;
+  }
+}
+
+.dr-finder-filter-list-mobile-heading {
+  display: flex;
+  justify-content: space-between;
+  background: $white;
+  color: $black;
+  margin-right: 4px;
+
+  svg {
+    width: 14px;
+    margin: $gutter/4 0;
+    fill: $purple;
+  }
+
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+}
+
+.dr-finder-filter-list-mobile__view-results {
   text-align: center;
-  color: $purple;
-  font-size: 14px;
+  margin-top: $gutter;
+
+  @include breakpoint($bp-small) {
+    display: none;
+  }
 }
