@@ -72,7 +72,7 @@
   width: 92%;
   overflow-y: auto;
   max-height: 112px;
-  border-bottom: solid 2px $purple;
+  border-bottom: solid 2px $filterList-hover;
   padding: $gutter/4 0;
 
   &::-webkit-scrollbar {
@@ -150,6 +150,7 @@
 }
 
 .dr-finder-filter-list__menu-button:hover {
+  border-color: transparent;
   color: $black;
   background-color: $white;
 
@@ -182,13 +183,14 @@
 
 .dr-finder-filter-list__menu-button svg {
   fill: $purple;
-  transform: rotate(355deg);
+  transform: rotate(0deg);
   width: 11.5px;
   height: 9px;
   margin: 6px 6px;
 
   @include breakpoint($bp-small) {
     margin: 9px;
+    transform: rotate(90deg);
   }
 }
 
@@ -197,7 +199,7 @@
 }
 
 .dr-finder-filter-list__menu-button.is-active svg {
-  transform: rotate(450deg);
+  transform: rotate(90deg);
 }
 
 .dr-finder-filter-list__menu-button.is-active svg g {
