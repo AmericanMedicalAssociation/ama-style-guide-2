@@ -1,14 +1,15 @@
 // @copyright Copyright (c) 2022 Palantir.net
 
 .dr-finder-filter-list {
-    display: none;
-    width: 90%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    background: $white;
-    border: 2px solid $filterList-hover;
+  display: none;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: $white;
+  border: 2px solid $filterList-hover;
+  padding: $gutter $gutter/2;
 
   &.is-active {
     display: block;
@@ -28,8 +29,8 @@
     gap: 10px;
     border: none;
     border-bottom: 1px solid $purple;
-    margin-bottom: $gutter;
-    padding-bottom: $gutter;
+    margin: 0 0 $gutter 0;
+    padding: 0 0 $gutter 0;
   }
 }
 
@@ -54,7 +55,7 @@
 .dr-finder-filter-list__submenu {
   display: none;
   border-radius: 10px;
-  margin: $gutter/4 $gutter/4;
+  margin: 0;
   position: relative;
   background: $white;
 
@@ -69,11 +70,11 @@
 }
 
 .dr-finder-filter-list__submenu-scroll {
-  width: 92%;
   overflow-y: auto;
   max-height: 112px;
   border-bottom: solid 2px $filterList-hover;
   padding: $gutter/4 0;
+  margin-right: 4px;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -94,6 +95,7 @@
   }
 
   @include breakpoint($bp-small) {
+    margin: 0;
     width: 100%;
     border: none;
   }
@@ -128,14 +130,14 @@
 .dr-finder-filter-list__menu-button {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   font-weight: normal;
   border: none;
   padding: $gutter/4 0;
   border-bottom: solid 2px $filterList-hover;
   background: $white;
   color: $black;
-  margin: $gutter/2 $gutter/4;
+  margin: 0;
 
   @include breakpoint($bp-small) {
     width: 100%;
@@ -224,11 +226,9 @@
 .dr-finder-filter-list-mobile-heading {
   display: flex;
   justify-content: space-between;
-  padding: $gutter/4 0;
-  margin: $gutter/4 $gutter/4;
   background: $white;
   color: $black;
-  width: 88%;
+  margin-right: 4px;
 
   svg {
     width: 14px;
@@ -243,8 +243,7 @@
 
 .dr-finder-filter-list-mobile__view-results {
   text-align: center;
-  padding: $gutter/2 0;
-  margin: $gutter;
+  margin-top: $gutter;
 
   @include breakpoint($bp-small) {
     display: none;
