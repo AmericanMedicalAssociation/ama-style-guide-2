@@ -9,7 +9,6 @@
   }
   a {
     position: relative;
-    width: 101px;
     height: 44px;
     border: 1px solid #a28ab5;
     padding: 2px 0 0;
@@ -18,12 +17,17 @@
     text-decoration: none;
     text-align: center;
     background-color: $white;
+    white-space: nowrap;
+    width: auto;
+    @include breakpoint($bp-small max-width) {
+      min-width: 115px;
+    }
     @include breakpoint($bp-small) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 162px;
-      font-size: 18px;
+      min-width: 162px;
+      font-size: 16px;
     }
     &::before {
       display: block;
@@ -36,17 +40,15 @@
       background-size: cover;
     }
     &.subscriptions {
-      white-space: nowrap;
-      width: auto;
-      
       @include breakpoint($bp-small) {
         padding: 9px 11px 8px;
       }
       &::before {
         background-image: url('../images/SubscriptionsMenuIcon_Locker.svg');
         @include breakpoint($bp-small) {
-          width: 32px;
-          height: 32px;
+          width: 23px;
+          height: 24px;
+          margin-right: 5px;
         }
       }
       &:hover {
@@ -57,15 +59,15 @@
     }
     &.topics {
       @include breakpoint($bp-small) {
-        width: 155px;
-        padding: 9px 37px 8px 36px;
+        min-width: 155px;
+        padding: 9px 28px 8px 24px;
       }
       &::before {
         width: 23px;
         background-image: url('../images/TopicsMenuIcon_Locker.svg');
         @include breakpoint($bp-small) {
-          width: 27px;
-          height: 27px;
+          width: 23px;
+          height: 23px;
         }
       }
       &:hover {
@@ -82,6 +84,9 @@
         width: 22px;
         height: 23px;
         background-image: url('../images/BookmarksMenuIcon_Locker.svg');
+        @include breakpoint($bp-small) {
+          margin-right: 5px;
+        }
       }
       &:hover {
         &::before {
