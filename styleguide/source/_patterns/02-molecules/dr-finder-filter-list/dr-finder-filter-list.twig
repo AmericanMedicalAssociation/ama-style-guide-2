@@ -16,9 +16,8 @@
       <div class="fieldset-wrapper">
         <div class="form-checkboxes">
           <div class="js-form-item form-item js-form-type-checkbox form-item-memberstatus-1 js-form-item-memberstatus-1">
-            {% for checkbox in filter.checkboxes %}
-              {% include '@atoms/forms/checkbox.twig' %}
-            {% endfor %}
+            <input data-drupal-selector="edit-specialty-1" type="checkbox" id="edit-specialty-1" name="specialty" value="1" class="form-radio">
+            <label for="edit-specialty-1" class="option">Test</label>
           </div>
           <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
         </div>
