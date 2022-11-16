@@ -14,9 +14,7 @@
       <div class="dr-finder-filter-list__submenu">
         <div class="dr-finder-filter-list__submenu-scroll">
           {% for checkbox in filter.checkboxes %}
-            <div class="dr-finder-filter-list__submenu-item">
-              {% include '@atoms/forms/checkbox.twig' %}
-            </div>
+            {% include '@atoms/forms/checkbox.twig' %}
           {% endfor %}
         </div>
         <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
