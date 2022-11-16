@@ -7,19 +7,23 @@
     {% include '@atoms/media/icons/svg/icon-close.twig' %}
   </div>
   {% for filter in drFinderFilterList %}
-    <div class="dr-finder-filter-list__menu-item">
-      <button class="dr-finder-filter-list__menu-button">{{ filter.title }}
-        {% include '@atoms/media/icons/svg/icon-triangle.twig' %}
-      </button>
-      <div class="dr-finder-filter-list__submenu">
-        <div class="dr-finder-filter-list__submenu-scroll">
-          {% for checkbox in filter.checkboxes %}
-            {% include '@atoms/forms/checkbox.twig' %}
-          {% endfor %}
+    <fieldset class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+        <span class="fieldset-legend">{{ filter.title }}
+          {% include '@atoms/media/icons/svg/icon-triangle.twig' %}
+        </span>
+      </legend>
+      <div class="fieldset-wrapper">
+        <div class="form-checkboxes">
+          <div class="js-form-item form-item js-form-type-checkbox form-item-memberstatus-1 js-form-item-memberstatus-1">
+            {% for checkbox in filter.checkboxes %}
+              {% include '@atoms/forms/checkbox.twig' %}
+            {% endfor %}
+          </div>
+          <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
         </div>
-        <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
       </div>
-    </div>
+    </fieldset>
   {% endfor %}
   <div class="dr-finder-filter-list-mobile__view-results">
     {% for button in drFinderFilterListButtons.results %}

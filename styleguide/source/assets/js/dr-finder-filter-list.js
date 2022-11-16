@@ -12,25 +12,25 @@
   Drupal.behaviors.filterListDrFinder = {
     attach: function (context, settings) {
 
-      $('.dr-finder-filter-list__menu-item', context).each(function () {
+      $('.dr-finder-filter-list .fieldgroup', context).each(function () {
         const class_active = 'is-active';
-        const button = '.dr-finder-filter-list__menu-button';
-        const openMenu = $('.dr-finder-filter-list__submenu');
+        const openMenu = $('.form-checkboxes');
 
-        $(button, this).once().on('click', function(e) {
+        $(this).find('.fieldset-legend').once().on('click', function(e) {
           e.stopPropagation();
           // Unfocus on the dropdown.
           $(this).blur();
-          // Add our class for CSS and remove from siblings button.
-          $(this).toggleClass(class_active).parent().siblings().find('button').removeClass(class_active);
-          // Add our class to the dropdown UL.
-          $(this).children().toggleClass(class_active);
+          // toggle active class.
+          $(this).toggleClass(class_active);
+          $(this).parent().toggleClass(class_active);
+          // Remove active from siblings buttons.
+          $(this).parent().parent().siblings().find('legend').removeClass(class_active);
         });
 
         // Click outside of menu to close.
         $(document).click( function(e) {
           if (!openMenu.is(e.target) && !openMenu.has(e.target).length) {
-            $(button, this).removeClass(class_active).children().removeClass(class_active);
+            $(this).find('legend').removeClass(class_active);
           }
         });
       });

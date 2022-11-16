@@ -35,7 +35,12 @@
   }
 }
 
-.dr-finder-filter-list__menu-item {
+.dr-finder-filter-list .form-item:not(.ama__radio):not(.ama__checkbox) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dr-finder-filter-list .fieldgroup {
   background: $white;
   margin: $gutter-mobile/2 0;
 
@@ -44,7 +49,7 @@
   }
 }
 
-.dr-finder-filter-list__menu-item label {
+.js-form-type-checkbox label {
   display: flex;
   color: $gray-64;
   font-size: 14.5px;
@@ -53,7 +58,11 @@
   margin: $gutter/6 0;
 }
 
-.dr-finder-filter-list__submenu {
+.dr-finder-filter-list legend {
+  width: 100%;
+}
+
+.dr-finder-filter-list .fieldset-wrapper {
   display: none;
   border-radius: 10px;
   margin: 0;
@@ -70,12 +79,13 @@
   }
 }
 
-.dr-finder-filter-list__submenu-scroll {
+
+.dr-finder-filter-list .js-form-type-checkbox {
   overflow-y: auto;
   max-height: 112px;
   border-bottom: solid 2px $filterList-hover;
   padding: $gutter/4 0;
-  margin-right: 4px;
+  margin-right: 5px;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -102,7 +112,7 @@
   }
 }
 
-.dr-finder-filter-list__submenu:before {
+.dr-finder-filter-list .fieldset-wrapper:before {
   content: "";
   width: 0;
   height: 0;
@@ -115,7 +125,7 @@
   top: -20px;
 }
 
-.dr-finder-filter-list__submenu:after {
+.dr-finder-filter-list .fieldset-wrapper:after {
   content: "";
   width: 0;
   height: 0;
@@ -128,7 +138,7 @@
   top: -19px;
 }
 
-.dr-finder-filter-list__menu-button {
+.dr-finder-filter-list .fieldset-legend {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -139,6 +149,8 @@
   background: $white;
   color: $black;
   margin: 0;
+  text-transform: none;
+  font-size: 18px;
 
   @include breakpoint($bp-small) {
     width: 100%;
@@ -152,7 +164,7 @@
   }
 }
 
-.dr-finder-filter-list__menu-button:hover {
+.dr-finder-filter-list .fieldset-legend:hover {
   border-color: $filterList-hover;
   color: $black;
   background-color: $white;
@@ -164,7 +176,7 @@
   }
 }
 
-.dr-finder-filter-list__menu-button.is-active + div {
+.dr-finder-filter-list legend.is-active + div {
   display: block;
 
   @include breakpoint($bp-small) {
@@ -173,7 +185,7 @@
   }
 }
 
-.dr-finder-filter-list__menu-button.is-active {
+.dr-finder-filter-list .fieldset-legend.is-active {
   border: none;
   padding: 0;
 
@@ -185,7 +197,7 @@
   }
 }
 
-.dr-finder-filter-list__menu-button svg {
+.dr-finder-filter-list .fieldset-legend svg {
   fill: $purple;
   transform: rotate(0deg);
   width: 11.5px;
@@ -198,16 +210,15 @@
   }
 }
 
-.dr-finder-filter-list__menu-button svg g {
-  fill: $purple;
-}
-
-.dr-finder-filter-list__menu-button.is-active svg {
+.dr-finder-filter-list .fieldset-legend.is-active svg {
   transform: rotate(90deg);
 }
 
-.dr-finder-filter-list__menu-button.is-active svg g {
+.dr-finder-filter-list .fieldset-legend svg g {
+  fill: $purple;
+}
 
+.dr-finder-filter-list .fieldset-legend.is-active svg g {
   @include breakpoint($bp-small) {
     fill: $white;
   }
@@ -225,6 +236,15 @@
   }
 }
 
+.dr-finder-filter-list-mobile__view-results {
+  text-align: center;
+  margin-top: $gutter;
+
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+}
+
 .dr-finder-filter-list-mobile-heading {
   display: flex;
   justify-content: space-between;
@@ -237,15 +257,6 @@
     margin: $gutter/4 0;
     fill: $purple;
   }
-
-  @include breakpoint($bp-small) {
-    display: none;
-  }
-}
-
-.dr-finder-filter-list-mobile__view-results {
-  text-align: center;
-  margin-top: $gutter;
 
   @include breakpoint($bp-small) {
     display: none;
