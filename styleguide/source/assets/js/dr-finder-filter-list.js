@@ -24,13 +24,13 @@
           $(this).toggleClass(class_active);
           $(this).parent().toggleClass(class_active);
           // Remove active from siblings buttons.
-          $(this).parent().parent().siblings().find('legend').removeClass(class_active);
+          $(this).parent().parent().siblings().find('legend').removeClass(class_active).find('.fieldset-legend').removeClass(class_active);
         });
 
         // Click outside of menu to close.
         $(document).click( function(e) {
           if (!openMenu.is(e.target) && !openMenu.has(e.target).length) {
-            $(this).find('legend').removeClass(class_active);
+            $(this).find('legend').removeClass(class_active).find('.fieldset-legend').removeClass(class_active);
           }
         });
       });
