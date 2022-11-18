@@ -2,6 +2,8 @@
 
 .dr-finder-modal {
   display: none;
+  padding: 0;
+  margin: 0;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -19,7 +21,10 @@
   background-color: $white;
   margin: 15% auto; /* 15% from the top and centered */
   padding: $gutter;
-  width: 50%; /* Could be more or less, depending on screen size */
+
+  @include breakpoint($bp-small) {
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
 }
 
 .dr-finder-modal__actions {
