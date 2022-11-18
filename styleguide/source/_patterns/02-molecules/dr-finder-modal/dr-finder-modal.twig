@@ -4,7 +4,7 @@
 #}
 <div class="dr-finder-modal {{ type }}">
   <div class="dr-finder-modal__content">
-    <span class="dr-finder-modal__close">&times;</span>
+    <input name="cancel_close" class="dr-finder-modal__close button button--secondary js-form-submit form-submit"  type="submit" id="edit-close-cancel-modal" value="X">
     {% set heading = modal.heading|merge({
       "level": "2",
       "class": "ama__h2"

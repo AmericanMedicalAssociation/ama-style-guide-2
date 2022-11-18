@@ -25,6 +25,10 @@
   @include breakpoint($bp-small) {
     width: 50%; /* Could be more or less, depending on screen size */
   }
+
+  .form-item-title {
+    @extend .ama__h2;
+  }
 }
 
 .dr-finder-modal__actions {
@@ -38,10 +42,9 @@
 /* The Close Button */
 .dr-finder-modal__close {
   position: absolute;
-  left: 94%;
+  right: 1px;
   top: 3%;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 18px;
   // If this in an input lets clear things out.
   background: none;
   border: none;
