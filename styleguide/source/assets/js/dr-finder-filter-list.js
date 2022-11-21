@@ -14,7 +14,7 @@
 
       $('.dr-finder-filter-list .fieldgroup', context).each(function () {
         const class_active = 'is-active';
-        const openMenu = $('.form-checkboxes');
+        const openMenu = $('.fieldset-wrapper');
 
         $(this).find('.fieldset-legend').once().on('click', function(e) {
           e.stopPropagation();
