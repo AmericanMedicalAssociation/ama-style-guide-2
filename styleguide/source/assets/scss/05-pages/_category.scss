@@ -11,7 +11,7 @@
 
   .ama__layout--two-col-right--75-25__right {
     margin: 0;
-    padding: 0 $gutter / 4;
+    padding: 0 calc($gutter / 4);
 
     .ama__tools {
       @include gutter($margin-top-full...);
@@ -87,7 +87,7 @@
   }
 
   .ama__masthead {
-    margin-bottom: $gutter / 4;
+    margin-bottom: calc($gutter / 4);
     padding: 0;
   }
 
@@ -104,7 +104,7 @@
   }
 
   .ama__layout--split__right .ama__article-stub--category {
-    padding: 0 ($gutter / 2);
+    padding: 0 (calc($gutter / 2));
   }
 
   &__article-stub-three-up {
@@ -211,7 +211,7 @@
 
   .ama__subcategory-featured-content .grid-container {
     @include breakpoint($bp-small) {
-      padding: $gutter / 2;
+      padding: calc($gutter / 2);
     }
   }
   .ama__layout--two-col-right--75-25 {

@@ -68,7 +68,7 @@ footer {
   min-height: 20px;
 
   @include breakpoint(max-width $bp-small) {
-    margin-bottom: $gutter / 2;
+    margin-bottom: calc($gutter / 2);
   }
 
   li {
@@ -84,7 +84,7 @@ footer {
   }
 
   li ~ li {
-    margin-left: $gutter/2;
+    margin-left: calc($gutter/2);
     list-style: none;
   }
 }

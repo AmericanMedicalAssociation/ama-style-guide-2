@@ -1,13 +1,13 @@
 .ama__subscribe-promo {
   display: inline-block;
-  padding: $gutter / 2;
+  padding: calc($gutter / 2);
   color: $white;
   background: $purple;
   @extend .display-list;
 
   &__subject-title {
     @extend .ama__h4--white;
-    padding-bottom: $gutter / 2;
+    padding-bottom: calc($gutter / 2);
   }
 
   &__form {
@@ -19,7 +19,7 @@
       @extend .ama__button--homepage;
       display: block;
       margin: 0 auto;
-      padding: $gutter / 2.2;
+      padding: calc($gutter / 2.2);
       border: 0;
 
       &:hover {
@@ -189,7 +189,7 @@
       }
 
       .ama__form-group {
-        margin-bottom: $gutter-mobile/2;
+        margin-bottom: calc($gutter-mobile/2);
         @include breakpoint($bp-large){
           flex: 1;
           margin-bottom: auto;

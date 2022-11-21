@@ -9,7 +9,7 @@ var gulp      = require('gulp'),
   gulpif      = require('gulp-if'),
   imagemin    = require('gulp-imagemin'),
   rename      = require('gulp-rename'),
-  sass        = require('gulp-sass'),
+  sass        = require('gulp-sass')(require('sass')),
   sassGlob    = require('gulp-sass-glob'),
   svgmin      = require('gulp-svgmin'),
   shell       = require('gulp-shell'),
@@ -135,7 +135,7 @@ gulp.task('sass', gulp.series('scss-lint', function (){
     .pipe(sassGlob())
     .pipe(sass(gulpif(production, { outputStyle: 'compressed' })).on('error', sass.logError))
     .pipe(prefix({
-      browsers: ['last 2 versions'],
+      overrideBrowserslist: ['last 2 versions'],
       grid: true,
       cascade: false
     }))
