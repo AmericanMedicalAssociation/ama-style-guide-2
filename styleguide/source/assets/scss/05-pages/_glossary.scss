@@ -6,6 +6,7 @@
   }
   .ama__subtitle {
     font-size: 18px;
+    line-height: 1.5;
     font-weight: normal;
   }
   .viewsreference--view-title {
@@ -272,16 +273,32 @@
     margin-bottom: calc($gutter/2);
     text-transform: uppercase;
     border-top: 4px solid $purple;
+    @include breakpoint($bp-small max-width) {
+      margin-top: 28px;
+    }
   }
   .suggested-listings {
     display: flex;
     column-gap: 29px;
+    flex-direction: column;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
     a {
       display: block;
       flex: 1;
+      font-size: 16px;
+      line-height: 23px;
       font-weight: $font-weight-bold;
-      padding: 6px 14px 39px;
+      padding: 12px 20px 20px 20px;
       text-decoration: none;
+      margin-bottom: 21px;
+      @include breakpoint($bp-small) {
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 0;
+        padding: 6px 14px 39px;
+      }
       &:nth-of-type(odd) {
         background-color: $darkBlue;
         color: $white;

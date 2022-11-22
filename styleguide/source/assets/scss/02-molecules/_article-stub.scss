@@ -110,6 +110,15 @@
     }
   }
 
+  &--image {
+    img.ama__bio-image-with-body__image {
+      margin-bottom: 10.5px;
+    }
+    .ama__image {
+      margin-bottom: 7px;
+    }
+  }
+
   &--inline {
     @include gutter($padding-top-full...);
     @include gutter($padding-bottom-full...);
@@ -185,6 +194,20 @@
       position: absolute;
       background: #3d1660;
       padding: 4.5px 12.5px;
+    }
+  }
+
+  &.ama__article-stub--category {
+    .ama__article-stub__metadata {
+      .article-event-date,
+      .read_time {
+        display: inline-block;
+        white-space: nowrap;
+      }
+      span,
+      .read_time h3 {
+        font-size: 12px;
+      }
     }
   }
 }
