@@ -2,10 +2,13 @@
 
 .dr-finder-search-result-card {
   display: flex;
+  // If we don't wrap we get an oval.
+  flex-flow: wrap;
   padding: $gutter;
   margin-bottom: $gutter;
   box-shadow: 0 1px 4px $gray-border;
   text-decoration: auto;
+  gap: $gutter;
 
   &:hover {
     background-color: $bodyTextHoverPurple;
@@ -19,7 +22,6 @@
   width: 125px;
   border-radius: 50%;
   background-color: $profileHeader-image;
-  margin-right: $gutter;
 
   // Round off image corners.
   img {
