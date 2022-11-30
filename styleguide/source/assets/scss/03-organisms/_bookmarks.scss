@@ -8,10 +8,17 @@
   }
   .ama_bookmark_left {
     border-bottom: none;
-    padding-bottom: 96px;
-    padding-top: 0;
+    padding: 0 0 96px;
     @include breakpoint($bp-small) {
-      padding-bottom: 56px;
+      padding-bottom: 17px;
+      padding-right: 17px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 20px;
+    }
+
+    .ama__search-result__description {
+      line-height: 1.5;
     }
   }
   .ama_bookmark_right {
@@ -34,6 +41,11 @@
         a::before {
           left: 35px;
         }
+        &.action-flag {
+          a::before {
+            left: 25px;
+          }
+        }
         &.action-unflag {
           a {
             pointer-events: all;
@@ -44,12 +56,6 @@
           a:hover {
             &::before {
               background-image: url('../images/RemoveHoverIcon_Locker.svg');
-            }
-          }
-          // When re-flagging unflagged bookmarks
-          &:not(.flag-glossary) {
-            a::before {
-              left: 20px;
             }
           }
         }
@@ -107,6 +113,9 @@
 }
 
 .my-topic-listing {
+  .ama__search-result__description {
+    line-height: 1.5;
+  }
   .title-removed,
   .description-removed {
     display: none;
@@ -131,8 +140,10 @@
   margin-top: 35px;
   @include breakpoint($bp-small max-width) {
     width: 87px;
+    height: 44px;
     a {
       font-size: 14px;
+      line-height: 2;
     }
   }
   @include breakpoint($bp-small) {
@@ -142,11 +153,13 @@
   }
   a {
     color: #310f4a;
+    font-size: 10px;
     text-decoration: none;
     position: relative;
     @include breakpoint($bp-small) {
-      padding: 9px 0 8px;
       display: block;
+      font-size: 16px;
+      padding: 9px 0 8px;
     }
     &::before {
       display: block;
@@ -164,7 +177,7 @@
         margin: 0 auto;
         position: absolute;
         left: 20px;
-        top: 10px;
+        top: 8px;
       }
     }
   }
@@ -175,21 +188,22 @@
       }
     }
     a::before {
-      background-image: url('../images/BookmarksMenuIcon_Locker.svg');
+      background-image: url('../images/BookmarkIcon_Locker.svg');
     }
     a:hover {
+      text-decoration: underline;
       &::before {
-        background-image: url('../images/BookmarkedIcon_Locker.svg');
+        background-image: url('../images/BookmarkHoverIcon_Locker.svg');
       }
     }
   }
   &.action-unflag {
     a {
-      pointer-events: none;
       @include breakpoint($bp-small) {
         padding-left: 16px;
       }
       &::before {
+        left: 45px;
         background-image: url('../images/BookmarkedIcon_Locker.svg');
       }
       &:hover {
@@ -283,12 +297,18 @@
 //  My Topics view styling.
 .topic-search {
   margin-top: 28px !important;
-  margin-bototm: 14px;
+  margin-bottom: 14px;
 }
 .my-topic-listing {
   flex-direction: row;
   .text {
-    padding-right: 14px;
+    padding-right: 0;
+    @include breakpoint($bp-small) {
+      padding-right: 17px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 20px;
+    }
     h2 {
       a {
         text-decoration: none;

@@ -18,6 +18,7 @@
 
         if($bodyFixed === 'hidden') {
           $('.ama__main-navigation').unstick();
+          $('.ama_locker_navigation').unstick();
           return;
         } else if($(window).width() < 768 ) { // If less than tablet
           $('.ama__main-navigation').sticky({zIndex: 501});
@@ -30,7 +31,7 @@
           $('.ama_locker_navigation').sticky({ zIndex: 501, topSpacing: 99 });
         } else {
           $('.ama__main-navigation ').sticky({ zIndex: 501 });
-          $('.ama_locker_navigation').sticky({zIndex: 501});
+          $('.ama_locker_navigation').sticky({zIndex: 501, topSpacing: 60});
         }
       });
 

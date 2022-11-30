@@ -8,15 +8,15 @@
   text-decoration: none;
   min-height: 400px;
   width: 100%;
-  
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { 
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     display: block;
 
     &--no-image {
       display: flex;
     }
   }
-  
+
 
   &__heading,
   & .ama__h2 {
@@ -306,7 +306,7 @@
     &:nth-child(2):nth-last-child(2),
     &:nth-child(3):nth-last-child(1) {
       @include gutter($margin-right-half...);
-      width: calc(33.333% - 14px);
+      width: calc(33.333% - 9.5px);
     }
     // first of three doesn't have left padding
     &:nth-child(1):nth-last-child(3) {
@@ -315,7 +315,6 @@
     // last of three doesn't have right padding
     &:nth-child(3):nth-last-child(1) {
       margin-right: 0;
-      width: 33.333%;
     }
 
     // 4-up layout
@@ -325,13 +324,12 @@
     &:nth-child(3):nth-last-child(2),
     &:nth-child(4):nth-last-child(1) {
       @include gutter($margin-right-half...);
-      width: calc(25% - 14px);
+      width: calc(25% - 10.5px);
     }
 
     // last of three doesn't have right padding
     &:nth-child(4):nth-last-child(1) {
       margin-right: 0;
-      width: 25%;
     }
   }
 }

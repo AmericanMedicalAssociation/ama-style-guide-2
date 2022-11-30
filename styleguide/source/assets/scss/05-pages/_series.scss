@@ -24,34 +24,6 @@
     }
   }
 
-  .subscribe-series {
-    display: none;
-    position: relative;
-    top: -30px;
-    @include type($myriad-pro, $font-weight-regular);
-    font-style: italic;
-    font-size: 15px;
-    color: #4d4d4d;
-    &:after {
-      display: inline-block;
-      content: '';
-      width: 18px;
-      height: 18px;
-      background: url(../icons/svg/subscribe.svg) no-repeat 0 0;
-      background-size: contain;
-      position: relative;
-      top: 5px;
-      left: 7px;
-    }
-    &:hover {
-      cursor: pointer;
-      &:after {
-        background: url(../icons/svg/subscribe-hover.svg) no-repeat 0 0;
-        background-size: contain;
-      }
-    }
-  }
-
   .ama__masthead__content__title__container,
   .ama__masthead {
     padding-top: 0;
@@ -81,7 +53,7 @@
     //for styleguide only
     .subscribe-series {
       display: block;
-      text-align: right;
+      text-align: left;
       top: -5px;
       @include breakpoint($bp-small) {
         display: inline-block;
