@@ -2,7 +2,7 @@
   @copyright Copyright (c) 2022 Palantir.net
   AMA Dr Finder modal.
 #}
-<div class="dr-finder-modal {{ type }}" style="display: block;">
+<div class="dr-finder-modal {{ type }}" style="display: none;">
   <div class="dr-finder-modal__content">
     <input name="cancel_close" class="dr-finder-modal__close button button--secondary js-form-submit form-submit"  type="submit" id="edit-close-cancel-modal" value="X">
     {% set heading = modal.heading|merge({
