@@ -6,6 +6,8 @@
   <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imageUrl ? "with-image" : "" }}">
     {% if drFinderSearchResultCard.imageUrl %}
       <img src="{{ drFinderSearchResultCard.imageUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
+    {% else %}
+      <img src="/assets/images/avatar.png" alt="avatar">
     {% endif %}
     {% if drFinderSearchResultCard.verified %}
       {% include '@atoms/media/icons/svg/icon-completed.twig'%}
