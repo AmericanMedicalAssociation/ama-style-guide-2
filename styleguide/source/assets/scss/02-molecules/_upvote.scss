@@ -1,4 +1,4 @@
-.rate-widget-thumbs-up {
+.rate-widget.thumbsup {
    display: flex;
    margin-top: 28px;
    margin-left: 28px;
@@ -9,6 +9,10 @@
    }
    .thumbs-active {
      fill: #46166B;
+   }
+
+   .rate-voted .rate-score {
+     color: #46166B;
    }
 
    &:hover {
@@ -22,26 +26,20 @@
    }
 
    .rate-score {
-       margin: 19px 10px 10px 10px;
-       color: #aaa;
-       font-weight: bold;
-       font-size: 22px;
-       position: relative;
-       right: 40px;
-       bottom: 16px;
-
-       &.voted {
-         color: #46166B;
-         right: 0;
-       }
+     margin: 19px 10px 10px 50px;
+     display: inline-block;
+     font-weight: bold;
+     font-size: 22px;
+     position: relative;
+     right: 40px;
+     bottom: 16px;
    }
 
    .ajax-progress {
      display: none;
    }
 
-   .rate-thumbs-up-btn-up {
-     width: 40px;
+   .thumbsup-rating-label-up {
      height: 55px;
      background: none;
      position: relative;
@@ -52,11 +50,16 @@
        right: 40px;
      }
 
-     .thumbs-active {
+     &::before {
+       content: '';
        display: block;
        position: relative;
        right: 0;
        bottom: 16px;
+     }
+
+     #Layer_6 {
+       animation: popup 1s ease;
 
        @keyframes popup {
          0% {
@@ -70,13 +73,8 @@
            transform: translateY(0px);
          }
        }
-
-       #Layer_6 {
-         animation: popup 1s ease;
-       }
-
      }
-   
+
      .rate-undo.use-ajax {
        display: block;
        width: 40px;
