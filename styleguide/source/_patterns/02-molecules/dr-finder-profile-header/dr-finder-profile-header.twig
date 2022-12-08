@@ -8,6 +8,10 @@
       <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
         {% if drFinderProfileHeader.imageUrl %}
           <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
+        {% else %}
+          {% if drFinderProfileHeader.avatar %}
+            <img src="{{ drFinderProfileHeader.avatar }}" alt="avatar">
+          {% endif %}
         {% endif %}
         {% if drFinderProfileHeader.verified %}
           {% include '@atoms/media/icons/svg/icon-completed.twig' %}
