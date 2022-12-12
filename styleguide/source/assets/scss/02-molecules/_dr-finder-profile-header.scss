@@ -30,11 +30,16 @@
   margin: 0;
 }
 
+.dr-finder-profile-header__doctor-info__pronouns {
+  font-size: 14px;
+}
+
 .dr-finder-profile-header__image-url {
   margin: auto;
   position: relative;
   text-align: center;
   background: $profileHeader-image;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 50%;
   width: 220px;
@@ -97,6 +102,9 @@
   svg {
     position: absolute;
     bottom: 10px;
-    right: $gutter;
+    right: 8px;
+    width: 40px;
+    max-width: inherit;
+    max-height: inherit;
   }
 }
