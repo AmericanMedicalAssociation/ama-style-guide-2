@@ -1,89 +1,99 @@
 .rate-widget.thumbsup {
-   display: flex;
-   margin-top: 28px;
-   margin-left: 28px;
-   clear: both;
+  margin-top: 28px;
+  margin-left: 28px;
+  clear: both;
 
-   .thumbs {
-     fill: #aaa;
-   }
-   .thumbs-active {
-     fill: #46166B;
-   }
+  form {
+    padding-bottom: 14px;
+  }
 
-   .rate-voted .rate-score {
-     color: #46166B;
-   }
+  .thumbs {
+    fill: #aaa;
+    position: absolute;
+    bottom: 0;
+  }
+  .thumbs-active {
+    fill: $purple;
+    position: absolute;
+    bottom: 0;
+  }
 
-   &:hover {
-     .rate-score,
-     .rate-score.voted,
-     .thumbs,
-     .thumbs-active {
-       color: #B5A1C3;
-       fill: #B5A1C3;
-     }
-   }
+  &:hover {
+    .rate-score,
+    .rate-score.voted,
+    .thumbs,
+    .thumbs-active {
+      color: #B5A1C3;
+      fill: #B5A1C3;
+    }
+  }
 
-   .rate-score {
-     margin: 19px 10px 10px 50px;
-     display: inline-block;
-     font-weight: bold;
-     font-size: 22px;
-     position: relative;
-     right: 40px;
-     bottom: 16px;
-   }
+  .rate-voted .rate-score {
+    color: $purple;
+  }
 
-   .ajax-progress {
-     display: none;
-   }
+  .rate-score {
+    margin: 19px 10px 10px 50px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 22px;
+    color: #aaa;
+  }
 
-   .thumbsup-rating-label-up {
-     height: 55px;
-     background: none;
-     position: relative;
-     right: 0;
+  .ajax-progress {
+    display: none;
+  }
 
-     &.use-ajax {
-       position: relative;
-       right: 40px;
-     }
+  .thumbsup-rating-label-up {
+    height: 55px;
+    background: none;
+    position: relative;
+    right: 0;
+    border: none;
 
-     &::before {
-       content: '';
-       display: block;
-       position: relative;
-       right: 0;
-       bottom: 16px;
-     }
+    .ui-icon-blank.ui-icon-blank.ui-icon-blank {
+      display: none;
+    }
 
-     #Layer_6 {
-       animation: popup 1s ease;
+    &.use-ajax {
+      position: relative;
+      right: 40px;
+    }
 
-       @keyframes popup {
-         0% {
-           transform: translateY(30px);
-           opacity: 0;
-         }
-         30% {
-           opacity: 1;
-         }
-         100% {
-           transform: translateY(0px);
-         }
-       }
-     }
+    &::before {
+      content: '';
+      display: block;
+      position: relative;
+      right: 0;
+      bottom: 16px;
+    }
 
-     .rate-undo.use-ajax {
-       display: block;
-       width: 40px;
-       height: 55px;
-       position: relative;
-       right: 0;
-       bottom: 55px;
-     }
-   }
+    #Layer_6 {
+      animation: popup 1s ease;
+
+      @keyframes popup {
+        0% {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    }
+
+    .rate-undo.use-ajax {
+      display: block;
+      width: 40px;
+      height: 55px;
+      position: relative;
+      right: 0;
+      bottom: 55px;
+    }
+  }
 }
 
 .no-upvote .rate-widget.thumbsup {
