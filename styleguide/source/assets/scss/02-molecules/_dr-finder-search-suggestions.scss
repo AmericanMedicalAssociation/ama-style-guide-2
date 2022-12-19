@@ -9,11 +9,20 @@
 }
 
 .dr-finder-filter_suggestion__text {
-  margin: $gutter 0 0 $gutter;
+  margin: 0 0 0 $gutter;
+
+  @include breakpoint($bp-small) {
+    margin: $gutter 0 0 $gutter;
+  }
+}
+
+.dr-finder-filter_suggestion__text ul {
+  margin-top: $gutter/2;
 }
 
 .dr-finder-filter_suggestion__text ul li {
-  list-style-type: disc;
-  padding: $gutter/4 0;
-  color: $black;
+
+  @include breakpoint($bp-small) {
+    padding: $gutter/4 0;
+  }
 }
