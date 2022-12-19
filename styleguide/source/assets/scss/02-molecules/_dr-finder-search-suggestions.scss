@@ -4,15 +4,23 @@
  * Styles for Dr Finder filter suggestions .
  */
 .dr-finder-filter_suggestions {
-  font-size: 37px;
+  font-size: 1.4em;
   color: $black;
+
+  @include breakpoint($bp-small) {
+    font-size: 37px;
+  }
 }
 
 .dr-finder-filter_suggestion-text ul li {
   list-style-type: disc;
   padding: $gutter/4 0;
-  font-size: 26px;
+  font-size: 1.1em;
   color: $black;
+
+  @include breakpoint($bp-small) {
+    font-size: 1.4em;
+  }
 }
 
 .dr-finder-filter_suggestion-text {
