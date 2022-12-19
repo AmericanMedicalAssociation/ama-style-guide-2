@@ -6,8 +6,9 @@
   <span>{{ drFinderFilterSuggestion.suggestionHeader }}</span>
   <div class="dr-finder-filter_suggestion__text">
     <ul>
-      <li>{{ drFinderFilterSuggestionText.TextOne }}</li>
-      <li>{{ drFinderFilterSuggestionText.TextTwo }}</li>
+      {% for suggestionText in drFinderFilterSuggestion.suggestionText %}
+        <li>{{ suggestionText.text }}</li>
+      {% endfor %}
     </ul>
   </div>
 </div>
