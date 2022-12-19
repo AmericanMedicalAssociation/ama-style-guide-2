@@ -3,27 +3,22 @@
  * @file
  * Styles for Dr Finder filter suggestions .
  */
-.dr-finder-filter_suggestions {
-  font-size: 1.4em;
+.dr-finder-filter_suggestions span {
+  @extend .ama__h1;
   color: $black;
-
-  @include breakpoint($bp-small) {
-    font-size: 37px;
-  }
+  padding: 0;
+  font-weight: normal;
 }
 
-.dr-finder-filter_suggestion-text ul li {
+.dr-finder-filter_suggestion__text {
+  margin: $gutter 0 0 $gutter;
+}
+
+.dr-finder-filter_suggestion__text ul li {
   list-style-type: disc;
   padding: $gutter/4 0;
-  font-size: 1.1em;
   color: $black;
 
   @include breakpoint($bp-small) {
-    font-size: 1.4em;
   }
-}
-
-.dr-finder-filter_suggestion-text {
-  padding: 0 20px;
-  margin: 20px 0 0 20px;
 }
