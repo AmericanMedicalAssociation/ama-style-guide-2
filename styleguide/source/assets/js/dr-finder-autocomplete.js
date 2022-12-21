@@ -16,7 +16,7 @@
         item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<b>$1</b>");
         return $("<li>")
           .attr("data-value", item.value)
-          .append(item.label)
+          .append("<div>" + item.label + "</div>")
           .appendTo(ul);
       };
       const statesAndMajorUSCities = ['Albuquerque', 'Alabama', 'Alaska', 'Arizona','Arlington', 'Arkansas','Atlanta', 'Aurora', 'Austin', 'Baltimore', 'Boston', 'Buffalo', 'Boston', 'Boise', 'Birmingham', 'California', 'Charlotte', 'Chicago', 'Cincinnati', 'Cleveland', 'Colorado', 'Columbus', 'Connecticut', 'Dallas', 'Delaware', 'Detroit', 'Denver', 'El Paso', 'Enid', 'Everett', 'Florida', 'Fort Collins', 'Fort Worth', 'Fullerton', 'Georgia', 'Glendale', 'Green Bay', 'Grand Rapids', 'Hawaii', 'Houston', 'Idaho', 'Illinois', 'Indiana', 'Indianapolis', 'Iowa', 'Jacksonville', 'Jersey City', 'Joliet', 'Kansas', 'Kentucky', 'Knoxville', 'Las Vegas', 'Los Angeles', 'Louisiana', 'Louisville', 'Madison', 'Maine', 'Maryland', 'Massachusetts', 'Memphis', 'Miami', 'Michigan', 'Milwaukee', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oklahoma City', 'Omaha', 'Oregon', 'Orlando', 'Pennsylvania', 'Phoenix', 'Philadelphia', 'Pittsburgh', 'Portland', 'Rochester', 'Rockford', 'Rhode Island', 'Rochester', 'San Antonio', 'San Diego', 'San Francisco', 'San Jose', 'Seattle', 'South Carolina', 'South Dakota', 'Tampa', 'Tennessee', 'Texas', 'Tucson', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
