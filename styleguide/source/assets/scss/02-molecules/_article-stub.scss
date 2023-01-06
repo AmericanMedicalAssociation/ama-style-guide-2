@@ -43,8 +43,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: start;
-    align-content: start;
+    align-items: flex-start;
+    align-content: flex-start;
 
     &:last-child {
       @include ama-rules(1px, 'bottom', solid, $gray-50);
@@ -259,7 +259,7 @@
 
 .ama__category__article-stub-three-up {
   .ama__article-stub {
-    padding: $gutter ($gutter / 2);
+    padding: $gutter (calc($gutter / 2));
 
     @include  breakpoint($bp-small) {
       padding: 0;

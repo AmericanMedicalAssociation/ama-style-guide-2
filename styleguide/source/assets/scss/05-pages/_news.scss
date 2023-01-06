@@ -25,7 +25,7 @@
         margin-top: 0;
         @include breakpoint($bp-small) {
           border-top: 8px solid $purple;
-          padding-top: $gutter / 2
+          padding-top: calc($gutter / 2);
         }
       }
 
@@ -37,10 +37,10 @@
   }
 
   .ama__inline-bio {
-    margin-bottom: $gutter * .75;
+    margin-bottom: calc($gutter * .75);
     padding-bottom: 0;
     @include breakpoint($bp-small) {
-      margin-bottom: $gutter * 1.25;
+      margin-bottom: calc($gutter * 1.25);
       padding-bottom: 0;
     }
   }
@@ -145,13 +145,13 @@
     margin-bottom: 17px;
   }
   .ama_article-stub-header {
-    margin-bottom: $gutter / 2;
+    margin-bottom: calc($gutter / 2);
   }
   .ama__h5--purple {
-    font-size: $gutter / 2;
+    font-size: calc($gutter / 2);
     font-weight: normal;
     line-height: normal;
-    margin-top: $gutter / 2;
+    margin-top: calc($gutter / 2);
   }
   .ama__article-stub__title {
     padding: 0;

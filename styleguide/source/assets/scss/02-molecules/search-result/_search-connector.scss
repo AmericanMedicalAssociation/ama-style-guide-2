@@ -3,9 +3,9 @@
   @include breakpoint($bp-med) {
     display: block;
   }
-  padding-bottom: $gutter * 2;
+  padding-bottom: calc($gutter * 2);
   a {
-    margin-bottom: $gutter/2;
+    margin-bottom: calc($gutter/2);
     text-decoration: none;
     display: block;
     .search-result-item {
@@ -15,8 +15,8 @@
       transition: font-size 1s;
       box-shadow: 0 3px 4px 0 rgba($purple, 0.5);
       background-color: rgba(70, 22, 107, 0.05);
-      padding: $gutter-mobile/2;
-      margin: $gutter-mobile/4;
+      padding: calc($gutter-mobile/2);
+      margin: calc($gutter-mobile/4);
       width: 49vh;
       height: 190px;
 

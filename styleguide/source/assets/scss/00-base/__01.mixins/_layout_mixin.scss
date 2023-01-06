@@ -7,8 +7,8 @@ $three-column: 3, 2, $gutter, $gutter*2;
   justify-content: space-between;
   margin-bottom: $row-gap*-1;
 
-  $col-width-tablet: calc(#{percentage((1/$col-tablet))} - #{$col-gap/2});
-  $col-width-desktop: calc(#{percentage((1/$col-desktop))} - #{$col-gap/2});
+  $col-width-tablet: calc(#{percentage((calc(1/$col-tablet)))} - #{calc($col-gap/2)});
+  $col-width-desktop: calc(#{percentage((calc(1/$col-desktop)))} - #{calc($col-gap/2)});
 
   & > * {
     margin-bottom: $row-gap;

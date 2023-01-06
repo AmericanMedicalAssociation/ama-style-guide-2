@@ -19,7 +19,7 @@
 
   &__text {
     @include breakpoint($bp-small) {
-      padding: 0 ($gutter / 2);
+      padding: 0 (calc($gutter / 2));
     }
     @include breakpoint($bp-small max-width) {
       order: 2;
@@ -31,7 +31,7 @@
     font-weight: $font-weight-semibold;
     font-size: 0.78em;
     line-height: 1;
-    margin: 0 0 ($gutter / 2) 0;
+    margin: 0 0 (calc($gutter / 2)) 0;
     &--topics {
       .stub-date {
         padding-bottom: 0;
@@ -51,7 +51,7 @@
     }
     .stub-date {
       @include type($myriad-pro, $font-weight-regular);
-      padding-bottom: ($gutter / 2.5);
+      padding-bottom: (calc($gutter / 2.5));
       display: inline-block;
     }
     span {

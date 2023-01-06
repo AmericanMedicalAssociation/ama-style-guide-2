@@ -3,10 +3,10 @@
 
   &__grid {
     display: none;
-    padding: $gutter-mobile 0 $gutter-mobile ($gutter-mobile / 4);
+    padding: $gutter-mobile 0 $gutter-mobile (calc($gutter-mobile / 4));
 
     @include breakpoint($bp-med) {
-      padding: ($gutter-mobile / 4) 0;
+      padding: (calc($gutter-mobile / 4)) 0;
     }
     @include breakpoint($bp-small) {
       display: flex;

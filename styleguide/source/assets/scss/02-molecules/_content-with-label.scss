@@ -1,13 +1,13 @@
 .ama__bio-section {
   dl {
     overflow: hidden;
-    margin: 0 0 $gutter/2 0;
+    margin: 0 0 calc($gutter/2) 0;
   }
 
   dt {
     font-weight: $font-weight-semibold;
     text-transform: capitalize;
-    margin-right: $gutter/4;
+    margin-right: calc($gutter/4);
 
     .as-gated {
       &:before {
@@ -15,7 +15,7 @@
         content: "";
         height: 20px;
         width: 14px;
-        margin-left: $gutter/4;
+        margin-left: calc($gutter/4);
       }
 
       @include breakpoint($bp-small min-width) {

@@ -3,16 +3,16 @@
     margin-right: 0 !important;
   }
   .ama__subcategory__row {
-    margin: 0 15px $gutter /4 15px;
+    margin: 0 15px calc($gutter /4) 15px;
     @include breakpoint($bp-small) {
-      margin: 0 0 $gutter /4 0;
+      margin: 0 0 calc($gutter /4) 0;
     }
     .ama__masthead__content__link {
       display: block;
       font-size: 20px;
-      padding-top: $gutter/2;
+      padding-top: calc($gutter/2);
       @include breakpoint($bp-small) {
-        padding-top: $gutter/4*3;
+        padding-top: calc($gutter/4*3);
       }
       @include breakpoint($bp-small) {
         padding-top: $gutter;
