@@ -6,8 +6,6 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: max-content auto auto;
-  grid-template-areas: 'content sidebar'
-                        'content_below sidebar';
 
   &__top {
     @include breakpoint($bp-small max-width) {
@@ -17,7 +15,6 @@
       grid-column: 1 / 1;
     }
     @include gutter($margin-bottom-full...);
-    grid-area: content;
     grid-row: 1 / 1;
     grid-column: 1 / 2;
   }
@@ -31,7 +28,6 @@
     @include gutter($margin-right-half...);
     grid-column: 1 / 1;
     grid-row: 2 / 2;
-    grid-area: content_below;
   }
 
   &__right {
@@ -59,7 +55,6 @@
 
     grid-column: 2 / 2;
     grid-row: 2 / 2;
-    grid-area: sidebar;
   }
 }
 
@@ -68,6 +63,5 @@
 .ama__category-index.ama__layout--two-col-right--75-25 {
   .ama__layout--two-col-right--75-25__left {
     grid-row: unset;
-    grid-area: unset;
   }
 }
