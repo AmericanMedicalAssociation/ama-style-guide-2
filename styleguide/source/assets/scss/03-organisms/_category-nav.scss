@@ -13,9 +13,25 @@
     margin-left: 0;
 
     a {
-      @extend %ama__h5--homepage;
       text-decoration: none;
       margin: 0 (calc($gutter / 2)) 0 0;
+      margin: 0 ($gutter / 2) 0 0;
+      letter-spacing: -.1px;
+      line-height: 65px;
+
+      @include breakpoint($bp-med) {
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.wf-active {
+  .ama__category-nav {
+    li {
+      a {
+        @extend %ama__h5--homepage;
+        letter-spacing: normal;
+      }
     }
   }
 }
