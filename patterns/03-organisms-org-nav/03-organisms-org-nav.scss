@@ -11,12 +11,23 @@
       text-transform: uppercase;
       text-decoration: none;
       margin: 0 ($gutter / 4);
-      font-size: .778em;
+      font-size: .70em;
       line-height: 2.214em;
-      font-weight: $font-weight-semibold;
+      font-weight: 600;
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+}
+.wf-active {
+  /* styles to use when web fonts are loading */
+  .ama__org-nav {
+    li {
+      a {
+        font-size: .778em;
+        font-weight: $font-weight-semibold;
       }
     }
   }
