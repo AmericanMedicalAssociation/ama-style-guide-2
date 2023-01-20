@@ -63,7 +63,7 @@
     a {
       position: relative;
       display: block;
-      padding: $gutter/6 $gutter;
+      padding: calc($gutter/6) $gutter;
       text-decoration: none;
       font-weight: $font-weight-semibold;
 
@@ -119,13 +119,13 @@
 
     &__heading {
       @extend %ama__type--14px;
-      padding: $gutter/4 $gutter;
+      padding: calc($gutter/4) $gutter;
     }
 
     &__divider {
       @extend %ama__type--14px;
       @include gutter($margin-top-half...);
-      padding: $gutter/2 $gutter;
+      padding: calc($gutter/2) $gutter;
       border-top: 1px solid $gray-50;
     }
   }
@@ -189,7 +189,7 @@
           @include gutter($padding-left-half...);
           @include gutter($padding-right-half...);
           @include type($myriad-pro, $font-weight-semibold);
-          padding: $gutter/4 0;
+          padding: calc($gutter/4) 0;
           margin-bottom: 0;
           text-decoration: none;
 
