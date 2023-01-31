@@ -6648,7 +6648,7 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .ama__article-stub--related .ama__article-stub__copy {
   width: 75%;
 }
-.ama__article-stub .ama__article-stub__description {
+.ama__article-stub .paragraph--type--series-related-article .ama__article-stub__description {
   margin-top: -7px;
 }
 .ama__article-stub .related-series-tag {
@@ -13821,11 +13821,13 @@ article[class*=__page-content] .ama__tags .ama__link--purple.ama__link--catalog:
   fill: #aaa;
   position: absolute;
   bottom: 0;
+  left: 0;
 }
 .rate-widget.thumbsup .thumbs-active {
   fill: #46166B;
   position: absolute;
   bottom: 0;
+  left: 0;
 }
 .rate-widget.thumbsup:hover .rate-score,
 .rate-widget.thumbsup:hover .rate-score.voted,
@@ -16215,10 +16217,6 @@ a:hover.ama__hub-card {
   }
 }
 
-.index-page .flag.action-unflag a {
-  pointer-events: none;
-}
-
 .flag-topic.action-flag a::before {
   background-image: url("../images/FollowIcon_Locker@1x.svg");
 }
@@ -17087,7 +17085,7 @@ a:hover.ama__hub-card {
 }
 .webform-submission-contact-us-form .ui-checkboxradio-label,
 .webform-submission-contact-us-form .ui-checkboxradio-label:hover {
-  padding: 10.5px;
+  padding: 10px;
   border: 1px solid #46166B;
   border-radius: 0;
   text-transform: none;
@@ -17096,12 +17094,6 @@ a:hover.ama__hub-card {
     background-color: $purple;
     color: white;
   }*/
-}
-@media (min-width: 56.25em) {
-  .webform-submission-contact-us-form .ui-checkboxradio-label,
-  .webform-submission-contact-us-form .ui-checkboxradio-label:hover {
-    padding: 14px;
-  }
 }
 .webform-submission-contact-us-form .ui-checkboxradio-label .ui-icon,
 .webform-submission-contact-us-form .ui-checkboxradio-label .ui-checkboxradio-icon-space,
