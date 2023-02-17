@@ -16219,6 +16219,11 @@ a:hover.ama__hub-card {
   }
 }
 
+@media (min-width: 56.25em) {
+  .flag-topic.anonymous a {
+    padding: 9px 0 9px 27px;
+  }
+}
 .flag-topic.action-flag a::before {
   background-image: url("../images/FollowIcon_Locker@1x.svg");
 }
@@ -18112,6 +18117,14 @@ section.ama__page--event__speakers {
 }
 @media (min-width: 37.5em) {
   .ama_locker_navigation {
+    padding-right: 0;
+  }
+}
+@media (max-width: 25em) {
+  .ama_locker_navigation {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     padding-right: 0;
   }
 }
@@ -20132,6 +20145,8 @@ section#related_links .ama__membership ul li {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
+  position: relative;
+  top: -8px;
 }
 @media (min-width: 37.5em) {
   .ama__series .salesforce-subscribe-form::before,
@@ -20143,6 +20158,13 @@ section#related_links .ama__membership ul li {
     position: absolute;
     left: 34px;
     top: 10px;
+  }
+}
+@media (max-width: 37.5em) {
+  .ama__series .salesforce-subscribe-form::before,
+  .ama__trending .salesforce-subscribe-form::before {
+    position: relative;
+    top: -2px;
   }
 }
 .ama__series .salesforce-subscribe-form .form-actions,
@@ -20168,7 +20190,7 @@ section#related_links .ama__membership ul li {
     height: 44px;
     font-size: 14px;
     line-height: 2;
-    top: -8px;
+    top: -10px;
   }
 }
 @media (min-width: 37.5em) {
@@ -20192,7 +20214,7 @@ section#related_links .ama__membership ul li {
 .ama__series .salesforce-subscribe-form + .flag,
 .ama__trending .salesforce-subscribe-form + .flag {
   display: inline-block;
-  margin-top: 0;
+  margin-top: 1px;
 }
 .ama__series .subscribe-series,
 .ama__trending .subscribe-series {
@@ -20223,14 +20245,21 @@ section#related_links .ama__membership ul li {
     min-width: 180px;
     max-width: 180px;
     max-height: 46px;
-    padding: 9px 0 8px 25px;
+    padding: 7px 0 8px 25px;
     margin-bottom: 5px;
   }
 }
 .ama__series .subscribe-series + .flag,
 .ama__trending .subscribe-series + .flag {
   display: inline-block;
-  margin-top: 0;
+  margin-top: 0px;
+}
+@media (max-width: 37.5em) {
+  .ama__series .subscribe-series + .flag,
+  .ama__trending .subscribe-series + .flag {
+    position: relative;
+    top: -10px;
+  }
 }
 .ama__series .subscribe-series:hover,
 .ama__trending .subscribe-series:hover {
@@ -20251,6 +20280,8 @@ section#related_links .ama__membership ul li {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
+  position: relative;
+  top: -8px;
 }
 @media (min-width: 37.5em) {
   .ama__series .subscribe-series::before,
