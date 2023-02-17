@@ -16,7 +16,7 @@
             var newUrl = oldUrl.replace(regex, '');
             $(link).attr("href", newUrl);
           }
-        });
+        })
 
         // Set selected category link to center of horizontal div
         function catalogLinkScroll() {
@@ -40,7 +40,8 @@
         if ($(window).width() < 900) {
           catalogLinkScroll();
         }
-      });
+
+      })
 
     }
   };
