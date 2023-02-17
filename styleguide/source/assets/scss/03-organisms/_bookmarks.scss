@@ -343,6 +343,13 @@
 }
 
 .flag-topic {
+  @include breakpoint($bp-med) {
+    &.anonymous {
+      a {
+        padding: 9px 0 9px 27px;
+      }
+    }
+  }
   &.action-flag {
     a::before {
       background-image: url('../images/FollowIcon_Locker@1x.svg');
