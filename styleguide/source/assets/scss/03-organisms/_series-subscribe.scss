@@ -136,6 +136,10 @@
       }
     }
     @include subscribeIcon();
+    @include breakpoint($bp-small max-width) {
+      position: relative;
+      top: -8px;
+    }
     &.subscribed {
       &::before {
         background-image: url('../images/SubscribedIcon_Locker.svg');
