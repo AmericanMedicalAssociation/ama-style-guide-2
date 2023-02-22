@@ -325,7 +325,10 @@ a.ama__membership {
       }
 
       .ama__membership_title_container {
-        margin-top: 0;
+        margin-top: 28px;
+        @include breakpoint($bp-small) {
+          margin-top: 0;
+        }
       }
   
       .ama__membership_cta_container {
@@ -348,6 +351,7 @@ a.ama__membership {
     }
 
     .ama__membership_media-container {
+      width: 100%;
       max-width: 680px;
       padding: 0;
       margin: 0;
