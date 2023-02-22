@@ -358,3 +358,73 @@ a.ama__membership {
     }
   }
 }
+
+// Category specific layout builder styling
+.layout--onecol .layout__region {
+  .ama__membership {
+    display: flex;
+    flex-direction: column-reverse;
+    column-gap: 120px;
+    border-bottom: 0.5px solid #000;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+      column-gap: 17px;
+    }
+    @include breakpoint($bp-med) {
+      column-gap: 120px;
+      padding-bottom: 56px;
+      margin-bottom: 41px;
+    }
+    .ama__membership-content {
+      background: none;
+      display: block;
+      @include breakpoint($bp-small) {
+        max-width: 380px;
+      }
+  
+      .ama__membership_title_container, 
+      .membership-body,
+      .ama__membership_cta_container {
+        padding: 0;
+      }
+
+      .ama__membership_logo-container {
+        display: none;
+      }
+
+      .ama__membership_title_container {
+        margin-top: 28px;
+        @include breakpoint($bp-small) {
+          margin-top: 0;
+        }
+      }
+  
+      .ama__membership_cta_container {
+        font-weight: bold;
+        margin: 21px 0 0;
+        @include breakpoint($bp-small) {
+          margin: 28px 0 0;
+          max-width: 224px;
+        }
+        a.ama__button {
+          padding: 8px 14px 7px;
+        }
+      }
+  
+      .ama__h2 {
+        text-transform: uppercase;
+        color: $purple;
+        font-weight: bold;
+      }
+    }
+
+    .ama__membership_media-container {
+      width: 100%;
+      max-width: 680px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
