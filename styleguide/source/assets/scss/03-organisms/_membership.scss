@@ -1,4 +1,4 @@
-.ama__membership {
+.ama__membership .ama__membership-content  {
   background: #ece7f0;
   @include gutter($padding-bottom-full...);
   @include child-top-gutters(calc($gutter / 2));
@@ -27,8 +27,8 @@
     margin-bottom: 0;
   }
 
-  &_logo-container {
-    background-color: #46166b;
+  .ama__membership_logo-container {
+    background-color: $purple;
     min-height: 28px;
     display: flex;
     margin-bottom: 0;
@@ -86,7 +86,7 @@ a.ama__membership {
 }
 
 //Slim Membership Block styling
-.layout--ama-page-section-one-col .ama__membership {
+.layout--ama-page-section-one-col .ama__membership .ama__membership-content {
   background: #ece7f0;
   height: 210px;
   margin: 0 0 35px;
@@ -285,6 +285,72 @@ a.ama__membership {
       position: relative;
       margin-left: -40px;
       margin-right: -30px;
+    }
+  }
+}
+
+// Category page membership block styling
+.ama__category .layout__region--content {
+  > .ama__membership {
+    display: flex;
+    flex-direction: column-reverse;
+    column-gap: 120px;
+    border-bottom: 0.5px solid #000;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+      column-gap: 17px;
+    }
+    @include breakpoint($bp-med) {
+      column-gap: 120px;
+      padding-bottom: 56px;
+      margin-bottom: 41px;
+    }
+    .ama__membership-content {
+      background: none;
+      display: block;
+      @include breakpoint($bp-small) {
+        max-width: 380px;
+      }
+  
+      .ama__membership_title_container, 
+      .membership-body,
+      .ama__membership_cta_container {
+        padding: 0;
+      }
+
+      .ama__membership_logo-container {
+        display: none;
+      }
+
+      .ama__membership_title_container {
+        margin-top: 0;
+      }
+  
+      .ama__membership_cta_container {
+        font-weight: bold;
+        margin: 21px 0 0;
+        @include breakpoint($bp-small) {
+          margin: 28px 0 0;
+          max-width: 224px;
+        }
+        a.ama__button {
+          padding: 8px 14px 7px;
+        }
+      }
+  
+      .ama__h2 {
+        text-transform: uppercase;
+        color: $purple;
+        font-weight: bold;
+      }
+    }
+
+    .ama__membership_media-container {
+      max-width: 680px;
+      padding: 0;
+      margin: 0;
     }
   }
 }
