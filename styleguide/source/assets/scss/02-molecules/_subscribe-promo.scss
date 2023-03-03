@@ -269,18 +269,15 @@
   color: #001b1b;
   display: flex;
   flex-direction: column-reverse;
-  column-gap: 120px;
   border-bottom: 0.5px solid #000;
+  padding: 0 0 28px 0;
   padding-bottom: 28px;
   margin-bottom: 28px;
   @include breakpoint($bp-small) {
     flex-direction: row;
-    column-gap: 17px;
   }
   @include breakpoint($bp-med) {
-    column-gap: 120px;
     padding-bottom: 56px;
-    margin-top: 56px;
     margin-bottom: 41px;
   }
   .ama__subscribe-promo--content {
@@ -295,12 +292,28 @@
   }
   .ama__subscribe-promo__subject-title {
     color: #001b1b;
+    font-weight: 400;
+    line-height: 1;
   }
   .ama__h2 {
     color: $purple;
+    font-weight: 800;
   }
   .ama__subscribe-promo__form .ama__checkbox span {
     color: #001b1b;
+  }
+
+  .ama__subscribe-promo__form_page .ama__subscribe-promo__email-subscribe-container .form-item-page-mr-email input[type=text] {
+    font-style: italic;
+    border-color: #424242;
+  }
+
+  .ama__subscribe-promo__form .ama__button {
+    background-color: $orange;
+    color: $black;
+    width: 100%;
+    max-width: 220px;
+    margin: 0;
   }
 
   .ama__subscribe-promo--media {
