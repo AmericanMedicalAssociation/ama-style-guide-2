@@ -318,11 +318,18 @@ a.ama__membership {
       @include breakpoint($bp-small) {
         max-width: 380px;
       }
+      @include breakpoint($bp-med) {
+        margin-right: 17px;
+      }
   
       .ama__membership_title_container, 
       .membership-body,
       .ama__membership_cta_container {
         padding: 0;
+      }
+
+      .membership-body {
+        display: block;
       }
 
       .ama__membership_logo-container {
@@ -376,7 +383,7 @@ a.ama__membership {
         margin-left: 17px;
       }
       @include breakpoint($bp-med) {
-        margin-left: 120px;
+        margin-left: auto;
       }  
     }
 }
