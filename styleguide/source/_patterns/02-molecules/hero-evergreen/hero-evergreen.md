@@ -14,7 +14,7 @@ Hero used specifically for the Evergreen Pages
     "image": {
       "exists": true,
       "alt": "alt text",
-      "src": "http://via.placeholder.com/800x600x186?l=3:2|800x600&s=36",
+      "src": "https://picsum.photos/800/600",
       "height": "600",
       "width": "800"
     },
