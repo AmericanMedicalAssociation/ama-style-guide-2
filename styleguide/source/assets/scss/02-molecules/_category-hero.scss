@@ -69,14 +69,10 @@
   }
 }
 
-
-
-
-
 .category-featured-content {
   padding-top: calc($gutter * .5);
   padding-bottom: calc($gutter * .5);
-  @include breakpoint($bp-small) {
+  @include breakpoint($bp-med) {
     padding-top: calc($gutter);
     padding-bottom: calc($gutter);
   }
@@ -87,7 +83,7 @@
     .article-wrapper {
       .description-wrapper {
         padding-left: 0;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           padding-left: calc($gutter * .75);
         }
         .description {
@@ -105,7 +101,7 @@
       }
     }
     .date_display {
-      height: calc($gutter * 1.25);
+      min-height: calc($gutter * 1.25);
       text-transform: uppercase;
     }
   }
@@ -248,7 +244,7 @@
   .three-article-display {
     display: flex;
     flex-direction: column;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       flex-direction: row;
     }
 
@@ -256,7 +252,7 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         flex-direction: row;
       }
 
@@ -264,7 +260,7 @@
         border-right: none;
         padding-right: 0;
         flex:1;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           border-right: $border-gray 1px solid;
           padding-right: 63px;
         }
@@ -276,7 +272,6 @@
         .description-wrapper {
           padding-left: 0;
         }
-
         .description {
           display: none;
         }
@@ -286,7 +281,7 @@
         display: flex;
         flex-direction: column;
         padding-left: 0;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           padding-left: 63px;
         }
         .article {
@@ -296,16 +291,16 @@
           &:first-child {
             .article-wrapper {
               justify-content: flex-end;
-              @include breakpoint($bp-small) {
+              border-bottom: $border-gray 1px solid;
+              @include breakpoint($bp-med) {
                 padding-bottom: $gutter;
               }
-              border-bottom: $border-gray 1px solid;
             }
           }
 
           &:last-child {
             .article-wrapper {
-              @include breakpoint($bp-small) {
+              @include breakpoint($bp-med) {
                 padding-top: $gutter;
               }
             }
@@ -318,19 +313,30 @@
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
             }
+
             .media {
               justify-self: flex-end;
               padding-left: 0;
               flex: 1;
               @include breakpoint($bp-small) {
+                flex: .33;
+              }
+              @include breakpoint($bp-med) {
                 padding-left: calc($gutter * .75);
+                flex: 1;
               }
             }
             .description-wrapper {
+              flex-direction: row-reverse;
               justify-self: flex-start;
               padding-left: 0;
-              flex-direction: row-reverse;
               flex: 1;
+              @include breakpoint($bp-small) {
+                flex: .66;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+              }
             }
           }
         }
@@ -341,6 +347,10 @@
           padding-right: 0;
           flex: 1;
           @include breakpoint($bp-small) {
+            flex: .66;
+            padding-right: calc($gutter * .5);
+          }
+          @include breakpoint($bp-med) {
             flex: .75;
             padding-right: calc($gutter * .5);
           }
@@ -351,24 +361,42 @@
         .last-column {
           flex: 1;
           padding-left: 0;
-          @include breakpoint($bp-small) {
-            flex: .25;
-            padding-left: calc($gutter * .5);
-          }
+          padding-right: 0;
           .media,
           .tags,
           .series-name {
-            display: none;
+            display: block;
+          }
+          @include breakpoint($bp-small) {
+            flex: .33;
+            padding-right: calc($gutter * .5);
+          }
+          @include breakpoint($bp-med) {
+            flex: .25;
+            padding-left: calc($gutter * .5);
+            .media,
+            .tags,
+            .series-name {
+              display: none;
+            }
           }
         }
       }
     }
   }
-
   .seven-article-display {
     display: flex;
     flex-direction: column;
-
+    .tags,
+    .series-name {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+      @include breakpoint($bp-med) {
+        display: block;
+      }
+    }
     .first-row {
       display: flex;
       flex-direction: column;
@@ -381,20 +409,24 @@
           margin-bottom: 0;
           @include breakpoint($bp-small) {
             flex-direction: row;
+          }
+          @include breakpoint($bp-med) {
             margin-bottom: calc($gutter * 1.25);
           }
         }
         .media {
           margin-bottom: 0;
           flex:1;
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             flex:.65;
           }
         }
         .description-wrapper {
           flex: 1;
+          padding-left: 0;
           @include breakpoint($bp-small) {
             flex:.35;
+            padding-left: $gutter;
           }
           .date_display {
             margin-bottom: calc($gutter * .5);
@@ -402,15 +434,20 @@
         }
       }
     }
-
     .second-row {
       display: flex;
       flex-direction: column;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         flex-direction: row;
       }
       .description {
         display: none;
+        @include breakpoint($bp-small) {
+          display: block;
+        }
+        @include breakpoint($bp-med) {
+          display: none;
+        }
       }
       .first-column {
         display: flex;
@@ -419,47 +456,43 @@
         padding-right : 0;
         flex: 1;
         @include breakpoint($bp-small) {
-          border-right: $border-gray 1px solid;
           flex: .35;
           padding-right: calc($gutter * .5);
+        }
+        @include breakpoint($bp-med) {
+          border-right: $border-gray 1px solid;
         }
         .article-wrapper {
           display: flex;
           flex-direction: column;
           .description-wrapper {
             padding-left: 0;
-            @include breakpoint($bp-small) {
-            }
           }
         }
       }
-
       .middle-column {
         flex-direction: column;
         padding-right: 0;
         padding-left: 0;
         border-right: none;
         flex: 1;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
+          flex:.4;
           padding-right: calc($gutter * .75);
           padding-left: calc($gutter * .75);
           border-right: $border-gray 1px solid;
-          flex: .4;
         }
-
         .article {
           &:first-child {
             .article-wrapper {
               border-bottom: $border-gray 1px solid;
             }
           }
-
           &:last-child {
             .article-wrapper {
               padding-top: 20px;
             }
           }
-
           .article-wrapper {
             padding-bottom: calc($gutter * .75);
             padding-top: 0;
@@ -468,23 +501,27 @@
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
             }
-
             .media {
               margin-left: 0;
               justify-self: flex-end;
               flex: 1;
-              @include breakpoint($bp-small) {
+              @include breakpoint($bp-med) {
                 margin-left: 10px;
               }
             }
             .description-wrapper {
               flex: 1.5;
+              padding-left: 0;
+              @include breakpoint($bp-small) {
+                padding-left: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                padding-left: 0;
+              }
             }
           }
         }
       }
-
-
       .last-column {
         display: flex;
         flex-direction: column;
@@ -492,42 +529,62 @@
         padding-left: 0;
         @include breakpoint($bp-small) {
           flex: .25;
+        }
+        @include breakpoint($bp-med) {
           padding-left: calc($gutter * .75);
         }
-
-        .media {
-          display: none;
-          width: 0;
-        }
-
         .article {
           .article-wrapper {
             border-bottom: $border-gray 1px solid;
             margin-top: calc($gutter * .75);
-          }
-
-          &:first-child {
-            .article-wrapper {
-              margin-top: 0;
+            flex-direction: column;
+            @include breakpoint($bp-small) {
+              flex-direction: row-reverse;
             }
-          }
-
-          &:last-child {
-            .article-wrapper {
-              border-bottom: none;
-              margin-top: calc($gutter * .75);
+            @include breakpoint($bp-med) {
+              flex-direction: column;
             }
-          }
-        }
-
-        .description-wrapper {
-          .series-name,
-          .description {
-            display: none;
-          }
-
-          h3.title {
-            margin-bottom: $gutter;
+            &:first-child {
+              .article-wrapper {
+                margin-top: 0;
+              }
+            }
+            &:last-child {
+              .article-wrapper {
+                border-bottom: none;
+                margin-top: calc($gutter * .75);
+              }
+            }
+            .media {
+              display: block;
+              flex: 1;
+              @include breakpoint($bp-small) {
+                flex: 1;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                display: none;
+                width: 0;
+              }
+            }
+            .description-wrapper {
+              flex: 1;
+              padding-right: 0;
+              @include breakpoint($bp-small) {
+                flex: 1.5;
+                padding-right: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                padding-right: 0;
+              }
+              .series-name {
+                display: none;
+              }
+              h3.title {
+                margin-bottom: $gutter;
+              }
+            }
           }
         }
       }
