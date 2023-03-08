@@ -77,8 +77,8 @@
   padding-top: calc($gutter * .5);
   padding-bottom: calc($gutter * .5);
   @include breakpoint($bp-small) {
-    padding-top: calc($gutter * 2);
-    padding-bottom: calc($gutter * 2);
+    padding-top: calc($gutter);
+    padding-bottom: calc($gutter);
   }
   .ama__podcast-player__links {
     display: none;
@@ -111,6 +111,10 @@
   }
 
   //  Text Styles
+  h2.title {
+    font-size: 26px;
+    font-weight: $font-weight-bold;
+  }
   a.block-wrapper-link,
   a.description-wrapper-link {
     color: $text-navy;
@@ -251,7 +255,7 @@
     .first-row {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      flex: 1;
       @include breakpoint($bp-small) {
         flex-direction: row;
       }
@@ -374,20 +378,23 @@
       .first-column {
         .article-wrapper {
           flex-direction: column;
+          margin-bottom: 0;
           @include breakpoint($bp-small) {
             flex-direction: row;
+            margin-bottom: calc($gutter * 1.25);
           }
         }
         .media {
-          width: 100%;
+          margin-bottom: 0;
+          flex:1;
           @include breakpoint($bp-small) {
-            width: 65%;
+            flex:.65;
           }
         }
         .description-wrapper {
-          width: 100%;
+          flex: 1;
           @include breakpoint($bp-small) {
-            width: 35%;
+            flex:.35;
           }
           .date_display {
             margin-bottom: calc($gutter * .5);
