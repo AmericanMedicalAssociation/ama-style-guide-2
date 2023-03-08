@@ -16,8 +16,9 @@
     }
     &__container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       @include breakpoint($bp-small) {
+        flex-direction: row;
         column-gap: 17px;
       }
       @include breakpoint($bp-med) {
@@ -25,8 +26,10 @@
       }
       .category-theme__container--left {
         width: 100%;
-        max-width: 348px;
         @include breakpoint($bp-small) {
+          max-width: 348px;
+        }
+        @include breakpoint($bp-med) {
           max-width: 380px;
         }
       }
@@ -76,8 +79,10 @@
         }
       }
     }
-    .category-theme--image {
-      max-width: 380px;
+    @include breakpoint($bp-small) {
+      .category-theme--image {
+        max-width: 380px;
+      }
     }
     .category-theme__stub--hidden {
       .description {
@@ -103,7 +108,10 @@
       }
       .stub__container {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
+        @include breakpoint($bp-small) {
+          flex-direction: row;
+        }
         .category-theme--content {
           h3.ama__article-stub__title {
             margin-bottom: 28px;
