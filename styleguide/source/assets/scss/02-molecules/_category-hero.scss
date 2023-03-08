@@ -415,10 +415,18 @@
             flex: .25;
             padding-left: calc($gutter * .5);
           }
-          .media,
-          .description,
           .tags,
           .series-name {
+            display: block;
+            @include breakpoint($bp-small) {
+              display: none;
+            }
+            @include breakpoint($bp-med) {
+              display: block;
+            }
+          }
+          .media,
+          .description {
             display: none;
             @include breakpoint($bp-small) {
               display: block;
