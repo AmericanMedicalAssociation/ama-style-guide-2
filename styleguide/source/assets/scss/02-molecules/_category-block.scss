@@ -1,45 +1,79 @@
 .ama__category-theme {
-    .category-theme {
-        &__header {
-            font-weight: bold;
-        }
-        &__container {
-            display: flex;
-            flex-direction: row;
-            & > div {
-                flex-basis: 50%;
-            }
-        }
-    }
-    .category-theme__container--left {
-        .category-theme__stub--hidden {
-            .description {
-                display: none;
-            }
-        }
-    }
-    .category-theme__container--right {
-        .category-theme__stub {
-            &--hidden {
-                .description {
-                    display: none;
-                }
-            }
-            .stub__container {
-                display: flex;
-                flex-direction: row;
-                & > div {
-                    flex-basis: 50%;
-                }
-            }
-        }
-    }
-
-    a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
+  .category-theme {
+    &__header {
+      font-weight: bold;
+      margin-bottom: 28px;
+      @include breakpoint($bp-small) {
+        margin-bottom: 23px;
       }
     }
+    &__container {
+      display: flex;
+      flex-direction: row;
+      & > div {
+        flex-basis: 50%;
+      }
+    }
+
+    &--content {
+      .ama__article-stub__metadata {
+        font-size: 14px;
+        color: #424242;
+        line-height: 1;
+      }
+    }
+  }
+  .category-theme__container--left {
+    .category-theme--content {
+      .ama__article-stub__metadata {
+        margin-bottom: 7px;
+        @include breakpoint($bp-small) {
+          margin-bottom: 14px;
+        }
+      }
+
+      .ama__article-stub__title {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 14px;
+        @include breakpoint($bp-small) {
+          font-size: 20px;
+          line-height: 27px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+    .category-theme--image {
+      max-width: 380px;
+    }
+    .category-theme__stub--hidden {
+      .description {
+        display: none;
+      }
+    }
+  }
+  .category-theme__container--right {
+    .category-theme__stub {
+      &--hidden {
+        .description {
+            display: none;
+        }
+      }
+      .stub__container {
+        display: flex;
+        flex-direction: row;
+        & > div {
+            flex-basis: 50%;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
