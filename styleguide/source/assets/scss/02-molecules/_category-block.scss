@@ -1,4 +1,11 @@
 .ama__category-theme {
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 0.5px solid #000;
+  @include breakpoint($bp-med) {
+    padding-bottom: 56px;
+    margin-bottom: 54px;
+  }
   .category-theme {
     &__header {
       font-weight: bold;
@@ -33,10 +40,12 @@
 
         .read_time {
           margin-bottom: 0;
+          padding-bottom: 0;
           .ama__h3 {
             font-size: 14px;
             color: #424242;
             margin-bottom: 0;
+            line-height: 27px;
           }
         }
       }
@@ -73,6 +82,12 @@
   }
   .category-theme__container--right {
     .category-theme__stub {
+      @include breakpoint($bp-med) {
+        border-bottom: 0.5px solid #a1a1a4;
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
       &--hidden {
         .description {
             display: none;
@@ -81,6 +96,16 @@
       .stub__container {
         display: flex;
         flex-direction: row;
+        .category-theme--content {
+          margin-bottom: 28px;
+          @include breakpoint($bp-med) {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+          }
+          @include breakpoint($bp-small) {
+            margin-bottom: 87px;
+          }
+        }
         .category-theme--image {
           display: block;
           max-width: 87px;
