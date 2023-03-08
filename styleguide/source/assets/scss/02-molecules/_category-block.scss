@@ -10,8 +10,18 @@
     &__container {
       display: flex;
       flex-direction: row;
-      & > div {
-        flex-basis: 50%;
+      @include breakpoint($bp-small) {
+        column-gap: 17px;
+      }
+      @include breakpoint($bp-med) {
+        column-gap: 130px;
+      }
+      .category-theme__container--left {
+        width: 100%;
+        max-width: 348px;
+        @include breakpoint($bp-small) {
+          max-width: 380px;
+        }
       }
     }
 
@@ -20,6 +30,15 @@
         font-size: 14px;
         color: #424242;
         line-height: 1;
+
+        .read_time {
+          margin-bottom: 0;
+          .ama__h3 {
+            font-size: 14px;
+            color: #424242;
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }
@@ -62,8 +81,16 @@
       .stub__container {
         display: flex;
         flex-direction: row;
-        & > div {
-            flex-basis: 50%;
+        .category-theme--image {
+          display: block;
+          max-width: 87px;
+          @include breakpoint($bp-med) {
+            display: none;
+          }
+          @include breakpoint($bp-small) {
+            display: block;
+            max-width: 180px;
+          }
         }
       }
     }
@@ -75,5 +102,11 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .tags {
+    color: $purple;
+    text-transform: uppercase;
+    margin-bottom: 25px;
   }
 }
