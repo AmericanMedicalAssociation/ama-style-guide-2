@@ -224,17 +224,17 @@
           }
         }
         .media {
-         flex-basis: 100%;
+         flex: 1;
           @include breakpoint($bp-small) {
-            flex-basis: 70%;
+            flex: .7;
           }
         }
         .description-wrapper {
-          flex-basis: 100%;
+          flex: 1;
           padding-left: 0;
           @include breakpoint($bp-small) {
             padding-left: calc($gutter * .75);
-            flex-basis: 40%;
+            flex: .4;
           }
         }
       }
@@ -410,10 +410,10 @@
         flex-direction: column;
         border-right: none;
         padding-right : 0;
-        width: 100%;
+        flex: 1;
         @include breakpoint($bp-small) {
           border-right: $border-gray 1px solid;
-          width: 35%;
+          flex: .35;
           padding-right: calc($gutter * .5);
         }
         .article-wrapper {
@@ -432,12 +432,12 @@
         padding-right: 0;
         padding-left: 0;
         border-right: none;
-        width: 100%;
+        flex: 1;
         @include breakpoint($bp-small) {
           padding-right: calc($gutter * .75);
           padding-left: calc($gutter * .75);
           border-right: $border-gray 1px solid;
-          flex-basis: 40%;
+          flex: .4;
         }
 
         .article {
@@ -481,10 +481,10 @@
       .last-column {
         display: flex;
         flex-direction: column;
-        flex-basis: 100%;
+        flex: 1;
         padding-left: 0;
         @include breakpoint($bp-small) {
-          flex-basis: 25%;
+          flex: .25;
           padding-left: calc($gutter * .75);
         }
 
