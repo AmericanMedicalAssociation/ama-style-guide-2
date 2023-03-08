@@ -168,12 +168,65 @@
       color: #46166b;
       font-size: 14px;
       text-transform: uppercase;
+      .tag {
+        position:relative;
+        &:after {
+          content: "/";
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: #46166b;
+        }
+        &:first-child {
+          padding-left:15px;
+          padding-right: 15px;
+          &:before {
+            content: "/";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #46166b;
+          }
+        }
+        &:last-child {
+          content: "";
+        }
+      }
     }
 
     .series-name {
       color: #46166b;
       font-size: 14px;
       font-weight: $font-weight-bold;
+    }
+  }
+
+  //  Formatting
+  .one-article-display {
+    .article-wrapper {
+      .description-wrapper {
+        .date_display {
+          font-size: 18px;
+        }
+        h3.title {
+          margin-bottom: calc($gutter * .5);
+        }
+        .description {
+          margin-bottom: $gutter;
+        }
+      }
+    }
+  }
+  .three-article-display {
+    .article {
+      &:first-child {
+        .tags {
+          margin-bottom: calc($gutter * .5);
+        }
+        .title {
+          margin-bottom: 28px;
+        }
+      }
     }
   }
 
@@ -306,9 +359,7 @@
             padding-right: calc($gutter * .75);
           }
 
-          .date,
-          .read_time,
-          .date.read_time {
+          .date_display {
             display: none;
           }
         }
@@ -425,17 +476,20 @@
           border-right: #a1a1a4 1px solid;
           flex-basis: 40%;
         }
+
         .article {
           &:first-child {
             .article-wrapper {
               border-bottom: #a1a1a4 1px solid;
             }
           }
+
           &:last-child {
             .article-wrapper {
               padding-top: 20px;
             }
           }
+
           .article-wrapper {
             padding-bottom: calc($gutter * .75);
             padding-top: 0;
@@ -444,15 +498,17 @@
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
             }
+
             .media {
               margin-left: 0;
               justify-self: flex-end;
               flex-basis: 100%;
               @include breakpoint($bp-small) {
                 margin-left: 10px;
-                flex-basis: 45%;
+                flex-basis: 58%;
               }
             }
+
             .description-wrapper {
               flex-basis: 100%;
               @include breakpoint($bp-small) {
@@ -462,52 +518,62 @@
           }
         }
       }
-    }
 
-    .last-column {
-      display: flex;
-      flex-direction: column;
-      flex-basis: 100%;
-      padding-left: 0;
-      @include breakpoint($bp-small) {
-        flex-basis: 25%;
-        padding-left: calc($gutter * .75);
-      }
-      .media {
-        display: none;
-        width: 0;
-      }
-      .article {
-        .article-wrapper {
-          border-bottom: #a1a1a4 1px solid;
-          margin-top: calc($gutter * .75);
+
+      .last-column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        padding-left: 0;
+        @include breakpoint($bp-small) {
+          flex-basis: 25%;
+          padding-left: calc($gutter * .75);
         }
-        &:first-child {
-          .article-wrapper {
-            margin-top: 0;
-          }
+
+        .media {
+          display: none;
+          width: 0;
         }
-        &:last-child {
+
+        .article {
           .article-wrapper {
-            border-bottom: none;
+            border-bottom: #a1a1a4 1px solid;
             margin-top: calc($gutter * .75);
           }
+
+          &:first-child {
+            .article-wrapper {
+              margin-top: 0;
+            }
+          }
+
+          &:last-child {
+            .article-wrapper {
+              border-bottom: none;
+              margin-top: calc($gutter * .75);
+            }
+          }
         }
-      }
-      .description-wrapper {
-        .series-name,
-        .description {
-          display: none;
-        }
-        h3.title {
-          margin-bottom: $gutter;
+
+        .description-wrapper {
+          .series-name,
+          .description {
+            display: none;
+          }
+
+          h3.title {
+            margin-bottom: $gutter;
+          }
         }
       }
     }
   }
-
   .ama__podcast-player__links {
     display: none;
+  }
+  .ama__podcast-player {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .hero-right {
