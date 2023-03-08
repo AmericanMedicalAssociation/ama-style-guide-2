@@ -170,6 +170,8 @@
       text-transform: uppercase;
       .tag {
         position:relative;
+        padding-left:15px;
+        padding-right: 15px;
         &:after {
           content: "/";
           position: absolute;
@@ -178,8 +180,6 @@
           color: #46166b;
         }
         &:first-child {
-          padding-left:15px;
-          padding-right: 15px;
           &:before {
             content: "/";
             position: absolute;
@@ -230,7 +230,6 @@
     }
   }
 
-
   //  Layout Styles
   .one-article-display {
     .first-row {
@@ -241,6 +240,13 @@
         flex-direction: column;
         @include breakpoint($bp-small) {
           flex-direction: row;
+        }
+        .article-wrapper {
+          display:flex;
+          flex-direction: column;
+          @include breakpoint($bp-small) {
+            flex-direction: row;
+          }
         }
         .media {
          flex-basis: 100%;
@@ -303,7 +309,6 @@
           padding-left: 63px;
           flex-basis: 100%;
         }
-
         .article {
           padding-top: 0;
           padding-bottom: 0;
@@ -458,7 +463,6 @@
           .description-wrapper {
             padding-left: 0;
             @include breakpoint($bp-small) {
-
             }
           }
         }
