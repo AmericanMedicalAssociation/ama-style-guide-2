@@ -115,6 +115,7 @@
   a.description-wrapper-link {
     color: $text-navy;
     text-decoration: none;
+    display: block;
 
     &:hover {
       text-decoration: none;
@@ -144,6 +145,7 @@
       color: $grape-purple;
       font-size: 14px;
       text-transform: uppercase;
+      margin-bottom: calc($gutter * .5);
       .tag {
         position:relative;
         padding-left:15px;
@@ -196,9 +198,6 @@
   .three-article-display {
     .article {
       &:first-child {
-        .tags {
-          margin-bottom: calc($gutter * .5);
-        }
         .title {
           margin-bottom: 28px;
         }
@@ -260,30 +259,31 @@
       .first-column {
         border-right: none;
         padding-right: 0;
-        flex-basis: 100%;
+        flex:1;
         @include breakpoint($bp-small) {
           border-right: $border-gray 1px solid;
           padding-right: 63px;
-          flex-basis: 100%;
         }
       }
 
       .article-wrapper {
         display: flex;
         flex-direction: column;
+        .description-wrapper {
+          padding-left: 0;
+        }
 
         .description {
           display: none;
         }
       }
       .last-column {
-        flex-basis: 100%;
+        flex: 1;
         display: flex;
         flex-direction: column;
         padding-left: 0;
         @include breakpoint($bp-small) {
           padding-left: 63px;
-          flex-basis: 100%;
         }
         .article {
           padding-top: 0;
@@ -317,16 +317,16 @@
             .media {
               justify-self: flex-end;
               padding-left: 0;
-              flex-basis:100%;
+              flex: 1;
               @include breakpoint($bp-small) {
                 padding-left: calc($gutter * .75);
-                flex-basis:60%;
               }
             }
             .description-wrapper {
               justify-self: flex-start;
               padding-left: 0;
               flex-direction: row-reverse;
+              flex: 1;
             }
           }
         }
@@ -335,9 +335,9 @@
       &.podcast-hero {
         .first-column {
           padding-right: 0;
-          flex-basis: 100%;
+          flex: 1;
           @include breakpoint($bp-small) {
-            flex-basis: 75%;
+            flex: .75;
             padding-right: calc($gutter * .5);
           }
           .date_display {
@@ -345,10 +345,10 @@
           }
         }
         .last-column {
-          flex-basis: 100%;
+          flex: 1;
           padding-left: 0;
           @include breakpoint($bp-small) {
-            flex-basis: 25%;
+            flex: .25;
             padding-left: calc($gutter * .5);
           }
           .media,
@@ -409,16 +409,16 @@
         display: flex;
         flex-direction: column;
         border-right: none;
+        padding-right : 0;
         width: 100%;
         @include breakpoint($bp-small) {
           border-right: $border-gray 1px solid;
           width: 35%;
+          padding-right: calc($gutter * .5);
         }
-
         .article-wrapper {
           display: flex;
           flex-direction: column;
-
           .description-wrapper {
             padding-left: 0;
             @include breakpoint($bp-small) {
@@ -443,7 +443,7 @@
         .article {
           &:first-child {
             .article-wrapper {
-              border-bottom: $border-gray1px 1px solid;
+              border-bottom: $border-gray 1px solid;
             }
           }
 
@@ -465,18 +465,13 @@
             .media {
               margin-left: 0;
               justify-self: flex-end;
-              flex-basis: 100%;
+              flex: 1;
               @include breakpoint($bp-small) {
                 margin-left: 10px;
-                flex-basis: 58%;
               }
             }
-
             .description-wrapper {
-              flex-basis: 100%;
-              @include breakpoint($bp-small) {
-                flex-basis: 75%;
-              }
+              flex: 1.5;
             }
           }
         }
