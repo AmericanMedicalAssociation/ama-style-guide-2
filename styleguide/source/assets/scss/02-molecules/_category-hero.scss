@@ -192,7 +192,7 @@
         .media {
          flex-basis: 100%;
           @include breakpoint($bp-small) {
-            flex-basis: 75%;
+            flex-basis: 70%;
           }
         }
         .description-wrapper {
@@ -200,7 +200,7 @@
           padding-left: 0;
           @include breakpoint($bp-small) {
             padding-left: calc($gutter * .75);
-            flex-basis: 25%;
+            flex-basis: 40%;
           }
         }
       }
@@ -229,7 +229,7 @@
         @include breakpoint($bp-small) {
           border-right: #a1a1a4 1px solid;
           padding-right: 63px;
-          flex-basis: 45%;
+          flex-basis: 100%;
         }
       }
 
@@ -241,45 +241,14 @@
           display: none;
         }
       }
-
-      //  Podcast Hero Styling.
-      &.podcast-hero {
-        .first-column {
-          flex-basis: 100%;
-          @include breakpoint($bp-small) {
-            flex-basis: 75%;
-          }
-
-          .date,
-          .read_time,
-          .date.read_time {
-            display: none;
-          }
-        }
-
-        .last-column {
-          flex-basis: 100%;
-          @include breakpoint($bp-small) {
-            flex-basis: 25%;
-          }
-
-          .media,
-          .tags,
-          .series-name {
-            display: none;
-          }
-        }
-      }
-
-
       .last-column {
         flex-basis: 100%;
         display: flex;
         flex-direction: column;
         padding-left: 0;
         @include breakpoint($bp-small) {
-          flex-basis: 55%;
           padding-left: 63px;
+          flex-basis: 100%;
         }
 
         .article {
@@ -288,6 +257,7 @@
 
           &:first-child {
             .article-wrapper {
+              justify-content: flex-end;
               @include breakpoint($bp-small) {
                 padding-bottom: $gutter;
               }
@@ -315,18 +285,49 @@
               flex-basis:100%;
               @include breakpoint($bp-small) {
                 padding-left: calc($gutter * .75);
-                flex-basis:50%;
+                flex-basis:60%;
               }
             }
             .description-wrapper {
               justify-self: flex-start;
               padding-left: 0;
               flex-direction: row-reverse;
-              flex-basis: 100%;
-              @include breakpoint($bp-small) {
-                flex-basis: 50%;
-              }
             }
+          }
+        }
+      }
+      //  Podcast Hero Styling.
+      &.podcast-hero {
+        .first-column {
+          flex-basis: 100%;
+          padding-right: 0;
+          @include breakpoint($bp-small) {
+            flex-basis: 75%;
+            padding-right: calc($gutter * .75);
+          }
+
+          .date,
+          .read_time,
+          .date.read_time {
+            display: none;
+          }
+        }
+
+        .last-column {
+          flex-basis: 100%;
+          padding-left: 0;
+          @include breakpoint($bp-small) {
+            flex-basis: 25%;
+            padding-left: calc($gutter * .75);
+          }
+          .description-wrapper {
+
+          }
+
+          .media,
+          .tags,
+          .series-name {
+            display: none;
           }
         }
       }
