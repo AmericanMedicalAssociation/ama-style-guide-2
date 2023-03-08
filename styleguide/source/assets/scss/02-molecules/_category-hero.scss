@@ -207,10 +207,29 @@
 
   //  Layout Styles
   .one-article-display {
+    .podcast-hero {
+      .first-column {
+        .article-wrapper {
+          flex-direction: column;
+          @include breakpoint($bp-med) {
+            flex-direction: row;
+          }
+        }
+      }
+    }
+    .tags,
+    .series-name {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+      @include breakpoint($bp-med) {
+        display: block;
+      }
+    }
     .first-row {
       display: flex;
       flex-direction: column;
-
       .first-column {
         flex-direction: column;
         @include breakpoint($bp-small) {
@@ -219,7 +238,7 @@
         .article-wrapper {
           display:flex;
           flex-direction: column;
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             flex-direction: row;
           }
         }
@@ -232,7 +251,7 @@
         .description-wrapper {
           flex: 1;
           padding-left: 0;
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             padding-left: calc($gutter * .75);
             flex: .4;
           }
@@ -247,6 +266,16 @@
     @include breakpoint($bp-med) {
       flex-direction: row;
     }
+    .tags,
+    .series-name {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+      @include breakpoint($bp-med) {
+        display: block;
+      }
+    }
 
     .first-row {
       display: flex;
@@ -256,26 +285,41 @@
         flex-direction: row;
       }
 
+      &.podcast-hero {
+        .first-column {
+          .article-wrapper {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            @include breakpoint($bp-small) {
+              flex-direction: column;
+            }
+          }
+        }
+      }
       .first-column {
         border-right: none;
         padding-right: 0;
-        flex:1;
+        flex: 1;
         @include breakpoint($bp-med) {
           border-right: $border-gray 1px solid;
           padding-right: 63px;
         }
-      }
-
-      .article-wrapper {
-        display: flex;
-        flex-direction: column;
-        .description-wrapper {
-          padding-left: 0;
+        .article-wrapper {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          @include breakpoint($bp-med) {
+            padding-left: calc($gutter * .75);
+          }
+          .description-wrapper {
+            padding-left: 0;
+          }
+          .description {
+            display: none;
+          }
         }
-        .description {
-          display: none;
-        }
-      }
+    }
       .last-column {
         flex: 1;
         display: flex;
@@ -362,11 +406,6 @@
           flex: 1;
           padding-left: 0;
           padding-right: 0;
-          .media,
-          .tags,
-          .series-name {
-            display: block;
-          }
           @include breakpoint($bp-small) {
             flex: .33;
             padding-right: calc($gutter * .5);
@@ -374,9 +413,16 @@
           @include breakpoint($bp-med) {
             flex: .25;
             padding-left: calc($gutter * .5);
-            .media,
-            .tags,
-            .series-name {
+          }
+          .media,
+          .description,
+          .tags,
+          .series-name {
+            display: none;
+            @include breakpoint($bp-small) {
+              display: block;
+            }
+            @include breakpoint($bp-med) {
               display: none;
             }
           }
@@ -407,11 +453,9 @@
         .article-wrapper {
           flex-direction: column;
           margin-bottom: 0;
-          @include breakpoint($bp-small) {
-            flex-direction: row;
-          }
           @include breakpoint($bp-med) {
             margin-bottom: calc($gutter * 1.25);
+            flex-direction: row;
           }
         }
         .media {
@@ -465,8 +509,31 @@
         .article-wrapper {
           display: flex;
           flex-direction: column;
+          flex: 1;
+          @include breakpoint($bp-small) {
+            flex-direction: row;
+          }
+          @include breakpoint($bp-med) {
+            flex-direction: column;
+          }
+          .media {
+            flex: 1;
+            @include breakpoint($bp-small) {
+              flex: 1.5;
+            }
+            @include breakpoint($bp-med) {
+              flex: 1;
+            }
+          }
           .description-wrapper {
             padding-left: 0;
+            flex: 1;
+            @include breakpoint($bp-small) {
+              padding-left: $gutter;
+            }
+            @include breakpoint($bp-med) {
+              padding-left: 0;
+            }
           }
         }
       }
@@ -476,8 +543,10 @@
         padding-left: 0;
         border-right: none;
         flex: 1;
-        @include breakpoint($bp-med) {
+        @include breakpoint($bp-small) {
           flex:.4;
+        }
+        @include breakpoint($bp-med) {
           padding-right: calc($gutter * .75);
           padding-left: calc($gutter * .75);
           border-right: $border-gray 1px solid;
@@ -511,12 +580,12 @@
             }
             .description-wrapper {
               flex: 1.5;
-              padding-left: 0;
+              padding-right: 0;
               @include breakpoint($bp-small) {
-                padding-left: $gutter;
+                padding-right: $gutter;
               }
               @include breakpoint($bp-med) {
-                padding-left: 0;
+                padding-right: 0;
               }
             }
           }
