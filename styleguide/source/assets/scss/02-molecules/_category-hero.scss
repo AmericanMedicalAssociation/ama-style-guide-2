@@ -373,10 +373,11 @@
             .description-wrapper {
               flex-direction: row-reverse;
               justify-self: flex-start;
-              padding-left: 0;
+              padding-right: 0;
               flex: 1;
               @include breakpoint($bp-small) {
                 flex: .66;
+                padding-right: $gutter;
               }
               @include breakpoint($bp-med) {
                 flex: 1;
@@ -468,7 +469,7 @@
         .description-wrapper {
           flex: 1;
           padding-left: 0;
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             flex:.35;
             padding-left: $gutter;
           }
