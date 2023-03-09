@@ -106,6 +106,16 @@
     font-weight: $font-weight-bold;
     margin-bottom: $gutter;
   }
+  h3.title,
+  .description {
+    margin-bottom: calc($gutter * .5);
+    @include breakpoint($bp-med) {
+      margin-bottom: $gutter;
+    }
+  }
+  .description {
+    margin-bottom: $gutter;
+  }
   a.block-wrapper-link,
   a.description-wrapper-link {
     color: $text-navy;
@@ -178,42 +188,16 @@
     padding-bottom: $gutter;
   }
 
-  //  Formatting
-  .one-article-display {
-    .article-wrapper {
-      .description-wrapper {
-        .date_display {
-          font-size: 18px;
-        }
-        h3.title {
-          margin-bottom: calc($gutter * .5);
-        }
-        .description {
-          margin-bottom: $gutter;
-        }
-      }
-    }
-  }
-  .three-article-display {
-    .article {
-      &:first-child {
-        .title {
-          margin-bottom: 28px;
-        }
-      }
-    }
-  }
-
   //  Layout Styles
   .article {
     border-bottom: $border-gray 1px solid;
+    padding-top: $gutter;
 
     @include breakpoint($bp-small) {
       padding-top: $gutter;
       padding-bottom: calc($gutter * .5);
     }
     @include breakpoint($bp-med) {
-      padding-top: 0;
       padding-bottom: 0;
       border-bottom: none;
       border-top: none;
@@ -222,6 +206,9 @@
         padding-top: 0;
         padding-bottom: 0;
         border-bottom: none;
+      }
+      &:first-child {
+        padding-top: 0;
       }
     }
   }
@@ -366,13 +353,17 @@
           &:first-child {
             border-bottom: $border-gray 1px solid;
             padding-bottom: $gutter;
+            padding-top: $gutter;
+            @include breakpoint($bp-med) {
+              padding-top: 0;
+            }
           }
           &:last-child {
             border-bottom: none;
+            padding-top: $gutter;
           }
 
           .article-wrapper {
-            border-bottom: none;
             flex-direction: column;
             justify-content: flex-end;
             @include breakpoint($bp-small) {
@@ -382,6 +373,7 @@
             .media {
               justify-self: flex-end;
               padding-left: 0;
+              margin-bottom: 0;
               flex: 1;
               @include breakpoint($bp-small) {
                 flex: .33;
@@ -536,6 +528,10 @@
           padding-right: calc($gutter * .5);
         }
         .article {
+          padding-top: $gutter;
+          @include breakpoint($bp-med) {
+            padding-top: 0;
+          }
           .article-wrapper {
             display: flex;
             flex-direction: column;
@@ -583,12 +579,19 @@
           border-right: $border-gray 1px solid;
         }
         .article {
-          &:first-child {
-            .article-wrapper {
+
+
+            border-bottom: $border-gray 1px solid;
+            &:last-child {
               border-bottom: none;
-              @include breakpoint($bp-med) {
-                border-bottom: $border-gray 1px solid;
-              }
+            }
+
+          .media {
+            margin-bottom: 0;
+          }
+          &:first-child {
+            @include breakpoint($bp-med) {
+              padding-bottom: $gutter;
             }
           }
 
@@ -635,7 +638,6 @@
           &:last-child {
             border-bottom: none;
           }
-
           .article-wrapper {
             flex-direction: column;
             @include breakpoint($bp-small) {
@@ -646,6 +648,7 @@
             }
             .media {
               display: block;
+              margin-bottom:0;
               flex: 1;
               @include breakpoint($bp-small) {
                 flex: 1;
@@ -669,9 +672,6 @@
               }
               .series-name {
                 display: none;
-              }
-              h3.title {
-                margin-bottom: $gutter;
               }
             }
           }
