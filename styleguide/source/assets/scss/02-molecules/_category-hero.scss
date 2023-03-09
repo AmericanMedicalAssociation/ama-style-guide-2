@@ -449,6 +449,14 @@ Styles for the new Category Featured Content Custom Block.
           flex: 1;
           padding-left: 0;
           padding-right: 0;
+          .article {
+            .title {
+              margin-bottom: $gutter;
+              @include breakpoint($bp-med) {
+                margin-bottom: 0;
+              }
+            }
+          }
           @include breakpoint($bp-small) {
             flex: .33;
             padding-right: calc($gutter * .5);
