@@ -202,18 +202,16 @@
 
   //  Layout Styles
   .article {
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    border-top: none;
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+    border-bottom: $border-gray 1px solid;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
     @include breakpoint($bp-small) {
       padding-top: $gutter;
       padding-bottom: calc($gutter * .5);
-      border-bottom: $border-gray 1px solid;
-      &:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
     }
     @include breakpoint($bp-med) {
       padding-top: 0;
@@ -318,10 +316,7 @@
       }
       &.hero {
         .article-wrapper {
-          border-bottom: none;
-          @include breakpoint($bp-small) {
-            border-bottom: $border-gray 1px solid;
-          }
+          border-bottom: $border-gray 1px solid;
           @include breakpoint($bp-med) {
             border-bottom: none;
           }
