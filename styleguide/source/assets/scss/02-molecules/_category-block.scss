@@ -129,6 +129,9 @@
         }
         .category-theme--content {
           flex-grow: 1;
+          @include breakpoint($bp-med) {
+            padding-right: 7px;
+          }
           h3.ama__article-stub__title {
             margin-bottom: 28px;
             font-size: 18px;
