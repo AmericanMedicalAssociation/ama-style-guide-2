@@ -315,10 +315,18 @@
         flex-direction: row;
       }
       &.hero {
-        .article-wrapper {
-          border-bottom: $border-gray 1px solid;
+        .article {
+          padding-bottom: $gutter;
           @include breakpoint($bp-med) {
-            border-bottom: none;
+            padding-bottom: 0;
+          }
+          .article-wrapper {
+            padding-bottom: $gutter;
+            border-bottom: $border-gray 1px solid;
+            @include breakpoint($bp-med) {
+              border-bottom: none;
+              padding-bottom: 0;
+            }
           }
         }
       }
@@ -447,7 +455,13 @@
             flex: .25;
             padding-left: calc($gutter * .5);
           }
-
+          .tags,
+          .series-name {
+            display: block;
+            @include breakpoint($bp-small) {
+              display: none;
+            }
+          }
           .media,
           .description {
             display: none;
