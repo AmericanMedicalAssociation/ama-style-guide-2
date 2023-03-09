@@ -47,9 +47,11 @@
         line-height: 27px;
 
         .read_time {
+          display: inline;
           margin-bottom: 0;
           padding-bottom: 0;
           .ama__h3 {
+            display: inline;
             font-size: 14px;
             color: #424242;
             margin-bottom: 0;
@@ -60,6 +62,7 @@
     }
   }
   .category-theme__container--left {
+    margin-bottom: 28px;
     .category-theme--content {
       .ama__article-stub__metadata {
         margin-bottom: 7px;
@@ -80,6 +83,7 @@
       }
     }
     @include breakpoint($bp-small) {
+      margin-bottom: 0;
       .category-theme--image {
         max-width: 380px;
       }
@@ -109,6 +113,17 @@
       .stub__container {
         display: flex;
         flex-direction: row-reverse;
+        @include breakpoint($bp-small max-width) {
+          &.stub__has-image {
+            margin-bottom: 20px;
+            min-height: 100px;
+          }
+          .ama__article-stub__metadata {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
         @include breakpoint($bp-small) {
           flex-direction: row;
         }
@@ -118,6 +133,9 @@
             margin-bottom: 28px;
             font-size: 18px;
             line-height: 22px;
+            @include breakpoint($bp-small max-width) {
+              padding-top: 30px;
+            }
             @include breakpoint($bp-med) {
               font-size: 18px;
               line-height: 25px;
@@ -125,9 +143,14 @@
           }
         }
         .category-theme--image {
-          display: block;
+          display: flex;
+          align-items: flex-end;
           max-width: 87px;
+          @include breakpoint($bp-small max-width) {
+            margin-right: 20px;
+          }
           @include breakpoint($bp-small) {
+            align-items: unset;
             display: none;
           }
           @include breakpoint($bp-med) {
