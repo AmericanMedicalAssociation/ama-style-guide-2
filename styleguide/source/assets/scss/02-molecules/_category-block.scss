@@ -113,6 +113,7 @@
           flex-direction: row;
         }
         .category-theme--content {
+          flex-grow: 1;
           h3.ama__article-stub__title {
             margin-bottom: 28px;
             font-size: 18px;
@@ -138,10 +139,10 @@
     }
   }
 
-  a {
+  .wrapper-link {
     text-decoration: none;
 
-    &:hover {
+    &:hover .ama__article-stub__title {
       text-decoration: underline;
     }
   }
