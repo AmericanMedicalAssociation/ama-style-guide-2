@@ -68,7 +68,6 @@
   }
 }
 
-
 /**
 Styles for the new Category Featured Content Custom Block.
  */
@@ -108,7 +107,7 @@ Styles for the new Category Featured Content Custom Block.
   h2.title {
     font-size: 26px;
     font-weight: $font-weight-bold;
-    margin-bottom: $gutter;
+    margin-bottom: 0;
   }
   h3.title,
   .description {
@@ -117,8 +116,16 @@ Styles for the new Category Featured Content Custom Block.
       margin-bottom: $gutter;
     }
   }
-  .description {
-    margin-bottom: $gutter;
+  .description-wrapper {
+    .description {
+      margin-bottom: $gutter;
+      @include breakpoint($bp-small) {
+        margin-bottom: 0;
+      }
+      @include breakpoint($bp-med) {
+        margin-bottom: $gutter;
+      }
+    }
   }
   a.block-wrapper-link,
   a.description-wrapper-link {
@@ -216,6 +223,16 @@ Styles for the new Category Featured Content Custom Block.
       }
       &:first-child {
         padding-top: 0;
+      }
+    }
+  }
+  .first-row {
+    .first-column {
+      .article {
+        padding-top: calc($gutter * .5);
+        .date_display {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -585,13 +602,20 @@ Styles for the new Category Featured Content Custom Block.
           border-right: $border-gray 1px solid;
         }
         .article {
-
-
-            border-bottom: $border-gray 1px solid;
-            &:last-child {
-              border-bottom: none;
+          padding-bottom: 11px;
+          padding-top:21px;
+          @include breakpoint($bp-small) {
+            padding-bottom: $gutter;
+          }
+          &:first-child {
+            @include breakpoint($bp-med) {
+              padding-top:0;
             }
-
+          }
+          border-bottom: $border-gray 1px solid;
+          &:last-child {
+            border-bottom: none;
+          }
           .media {
             margin-bottom: 0;
           }
@@ -600,7 +624,6 @@ Styles for the new Category Featured Content Custom Block.
               padding-bottom: $gutter;
             }
           }
-
           .article-wrapper {
             padding-top: 0;
             flex-direction: column;
@@ -646,9 +669,15 @@ Styles for the new Category Featured Content Custom Block.
         }
         .article {
           border-bottom: $border-gray 1px solid;
-          padding-top:21px;
-          &:last-child {
-            border-bottom: none;
+          padding-bottom: calc($gutter * .5);
+          padding-top: $gutter;
+          @include breakpoint($bp-small) {
+            padding-bottom: $gutter;
+          }
+          &:first-child {
+            @include breakpoint($bp-med) {
+              padding-top:0;
+            }
           }
           .article-wrapper {
             flex-direction: column;
