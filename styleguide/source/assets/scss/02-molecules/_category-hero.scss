@@ -110,6 +110,7 @@
   h2.title {
     font-size: 26px;
     font-weight: $font-weight-bold;
+    margin-bottom: $gutter;
   }
   a.block-wrapper-link,
   a.description-wrapper-link {
@@ -309,9 +310,6 @@
           display: flex;
           flex: 1;
           flex-direction: column;
-          @include breakpoint($bp-med) {
-            padding-left: calc($gutter * .75);
-          }
           .description-wrapper {
             padding-left: 0;
           }
@@ -381,6 +379,8 @@
               }
               @include breakpoint($bp-med) {
                 flex: 1;
+                padding-right: 0;
+                padding-left: 0;
               }
             }
           }
