@@ -30,7 +30,6 @@
         display: block;
       }
     }
-
     width: 100%;
   }
 
@@ -68,6 +67,11 @@
     }
   }
 }
+
+
+/**
+Styles for the new Category Featured Content Custom Block.
+ */
 
 .category-featured-content {
   padding-top: calc($gutter * .5);
@@ -137,6 +141,9 @@
     .date_display {
       color: $date-olive;
       font-size: 14px;
+    }
+    .media {
+      margin-bottom: calc($gutter * .5);
     }
 
     .hero {
@@ -215,6 +222,12 @@
   .one-article-display {
     .podcast-hero {
       .first-column {
+        .date_display {
+          display: none;
+        }
+        .media {
+          margin-bottom: 0;
+        }
         .article-wrapper {
           flex-direction: column;
           @include breakpoint($bp-med) {
@@ -285,7 +298,6 @@
         display: block;
       }
     }
-
     .description {
       display: none;
       @include breakpoint($bp-small) {
@@ -295,7 +307,6 @@
         display: none;
       }
     }
-
     .first-row {
       display: flex;
       flex-direction: column;
@@ -362,21 +373,20 @@
             border-bottom: none;
             padding-top: $gutter;
           }
-
           .article-wrapper {
             flex-direction: column;
             justify-content: flex-end;
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
             }
-
             .media {
               justify-self: flex-end;
               padding-left: 0;
-              margin-bottom: 0;
               flex: 1;
+              margin-bottom: calc($gutter * .5);
               @include breakpoint($bp-small) {
                 flex: .33;
+                margin-bottom: 0;
               }
               @include breakpoint($bp-med) {
                 padding-left: calc($gutter * .75);
@@ -430,20 +440,19 @@
             flex: .25;
             padding-left: calc($gutter * .5);
           }
+          .media {
+            margin-bottom: 0;
+            display: block;
+          }
+          @include breakpoint ($bp-med) {
+            .media {
+              display: none;
+            }
+          }
           .tags,
           .series-name {
             display: block;
             @include breakpoint($bp-small) {
-              display: none;
-            }
-          }
-          .media,
-          .description {
-            display: none;
-            @include breakpoint($bp-small) {
-              display: block;
-            }
-            @include breakpoint($bp-med) {
               display: none;
             }
           }
@@ -480,7 +489,7 @@
           }
         }
         .media {
-          margin-bottom: 0;
+          margin-bottom: calc($gutter * .5);
           flex:1;
           @include breakpoint($bp-med) {
             flex:.65;
@@ -492,9 +501,6 @@
           @include breakpoint($bp-med) {
             flex:.35;
             padding-left: $gutter;
-          }
-          .date_display {
-            margin-bottom: calc($gutter * .5);
           }
         }
       }
@@ -605,6 +611,11 @@
               margin-left: 0;
               justify-self: flex-end;
               flex: 1;
+              margin-bottom: calc($gutter * .5);
+              @include breakpoint($bp-small) {
+                margin-left: 10px;
+                margin-bottom: 0;
+              }
               @include breakpoint($bp-med) {
                 margin-left: 10px;
               }
@@ -635,6 +646,7 @@
         }
         .article {
           border-bottom: $border-gray 1px solid;
+          padding-top:21px;
           &:last-child {
             border-bottom: none;
           }
@@ -648,10 +660,11 @@
             }
             .media {
               display: block;
-              margin-bottom:0;
+              margin-bottom: calc($gutter * .5);
               flex: 1;
               @include breakpoint($bp-small) {
                 flex: 1;
+                margin-bottom: 0;
               }
               @include breakpoint($bp-med) {
                 flex: 1;
@@ -684,7 +697,7 @@
   }
   .ama__podcast-player {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: calc($gutter * .5);
     .ama__image {
       width: 100%;
       height: auto;
@@ -692,6 +705,9 @@
         width: 230px;
         height: 230px;
       }
+    }
+    .ama__podcast-player__date {
+      margin-bottom: 0;
     }
   }
 }
