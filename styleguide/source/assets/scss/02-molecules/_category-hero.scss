@@ -174,6 +174,10 @@
     }
   }
 
+  .article {
+    padding-bottom: $gutter;
+  }
+
   //  Formatting
   .one-article-display {
     .article-wrapper {
@@ -202,13 +206,8 @@
 
   //  Layout Styles
   .article {
-    padding-top: $gutter;
-    padding-bottom: $gutter;
     border-bottom: $border-gray 1px solid;
-    &:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+
     @include breakpoint($bp-small) {
       padding-top: $gutter;
       padding-bottom: calc($gutter * .5);
@@ -246,6 +245,9 @@
       @include breakpoint($bp-med) {
         display: block;
       }
+    }
+    .article {
+      border-bottom: none;
     }
     .first-row {
       display: flex;
@@ -314,23 +316,6 @@
       @include breakpoint($bp-med) {
         flex-direction: row;
       }
-      &.hero {
-        .article {
-          padding-bottom: $gutter;
-          @include breakpoint($bp-med) {
-            padding-bottom: 0;
-          }
-          .article-wrapper {
-            padding-bottom: $gutter;
-            border-bottom: $border-gray 1px solid;
-            @include breakpoint($bp-med) {
-              border-bottom: none;
-              padding-bottom: 0;
-            }
-          }
-        }
-      }
-
       &.podcast-hero {
         .first-column {
           .article-wrapper {
@@ -351,6 +336,15 @@
           border-right: $border-gray 1px solid;
           padding-right: 63px;
         }
+        .article {
+          border-bottom: $border-gray 1px solid;
+          &:last-child {
+            border-bottom: $border-gray 1px solid;
+            @include breakpoint($bp-med) {
+              border-bottom: none;
+            }
+          }
+        }
         .article-wrapper {
           display: flex;
           flex: 1;
@@ -359,7 +353,7 @@
             padding-left: 0;
           }
         }
-    }
+      }
       .last-column {
         flex: 1;
         display: flex;
@@ -370,22 +364,11 @@
         }
         .article {
           &:first-child {
-            .article-wrapper {
-              justify-content: flex-end;
-              border-bottom: none;
-              @include breakpoint($bp-med) {
-                border-bottom: $border-gray 1px solid;
-                padding-bottom: $gutter;
-              }
-            }
+            border-bottom: $border-gray 1px solid;
+            padding-bottom: $gutter;
           }
-
           &:last-child {
-            .article-wrapper {
-              @include breakpoint($bp-med) {
-                padding-top: $gutter;
-              }
-            }
+            border-bottom: none;
           }
 
           .article-wrapper {
@@ -547,38 +530,40 @@
         flex: 1;
         @include breakpoint($bp-small) {
           flex: .35;
-          padding-right: calc($gutter * .5);
         }
         @include breakpoint($bp-med) {
           border-right: $border-gray 1px solid;
+          padding-right: calc($gutter * .5);
         }
-        .article-wrapper {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          @include breakpoint($bp-small) {
-            flex-direction: row;
-          }
-          @include breakpoint($bp-med) {
+        .article {
+          .article-wrapper {
+            display: flex;
             flex-direction: column;
-          }
-          .media {
             flex: 1;
             @include breakpoint($bp-small) {
-              flex: 1.5;
+              flex-direction: row;
             }
             @include breakpoint($bp-med) {
+              flex-direction: column;
+            }
+            .media {
               flex: 1;
+              @include breakpoint($bp-small) {
+                flex: 1.5;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+              }
             }
-          }
-          .description-wrapper {
-            padding-left: 0;
-            flex: 1;
-            @include breakpoint($bp-small) {
-              padding-left: $gutter;
-            }
-            @include breakpoint($bp-med) {
+            .description-wrapper {
               padding-left: 0;
+              flex: 1;
+              @include breakpoint($bp-small) {
+                padding-left: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                padding-left: 0;
+              }
             }
           }
         }
@@ -606,15 +591,9 @@
               }
             }
           }
-          &:last-child {
-            .article-wrapper {
-              padding-top: 20px;
-            }
-          }
+
           .article-wrapper {
-            padding-bottom: calc($gutter * .75);
             padding-top: 0;
-            border-bottom: none;
             flex-direction: column;
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
@@ -653,28 +632,17 @@
         }
         .article {
           border-bottom: $border-gray 1px solid;
-          @include breakpoint($bp-small) {
-            &:last-child {
-              border-bottom: none;
-            }
-          }
-          @include breakpoint($bp-med) {
+          &:last-child {
             border-bottom: none;
           }
+
           .article-wrapper {
-            margin-top: calc($gutter * .75);
             flex-direction: column;
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
             }
             @include breakpoint($bp-med) {
               flex-direction: column;
-            }
-            &:first-child {
-              margin-top: 0;
-            }
-            &:last-child {
-              margin-top: calc($gutter * .75);
             }
             .media {
               display: block;
