@@ -201,6 +201,33 @@
   }
 
   //  Layout Styles
+  .article {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    border-top: none;
+    @include breakpoint($bp-small) {
+      padding-top: $gutter;
+      padding-bottom: calc($gutter * .5);
+      border-bottom: $border-gray 1px solid;
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+    @include breakpoint($bp-med) {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      border-top: none;
+      margin-bottom: 0;
+      &:only-child {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
   .one-article-display {
     .podcast-hero {
       .first-column {
@@ -289,6 +316,17 @@
       @include breakpoint($bp-med) {
         flex-direction: row;
       }
+      &.hero {
+        .article-wrapper {
+          border-bottom: none;
+          @include breakpoint($bp-small) {
+            border-bottom: $border-gray 1px solid;
+          }
+          @include breakpoint($bp-med) {
+            border-bottom: none;
+          }
+        }
+      }
 
       &.podcast-hero {
         .first-column {
@@ -328,14 +366,12 @@
           padding-left: 63px;
         }
         .article {
-          padding-top: 0;
-          padding-bottom: 0;
-
           &:first-child {
             .article-wrapper {
               justify-content: flex-end;
-              border-bottom: $border-gray 1px solid;
+              border-bottom: none;
               @include breakpoint($bp-med) {
+                border-bottom: $border-gray 1px solid;
                 padding-bottom: $gutter;
               }
             }
@@ -555,7 +591,10 @@
         .article {
           &:first-child {
             .article-wrapper {
-              border-bottom: $border-gray 1px solid;
+              border-bottom: none;
+              @include breakpoint($bp-med) {
+                border-bottom: $border-gray 1px solid;
+              }
             }
           }
           &:last-child {
@@ -605,7 +644,7 @@
         }
         .article {
           border-bottom: none;
-          @include breakpoint($bp-med) {
+          @include breakpoint($bp-small) {
             border-bottom: $border-gray 1px solid;
             &:last-child {
               border-bottom: none;
