@@ -652,12 +652,14 @@
           padding-left: calc($gutter * .75);
         }
         .article {
-          border-bottom: none;
+          border-bottom: $border-gray 1px solid;
           @include breakpoint($bp-small) {
-            border-bottom: $border-gray 1px solid;
             &:last-child {
               border-bottom: none;
             }
+          }
+          @include breakpoint($bp-med) {
+            border-bottom: none;
           }
           .article-wrapper {
             margin-top: calc($gutter * .75);
