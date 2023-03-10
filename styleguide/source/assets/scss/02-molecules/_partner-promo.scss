@@ -124,55 +124,54 @@
 
 
 // Category specific layout builder styling
-.layout-builder__layout.layout--onecol .layout__region,
-.layout-builder__layout.layout--ama-page-section-one-col .layout__region {
-  .ama__partner-promo {
-    background: none;
-    display: flex;
-    flex-direction: column-reverse;
+.ama__category .layout__region--content > .ama__partner-promo,
+.layout-builder__layout.layout--onecol .layout__region .ama__partner-promo,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo {
+  background: none;
+  display: flex;
+  flex-direction: column-reverse;
+  column-gap: 120px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 0.5px solid #000;
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    column-gap: 17px;
+  }
+  @include breakpoint($bp-med) {
     column-gap: 120px;
-    padding-bottom: 28px;
-    margin-bottom: 28px;
-    border-bottom: 0.5px solid #000;
+    padding-bottom: 56px;
+    margin-bottom: 41px;
+  }
+  .ama__partner-promo__text {
+    display: block;
+    padding: 0;
     @include breakpoint($bp-small) {
-      flex-direction: row;
-      column-gap: 17px;
+      max-width: 380px;
     }
-    @include breakpoint($bp-med) {
-      column-gap: 120px;
-      padding-bottom: 56px;
-      margin-bottom: 41px;
+    h2.ama__h2 {
+      color: $blue;
     }
-    .ama__partner-promo__text {
-      display: block;
-      padding: 0;
+    p {
+      color: $black;
+    }
+    .ama__button {
+      font-weight: bold;
+      margin: 21px 0 0;
       @include breakpoint($bp-small) {
-        max-width: 380px;
+        margin: 28px 0 0;
+        max-width: 224px;
       }
-      h2.ama__h2 {
-        color: $blue;
-      }
-      p {
-        color: $black;
-      }
-      .ama__button {
-        font-weight: bold;
-        margin: 21px 0 0;
-        @include breakpoint($bp-small) {
-          margin: 28px 0 0;
-          max-width: 224px;
-        }
-        a.ama__button {
-          padding: 8px 14px 7px;
-        }
+      a.ama__button {
+        padding: 8px 14px 7px;
       }
     }
-    .ama__partner-promo--media {
-      display: block;
-      width: 100%;
-      max-width: 680px;
-      padding: 0;
-      margin: 0;
-    }
+  }
+  .ama__partner-promo--media {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    padding: 0;
+    margin: 0;
   }
 }

@@ -30,7 +30,6 @@
         display: block;
       }
     }
-
     width: 100%;
   }
 
@@ -68,4 +67,690 @@
     }
   }
 }
+
+/**
+Styles for the new Category Featured Content Custom Block.
+ */
+
+.category-featured-content {
+  padding-top: calc($gutter * .5);
+  padding-bottom: calc($gutter * .5);
+  @include breakpoint($bp-med) {
+    padding-top: calc($gutter);
+    padding-bottom: calc($gutter);
+  }
+  .hero {
+    .article-wrapper {
+      .description-wrapper {
+        padding-left: 0;
+        @include breakpoint($bp-med) {
+          padding-left: calc($gutter * .75);
+        }
+      }
+    }
+  }
+  .article-wrapper {
+    display: flex;
+    .description-wrapper {
+      .flex-parent {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .date_display {
+      min-height: calc($gutter * 1.25);
+      text-transform: uppercase;
+    }
+  }
+
+  //  Text Styles
+  h2.title {
+    font-size: 26px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+  }
+  h3.title,
+  .description {
+    margin-bottom: calc($gutter * .5);
+    @include breakpoint($bp-med) {
+      margin-bottom: $gutter;
+    }
+  }
+  .description-wrapper {
+    .description {
+      margin-bottom: $gutter;
+      @include breakpoint($bp-small) {
+        margin-bottom: 0;
+      }
+      @include breakpoint($bp-med) {
+        margin-bottom: $gutter;
+      }
+    }
+  }
+  a.block-wrapper-link,
+  a.description-wrapper-link {
+    color: $text-navy;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+
+      h3.title {
+        text-decoration: underline;
+      }
+    }
+    h3.title {
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+    }
+
+    .date_display {
+      color: $date-olive;
+      font-size: 14px;
+    }
+    .media {
+      margin-bottom: calc($gutter * .5);
+    }
+
+    .hero {
+      .date_display {
+        color: $text-navy;
+        font-size: 18px;
+      }
+    }
+
+    .tags {
+      color: $grape-purple;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: calc($gutter * .5);
+      .tag {
+        position:relative;
+        padding-left:15px;
+        padding-right: 15px;
+        &:after {
+          content: "/";
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: $grape-purple;
+        }
+        &:first-child {
+          &:before {
+            content: "/";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $grape-purple;
+          }
+        }
+        &:last-child {
+          content: "";
+        }
+      }
+    }
+
+    .series-name {
+      color: $grape-purple;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .article {
+    padding-bottom: $gutter;
+  }
+
+  //  Layout Styles
+  .article {
+    border-bottom: $border-gray 1px solid;
+    padding-top: $gutter;
+
+    @include breakpoint($bp-small) {
+      padding-top: $gutter;
+      padding-bottom: calc($gutter * .5);
+    }
+    @include breakpoint($bp-med) {
+      padding-bottom: 0;
+      border-bottom: none;
+      border-top: none;
+      margin-bottom: 0;
+      &:only-child {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+  .first-row {
+    .first-column {
+      .article {
+        padding-top: calc($gutter * .5);
+        .date_display {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .one-article-display {
+    .podcast-hero {
+      .first-column {
+        .date_display {
+          display: none;
+        }
+        .media {
+          margin-bottom: 0;
+        }
+        .article-wrapper {
+          flex-direction: column;
+          @include breakpoint($bp-med) {
+            flex-direction: row;
+          }
+        }
+      }
+    }
+    .tags,
+    .series-name {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+      @include breakpoint($bp-med) {
+        display: block;
+      }
+    }
+    .article {
+      border-bottom: none;
+    }
+    .first-row {
+      display: flex;
+      flex-direction: column;
+      .first-column {
+        flex-direction: column;
+        @include breakpoint($bp-small) {
+          flex-direction: row;
+        }
+        .article-wrapper {
+          display:flex;
+          flex-direction: column;
+          @include breakpoint($bp-med) {
+            flex-direction: row;
+          }
+        }
+        .media {
+         flex: 1;
+          @include breakpoint($bp-small) {
+            flex: .7;
+          }
+        }
+        .description-wrapper {
+          flex: 1;
+          padding-left: 0;
+          @include breakpoint($bp-med) {
+            padding-left: calc($gutter * .75);
+            flex: .4;
+          }
+        }
+      }
+    }
+  }
+
+  .three-article-display {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint($bp-med) {
+      flex-direction: row;
+    }
+    .tags,
+    .series-name {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+      @include breakpoint($bp-med) {
+        display: block;
+      }
+    }
+    .description {
+      display: none;
+      @include breakpoint($bp-small) {
+        display: block;
+      }
+      @include breakpoint($bp-med) {
+        display: none;
+      }
+    }
+    .first-row {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      @include breakpoint($bp-med) {
+        flex-direction: row;
+      }
+      &.podcast-hero {
+        .first-column {
+          .article-wrapper {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            @include breakpoint($bp-small) {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+      .first-column {
+        border-right: none;
+        padding-right: 0;
+        flex: 1;
+        @include breakpoint($bp-med) {
+          border-right: $border-gray 1px solid;
+          padding-right: 63px;
+        }
+        .article {
+          border-bottom: $border-gray 1px solid;
+          &:last-child {
+            border-bottom: $border-gray 1px solid;
+            @include breakpoint($bp-med) {
+              border-bottom: none;
+            }
+          }
+        }
+        .article-wrapper {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          .description-wrapper {
+            padding-left: 0;
+          }
+        }
+      }
+      .last-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        @include breakpoint($bp-med) {
+          padding-left: 63px;
+        }
+        .article {
+          &:first-child {
+            border-bottom: $border-gray 1px solid;
+            padding-bottom: $gutter;
+            padding-top: $gutter;
+            @include breakpoint($bp-med) {
+              padding-top: 0;
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+            padding-top: $gutter;
+          }
+          .article-wrapper {
+            flex-direction: column;
+            justify-content: flex-end;
+            @include breakpoint($bp-small) {
+              flex-direction: row-reverse;
+            }
+            .media {
+              justify-self: flex-end;
+              padding-left: 0;
+              flex: 1;
+              margin-bottom: calc($gutter * .5);
+              @include breakpoint($bp-small) {
+                flex: .33;
+                margin-bottom: 0;
+              }
+              @include breakpoint($bp-med) {
+                padding-left: calc($gutter * .75);
+                flex: 1;
+              }
+            }
+            .description-wrapper {
+              flex-direction: row-reverse;
+              justify-self: flex-start;
+              padding-right: 0;
+              flex: 1;
+              @include breakpoint($bp-small) {
+                flex: .66;
+                padding-right: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                padding-right: 0;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+      //  Podcast Hero Styling.
+      &.podcast-hero {
+        .first-column {
+          padding-right: 0;
+          flex: 1;
+          @include breakpoint($bp-small) {
+            flex: .66;
+            padding-right: calc($gutter * .5);
+          }
+          @include breakpoint($bp-med) {
+            flex: .75;
+            padding-right: calc($gutter * .5);
+          }
+          .date_display {
+            display: none;
+          }
+        }
+        .last-column {
+          flex: 1;
+          padding-left: 0;
+          padding-right: 0;
+          .article {
+            .title {
+              margin-bottom: $gutter;
+              @include breakpoint($bp-med) {
+                margin-bottom: 0;
+              }
+            }
+          }
+          @include breakpoint($bp-small) {
+            flex: .33;
+            padding-right: calc($gutter * .5);
+          }
+          @include breakpoint($bp-med) {
+            flex: .25;
+            padding-left: calc($gutter * .5);
+          }
+          .media {
+            margin-bottom: 0;
+            display: block;
+          }
+          @include breakpoint ($bp-med) {
+            .media {
+              display: none;
+            }
+          }
+          .tags,
+          .series-name {
+            display: block;
+            @include breakpoint($bp-small) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .seven-article-display {
+    display: flex;
+    flex-direction: column;
+    .tags,
+    .series-name {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+      @include breakpoint($bp-med) {
+        display: block;
+      }
+    }
+    .first-row {
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+      }
+      .first-column {
+        .article-wrapper {
+          flex-direction: column;
+          margin-bottom: 0;
+          @include breakpoint($bp-med) {
+            margin-bottom: calc($gutter * 1.25);
+            flex-direction: row;
+          }
+        }
+        .media {
+          margin-bottom: calc($gutter * .5);
+          flex:1;
+          @include breakpoint($bp-med) {
+            flex:.65;
+          }
+        }
+        .description-wrapper {
+          flex: 1;
+          padding-left: 0;
+          @include breakpoint($bp-med) {
+            flex:.35;
+            padding-left: $gutter;
+          }
+        }
+      }
+    }
+    .second-row {
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-med) {
+        flex-direction: row;
+      }
+      .description {
+        display: none;
+        @include breakpoint($bp-small) {
+          display: block;
+        }
+        @include breakpoint($bp-med) {
+          display: none;
+        }
+      }
+      .first-column {
+        display: flex;
+        flex-direction: column;
+        border-right: none;
+        padding-right : 0;
+        flex: 1;
+        @include breakpoint($bp-small) {
+          flex: .35;
+        }
+        @include breakpoint($bp-med) {
+          border-right: $border-gray 1px solid;
+          padding-right: calc($gutter * .5);
+        }
+        .article {
+          padding-top: $gutter;
+          @include breakpoint($bp-med) {
+            padding-top: 0;
+          }
+          .article-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            @include breakpoint($bp-small) {
+              flex-direction: row;
+            }
+            @include breakpoint($bp-med) {
+              flex-direction: column;
+            }
+            .media {
+              flex: 1;
+              @include breakpoint($bp-small) {
+                flex: 1.5;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+              }
+            }
+            .description-wrapper {
+              padding-left: 0;
+              flex: 1;
+              @include breakpoint($bp-small) {
+                padding-left: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+      .middle-column {
+        flex-direction: column;
+        padding-right: 0;
+        padding-left: 0;
+        border-right: none;
+        flex: 1;
+        @include breakpoint($bp-small) {
+          flex:.4;
+        }
+        @include breakpoint($bp-med) {
+          padding-right: calc($gutter * .75);
+          padding-left: calc($gutter * .75);
+          border-right: $border-gray 1px solid;
+        }
+        .article {
+          padding-bottom: 11px;
+          padding-top:21px;
+          @include breakpoint($bp-small) {
+            padding-bottom: $gutter;
+          }
+          &:first-child {
+            @include breakpoint($bp-med) {
+              padding-top:0;
+            }
+          }
+          border-bottom: $border-gray 1px solid;
+          &:last-child {
+            border-bottom: none;
+          }
+          .media {
+            margin-bottom: 0;
+          }
+          &:first-child {
+            @include breakpoint($bp-med) {
+              padding-bottom: $gutter;
+            }
+          }
+          .article-wrapper {
+            padding-top: 0;
+            flex-direction: column;
+            @include breakpoint($bp-small) {
+              flex-direction: row-reverse;
+            }
+            .media {
+              margin-left: 0;
+              justify-self: flex-end;
+              flex: 1;
+              margin-bottom: calc($gutter * .5);
+              @include breakpoint($bp-small) {
+                margin-left: 10px;
+                margin-bottom: 0;
+              }
+              @include breakpoint($bp-med) {
+                margin-left: 10px;
+              }
+            }
+            .description-wrapper {
+              flex: 1.5;
+              padding-right: 0;
+              @include breakpoint($bp-small) {
+                padding-right: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+      .last-column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-left: 0;
+        @include breakpoint($bp-small) {
+          flex: .25;
+        }
+        @include breakpoint($bp-med) {
+          padding-left: calc($gutter * .75);
+        }
+        .article {
+          border-bottom: $border-gray 1px solid;
+          padding-bottom: calc($gutter * .5);
+          padding-top: $gutter;
+          @include breakpoint($bp-small) {
+            padding-bottom: $gutter;
+          }
+          &:first-child {
+            @include breakpoint($bp-med) {
+              padding-top:0;
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+          .article-wrapper {
+            flex-direction: column;
+            @include breakpoint($bp-small) {
+              flex-direction: row-reverse;
+            }
+            @include breakpoint($bp-med) {
+              flex-direction: column;
+            }
+            .media {
+              display: block;
+              margin-bottom: calc($gutter * .5);
+              flex: 1;
+              @include breakpoint($bp-small) {
+                flex: 1;
+                margin-bottom: 0;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                display: none;
+                width: 0;
+              }
+            }
+            .description-wrapper {
+              flex: 1;
+              padding-right: 0;
+              @include breakpoint($bp-small) {
+                flex: 1.5;
+                padding-right: $gutter;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                padding-right: 0;
+              }
+              .series-name {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .ama__podcast-player__links {
+    display: none;
+  }
+  .ama__podcast-player {
+    margin-top: 0;
+    margin-bottom: calc($gutter * .5);
+    .ama__image {
+      width: 100%;
+      height: auto;
+      @include breakpoint($bp-small) {
+        width: 230px;
+        height: 230px;
+      }
+    }
+    .ama__podcast-player__date {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
 
