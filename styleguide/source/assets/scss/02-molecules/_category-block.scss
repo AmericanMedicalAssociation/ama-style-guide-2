@@ -95,6 +95,8 @@
     }
   }
   .category-theme__container--right {
+    margin-left:auto;
+    flex-grow: 1;
     .category-theme__stub {
       @include breakpoint($bp-med) {
         border-bottom: 0.5px solid #a1a1a4;
@@ -113,6 +115,7 @@
       .stub__container {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: end;
         @include breakpoint($bp-small max-width) {
           &.stub__has-image {
             margin-bottom: 20px;
