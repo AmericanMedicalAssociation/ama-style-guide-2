@@ -1,0 +1,33 @@
+{% set image = partnerPromo.image %}
+{% set homepage = partnerPromo.homepage ? "ama__partner-promo ama__partner-promo--homepage" : "ama__partner-promo " %}
+
+<div class="{{ homepage }}">
+  {% if image.src is not empty %}
+    <div class="ama__partner-promo__image">
+      {% include '@atoms/image/image.twig' %}
+    </div>
+  {% endif %}
+  <div class="ama__partner-promo__text">
+    {% if partnerPromo.homepage %}
+      {% set heading = partnerPromo.featureHeading %}
+      {% include '@atoms/heading/heading.twig' %}
+      {% set heading = partnerPromo.promoHeading %}
+      {% include '@atoms/heading/heading.twig' %}
+    {% endif %}
+
+    {% set heading = partnerPromo.heading %}
+    {% include '@atoms/heading/heading.twig' with { heading : partnerPromo.heading } %}
+
+    {% if partnerPromo.paragraph.text %}
+      {% include '@atoms/paragraph.twig' with { paragraph: partnerPromo.paragraph } %}
+    {% endif %}
+
+    {% set button = partnerPromo.button %}
+    {% include '@atoms/button/button.twig' %}
+
+    {% if partnerPromo.secondaryButton.text %}
+      {% set button = partnerPromo.secondaryButton %}
+      {% include '@atoms/button/button.twig' %}
+    {% endif %}
+  </div>
+</div>
