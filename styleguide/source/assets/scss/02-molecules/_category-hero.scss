@@ -73,58 +73,27 @@ Styles for the new Category Featured Content Custom Block.
  */
 
 .category-featured-content {
-  padding-top: calc($gutter * .5);
-  padding-bottom: calc($gutter * .5);
-  @include breakpoint($bp-med) {
-    padding-top: calc($gutter);
-    padding-bottom: calc($gutter);
-  }
-  .hero {
-    .article-wrapper {
-      .description-wrapper {
-        padding-left: 0;
-        @include breakpoint($bp-med) {
-          padding-left: calc($gutter * .75);
-        }
-      }
-    }
-  }
-  .article-wrapper {
-    display: flex;
-    .description-wrapper {
-      .flex-parent {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-    .date_display {
-      min-height: calc($gutter * 1.25);
-      text-transform: uppercase;
-    }
-  }
-
+  padding-top: $gutter;
+  padding-bottom: $gutter;
   //  Text Styles
   h2.title {
     font-size: 26px;
     font-weight: $font-weight-bold;
-    margin-bottom: 0;
+    margin-bottom: calc($gutter * .5);
   }
   h3.title,
   .description {
-    margin-bottom: calc($gutter * .5);
+    //just for reset TEMP
+    margin-bottom: 0;
     @include breakpoint($bp-med) {
-      margin-bottom: $gutter;
+
     }
   }
-  .description-wrapper {
-    .description {
-      margin-bottom: $gutter;
-      @include breakpoint($bp-small) {
-        margin-bottom: 0;
-      }
-      @include breakpoint($bp-med) {
-        margin-bottom: $gutter;
-      }
+
+  .media {
+    margin-bottom: 0 !important;
+    img {
+      display: block;
     }
   }
   a.block-wrapper-link,
@@ -132,10 +101,8 @@ Styles for the new Category Featured Content Custom Block.
     color: $text-navy;
     text-decoration: none;
     display: block;
-
     &:hover {
       text-decoration: none;
-
       h3.title {
         text-decoration: underline;
       }
@@ -144,15 +111,10 @@ Styles for the new Category Featured Content Custom Block.
       font-size: 20px;
       font-weight: $font-weight-bold;
     }
-
     .date_display {
       color: $date-olive;
       font-size: 14px;
     }
-    .media {
-      margin-bottom: calc($gutter * .5);
-    }
-
     .hero {
       .date_display {
         color: $text-navy;
@@ -164,7 +126,6 @@ Styles for the new Category Featured Content Custom Block.
       color: $grape-purple;
       font-size: 14px;
       text-transform: uppercase;
-      margin-bottom: calc($gutter * .5);
       .tag {
         position:relative;
         padding-left:15px;
@@ -198,73 +159,163 @@ Styles for the new Category Featured Content Custom Block.
     }
   }
 
-  .article {
-    padding-bottom: $gutter;
+  //  Layout Styles
+  .hero {
+    .article-wrapper {
+      .article {
+        .description-wrapper {
+          padding-left: 0;
+          @include breakpoint($bp-med) {
+            padding-left: calc($gutter * .75);
+          }
+        }
+      }
+    }
+  }
+  .description-wrapper {
+    .tags {
+      padding-top: $gutter;
+      @include breakpoint($bp-med) {
+        padding-top: calc($gutter * .5);
+      }
+    }
+    .description {
+      padding-top: calc($gutter * .5);
+      @include breakpoint($bp-med) {
+        padding-top: calc($gutter * .75);
+      }
+    }
+    .series-name {
+      padding-top: calc($gutter * .25);
+    }
   }
 
-  //  Layout Styles
-  .article {
-    border-bottom: $border-gray 1px solid;
-    padding-top: $gutter;
-
-    @include breakpoint($bp-small) {
-      padding-top: $gutter;
-      padding-bottom: calc($gutter * .5);
+  //  The last item should never have a bottom border.
+  .cat-row {
+    &:last-child {
+      .column {
+        &:last-child {
+          .article {
+            &:last-child {
+              //  Remove bottom border from the final article in the block.
+              border-bottom: none;
+            }
+          }
+        }
+      }
     }
-    @include breakpoint($bp-med) {
-      padding-bottom: 0;
-      border-bottom: none;
-      border-top: none;
-      margin-bottom: 0;
-      &:only-child {
-        padding-top: 0;
-        padding-bottom: 0;
-        border-bottom: none;
+    &:first-child {
+      .column {
+        &:first-child {
+          .article {
+            //  Set date size on all heroes.
+            .date_display {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    //  MASTER PADDING.
+    .column {
+      .article {
+        padding-bottom: calc($gutter * .75);
+        &:first-child {
+          padding-top: calc($gutter * .75);
+          @include breakpoint($bp-med) {
+            padding-top: 0;
+          }
+        }
       }
       &:first-child {
-        padding-top: 0;
+        .article {
+          &:first-child {
+            padding-top: calc($gutter * .75);
+            @include breakpoint($bp-med) {
+              padding-top: 0;
+            }
+            .description-wrapper {
+              padding-left: 0;
+              @include breakpoint($bp-med) {
+                padding-left: calc($gutter * .75);
+              }
+            }
+          }
+        }
+      }
+      .article {
+        &:not(:first-child) {
+          padding-top: calc($gutter * .75);
+        }
+      }
+    }
+
+    .column {
+      .article {
+        border-bottom: $border-gray 1px solid;
+        &:last-child {
+          @include breakpoint($bp-med) {
+            border: none;
+          }
+        }
+
       }
     }
   }
-  .first-row {
-    .first-column {
-      .article {
-        padding-top: calc($gutter * .5);
+
+  .article {
+    .article-wrapper {
+      display: flex;
+      .description-wrapper {
+        .flex-parent {
+          display: flex;
+          flex-direction: column;
+        }
         .date_display {
-          font-size: 18px;
+          min-height: calc($gutter * 1.25);
+          text-transform: uppercase;
+        }
+        .description {
+          display: none;
+          @include breakpoint($bp-small) {
+            display: block;
+            height: auto;
+          }
+          @include breakpoint($bp-med) {
+            display: none;
+          }
+        }
+        .tags,
+        .series-name {
+          display: block;
+          @include breakpoint($bp-small) {
+            display: none;
+          }
+          @include breakpoint($bp-med) {
+            display: block;
+          }
         }
       }
     }
   }
-  .one-article-display {
-    .podcast-hero {
-      .first-column {
-        .date_display {
-          display: none;
+  .podcast-hero {
+    .first-column {
+      .date_display {
+        display: none;
+      }
+      .article-wrapper {
+        flex-direction: column;
+        padding-left: 0;
+        @include breakpoint($bp-med) {
+          flex-direction: row;
         }
         .media {
-          margin-bottom: 0;
-        }
-        .article-wrapper {
           flex-direction: column;
           @include breakpoint($bp-med) {
             flex-direction: row;
           }
         }
       }
-    }
-    .tags,
-    .series-name {
-      display: block;
-      @include breakpoint($bp-small) {
-        display: none;
-      }
-      @include breakpoint($bp-med) {
-        display: block;
-      }
-    }
-    .article {
-      border-bottom: none;
     }
     .first-row {
       display: flex;
@@ -298,31 +349,65 @@ Styles for the new Category Featured Content Custom Block.
       }
     }
   }
+  .one-article-display {
+    display: flex;
+    flex-direction: column;
 
+    .first-row {
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+      }
+      .first-column {
+        .article {
+          padding-bottom: 0;
+        }
+        flex: 1;
+        .article-wrapper {
+          flex: 1;
+          flex-direction: column;
+          @include breakpoint($bp-med) {
+            flex-direction: row;
+          }
+          .media {
+            flex: 1;
+            @include breakpoint($bp-med) {
+              flex: .7;
+            }
+          }
+          .description-wrapper {
+            flex: 1;
+            padding-left: 0;
+            @include breakpoint($bp-med) {
+              flex: .3;
+              padding-left: $gutter;
+            }
+            .description {
+              display: none;
+              @include breakpoint($bp-small) {
+                display: block;
+              }
+              @include breakpoint($bp-med) {
+                display: block;
+              }
+            }
+            .date_display {
+              margin-top: calc($gutter * .25);
+              @include breakpoint($bp-med) {
+                margin-top:0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .three-article-display {
     display: flex;
     flex-direction: column;
     @include breakpoint($bp-med) {
       flex-direction: row;
-    }
-    .tags,
-    .series-name {
-      display: block;
-      @include breakpoint($bp-small) {
-        display: none;
-      }
-      @include breakpoint($bp-med) {
-        display: block;
-      }
-    }
-    .description {
-      display: none;
-      @include breakpoint($bp-small) {
-        display: block;
-      }
-      @include breakpoint($bp-med) {
-        display: none;
-      }
     }
     .first-row {
       display: flex;
@@ -330,18 +415,6 @@ Styles for the new Category Featured Content Custom Block.
       flex: 1;
       @include breakpoint($bp-med) {
         flex-direction: row;
-      }
-      &.podcast-hero {
-        .first-column {
-          .article-wrapper {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            @include breakpoint($bp-small) {
-              flex-direction: column;
-            }
-          }
-        }
       }
       .first-column {
         border-right: none;
@@ -352,20 +425,19 @@ Styles for the new Category Featured Content Custom Block.
           padding-right: 63px;
         }
         .article {
-          border-bottom: $border-gray 1px solid;
-          &:last-child {
-            border-bottom: $border-gray 1px solid;
-            @include breakpoint($bp-med) {
-              border-bottom: none;
+          .article-wrapper {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            .description-wrapper {
+              padding-left: 0;
+              @include breakpoint($bp-med) {
+                padding-left: 0;
+              }
+              .date_display {
+                margin-top: calc($gutter * .25);
+              }
             }
-          }
-        }
-        .article-wrapper {
-          display: flex;
-          flex: 1;
-          flex-direction: column;
-          .description-wrapper {
-            padding-left: 0;
           }
         }
       }
@@ -378,18 +450,6 @@ Styles for the new Category Featured Content Custom Block.
           padding-left: 63px;
         }
         .article {
-          &:first-child {
-            border-bottom: $border-gray 1px solid;
-            padding-bottom: $gutter;
-            padding-top: $gutter;
-            @include breakpoint($bp-med) {
-              padding-top: 0;
-            }
-          }
-          &:last-child {
-            border-bottom: none;
-            padding-top: $gutter;
-          }
           .article-wrapper {
             flex-direction: column;
             justify-content: flex-end;
@@ -400,10 +460,8 @@ Styles for the new Category Featured Content Custom Block.
               justify-self: flex-end;
               padding-left: 0;
               flex: 1;
-              margin-bottom: calc($gutter * .5);
               @include breakpoint($bp-small) {
                 flex: .33;
-                margin-bottom: 0;
               }
               @include breakpoint($bp-med) {
                 padding-left: calc($gutter * .75);
@@ -422,7 +480,12 @@ Styles for the new Category Featured Content Custom Block.
               @include breakpoint($bp-med) {
                 flex: 1;
                 padding-right: 0;
-                padding-left: 0;
+              }
+              .date_display {
+                margin-top: calc($gutter * .25);
+                @include breakpoint($bp-small) {
+                  margin-top: 0;
+                }
               }
             }
           }
@@ -441,37 +504,39 @@ Styles for the new Category Featured Content Custom Block.
             flex: .75;
             padding-right: calc($gutter * .5);
           }
-          .date_display {
-            display: none;
+          .article {
+            .article-wrapper {
+              display: flex;
+              flex: 1;
+              flex-direction: column;
+              padding-left: 0;
+              @include breakpoint($bp-small) {
+                flex-direction: column;
+              }
+            }
           }
         }
         .last-column {
           flex: 1;
           padding-left: 0;
           padding-right: 0;
-          .article {
-            .title {
-              margin-bottom: $gutter;
-              @include breakpoint($bp-med) {
-                margin-bottom: 0;
-              }
-            }
-          }
           @include breakpoint($bp-small) {
             flex: .33;
-            padding-right: calc($gutter * .5);
+            padding-right: calc($gutter * .75);
           }
           @include breakpoint($bp-med) {
             flex: .25;
-            padding-left: calc($gutter * .5);
+            padding-left: calc($gutter * .75);
           }
           .media {
-            margin-bottom: 0;
             display: block;
           }
           @include breakpoint ($bp-med) {
             .media {
               display: none;
+              img {
+                display: none;
+              }
             }
           }
           .tags,
@@ -488,44 +553,52 @@ Styles for the new Category Featured Content Custom Block.
   .seven-article-display {
     display: flex;
     flex-direction: column;
-    .tags,
-    .series-name {
-      display: block;
-      @include breakpoint($bp-small) {
-        display: none;
-      }
-      @include breakpoint($bp-med) {
-        display: block;
-      }
-    }
     .first-row {
+      margin-bottom: 0;
       display: flex;
       flex-direction: column;
       @include breakpoint($bp-small) {
         flex-direction: row;
       }
+      @include breakpoint($bp-med) {
+        margin-bottom: calc($gutter * 1.25);
+      }
       .first-column {
+        flex: 1;
         .article-wrapper {
+          flex: 1;
           flex-direction: column;
-          margin-bottom: 0;
           @include breakpoint($bp-med) {
-            margin-bottom: calc($gutter * 1.25);
             flex-direction: row;
           }
-        }
-        .media {
-          margin-bottom: calc($gutter * .5);
-          flex:1;
-          @include breakpoint($bp-med) {
-            flex:.65;
+          .media {
+            flex: 1;
+            @include breakpoint($bp-med) {
+              flex:.7;
+            }
           }
-        }
-        .description-wrapper {
-          flex: 1;
-          padding-left: 0;
-          @include breakpoint($bp-med) {
-            flex:.35;
-            padding-left: $gutter;
+          .description-wrapper {
+            flex: 1;
+            padding-left: 0;
+            @include breakpoint($bp-med) {
+              flex:.3;
+              padding-left: $gutter;
+            }
+            .description {
+              display: none;
+              @include breakpoint($bp-small) {
+                display: block;
+              }
+              @include breakpoint($bp-med) {
+                display: block;
+              }
+            }
+            .date_display {
+              margin-top: calc($gutter * .25);
+              @include breakpoint($bp-med) {
+                margin-top:0;
+              }
+            }
           }
         }
       }
@@ -536,13 +609,10 @@ Styles for the new Category Featured Content Custom Block.
       @include breakpoint($bp-med) {
         flex-direction: row;
       }
-      .description {
-        display: none;
-        @include breakpoint($bp-small) {
-          display: block;
-        }
+      .date_display {
+        margin-top: calc($gutter * .25);
         @include breakpoint($bp-med) {
-          display: none;
+          margin-top:0;
         }
       }
       .first-column {
@@ -556,13 +626,9 @@ Styles for the new Category Featured Content Custom Block.
         }
         @include breakpoint($bp-med) {
           border-right: $border-gray 1px solid;
-          padding-right: calc($gutter * .5);
+          padding-right: calc($gutter * .75);
         }
         .article {
-          padding-top: $gutter;
-          @include breakpoint($bp-med) {
-            padding-top: 0;
-          }
           .article-wrapper {
             display: flex;
             flex-direction: column;
@@ -610,30 +676,7 @@ Styles for the new Category Featured Content Custom Block.
           border-right: $border-gray 1px solid;
         }
         .article {
-          padding-bottom: 11px;
-          padding-top:21px;
-          @include breakpoint($bp-small) {
-            padding-bottom: $gutter;
-          }
-          &:first-child {
-            @include breakpoint($bp-med) {
-              padding-top:0;
-            }
-          }
-          border-bottom: $border-gray 1px solid;
-          &:last-child {
-            border-bottom: none;
-          }
-          .media {
-            margin-bottom: 0;
-          }
-          &:first-child {
-            @include breakpoint($bp-med) {
-              padding-bottom: $gutter;
-            }
-          }
           .article-wrapper {
-            padding-top: 0;
             flex-direction: column;
             @include breakpoint($bp-small) {
               flex-direction: row-reverse;
@@ -642,10 +685,8 @@ Styles for the new Category Featured Content Custom Block.
               margin-left: 0;
               justify-self: flex-end;
               flex: 1;
-              margin-bottom: calc($gutter * .5);
               @include breakpoint($bp-small) {
                 margin-left: 10px;
-                margin-bottom: 0;
               }
               @include breakpoint($bp-med) {
                 margin-left: 10px;
@@ -676,20 +717,6 @@ Styles for the new Category Featured Content Custom Block.
           padding-left: calc($gutter * .75);
         }
         .article {
-          border-bottom: $border-gray 1px solid;
-          padding-bottom: calc($gutter * .5);
-          padding-top: $gutter;
-          @include breakpoint($bp-small) {
-            padding-bottom: $gutter;
-          }
-          &:first-child {
-            @include breakpoint($bp-med) {
-              padding-top:0;
-            }
-          }
-          &:last-child {
-            border-bottom: none;
-          }
           .article-wrapper {
             flex-direction: column;
             @include breakpoint($bp-small) {
@@ -700,15 +727,12 @@ Styles for the new Category Featured Content Custom Block.
             }
             .media {
               display: block;
-              margin-bottom: calc($gutter * .5);
               flex: 1;
-              @include breakpoint($bp-small) {
-                flex: 1;
-                margin-bottom: 0;
-              }
               @include breakpoint($bp-med) {
-                flex: 1;
                 display: none;
+                img {
+                  display: none;
+                }
                 width: 0;
               }
             }
@@ -737,17 +761,31 @@ Styles for the new Category Featured Content Custom Block.
   }
   .ama__podcast-player {
     margin-top: 0;
-    margin-bottom: calc($gutter * .5);
+    margin-bottom: 0;
     .ama__image {
       width: 100%;
       height: auto;
+      margin-left: 0;
+      margin-right: 0;
       @include breakpoint($bp-small) {
         width: 230px;
         height: 230px;
       }
+      @include breakpoint($bp-med) {
+        margin-right: 24px;
+      }
+      img {
+        margin: 0;
+        @include breakpoint($bp-small) {
+          margin: 0;
+        }
+      }
     }
     .ama__podcast-player__date {
       margin-bottom: 0;
+    }
+    .ama__podcast-player__episode_info {
+      margin-bottom: calc($gutter * .75);
     }
   }
 }
