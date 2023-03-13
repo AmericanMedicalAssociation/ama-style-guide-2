@@ -72,6 +72,14 @@
 Styles for the new Category Featured Content Custom Block.
  */
 
+.ama__category {
+  .category-featured-content {
+    .description {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .category-featured-content {
   padding-top: $gutter;
   padding-bottom: $gutter;
@@ -83,11 +91,7 @@ Styles for the new Category Featured Content Custom Block.
   }
   h3.title,
   .description {
-    //just for reset TEMP
     margin-bottom: 0;
-    @include breakpoint($bp-med) {
-
-    }
   }
 
   .media {
@@ -114,12 +118,6 @@ Styles for the new Category Featured Content Custom Block.
     .date_display {
       color: $date-olive;
       font-size: 14px;
-    }
-    .hero {
-      .date_display {
-        color: $text-navy;
-        font-size: 18px;
-      }
     }
 
     .tags {
@@ -199,6 +197,10 @@ Styles for the new Category Featured Content Custom Block.
             &:last-child {
               //  Remove bottom border from the final article in the block.
               border-bottom: none;
+              padding-bottom: 0;
+              @include breakpoint($bp-med) {
+                padding-bottom: calc($gutter * .75);
+              }
             }
           }
         }
@@ -217,6 +219,19 @@ Styles for the new Category Featured Content Custom Block.
       }
     }
     //  MASTER PADDING.
+    &.first-row {
+      .first-column {
+        .article {
+          // No extra bottom padding on Heroes.
+          &:first-child {
+            padding-bottom: calc($gutter * .75);
+            @include breakpoint($bp-med) {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
     .column {
       .article {
         padding-bottom: calc($gutter * .75);
@@ -386,9 +401,6 @@ Styles for the new Category Featured Content Custom Block.
             .description {
               display: none;
               @include breakpoint($bp-small) {
-                display: block;
-              }
-              @include breakpoint($bp-med) {
                 display: block;
               }
             }
@@ -566,6 +578,8 @@ Styles for the new Category Featured Content Custom Block.
       .first-column {
         flex: 1;
         .article-wrapper {
+          .article {
+          }
           flex: 1;
           flex-direction: column;
           @include breakpoint($bp-med) {
@@ -589,9 +603,6 @@ Styles for the new Category Featured Content Custom Block.
               @include breakpoint($bp-small) {
                 display: block;
               }
-              @include breakpoint($bp-med) {
-                display: block;
-              }
             }
             .date_display {
               margin-top: calc($gutter * .25);
@@ -611,7 +622,7 @@ Styles for the new Category Featured Content Custom Block.
       }
       .date_display {
         margin-top: calc($gutter * .25);
-        @include breakpoint($bp-med) {
+        @include breakpoint($bp-small) {
           margin-top:0;
         }
       }
@@ -656,6 +667,15 @@ Styles for the new Category Featured Content Custom Block.
               }
               @include breakpoint($bp-med) {
                 padding-left: 0;
+              }
+              .date_display {
+                margin-top: calc($gutter * .25);
+                @include breakpoint($bp-small) {
+                  margin-top:0;
+                }
+                @include breakpoint($bp-med) {
+                  margin-top: calc($gutter * .25);
+                }
               }
             }
           }
@@ -747,9 +767,6 @@ Styles for the new Category Featured Content Custom Block.
                 flex: 1;
                 padding-right: 0;
               }
-              .series-name {
-                display: none;
-              }
             }
           }
         }
@@ -765,14 +782,11 @@ Styles for the new Category Featured Content Custom Block.
     .ama__image {
       width: 100%;
       height: auto;
-      margin-left: 0;
       margin-right: 0;
       @include breakpoint($bp-small) {
         width: 230px;
         height: 230px;
-      }
-      @include breakpoint($bp-med) {
-        margin-right: 24px;
+        margin-right: calc($gutter * .75);
       }
       img {
         margin: 0;
@@ -789,6 +803,3 @@ Styles for the new Category Featured Content Custom Block.
     }
   }
 }
-
-
-
