@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1678489160" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1678489160" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1678721579" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1678721579" media="all" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1678489160" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1678489160" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1678721579" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1678721579" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -47,7 +47,7 @@
   <div class="sg-pattern-head">
     <h3 class="sg-pattern-title">
       <a href="../../patterns/02-molecules-people-listing-people-listing/02-molecules-people-listing-people-listing.html" class="patternLink" data-patternpartial="molecules-people-listing" title="Link to Pattern">
-        people listing
+        People Listing
         
               </a>
     </h3>
@@ -85,7 +85,7 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-molecules-people-listing" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-link","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-content-with-label","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-button","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"}],"lineageR":[{"lineagePattern":"pages-people-listing","lineagePath":"..\/..\/patterns\/05-pages-people-listing\/05-pages-people-listing.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"people listing"},"patternDesc":"","patternExtension":"twig","patternName":"people listing","patternPartial":"molecules-people-listing","patternState":""}
+    {"lineage":[{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-link","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"molecules-content-with-label","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"},{"lineagePattern":"atoms-button","lineagePath":"..\/..\/patterns\/02-molecules-people-listing-people-listing\/02-molecules-people-listing-people-listing.html"}],"lineageR":[{"lineagePattern":"pages-people-listing","lineagePath":"..\/..\/patterns\/05-pages-people-listing\/05-pages-people-listing.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"people listing"},"patternDesc":"<h3>Description<\/h3>\n\n<p>A people listing molecule consists of an optional image, optional bio, and heading as well as an optional CTA.<\/p>\n\n<h3>Variant options<\/h3>\n\n<ul>\n<li><a href=\"?p=molecules-people-listing-as-card\">As Card<\/a><\/li>\n<li><a href=\"?p=molecules-people-listing-as-card-with-cta\">As Card with CTA<\/a><\/li>\n<\/ul>\n\n<p><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5402\">EWL-5402<\/a><\/p>\n\n<h3>Use Case<\/h3>\n\n<p>The cards are used on the Hub pages<\/p>\n\n<pre><code>\"peopleListingCard\": {\n  image {\n    alt:\n      type: string \/ required\n    src:\n      type: string (url) \/ required\n    height:\n      type: string \/ required\n    width:\n      type: string \/ required\n  }\n  heading {\n     level:\n       type: string \/ required\n     text:\n       type: string \/ required\n     class:\n       type: string \/ optional\n   }\n  \"speciality\": {\n    heading {\n      level:\n        type: string \/ required\n      text:\n        type: string \/ required\n      class:\n        type: string \/ optional\n    }\n     paragraph {\n      text:\n        type: string\n      class:\n        type: string \/ optional\n    }\n  },\n\n\n  \"details\": [\n    {\n      heading {\n        level:\n          type: string \/ required\n        text:\n          type: string \/ required\n        class:\n          type: string \/ optional\n      }\n       paragraph {\n        text:\n          type: string\n        class:\n          type: string \/ optional\n      }\n    }\n  ],\n  button: {\n    href:\n      type: string (url) \/ optional\n    info: \n      type: string \/ optional\n    text: \n      type: string \/ required\n    type:\n      type: string \/ optional (ex: \"button\", \"submit\")\n    style:\n      type: string \/ optional (\"secondary\" or \"\")\n     size:\n      type: string \/ optional (\"small\", \"block\" or \"\")\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"People Listing","patternPartial":"molecules-people-listing","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="molecules-people-listing-as-card-with-cta" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -297,10 +297,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1678489160">
+<script id="pl-js-polyfill-insert-1678721579">
   (function() {
     if (self != top) {
-      var cb = '1678489160';
+      var cb = '1678721579';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -310,10 +310,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1678489160">
+<script id="pl-js-insert-1678721579">
   (function() {
     if (self != top) {
-      var cb = '1678489160';
+      var cb = '1678721579';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
