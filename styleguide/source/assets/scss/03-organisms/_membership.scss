@@ -299,9 +299,7 @@ a.ama__membership {
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership {
     display: flex;
     flex-direction: column-reverse;
-    border-bottom: 0.5px solid #000;
     padding-bottom: 28px;
-    margin-bottom: 28px;
     width: 100%;
     background: none;
     align-items: flex-start;
@@ -311,7 +309,6 @@ a.ama__membership {
     @include breakpoint($bp-med) {
       padding-bottom: 56px;
       margin-top: 56px;
-      margin-bottom: 41px;
     }
     .ama__membership-content {
       background: none;
@@ -357,6 +354,7 @@ a.ama__membership {
           max-width: 224px;
         }
         a.ama__button {
+          color: $text-navy;
           padding: 8px 14px 7px;
           line-height: 1;
           height: unset;
@@ -401,9 +399,7 @@ a.ama__membership {
     display: flex;
     flex-direction: column-reverse;
     column-gap: 120px;
-    border-bottom: 0.5px solid #000;
     padding-bottom: 28px;
-    margin-bottom: 28px;
     @include breakpoint($bp-small) {
       flex-direction: row;
       column-gap: 17px;
@@ -412,7 +408,6 @@ a.ama__membership {
       column-gap: 120px;
       padding-bottom: 56px;
       margin-top: 56px;
-      margin-bottom: 41px;
     }
     .ama__membership-content {
       background: none;
@@ -451,6 +446,7 @@ a.ama__membership {
           max-width: 224px;
         }
         a.ama__button {
+          color: $text-navy;
           padding: 8px 14px 7px;
           line-height: 1;
           height: unset;

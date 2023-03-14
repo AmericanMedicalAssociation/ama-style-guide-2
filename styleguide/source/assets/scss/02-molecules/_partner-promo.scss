@@ -70,14 +70,11 @@
   display: flex;
   flex-direction: column-reverse;
   padding-bottom: 28px;
-  margin-bottom: 28px;
-  border-bottom: 0.5px solid #000;
   @include breakpoint($bp-small) {
     flex-direction: row;
   }
   @include breakpoint($bp-med) {
     padding-bottom: 56px;
-    margin-bottom: 41px;
   }
   .ama__partner-promo__text {
     display: block;
@@ -103,6 +100,7 @@
         max-width: 224px;
       }
       a.ama__button {
+        color: $text-navy;
         padding: 8px 14px 7px;
       }
     }
@@ -133,7 +131,6 @@
   column-gap: 120px;
   padding-bottom: 28px;
   margin-bottom: 28px;
-  border-bottom: 0.5px solid #000;
   @include breakpoint($bp-small) {
     flex-direction: row;
     column-gap: 17px;
@@ -141,7 +138,6 @@
   @include breakpoint($bp-med) {
     column-gap: 120px;
     padding-bottom: 56px;
-    margin-bottom: 41px;
   }
   .ama__partner-promo__text {
     display: block;
@@ -163,6 +159,7 @@
         max-width: 224px;
       }
       a.ama__button {
+        color: $text-navy;
         padding: 8px 14px 7px;
       }
     }
