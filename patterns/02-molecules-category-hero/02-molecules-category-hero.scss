@@ -80,9 +80,15 @@ Styles for the new Category Featured Content Custom Block.
   }
 }
 
+
+
 .category-featured-content {
-  padding-top: $gutter;
-  padding-bottom: $gutter;
+  padding-top: 0;
+  padding-bottom: 0;
+  @include breakpoint($bp-med) {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
   //  Text Styles
   h2.title {
     font-size: 26px;
@@ -171,25 +177,16 @@ Styles for the new Category Featured Content Custom Block.
     }
   }
   .description-wrapper {
-    .tags {
-      padding-top: $gutter;
-      @include breakpoint($bp-med) {
-        padding-top: calc($gutter * .5);
-      }
-    }
     .description {
       padding-top: calc($gutter * .5);
       @include breakpoint($bp-med) {
         padding-top: calc($gutter * .75);
       }
     }
-    .series-name {
-      padding-top: calc($gutter * .25);
-    }
   }
 
   //  The last item should never have a bottom border.
-  .cat-row {
+  .block-row {
     &:last-child {
       .column {
         &:last-child {
@@ -197,9 +194,9 @@ Styles for the new Category Featured Content Custom Block.
             &:last-child {
               //  Remove bottom border from the final article in the block.
               border-bottom: none;
-              padding-bottom: 0;
+              padding-bottom: calc($gutter * .75);
               @include breakpoint($bp-med) {
-                padding-bottom: calc($gutter * .75);
+
               }
             }
           }
@@ -256,6 +253,9 @@ Styles for the new Category Featured Content Custom Block.
               }
             }
           }
+          &.hero {
+            padding-top: 0;
+          }
         }
       }
       .article {
@@ -289,6 +289,10 @@ Styles for the new Category Featured Content Custom Block.
         .date_display {
           min-height: calc($gutter * 1.25);
           text-transform: uppercase;
+          //&.empty {
+           // min-height: 0;
+           // display: none;
+         // }
         }
         .description {
           display: none;
@@ -300,14 +304,29 @@ Styles for the new Category Featured Content Custom Block.
             display: none;
           }
         }
-        .tags,
-        .series-name {
+        .tag-wrapper {
+          padding-top: calc($gutter * .75);
           display: block;
           @include breakpoint($bp-small) {
             display: none;
           }
           @include breakpoint($bp-med) {
             display: block;
+          }
+          &.hide {
+            display: none;
+          }
+          &.has-tags {
+            &.has-series-name {
+              .series-name {
+                padding-top: calc($gutter * .25);
+              }
+            }
+          }
+          &.has-series-name {
+            .series-name {
+              padding-top: 0;
+            }
           }
         }
       }
@@ -374,6 +393,33 @@ Styles for the new Category Featured Content Custom Block.
       @include breakpoint($bp-small) {
         flex-direction: row;
       }
+      &.hero-align-right {
+        .first-column {
+          .article.hero {
+            .article-wrapper {
+              @include breakpoint($bp-med) {
+                flex-direction: row-reverse;
+              }
+              .media {
+                flex: 1;
+                @include breakpoint($bp-med) {
+                  flex: .7;
+                }
+              }
+              .description-wrapper {
+                flex: 1;
+                padding-right: 0;
+                padding-left: 0;
+                @include breakpoint($bp-med) {
+                  flex: .3;
+                  padding-right: $gutter;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
       .first-column {
         .article {
           padding-bottom: 0;
@@ -415,9 +461,14 @@ Styles for the new Category Featured Content Custom Block.
       }
     }
   }
+
   .three-article-display {
     display: flex;
     flex-direction: column;
+    pading-top: $gutter;
+    @include breakpoint($bp-small) {
+      pading-top: 0;
+    }
     @include breakpoint($bp-med) {
       flex-direction: row;
     }
@@ -427,6 +478,27 @@ Styles for the new Category Featured Content Custom Block.
       flex: 1;
       @include breakpoint($bp-med) {
         flex-direction: row;
+      }
+      &.hero-align-right {
+        @include breakpoint($bp-med) {
+          flex-direction: row-reverse;
+        }
+        .first-column {
+          padding-left: 0;
+          border-left: none;
+          @include breakpoint($bp-med) {
+            border-right: none;
+            border-left: $border-gray 1px solid;
+            padding-left: 63px;
+            padding-right: 0;
+          }
+        }
+        .last-column {
+          @include breakpoint($bp-med) {
+            padding-right: 63px;
+            padding-left: 0;
+          }
+        }
       }
       .first-column {
         border-right: none;
@@ -505,6 +577,18 @@ Styles for the new Category Featured Content Custom Block.
       }
       //  Podcast Hero Styling.
       &.podcast-hero {
+        &.hero-align-right {
+          .first-column {
+            padding-right: 0;
+            padding-left: 0;
+            @include breakpoint($bp-med) {
+              padding-left: calc($gutter * .75);
+            }
+          }
+          .last-column {
+            padding-left: 0;
+          }
+        }
         .first-column {
           padding-right: 0;
           flex: 1;
@@ -551,13 +635,6 @@ Styles for the new Category Featured Content Custom Block.
               }
             }
           }
-          .tags,
-          .series-name {
-            display: block;
-            @include breakpoint($bp-small) {
-              display: none;
-            }
-          }
         }
       }
     }
@@ -574,6 +651,25 @@ Styles for the new Category Featured Content Custom Block.
       }
       @include breakpoint($bp-med) {
         margin-bottom: calc($gutter * 1.25);
+      }
+      &.hero-align-right {
+        .first-column {
+          .article.hero {
+            .article-wrapper {
+              @include breakpoint($bp-med) {
+                flex-direction: row-reverse;
+              }
+              .description-wrapper {
+                padding-right: 0;
+                padding-left: 0;
+                @include breakpoint($bp-med) {
+                  padding-right: $gutter;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
       }
       .first-column {
         flex: 1;
