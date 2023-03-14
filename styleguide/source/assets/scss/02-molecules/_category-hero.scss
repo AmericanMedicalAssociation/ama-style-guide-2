@@ -194,9 +194,9 @@ Styles for the new Category Featured Content Custom Block.
             &:last-child {
               //  Remove bottom border from the final article in the block.
               border-bottom: none;
-              padding-bottom: 0;
+              padding-bottom: calc($gutter * .75);
               @include breakpoint($bp-med) {
-                padding-bottom: calc($gutter * .75);
+
               }
             }
           }
@@ -252,6 +252,9 @@ Styles for the new Category Featured Content Custom Block.
                 padding-left: calc($gutter * .75);
               }
             }
+          }
+          &.hero {
+            padding-top: 0;
           }
         }
       }
@@ -458,6 +461,10 @@ Styles for the new Category Featured Content Custom Block.
   .three-article-display {
     display: flex;
     flex-direction: column;
+    pading-top: $gutter;
+    @include breakpoint($bp-small) {
+      pading-top: 0;
+    }
     @include breakpoint($bp-med) {
       flex-direction: row;
     }
@@ -573,6 +580,9 @@ Styles for the new Category Featured Content Custom Block.
             @include breakpoint($bp-med) {
               padding-left: calc($gutter * .75);
             }
+          }
+          .last-column {
+            padding-left: 0;
           }
         }
         .first-column {
