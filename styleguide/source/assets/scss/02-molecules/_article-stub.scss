@@ -1,6 +1,7 @@
 .ama__article-stub {
   a {
     text-decoration: none;
+    line-height: 1;
 
     &:hover {
       text-decoration: underline;
@@ -10,6 +11,8 @@
   &__title {
     padding: 0;
     width: 100%;
+    font-size: 20px;
+    line-height: 26px;
   }
 
   &__copy {
@@ -73,9 +76,6 @@
       width: 75%;
     }
   }
-  .paragraph--type--series-related-article .ama__article-stub__description {
-    margin-top: -7px;
-  }
   .related-series-tag {
     display: block;
     margin-top: 7px;
@@ -84,7 +84,6 @@
       display:block;
       color: $purple;
       line-height: 16px;
-      font-weight: $font-weight-bold;
     }
   }
   &--small {
@@ -213,6 +212,34 @@
       span,
       .read_time h3 {
         font-size: 12px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tags {
+    color: $grape-purple;
+    font-size: 14px;
+    text-transform: uppercase;
+    .tag {
+      position:relative;
+      padding-left:15px;
+      padding-right: 15px;
+      &:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $grape-purple;
+      }
+      &:first-child {
+        &:before {
+          content: "/";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: $grape-purple;
+        }
       }
     }
   }

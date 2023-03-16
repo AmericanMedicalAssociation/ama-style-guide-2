@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @include breakpoint($bp-med min-width) {
       flex-wrap: nowrap;
@@ -19,17 +20,41 @@
     margin-left: 0;
     @include gutter($margin-bottom-full...);
     width: 100%;
+    max-width: unset;
 
     &:first-child {
       margin-left: 0;
     }
 
+    @include breakpoint($bp-small max-width) {
+      &:last-of-type {
+        margin-bottom: 33px;
+      }
+    }
+
     @include breakpoint($bp-small min-width) {
       @include gutter($margin-left-full...);
-      @include gutter($margin-bottom-full...);
-      width: 47%;
+      margin-bottom: 25px;
+      width: 45%;
+      max-width: 303px;
+      flex: 1 1 auto;
+      &:last-of-type,
+      &:nth-of-type(3) {
+        border-top: .5px solid $border-gray;
+        padding-top: 25px;
+      }
       &:nth-of-type(3) {
         margin-left: 0;
+      }
+      &:nth-of-type(even) {
+        &:before {
+          content: "";
+          display: block;
+          border-left: .5px solid $border-gray;
+          position: absolute;
+          height: 40%;
+          left: 50%;
+        }
       }
       &.five-up {
         width: 30%;
@@ -39,6 +64,11 @@
     @include breakpoint($bp-med min-width) {
       @include gutter($margin-left-full...);
       width: 25%;
+      &:last-of-type,
+      &:nth-of-type(3) {
+        padding-top: 0;
+        border-top: none;
+      }
       &:nth-of-type(3) {
         @include gutter($margin-left-full...);
         &.five-up {
@@ -47,6 +77,12 @@
       }
       &.five-up {
         width: 33%;
+      }
+      &:nth-of-type(even) {
+        margin-left: 28px;
+      }
+      &:before {
+        display: none !important;
       }
     }
     @include breakpoint($bp-large min-width) {
@@ -62,6 +98,9 @@
 
   .ama__article-stub__copy {
     padding: 0;
+    display: block;
+    min-height: 15px;
+    margin-bottom: 7px;
   }
   .grid-container {
     &:last-child {
