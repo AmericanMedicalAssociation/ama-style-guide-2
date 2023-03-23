@@ -298,10 +298,23 @@
     color: $purple;
     font-weight: 800;
   }
-  .ama__subscribe-promo__form .ama__checkbox span {
-    color: $text-navy;
-    font-size: 10px;
-    text-transform: initial;
+  .ama__subscribe-promo__form .ama__checkbox {
+    .ui-checkboxradio-icon {
+      border: 1px solid $purple;
+      border-radius: 2px;
+      width: 13px;
+      min-width: 13px;
+      height: 16px;
+  
+    }
+    span.us-verify {
+      color: $text-navy;
+      font-size: 10px;
+      text-transform: initial;
+    }
+    &.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon {
+      background-position: -66px -145px;
+    }
   }
 
   .ama__subscribe-promo__form_page .ama__subscribe-promo__email-subscribe-container .form-item-page-mr-email input[type=text] {
@@ -312,9 +325,11 @@
   .ama__subscribe-promo__form .ama__button {
     background-color: $orange;
     color: $black;
+    font-weight: bold;
     width: 100%;
     max-width: 220px;
     margin: 0;
+    text-transform: none;
   }
 
   .ama__subscribe-promo--media {
@@ -329,6 +344,10 @@
     @include breakpoint($bp-med) {
       margin-left: auto;
     }
+  }
+
+  .form-item--error-message.active-error {
+    color: $black;
   }
 }
 
@@ -381,6 +400,7 @@
   .ama__subscribe-promo__form .ama__button {
     background-color: $orange;
     color: $black;
+    font-weight: bold;
     width: 100%;
     max-width: 220px;
     margin: 0;
