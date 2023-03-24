@@ -18,12 +18,17 @@
 
   .ama__article-stub {
     margin-left: 0;
-    @include gutter($margin-bottom-full...);
+    margin-bottom: 26px;
     width: 100%;
     max-width: unset;
+    border-bottom: 0.5px solid $border-gray;
 
     &:first-child {
       margin-left: 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
     }
 
     @include breakpoint($bp-small max-width) {
@@ -38,6 +43,7 @@
       width: 45%;
       max-width: 303px;
       flex: 1 1 auto;
+      border-bottom: none;
       &:last-of-type,
       &:nth-of-type(3) {
         border-top: .5px solid $border-gray;
@@ -64,6 +70,26 @@
     @include breakpoint($bp-med min-width) {
       @include gutter($margin-left-full...);
       width: 25%;
+      max-width: 250px;
+      &:first-of-type {
+        // The 2.1 is bases off a 29.5px margin in a 1400px wide container.
+        // Someone forgot that global max container size is actually 1140px...
+        margin-right: 2.1%;
+      }
+      &:nth-of-type(even),
+      &:nth-of-type(3) {
+        margin-left: 2.1%;
+        margin-right: 2.1%;
+        position: relative;
+        &:before {
+          content: "";
+          display: block;
+          border-left: .5px solid $border-gray;
+          position: absolute;
+          height: 330px;
+          left: -10%;
+        }
+      }
       &:last-of-type,
       &:nth-of-type(3) {
         padding-top: 0;
@@ -77,12 +103,6 @@
       }
       &.five-up {
         width: 33%;
-      }
-      &:nth-of-type(even) {
-        margin-left: 28px;
-      }
-      &:before {
-        display: none !important;
       }
     }
     @include breakpoint($bp-large min-width) {
