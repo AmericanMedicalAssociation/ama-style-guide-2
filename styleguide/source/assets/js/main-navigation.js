@@ -16,16 +16,25 @@
           productNavHeight = 0,
           categoryNavMenuHeight = $('.ama_category_navigation_menu').outerHeight(),
           categoryNavMenuResizedHeight = 0,
-          windowWidth = $(window).width();
+          windowWidth = $(window).width(),
+          $alert_banner = $('.ama__alert__wrap');
 
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
       var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
 
+      // Set product nav height if present.
       if($productNav.length && $productNav.is(':visible') ){
         productNavHeight = $productNav.height();
       } else {
         productNavHeight = 0;
+      }
+
+      // Set alert banner height if present.
+      if($alert_banner.length && $alert_banner.is(':visible')) {
+        alertBannerHeight = $alert_banner.outerHeight();
+      } else {
+        alertBannerHeight = 0;
       }
 
         // Calculate whether or not the category nav should have scrollbars
@@ -45,7 +54,7 @@
         if (categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight > viewportHeight && !agentID) {
 
           // Set the menu dropdown the same as viewport to enable scrolling
-          var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight;
+          var categoryNavMenuHeightResized = categoryNavMenuResizedHeight - $mainNav.outerHeight() - productNavHeight - alertBannerHeight;
           $categoryNavigationMenuGroup.addClass('scroll').outerHeight(categoryNavMenuHeightResized);
 
           $categoryNavigationMenuGroup.on('show.smapi', function(e, menu) {
@@ -69,7 +78,7 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight) > viewportHeight) {
+            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
               bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup, {
                 allowTouchMove: function allowTouchMove(el) {
                   while (el && el !== document.body) {
