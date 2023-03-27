@@ -1,5 +1,6 @@
 .ama__subcategory-exploration {
-  border-bottom: solid 1px $gray-50;
+  border: solid $purple;
+  border-width: 1px 0;
   overflow: hidden;
   padding: 0 0 calc($gutter/4) 0;
 
@@ -44,13 +45,15 @@
     h2 {
       text-decoration: none;
       padding: 0;
-      font-weight: $font-weight-semibold;
-      font-size: 18px;
+      font-size: 12px;
+      font-weight: 300;
       display: inline;
+      padding: 0 45px 0 0 ;
+      text-transform: uppercase;
 
       @include breakpoint($bp-small) {
-        font-weight: $font-weight-semibold;
-        font-size: 26px;
+        font-weight: 300;
+        font-size: 18px;
       }
 
       &:hover h2,
@@ -59,19 +62,8 @@
       }
     }
 
-
-    a:after {
-      content: "|";
-      padding: 0 calc($gutter / 5);
-    }
-
-
     h2 {
-      line-height: 14px;
-
-      @include breakpoint($bp-small) {
-        line-height: 32px;
-      }
+      line-height: 26px;
     }
   }
 
@@ -130,5 +122,11 @@
   }
 }
 
-
+.ama__category__row {
+  .ama__masthead {
+    &__content{
+      border: none;
+    }
+  }
+}
 
