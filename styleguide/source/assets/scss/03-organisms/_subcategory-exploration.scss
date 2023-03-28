@@ -36,10 +36,15 @@
       margin: 0;
 
       &:last-child a:after {
-          content: "";
-          padding: 0;
-        }
+        content: "";
+        padding: 0;
       }
+    }
+    h2 {
+      a {
+        line-height: 1;
+      }
+    }
 
     a,
     h2 {
@@ -48,8 +53,9 @@
       font-size: 12px;
       font-weight: 300;
       display: flex;
-      padding: 0 45px 0 0 ;
+      padding: 0 45px 7px 0 ;
       text-transform: uppercase;
+      margin-bottom: 0;
 
       @include breakpoint($bp-small) {
         font-weight: 300;
@@ -67,12 +73,12 @@
 
       a {
         position: relative;
-        
+
         &:focus {
-            padding: 0 19.5px;
-            height: 26px;
-            line-height: 20px;
-            border: 3px solid $description-blue-visited;
+          padding: 0 19.5px;
+          height: 26px;
+          line-height: 20px;
+          border: 3px solid $description-blue-visited;
         }
       }
     }
