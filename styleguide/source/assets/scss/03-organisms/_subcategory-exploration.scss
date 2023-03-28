@@ -2,15 +2,14 @@
   border: solid $purple;
   border-width: 1px 0;
   overflow: hidden;
-  padding: 0 0 calc($gutter/4) 0;
-
+  padding: calc($gutter/2) 0 calc($gutter/4) 0;
+  
   @include breakpoint($bp-small) {
-    padding: calc($gutter/2) 0;
+    padding: calc($gutter/8) 0 calc($gutter/4) 0;
   }
 
   &__list {
-    overflow: hidden;
-    height: 60px;
+    overflow: visible;
 
     @include breakpoint($bp-small) {
       height: 95px;
@@ -49,17 +48,17 @@
     a,
     h2 {
       text-decoration: none;
-      padding: 0;
       font-size: 12px;
       font-weight: 300;
       display: flex;
-      padding: 0 45px 7px 0 ;
       text-transform: uppercase;
       margin-bottom: 0;
+      padding: calc($gutter/4) calc($gutter/3) calc($gutter/4) 0;
 
       @include breakpoint($bp-small) {
         font-weight: 300;
         font-size: 18px;
+        padding: 0 45px 7px 0;
       }
 
       &:hover h2,
@@ -72,13 +71,14 @@
       line-height: 26px;
 
       a {
-        position: relative;
 
         &:focus {
-          padding: 0 19.5px;
+          padding: 2px 20.5px 4px 20.5px;
+          margin-left: 4px;
+          margin-top: -4px;
           height: 26px;
           line-height: 20px;
-          border: 3px solid $description-blue-visited;
+          outline: 3px solid $description-blue-visited;
         }
       }
     }
