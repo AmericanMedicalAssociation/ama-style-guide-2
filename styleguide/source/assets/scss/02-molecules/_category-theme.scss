@@ -1,10 +1,23 @@
 .ama__category-theme {
   padding-bottom: 28px;
   margin-bottom: 28px;
-  border-bottom: 0.5px solid #000;
   @include breakpoint($bp-med) {
     padding-bottom: 56px;
     margin-bottom: 54px;
+  }
+  .description {
+    display: none;
+  }
+  .series-name {
+    color: $grape-purple;
+    font-size: 14px;
+    line-height: 1.14;
+    font-weight: $font-weight-bold;
+    padding-top: 7px;
+    display:none;
+    @include breakpoint($bp-small) {
+      display: block;
+    }
   }
   .category-theme {
     &__header {
@@ -22,7 +35,7 @@
         column-gap: 17px;
       }
       @include breakpoint($bp-med) {
-        column-gap: 130px;
+        column-gap: 120px;
       }
       .category-theme__container--left {
         width: 100%;
@@ -44,8 +57,10 @@
       .ama__article-stub__metadata {
         font-size: 14px;
         color: #424242;
-        line-height: 27px;
-
+        line-height: 1.93;
+        .article-event-date {
+          display: inline;
+        }
         .read_time {
           display: inline;
           margin-bottom: 0;
@@ -86,31 +101,41 @@
       margin-bottom: 0;
       .category-theme--image {
         max-width: 380px;
-      }
-    }
-    .category-theme__stub--hidden {
-      .description {
-        display: none;
+        margin-top: 25px;
       }
     }
   }
   .category-theme__container--right {
-    margin-left:auto;
+    margin-left: auto;
     flex-grow: 1;
+    @include breakpoint($bp-med max-width) {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+    }
     .category-theme__stub {
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-small) {
+        flex-grow: 1;
         border-bottom: 0.5px solid #a1a1a4;
         margin-bottom: 20px;
-        min-height: 128px;
         &:last-of-type {
           border-bottom: none;
           margin-bottom: 0;
         }
       }
-      &--hidden {
+      @include breakpoint($bp-med) {
+
+        min-height: 128px;
+      }
+      .description {
+        margin-bottom: 28px;
+      }
+      &--show {
+        @include breakpoint($bp-small) {
         .description {
-            display: none;
+            display: block;
         }
+      }
       }
       .stub__container {
         display: flex;
@@ -128,6 +153,7 @@
           }
         }
         @include breakpoint($bp-small) {
+          padding-bottom: 21px;
           flex-direction: row;
         }
         .category-theme--content {
@@ -136,11 +162,13 @@
             padding-right: 7px;
           }
           h3.ama__article-stub__title {
-            margin-bottom: 28px;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 1.39;
             @include breakpoint($bp-small max-width) {
-              padding-top: 30px;
+              padding-top: 22px;
+            }
+            @include breakpoint($bp-small) {
+              margin-bottom: 28px;
             }
             @include breakpoint($bp-med) {
               font-size: 18px;
@@ -160,8 +188,9 @@
             display: none;
           }
           @include breakpoint($bp-med) {
-            display: block;
+            display: flex;
             max-width: 180px;
+            align-items: center;
           }
         }
       }
@@ -179,9 +208,35 @@
   .tags {
     color: $purple;
     text-transform: uppercase;
-    margin-bottom: 25px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.36;
     display: none;
-    @include breakpoint($bp-med) {
+    .tag {
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      &:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        top: 3;
+        color: $grape-purple;
+      }
+      &:first-child {
+        &:before {
+          content: "/";
+          position: absolute;
+          left: 0;
+          top: 3;
+          color: $grape-purple;
+        }
+      }
+      &:last-child {
+        content: "";
+      }
+    }
+    @include breakpoint($bp-small) {
       display: block;
     }
   }
