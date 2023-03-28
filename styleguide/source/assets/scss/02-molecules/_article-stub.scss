@@ -81,9 +81,14 @@
     margin-top: 7px;
     a {
       font-size: 14px;
-      display:block;
+      font-weight: bold;
+      display: block;
       color: $purple;
       line-height: 16px;
+      opacity: .7;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   &--small {
@@ -218,7 +223,7 @@
   }
 
   .tags {
-    color: $grape-purple;
+    color: $purple;
     font-size: 14px;
     text-transform: uppercase;
     .tag {
@@ -230,7 +235,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        color: $grape-purple;
+        color: $purple;
       }
       &:first-child {
         &:before {
@@ -238,7 +243,7 @@
           position: absolute;
           left: 0;
           top: 0;
-          color: $grape-purple;
+          color: $purple;
         }
       }
     }

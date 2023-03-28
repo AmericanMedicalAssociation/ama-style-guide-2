@@ -1,13 +1,17 @@
 .ama__category-page-article-stub {
 
   .grid-container {
-    @include gutter($margin-top-full...);
+    padding-top: $gutter;
+    margin: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 
     @include breakpoint($bp-med min-width) {
+      @include gutter($margin-top-full...);
+      @include gutter($margin-bottom-full...);
+      padding-top: 0;
       flex-wrap: nowrap;
     }
 
@@ -18,13 +22,20 @@
 
   .ama__article-stub {
     margin-left: 0;
-    margin-bottom: 26px;
+    margin-top: 28px;
+    padding-top: 28px;
     width: 100%;
     max-width: unset;
-    border-bottom: 0.5px solid $border-gray;
+    border-top: 0.5px solid $border-gray;
 
     &:first-child {
       margin-left: 0;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
     }
 
     &:last-of-type {
@@ -33,33 +44,44 @@
 
     @include breakpoint($bp-small max-width) {
       &:last-of-type {
-        margin-bottom: 33px;
+        margin-bottom: 28px;
       }
     }
 
     @include breakpoint($bp-small min-width) {
-      @include gutter($margin-left-full...);
-      margin-bottom: 60px;
-      width: 45%;
-      max-width: 303px;
+      margin-bottom: 0;
+      width: 50%;
       flex: 1 1 auto;
-      border-bottom: none;
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+      > div {
+        max-width: 303px;
+        width: 86%;
+      }
       &:last-of-type,
       &:nth-of-type(3) {
-        border-top: .5px solid $border-gray;
-        padding-top: 25px;
+        margin-top: 56px;
+        > div {
+          display: block;
+          position: relative;
+          &::before {
+            content: '';
+            border-top: .5px solid $border-gray;
+            width: 100%;
+            position: absolute;
+            top: -28px;
+          }
+        }
       }
+
       &:nth-of-type(3) {
         margin-left: 0;
       }
       &:nth-of-type(even) {
-        &:before {
-          content: "";
-          display: block;
-          border-left: .5px solid $border-gray;
-          position: absolute;
-          height: 343px;
-          left: 50%;
+        border-left: .5px solid $border-gray;
+        > div {
+          float: right;
         }
       }
       &.five-up {
@@ -70,33 +92,46 @@
     @include breakpoint($bp-med min-width) {
       @include gutter($margin-left-full...);
       width: 25%;
-      max-width: 250px;
+      margin-top: 0;
+      padding-top: 0;
+      > div {
+        max-width: unset;
+        width: 100%;
+      }
       &:first-of-type {
         // The 2.1 is bases off a 29.5px margin in a 1400px wide container.
         // Someone forgot that global max container size is actually 1140px...
-        margin-right: 2.1%;
+        padding-right: 2.1%;
+      }
+      &:nth-of-type(even) {
+        border-left: none;
+        > div {
+          float: unset;
+        }
       }
       &:nth-of-type(even),
       &:nth-of-type(3) {
-        margin-left: 2.1%;
-        margin-right: 2.1%;
+        margin-left: 0;
+        padding-left: 2.1%;
         position: relative;
-        &:before {
-          content: "";
-          display: block;
-          border-left: .5px solid $border-gray;
-          position: absolute;
-          height: 330px;
-          left: -10%;
+        border-left: 0.5px solid #a1a1a4;
+        > div {
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+          &::before {
+            display: none;
+          }
         }
       }
       &:last-of-type,
       &:nth-of-type(3) {
         padding-top: 0;
+        margin-top: 0;
         border-top: none;
+        margin-left: 2.1%;
       }
       &:nth-of-type(3) {
-        @include gutter($margin-left-full...);
         &.five-up {
           margin-left: $gutter*.75;
         }

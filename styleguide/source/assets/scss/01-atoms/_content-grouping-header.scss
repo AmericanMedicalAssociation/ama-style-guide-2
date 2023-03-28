@@ -6,6 +6,9 @@
   line-height: 31px;
   font-weight: bold;
   padding: 0 0 14px 0;
+  @include breakpoint($bp-med max-width) {
+    display: none;
+  }
 }
 
 //Subcat specific header styling, also inline article stub lists on news articles.
