@@ -1,10 +1,6 @@
 .ama__category-theme {
   padding-bottom: 28px;
-  margin-bottom: 28px;
-  @include breakpoint($bp-med) {
-    padding-bottom: 56px;
-    margin-bottom: 54px;
-  }
+  padding-top: 28px;
   .description {
     display: none;
   }
@@ -22,30 +18,26 @@
   .category-theme {
     &__header {
       font-weight: bold;
-      margin-bottom: 28px;
+      padding-bottom: $gutter;
       @include breakpoint($bp-small) {
-        margin-bottom: 23px;
+        padding-bottom: calc($gutter * .75);
       }
     }
     &__container {
+      h3,
+      .ama__h3 {
+        margin-bottom: 0 !important;
+      }
       display: flex;
       flex-direction: column;
       @include breakpoint($bp-small) {
         flex-direction: row;
-        column-gap: 17px;
+
       }
       @include breakpoint($bp-med) {
-        column-gap: 120px;
+
       }
-      .category-theme__container--left {
-        width: 100%;
-        @include breakpoint($bp-small) {
-          max-width: 348px;
-        }
-        @include breakpoint($bp-med) {
-          max-width: 380px;
-        }
-      }
+
     }
 
     &--content {
@@ -69,7 +61,6 @@
             display: inline;
             font-size: 14px;
             color: #424242;
-            margin-bottom: 0;
             line-height: 27px;
           }
         }
@@ -77,75 +68,96 @@
     }
   }
   .category-theme__container--left {
-    margin-bottom: 28px;
+    padding-bottom: $gutter;
     .category-theme--content {
       .ama__article-stub__metadata {
-        margin-bottom: 7px;
+        padding-bottom: calc($gutter * .25);
         @include breakpoint($bp-small) {
-          margin-bottom: 14px;
+          padding-bottom: calc($gutter * .5);
         }
       }
 
       .ama__article-stub__title {
         font-size: 18px;
         line-height: 22px;
-        margin-bottom: 14px;
+        padding-bottom: calc($gutter * .5);
         @include breakpoint($bp-small) {
           font-size: 20px;
           line-height: 27px;
-          margin-bottom: 25px;
+          padding-bottom: calc($gutter * .75);
         }
       }
     }
     @include breakpoint($bp-small) {
-      margin-bottom: 0;
+      padding-bottom: 0;
       .category-theme--image {
-        max-width: 380px;
-        margin-top: 25px;
+        max-width: 100%;
+        padding-top: $gutter;
       }
     }
   }
   .category-theme__container--right {
     margin-left: auto;
-    flex-grow: 1;
     @include breakpoint($bp-med max-width) {
       display: flex;
       flex-wrap: wrap;
-      align-content: center;
     }
     .category-theme__stub {
       @include breakpoint($bp-small) {
         flex-grow: 1;
-        border-bottom: 0.5px solid #a1a1a4;
-        margin-bottom: 20px;
+        border-bottom: 1px solid #a1a1a4;
+        padding-bottom: calc($gutter * .75);
+        padding-top: calc($gutter * .75);
         &:last-of-type {
           border-bottom: none;
-          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        &:first-of-type {
+          padding-top: 0;
         }
       }
       @include breakpoint($bp-med) {
-
         min-height: 128px;
       }
       .description {
-        margin-bottom: 28px;
+        padding-bottom: $gutter;
       }
       &--show {
         @include breakpoint($bp-small) {
-        .description {
+          .description {
             display: block;
+          }
         }
-      }
       }
       .stub__container {
         display: flex;
         flex-direction: row-reverse;
         justify-content: end;
-        @include breakpoint($bp-small max-width) {
-          &.stub__has-image {
-            margin-bottom: 20px;
-            min-height: 100px;
+        .category-theme--content {
+          flex: 1;
+        }
+        &.stub__has-image {
+          min-height: 100px;
+          .category-theme--content {
+            flex: .75;
+            @include breakpoint($bp-small) {
+              flex: .5;
+            }
+            @include breakpoint($bp-med) {
+              flex: .7;
+            }
           }
+          .category-theme--image {
+            flex: .25;
+            @include breakpoint($bp-small) {
+              flex: .5;
+            }
+            @include breakpoint($bp-med) {
+              flex: .3;
+            }
+          }
+        }
+        @include breakpoint($bp-small max-width) {
           .ama__article-stub__metadata {
             position: absolute;
             top: 0;
@@ -153,22 +165,28 @@
           }
         }
         @include breakpoint($bp-small) {
-          padding-bottom: 21px;
           flex-direction: row;
         }
         .category-theme--content {
-          flex-grow: 1;
+          flex: 1;
           @include breakpoint($bp-med) {
-            padding-right: 7px;
+            padding-right: calc($gutter * .25);
+          }
+          @include breakpoint($bp-med) {
+            padding-right: calc($gutter * .25);
+          }
+          h3.ama__h3 {
+            margin-bottom: 0;
           }
           h3.ama__article-stub__title {
             font-size: 18px;
             line-height: 1.39;
+            margin-bottom: 0;
             @include breakpoint($bp-small max-width) {
-              padding-top: 22px;
+              padding-top: calc($gutter * .75);
             }
             @include breakpoint($bp-small) {
-              margin-bottom: 28px;
+              padding-bottom: $gutter;
             }
             @include breakpoint($bp-med) {
               font-size: 18px;
@@ -178,10 +196,11 @@
         }
         .category-theme--image {
           display: flex;
+          flex: .25;
           align-items: flex-end;
-          max-width: 87px;
           @include breakpoint($bp-small max-width) {
-            margin-right: 20px;
+            margin-right: calc($gutter * .75);
+            flex: .75;
           }
           @include breakpoint($bp-small) {
             align-items: unset;
@@ -189,8 +208,6 @@
           }
           @include breakpoint($bp-med) {
             display: flex;
-            max-width: 180px;
-            align-items: center;
           }
         }
       }
@@ -241,3 +258,4 @@
     }
   }
 }
+
