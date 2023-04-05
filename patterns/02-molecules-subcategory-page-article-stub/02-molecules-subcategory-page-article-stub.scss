@@ -45,13 +45,14 @@
     line-height: 23px;
     color: $gray-50;
     text-transform: uppercase;
+    margin-bottom: 7px;
     @include breakpoint($bp-small) {
       font-size: 0.78em;
       line-height: .9em;
     }
     .stub-date {
       @include type($myriad-pro, $font-weight-regular);
-      padding-bottom: (calc($gutter / 2.5));
+      padding-bottom: 0;
       display: inline-block;
     }
     span {
@@ -62,8 +63,10 @@
       bottom: 0px;
     }
     .read_time {
-      padding-bottom: 11.2px;
       display: inline-block;
+      h3 {
+        margin-bottom: 0;
+      }
     }
   }
 
