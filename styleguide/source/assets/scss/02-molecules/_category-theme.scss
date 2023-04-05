@@ -3,6 +3,7 @@
   padding-top: 28px;
   .description {
     display: none;
+    font-size: 18px;
   }
   .series-name {
     color: $purple;
@@ -15,10 +16,32 @@
       display: block;
     }
   }
+  .date,
+  .mobile-date {
+    font-size: 14px;
+    color: #424242;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    .article-event-date {
+      display: inline;
+    }
+    .read_time {
+      display: inline;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      .ama__h3 {
+        display: inline;
+        font-size: 14px;
+        color: #424242;
+        line-height: 27px;
+      }
+    }
+  }
   .category-theme {
     &__header {
       font-weight: bold;
       padding-bottom: $gutter;
+      margin-bottom: 0;
       @include breakpoint($bp-small) {
         padding-bottom: calc($gutter * .75);
       }
@@ -39,29 +62,40 @@
       }
 
     }
-
     &--content {
       .ama__subcategory-page-article-stub__date-time,
       .ama__article-stub__copy {
         padding-left: 0;
         padding-right: 0;
       }
-      .ama__article-stub__metadata {
-        font-size: 14px;
-        color: #424242;
-        line-height: 1.93;
-        .article-event-date {
-          display: inline;
+    }
+    &--two-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          &:last-of-type {
+            .description {
+              @include breakpoint($bp-med) {
+                display: block;
+              }
+            }
+          }
         }
-        .read_time {
-          display: inline;
-          margin-bottom: 0;
-          padding-bottom: 0;
-          .ama__h3 {
-            display: inline;
-            font-size: 14px;
-            color: #424242;
-            line-height: 27px;
+      }
+    }
+    &--three-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .description {
+            @include breakpoint($bp-med) {
+              display: block;
+            }
+          }
+          &:last-of-type {
+            .description {
+              @include breakpoint($bp-med) {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -69,13 +103,23 @@
   }
   .category-theme__container--left {
     padding-bottom: $gutter;
+    padding-right: 0;
+    flex: 1;
+    @include breakpoint($bp-small) {
+      padding-right: calc($gutter * .75);
+      flex: .5;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: calc($gutter * 4.25);
+      flex: .4;
+    }
+    .category-theme--image {
+      padding-top: calc($gutter * .25);
+    }
+    .mobile-date {
+      display: none;
+    }
     .category-theme--content {
-      .ama__article-stub__metadata {
-        padding-bottom: calc($gutter * .25);
-        @include breakpoint($bp-small) {
-          padding-bottom: calc($gutter * .5);
-        }
-      }
 
       .ama__article-stub__title {
         font-size: 18px;
@@ -92,21 +136,28 @@
       padding-bottom: 0;
       .category-theme--image {
         max-width: 100%;
-        padding-top: $gutter;
       }
     }
   }
   .category-theme__container--right {
     margin-left: auto;
-    @include breakpoint($bp-med max-width) {
-      display: flex;
-      flex-wrap: wrap;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint($bp-small) {
+      flex: .5;
     }
+    @include breakpoint($bp-med) {
+      flex: .6;
+    }
+
     .category-theme__stub {
+      padding-bottom: calc($gutter * .75);
+      &:last-of-type {
+        padding-bottom: 0;
+      }
       @include breakpoint($bp-small) {
-        flex-grow: 1;
         border-bottom: 1px solid #a1a1a4;
-        padding-bottom: calc($gutter * .75);
         padding-top: calc($gutter * .75);
         &:last-of-type {
           border-bottom: none;
@@ -119,29 +170,32 @@
       @include breakpoint($bp-med) {
         min-height: 128px;
       }
-      .description {
-        padding-bottom: $gutter;
-      }
-      &--show {
-        @include breakpoint($bp-small) {
-          .description {
-            display: block;
-          }
-        }
-      }
       .stub__container {
         display: flex;
         flex-direction: row-reverse;
+        flex-wrap: wrap;
         justify-content: end;
-        .category-theme--content {
-          flex: 1;
+        .mobile-date {
+          display: block;
+          flex-basis: 100%;
+          padding-bottom: calc($gutter * .25);
+          @include breakpoint($bp-small) {
+            display: none;
+          }
         }
+        .date {
+          display: none;
+          @include breakpoint($bp-small) {
+            display: block;
+          }
+        }
+
         &.stub__has-image {
           min-height: 100px;
           .category-theme--content {
             flex: .75;
             @include breakpoint($bp-small) {
-              flex: .5;
+              flex: 1;
             }
             @include breakpoint($bp-med) {
               flex: .7;
@@ -157,21 +211,11 @@
             }
           }
         }
-        @include breakpoint($bp-small max-width) {
-          .ama__article-stub__metadata {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-        }
         @include breakpoint($bp-small) {
           flex-direction: row;
         }
         .category-theme--content {
           flex: 1;
-          @include breakpoint($bp-med) {
-            padding-right: calc($gutter * .25);
-          }
           @include breakpoint($bp-med) {
             padding-right: calc($gutter * .25);
           }
@@ -182,9 +226,7 @@
             font-size: 18px;
             line-height: 1.39;
             margin-bottom: 0;
-            @include breakpoint($bp-small max-width) {
-              padding-top: calc($gutter * .75);
-            }
+            padding-top: 0;
             @include breakpoint($bp-small) {
               padding-bottom: $gutter;
             }
@@ -198,8 +240,10 @@
           display: flex;
           flex: .25;
           align-items: flex-end;
+          padding-right: $gutter;
+          padding-left: 0;
           @include breakpoint($bp-small max-width) {
-            margin-right: calc($gutter * .75);
+            padding-right: 0;
             flex: .75;
           }
           @include breakpoint($bp-small) {
@@ -208,6 +252,7 @@
           }
           @include breakpoint($bp-med) {
             display: flex;
+            padding-left: $gutter;
           }
         }
       }
