@@ -10,7 +10,7 @@
     font-size: 14px;
     line-height: 1.14;
     font-weight: $font-weight-bold;
-    padding-top: 7px;
+    padding-bottom: 7px;
     display:none;
     @include breakpoint($bp-small) {
       display: block;
@@ -113,14 +113,10 @@
       padding-right: calc($gutter * 4.25);
       flex: .4;
     }
-    .category-theme--image {
-      padding-top: calc($gutter * .25);
-    }
     .mobile-date {
       display: none;
     }
     .category-theme--content {
-
       .ama__article-stub__title {
         font-size: 18px;
         line-height: 22px;
@@ -243,7 +239,6 @@
           padding-right: $gutter;
           padding-left: 0;
           @include breakpoint($bp-small max-width) {
-            padding-right: 0;
             flex: .75;
           }
           @include breakpoint($bp-small) {
@@ -258,15 +253,12 @@
       }
     }
   }
-
   .wrapper-link {
     text-decoration: none;
-
     &:hover .ama__article-stub__title {
       text-decoration: underline;
     }
   }
-
   .tags {
     color: $purple;
     text-transform: uppercase;
@@ -274,6 +266,7 @@
     font-style: italic;
     line-height: 1.36;
     display: none;
+    padding-bottom: calc($gutter * .25);
     .tag {
       padding-left: 15px;
       padding-right: 15px;
