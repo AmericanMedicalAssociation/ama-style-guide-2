@@ -3,18 +3,13 @@
   border-width: 1px 0;
   overflow: hidden;
   padding: calc($gutter/2) 0 calc($gutter/4) 0;
-  
+
   @include breakpoint($bp-small) {
     padding: calc($gutter/2) 0 calc($gutter/5) 0;
   }
 
   &__list {
     overflow: visible;
-
-    @include breakpoint($bp-small) {
-      height: 95px;
-    }
-
     @include breakpoint($bp-med) {
       height: auto;
     }
@@ -28,15 +23,18 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin-bottom: 0;
+      justify-content:space-between;
     }
 
     li {
       list-style-type: none;
       margin: 0;
-
       &:last-child a:after {
         content: "";
         padding: 0;
+      }
+      &:last-child {
+        margin-right: auto;
       }
     }
     h2 {
@@ -53,12 +51,12 @@
       display: flex;
       text-transform: uppercase;
       margin-bottom: 0;
-      padding: calc($gutter/4) calc($gutter/3) calc($gutter/4) 0;
+      padding: 0 calc($gutter/2) calc($gutter/4) 0;
 
       @include breakpoint($bp-small) {
         font-weight: 300;
         font-size: 18px;
-        padding: 0 45px 7px 0;
+        padding: 0 calc($gutter/2) calc($gutter/4) 0;
       }
 
       &:hover h2,
