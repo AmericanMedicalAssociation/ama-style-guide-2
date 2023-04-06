@@ -98,6 +98,11 @@ Styles for the new Category Featured Content Custom Block.
   h3.title,
   .description {
     margin-bottom: 0;
+    &:focus {
+      h3 {
+        border: 3px solid $description-blue-visited;
+      }
+    }
   }
 
   .media {
@@ -117,6 +122,11 @@ Styles for the new Category Featured Content Custom Block.
         text-decoration: underline;
       }
     }
+    &:focus {
+      h3.title {
+        border: 3px solid $description-blue-visited;
+      }
+    }
     h3.title {
       font-size: 20px;
       font-weight: $font-weight-bold;
@@ -127,7 +137,7 @@ Styles for the new Category Featured Content Custom Block.
     }
 
     .tags {
-      color: $grape-purple;
+      color: $purple;
       font-size: 14px;
       text-transform: uppercase;
       .tag {
@@ -139,7 +149,7 @@ Styles for the new Category Featured Content Custom Block.
           position: absolute;
           right: 0;
           top: 0;
-          color: $grape-purple;
+          color: $purple;
         }
         &:first-child {
           &:before {
@@ -147,7 +157,7 @@ Styles for the new Category Featured Content Custom Block.
             position: absolute;
             left: 0;
             top: 0;
-            color: $grape-purple;
+            color: $purple;
           }
         }
         &:last-child {
@@ -157,7 +167,7 @@ Styles for the new Category Featured Content Custom Block.
     }
 
     .series-name {
-      color: $grape-purple;
+      color: $purple;
       font-size: 14px;
       font-weight: $font-weight-bold;
     }
@@ -287,12 +297,11 @@ Styles for the new Category Featured Content Custom Block.
           flex-direction: column;
         }
         .date_display {
-          min-height: calc($gutter * 1.25);
+          padding-bottom: calc($gutter * .5);
           text-transform: uppercase;
-          //&.empty {
-           // min-height: 0;
-           // display: none;
-         // }
+          .read-time {
+            display: inline-block;
+          }
         }
         .description {
           display: none;
@@ -412,7 +421,7 @@ Styles for the new Category Featured Content Custom Block.
                 padding-left: 0;
                 @include breakpoint($bp-med) {
                   flex: .3;
-                  padding-right: $gutter;
+                  padding-right: calc($gutter * .75);
                   padding-left: 0;
                 }
               }
@@ -442,7 +451,7 @@ Styles for the new Category Featured Content Custom Block.
             padding-left: 0;
             @include breakpoint($bp-med) {
               flex: .3;
-              padding-left: $gutter;
+              padding-left: calc($gutter * .75);
             }
             .description {
               display: none;
@@ -489,13 +498,13 @@ Styles for the new Category Featured Content Custom Block.
           @include breakpoint($bp-med) {
             border-right: none;
             border-left: $border-gray 1px solid;
-            padding-left: 63px;
+            padding-left: calc($gutter * 2.25);
             padding-right: 0;
           }
         }
         .last-column {
           @include breakpoint($bp-med) {
-            padding-right: 63px;
+            padding-right: calc($gutter * 2.25);
             padding-left: 0;
           }
         }
@@ -506,7 +515,7 @@ Styles for the new Category Featured Content Custom Block.
         flex: 1;
         @include breakpoint($bp-med) {
           border-right: $border-gray 1px solid;
-          padding-right: 63px;
+          padding-right: calc($gutter * 2.25);
         }
         .article {
           .article-wrapper {
@@ -531,7 +540,7 @@ Styles for the new Category Featured Content Custom Block.
         flex-direction: column;
         padding-left: 0;
         @include breakpoint($bp-med) {
-          padding-left: 63px;
+          padding-left: calc($gutter * 2.25);
         }
         .article {
           .article-wrapper {
@@ -559,7 +568,7 @@ Styles for the new Category Featured Content Custom Block.
               flex: 1;
               @include breakpoint($bp-small) {
                 flex: .66;
-                padding-right: $gutter;
+                padding-right: calc($gutter * .75);
               }
               @include breakpoint($bp-med) {
                 flex: 1;
@@ -598,7 +607,6 @@ Styles for the new Category Featured Content Custom Block.
           }
           @include breakpoint($bp-med) {
             flex: .75;
-            padding-right: calc($gutter * .5);
           }
           .article {
             .article-wrapper {
@@ -663,7 +671,7 @@ Styles for the new Category Featured Content Custom Block.
                 padding-right: 0;
                 padding-left: 0;
                 @include breakpoint($bp-med) {
-                  padding-right: $gutter;
+                  padding-right: calc($gutter * .75);
                   padding-left: 0;
                 }
               }
@@ -692,7 +700,7 @@ Styles for the new Category Featured Content Custom Block.
             padding-left: 0;
             @include breakpoint($bp-med) {
               flex:.3;
-              padding-left: $gutter;
+              padding-left: calc($gutter * .75);
             }
             .description {
               display: none;
@@ -759,7 +767,7 @@ Styles for the new Category Featured Content Custom Block.
               padding-left: 0;
               flex: 1;
               @include breakpoint($bp-small) {
-                padding-left: $gutter;
+                padding-left: calc($gutter * .75);
               }
               @include breakpoint($bp-med) {
                 padding-left: 0;
@@ -812,7 +820,7 @@ Styles for the new Category Featured Content Custom Block.
               flex: 1.5;
               padding-right: 0;
               @include breakpoint($bp-small) {
-                padding-right: $gutter;
+                padding-right: calc($gutter * .75);
               }
               @include breakpoint($bp-med) {
                 padding-right: 0;
@@ -857,7 +865,7 @@ Styles for the new Category Featured Content Custom Block.
               padding-right: 0;
               @include breakpoint($bp-small) {
                 flex: 1.5;
-                padding-right: $gutter;
+                padding-right: calc($gutter * .75);
               }
               @include breakpoint($bp-med) {
                 flex: 1;
