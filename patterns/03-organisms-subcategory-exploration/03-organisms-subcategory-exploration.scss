@@ -1,20 +1,15 @@
 .ama__subcategory-exploration {
-  border-bottom: solid 1px $gray-50;
+  border: solid $purple;
+  border-width: 1px 0;
   overflow: hidden;
-  padding: 0 0 calc($gutter/4) 0;
+  padding: calc($gutter/2) 0 calc($gutter/4) 0;
 
   @include breakpoint($bp-small) {
-    padding: calc($gutter/2) 0;
+    padding: calc($gutter/2) 0 calc($gutter/5) 0;
   }
 
   &__list {
-    overflow: hidden;
-    height: 60px;
-
-    @include breakpoint($bp-small) {
-      height: 95px;
-    }
-
+    overflow: visible;
     @include breakpoint($bp-med) {
       height: auto;
     }
@@ -28,29 +23,40 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin-bottom: 0;
+      justify-content:space-between;
     }
 
     li {
       list-style-type: none;
       margin: 0;
-
       &:last-child a:after {
-          content: "";
-          padding: 0;
-        }
+        content: "";
+        padding: 0;
       }
+      &:last-child {
+        margin-right: auto;
+      }
+    }
+    h2 {
+      a {
+        line-height: 1;
+      }
+    }
 
     a,
     h2 {
       text-decoration: none;
-      padding: 0;
-      font-weight: $font-weight-semibold;
-      font-size: 18px;
-      display: inline;
+      font-size: 12px;
+      font-weight: 300;
+      display: flex;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      padding: 0 calc($gutter/2) calc($gutter/4) 0;
 
       @include breakpoint($bp-small) {
-        font-weight: $font-weight-semibold;
-        font-size: 26px;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 0 calc($gutter/2) calc($gutter/4) 0;
       }
 
       &:hover h2,
@@ -59,18 +65,19 @@
       }
     }
 
-
-    a:after {
-      content: "|";
-      padding: 0 calc($gutter / 5);
-    }
-
-
     h2 {
-      line-height: 14px;
+      line-height: 26px;
 
-      @include breakpoint($bp-small) {
-        line-height: 32px;
+      a {
+
+        &:focus-visible {
+          padding: 2px 20.5px 4px 20.5px;
+          margin-left: 4px;
+          margin-top: -4px;
+          height: 26px;
+          line-height: 20px;
+          outline: 3px solid $description-blue-visited;
+        }
       }
     }
   }
@@ -130,5 +137,11 @@
   }
 }
 
-
+.ama__category__row {
+  .ama__masthead {
+    &__content{
+      border: none;
+    }
+  }
+}
 

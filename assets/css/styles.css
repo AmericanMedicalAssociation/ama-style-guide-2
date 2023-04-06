@@ -7203,6 +7203,10 @@ Styles for the new Category Featured Content Custom Block.
 .category-featured-content .description {
   margin-bottom: 0;
 }
+.category-featured-content h3.title:focus h3,
+.category-featured-content .description:focus h3 {
+  border: 3px solid #0176a5;
+}
 .category-featured-content .media {
   margin-bottom: 0 !important;
 }
@@ -7222,6 +7226,10 @@ Styles for the new Category Featured Content Custom Block.
 .category-featured-content a.block-wrapper-link:hover h3.title,
 .category-featured-content a.description-wrapper-link:hover h3.title {
   text-decoration: underline;
+}
+.category-featured-content a.block-wrapper-link:focus h3.title,
+.category-featured-content a.description-wrapper-link:focus h3.title {
+  border: 3px solid #0176a5;
 }
 .category-featured-content a.block-wrapper-link h3.title,
 .category-featured-content a.description-wrapper-link h3.title {
@@ -14915,7 +14923,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__button {
   background-color: #ED8B00;
-  color: #000000;
+  color: #001b1b;
   font-weight: bold;
   width: 100%;
   margin: 0;
@@ -15068,7 +15076,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 .layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
 .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button {
   background-color: #ED8B00;
-  color: #000000;
+  color: #001b1b;
   font-weight: bold;
   width: 100%;
   max-width: 220px;
@@ -23115,23 +23123,18 @@ a.subscribe-series {
 }
 
 .ama__subcategory-exploration {
-  border-bottom: solid 1px #767676;
+  border: solid #46166B;
+  border-width: 1px 0;
   overflow: hidden;
-  padding: 0 0 7px 0;
+  padding: 14px 0 7px 0;
 }
 @media (min-width: 37.5em) {
   .ama__subcategory-exploration {
-    padding: 14px 0;
+    padding: 14px 0 5.6px 0;
   }
 }
 .ama__subcategory-exploration__list {
-  overflow: hidden;
-  height: 60px;
-}
-@media (min-width: 37.5em) {
-  .ama__subcategory-exploration__list {
-    height: 95px;
-  }
+  overflow: visible;
 }
 @media (min-width: 56.25em) {
   .ama__subcategory-exploration__list {
@@ -23152,6 +23155,9 @@ a.subscribe-series {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .ama__subcategory-exploration__list li {
   list-style-type: none;
@@ -23161,19 +23167,30 @@ a.subscribe-series {
   content: "";
   padding: 0;
 }
+.ama__subcategory-exploration__list li:last-child {
+  margin-right: auto;
+}
+.ama__subcategory-exploration__list h2 a {
+  line-height: 1;
+}
 .ama__subcategory-exploration__list a,
 .ama__subcategory-exploration__list h2 {
   text-decoration: none;
-  padding: 0;
-  font-weight: 600;
-  font-size: 18px;
-  display: inline;
+  font-size: 12px;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding: 0 14px 7px 0;
 }
 @media (min-width: 37.5em) {
   .ama__subcategory-exploration__list a,
   .ama__subcategory-exploration__list h2 {
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 0 14px 7px 0;
   }
 }
 .ama__subcategory-exploration__list a:hover h2, .ama__subcategory-exploration__list a:hover,
@@ -23181,17 +23198,16 @@ a.subscribe-series {
 .ama__subcategory-exploration__list h2:hover {
   text-decoration: underline;
 }
-.ama__subcategory-exploration__list a:after {
-  content: "|";
-  padding: 0 5.6px;
-}
 .ama__subcategory-exploration__list h2 {
-  line-height: 14px;
+  line-height: 26px;
 }
-@media (min-width: 37.5em) {
-  .ama__subcategory-exploration__list h2 {
-    line-height: 32px;
-  }
+.ama__subcategory-exploration__list h2 a:focus-visible {
+  padding: 2px 20.5px 4px 20.5px;
+  margin-left: 4px;
+  margin-top: -4px;
+  height: 26px;
+  line-height: 20px;
+  outline: 3px solid #0176a5;
 }
 .ama__subcategory-exploration__show-more {
   font-size: 1.1em;
@@ -23260,6 +23276,10 @@ a.subscribe-series {
 }
 .ama__subcategory-exploration__show-more--expanded .ama__subcategory-exploration__show-more--close {
   display: inline-block;
+}
+
+.ama__category__row .ama__masthead__content {
+  border: none;
 }
 
 .ama__subcategory-explore-topics {
