@@ -2,7 +2,6 @@
   padding-bottom: 28px;
   padding-top: 28px;
   .description {
-    display: none;
     font-size: 18px;
   }
   .series-name {
@@ -55,12 +54,7 @@
       flex-direction: column;
       @include breakpoint($bp-small) {
         flex-direction: row;
-
       }
-      @include breakpoint($bp-med) {
-
-      }
-
     }
     &--content {
       .ama__subcategory-page-article-stub__date-time,
@@ -69,32 +63,35 @@
         padding-right: 0;
       }
     }
+    &--four-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .description {
+            display: none;
+          }
+        }
+      }
+    }
+    &--three-up,
     &--two-up {
       .category-theme__container--right {
         .category-theme__stub {
-          &:last-of-type {
-            .description {
-              @include breakpoint($bp-med) {
-                display: block;
-              }
+          .description {
+            display: none;
+            @include breakpoint($bp-small) {
+              display: block;
             }
           }
         }
       }
     }
-    &--three-up {
+    &--two-up {
       .category-theme__container--right {
         .category-theme__stub {
           .description {
-            @include breakpoint($bp-med) {
+            display: none;
+            @include breakpoint($bp-small) {
               display: block;
-            }
-          }
-          &:last-of-type {
-            .description {
-              @include breakpoint($bp-med) {
-                display: none;
-              }
             }
           }
         }
@@ -235,7 +232,6 @@
         .category-theme--image {
           display: flex;
           flex: .25;
-          align-items: flex-end;
           padding-right: $gutter;
           padding-left: 0;
           @include breakpoint($bp-small max-width) {
@@ -244,6 +240,7 @@
           @include breakpoint($bp-small) {
             align-items: unset;
             display: none;
+            padding-right: 0;
           }
           @include breakpoint($bp-med) {
             display: flex;
@@ -296,3 +293,51 @@
     }
   }
 }
+.category-theme__container {
+  &.category-subcat {
+    flex-direction: column;
+    @include breakpoint($bp-small) {
+
+    }
+    @include breakpoint($bp-med) {
+      flex-direction: row;
+    }
+    .category-theme__container--left {
+      border-bottom: 1px $border-gray solid;
+      padding-bottom: $gutter;
+      padding-right: 0;
+      border-right: none;
+      @include breakpoint($bp-med) {
+        padding-right: calc($gutter * 2);
+        border-right: 1px $border-gray solid;
+        border-bottom: none;
+      }
+    }
+    .category-theme__container--right {
+      padding-left: 0;
+      @include breakpoint($bp-med) {
+        padding-left: calc($gutter * 2);
+      }
+      .category-theme__stub {
+        &:first-of-type {
+          padding-top: calc($gutter * .75);
+          @include breakpoint($bp-med) {
+            padding-top: 0;
+          }
+        }
+      }
+      .stub__container {
+        &.stub__has-image {
+          .category-theme--image {
+            display: block;
+            padding-left: 0;
+            @include breakpoint($bp-small) {
+              padding-left: calc($gutter * .75);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
