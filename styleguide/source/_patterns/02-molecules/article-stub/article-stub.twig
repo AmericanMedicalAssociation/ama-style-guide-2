@@ -25,6 +25,7 @@
 {% endmacro %}
 
 <div class="ama__article-stub {{ classes|join(' ') }}">
+  <div>
   {% block articleStub_media %}
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
@@ -77,7 +78,7 @@
   {% if podcast or video_tag or series_tag %}
     <div class="tags">
       {% if series_tag == 1 %}<span class="tag">series</span>{% endif %}
-      {% if podcast == 1 %}<span class="tag">podcast</span>{% endif %}
+      {% if podcast == 1 %}<span class="tag podcast-tag">podcast</span>{% endif %}
       {% if video_tag == 1 %}<span class="tag">video</span>{% endif %}
     </div>
   {% endif %}
@@ -86,4 +87,5 @@
       <a href="">Series Name</a>
     </span>
   {% endif %}
+  </div>
 </div>

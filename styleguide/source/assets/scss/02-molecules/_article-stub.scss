@@ -227,16 +227,10 @@
     font-size: 14px;
     text-transform: uppercase;
     .tag {
-      position:relative;
-      padding-left:15px;
-      padding-right: 15px;
-      &:after {
-        content: "/";
-        position: absolute;
-        right: 0;
-        top: 0;
-        color: $purple;
-      }
+      display: inline-block;
+      min-width: 60px;
+      position: relative;
+      text-align: center;
       &:first-child {
         &:before {
           content: "/";
@@ -244,6 +238,18 @@
           left: 0;
           top: 0;
           color: $purple;
+        }
+      }
+      &:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $purple;
+      }
+      &.podcast-tag {
+        &:after {
+          right: -7px;
         }
       }
     }
