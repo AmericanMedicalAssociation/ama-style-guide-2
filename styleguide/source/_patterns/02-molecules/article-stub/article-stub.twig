@@ -25,36 +25,10 @@
 {% endmacro %}
 
 <div class="ama__article-stub {{ classes|join(' ') }}">
-{% if articleStub.series %}
-  <span class="series-icon">AMA Series</span>
-{% endif %}
-
+  <div>
   {% block articleStub_media %}
     {{ _self.mediaType(articleStub) }}
   {% endblock %}
-
-  {% if articleStub.categoryPage.heading %}
-    {% set heading = articleStub.categoryPage.heading %}
-    {% include "@atoms/heading/heading.twig" %}
-  {% endif %}
-
-  {% if articleStub.homepage.heading %}
-    {% set heading = articleStub.homepage.heading %}
-    {% include "@atoms/heading/heading.twig" %}
-  {% endif %}
-
-  {% if articleStub.navigation.heading %}
-    {% set heading = articleStub.navigation.heading %}
-    {% include "@atoms/heading/heading.twig" %}
-  {% endif %}
-
-  {% if link %}
-    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
-    {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
-    <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
-      {% include "@atoms/link/link.twig" %}
-    </{{ headingLevel }}>
-  {% endif %}
 
   {% if not articleStub.related %}
   <div class="ama__article-stub__copy">
@@ -74,4 +48,44 @@
 
   </div>
   {% endif %}
+
+  {# {% if articleStub.categoryPage.heading %}
+    {% set heading = articleStub.categoryPage.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %}
+
+  {% if articleStub.homepage.heading %}
+    {% set heading = articleStub.homepage.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %}
+
+  {% if articleStub.navigation.heading %}
+    {% set heading = articleStub.navigation.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %} #}
+
+  {% if link %}
+    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+    {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
+    <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
+      {% include "@atoms/link/link.twig" %}
+    </{{ headingLevel }}>
+  {% endif %}
+
+  {% set podcast = articleStub.podcast %}
+  {% set series_tag = articleStub.series_tag %}
+  {% set video_tag = articleStub.video_tag %}
+  {% if podcast or video_tag or series_tag %}
+    <div class="tags">
+      {% if series_tag == 1 %}<span class="tag">series</span>{% endif %}
+      {% if podcast == 1 %}<span class="tag podcast-tag">podcast</span>{% endif %}
+      {% if video_tag == 1 %}<span class="tag">video</span>{% endif %}
+    </div>
+  {% endif %}
+  {% if series_tag %}
+    <span class="related-series-tag">
+      <a href="">Series Name</a>
+    </span>
+  {% endif %}
+  </div>
 </div>
