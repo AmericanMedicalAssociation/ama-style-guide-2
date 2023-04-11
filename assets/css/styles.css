@@ -6959,6 +6959,9 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .ama__page--news__teasers .ama__four-up-teaser {
   margin: initial;
 }
+.ama__page--news__teasers .ama__four-up-teaser .ama__article-stub:nth-of-type(even), .ama__page--news__teasers .ama__four-up-teaser .ama__article-stub:nth-of-type(3) {
+  border: none;
+}
 
 @media (max-width: 37.5em) {
   .ama__column-teaser {
@@ -8719,7 +8722,6 @@ Styles for the new Category Featured Content Custom Block.
   color: #46166B;
   text-transform: uppercase;
   font-size: 14px;
-  font-style: italic;
   line-height: 1.36;
   display: none;
   padding-bottom: 7px;
@@ -20006,7 +20008,7 @@ section.ama__page--event__speakers {
 }
 @media (min-width: 37.5em) {
   .ama__four-up-teaser .ama__article-stub:first-child {
-    padding: 0;
+    padding-left: 0;
   }
 }
 
