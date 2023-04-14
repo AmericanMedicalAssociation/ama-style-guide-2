@@ -18,7 +18,6 @@
   &__copy {
     flex-grow: 1;
     @include breakpoint($bp-small min-width) {
-      @include gutter($padding-left-full...);
       @include gutter($padding-right-full...);
     }
 
@@ -247,8 +246,11 @@
         color: $purple;
       }
       &.podcast-tag {
+        min-width: 68px;
+      }
+      & +.podcast-tag {
         &:after {
-          right: -7px;
+          right: -8px;
         }
       }
     }
@@ -298,10 +300,65 @@
 
 .ama__category__article-stub-three-up {
   .ama__article-stub {
-    padding: $gutter (calc($gutter / 2));
+    margin-left: 0;
+    margin-top: calc($gutter * .75);
+    padding-top: $gutter;
+    width: 100%;
+    max-width: unset;
+    border-top: 0.5px  $border-gray solid;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    @include breakpoint($bp-small max-width) {
+      &:last-of-type {
+        margin-bottom: $gutter;
+      }
+    }
 
     @include  breakpoint($bp-small) {
-      padding: 0;
+      margin-bottom: 0;
+      flex: 1 1 auto;
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+      @include gutter($margin-left-full...);
+      width: 100%;
+      &:first-of-type {
+        // The 2.1 is bases off a 29.5px margin in a 1400px wide container.
+        // Someone forgot that global max container size is actually 1140px...
+        padding-right: 2.1%;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        margin-left: 0;
+        padding-left: 2.1%;
+        position: relative;
+        border-left: 0.5px solid #a1a1a4;
+        > div {
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+          &::before {
+            display: none;
+          }
+        }
+      }
+      &:last-of-type {
+        margin-left: 2.1%;
+      }
     }
   }
 }
