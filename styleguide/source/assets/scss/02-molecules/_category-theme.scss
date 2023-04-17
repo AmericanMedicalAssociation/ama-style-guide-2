@@ -313,10 +313,10 @@
         .category-theme__stub {
           .stub__container {
             flex-direction: column-reverse;
-            @include breakpoint($bp-med) {
+            @include breakpoint($bp-small) {
               flex-direction: row;
             }
-            @include breakpoint($bp-large) {
+            @include breakpoint($bp-med) {
               flex-direction: column;
             }
             .description {
@@ -331,6 +331,12 @@
               }
             }
             &.stub__has-image {
+              .category-theme--content {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .34;
+                }
+              }
               .category-theme--image {
                 padding-left: 0;
                 padding-right: 0;
@@ -339,7 +345,7 @@
                   padding-left: calc($gutter * .75);
                   flex: .66;
                 }
-                @include breakpoint($bp-large) {
+                @include breakpoint($bp-med) {
                   padding-left: 0;
                   flex: 1;
                 }
