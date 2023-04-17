@@ -1,7 +1,7 @@
 .ama__category-theme {
   padding-bottom: 0;
   padding-top: 0;
-  @include breakpoint($bp-small) {
+  @include breakpoint($bp-med) {
     padding-bottom: 28px;
     padding-top: 28px;
   }
@@ -20,7 +20,7 @@
     font-weight: $font-weight-bold;
     padding-bottom: 7px;
     display:none;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       display: block;
     }
   }
@@ -50,7 +50,7 @@
       font-weight: bold;
       padding-bottom: $gutter;
       margin-bottom: 0;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         padding-bottom: calc($gutter * .75);
       }
     }
@@ -61,7 +61,7 @@
       }
       display: flex;
       flex-direction: column;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         flex-direction: row;
       }
     }
@@ -87,7 +87,7 @@
         .category-theme__stub {
           .description {
             display: none;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               display: block;
             }
           }
@@ -99,7 +99,7 @@
         .category-theme__stub {
           .description {
             display: none;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               display: block;
             }
           }
@@ -111,11 +111,11 @@
     padding-bottom: $gutter;
     padding-right: 0;
     flex: 1;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       padding-right: calc($gutter * .75);
       flex: .5;
     }
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       padding-right: calc($gutter * 4.25);
       flex: .4;
     }
@@ -127,14 +127,14 @@
         font-size: 18px;
         line-height: 22px;
         padding-bottom: calc($gutter * .5);
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           font-size: 20px;
           line-height: 27px;
           padding-bottom: calc($gutter * .75);
         }
       }
     }
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       padding-bottom: 0;
       .category-theme--image {
         max-width: 100%;
@@ -146,10 +146,10 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       flex: .5;
     }
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       flex: .6;
     }
 
@@ -158,7 +158,7 @@
       &:last-of-type {
         padding-bottom: 0;
       }
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         border-bottom: 1px solid #a1a1a4;
         padding-top: calc($gutter * .75);
         &:last-of-type {
@@ -169,7 +169,7 @@
           padding-top: 0;
         }
       }
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-large) {
         min-height: 128px;
       }
       .stub__container {
@@ -181,13 +181,13 @@
           display: block;
           flex-basis: 100%;
           padding-bottom: calc($gutter * .25);
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             display: none;
           }
         }
         .date {
           display: none;
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             display: block;
           }
         }
@@ -196,29 +196,29 @@
           min-height: 100px;
           .category-theme--content {
             flex: .75;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               flex: 1;
             }
-            @include breakpoint($bp-med) {
+            @include breakpoint($bp-large) {
               flex: .7;
             }
           }
           .category-theme--image {
             flex: .25;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               flex: .5;
             }
-            @include breakpoint($bp-med) {
+            @include breakpoint($bp-large) {
               flex: .3;
             }
           }
         }
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           flex-direction: row;
         }
         .category-theme--content {
           flex: 1;
-          @include breakpoint($bp-med) {
+          @include breakpoint($bp-large) {
             padding-right: calc($gutter * .25);
           }
           h3.ama__h3 {
@@ -229,10 +229,10 @@
             line-height: 1.39;
             margin-bottom: 0;
             padding-top: 0;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               padding-bottom: calc($gutter * .75);
             }
-            @include breakpoint($bp-med) {
+            @include breakpoint($bp-large) {
               font-size: 18px;
               line-height: 25px;
             }
@@ -243,15 +243,15 @@
           flex: .25;
           padding-right: $gutter;
           padding-left: 0;
-          @include breakpoint($bp-small max-width) {
+          @include breakpoint($bp-med max-width) {
             flex: .75;
           }
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-med) {
             align-items: unset;
             display: none;
             padding-right: 0;
           }
-          @include breakpoint($bp-med) {
+          @include breakpoint($bp-large) {
             display: block;
             padding-left: $gutter;
           }
@@ -296,7 +296,7 @@
         content: "";
       }
     }
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       display: block;
     }
   }
@@ -313,10 +313,10 @@
         .category-theme__stub {
           .stub__container {
             flex-direction: column-reverse;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               flex-direction: row;
             }
-            @include breakpoint($bp-med) {
+            @include breakpoint($bp-large) {
               flex-direction: column;
             }
             .description {
@@ -333,7 +333,7 @@
             &.stub__has-image {
               .category-theme--content {
                 flex: 1;
-                @include breakpoint($bp-small) {
+                @include breakpoint($bp-med) {
                   flex: .34;
                 }
               }
@@ -341,11 +341,11 @@
                 padding-left: 0;
                 padding-right: 0;
                 flex: 1;
-                @include breakpoint($bp-small) {
+                @include breakpoint($bp-med) {
                   padding-left: calc($gutter * .75);
                   flex: .66;
                 }
-                @include breakpoint($bp-med) {
+                @include breakpoint($bp-large) {
                   padding-left: 0;
                   flex: 1;
                 }
@@ -355,144 +355,3 @@
         }
       }
     }
-    &.category-theme--three-up {
-      .category-theme__container--right {
-        .category-theme__stub {
-          .stub__container {
-            border-bottom: 1px solid $border-gray;
-            padding-bottom: 0;
-            @include breakpoint($bp-small) {
-              border-bottom: none;
-            }
-          }
-          &:last-child {
-            .stub__container {
-              border-bottom: none;
-            }
-          }
-          .stub__container {
-
-
-            .category-theme--content {
-              flex: 1;
-              flex-direction: column;
-              @include breakpoint($bp-small) {
-                flex: 1;
-                flex-direction: column;
-              }
-              @include breakpoint($bp-med) {
-                flex: 1;
-                flex-direction: column;
-              }
-              @include breakpoint($bp-large) {
-                flex: 1;
-                flex-direction: column;
-              }
-            }
-
-            .description {
-              display: block;
-            }
-            &.stub__has-image {
-              flex-direction: column-reverse;
-              @include breakpoint($bp-small) {
-                flex-direction: row;
-              }
-
-              .category-theme--image {
-                padding-right: 0;
-                flex: 1;
-                @include breakpoint($bp-small) {
-                  flex: .33;
-
-                }
-                @include breakpoint($bp-med) {
-                  flex: .4;
-                }
-              }
-              .category-theme--content {
-                flex: 1;
-                @include breakpoint($bp-small) {
-                  flex: .67;
-                }
-                @include breakpoint($bp-med) {
-                  flex: .6;
-                }
-              }
-            }
-            .mobile-date {
-              display: none;
-            }
-            .date {
-              display: block;
-            }
-          }
-        }
-      }
-    }
-    &.category-theme--four-up {
-      .category-theme__container--right {
-        .category-theme__stub {
-          .stub__container {
-            border-bottom: 1px solid $border-gray;
-            padding-bottom: calc($gutter * .75);
-            @include breakpoint($bp-small) {
-              border-bottom: none;
-              padding-bottom: 0;
-            }
-          }
-          &:last-child {
-            .stub__container {
-              border-bottom: none;
-              padding-bottom: 0;
-            }
-          }
-        }
-      }
-    }
-    flex-direction: column;
-    @include breakpoint($bp-small) {
-
-    }
-    @include breakpoint($bp-med) {
-      flex-direction: row;
-    }
-    .category-theme__container--left {
-      border-bottom: 1px $border-gray solid;
-      padding-bottom: $gutter;
-      padding-right: 0;
-      border-right: none;
-      @include breakpoint($bp-med) {
-        padding-right: calc($gutter * 2);
-        border-right: 1px $border-gray solid;
-        border-bottom: none;
-      }
-    }
-    .category-theme__container--right {
-      padding-left: 0;
-      @include breakpoint($bp-med) {
-        padding-left: calc($gutter * 2);
-      }
-      .category-theme__stub {
-        &:first-of-type {
-          padding-top: calc($gutter * .75);
-          @include breakpoint($bp-med) {
-            padding-top: 0;
-          }
-        }
-      }
-      .stub__container {
-        &.stub__has-image {
-          .category-theme--image {
-            display: block;
-            padding-left: 0;
-            @include breakpoint($bp-small) {
-              padding-left: calc($gutter * .75);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
