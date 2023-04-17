@@ -317,9 +317,23 @@
             .description {
               display: block;
             }
+            .mobile-date {
+              display: none;
+            }
+            .category-theme--content {
+              .date {
+                display: block;
+              }
+              h3.ama__h3 {
+                &.ama__article-stub__title {
+                  padding-bottom: calc($gutter * .75);
+                  @include breakpoint($bp-small) {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
             &.stub__has-image {
-
-
               .category-theme--image {
                 padding-left: 0;
                 padding-right: 0;
@@ -330,15 +344,6 @@
                 }
                 @include breakpoint($bp-large) {
                   padding-left: 0;
-                  flex: 1;
-                }
-              }
-              .category-theme--content {
-                flex: 1;
-                @include breakpoint($bp-small) {
-                  flex: .34;
-                }
-                @include breakpoint($bp-large) {
                   flex: 1;
                 }
               }
