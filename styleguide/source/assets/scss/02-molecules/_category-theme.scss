@@ -230,7 +230,7 @@
             margin-bottom: 0;
             padding-top: 0;
             @include breakpoint($bp-small) {
-              padding-bottom: $gutter;
+              padding-bottom: calc($gutter * .75);
             }
             @include breakpoint($bp-med) {
               font-size: 18px;
@@ -303,6 +303,11 @@
 }
 .category-theme__container {
   &.category-subcat {
+    h3.ama__h3 {
+      &.ama__article-stub__title {
+        padding-bottom: calc($gutter * .75);
+      }
+    }
     &.category-theme--two-up {
       .category-theme__container--right {
         .category-theme__stub {
@@ -323,14 +328,6 @@
             .category-theme--content {
               .date {
                 display: block;
-              }
-              h3.ama__h3 {
-                &.ama__article-stub__title {
-                  padding-bottom: calc($gutter * .75);
-                  @include breakpoint($bp-small) {
-                    padding-bottom: 0;
-                  }
-                }
               }
             }
             &.stub__has-image {
