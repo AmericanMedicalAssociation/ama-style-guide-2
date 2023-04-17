@@ -371,31 +371,53 @@
             }
           }
           .stub__container {
+
+
+            .category-theme--content {
+              flex: 1;
+              flex-direction: column;
+              @include breakpoint($bp-small) {
+                flex: 1;
+                flex-direction: column;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                flex-direction: column;
+              }
+              @include breakpoint($bp-large) {
+                flex: 1;
+                flex-direction: column;
+              }
+            }
+
             .description {
               display: block;
             }
-            flex-direction: column-reverse;
-            @include breakpoint($bp-small) {
-              flex-direction: row;
-            }
-            .category-theme--image {
-              padding-right: 0;
-              flex: 1;
+            &.stub__has-image {
+              flex-direction: column-reverse;
               @include breakpoint($bp-small) {
-                flex: .33;
+                flex-direction: row;
+              }
 
+              .category-theme--image {
+                padding-right: 0;
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .33;
+
+                }
+                @include breakpoint($bp-med) {
+                  flex: .4;
+                }
               }
-              @include breakpoint($bp-med) {
-                flex: .4;
-              }
-            }
-            .category-theme--content {
-              flex: 1;
-              @include breakpoint($bp-small) {
-                flex: .67;
-              }
-              @include breakpoint($bp-med) {
-                flex: .6;
+              .category-theme--content {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .67;
+                }
+                @include breakpoint($bp-med) {
+                  flex: .6;
+                }
               }
             }
             .mobile-date {
