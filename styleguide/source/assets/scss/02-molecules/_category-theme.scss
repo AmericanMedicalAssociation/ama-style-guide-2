@@ -299,6 +299,105 @@
 }
 .category-theme__container {
   &.category-subcat {
+    &.category-theme--two-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .stub__container {
+            flex-direction: column-reverse;
+            @include breakpoint($bp-small) {
+              flex-direction: row;
+            }
+            @include breakpoint($bp-large) {
+              flex-direction: column;
+            }
+            .description {
+              display: block;
+            }
+            &.stub__has-image {
+
+
+              .category-theme--image {
+                padding-left: 0;
+                padding-right: 0;
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  padding-left: calc($gutter * .75);
+                  flex: .66;
+                }
+                @include breakpoint($bp-large) {
+                  padding-left: 0;
+                  flex: 1;
+                }
+              }
+              .category-theme--content {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .34;
+                }
+                @include breakpoint($bp-large) {
+                  flex: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.category-theme--three-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .stub__container {
+            border-bottom: 1px solid $border-gray;
+            padding-bottom: calc($gutter * .75);
+            @include breakpoint($bp-small) {
+              border-bottom: none;
+              padding-bottom: 0;
+            }
+          }
+          &:last-child {
+            .stub__container {
+              border-bottom: none;
+              padding-bottom: none;
+            }
+          }
+          .stub__container {
+            .description {
+              display: block;
+            }
+            flex-direction: column-reverse;
+            @include breakpoint($bp-small) {
+              flex-direction: row;
+            }
+            .category-theme--image {
+              padding-right: 0;
+              flex: 1;
+              @include breakpoint($bp-small) {
+                flex: .33;
+
+              }
+              @include breakpoint($bp-med) {
+                flex: .4;
+              }
+            }
+            .category-theme--content {
+              flex: 1;
+              @include breakpoint($bp-small) {
+                flex: .67;
+              }
+              @include breakpoint($bp-med) {
+                flex: .6;
+              }
+            }
+            .mobile-date {
+              display: none;
+            }
+            .date {
+              display: block;
+            }
+          }
+        }
+      }
+    }
     flex-direction: column;
     @include breakpoint($bp-small) {
 
