@@ -21,6 +21,7 @@
       margin: 0 auto;
       padding: calc($gutter / 2.2);
       border: 0;
+      text-transform: none;
 
       &:hover {
         background: $hoverPurple;
@@ -315,7 +316,7 @@
       width: 13px;
       min-width: 13px;
       height: 16px;
-  
+
     }
     span.us-verify {
       color: $text-navy;
@@ -335,7 +336,7 @@
   .ama__subscribe-promo__form .ama__button {
     background-color: $orange;
     color: $black;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     width: 100%;
     margin: 0;
     text-transform: none;
@@ -420,7 +421,7 @@
   .ama__subscribe-promo__form .ama__button {
     background-color: $orange;
     color: $black;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     width: 100%;
     max-width: 220px;
     margin: 0;
