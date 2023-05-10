@@ -119,6 +119,10 @@
     }
   }
   .ama__layout--one-column__page-content {
+    .index-hero {
+      padding: calc($gutter * 2) 0;
+      border-bottom: 1px solid $border-gray;
+    }
     .article_stub-list {
       margin: 28px 0 0;
       @include breakpoint($bp-small) {
@@ -152,7 +156,7 @@
 .description {
   .desc-display {
     &.full {
-      div p, 
+      div p,
       > p:last-of-type {
         margin-bottom: 14px;
       }
