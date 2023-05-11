@@ -61,10 +61,11 @@
   }
 }
 
-// Category page membership block styling
+// Taxonomy page membership block styling
 .ama__category .layout__region--content > .ama__partner-promo,
 .ama__category .layout__region--content .layout--onecol .ama__partner-promo,
-.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo {
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo {
   background: none;
   width: 100%;
   display: flex;
@@ -88,7 +89,8 @@
     h2.ama__h2 {
       color: $blue;
     }
-    p {
+    p,
+    ul {
       color: $black;
     }
 
@@ -116,6 +118,29 @@
     }
     @include breakpoint($bp-med) {
       margin-left: auto;
+    }
+  }
+}
+
+// Index Hero slot styling
+.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo {
+  @include breakpoint($bp-small) {
+    flex-direction: row-reverse;
+    .ama__partner-promo--media {
+      max-width: unset;
+      padding-left: 0;
+      padding-right: 22px;
+      flex: .7;
+    }
+    .ama__partner-promo__text {
+      flex: .3;
+    }
+  }
+  .ama__button {
+    background: $purple;
+    color: $white;
+    &:hover{
+      background: $hoverPurple;
     }
   }
 }

@@ -263,9 +263,10 @@
   }
 }
 
-// Category page subscribe promo block styling
+// Taxonomy page subscribe promo block styling
 .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo,
-.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo {
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo,
+.index-page .ama__layout--one-column__page-content .ama__subscribe-promo {
   background: none;
   color: $text-navy;
   display: flex;
@@ -347,6 +348,28 @@
 
   .form-item--error-message.active-error {
     color: $black;
+  }
+}
+
+// Index Hero slot styling
+.index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo {
+  @include breakpoint($bp-small) {
+    flex-direction: row-reverse;
+    .ama__subscribe-promo--media {
+      padding-left: 0;
+      padding-right: 22px;
+      flex: .7;
+    }
+    .ama__subscribe-promo--content {
+      flex: .3;
+    }
+  }
+  .ama__button {
+    background: $purple;
+    color: $white;
+    &:hover{
+      background: $hoverPurple;
+    }
   }
 }
 
