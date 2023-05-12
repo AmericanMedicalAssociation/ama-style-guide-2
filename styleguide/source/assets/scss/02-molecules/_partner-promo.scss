@@ -65,7 +65,8 @@
 .ama__category .layout__region--content > .ama__partner-promo,
 .ama__category .layout__region--content .layout--onecol .ama__partner-promo,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo,
-.index-page .ama__layout--one-column__page-content .ama__partner-promo {
+.index-page .ama__layout--one-column__page-content .ama__partner-promo,
+.index-page > div > .ama__partner-promo {
   background: none;
   width: 100%;
   display: flex;
@@ -134,6 +135,9 @@
     }
     .ama__partner-promo__text {
       flex: .3;
+      h2.ama__h2 {
+        color: $purple;
+      }
     }
   }
   .ama__button {
