@@ -398,6 +398,8 @@ a.ama__membership {
 // Index Hero slot styling
 .index-page .ama__layout--one-column__page-content .index-hero .ama__membership {
   @include breakpoint($bp-small) {
+    padding: 0;
+    margin-top: $gutter;
     flex-direction: row-reverse;
     .ama__membership_media-container {
       max-width: unset;
