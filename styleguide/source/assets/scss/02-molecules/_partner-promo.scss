@@ -125,21 +125,33 @@
 
 // Index Hero slot styling
 .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo {
+  margin-top: calc($gutter / 2);
+  padding-top: 14px;
   @include breakpoint($bp-small) {
     padding: 0;
     margin-top: $gutter;
     flex-direction: row-reverse;
-    .ama__partner-promo--media {
+    .ama__partner-promo__text {
+      flex: .3;
+      h2.ama__h2 {
+        color: $purple;
+        font-weight: bold;
+      }
+    }
+  }
+  .ama__partner-promo--media {
+    margin: 0 0 calc($gutter /2) 0;
+    @include breakpoint($bp-small) {
+      margin-bottom: 0;
       max-width: unset;
       padding-left: 0;
       padding-right: 22px;
       flex: .7;
     }
-    .ama__partner-promo__text {
-      flex: .3;
-      h2.ama__h2 {
-        color: $purple;
-      }
+  }
+  .ama__partner-promo__text {
+    h2.ama__h2 {
+      color: $purple;
     }
   }
   .ama__button {

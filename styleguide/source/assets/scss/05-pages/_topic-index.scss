@@ -120,7 +120,11 @@
   }
   .ama__layout--one-column__page-content {
     .index-hero {
-      padding: $gutter 0 calc($gutter * 2) 0;
+      padding: calc($gutter / 2) 0 $gutter 0;
+      @include breakpoint($bp-small) {
+        margin-top: 0;
+        padding: $gutter 0 calc($gutter * 2) 0;
+      }
       border-bottom: 1px solid $border-gray;
     }
     .article_stub-list {
@@ -147,6 +151,11 @@
     }
   }
   @include breakpoint($bp-med max-width) {
+    &.ama__75-25__masthead  {
+      .ama__75-25__masthead__content {
+        padding-bottom: $gutter;
+      }
+    }
     .ama__category__article-stub-three-up > div {
       padding-bottom: $gutter;
     }

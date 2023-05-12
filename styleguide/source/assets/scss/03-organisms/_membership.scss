@@ -338,8 +338,8 @@ a.ama__membership {
       }
 
       .ama__membership_title_container {
-        margin-top: 28px;
-        margin-bottom: 14px;
+        margin-top: calc($gutter / 2);
+        margin-bottom: calc($gutter / 2);
         @include breakpoint($bp-small) {
           margin-top: 0;
           margin-bottom: 0;
@@ -397,18 +397,27 @@ a.ama__membership {
 
 // Index Hero slot styling
 .index-page .ama__layout--one-column__page-content .index-hero .ama__membership {
+  margin-top: calc($gutter / 2);
+  padding-top: 14px;
   @include breakpoint($bp-small) {
     padding: 0;
     margin-top: $gutter;
     flex-direction: row-reverse;
-    .ama__membership_media-container {
+    .ama__membership-content {
+      flex: .3;
+      h2.ama__h2 {
+        font-weight: bold;
+      }
+    }
+  }
+  .ama__membership_media-container {
+    margin: 0 0 calc($gutter /2) 0;
+    @include breakpoint($bp-small) {
+      margin-bottom: 0;
       max-width: unset;
       padding-left: 0;
       padding-right: 22px;
       flex: .7;
-    }
-    .ama__membership-content {
-      flex: .3;
     }
   }
   .ama__membership_cta_container a.ama__button {
