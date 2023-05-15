@@ -399,12 +399,12 @@ a.ama__membership {
 .index-page .ama__layout--one-column__page-content .index-hero .ama__membership {
   margin-top: calc($gutter / 2);
   padding-top: 14px;
-  @include breakpoint($bp-small) {
+  flex-direction: column-reverse;
+  @include breakpoint($bp-med) {
     padding: 0;
     margin-top: $gutter;
     flex-direction: row-reverse;
     .ama__membership-content {
-      flex: .3;
       h2.ama__h2 {
         font-weight: $font-weight-bold;
       }
@@ -412,12 +412,11 @@ a.ama__membership {
   }
   .ama__membership_media-container {
     margin: 0 0 calc($gutter /2) 0;
-    @include breakpoint($bp-small) {
+    padding-left: 0;
+    @include breakpoint($bp-med) {
       margin-bottom: 0;
       max-width: unset;
-      padding-left: 0;
       padding-right: 22px;
-      flex: .7;
     }
   }
   .ama__membership_cta_container a.ama__button {
