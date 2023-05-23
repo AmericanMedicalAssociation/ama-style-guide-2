@@ -7261,8 +7261,8 @@ Styles for the new Category Featured Content Custom Block.
 .featured-content .description {
   margin-bottom: 0;
 }
-.featured-content h3.title:focus h3,
-.featured-content .description:focus h3 {
+.featured-content h3.title:focus-visible,
+.featured-content .description:focus-visible {
   border: 3px solid #0176a5;
 }
 .featured-content .media {
@@ -7285,8 +7285,8 @@ Styles for the new Category Featured Content Custom Block.
 .featured-content a.description-wrapper-link:hover h3.title {
   text-decoration: underline;
 }
-.featured-content a.block-wrapper-link:focus h3.title,
-.featured-content a.description-wrapper-link:focus h3.title {
+.featured-content a.block-wrapper-link:focus-visible h3.title,
+.featured-content a.description-wrapper-link:focus-visible h3.title {
   border: 3px solid #0176a5;
 }
 .featured-content a.block-wrapper-link h3.title,
@@ -20411,6 +20411,7 @@ section.ama__page--event__speakers {
 }
 .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__subscribe-promo__email-subscribe-container {
   margin-bottom: 0;
+  position: relative;
 }
 .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form label#footer-mr-email-label {
   position: absolute;
@@ -22709,6 +22710,7 @@ a.ama__membership:hover {
     flex-direction: row-reverse;
   }
   .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership-content h2.ama__h2, .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership-content h2.ui-accordion-header {
+    text-transform: unset;
     font-weight: 600;
   }
 }
