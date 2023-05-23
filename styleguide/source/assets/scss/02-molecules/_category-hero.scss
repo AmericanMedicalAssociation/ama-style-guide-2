@@ -97,10 +97,8 @@ Styles for the new Category Featured Content Custom Block.
   h3.title,
   .description {
     margin-bottom: 0;
-    &:focus {
-      h3 {
-        border: 3px solid $description-blue-visited;
-      }
+    &:focus-visible {
+      border: 3px solid $description-blue-visited;
     }
   }
 
@@ -121,7 +119,7 @@ Styles for the new Category Featured Content Custom Block.
         text-decoration: underline;
       }
     }
-    &:focus {
+    &:focus-visible {
       h3.title {
         border: 3px solid $description-blue-visited;
       }
