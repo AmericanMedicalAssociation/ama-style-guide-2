@@ -119,6 +119,14 @@
     }
   }
   .ama__layout--one-column__page-content {
+    .index-hero {
+      padding: calc($gutter / 2) 0 $gutter 0;
+      @include breakpoint($bp-small) {
+        margin-top: 0;
+        padding: $gutter 0 calc($gutter * 2) 0;
+      }
+      border-bottom: 1px solid $border-gray;
+    }
     .article_stub-list {
       margin: 28px 0 0;
       @include breakpoint($bp-small) {
@@ -142,12 +150,22 @@
       }
     }
   }
+  @include breakpoint($bp-med max-width) {
+    &.ama__75-25__masthead  {
+      .ama__75-25__masthead__content {
+        padding-bottom: $gutter;
+      }
+    }
+    .ama__category__article-stub-three-up > div {
+      padding-bottom: $gutter;
+    }
+  }
 }
 
 .description {
   .desc-display {
     &.full {
-      div p, 
+      div p,
       > p:last-of-type {
         margin-bottom: 14px;
       }

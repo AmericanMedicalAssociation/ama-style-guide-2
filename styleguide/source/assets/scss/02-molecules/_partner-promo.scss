@@ -61,10 +61,12 @@
   }
 }
 
-// Category page membership block styling
+// Taxonomy page membership block styling
 .ama__category .layout__region--content > .ama__partner-promo,
 .ama__category .layout__region--content .layout--onecol .ama__partner-promo,
-.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo {
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo,
+.index-page > div > .ama__partner-promo {
   background: none;
   width: 100%;
   display: flex;
@@ -88,12 +90,13 @@
     h2.ama__h2 {
       color: $blue;
     }
-    p {
+    p,
+    ul {
       color: $black;
     }
 
     .ama__button {
-      font-weight: bold;
+      font-weight: $font-weight-bold;
       margin: 21px 0 0;
       @include breakpoint($bp-small) {
         margin: 28px 0 0;
@@ -116,6 +119,45 @@
     }
     @include breakpoint($bp-med) {
       margin-left: auto;
+    }
+  }
+}
+
+// Index Hero slot styling
+.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo {
+  margin-top: calc($gutter / 2);
+  padding-top: 14px;
+  flex-direction: column-reverse;
+  @include breakpoint($bp-med) {
+    padding: 0;
+    margin-top: $gutter;
+    flex-direction: row-reverse;
+    .ama__partner-promo__text {
+      h2.ama__h2 {
+        color: $purple;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  .ama__partner-promo--media {
+    margin: 0 0 calc($gutter /2) 0;
+    padding-left: 0;
+    @include breakpoint($bp-med) {
+      margin-bottom: 0;
+      max-width: unset;
+      padding-right: 22px;
+    }
+  }
+  .ama__partner-promo__text {
+    h2.ama__h2 {
+      color: $purple;
+    }
+  }
+  .ama__button {
+    background: $purple;
+    color: $white;
+    &:hover{
+      background: $hoverPurple;
     }
   }
 }
@@ -152,7 +194,7 @@
       color: $black;
     }
     .ama__button {
-      font-weight: bold;
+      font-weight: $font-weight-bold;
       margin: 21px 0 0;
       @include breakpoint($bp-small) {
         margin: 28px 0 0;

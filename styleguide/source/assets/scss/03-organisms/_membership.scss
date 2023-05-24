@@ -51,7 +51,7 @@
 
     img {
       width: 100%;
-      height:auto;
+      height: auto;
       margin-top: 0;
     }
   }
@@ -92,13 +92,11 @@ a.ama__membership {
 //Slim Membership Block styling
 .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
   background: #ece7f0;
-  height: 210px;
   margin: 0 0 35px;
   position: relative;
   padding-bottom: 0;
   @include breakpoint($bp-small min-width) {
     width: 100%;
-    height: unset;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -293,10 +291,12 @@ a.ama__membership {
   }
 }
 
-// Category page membership block styling
+// Taxonomy page membership block styling
 .ama__category .layout__region--content > .ama__membership,
 .ama__category .layout__region--content .layout--onecol .ama__membership,
-.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership {
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership,
+.index-page .ama__layout--one-column__page-content .ama__membership,
+.index-page > div > .ama__membership {
     display: flex;
     flex-direction: column-reverse;
     padding-bottom: 28px;
@@ -320,8 +320,8 @@ a.ama__membership {
       @include breakpoint($bp-med) {
         margin-right: 17px;
       }
-  
-      .ama__membership_title_container, 
+
+      .ama__membership_title_container,
       .membership-body,
       .ama__membership_cta_container {
         padding: 0;
@@ -336,16 +336,16 @@ a.ama__membership {
       }
 
       .ama__membership_title_container {
-        margin-top: 28px;
-        margin-bottom: 14px;
+        margin-top: calc($gutter / 2);
+        margin-bottom: calc($gutter / 2);
         @include breakpoint($bp-small) {
           margin-top: 0;
           margin-bottom: 0;
         }
       }
-  
+
       .ama__membership_cta_container {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         margin: 21px 0 0;
         max-width: unset;
         position: unset;
@@ -354,19 +354,20 @@ a.ama__membership {
           max-width: 224px;
         }
         a.ama__button {
+          font-size: 18px;
+          line-height: 27px;
           color: $text-navy;
           padding: 8px 14px 7px;
-          line-height: 1;
           height: unset;
           width: 100%;
           margin: 0;
         }
       }
-  
+
       .ama__h2 {
         text-transform: uppercase;
         color: $purple;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         text-align: left;
         padding: 0;
         margin: 0;
@@ -390,6 +391,41 @@ a.ama__membership {
         height: auto;
       }
     }
+}
+
+// Index Hero slot styling
+.index-page .ama__layout--one-column__page-content .index-hero .ama__membership {
+  margin-top: calc($gutter / 2);
+  padding-top: 14px;
+  flex-direction: column-reverse;
+  @include breakpoint($bp-med) {
+    padding: 0;
+    margin-top: $gutter;
+    flex-direction: row-reverse;
+    .ama__membership-content {
+      h2.ama__h2 {
+        text-transform: unset;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  .ama__membership_media-container {
+    margin: 0 0 calc($gutter /2) 0;
+    padding-left: 0;
+    @include breakpoint($bp-med) {
+      margin-bottom: 0;
+      max-width: unset;
+      padding-right: 22px;
+    }
+  }
+  .ama__membership_cta_container a.ama__button {
+    background: $purple;
+    border-color: $purple;
+    color: $white;
+    &:hover{
+      background: $hoverPurple;
+    }
+  }
 }
 
 // Category specific layout builder styling
@@ -416,8 +452,8 @@ a.ama__membership {
       @include breakpoint($bp-small) {
         max-width: 380px;
       }
-  
-      .ama__membership_title_container, 
+
+      .ama__membership_title_container,
       .membership-body,
       .ama__membership_cta_container {
         padding: 0;
@@ -435,9 +471,9 @@ a.ama__membership {
           margin-bottom: 0;
         }
       }
-  
+
       .ama__membership_cta_container {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         margin: 21px 0 0;
         max-width: unset;
         position: unset;
@@ -447,18 +483,19 @@ a.ama__membership {
         }
         a.ama__button {
           color: $text-navy;
+          font-size: 18px;
+          line-height: 27px;
           padding: 8px 14px 7px;
-          line-height: 1;
           height: unset;
           width: 100%;
           margin: 0;
         }
       }
-  
+
       .ama__h2 {
         text-transform: uppercase;
         color: $purple;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         text-align: left;
         padding: 0;
         margin: 0;

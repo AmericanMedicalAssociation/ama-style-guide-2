@@ -178,6 +178,19 @@
 
 // Masthead styling for 75% 25% two column masthead
 
+.index-page {
+  .ama__75-25__masthead {
+    display: flex;
+    flex-direction: column;
+    .heading-right {
+      display: none;
+    }
+    .heading-left {
+      margin-right: 0;
+    }
+  }
+}
+
 .ama__75-25__masthead {
   display: block;
   @include breakpoint($bp-small) {

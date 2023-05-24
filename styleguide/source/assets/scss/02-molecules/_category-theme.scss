@@ -1,0 +1,682 @@
+//  Remove duplicate styles.
+.ama__category-theme {
+  padding-bottom: 0;
+  padding-top: 0;
+  @include breakpoint($bp-small) {
+    padding-bottom: 28px;
+    padding-top: 28px;
+  }
+  .description {
+    font-size: 18px;
+    padding-bottom: calc($gutter * .75);
+    margin-bottom: 0 !important;
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+  .series-name {
+    color: $purple;
+    font-size: 14px;
+    line-height: 1.14;
+    font-weight: $font-weight-bold;
+    padding-bottom: 7px;
+    display:none;
+    @include breakpoint($bp-small) {
+      display: block;
+    }
+  }
+  .wrapper-link {
+    text-decoration: none;
+    &:hover .ama__article-stub__title {
+      text-decoration: underline;
+    }
+  }
+  .tags {
+    color: $purple;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.36;
+    display: none;
+    padding-bottom: calc($gutter * .25);
+    .tag {
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      &:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        top: 3;
+        color: $purple;
+      }
+      &:first-child {
+        &:before {
+          content: "/";
+          position: absolute;
+          left: 0;
+          top: 3;
+          color: $purple;
+        }
+      }
+      &:last-child {
+        content: "";
+      }
+    }
+    @include breakpoint($bp-small) {
+      display: block;
+    }
+  }
+  .date,
+  .mobile-date {
+    font-size: 14px;
+    color: #424242;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    .article-event-date {
+      display: inline;
+    }
+    .read_time {
+      display: inline;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      .ama__h3 {
+        display: inline;
+        font-size: 14px;
+        color: #424242;
+        line-height: 27px;
+      }
+    }
+  }
+  .category-theme {
+    &__header {
+      font-weight: $font-weight-bold;
+      padding-bottom: $gutter;
+      margin-bottom: 0;
+      @include breakpoint($bp-small) {
+        padding-bottom: calc($gutter * .75);
+      }
+    }
+
+    &__container {
+      h3,
+      .ama__h3 {
+        margin-bottom: 0 !important;
+      }
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+      }
+      &--left {
+        //padding-bottom: $gutter;
+        padding-right: 0;
+        flex: 1;
+        @include breakpoint($bp-small) {
+          padding-right: calc($gutter * .75);
+          flex: .5;
+        }
+        @include breakpoint($bp-med) {
+          padding-right: calc($gutter * 4.25);
+          flex: .4;
+        }
+        .mobile-date {
+          display: none;
+        }
+        .category-theme--content {
+          .ama__article-stub__title {
+            font-size: 18px;
+            line-height: 22px;
+            padding-bottom: calc($gutter * .5);
+            @include breakpoint($bp-small) {
+              font-size: 20px;
+              line-height: 27px;
+              padding-bottom: calc($gutter * .75);
+            }
+          }
+        }
+        @include breakpoint($bp-small) {
+          padding-bottom: 0;
+          .category-theme--image {
+            max-width: 100%;
+          }
+        }
+      }
+      &--right {
+        margin-left: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint($bp-small) {
+          flex: .5;
+        }
+        @include breakpoint($bp-med) {
+          flex: .6;
+        }
+        .category-theme__stub {
+          padding-bottom: calc($gutter * .75);
+          &:last-of-type {
+            padding-bottom: 0;
+          }
+          @include breakpoint($bp-small) {
+            border-bottom: 1px solid #a1a1a4;
+            padding-top: calc($gutter * .75);
+            &:last-of-type {
+              border-bottom: none;
+              padding-bottom: 0;
+            }
+            &:first-of-type {
+              padding-top: 0;
+            }
+          }
+          @include breakpoint($bp-med) {
+            min-height: 128px;
+          }
+          .stub__container {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            justify-content: end;
+            .mobile-date {
+              display: block;
+              flex-basis: 100%;
+              padding-bottom: calc($gutter * .25);
+              @include breakpoint($bp-small) {
+                display: none;
+              }
+            }
+            .date {
+              display: none;
+              @include breakpoint($bp-small) {
+                display: block;
+              }
+            }
+
+            &.stub__has-image {
+              min-height: 100px;
+              .category-theme--content {
+                flex: .75;
+                @include breakpoint($bp-small) {
+                  flex: 1;
+                }
+                @include breakpoint($bp-med) {
+                  flex: .7;
+                }
+              }
+              .category-theme--image {
+                flex: .25;
+                @include breakpoint($bp-small) {
+                  flex: .5;
+                }
+                @include breakpoint($bp-med) {
+                  flex: .3;
+                }
+              }
+            }
+            @include breakpoint($bp-small) {
+              flex-direction: row;
+            }
+            .category-theme--content {
+              flex: 1;
+              @include breakpoint($bp-med) {
+                padding-right: calc($gutter * .25);
+              }
+              h3.ama__h3 {
+                margin-bottom: 0;
+              }
+              h3.ama__article-stub__title {
+                font-size: 18px;
+                line-height: 1.39;
+                margin-bottom: 0;
+                padding-top: 0;
+                @include breakpoint($bp-small) {
+                  padding-bottom: calc($gutter * .75);
+                }
+                @include breakpoint($bp-med) {
+                  font-size: 18px;
+                  line-height: 25px;
+                }
+              }
+            }
+            .category-theme--image {
+              flex: .25;
+              padding-right: $gutter;
+              padding-left: 0;
+              @include breakpoint($bp-small max-width) {
+                flex: .75;
+              }
+              @include breakpoint($bp-small) {
+                align-items: unset;
+                padding-right: 0;
+              }
+              @include breakpoint($bp-med) {
+                padding-left: $gutter;
+              }
+            }
+          }
+        }
+      }
+    }
+    &--content {
+      .ama__subcategory-page-article-stub__date-time,
+      .ama__article-stub__copy {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &--four-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .stub__container {
+            .description {
+              display: none;
+            }
+            .category-theme--image {
+              display: block;
+              @include breakpoint($bp-small) {
+                display: none;
+              }
+              @include breakpoint($bp-med) {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+    &--three-up {
+      flex-direction: column;
+      @include breakpoint($bp-med) {
+        flex-direction: row;
+      }
+      .category-theme__container--left {
+        padding-right: 0;
+        @include breakpoint($bp-med) {
+          padding-right: calc($gutter * 4.25);
+        }
+        .category-theme__stub {
+          border-bottom: none;
+          padding-bottom: calc($gutter * .75);
+          @include breakpoint($bp-small) {
+            border-bottom: 1px solid $border-gray;
+          }
+          @include breakpoint($bp-med) {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+          .stub__container {
+            &.stub__has-image {
+              display: flex;
+              flex-direction: column-reverse;
+              @include breakpoint($bp-small) {
+                flex-direction: row;
+              }
+              @include breakpoint($bp-med) {
+                flex-direction: column;
+              }
+              .category-theme--image {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .66;
+                }
+                @include breakpoint($bp-med) {
+                  flex: 1;
+                }
+              }
+              .category-theme--content {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .34;
+                }
+                @include breakpoint($bp-med) {
+                  flex: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .category-theme__container--right {
+        .category-theme__stub {
+          padding-top: calc($gutter * .75);
+          padding-bottom: calc($gutter * .75);
+          border-bottom: none;
+          @include breakpoint($bp-small) {
+            border-bottom: 1px solid $border-gray;
+          }
+          @include breakpoint($bp-med) {
+            padding-top: 0;
+          }
+          &:last-child {
+            padding-top: calc($gutter * .75);
+            border-bottom: none;
+
+          }
+          .stub__container {
+            .category-theme--content {
+              flex: 1;
+              flex-direction: column;
+              @include breakpoint($bp-small) {
+                flex: 1;
+                flex-direction: column;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                flex-direction: column;
+              }
+              @include breakpoint($bp-large) {
+                flex: 1;
+                flex-direction: column;
+              }
+              .ama__article-stub__title {
+                padding-bottom: calc($gutter * .75);
+              }
+              .description {
+                display: none;
+                padding-bottom: 0;
+                @include breakpoint($bp-small) {
+                  display: block;
+                }
+              }
+            }
+            &.stub__has-image {
+              flex-direction: column-reverse;
+              @include breakpoint($bp-small) {
+                flex-direction: row;
+              }
+              .category-theme--image {
+                padding-right: 0;
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .33;
+                }
+                @include breakpoint($bp-med) {
+                  flex: .4;
+                }
+              }
+              .category-theme--content {
+                flex: 1;
+                padding-right: 0;
+                @include breakpoint($bp-small) {
+                  flex: .67;
+                  padding-right: calc($gutter * .75);
+                }
+                @include breakpoint($bp-med) {
+                  flex: .6;
+                }
+              }
+            }
+            .mobile-date {
+              display: none;
+            }
+            .date {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    &--two-up {
+      .category-theme__container--right {
+        flex: 1;
+        @include breakpoint($bp-small) {
+          flex: .5;
+        }
+        @include breakpoint($bp-large) {
+          flex: .6;
+        }
+      }
+      .category-theme__container--left {
+        flex: 1;
+        padding-right: 0;
+        @include breakpoint($bp-small) {
+          flex: .5;
+          padding-right: calc($gutter * 3.25);
+        }
+        @include breakpoint($bp-large) {
+          flex: .4;
+          padding-right: calc($gutter * 4.25);
+        }
+      }
+      .category-theme__container--left {
+        .category-theme__stub {
+          border-bottom: 1px solid $border-gray;
+          @include breakpoint($bp-small) {
+            border-bottom: none;
+          }
+          .stub__container {
+            display:flex;
+            flex-direction: column-reverse;
+            @include breakpoint($bp-small) {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+      .category-theme__container--right {
+        .category-theme__stub {
+          padding-top: calc($gutter * .75);
+          @include breakpoint($bp-small) {
+            padding-top: 0;
+          }
+          .stub__container {
+            flex-direction: column-reverse;
+            @include breakpoint($bp-small) {
+              flex-direction: column;
+            }
+            .description {
+              display: none;
+              @include breakpoint($bp-small) {
+                display: block;
+              }
+            }
+            .mobile-date {
+              display: none;
+            }
+            .category-theme--content {
+              .date {
+                display: block;
+              }
+            }
+            &.stub__has-image {
+              .category-theme--content {
+
+              }
+              .category-theme--image {
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//  Subcategory block styles.
+.category-theme__container {
+  &.category-subcat {
+    h3.ama__h3 {
+      &.ama__article-stub__title {
+        padding-bottom: calc($gutter * .75);
+      }
+    }
+    &.category-theme--two-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .stub__container {
+            flex-direction: column-reverse;
+            @include breakpoint($bp-small) {
+              flex-direction: row;
+            }
+            @include breakpoint($bp-med) {
+              flex-direction: column;
+            }
+            .description {
+              display: block;
+            }
+            .mobile-date {
+              display: none;
+            }
+            .category-theme--content {
+              .date {
+                display: block;
+              }
+            }
+            &.stub__has-image {
+              .category-theme--content {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .34;
+                }
+              }
+              .category-theme--image {
+                padding-left: 0;
+                padding-right: 0;
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  padding-left: calc($gutter * .75);
+                  flex: .66;
+                }
+                @include breakpoint($bp-med) {
+                  padding-left: 0;
+                  flex: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.category-theme--three-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          border-bottom: 1px solid $border-gray;
+          &:last-child {
+            border-bottom: 0;
+          }
+          .stub__container {
+            padding-bottom: 0;
+          }
+          .stub__container {
+            .category-theme--content {
+              flex: 1;
+              flex-direction: column;
+              @include breakpoint($bp-small) {
+                flex: 1;
+                flex-direction: column;
+              }
+              @include breakpoint($bp-med) {
+                flex: 1;
+                flex-direction: column;
+              }
+              @include breakpoint($bp-large) {
+                flex: 1;
+                flex-direction: column;
+              }
+            }
+            .description {
+              display: block;
+            }
+            &.stub__has-image {
+              flex-direction: column-reverse;
+              @include breakpoint($bp-small) {
+                flex-direction: row;
+              }
+              .category-theme--image {
+                padding-right: 0;
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .33;
+
+                }
+                @include breakpoint($bp-med) {
+                  flex: .4;
+                }
+              }
+              .category-theme--content {
+                flex: 1;
+                @include breakpoint($bp-small) {
+                  flex: .67;
+                }
+                @include breakpoint($bp-med) {
+                  flex: .6;
+                }
+              }
+            }
+            .mobile-date {
+              display: none;
+            }
+            .date {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    &.category-theme--four-up {
+      .category-theme__container--right {
+        .category-theme__stub {
+          .stub__container {
+            border-bottom: 1px solid $border-gray;
+            padding-bottom: calc($gutter * .75);
+            @include breakpoint($bp-small) {
+              border-bottom: none;
+              padding-bottom: 0;
+            }
+          }
+          &:last-child {
+            .stub__container {
+              border-bottom: none;
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    flex-direction: column;
+    @include breakpoint($bp-small) {
+
+    }
+    @include breakpoint($bp-med) {
+      flex-direction: row;
+    }
+    .category-theme__container--left {
+      border-bottom: 1px $border-gray solid;
+      padding-bottom: $gutter;
+      padding-right: 0;
+      border-right: none;
+      @include breakpoint($bp-med) {
+        padding-right: calc($gutter * 2);
+        border-right: 1px $border-gray solid;
+        border-bottom: none;
+      }
+    }
+    .category-theme__container--right {
+      padding-left: 0;
+      @include breakpoint($bp-med) {
+        padding-left: calc($gutter * 2);
+      }
+      .category-theme__stub {
+        &:first-of-type {
+          padding-top: calc($gutter * .75);
+          @include breakpoint($bp-med) {
+            padding-top: 0;
+          }
+        }
+      }
+      .stub__container {
+        &.stub__has-image {
+          .category-theme--image {
+            display: block;
+            padding-left: 0;
+            @include breakpoint($bp-small) {
+              padding-left: calc($gutter * .75);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
