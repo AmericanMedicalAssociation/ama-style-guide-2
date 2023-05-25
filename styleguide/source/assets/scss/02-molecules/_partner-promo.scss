@@ -110,7 +110,6 @@
   }
   .ama__partner-promo--media {
     display: block;
-    width: 100%;
     padding: 0;
     margin: 0;
     flex: 1;
@@ -203,8 +202,8 @@
     display: block;
     width: 100%;
     flex: 1;
-    @include breakpoint($bp-med) {
-      flex: 66;
+    @include breakpoint($bp-small) {
+      flex: .66;
     }
     padding: 0;
     margin: 0;
