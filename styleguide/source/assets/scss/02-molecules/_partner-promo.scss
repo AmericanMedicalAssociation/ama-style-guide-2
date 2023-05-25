@@ -131,7 +131,7 @@
   @include breakpoint($bp-med) {
     padding: 0;
     margin-top: $gutter;
-    flex-direction: row;
+    flex-direction: row-reverse;
     .ama__partner-promo__text {
       h2.ama__h2 {
         color: $purple;
@@ -142,14 +142,23 @@
   .ama__partner-promo--media {
     margin: 0;
     padding-left: 0;
+    margin-right: auto;
     @include breakpoint($bp-med) {
       margin-bottom: 0;
+      padding-right: 22px;
     }
   }
   .ama__partner-promo__text {
     h2.ama__h2 {
       color: $blue;
     }
+  }
+  .ama__button {	
+    background: $purple;	
+    color: $white;	
+    &:hover{	
+      background: $hoverPurple;	
+    }	    
   }
 }
 
