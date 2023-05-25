@@ -12641,7 +12641,11 @@ section.ama__forum_comments {
 .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text,
 .index-page > div > .ama__partner-promo .ama__partner-promo__text {
   display: block;
+  margin-right: 0;
   padding: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 @media (min-width: 37.5em) {
   .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text,
@@ -12649,16 +12653,10 @@ section.ama__forum_comments {
   .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text,
   .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text,
   .index-page > div > .ama__partner-promo .ama__partner-promo__text {
-    max-width: 380px;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text,
-  .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text,
-  .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text,
-  .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text,
-  .index-page > div > .ama__partner-promo .ama__partner-promo__text {
-    margin-right: 17px;
+    margin-right: 21px;
+    -webkit-box-flex: 0.34;
+    -ms-flex: 0.34;
+    flex: 0.34;
   }
 }
 .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text h2.ama__h2, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text h2.ui-accordion-header,
@@ -12708,7 +12706,7 @@ section.ama__forum_comments {
   font-weight: 600;
   margin: 21px 0 0;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 56.25em) {
   .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button,
   .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .ama__button,
   .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .ama__button,
@@ -12732,10 +12730,11 @@ section.ama__forum_comments {
 .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo--media,
 .index-page > div > .ama__partner-promo .ama__partner-promo--media {
   display: block;
-  width: 100%;
-  max-width: 680px;
   padding: 0;
   margin: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 @media (min-width: 37.5em) {
   .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo--media,
@@ -12744,6 +12743,9 @@ section.ama__forum_comments {
   .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo--media,
   .index-page > div > .ama__partner-promo .ama__partner-promo--media {
     margin-left: 17px;
+    -webkit-box-flex: 0.66;
+    -ms-flex: 0.66;
+    flex: 0.66;
   }
 }
 @media (min-width: 56.25em) {
@@ -12779,18 +12781,18 @@ section.ama__forum_comments {
   }
 }
 .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo--media {
-  margin: 0 0 14px 0;
+  margin: 0;
   padding-left: 0;
+  margin-right: auto;
 }
 @media (min-width: 56.25em) {
   .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo--media {
     margin-bottom: 0;
-    max-width: unset;
     padding-right: 22px;
   }
 }
 .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo__text h2.ama__h2, .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo__text .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo__text h2.ui-accordion-header {
-  color: #46166B;
+  color: #027DBC;
 }
 .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__button {
   background: #46166B;
@@ -12845,12 +12847,17 @@ section.ama__forum_comments {
 .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text {
   display: block;
   padding: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 @media (min-width: 37.5em) {
   .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text,
   .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text,
   .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text {
-    max-width: 380px;
+    -webkit-box-flex: 0.34;
+    -ms-flex: 0.34;
+    flex: 0.34;
   }
 }
 .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text h2.ama__h2, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text h2.ui-accordion-header,
@@ -12898,9 +12905,20 @@ section.ama__forum_comments {
 .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo--media {
   display: block;
   width: 100%;
-  max-width: 680px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   padding: 0;
   margin: 0;
+}
+@media (min-width: 37.5em) {
+  .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo--media,
+  .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo--media,
+  .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo--media {
+    -webkit-box-flex: 0.66;
+    -ms-flex: 0.66;
+    flex: 0.66;
+  }
 }
 
 .ama__partner {
@@ -15608,9 +15626,9 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo--content,
   .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo--content,
   .index-page > div > .ama__subscribe-promo .ama__subscribe-promo--content {
-    -webkit-box-flex: 0.375;
-    -ms-flex: 0.375;
-    flex: 0.375;
+    -webkit-box-flex: 0.34;
+    -ms-flex: 0.34;
+    flex: 0.34;
   }
 }
 .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo--media,
@@ -15631,9 +15649,9 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo--media,
   .index-page > div > .ama__subscribe-promo .ama__subscribe-promo--media {
     padding-left: 21px;
-    -webkit-box-flex: 0.625;
-    -ms-flex: 0.625;
-    flex: 0.625;
+    -webkit-box-flex: 0.66;
+    -ms-flex: 0.66;
+    flex: 0.66;
   }
 }
 @media (min-width: 56.25em) {
@@ -22525,6 +22543,9 @@ a.ama__membership:hover {
   background: none;
   display: block;
   padding: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 @media (min-width: 37.5em) {
   .ama__category .layout__region--content > .ama__membership .ama__membership-content,
@@ -22532,7 +22553,9 @@ a.ama__membership:hover {
   .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership .ama__membership-content,
   .index-page .ama__layout--one-column__page-content .ama__membership .ama__membership-content,
   .index-page > div > .ama__membership .ama__membership-content {
-    max-width: 380px;
+    -webkit-box-flex: 0.34;
+    -ms-flex: 0.34;
+    flex: 0.34;
   }
 }
 @media (min-width: 56.25em) {
@@ -22661,9 +22684,11 @@ a.ama__membership:hover {
 .index-page > div > .ama__membership .ama__membership_media-container {
   display: block;
   width: 100%;
-  max-width: 680px;
   padding: 0;
   margin: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 @media (min-width: 37.5em) {
   .ama__category .layout__region--content > .ama__membership .ama__membership_media-container,
@@ -22672,6 +22697,9 @@ a.ama__membership:hover {
   .index-page .ama__layout--one-column__page-content .ama__membership .ama__membership_media-container,
   .index-page > div > .ama__membership .ama__membership_media-container {
     margin-left: 17px;
+    -webkit-box-flex: 0.66;
+    -ms-flex: 0.66;
+    flex: 0.66;
   }
 }
 @media (min-width: 56.25em) {
@@ -22717,11 +22745,11 @@ a.ama__membership:hover {
 .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_media-container {
   margin: 0 0 14px 0;
   padding-left: 0;
+  margin-right: auto;
 }
 @media (min-width: 56.25em) {
   .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_media-container {
     margin-bottom: 0;
-    max-width: unset;
     padding-right: 22px;
   }
 }
