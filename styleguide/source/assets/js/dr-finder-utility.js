@@ -1,7 +1,6 @@
 /**
  * @file
  * Dr Finder utility functions.
- *.
  */
 
 /** JS for 'Back to Search' button */
@@ -19,7 +18,7 @@ function clearFilters() {
   // Get params.
   const params = new URLSearchParams(window.location.search.split("?")[1]);
   // Remove URL params.
-  params.delete('specialty');
+  params.delete('specialityGeneralCatCd');
   params.delete('memberStatus');
   params.delete('degreeType');
   // Go to new url.
