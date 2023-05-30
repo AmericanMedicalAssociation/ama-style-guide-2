@@ -1,30 +1,34 @@
-<div class="category-subcat ama__category-theme">
-  <div class="category-theme__container">
-    <div class="category-theme__container--left">
-      <a class="wrapper-link" href="" title="Online Learning &amp; CME">
-        <h3 class="ama__h3 ama__article-stub__title">{{ subcat.heading }}</h3>
-        <div class="ama__article-stub__description description">
-          <p>{{ subcat.description }}</p>
+<div class="layout layout--ama-page-section-one-col container section ama__category__row">
+  <div class="layout__region layout__region--main">
+    <div class="category-subcat ama__category-theme">
+      <div class="category-theme__container category-subcat category-theme--four-up">
+        <div class="category-theme__container--left">
+          <a class="wrapper-link" href="" title="Online Learning &amp; CME">
+            <h3 class="ama__h3 ama__article-stub__title">{{ subcat.heading }}</h3>
+            <div class="ama__article-stub__description description">
+              <p>{{ subcat.description }}</p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="category-theme__container--right">
-      <div class="category-theme__container category-theme--two-up">
-        <div class="category-theme__container--right ">
+        <div class="category-theme__container--right">
           {% for article in related_articles %}
           <div class="category-theme__stub">
             <div class="category-theme__stub">
               <a class="wrapper-link" href="#" title="{{ article.heading }}">
                 <div class="stub__container stub__has-image">
+                  <div class="mobile-date">
+                  <span>UPDATED</span>
+                    {{ article.date }}
+                    <span>·</span>
+                    {{ article.length }}
+                  </div>
                   <div class="category-theme--content">
-                    <div class="ama__article-stub__copy">
-                      <div class="ama__article-stub__metadata">
+                      <div class="date">
                         <span>UPDATED</span>
                         {{ article.date }}
                         <span>·</span>
                         {{ article.length }}
                       </div>
-                    </div>
                     <h3 class="ama__h3 ama__article-stub__title">
                       {{ article.heading }}
                     </h3>
@@ -32,9 +36,10 @@
                       {{ article.description }}
                     </div>
                     <div class="tags">
-                      / <span class="tag">series /</span>
+                      <span class="tag">series</span>
                     </div>
                     <div class="series-name">
+                      "Shadow Me" Specialty Series
                     </div>
                   </div>
                   <div class="category-theme--image">
