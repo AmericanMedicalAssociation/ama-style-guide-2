@@ -80,12 +80,12 @@
   }
   .ama__partner-promo__text {
     display: block;
+    margin-right: 0;
     padding: 0;
+    flex: 1;
     @include breakpoint($bp-small) {
-      max-width: 380px;
-    }
-    @include breakpoint($bp-med) {
-      margin-right: 17px;
+      margin-right: calc($gutter * .75);
+      flex: .34;
     }
     h2.ama__h2 {
       color: $blue;
@@ -98,7 +98,7 @@
     .ama__button {
       font-weight: $font-weight-bold;
       margin: 21px 0 0;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         margin: 28px 0 0;
         max-width: 224px;
       }
@@ -110,12 +110,12 @@
   }
   .ama__partner-promo--media {
     display: block;
-    width: 100%;
-    max-width: 680px;
     padding: 0;
     margin: 0;
+    flex: 1;
     @include breakpoint($bp-small) {
       margin-left: 17px;
+      flex: .66;
     }
     @include breakpoint($bp-med) {
       margin-left: auto;
@@ -140,25 +140,26 @@
     }
   }
   .ama__partner-promo--media {
-    margin: 0 0 calc($gutter /2) 0;
+    margin: 0;
     padding-left: 0;
+    margin-right: auto;
     @include breakpoint($bp-med) {
       margin-bottom: 0;
-      max-width: unset;
       padding-right: 22px;
     }
   }
   .ama__partner-promo__text {
+    margin-right: 0;
     h2.ama__h2 {
-      color: $purple;
+      color: $blue;
     }
   }
-  .ama__button {
-    background: $purple;
-    color: $white;
-    &:hover{
-      background: $hoverPurple;
-    }
+  .ama__button {	
+    background: $purple;	
+    color: $white;	
+    &:hover{	
+      background: $hoverPurple;	
+    }	    
   }
 }
 
@@ -184,8 +185,9 @@
   .ama__partner-promo__text {
     display: block;
     padding: 0;
+    flex: 1;
     @include breakpoint($bp-small) {
-      max-width: 380px;
+      flex: .34;
     }
     h2.ama__h2 {
       color: $blue;
@@ -209,7 +211,10 @@
   .ama__partner-promo--media {
     display: block;
     width: 100%;
-    max-width: 680px;
+    flex: 1;
+    @include breakpoint($bp-small) {
+      flex: .66;
+    }
     padding: 0;
     margin: 0;
   }
