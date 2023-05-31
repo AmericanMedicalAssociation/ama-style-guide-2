@@ -1,18 +1,29 @@
+
+a.index-page  {
+  &.ama__subcategory-page-article-stub {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
 /** Styles for the teaser social share bar. **/
 .share-wrapper {
   display: flex;
   flex-direction: row;
   justify-items: flex-end;
   justify-content: flex-end;
+  padding-bottom: $gutter;
+  border-bottom: 2px solid $gray-20;
 
   //  Share text.
-  .copy {
+  .text {
     font-size: 20px;
     font-weight: 400;
   }
   .icon {
-    padding-left: 25px;
+    padding-left: 30px;
     margin-left: calc($gutter * .5);
+    position: relative;
     @include breakpoint($bp-small) {
       margin-left: calc($gutter * .75);
     }
@@ -33,43 +44,52 @@
     }
 
     //  Icons.
-    .bookmark {
-      padding: 25px;
+    &.bookmark {
       &:before {
-        background-image: url("../icons/svg/social-share-icons/Bookmark.svg");
+        height: 28px;
+        width: 19px;
+        background-image: url("../icons/svg/social-share-icons/bookmark.svg");
       }
       &.bookmarked {
         &:before {
           background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
-
         }
       }
     }
-
-    .copy-url {
+    &.copy-url {
       &:before {
-        background-image: url("../icons/svg/social-share-icons/Copy.svg");
+        height: 21.5px;
+        width: 13.5px;
+        background-image: url("../icons/svg/social-share-icons/copy.svg");
       }
       &.copied {
         &:before {
-          background-image: url("../icons/svg/social-share-icons/Copied.svg");
+          background-image: url("../icons/svg/social-share-icons/copied.svg");
         }
       }
     }
 
-    .share {
+    &.share {
       &:before {
-        background-image: url("../icons/svg/social-share-icons/Share.svg");
+        width: 26px;
+        height: 30px;
+        background-image: url("../icons/svg/social-share-icons/share.svg");
       }
       &.shared {
         &:before {
-          background-image: url("../icons/svg/social-share-icons/Shared.svg");
+          background-image: url("../icons/svg/social-share-icons/shared.svg");
         }
       }
       .share-modal {
+        &.hidden {
+          display: none;
+        }
+        &.visible {
+          display: block;
+        }
         position: absolute;
-        height: 30vh;
-        width: 30vw;
+        height: 40vh;
+        width: 40vw;
         border-radius: 20px;
         background: $white;
         .facebook {
