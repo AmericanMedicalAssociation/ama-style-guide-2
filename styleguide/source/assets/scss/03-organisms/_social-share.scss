@@ -21,7 +21,7 @@ a.index-page  {
     font-weight: 400;
   }
   .icon {
-    padding-left: 30px;
+    padding-left: 39px;
     margin-left: calc($gutter * .5);
     position: relative;
     @include breakpoint($bp-small) {
@@ -40,14 +40,14 @@ a.index-page  {
       background-position: 0 0;
       background-size: cover;
       left: 0;
-      top: 0;
     }
 
     //  Icons.
     &.bookmark {
       &:before {
-        height: 28px;
-        width: 19px;
+        top: -5px;
+        height: 38px;
+        width: 38px;
         background-image: url("../icons/svg/social-share-icons/bookmark.svg");
       }
       &.bookmarked {
@@ -58,8 +58,9 @@ a.index-page  {
     }
     &.copy-url {
       &:before {
-        height: 21.5px;
-        width: 13.5px;
+        height: 38.5px;
+        width: 35.5px;
+        top: -5px;
         background-image: url("../icons/svg/social-share-icons/copy.svg");
       }
       &.copied {
@@ -71,8 +72,10 @@ a.index-page  {
 
     &.share {
       &:before {
-        width: 26px;
-        height: 30px;
+        width: 48px;
+        height: 42px;
+        left: -6px;
+        top: -11px;
         background-image: url("../icons/svg/social-share-icons/share.svg");
       }
       &.shared {
@@ -91,7 +94,7 @@ a.index-page  {
         height: 40vh;
         width: 40vw;
         border-radius: 20px;
-        background: $white;
+        background: $border-gray;
         .facebook {
 
         }
