@@ -14,12 +14,15 @@ a.index-page  {
   justify-content: flex-end;
   padding-bottom: $gutter;
   border-bottom: 2px solid $gray-20;
+  padding-top: 4px; // To accomodate the icons.
 
   //  Share text.
   .text {
     font-size: 20px;
     font-weight: 400;
   }
+
+  //  Icon parent styles.
   .icon {
     padding-left: 39px;
     margin-left: calc($gutter * .5);
@@ -56,7 +59,7 @@ a.index-page  {
         }
       }
     }
-    &.copy-url {
+    &.copy {
       &:before {
         height: 38.5px;
         width: 35.5px;
@@ -69,7 +72,6 @@ a.index-page  {
         }
       }
     }
-
     &.share {
       &:before {
         width: 48px;
@@ -83,6 +85,8 @@ a.index-page  {
           background-image: url("../icons/svg/social-share-icons/shared.svg");
         }
       }
+
+      //  Social Modal.
       .share-modal {
         &.hidden {
           display: none;
