@@ -6,36 +6,62 @@
   justify-items: flex-end;
   justify-content: flex-end;
 
-  //  Icons.
-  .bookmark {
-    padding: 25px;
-    &:before {
-      content: "";
-      position: absolute;
-      left: 25px;
-    }
-  }
   //  Share text.
   .copy {
     font-size: 20px;
     font-weight: 400;
   }
-  .copy-url {
+  .icon {
+    padding-left: 25px;
 
-  }
-  .share {
-    .share-modal {
-      .facebook {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
 
+    //  Icons.
+    .bookmark {
+      padding: 25px;
+
+      &.bookmarked {
+        &:before {
+        }
       }
-      .linked-in {
+    }
 
+    .copy-url {
+      &.copied {
+        &:before {
+        }
       }
-      .twitter {
+    }
 
+    .share {
+      .share-modal {
+        position: absolute;
+        height: 30vh;
+        width: 30vw;
+        border-radius: 20px;
+        background: $white;
+        .facebook {
+
+        }
+        .linked-in {
+
+        }
+        .twitter {
+
+        }
+        .email {
+
+        }
       }
-      .email {
+      &.shared {
+        &:before {
 
+        }
       }
     }
   }
