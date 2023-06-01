@@ -15212,9 +15212,6 @@ footer .social--instagram-white:hover {
 .ama__subcategory-page-article-stub__date-time .read_time h3 {
   margin-bottom: 0;
 }
-.ama__subcategory-page-article-stub__paragraph {
-  margin-bottom: 0;
-}
 .ama__subcategory-page-article-stub:hover .ama__subcategory-page-article-stub__heading {
   text-decoration: underline;
 }
@@ -23959,6 +23956,111 @@ a.subscribe-series {
   }
 }
 
+a.index-page.ama__subcategory-page-article-stub {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+a.index-page.ama__subcategory-page-article-stub--topics {
+  border-bottom: none;
+}
+a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text p.ama__subcategory-page-article-stub__subcategory, a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text .ama__jama .ama__image__text .ama__subcategory-page-article-stub__subcategory.ama__image__text__subtitle, .ama__jama .ama__image__text a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text .ama__subcategory-page-article-stub__subcategory.ama__image__text__subtitle, a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text .ama__subcategory-page-article-stub__subcategory.ama__resource-link--inline__text {
+  margin-bottom: 14px;
+}
+a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text p, a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text .ama__image__text__subtitle, a.index-page.ama__subcategory-page-article-stub--topics .ama__subcategory-page-article-stub__text .ama__resource-link--inline__text {
+  margin-bottom: 0;
+}
+a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
+  border-bottom: none;
+}
+
+/** Styles for the teaser social share bar. **/
+.share-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-items: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-bottom: 28px;
+  border-bottom: 2px solid #CBCBCB;
+  padding-top: 4px;
+}
+.share-wrapper .text {
+  font-size: 20px;
+  font-weight: 400;
+}
+.share-wrapper .icon {
+  padding-left: 39px;
+  margin-left: 14px;
+  position: relative;
+}
+@media (min-width: 37.5em) {
+  .share-wrapper .icon {
+    margin-left: 21px;
+  }
+}
+.share-wrapper .icon:first-child {
+  margin-left: 0;
+}
+@media (min-width: 37.5em) {
+  .share-wrapper .icon:first-child {
+    margin-left: 0;
+  }
+}
+.share-wrapper .icon:before {
+  position: absolute;
+  content: " ";
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  left: 0;
+}
+.share-wrapper .icon.bookmark:before {
+  top: -5px;
+  height: 38px;
+  width: 38px;
+  background-image: url("../icons/svg/social-share-icons/bookmark.svg");
+}
+.share-wrapper .icon.bookmark.bookmarked:before {
+  background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
+}
+.share-wrapper .icon.copy:before {
+  height: 38.5px;
+  width: 35.5px;
+  top: -5px;
+  background-image: url("../icons/svg/social-share-icons/copy.svg");
+}
+.share-wrapper .icon.copy.copied:before {
+  background-image: url("../icons/svg/social-share-icons/copied.svg");
+}
+.share-wrapper .icon.share:before {
+  width: 48px;
+  height: 42px;
+  left: -6px;
+  top: -11px;
+  background-image: url("../icons/svg/social-share-icons/share.svg");
+}
+.share-wrapper .icon.share.shared:before {
+  background-image: url("../icons/svg/social-share-icons/shared.svg");
+}
+.share-wrapper .icon.share .share-modal {
+  position: absolute;
+  height: 40vh;
+  width: 40vw;
+  border-radius: 20px;
+  background: #a1a1a4;
+}
+.share-wrapper .icon.share .share-modal.hidden {
+  display: none;
+}
+.share-wrapper .icon.share .share-modal.visible {
+  display: block;
+}
 .ama__subcategory-featured-content {
   background: #EDEDED;
   margin-top: 21px;
