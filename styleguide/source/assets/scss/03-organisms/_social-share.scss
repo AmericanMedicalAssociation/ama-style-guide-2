@@ -4,7 +4,23 @@ a.index-page  {
     border-bottom: none;
     padding-bottom: 0;
   }
+  &.ama__subcategory-page-article-stub--topics {
+    border-bottom: none;
+    .ama__subcategory-page-article-stub__text {
+      p.ama__subcategory-page-article-stub__subcategory {
+        margin-bottom: calc($gutter * .5);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    &.ama__content-type-stub {
+      border-bottom: none;
+    }
+  }
 }
+
+
 
 /** Styles for the teaser social share bar. **/
 .share-wrapper {
