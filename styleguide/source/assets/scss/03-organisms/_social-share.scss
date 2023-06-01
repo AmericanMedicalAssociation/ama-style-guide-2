@@ -1,0 +1,133 @@
+//  Override the default article stub padding and border.
+a.index-page  {
+  &.ama__subcategory-page-article-stub {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  &.ama__subcategory-page-article-stub--topics {
+    border-bottom: none;
+    .ama__subcategory-page-article-stub__text {
+      p.ama__subcategory-page-article-stub__subcategory {
+        margin-bottom: calc($gutter * .5);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    &.ama__content-type-stub {
+      border-bottom: none;
+    }
+  }
+}
+
+
+
+/** Styles for the teaser social share bar. **/
+.share-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: $gutter;
+  border-bottom: 2px solid $gray-20;
+  padding-top: 4px; // To accomodate the icons.
+
+  //  Share text.
+  .text {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  //  Icon parent styles.
+  .icon {
+    padding-left: 39px;
+    margin-left: calc($gutter * .5);
+    position: relative;
+    @include breakpoint($bp-small) {
+      margin-left: calc($gutter * .75);
+    }
+    &:first-child {
+      margin-left: 0;
+      @include breakpoint($bp-small) {
+        margin-left: 0;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: " ";
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      left: 0;
+    }
+
+    //  Icons.
+    &.bookmark {
+      &:before {
+        top: -5px;
+        height: 38px;
+        width: 38px;
+        background-image: url("../icons/svg/social-share-icons/bookmark.svg");
+      }
+      &.bookmarked {
+        &:before {
+          background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
+        }
+      }
+    }
+    &.copy {
+      &:before {
+        height: 38.5px;
+        width: 35.5px;
+        top: -5px;
+        background-image: url("../icons/svg/social-share-icons/copy.svg");
+      }
+      &.copied {
+        &:before {
+          background-image: url("../icons/svg/social-share-icons/copied.svg");
+        }
+      }
+    }
+    &.share {
+      &:before {
+        width: 48px;
+        height: 42px;
+        left: -6px;
+        top: -11px;
+        background-image: url("../icons/svg/social-share-icons/share.svg");
+      }
+      &.shared {
+        &:before {
+          background-image: url("../icons/svg/social-share-icons/shared.svg");
+        }
+      }
+
+      //  Social Modal.
+      .share-modal {
+        &.hidden {
+          display: none;
+        }
+        &.visible {
+          display: block;
+        }
+        position: absolute;
+        height: 40vh;
+        width: 40vw;
+        border-radius: 20px;
+        background: $border-gray;
+        .facebook {
+
+        }
+        .linked-in {
+
+        }
+        .twitter {
+
+        }
+        .email {
+
+        }
+      }
+    }
+  }
+}
