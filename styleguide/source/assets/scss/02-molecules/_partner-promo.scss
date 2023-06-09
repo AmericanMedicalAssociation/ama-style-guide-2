@@ -66,6 +66,7 @@
 .ama__category .layout__region--content .layout--onecol .ama__partner-promo,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo,
 .index-page .ama__layout--one-column__page-content .ama__partner-promo,
+.index-page.index-promo .ama__partner-promo,
 .index-page > div > .ama__partner-promo {
   background: none;
   width: 100%;
@@ -120,6 +121,15 @@
     @include breakpoint($bp-med) {
       margin-left: auto;
     }
+  }
+}
+
+// Index Entry slot styling
+.index-page.index-promo .ama__partner-promo {
+  border-bottom: solid 2px $gray-20;
+  padding-top: $gutter;
+  @include breakpoint($bp-med) {
+    padding-top: $gutter * 2;
   }
 }
 
