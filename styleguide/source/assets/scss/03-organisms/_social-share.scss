@@ -38,6 +38,32 @@ a.index-page  {
     font-weight: 400;
   }
 
+  // Bookmark icon styles in teaser footer
+  .flag-footer {
+    a {
+      text-decoration: none;
+    }
+    .icon {
+      &.bookmark {
+        &:before {
+          top: -5px;
+          height: 38px;
+          width: 38px;
+          background-image: url("../icons/svg/social-share-icons/bookmark.svg");
+        }
+      }
+    }
+    &.action-unflag {
+      .icon {
+        &.bookmark {
+          &:before {
+            background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
+          }
+        }
+      }
+    }
+  }
+
   //  Icon parent styles.
   .icon {
     padding-left: 39px;
@@ -59,21 +85,6 @@ a.index-page  {
       background-position: 0 0;
       background-size: cover;
       left: 0;
-    }
-
-    //  Icons.
-    &.bookmark {
-      &:before {
-        top: -5px;
-        height: 38px;
-        width: 38px;
-        background-image: url("../icons/svg/social-share-icons/bookmark.svg");
-      }
-      &.bookmarked {
-        &:before {
-          background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
-        }
-      }
     }
     &.copy {
       color: $black;
