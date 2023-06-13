@@ -294,7 +294,8 @@ a.ama__membership {
 .ama__category .layout__region--content .layout--onecol .ama__membership,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership,
 .index-page .ama__layout--one-column__page-content .ama__membership,
-.index-page.index-promo .ama__membership,
+.index-page .index-promo .ama__membership,
+.index-page .no-results .ama__membership,
 .index-page > div > .ama__membership {
     display: flex;
     flex-direction: column-reverse;
@@ -393,14 +394,20 @@ a.ama__membership {
 }
 
 // Index Entry slot styling
-.index-page.index-promo .ama__membership {
-  border-bottom: solid 2px $gray-20;
+.index-page .index-promo .ama__membership,
+.index-page .no-results .ama__membership {
+  //border-bottom: solid 2px $gray-20;
   @include breakpoint($bp-small max-width) {
     margin: 0;
   }
   @include breakpoint($bp-med max-width) {
     padding-top: $gutter;
   }
+}
+
+.index-page .index-promo .ama__membership,
+.index-page .no-results .ama__membership:not(:last-child) {
+  border-bottom: solid 2px $gray-20;
 }
 
 // Index Hero slot styling
