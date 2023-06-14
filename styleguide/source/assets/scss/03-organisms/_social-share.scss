@@ -105,6 +105,10 @@ a.index-page  {
         top: -5px;
         background-image: url("../icons/svg/social-share-icons/copy.svg");
       }
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
       &.copied {
         &:before {
           background-image: url("../icons/svg/social-share-icons/copied.svg");
@@ -124,30 +128,53 @@ a.index-page  {
           background-image: url("../icons/svg/social-share-icons/shared.svg");
         }
       }
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
 
       //  Social Modal.
       .share-modal {
         display:flex;
         flex-direction: column;
         border: 1px solid $border-gray;
-        border-radius: 20px;
+        border-radius: 20px 20px 0 0;
         z-index: 99;
+        bottom: 0;
+        right: calc(50% - 147px);
+        position: fixed;
+        padding: 20px 48px 20px 34px;
+        background: $white;
+        display: block;
+        @include breakpoint($bp-small) {
+          position: absolute;
+          border-radius: 20px;
+          right: -87px;
+          bottom: 39px;
+        }
         &.hidden {
           display: none;
+          .click-catcher {
+            display:none;
+          }
         }
-        &.visible {
-          display: block;
-        }
-        @include breakpoint($bp-small) {
+        .click-catcher {
+          z-index: 0;
+          position: fixed;
+          cursor: default;
+          top: 0;
+          right: 0;
+          left: 0;
           bottom: 0;
-          right: 50%;
+          display: block;
+          background: transparent;
         }
-        bottom: 0;
-        right: 50%;
-        position: absolute;
-        padding: 20px 48px 20px 34px;
-        border-radius: 20px;
-        background: $white;
+        .close {
+          &:focus {
+            text-decoration: underline;
+            background: red;
+          }
+        }
         a {
           white-space: nowrap;
           display: block;
@@ -157,6 +184,9 @@ a.index-page  {
           font-size: 20px;
           font-weight: $font-weight-bold;
           text-decoration: none;
+          &:focus {
+            text-decoration: underline;
+          }
           &:hover {
             text-decoration: underline;
           }
