@@ -362,3 +362,80 @@
     }
   }
 }
+
+
+
+.ama__article-stub--category {
+  .tags-wrapper {
+    padding-top: calc($gutter * .75);
+    .series-cat-tags {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      padding-top: 3px;
+      .series-name {
+        display: block;
+        margin-top: 0;
+        font-size: 14px;
+        padding: 0;
+        font-weight: $font-weight-bold;
+        display: block;
+        color: $purple;
+        line-height: 1;
+        margin-right: calc($gutter * .5);
+      }
+      .category-tag {
+        margin-bottom: 0;
+        margin-right: calc($gutter * .5);
+        line-height: 1;
+        font-size: 14px;
+      }
+    }
+    .tags {
+      color: $purple;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding-bottom: calc($gutter * .25);
+
+      .tag {
+        display: inline-block;
+        min-width: 60px;
+        position: relative;
+        text-align: center;
+
+        &:first-child {
+          &:before {
+            content: "/";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $purple;
+          }
+        }
+
+        &:after {
+          content: "/";
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: $purple;
+        }
+
+        &.podcast-tag {
+          min-width: 68px;
+        }
+
+        & + .podcast-tag {
+          &:after {
+            right: -8px;
+          }
+        }
+        &.series-tag {
+          margin-top: 0;
+        }
+      }
+    }
+
+
+  }
+}
