@@ -90,9 +90,9 @@ a.ama__membership {
 }
 
 //Slim Membership Block styling
-.layout--ama-page-section-one-col .ama__membership .ama__membership-content {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
   background: #ece7f0;
-  margin: 0 0 35px;
+  margin: 0 -21px 35px -21px;
   position: relative;
   padding-bottom: 0;
   @include breakpoint($bp-small min-width) {
@@ -104,6 +104,7 @@ a.ama__membership {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    margin: 0;
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
@@ -183,15 +184,12 @@ a.ama__membership {
     }
   }
   .ama__membership_cta_container {
-    margin: 0 auto;
+    margin: 21px auto;
     display: block;
     max-width: 75%;
     text-align: center;
-    position: absolute;
-    bottom: 21px;
-    left: 0;
-    right: 0;
     @include breakpoint($bp-small min-width) {
+      margin: 0 auto;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
