@@ -89,10 +89,10 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     flex: 1;
     margin-left: 0;
     @include breakpoint($bp-small) {
+      margin-left: calc($gutter * .5);
       flex: .34;
     }
     @include breakpoint($bp-med) {
-      margin-left: calc($gutter * .5);
       flex: .25;
     }
   }
