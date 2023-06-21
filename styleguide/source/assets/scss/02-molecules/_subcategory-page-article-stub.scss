@@ -89,11 +89,12 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     flex: 1;
     margin-left: 0;
     @include breakpoint($bp-small) {
-      margin-left: calc($gutter * .5);
       flex: .34;
+      margin-left: calc($gutter * .5);
     }
     @include breakpoint($bp-med) {
       flex: .25;
+      margin-left: calc($gutter * 4);
     }
   }
 
@@ -109,6 +110,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     }
     @include breakpoint($bp-med) {
       flex: .25;
+      margin-left: calc($gutter * 4);
     }
   }
   .ama__subcategory-page-article-stub__text {
