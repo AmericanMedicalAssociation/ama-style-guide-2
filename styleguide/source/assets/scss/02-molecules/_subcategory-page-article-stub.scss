@@ -89,7 +89,6 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     flex: 1;
     margin-left: 0;
     @include breakpoint($bp-small) {
-      margin-left: calc($gutter * .5);
       flex: .34;
     }
     @include breakpoint($bp-med) {
@@ -105,7 +104,6 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     flex: 1;
     @include breakpoint($bp-small) {
       flex: .34;
-      margin-left: calc($gutter * .5);
     }
     @include breakpoint($bp-med) {
       flex: .25;
@@ -119,9 +117,11 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     .ama__subcategory-page-article-stub__text {
       @include breakpoint($bp-small) {
         flex: .66;
+        margin-right: calc($gutter * .5);
       }
       @include breakpoint($bp-med) {
         flex: .75;
+        margin-right: calc($gutter * 4);
       }
     }
   }
