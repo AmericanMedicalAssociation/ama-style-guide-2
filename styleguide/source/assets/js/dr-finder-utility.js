@@ -5,12 +5,7 @@
 
 /** JS for 'Back to Search' button */
 function removeParamAndGoBack() {
-  // Get params.
-  const params = new URLSearchParams(document.referrer.split("?")[1]);
-  // Remove page param, so we go back to the beginning if we've scrolled.
-  params.delete('page');
-  // Redirect to previous page without page param.
-  window.location = document.referrer.split("?")[0] + '?' + params;
+  window.location = sessionStorage.getItem('searchPath') || '/search';
 }
 
 /** JS for 'Clear Filters' button */
