@@ -201,9 +201,15 @@
 
   .ama__subtitle {
     color: $gray-64;
-    font-size: 20px;
     font-weight: normal;
     padding-top: 14px;
+    font-size: 14px;
+    @include breakpoint($bp-small) {
+      font-size: 16px;
+    }
+    @include breakpoint($bp-med) {
+      font-size: 20px;
+    }
   }
 
   .heading-left {
