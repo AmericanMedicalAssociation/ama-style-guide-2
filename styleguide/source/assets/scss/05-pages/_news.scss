@@ -110,6 +110,11 @@
         display: inline-flex;
         margin-left: 20px;
       }
+      .article-event-type {
+        @include breakpoint($bp-med max-width) {
+          margin-top: 0;
+        }
+      }
     }
     .article-event-type {
       margin-bottom: 12px;
@@ -138,7 +143,7 @@
     .article-event-location {
       font-size: 20px;
       font-weight: $font-weight-bold;
-      margin-bottom: 38px;
+      margin-bottom: 33px;
       margin-top: -4px;
       @include breakpoint($bp-med max-width) {
         margin-bottom: 25px;
@@ -152,9 +157,12 @@
       text-align: center;
       display: inline-block;
       text-transform: capitalize;
-      width: 280px;
-      @include breakpoint($bp-med max-width) {
-        width: 100%;
+      width: 100%;
+      &:hover {
+        background-color: $hoverPurple;
+      }
+      @include breakpoint($bp-med min-width) {
+        max-width: 280px;
       }
     }
     .article-event-address {
