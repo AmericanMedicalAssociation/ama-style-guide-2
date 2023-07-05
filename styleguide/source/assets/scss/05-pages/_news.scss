@@ -86,7 +86,7 @@
       -ms-flex-direction: column;
       flex-direction: column;
     }
-    & > div:nth-child(2) {
+    .article-event-details {
       padding-left: 120px;
       order: 0;
       flex: 0 0 auto;
@@ -97,21 +97,39 @@
         width: 100%;
       }
     }
+    &.no-image {
+      .article-event-details {
+        width: 66.666667%;
+        padding-left: 0;
+      }
+      .article-event-date  {
+        display: inline-flex;
+        width: 280px;
+      }
+      .article-event-address  {
+        display: inline-flex;
+        margin-left: 20px;
+      }
+    }
     .article-event-type {
-      margin-bottom: 7px;
+      margin-bottom: 12px;
       font-size: 31px;
       line-height: 1;
       font-weight: $font-weight-bold;
+      @include breakpoint($bp-med max-width) {
+        margin-top: 24px;
+        font-size: 26px;
+      }
     }
     .article-event-title {
-      margin-bottom: 28px;
+      margin-bottom: 33px;
       font-size: 24px;
       line-height: 27px;
       font-weight: $font-weight-regular;
       color: $blue;
     }
     .article-event-date {
-      margin-bottom: 28px;
+      margin-bottom: 19px;
       font-size: 24px;
       line-height: 1;
       font-weight: $font-weight-bold;
@@ -120,10 +138,13 @@
     .article-event-location {
       font-size: 20px;
       font-weight: $font-weight-bold;
-      margin-bottom: 15px;
+      margin-bottom: 38px;
       margin-top: -4px;
+      @include breakpoint($bp-med max-width) {
+        margin-bottom: 25px;
+      }
     }
-    .article-event-link {
+    .article-event-link  {
       background-color: $purple;
       color: $white;
       text-decoration: none;
@@ -131,9 +152,13 @@
       text-align: center;
       display: inline-block;
       text-transform: capitalize;
+      width: 280px;
+      @include breakpoint($bp-med max-width) {
+        width: 100%;
+      }
     }
     .article-event-address {
-      margin-bottom: 16px;
+      margin-bottom: 25px;
       p,
       span{
         font-size: 14px;
@@ -141,6 +166,54 @@
       p {
         margin-bottom: 0;
         line-height: 21px;
+      }
+    }
+    .icon {
+      padding-left: 55px;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: " ";
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+        left: 0;
+      }
+      &.add-event {
+        color: $black;
+        background-color: $white;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+        &:before {
+          height: 41.5px;
+          width: 35.5px;
+          top: -15px;
+          background-image: url("../icons/svg/event-header-icons/AddtoCalendarIcon.svg");
+        }
+        &:hover::before {
+          background-image: url("../icons/svg/event-header-icons/AddtoCalendarIconHover.svg");
+        }
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      &.locate-event {
+        &:before {
+          width: 48px;
+          height: 47px;
+          left: -6px;
+          top: 1px;
+          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
+        }
+        &:hover::before {
+          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
+        }
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
     }
   }
