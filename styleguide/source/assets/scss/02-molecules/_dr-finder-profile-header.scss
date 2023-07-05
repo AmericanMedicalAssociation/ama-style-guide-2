@@ -111,3 +111,15 @@
     max-height: inherit;
   }
 }
+
+.dr-finder-profile-header__doctor-info__address {
+
+  &.multiadress {
+    border-bottom: solid 1px $gray-30;
+    padding: .5em 0;
+
+    @include breakpoint($bp-small) {
+      max-width: 275px;
+    }
+  }
+}
