@@ -72,8 +72,8 @@ a.index-page  {
     }
   }
 
-  //  Icon parent styles.
-  .icon {
+  //  Icon and print icon parent styles.
+  .icon, a.print {
     padding-left: 39px;
     margin-left: calc($gutter * .5);
     position: relative;
@@ -104,6 +104,9 @@ a.index-page  {
         text-decoration: underline;
         cursor: pointer;
       }
+      &.masthead:hover:before {
+        background-image: url("../icons/svg/social-share-icons/copied.svg");
+      }
       &.copied {
         &:before {
           background-image: url("../icons/svg/social-share-icons/copied.svg");
@@ -126,6 +129,9 @@ a.index-page  {
       &:hover {
         text-decoration: underline;
         cursor: pointer;
+      }
+      &.masthead:hover:before {
+        background-image: url("../icons/svg/social-share-icons/shared.svg");
       }
 
       //  Social Modal.
@@ -210,6 +216,91 @@ a.index-page  {
         .email {
           &:before {
             background-image: url("../icons/svg/social-share-icons/email.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+//  Styles for the social share bar in the news article masthead.
+.ama__75-25__masthead {
+  z-index: 99;
+  position: relative;
+
+  .social-share-row {
+    display: flex;
+    justify-content: space-between;
+  
+    .share-bar--news-article {
+      @include breakpoint($bp-small max-width) {
+        display: flex;
+        position: fixed;
+        z-index: 99;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 60px;
+        margin: 3px 0 0;
+        background-color: $white;
+        justify-items: center;
+        border-top: 1px solid $border-gray;
+        justify-content: end;
+        padding: 0 14px;
+      }
+  
+      .share-wrapper {
+        border-bottom: 0;
+        @include breakpoint($bp-small max-width) {
+          padding: 0;
+          margin-top: 7px;
+          height: 100%;
+        }
+
+        .icon {
+          &::before {
+            left: 0;
+            top: 0;
+            background-position: center;
+          }
+        }
+  
+        span.text {
+          position: absolute;
+          visibility: hidden;
+        }
+        a.print {
+          height: 40px;
+          width: 40px;
+          color: $black;
+          background-color: $white;
+          padding-top: 0;
+          padding-bottom: 0;
+          border: none;
+          text-indent: 100%;
+          white-space: nowrap;
+          display: block;
+          overflow: hidden;
+          @include breakpoint($bp-small max-width) {
+            display: none;
+          }
+
+          &:before {
+            height: 40px;
+            width: 40px;
+            background-image: url("../icons/svg/social-share-icons/print.svg");
+          }
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/printed.svg");
+            }
+          }
+          &.printed {
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/printed.svg");
+            }
           }
         }
       }
