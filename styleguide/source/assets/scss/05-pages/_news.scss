@@ -1,3 +1,31 @@
+.article-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .article-header-row {
+    display: flex;
+    flex-direction: row;}
+  [data-region="title"] {
+    flex: 1;
+  }
+  [data-region="description"] {
+    flex: 1;
+  }
+  [data-region="date"] {
+    flex: .5;
+  }
+  [data-region="author"] {
+    flex: .5;
+  }
+  [data-region="subscribe"] {
+    flex: .5;
+  }
+  [data-region="share"] {
+    flex: .5;
+  }
+}
+
+
 .ama__news {
   hr {
     margin: 20px 0;
