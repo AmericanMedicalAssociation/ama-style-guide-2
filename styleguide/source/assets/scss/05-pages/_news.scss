@@ -67,55 +67,171 @@
     }
   }
 
-  //Event section Styles
-  .event-row {
-    margin-bottom: 27px;
-    margin-top: 15px;
+  //Event Header Styles
+  .event-header {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    color: $gray-64;
+    border-top: solid .5px $black;
+    border-bottom: solid .5px $black;
+    @include breakpoint($bp-med min-width) {
+      flex-direction: row;
+    }
+    .article-event-details {
+      padding-left: 0;
+      order: 0;
+      flex: 0 0 auto;
+      width: 100%;
+      align-self: auto;
+      @include breakpoint($bp-med min-width) {
+        padding-left: 120px;
+        width: 41.6666666667%;
+      }
+    }
     .article-event-type {
-      margin-bottom: 4px;
-      padding-bottom: 0;
+      margin-bottom: 7px;
+      margin-top: 24px;
       font-size: 26px;
+      line-height: 1;
+      font-weight: $font-weight-bold;
+      @include breakpoint($bp-med min-width) {
+        margin-top: 0;
+        font-size: 31px;
+      }
     }
     .article-event-title {
+      margin-bottom: 28px;
       font-size: 24px;
+      line-height: 27px;
       font-weight: $font-weight-regular;
+      color: $blue;
     }
     .article-event-date {
+      margin-top: 9px;
+      margin-bottom: 19px;
       font-size: 24px;
-      margin-top: -4px;
+      line-height: 1;
       font-weight: $font-weight-bold;
       text-transform: uppercase;
     }
     .article-event-location {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: $font-weight-bold;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
       margin-top: -4px;
+      @include breakpoint($bp-med min-width) {
+        margin-bottom: 33px;
+      }
     }
-    .article-event-link {
+    .article-event-link  {
       background-color: $purple;
       color: $white;
       text-decoration: none;
       padding: 5px 20px;
-      width: 50%;
       text-align: center;
       display: inline-block;
       text-transform: capitalize;
+      width: 100%;
+      &:hover {
+        background-color: $hoverPurple;
+      }
+      @include breakpoint($bp-med min-width) {
+        max-width: 280px;
+      }
     }
     .article-event-address {
-      margin-top: -5px;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
       p,
       span{
-        font-size: 24px;
+        font-size: 14px;
       }
       p {
         margin-bottom: 0;
-        line-height: 27px;
+        line-height: 21px;
+      }
+    }
+    .icon {
+      padding-left: 44px;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: " ";
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+        left: 0;
+      }
+      &.add-event {
+        background-color: $white;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+        &:before {
+          height: 30px;
+          width: 30px;
+          top: -3px;
+          background-image: url("../icons/svg/event-header-icons/AddtoCalendarIcon.svg");
+        }
+        &:hover::before {
+          background-image: url("../icons/svg/event-header-icons/AddtoCalendarIconHover.svg");
+        }
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      &.locate-event {
+        &:before {
+          width: 29px;
+          height: 33px;
+          left: -5px;
+          top: 5px;
+          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
+        }
+        &:hover::before {
+          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
+        }
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+    &.no-image {
+      .article-event-details {
+        width: 66.666667%;
+        padding-left: 0;
+      }
+      .article-event-info-wrapper {
+        @include breakpoint($bp-small min-width) {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+      .article-event-date  {
+        width: 280px;
+      }
+      .article-event-address  {
+        @include breakpoint($bp-small min-width) {
+          margin-left: 20px;
+        }
+      }
+      .article-event-type {
+        @include breakpoint($bp-med max-width) {
+          margin-top: 0;
+        }
       }
     }
   }
 }
+
 //Rule to hide mobile toc if add toc field isnt selected
 .no-toc {
   .ama__news {
