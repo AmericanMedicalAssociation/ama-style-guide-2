@@ -73,67 +73,48 @@
     padding-bottom: 28px;
     margin-bottom: 28px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: stretch;
     align-items: flex-start;
-    color: $gray-80;
+    color: $gray-64;
     border-top: solid .5px $black;
     border-bottom: solid .5px $black;
-    @include breakpoint($bp-med max-width) {
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
+    @include breakpoint($bp-med min-width) {
+      flex-direction: row;
     }
     .article-event-details {
-      padding-left: 120px;
+      padding-left: 0;
       order: 0;
       flex: 0 0 auto;
-      width: 41.6666666667%;
+      width: 100%;
       align-self: auto;
-      @include breakpoint($bp-med max-width) {
-        padding-left: 0;
-        width: 100%;
-      }
-    }
-    &.no-image {
-      .article-event-details {
-        width: 66.666667%;
-        padding-left: 0;
-      }
-      .article-event-date  {
-        display: inline-flex;
-        width: 280px;
-      }
-      .article-event-address  {
-        display: inline-flex;
-        margin-left: 20px;
-      }
-      .article-event-type {
-        @include breakpoint($bp-med max-width) {
-          margin-top: 0;
-        }
+      @include breakpoint($bp-med min-width) {
+        padding-left: 120px;
+        width: 41.6666666667%;
       }
     }
     .article-event-type {
-      margin-bottom: 12px;
-      font-size: 31px;
+      margin-bottom: 7px;
+      margin-top: 24px;
+      font-size: 26px;
       line-height: 1;
       font-weight: $font-weight-bold;
-      @include breakpoint($bp-med max-width) {
-        margin-top: 24px;
-        font-size: 26px;
+      @include breakpoint($bp-med min-width) {
+        margin-top: 0;
+        font-size: 31px;
       }
     }
     .article-event-title {
-      margin-bottom: 33px;
+      margin-bottom: 28px;
       font-size: 24px;
       line-height: 27px;
       font-weight: $font-weight-regular;
       color: $blue;
     }
     .article-event-date {
+      margin-top: 9px;
       margin-bottom: 19px;
       font-size: 24px;
       line-height: 1;
@@ -143,10 +124,10 @@
     .article-event-location {
       font-size: 20px;
       font-weight: $font-weight-bold;
-      margin-bottom: 33px;
+      margin-bottom: 25px;
       margin-top: -4px;
-      @include breakpoint($bp-med max-width) {
-        margin-bottom: 25px;
+      @include breakpoint($bp-med min-width) {
+        margin-bottom: 33px;
       }
     }
     .article-event-link  {
@@ -177,7 +158,7 @@
       }
     }
     .icon {
-      padding-left: 55px;
+      padding-left: 44px;
       position: relative;
       &:before {
         position: absolute;
@@ -188,15 +169,14 @@
         left: 0;
       }
       &.add-event {
-        color: $black;
         background-color: $white;
         padding-top: 0;
         padding-bottom: 0;
         border: none;
         &:before {
-          height: 41.5px;
-          width: 35.5px;
-          top: -15px;
+          height: 30px;
+          width: 30px;
+          top: -3px;
           background-image: url("../icons/svg/event-header-icons/AddtoCalendarIcon.svg");
         }
         &:hover::before {
@@ -209,10 +189,10 @@
       }
       &.locate-event {
         &:before {
-          width: 48px;
-          height: 47px;
-          left: -6px;
-          top: 1px;
+          width: 29px;
+          height: 33px;
+          left: -5px;
+          top: 5px;
           background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
         }
         &:hover::before {
@@ -221,6 +201,31 @@
         &:hover {
           text-decoration: underline;
           cursor: pointer;
+        }
+      }
+    }
+    &.no-image {
+      .article-event-details {
+        width: 66.666667%;
+        padding-left: 0;
+      }
+      .article-event-info-wrapper {
+        @include breakpoint($bp-small min-width) {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+      .article-event-date  {
+        width: 280px;
+      }
+      .article-event-address  {
+        @include breakpoint($bp-small min-width) {
+          margin-left: 20px;
+        }
+      }
+      .article-event-type {
+        @include breakpoint($bp-med max-width) {
+          margin-top: 0;
         }
       }
     }
