@@ -274,8 +274,17 @@ a.index-page  {
 
           &.share {
             padding-left: 40px;
+            @include breakpoint($bp-small max-width) {
+              height: 40px;
+            }
             &:before {
               width: 40px;
+            }
+          }
+
+          &.copy {
+            @include breakpoint($bp-small max-width) {
+              height: 40px;
             }
           }
 
