@@ -15,11 +15,9 @@
       $('a.dr-finder-search-result-card ').on('click', function (e) {
         e.preventDefault();
         // Get params.
-        const params = new URLSearchParams(document.referrer.split("?")[1]);
-        // Remove page param, so we go back to the beginning if we've scrolled.
-        params.delete('page');
+        const params = window.location.search;
         // Redirect to previous page without page param.
-        currentPath = document.referrer.split("?")[0] + '?' + params;
+        currentPath =  window.location.pathname + params.split("&page")[0];
         sessionStorage.setItem('searchPath', currentPath);
         window.location = $(this).attr('href');
       });
