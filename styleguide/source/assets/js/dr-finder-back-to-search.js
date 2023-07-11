@@ -9,17 +9,18 @@
  */
  (function ($, Drupal) {
 
-    Drupal.behaviors.backToSearch = {
-      attach: function (context, settings) {
-  
-        $('a.dr-finder-search-result-card ').on('click', function (e) {
-          e.preventDefault();
-  
-          const currentPath = window.location.pathname + window.location.search;
-          sessionStorage.setItem('searchPath', currentPath);
-          window.location = $(this).attr('href');
-        });
-      }
-    };
-  })(jQuery, Drupal);
-  
+  Drupal.behaviors.backToSearch = {
+    attach: function (context, settings) {
+
+      $('a.dr-finder-search-result-card ').on('click', function (e) {
+        e.preventDefault();
+        // Get params.
+        const params = window.location.search;
+        // Redirect to previous page without page param.
+        currentPath =  window.location.pathname + params.split("&page")[0];
+        sessionStorage.setItem('searchPath', currentPath);
+        window.location = $(this).attr('href');
+      });
+    }
+  };
+})(jQuery, Drupal);
