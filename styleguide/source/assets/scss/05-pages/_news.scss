@@ -2,26 +2,83 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: $gutter;
   .article-header-row {
     display: flex;
     flex-direction: row;}
   [data-region="title"] {
     flex: 1;
   }
-  [data-region="description"] {
+  [data-region="subtitle"] {
     flex: 1;
   }
   [data-region="date"] {
-    flex: .5;
+    font-size: 14px;
+    padding-right: $gutter;
+    color: $gray-40;
+    .dot {
+      margin: 3px 7px 0;
+      font-size:24px;
+      line-height: 0;
+    }
+    .updated {
+      margin-right: 7px;
+    }
   }
   [data-region="author"] {
-    flex: .5;
   }
   [data-region="subscribe"] {
-    flex: .5;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: calc($gutter * .5);
+
+    .form-actions {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    input.button {
+      &.form-submit.ama__button {
+        margin-bottom: 0;
+        background-color: $white;
+        border: 1px solid $purple;
+        padding: 7px;
+        color: purple;
+      }
+    }
+    a.link {
+      font-weight: $font-weight-bold;
+      color:  purple;
+      font-size: purple;
+      margin-left: 7px;
+      text-decoration: none;
+    }
   }
-  [data-region="share"] {
-    flex: .5;
+  .share-row {
+    border-bottom: 2px solid $gray-30;
+    padding-bottom: $gutter;
+    [data-region="share"] {
+      margin-left: auto;
+      .share-wrapper {
+        border-bottom: none;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+  .article-header-row {
+    &.date-row {
+      .date {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    &.author-row .author,
+    &.author-row .author [data-once="quickedit"] {
+
+        display: flex;
+        flex-direction: row;
+
+    }
   }
 }
 
@@ -61,15 +118,6 @@
         padding-top: 0;
         border-top: none;
       }
-    }
-  }
-
-  .ama__inline-bio {
-    margin-bottom: calc($gutter * .75);
-    padding-bottom: 0;
-    @include breakpoint($bp-small) {
-      margin-bottom: calc($gutter * 1.25);
-      padding-bottom: 0;
     }
   }
 
