@@ -41,6 +41,7 @@
       <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
     {% endif %}
     {% if drFinderProfileHeader.data.address %}
+      {% set isMulti = drFinderProfileHeader.data.address|length > 1 %}
       {% for item in drFinderProfileHeader.data.address %}
         <div class="dr-finder-profile-header__doctor-info__address {{ isMulti ? 'multiadress'  : '' }}">{{ item|raw }}</div>
       {% endfor %}
