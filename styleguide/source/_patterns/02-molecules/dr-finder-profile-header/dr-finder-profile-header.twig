@@ -37,17 +37,13 @@
     {% if drFinderProfileHeader.data.pronouns %}
       <div class="dr-finder-profile-header__doctor-info__pronouns">{{ drFinderProfileHeader.data.pronouns|raw }}</div>
     {% endif %}
+    {% if drFinderProfileHeader.data.phoneNumber %}
+      <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
+    {% endif %}
     {% if drFinderProfileHeader.data.address %}
-      {% set isMulti = drFinderProfileHeader.data.address|length > 1 %}
-      {% if drFinderProfileHeader.data.phoneNumber and isMulti %}
-        <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
-      {% endif %}
       {% for item in drFinderProfileHeader.data.address %}
         <div class="dr-finder-profile-header__doctor-info__address {{ isMulti ? 'multiadress'  : '' }}">{{ item|raw }}</div>
       {% endfor %}
-      {% if drFinderProfileHeader.data.phoneNumber and not isMulti %}
-        <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
-      {% endif %}
     {% endif %}
     {% if drFinderProfileHeader.data.specialty %}
       <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
