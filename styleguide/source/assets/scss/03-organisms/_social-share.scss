@@ -159,8 +159,11 @@ a.index-page  {
         border-radius: 20px;
         @include breakpoint($bp-small) {
           position: absolute;
-          right: -120px;
-          bottom: -268px;
+          right: -125px;
+          bottom: -274px;
+        }
+        @include breakpoint($bp-med) {
+          right: -145px;
         }
         &.hidden {
           display: none;
@@ -247,11 +250,12 @@ a.index-page  {
         @include breakpoint($bp-small max-width) {
           display: flex;
           position: fixed;
+          align-items: center;
           z-index: 99;
           bottom: 0;
           right: 0;
           left: 0;
-          height: 60px;
+          height: 57px;
           margin: 3px 0 0;
           background-color: $white;
           border-top: 1px solid $border-gray;
@@ -274,6 +278,7 @@ a.index-page  {
 
           &.share {
             padding-left: 40px;
+            margin-left: 21px;
             @include breakpoint($bp-small max-width) {
               height: 40px;
             }
@@ -305,6 +310,11 @@ a.index-page  {
           position: absolute;
           display: none;
         }
+        div.icon.print {
+          @include breakpoint($bp-small max-width) {
+            display: none;
+          }
+        }
         a.print {
           height: 40px;
           width: 40px;
@@ -317,9 +327,6 @@ a.index-page  {
           white-space: nowrap;
           display: block;
           overflow: hidden;
-          @include breakpoint($bp-small max-width) {
-            display: none;
-          }
           &:before {
             height: 40px;
             width: 40px;
@@ -339,6 +346,12 @@ a.index-page  {
             &:before {
               background-image: url("../icons/svg/social-share-icons/printed.svg");
             }
+          }
+        }
+
+        .article-bookmark {
+          @include breakpoint($bp-small max-width) {
+            height: 40px;
           }
         }
       }
