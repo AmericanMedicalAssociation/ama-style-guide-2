@@ -11,6 +11,7 @@
         flex: 1;
         .ama__h1 {
           font-size: 1.9em;
+          margin-bottom: calc($gutter * .5);
           @include breakpoint($bp-small) {
             font-size: 2.4em;
           }
@@ -84,6 +85,9 @@
         display: flex;
         flex-direction: row-reverse;
         padding-right: calc($gutter * .5);
+        .salesforce-subscribe-form {
+          margin-right: calc($gutter * .25);
+        }
         a.link {
           font-size: 12px;
           @include breakpoint($bp-small) {
@@ -91,7 +95,6 @@
           }
           font-weight: $font-weight-bold;
           color:  purple;
-          margin-left: calc($gutter * .25);
           text-decoration: none;
           align-self:center;
         }
