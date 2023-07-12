@@ -273,19 +273,29 @@ a.index-page  {
           }
 
           &.share {
-            padding-left: 40px;
+            padding-left: 42px;
             @include breakpoint($bp-small max-width) {
               height: 40px;
             }
             &:before {
-              width: 40px;
+              width: 51px;
             }
           }
-
+          &.print {
+            &a {
+              color: transparent;
+              padding-right: 15px;
+            }
+          }
           &.copy {
+            margin-right: -14px;
+            margin-top: 3px;
             @include breakpoint($bp-small max-width) {
               height: 40px;
             }
+          }
+          &.bookmark {
+            margin-top: 3px;
           }
 
           &.share,
@@ -308,7 +318,7 @@ a.index-page  {
         a.print {
           height: 40px;
           width: 40px;
-          color: $black;
+          color: transparent;
           background-color: $white;
           padding-top: 0;
           padding-bottom: 0;
@@ -317,12 +327,15 @@ a.index-page  {
           white-space: nowrap;
           display: block;
           overflow: hidden;
+          visibility: visible;
+          margin-top: 6px;
+          padding-right: calc($gutter * .25);
           @include breakpoint($bp-small max-width) {
-            display: none;
+            visibility: hidden;
           }
           &:before {
-            height: 40px;
-            width: 40px;
+            height: 33px;
+            width: 33px;
             background-image: url("../icons/svg/social-share-icons/print.svg");
           }
           &:hover {
