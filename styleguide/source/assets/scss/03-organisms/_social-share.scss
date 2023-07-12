@@ -229,39 +229,34 @@ a.index-page  {
 }
 
 //  Styles for the social share bar in the news article masthead.
-.ama__75-25__masthead {
+.article-header {
   z-index: 99;
   position: relative;
-
-  .social-share-row {
-    display: flex;
-    justify-content: space-between;
-  
-    .share-bar--news-article {
-      @include breakpoint($bp-small max-width) {
-        display: flex;
-        position: fixed;
-        z-index: 99;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: 60px;
-        margin: 3px 0 0;
-        background-color: $white;
-        justify-items: center;
-        border-top: 1px solid $border-gray;
-        justify-content: end;
-        padding: 0 14px;
-      }
-  
+  .share-row {
+    .share {
+      display: flex;
+      margin-left: auto;
       .share-wrapper {
         border-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        @include breakpoint($bp-small max-width) {
+          display: flex;
+          position: fixed;
+          z-index: 99;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          height: 60px;
+          margin: 3px 0 0;
+          background-color: $white;
+          border-top: 1px solid $border-gray;
+          padding: 0 14px;
+        }
         @include breakpoint($bp-small max-width) {
           padding: 0;
           margin-top: 7px;
-          height: 100%;
         }
-
         .icon {
           &::before {
             left: 0;
@@ -269,10 +264,9 @@ a.index-page  {
             background-position: center;
           }
         }
-  
         span.text {
           position: absolute;
-          visibility: hidden;
+          display: none;
         }
         a.print {
           height: 40px;
@@ -289,7 +283,6 @@ a.index-page  {
           @include breakpoint($bp-small max-width) {
             display: none;
           }
-
           &:before {
             height: 40px;
             width: 40px;
