@@ -94,7 +94,8 @@
             font-size: 14px;
           }
           font-weight: $font-weight-bold;
-          color:  purple;
+          color:  $purple;
+          text-transform: uppercase;
           text-decoration: none;
           align-self:center;
         }
@@ -121,6 +122,18 @@
     background-color: $gray-40;
     border: 0;
     height: 2px;
+  }
+}
+
+//temporary subscribe button fix
+.article-header {
+  form {
+    div#edit-actions {
+      margin-top: 0;
+    }
+    input#edit-submit {
+      margin-bottom: 0;
+    }
   }
 }
 
