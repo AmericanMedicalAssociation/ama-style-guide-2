@@ -283,14 +283,24 @@ a.index-page  {
               height: 40px;
             }
             &:before {
-              width: 40px;
+              width: 51px;
             }
           }
-
+          &.print {
+            &a {
+              color: transparent;
+              padding-right: 15px;
+            }
+          }
           &.copy {
+            margin-right: -14px;
+            margin-top: 3px;
             @include breakpoint($bp-small max-width) {
               height: 40px;
             }
+          }
+          &.bookmark {
+            margin-top: 3px;
           }
 
           &.share,
@@ -318,7 +328,7 @@ a.index-page  {
         a.print {
           height: 40px;
           width: 40px;
-          color: $black;
+          color: transparent;
           background-color: $white;
           padding-top: 0;
           padding-bottom: 0;
@@ -328,8 +338,8 @@ a.index-page  {
           display: block;
           overflow: hidden;
           &:before {
-            height: 40px;
-            width: 40px;
+            height: 33px;
+            width: 33px;
             background-image: url("../icons/svg/social-share-icons/print.svg");
           }
           &:hover {
