@@ -85,6 +85,10 @@ a.index-page  {
     @include breakpoint($bp-small) {
       margin-left: calc($gutter * .75);
     }
+    // Override browser styling
+    &:focus-visible {
+      outline: 0;
+    }
     &:before {
       position: absolute;
       content: " ";
@@ -263,6 +267,39 @@ a.index-page  {
             top: 0;
             background-position: center;
           }
+          // Override browser styling
+          &:focus-visible {
+            outline: 0;
+          }
+
+          &.share {
+            padding-left: 40px;
+            @include breakpoint($bp-small max-width) {
+              height: 40px;
+            }
+            &:before {
+              width: 40px;
+            }
+          }
+
+          &.copy {
+            @include breakpoint($bp-small max-width) {
+              height: 40px;
+            }
+          }
+
+          &.share,
+          &.copy {
+            &:focus {
+              outline: 2px solid $tab-focus-blue;
+            }
+          }
+        }
+
+        div.action-flag a:focus {
+          div.icon.bookmark::before {
+            outline: 2px solid $tab-focus-blue;
+          }
         }
         span.text {
           position: absolute;
@@ -294,6 +331,9 @@ a.index-page  {
             &:before {
               background-image: url("../icons/svg/social-share-icons/printed.svg");
             }
+          }
+          &:focus {
+            outline: 2px solid $tab-focus-blue;
           }
           &.printed {
             &:before {
