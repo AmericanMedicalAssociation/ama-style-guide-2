@@ -32,11 +32,12 @@
   }
 
   img.ama__image {
-    display: block;
+    display: none;
     height: 230px;
     width: 230px;
     margin: 0 auto 14px;
     @include breakpoint($bp-small) {
+      display: block;
       height: 144px;
       width: 144px;
       margin: 0 24px 0 0;
