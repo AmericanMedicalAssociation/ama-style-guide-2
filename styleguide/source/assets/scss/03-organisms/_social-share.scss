@@ -150,7 +150,7 @@ a.index-page  {
         border: 1px solid $border-gray;
         border-radius: 20px 20px 0 0;
         z-index: 99;
-        bottom: 60px;
+        bottom: 0;
         right: 0;
         position: fixed;
         padding: 20px 48px 20px 34px;
@@ -232,6 +232,10 @@ a.index-page  {
         }
       }
     }
+  }
+  .icon.print {
+    width: 92px;
+    margin-left: 0;
   }
 }
 
@@ -328,8 +332,8 @@ a.index-page  {
         a.print {
           height: 40px;
           width: 40px;
-          color: transparent;
-          background-color: $white;
+          margin-top: 7px;
+          background-color: transparent;
           padding-top: 0;
           padding-bottom: 0;
           border: none;
@@ -356,6 +360,12 @@ a.index-page  {
             &:before {
               background-image: url("../icons/svg/social-share-icons/printed.svg");
             }
+          }
+        }
+
+        .share-modal {
+          @include breakpoint($bp-small max-width) {
+            bottom: 60px;
           }
         }
 
