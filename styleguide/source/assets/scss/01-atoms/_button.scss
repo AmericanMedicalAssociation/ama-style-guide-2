@@ -54,10 +54,34 @@ button {
   &--link {
     @include ama-button("", "link");
   }
-
-
 }
 
 .ama__button--small.ama__button--tertiary  {
   @include ama-button("small", "tertiary");
+}
+
+.ama__input-wrapper--subscribe-news {
+  %ama__button,
+  .ama__button,
+  button {
+    @include ama-button();
+    &--news-subscribe {
+      @include ama-button("", "news-subscribe");
+    }
+  }
+  &:hover {
+    .ama__button--news-subscribe {
+      border-color: transparent;
+      color: $white;
+      background-color: $purple;
+      + span.arrow {
+        + span.arrow {
+          display: none;
+          + span.sub-title {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
