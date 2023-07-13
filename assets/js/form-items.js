@@ -302,6 +302,8 @@
             }
             listFilter($("#ama__search__location"), $(".ama__form-group"));
           }
+
+
         });
       })(jQuery);
     }
