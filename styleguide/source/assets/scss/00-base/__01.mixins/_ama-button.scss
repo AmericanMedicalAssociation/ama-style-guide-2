@@ -61,6 +61,44 @@
       color: $gray-64 !important;
     }
   }
+  @else if($style == "news-subscribe") {
+    background-color: $white;
+    color: $purple;
+    padding: 7px !important;
+    height: 36px;
+    font-size: 14px !important;
+    font-weight: 600;
+    border: 1px solid $purple;
+    text-transform: uppercase;
+
+    + span.arrow {
+      width: 0; 
+      height: 0; 
+      border-top: 18px solid transparent; 
+      border-bottom: 18px solid transparent; /* 36px height (18+18) */
+      border-left: 18px solid $purple;
+      position: absolute;
+
+      + span.arrow {
+        width: 0; 
+        height: 0;
+        border-top: 18px solid transparent; 
+        border-bottom: 18px solid transparent; /* 36px height (18+18) */
+        border-left: 18px solid $white;
+        margin-left: -1px;
+        position: absolute;
+
+        + span.sub-title {
+          margin-left: 30px;
+          font-size: 14px;
+          font-weight: 600;
+          color: $purple;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 
   //outline
   @else if($style == "reset") {
