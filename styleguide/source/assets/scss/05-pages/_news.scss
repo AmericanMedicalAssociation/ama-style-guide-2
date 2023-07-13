@@ -86,10 +86,11 @@
         flex-direction: row-reverse;
         padding-right: calc($gutter * .5);
         .salesforce-subscribe-form {
-          margin-right: calc($gutter * .25);
+          margin-right: calc($gutter * .5);
         }
         a.link {
           font-size: 12px;
+          margin-top: -11px;
           @include breakpoint($bp-small) {
             font-size: 14px;
           }
@@ -98,6 +99,9 @@
           text-transform: uppercase;
           text-decoration: none;
           align-self:center;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
