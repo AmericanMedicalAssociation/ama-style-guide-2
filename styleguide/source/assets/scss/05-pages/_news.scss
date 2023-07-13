@@ -1,9 +1,143 @@
+.article-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: $gutter;
+  .article-header-row {
+    display: flex;
+    flex-direction: row;
+    &.title-row {
+      [data-region="title"] {
+        flex: 1;
+        .ama__h1 {
+          font-size: 1.9em;
+          margin-bottom: calc($gutter * .5);
+          @include breakpoint($bp-small) {
+            font-size: 2.4em;
+          }
+          @include breakpoint($bp-med) {
+            font-size: 2.67em;
+          }
+          color: $date-olive;
+        }
+      }
+    }
+    &.subtitle-row {
+      [data-region="subtitle"] {
+        flex: 1;
+        padding-bottom: calc($gutter * .5);
+        p.ama__subtitle {
+          font-size: 14px;
+          font-weight: $font-weight-regular;
+          color: $gray-64;
+          margin-bottom: 0;
+          @include breakpoint($bp-small) {
+            font-size: 16px;
+          }
+          @include breakpoint($bp-med) {
+            font-size:20px;
+          }
+        }
+      }
+    }
+    &.date-row {
+      padding-bottom: calc($gutter * .5);
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-med) {
+        flex-direction: row;
+      }
+      [data-region="date"] {
+        font-size: 14px;
+        padding-right: $gutter;
+        color: $gray-40;
+        padding-bottom: calc($gutter * .5);
+        @include breakpoint($bp-med) {
+          padding-bottom: 0;
+        }
+        .updated {
+          margin-right: calc($gutter * .25);
+        }
+        .date {
+          display: flex;
+          flex-direction: row;
+        }
+        .article-date {
+          margin-right: 3px;
+        }
+        .dot {
+          margin-right: 3px;
+          font-size:24px;
+          position: relative;
+          top: -3px;
+          line-height: 0;
+        }
+      }
+    }
+    &.author-row .author,
+    &.author-row .author [data-once="quickedit"] {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &.subscribe-row {
+      [data-region="subscribe"] {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: calc($gutter * .5);
+        .salesforce-subscribe-form {
+          margin-right: calc($gutter * .5);
+        }
+        a.link {
+          font-size: 12px;
+          margin-top: -11px;
+          @include breakpoint($bp-small) {
+            font-size: 14px;
+          }
+          font-weight: $font-weight-bold;
+          color:  $purple;
+          text-transform: uppercase;
+          text-decoration: none;
+          align-self:center;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &.share-row {
+      border-bottom: 1px solid $gray-30;
+      padding-bottom: $gutter;
+      [data-region="share"] {
+        margin-left: auto;
+        .share-wrapper {
+          border-bottom: none;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 .ama__news {
   hr {
     margin: 20px 0;
     background-color: $gray-40;
     border: 0;
     height: 2px;
+  }
+}
+
+//temporary subscribe button fix
+.article-header {
+  form {
+    div#edit-actions {
+      margin-top: 0;
+    }
+    input#edit-submit {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -33,15 +167,6 @@
         padding-top: 0;
         border-top: none;
       }
-    }
-  }
-
-  .ama__inline-bio {
-    margin-bottom: calc($gutter * .75);
-    padding-bottom: 0;
-    @include breakpoint($bp-small) {
-      margin-bottom: calc($gutter * 1.25);
-      padding-bottom: 0;
     }
   }
 
@@ -84,6 +209,7 @@
     @include breakpoint($bp-med min-width) {
       flex-direction: row;
     }
+
     .article-event-details {
       padding-left: 0;
       order: 0;
