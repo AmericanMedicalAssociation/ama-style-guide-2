@@ -151,6 +151,109 @@
   }
 }
 
+.subscribe--news-article {
+
+  .news-subscribe-wrapper {
+
+    @include breakpoint($bp-small) {
+      display: flex;
+      align-items: center;
+    }
+
+    .salesforce-subscribe-form {
+      span.icon--subscribe-news {
+        display: inline-flex;
+        align-items: center;
+
+        .ama__button--news-subscribe {
+          padding-right: 36px !important;
+          &:hover {
+            border-color: transparent;
+            color: $white;
+            background-color: $purple;
+          }
+        }
+        &:hover {
+          &:after {
+            background-image: url("../icons/svg/icon-subscribe-hover.svg");
+          }
+          + span.arrow {
+            + span.arrow {
+              display: none;
+            }
+          }
+          .ama__button--news-subscribe {
+            border-color: transparent;
+            color: $white;
+            background-color: $purple;
+          }
+        }
+        &:after {
+          content: "";
+          display: inline-block;
+          height: 32px;
+          width: 32px;
+          margin-left: -32px;
+          overflow: hidden;
+          position: relative;
+          background-image: url("../icons/svg/icon-subscribe.svg");
+        }
+        + span.arrow {
+          width: 0; 
+          height: 0;
+          border-top: 18px solid transparent; 
+          border-bottom: 18px solid transparent; /* 36px height (18+18) */
+          border-left: 18px solid $purple;
+          position: absolute;
+    
+          + span.arrow {
+            width: 0; 
+            height: 0;
+            border-top: 18px solid transparent; 
+            border-bottom: 18px solid transparent; /* 36px height (18+18) */
+            border-left: 18px solid $white;
+            margin-left: -1px;
+            position: absolute;
+          }
+        }
+      }
+      
+      .form-actions {
+        margin: 0;
+      }
+    }
+    .sub-title {
+      @include breakpoint($bp-small) {
+        margin-left: 30px;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        color: $purple;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .subscribed {
+      span.icon--subscribe-news {
+        &:after {
+          background-image: url("../icons/svg/icon-unsubscribe.svg");
+        }
+        &:hover {
+          &:after {
+            background-image: url("../icons/svg/icon-unsubscribe-hover.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
 a.subscribe-series {
   display: block;
   min-height: 28px;
