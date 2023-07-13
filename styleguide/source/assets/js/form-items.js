@@ -301,11 +301,6 @@
               });
             }
             listFilter($("#ama__search__location"), $(".ama__form-group"));
-
-            // Create click funtionality for the Subscribe button on news article pages.
-            $(".ama__input-wrapper--subscribe-news").on("click", function() {
-              $(this).closest('form').submit();
-            });
           }
 
 
