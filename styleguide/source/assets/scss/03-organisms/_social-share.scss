@@ -151,16 +151,19 @@ a.index-page  {
         border-radius: 20px 20px 0 0;
         z-index: 99;
         bottom: 0;
-        right: calc(50% - 147px);
+        right: 0;
         position: fixed;
         padding: 20px 48px 20px 34px;
         background: $white;
         display: block;
+        border-radius: 20px;
         @include breakpoint($bp-small) {
           position: absolute;
-          border-radius: 20px;
-          right: -87px;
-          bottom: 39px;
+          right: -125px;
+          bottom: -274px;
+        }
+        @include breakpoint($bp-med) {
+          right: -145px;
         }
         &.hidden {
           display: none;
@@ -230,6 +233,10 @@ a.index-page  {
       }
     }
   }
+  .icon.print {
+    width: 92px;
+    margin-left: 0;
+  }
 }
 
 //  Styles for the social share bar in the news article masthead.
@@ -247,11 +254,12 @@ a.index-page  {
         @include breakpoint($bp-small max-width) {
           display: flex;
           position: fixed;
+          align-items: center;
           z-index: 99;
           bottom: 0;
           right: 0;
           left: 0;
-          height: 60px;
+          height: 57px;
           margin: 3px 0 0;
           background-color: $white;
           border-top: 1px solid $border-gray;
@@ -273,7 +281,8 @@ a.index-page  {
           }
 
           &.share {
-            padding-left: 42px;
+            padding-left: 40px;
+            margin-left: 21px;
             @include breakpoint($bp-small max-width) {
               height: 40px;
             }
@@ -315,11 +324,16 @@ a.index-page  {
           position: absolute;
           display: none;
         }
+        div.icon.print {
+          @include breakpoint($bp-small max-width) {
+            display: none;
+          }
+        }
         a.print {
           height: 40px;
           width: 40px;
-          color: transparent;
-          background-color: $white;
+          margin-top: 7px;
+          background-color: transparent;
           padding-top: 0;
           padding-bottom: 0;
           border: none;
@@ -327,12 +341,6 @@ a.index-page  {
           white-space: nowrap;
           display: block;
           overflow: hidden;
-          visibility: visible;
-          margin-top: 6px;
-          padding-right: calc($gutter * .25);
-          @include breakpoint($bp-small max-width) {
-            visibility: hidden;
-          }
           &:before {
             height: 33px;
             width: 33px;
@@ -352,6 +360,18 @@ a.index-page  {
             &:before {
               background-image: url("../icons/svg/social-share-icons/printed.svg");
             }
+          }
+        }
+
+        .share-modal {
+          @include breakpoint($bp-small max-width) {
+            bottom: 60px;
+          }
+        }
+
+        .article-bookmark {
+          @include breakpoint($bp-small max-width) {
+            height: 40px;
           }
         }
       }
