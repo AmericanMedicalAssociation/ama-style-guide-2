@@ -127,7 +127,7 @@
   //give the content column of the news article a tob border
   .ama__layout--two-column--right {
     &__sidebar--secondary {
-      @include breakpoint($bp-med min-width) {
+      @include breakpoint($bp-med) {
         padding-top: 0;
       }
     }
@@ -176,45 +176,56 @@
 
   //Event Header Styles
   .event-header {
-    padding-top: 28px;
-    padding-bottom: 28px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    padding-bottom: $gutter;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: flex-start;
-    align-content: stretch;
     align-items: flex-start;
     color: $gray-64;
-    border-bottom: solid .5px $black;
-    @include breakpoint($bp-med min-width) {
+    border-bottom: solid .5px $gray-64;
+    @include breakpoint($bp-small) {
       flex-direction: row;
     }
-
+    .article-event-image {
+      flex: 1;
+      @include breakpoint($bp-small) {
+        flex: .5;
+      }
+      @include breakpoint($bp-med) {
+        flex: .66;
+      }
+    }
     .article-event-details {
       padding-left: 0;
       order: 0;
-      flex: 0 0 auto;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
       align-self: auto;
-      @include breakpoint($bp-med min-width) {
-        padding-left: 120px;
-        width: 41.6666666667%;
+      @include breakpoint($bp-small) {
+        padding-left: calc($gutter * 4.25);
+        flex: .5;
+      }
+      @include breakpoint($bp-med) {
+        flex: .34;
       }
     }
     .article-event-type {
-      margin-bottom: 7px;
+      margin-bottom: calc($gutter * .25);
       margin-top: 24px;
       font-size: 26px;
       line-height: 1;
       font-weight: $font-weight-bold;
-      @include breakpoint($bp-med min-width) {
+      @include breakpoint($bp-small) {
         margin-top: 0;
+      }
+      @include breakpoint($bp-med) {
         font-size: 31px;
       }
     }
     .article-event-title {
-      margin-bottom: 28px;
+      margin-bottom: $gutter;
       font-size: 24px;
       line-height: 27px;
       font-weight: $font-weight-regular;
@@ -231,30 +242,33 @@
     .article-event-location {
       font-size: 20px;
       font-weight: $font-weight-bold;
-      margin-bottom: 25px;
       margin-top: -4px;
-      @include breakpoint($bp-med min-width) {
-        margin-bottom: 33px;
-      }
     }
-    .article-event-link  {
-      background-color: $purple;
-      color: $white;
-      text-decoration: none;
-      padding: 5px 20px;
-      text-align: center;
-      display: inline-block;
-      text-transform: capitalize;
-      width: 100%;
-      &:hover {
-        background-color: $hoverPurple;
+    .article-event-cta {
+      margin-top: 25px;
+      @include breakpoint($bp-med) {
+        margin-top: 33px;
       }
-      @include breakpoint($bp-med min-width) {
-        max-width: 280px;
+      .article-event-link  {
+        background-color: $purple;
+        color: $white;
+        text-decoration: none;
+        padding: 5px calc($gutter * .75);
+        text-align: center;
+        display: inline-block;
+        text-transform: capitalize;
+        min-width: 100%;
+        flex: 1;
+        &:hover {
+          background-color: $hoverPurple;
+        }
+        @include breakpoint($bp-small) {
+          min-width: 280px;
+        }
       }
     }
     .article-event-address {
-      margin-bottom: 25px;
+      margin-bottom: $gutter;
       p,
       span{
         font-size: 14px;
@@ -313,21 +327,19 @@
     }
     &.no-image {
       .article-event-details {
-        width: 66.666667%;
+        flex: 1;
         padding-left: 0;
       }
       .article-event-info-wrapper {
-        @include breakpoint($bp-small min-width) {
+        @include breakpoint($bp-small) {
           display: flex;
           flex-direction: row;
         }
       }
-      .article-event-date  {
-        width: 280px;
-      }
+
       .article-event-address  {
-        @include breakpoint($bp-small min-width) {
-          margin-left: 20px;
+        @include breakpoint($bp-small) {
+          margin-left: $gutter;
         }
       }
       .article-event-type {
@@ -361,10 +373,10 @@
 .ama__article-stub-list--inline {
   margin-top: $gutter;
   margin-bottom: $gutter;
-  @include breakpoint($bp-small min-width) {
+  @include breakpoint($bp-small) {
     margin-bottom: 59px;
   }
-  @include breakpoint($bp-med min-width) {
+  @include breakpoint($bp-med) {
     margin-bottom: 17px;
   }
   .ama_article-stub-header {
@@ -401,7 +413,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       flex-wrap: nowrap;
     }
   }
@@ -415,7 +427,7 @@
       margin-left: 0;
     }
 
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       @include gutter($margin-left-full...);
       @include gutter($margin-bottom-half...);
       width: 47%;
@@ -424,7 +436,7 @@
       }
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($margin-left-full...);
       width: 25%;
       &:nth-of-type(3) {
