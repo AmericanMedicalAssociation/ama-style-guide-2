@@ -355,11 +355,19 @@ a.index-page  {
           &.copy {
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;
+
+              .share-modal {
+                display: flex;
+
+                &:focus-within {
+                  display: flex !important;
+                }
+              }
             }
           }
         }
 
-        div.action-flag a:focus {
+        div.action-flag a:focus-visible {
           div.icon.bookmark::before {
             outline: 2px solid $tab-focus-blue;
           }
@@ -374,14 +382,15 @@ a.index-page  {
           }
         }
         a.print {
-          height: 40px;
-          width: 40px;
+          height: 33px;
+          width: 33px;
           margin-top: 7px;
           background-color: transparent;
           padding-top: 0;
           padding-bottom: 0;
+          padding-left: 33px;
           border: none;
-          text-indent: 100%;
+          text-indent: 150%;
           white-space: nowrap;
           display: block;
           overflow: hidden;
@@ -397,8 +406,9 @@ a.index-page  {
               background-image: url("../icons/svg/social-share-icons/printed.svg");
             }
           }
-          &:focus {
+          &:focus-visible {
             outline: 2px solid $tab-focus-blue;
+            height: 33px;
           }
           &.printed {
             &:before {
