@@ -19,6 +19,10 @@
             font-size: 2.67em;
           }
           color: $date-olive;
+          &:focus-visible {
+            outline: 2px solid $tab-focus-blue;
+            outline-offset: 5px;
+          }
         }
       }
     }
@@ -64,6 +68,13 @@
         }
         .article-date {
           margin-right: 3px;
+
+          time {
+            &:focus-visible {
+              outline: 2px solid $tab-focus-blue;
+              outline-offset: 5px;
+            }
+          }
         }
         .dot {
           margin-right: 3px;
@@ -71,6 +82,12 @@
           position: relative;
           top: -3px;
           line-height: 0;
+        }
+        span.read_time {
+          &:focus-visible {
+            outline: 2px solid $tab-focus-blue;
+            outline-offset: 5px;
+          }
         }
       }
     }

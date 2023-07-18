@@ -87,7 +87,9 @@ a.index-page  {
     }
     // Override browser styling
     &:focus-visible {
-      outline: 0;
+      outline: 2px solid $tab-focus-blue;
+      position: relative;
+      z-index: 99;
     }
     &:before {
       position: absolute;
@@ -317,7 +319,9 @@ a.index-page  {
           }
           // Override browser styling
           &:focus-visible {
-            outline: 0;
+            outline: 2px solid $tab-focus-blue;
+            position: relative;
+            z-index: 99;
           }
 
           &.share-icon {
@@ -349,7 +353,7 @@ a.index-page  {
 
           &.share-icon,
           &.copy {
-            &:focus {
+            &:focus-visible {
               outline: 2px solid $tab-focus-blue;
             }
           }

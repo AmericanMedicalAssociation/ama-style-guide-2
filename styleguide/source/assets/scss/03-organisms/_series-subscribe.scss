@@ -170,6 +170,10 @@
         color: $white;
         background-color: $purple;
       }
+      &:focus-visible {
+        outline: 2px solid $tab-focus-blue;
+        outline-offset: 5px;  
+      }
     }
     &:hover {
       &:after {
@@ -230,6 +234,11 @@
       color: $purple;
       text-transform: uppercase;
       text-decoration: none;
+
+      &:focus-visible {
+        outline: 2px solid $tab-focus-blue;
+        outline-offset: 5px;
+      }
 
       &:hover {
         text-decoration: underline;
