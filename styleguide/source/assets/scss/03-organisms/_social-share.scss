@@ -348,7 +348,10 @@ a.index-page  {
             }
           }
           &.bookmark {
-            margin-top: 3px;
+            margin-top: 10px;
+            @include breakpoint($bp-small) {
+              margin-top: 3px;
+            }
           }
 
           &.share,
