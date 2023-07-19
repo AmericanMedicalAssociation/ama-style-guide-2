@@ -22,8 +22,11 @@
     background-color: $white;
     white-space: nowrap;
     width: auto;
-    &:focus {
-      border: 2px solid $tab-focus-blue;
+    &:focus-visible {
+      outline: 2px solid $tab-focus-blue;
+      position: relative;
+      z-index: 99;
+      outline-offset: -5px;
     }
     @include breakpoint($bp-small max-width) {
       min-width: 115px;

@@ -92,7 +92,9 @@ a.index-page  {
     }
     // Override browser styling
     &:focus-visible {
-      outline: 0;
+      outline: 2px solid $tab-focus-blue;
+      position: relative;
+      z-index: 99;
     }
     &:before {
       position: absolute;
@@ -322,7 +324,9 @@ a.index-page  {
           }
           // Override browser styling
           &:focus-visible {
-            outline: 0;
+            outline: 2px solid $tab-focus-blue;
+            position: relative;
+            z-index: 99;
           }
 
           &.share-icon {
@@ -332,7 +336,7 @@ a.index-page  {
               height: 40px;
             }
             &:before {
-              width: 51px;
+              width: 40px;
             }
           }
           &.print {
@@ -354,13 +358,26 @@ a.index-page  {
 
           &.share-icon,
           &.copy {
-            &:focus {
+            &:focus-visible {
               outline: 2px solid $tab-focus-blue;
+
+              .share-modal {
+                display: flex;
+
+                &:focus-within {
+                  display: flex;
+                }
+              }
+            }
+            &:focus-within {
+              .share-modal {
+                display: flex;
+              }
             }
           }
         }
 
-        div.action-flag a:focus {
+        div.action-flag a:focus-visible {
           div.icon.bookmark::before {
             outline: 2px solid $tab-focus-blue;
           }
@@ -375,14 +392,15 @@ a.index-page  {
           }
         }
         a.print {
-          height: 40px;
-          width: 40px;
+          height: 33px;
+          width: 33px;
           margin-top: 7px;
           background-color: transparent;
           padding-top: 0;
           padding-bottom: 0;
+          padding-left: 33px;
           border: none;
-          text-indent: 100%;
+          text-indent: 150%;
           white-space: nowrap;
           display: block;
           overflow: hidden;
@@ -398,8 +416,9 @@ a.index-page  {
               background-image: url("../icons/svg/social-share-icons/printed.svg");
             }
           }
-          &:focus {
+          &:focus-visible {
             outline: 2px solid $tab-focus-blue;
+            height: 33px;
           }
           &.printed {
             &:before {
@@ -409,8 +428,17 @@ a.index-page  {
         }
 
         .share-modal {
+          cursor: default;
           @include breakpoint($bp-small max-width) {
             bottom: 60px;
+          }
+
+          a {
+            margin-bottom: 28px;
+            padding-bottom: 0;
+            &:focus-visible {
+              outline: 2px solid $tab-focus-blue;
+            }
           }
         }
 
