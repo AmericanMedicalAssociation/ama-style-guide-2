@@ -44,6 +44,11 @@ a.index-page  {
 
   // Bookmark icon styles in teaser footer
   .flag-footer {
+    @include breakpoint($bp-small max-width) {
+      align-self: flex-start;
+      padding-top: 5px;
+    }
+
     a {
       text-decoration: none;
 
