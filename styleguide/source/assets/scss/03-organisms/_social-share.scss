@@ -34,9 +34,12 @@ a.index-page  {
 
   //  Share text.
   .text {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
+    @include breakpoint($bp-small) {
+      font-size: 20px;
+    }
   }
   .ajax-progress {
     display: none;
