@@ -303,10 +303,15 @@
             listFilter($("#ama__search__location"), $(".ama__form-group"));
           }
           // make the entire subscribe button clickable.
-          $('form.salesforce-subscribe-form').on('click', function(e) {
-            $(this).submit();
+          $('form.salesforce-subscribe-form, .ama__input-wrapper--subscribe-news').on('click', function(e) {
+            if ($(this).hasClass('salesforce-subscribe-form')) {
+              $(this).submit();
+            }
+            else {
+              var link = $(this).find('a').attr('href');
+              location.href = link;
+            }
           });
-
         });
       })(jQuery);
     }
