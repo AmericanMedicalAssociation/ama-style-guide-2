@@ -24472,11 +24472,13 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 .share-wrapper .ajax-progress {
   display: none;
 }
+.share-wrapper .ama_book_mark .flag-bookmark {
+  padding-top: 5px;
+}
 @media (max-width: 37.5em) {
   .share-wrapper .flag-footer {
     -ms-flex-item-align: start;
     align-self: flex-start;
-    padding-top: 5px;
   }
 }
 .share-wrapper .flag-footer a {
@@ -24522,7 +24524,6 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 }
 .share-wrapper .icon.copy, .share-wrapper a.print.copy {
   color: #000000;
-  background-color: #ffffff;
   padding-top: 0;
   padding-bottom: 0;
   border: none;
@@ -24543,24 +24544,24 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 .share-wrapper .icon.copy.copied:before, .share-wrapper a.print.copy.copied:before {
   background-image: url("../icons/svg/social-share-icons/copied.svg");
 }
-.share-wrapper .icon.share-icon:before, .share-wrapper a.print.share-icon:before {
+.share-wrapper .icon.share:before, .share-wrapper a.print.share:before {
   width: 48px;
   height: 42px;
   left: -6px;
   top: -11px;
   background-image: url("../icons/svg/social-share-icons/share.svg");
 }
-.share-wrapper .icon.share-icon.shared:before, .share-wrapper a.print.share-icon.shared:before {
+.share-wrapper .icon.share.shared:before, .share-wrapper a.print.share.shared:before {
   background-image: url("../icons/svg/social-share-icons/shared.svg");
 }
-.share-wrapper .icon.share-icon:hover, .share-wrapper a.print.share-icon:hover {
+.share-wrapper .icon.share:hover, .share-wrapper a.print.share:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.share-wrapper .icon.share-icon.masthead:hover:before, .share-wrapper a.print.share-icon.masthead:hover:before {
+.share-wrapper .icon.share.masthead:hover:before, .share-wrapper a.print.share.masthead:hover:before {
   background-image: url("../icons/svg/social-share-icons/shared.svg");
 }
-.share-wrapper .icon.share-icon .share-modal, .share-wrapper a.print.share-icon .share-modal {
+.share-wrapper .icon.share .share-modal, .share-wrapper a.print.share .share-modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24580,24 +24581,24 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   border-radius: 20px;
 }
 @media (min-width: 37.5em) {
-  .share-wrapper .icon.share-icon .share-modal, .share-wrapper a.print.share-icon .share-modal {
+  .share-wrapper .icon.share .share-modal, .share-wrapper a.print.share .share-modal {
     position: absolute;
     right: -125px;
     bottom: -274px;
   }
 }
 @media (min-width: 56.25em) {
-  .share-wrapper .icon.share-icon .share-modal, .share-wrapper a.print.share-icon .share-modal {
+  .share-wrapper .icon.share .share-modal, .share-wrapper a.print.share .share-modal {
     right: -145px;
   }
 }
-.share-wrapper .icon.share-icon .share-modal.hidden, .share-wrapper a.print.share-icon .share-modal.hidden {
+.share-wrapper .icon.share .share-modal.hidden, .share-wrapper a.print.share .share-modal.hidden {
   display: none;
 }
-.share-wrapper .icon.share-icon .share-modal.hidden .click-catcher, .share-wrapper a.print.share-icon .share-modal.hidden .click-catcher {
+.share-wrapper .icon.share .share-modal.hidden .click-catcher, .share-wrapper a.print.share .share-modal.hidden .click-catcher {
   display: none;
 }
-.share-wrapper .icon.share-icon .share-modal .click-catcher, .share-wrapper a.print.share-icon .share-modal .click-catcher {
+.share-wrapper .icon.share .share-modal .click-catcher, .share-wrapper a.print.share .share-modal .click-catcher {
   z-index: 0;
   position: fixed;
   cursor: default;
@@ -24608,7 +24609,7 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   display: block;
   background: transparent;
 }
-.share-wrapper .icon.share-icon .share-modal a, .share-wrapper a.print.share-icon .share-modal a {
+.share-wrapper .icon.share .share-modal a, .share-wrapper a.print.share .share-modal a {
   white-space: nowrap;
   display: block;
   position: relative;
@@ -24618,16 +24619,16 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   font-weight: 600;
   text-decoration: none;
 }
-.share-wrapper .icon.share-icon .share-modal a:focus, .share-wrapper a.print.share-icon .share-modal a:focus {
+.share-wrapper .icon.share .share-modal a:focus, .share-wrapper a.print.share .share-modal a:focus {
   text-decoration: underline;
 }
-.share-wrapper .icon.share-icon .share-modal a:hover, .share-wrapper a.print.share-icon .share-modal a:hover {
+.share-wrapper .icon.share .share-modal a:hover, .share-wrapper a.print.share .share-modal a:hover {
   text-decoration: underline;
 }
-.share-wrapper .icon.share-icon .share-modal a:last-child, .share-wrapper a.print.share-icon .share-modal a:last-child {
+.share-wrapper .icon.share .share-modal a:last-child, .share-wrapper a.print.share .share-modal a:last-child {
   padding-bottom: 0;
 }
-.share-wrapper .icon.share-icon .share-modal a:before, .share-wrapper a.print.share-icon .share-modal a:before {
+.share-wrapper .icon.share .share-modal a:before, .share-wrapper a.print.share .share-modal a:before {
   width: 40px;
   height: 40px;
   left: 0px;
@@ -24636,16 +24637,16 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   background-repeat: no-repeat;
   position: absolute;
 }
-.share-wrapper .icon.share-icon .share-modal .facebook:before, .share-wrapper a.print.share-icon .share-modal .facebook:before {
+.share-wrapper .icon.share .share-modal .facebook:before, .share-wrapper a.print.share .share-modal .facebook:before {
   background-image: url("../icons/svg/social-share-icons/fb.svg");
 }
-.share-wrapper .icon.share-icon .share-modal .linkedin:before, .share-wrapper a.print.share-icon .share-modal .linkedin:before {
+.share-wrapper .icon.share .share-modal .linkedin:before, .share-wrapper a.print.share .share-modal .linkedin:before {
   background-image: url("../icons/svg/social-share-icons/linkedin.svg");
 }
-.share-wrapper .icon.share-icon .share-modal .twitter:before, .share-wrapper a.print.share-icon .share-modal .twitter:before {
+.share-wrapper .icon.share .share-modal .twitter:before, .share-wrapper a.print.share .share-modal .twitter:before {
   background-image: url("../icons/svg/social-share-icons/twitter.svg");
 }
-.share-wrapper .icon.share-icon .share-modal .email:before, .share-wrapper a.print.share-icon .share-modal .email:before {
+.share-wrapper .icon.share .share-modal .email:before, .share-wrapper a.print.share .share-modal .email:before {
   background-image: url("../icons/svg/social-share-icons/email.svg");
 }
 .share-wrapper .icon.print {
@@ -24659,7 +24660,13 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 }
 .article-header .share-row .share {
   display: inline;
-  margin-left: auto;
+  margin-left: 15px;
+  height: 43px;
+}
+@media (min-width: 37.5em) {
+  .article-header .share-row .share {
+    height: unset;
+  }
 }
 .article-header .share-row .share.is-sticky .share-wrapper {
   display: -webkit-box;
@@ -24692,15 +24699,11 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   margin-top: 250px;
 }
 .article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon,
-.article-header .share-row .share .share-wrapper.share-wrapper--fixed .bookmark,
-.article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.share-icon {
+.article-header .share-row .share .share-wrapper.share-wrapper--fixed .bookmark {
   margin: 0 0 15px 0;
   width: 30px;
   height: 30px;
   padding-left: 0;
-}
-.article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.share-icon:before {
-  width: 40px;
 }
 .article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.copy {
   margin-right: 0;
@@ -24747,24 +24750,12 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   position: relative;
   z-index: 99;
 }
-.article-header .share-row .share .share-wrapper .icon.share-icon {
-  padding-left: 40px;
-  margin-left: 21px;
-}
-@media (max-width: 37.5em) {
-  .article-header .share-row .share .share-wrapper .icon.share-icon {
-    height: 40px;
-  }
-}
-.article-header .share-row .share .share-wrapper .icon.share-icon:before {
-  width: 40px;
-}
 .article-header .share-row .share .share-wrapper .icon.printa {
   color: transparent;
   padding-right: 15px;
 }
 .article-header .share-row .share .share-wrapper .icon.copy {
-  margin-right: -14px;
+  margin-right: -6px;
   margin-top: 3px;
 }
 @media (max-width: 37.5em) {
@@ -24775,20 +24766,20 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 .article-header .share-row .share .share-wrapper .icon.bookmark {
   margin-top: 3px;
 }
-.article-header .share-row .share .share-wrapper .icon.share-icon:focus-visible, .article-header .share-row .share .share-wrapper .icon.copy:focus-visible {
+.article-header .share-row .share .share-wrapper .icon.share:focus-visible, .article-header .share-row .share .share-wrapper .icon.copy:focus-visible {
   outline: 2px solid #0076a5;
 }
-.article-header .share-row .share .share-wrapper .icon.share-icon:focus-visible .share-modal, .article-header .share-row .share .share-wrapper .icon.copy:focus-visible .share-modal {
+.article-header .share-row .share .share-wrapper .icon.share:focus-visible .share-modal, .article-header .share-row .share .share-wrapper .icon.copy:focus-visible .share-modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.article-header .share-row .share .share-wrapper .icon.share-icon:focus-visible .share-modal:focus-within, .article-header .share-row .share .share-wrapper .icon.copy:focus-visible .share-modal:focus-within {
+.article-header .share-row .share .share-wrapper .icon.share:focus-visible .share-modal:focus-within, .article-header .share-row .share .share-wrapper .icon.copy:focus-visible .share-modal:focus-within {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.article-header .share-row .share .share-wrapper .icon.share-icon:focus-within .share-modal, .article-header .share-row .share .share-wrapper .icon.copy:focus-within .share-modal {
+.article-header .share-row .share .share-wrapper .icon.share:focus-within .share-modal, .article-header .share-row .share .share-wrapper .icon.copy:focus-within .share-modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
