@@ -277,7 +277,7 @@
         min-width: 100%;
         flex: 1;
         &:hover {
-          background-color: $hoverPurple;
+          //background-color: $hoverPurple;
         }
         @include breakpoint($bp-small) {
           min-width: 280px;
@@ -334,11 +334,11 @@
           background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
         }
         &:hover::before {
-          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
+          //background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
         }
         &:hover {
-          text-decoration: underline;
-          cursor: pointer;
+          //text-decoration: underline;
+          //cursor: pointer;
         }
       }
     }
@@ -346,6 +346,9 @@
       .article-event-details {
         flex: 1;
         padding-left: 0;
+        @include breakpoint($bp-small) {
+          flex: .8;
+        }
       }
       .article-event-info-wrapper {
         @include breakpoint($bp-small) {
