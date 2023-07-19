@@ -22576,14 +22576,16 @@ a.ama__membership:hover {
   display: none;
 }
 
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
   background: #ece7f0;
-  margin: 0 -21px 35px -21px;
+  margin: 0 -15px 35px -15px;
   position: relative;
   padding-bottom: 0;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -22600,16 +22602,20 @@ a.ama__membership:hover {
     margin: 0;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content > * {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content > *,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content > * {
   margin-bottom: 0;
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container) {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container),
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content > *:not(.membership_image):not(.ama__button):not(.ama__membership_cta_container) {
   padding: unset;
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .membership-body {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .membership-body,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .membership-body {
   display: none;
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container {
   display: block;
   width: 100%;
   height: 40px;
@@ -22617,18 +22623,21 @@ a.ama__membership:hover {
   padding: 0;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container {
     width: 102px;
     height: 44px;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container {
     width: 200px;
     height: 70px;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo {
   display: block;
   height: 31px;
   width: 76px;
@@ -22637,36 +22646,42 @@ a.ama__membership:hover {
   left: 2.3%;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo {
     left: 12%;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .logo {
     top: 20%;
     left: 25%;
     height: 42px;
     width: 105px;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .ama__site-logo {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .ama__site-logo,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .ama__site-logo {
   display: block;
   position: relative;
   height: 44px;
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .ama__site-logo {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .ama__site-logo,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_logo-container .ama__site-logo {
     height: 70px;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_title_container {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_title_container,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_title_container {
   display: block;
   padding-left: 0;
   padding-right: 0;
   margin: 0;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_title_container {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_title_container,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_title_container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -22679,14 +22694,16 @@ a.ama__membership:hover {
     flex-grow: 6;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
   margin: 21px auto;
   display: block;
   max-width: 75%;
   text-align: center;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
     margin: 0 auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -22705,20 +22722,25 @@ a.ama__membership:hover {
   }
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
     -webkit-box-flex: 3;
     -ms-flex-positive: 3;
     flex-grow: 3;
   }
 }
 @media (min-width: 75em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container {
     -webkit-box-flex: 2;
     -ms-flex-positive: 2;
     flex-grow: 2;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header,
+.ama__link-list--mobile .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header {
   margin-top: 14px;
   margin-bottom: 0;
   padding-left: 16%;
@@ -22727,17 +22749,24 @@ a.ama__membership:hover {
   font-size: 26px;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header,
+  .ama__link-list--mobile .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header {
     margin-top: 0;
     padding: 0;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header, .ama__link-list--mobile .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ama__h2,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__link-list--mobile h2.ui-accordion-header,
+  .ama__link-list--mobile .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content h2.ui-accordion-header {
     font-size: 1.444em;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
   padding: 0 22px;
   font-size: 18px;
   height: 50px;
@@ -22747,7 +22776,8 @@ a.ama__membership:hover {
   overflow: hidden;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
     display: inline-block;
     margin: 0;
     padding: 0 12px;
@@ -22757,11 +22787,21 @@ a.ama__membership:hover {
   }
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
     font-size: 20px;
     height: 50px;
     line-height: 50px;
     margin-right: 28px;
+  }
+}
+
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership {
+  margin-bottom: 28px;
+}
+@media (max-width: 37.5em) {
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
+    margin: 0 0 35px 0;
   }
 }
 
@@ -24659,14 +24699,8 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   position: relative;
 }
 .article-header .share-row .share {
-  display: inline;
   margin-left: 15px;
   height: 43px;
-}
-@media (min-width: 37.5em) {
-  .article-header .share-row .share {
-    height: unset;
-  }
 }
 .article-header .share-row .share.is-sticky .share-wrapper {
   display: -webkit-box;
@@ -24686,6 +24720,10 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   position: absolute;
   margin-top: 250px;
   width: 50px !important;
+}
+.article-header .share-row .share.is-sticky .share-wrapper .share-modal {
+  right: -316px;
+  bottom: -250px;
 }
 .article-header .share-row .share .share-wrapper {
   border-bottom: 0;
@@ -28098,12 +28136,6 @@ body.search-results .ama__layout--two-column--left {
   padding-top: 0;
   margin-top: 0;
 }
-@media (min-width: 37.5em) {
-  .ama__news-article .ama__layout--two-column--right__page-content.border {
-    border-top: 8px solid #46166B;
-    padding-top: 14px;
-  }
-}
 .ama__news-article .ama__layout--two-column--right__page-content.border-none {
   padding-top: 0;
   border-top: none;
@@ -28263,9 +28295,6 @@ body.search-results .ama__layout--two-column--left {
   -ms-flex: 1;
   flex: 1;
 }
-.ama__news-article .event-header .article-event-cta .article-event-link:hover {
-  background-color: #9073A6;
-}
 @media (min-width: 37.5em) {
   .ama__news-article .event-header .article-event-cta .article-event-link {
     min-width: 280px;
@@ -28320,18 +28349,18 @@ body.search-results .ama__layout--two-column--left {
   top: 5px;
   background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
 }
-.ama__news-article .event-header .icon.locate-event:hover::before {
-  background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
-}
-.ama__news-article .event-header .icon.locate-event:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
 .ama__news-article .event-header.no-image .article-event-details {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   padding-left: 0;
+}
+@media (min-width: 37.5em) {
+  .ama__news-article .event-header.no-image .article-event-details {
+    -webkit-box-flex: 0.8;
+    -ms-flex: 0.8;
+    flex: 0.8;
+  }
 }
 @media (min-width: 37.5em) {
   .ama__news-article .event-header.no-image .article-event-info-wrapper {
