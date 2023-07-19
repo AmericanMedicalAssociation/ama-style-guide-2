@@ -90,9 +90,10 @@ a.ama__membership {
 }
 
 //Slim Membership Block styling
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
   background: #ece7f0;
-  margin: 0 -21px 35px -21px;
+  margin: 0 -15px 35px -15px;
   position: relative;
   padding-bottom: 0;
   @include breakpoint($bp-small min-width) {
@@ -246,6 +247,15 @@ a.ama__membership {
       height: 50px;
       line-height: 50px;
       margin-right: 28px;
+    }
+  }
+}
+
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership {
+  margin-bottom: 28px;
+  .ama__membership-content {
+    @include breakpoint($bp-small max-width) {
+      margin: 0 0 35px 0;
     }
   }
 }
