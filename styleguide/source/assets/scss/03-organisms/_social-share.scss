@@ -46,10 +46,14 @@ a.index-page  {
   }
 
   // Bookmark icon styles in teaser footer
+  .ama_book_mark {
+    .flag-bookmark {
+      padding-top: 5px;
+    }
+  }
   .flag-footer {
     @include breakpoint($bp-small max-width) {
       align-self: flex-start;
-      padding-top: 5px;
     }
 
     a {
@@ -109,7 +113,6 @@ a.index-page  {
     }
     &.copy {
       color: $black;
-      background-color: $white;
       padding-top: 0;
       padding-bottom: 0;
       border: none;
@@ -132,7 +135,7 @@ a.index-page  {
         }
       }
     }
-    &.share-icon {
+    &.share {
       &:before {
         width: 48px;
         height: 42px;
@@ -256,7 +259,11 @@ a.index-page  {
   .share-row {
     .share {
       display: inline;
-      margin-left: auto;
+      margin-left: 15px;
+      height: 43px;
+      @include breakpoint($bp-small) {
+        height: unset;
+      }
 
       &.is-sticky {
         .share-wrapper {
@@ -280,16 +287,12 @@ a.index-page  {
           left: 0;
           position: absolute;
           margin-top: 250px;
-          .icon, 
-          .bookmark,
-          .icon.share-icon {
+          .icon,
+          .bookmark {
             margin: 0 0 15px 0;
             width: 30px;
             height: 30px;
             padding-left: 0;
-          }
-          .icon.share-icon:before {
-            width: 40px;
           }
           .icon.copy {
             margin-right: 0;
@@ -331,17 +334,6 @@ a.index-page  {
             position: relative;
             z-index: 99;
           }
-
-          &.share-icon {
-            padding-left: 40px;
-            margin-left: 21px;
-            @include breakpoint($bp-small max-width) {
-              height: 40px;
-            }
-            &:before {
-              width: 40px;
-            }
-          }
           &.print {
             &a {
               color: transparent;
@@ -349,7 +341,7 @@ a.index-page  {
             }
           }
           &.copy {
-            margin-right: -14px;
+            margin-right: -6px;
             margin-top: 3px;
             @include breakpoint($bp-small max-width) {
               height: 40px;
@@ -359,7 +351,7 @@ a.index-page  {
             margin-top: 3px;
           }
 
-          &.share-icon,
+          &.share,
           &.copy {
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;
