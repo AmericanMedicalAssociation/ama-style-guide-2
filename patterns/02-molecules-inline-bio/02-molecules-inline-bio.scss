@@ -10,7 +10,17 @@
     margin-right: 8px;
   }
   .ama__link--icon {
-    margin-top: -10px;
+  margin-top: -10px;
+    &:focus-visible {
+      outline: 2px solid $tab-focus-blue;
+      outline-offset: -4px;
+    }
+  }
+}
+span.ama__inline-bio__link {
+  &:focus-visible {
+    outline: 2px solid $tab-focus-blue;
+    outline-offset: 2px;
   }
 }
 .ama__inline-bio {
