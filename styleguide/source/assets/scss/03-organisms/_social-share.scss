@@ -331,7 +331,7 @@ a.index-page  {
               height: 40px;
             }
             &:before {
-              width: 51px;
+              width: 40px;
             }
           }
           &.print {
@@ -360,8 +360,13 @@ a.index-page  {
                 display: flex;
 
                 &:focus-within {
-                  display: flex !important;
+                  display: flex;
                 }
+              }
+            }
+            &:focus-within {
+              .share-modal {
+                display: flex;
               }
             }
           }
@@ -418,8 +423,17 @@ a.index-page  {
         }
 
         .share-modal {
+          cursor: default;
           @include breakpoint($bp-small max-width) {
             bottom: 60px;
+          }
+
+          a {
+            margin-bottom: 28px;
+            padding-bottom: 0;
+            &:focus-visible {
+              outline: 2px solid $tab-focus-blue;
+            }
           }
         }
 
