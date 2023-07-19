@@ -8,7 +8,7 @@
     attach: function (context, settings) {
       (function ($) {
         $(document).ready(function(){
-   
+
           // Do not execute in the layout builder edit dialog
           if (!$('.js-off-canvas-dialog-open').length) {
             $('.multiselect').multiselect();
@@ -33,8 +33,8 @@
 
             // jQueryUI selectmenu method
             $('.ama__select-menu__select').selectmenu();
-            
-         
+
+
 
             // Submits the search form after a select menu items has been selected
             $('.ama__select-menu__select').on('selectmenuchange', function() {
@@ -302,7 +302,10 @@
             }
             listFilter($("#ama__search__location"), $(".ama__form-group"));
           }
-
+          // make the entire subscribe button clickable.
+          $('form.salesforce-subscribe-form').on('click', function(e) {
+            $(this).submit();
+          });
 
         });
       })(jQuery);
