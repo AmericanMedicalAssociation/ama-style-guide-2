@@ -288,6 +288,7 @@ a.index-page  {
           left: 0;
           position: absolute;
           margin-top: 250px;
+          // Adjust icon alignment when sticky/scrolling
           .icon,
           .bookmark {
             margin: 0 0 15px 0;
@@ -297,12 +298,19 @@ a.index-page  {
           }
           .icon.copy {
             margin-right: 0;
-            margin-top: 0;
+            margin-top: 5px;
           }
           .icon a.print {
-            margin-left: 5px;
+            margin-left: -2px;
             width: 30px;
             height: 30px;
+          }
+          .icon.share::before {
+            left: -9px;
+          }
+          .icon.copy::before,
+          .icon.bookmark::before {
+            left: -4px;
           }
         }
         @include breakpoint($bp-small max-width) {
