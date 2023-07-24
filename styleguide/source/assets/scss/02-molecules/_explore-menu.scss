@@ -10,11 +10,33 @@
   &__button {
     padding: $gutter/4;
     margin: $gutter/4;
-    display: flex;
     align-items: center;
-    border: 1px solid $white;
     cursor: pointer;
-    min-width: 200px;
+    
+    &.main {
+      display: none;
+      border: 1px solid $white;
+      min-width: 200px;
+  
+      @include breakpoint($bp-small) {
+        display: flex;
+      }
+    }
+  
+    &.mobile {
+      display: block;
+      width: 55px;
+
+      &::before {
+        content: url('../icons/svg/icon-menu-closed.svg');
+        height: 32px;
+        display: block;
+      }
+  
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+    }
 
     &:hover {
       background-color: $hoverPurple;

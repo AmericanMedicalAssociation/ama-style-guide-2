@@ -86,7 +86,7 @@
 
   .ama__site-logo {
     align-items: flex-start;
-    text-align: center;
+    text-align: left;
     min-width: 125px;
     flex-grow: 1;
 
@@ -94,6 +94,7 @@
       @include gutter($margin-right-half...);
       flex-grow: 0;
       min-width: 0;
+      text-align: center;
     }
 
     @include breakpoint($bp-med min-width) {
