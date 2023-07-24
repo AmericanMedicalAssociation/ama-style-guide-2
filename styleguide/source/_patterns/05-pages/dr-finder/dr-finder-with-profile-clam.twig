@@ -17,6 +17,6 @@
     {% include '@atoms/heading/heading.twig' %}
     {% include '@atoms/link/link.twig' with { "link" : backLink } %}
     {% include '@molecules/dr-finder-profile-header/dr-finder-profile-header.twig' %}
-    <div class="dr-finder-search__cta"> {{ drFinderSearch.cta.text|raw }} </div>
+    {% include '@molecules/dr-finder-credentials/dr-finder-credentials-physician.twig' %}
   </div>
 {% endblock %}
