@@ -32,6 +32,12 @@
         height: 32px;
         display: block;
       }
+
+      &::after {
+        content: url('../icons/svg/icon-menu-open.svg');
+        height: 32px;
+        display: none;
+      }
   
       @include breakpoint($bp-small) {
         display: none;
@@ -80,6 +86,20 @@
       &:hover {
         text-decoration: none;
         background-color: $hoverPurple;
+      }
+    }
+  }
+
+  &.open {
+    .ama__explore-menu__button {
+      &.mobile {
+        &::before {
+          display: none;
+        }
+  
+        &::after {
+          display: block;
+        }
       }
     }
   }
