@@ -542,7 +542,24 @@ a.ama__membership {
 
 .text-body {
   promo-embed {
+    &.promo-size-full, &.promo-size-half {
+      .ama__membership_media-container {
+        display: none;
+      }
+      .ama__membership_cta_container {
+        a {
+          width: 100%;
+        }
+      }
+    }
     @include breakpoint($bp-med) {
+      &.promo-size-full, &.promo-size-half {
+        .ama__membership_cta_container {
+          a {
+            width: auto;
+          }
+        }
+      }
       &.promo-size-half {
         display: inline;
         max-width: 50%;
