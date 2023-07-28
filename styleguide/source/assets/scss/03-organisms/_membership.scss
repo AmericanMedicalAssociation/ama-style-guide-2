@@ -542,16 +542,18 @@ a.ama__membership {
 
 .text-body {
   promo-embed {
-    &.promo-size-half {
-      display: inline;
-      max-width: 50%;
-      &.align-left {
-        float: left;
-        @include gutter($padding-right-full...);
-      }
-      &.align-right {
-        float: right;
-        @include gutter($padding-left-full...);
+    @include breakpoint($bp-med) {
+      &.promo-size-half {
+        display: inline;
+        max-width: 50%;
+        &.align-left {
+          float: left;
+          @include gutter($padding-right-full...);
+        }
+        &.align-right {
+          float: right;
+          @include gutter($padding-left-full...);
+        }
       }
     }
     > div[class^="membership-"] {
