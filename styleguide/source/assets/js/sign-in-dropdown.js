@@ -11,6 +11,7 @@
        parentElement.unbind('click').click(function(e){
           e.stopPropagation();
           $(menuElement).slideToggle();
+          $(parentElement).toggleClass('open');
         });
 
         // Stop link from firing
@@ -22,6 +23,7 @@
           // if the target of the click isn't the container nor a descendant of the container
           if (!parentElement.is(e.target) && parentElement.has(e.target).length === 0) {
             $(menuElement).slideUp();
+            $(parentElement).removeClass('open');
           }
 
           // Set timeout for when a user mouses out of the menu
@@ -30,6 +32,7 @@
           }).mouseleave(function(){
             setTimeout(function(){
               $(menuElement).slideUp();
+              $(parentElement).removeClass('open');
             }, 2000);
           });
         });
