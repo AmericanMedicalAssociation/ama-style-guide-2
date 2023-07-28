@@ -539,3 +539,32 @@ a.ama__membership {
     }
   }
 }
+
+.text-body {
+  promo-embed {
+    &.promo-size-half {
+      display: inline;
+      max-width: 50%;
+      &.align-left {
+        float: left;
+        @include gutter($padding-right-full...);
+      }
+      &.align-right {
+        float: right;
+        @include gutter($padding-left-full...);
+      }
+    }
+    > div[class^="membership-"] {
+      border: solid $black;
+      border-width: 1px 0;
+      @include gutter($margin-bottom-full...);
+      @include gutter($padding-bottom-full...);
+      @include gutter($margin-top-full...);
+      @include gutter($padding-top-full...);
+
+      h2 {
+        color: $purple;
+      }
+    }
+  }
+}
