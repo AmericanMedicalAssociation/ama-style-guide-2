@@ -66,5 +66,15 @@ promo-embed {
         padding: $gutter 0;
       }
     }
+    &.align-right {
+      padding-right: 0;
+      padding-left: 0;
+      @include breakpoint($bp-small) {
+        padding-left: calc($gutter * .5);
+      }
+      @include breakpoint($bp-med) {
+        padding-left: $gutter;
+      }
+    }
   }
 }
