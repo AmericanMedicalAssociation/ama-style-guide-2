@@ -23277,6 +23277,73 @@ a.ama__membership:hover {
   margin: 0;
 }
 
+.text-body promo-embed.promo-size-full .ama__membership_media-container, .text-body promo-embed.promo-size-half .ama__membership_media-container {
+  display: none;
+}
+.text-body promo-embed.promo-size-full .ama__membership_cta_container a, .text-body promo-embed.promo-size-half .ama__membership_cta_container a {
+  width: 100%;
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed.promo-size-full .ama__membership_cta_container a, .text-body promo-embed.promo-size-half .ama__membership_cta_container a {
+    width: auto;
+  }
+  .text-body promo-embed.promo-size-half {
+    display: inline;
+    max-width: 50%;
+  }
+  .text-body promo-embed.promo-size-half.align-left {
+    float: left;
+    padding-right: 21px;
+  }
+}
+@media (min-width: 56.25em) and (min-width: 56.25em) {
+  .text-body promo-embed.promo-size-half.align-left {
+    padding-right: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed.promo-size-half.align-right {
+    float: right;
+    padding-left: 21px;
+  }
+}
+@media (min-width: 56.25em) and (min-width: 56.25em) {
+  .text-body promo-embed.promo-size-half.align-right {
+    padding-left: 28px;
+  }
+}
+.text-body promo-embed > div[class^=membership-] {
+  border: solid #000000;
+  border-width: 1px 0;
+  margin-bottom: 21px;
+  padding-bottom: 21px;
+  margin-top: 21px;
+  padding-top: 21px;
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed > div[class^=membership-] {
+    margin-bottom: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed > div[class^=membership-] {
+    padding-bottom: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed > div[class^=membership-] {
+    margin-top: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed > div[class^=membership-] {
+    padding-top: 28px;
+  }
+}
+.text-body promo-embed > div[class^=membership-] h2 {
+  color: #46166B;
+}
+
 .ama__org-nav {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 34%;
@@ -24728,12 +24795,19 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 }
 .article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.copy {
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 5px;
 }
 .article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon a.print {
-  margin-left: 5px;
+  margin-left: -2px;
   width: 30px;
   height: 30px;
+}
+.article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.share::before {
+  left: -9px;
+}
+.article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.copy::before,
+.article-header .share-row .share .share-wrapper.share-wrapper--fixed .icon.bookmark::before {
+  left: -4px;
 }
 @media (max-width: 37.5em) {
   .article-header .share-row .share .share-wrapper {
