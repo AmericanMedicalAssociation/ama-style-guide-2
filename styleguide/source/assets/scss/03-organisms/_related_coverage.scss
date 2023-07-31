@@ -1,0 +1,54 @@
+promo-embed {
+  div[class*="related_coverage-"] {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $border-gray;
+    border-bottom: 1px solid $border-gray;
+    p {
+      margin-bottom: 0;
+    }
+    .heading {
+      margin-bottom: calc($gutter * .75);
+      p {
+        font-weight: $font-weight-bold;
+        font-size: 26px;
+      }
+    }
+    .link-heading {
+      p {
+        font-weight: $font-weight-bold;
+        font-size: 20px;
+        line-height: calc($gutter * .9);
+      }
+    }
+    .link {
+      margin-bottom: calc($gutter * .5);
+      p {
+        font-size: 18px;
+        a {
+          color: $blue;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  &.promo-size-full {
+    div[class*="related_coverage-"] {
+      padding: $gutter 0;
+      @include breakpoint($bp-small) {
+        padding: $gutter calc($gutter * .5);
+      }
+      @include breakpoint($bp-med) {
+        padding: $gutter;
+      }
+    }
+  }
+  &.promo-size-half {
+    div[class*="related_coverage-"] {
+      padding: $gutter 0;
+    }
+  }
+}
