@@ -1,107 +1,165 @@
 // Flag/bookmark styling
 .ama_locker_navigation {
   display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
   justify-content: flex-end;
-  padding-right: 10px;
-  @include breakpoint($bp-small) {
-    padding-right: 0;
+  position: fixed;
+  &.hidden {
+    display: none;
   }
-  @include breakpoint($bp-xs max-width) {
-    justify-content: center;
-    padding-right: 0;
+  @include breakpoint($bp-small max-width) {
+    //display: none;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    height: 92px;
+    border: 0.5px solid $black;
+  }
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    position: relative;
+    padding-right: 12px;
+  }
+  &-catcher {
+    z-index: 99;
+    position: fixed;
+    cursor: default;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.25);
+  }
+  &-trigger {
+    display: block;
+    text-align: right;
+    padding-right:15px;
+    @include breakpoint($bp-small) {
+      display: none;
+    }
+    .dot {
+      height: 2px;
+      width: 2px;
+      background-color: $purple;
+      border-radius: 50%;
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
   }
   a {
-    position: relative;
-    height: 44px;
-    border: 1px solid #a28ab5;
-    padding: 2px 0 0;
-    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 7px;
+    font-size: 10px;
+    font-weight: $font-weight-light;
     color: #310f4a;
     text-decoration: none;
     text-align: center;
     background-color: $white;
     white-space: nowrap;
     width: auto;
+    @include breakpoint($bp-small max-width) {
+      min-width: 115px;
+    }
+    @include breakpoint($bp-small) {
+      position: relative;
+      height: 49px;
+      padding: 2px 0 0;
+    }
+    &::before {
+      display: block;
+      width: 24px;
+      height: 21px;
+      margin-left: 8px;
+      margin-right: 8px;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      @include breakpoint($bp-small) {
+        margin: 0 auto;
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+    }
     &:focus-visible {
       outline: 2px solid $tab-focus-blue;
       position: relative;
       z-index: 99;
       outline-offset: -5px;
     }
-    @include breakpoint($bp-small max-width) {
-      min-width: 115px;
-    }
-    @include breakpoint($bp-small) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 162px;
-      font-size: 16px;
-    }
-    &::before {
-      display: block;
-      width: 24px;
-      height: 21px;
-      margin: 0 auto;
-      content: "";
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-size: cover;
+    &:not(:last-child)::after {
+      @include breakpoint($bp-small) {
+        display: block;
+        content: "";
+        height: 23px;
+        width: 1px;
+        background-color: #000;
+        margin-left: 11px;
+        margin-right:10px;
+      }
     }
     &.subscriptions {
-      @include breakpoint($bp-small) {
-        padding: 9px 11px 8px;
-      }
+      padding-bottom: 5px;
       &::before {
-        background-image: url('../images/SubscriptionsMenuIcon_Locker.svg');
-        @include breakpoint($bp-small) {
-          width: 23px;
-          height: 24px;
-          margin-right: 5px;
-        }
+        width: 24px;
+        height: 20px;
+        margin-right: 6px;
+        margin-top: 6px;
+        background-image: url('../icons/svg/locker-menu-icons/icon-locker-subscriptions.svg');
       }
       &:hover {
         &::before {
-          background-image: url('../images/SubscribedIcon_Locker.svg');
+          background-image: url('../icons/svg/locker-menu-icons/icon-locker-subscriptions-hover.svg');
         }
+      }
+      @include breakpoint($bp-small) {
+        padding: 13px 0 13px 14px;
       }
     }
     &.topics {
-      @include breakpoint($bp-small) {
-        min-width: 155px;
-        padding: 9px 28px 8px 24px;
-      }
       &::before {
-        width: 23px;
-        background-image: url('../images/TopicsMenuIcon_Locker.svg');
-        @include breakpoint($bp-small) {
-          width: 23px;
-          height: 23px;
-        }
+        width: 21px;
+        height: 21px;
+        margin-right: 7px;
+        background-image: url('../icons/svg/locker-menu-icons/icon-locker-topics.svg');
       }
       &:hover {
         &::before {
-          background-image: url('../images/FollowingIcon_Locker.svg');
+          background-image: url('../icons/svg/locker-menu-icons/icon-locker-topics-hover.svg');
         }
+      }
+      @include breakpoint($bp-small) {
+        padding: 13px 0;
       }
     }
     &.bookmarks {
-      @include breakpoint($bp-small) {
-        padding: 9px 23px 8px 25px;
-      }
       &::before {
-        width: 22px;
-        height: 23px;
-        background-image: url('../images/BookmarksMenuIcon_Locker.svg');
-        @include breakpoint($bp-small) {
-          margin-right: 5px;
-        }
+        width: 21px;
+        height: 24px;
+        margin-right: 7px;
+        background-image: url('../icons/svg/locker-menu-icons/icon-locker-bookmarks.svg');
       }
       &:hover {
         &::before {
-          background-image: url('../images/BookmarkedIcon_Locker.svg');
+          background-image: url('../icons/svg/locker-menu-icons/icon-locker-bookmarks-hover.svg');
         }
       }
+      @include breakpoint($bp-small) {
+        padding: 13px 14px 13px 0;
+      }
     }
+  }
+  @include breakpoint($bp-small) {
+    padding-right: 0;
+  }
+  @include breakpoint($bp-xs max-width) {
+    justify-content: center;
+    padding-right: 0;
   }
 }
