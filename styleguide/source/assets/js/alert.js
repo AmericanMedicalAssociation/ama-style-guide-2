@@ -10,17 +10,19 @@
 (function ($, Drupal) {
   Drupal.behaviors.alert = {
     attach: function (context, settings) {
-      var alert = $('.ama__alert__wrap').attr('id');
-      var alertCookie = Cookies.set('alertCookie', 'ama__alert--' + alert);
+      var alertId = $('.ama__alert__wrap').attr('id');
+      var alertCookie = Cookies.get('alertCookie');
+      var alertNode = Cookies.get('alertNode');
 
       (function ($) {
         // If the 'hide cookie is not set we show the alert
-        if (alertCookie !== '1') {
+        if ((alertNode !== alertId) || (alertCookie !== '1')) {
           $('.ama__alert__wrap').css({
             "transition": "opacity .15s",
             "opacity": "1"
           });
-        } else {
+        }
+        else {
           $('.ama__alert__wrap').css({
             "display": "none"
           });
@@ -34,8 +36,11 @@
             "opacity": "0",
             "display": "none"
           });
-          // set the cookie
-          Cookies.set('alertCookie', 'ama__alert--' + alert, '1', { expires: 1});
+
+          // set the cookies
+          Cookies.set('alertCookie', '1', { expires: 1});
+          Cookies.set('alertNode', alertId, { expires: 1});
+
           return false;
         });
       })(jQuery);
