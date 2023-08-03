@@ -1,0 +1,88 @@
+promo-embed {
+  div[class*="related_coverage-"] {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $border-gray;
+    border-bottom: 1px solid $border-gray;
+    margin: calc($gutter * .5) 0;
+    p {
+      margin-bottom: 0;
+      display:inline-block;
+    }
+    .heading {
+      margin-bottom: calc($gutter * .75);
+      p {
+        font-weight: $font-weight-bold;
+        font-size: 20px;
+        @include breakpoint($bp-small) {
+          font-size: 26px;
+        }
+      }
+    }
+    .link-heading {
+      p {
+        font-weight: $font-weight-bold;
+        line-height: calc($gutter * .9);
+        font-size: 18px;
+        @include breakpoint($bp-med) {
+          font-size: 20px;
+        }
+      }
+    }
+    .link {
+      margin-bottom: calc($gutter * .5);
+      p {
+        font-size: 14px;
+        @include breakpoint($bp-small) {
+          font-size: 20px;
+        }
+        @include breakpoint($bp-med) {
+          font-size: 18px;
+        }
+        a {
+          color: $blue;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+          &:focus-visible {
+            outline: 2px solid $tab-focus-blue;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+  &.promo-size-full {
+    div[class*="related_coverage-"] {
+      padding: $gutter 0;
+      @include breakpoint($bp-small) {
+        padding: $gutter calc($gutter * .5);
+      }
+      @include breakpoint($bp-med) {
+        padding: $gutter;
+      }
+    }
+  }
+  &.promo-size-half {
+    div[class*="related_coverage-"] {
+      padding: $gutter 0;
+      @include breakpoint($bp-small) {
+        padding: $gutter calc($gutter * .5);
+      }
+      @include breakpoint($bp-med) {
+        padding: $gutter 0;
+      }
+    }
+    &.align-right {
+      padding-right: 0;
+      padding-left: 0;
+      @include breakpoint($bp-small) {
+        padding-left: calc($gutter * .5);
+      }
+      @include breakpoint($bp-med) {
+        padding-left: $gutter;
+      }
+    }
+  }
+}
