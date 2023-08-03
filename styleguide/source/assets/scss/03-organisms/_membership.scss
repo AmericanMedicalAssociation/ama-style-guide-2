@@ -543,15 +543,25 @@ a.ama__membership {
 .text-body {
   promo-embed {
     &.promo-size-full, &.promo-size-half {
-      .ama__membership_media-container {
-        display: none;
+      .embedded-entity {
+        flex-direction: column;
+        display: flex;
+        .partner-promo--media-container, .ama__membership_media-container {
+          order: -1;
+          @include gutter($margin-bottom-full...);
+        }
       }
       a.ama__button--complementary {
         width: 100%;
+        min-width: 220px;
+        
         &:focus-visible {
           outline: 2px solid $tab-focus-blue;
           outline-offset: 10px;
         }
+      }
+      h2.section-title {
+        display: none;
       }
     }
     @include breakpoint($bp-med) {
@@ -563,7 +573,15 @@ a.ama__membership {
       &.promo-size-full {
         width: 100%;
         .embedded-entity {
-          width: 50%;
+          display: flex;
+          flex-direction: row;
+          > div {
+            max-width: 50%;
+            width: 50%;
+          }
+          .partner-promo--media-container, .ama__membership_media-container {
+            order: 99;
+          }
         }
       }
       &.promo-size-half {
