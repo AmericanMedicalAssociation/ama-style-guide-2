@@ -543,26 +543,55 @@ a.ama__membership {
 .text-body {
   promo-embed {
     &.promo-size-full, &.promo-size-half {
-      .ama__membership_media-container {
-        display: none;
-      }
-      .ama__membership_cta_container {
-        a {
-          width: 100%;
+      .embedded-entity {
+        flex-direction: column;
+        display: flex;
+        .partner-promo--media-container, .ama__membership_media-container {
+          order: -1;
+          @include gutter($margin-bottom-full...);
         }
+      }
+      a.ama__button--complementary {
+        width: 100%;
+        min-width: 220px;
+        
+        &:focus-visible {
+          outline: 2px solid $tab-focus-blue;
+          outline-offset: 10px;
+        }
+      }
+      h2.section-title {
+        display: none;
       }
     }
     @include breakpoint($bp-med) {
       &.promo-size-full, &.promo-size-half {
-        .ama__membership_cta_container {
-          a {
-            width: auto;
+        a.ama__button--complementary {
+          width: auto;
+        }
+        ul {
+          margin-left: 0;
+        }
+      }
+      &.promo-size-full {
+        width: 100%;
+        .embedded-entity {
+          display: flex;
+          flex-direction: row;
+          > div {
+            max-width: 50%;
+            width: 50%;
+          }
+          .partner-promo--media-container, .ama__membership_media-container {
+            order: 99;
           }
         }
       }
       &.promo-size-half {
-        display: inline;
-        max-width: 50%;
+        &.align-left, &.align-right {
+          display: inline;
+          max-width: 50%;
+        }
         &.align-left {
           float: left;
           @include gutter($padding-right-full...);

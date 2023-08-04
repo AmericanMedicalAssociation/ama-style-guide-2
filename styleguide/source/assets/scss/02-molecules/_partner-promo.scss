@@ -235,3 +235,17 @@
     margin: 0;
   }
 }
+
+// Embedded partner promo in articles.
+.partner-promo-inline {
+  border: solid black;
+  border-width: 1px 0;
+  @include gutter($margin-bottom-full...);
+  @include gutter($padding-bottom-full...);
+  @include gutter($margin-top-full...);
+  @include gutter($padding-top-full...);
+
+  .ama__h2 {
+    color: $purple;
+  }
+}    
