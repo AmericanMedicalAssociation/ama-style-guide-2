@@ -13069,6 +13069,38 @@ span.ama__inline-bio__link:focus-visible {
   }
 }
 
+.partner-promo-inline {
+  border: solid black;
+  border-width: 1px 0;
+  margin-bottom: 21px;
+  padding-bottom: 21px;
+  margin-top: 21px;
+  padding-top: 21px;
+}
+@media (min-width: 56.25em) {
+  .partner-promo-inline {
+    margin-bottom: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .partner-promo-inline {
+    padding-bottom: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .partner-promo-inline {
+    margin-top: 28px;
+  }
+}
+@media (min-width: 56.25em) {
+  .partner-promo-inline {
+    padding-top: 28px;
+  }
+}
+.partner-promo-inline .ama__h2, .partner-promo-inline .ama__promo--inline-banner a, .ama__promo--inline-banner .partner-promo-inline a, .partner-promo-inline .ama__link-list--mobile .ui-accordion-header, .ama__link-list--mobile .partner-promo-inline .ui-accordion-header {
+  color: #46166B;
+}
+
 .ama__partner {
   border-top: 1px #767676 solid;
   padding-top: 21px;
@@ -23349,17 +23381,66 @@ a.ama__membership:hover {
   margin: 0;
 }
 
-.text-body promo-embed.promo-size-full .ama__membership_media-container, .text-body promo-embed.promo-size-half .ama__membership_media-container {
-  display: none;
+.text-body promo-embed.promo-size-full .embedded-entity, .text-body promo-embed.promo-size-half .embedded-entity {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.text-body promo-embed.promo-size-full .ama__membership_cta_container a, .text-body promo-embed.promo-size-half .ama__membership_cta_container a {
-  width: 100%;
+.text-body promo-embed.promo-size-full .embedded-entity .partner-promo--media-container, .text-body promo-embed.promo-size-full .embedded-entity .ama__membership_media-container, .text-body promo-embed.promo-size-half .embedded-entity .partner-promo--media-container, .text-body promo-embed.promo-size-half .embedded-entity .ama__membership_media-container {
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
+  margin-bottom: 21px;
 }
 @media (min-width: 56.25em) {
-  .text-body promo-embed.promo-size-full .ama__membership_cta_container a, .text-body promo-embed.promo-size-half .ama__membership_cta_container a {
+  .text-body promo-embed.promo-size-full .embedded-entity .partner-promo--media-container, .text-body promo-embed.promo-size-full .embedded-entity .ama__membership_media-container, .text-body promo-embed.promo-size-half .embedded-entity .partner-promo--media-container, .text-body promo-embed.promo-size-half .embedded-entity .ama__membership_media-container {
+    margin-bottom: 28px;
+  }
+}
+.text-body promo-embed.promo-size-full a.ama__button--complementary, .text-body promo-embed.promo-size-half a.ama__button--complementary {
+  width: 100%;
+  min-width: 220px;
+}
+.text-body promo-embed.promo-size-full a.ama__button--complementary:focus-visible, .text-body promo-embed.promo-size-half a.ama__button--complementary:focus-visible {
+  outline: 2px solid #0076a5;
+  outline-offset: 10px;
+}
+.text-body promo-embed.promo-size-full h2.section-title, .text-body promo-embed.promo-size-half h2.section-title {
+  display: none;
+}
+@media (min-width: 56.25em) {
+  .text-body promo-embed.promo-size-full a.ama__button--complementary, .text-body promo-embed.promo-size-half a.ama__button--complementary {
     width: auto;
   }
-  .text-body promo-embed.promo-size-half {
+  .text-body promo-embed.promo-size-full ul, .text-body promo-embed.promo-size-half ul {
+    margin-left: 0;
+  }
+  .text-body promo-embed.promo-size-full {
+    width: 100%;
+  }
+  .text-body promo-embed.promo-size-full .embedded-entity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .text-body promo-embed.promo-size-full .embedded-entity > div {
+    max-width: 50%;
+    width: 50%;
+  }
+  .text-body promo-embed.promo-size-full .embedded-entity .partner-promo--media-container, .text-body promo-embed.promo-size-full .embedded-entity .ama__membership_media-container {
+    -webkit-box-ordinal-group: 100;
+    -ms-flex-order: 99;
+    order: 99;
+  }
+  .text-body promo-embed.promo-size-half.align-left, .text-body promo-embed.promo-size-half.align-right {
     display: inline;
     max-width: 50%;
   }
