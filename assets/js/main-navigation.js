@@ -124,6 +124,14 @@
         e.stopPropagation();
       });
 
+      // If sticky nav wrapper, remove id to prevent duplicate ids.
+      $(window).on('load', function() {
+        $stickyWrapper = $('.sticky-wrapper');
+        if($stickyWrapper.length && $stickyWrapper.has('#share-wrapper')) {
+          $stickyWrapper.removeAttr('id');
+        }
+      });
+
       // If a user clicks outside the menu then close it
       $(document).click(function (e) {
         if (!$categoryNavigationMenu.is(e.target) && $categoryNavigationMenu.has(e.target).length === 0) {
