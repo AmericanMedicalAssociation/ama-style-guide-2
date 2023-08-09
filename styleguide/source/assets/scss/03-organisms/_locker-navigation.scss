@@ -1,15 +1,12 @@
 // Flag/bookmark styling
 .ama_locker_navigation {
-  display: flex;
+  display: none;
   flex-direction: column-reverse;
   align-items: flex-end;
   justify-content: flex-end;
   position: fixed;
-  &.hidden {
-    display: none;
-  }
-  @include breakpoint($bp-small max-width) {
-    //display: none;
+  &.expanded {
+    display: flex;
     top: 0;
     right: 0;
     z-index: 999;
@@ -17,6 +14,7 @@
     border: 0.5px solid $black;
   }
   @include breakpoint($bp-small) {
+    display: flex;
     flex-direction: row;
     position: relative;
     padding-right: 12px;

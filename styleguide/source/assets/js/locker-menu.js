@@ -16,24 +16,28 @@
         function lockerMenu() {
             // Open menu on trigger click.
             $trigger.once('click-to-show').on('click', function (e) {
-                $menu.toggleClass('hidden');
+                $menu.addClass('expanded');
                 $catcher.toggleClass('hidden');
                 $body.css({"overflow":"hidden"});
             });
             // Close menu on background click.
             $catcher.once('click-to-hide').on('click', function () {
                 $catcher.toggleClass('hidden');
-                $menu.toggleClass('hidden');
+                $menu.removeClass('expanded');
                 $body.css({"overflow":"auto"});
             });
             // Update sticky state on window resize.
             $window.resize(function(){
                 if($window.width() < 600) {
-                    $menu.unstick().addClass('hidden');
+                    if($menu.hasClass('expanded')) {
+                        $menu.removeClass('expanded');
+                    }
+                    $menu.unstick();
                     $trigger.sticky({zIndex: 501, topSpacing: 62});
                 } else {
+                    $menu.removeClass('expanded');
                     $trigger.unstick();
-                    $menu.sticky({zIndex: 501, topSpacing: 60}).removeClass('hidden');
+                    $menu.sticky({zIndex: 501, topSpacing: 60});
                 }
             });
         }
@@ -46,7 +50,7 @@
                 $('.ama_locker_navigation').unstick();
             return;
             } else if($window.width() < 600) {
-                $menu.unstick().addClass('hidden');
+                $menu.unstick();
                 $trigger.sticky({zIndex: 501, topSpacing: 62});
             } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
                 $menu.sticky({ zIndex: 501, topSpacing: 132 });
