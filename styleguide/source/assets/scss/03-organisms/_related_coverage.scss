@@ -55,6 +55,13 @@ promo-embed {
   }
   &.promo-size-full {
     div[class*="related_coverage-"] {
+      .embedded-entity {
+        flex-direction: column;
+        > div {
+          width: auto;
+          max-width: 100%;
+        }
+      }
       padding: $gutter 0;
       @include breakpoint($bp-small) {
         padding: $gutter calc($gutter * .5);
@@ -66,6 +73,13 @@ promo-embed {
   }
   &.promo-size-half {
     div[class*="related_coverage-"] {
+      .embedded-entity {
+        flex-direction: column;
+        > div {
+          width: auto;
+          max-width: 100%;
+        }
+      }
       padding: $gutter 0;
       @include breakpoint($bp-small) {
         padding: $gutter calc($gutter * .5);
