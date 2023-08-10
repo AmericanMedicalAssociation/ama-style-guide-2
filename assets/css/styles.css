@@ -23433,6 +23433,8 @@ a.ama__membership:hover {
   }
   .text-body promo-embed.promo-size-full {
     width: 100%;
+    clear: both;
+    display: block;
   }
   .text-body promo-embed.promo-size-full .embedded-entity {
     display: -webkit-box;
@@ -23775,6 +23777,16 @@ promo-embed div[class*=related_coverage-] .link p a:focus-visible, promo-embed d
 promo-embed.promo-size-full div[class*=related_coverage-] {
   padding: 28px 0;
 }
+promo-embed.promo-size-full div[class*=related_coverage-] .embedded-entity {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+promo-embed.promo-size-full div[class*=related_coverage-] .embedded-entity > div {
+  width: auto;
+  max-width: 100%;
+}
 @media (min-width: 37.5em) {
   promo-embed.promo-size-full div[class*=related_coverage-] {
     padding: 28px 14px;
@@ -23787,6 +23799,16 @@ promo-embed.promo-size-full div[class*=related_coverage-] {
 }
 promo-embed.promo-size-half div[class*=related_coverage-] {
   padding: 28px 0;
+}
+promo-embed.promo-size-half div[class*=related_coverage-] .embedded-entity {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+promo-embed.promo-size-half div[class*=related_coverage-] .embedded-entity > div {
+  width: auto;
+  max-width: 100%;
 }
 @media (min-width: 37.5em) {
   promo-embed.promo-size-half div[class*=related_coverage-] {
