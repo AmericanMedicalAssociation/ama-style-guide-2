@@ -259,7 +259,9 @@ a.index-page  {
   .share-row {
     .share {
       margin-left: 15px;
-      height: 43px;
+      @include breakpoint($bp-small) {
+        height: 43px;
+      }
 
       &.is-sticky {
         .share-wrapper {
@@ -379,6 +381,14 @@ a.index-page  {
             &:focus-within {
               .share-modal {
                 display: flex;
+              }
+            }
+          }
+
+          &.share {
+            &:before {
+              @include breakpoint($bp-small max-width) {
+                top: -22px;
               }
             }
           }
