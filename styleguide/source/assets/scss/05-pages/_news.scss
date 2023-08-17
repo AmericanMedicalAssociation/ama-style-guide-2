@@ -45,9 +45,11 @@
       }
     }
     &.date-row {
-      padding-bottom: calc($gutter * .5);
       display: flex;
       flex-direction: column;
+      @include breakpoint($bp-small) {
+        padding-bottom: calc($gutter * .5);
+      }
       @include breakpoint($bp-med) {
         flex-direction: row;
       }
@@ -55,7 +57,9 @@
         font-size: 14px;
         padding-right: $gutter;
         color: $gray-40;
-        padding-bottom: calc($gutter * .5);
+        @include breakpoint($bp-small) {
+          padding-bottom: calc($gutter * .5);
+        }
         @include breakpoint($bp-med) {
           padding-bottom: 0;
         }
@@ -89,6 +93,11 @@
             outline-offset: 5px;
           }
         }
+        + .author {
+          @include breakpoint($bp-small max-width) {
+            padding-top: 14px;
+          }
+        }
       }
     }
     &.author-row .author,
@@ -98,6 +107,7 @@
       flex-wrap: wrap;
     }
     &.subscribe-row {
+      padding: calc($gutter/2) 0;
       [data-region="subscribe"] {
         display: flex;
         flex-direction: row-reverse;
@@ -106,7 +116,6 @@
     }
     &.share-row {
       border-bottom: 1px solid $gray-30;
-      padding-bottom: calc($gutter/2);
       @include breakpoint($bp-small) {
         padding-bottom: $gutter;
       }
