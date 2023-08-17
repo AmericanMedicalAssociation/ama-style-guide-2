@@ -11628,7 +11628,7 @@ section.ama__forum_comments {
   margin-right: 8px;
 }
 .bio-entry .by {
-  margin-right: 8px;
+  margin-right: 5px;
 }
 .bio-entry .and {
   margin-right: 8px;
@@ -17077,40 +17077,45 @@ article[class*=__page-content] .ama__tags .ama__link--purple.ama__link--catalog:
 
 .rate-widget.thumbsup {
   margin-top: 28px;
-  margin-left: 28px;
   clear: both;
 }
 .rate-widget.thumbsup form {
   padding-bottom: 14px;
 }
-.rate-widget.thumbsup .thumbs {
-  fill: #aaa;
+.rate-widget.thumbsup .upvote-icon {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #767676;
+  padding: 0 7px 0 30px;
+}
+.rate-widget.thumbsup .upvote-icon::before {
+  content: " ";
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 7px;
+  left: 13px;
+  width: 21px;
+  height: 19px;
+  background: url("../icons/svg/icon-upvote.svg") no-repeat 0px 0px;
+  background-size: contain;
 }
-.rate-widget.thumbsup .thumbs-active {
-  fill: #46166B;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.rate-widget.thumbsup .upvote-icon:hover::before {
+  background: url("../icons/svg/icon-upvote-hover.svg") no-repeat 0px 0px;
 }
-.rate-widget.thumbsup:hover .rate-score,
-.rate-widget.thumbsup:hover .rate-score.voted,
-.rate-widget.thumbsup:hover .thumbs,
-.rate-widget.thumbsup:hover .thumbs-active {
-  color: #B5A1C3;
-  fill: #B5A1C3;
+.rate-widget.thumbsup .rate-voted .rate-score,
+.rate-widget.thumbsup .rate-voted .upvote-icon {
+  color: #000000;
 }
-.rate-widget.thumbsup .rate-voted .rate-score {
-  color: #46166B;
+.rate-widget.thumbsup .rate-voted .upvote-icon::before {
+  background: url("../icons/svg/icon-upvote-active.svg") no-repeat 0px 0px;
 }
 .rate-widget.thumbsup .rate-score {
-  margin: 19px 10px 10px 50px;
+  color: #767676;
   display: inline-block;
-  font-weight: bold;
-  font-size: 22px;
-  color: #aaa;
+  font-weight: 600;
+  font-size: 18px;
+  min-width: 19px;
 }
 .rate-widget.thumbsup .ajax-progress {
   display: none;
@@ -17118,11 +17123,15 @@ article[class*=__page-content] .ama__tags .ama__link--purple.ama__link--catalog:
 .rate-widget.thumbsup .thumbsup-rating-label-up {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
-  height: 55px;
+  height: 34px;
   background: none;
   position: relative;
   right: 0;
   border: none;
+  border: 1px solid #767676;
+  border-radius: 16px;
+  padding: 0 14px;
+  min-width: 147px;
 }
 .rate-widget.thumbsup .thumbsup-rating-label-up .ui-icon-blank.ui-icon-blank.ui-icon-blank {
   display: none;
@@ -17137,38 +17146,6 @@ article[class*=__page-content] .ama__tags .ama__link--purple.ama__link--catalog:
   position: relative;
   right: 0;
   bottom: 16px;
-}
-.rate-widget.thumbsup .thumbsup-rating-label-up #Layer_6 {
-  -webkit-animation: popup 1s ease;
-  animation: popup 1s ease;
-}
-@-webkit-keyframes popup {
-  0% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-}
-@keyframes popup {
-  0% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
 }
 .rate-widget.thumbsup .thumbsup-rating-label-up .rate-undo.use-ajax {
   display: block;
@@ -25043,7 +25020,11 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 }
 .article-header .share-row .share {
   margin-left: 15px;
-  height: 43px;
+}
+@media (min-width: 37.5em) {
+  .article-header .share-row .share {
+    height: 43px;
+  }
 }
 .article-header .share-row .share.is-sticky .share-wrapper {
   display: -webkit-box;
@@ -25116,16 +25097,10 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
     right: 0;
     left: 0;
     height: 57px;
-    margin: 3px 0 0;
+    margin: 7px 0 0;
     background-color: #ffffff;
     border-top: 1px solid #a1a1a4;
-    padding: 0 14px;
-  }
-}
-@media (max-width: 37.5em) {
-  .article-header .share-row .share .share-wrapper {
     padding: 0;
-    margin-top: 7px;
   }
 }
 .article-header .share-row .share .share-wrapper .icon::before {
@@ -25176,6 +25151,11 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 37.5em) {
+  .article-header .share-row .share .share-wrapper .icon.share:before {
+    top: -22px;
+  }
 }
 .article-header .share-row .share .share-wrapper div.action-flag a:focus-visible div.icon.bookmark::before {
   outline: 2px solid #0076a5;
@@ -28448,7 +28428,12 @@ body.search-results .ama__layout--two-column--left {
 }
 .article-header .article-header-row.share-row {
   border-bottom: 1px solid #979797;
-  padding-bottom: 28px;
+  padding-bottom: 14px;
+}
+@media (min-width: 37.5em) {
+  .article-header .article-header-row.share-row {
+    padding-bottom: 28px;
+  }
 }
 .article-header .article-header-row.share-row [data-region=share] {
   margin-left: auto;
