@@ -106,13 +106,15 @@
       padding-bottom: 5px;
       &::before {
         width: 24px;
-        height: 20px;
+        height: 22px;
         margin-right: 6px;
         background-image: url('../icons/svg/locker-menu-icons/icon-locker-subscriptions.svg');
       }
       &:hover {
         &::before {
           background-image: url('../icons/svg/locker-menu-icons/icon-locker-subscriptions-hover.svg');
+          background-position: -4px -4px;
+          background-size: initial;
         }
       }
       @include breakpoint($bp-small) {
@@ -129,6 +131,8 @@
       &:hover {
         &::before {
           background-image: url('../icons/svg/locker-menu-icons/icon-locker-topics-hover.svg');
+          background-position: -5px -5px;
+          background-size: initial;
         }
       }
       @include breakpoint($bp-small) {
@@ -145,6 +149,8 @@
       &:hover {
         &::before {
           background-image: url('../icons/svg/locker-menu-icons/icon-locker-bookmarks-hover.svg');
+          background-position: -4px -4px;
+          background-size: initial;
         }
       }
       @include breakpoint($bp-small) {
