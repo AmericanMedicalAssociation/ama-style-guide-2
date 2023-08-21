@@ -34,15 +34,26 @@
             // jQueryUI selectmenu method
             $('.ama__select-menu__select').selectmenu();
 
-
+            // If focus is on the select menu
+            // Only submit after hitting enter
+            $('#edit-sort-by--3-button').on('keyup',function(e) {
+              if(e.which == 9) {
+                $('#edit-sort-by--3-button').on('keyup',function(e) {
+                  if(e.which == 13) {
+                    $('#block-exposedformacquia-search-solrpage-2').submit();
+                  }
+                });
+              }
+            });
 
             // Submits the search form after a select menu items has been selected
-            $('.ama__select-menu__select').on('selectmenuchange', function() {
+            $('.ama__select-menu__select:not(#edit-sort-by--3)').on('selectmenuchange', function() {
               $('#block-exposedformacquia-search-solrpage-2').submit();
             });
 
-            $('.ama__select-menu__select').on('selectmenuchange', function() {
-              $(this).trigger('change');
+            $('#edit-sort-by--3-menu').click(function () {
+                $('#block-exposedformacquia-search-solrpage-2').submit();
+                $('#edit-sort-by--3-menu').hide();
             });
 
             // Start search filter
