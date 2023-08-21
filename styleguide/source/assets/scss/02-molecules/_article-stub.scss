@@ -435,7 +435,19 @@
         }
       }
     }
+  }
+}
 
-
+//  Style the layout container of the article stub list on article and press release pages
+.article-stub-list {
+  border-top: 2px solid $purple;
+  border-bottom: 1px solid $border-gray;
+  padding-top: calc($gutter * .5);
+  padding-bottom: $gutter;
+  .ama__category-page-article-stub {
+    .grid-container {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 }
