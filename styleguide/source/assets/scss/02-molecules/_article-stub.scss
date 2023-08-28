@@ -448,6 +448,21 @@
     .grid-container {
       margin-top: 0;
       margin-bottom: 0;
+      &[data-count="3"] {
+        width: 100%;
+        @include breakpoint($bp-med) {
+          width: 75%;
+        }
+        .ama__article-stub.ama__article-stub--category:last-child {
+          padding-right: 0;
+          border-right: none;
+          @include breakpoint($bp-med) {
+            width: 27.3%;
+            padding-right: 2.1%;
+            border-right: 1px solid $border-gray;
+          }
+        }
+      }
     }
   }
 }
