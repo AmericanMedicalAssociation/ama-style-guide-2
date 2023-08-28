@@ -1,6 +1,6 @@
 .ama__tags,
 article[class*='__page-content'] .ama__tags {
-  @include gutter($margin-top-full...);
+  margin-top: calc($gutter / 2);
   margin-bottom: calc($gutter / 2);
   display: flex;
   align-items: flex-start;
@@ -10,6 +10,7 @@ article[class*='__page-content'] .ama__tags {
 
   @include breakpoint($bp-small) {
     flex-direction: row;
+    margin-bottom: calc($gutter * 2);
   }
 
   &-text {
