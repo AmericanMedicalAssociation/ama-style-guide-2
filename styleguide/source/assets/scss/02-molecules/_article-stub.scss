@@ -446,7 +446,10 @@
   padding-bottom: $gutter;
   h4 {
     display: block;
-    padding: 0;
+    padding: 0 0 0 0;
+    @include breakpoint($bp-med) {
+      padding: 0 0 $gutter 0;
+    }
   }
   .ama__category-page-article-stub {
     .grid-container {
