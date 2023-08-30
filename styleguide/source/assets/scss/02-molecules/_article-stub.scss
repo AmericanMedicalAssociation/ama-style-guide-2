@@ -293,9 +293,9 @@
 
 .ama__column-teaser {
   @include breakpoint($bp-small max-width) {
-        @include gutter($padding-left-half...);
-        @include gutter($padding-right-half...);
-      }
+    @include gutter($padding-left-half...);
+    @include gutter($padding-right-half...);
+  }
 }
 
 .ama__category__article-stub-three-up {
@@ -444,6 +444,13 @@
   border-bottom: 1px solid $border-gray;
   padding-top: calc($gutter * .5);
   padding-bottom: $gutter;
+  h4 {
+    display: block;
+    padding: 0 0 0 0;
+    @include breakpoint($bp-med) {
+      padding: 0 0 $gutter 0;
+    }
+  }
   .ama__category-page-article-stub {
     .grid-container {
       margin-top: 0;
