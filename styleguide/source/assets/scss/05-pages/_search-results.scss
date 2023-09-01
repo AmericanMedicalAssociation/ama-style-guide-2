@@ -14,24 +14,13 @@
 
 .ama__search-result-list {
   .no-results {
-    span.search-border {
-      display: none;
-      width: 280px;
-      height: 1px;
-      border-bottom: 1px solid $gray-border;
-      margin-bottom: 10px;
-      padding-top: 68px;
-      @include breakpoint($bp-small) {
-        display: block;
-      }
-    }
+    margin-top: $gutter;
     h3.ama__h3 {
-      font-weight: normal;
       margin-bottom: $gutter;
 
       + p {
-        padding-bottom: calc($gutter/2);
-        border-bottom: 1px solid $gray-border;
+        padding-bottom: $gutter;
+        border-bottom: 1px solid $gray-20;
       }
     }
 
@@ -44,7 +33,9 @@
     }
 
     .contact-us {
-      padding-top: 20px;
+      p {
+        margin-bottom: $gutter;
+      }
       @include breakpoint($bp-large) {
         width: 65%;
         max-width: 578px;
