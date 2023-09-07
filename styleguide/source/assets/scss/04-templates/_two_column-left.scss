@@ -83,7 +83,9 @@ body.search-results {
       padding-right: 0;
     }
     #block-ama-one-content {
-      border-top: 1px solid $gray-20;
+      @include breakpoint($bp-small) {
+        border-top: 1px solid $gray-20;
+      }
       @include breakpoint($bp-small max-width) {
         padding-top: 10px;
       }

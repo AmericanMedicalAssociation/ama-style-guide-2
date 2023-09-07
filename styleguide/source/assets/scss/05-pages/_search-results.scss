@@ -11,3 +11,35 @@
     }
   }
 }
+
+.ama__search-result-list {
+  .no-results {
+    margin-top: $gutter;
+    h3.ama__h3 {
+      margin-bottom: $gutter;
+
+      + p {
+        padding-bottom: $gutter;
+        border-bottom: 1px solid $gray-20;
+      }
+    }
+
+    a {
+      color: $blue;
+
+      &.phone {
+        border: none;
+      }
+    }
+
+    .contact-us {
+      p {
+        margin-bottom: $gutter;
+      }
+      @include breakpoint($bp-large) {
+        width: 65%;
+        max-width: 578px;
+      }
+    }
+  }
+}
