@@ -194,3 +194,48 @@
     z-index: 502 !important;
   }
 }
+
+.ama__hub {
+  .ama__main-navigation {
+    display: flex;
+    background: $white;
+    border-bottom: none;
+    margin: 0 5px;
+    height: 96px;
+    min-height: 96px;
+    @include breakpoint($bp-small) {
+      height: 81px;
+      min-height: 81px;
+    }
+    @include breakpoint($bp-med) {
+      height: 117px;
+      min-height: 117px;
+    }
+
+    .container {
+      justify-content: space-between;
+      border-bottom: 1px solid $gray-30;
+      width: 100%;
+      margin-bottom: 7px;
+      @include breakpoint($bp-small) {
+        max-width: 1195px;
+        align-items: flex-end;
+        padding: 0 0 19px 0;
+      }
+    }
+
+    a.ama__site-logo {
+      max-width: 125px;
+      margin: 0;
+      .logo {
+        width: 125px;
+        height: auto;
+      }
+    }
+    a.hub-header--link {
+      color: $blue;
+      text-decoration: none;
+      padding-right: 5px;
+    }
+  }
+}
