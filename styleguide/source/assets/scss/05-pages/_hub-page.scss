@@ -2,13 +2,14 @@
 .hub-container {
   .ama__hub-banner {
     background: $purple;
-    height: 109px;
-    display: none;
-    @include breakpoint($bp-small) {
-      display: flex;
+    height: 146px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include breakpoint($bp-med) {
+      height: 109px;
       flex-direction: row;
-      align-items: center;
-      justify-content: center;
     }
 
     a.hub_banner_link {
@@ -21,7 +22,11 @@
       text-align: center;
       &:first-of-type {
         background: $complementary;
-        margin-right: 11px;
+        margin-bottom: 17px;
+        @include breakpoint($bp-med) {
+          margin-right: 11px;
+          margin-bottom: 0;
+        }
       }
       &:last-of-type {
         background: $white;
