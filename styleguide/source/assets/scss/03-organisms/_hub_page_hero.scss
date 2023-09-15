@@ -1,14 +1,17 @@
 .background-wrapper {
-  background: $white;
   color: $black;
   a {
     //color: $black;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &.purple {
     background: $purple;
     color: $white;
     a {
-      //color: $white;
+      color: $white;
     }
   }
 }
@@ -16,9 +19,12 @@
 .hub-page-hero {
   display:flex;
   flex-direction: column;
-  padding: calc($gutter * 1.25) 15px calc($gutter * 2);
+  padding: calc($gutter * .5) calc($gutter * .25) calc($gutter * 1.25);
+  @include breakpoint($bp-small) {
+    padding: calc($gutter * 1.25) 15px calc($gutter * .75);
+  }
   @include breakpoint($bp-med) {
-    padding: calc($gutter * 1.25) 15px calc($gutter * 2);
+    padding: calc($gutter * 1.25) 15px;
   }
   &.has-media {
     .heading {
@@ -35,6 +41,11 @@
         @include breakpoint($bp-med) {
           flex: .6;
         }
+        .cta-container {
+          .ama__button {
+            flex: .5;
+          }
+        }
       }
       .media {
         display: none;
@@ -50,6 +61,19 @@
     flex: 1;
     width: 100%;
     display: block;
+    padding-bottom: 0;
+    @include breakpoint($bp-small) {
+      padding-bottom: calc($gutter * 1.25);
+    }
+    @include breakpoint($bp-small) {
+      padding-bottom: calc($gutter * .75);
+    }
+    p {
+      margin-bottom : 0;
+    }
+    h1 {
+      margin-bottom : 0;
+    }
   }
   .body {
     display: flex;
@@ -71,10 +95,14 @@
         font-size: 32px;
       }
       .cta-container {
-        display: flex;
-        flex-direction: column;
-        @include breakpoint($bp-med) {
-          flex-direction: row;
+        padding-top: calc($gutter * 1.75);
+        flex-direction: row;
+        display: none;
+        @include breakpoint($bp-small) {
+          display: flex;
+        }
+        @include breakpoint($bp-large) {
+          padding-top: calc($gutter * 2);
         }
         &.center {
           align-items: center;
@@ -85,18 +113,69 @@
           justify-content: left;
         }
         .ama__button {
-          flex: 1;
-          width: 100%;
-          @include breakpoint($bp-med) {
-            flex: .4;
+          color: $purple;
+          flex: .4;
+          @include breakpoint($bp-large) {
+            flex: .3;
+          }
+          &:hover {
+            color: #5C5C5C;
+            border-color: #ffd8a3;
+            background-color: #ffd8a3;
+          }
+          &:first-child {
+            margin-right: calc($gutter * .5);
           }
           &:last-child {
-            margin-left: 0;
-            @include breakpoint($bp-med) {
-              margin-left: calc($gutter * .5);
+            margin-right: 0;
+          }
+          &.ama__button--complementary {
+            color: $black;
+            &:hover {
+              color: #5C5C5C;
             }
           }
         }
+      }
+    }
+  }
+}
+
+.cta-container-mobile {
+  display: flex;
+  flex-direction: column;
+  padding: calc($gutter * .5);
+  margin: calc($gutter * .5) calc($gutter * .25);
+  border-top: 1px solid $purple;
+  border-bottom: 1px solid $purple;
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+  .ama__button {
+    flex: 1;
+    width: 100%;
+  }
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+  &.left {
+    align-items: flex-start;
+    justify-content: left;
+  }
+  .ama__button {
+    flex: 1;
+    width: 100%;
+    margin-top: calc($gutter * .5);
+    &:hover {
+      color: #5C5C5C;
+      border-color: #ffd8a3;
+      background-color: #ffd8a3;
+    }
+    &.ama__button--complementary {
+      margin-top:0;
+      &:hover {
+        color: #5C5C5C;
       }
     }
   }
