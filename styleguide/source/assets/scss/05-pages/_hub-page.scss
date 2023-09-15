@@ -1,5 +1,9 @@
 .ama__hub,
 .hub-container {
+  // Offset for sticky banner
+  .ama__footer.has_banner {
+    margin-top: 0;
+  }
   .ama__hub-banner {
     background: $purple;
     height: 146px;
@@ -7,6 +11,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
     @include breakpoint($bp-med) {
       height: 109px;
       flex-direction: row;
@@ -15,11 +23,14 @@
     a.hub_banner_link {
       display: block;
       color: $purple;
-      min-width: 380px;
+      min-width: 376px;
       height: 51px;
       line-height: 51px;
       text-decoration: none;
       text-align: center;
+      @include breakpoint($bp-med) {
+        width: 380px;
+      }
       &:first-of-type {
         background: $complementary;
         margin-bottom: 17px;
