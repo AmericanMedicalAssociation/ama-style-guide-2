@@ -44,7 +44,11 @@
         }
         .cta-container {
           .ama__button {
+            max-width: 291px;
             flex: .5;
+            @include breakpoint($bp-med) {
+              max-width: 280px;
+            }
           }
         }
       }
