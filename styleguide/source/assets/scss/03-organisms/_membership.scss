@@ -113,6 +113,9 @@ a.ama__membership {
     flex: auto;
     margin-top: 0;
     align-items: center;
+    @include breakpoint($bp-small max-width) {
+      flex-direction: column;
+    }
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
