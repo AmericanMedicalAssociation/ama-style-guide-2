@@ -1,0 +1,70 @@
+.ama__hub,
+.hub-container {
+  // Offset for sticky banner
+  .ama__footer.has_banner {
+    margin-top: 0;
+  }
+  .ama__hub-banner {
+    background: $purple;
+    min-height: 146px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 14px 0;
+    @include breakpoint($bp-med) {
+      min-height: 109px;
+      flex-direction: row;
+      padding: 30px 0;
+    }
+
+    > div {
+      width: 376px;
+      min-height: 51px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint($bp-med) {
+        width: 380px;
+      }
+      &:first-of-type {
+        background: $complementary;
+        margin-bottom: 17px;
+        @include breakpoint($bp-med) {
+          margin-right: 11px;
+          margin-bottom: 0;
+        }
+      }
+      &:last-of-type {
+        background: $white;
+      }
+      &:hover,
+      &:focus {
+        color: $gray-64;
+        background: $hoverComplementary;
+      }
+      a.hub_banner_link {
+        display: block;
+        color: $purple;
+        text-decoration: none;
+        text-align: center;
+        padding: 12px 75px;
+        @include breakpoint($bp-med) {
+          padding: 12px 85px;
+        }
+      }
+    }
+  }
+}
+
+// Styleguide only
+.hub-container {
+  .ama__layout--one-column.container {
+    max-width: 1440px;
+    width: 100%;
+  }
+}
