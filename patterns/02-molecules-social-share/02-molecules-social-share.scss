@@ -68,7 +68,10 @@ footer {
   .ama__social-share a.social--twitter-white,
   .ama__social-share a.social--twitter-white:hover {
     background-size: 55px;
-    background-position: -2.5px -2.5px;;
+    background-position: -2.5px -2.5px;
+    @include breakpoint(max-width $bp-small) {
+      background-size: 48px;
+    }
   }
 }
 
