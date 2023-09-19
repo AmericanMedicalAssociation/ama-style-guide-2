@@ -18,7 +18,7 @@
 .hub-page-hero {
   display:flex;
   flex-direction: column;
-  padding: calc($gutter * .5) calc($gutter * .25) calc($gutter * 1.25);
+  padding: calc($gutter * .5) 15px calc($gutter * 1.25);
   @include breakpoint($bp-small) {
     padding: calc($gutter * 1.25) 15px calc($gutter * .75);
   }
@@ -164,8 +164,8 @@
 .cta-container-mobile {
   display: flex;
   flex-direction: column;
-  padding: calc($gutter * .5);
-  margin: calc($gutter * .5) calc($gutter * .25);
+  padding: calc($gutter * .5) 15px;
+  margin: calc($gutter * .5) 0;
   border-top: 1px solid $purple;
   border-bottom: 1px solid $purple;
   @include breakpoint($bp-small) {
