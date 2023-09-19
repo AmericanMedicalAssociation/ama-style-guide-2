@@ -18,20 +18,11 @@
   {% endif %}
 
   <div class="ama__hub-hero__description">
-    <div class="ama__hub-hero__heading">
-      {% include "@atoms/heading/heading.twig" %}
-    </div>
-
     {% if hubHero.paragraph is not empty %}
       {% include "@atoms/paragraph.twig" with { 'class': 'ama__hub-hero__text' } %}
     {% endif %}
-
-    {% if hubHero.unorderedList is not empty %}
-      {% include "@atoms/unordered-list.twig" with { 'class': 'ama__hub-hero__list' }  %}
-    {% endif %}
-
-    <div class="ama__hub-hero__button-container">
-      {% include "@atoms/button/button.twig" %}
+    <div class="ama__hub-hero__heading">
+      {% include "@atoms/heading/heading.twig" %}
     </div>
   </div>
 </section>
