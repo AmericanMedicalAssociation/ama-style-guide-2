@@ -1,0 +1,202 @@
+.background-wrapper {
+  color: $black;
+  a {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.purple {
+    background: $purple;
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
+}
+.hub-page-hero {
+  display:flex;
+  flex-direction: column;
+  padding: calc($gutter * .5) 15px calc($gutter * 1.25);
+  @include breakpoint($bp-small) {
+    padding: calc($gutter * 1.25) 15px calc($gutter * .75);
+  }
+  @include breakpoint($bp-med) {
+    padding: calc($gutter * 1.25) 15px;
+  }
+
+  //  If the block has media, it becomes a 60/40 block.
+  &.has-media {
+    .heading {
+      flex: 1;
+      width: 100%;
+      @include breakpoint($bp-med) {
+        width: 60%;
+        flex: .6;
+      }
+    }
+    .body {
+      .copy {
+        flex: 1;
+        @include breakpoint($bp-small) {
+          flex: .5;
+        }
+        @include breakpoint($bp-med) {
+          flex: .6;
+        }
+        .cta-container {
+          .ama__button {
+            max-width: 291px;
+            flex: .5;
+            @include breakpoint($bp-med) {
+              max-width: 280px;
+            }
+          }
+        }
+      }
+      .media {
+        display: none;
+        @include breakpoint($bp-small) {
+          flex: .5;
+          padding-left: calc($gutter * .5);
+          display: block;
+        }
+        @include breakpoint($bp-med) {
+          flex: .4;
+          padding-left: calc($gutter * .5);
+        }
+      }
+    }
+  }
+
+  .heading {
+    flex: 1;
+    width: 100%;
+    display: block;
+    padding-bottom: 0;
+    @include breakpoint($bp-small) {
+      padding-bottom: calc($gutter * 1.25);
+    }
+    @include breakpoint($bp-med) {
+      padding-bottom: calc($gutter * .75);
+    }
+    p {
+      margin-bottom : 0;
+    }
+    h1 {
+      margin-bottom : 0;
+    }
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+    .copy {
+      &.no-copy {
+        justify-content: center;
+      }
+      display: flex;
+      flex-direction: column;
+
+      //  This CTA container is hidden on Mobile.
+      .cta-container {
+        padding-top: calc($gutter * 1.75);
+        flex-direction: row;
+        display: none;
+        @include breakpoint($bp-small) {
+          display: flex;
+        }
+        @include breakpoint($bp-large) {
+          padding-top: calc($gutter * 2);
+        }
+        &.center {
+          align-items: center;
+          justify-content: center;
+        }
+        &.left {
+          align-items: flex-start;
+          justify-content: left;
+        }
+        .ama__button {
+          color: $purple;
+          flex: .4;
+          @include breakpoint($bp-large) {
+            flex: .3;
+          }
+          &:hover {
+            color: $gray-64;
+            border-color: $hoverComplementary;
+            background-color: $hoverComplementary;
+          }
+          &:first-child {
+            margin-right: calc($gutter * .5);
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          &.ama__button--complementary {
+            color: $black;
+            &:hover {
+              color: $gray-64;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hub-page-mobile {
+  &.media {
+    display:block;
+    margin-bottom: 0;
+    @include breakpoint($bp-small) {
+      display: none;
+    }
+  }
+}
+
+//  Style the CTAs that will only appear on mobile.
+.cta-container-mobile {
+  display: flex;
+  flex-direction: column;
+  padding: calc($gutter * .5) 15px;
+  margin: calc($gutter * .5) 0;
+  border-top: 1px solid $purple;
+  border-bottom: 1px solid $purple;
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+  .ama__button {
+    flex: 1;
+    width: 100%;
+  }
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+  &.left {
+    align-items: flex-start;
+    justify-content: left;
+  }
+  .ama__button {
+    flex: 1;
+    width: 100%;
+    margin-top: calc($gutter * .5);
+    &:hover {
+      color: $gray-64;
+      border-color: $hoverComplementary;
+      background-color: $hoverComplementary;
+    }
+    &.ama__button--complementary {
+      margin-top:0;
+      &:hover {
+        color: $gray-64;
+      }
+    }
+  }
+}
