@@ -196,6 +196,12 @@
 }
 
 .ama__hub {
+  .sticky-wrapper {
+    height: 96px !important;
+    @include breakpoint($bp-med) {
+      height: 117px !important;
+    }
+  }
   .ama__main-navigation {
     background: $white;
     border-bottom: none;
