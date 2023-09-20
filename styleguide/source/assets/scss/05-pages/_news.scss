@@ -100,7 +100,13 @@
         }
       }
 
-      + .share-row {
+      @include breakpoint($bp-small max-width) {
+        + .share-row:not(.subscribe-row) {
+          padding-top: $gutter;
+        }
+      }
+
+      + .share-row.subscribe-row {
         padding-top: 0;
       }
     }
