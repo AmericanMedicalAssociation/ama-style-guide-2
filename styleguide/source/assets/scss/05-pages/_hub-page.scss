@@ -1,5 +1,18 @@
 .ama__hub,
 .hub-container {
+  // Offset for hub hero row
+  .ama__hub-hero-row {
+    margin-top: 20px;
+    @include breakpoint($bp-med) {
+      margin-top: 56px;
+    }
+  }
+  &.toolbar-icon-9 .ama__hub-hero-row {
+    margin-top: 34px;
+    @include breakpoint($bp-large) {
+      margin-top: 56px;
+    }
+  }
   // Offset for sticky banner
   .ama__footer.has_banner {
     margin-top: 0;
