@@ -1,0 +1,45 @@
+{% set heading, paragraph, image, video, unorderedList, link1, link2 = hubPageHero.heading, hubPageHero.paragraph, hubPageHero.image, hubPageHero.video, hubPageHero.unorderedList, hubPageHero.link1, hubPageHero.link2 %}
+
+ {# {% if hubPageHero.layout == "ama__hub-hero--side-right" %}
+   {% set background = "background-image: url( #{hubPageHero.backgroundImage} );" %}
+{% elseif hubPageHero.layout == "ama__hub-hero--hero-side" %}
+  {% set background = "background-image: url( #{hubPageHero.backgroundImage} );" %}
+{% endif %} #}
+
+<section class="ama__hub-hero-row">
+  {% if hubPageHero.image.src is not empty %}
+    <div class="hub-page-mobile media">
+      {% include "@atoms/image/image.twig" %}
+    </div>
+  {% endif %}
+
+  <div class="background-wrapper purple">
+    <div class="hub-page-hero has-media container">
+      <div class="heading">
+        {% include "@atoms/paragraph.twig" %}
+      </div>
+      <div class="body">
+        <div class="copy>">
+          {% if hubPageHero.paragraph is not empty %}
+          <div class="subheading">
+            {% include "@atoms/heading/heading.twig" %}
+          </div>
+          {% endif %}
+          <div class="cta-container">
+          {% if hubPageBanner.link1 %}
+            {% include "@atoms/link/link.twig" with { link : hubPageBanner.link1 } %}
+          {% endif %}
+          {% if hubPageBanner.link2 %}
+            {% include "@atoms/link/link.twig" with { link : hubPageBanner.link2 } %}
+          {% endif %}
+          </div>
+        </div>
+        {% if hubPageHero.image.src is not empty %}
+          <div class="media">
+            {% include "@atoms/image/image.twig" %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
