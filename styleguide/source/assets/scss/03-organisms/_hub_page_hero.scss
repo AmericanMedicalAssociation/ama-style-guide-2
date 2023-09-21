@@ -1,5 +1,36 @@
+//  We need the container for the hero block. Keep it from getting double padding when placed in another container.
+.container {
+  .background-wrapper {
+    width: calc(99.9vw - 17px);
+    margin-left: calc(((100% - 100vw) / 2) + 8px);
+    @include breakpoint($bp-med) {
+      width: calc(99.9vw - 15px);
+      margin-left: calc(((100% - 100vw) / 2) + 7px);
+    }
+    .hub-page-hero {
+      padding: calc($gutter * .5) 15px calc($gutter * 1.25);
+      @include breakpoint($bp-small) {
+        padding: calc($gutter * 1.25) 15px calc($gutter * .75);
+      }
+      @include breakpoint($bp-med) {
+        padding: calc($gutter * 1.25) 14px calc($gutter * 1.25) 17px;
+      }
+    }
+  }
+  .hub-page-mobile {
+    &.media {
+      max-width: unset;
+      margin: 0 -15px;
+    }
+  }
+  .cta-container-mobile {
+    padding: calc($gutter * .5) 0px;
+    margin: calc($gutter * .5) 0px;
+  }
+}
 .background-wrapper {
   color: $black;
+  margin-bottom: calc($gutter * .5);
   a {
     color: $black;
     text-decoration: none;
@@ -26,6 +57,43 @@
     padding: calc($gutter * 1.25) 15px;
   }
 
+  h1,
+  h2,
+  h3 {
+    &.hub_hero_heading {
+      margin-bottom: calc($gutter * .5);
+      &.large {
+        font-size: 28px;
+      }
+      &.medium {
+        font-size: 22px;
+      }
+      &.small {
+        font-size: 20px;
+      }
+      @include breakpoint($bp-med) {
+        &.large {
+          font-size: 48px;
+        }
+        &.medium {
+          font-size: 38px;
+        }
+        &.small {
+          font-size: 26px;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .heading {
+    h1 {
+      &.hub_hero_heading {
+        margin-bottom: 0;
+      }
+    }
+  }
   //  If the block has media, it becomes a 60/40 block.
   &.has-media {
     .heading {
@@ -74,18 +142,12 @@
     flex: 1;
     width: 100%;
     display: block;
-    padding-bottom: 0;
+    padding-bottom: calc($gutter * .5);
     @include breakpoint($bp-small) {
       padding-bottom: calc($gutter * 1.25);
     }
     @include breakpoint($bp-med) {
       padding-bottom: calc($gutter * .75);
-    }
-    p {
-      margin-bottom : 0;
-    }
-    h1 {
-      margin-bottom : 0;
     }
   }
   .body {
@@ -157,6 +219,9 @@
     @include breakpoint($bp-small) {
       display: none;
     }
+    img {
+      margin-bottom: -7px;
+    }
   }
 }
 
@@ -164,8 +229,8 @@
 .cta-container-mobile {
   display: flex;
   flex-direction: column;
-  padding: calc($gutter * .5) 15px;
-  margin: calc($gutter * .5) 0;
+  padding: calc($gutter * .5) 0;
+  margin: calc($gutter * .5) 15px;
   border-top: 1px solid $purple;
   border-bottom: 1px solid $purple;
   @include breakpoint($bp-small) {
