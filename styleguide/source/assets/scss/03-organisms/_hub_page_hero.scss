@@ -57,6 +57,43 @@
     padding: calc($gutter * 1.25) 15px;
   }
 
+  h1,
+  h2,
+  h3 {
+    &.hub_hero_heading {
+      margin-bottom: calc($gutter * .5);
+      &.large {
+        font-size: 28px;
+      }
+      &.medium {
+        font-size: 22px;
+      }
+      &.small {
+        font-size: 20px;
+      }
+      @include breakpoint($bp-med) {
+        &.large {
+          font-size: 48px;
+        }
+        &.medium {
+          font-size: 38px;
+        }
+        &.small {
+          font-size: 26px;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .heading {
+    h1 {
+      &.hub_hero_heading {
+        margin-bottom: 0;
+      }
+    }
+  }
   //  If the block has media, it becomes a 60/40 block.
   &.has-media {
     .heading {
@@ -105,18 +142,12 @@
     flex: 1;
     width: 100%;
     display: block;
-    padding-bottom: 0;
+    padding-bottom: calc($gutter * .5);
     @include breakpoint($bp-small) {
       padding-bottom: calc($gutter * 1.25);
     }
     @include breakpoint($bp-med) {
       padding-bottom: calc($gutter * .75);
-    }
-    p {
-      margin-bottom : 0;
-    }
-    h1 {
-      margin-bottom : 0;
     }
   }
   .body {
