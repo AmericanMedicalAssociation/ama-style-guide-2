@@ -3,6 +3,10 @@
   // Offset for sticky banner
   .ama__footer.has_banner {
     margin-top: 0;
+    margin-bottom: 175px;
+    @include breakpoint($bp-med) {
+      margin-bottom: 110px;
+    }
   }
   .ama__hub-banner {
     background: $purple;
@@ -11,7 +15,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 1;
@@ -39,7 +43,7 @@
           margin-bottom: 0;
         }
       }
-      &:last-of-type {
+      &:nth-child(2) {
         background: $white;
       }
       &:hover,
