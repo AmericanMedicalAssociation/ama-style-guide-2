@@ -1,4 +1,4 @@
-{% set heading, paragraph, image, video, unorderedList, link1, link2 = hubPageHero.heading, hubPageHero.paragraph, hubPageHero.image, hubPageHero.video, hubPageHero.unorderedList, hubPageHero.link1, hubPageHero.link2 %}
+{% set heading, heading2, heading3, paragraph, image, video, unorderedList, link1, link2 = hubPageHero.heading, hubPageHero.heading2, hubPageHero.heading3, hubPageHero.paragraph, hubPageHero.image, hubPageHero.video, hubPageHero.unorderedList, hubPageHero.link1, hubPageHero.link2 %}
 
  {# {% if hubPageHero.layout == "ama__hub-hero--side-right" %}
    {% set background = "background-image: url( #{hubPageHero.backgroundImage} );" %}
@@ -6,7 +6,7 @@
   {% set background = "background-image: url( #{hubPageHero.backgroundImage} );" %}
 {% endif %} #}
 
-<section class="ama__hub-hero-row">
+<section class="ama__hub-hero-row styleguide">
   {% if hubPageHero.image.src is not empty %}
     <div class="hub-page-mobile media">
       {% include "@atoms/image/image.twig" %}
@@ -19,18 +19,20 @@
         {% include "@atoms/paragraph.twig" %}
       </div>
       <div class="body">
-        <div class="copy>">
+        <div class="copy">
           {% if hubPageHero.paragraph is not empty %}
           <div class="subheading">
-            {% include "@atoms/heading/heading.twig" %}
+            {% include "@atoms/heading/heading.twig" with { heading : hubPageHero.heading } %}
+            {% include "@atoms/heading/heading.twig" with { heading : hubPageHero.heading2 } %}
+            {% include "@atoms/heading/heading.twig" with { heading : hubPageHero.heading3 } %}
           </div>
           {% endif %}
-          <div class="cta-container">
-          {% if hubPageBanner.link1 %}
-            {% include "@atoms/link/link.twig" with { link : hubPageBanner.link1 } %}
+          <div class="cta-container left">
+          {% if hubPageHero.link1 %}
+            {% include "@atoms/link/link.twig" with { link : hubPageHero.link1 } %}
           {% endif %}
-          {% if hubPageBanner.link2 %}
-            {% include "@atoms/link/link.twig" with { link : hubPageBanner.link2 } %}
+          {% if hubPageHero.link2 %}
+            {% include "@atoms/link/link.twig" with { link : hubPageHero.link2 } %}
           {% endif %}
           </div>
         </div>
@@ -41,5 +43,14 @@
         {% endif %}
       </div>
     </div>
+  </div>
+
+  <div class="cta-container-mobile">
+    {% if hubPageHero.link1 %}
+      {% include "@atoms/link/link.twig" with { link : hubPageHero.link1 } %}
+    {% endif %}
+    {% if hubPageHero.link2 %}
+      {% include "@atoms/link/link.twig" with { link : hubPageHero.link2 } %}
+    {% endif %}
   </div>
 </section>
