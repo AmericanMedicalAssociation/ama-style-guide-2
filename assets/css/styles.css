@@ -21666,6 +21666,9 @@ section.ama__page--event__speakers {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.hub-page-hero .body .copy .subheading ul {
+  margin-left: 18px;
+}
 .hub-page-hero .body .copy .cta-container {
   padding-top: 49px;
   -webkit-box-orient: horizontal;
@@ -28801,6 +28804,13 @@ body.search-results .ama__layout--two-column--left {
 .ama__hub .ama__footer.has_banner,
 .hub-container .ama__footer.has_banner {
   margin-top: 0;
+  margin-bottom: 175px;
+}
+@media (min-width: 56.25em) {
+  .ama__hub .ama__footer.has_banner,
+  .hub-container .ama__footer.has_banner {
+    margin-bottom: 110px;
+  }
 }
 .ama__hub .ama__hub-banner,
 .hub-container .ama__hub-banner {
@@ -28819,7 +28829,7 @@ body.search-results .ama__layout--two-column--left {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 1;
@@ -28868,8 +28878,12 @@ body.search-results .ama__layout--two-column--left {
     margin-bottom: 0;
   }
 }
-.ama__hub .ama__hub-banner > div:last-of-type,
-.hub-container .ama__hub-banner > div:last-of-type {
+.ama__hub .ama__hub-banner > div:first-of-type a.hub_banner_link,
+.hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link {
+  color: #000000;
+}
+.ama__hub .ama__hub-banner > div:nth-child(2),
+.hub-container .ama__hub-banner > div:nth-child(2) {
   background: #ffffff;
 }
 .ama__hub .ama__hub-banner > div:hover, .ama__hub .ama__hub-banner > div:focus,
