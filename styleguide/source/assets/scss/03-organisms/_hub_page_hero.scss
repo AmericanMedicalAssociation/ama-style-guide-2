@@ -31,8 +31,7 @@
 .background-wrapper {
   color: $black;
   margin-bottom: calc($gutter * .5);
-  a,
-  a span {
+  a {
     color: $black;
     text-decoration: none;
     &:hover {
@@ -42,8 +41,7 @@
   &.purple {
     background: $purple;
     color: $white;
-    a,
-    a span {
+    a {
       color: $white;
     }
   }
@@ -153,8 +151,7 @@
           @include breakpoint($bp-med) {
             display: flex;
           }
-          .ama__button,
-          .ama__button span {
+          .ama__button {
             max-width: 291px;
             flex: .5;
             @include breakpoint($bp-med) {
@@ -282,8 +279,7 @@
   @include breakpoint($bp-small) {
     display: none;
   }
-  .ama__button,
-  .ama__button span {
+  .ama__button {
     flex: 1;
     width: 100%;
   }
@@ -295,8 +291,7 @@
     align-items: flex-start;
     justify-content: left;
   }
-  .ama__button,
-  .ama__button span {
+  .ama__button {
     flex: 1;
     width: 100%;
     margin-top: calc($gutter * .5);
@@ -306,8 +301,7 @@
       border-color: $hoverComplementary;
       background-color: $hoverComplementary;
     }
-    &.ama__button--complementary,
-    &.ama__button--complementary span {
+    &.ama__button--complementary {
       margin-top:0;
       &:hover {
         color: $gray-64;
