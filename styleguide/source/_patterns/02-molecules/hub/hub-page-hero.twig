@@ -1,10 +1,4 @@
-{% set heading, heading2, heading3, paragraph, image, video, unorderedList, link1, link2 = hubPageHero.heading, hubPageHero.heading2, hubPageHero.heading3, hubPageHero.paragraph, hubPageHero.image, hubPageHero.video, hubPageHero.unorderedList, hubPageHero.link1, hubPageHero.link2 %}
-
- {# {% if hubPageHero.layout == "ama__hub-hero--side-right" %}
-   {% set background = "background-image: url( #{hubPageHero.backgroundImage} );" %}
-{% elseif hubPageHero.layout == "ama__hub-hero--hero-side" %}
-  {% set background = "background-image: url( #{hubPageHero.backgroundImage} );" %}
-{% endif %} #}
+{% set subheading, heading, heading2, heading3, image, link1, link2, purple = hubPageHero.subheading, hubPageHero.heading, hubPageHero.heading2, hubPageHero.heading3, hubPageHero.image, hubPageHero.link1, hubPageHero.link2, hubPageHero.purple %}
 
 <section class="ama__hub-hero-row styleguide">
   {% if hubPageHero.image.src is not empty %}
@@ -13,14 +7,18 @@
     </div>
   {% endif %}
 
-  <div class="background-wrapper purple">
+  {% if purple == 1%}
+    <div class="background-wrapper purple">
+  {% else %}
+    <div class="background-wrapper">
+  {% endif %}
     <div class="hub-page-hero has-media container">
       <div class="heading">
-        {% include "@atoms/paragraph.twig" %}
+        {% include "@atoms/heading/heading.twig" with { heading : hubPageHero.subheading } %}
       </div>
       <div class="body">
         <div class="copy">
-          {% if hubPageHero.paragraph is not empty %}
+          {% if hubPageHero.heading is not empty %}
           <div class="subheading">
             {% include "@atoms/heading/heading.twig" with { heading : hubPageHero.heading } %}
             {% include "@atoms/heading/heading.twig" with { heading : hubPageHero.heading2 } %}
@@ -28,10 +26,10 @@
           </div>
           {% endif %}
           <div class="cta-container left">
-          {% if hubPageHero.link1 %}
+          {% if hubPageHero.link1 is not empty %}
             {% include "@atoms/link/link.twig" with { link : hubPageHero.link1 } %}
           {% endif %}
-          {% if hubPageHero.link2 %}
+          {% if hubPageHero.link2 is not empty %}
             {% include "@atoms/link/link.twig" with { link : hubPageHero.link2 } %}
           {% endif %}
           </div>
@@ -46,10 +44,10 @@
   </div>
 
   <div class="cta-container-mobile">
-    {% if hubPageHero.link1 %}
+    {% if hubPageHero.link1 is not empty %}
       {% include "@atoms/link/link.twig" with { link : hubPageHero.link1 } %}
     {% endif %}
-    {% if hubPageHero.link2 %}
+    {% if hubPageHero.link2 is not empty %}
       {% include "@atoms/link/link.twig" with { link : hubPageHero.link2 } %}
     {% endif %}
   </div>
