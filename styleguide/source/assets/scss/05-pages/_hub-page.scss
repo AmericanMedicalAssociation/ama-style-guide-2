@@ -40,6 +40,9 @@
         }
         a.hub_banner_link {
           color: $black;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
       &:nth-child(2) {
@@ -58,6 +61,9 @@
         padding: 12px 75px;
         @include breakpoint($bp-med) {
           padding: 12px 85px;
+        }
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
