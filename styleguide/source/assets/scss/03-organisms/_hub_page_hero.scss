@@ -114,11 +114,15 @@
           flex: .6;
         }
         .cta-container {
+          display:none;
+          @include breakpoint($bp-med) {
+            display: flex;
+          }
           .ama__button {
             max-width: 291px;
             flex: .5;
             @include breakpoint($bp-med) {
-              max-width: 280px;
+              max-width: 325px;
             }
           }
         }
@@ -168,48 +172,49 @@
           margin-left: 18px;
         }
       }
-      //  This CTA container is hidden on Mobile.
-      .cta-container {
-        padding-top: calc($gutter * 1.75);
-        flex-direction: row;
-        display: none;
-        @include breakpoint($bp-small) {
-          display: flex;
-        }
-        @include breakpoint($bp-large) {
-          padding-top: calc($gutter * 2);
-        }
-        &.center {
-          align-items: center;
-          justify-content: center;
-        }
-        &.left {
-          align-items: flex-start;
-          justify-content: left;
-        }
-        .ama__button {
-          color: $purple;
-          flex: .4;
-          @include breakpoint($bp-large) {
-            flex: .3;
-          }
-          &:hover {
-            color: $gray-64;
-            border-color: $hoverComplementary;
-            background-color: $hoverComplementary;
-          }
-          &:first-child {
-            margin-right: calc($gutter * .5);
-          }
-          &:last-child {
-            margin-right: 0;
-          }
-          &.ama__button--complementary {
-            color: $black;
-            &:hover {
-              color: $gray-64;
-            }
-          }
+    }
+  }
+  //  This CTA container is hidden on Mobile.
+  .cta-container {
+    padding-top: calc($gutter * 1.75);
+    flex-direction: row;
+    display: none;
+    @include breakpoint($bp-small) {
+      display: flex;
+    }
+    @include breakpoint($bp-large) {
+      padding-top: calc($gutter * 2);
+    }
+    &.center {
+      align-items: center;
+      justify-content: center;
+    }
+    &.left {
+      align-items: flex-start;
+      justify-content: left;
+    }
+    .ama__button {
+      color: $purple;
+      font-weight: $font-weight-regular;
+      flex: .4;
+      @include breakpoint($bp-large) {
+        flex: .3;
+      }
+      &:hover {
+        color: $gray-64;
+        border-color: $hoverComplementary;
+        background-color: $hoverComplementary;
+      }
+      &:first-child {
+        margin-right: calc($gutter * .5);
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &.ama__button--complementary {
+        color: $black;
+        &:hover {
+          color: $gray-64;
         }
       }
     }
@@ -228,7 +233,15 @@
     }
   }
 }
-
+.tablet-cta {
+  display: none;
+  @include breakpoint($bp-small) {
+    display: block;
+  }
+  @include breakpoint($bp-med) {
+    display: none;
+  }
+}
 //  Style the CTAs that will only appear on mobile.
 .cta-container-mobile {
   display: flex;
@@ -256,6 +269,7 @@
     flex: 1;
     width: 100%;
     margin-top: calc($gutter * .5);
+    font-weight: $font-weight-regular;
     &:hover {
       color: $gray-64;
       border-color: $hoverComplementary;
