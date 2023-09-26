@@ -21586,6 +21586,16 @@ section.ama__page--event__speakers {
     flex: 0.6;
   }
 }
+.hub-page-hero.has-media .body .copy .cta-container {
+  display: none;
+}
+@media (min-width: 56.25em) {
+  .hub-page-hero.has-media .body .copy .cta-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 .hub-page-hero.has-media .body .copy .cta-container .ama__button {
   max-width: 291px;
   -webkit-box-flex: 0.5;
@@ -21594,7 +21604,7 @@ section.ama__page--event__speakers {
 }
 @media (min-width: 56.25em) {
   .hub-page-hero.has-media .body .copy .cta-container .ama__button {
-    max-width: 280px;
+    max-width: 325px;
   }
 }
 .hub-page-hero.has-media .body .media {
@@ -21669,7 +21679,7 @@ section.ama__page--event__speakers {
 .hub-page-hero .body .copy .subheading ul {
   margin-left: 18px;
 }
-.hub-page-hero .body .copy .cta-container {
+.hub-page-hero .cta-container {
   padding-top: 49px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -21678,18 +21688,18 @@ section.ama__page--event__speakers {
   display: none;
 }
 @media (min-width: 37.5em) {
-  .hub-page-hero .body .copy .cta-container {
+  .hub-page-hero .cta-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 @media (min-width: 75em) {
-  .hub-page-hero .body .copy .cta-container {
+  .hub-page-hero .cta-container {
     padding-top: 56px;
   }
 }
-.hub-page-hero .body .copy .cta-container.center {
+.hub-page-hero .cta-container.center {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -21697,7 +21707,7 @@ section.ama__page--event__speakers {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.hub-page-hero .body .copy .cta-container.left {
+.hub-page-hero .cta-container.left {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -21705,34 +21715,35 @@ section.ama__page--event__speakers {
   -ms-flex-pack: left;
   justify-content: left;
 }
-.hub-page-hero .body .copy .cta-container .ama__button {
+.hub-page-hero .cta-container .ama__button {
   color: #46166B;
+  font-weight: 400;
   -webkit-box-flex: 0.4;
   -ms-flex: 0.4;
   flex: 0.4;
 }
 @media (min-width: 75em) {
-  .hub-page-hero .body .copy .cta-container .ama__button {
+  .hub-page-hero .cta-container .ama__button {
     -webkit-box-flex: 0.3;
     -ms-flex: 0.3;
     flex: 0.3;
   }
 }
-.hub-page-hero .body .copy .cta-container .ama__button:hover {
+.hub-page-hero .cta-container .ama__button:hover {
   color: #5C5C5C;
   border-color: #ffd8a3;
   background-color: #ffd8a3;
 }
-.hub-page-hero .body .copy .cta-container .ama__button:first-child {
+.hub-page-hero .cta-container .ama__button:first-child {
   margin-right: 14px;
 }
-.hub-page-hero .body .copy .cta-container .ama__button:last-child {
+.hub-page-hero .cta-container .ama__button:last-child {
   margin-right: 0;
 }
-.hub-page-hero .body .copy .cta-container .ama__button.ama__button--complementary {
+.hub-page-hero .cta-container .ama__button.ama__button--complementary {
   color: #000000;
 }
-.hub-page-hero .body .copy .cta-container .ama__button.ama__button--complementary:hover {
+.hub-page-hero .cta-container .ama__button.ama__button--complementary:hover {
   color: #5C5C5C;
 }
 
@@ -21747,6 +21758,20 @@ section.ama__page--event__speakers {
 }
 .hub-page-mobile.media img {
   margin-bottom: -7px;
+}
+
+.tablet-cta {
+  display: none;
+}
+@media (min-width: 37.5em) {
+  .tablet-cta {
+    display: block;
+  }
+}
+@media (min-width: 56.25em) {
+  .tablet-cta {
+    display: none;
+  }
 }
 
 .cta-container-mobile {
@@ -21795,6 +21820,7 @@ section.ama__page--event__speakers {
   flex: 1;
   width: 100%;
   margin-top: 14px;
+  font-weight: 400;
 }
 .cta-container-mobile .ama__button:hover {
   color: #5C5C5C;
@@ -28875,6 +28901,10 @@ body.search-results .ama__layout--two-column--left {
 .hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link {
   color: #000000;
 }
+.ama__hub .ama__hub-banner > div:first-of-type a.hub_banner_link:hover,
+.hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link:hover {
+  text-decoration: underline;
+}
 .ama__hub .ama__hub-banner > div:nth-child(2),
 .hub-container .ama__hub-banner > div:nth-child(2) {
   background: #ffffff;
@@ -28898,6 +28928,10 @@ body.search-results .ama__layout--two-column--left {
   .hub-container .ama__hub-banner > div a.hub_banner_link {
     padding: 12px 85px;
   }
+}
+.ama__hub .ama__hub-banner > div a.hub_banner_link:hover,
+.hub-container .ama__hub-banner > div a.hub_banner_link:hover {
+  text-decoration: underline;
 }
 
 .hub-container .ama__layout--one-column.container {
