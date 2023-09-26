@@ -56,7 +56,23 @@
   @include breakpoint($bp-med) {
     padding: calc($gutter * 1.25) 15px;
   }
-
+  ul {
+    li {
+      list-style-type: none;
+      h1,
+      h2,
+      h3 {
+        padding-left: 25px;
+        &:before {
+          font-size: 32px;
+          content: ".";
+          position: relative;
+          right: 15px;
+          top: -4px;
+        }
+      }
+    }
+  }
   h1,
   h2,
   h3 {
@@ -105,6 +121,7 @@
       }
     }
     .body {
+      flex-direction: row;
       .copy {
         flex: 1;
         @include breakpoint($bp-small) {
@@ -157,10 +174,6 @@
   .body {
     display: flex;
     flex-direction: column;
-
-    @include breakpoint($bp-small) {
-      flex-direction: row;
-    }
     .copy {
       &.no-copy {
         justify-content: center;
