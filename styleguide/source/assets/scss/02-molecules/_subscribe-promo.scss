@@ -51,7 +51,11 @@
 
       &.ui-state-active {
         .ui-icon-background {
-          border: 1px solid $gray-7;
+          background-color: $white;
+          background-image: url('../icons/svg/icon-checkmark-black.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 14px;
         }
       }
     }
@@ -335,9 +339,6 @@
       color: $text-navy;
       font-size: 10px;
       text-transform: initial;
-    }
-    &.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon {
-      background-position: -66px -145px;
     }
   }
 
