@@ -3,12 +3,14 @@
 <div class="hub-container">
   <div class="ama__hub-banner">
   {% if hubBanner.link1 %}
-    {# {% include '@atoms/button/button.twig' with { button : hubBanner.button1 } %} #}
+    <div>
     {% include "@atoms/link/link.twig" with { link : hubBanner.link1 } %}
+    </div>
   {% endif %}
   {% if hubBanner.link2 %}
-    {# {% include '@atoms/button/button.twig' with { button : hubBanner.button2 } %} #}
+    <div>
     {% include "@atoms/link/link.twig" with { link : hubBanner.link2 } %}
+    </div>
   {% endif %}
   </div>
 </div>
