@@ -15596,7 +15596,11 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   height: 20px;
 }
 .ama__subscribe-promo__form .ama__checkbox.form-item.ui-state-active .ui-icon-background {
-  border: 1px solid #EDEDED;
+  background-color: #ffffff;
+  background-image: url("../icons/svg/icon-checkmark-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
 }
 .ama__subscribe-promo__form .form-item--error-message.active-error,
 .ama__subscribe-promo__form label.error {
@@ -16034,14 +16038,6 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   color: #001b1b;
   font-size: 10px;
   text-transform: initial;
-}
-.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon,
-.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon,
-.index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon,
-.index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon,
-.index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon,
-.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox.ui-checkboxradio-label.ui-state-active .ui-checkboxradio-icon {
-  background-position: -66px -145px;
 }
 .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form_page .ama__subscribe-promo__email-subscribe-container .form-item-page-mr-email input[type=text],
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form_page .ama__subscribe-promo__email-subscribe-container .form-item-page-mr-email input[type=text],
@@ -21743,7 +21739,8 @@ section.ama__page--event__speakers {
   -ms-flex-pack: left;
   justify-content: left;
 }
-.hub-page-hero .cta-container .ama__button {
+.hub-page-hero .cta-container .ama__button,
+.hub-page-hero .cta-container .ama__botton span {
   color: #46166B;
   font-weight: 400;
   -webkit-box-flex: 0.4;
@@ -21751,27 +21748,35 @@ section.ama__page--event__speakers {
   flex: 0.4;
 }
 @media (min-width: 75em) {
-  .hub-page-hero .cta-container .ama__button {
+  .hub-page-hero .cta-container .ama__button,
+  .hub-page-hero .cta-container .ama__botton span {
     -webkit-box-flex: 0.3;
     -ms-flex: 0.3;
     flex: 0.3;
   }
 }
-.hub-page-hero .cta-container .ama__button:hover {
+.hub-page-hero .cta-container .ama__button:hover,
+.hub-page-hero .cta-container .ama__botton span:hover {
   color: #5C5C5C;
   border-color: #ffd8a3;
   background-color: #ffd8a3;
 }
-.hub-page-hero .cta-container .ama__button:first-child {
+.hub-page-hero .cta-container .ama__button:first-child,
+.hub-page-hero .cta-container .ama__botton span:first-child {
   margin-right: 14px;
 }
-.hub-page-hero .cta-container .ama__button:last-child {
+.hub-page-hero .cta-container .ama__button:last-child,
+.hub-page-hero .cta-container .ama__botton span:last-child {
   margin-right: 0;
 }
-.hub-page-hero .cta-container .ama__button.ama__button--complementary {
+.hub-page-hero .cta-container .ama__button.ama__button--complementary, .hub-page-hero .cta-container .ama__button.ama__button--complementary span,
+.hub-page-hero .cta-container .ama__botton span.ama__button--complementary,
+.hub-page-hero .cta-container .ama__botton span.ama__button--complementary span {
   color: #000000;
 }
-.hub-page-hero .cta-container .ama__button.ama__button--complementary:hover {
+.hub-page-hero .cta-container .ama__button.ama__button--complementary:hover, .hub-page-hero .cta-container .ama__button.ama__button--complementary span:hover,
+.hub-page-hero .cta-container .ama__botton span.ama__button--complementary:hover,
+.hub-page-hero .cta-container .ama__botton span.ama__button--complementary span:hover {
   color: #5C5C5C;
 }
 
@@ -21860,6 +21865,10 @@ section.ama__page--event__speakers {
 }
 .cta-container-mobile .ama__button.ama__button--complementary:hover {
   color: #5C5C5C;
+}
+
+.ama__hub-hero-row.styleguide .hub-page-mobile.media img {
+  width: 100%;
 }
 
 .ama__hub-card-row {
@@ -28474,6 +28483,9 @@ body.search-results .ama__layout--two-column--left {
   background-color: #ccd7e2;
   color: #000000;
 }
+.ama__glossary-page .suggested-listings a:hover, .ama__glossary-page .suggested-listings a:focus {
+  text-decoration: underline;
+}
 
 .ama__homepage .ama__layout--one-column__content-top {
   display: none;
@@ -29195,6 +29207,9 @@ body.search-results .ama__layout--two-column--left {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+.ama__news-article .embedded-entity.media.align-right.image .media-caption {
+  max-width: 220px;
 }
 .ama__news-article .embedded-entity.media + .ama-toc-link {
   padding-top: 14px;

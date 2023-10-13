@@ -1,10 +1,11 @@
-{% set hubHero, hubSectionHeader, hubHeroes, hubCards = hubPage.hubHero, hubPage.hubSectionHeader, hubPage.hubHeroes, hubPage.hubCards|slice(0, 4) %}
+{% set hubPageHero, hubHero, hubSectionHeader, hubHeroes, hubCards, hubBanner = hubPage.hubPageHero, hubPage.hubHero, hubPage.hubSectionHeader, hubPage.hubHeroes, hubPage.hubCards|slice(0, 4), hubPage.hubBanner %}
 
 {% block header %}
   {% include '@organisms/main-navigation/main-navigation-hub-page.twig' %}
 {% endblock %}
 
 {% block contentTop %}
+  {% include "@molecules/hub/hub-page-hero.twig" %}
   {% include "@molecules/hub/hub-hero.twig" %}
 {% endblock %}
 
@@ -29,4 +30,6 @@
   {% block footer %}
     {% include "@organisms/footer/footer.twig" %}
   {% endblock %}
+
+  {% include "@molecules/hub/hub-banner.twig" %}
 </div>
