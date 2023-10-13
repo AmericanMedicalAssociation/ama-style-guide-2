@@ -217,7 +217,8 @@
       align-items: flex-start;
       justify-content: left;
     }
-    .ama__button {
+    .ama__button,
+    .ama__botton span {
       color: $purple;
       font-weight: $font-weight-regular;
       flex: .4;
@@ -235,7 +236,8 @@
       &:last-child {
         margin-right: 0;
       }
-      &.ama__button--complementary {
+      &.ama__button--complementary,
+      &.ama__button--complementary span {
         color: $black;
         &:hover {
           color: $gray-64;
@@ -304,6 +306,15 @@
       &:hover {
         color: $gray-64;
       }
+    }
+  }
+}
+
+// Styleguide Specific Styles
+.ama__hub-hero-row.styleguide {
+  .hub-page-mobile {
+    &.media img {
+      width: 100%;
     }
   }
 }
