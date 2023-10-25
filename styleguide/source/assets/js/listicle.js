@@ -4,9 +4,9 @@
  *
  * Handling classes to build listicle properly outside ckeditor.
  */
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   Drupal.behaviors.listicle = {
-    attach: function(context, settings) {
+    attach: function(context) {
       if ($('.listicle', context).length) {
         $('.listicle').each(function () {
           $(this).children().each(function (idx, e) {
@@ -34,7 +34,7 @@
           var imageWidth = $(this).width()
           console.log(imageWidth)
           var clearfix = '<div class="clearfix"></div>'
-          $(this).closest('.listicle__item').once().append(clearfix)
+          $(once('listicle-item', '.listicle__item', this)).append(clearfix)
           if (imageWidth >= width*.7) {
             $(this).addClass('no-margin')
             $(this).closest ('figure').addClass('no-margin')
@@ -43,4 +43,4 @@
       }
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

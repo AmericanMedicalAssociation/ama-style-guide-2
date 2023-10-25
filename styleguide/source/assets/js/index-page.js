@@ -1,4 +1,4 @@
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   Drupal.behaviors.index = {
     attach: function (context, settings) {
 
@@ -54,7 +54,7 @@
        */
 
       // Set height on pageload using the hidden divs.
-      $('.desc-display', context).once('getHeight').each(function () {
+      $(once('getHeight', '.desc-display', context)).each(function () {
         getDimensions()
         desc.css('height', truncHeight + 'px')
       });
@@ -90,4 +90,4 @@
 
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
