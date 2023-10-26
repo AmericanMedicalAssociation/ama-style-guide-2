@@ -1,6 +1,6 @@
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   Drupal.behaviors.glossary_load = {
-    attach: function(context, settings) {
+    attach: function(context) {
 
       $(document).ready(function() {
 
@@ -10,7 +10,7 @@
         var regex = /topic=(.*?)&|&topic=.*/i;
 
         //  Loop through the filter links looking for a topic query parameter. If there is one, strip it out.
-        $('#edit-name--2 a.bef-link').once().each(function (i, link) {
+        $(once('filter-links', '#edit-name--2 a.bef-link', context)).each(function (i, link) {
           var oldUrl = $(link).attr("href");
           if(regex.test(oldUrl)) {
             var newUrl = oldUrl.replace(regex, '');
@@ -45,4 +45,4 @@
 
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
