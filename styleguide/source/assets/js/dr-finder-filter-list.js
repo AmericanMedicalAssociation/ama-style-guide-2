@@ -7,16 +7,15 @@
  * - https://drupal.org/node/1446420
  * - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
  */
-(function ($, Drupal) {
+(function ($, Drupal, once) {
 
   Drupal.behaviors.filterListDrFinder = {
-    attach: function (context, settings) {
+    attach: function (context) {
 
       $('.dr-finder-filter-list .fieldgroup', context).each(function () {
         const class_active = 'is-active';
         const openMenu = $('.fieldset-wrapper');
-
-        $(this).find('.fieldset-legend').once().on('click', function(e) {
+        $(once('filter-legend', '.fieldset-legend', this)).on('click', function(e) {
           e.stopPropagation();
           // Unfocus on the dropdown.
           $(this).blur();
@@ -36,4 +35,4 @@
       });
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
