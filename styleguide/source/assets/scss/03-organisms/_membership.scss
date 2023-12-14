@@ -402,13 +402,12 @@ a.ama__membership {
       @include breakpoint($bp-small) {
         margin-left: 17px;
         flex: .66;
+        img {
+          float: right;
+        }
       }
       @include breakpoint($bp-med) {
         margin-left: auto;
-      }
-      img {
-        width: 100%;
-        height: auto;
       }
     }
 }
