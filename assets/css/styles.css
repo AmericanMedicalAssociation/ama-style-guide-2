@@ -5649,20 +5649,6 @@ article ol {
   width: 269px;
 }
 
-.ama__skip-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 50px;
-  -webkit-transform: translateY(-50px);
-  transform: translateY(-50px);
-}
-
-.ama__skip-nav:focus {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
 .ama__social-icons {
   list-style: none;
 }
@@ -6524,6 +6510,10 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   }
 }
 
+.ama__alert__wrap.sg {
+  opacity: 1;
+}
+
 .ama__applied-filters {
   padding-bottom: 10.5px;
   border-bottom: 1px solid #767676;
@@ -7203,7 +7193,7 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   .article-stub-list .ama__category-page-article-stub .grid-container[data-count="3"] .ama__article-stub.ama__article-stub--category:last-child {
     width: 27.3%;
     padding-right: 2.1%;
-    border-right: 1px solid #a1a1a4;
+    border-right: none;
   }
 }
 
@@ -12459,7 +12449,7 @@ span.ama__inline-bio__link:focus-visible {
 }
 @media (min-width: 37.5em) {
   .ama_page_grouping_news {
-    margin: 0;
+    margin: 0 0 28px 0;
   }
 }
 .ama_page_grouping_news.bottom-border {
@@ -14977,16 +14967,16 @@ a.ama__promo--border:hover {
   background-size: 31px;
 }
 
-.social--instagram-white {
+.social--instagram-logo-white {
   display: inline-block;
-  background-image: url("../icons/svg/icon-instagram-white-brand.svg");
+  background-image: url("../icons/svg/icon-instagram-logo-white-brand.svg");
   background-repeat: no-repeat;
   background-size: 31px;
   height: 31px;
   width: 31px;
 }
-.social--instagram-white:hover {
-  background: url("../icons/svg/icon-instagram-white-brand-hover.svg");
+.social--instagram-logo-white:hover {
+  background: url("../icons/svg/icon-instagram-logo-white-brand-hover.svg");
   background-size: 31px;
 }
 
@@ -15236,16 +15226,16 @@ footer .social--youtube-white:hover {
   background: url("../icons/svg/icon-youtube-white-hover.svg");
   background-size: 31px;
 }
-footer .social--instagram-white {
+footer .social--instagram-logo-white {
   display: inline-block;
-  background-image: url("../icons/svg/icon-instagram-white-purple.svg");
+  background-image: url("../icons/svg/icon-instagram-logo-white-purple.svg");
   background-repeat: no-repeat;
   background-size: 31px;
   height: 31px;
   width: 31px;
 }
-footer .social--instagram-white:hover {
-  background: url("../icons/svg/icon-instagram-white-hover.svg");
+footer .social--instagram-logo-white:hover {
+  background: url("../icons/svg/icon-instagram-logo-white-hover.svg");
   background-size: 31px;
 }
 footer .ama__social-share a.social--twitter-white,
@@ -16292,7 +16282,6 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 .ama--news-toc {
   padding: 0 28px 15px 0;
   margin-bottom: 15px;
-  border-bottom: 2px solid #767676;
   display: block;
 }
 @media (min-width: 56.25em) {
@@ -23744,6 +23733,15 @@ a.ama__membership:hover {
     -ms-flex: 0.66;
     flex: 0.66;
   }
+  .ama__category .layout__region--content > .ama__membership .ama__membership_media-container img,
+  .ama__category .layout__region--content .layout--onecol .ama__membership .ama__membership_media-container img,
+  .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership .ama__membership_media-container img,
+  .index-page .ama__layout--one-column__page-content .ama__membership .ama__membership_media-container img,
+  .index-page .index-promo .ama__membership .ama__membership_media-container img,
+  .index-page .no-results .ama__membership .ama__membership_media-container img,
+  .index-page > div > .ama__membership .ama__membership_media-container img {
+    float: right;
+  }
 }
 @media (min-width: 56.25em) {
   .ama__category .layout__region--content > .ama__membership .ama__membership_media-container,
@@ -23755,16 +23753,6 @@ a.ama__membership:hover {
   .index-page > div > .ama__membership .ama__membership_media-container {
     margin-left: auto;
   }
-}
-.ama__category .layout__region--content > .ama__membership .ama__membership_media-container img,
-.ama__category .layout__region--content .layout--onecol .ama__membership .ama__membership_media-container img,
-.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership .ama__membership_media-container img,
-.index-page .ama__layout--one-column__page-content .ama__membership .ama__membership_media-container img,
-.index-page .index-promo .ama__membership .ama__membership_media-container img,
-.index-page .no-results .ama__membership .ama__membership_media-container img,
-.index-page > div > .ama__membership .ama__membership_media-container img {
-  width: 100%;
-  height: auto;
 }
 
 @media (max-width: 37.5em) {
