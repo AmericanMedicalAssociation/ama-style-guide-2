@@ -5649,6 +5649,20 @@ article ol {
   width: 269px;
 }
 
+.ama__skip-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  -webkit-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+
+.ama__skip-nav:focus {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
 .ama__social-icons {
   list-style: none;
 }
@@ -6508,10 +6522,6 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   .ama__alert__close {
     top: 35%;
   }
-}
-
-.ama__alert__wrap.sg {
-  opacity: 1;
 }
 
 .ama__applied-filters {

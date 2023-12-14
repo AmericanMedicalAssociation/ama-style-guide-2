@@ -1,0 +1,23 @@
+<h2 class="ama__h2">{{ agenda.agendaName }}</h2>
+<div id="ama__agenda" class="ama__tabs">
+  <ul class="ama__tabs-navigation">
+    {% for agendaTab in agenda.agendaTabs %}
+      <li class="ama__agenda-date"><a href="#{{ agendaTab.tabId }}">{{ agendaTab.tabTitle }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="ama__tabs-navigation--mobile">
+    <select class="ama__select-menu__select">
+      {% for agendaTab in agenda.agendaTabs %}
+        <option value="{{ agendaTab.tabId }}">{{ agendaTab.tabTitle }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% for agendaTab in agenda.agendaTabs %}
+    {%  set table = agendaTab.table %}
+    <div id="{{ agendaTab.tabId }}" class="ama__tabs--content">
+      {% include '@molecules/agenda-table.twig' %}
+    </div>
+  {% endfor %}
+</div>
+
+
