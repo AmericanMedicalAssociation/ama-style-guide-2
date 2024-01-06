@@ -11,7 +11,7 @@
 
   .ama__layout--two-col-right--75-25__right {
     margin: 0;
-    padding: 0 $gutter / 4;
+    padding: 0 calc($gutter / 4);
 
     .ama__tools {
       @include gutter($margin-top-full...);
@@ -41,7 +41,7 @@
 
   &__row {
     padding: $gutter 0;
-    border-top: solid 2px $gray-50;
+    border-top: solid 1px $border-gray;
     max-width: 100%;
 
     .container {
@@ -87,7 +87,7 @@
   }
 
   .ama__masthead {
-    margin-bottom: $gutter / 4;
+    margin-bottom: calc($gutter / 4);
     padding: 0;
   }
 
@@ -104,7 +104,7 @@
   }
 
   .ama__layout--split__right .ama__article-stub--category {
-    padding: 0 ($gutter / 2);
+    padding: 0 (calc($gutter / 2));
   }
 
   &__article-stub-three-up {
@@ -115,34 +115,18 @@
     }
     @include breakpoint($bp-small) {
       .grid-container {
-        @include gutter($margin-top-full...);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        -ms-grid-columns: 1fr $gutter 1fr $gutter 1fr;
-        grid-gap: $gutter;
-        grid-template-rows: auto auto;
-        .ama__article-stub {
-          &:nth-child(1) {
-            -ms-grid-column: 1;
-          }
-          &:nth-child(2) {
-            -ms-grid-column: 3;
-          }
-          &:nth-child(3) {
-            -ms-grid-column: 5;
-          }
-          h3 {
-            padding: 0;
-          }
-          .ama__image {
-            margin-bottom: 0;
-          }
+        padding-top: $gutter;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    
+        @include breakpoint($bp-med min-width) {
+          @include gutter($margin-top-full...);
+          @include gutter($margin-bottom-full...);
+          padding-top: 0;
         }
-      }
-    }
-    @include breakpoint($bp-med) {
-      .grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
       }
     }
   }
@@ -153,27 +137,6 @@
         margin-bottom: $gutter;
       }
     }
-
-    @include breakpoint($bp-small) {
-      .grid-container {
-        @include gutter($margin-top-full...);
-        display: flex;
-        flex-wrap: wrap;
-        .ama__article-stub {
-          flex-basis: 32%;
-          &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
-            flex-basis: 24%;
-          }
-          h3 {
-            padding: 0;
-          }
-          .ama__image {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-
   }
 
   .ama__article-stub--category .ama__h5 {
@@ -211,7 +174,7 @@
 
   .ama__subcategory-featured-content .grid-container {
     @include breakpoint($bp-small) {
-      padding: $gutter / 2;
+      padding: calc($gutter / 2);
     }
   }
   .ama__layout--two-col-right--75-25 {

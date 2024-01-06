@@ -1,4 +1,4 @@
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   Drupal.behaviors.index = {
     attach: function (context, settings) {
 
@@ -11,8 +11,8 @@
     var truncated = $('.truncated').html()
     var fullHeight = ''
     var truncHeight = ''
-    var moreHtml = '<a href="#" class="more"> ...Read More</a>'
-    var lessHtml = '<a href="#" class="less">Show Less</a>'
+    var moreHtml = '<a accesskey="l" href="#" alt="Read More" class="more" tabindex="0"> ...Read More</a>'
+    var lessHtml = '<a accesskey="l" href="#" alt="Show Less" class="less" tabindex="0">Show Less</a>'
     var width = ''
 
       function getDimensions () {
@@ -54,7 +54,7 @@
        */
 
       // Set height on pageload using the hidden divs.
-      $('.desc-display', context).once('getHeight').each(function () {
+      $(once('getHeight', '.desc-display', context)).each(function () {
         getDimensions()
         desc.css('height', truncHeight + 'px')
       });
@@ -90,4 +90,4 @@
 
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

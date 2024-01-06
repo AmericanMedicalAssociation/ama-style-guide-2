@@ -6,7 +6,7 @@
   }
 
   .logo img {
-    padding-bottom: $gutter / 2;
+    padding-bottom: calc($gutter / 2);
   }
 
   a {
@@ -70,7 +70,7 @@
   min-width: 265px;
   max-width: 100%;
   display: inline-block;
-  margin-bottom: $gutter / 2;
+  margin-bottom: calc($gutter / 2);
 }
 
 .ama__jama__title {
@@ -78,11 +78,11 @@
   text-transform: uppercase;
   font-weight: bold;
   display: flex;
-  margin-bottom: $gutter / 4;
+  margin-bottom: calc($gutter / 4);
 
   .ama__icon {
     max-height: 30px;
-    margin-right: $gutter / 4;
+    margin-right: calc($gutter / 4);
     max-width: 30px;
     width: 30px;
     height: 30px;
@@ -110,7 +110,7 @@
     a {
       @extend .ama__link--hover-red;
       display: block;
-      padding: ($gutter / 4) 0;
+      padding: (calc($gutter / 4)) 0;
       text-decoration: none;
 
       &:hover {
@@ -138,7 +138,7 @@
 
 *[class*="__page-content"] .ama__jama {
   .ama__jama__links li a {
-    margin-top: $gutter / 4;
+    margin-top: calc($gutter / 4);
   }
 }
 

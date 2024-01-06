@@ -1,6 +1,7 @@
 .ama__article-stub {
   a {
     text-decoration: none;
+    line-height: 1;
 
     &:hover {
       text-decoration: underline;
@@ -10,12 +11,13 @@
   &__title {
     padding: 0;
     width: 100%;
+    font-size: 20px;
+    line-height: 26px;
   }
 
   &__copy {
     flex-grow: 1;
     @include breakpoint($bp-small min-width) {
-      @include gutter($padding-left-full...);
       @include gutter($padding-right-full...);
     }
 
@@ -43,8 +45,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: start;
-    align-content: start;
+    align-items: flex-start;
+    align-content: flex-start;
 
     &:last-child {
       @include ama-rules(1px, 'bottom', solid, $gray-50);
@@ -73,13 +75,19 @@
       width: 75%;
     }
   }
-  .related-series-tag a {
-    font-size: 14px;
-    display:block;
-    color: $purple;
-    margin:-7px 0;
-    line-height: 16px;
-    font-weight: $font-weight-bold;
+  .related-series-tag {
+    display: block;
+    margin-top: 7px;
+    a {
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      display: block;
+      color: $purple;
+      line-height: 16px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   &--small {
     display: flex;
@@ -207,6 +215,43 @@
       span,
       .read_time h3 {
         font-size: 12px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tags {
+    color: $purple;
+    font-size: 14px;
+    text-transform: uppercase;
+    .tag {
+      display: inline-block;
+      min-width: 60px;
+      position: relative;
+      text-align: center;
+      &:first-child {
+        &:before {
+          content: "/";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: $purple;
+        }
+      }
+      &:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $purple;
+      }
+      &.podcast-tag {
+        min-width: 68px;
+      }
+      & +.podcast-tag {
+        &:after {
+          right: -8px;
+        }
       }
     }
   }
@@ -230,7 +275,7 @@
 
   .ama__h5--purple {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 
   .ama__article-stub__title {
@@ -244,25 +289,187 @@
       font-size: 22px;
     }
   }
-
-  .ama__four-up-teaser {
-    margin: initial;
-  }
 }
 
 .ama__column-teaser {
   @include breakpoint($bp-small max-width) {
-        @include gutter($padding-left-half...);
-        @include gutter($padding-right-half...);
-      }
+    @include gutter($padding-left-half...);
+    @include gutter($padding-right-half...);
+  }
 }
 
 .ama__category__article-stub-three-up {
   .ama__article-stub {
-    padding: $gutter ($gutter / 2);
+    margin-left: 0;
+    margin-top: calc($gutter * .75);
+    padding-top: $gutter;
+    width: 100%;
+    max-width: unset;
+    border-top: 0.5px  $border-gray solid;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    @include breakpoint($bp-small max-width) {
+      &:last-of-type {
+        margin-bottom: $gutter;
+      }
+    }
 
     @include  breakpoint($bp-small) {
-      padding: 0;
+      margin-bottom: 0;
+      flex: 1 1 auto;
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+      @include gutter($margin-left-full...);
+      width: 100%;
+      &:first-of-type {
+        // The 2.1 is bases off a 29.5px margin in a 1400px wide container.
+        // Someone forgot that global max container size is actually 1140px...
+        padding-right: 2.1%;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        margin-left: 0;
+        padding-left: 2.1%;
+        position: relative;
+        border-left: 0.5px solid #a1a1a4;
+        > div {
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+          &::before {
+            display: none;
+          }
+        }
+      }
+      &:last-of-type {
+        margin-left: 2.1%;
+      }
+    }
+  }
+}
+
+
+
+.ama__article-stub--category {
+  .tags-wrapper {
+    padding-top: calc($gutter * .75);
+    .series-cat-tags {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      padding-top: 3px;
+      .series-name {
+        display: block;
+        margin-top: 0;
+        font-size: 14px;
+        padding: 0;
+        font-weight: $font-weight-bold;
+        display: block;
+        color: $purple;
+        line-height: 1;
+        margin-right: calc($gutter * .5);
+      }
+      .category-tag {
+        margin-bottom: 0;
+        margin-right: calc($gutter * .5);
+        line-height: 1;
+        font-size: 14px;
+      }
+    }
+    .tags {
+      color: $purple;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding-bottom: calc($gutter * .25);
+
+      .tag {
+        display: inline-block;
+        min-width: 60px;
+        position: relative;
+        text-align: center;
+
+        &:first-child {
+          &:before {
+            content: "/";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $purple;
+          }
+        }
+
+        &:after {
+          content: "/";
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: $purple;
+        }
+
+        &.podcast-tag {
+          min-width: 68px;
+        }
+
+        & + .podcast-tag {
+          &:after {
+            right: -8px;
+          }
+        }
+        &.series-tag {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+//  Style the layout container of the article stub list on article and press release pages
+.article-stub-list {
+  border-top: 2px solid $purple;
+  border-bottom: 1px solid $border-gray;
+  padding-top: calc($gutter * .5);
+  padding-bottom: $gutter;
+  h4 {
+    display: block;
+    padding: 0 0 0 0;
+    @include breakpoint($bp-med) {
+      padding: 0 0 $gutter 0;
+    }
+  }
+  .ama__category-page-article-stub {
+    .grid-container {
+      margin-top: 0;
+      margin-bottom: 0;
+      &[data-count="3"] {
+        width: 100%;
+        @include breakpoint($bp-med) {
+          width: 75%;
+        }
+        .ama__article-stub.ama__article-stub--category:last-child {
+          padding-right: 0;
+          border-right: none;
+          @include breakpoint($bp-med) {
+            width: 27.3%;
+            padding-right: 2.1%;
+            border-right: none;
+          }
+        }
+      }
     }
   }
 }

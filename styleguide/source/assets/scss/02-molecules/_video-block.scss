@@ -9,8 +9,8 @@
   margin-bottom: 21px;
   @include breakpoint($bp-small) {
     flex-direction: row;
-    margin: $gutter/3 0;
-    padding: $gutter/2 7%;
+    margin: calc($gutter/3) 0;
+    padding: calc($gutter/2) 7%;
     margin-bottom: 28px;
   }
   @include breakpoint($bp-large) {
@@ -27,7 +27,7 @@
       }
     }
     .description {
-      padding-top: $gutter/2;
+      padding-top: calc($gutter/2);
       align-self: flex-start;
       @include breakpoint($bp-small) {
         padding-left: 4%;
@@ -65,8 +65,8 @@
     text-decoration: none;
     font-weight: $font-weight-bold;
     padding-right: 0;
-    padding-bottom: $gutter/4;
-    padding-top: $gutter/2;
+    padding-bottom: calc($gutter/4);
+    padding-top: calc($gutter/2);
     &:hover {
       text-decoration: underline;
     }

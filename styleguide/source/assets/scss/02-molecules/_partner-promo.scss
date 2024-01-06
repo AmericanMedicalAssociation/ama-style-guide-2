@@ -3,7 +3,7 @@
   background: $blue;
 
   &__text {
-    padding: $gutter / 2;
+    padding: calc($gutter / 2);
     @extend .display-list;
   }
 
@@ -55,4 +55,197 @@
       padding: 10px 5.5% 10px 10px;
     }
   }
+  // Only show partner promo media on category pages
+  .ama__partner-promo--media {
+    display: none;
+  }
 }
+
+// Taxonomy page membership block styling
+.ama__category .layout__region--content > .ama__partner-promo,
+.ama__category .layout__region--content .layout--onecol .ama__partner-promo,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo,
+.index-page .index-promo .ama__partner-promo,
+.index-page .no-results .ama__partner-promo,
+.index-page > div > .ama__partner-promo {
+  background: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 28px;
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
+  @include breakpoint($bp-med) {
+    padding-bottom: 56px;
+  }
+  .ama__partner-promo__text {
+    display: block;
+    margin-right: 0;
+    padding: 0;
+    flex: 1;
+    @include breakpoint($bp-small) {
+      margin-right: calc($gutter * .75);
+      flex: .34;
+    }
+    h2.ama__h2 {
+      color: $blue;
+    }
+    p,
+    ul {
+      color: $black;
+    }
+
+    .ama__button {
+      font-weight: $font-weight-bold;
+      margin: 21px 0 0;
+      @include breakpoint($bp-med) {
+        margin: 28px 0 0;
+        max-width: 224px;
+      }
+      a.ama__button {
+        color: $text-navy;
+        padding: 8px 14px 7px;
+      }
+    }
+  }
+  .ama__partner-promo--media {
+    display: block;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    @include breakpoint($bp-small) {
+      margin-left: 17px;
+      flex: .66;
+    }
+    @include breakpoint($bp-med) {
+      margin-left: auto;
+    }
+  }
+}
+
+// Index Entry slot styling
+.index-page .index-promo .ama__partner-promo,
+.index-page .no-results .ama__partner-promo {
+  padding-top: $gutter;
+  @include breakpoint($bp-med) {
+    padding-top: $gutter * 2;
+  }
+}
+
+.index-page .index-promo .ama__partner-promo,
+.index-page .no-results .ama__partner-promo:not(:last-child) {
+  border-bottom: solid 2px $gray-20;
+}
+
+// Index Hero slot styling
+.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo {
+  margin-top: calc($gutter / 2);
+  padding-top: 14px;
+  flex-direction: column-reverse;
+  @include breakpoint($bp-med) {
+    padding: 0;
+    margin-top: $gutter;
+    flex-direction: row-reverse;
+    .ama__partner-promo__text {
+      h2.ama__h2 {
+        color: $purple;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  .ama__partner-promo--media {
+    margin: 0;
+    padding-left: 0;
+    margin-right: auto;
+    @include breakpoint($bp-med) {
+      margin-bottom: 0;
+      padding-right: 22px;
+    }
+  }
+  .ama__partner-promo__text {
+    margin-right: 0;
+    h2.ama__h2 {
+      color: $blue;
+    }
+  }
+  .ama__button {	
+    background: $purple;	
+    color: $white;	
+    &:hover{	
+      background: $hoverPurple;	
+    }	    
+  }
+}
+
+
+// Category specific layout builder styling
+.ama__category .layout__region--content > .ama__partner-promo,
+.layout-builder__layout.layout--onecol .layout__region .ama__partner-promo,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo {
+  background: none;
+  display: flex;
+  flex-direction: column-reverse;
+  column-gap: 120px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    column-gap: 17px;
+  }
+  @include breakpoint($bp-med) {
+    column-gap: 120px;
+    padding-bottom: 56px;
+  }
+  .ama__partner-promo__text {
+    display: block;
+    padding: 0;
+    flex: 1;
+    @include breakpoint($bp-small) {
+      flex: .34;
+    }
+    h2.ama__h2 {
+      color: $blue;
+    }
+    p {
+      color: $black;
+    }
+    .ama__button {
+      font-weight: $font-weight-bold;
+      margin: 21px 0 0;
+      @include breakpoint($bp-small) {
+        margin: 28px 0 0;
+        max-width: 224px;
+      }
+      a.ama__button {
+        color: $text-navy;
+        padding: 8px 14px 7px;
+      }
+    }
+  }
+  .ama__partner-promo--media {
+    display: block;
+    width: 100%;
+    flex: 1;
+    @include breakpoint($bp-small) {
+      flex: .66;
+    }
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// Embedded partner promo in articles.
+.partner-promo-inline {
+  border: solid black;
+  border-width: 1px 0;
+  @include gutter($margin-bottom-full...);
+  @include gutter($padding-bottom-full...);
+  @include gutter($margin-top-full...);
+  @include gutter($padding-top-full...);
+
+  .ama__h2 {
+    color: $purple;
+  }
+}    

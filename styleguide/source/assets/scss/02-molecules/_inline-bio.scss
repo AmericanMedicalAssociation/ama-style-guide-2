@@ -1,65 +1,40 @@
+.bio-entry {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  margin-right: 8px;
+  .by {
+    margin-right: 5px;
+  }
+  .and {
+    margin-right: 8px;
+  }
+  .ama__link--icon {
+  margin-left: 4px;
+    &:focus-visible {
+      outline: 2px solid $tab-focus-blue;
+      outline-offset: -4px;
+    }
+  }
+}
+span.ama__inline-bio__link {
+  &:focus-visible {
+    outline: 2px solid $tab-focus-blue;
+    outline-offset: 2px;
+  }
+}
 .ama__inline-bio {
-  @include gutter($padding-top-half...);
-  @include breakpoint($bp-small) {
-    @include gutter($padding-bottom-half...);
-  }
-  &__image {
-    display: none;
-    margin-bottom:35px;
-
-    @include breakpoint($bp-small) {
-      vertical-align: top;
-      display: inline-block;
-      width: 80px;
-      height: 80px;
-      margin-right: 22px;
-      border-radius: 50%;
-    }
-  }
-
-  &__text {
-    @include type($myriad-pro, $font-weight-regular);
-    font-size: 20px;
-    color: $black;
-    display: block;
-    margin-top: -4px;
-
-    .ama__h3 {
-      @include type($myriad-pro, $font-weight-regular);
-      font-size: 20px;
-      line-height: 27px;
-    }
-    .ama__h1.ama__h3 a {
-      text-decoration: none;
-      font-size: 22px;
-      line-height: 26px;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    @include breakpoint($bp-med) {
-      @include gutter($padding-left-full...);
-      @include gutter($padding-right-full...);
-    }
-    @include breakpoint($bp-small) {
-      padding-left: 0;
-      padding-right: 0;
-      display: inline-block;
-    }
-
-    & > * {
-      margin-bottom: 0;
-    }
-
-    & > :first-child {
-      color: $black;
-    }
-  }
+  display: flex;
+  flex-direction: row;
 
   &__link {
-    display: block;
-    font-weight: $font-weight-semibold;
-
+    a {
+      font-size: 14px;
+      display: block;
+      font-weight: $font-weight-semibold;
+      text-decoration: none;
+      color: $blue;
+    }
     &--full {
       font-size: 1.5em;
       margin-top: -20px;
@@ -67,14 +42,21 @@
       margin-bottom: $gutter;
       font-weight: $font-weight-regular;
     }
-
     &.ama__link--icon {
+      margin-bottom: 14px;
+      display: block;
+      line-height: 1;
+      &:hover {
+        svg {
+          fill: $purple;
+        }
+      }
       svg {
-        fill: $blue;
-        width: 35px;
-        height: 35px;
-        max-height: none;
-        max-width: none;
+        fill: $black;
+        width: 18px;
+        height: 18px;
+        max-height: 18px;
+        max-width: 18px;
       }
     }
   }

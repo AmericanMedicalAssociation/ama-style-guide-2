@@ -2,7 +2,7 @@
 el: '.annual-interim'
 title: 'Annual/Interim Meeting Block'
 ---
-A text/containing elment that is part of a home page custom block to promote AMA's Annual, Interim, and Special Meetings.
+A text/containing element that is part of a home page custom block to promote AMA's Annual, Interim, and Special Meetings.
 
 [EWL-9032](https://issues.ama-assn.org/browse/EWL-9032)
 

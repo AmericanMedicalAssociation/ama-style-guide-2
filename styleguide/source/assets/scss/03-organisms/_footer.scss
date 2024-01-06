@@ -79,36 +79,55 @@
     }
   }
 
-  .ama__subscribe-promo--wide .ama__subscribe-promo__form {
-    .form-actions {
-      margin: 0;
+  .ama__subscribe-promo--wide {
+    > p {
+      margin-bottom: 28px;
     }
-    input {
-      height: 50px;
-    }
-
-    form{
-      @include breakpoint(max-width $bp-small){
-        flex-direction: row;
+    .ama__subscribe-promo__form {
+      .form-actions {
+        margin: 0;
       }
-    }
-
-     .ama__button {
-      @extend %ama__button;
-      text-transform: capitalize;
-      color: $black;
-      background: $orange-medium;
-    }
-
-    .ama__form-group {
-      display: flex;
-      width: 100%;
+      .ama__subscribe-promo__email-subscribe-container {
+        margin-bottom: 0;
+        position: relative;
+      }
+      label#footer-mr-email-label {
+        position: absolute;
+        top: -16px;
+        color: $white;
+        @include type($myriad-pro, $font-weight-regular);
+        font-size: 18px;
+        line-height: 27px;
+        text-transform: inherit;
+      }
+      input {
+        height: 50px;
+      }
+  
+      form{
+        @include breakpoint(max-width $bp-small){
+          flex-direction: row;
+        }
+      }
+  
+       .ama__button {
+        @extend %ama__button;
+        text-transform: capitalize;
+        color: $black;
+        background: $orange-medium;
+        line-height: 1;
+      }
+  
+      .ama__form-group {
+        display: flex;
+        width: 100%;
+      }
     }
   }
 
   &__menu-utility {
     margin-top: 0;
-    padding: $gutter / 2 0;
+    padding: calc($gutter / 2) 0;
 
     li {
       display: inline-block;

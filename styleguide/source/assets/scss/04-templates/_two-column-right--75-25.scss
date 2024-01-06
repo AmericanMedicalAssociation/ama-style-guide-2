@@ -11,7 +11,7 @@
 
   &__top {
     @include breakpoint($bp-small max-width) {
-      padding: 0 ($gutter / 2);
+      padding: 0 (calc($gutter / 2));
       margin-bottom: 0;
       grid-row: 1 / 2;
       grid-column: 1 / 1;
@@ -37,7 +37,7 @@
   &__right {
     > div {
       margin-top:0;
-      margin-bottom: ($gutter *2);
+      margin-bottom: (calc($gutter *2));
       &:last-child {
         margin-bottom: 0;
       }
@@ -54,7 +54,7 @@
     @include breakpoint($bp-small max-width) {
       grid-row: 3 / 3;
       grid-column: 1 / 1;
-      padding: 0 ($gutter / 2);
+      padding: 0 (calc($gutter / 2));
     }
 
     grid-column: 2 / 2;

@@ -14,8 +14,8 @@
 
   .links {
     background-color: $pg-xtra-lt-blue;
-    border-left: solid $gutter / 2 $pg-blue;
-    padding: $gutter / 2 $gutter / 4;
+    border-left: solid calc($gutter / 2) $pg-blue;
+    padding: calc($gutter / 2) calc($gutter / 4);
     @include breakpoint($bp-small) {
       padding: $gutter;
       border-left: solid $gutter * .75 $pg-blue;
@@ -29,7 +29,7 @@
     .ama_page_grouping_title {
       font-size: 22px;
       font-weight: 600;
-      margin-bottom: $gutter / 2;
+      margin-bottom: calc($gutter / 2);
     }
 
     .link-list {
@@ -97,7 +97,7 @@
   margin: 0 0 $gutter;
   padding: 0;
   @include breakpoint($bp-small) {
-    margin: 0;
+    margin: 0 0 28px 0;
   }
 
   &.bottom-border {
@@ -111,7 +111,7 @@
     @include breakpoint($bp-small) {
       height: 8px;
       background: $purple;
-      margin: $gutter 0 $gutter / 2;
+      margin: $gutter 0 calc($gutter / 2);
     }
   }
 
@@ -121,10 +121,10 @@
 
   .links {
     background-color: $pg-xtra-lt-blue;
-    padding: $gutter / 2;
+    padding: calc($gutter / 2);
     flex: 100%;
     @include breakpoint($bp-small) {
-      padding: $gutter / 2 $gutter $gutter / 2  $gutter / 2;
+      padding: calc($gutter / 2) $gutter calc($gutter / 2)  calc($gutter / 2);
     }
     @include breakpoint($bp-med) {
       padding: 10px 28px 10px 14px;
@@ -133,7 +133,7 @@
     .ama_page_grouping_title {
       font-size: 22px;
       font-weight: 600;
-      margin-bottom: $gutter /2;
+      margin-bottom: calc($gutter /2);
       @include breakpoint($bp-small) {
         font-size: 20px;
         margin-bottom: 0;
@@ -154,7 +154,7 @@
 
         &.heading {
           font-weight: $font-weight-bold;
-          padding-right: $gutter / 4;
+          padding-right: calc($gutter / 4);
           position: relative;
           &::after {
             content: "|";
@@ -170,7 +170,7 @@
         &.active {
           text-decoration: none;
           position: relative;
-          padding-right: $gutter / 4;
+          padding-right: calc($gutter / 4);
 
           &::after {
             content: "|";

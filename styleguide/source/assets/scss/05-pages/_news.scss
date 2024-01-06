@@ -1,3 +1,146 @@
+.article-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: $gutter;
+  .article-header-row {
+    display: flex;
+    flex-direction: row;
+    &.title-row {
+      [data-region="title"] {
+        flex: 1;
+        .ama__h1 {
+          font-size: 1.9em;
+          margin-bottom: calc($gutter * .5);
+          @include breakpoint($bp-small) {
+            font-size: 2.4em;
+          }
+          @include breakpoint($bp-med) {
+            font-size: 2.67em;
+          }
+          color: $date-olive;
+          &:focus-visible {
+            outline: 2px solid $tab-focus-blue;
+            outline-offset: 5px;
+          }
+        }
+      }
+    }
+    &.subtitle-row {
+      [data-region="subtitle"] {
+        flex: 1;
+        padding-bottom: calc($gutter * .5);
+        p.ama__subtitle {
+          font-size: 14px;
+          font-weight: $font-weight-regular;
+          color: $gray-64;
+          margin-bottom: 0;
+          @include breakpoint($bp-small) {
+            font-size: 16px;
+          }
+          @include breakpoint($bp-med) {
+            font-size:20px;
+          }
+        }
+      }
+    }
+    &.date-row {
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-small) {
+        padding-bottom: calc($gutter * .5);
+      }
+      @include breakpoint($bp-med) {
+        flex-direction: row;
+      }
+      [data-region="date"] {
+        font-size: 14px;
+        padding-right: $gutter;
+        color: $gray-40;
+        @include breakpoint($bp-small) {
+          padding-bottom: calc($gutter * .5);
+        }
+        @include breakpoint($bp-med) {
+          padding-bottom: 0;
+        }
+        .updated {
+          margin-right: calc($gutter * .25);
+        }
+        .date {
+          display: flex;
+          flex-direction: row;
+        }
+        .article-date {
+          margin-right: 3px;
+
+          time {
+            &:focus-visible {
+              outline: 2px solid $tab-focus-blue;
+              outline-offset: 5px;
+            }
+          }
+        }
+        .dot {
+          margin-right: 3px;
+          font-size:24px;
+          position: relative;
+          top: -3px;
+          line-height: 0;
+        }
+        span.read_time {
+          &:focus-visible {
+            outline: 2px solid $tab-focus-blue;
+            outline-offset: 5px;
+          }
+        }
+        + .author {
+          @include breakpoint($bp-small max-width) {
+            padding-top: 14px;
+          }
+        }
+      }
+
+      @include breakpoint($bp-small max-width) {
+        + .share-row:not(.subscribe-row) {
+          padding-top: $gutter;
+        }
+      }
+
+      + .share-row.subscribe-row {
+        padding-top: 0;
+      }
+    }
+    &.author-row .author,
+    &.author-row .author [data-once="quickedit"] {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &.subscribe-row {
+      padding: calc($gutter/2) 0;
+      [data-region="subscribe"] {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: calc($gutter * .5);
+      }
+    }
+    &.share-row {
+      border-bottom: 1px solid $gray-30;
+      @include breakpoint($bp-small) {
+        padding-bottom: $gutter;
+      }
+      [data-region="share"] {
+        margin-left: auto;
+        .share-wrapper {
+          border-bottom: none;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 .ama__news {
   hr {
     margin: 20px 0;
@@ -7,11 +150,23 @@
   }
 }
 
+//temporary subscribe button fix
+.article-header {
+  form {
+    div#edit-actions {
+      margin-top: 0;
+    }
+    input#edit-submit {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .ama__news-article {
   //give the content column of the news article a tob border
   .ama__layout--two-column--right {
     &__sidebar--secondary {
-      @include breakpoint($bp-med min-width) {
+      @include breakpoint($bp-med) {
         padding-top: 0;
       }
     }
@@ -23,25 +178,12 @@
         border-top: none;
         padding-top: 0;
         margin-top: 0;
-        @include breakpoint($bp-small) {
-          border-top: 8px solid $purple;
-          padding-top: $gutter / 2
-        }
       }
 
       &.border-none {
         padding-top: 0;
         border-top: none;
       }
-    }
-  }
-
-  .ama__inline-bio {
-    margin-bottom: $gutter * .75;
-    padding-bottom: 0;
-    @include breakpoint($bp-small) {
-      margin-bottom: $gutter * 1.25;
-      padding-bottom: 0;
     }
   }
 
@@ -56,6 +198,12 @@
       .media-caption {
         max-width: fit-content;
       }
+
+      &.image {
+        .media-caption {
+          max-width: 220px;
+        }
+      }
     }
 
     + .ama-toc-link {
@@ -67,55 +215,186 @@
     }
   }
 
-  //Event section Styles
-  .event-row {
-    margin-bottom: 27px;
-    margin-top: 15px;
+  //Event Header Styles
+  .event-header {
+    margin-bottom: 24px;
+    padding-bottom: $gutter;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: $gray-64;
+    border-bottom: solid .5px $gray-64;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+    .article-event-image {
+      flex: 1;
+      @include breakpoint($bp-small) {
+        flex: .5;
+      }
+      @include breakpoint($bp-med) {
+        flex: .66;
+      }
+    }
+    .article-event-details {
+      padding-left: 0;
+      order: 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-self: auto;
+      @include breakpoint($bp-small) {
+        padding-left: calc($gutter * 4.25);
+        flex: .5;
+      }
+      @include breakpoint($bp-med) {
+        flex: .34;
+      }
+    }
     .article-event-type {
-      margin-bottom: 4px;
-      padding-bottom: 0;
+      margin-bottom: calc($gutter * .25);
+      margin-top: 24px;
       font-size: 26px;
+      line-height: 1;
+      font-weight: $font-weight-bold;
+      @include breakpoint($bp-small) {
+        margin-top: 0;
+      }
+      @include breakpoint($bp-med) {
+        font-size: 31px;
+      }
     }
     .article-event-title {
+      margin-bottom: $gutter;
       font-size: 24px;
+      line-height: 27px;
       font-weight: $font-weight-regular;
+      color: $blue;
     }
     .article-event-date {
+      margin-top: 9px;
+      margin-bottom: 19px;
       font-size: 24px;
-      margin-top: -4px;
+      line-height: 1;
       font-weight: $font-weight-bold;
       text-transform: uppercase;
     }
     .article-event-location {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: $font-weight-bold;
-      margin-bottom: 15px;
       margin-top: -4px;
     }
-    .article-event-link {
-      background-color: $purple;
-      color: $white;
-      text-decoration: none;
-      padding: 5px 20px;
-      width: 50%;
-      text-align: center;
-      display: inline-block;
-      text-transform: capitalize;
+    .article-event-cta {
+      margin-top: 25px;
+      @include breakpoint($bp-med) {
+        margin-top: 33px;
+      }
+      .article-event-link  {
+        background-color: $purple;
+        color: $white;
+        text-decoration: none;
+        padding: 5px calc($gutter * .75);
+        text-align: center;
+        display: inline-block;
+        text-transform: capitalize;
+        min-width: 100%;
+        flex: 1;
+        &:hover {
+          //background-color: $hoverPurple;
+        }
+        @include breakpoint($bp-small) {
+          min-width: 280px;
+        }
+      }
     }
     .article-event-address {
-      margin-top: -5px;
-      margin-bottom: 15px;
+      margin-bottom: $gutter;
       p,
       span{
-        font-size: 24px;
+        font-size: 14px;
       }
       p {
         margin-bottom: 0;
-        line-height: 27px;
+        line-height: 21px;
+      }
+    }
+    .icon {
+      padding-left: 44px;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: " ";
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+        left: 0;
+      }
+      &.add-event {
+        background-color: $white;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+        &:before {
+          height: 30px;
+          width: 30px;
+          top: -3px;
+          background-image: url("../icons/svg/event-header-icons/AddtoCalendarIcon.svg");
+        }
+        &:hover::before {
+          //background-image: url("../icons/svg/event-header-icons/AddtoCalendarIconHover.svg");
+        }
+        &:hover {
+          //text-decoration: underline;
+          //cursor: pointer;
+        }
+      }
+      &.locate-event {
+        &:before {
+          width: 29px;
+          height: 33px;
+          left: -5px;
+          top: 5px;
+          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
+        }
+        &:hover::before {
+          //background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
+        }
+        &:hover {
+          //text-decoration: underline;
+          //cursor: pointer;
+        }
+      }
+    }
+    &.no-image {
+      .article-event-details {
+        flex: 1;
+        padding-left: 0;
+        @include breakpoint($bp-small) {
+          flex: .8;
+        }
+      }
+      .article-event-info-wrapper {
+        @include breakpoint($bp-small) {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+
+      .article-event-address  {
+        @include breakpoint($bp-small) {
+          margin-left: $gutter;
+        }
+      }
+      .article-event-type {
+        @include breakpoint($bp-med max-width) {
+          margin-top: 0;
+        }
       }
     }
   }
 }
+
 //Rule to hide mobile toc if add toc field isnt selected
 .no-toc {
   .ama__news {
@@ -138,20 +417,20 @@
 .ama__article-stub-list--inline {
   margin-top: $gutter;
   margin-bottom: $gutter;
-  @include breakpoint($bp-small min-width) {
+  @include breakpoint($bp-small) {
     margin-bottom: 59px;
   }
-  @include breakpoint($bp-med min-width) {
+  @include breakpoint($bp-med) {
     margin-bottom: 17px;
   }
   .ama_article-stub-header {
-    margin-bottom: $gutter / 2;
+    margin-bottom: calc($gutter / 2);
   }
   .ama__h5--purple {
-    font-size: $gutter / 2;
+    font-size: calc($gutter / 2);
     font-weight: normal;
     line-height: normal;
-    margin-top: $gutter / 2;
+    margin-top: calc($gutter / 2);
   }
   .ama__article-stub__title {
     padding: 0;
@@ -178,7 +457,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       flex-wrap: nowrap;
     }
   }
@@ -192,7 +471,7 @@
       margin-left: 0;
     }
 
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       @include gutter($margin-left-full...);
       @include gutter($margin-bottom-half...);
       width: 47%;
@@ -201,7 +480,7 @@
       }
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($margin-left-full...);
       width: 25%;
       &:nth-of-type(3) {

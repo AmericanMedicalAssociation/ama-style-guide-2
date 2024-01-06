@@ -53,7 +53,7 @@
       @include breakpoint($bp-med min-width) {
         width: 200px;
       }
-      margin-bottom: $gutter/2;
+      margin-bottom: calc($gutter/2);
       width: 100%;
       text-align: right;
 
@@ -94,10 +94,10 @@
       @extend %ama__link--blue;
       @extend %ama__h4;
       text-transform: uppercase;
-      padding: $gutter-mobile 0 $gutter-mobile/2;
+      padding: $gutter-mobile 0 calc($gutter-mobile/2);
 
       @include breakpoint($bp-med) {
-        padding: $gutter-mobile/2 0 $gutter-mobile;
+        padding: calc($gutter-mobile/2) 0 $gutter-mobile;
         display: block;
         grid-column: 1 / 5;
         -ms-grid-column-span: 5;
@@ -168,7 +168,7 @@
           width: 50px;
 
           li {
-            margin: 0 0 $gutter/2 0 ;
+            margin: 0 0 calc($gutter/2) 0 ;
           }
         }
       }
@@ -178,12 +178,38 @@
 
 // Masthead styling for 75% 25% two column masthead
 
+.index-page {
+  .ama__75-25__masthead {
+    display: flex;
+    flex-direction: column;
+    .heading-right {
+      display: none;
+    }
+    .heading-left {
+      margin-right: 0;
+    }
+  }
+}
+
 .ama__75-25__masthead {
   display: block;
   @include breakpoint($bp-small) {
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 3fr 1fr;
+  }
+
+  .ama__subtitle {
+    color: $gray-64;
+    font-weight: normal;
+    padding-top: 14px;
+    font-size: 14px;
+    @include breakpoint($bp-small) {
+      font-size: 16px;
+    }
+    @include breakpoint($bp-med) {
+      font-size: 20px;
+    }
   }
 
   .heading-left {
@@ -212,18 +238,18 @@
       @extend %ama__link--blue;
       @extend %ama__h4;
       text-transform: uppercase;
-      padding: $gutter-mobile 0 $gutter-mobile / 2;
+      padding: $gutter-mobile 0 calc($gutter-mobile / 2);
       display: block;
       @include breakpoint($bp-xs) {
         margin-bottom: 20px;
         @include gutter($margin-bottom-half...);
       }
       @include breakpoint($bp-med) {
-        padding: $gutter-mobile*1.4 0 5px;
+        padding: calc($gutter-mobile*1.4) 0 5px;
       }
     }
     .ama__h1 {
-      margin-bottom: $gutter / 2 ;
+      margin-bottom: calc($gutter / 2);
     }
 
     .share-row {
@@ -259,7 +285,7 @@
           .date-block {
             margin-bottom: 0 !important;
             @include breakpoint($bp-small) {
-              margin-bottom: $gutter /2;
+              margin-bottom: calc($gutter /2);
             }
           }
         }
@@ -275,7 +301,7 @@
         margin-bottom: 35px;
         &.print-region.w-bio {
           margin-bottom: 0;
-          padding-top:32px;
+          padding-top: 32px;
         }
         @include breakpoint($bp-med) {
           display: flex;
@@ -334,7 +360,7 @@
 }
 
 // Exceptions for social share icons
-.ama__news-article, .ama__resource-page {
+.ama__resource-page {
   .ama__masthead__content__share {
     display: none;
     @include breakpoint($bp-small) {
@@ -350,9 +376,4 @@
   }
 }
 
-article.ama__people-bio {
-  a.ama__masthead__content__link {
-    padding-bottom: 0;
-  }
-}
 

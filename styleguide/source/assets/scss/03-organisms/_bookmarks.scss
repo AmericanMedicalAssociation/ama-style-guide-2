@@ -22,7 +22,7 @@
     }
   }
   .ama_bookmark_right {
-    padding: $gutter/2 0;
+    padding: calc($gutter/2) 0;
     @include breakpoint($bp-small) {
       padding-bottom: 56px;
       &.ama__search-result__image {
@@ -342,15 +342,14 @@
   }
 }
 
-.index-page {
-  .flag.action-unflag {
-    a {
-      pointer-events: none;
+.flag-topic {
+  @include breakpoint($bp-med) {
+    &.anonymous {
+      a {
+        padding: 9px 0 9px 27px;
+      }
     }
   }
-}
-
-.flag-topic {
   &.action-flag {
     a::before {
       background-image: url('../images/FollowIcon_Locker@1x.svg');
@@ -370,6 +369,11 @@
       background-image: url('../images/FollowingIcon_Locker.svg');
       @include breakpoint($bp-small) {
         left: 25px;
+      }
+    }
+    a:hover {
+      &::before {
+        background-image: url('../images/FollowIcon_Locker@1x.svg');
       }
     }
   }

@@ -28,7 +28,7 @@
     }
 
     @include breakpoint($bp-small max-width) {
-      padding: $gutter / 2;
+      padding: calc($gutter / 2);
     }
 
     padding: $gutter 0;
@@ -37,7 +37,7 @@
 
   .ama__category-index__stubs__load-more {
     text-align: center;
-    padding: $gutter ($gutter / 2);
+    padding: $gutter (calc($gutter / 2));
 
     button {
       width: 100%;
@@ -77,6 +77,20 @@
         margin-right: 0;
       }
       margin-right: 14px;
+    }
+  }
+}
+.index-page {
+  &.ama__subcategory-page-article-stub {
+    padding-right: 0;
+    padding-left: 0;
+    @include breakpoint($bp-small) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 0;
+      padding-left: 0;
     }
   }
 }

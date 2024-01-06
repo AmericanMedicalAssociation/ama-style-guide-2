@@ -113,7 +113,7 @@
       align-items: center;
 
       .ama__button {
-        padding: 2px $gutter/2;
+        padding: 2px calc($gutter/2);
       }
     }
   }
@@ -193,5 +193,70 @@
 
   &.is-sticky .ama__main-navigation {
     z-index: 502 !important;
+  }
+}
+
+.ama__hub {
+  .sticky-wrapper {
+    height: 96px !important;
+    @include breakpoint($bp-med) {
+      height: 117px !important;
+    }
+  }
+  .ama__main-navigation {
+    background: $white;
+    border-bottom: none;
+    height: 96px;
+    min-height: 96px;
+    padding: 0 5px 17px 5px;
+    @include breakpoint($bp-small) {
+      height: 81px;
+      min-height: 81px;
+      padding: 0 5px 7px 5px;
+    }
+    @include breakpoint($bp-med) {
+      height: 117px;
+      min-height: 117px;
+    }
+
+    .container {
+      height: 100%;
+      @include breakpoint($bp-med max-width) {
+        width: 100%;
+      }
+      > div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid $gray-30;
+        padding-bottom: 17px;
+        align-items: flex-start;
+        align-self: flex-end;
+        @include breakpoint($bp-small) {
+          padding-bottom: 8px;
+          align-items: flex-end;
+          padding: 0 0 19px 0;
+        }
+      }
+    }
+
+    a.ama__site-logo {
+      max-width: 125px;
+      margin: 0;
+      .logo {
+        width: 125px;
+        height: auto;
+      }
+    }
+    a.hub-header--link {
+      color: $blue;
+      text-decoration: none;
+      padding-right: 5px;
+      padding-left: 10px;
+      font-size: 18px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

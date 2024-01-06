@@ -24,7 +24,8 @@
     margin-bottom: 0;
   }
 
-  .ama__category-page-article-stub {
+  .ama__category-page-article-stub,
+  .ama__category__article-stub-three-up {
     padding: 0 15px;
     @include breakpoint($bp-small) {
       padding: 0;
@@ -40,7 +41,7 @@
     }
 
     @include breakpoint($bp-small max-width) {
-      padding: $gutter / 2;
+      padding: calc($gutter / 2);
     }
 
     padding: $gutter 0;
@@ -50,7 +51,7 @@
   .ama__subcategory-index__stubs__load-more,
   .ama__category-index__stubs__load-more {
     text-align: center;
-    padding: $gutter ($gutter / 2);
+    padding: $gutter (calc($gutter / 2));
 
     button {
       width: 100%;

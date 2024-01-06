@@ -1,9 +1,14 @@
 .ama__content-grouping-header {
   display: inline-block;
-  background: $purple;
-  color: $white;
-  font-weight: $font-weight-regular;
-  padding: ($gutter / 4) $gutter ($gutter / 4) ($gutter / 2);
+  background: none;
+  color: $black;
+  font-size: 26px;
+  line-height: 31px;
+  font-weight: $font-weight-bold;
+  padding: 0 0 14px 0;
+  @include breakpoint($bp-med max-width) {
+    display: none;
+  }
 }
 
 //Subcat specific header styling, also inline article stub lists on news articles.

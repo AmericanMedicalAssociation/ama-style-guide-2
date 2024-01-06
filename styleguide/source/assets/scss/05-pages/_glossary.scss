@@ -26,7 +26,7 @@
       padding-bottom: 8px;
       border-bottom: 1px solid #b4b4b4;
       margin-bottom: 28px;
-      div#edit-name--2 {
+      div#edit-name {
         overflow:hidden;
         width:85vw;
         overflow-x: scroll;
@@ -143,7 +143,7 @@
         }
       }
 
-      #edit-topic--2 {
+      #edit-topic {
         border: 1px solid $purple;
         padding: 5px 10px;
 
@@ -270,7 +270,7 @@
   h3.suggested-listing-title {
     font-weight: $font-weight-bold;
     padding-top: $gutter;
-    margin-bottom: $gutter/2;
+    margin-bottom: calc($gutter/2);
     text-transform: uppercase;
     border-top: 4px solid $purple;
     @include breakpoint($bp-small max-width) {
@@ -306,6 +306,10 @@
       &:nth-of-type(even) {
         background-color: $hoverGrayBlue;
         color: $black;
+      }
+      &:hover,
+      &:focus {
+        text-decoration: underline;
       }
     }
   }
