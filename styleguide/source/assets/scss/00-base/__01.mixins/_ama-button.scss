@@ -138,6 +138,53 @@
       text-decoration: none;
     }
   }
+  // pill
+  @else if($style == "pill") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+  }
+  @else if($style == "pill-secondary") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+    color: $purple;
+    background-color: $white;
+
+    &:hover {
+      // Remove border.
+      border-color: transparent;
+      background-color: #dbc8e0;
+      color: $purple;
+    }
+  }
+  // pill-claim
+  @else if($style == "pill-claim") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+    color: $purple;
+    background-color: #e4d3e7;
+    border: none;
+
+    &:hover {
+      background-color: $purple;
+      color:$white;
+    }
+  }
+  // icon
+  @else if($style == "icon") {
+    font-weight: normal;
+    border-radius: 25px;
+    padding: 0 $gutter;
+    color: $purple;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #dbc8e0;
+      color: $purple;
+    }
+  }
   @else {
     background-color: $purple;
     border-color: transparent;

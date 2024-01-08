@@ -3,15 +3,21 @@
   <span class="ama__sign-in-dropdown__text">{{ signInDropdown.text }}</span>
   <i class="ama__sign-in-dropdown__caret"></i>
   <div class="ama__sign-in-dropdown__menu">
-    {% for menuGroups in signInDropdown.menuGroups %}
-      <ul class="ama__sign-in-dropdown__menu__group">
-        {% for item in menuGroups.group %}
-          {% set link = item.link %}
-          <li>
-            {% include "@atoms/link/link.twig" %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endfor %}
+    {# Use styleguide json data. #}
+    {% if signInDropdown.account is null %}
+      {% for menuGroups in signInDropdown.menuGroups %}
+        <ul class="ama__sign-in-dropdown__menu__group">
+          {% for item in menuGroups.group %}
+            {% set link = item.link %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    {% else %}
+      {# Use Drupal menu data. #}
+      {{ signInDropdown.account }}
+    {% endif %}
   </div>
 </div>

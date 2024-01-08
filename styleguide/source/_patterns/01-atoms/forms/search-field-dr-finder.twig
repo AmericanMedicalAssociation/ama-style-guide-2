@@ -1,0 +1,42 @@
+{#
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder search field with label.
+#}
+
+<div class="ama-dr-finder-search-field">
+  <div class="ama-dr-finder-search-field__first">
+    <label
+      for="{{ searchFieldDrFinder.fieldFirst.id }}"
+      class="ama-dr-finder-search-field__label"
+    >{{ searchFieldDrFinder.fieldFirst.label }}
+    </label>
+    <input
+      id="{{ searchFieldDrFinder.fieldFirst.id }}"
+      class="ama-dr-finder-search-field__input"
+      name="{{ searchFieldDrFinder.fieldFirst.name }}"
+      type="text"
+      placeholder="{{ searchFieldDrFinder.fieldFirst.placeholder }}"
+      required="{{ searchFieldDrFinder.fieldFirst.required }}"
+      aria-required="{{ searchFieldDrFinder.fieldFirst.required }}"
+    >
+  </div>
+  <div class="ama-dr-finder-search-field__second">
+    <label
+      for="{{ fieldSecond.searchFieldDrFinder.id }}"
+      class="ama-dr-finder-search-field__label"
+    >{{ searchFieldDrFinder.fieldSecond.label }}
+    </label>
+    <input
+      id="{{ searchFieldDrFinder.fieldSecond.id }}"
+      class="ama-dr-finder-search-field__input"
+      name="{{ searchFieldDrFinder.fieldSecond..name }}"
+      type="text"
+      placeholder="{{ searchFieldDrFinder.fieldSecond.placeholder }}"
+      required="{{ searchFieldDrFinder.fieldSecond.required }}"
+      aria-required="{{ searchFieldDrFinder.fieldSecond.required }}"
+    >
+  </div>
+  <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
+    <input type="submit" id="edit-submit-api-search--2" value="Search" class="button js-form-submit form-submit">
+  </div>
+</div>
