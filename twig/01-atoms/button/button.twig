@@ -6,12 +6,19 @@
     href="{{ button.href }}"
     class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}}"
     title="{{ button.info }}">
-      {{ button.text }}
+    {{ button.text }}
+    {% if button.icon %}
+      {% include '@atoms/media/icons/svg/' ~ button.icon ~ '.twig' ignore missing %}
+    {% endif %}
   </a>
 {% else %}
-  <button type="{{ button.type }}"
-          class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ class }}"
-          aria-label="{{ button.info }}">
+  <button
+    type="{{ button.type }}"
+    class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ button.class }}"
+    aria-label="{{ button.info }}">
     {{ button.text }}
+    {% if button.icon %}
+      {% include '@atoms/media/icons/svg/' ~ button.icon ~ '.twig' ignore missing %}
+    {% endif %}
   </button>
 {% endif %}

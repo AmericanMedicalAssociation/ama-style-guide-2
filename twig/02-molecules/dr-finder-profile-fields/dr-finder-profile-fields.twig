@@ -1,0 +1,9 @@
+{#
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder profile fields.
+#}
+<div class="dr-finder-profile-fields">
+   {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : drFinderProfileFields.pronouns} %}
+   {% include '@atoms/forms/text-field.twig' with {'textField' : drFinderProfileFields.practiceURL} %}
+   {% include '@atoms/forms/radio-buttons.twig' with {'radioButtons' : drFinderProfileFields.newPatients} %}
+</div>

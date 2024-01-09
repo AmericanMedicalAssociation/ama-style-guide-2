@@ -1,0 +1,20 @@
+{#
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder interview questions.
+#}
+<div class="dr-finder-interview-questions">
+  <div class="ama__h2">Tell Us About Yourself</div>
+  <p>Click the checkbox once to enable questions visibility, click again to hide the question and save your answer for further <editing class=""></editing></p>
+  <p>** Please select up to five questions</p>
+  {# Member fields, if claimed, verified, and a memeber. #}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.inspiration} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.moveMeds} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.career} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.community} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+  {% include '@atoms/forms/textarea.twig' with {'textArea' : drFinderInterviewQuestions.future} %}
+  {% include '@atoms/forms/checkbox.twig' with {'checkbox' : drFinderInterviewQuestions.visible} %}
+</div>
