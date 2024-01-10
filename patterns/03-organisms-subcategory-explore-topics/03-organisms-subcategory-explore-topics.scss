@@ -1,0 +1,54 @@
+.ama__subcategory-explore-topics {
+  display: inline-block;
+  padding: 21px 0px $gutter;
+
+  @include breakpoint($bp-small) {
+    display: flex;
+  }
+}
+
+.ama__subcategory-explore-topics__heading {
+  display: inline;
+
+  @include breakpoint($bp-small) {
+    display: block;
+    flex-shrink: 0;
+    margin-right: 0.25em;
+  }
+
+  font-weight: $font-weight-semibold;
+}
+
+.ama__subcategory-explore-topics__items {
+  display: inline;
+
+  @include breakpoint($bp-small) {
+    display: block;
+  }
+}
+
+.ama__subcategory-explore-topics__item {
+  display: inline;
+  list-style: none;
+
+  & + .ama__subcategory-explore-topics__item::before {
+    content: " | ";
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.layout--ama-page-section-one-col .ama__subcategory-explore-topics {
+  padding: 21px 15px 28px;;
+  @include breakpoint($bp-small) {
+    padding: 21px 0px 28px;
+  }
+}
+
+

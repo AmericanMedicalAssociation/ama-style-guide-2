@@ -1,0 +1,39 @@
+.ama__four-up-teaser {
+  display: flex;
+  flex-direction: column;
+  @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
+
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+  @include breakpoint($bp-med) {
+    flex-wrap: nowrap;
+  }
+
+  .ama__article-stub {
+    @include gutter($margin-bottom-full...);
+    @include breakpoint($bp-small) {
+      margin-bottom: 0;
+    }
+    flex-grow: 1;
+    flex-basis: 0;
+
+    &__copy > h2 {
+      @extend %ama__type--small;
+    }
+
+    @include breakpoint($bp-small) {
+      @include gutter($padding-left-half...);
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
