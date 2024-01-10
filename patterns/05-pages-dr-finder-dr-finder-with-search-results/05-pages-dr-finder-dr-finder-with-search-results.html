@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1704846190" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1704846190" media="all" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="../../assets/favicons/manifest.json" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#46166b" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+  <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1704846190" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1704846190" media="all" />
+  <!-- End Pattern Lab -->
+
+</head>
+<body class="">
+<div class="layout-container">
+      <div id="amaCategoryNavigation" class="ama__main-navigation ama__main-navigation--dr-finder">
+  <div class="container">
+    <div id="ama__explore-menu" class="ama__explore-menu">
+  <div class="ama__explore-menu__button main">
+    <h3 class="ama__h3 ama__explore-menu__text">explore</h3>
+    <i class="ama__explore-menu__caret"></i>
+  </div>
+  <div class="ama__explore-menu__button mobile"></div>
+  <div class="ama__explore-menu__menu">
+              <ul>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>AMA Home</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>JAMA Network.</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>FREIDA</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>Education Center</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>AMA Insurance</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>AMA Journal of Ethics</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>CPT</span>
+  </a>
+</li>
+                  <li><a
+  href="#"
+  title="Link to something"
+  target="_blank"
+  class="ama__link ama__link--white">
+    <span>Store</span>
+  </a>
+</li>
+              </ul>
+      </div>
+</div>
+    
+<a href="#" class="ama__site-logo">
+  <img src="../../assets/images/brand/logo-reversed.svg" class="logo" alt="American Medical Association" />
+</a>
+
+
+    <div id="ama__sign-in-dropdown" class="ama__sign-in-dropdown">
+  <i class="icon--usermenu-outline ama__sign-in-dropdown__user-icon"></i>
+  <span class="ama__sign-in-dropdown__text">Sign In</span>
+  <i class="ama__sign-in-dropdown__caret"></i>
+  <div class="ama__sign-in-dropdown__menu">
+                      <ul class="ama__sign-in-dropdown__menu__group">
+                                  <li>
+              <a
+  href="#"
+  title="Sign In"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Sign In</span>
+  </a>
+            </li>
+                                  <li>
+              <a
+  href="#"
+  title="Create free account"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Create free account</span>
+  </a>
+            </li>
+                  </ul>
+            </div>
+</div>
+  </div>
+</div>
+
+  <div class="ama__layout--one-column container ">
+    
+    <section class="ama__layout--one-column__content-top">
+              <section class="ama__placeholder ">
+  Content Top region content
+</section>
+          </section>
+
+    <article class="ama__layout--one-column__page-content" role="article">
+        <div class="ama__dr-finder search container">
+        <h1 class="ama__h1">Find a Doctor</h1>
+    
+    <div class="dr-finder-search">
+  <div class="dr-finder-search__search-field">
+    
+<div class="ama-dr-finder-search-field">
+  <div class="ama-dr-finder-search-field__first">
+    <label
+      for="ama-dr-finder-search-field__input-first"
+      class="ama-dr-finder-search-field__label"
+    >Name
+    </label>
+    <input
+      id="ama-dr-finder-search-field__input-first"
+      class="ama-dr-finder-search-field__input"
+      name="ama-dr-finder-search-field__name-first"
+      type="text"
+      placeholder="Enter Physician Name"
+      required=""
+      aria-required=""
+    >
+  </div>
+  <div class="ama-dr-finder-search-field__second">
+    <label
+      for=""
+      class="ama-dr-finder-search-field__label"
+    >City, city/state combination, or ZIP code
+    </label>
+    <input
+      id="edit-location"
+      class="ama-dr-finder-search-field__input"
+      name="
+Warning: Array to string conversion in /app/styleguides/ama-style-guide-2/styleguide/vendor/twig/twig/src/Environment.php(497) : eval()'d code on line 89
+Array"
+      type="text"
+      placeholder="Chicago"
+      required=""
+      aria-required=""
+    >
+  </div>
+  <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
+    <input type="submit" id="edit-submit-api-search--2" value="Search" class="button js-form-submit form-submit">
+  </div>
+</div>
+  </div>
+  <div class="dr-finder-search__quick-finder">
+      </div>
+</div>
+    <div class="dr-finder-filter-list">
+  <div class="dr-finder-filter-list-mobile-heading">Filter Your Results
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M11.4 10l8.3-8.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L10 8.6 1.7.3C1.3-.1.7-.1.3.3s-.4 1 0 1.4L8.6 10 .3 18.3c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3l8.3-8.3 8.3 8.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L11.4 10z"/></svg>  </div>
+      <fieldset class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+        <span class="fieldset-legend">Specialty
+          <?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1262.000000, -1492.000000)" fill="#FFFFFF" id="Group-9">
+            <g transform="translate(110.000000, 1477.000000)">
+                <g id="Group-4">
+                    <g id="Group-11" transform="translate(1134.000000, 0.000000)">
+                        <polygon id="Triangle" points="32 23.5 18 32 18 15"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>        </span>
+      </legend>
+      <div class="fieldset-wrapper">
+        <div class="form-checkboxes">
+          <div class="js-form-item form-item js-form-type-checkbox form-item-memberstatus-1 js-form-item-memberstatus-1">
+            <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-all" type="radio" id="edit-specialty-all" name="specialty" value="All" checked="checked" class="form-radio">
+                <label for="edit-specialty-all" class="option">- Any -</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-1" type="radio" id="edit-specialty-1" name="specialty" value="1" class="form-radio">
+                <label for="edit-specialty-1" class="option">Allergy and Immunology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-2" type="radio" id="edit-specialty-2" name="specialty" value="2" class="form-radio">
+                <label for="edit-specialty-2" class="option">Anesthesiology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-3" type="radio" id="edit-specialty-3" name="specialty" value="3" class="form-radio">
+                <label for="edit-specialty-3" class="option">Cardiology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-4" type="radio" id="edit-specialty-4" name="specialty" value="4" class="form-radio">
+                <label for="edit-specialty-4" class="option">Dermatology</label>
+              </div>
+          </div>
+          <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
+        </div>
+      </div>
+    </fieldset>
+      <fieldset class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+        <span class="fieldset-legend">Member Status
+          <?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1262.000000, -1492.000000)" fill="#FFFFFF" id="Group-9">
+            <g transform="translate(110.000000, 1477.000000)">
+                <g id="Group-4">
+                    <g id="Group-11" transform="translate(1134.000000, 0.000000)">
+                        <polygon id="Triangle" points="32 23.5 18 32 18 15"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>        </span>
+      </legend>
+      <div class="fieldset-wrapper">
+        <div class="form-checkboxes">
+          <div class="js-form-item form-item js-form-type-checkbox form-item-memberstatus-1 js-form-item-memberstatus-1">
+            <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-all" type="radio" id="edit-specialty-all" name="specialty" value="All" checked="checked" class="form-radio">
+                <label for="edit-specialty-all" class="option">- Any -</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-1" type="radio" id="edit-specialty-1" name="specialty" value="1" class="form-radio">
+                <label for="edit-specialty-1" class="option">Allergy and Immunology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-2" type="radio" id="edit-specialty-2" name="specialty" value="2" class="form-radio">
+                <label for="edit-specialty-2" class="option">Anesthesiology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-3" type="radio" id="edit-specialty-3" name="specialty" value="3" class="form-radio">
+                <label for="edit-specialty-3" class="option">Cardiology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-4" type="radio" id="edit-specialty-4" name="specialty" value="4" class="form-radio">
+                <label for="edit-specialty-4" class="option">Dermatology</label>
+              </div>
+          </div>
+          <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
+        </div>
+      </div>
+    </fieldset>
+      <fieldset class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+        <span class="fieldset-legend">Degree type
+          <?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1262.000000, -1492.000000)" fill="#FFFFFF" id="Group-9">
+            <g transform="translate(110.000000, 1477.000000)">
+                <g id="Group-4">
+                    <g id="Group-11" transform="translate(1134.000000, 0.000000)">
+                        <polygon id="Triangle" points="32 23.5 18 32 18 15"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>        </span>
+      </legend>
+      <div class="fieldset-wrapper">
+        <div class="form-checkboxes">
+          <div class="js-form-item form-item js-form-type-checkbox form-item-memberstatus-1 js-form-item-memberstatus-1">
+            <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-all" type="radio" id="edit-specialty-all" name="specialty" value="All" checked="checked" class="form-radio">
+                <label for="edit-specialty-all" class="option">- Any -</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-1" type="radio" id="edit-specialty-1" name="specialty" value="1" class="form-radio">
+                <label for="edit-specialty-1" class="option">Allergy and Immunology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-2" type="radio" id="edit-specialty-2" name="specialty" value="2" class="form-radio">
+                <label for="edit-specialty-2" class="option">Anesthesiology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-3" type="radio" id="edit-specialty-3" name="specialty" value="3" class="form-radio">
+                <label for="edit-specialty-3" class="option">Cardiology</label>
+              </div>
+              <div class="js-form-item form-item js-form-type-radio form-item-specialty js-form-item-specialty">
+                <input data-drupal-selector="edit-specialty-4" type="radio" id="edit-specialty-4" name="specialty" value="4" class="form-radio">
+                <label for="edit-specialty-4" class="option">Dermatology</label>
+              </div>
+          </div>
+          <a href="#" class="dr-finder-filter-list__menu-view-results">View Results</a>
+        </div>
+      </div>
+    </fieldset>
+    <div class="dr-finder-filter-list-mobile__view-results">
+          
+  <button
+    type="button"
+    class="ama__button    ama__button--pill-claim  "
+    aria-label="alt">
+    View Results
+      </button>
+      </div>
+</div>
+    <div class="dr-finder-filter-buttons">
+  <div class="dr-finder-filter-buttons__filters">
+          
+  <a
+    href="/search?test=1&amp;test=2"
+    class="ama__button    ama__button--pill-secondary"
+    title="alt">
+    Chicago
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M11.4 10l8.3-8.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L10 8.6 1.7.3C1.3-.1.7-.1.3.3s-.4 1 0 1.4L8.6 10 .3 18.3c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3l8.3-8.3 8.3 8.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L11.4 10z"/></svg>      </a>
+      </div>
+  <div class="dr-finder-filter-buttons__filters-mobile is-active">
+          
+  <button
+    type="button"
+    class="ama__button    ama__button--pill-claim  "
+    aria-label="alt">
+    All Filters
+      </button>
+      </div>
+  <div class="dr-finder-filter-buttons__clear">
+    <a href="#">Clear Filters</a>
+  </div>
+</div>
+    <div class="dr-finder-search-results-header">
+   <div class="dr-finder-search-results-header__results-text" >
+      Result for "Chicago"
+   </div>
+   <div class="dr-finder-search-results-header__results">
+       Showing 1 - 10 of 500 Results
+   </div>
+</div>
+
+          <a href="" class="dr-finder-search-result-card  ">
+  <div class="dr-finder-search-result-card__image ">
+                  <img src="/assets/images/avatar.png" alt="avatar">
+                </div>
+  <div class="dr-finder-search-result-card__content">
+    <div class="dr-finder-search-result-card__content__name ama__h2">Katherine Ross, MD</div>
+    <div class="dr-finder-search-result-card__content__address">Chicago,IL 60659  4.2 Miles</div>
+    <div class="dr-finder-search-result-card__content__specialty">Cardiology</div>
+      </div>
+</a>
+          <a href="" class="dr-finder-search-result-card verified member">
+  <div class="dr-finder-search-result-card__image with-image">
+          <img src="/assets/images/sample-doc-image.png" alt="Nate Yang Paak, MD">
+              <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<style type="text/css">
+  .st0{clip-path:url(#SVGID_00000076588393057980064120000000948571725801140867_);fill:#46266A;}
+  .st1{fill:#FFFFFF;}
+</style>
+  <g>
+    <defs>
+      <path id="SVGID_1_" d="M540,953.97c-68.93,67.1-124.55,93.88-166.87,80.33c-42.32-13.54-71.34-67.4-87.05-161.59
+			c-95.81,14.38-156.79,3.85-182.95-31.6C76.98,805.66,85.65,745.29,129.14,660C43.05,616.17,0,572.35,0,528.53
+			s43.05-87.65,129.14-131.47c-43.5-85.29-52.17-145.67-26.01-181.12c26.16-35.45,87.14-45.99,182.95-31.6
+			c15.72-94.18,44.73-148.04,87.05-161.59C415.45,9.2,471.07,35.98,540,103.08c68.93-67.1,124.55-93.88,166.87-80.33
+			c42.32,13.54,71.34,67.4,87.05,161.59c95.81-14.38,156.79-3.85,182.95,31.6c26.16,35.45,17.48,95.83-26.01,181.12
+			c86.1,43.82,129.14,87.65,129.14,131.47S1036.95,616.17,950.86,660c43.5,85.29,52.17,145.66,26.01,181.12
+			c-26.16,35.45-87.14,45.99-182.95,31.6c-15.72,94.18-44.73,148.04-87.05,161.59C664.55,1047.85,608.93,1021.07,540,953.97z"/>
+    </defs>
+    <clipPath id="SVGID_00000062184760091327256430000007953687112027365514_">
+      <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+    </clipPath>
+
+    <rect x="-20.77" y="-3.97" style="clip-path:url(#SVGID_00000062184760091327256430000007953687112027365514_);fill:#46266A;" width="1121.54" height="1072.59"/>
+  </g>
+  <path class="st1" d="M494.35,676.69L405.7,547.12c-11.67-17.06-10.84-40.85,4.12-55.11c19.08-18.19,48.97-14.44,63.22,6.39
+	l43.84,64.09c2.15,3.14,6.74,3.25,9.05,0.22l150.48-198.36c12.51-16.49,35.37-23.22,53.65-13.53
+	c23.29,12.35,29.13,41.86,13.88,61.96L542.83,677.88C530.5,694.13,505.87,693.53,494.35,676.69z"/>
+</svg>
+      </div>
+  <div class="dr-finder-search-result-card__content">
+    <div class="dr-finder-search-result-card__content__name ama__h2">Nate Yang Paak, MD</div>
+    <div class="dr-finder-search-result-card__content__address">Chicago,IL 60659  4.2 Miles</div>
+    <div class="dr-finder-search-result-card__content__specialty">Cardiology</div>
+          <div class="dr-finder-badge">
+  Member
+</div>
+      </div>
+</a>
+          <a href="" class="dr-finder-search-result-card  ">
+  <div class="dr-finder-search-result-card__image ">
+                  <img src="/assets/images/avatar.png" alt="avatar">
+                </div>
+  <div class="dr-finder-search-result-card__content">
+    <div class="dr-finder-search-result-card__content__name ama__h2">Katherine Ross, MD</div>
+    <div class="dr-finder-search-result-card__content__address">Chicago,IL 60659  4.2 Miles</div>
+    <div class="dr-finder-search-result-card__content__specialty">Cardiology zz</div>
+      </div>
+</a>
+          <a href="" class="dr-finder-search-result-card  member">
+  <div class="dr-finder-search-result-card__image with-image">
+          <img src="/assets/images/sample-doc-image.png" alt="Nate Yang Paak, MD">
+          </div>
+  <div class="dr-finder-search-result-card__content">
+    <div class="dr-finder-search-result-card__content__name ama__h2">Nate Yang Paak, MD</div>
+    <div class="dr-finder-search-result-card__content__address">Chicago,IL 60659  4.2 Miles</div>
+    <div class="dr-finder-search-result-card__content__specialty">Cardiology</div>
+          <div class="dr-finder-badge">
+  Member
+</div>
+      </div>
+</a>
+        <div class="loading"><img alt="loading" src="/assets/icons/loading.gif" /></div>
+  </div>
+  <div class="dr-finder-search__cta">
+  Organizations seeking credentialing products can learn more at
+  <a
+  href="https://amacredentialingservices.org/?utm_source=DoctorFinder+landing+page%2FSERP&amp;utm_medium=link"
+  title="Request access to AMA Profiles for MDs, DOs and PAs"
+  target="_self"
+  class="">
+    <span>AMA Credentialing Services.</span>
+  </a>
+</div>
+    </article>
+
+  </div>
+
+      <footer class="ama__footer ">
+  <div class="container">
+    
+<a href="#" class="ama__site-logo--footer">
+  <img src="../../assets/images/brand/logo-reversed.svg" class="logo" alt="American Medical Association" />
+</a>
+
+
+    <div class="ama__footer__left">
+      <p class="ama__footer__mission"> The AMA promotes the art and science of medicine and the betterment of public health.</p>
+      <ul class="ama__social-share">
+          <li>
+      <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook-white"></a>
+    </li>
+          <li>
+      <a href="plus.google.com/+americanmedicalassociation" class="social--googleplus-white"></a>
+    </li>
+          <li>
+      <a href="twitter.com/AmerMedicalAssn" class="social--twitter-white"></a>
+    </li>
+          <li>
+      <a href="www.linkedin.com/company/american-medical-association" class="social--linkedin-white"></a>
+    </li>
+          <li>
+      <a href="www.youtube.com/user/AmerMedicalAssn" class="social--youtube-white"></a>
+    </li>
+          <li>
+      <a href="www.instagram.com/user/AmerMedicalAssn" class="social--instagram-white"></a>
+    </li>
+  </ul>
+      <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="ama__footer__connect">
+    <span>Contact Us</span>
+  </a>
+      <p > Download AMA Connect app for <a href='#'>iPhone</a> or <a href='#'>Android</a></p>
+    </div>
+
+    <div class="ama__footer__right">
+              <div class="ama__footer__menu-secondary-user">
+                      <ul>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Careers</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Events</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Press Center</span>
+  </a>
+                </li>
+                          </ul>
+                      <ul>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Alliance</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMPAC</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Foundation</span>
+  </a>
+                </li>
+                          </ul>
+                  </div>
+                    <p > The best in medicine, delivered to your mailbox</p>
+        <div class="ama__subscribe-promo--wide">
+          <div class="ama__subscribe-promo__form">
+                          <div class="ama__subscribe-promo__email-subscribe-container">
+                <div class="ama__form-group">
+  <label>email</label>
+  <input name="email" type="email" placeholder="Email Address" required="" aria-required="true">
+</div>
+                
+  <button
+    type="button"
+    class="ama__button      "
+    aria-label="alt">
+    Subscribe
+      </button>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"><defs><path id="a" d="M0 0h20v20H0z"/><mask id="b" x="0" y="0" width="20" height="20" fill="#fff"><use xlink:href="#a"/></mask></defs><g fill="none" fill-rule="evenodd"><use stroke="#979797" mask="url(#b)" stroke-width="2" fill="#FFF" xlink:href="#a"/><path fill="#46166B" d="M0 25h20v20H0z"/><path fill="#FFF" fill-rule="nonzero" d="M8.5 39.035L4 34.716l1.396-1.435 3.077 2.937L14.579 30 16 31.408z"/></g></svg>
+              <span>I verify I'm a US citizen</span>
+                      </div>
+        </div>
+          </div>
+  </div>
+
+  <div class="container">
+          <div class="ama__footer__menu-products">
+        <ul>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>JAMA Network</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>FRIEDA</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Education Center</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Insurance</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Journal of Ethics</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>CPT</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Store</span>
+  </a>
+            </li>
+                  </ul>
+      </div>
+      </div>
+
+  <div class="ama__footer__bottom">
+    <div class="container">
+              <ul class="ama__footer__menu-utility">
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Terms of Use</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Privacy Policy</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Code of Conduct</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Website Accessibility</span>
+  </a>
+            </li>
+                  </ul>
+            
+    
+<div class="ama__copyright ama__type--smaller">
+  Copyright  1995 - 2024  American Medical Association. All rights reserved.
+</div>
+    </div>
+  </div>
+</footer>
+  </div>
+
+      <!--DO NOT REMOVE-->
+      <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"templates-one-column","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"molecules-alert","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"organisms-dr-finder-main-navigation","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"organisms-dr-finder-search","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"molecules-dr-finder-filter-list","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"molecules-dr-finder-filter-buttons","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"molecules-dr-finder-search-results-header","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"molecules-dr-finder-search-result-card","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"atoms-loading","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"},{"lineagePattern":"molecules-dr-finder-credentials-general","lineagePath":"..\/..\/patterns\/05-pages-dr-finder-dr-finder-with-search-results\/05-pages-dr-finder-dr-finder-with-search-results.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"pages","patternSubtype":"dr finder"},"patternDesc":"","patternExtension":"twig","patternName":"dr finder with search results","patternPartial":"pages-dr-finder-with-search-results","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1704846190">
+  (function() {
+    if (self != top) {
+      var cb = '1704846190';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1704846190">
+  (function() {
+    if (self != top) {
+      var cb = '1704846190';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-multiselect-widget/3.0.0/jquery.multiselect.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+      <script src="../../assets/js/app.js"></script>
+    </div>
+  </body>
+
+</html>

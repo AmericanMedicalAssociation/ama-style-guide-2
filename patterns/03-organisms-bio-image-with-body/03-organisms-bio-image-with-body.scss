@@ -1,0 +1,91 @@
+.ama__bio-image-with-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 0;
+
+  &__image {
+    min-width: 0;
+    max-width: 100%;
+    align-self: center;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__copy {
+    flex-grow: 1;
+    flex-basis: 0;
+    @include breakpoint($bp-med max-width) {
+      margin-top: 14px;
+    }
+  }
+
+  @include breakpoint($bp-xs) {
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      margin: 0;
+    }
+
+    dt, dd {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @include breakpoint($bp-small) {
+    padding-bottom: $gutter;
+    flex-direction: row;
+    justify-content: left;
+    text-align: left;
+    flex-wrap: nowrap;
+
+    dt, dd {
+      width: auto;
+    }
+
+    &__image {
+      width: auto;
+      min-width: 0;
+      margin: 0 15px 0 0;
+      align-self: flex-start;
+      @include breakpoint($bp-small) {
+        margin: 0 $gutter 0 0;
+      }
+    }
+  }
+
+  @include breakpoint($bp-med max-width) {
+    dt, dd {
+      display: inline;
+      width: 100%;
+    }
+
+    dd a {
+      text-decoration: none;
+    }
+
+    dt {
+      font-weight: normal;
+      margin-right: 0;
+    }
+  }
+  .ama__h1 {
+    &.pronouns {
+      margin-bottom: 0;
+    }
+  }
+  .pronouns-wrapper {
+    margin-bottom: $gutter * .75;
+    margin-top: $gutter * .25;
+    font-size: 20px;
+    @include breakpoint($bp-med) {
+      font-size: 18px;
+    }
+  }
+}

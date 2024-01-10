@@ -1,0 +1,14 @@
+section.ama__page--event__speakers {
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: calc($gutter / 2);
+  grid-column-gap: calc($gutter / 2);
+
+  @include breakpoint($bp-xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint($bp-small) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

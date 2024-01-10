@@ -1,0 +1,185 @@
+.ama__resource-page {
+  @include breakpoint($bp-large) {
+    overflow: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    height: 100%;
+  }
+
+  .ama__layout--split__left {
+    display: none;
+
+    @include breakpoint($bp-small) {
+      display: block;
+    }
+  }
+
+  &__resource-link {
+    background: $bodyTextHoverPurple;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__page-content {
+    ol {
+      list-style-position: inside;
+
+      ol {
+        padding-left: 1em;
+      }
+    }
+  }
+
+  .ama__layout--split__left {
+    @include breakpoint($bp-large) {
+      overflow: auto;
+      clip: auto;
+      height: 100vh;
+      width: auto;
+      margin: 0;
+      border: none;
+      position: relative;
+
+      & .container {
+        width: auto;
+      }
+    }
+  }
+
+  .ama__layout--split__right {
+    @include breakpoint($bp-large) {
+      border-left: solid 1px $gray-64;
+      position: relative;
+    }
+  }
+
+
+  //Split Screen resource page Footer override
+  &__mobile-footer {
+    @include breakpoint($bp-large) {
+      display: none;
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    .ama__footer {
+      display: none;
+    }
+  }
+
+  &__desktop-footer.ama__footer {
+    display: none;
+
+    @include breakpoint($bp-large) {
+      display: block;
+    }
+
+    .ama__social-share {
+      a {
+        height: 50px;
+        width: 50px;
+        background-size: 50px;
+      }
+    }
+
+    .ama__site-logo--footer img {
+      margin: auto;
+      display: block;
+    }
+
+    .ama__footer__menu-secondary-user {
+      @include font-size($footer-font-sizes);
+      display: block;
+      padding-bottom: $gutter-mobile;
+      margin-bottom: $gutter-mobile;
+      border-bottom: 1px solid $gray-50;
+
+      ul {
+        list-style-type: none;
+
+        li {
+          list-style: none;
+          margin: 0;
+        }
+      }
+    }
+
+    .ama__footer > .container {
+      display: inherit;
+      flex-wrap: inherit;
+    }
+
+    .ama__footer__left {
+      order: inherit;
+      flex-grow: inherit;
+      flex-shrink: inherit;
+      flex-basis: 100%;
+    }
+
+    .ama__footer__right {
+      order: inherit;
+      flex-grow: inherit;
+      flex-shrink: inherit;
+      flex-basis: 100%;
+
+      .ama__subscribe-promo--wide .ama__subscribe-promo__form {
+        input {
+          @include gutter($margin-bottom-full...);
+          height: 49px;
+          background-color: $white;
+        }
+
+        .form-item--error-message,
+        label.error {
+          position: inherit;
+          bottom: inherit;
+        }
+
+        .ama__button {
+          margin: 0 auto;
+          display: inline-block;
+          background: $purple;
+        }
+
+        div[role=alert] {
+          display: inherit;
+        }
+      }
+    }
+
+    .ama__footer__menu-products {
+      order: inherit;
+      flex: inherit;
+    }
+
+    .ama__footer__menu-utility {
+      margin-top: 0;
+      padding: 14px 0;
+      text-align: center;
+
+      li {
+        display: inline-block;
+      }
+    }
+
+
+    .ama__footer__bottom {
+      @include gutter($padding-bottom-full...);
+      @include font-size($footer-font-sizes--menu);
+      text-align: center;
+      background: $purple;
+      border-top: 1px solid $gray-50;
+      color: $white;
+
+      & > .container {
+        display: block;
+      }
+    }
+
+    .ama__footer__mission {
+      max-width: 100%;
+    }
+  }
+}
