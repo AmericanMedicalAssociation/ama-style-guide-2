@@ -9,7 +9,7 @@
   z-index: 9999;
   background: $white;
   border: 2px solid $filterList-hover;
-  padding: $gutter $gutter/2;
+  padding: $gutter calc($gutter / 2);
 
   &.is-active {
     display: block;
@@ -42,7 +42,7 @@
 
 .dr-finder-filter-list .fieldgroup {
   background: $white;
-  margin: $gutter-mobile/2 0;
+  margin: calc($gutter-mobile / 2) 0;
 
   @include breakpoint($bp-small) {
     margin: 0;
@@ -53,7 +53,7 @@
   color: $gray-64;
   font-size: 14.5px;
   justify-content: left;
-  margin: $gutter/6 0;
+  margin: calc($gutter / 6) 0;
   text-transform: none;
   font-weight: normal;
 }
@@ -84,7 +84,7 @@
   overflow-y: auto;
   max-height: 112px;
   border-bottom: solid 2px $filterList-hover;
-  padding: $gutter/4 0;
+  padding: calc($gutter / 4) 0;
   margin-right: 5px;
 
   &::-webkit-scrollbar {
@@ -144,7 +144,7 @@
   width: 100%;
   font-weight: normal;
   border: none;
-  padding: $gutter/4 0;
+  padding: calc($gutter / 4) 0;
   border-bottom: solid 2px $filterList-hover;
   background: $white;
   color: $black;
@@ -254,7 +254,7 @@
 
   svg {
     width: 14px;
-    margin: $gutter/4 0;
+    margin: calc($gutter / 4) 0;
     fill: $purple;
   }
 
