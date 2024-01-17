@@ -158,3 +158,26 @@ ul.ul-standard {
 .ama__category-nav ul {
   margin-bottom: 14px;
 }
+
+ul.checkmark {
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    &::before {
+      content: url('../images/check_mark_icon.svg');
+      position: absolute;
+      left:0;
+      top:2px;
+      width: 30px;
+      height: 30px;
+      //content: url('../images/check_mark_icon.svg');
+    }
+  }
+}
+
+[data-editor-active-text-format="gating_block"] {
+  ul {
+    margin-left: 0;
+  }
+}
