@@ -198,7 +198,7 @@
   @if($size == "small" and $style == "secondary") {
     @include type($myriad-pro, $font-weight-regular);
     @include font-size($button-font-sizes--menu);
-    padding: $gutter/6 $gutter/2;
+    padding: calc($gutter/6) calc($gutter/2);
     background-color: $white;
     border-color: $purple;
     color: $purple;
