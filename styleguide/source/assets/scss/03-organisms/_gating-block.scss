@@ -1,0 +1,32 @@
+.gating-block-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .gating-block {
+    width: 100%;
+    font-size: 18px;
+    @include breakpoint($bp-small) {
+      width: 50%;
+    }
+    &.left {
+      text-align: left;
+    }
+    &.center {
+      text-align: center;
+    }
+    .gating-cta {
+      min-width: 60%;
+    }
+    .small {
+      font-size: 14px;
+    }
+    a {
+      color: $gating-block-link;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
