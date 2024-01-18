@@ -14,19 +14,34 @@
     }
     &.center {
       text-align: center;
+      ul {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     .gating-cta {
-      min-width: 60%;
+      min-width: 50%;
+      max-width: 100%;
+      margin-bottom: calc($gutter * .5);
     }
     .small {
       font-size: 14px;
     }
     a {
-      color: $gating-block-link;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
+      &:not(.ama__button) {
+        color: $gating-block-link;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
+    }
+    ul {
+      margin-bottom: calc($gutter * .75);
+    }
+    p {
+      margin-bottom: calc($gutter);
     }
   }
 }
