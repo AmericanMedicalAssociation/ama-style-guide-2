@@ -6686,6 +6686,22 @@ ul.ul-standard li:before {
   margin-bottom: 14px;
 }
 
+ul.checkmark {
+  margin-left: 0;
+}
+ul.checkmark li {
+  list-style: none;
+  position: relative;
+  padding-left: 25px;
+}
+ul.checkmark li::before {
+  content: url("../images/check_mark_icon.svg");
+  position: absolute;
+  background: transparent;
+  left: 0;
+  top: 2px;
+}
+
 img,
 video,
 object {
@@ -22808,6 +22824,65 @@ section.ama__page--event__speakers {
   }
 }
 
+.gating-block-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.gating-block-wrapper .gating-block {
+  width: 100%;
+  font-size: 18px;
+}
+@media (min-width: 37.5em) {
+  .gating-block-wrapper .gating-block {
+    width: 50%;
+  }
+}
+.gating-block-wrapper .gating-block.left {
+  text-align: left;
+}
+.gating-block-wrapper .gating-block.center {
+  text-align: center;
+}
+.gating-block-wrapper .gating-block.center ul {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gating-block-wrapper .gating-block .gating-cta {
+  min-width: 50%;
+  max-width: 100%;
+  margin-bottom: 14px;
+}
+.gating-block-wrapper .gating-block .small {
+  font-size: 14px;
+  margin-top: 28px;
+}
+.gating-block-wrapper .gating-block a:not(.ama__button) {
+  color: #015884;
+  text-decoration: none;
+}
+.gating-block-wrapper .gating-block a:not(.ama__button):hover {
+  text-decoration: underline;
+  background: transparent;
+}
+.gating-block-wrapper .gating-block ul {
+  margin-bottom: 21px;
+}
+.gating-block-wrapper .gating-block p, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle, .gating-block-wrapper .gating-block .ama__resource-link--inline__text {
+  margin-bottom: 28px;
+}
+
 .ama__homepage__stubs > .ama__hero-video {
   display: block;
 }
@@ -31659,6 +31734,12 @@ div[role=alert] {
   .ama__news__article-stub-two-up .grid-container .ama__article-stub {
     width: 100%;
   }
+}
+
+.gating-teaser {
+  --mask: linear-gradient(to bottom, rgba(0,0,0, 1) 0, rgba(0,0,0, 1) 90%, rgba(0,0,0, 0) 100%, rgba(0,0,0, 0) 0 ) 100% 50% / 100% 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 
 .ama__people-bio header {
