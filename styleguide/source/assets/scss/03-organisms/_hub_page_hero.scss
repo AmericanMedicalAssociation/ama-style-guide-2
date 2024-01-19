@@ -225,7 +225,8 @@
       @include breakpoint($bp-large) {
         flex: .3;
       }
-      &:hover {
+      &:hover,
+      &:focus {
         color: $gray-64;
         border-color: $hoverComplementary;
         background-color: $hoverComplementary;
@@ -296,14 +297,16 @@
     width: 100%;
     margin-top: calc($gutter * .5);
     font-weight: $font-weight-regular;
-    &:hover {
+    &:hover,
+    &:focus {
       color: $gray-64;
       border-color: $hoverComplementary;
       background-color: $hoverComplementary;
     }
     &.ama__button--complementary {
       margin-top:0;
-      &:hover {
+      &:hover,
+      &:focus {
         color: $gray-64;
       }
     }
