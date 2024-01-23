@@ -6034,20 +6034,6 @@ article ol {
   width: 269px;
 }
 
-.ama__skip-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 50px;
-  -webkit-transform: translateY(-50px);
-  transform: translateY(-50px);
-}
-
-.ama__skip-nav:focus {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
 .ama__social-icons {
   list-style: none;
 }
@@ -22825,9 +22811,8 @@ section.ama__page--event__speakers {
 }
 
 .gating-block-wrapper {
-  margin: 49px 0 14px;
+  margin: 28px 14px;
   padding: 28px 0 42px;
-  border-top: 1px solid #979797;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22843,6 +22828,13 @@ section.ama__page--event__speakers {
   justify-content: center;
 }
 .gating-block-wrapper .gating-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   font-size: 18px;
 }
@@ -31745,10 +31737,20 @@ div[role=alert] {
   }
 }
 
-.gating-teaser {
-  --mask: linear-gradient(to bottom, rgba(0,0,0, 1) 0, rgba(0,0,0, 1) 90%, rgba(0,0,0, 0) 100%, rgba(0,0,0, 0) 0 ) 100% 50% / 100% 100% repeat-x;
-  -webkit-mask: var(--mask);
-  mask: var(--mask);
+.teaser-wrapper {
+  margin-bottom: 21px;
+  border-bottom: 1px solid #979797;
+  position: relative;
+}
+.teaser-wrapper .fade {
+  height: 200px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-image: url("../images/teaser-fade.png");
+  background-repeat: repeat-x;
 }
 
 .ama__people-bio header {
