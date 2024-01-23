@@ -1,12 +1,13 @@
 .gating-block-wrapper {
-  margin: calc($gutter * 1.75) 0 calc($gutter * .5);
+  margin: $gutter calc($gutter * .5);
   padding: calc($gutter) 0 calc($gutter * 1.5);
-  border-top: 1px solid $gray-30;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   .gating-block {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     font-size: 18px;
     @include breakpoint($bp-small) {
