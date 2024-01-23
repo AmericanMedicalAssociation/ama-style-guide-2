@@ -298,7 +298,10 @@
     padding: 0;
     flex: 1;
     @include breakpoint($bp-small) {
-      flex: .34;
+      flex: .4;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 119px;
     }
   }
   .ama__subscribe-promo--media {
@@ -308,11 +311,7 @@
     padding: 0;
     margin: 0 0 28px 0;
     @include breakpoint($bp-small) {
-      padding-left: calc($gutter * .75);
-      flex: .66;
-    }
-    @include breakpoint($bp-med) {
-      padding-left: calc($gutter * 4.25);
+      flex: .6;
     }
   }
   .ama__subscribe-promo__subject-title {
