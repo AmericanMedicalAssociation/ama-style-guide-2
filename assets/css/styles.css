@@ -22828,6 +22828,8 @@ section.ama__page--event__speakers {
   justify-content: center;
 }
 .gating-block-wrapper .gating-block {
+  width: 100%;
+  font-size: 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22835,8 +22837,6 @@ section.ama__page--event__speakers {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
-  font-size: 18px;
 }
 @media (min-width: 37.5em) {
   .gating-block-wrapper .gating-block {
@@ -22845,20 +22845,35 @@ section.ama__page--event__speakers {
 }
 .gating-block-wrapper .gating-block.left {
   text-align: left;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 .gating-block-wrapper .gating-block.center {
   text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-.gating-block-wrapper .gating-block.center ul {
+.gating-block-wrapper .gating-block ul {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
 }
-.gating-block-wrapper .gating-block .gating-cta {
+.gating-block-wrapper .gating-block p:has(a.ama__button), .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button), .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button), .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button) {
   min-width: 50%;
   max-width: 100%;
 }
-.gating-block-wrapper .gating-block .gating-cta.ama__button {
+.gating-block-wrapper .gating-block p:has(a.ama__button) .gating-cta, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button) .gating-cta, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button) .gating-cta, .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button) .gating-cta {
+  width: 100%;
+}
+.gating-block-wrapper .gating-block p:has(a.ama__button) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button) .gating-cta.ama__button, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button) .gating-cta.ama__button {
   padding: 9px 14px;
 }
 .gating-block-wrapper .gating-block .small {
