@@ -6,29 +6,36 @@
   align-items: center;
   justify-content: center;
   .gating-block {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
     @include breakpoint($bp-small) {
       width: 50%;
     }
     &.left {
       text-align: left;
+      align-items: flex-start;
+      justify-content: flex-start;
     }
     &.center {
       text-align: center;
-      ul {
-        text-align: left;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      align-items: center;
+      justify-content: center;
     }
-    .gating-cta {
+    ul {
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p:has(a.ama__button) {
       min-width: 50%;
       max-width: 100%;
-      &.ama__button {
-        padding: 9px 14px;
+      .gating-cta {
+        width: 100%;
+        &.ama__button {
+          padding: 9px 14px;
+        }
       }
     }
     .small {
