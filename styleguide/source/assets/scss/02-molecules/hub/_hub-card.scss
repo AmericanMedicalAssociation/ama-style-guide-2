@@ -135,7 +135,8 @@
   }
 
   @at-root {
-    a:hover#{&} {
+    a:hover#{&},
+    a:focus#{&} {
       background-color: darken($gray-7, 10%);
     }
   }
