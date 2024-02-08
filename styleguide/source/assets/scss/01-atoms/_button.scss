@@ -4,7 +4,7 @@ button {
   @include ama-button();
 
   &--secondary {
-    @include ama-button("", "secondary");
+      @include ama-button("", "secondary");
   }
 
   &--tertiary {
@@ -54,6 +54,23 @@ button {
   &--link {
     @include ama-button("", "link");
   }
+
+  &--pill {
+    @include ama-button("", "pill");
+  }
+
+  &--pill-secondary {
+    @include ama-button("", "pill-secondary");
+  }
+
+  &--pill-claim {
+    @include ama-button("", "pill-claim");
+  }
+
+  &--icon {
+    @include ama-button("", "icon");
+  }
+
   &--news-subscribe {
     @include ama-button("", "news-subscribe");
   }

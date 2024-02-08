@@ -576,3 +576,20 @@
     }
   }
 }
+
+// Gating.
+.teaser-wrapper {
+  margin-bottom: calc($gutter * .75);
+  border-bottom: 1px solid $gray-30;
+  position: relative;
+  .fade {
+    height: 200px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-image: url("../images/teaser-fade.png");
+    background-repeat: repeat-x;
+  }
+}
