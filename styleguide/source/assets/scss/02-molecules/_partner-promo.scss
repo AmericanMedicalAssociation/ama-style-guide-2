@@ -86,8 +86,10 @@
     padding: 0;
     flex: 1;
     @include breakpoint($bp-small) {
-      margin-right: calc($gutter * .75);
-      flex: .34;
+      flex: .4;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 119px;
     }
     h2.ama__h2 {
       color: $blue;
@@ -117,7 +119,7 @@
     flex: 1;
     @include breakpoint($bp-small) {
       margin-left: 17px;
-      flex: .66;
+      flex: .6;
     }
     @include breakpoint($bp-med) {
       margin-left: auto;
