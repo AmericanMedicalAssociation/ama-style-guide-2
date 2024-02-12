@@ -32,26 +32,24 @@
         width: 380px;
       }
       &:first-of-type {
-        background: $complementary;
         margin-bottom: 17px;
         @include breakpoint($bp-med) {
           margin-right: 11px;
           margin-bottom: 0;
         }
         a.hub_banner_link {
+          background: $complementary;
           color: $black;
-          &:hover {
+          &:hover,
+          &:focus {
             text-decoration: underline;
           }
         }
       }
       &:nth-child(2) {
-        background: $white;
-      }
-      &:hover,
-      &:focus {
-        color: $gray-64;
-        background: $hoverComplementary;
+        a.hub_banner_link {
+          background: $white;
+        }
       }
       a.hub_banner_link {
         display: block;
@@ -62,8 +60,11 @@
         @include breakpoint($bp-med) {
           padding: 12px 85px;
         }
-        &:hover {
+        &:hover,
+        &:focus {
           text-decoration: underline;
+          color: $gray-64;
+          background: $hoverComplementary;
         }
       }
     }
