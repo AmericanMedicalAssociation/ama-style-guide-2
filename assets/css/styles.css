@@ -31150,7 +31150,6 @@ div[role=alert] {
 }
 .ama__hub .ama__hub-banner > div:first-of-type,
 .hub-container .ama__hub-banner > div:first-of-type {
-  background: #ff9e1b;
   margin-bottom: 17px;
 }
 @media (min-width: 56.25em) {
@@ -31162,21 +31161,17 @@ div[role=alert] {
 }
 .ama__hub .ama__hub-banner > div:first-of-type a.hub_banner_link,
 .hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link {
+  background: #ff9e1b;
   color: #000000;
 }
-.ama__hub .ama__hub-banner > div:first-of-type a.hub_banner_link:hover,
-.hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link:hover {
+.ama__hub .ama__hub-banner > div:first-of-type a.hub_banner_link:hover, .ama__hub .ama__hub-banner > div:first-of-type a.hub_banner_link:focus,
+.hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link:hover,
+.hub-container .ama__hub-banner > div:first-of-type a.hub_banner_link:focus {
   text-decoration: underline;
 }
-.ama__hub .ama__hub-banner > div:nth-child(2),
-.hub-container .ama__hub-banner > div:nth-child(2) {
+.ama__hub .ama__hub-banner > div:nth-child(2) a.hub_banner_link,
+.hub-container .ama__hub-banner > div:nth-child(2) a.hub_banner_link {
   background: #ffffff;
-}
-.ama__hub .ama__hub-banner > div:hover, .ama__hub .ama__hub-banner > div:focus,
-.hub-container .ama__hub-banner > div:hover,
-.hub-container .ama__hub-banner > div:focus {
-  color: #5C5C5C;
-  background: #ffd8a3;
 }
 .ama__hub .ama__hub-banner > div a.hub_banner_link,
 .hub-container .ama__hub-banner > div a.hub_banner_link {
@@ -31192,9 +31187,12 @@ div[role=alert] {
     padding: 12px 85px;
   }
 }
-.ama__hub .ama__hub-banner > div a.hub_banner_link:hover,
-.hub-container .ama__hub-banner > div a.hub_banner_link:hover {
+.ama__hub .ama__hub-banner > div a.hub_banner_link:hover, .ama__hub .ama__hub-banner > div a.hub_banner_link:focus,
+.hub-container .ama__hub-banner > div a.hub_banner_link:hover,
+.hub-container .ama__hub-banner > div a.hub_banner_link:focus {
   text-decoration: underline;
+  color: #5C5C5C;
+  background: #ffd8a3;
 }
 
 .hub-container .ama__layout--one-column.container {
