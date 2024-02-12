@@ -40,7 +40,8 @@
         }
         a.hub_banner_link {
           color: $black;
-          &:hover {
+          &:hover,
+          &:focus {
             text-decoration: underline;
           }
         }
@@ -62,7 +63,8 @@
         @include breakpoint($bp-med) {
           padding: 12px 85px;
         }
-        &:hover {
+        &:hover,
+        &:focus {
           text-decoration: underline;
         }
       }
