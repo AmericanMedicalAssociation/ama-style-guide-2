@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1708390894" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1708390894" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1708554562" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1708554562" media="all" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1708390894" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1708390894" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1708554562" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1708554562" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -43,7 +43,7 @@
 
       <!--DO NOT REMOVE-->
       <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"atoms-button","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"}],"lineageR":[{"lineagePattern":"organisms-promo-group","lineagePath":"..\/..\/patterns\/03-organisms-promo-group\/03-organisms-promo-group.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage-homepage\/05-pages-homepage-homepage.html"},{"lineagePattern":"pages-homepage-with-trending","lineagePath":"..\/..\/patterns\/05-pages-homepage-homepage-with-trending\/05-pages-homepage-homepage-with-trending.html"},{"lineagePattern":"pages-homepage-with-vertical-trending","lineagePath":"..\/..\/patterns\/05-pages-homepage-homepage-with-vertical-trending\/05-pages-homepage-homepage-with-vertical-trending.html"},{"lineagePattern":"pages-news-as-gated","lineagePath":"..\/..\/patterns\/05-pages-news-news-as-gated\/05-pages-news-news-as-gated.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"pages-news","lineagePath":"..\/..\/patterns\/05-pages-news-news\/05-pages-news-news.html"},{"lineagePattern":"pages-topic","lineagePath":"..\/..\/patterns\/05-pages-topic\/05-pages-topic.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"promo"},"patternDesc":"<p>A Promo is a flexible pattern that includes a heading, a description, a logo (optional), an image (optional), and a Secondary CTA button (optional).<\/p>\n\n<h3>Important functional details<\/h3>\n\n<h4>Background vs. border<\/h4>\n\n<p>This pattern can optionally have one of two background\/border styles, shown via variants. The default style for this pattern is \"Background.\" The JSON data for this pattern MUST include the \"style:\" line or the pattern will visually break.<\/p>\n\n<h4>Render as link vs. render as div based on CTA<\/h4>\n\n<p>If this pattern includes a CTA, as shown in the variant [Promo With CTA]?p=molecules-promo-with-cta), the containing element will render as a <code>div<\/code> and the CTA button will link to the provided URL. If this pattern does not include a CTA, the pattern wrapper will render as an <code>&lt;a&gt;<\/code> element.<\/p>\n\n<h4>CTA button styling<\/h4>\n\n<p>This pattern should only ever have a Secondary CTA button, and never a Primary or \"block\" button.<\/p>\n\n<h3>Variants<\/h3>\n\n<ul>\n<li><a href=\"?p=molecules-promo-with-cta\">Promo With CTA<\/a> - example including a CTA, causing the pattern to render as a <code>div<\/code> instead of a link.<\/li>\n<li><a href=\"?p=molecules-promo-with-image\">Promo With Image<\/a> - example including an image.<\/li>\n<li><a href=\"?p=molecules-promo-with-border\">Promo With Border<\/a> - example of this pattern when <code>\"style:\"<\/code> is set to <code>border<\/code>.`<\/li>\n<li><a href=\"?p=molecules-promo-as-inline\">Promo As Inline<\/a> - example of this pattern when <code>\"style:\"<\/code> is set to <code>inline<\/code>.`<\/li>\n<li><a href=\"?p=molecules-promo-as-homepage\">Promo As Homepage<\/a> - example of this pattern when <code>\"style:\"<\/code> is set to <code>homepage<\/code>.`<\/li>\n<\/ul>\n\n<h3>Tickets<\/h3>\n\n<p><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-4185\">EWL-4185<\/a>\n<a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-4514\">EWL-4514<\/a>\n<a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5460\">EWL-4514<\/a><\/p>\n\n<h3>Use Case<\/h3>\n\n<p>This produces a container for a \"Promotional\" Item meant for addtional information with a call to action button.<\/p>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n  style: \"background\", (required, options: \"background\", \"border\")\n  heading: {\n    level: \"2\"\n    text: \n      type: string \/ required\n    class: \"ama__h2\"\n  }\n  paragraph: {\n    text: \n      type: string \/ required\n  }\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":"Promo","patternPartial":"molecules-promo","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"atoms-image","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"},{"lineagePattern":"atoms-button","lineagePath":"..\/..\/patterns\/02-molecules-promo-promo\/02-molecules-promo-promo.html"}],"lineageR":[{"lineagePattern":"organisms-promo-group","lineagePath":"..\/..\/patterns\/03-organisms-promo-group\/03-organisms-promo-group.html"},{"lineagePattern":"pages-homepage","lineagePath":"..\/..\/patterns\/05-pages-homepage-homepage\/05-pages-homepage-homepage.html"},{"lineagePattern":"pages-homepage-with-trending","lineagePath":"..\/..\/patterns\/05-pages-homepage-homepage-with-trending\/05-pages-homepage-homepage-with-trending.html"},{"lineagePattern":"pages-homepage-with-vertical-trending","lineagePath":"..\/..\/patterns\/05-pages-homepage-homepage-with-vertical-trending\/05-pages-homepage-homepage-with-vertical-trending.html"},{"lineagePattern":"pages-news-as-gated","lineagePath":"..\/..\/patterns\/05-pages-news-news-as-gated\/05-pages-news-news-as-gated.html"},{"lineagePattern":"pages-news-with-jama-examples","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"pages-news","lineagePath":"..\/..\/patterns\/05-pages-news-news\/05-pages-news-news.html"},{"lineagePattern":"pages-topic","lineagePath":"..\/..\/patterns\/05-pages-topic\/05-pages-topic.html"}],"patternBreadcrumb":{"patternType":"molecules","patternSubtype":"promo"},"patternDesc":"","patternExtension":"twig","patternName":"promo","patternPartial":"molecules-promo","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -77,10 +77,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1708390894">
+<script id="pl-js-polyfill-insert-1708554562">
   (function() {
     if (self != top) {
-      var cb = '1708390894';
+      var cb = '1708554562';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -90,10 +90,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1708390894">
+<script id="pl-js-insert-1708554562">
   (function() {
     if (self != top) {
-      var cb = '1708390894';
+      var cb = '1708554562';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
