@@ -1,0 +1,65 @@
+{%  set
+  link, heading, date, image, name, job =
+  news_header.link,
+  news_header.heading,
+  news_header.date,
+  news_header.image,
+  news_header.name,
+  news_header.job
+%}
+
+<div class="ama__news-article">
+  <header class="ama__news-heading ama__news-heading__content layout container">
+    <div class="heading-left" role="complementary">
+      <div class="title-region">
+        {% if news_header.link.title %}
+          {% include "@atoms/link/link.twig" %}
+        {% endif %}
+        {% if news_header.heading.text %}
+          {% include "@atoms/heading/heading.twig" %}
+        {% endif %}
+      </div>
+      <div class="ama__news-article__share-row">
+        <div class="ama__date date-region">
+          <div class="ama__news-heading__content__date">
+            <h3 class="ama__h3 date-block">
+              <time>
+                {% if news_header.date.month %}
+                  <div class="ama__masthead__content__date">
+                    {% include "@atoms/date-block.twig" %}
+                  </div>
+                {% endif %}
+              </time>
+            </h3>
+          </div>
+        </div>
+        <div class="ama__share share-region">
+          {% if news_header.social %}
+            <div class="ama__masthead__content__share">
+              {% include "@molecules/social-share.twig" %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="ama__news-article__bio bio-region">
+        <aside class="contextual-region ama__inline-bio">
+
+            {% if news_header.image.src %}
+              {% include "@atoms/image/image.twig" %}
+            {% endif %}
+            <div class="ama__inline-bio__text">
+              <h3 class="ama__h1 ama__h3">
+                {% if news_header.name.href %}
+                  <a href="{{ news_header.name.href }}" title="{{ news_header.name.title }}">{{ news_header.name.text }}</a>
+                {% endif %}
+              </h3>
+              <span class="ama__h3">
+                {{ news_header.job.text }}
+              </span>
+            </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  </header>
+</div>

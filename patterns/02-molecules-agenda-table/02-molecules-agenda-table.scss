@@ -1,0 +1,28 @@
+.ama__table-agenda{
+  border: 0;
+  border-top: solid 2px $gray-50;
+  margin: 4px;
+  width: auto;
+
+  div[class*='ama__h']{
+    margin-bottom: 0;
+  }
+
+  tbody tr {
+    background: white;
+  }
+
+  td {
+    padding: 5px 15px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+
+    @include breakpoint($bp-small){
+      &:first-child{
+        width: 25%;
+        min-width: 200px;
+      }
+    }
+  }
+}
