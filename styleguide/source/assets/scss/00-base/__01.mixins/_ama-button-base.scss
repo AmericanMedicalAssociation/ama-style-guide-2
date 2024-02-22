@@ -19,3 +19,17 @@
     color: $white;
   }
 }
+
+@mixin button_focus_outline_light {
+  &:focus {
+    outline: 2px solid $pg-lt-blue;
+    outline-offset: 3px;
+  }
+}
+
+@mixin button_focus_outline {
+  &:focus {
+    outline: 2px solid $blue;
+    outline-offset: 3px;
+  }
+}

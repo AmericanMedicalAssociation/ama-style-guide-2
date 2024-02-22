@@ -13,7 +13,12 @@
     cursor: pointer;
   }
 
+  &.open {
+    outline: 2px solid $pg-lt-blue;
+  }
+
   @include breakpoint($bp-small) {
+    height: 34px;
     justify-content: flex-end;
     border-left: 0;
     width: 100px;
