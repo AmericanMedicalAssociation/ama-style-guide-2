@@ -29,6 +29,7 @@
       padding-left: 40px;
       a {
         color: $white;
+        @include button_focus_outline_light;
       }
     }
 
@@ -62,11 +63,13 @@
     @include breakpoint($bp-small) {
       display: block;
     }
+
+    @include button_focus_outline_light;
   }
 
   &__close {
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
     overflow: hidden;
     margin-left: 25px;
     position: absolute;
@@ -77,6 +80,8 @@
       fill: $white;
       vertical-align: inherit;
     }
+
+    @include button_focus_outline_light;
 
     @include breakpoint($bp-small) {
       position: static;

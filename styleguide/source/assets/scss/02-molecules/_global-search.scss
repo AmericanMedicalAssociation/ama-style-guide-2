@@ -9,6 +9,10 @@
   align-items: center;
   border-left: 1px solid $gray-50;
 
+  &.open {
+    outline: 2px solid $pg-lt-blue;
+  }
+
   @include breakpoint($bp-small) {
     display: none;
   }
@@ -86,6 +90,11 @@
     &::placeholder {
       font-style: italic;
     }
+
+    &:focus-within {
+      outline: 2px solid $pg-lt-blue;
+      outline-offset: 3px;
+    }
   }
 
   .form-actions {
@@ -120,6 +129,13 @@
     &:hover {
       background-color: $hoverPurple;
     }
+
+    &:focus {
+      outline: 2px solid $pg-lt-blue;
+      outline-offset: 3px;
+    }
+
+    @include button_focus_outline_light;
   }
 }
 

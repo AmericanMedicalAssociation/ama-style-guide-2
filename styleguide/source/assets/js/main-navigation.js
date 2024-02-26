@@ -142,6 +142,12 @@
 
       $($mobileSearchTrigger).unbind('click').click(function () {
         $mobileSearch.slideToggle();
+        $mobileSearchTrigger.toggleClass('open');
+      });
+
+      //Set focus state on mobile trigger button
+      $($mobileSearchTrigger).focus(function(){
+        $mobileSearchTrigger.css('outline', 'outline: 2px solid #80d4f5');
       });
 
       function moveSocialSharePosition(){

@@ -1,6 +1,13 @@
 .ama__site-logo {
   height: 45px;
 
+  &:focus {   
+    .logo {
+      outline: 2px solid $pg-lt-blue;
+      outline-offset: 3px;
+    }   
+  }
+
   .logo {
     height: 45px;
     width: 110px;
