@@ -8,6 +8,7 @@
     }
     @include breakpoint($bp-med) {
       flex-flow: row nowrap;
+      padding-bottom: $gutter;
     }
 
     &__mobile-image {
@@ -43,7 +44,6 @@
         @include breakpoint($bp-small) {
           min-height: 200px;
           background: $white;
-          @include gutter($padding-bottom-full...);
         }
 
         //Fix for overriding jquery widget
@@ -101,23 +101,23 @@
       flex-direction: column;
       background-size: cover;
       background-position: center center;
-      @include breakpoint($bp-small max-width) {
+      @include breakpoint($bp-med max-width) {
         margin: $gutter 0 23px;
       }
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         margin-left: 86px;
       }
     }
     .image-container {
       position: relative;
       overflow: hidden;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         padding-bottom: 66.67%;
       }
     }
 
     .image-container img {
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         position: absolute;
         top: 0;
         left: 0;
@@ -146,7 +146,7 @@
         //background-color: $white;
         //color: #46166b;
         &:hover {
-          background-color: #46166b;
+          //background-color: #46166b;
           //color: $white;
         }
       }
@@ -159,6 +159,7 @@
       margin-bottom: $gutter;
       @include breakpoint($bp-small) {
         margin-bottom: $gutter;
+        padding-top: $gutter;
       }
     }
   }
