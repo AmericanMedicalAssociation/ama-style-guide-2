@@ -31,7 +31,6 @@
 }
 
 .dr-finder-profile-header__doctor-info__pronouns {
-  font-size: 16px;
   margin: calc($gutter/5) 0;
 }
 
@@ -64,7 +63,7 @@
 }
 
 .dr-finder-profile-header__doctor-info__specialty {
-  font-weight: bold;
+  font-weight: 600;
   margin-top: calc($gutter/4);
 }
 
@@ -73,12 +72,12 @@
 }
 
 .dr-finder-profile-header__claim .ama__button {
-  padding: 7px 21px;
+  padding: 5px 21px;
 }
 .dr-finder-profile-header__upload-actions .ama__button {
   width: 100%;
   margin-bottom: calc($gutter/2);
-  padding: 7px 21px;
+  padding: 5px 21px;
 }
 
 .dr-finder-profile-header__edit-actions .ama__button {
@@ -86,12 +85,14 @@
 
   @include breakpoint($bp-small) {
     width: auto;
-    padding: 7px 21px;
+    padding: 5px 21px;
   }
 }
 
 .dr-finder-profile-header__doctor-info__service {
-  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
 }
 
 .dr-finder-profile-header__edit-actions,
