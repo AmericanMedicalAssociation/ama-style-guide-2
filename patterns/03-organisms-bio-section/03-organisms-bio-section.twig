@@ -1,8 +1,0 @@
-{% set contentWithLabelList = bioSection.contentWithLabelList %}
-
-<div class="ama__bio-section">
-  {% if bioSection.heading %}
-    <h3 class="ama__bio-section__header">{{ bioSection.heading }}</h3>
-  {% endif %}
-  {% include "@molecules/content-with-label-as-list.twig" %}
-</div>
