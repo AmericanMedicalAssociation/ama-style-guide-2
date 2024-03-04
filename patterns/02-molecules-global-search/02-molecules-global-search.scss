@@ -1,0 +1,141 @@
+.global-search-trigger {
+  position: relative;
+  background-color: $purple;
+  display: flex;
+  justify-content: center;
+  color: $white;
+  height: 60px;
+  width: 70px;
+  align-items: center;
+  border-left: 1px solid $gray-50;
+
+  &.open {
+    outline: 2px solid $pg-lt-blue;
+  }
+
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+
+  &__icon {
+    background-size: 24px 25px;
+    min-height: 24px;
+    min-width: 25px;
+    max-height: 24px;
+    max-width: 25px;
+  }
+}
+
+.ama__global-search {
+  @include gutter($padding-left-half...);
+  display: none;
+  height: 60px;
+  border-left: 1px solid $gray-50;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: $purple;
+
+  @include breakpoint($bp-small) {
+    position: relative;
+    display: block;
+    padding-left: 0;
+    top: 0;
+    flex-grow: 1;
+    height: 34px;
+    border: 0;
+    width: 70px;
+  }
+
+  .searchbar-wrapper {
+    width: 100%;
+  }
+
+  .ama__search__field--in-body {
+    display: flex;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include breakpoint($bp-small) {
+      justify-content: flex-start;
+    }
+  }
+
+  input[type="text"],
+  .ama__search__field__input {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    background-image: none;
+    border: 0;
+    max-height: 40px;
+    min-height: 40px;
+    min-width: 250px;
+
+    @include breakpoint($bp-small) {
+      padding: 0 calc($gutter/4);
+      display: block;
+      max-height: 34px;
+      min-height: 34px;
+    }
+
+    &:focus,
+    &:active {
+      color: $black;
+      font-style: normal;
+      border: 1px solid $white;
+    }
+
+    &::placeholder {
+      font-style: italic;
+    }
+
+    &:focus-within {
+      outline: 2px solid $pg-lt-blue;
+      outline-offset: 3px;
+    }
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+
+  .ama__global-search__action .ama__button {
+    @extend .icon--search-white;
+    background-size: 0 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    overflow: hidden;
+    min-width: 100px;
+    position: relative;
+    text-indent: 0;
+
+    @include breakpoint($bp-small) {
+      border: 2px solid $white;
+      background-color: $purple;
+      background-size: 22px 22px;
+      background-position: 5px 4px;
+      min-height: 34px;
+      max-height: 34px;
+      min-width: 34px;
+      max-width: 34px;
+      height: 34px;
+      width: 39px;
+      text-indent: -999px;
+    }
+
+    &:hover {
+      background-color: $hoverPurple;
+    }
+
+    &:focus {
+      outline: 2px solid $pg-lt-blue;
+      outline-offset: 3px;
+    }
+
+    @include button_focus_outline_light;
+  }
+}
+

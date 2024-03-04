@@ -1,0 +1,98 @@
+.ama__upcoming-event {
+  @include gutter($padding-bottom-half...);
+  @include gutter($padding-top-full...);
+  @include gutter($padding-left-half...);
+  border-top: 1px solid $gray-7;
+
+  @include breakpoint($bp-small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include breakpoint($bp-large) {
+    display: flex;
+  }
+
+  &__title {
+    a {
+      display: flex;
+    }
+
+    svg {
+      @include gutter($margin-right-half...);
+      display: none;
+
+      @include breakpoint($bp-small) {
+        display: block;
+        flex: none;
+      }
+    }
+
+    @include breakpoint($bp-med) {
+      @include gutter($padding-right-full...);
+      flex-basis: 50%;
+    }
+  }
+
+  &__text {
+    color: $gray-50;
+    display: flex;
+
+    @include breakpoint($bp-small) {
+      margin-left: 30px;
+    }
+
+    @include breakpoint($bp-large) {
+      margin-left: 0;
+      flex-basis: 50%;
+    }
+
+    p {
+      @include gutter($margin-right-full...);
+      @include font-size($small-font-sizes);
+
+      @include breakpoint($bp-large) {
+        width: 50%;
+      }
+
+      @include breakpoint($bp-med) {
+        @include font-size($p-font-sizes);
+        line-height: 1.222em;
+      }
+    }
+  }
+}
+
+.ama__upcoming-events {
+  @include gutter($margin-bottom-full...);
+  position: relative;
+  overflow: hidden;
+  
+  &__header {
+    display: flex;
+  }
+
+  .ama__section-title {
+    @include breakpoint($bp-med) {
+      flex-grow: 1;
+    }
+  }
+
+  &__view-all-link {
+    @include font-size($small-font-sizes);
+    float: right;
+
+    @include breakpoint($bp-small) {
+      position: absolute;
+      top: 10px;
+      right: 0;
+    }
+
+    @include breakpoint($bp-med) {
+      font-size: .778em;
+      line-height: 1.571em;
+      top: 45px;
+      right: 20px;
+    }
+  }
+}
