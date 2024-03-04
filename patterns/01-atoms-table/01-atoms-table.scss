@@ -1,0 +1,100 @@
+/*
+ * jQuery Basic Table
+ * Author: Jerry Low
+ */
+
+table {
+  @include gutter($margin-bottom-half...);
+  background: $white;
+  border-collapse: collapse;
+  border: 1px solid $gray-50;
+  width: 100%;
+}
+
+table tr,
+table th,
+table td {
+  border: none;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: calc($gutter/4);
+  border: 1px solid $gray-50;
+}
+
+table th {
+  text-transform: uppercase;
+}
+
+table tr td {
+  background: $gray-20;
+}
+
+table tr:nth-of-type(2n+2) td {
+  background: $white;
+}
+
+table.bt tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+table.bt thead {
+  display: none;
+}
+
+table.bt tbody tr:last-child {
+  border-bottom: 1px solid $gray-50;
+}
+
+table.bt {
+  &:not(.ama__table-agenda) {
+    tbody td {
+      &:before {
+        content: attr(data-th) ":";
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        display: inline-block;
+
+      }
+    }
+  }
+  tbody td {
+    border: 0 solid $gray-20;
+    display: block;
+    vertical-align: top;
+
+
+    &:first-child + &:first-child {
+      border-top: 1px solid $gray-50;
+    }
+
+    &:last-child {
+      @include gutter($padding-bottom-half...);
+      border-bottom: 1px solid $gray-50;
+
+    }
+
+    .bt-content {
+      vertical-align: top;
+      display: block;
+      hyphens: auto;
+    }
+
+    .bt-hide {
+      display: none;
+    }
+  }
+}
+
+.bt-wrapper.active {
+  max-height: 310px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+caption {
+  text-align: left;
+}

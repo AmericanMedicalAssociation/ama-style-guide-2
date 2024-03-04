@@ -1,0 +1,123 @@
+// General
+.ama__image_popup {
+  &__wrapper {
+    padding: 0;
+  }
+  &__modal-link-wrapper{
+    position: absolute;
+    bottom: calc($gutter /4);
+    right: 0;
+    height: 41px;
+    width: 41px;
+    display: none;
+    z-index: 10;
+    @include breakpoint($bp-small) {
+      display:block;
+    }
+    .ama-image-popup-icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      background: url('../images/expand.svg') no-repeat 0px 0px;
+      background-size: cover;
+    }
+  }
+}
+
+.embedded-entity.media {
+  margin-bottom: calc($gutter /2);
+}
+
+.media-modal {
+  &:not(.align-right) {
+    clear: both;
+  }
+  &.align-right {
+    // right aligned modals need to override the full width padding
+    .media-caption,
+    .media-entity {
+      @include breakpoint($bp-small) {
+        padding: 0 50px 0 0;
+      }
+      @include breakpoint($bp-med) {
+        padding: 0 50px 0 0;
+      }
+      @include breakpoint($bp-large) {
+        padding: 0 50px 0 0;
+      }
+    }
+  }
+  // full width modals need padding
+  .media-caption,
+  .media-entity {
+    @include breakpoint($bp-small) {
+      padding: 0 50px 0 23px;
+    }
+    @include breakpoint($bp-med) {
+      padding: 0 50px 0 45px;
+    }
+    @include breakpoint($bp-large) {
+      padding: 0 69px;
+    }
+  }
+  .media-entity {
+    position: relative;
+  }
+}
+
+// Modal Window
+.ama-image-popup-modal {
+  z-index:502;
+  display: table;
+  max-width: 95%;
+  max-height: 92vh !important;
+  padding: .5em .5em 0;
+  .ui-dialog-content {
+    padding: 0;
+    max-height:100vh !important;
+    img {
+      max-height: 90vh;
+      max-width: 100%;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+.ama-image-popup-modal.ui-widget.ui-widget-content {
+  border: 0;
+}
+
+.ama-image-popup-modal .ui-dialog-title,
+.ama-image-popup-modal .ui-button-icon-only .ui-icon,
+.ama-image-popup-modal-wrapper .modal-link .ajax-progress-throbber .throbber,
+.ama-image-popup-modal-wrapper .modal-link .ajax-progress {
+  display: none;
+}
+
+.ama-image-popup-modal .ui-widget-header {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.ui-widget-overlay {
+  background: $gray-50;
+  opacity: 0.81;
+}
+
+.ama-image-popup-modal .ui-dialog-titlebar-close {
+  background: url('../images/close.svg');
+  border: none;
+  position: absolute;
+  right: -24px;
+  top: -14px;
+  height: $gutter;
+  width: $gutter;
+  padding: 0;
+}
+
+.ama-image-popup-modal .ui-dialog-titlebar-close:focus {
+  outline: none;
+}

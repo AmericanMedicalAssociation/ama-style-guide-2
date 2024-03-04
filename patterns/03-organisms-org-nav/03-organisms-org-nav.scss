@@ -1,0 +1,36 @@
+.ama__org-nav {
+  flex: 0 0 34%;
+  max-width: 34%;
+  text-align: right;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: $purple;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 (calc($gutter / 4));
+      font-size: .778em;
+      line-height: 2.214em;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include button_focus_outline;
+    }
+  }
+}
+.wf-active {
+  /* styles to use when web fonts are loading */
+  .ama__org-nav {
+    li {
+      a {
+        font-size: .778em;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+}

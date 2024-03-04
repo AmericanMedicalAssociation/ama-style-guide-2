@@ -1,0 +1,96 @@
+.ama-search-connector-container {
+  display:none;
+  @include breakpoint($bp-med) {
+    display: block;
+  }
+  a {
+    margin-bottom: calc($gutter/2);
+    text-decoration: none;
+    display: block;
+    .search-result-item {
+      -webkit-transition: font-size 1s;
+      -moz-transition: font-size 1s;
+      -o-transition: font-size 1s;
+      transition: font-size 1s;
+      box-shadow: 0 3px 4px 0 rgba($purple, 0.5);
+      background-color: rgba(70, 22, 107, 0.05);
+      padding: calc($gutter-mobile/2);
+      margin: calc($gutter-mobile/4);
+      width: 49vh;
+      height: 190px;
+
+      @include breakpoint(359px max-width) {
+        width: 46vh;
+      }
+      @include breakpoint($bp-xs max-width) {
+        width: 47vh;
+      }
+      @include breakpoint($bp-xs min-width) {
+        width: 49vh;
+      }
+      @include breakpoint($bp-med min-width) {
+        width: auto;
+        height: auto;
+      }
+      .search-result-item-title {
+        @include font-size($h3-font-sizes);
+        color: $purple;
+        font-weight: $font-weight-bold;
+        margin-bottom: 0;
+      }
+      .search-result-item-count {
+        @include font-size($h4-font-sizes);
+        color: $gray-64;
+      }
+      .search-result-item-subtitle {
+        @include font-size($h5-font-sizes);
+        width: 85%;
+        @include breakpoint($bp-med min-width) {
+          width: auto;
+        }
+      }
+    }
+  }
+  a:hover > .search-result-item {
+    box-shadow: 0 3px 4px 0 rgba($hoverPurple, 0.5);
+    opacity: .9;
+    transform: scale(1.01);
+    transition: all 0.05s ease-in-out;
+  }
+  .search-connector-header {
+    font-family: $myriad-pro;
+    @include font-size($p-font-sizes);
+    .title {
+      text-transform: uppercase;
+    }
+    .teaser {
+      @include font-size($p-font-sizes);
+      .keyword {
+        font-style: italic;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  .search-connector-results {
+    float: left;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    @include breakpoint($bp-med min-width) {
+      overflow-x: hidden;
+      float: none;
+      display: block;
+    }
+    &:after{
+      content: '';
+      padding-right: 25%;
+      height: 1px;
+      @include breakpoint($bp-med min-width) {
+        content: '';
+        padding-right: 0;
+        height: 0;
+      }
+    }
+  }
+}

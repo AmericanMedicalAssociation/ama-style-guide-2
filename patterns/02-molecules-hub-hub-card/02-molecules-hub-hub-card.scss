@@ -1,0 +1,336 @@
+.ama__hub-card {
+  @include gutter($margin-bottom-half...);
+  display: flex;
+  background-color: $gray-7;
+  background-size: contain;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  min-height: 400px;
+  width: 100%;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: block;
+
+    &--no-image {
+      display: flex;
+    }
+  }
+
+
+  &__heading,
+  & .ama__h2 {
+    @include gutter($margin-top-full...);
+    margin-bottom: 0;
+  }
+
+  &__description {
+    @include gutter-all($padding-all-full...);
+    margin: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  &__button-container {
+    text-align: center;
+
+    .ama__button--secondary {
+      @extend %ama__button--secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      @extend %ama__button;
+    }
+
+    a:nth-child(2) {
+      margin-left: 16px;
+    }
+    &.text-only {
+      @include breakpoint($bp-xs) {
+        width: 100%;
+      }
+      @include breakpoint($bp-med) {
+        width: 50%;
+      }
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__button-flex {
+    @media(min-width: 320px) and (max-width:$bp-med) {
+      flex-direction: column;
+      a {
+        margin: 0 auto 15px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a:nth-child(2) {
+        margin: 0 auto;
+      }
+    }
+    @include breakpoint($bp-med) {
+      display: flex;
+      flex-direction: row;
+      padding: 20px 0;
+      text-align: center;
+      justify-content: center;
+
+      a {
+        flex-basis: 50%;
+        max-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a:nth-child(2) {
+        margin: 0 0 0 16px;
+      }
+    }
+  }
+
+  &__image {
+    margin: 0;
+    height: 100%;
+    display: flex;
+
+    .ama__image {
+      @include breakpoint($bp-xs) {
+        height: 100%;
+        object-position: top;
+      }
+      height: auto;
+      object-position: center;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    & > * {
+      height: auto;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  //IE11 hack becaue IE does not understand object-fit
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    //This targets all hub cards in IE11
+    &__image {
+      height: auto;
+
+      .ama__image {
+        max-height: 400px;
+      }
+    }
+    //This targets all hub hero images and prevents them from having a max-height
+    &.ama__hub-hero .ama__hub-card__image .ama__image {
+      max-width: 100%;
+      max-height: none;
+    }
+  }
+
+  @at-root {
+    a:hover#{&},
+    a:focus#{&} {
+      background-color: darken($gray-7, 10%);
+    }
+  }
+
+  &--no-image {
+    @include gutter($padding-bottom-full...);
+    min-height: 0;
+
+    .ama__hub-card__heading {
+      border-bottom: 1px so & d $gray-50;
+    }
+
+    .ama__hub-card__text {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-half...);
+    }
+  }
+
+  &--image-text {
+    .ama__hub-card__image {
+      @include breakpoint($bp-xs) {
+        max-height: 400px;
+      }
+      @include breakpoint($bp-small) {
+        max-height: 240px;
+      }
+      @include breakpoint($bp-med) {
+        max-height: 300px;
+      }
+      @include breakpoint($bp-large) {
+        max-height: 370px;
+      }
+      @include breakpoint($bp-xl) {
+        max-height: 370px;
+      }
+      overflow: hidden;
+    }
+  }
+
+  &--portrait {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    .ama__image {
+      display: none;
+    }
+
+    .ama__hub-card__description {
+      margin-top: auto;
+    }
+  }
+
+  &--fifty-fifty {
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__button-container {
+      text-align: left;
+      padding: 20px 0;
+    }
+
+    .ama__hub-card__image,
+    .ama__image {
+      flex-basis: 100%;
+    }
+
+    .ama__hub-card__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--fifty-fifty-left {
+    @extend .ama__hub-card--fifty-fifty;
+    flex-direction: column;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include breakpoint($bp-small $bp-med) {
+    // 2-up layout
+    // when there are three items it's 50:50
+    &:nth-child(1):nth-last-child(2) {
+      @include gutter($margin-right-half...);
+      @include gutter($margin-bottom-half...);
+      width: calc(50% - 14px);
+    }
+
+    &:nth-child(2):nth-last-child(1) {
+      @include gutter($margin-left-half...);
+      @include gutter($margin-bottom-half...);
+      width: calc(50% - 14px);
+    }
+
+    // 3-up layout
+    // when there are three items it's 50:50/100
+    // first item is
+    &:nth-child(1):nth-last-child(3) {
+      @include gutter($margin-right-half...);
+      @include gutter($margin-bottom-half...);
+      width: calc(50% - 14px);
+    }
+    // last of three doesn't have right padding
+    &:nth-child(2):nth-last-child(2) {
+      @include gutter($margin-left-half...);
+      width: calc(50% - 14px);
+
+    }
+
+    &:nth-child(3):nth-last-child(1) {
+      width: 100%;
+    }
+
+    // 3-up layout
+    // when there are three items it's 50:50/50:50
+    &:nth-child(1):nth-last-child(4),
+    &:nth-child(2):nth-last-child(3),
+    &:nth-child(3):nth-last-child(2),
+    &:nth-child(4):nth-last-child(1) {
+      width: calc(50% - 14px);
+    }
+    // first of three doesn't have left padding
+    &:nth-child(1):nth-last-child(4),
+    &:nth-child(3):nth-last-child(2) {
+      @include gutter($margin-right-half...);
+      @include gutter($margin-bottom-half...);
+    }
+    // last of three doesn't have right padding
+    &:nth-child(2):nth-last-child(3),
+    &:nth-child(4):nth-last-child(1) {
+      @include gutter($margin-bottom-half...);
+    }
+  }
+
+  @include breakpoint($bp-med) {
+    width: 100%;
+
+    // 2-up layout
+    // when there are three items it's 50:50
+    &:nth-child(1):nth-last-child(2) {
+      @include gutter($margin-right-half...);
+      width: calc(50% - 14px);
+    }
+
+    &:nth-child(2):nth-last-child(1) {
+      margin-right: 0;
+      width: 50%;
+    }
+
+    // 3-up layout
+    // when there are three items it's 33:33:33
+    &:nth-child(1):nth-last-child(3),
+    &:nth-child(2):nth-last-child(2),
+    &:nth-child(3):nth-last-child(1) {
+      @include gutter($margin-right-half...);
+      width: calc(33.333% - 9.5px);
+    }
+    // first of three doesn't have left padding
+    &:nth-child(1):nth-last-child(3) {
+      //margin-left: 0;
+    }
+    // last of three doesn't have right padding
+    &:nth-child(3):nth-last-child(1) {
+      margin-right: 0;
+    }
+
+    // 4-up layout
+    // when there are three items it's 25:25:25:25
+    &:nth-child(1):nth-last-child(4),
+    &:nth-child(2):nth-last-child(3),
+    &:nth-child(3):nth-last-child(2),
+    &:nth-child(4):nth-last-child(1) {
+      @include gutter($margin-right-half...);
+      width: calc(25% - 10.5px);
+    }
+
+    // last of three doesn't have right padding
+    &:nth-child(4):nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+}
