@@ -23,6 +23,7 @@
       @include breakpoint($bp-small max-width) {
         margin-top: $gutter;
       }
+      flex-basis: 35%;
       h2 {
         font-size: 2em;
         line-height: 42px;
@@ -176,14 +177,19 @@
     padding-top: $gutter;
     .thirty-seventy-block {
       &__aside {
-        @include breakpoint($bp-med) {
-          padding-right: $gutter;
-          max-width: 405px;
+        &.double-button {
+          @include breakpoint($bp-med) {
+            padding-right: $gutter;
+            max-width: 405px;
+            flex-basis: 60%;
+          }
         }
       }
       &__background {
-        @include breakpoint($bp-med) {
-          margin-left: 0;
+        &.double-button {
+          @include breakpoint($bp-med) {
+            margin-left: 0;
+          }
         }
       }
     }
