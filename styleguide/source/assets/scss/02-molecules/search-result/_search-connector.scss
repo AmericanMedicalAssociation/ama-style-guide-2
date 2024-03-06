@@ -1,4 +1,8 @@
 .ama-search-connector-container {
+  @include breakpoint($bp-med max-width) {
+    padding-top: calc($gutter/2);
+    border-top: 1px solid $gray-20;
+  }
   a {
     margin-bottom: calc($gutter/2);
     text-decoration: none;
@@ -15,8 +19,9 @@
       width: 49vh;
       height: 190px;
 
-      @include breakpoint(359px max-width) {
-        width: 46vh;
+      @include breakpoint($bp-med max-width) {
+        max-width: 280px;
+        margin-right: 20px;
       }
       @include breakpoint($bp-xs max-width) {
         width: 47vh;
@@ -55,6 +60,10 @@
   }
   .search-connector-header {
     font-family: $myriad-pro;
+
+    @include breakpoint($bp-med max-width) {
+      display: none;
+    }
     @include font-size($p-font-sizes);
     .title {
       text-transform: uppercase;
