@@ -176,19 +176,19 @@
     border-top: 1px solid $gray-7;
     padding-top: $gutter;
     .thirty-seventy-block {
-      &__aside {
-        &.double-button {
-          @include breakpoint($bp-med) {
-            padding-right: $gutter;
-            max-width: 405px;
-            flex-basis: 60%;
+      &.double-button {
+        .thirty-seventy-block {
+          &__aside {
+            @include breakpoint($bp-med) {
+              padding-right: $gutter;
+              max-width: 405px;
+              flex-basis: 60%;
+            }
           }
-        }
-      }
-      &__background {
-        &.double-button {
-          @include breakpoint($bp-med) {
-            margin-left: 0;
+          &__background {
+            @include breakpoint($bp-med) {
+              margin-left: 0;
+            }
           }
         }
       }
