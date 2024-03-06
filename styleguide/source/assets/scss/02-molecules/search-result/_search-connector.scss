@@ -1,8 +1,4 @@
 .ama-search-connector-container {
-  display:none;
-  @include breakpoint($bp-med) {
-    display: block;
-  }
   a {
     margin-bottom: calc($gutter/2);
     text-decoration: none;
@@ -91,6 +87,18 @@
         padding-right: 0;
         height: 0;
       }
+    }
+
+    > a:first-of-type {
+      @include breakpoint($bp-med min-width) {
+        display: none !important;
+      }
+    }
+  }
+
+  &.desktop {
+    @include breakpoint($bp-med max-width) {
+      display: none !important;
     }
   }
 }
