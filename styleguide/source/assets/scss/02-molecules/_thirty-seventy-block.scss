@@ -111,17 +111,20 @@
     .image-container {
       position: relative;
       overflow: hidden;
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-small) {
         padding-bottom: 66.67%;
+      }
+      @include breakpoint($bp-small $bp-med) {
+        min-height: 480px;
       }
     }
 
     .image-container img {
-      @include breakpoint($bp-med) {
+      width: 100%;
+      @include breakpoint($bp-small) {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
         height: 100%;
         object-fit: cover;
       }
@@ -168,7 +171,26 @@
     text-decoration: none;
   }
 
+  // Article Embed Styles
   .thirty-seventy-block-embed {
     border-top: 1px solid $gray-7;
     padding-top: $gutter;
+    .thirty-seventy-block {
+      &.double-button {
+        .thirty-seventy-block {
+          &__aside {
+            @include breakpoint($bp-med) {
+              padding-right: $gutter;
+              max-width: 405px;
+              flex-basis: 60%;
+            }
+          }
+          &__background {
+            @include breakpoint($bp-med) {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
   }
