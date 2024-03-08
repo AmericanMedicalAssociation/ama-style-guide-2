@@ -14,7 +14,9 @@
     align-items: center;
     border: 1px solid $white;
     cursor: pointer;
-    min-width: 200px;
+    @include breakpoint($bp-med) {
+      min-width: 200px;
+    }
 
     &.main {
       display: none;
