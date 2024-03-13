@@ -32,6 +32,11 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    .ama__button--pill-secondary {
+      @include breakpoint($bp-small) {
+        padding: 5px 21px;
+      }
+    }
   }
 }
 
