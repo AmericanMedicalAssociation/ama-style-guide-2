@@ -10540,6 +10540,12 @@ Styles for the new Category Featured Content Custom Block.
   justify-content: center;
   gap: 10px;
 }
+@media (min-width: 37.5em) {
+  .dr-finder-modal__content .form-managed-file .ama__button--pill-secondary,
+  .dr-finder-modal__content .form-actions .ama__button--pill-secondary {
+    padding: 5px 21px;
+  }
+}
 
 /* The Close Button */
 .dr-finder-modal__close {
@@ -10793,7 +10799,6 @@ main {
 }
 
 .dr-finder-profile-header__doctor-info__pronouns {
-  font-size: 16px;
   margin: 5.6px 0;
 }
 
@@ -10829,7 +10834,7 @@ main {
 }
 
 .dr-finder-profile-header__doctor-info__specialty {
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 7px;
 }
 
@@ -10837,9 +10842,14 @@ main {
   color: #027DBC;
 }
 
+.dr-finder-profile-header__claim .ama__button {
+  padding: 5px 21px;
+}
+
 .dr-finder-profile-header__upload-actions .ama__button {
   width: 100%;
   margin-bottom: 14px;
+  padding: 5px 21px;
 }
 
 .dr-finder-profile-header__edit-actions .ama__button {
@@ -10848,11 +10858,14 @@ main {
 @media (min-width: 37.5em) {
   .dr-finder-profile-header__edit-actions .ama__button {
     width: auto;
+    padding: 5px 21px;
   }
 }
 
 .dr-finder-profile-header__doctor-info__service {
-  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
 }
 
 .dr-finder-profile-header__edit-actions,
@@ -10887,6 +10900,10 @@ main {
   .dr-finder-profile-header__doctor-info__address.multiadress {
     max-width: 275px;
   }
+}
+
+.dr-finder-profile__actions .ama__button {
+  padding: 5px 21px;
 }
 
 .dr-finder-search-result-card {
@@ -11640,7 +11657,11 @@ main {
   align-items: center;
   border: 1px solid #ffffff;
   cursor: pointer;
-  min-width: 200px;
+}
+@media (min-width: 56.25em) {
+  .ama__explore-menu__button {
+    min-width: 200px;
+  }
 }
 .ama__explore-menu__button.main {
   display: none;
@@ -18664,25 +18685,25 @@ a.thirty-seventy-wrapper,
     text-transform: uppercase;
   }
 }
-.ama__trending-block__header.trending-icon span {
+.ama__trending-block__header.trending-icon h3 {
   font-size: 22px;
   font-weight: 600;
   margin: 0;
   line-height: 1.18;
 }
-.ama__trending-block__header.trending-icon span::before {
+.ama__trending-block__header.trending-icon h3::before {
   width: 0;
   height: 0;
 }
 @media (min-width: 37.5em) {
-  .ama__trending-block__header.trending-icon span::before {
-    top: 6px;
-    left: -24px;
+  .ama__trending-block__header.trending-icon h3::before {
+    top: 5px;
+    left: 58px;
     width: 18px;
     height: 18px;
   }
 }
-.ama__trending-block__header.trending-icon span::after {
+.ama__trending-block__header.trending-icon h3::after {
   background: none;
 }
 .ama__trending-block__inner {
@@ -18859,7 +18880,7 @@ a.thirty-seventy-wrapper,
   text-decoration: none;
   text-align: center;
 }
-.trending-icon span {
+.trending-icon h3 {
   position: relative;
   margin: 0 7px 4px 14px;
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -18871,7 +18892,7 @@ a.thirty-seventy-wrapper,
   letter-spacing: normal;
   color: #ffffff;
 }
-.trending-icon span::before {
+.trending-icon h3::before {
   content: " ";
   position: absolute;
   left: -38px;
@@ -18881,16 +18902,6 @@ a.thirty-seventy-wrapper,
   background: url("../icons/icon-trending.svg") no-repeat 0px 0px;
   background-size: contain;
   border-radius: 50%;
-}
-.trending-icon span::after {
-  content: " ";
-  position: absolute;
-  right: -32px;
-  top: 5px;
-  width: 24px;
-  height: 18px;
-  background: url("../images/arrow-right-white.png") no-repeat 0px 0px;
-  background-size: contain;
 }
 
 .ama__upcoming-event {
