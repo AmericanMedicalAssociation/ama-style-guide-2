@@ -65,7 +65,13 @@
       padding-left: 40px;
       counter-increment: inst;
       list-style: none;
+      width: 90%;
+      padding-bottom: 14px;
+      margin: 14px auto 0;
+      border-bottom: 1px solid $gray-20;
       @include breakpoint($bp-large) {
+        width: 100%;
+        max-width: 249px;
         padding-left: 47px;
       }
       &::before {
@@ -105,16 +111,6 @@
       text-decoration: none;
       &:hover {
         text-decoration: underline;
-      }
-    }
-
-    .ama__rule {
-      width: 90%;
-      margin: 14px auto 0;
-      border-color: $gray-20;
-      @include breakpoint($bp-large) {
-        width: 100%;
-        max-width: 249px;
       }
     }
   }
