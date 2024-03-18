@@ -71,17 +71,16 @@ fieldset#edit-state--wrapper {
 
 body[data-once*="form-single-submit"] > div.ui-selectmenu-menu.ui-front.ui-selectmenu-open {
   padding-right: 15px;
-}
-
-ul#edit-state-state-province-menu {
-  max-height: 400px;
-  overflow-y: scroll;
-  @media screen and (max-width: $bp-med) {
-    width: 100% !important;
-  }
-
-  li.ui-menu-item {
-    width: 100%;
-    white-space: normal !important;
+  ul.ui-menu {
+    max-height: 400px;
+    overflow-y: scroll;
+    @media screen and (max-width: $bp-med) {
+      width: 100% !important;
+    }
+  
+    li.ui-menu-item {
+      width: 100%;
+      white-space: normal !important;
+    }
   }
 }
