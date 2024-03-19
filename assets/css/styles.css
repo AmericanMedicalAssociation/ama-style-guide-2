@@ -12455,12 +12455,14 @@ section.ama__forum_comments {
 .ama__forum-table-wrap table tr [data-th=Topics] span,
 .ama__forum-table-wrap table tr [data-th=Posts] span,
 .ama__forum-table-wrap table tr [data-th^=Resolution] span,
+.ama__forum-table-wrap table tr [data-th^=Report] span,
 .ama__forum-table-wrap table tr [data-th=Replies] span,
 .ama__forum-table-wrap table tr [data-th="Last post"] span,
 .ama__forum-table-wrap table tr [data-th="Last reply"] span,
 .ama__topic-table-wrap table tr [data-th=Topics] span,
 .ama__topic-table-wrap table tr [data-th=Posts] span,
 .ama__topic-table-wrap table tr [data-th^=Resolution] span,
+.ama__topic-table-wrap table tr [data-th^=Report] span,
 .ama__topic-table-wrap table tr [data-th=Replies] span,
 .ama__topic-table-wrap table tr [data-th="Last post"] span,
 .ama__topic-table-wrap table tr [data-th="Last reply"] span {
@@ -12471,12 +12473,14 @@ section.ama__forum_comments {
   .ama__forum-table-wrap table tr [data-th=Topics] span,
   .ama__forum-table-wrap table tr [data-th=Posts] span,
   .ama__forum-table-wrap table tr [data-th^=Resolution] span,
+  .ama__forum-table-wrap table tr [data-th^=Report] span,
   .ama__forum-table-wrap table tr [data-th=Replies] span,
   .ama__forum-table-wrap table tr [data-th="Last post"] span,
   .ama__forum-table-wrap table tr [data-th="Last reply"] span,
   .ama__topic-table-wrap table tr [data-th=Topics] span,
   .ama__topic-table-wrap table tr [data-th=Posts] span,
   .ama__topic-table-wrap table tr [data-th^=Resolution] span,
+  .ama__topic-table-wrap table tr [data-th^=Report] span,
   .ama__topic-table-wrap table tr [data-th=Replies] span,
   .ama__topic-table-wrap table tr [data-th="Last post"] span,
   .ama__topic-table-wrap table tr [data-th="Last reply"] span {
@@ -17767,9 +17771,6 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox .ui-checkboxradio-icon {
   border: 1px solid #46166B;
   border-radius: 2px;
-  width: 13px;
-  min-width: 13px;
-  height: 16px;
 }
 .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox span.us-verify,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__checkbox span.us-verify,
@@ -17812,6 +17813,15 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button {
     max-width: 220px;
   }
+}
+.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover {
+  background-color: #ffd8a3;
+  border-color: #ffd8a3;
 }
 .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .form-item--error-message.active-error,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .form-item--error-message.active-error,
@@ -18726,9 +18736,15 @@ a.thirty-seventy-wrapper,
   padding-left: 40px;
   counter-increment: inst;
   list-style: none;
+  width: 90%;
+  padding-bottom: 14px;
+  margin: 14px auto 0;
+  border-bottom: 1px solid #CBCBCB;
 }
 @media (min-width: 75em) {
   .ama__trending-block__links > li {
+    width: 100%;
+    max-width: 249px;
     padding-left: 47px;
   }
 }
@@ -18772,17 +18788,6 @@ a.thirty-seventy-wrapper,
 }
 .ama__trending-block__links a:hover {
   text-decoration: underline;
-}
-.ama__trending-block__links .ama__rule {
-  width: 90%;
-  margin: 14px auto 0;
-  border-color: #CBCBCB;
-}
-@media (min-width: 75em) {
-  .ama__trending-block__links .ama__rule {
-    width: 100%;
-    max-width: 249px;
-  }
 }
 .ama__trending-block__view-all {
   font-size: 16px;
@@ -22541,17 +22546,16 @@ fieldset#edit-state--wrapper .ui-selectmenu-button.ui-button {
 body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectmenu-open {
   padding-right: 15px;
 }
-
-ul#edit-state-state-province-menu {
+body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectmenu-open ul.ui-menu {
   max-height: 400px;
   overflow-y: scroll;
 }
 @media screen and (max-width: 56.25em) {
-  ul#edit-state-state-province-menu {
+  body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectmenu-open ul.ui-menu {
     width: 100% !important;
   }
 }
-ul#edit-state-state-province-menu li.ui-menu-item {
+body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectmenu-open ul.ui-menu li.ui-menu-item {
   width: 100%;
   white-space: normal !important;
 }
@@ -27132,7 +27136,8 @@ section#related_links .ama__membership ul li {
 }
 
 .ama__series .salesforce-subscribe-form,
-.ama__trending .salesforce-subscribe-form {
+.ama__trending .salesforce-subscribe-form,
+.ama__topic_terms .salesforce-subscribe-form {
   display: inline-block;
   border: none;
   line-height: 0;
@@ -27140,12 +27145,14 @@ section#related_links .ama__membership ul li {
 }
 @media (max-width: 37.5em) {
   .ama__series .salesforce-subscribe-form,
-  .ama__trending .salesforce-subscribe-form {
+  .ama__trending .salesforce-subscribe-form,
+  .ama__topic_terms .salesforce-subscribe-form {
     height: 44px;
   }
 }
 .ama__series .salesforce-subscribe-form::before,
-.ama__trending .salesforce-subscribe-form::before {
+.ama__trending .salesforce-subscribe-form::before,
+.ama__topic_terms .salesforce-subscribe-form::before {
   display: block;
   width: 19px;
   height: 19px;
@@ -27160,7 +27167,8 @@ section#related_links .ama__membership ul li {
 }
 @media (min-width: 37.5em) {
   .ama__series .salesforce-subscribe-form::before,
-  .ama__trending .salesforce-subscribe-form::before {
+  .ama__trending .salesforce-subscribe-form::before,
+  .ama__topic_terms .salesforce-subscribe-form::before {
     padding-left: 5px;
     width: 21px;
     height: 26px;
@@ -27172,17 +27180,20 @@ section#related_links .ama__membership ul li {
 }
 @media (max-width: 37.5em) {
   .ama__series .salesforce-subscribe-form::before,
-  .ama__trending .salesforce-subscribe-form::before {
+  .ama__trending .salesforce-subscribe-form::before,
+  .ama__topic_terms .salesforce-subscribe-form::before {
     position: relative;
     top: -2px;
   }
 }
 .ama__series .salesforce-subscribe-form .form-actions,
-.ama__trending .salesforce-subscribe-form .form-actions {
+.ama__trending .salesforce-subscribe-form .form-actions,
+.ama__topic_terms .salesforce-subscribe-form .form-actions {
   margin: 0;
 }
 .ama__series .salesforce-subscribe-form input.form-submit,
-.ama__trending .salesforce-subscribe-form input.form-submit {
+.ama__trending .salesforce-subscribe-form input.form-submit,
+.ama__topic_terms .salesforce-subscribe-form input.form-submit {
   border: 1px solid #a28ab5;
   background: none;
   color: #310f4a;
@@ -27195,7 +27206,8 @@ section#related_links .ama__membership ul li {
 }
 @media (max-width: 37.5em) {
   .ama__series .salesforce-subscribe-form input.form-submit,
-  .ama__trending .salesforce-subscribe-form input.form-submit {
+  .ama__trending .salesforce-subscribe-form input.form-submit,
+  .ama__topic_terms .salesforce-subscribe-form input.form-submit {
     width: 87px;
     height: 44px;
     font-size: 14px;
@@ -27205,7 +27217,8 @@ section#related_links .ama__membership ul li {
 }
 @media (min-width: 37.5em) {
   .ama__series .salesforce-subscribe-form input.form-submit,
-  .ama__trending .salesforce-subscribe-form input.form-submit {
+  .ama__trending .salesforce-subscribe-form input.form-submit,
+  .ama__topic_terms .salesforce-subscribe-form input.form-submit {
     min-width: 180px;
     max-width: 180px;
     max-height: 46px;
@@ -27214,20 +27227,24 @@ section#related_links .ama__membership ul li {
   }
 }
 .ama__series .salesforce-subscribe-form:hover::before,
-.ama__trending .salesforce-subscribe-form:hover::before {
+.ama__trending .salesforce-subscribe-form:hover::before,
+.ama__topic_terms .salesforce-subscribe-form:hover::before {
   background-image: url("../images/SubscribeHoverIcon_Locker.svg");
 }
 .ama__series .salesforce-subscribe-form:hover input.form-submit,
-.ama__trending .salesforce-subscribe-form:hover input.form-submit {
+.ama__trending .salesforce-subscribe-form:hover input.form-submit,
+.ama__topic_terms .salesforce-subscribe-form:hover input.form-submit {
   text-decoration: underline;
 }
 .ama__series .salesforce-subscribe-form + .flag,
-.ama__trending .salesforce-subscribe-form + .flag {
+.ama__trending .salesforce-subscribe-form + .flag,
+.ama__topic_terms .salesforce-subscribe-form + .flag {
   display: inline-block;
   margin-top: 1px;
 }
 .ama__series .subscribe-series,
-.ama__trending .subscribe-series {
+.ama__trending .subscribe-series,
+.ama__topic_terms .subscribe-series {
   display: inline-block;
   border: 1px solid #a28ab5;
   background: none;
@@ -27241,7 +27258,8 @@ section#related_links .ama__membership ul li {
 }
 @media (max-width: 37.5em) {
   .ama__series .subscribe-series,
-  .ama__trending .subscribe-series {
+  .ama__trending .subscribe-series,
+  .ama__topic_terms .subscribe-series {
     width: 87px;
     height: 44px;
     font-size: 14px;
@@ -27251,7 +27269,8 @@ section#related_links .ama__membership ul li {
 }
 @media (min-width: 37.5em) {
   .ama__series .subscribe-series,
-  .ama__trending .subscribe-series {
+  .ama__trending .subscribe-series,
+  .ama__topic_terms .subscribe-series {
     min-width: 180px;
     max-width: 180px;
     max-height: 46px;
@@ -27260,27 +27279,32 @@ section#related_links .ama__membership ul li {
   }
 }
 .ama__series .subscribe-series + .flag,
-.ama__trending .subscribe-series + .flag {
+.ama__trending .subscribe-series + .flag,
+.ama__topic_terms .subscribe-series + .flag {
   display: inline-block;
   margin-top: 0px;
 }
 @media (max-width: 37.5em) {
   .ama__series .subscribe-series + .flag,
-  .ama__trending .subscribe-series + .flag {
+  .ama__trending .subscribe-series + .flag,
+  .ama__topic_terms .subscribe-series + .flag {
     position: relative;
     top: -10px;
   }
 }
 .ama__series .subscribe-series:hover,
-.ama__trending .subscribe-series:hover {
+.ama__trending .subscribe-series:hover,
+.ama__topic_terms .subscribe-series:hover {
   text-decoration: underline;
 }
 .ama__series .subscribe-series:hover::before,
-.ama__trending .subscribe-series:hover::before {
+.ama__trending .subscribe-series:hover::before,
+.ama__topic_terms .subscribe-series:hover::before {
   background-image: url("../images/SubscribeHoverIcon_Locker.svg");
 }
 .ama__series .subscribe-series::before,
-.ama__trending .subscribe-series::before {
+.ama__trending .subscribe-series::before,
+.ama__topic_terms .subscribe-series::before {
   display: block;
   width: 19px;
   height: 19px;
@@ -27295,7 +27319,8 @@ section#related_links .ama__membership ul li {
 }
 @media (min-width: 37.5em) {
   .ama__series .subscribe-series::before,
-  .ama__trending .subscribe-series::before {
+  .ama__trending .subscribe-series::before,
+  .ama__topic_terms .subscribe-series::before {
     padding-left: 5px;
     width: 21px;
     height: 26px;
@@ -27307,18 +27332,21 @@ section#related_links .ama__membership ul li {
 }
 @media (max-width: 37.5em) {
   .ama__series .subscribe-series,
-  .ama__trending .subscribe-series {
+  .ama__trending .subscribe-series,
+  .ama__topic_terms .subscribe-series {
     position: relative;
     top: -8px;
   }
 }
 .ama__series .subscribe-series.subscribed::before,
-.ama__trending .subscribe-series.subscribed::before {
+.ama__trending .subscribe-series.subscribed::before,
+.ama__topic_terms .subscribe-series.subscribed::before {
   background-image: url("../images/SubscribedIcon_Locker.svg");
 }
 @media (min-width: 37.5em) {
   .ama__series .subscribe-series.subscribed::before,
-  .ama__trending .subscribe-series.subscribed::before {
+  .ama__trending .subscribe-series.subscribed::before,
+  .ama__topic_terms .subscribe-series.subscribed::before {
     left: 28px;
   }
 }
