@@ -3332,6 +3332,7 @@ button--news-subscribe:focus {
   line-height: 31px;
   font-weight: 600;
   padding: 0 0 14px 0;
+  margin-bottom: 0;
 }
 @media (max-width: 56.25em) {
   .ama__content-grouping-header {
@@ -12538,6 +12539,15 @@ section.ama__forum_comments {
   font-size: 20px;
   color: black;
 }
+.ama__topic-table-wrap th:nth-of-type(3) {
+  position: relative;
+  padding-right: 24px;
+}
+.ama__topic-table-wrap th:nth-of-type(3) span.tablesort {
+  position: absolute;
+  right: 4px;
+  top: 28px;
+}
 .ama__topic-table-wrap th:first-child {
   font-weight: 600;
   font-size: 26px;
@@ -12551,7 +12561,6 @@ section.ama__forum_comments {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 6em;
 }
 .ama__topic-table-wrap th:nth-child(2) a span {
   position: relative;
@@ -18039,6 +18048,12 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   width: 100%;
   max-width: 220px;
   margin: 0;
+}
+.ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover {
+  background-color: #ffd8a3;
+  border-color: #ffd8a3;
 }
 
 .ama--news-toc {
@@ -28825,11 +28840,11 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
     margin-bottom: 28px;
   }
 }
-.ama__news-article .ama__tools h3,
-.ama__event-detail .ama__tools h3,
-.ama__evergreen-page .ama__tools h3,
-.ama__press-release .ama__tools h3,
-.ama__subcategory-index .ama__tools h3 {
+.ama__news-article .ama__tools h2,
+.ama__event-detail .ama__tools h2,
+.ama__evergreen-page .ama__tools h2,
+.ama__press-release .ama__tools h2,
+.ama__subcategory-index .ama__tools h2 {
   -webkit-box-flex: 0;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
@@ -30026,6 +30041,9 @@ body.search-results .ama__layout--two-column--left {
 }
 .ama__category__row .container {
   padding: 0;
+}
+.ama__category__row:last-of-type {
+  border-bottom: solid 1px #a1a1a4;
 }
 @media (max-width: 37.5em) {
   .ama__category__row--no-mobile-padding {
