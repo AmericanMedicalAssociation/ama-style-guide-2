@@ -24,7 +24,7 @@
       text-align: center;
       text-transform: uppercase;
     }
-    span {
+    h3 {
       font-size: 22px;
       font-weight: 600;
       margin: 0;
@@ -33,8 +33,8 @@
         width: 0;
         height: 0;
         @include breakpoint($bp-small) {
-          top: 6px;
-          left: -24px;
+          top: 5px;
+          left: 58px;
           width: 18px;
           height: 18px;
         }
@@ -65,7 +65,13 @@
       padding-left: 40px;
       counter-increment: inst;
       list-style: none;
+      width: 90%;
+      padding-bottom: 14px;
+      margin: 14px auto 0;
+      border-bottom: 1px solid $gray-20;
       @include breakpoint($bp-large) {
+        width: 100%;
+        max-width: 249px;
         padding-left: 47px;
       }
       &::before {
@@ -105,16 +111,6 @@
       text-decoration: none;
       &:hover {
         text-decoration: underline;
-      }
-    }
-
-    .ama__rule {
-      width: 90%;
-      margin: 14px auto 0;
-      border-color: $gray-20;
-      @include breakpoint($bp-large) {
-        width: 100%;
-        max-width: 249px;
       }
     }
   }

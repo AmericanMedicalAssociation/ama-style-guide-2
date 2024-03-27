@@ -50,6 +50,7 @@
       [data-th="Topics"],
       [data-th="Posts"],
       [data-th^="Resolution"],
+      [data-th^="Report"],
       [data-th="Replies"],
       [data-th="Last post"],
       [data-th="Last reply"] {
@@ -110,10 +111,22 @@
     }
   }
 
-  th a {
-    font-weight: normal;
-    font-size: 20px;
-    color: black;
+  th {
+    a {
+      font-weight: normal;
+      font-size: 20px;
+      color: black;
+    }
+
+    &:nth-of-type(3) {
+      position: relative;
+      padding-right: 24px;
+      span.tablesort {
+        position: absolute;
+        right: 4px;
+        top: 28px;
+      }
+    }
   }
 
   th:first-child {
@@ -125,7 +138,7 @@
   th:nth-child(2) a {
     display: flex;
     flex-direction: row;
-    width: 6em;
+    // width: 6em;
   }
 
   th:nth-child(2) a span {

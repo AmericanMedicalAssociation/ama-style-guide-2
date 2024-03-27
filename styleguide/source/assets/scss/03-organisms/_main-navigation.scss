@@ -86,7 +86,7 @@
 
   .ama__site-logo {
     align-items: flex-start;
-    text-align: center;
+    text-align: left;
     min-width: 125px;
     flex-grow: 1;
 
@@ -94,6 +94,7 @@
       @include gutter($margin-right-half...);
       flex-grow: 0;
       min-width: 0;
+      text-align: center;
     }
 
     @include breakpoint($bp-med min-width) {
@@ -115,6 +116,10 @@
         padding: 2px calc($gutter/2);
       }
     }
+    
+    a {
+      @include button_focus_outline_light;
+    }
   }
 
   &__join--links {
@@ -124,6 +129,10 @@
     font-size: 14px;
     line-height: 1em;
     flex-grow: 2;
+
+    a {
+      @include button_focus_outline_light;
+    }
 
     @include breakpoint($bp-small min-width) {
       @include gutter($margin-left-full...);
@@ -149,6 +158,10 @@
   .ama__sign-in-dropdown {
     background-color: transparent;
     z-index: 500;
+    &:focus-within {
+      outline: 2px solid $pg-lt-blue;
+      outline-offset: 3px;
+    }
 
     @include breakpoint($bp-small min-width) {
       width: auto;
@@ -164,6 +177,10 @@
       display: block;
       min-width: 130px;
       text-align: right;
+
+      a {
+        @include button_focus_outline_light;
+      }
     }
   }
 
@@ -253,7 +270,8 @@
       padding-right: 5px;
       padding-left: 10px;
       font-size: 18px;
-      &:hover {
+      &:hover,
+      &:focus {
         text-decoration: underline;
       }
     }

@@ -298,7 +298,10 @@
     padding: 0;
     flex: 1;
     @include breakpoint($bp-small) {
-      flex: .34;
+      flex: .4;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 119px;
     }
   }
   .ama__subscribe-promo--media {
@@ -308,11 +311,7 @@
     padding: 0;
     margin: 0 0 28px 0;
     @include breakpoint($bp-small) {
-      padding-left: calc($gutter * .75);
-      flex: .66;
-    }
-    @include breakpoint($bp-med) {
-      padding-left: calc($gutter * 4.25);
+      flex: .6;
     }
   }
   .ama__subscribe-promo__subject-title {
@@ -330,10 +329,6 @@
     .ui-checkboxradio-icon {
       border: 1px solid $purple;
       border-radius: 2px;
-      width: 13px;
-      min-width: 13px;
-      height: 16px;
-
     }
     span.us-verify {
       color: $text-navy;
@@ -356,6 +351,11 @@
     text-transform: none;
     @include breakpoint($bp-small) {
       max-width: 220px;
+    }
+
+    &:hover {
+      background-color: #ffd8a3;
+      border-color: #ffd8a3;
     }
   }
 
@@ -490,5 +490,9 @@
     width: 100%;
     max-width: 220px;
     margin: 0;
+    &:hover {
+      background-color: #ffd8a3;
+      border-color: #ffd8a3;
+    }
   }
 }

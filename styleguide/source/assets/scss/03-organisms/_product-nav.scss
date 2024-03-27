@@ -10,10 +10,14 @@
   }
 
   li {
-    display: inline-block;
+    display: inline-grid;
 
     a {
       margin: 0 (calc($gutter / 2));
+      z-index: 99;
+      line-height: 1;
+
+      @include button_focus_outline_light;
     }
   }
 }

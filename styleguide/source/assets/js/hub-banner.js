@@ -30,6 +30,18 @@
           });
         }
       });
+
+      // Add tabindex attribute to all heading/subheading anchor tags
+      $(function() {
+        if ($('.hub-page-hero').length) {
+          if ($('.hub-page-hero .heading a').length) {
+            $('.hub-page-hero .heading a').attr('tabindex', '0');
+          }
+          if ($('.hub-page-hero .subheading a').length) {
+            $('.hub-page-hero .subheading a').attr('tabindex', '0');
+          }
+        }
+      });
     }
   };
 })(jQuery, Drupal);

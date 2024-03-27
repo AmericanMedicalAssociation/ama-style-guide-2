@@ -1,0 +1,28 @@
+// @copyright Copyright (c) 2022 Palantir.net
+/**
+ * @file
+ * Styles for Dr Finder filter suggestions .
+ */
+.dr-finder-filter_suggestions span {
+  @extend .ama__h1;
+  font-weight: normal;
+}
+
+.dr-finder-filter_suggestion__text {
+  margin: 0 0 0 $gutter;
+
+  @include breakpoint($bp-small) {
+    margin: $gutter 0 0 $gutter;
+  }
+}
+
+.dr-finder-filter_suggestion__text ul {
+  margin-top: calc($gutter/2);
+}
+
+.dr-finder-filter_suggestion__text ul li {
+
+  @include breakpoint($bp-small) {
+    padding: calc($gutter/4) 0;
+  }
+}

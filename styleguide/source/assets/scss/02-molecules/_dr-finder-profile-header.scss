@@ -1,0 +1,131 @@
+// @copyright Copyright (c) 2022 Palantir.net
+
+.dr-finder-profile-header {
+  @include breakpoint($bp-small) {
+    padding-top: $gutter;
+    margin-top: $gutter;
+    display: flex;
+  }
+}
+
+// We're showing the Member badge in different areas so show/hide below.
+.dr-finder-profile-header__image-column .dr-finder-badge {
+  margin: $gutter auto;
+
+  @include breakpoint($bp-small) {
+    display: none;
+  }
+}
+
+.dr-finder-profile-header__doctor-info .dr-finder-badge {
+  display: none;
+
+  @include breakpoint($bp-small) {
+    display: block;
+  }
+}
+
+// We don't need the space below this header.
+.dr-finder-profile-header__doctor-info__name {
+  margin: 0 0 4px 0;
+}
+
+.dr-finder-profile-header__doctor-info__pronouns {
+  margin: calc($gutter/5) 0;
+}
+
+.dr-finder-profile-header__image-url {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  background: $profileHeader-image;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+    height: inherit;
+  }
+}
+
+.dr-finder-profile-header__doctor-info {
+
+  @include breakpoint($bp-small) {
+    margin: 0 $gutter;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+}
+
+.dr-finder-profile-header__doctor-info__specialty {
+  font-weight: 600;
+  margin-top: calc($gutter/4);
+}
+
+.dr-finder-profile-header__doctor-info__url a {
+  color: $blue;
+}
+
+.dr-finder-profile-header__claim .ama__button {
+  padding: 5px 21px;
+}
+.dr-finder-profile-header__upload-actions .ama__button {
+  width: 100%;
+  margin-bottom: calc($gutter/2);
+  padding: 5px 21px;
+}
+
+.dr-finder-profile-header__edit-actions .ama__button {
+  width: 100%;
+
+  @include breakpoint($bp-small) {
+    width: auto;
+    padding: 5px 21px;
+  }
+}
+
+.dr-finder-profile-header__doctor-info__service {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+}
+
+.dr-finder-profile-header__edit-actions,
+.dr-finder-profile-header__upload-actions {
+  margin: $gutter 0;
+
+  @include breakpoint($bp-small) {
+    margin-top: 18px;
+    margin-bottom: $gutter*2;
+  }
+}
+
+.dr-finder-profile-header__image-verified-container {
+  position: relative;
+
+  svg {
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+    width: 40px;
+    max-width: inherit;
+    max-height: inherit;
+  }
+}
+
+.dr-finder-profile-header__doctor-info__address {
+
+  &.multiadress {
+    border-bottom: solid 1px $gray-30;
+    padding: .5em 0;
+
+    @include breakpoint($bp-small) {
+      max-width: 275px;
+    }
+  }
+}
