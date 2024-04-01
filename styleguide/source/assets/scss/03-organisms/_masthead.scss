@@ -91,10 +91,17 @@
     }
 
     &__link {
-      @extend %ama__link--blue;
-      @extend %ama__h4;
+      font-size: 14px;
+      line-height: 21px;
+      color: $gating-block-link;
       text-transform: uppercase;
       padding: $gutter-mobile 0 calc($gutter-mobile/2);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
 
       @include breakpoint($bp-med) {
         padding: calc($gutter-mobile/2) 0 $gutter-mobile;
