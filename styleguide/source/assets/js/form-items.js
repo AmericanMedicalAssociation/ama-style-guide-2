@@ -31,8 +31,30 @@
               }
             }
 
-            // jQueryUI selectmenu method
-            $('.ama__select-menu__select').selectmenu();
+          // jQueryUI selectmenu method to initiate custom dropdown menu
+          $('.ama__select-menu__select').selectmenu();
+
+          // Wait for a short delay to ensure the menu is fully loaded and initialized
+          setTimeout(function() {
+            // Set aria-label on selectmenu button
+            var inititalSelectedOptionText = $('.ui-selectmenu-menu').find('div.ui-state-active').text();
+            $('.ui-selectmenu-menu').find('div.ui-state-active').attr('aria-label', 'Sort by ' + inititalSelectedOptionText);
+          }, 100);
+
+          // Set aria-label on selectmenu button when an option is selected
+          $('.ama__select-menu__select').selectmenu({
+            change: function(event, ui) {
+              // Get the text of the currently selected option
+              var selectedOptionText = $(this).find('option:selected').text();
+              
+              // Set the aria-label attribute to the text of the selected option
+              $('.ama__select-menu__select').next('.ui-selectmenu-button').find('.ui-selectmenu-text').attr('aria-label', 'Sorty by ' + selectedOptionText);
+              $('.ui-selectmenu-menu').find('.ui-menu-item div.ui-state-active').attr('aria-label', 'Sort by ' + selectedOptionText);
+            }
+            });
+
+          // Refresh menu to set changes
+          $('.ama__select-menu__select').selectmenu('refresh');
 
             // If focus is on the select menu
             // Only submit after hitting enter
