@@ -323,6 +323,11 @@
               location.href = link;
             }
           });
+
+          if($('.paragraph--type--form-50-50 div.success_message').length) {
+            console.log('success');
+            $('.paragraph--type--form-50-50').find('.form-content').addClass('success');
+          };
         });
       })(jQuery);
     }
