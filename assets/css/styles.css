@@ -755,8 +755,7 @@ div[role=alert] a, h4 a,
 .ama__h4 a,
 .ama__accordion-tab.ui-state-default a,
 .ama__tabs .ama__agenda-date a.ui-tabs-anchor a,
-.ama__75-25__masthead__content .link a,
-.ama__masthead__content__link a, h3 a,
+.ama__75-25__masthead__content .link a, h3 a,
 .ama__h3 a,
 .ama__subcategory-hero__title a,
 .ama__category-hero__title a,
@@ -1047,8 +1046,7 @@ h4,
 .ama__h4,
 .ama__accordion-tab.ui-state-default,
 .ama__tabs .ama__agenda-date a.ui-tabs-anchor,
-.ama__75-25__masthead__content .link,
-.ama__masthead__content__link {
+.ama__75-25__masthead__content .link {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 0.9;
@@ -1059,8 +1057,7 @@ h4,
   .ama__h4,
   .ama__accordion-tab.ui-state-default,
   .ama__tabs .ama__agenda-date a.ui-tabs-anchor,
-  .ama__75-25__masthead__content .link,
-  .ama__masthead__content__link {
+  .ama__75-25__masthead__content .link {
     font-size: 0.9;
     line-height: 1.6;
   }
@@ -1070,8 +1067,7 @@ h4,
   .ama__h4,
   .ama__accordion-tab.ui-state-default,
   .ama__tabs .ama__agenda-date a.ui-tabs-anchor,
-  .ama__75-25__masthead__content .link,
-  .ama__masthead__content__link {
+  .ama__75-25__masthead__content .link {
     font-size: 1.111em;
     line-height: 1.6;
   }
@@ -1081,8 +1077,7 @@ h4,
   .ama__h4,
   .ama__accordion-tab.ui-state-default,
   .ama__tabs .ama__agenda-date a.ui-tabs-anchor,
-  .ama__75-25__masthead__content .link,
-  .ama__masthead__content__link {
+  .ama__75-25__masthead__content .link {
     font-size: 1.111em;
     line-height: 1.6;
   }
@@ -4684,31 +4679,24 @@ a {
 }
 
 .ama__link--blue, .ama__promo--inline-banner a, .ama__applied-filters__tag__remove,
-.ama__75-25__masthead__content .link,
-.ama__masthead__content__link {
+.ama__75-25__masthead__content .link {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none;
 }
 .ama__link--blue span, .ama__promo--inline-banner a span, .ama__applied-filters__tag__remove span,
-.ama__75-25__masthead__content .link span,
-.ama__masthead__content__link span {
+.ama__75-25__masthead__content .link span {
   text-decoration: none;
 }
 .ama__link--blue:link, .ama__promo--inline-banner a:link, .ama__applied-filters__tag__remove:link, .ama__link--blue:visited, .ama__promo--inline-banner a:visited, .ama__applied-filters__tag__remove:visited,
 .ama__75-25__masthead__content .link:link,
-.ama__masthead__content__link:link,
-.ama__75-25__masthead__content .link:visited,
-.ama__masthead__content__link:visited {
+.ama__75-25__masthead__content .link:visited {
   color: #027DBC;
 }
 .ama__link--blue:active, .ama__promo--inline-banner a:active, .ama__applied-filters__tag__remove:active, .ama__link--blue:hover, .ama__promo--inline-banner a:hover, .ama__applied-filters__tag__remove:hover, .ama__link--blue:focus, .ama__promo--inline-banner a:focus, .ama__applied-filters__tag__remove:focus,
 .ama__75-25__masthead__content .link:active,
-.ama__masthead__content__link:active,
 .ama__75-25__masthead__content .link:hover,
-.ama__masthead__content__link:hover,
-.ama__75-25__masthead__content .link:focus,
-.ama__masthead__content__link:focus {
+.ama__75-25__masthead__content .link:focus {
   color: #3597C9;
   text-decoration: underline;
   background-color: transparent;
@@ -19914,6 +19902,203 @@ a:focus.ama__hub-card {
   }
 }
 
+.paragraph--type--form-50-50 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 14px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 > div {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+.paragraph--type--form-50-50 .text-content {
+  background: #CBCBCB;
+  padding: 28px 4%;
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .text-content {
+    padding: 57px 4.4% 28px;
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 75em) {
+  .paragraph--type--form-50-50 .text-content {
+    -ms-flex-preferred-size: 40%;
+    flex-basis: 40%;
+  }
+}
+.paragraph--type--form-50-50 .form-content {
+  background: #EDEDED;
+  padding: 28px 8.6% 26px;
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .form-content {
+    padding: 57px 8.6% 0;
+  }
+}
+@media (max-width: 37.5em) {
+  .paragraph--type--form-50-50 .form-content h3,
+  .paragraph--type--form-50-50 .form-content > div {
+    text-align: center;
+  }
+}
+.paragraph--type--form-50-50 .form-content.success h3,
+.paragraph--type--form-50-50 .form-content.success h3 + div {
+  display: none;
+}
+.paragraph--type--form-50-50 .ama__h1, .paragraph--type--form-50-50 .dr-finder-search-results-header__results-text, .paragraph--type--form-50-50 .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .paragraph--type--form-50-50 span {
+  margin-bottom: 14px;
+}
+.paragraph--type--form-50-50 .ama__hub-card__image {
+  margin: 33px auto 50px;
+  display: none;
+}
+@media (min-width: 56.25em) {
+  .paragraph--type--form-50-50 .ama__hub-card__image {
+    display: block;
+    max-width: 196px;
+  }
+}
+@media (min-width: 75em) {
+  .paragraph--type--form-50-50 .ama__hub-card__image {
+    max-width: 344px;
+  }
+}
+.paragraph--type--form-50-50 .salesforce-lead-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+@media (max-width: 37.5em) {
+  .paragraph--type--form-50-50 .salesforce-lead-form .form-item {
+    margin-top: 28px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .salesforce-lead-form .form-item.js-form-item-first-name + .js-form-item-last-name, .paragraph--type--form-50-50 .salesforce-lead-form .form-item.js-form-item-first-name:has(+ .js-form-item-last-name) {
+    margin-top: 18px;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .salesforce-lead-form .form-item.js-form-item-first-name + .js-form-item-last-name {
+    padding-left: 7px;
+  }
+  .paragraph--type--form-50-50 .salesforce-lead-form .form-item.js-form-item-first-name:has(+ .js-form-item-last-name) {
+    padding-right: 7px;
+  }
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item label {
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #000000;
+  font-weight: normal;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item label:after {
+  content: "";
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item input {
+  font-size: 14px;
+  line-height: 1;
+  padding: 3.25px 3px;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item input.error {
+  background: none;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item input:focus {
+  border: 2px solid #0076a5;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item .form-item--error-message {
+  margin-top: 4px;
+  margin-bottom: 0;
+  border: none;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-item .form-item--error-message strong {
+  color: #E90C26;
+  font-size: 12px;
+  font-weight: normal;
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .salesforce-lead-form .js-form-item-first-name {
+    padding-right: 7px;
+  }
+  .paragraph--type--form-50-50 .salesforce-lead-form .js-form-item-last-name {
+    padding-left: 7px;
+  }
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-actions {
+  margin: 14px auto 6px;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-actions input {
+  min-width: 173px;
+  padding: 5.5px 14px;
+  font-weight: normal;
+}
+.paragraph--type--form-50-50 .salesforce-lead-form .form-actions input:focus {
+  outline: 2px solid #0076a5;
+  outline-offset: 3px;
+}
+.paragraph--type--form-50-50 .form-content.success {
+  padding: 120px 0;
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .form-content.success {
+    padding: 92px 0;
+  }
+}
+.paragraph--type--form-50-50 #lead-form-container .success_message {
+  text-align: center;
+  position: relative;
+}
+.paragraph--type--form-50-50 #lead-form-container .success_message h2 {
+  font-size: 38px;
+  margin-bottom: 112px;
+}
+.paragraph--type--form-50-50 #lead-form-container .success_message h2:after {
+  content: " ";
+  position: absolute;
+  left: 42%;
+  top: 65px;
+  width: 92px;
+  height: 92px;
+  background: url("../images/check_confirmation.svg") no-repeat 0px 0px;
+}
+.paragraph--type--form-50-50 #lead-form-container .success_message p, .paragraph--type--form-50-50 #lead-form-container .success_message .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .paragraph--type--form-50-50 #lead-form-container .success_message .ama__image__text__subtitle, .paragraph--type--form-50-50 #lead-form-container .success_message .ama__resource-link--inline__text {
+  padding-top: 28px;
+  margin: 0 auto;
+  max-width: 280px;
+}
+
 .ama__hub-hero-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24668,8 +24853,12 @@ section.ama__page--event__speakers {
   padding-left: 10px;
   font-size: 18px;
 }
-.ama__hub .ama__main-navigation a.hub-header--link:hover, .ama__hub .ama__main-navigation a.hub-header--link:focus {
+.ama__hub .ama__main-navigation a.hub-header--link:hover {
   text-decoration: underline;
+}
+.ama__hub .ama__main-navigation a.hub-header--link:focus {
+  outline: 2px solid #80d4f5;
+  outline-offset: 3px;
 }
 
 .ama__masthead {
@@ -24793,8 +24982,15 @@ section.ama__page--event__speakers {
   }
 }
 .ama__masthead__content__link {
+  font-size: 14px;
+  line-height: 21px;
+  color: #015884;
   text-transform: uppercase;
   padding: 21px 0 10.5px;
+  text-decoration: none;
+}
+.ama__masthead__content__link:hover, .ama__masthead__content__link:focus {
+  text-decoration: underline;
 }
 @media (min-width: 56.25em) {
   .ama__masthead__content__link {
