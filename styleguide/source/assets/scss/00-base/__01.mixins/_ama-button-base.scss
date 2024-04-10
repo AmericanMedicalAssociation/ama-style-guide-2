@@ -13,7 +13,7 @@
   vertical-align: middle;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     border-color: $purple;
     background-color: $hoverPurple;
     color: $white;
@@ -21,14 +21,14 @@
 }
 
 @mixin button_focus_outline_light {
-  &:focus {
+  &:focus-visible {
     outline: 2px solid $pg-lt-blue;
     outline-offset: 3px;
   }
 }
 
 @mixin button_focus_outline {
-  &:focus {
+  &:focus-visible {
     outline: 2px solid $blue;
     outline-offset: 3px;
   }
