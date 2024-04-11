@@ -631,13 +631,19 @@ a.ama__membership {
   }
 }
 
+// Dr. Finder membership promo styles
 .ama__membership.ama_drfinder_promo {
   background-color: transparent;
   margin-top: 56px;
   padding-bottom: 56px;
 
+  .ama__membership-content {
+    background: none;
+  }
+
   .ama__membership_cta_container {
     margin-left: 0;
+    @include gutter($padding-left-full...);
 
     .ama__button {
       width: auto;
