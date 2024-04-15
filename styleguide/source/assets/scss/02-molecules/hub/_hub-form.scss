@@ -25,6 +25,10 @@
     }
   }
 
+  #lead-form-container {
+    padding-bottom: 28px;
+  }
+
   .form-content {
     background: $gray-7;
     padding: 28px 8.6% 26px;
@@ -111,17 +115,6 @@
           border: 2px solid $tab-focus-blue;
         }
       }
-
-      .form-item--error-message {
-        margin-top: 4px;
-        margin-bottom: 0;
-        border: none;
-        strong {
-          color: $red;
-          font-size: 12px;
-          font-weight: normal;
-        }
-      }
     }
     @include breakpoint($bp-small) {
       .js-form-item-first-name {
@@ -137,12 +130,27 @@
         min-width: 173px;
         padding: 5.5px 14px;
         font-weight: normal;
+
+        &.form-submit.ama__button {
+          margin: 0;
+        }
     
         &:focus {
           outline: 2px solid $tab-focus-blue;
           outline-offset: 3px;
         }
       }
+    }
+  }
+
+  .form-item--error-message {
+    margin-top: 4px;
+    margin-bottom: 0;
+    border: none;
+    strong {
+      color: $red;
+      font-size: 12px;
+      font-weight: normal;
     }
   }
 
