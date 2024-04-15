@@ -19945,6 +19945,9 @@ a:focus.ama__hub-card {
     flex-basis: 40%;
   }
 }
+.paragraph--type--form-50-50 #lead-form-container {
+  padding-bottom: 28px;
+}
 .paragraph--type--form-50-50 .form-content {
   background: #EDEDED;
   padding: 28px 8.6% 26px;
@@ -20038,16 +20041,6 @@ a:focus.ama__hub-card {
 .paragraph--type--form-50-50 .salesforce-lead-form .form-item input:focus {
   border: 2px solid #0076a5;
 }
-.paragraph--type--form-50-50 .salesforce-lead-form .form-item .form-item--error-message {
-  margin-top: 4px;
-  margin-bottom: 0;
-  border: none;
-}
-.paragraph--type--form-50-50 .salesforce-lead-form .form-item .form-item--error-message strong {
-  color: #E90C26;
-  font-size: 12px;
-  font-weight: normal;
-}
 @media (min-width: 37.5em) {
   .paragraph--type--form-50-50 .salesforce-lead-form .js-form-item-first-name {
     padding-right: 7px;
@@ -20064,9 +20057,22 @@ a:focus.ama__hub-card {
   padding: 5.5px 14px;
   font-weight: normal;
 }
+.paragraph--type--form-50-50 .salesforce-lead-form .form-actions input.form-submit.ama__button {
+  margin: 0;
+}
 .paragraph--type--form-50-50 .salesforce-lead-form .form-actions input:focus {
   outline: 2px solid #0076a5;
   outline-offset: 3px;
+}
+.paragraph--type--form-50-50 .form-item--error-message {
+  margin-top: 4px;
+  margin-bottom: 0;
+  border: none;
+}
+.paragraph--type--form-50-50 .form-item--error-message strong {
+  color: #E90C26;
+  font-size: 12px;
+  font-weight: normal;
 }
 .paragraph--type--form-50-50 .form-content.success {
   padding: 120px 0;
@@ -26469,8 +26475,17 @@ a.ama__membership:hover {
   margin-top: 56px;
   padding-bottom: 56px;
 }
+.ama__membership.ama_drfinder_promo .ama__membership-content {
+  background: none;
+}
 .ama__membership.ama_drfinder_promo .ama__membership_cta_container {
   margin-left: 0;
+  padding-left: 21px;
+}
+@media (min-width: 56.25em) {
+  .ama__membership.ama_drfinder_promo .ama__membership_cta_container {
+    padding-left: 28px;
+  }
 }
 .ama__membership.ama_drfinder_promo .ama__membership_cta_container .ama__button {
   width: auto;
