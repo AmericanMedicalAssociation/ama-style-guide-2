@@ -201,12 +201,23 @@
 }
 
 .sticky-wrapper {
-  height: 61px !important;
-  .is-sticky {
-    min-height: 61px;
-    height: 61px;
+  &:first-of-type {
+    height: 0 !important;
+    @include breakpoint($bp-small) {
+      height: 27px !important;
+      .is-sticky {
+        min-height: 27px;
+        height: 27px;
+      }
+    }
   }
-
+  &:last-of-type {
+    height: 61px !important;
+    .is-sticky {
+      min-height: 61px;
+      height: 61px;
+    }
+  }
   &.is-sticky .ama__main-navigation {
     z-index: 502 !important;
   }

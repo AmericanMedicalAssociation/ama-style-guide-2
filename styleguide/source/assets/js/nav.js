@@ -12,22 +12,45 @@
   Drupal.behaviors.ribbonnav = {
     attach: function (context, settings) {
 
-      // Needs doc ready because the admin toolbar needs to get loaded to determine the top spacing for sticky nav
-      $(function() {
+      function setStickyNav() { 
+        // Needs doc ready because the admin toolbar needs to get loaded to determine the top spacing for sticky nav
         var $bodyFixed = $('body').css('overflow');
+        var $productNav = $('.ama__product-nav');
 
+        // Set product nav height if present.
+        if($productNav.length && $productNav.is(':visible') ){
+          productNavHeight = $productNav.height();
+        } else {
+          productNavHeight = 0;
+        }
+
+        // Set main nav and product nav sticky state based on admin toolbar and screen size.
         if($bodyFixed === 'hidden') {
           $('.ama__main-navigation').unstick();
+          $('.ama__product-nav').unstick();
           return;
         } else if($(window).width() < 768 ) { // If less than tablet
-          $('.ama__main-navigation').sticky({zIndex: 501});
+          $('.ama__main-navigation').sticky({zIndex: 501 });
         } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
-          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 72 });
+          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 99 });
+          $('.ama__product-nav').sticky({zIndex: 501, topSpacing: 72 });
         } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
-          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 39 });
+          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 66 });
+          $('.ama__product-nav').sticky({zIndex: 501, topSpacing: 39 });
         } else {
           $('.ama__main-navigation ').sticky({ zIndex: 501 });
+          if(!($('body.ama__hub').length)) { 
+            $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: productNavHeight });
+            $('.ama__product-nav').sticky({zIndex: 501});
+          }
         }
+      };
+
+      setStickyNav();
+
+      // On resize, reset sticky nav positining and state.
+      $( window ).resize(function() { 
+        setStickyNav();
       });
 
       $('.ama__ribbon__dropdown').each(function () {
