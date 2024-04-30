@@ -173,7 +173,7 @@ a.index-page  {
         @include breakpoint($bp-small) {
           position: absolute;
           right: -125px;
-          bottom: -274px;
+          bottom: -332px;
         }
         @include breakpoint($bp-med) {
           right: -145px;
@@ -247,12 +247,44 @@ a.index-page  {
             background-image: url("../icons/svg/social-share-icons/email.svg");
           }
         }
+        .doximity {
+          &:before {
+            background-image: url("../icons/svg/social-share-icons/doximity.svg");
+            background-size: contain;
+            width: 35px;
+            height: 35px;
+            top: -2px;
+          }
+        }
       }
     }
   }
   .icon.print {
     width: 92px;
     margin-left: 0;
+  }
+  .contextual-link-wrapper {
+    position: absolute;
+    display: none;
+    left: 30px;
+    @include breakpoint($bp-small max-width) {
+      display: block;
+    }
+    &:hover, &:active {
+      background-color: #46166b;
+      opacity: 0.2;
+    }
+    &:focus-visible {
+      outline: 2px solid #80d4f5;
+      outline-offset: 3px;
+    }
+    a {
+      color: black;
+      font-size: 20px;
+      text-decoration: underline;
+      text-transform: none;
+      padding: 0;
+    }
   }
 }
 
