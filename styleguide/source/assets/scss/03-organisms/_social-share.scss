@@ -173,7 +173,7 @@ a.index-page  {
         @include breakpoint($bp-small) {
           position: absolute;
           right: -125px;
-          bottom: -274px;
+          bottom: -332px;
         }
         @include breakpoint($bp-med) {
           right: -145px;
@@ -245,6 +245,15 @@ a.index-page  {
         .email {
           &:before {
             background-image: url("../icons/svg/social-share-icons/email.svg");
+          }
+        }
+        .doximity {
+          &:before {
+            background-image: url("../icons/svg/social-share-icons/doximity.svg");
+            background-size: contain;
+            width: 35px;
+            height: 35px;
+            top: -2px;
           }
         }
       }
