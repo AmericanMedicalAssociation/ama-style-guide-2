@@ -57,7 +57,7 @@
             } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
                 $menu.sticky({ zIndex: 501, topSpacing: 195 });
             } else {
-                $menu.sticky({zIndex: 501, topSpacing: 75});
+                $menu.sticky({zIndex: 501, topSpacing: 89});
             }
         });
 
