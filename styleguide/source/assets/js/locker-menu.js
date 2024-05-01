@@ -37,7 +37,7 @@
                 } else {
                     $menu.removeClass('expanded');
                     $trigger.unstick();
-                    $menu.sticky({zIndex: 501, topSpacing: 60});
+                    $menu.sticky({zIndex: 501, topSpacing: 89});
                 }
             });
         }
@@ -53,9 +53,9 @@
                 $menu.unstick();
                 $trigger.sticky({zIndex: 501, topSpacing: 62});
             } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
-                $menu.sticky({ zIndex: 501, topSpacing: 154 });
+                $menu.sticky({ zIndex: 501, topSpacing: 168 });
             } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
-                $menu.sticky({ zIndex: 501, topSpacing: 141 });
+                $menu.sticky({ zIndex: 501, topSpacing: 195 });
             } else {
                 $menu.sticky({zIndex: 501, topSpacing: 75});
             }
