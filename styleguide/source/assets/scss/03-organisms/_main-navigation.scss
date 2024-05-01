@@ -5,17 +5,11 @@
   position: relative;
   z-index: 501;
 
-  @include breakpoint($bp-small min-width) {
-    height: 61px;
-    min-height: 61px;
-  }
-
   .container {
     position: relative;
     display: flex;
     align-items: center;
     padding-right: 0;
-    min-height: 61px;
 
     @include breakpoint($bp-small min-width) {
       @include gutter($padding-right-half...);
@@ -28,7 +22,7 @@
 
   .ama_category_navigation_wrapper {
     position: absolute;
-    top: 61px;
+    top: 48px;
     left: 0;
     z-index: 501;
 
@@ -202,20 +196,15 @@
 
 .sticky-wrapper {
   &:first-of-type {
-    height: 0 !important;
     @include breakpoint($bp-small) {
-      height: 27px !important;
       .is-sticky {
         min-height: 27px;
-        height: 27px;
       }
     }
   }
   &:last-of-type {
-    height: 61px !important;
     .is-sticky {
       min-height: 61px;
-      height: 61px;
     }
   }
   &.is-sticky .ama__main-navigation {

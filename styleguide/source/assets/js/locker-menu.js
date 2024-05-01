@@ -53,11 +53,11 @@
                 $menu.unstick();
                 $trigger.sticky({zIndex: 501, topSpacing: 62});
             } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
-                $menu.sticky({ zIndex: 501, topSpacing: 132 });
+                $menu.sticky({ zIndex: 501, topSpacing: 154 });
             } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
-                $menu.sticky({ zIndex: 501, topSpacing: 99 });
+                $menu.sticky({ zIndex: 501, topSpacing: 141 });
             } else {
-                $menu.sticky({zIndex: 501, topSpacing: 60});
+                $menu.sticky({zIndex: 501, topSpacing: 75});
             }
         });
 
