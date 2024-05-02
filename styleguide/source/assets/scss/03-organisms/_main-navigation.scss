@@ -5,11 +5,6 @@
   position: relative;
   z-index: 501;
 
-  @include breakpoint($bp-small min-width) {
-    height: 61px;
-    min-height: 61px;
-  }
-
   .container {
     position: relative;
     display: flex;
@@ -28,7 +23,7 @@
 
   .ama_category_navigation_wrapper {
     position: absolute;
-    top: 61px;
+    top: 48px;
     left: 0;
     z-index: 501;
 
@@ -201,12 +196,18 @@
 }
 
 .sticky-wrapper {
-  height: 61px !important;
-  .is-sticky {
-    min-height: 61px;
-    height: 61px;
+  &:first-of-type {
+    @include breakpoint($bp-small) {
+      .is-sticky {
+        min-height: 27px;
+      }
+    }
   }
-
+  &:last-of-type {
+    .is-sticky {
+      min-height: 61px;
+    }
+  }
   &.is-sticky .ama__main-navigation {
     z-index: 502 !important;
   }
