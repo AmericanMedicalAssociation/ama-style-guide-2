@@ -12,22 +12,30 @@
   Drupal.behaviors.ribbonnav = {
     attach: function (context, settings) {
 
-      // Needs doc ready because the admin toolbar needs to get loaded to determine the top spacing for sticky nav
-      $(function() {
+      function setStickyNav() { 
+        // Needs doc ready because the admin toolbar needs to get loaded to determine the top spacing for sticky nav
         var $bodyFixed = $('body').css('overflow');
 
+        // Set main nav and product nav sticky state based on admin toolbar and screen size.
         if($bodyFixed === 'hidden') {
-          $('.ama__main-navigation').unstick();
+          $('.ama__main-navigation').unstick().removeAttr('style');
           return;
         } else if($(window).width() < 768 ) { // If less than tablet
-          $('.ama__main-navigation').sticky({zIndex: 501});
+          $('.ama__main-navigation').sticky({zIndex: 501 });
         } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
-          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 72 });
+          $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 79 });
         } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
           $('.ama__main-navigation ').sticky({ zIndex: 501, topSpacing: 39 });
         } else {
           $('.ama__main-navigation ').sticky({ zIndex: 501 });
         }
+      };
+
+      setStickyNav();
+
+      // On resize, reset sticky nav positining and state.
+      $( window ).on('resize', function() { 
+        setStickyNav();
       });
 
       $('.ama__ribbon__dropdown').each(function () {
@@ -43,7 +51,7 @@
           $(this).children().toggleClass(class_active);
         });
 
-        $(document).click( function(){
+        $(document).on('click', function(){
           $('.ama__ribbon__dropdown__trigger', this).removeClass(class_active).children().removeClass(class_active);
         });
       });
