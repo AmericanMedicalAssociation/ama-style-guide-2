@@ -73,7 +73,7 @@
     @include gutter($padding-left-half...);
     @include gutter($padding-right-half...);
     position: absolute;
-    top: 42px;
+    top: 62px;
     right: 0;
     box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
     background-color: $white;
@@ -81,6 +81,9 @@
     text-align: right;
     display: none;
     min-width: 200px;
+    @include breakpoint($bp-small) {
+      top: 48px;
+    }
 
     li {
       list-style: none;
