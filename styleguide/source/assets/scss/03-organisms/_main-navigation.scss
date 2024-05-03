@@ -1,9 +1,13 @@
 .ama__main-navigation {
-  border-bottom: 1px solid $gray-50;
-  background-color: $purple;
-  color: $white;
   position: relative;
   z-index: 501;
+  width: 100%;
+
+  .ama__main_nav_container {
+    border-bottom: 1px solid $gray-50;
+    background-color: $purple;
+    color: $white;
+  }
 
   .container {
     position: relative;
@@ -23,7 +27,7 @@
 
   .ama_category_navigation_wrapper {
     position: absolute;
-    top: 48px;
+    top: 62px;
     left: 0;
     z-index: 501;
 
@@ -208,9 +212,6 @@
       min-height: 61px;
     }
   }
-  &.is-sticky .ama__main-navigation {
-    z-index: 502 !important;
-  }
 }
 
 .ama__hub {
@@ -220,7 +221,7 @@
       height: 117px !important;
     }
   }
-  .ama__main-navigation {
+  .ama__main-navigation .ama__main_nav_container {
     background: $white;
     border-bottom: none;
     height: 96px;
