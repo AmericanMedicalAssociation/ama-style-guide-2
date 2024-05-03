@@ -16414,7 +16414,7 @@ a.ama__promo--border:hover {
   padding-left: 10.5px;
   padding-right: 10.5px;
   position: absolute;
-  top: 42px;
+  top: 62px;
   right: 0;
   -webkit-box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
@@ -16432,6 +16432,11 @@ a.ama__promo--border:hover {
 @media (min-width: 56.25em) {
   .ama__sign-in-dropdown__menu {
     padding-right: 14px;
+  }
+}
+@media (min-width: 37.5em) {
+  .ama__sign-in-dropdown__menu {
+    top: 48px;
   }
 }
 .ama__sign-in-dropdown__menu li {
@@ -22821,47 +22826,67 @@ section.ama__page--event__speakers {
 }
 
 .ama__homepage__trending .featured-link__title {
-  font-size: 2em;
+  font-size: 26px;
   line-height: 42px;
   color: #5E5E5E;
-  margin-bottom: 28px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+@media (min-width: 37.5em) {
+  .ama__homepage__trending .featured-link__title {
+    margin-bottom: 28px;
+    font-size: 35px;
+    padding-left: 11px;
+  }
 }
 .ama__homepage__trending .featured-links__link-list {
   padding-bottom: 14px;
+  padding-left: 0;
 }
-.ama__homepage__trending .featured-links__link-list ol {
-  list-style-position: inside;
+@media (min-width: 37.5em) {
+  .ama__homepage__trending .featured-links__link-list {
+    padding-left: 11px;
+  }
+}
+.ama__homepage__trending .featured-links__link-list ol,
+.ama__homepage__trending .featured-links__link-list div {
+  list-style-type: none;
   margin-bottom: 0;
 }
-.ama__homepage__trending .featured-links__link-list ol li {
+.ama__homepage__trending .featured-links__link-list ol div,
+.ama__homepage__trending .featured-links__link-list div div {
   padding: 14px 0;
-  border-bottom: 1px solid #979797;
 }
-.ama__homepage__trending .featured-links__link-list ol li::marker {
+.ama__homepage__trending .featured-links__link-list ol li,
+.ama__homepage__trending .featured-links__link-list div li {
+  padding: 14px 0 14px 28px;
+}
+.ama__homepage__trending .featured-links__link-list ol li::before,
+.ama__homepage__trending .featured-links__link-list div li::before {
+  content: attr(data-list);
   color: #000000;
   font-size: 20px;
   line-height: 26px;
   font-weight: 600;
+  position: absolute;
+  left: 0;
 }
-.ama__homepage__trending .featured-links__link-list ol li a {
-  border-bottom: 0;
-  display: inline;
-  margin-left: 14px;
+.ama__homepage__trending .featured-links__link-list ol li, .ama__homepage__trending .featured-links__link-list ol div,
+.ama__homepage__trending .featured-links__link-list div li,
+.ama__homepage__trending .featured-links__link-list div div {
+  border-bottom: 1px solid #979797;
+  position: relative;
 }
-.ama__homepage__trending .featured-links__link-list ol li a:hover {
+.ama__homepage__trending .featured-links__link-list ol li a, .ama__homepage__trending .featured-links__link-list ol div a,
+.ama__homepage__trending .featured-links__link-list div li a,
+.ama__homepage__trending .featured-links__link-list div div a {
+  text-decoration: none;
+}
+.ama__homepage__trending .featured-links__link-list ol li a:hover, .ama__homepage__trending .featured-links__link-list ol div a:hover,
+.ama__homepage__trending .featured-links__link-list div li a:hover,
+.ama__homepage__trending .featured-links__link-list div div a:hover {
   text-decoration: underline;
   background-color: transparent;
-}
-.ama__homepage__trending .featured-links__link-list a {
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 600;
-  color: #000000;
-  display: block;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  text-decoration: none;
-  border-bottom: 1px solid #979797;
 }
 .ama__homepage__trending .featured-links__more {
   display: -webkit-box;
@@ -24588,11 +24613,14 @@ section.ama__page--event__speakers {
 }
 
 .ama__main-navigation {
+  position: relative;
+  z-index: 501;
+  width: 100%;
+}
+.ama__main-navigation .ama__main_nav_container {
   border-bottom: 1px solid #767676;
   background-color: #46166B;
   color: #ffffff;
-  position: relative;
-  z-index: 501;
 }
 .ama__main-navigation .container {
   position: relative;
@@ -24625,7 +24653,7 @@ section.ama__page--event__speakers {
 }
 .ama__main-navigation .ama_category_navigation_wrapper {
   position: absolute;
-  top: 48px;
+  top: 62px;
   left: 0;
   z-index: 501;
 }
@@ -24846,9 +24874,6 @@ section.ama__page--event__speakers {
 .sticky-wrapper:last-of-type .is-sticky {
   min-height: 61px;
 }
-.sticky-wrapper.is-sticky .ama__main-navigation {
-  z-index: 502 !important;
-}
 
 .ama__hub .sticky-wrapper {
   height: 96px !important;
@@ -24858,7 +24883,7 @@ section.ama__page--event__speakers {
     height: 117px !important;
   }
 }
-.ama__hub .ama__main-navigation {
+.ama__hub .ama__main-navigation .ama__main_nav_container {
   background: #ffffff;
   border-bottom: none;
   height: 96px;
@@ -24866,27 +24891,27 @@ section.ama__page--event__speakers {
   padding: 0 5px 17px 5px;
 }
 @media (min-width: 37.5em) {
-  .ama__hub .ama__main-navigation {
+  .ama__hub .ama__main-navigation .ama__main_nav_container {
     height: 81px;
     min-height: 81px;
     padding: 0 5px 7px 5px;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__hub .ama__main-navigation {
+  .ama__hub .ama__main-navigation .ama__main_nav_container {
     height: 117px;
     min-height: 117px;
   }
 }
-.ama__hub .ama__main-navigation .container {
+.ama__hub .ama__main-navigation .ama__main_nav_container .container {
   height: 100%;
 }
 @media (max-width: 56.25em) {
-  .ama__hub .ama__main-navigation .container {
+  .ama__hub .ama__main-navigation .ama__main_nav_container .container {
     width: 100%;
   }
 }
-.ama__hub .ama__main-navigation .container > div {
+.ama__hub .ama__main-navigation .ama__main_nav_container .container > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24903,7 +24928,7 @@ section.ama__page--event__speakers {
   align-self: flex-end;
 }
 @media (min-width: 37.5em) {
-  .ama__hub .ama__main-navigation .container > div {
+  .ama__hub .ama__main-navigation .ama__main_nav_container .container > div {
     padding-bottom: 8px;
     -webkit-box-align: end;
     -ms-flex-align: end;
@@ -24911,25 +24936,25 @@ section.ama__page--event__speakers {
     padding: 0 0 19px 0;
   }
 }
-.ama__hub .ama__main-navigation a.ama__site-logo {
+.ama__hub .ama__main-navigation .ama__main_nav_container a.ama__site-logo {
   max-width: 125px;
   margin: 0;
 }
-.ama__hub .ama__main-navigation a.ama__site-logo .logo {
+.ama__hub .ama__main-navigation .ama__main_nav_container a.ama__site-logo .logo {
   width: 125px;
   height: auto;
 }
-.ama__hub .ama__main-navigation a.hub-header--link {
+.ama__hub .ama__main-navigation .ama__main_nav_container a.hub-header--link {
   color: #027DBC;
   text-decoration: none;
   padding-right: 5px;
   padding-left: 10px;
   font-size: 18px;
 }
-.ama__hub .ama__main-navigation a.hub-header--link:hover {
+.ama__hub .ama__main-navigation .ama__main_nav_container a.hub-header--link:hover {
   text-decoration: underline;
 }
-.ama__hub .ama__main-navigation a.hub-header--link:focus-visible {
+.ama__hub .ama__main-navigation .ama__main_nav_container a.hub-header--link:focus-visible {
   outline: 2px solid #80d4f5;
   outline-offset: 3px;
 }

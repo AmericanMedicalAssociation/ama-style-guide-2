@@ -26,48 +26,9 @@
                 $menu.removeClass('expanded');
                 $body.css({"overflow":"auto"});
             });
-            // Update sticky state on window resize.
-            $window.resize(function(){
-                if($window.width() < 600) {
-                    if($menu.hasClass('expanded')) {
-                        $menu.removeClass('expanded');
-                    }
-                    $menu.unstick();
-                    $trigger.sticky({zIndex: 501, topSpacing: 62});
-                } else {
-                    $menu.removeClass('expanded');
-                    $trigger.unstick();
-                    $menu.sticky({zIndex: 501, topSpacing: 89});
-                }
-            });
         }
 
         lockerMenu();
-
-        // Need to load admin toolbar before determining top spacing for sticky elements.
-        $(function() {
-            if(bodyFixed === 'hidden') {
-                $('.ama_locker_navigation').unstick();
-            return;
-            } else if($window.width() < 600) {
-                $menu.unstick();
-                $trigger.sticky({zIndex: 501, topSpacing: 62});
-            } else if($('.toolbar-tray').hasClass('toolbar-tray-horizontal')) {
-                $menu.sticky({ zIndex: 501, topSpacing: 168 });
-            } else if($('.toolbar-tray').hasClass('toolbar-tray-vertical')) {
-                $menu.sticky({ zIndex: 501, topSpacing: 195 });
-            } else {
-                $menu.sticky({zIndex: 501, topSpacing: 89});
-            }
-        });
-
-        // If sticky nav wrapper, remove id to prevent duplicate ids.
-        $(window).on('load', function() {
-            $stickyWrapper = $('.sticky-wrapper');
-            if($stickyWrapper.length && $stickyWrapper.has('#share-wrapper')) {
-                $stickyWrapper.removeAttr('id');
-            }
-        });
 
       }
     };
