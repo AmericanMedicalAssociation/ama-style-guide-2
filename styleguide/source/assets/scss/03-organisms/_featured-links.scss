@@ -1,32 +1,47 @@
 .ama__homepage__trending {
   .featured-link__title {
-    font-size: 2em;
-    line-height: 42px;
+    font-size: 26px;
+    line-height: calc($gutter * 1.5);
     color: #5E5E5E;
-    margin-bottom: 28px;
+    margin-bottom: 0;
+      padding-left: 0;
+      @include breakpoint($bp-small) {
+          margin-bottom: $gutter;
+          font-size: calc($gutter * 1.25);
+          padding-left: 11px;
+      }
   }
   .featured-links__link-list {
     padding-bottom: 14px;
+      padding-left: 0;
+      @include breakpoint($bp-small) {
+          padding-left: 11px;
+      }
 
-    ol {
-      list-style-position: inside;
+    ol,
+    div {
+      list-style-type: none;
       margin-bottom: 0;
-
-      li {
-        padding: 14px 0;
-        border-bottom: 1px solid #979797;
-
-        &::marker {
-          color: #000000;
-          font-size: 20px;
-          line-height: 26px;
-          font-weight: 600;
+        div {
+            padding: calc($gutter * .5) 0;
         }
+        li {
+            padding: calc($gutter * .5) 0 calc($gutter * .5) $gutter;
+            &::before {
+                content: attr(data-list);
+                color: $black;
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: 600;
+                position: absolute;
+                left: 0;
+            }
+        }
+      li, div {
+        border-bottom: 1px solid #979797;
+          position: relative;
         a {
-          border-bottom: 0;
-          display: inline;
-          margin-left: 14px;
-
+            text-decoration: none;
           &:hover {
             text-decoration: underline;
             background-color: transparent;
@@ -34,17 +49,6 @@
 
         }
       }
-    }
-    a {
-      font-size: 20px;
-      line-height: 26px;
-      font-weight: 600;
-      color: #000000;
-      display: block;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      text-decoration: none;
-      border-bottom: 1px solid #979797;
     }
   }
   .featured-links__more {
