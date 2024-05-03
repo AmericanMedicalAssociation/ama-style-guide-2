@@ -34,7 +34,9 @@
       setStickyNav();
 
       // On resize, reset sticky nav positining and state.
-      $( window ).on('resize', function() { 
+      $( window ).on('resize', function() {
+        // Undo inline styles to prevent sticky nav from breaking on resize.
+        $('.ama__main-navigation').removeAttr('style');
         setStickyNav();
       });
 
