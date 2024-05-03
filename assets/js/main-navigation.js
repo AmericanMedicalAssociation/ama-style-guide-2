@@ -9,7 +9,6 @@
           $mobileSearchTrigger = $('.global-search-trigger'),
           $mobileSearch = $('.ama__global-search'),
           $mainNav = $('.ama__main-navigation '),
-          $productNav = $('.ama__product-nav'),
           $subMenu = $('.ama_category_navigation_menu__submenu'),
           $subMenuArticle = $('.ama_category_navigation_menu__articles'),
           viewportHeight = 0,
@@ -22,13 +21,6 @@
       // Checks if user agent is a mobile device
       var deviceAgent = navigator.userAgent.toLowerCase();
       var agentID = deviceAgent.match(/(android|webos|iphone|ipod|blackberry)/) && windowWidth < 768;
-
-      // Set product nav height if present.
-      if($productNav.length && $productNav.is(':visible') ){
-        productNavHeight = $productNav.height();
-      } else {
-        productNavHeight = 0;
-      }
 
       // Set alert banner height if present.
       if($alert_banner.length && $alert_banner.is(':visible')) {
