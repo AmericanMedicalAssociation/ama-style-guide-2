@@ -1,0 +1,17 @@
+.dr-finder-profile-aside {
+    &__claim {
+      @include breakpoint($bp-small max-width) {
+        border-top: solid 1px $gray-30;
+        padding-top: $gutter;
+      }
+      @include breakpoint($bp-small) {
+        flex-basis: 282px;
+      }
+      &__heading {
+        font-weight: 600;
+      }
+      a {
+        color: $blue;
+      }
+    }
+  }
