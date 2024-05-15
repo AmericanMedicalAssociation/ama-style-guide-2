@@ -1,8 +1,7 @@
 .ama__alert {
   display: flex;
-  background-color: $homepagePurple;
-  padding: calc($gutter / 2);
-  color: $white;
+  background-color: $white;
+  color: #5c5c5c;
   width: 100%;
   align-items: center;
   flex-direction: column;
@@ -10,6 +9,7 @@
   background-repeat: no-repeat;
   background-position: 20px 50%;
   position: relative;
+    font-size: 16px;;
 
   @include breakpoint($bp-small) {
     flex-direction: row;
@@ -21,14 +21,14 @@
   }
 
   &__text {
-    font-weight: $font-weight-bold;
+
     margin-bottom: 0;
     margin-right: 25px;
 
     &.mobile {
       padding-left: 40px;
       a {
-        color: $white;
+
         @include button_focus_outline_light;
       }
     }
@@ -51,14 +51,8 @@
   }
 
   .ama__button {
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    margin: 0 auto;
-    display: none;
 
-    @include breakpoint($bp-small) {
-      align-self: flex-end;
-    }
+    display: none;
 
     @include breakpoint($bp-small) {
       display: block;
@@ -81,7 +75,7 @@
       vertical-align: inherit;
     }
 
-    @include button_focus_outline_light;
+
 
     @include breakpoint($bp-small) {
       position: static;
