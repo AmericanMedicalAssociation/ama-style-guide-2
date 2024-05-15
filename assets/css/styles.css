@@ -6852,8 +6852,9 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #ffffff;
-  color: #5c5c5c;
+  background-color: #7229D1;
+  padding: 14px;
+  color: #ffffff;
   width: 100%;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6866,7 +6867,6 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   background-repeat: no-repeat;
   background-position: 20px 50%;
   position: relative;
-  font-size: 16px;
 }
 @media (min-width: 37.5em) {
   .ama__alert {
@@ -6881,11 +6881,15 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   min-height: unset;
 }
 .ama__alert__text {
+  font-weight: 600;
   margin-bottom: 0;
   margin-right: 25px;
 }
 .ama__alert__text.mobile {
   padding-left: 40px;
+}
+.ama__alert__text.mobile a {
+  color: #ffffff;
 }
 .ama__alert__text.mobile a:focus-visible {
   outline: 2px solid #80d4f5;
@@ -6895,6 +6899,9 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   .ama__alert__text {
     margin-right: 0;
     margin-left: 50px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
   }
   .ama__alert__text.mobile {
     display: none;
@@ -6906,7 +6913,16 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   }
 }
 .ama__alert .ama__button {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 auto;
   display: none;
+}
+@media (min-width: 37.5em) {
+  .ama__alert .ama__button {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
 }
 @media (min-width: 37.5em) {
   .ama__alert .ama__button {
@@ -6929,6 +6945,10 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .ama__alert__close svg {
   fill: #ffffff;
   vertical-align: inherit;
+}
+.ama__alert__close:focus-visible {
+  outline: 2px solid #80d4f5;
+  outline-offset: 3px;
 }
 @media (min-width: 37.5em) {
   .ama__alert__close {
