@@ -1,99 +1,100 @@
 .ama__alert {
-  display: flex;
-  background-color: $homepagePurple;
-  padding: calc($gutter / 2);
-  color: $white;
-  width: 100%;
-  align-items: center;
-  flex-direction: column;
-  background-image: url('../icons/svg/icon-homepage-alert.svg');
-  background-repeat: no-repeat;
-  background-position: 20px 50%;
-  position: relative;
-
-  @include breakpoint($bp-small) {
+    display: flex;
+    background-color: $white;
+    color: $gray-64;
+    width: 100%;
+    align-items: center;
+    padding: calc($gutter * .5) calc($gutter * .75);
     flex-direction: row;
-  }
+    background-image: url('../icons/svg/icon-alert-alert.svg');
+    background-repeat: no-repeat;
+    background-position: 20px 50%;
+    position: relative;
+    font-size: 16px;;
 
-  &__wrap {
-    opacity: 0;
-    min-height: unset;
-  }
-
-  &__text {
-    font-weight: $font-weight-bold;
-    margin-bottom: 0;
-    margin-right: 25px;
-
-    &.mobile {
-      padding-left: 40px;
-      a {
-        color: $white;
-        @include button_focus_outline_light;
-      }
+    &__wrap {
+        opacity: 0;
+        min-height: unset;
     }
-
-    @include breakpoint($bp-small) {
-      margin-right: 0;
-      margin-left: 50px;
-      flex: 1;
-
-      &.mobile {
-        display: none;
-      }
+    &__text {
+        margin-bottom: 0;
+        margin-right: 25px;
+        a {
+            color: #025785;
+            text-decoration: none;
+            display: inline;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        p {
+            display: inline;
+            font-size: 16px;
+            margin-right: 4px;
+            line-height: 1em;
+        }
+        &.mobile {
+            padding-left: calc($gutter * .75);
+            display:block;
+            a {
+                font-size: 14px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        &.desktop {
+            display: none;
+        }
+        @include breakpoint($bp-med) {
+            margin-right: 0;
+            margin-left: $gutter;
+            &.mobile {
+                display: none;
+            }
+            &.desktop {
+                display: block;
+                p {
+                    display: inline;
+                }
+                a {
+                    display: inline;
+                }
+            }
+        }
     }
-
-    @include breakpoint($bp-small max-width) {
-      &.desktop {
-        display: none
-      }
+    &__close {
+        height: 20px;
+        width: 20px;
+        overflow: hidden;
+        margin-left: auto;
+        top: 0;
+        right: 5px;
+        align-self: flex-end;
+        @include breakpoint($bp-med max-width) {
+            top: 35%;
+        }
+        &.mobile {
+            display: block;
+            align-self: start;
+        }
+        &.desktop {
+            display: none;
+        }
+        @include breakpoint($bp-med) {
+            &.mobile {
+                display: none;
+            }
+            &.desktop {
+                display: block;
+            }
+        }
+        svg {
+            vertical-align: inherit;
+        }
     }
-  }
-
-  .ama__button {
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    margin: 0 auto;
-    display: none;
-
-    @include breakpoint($bp-small) {
-      align-self: flex-end;
-    }
-
-    @include breakpoint($bp-small) {
-      display: block;
-    }
-
-    @include button_focus_outline_light;
-  }
-
-  &__close {
-    height: 20px;
-    width: 20px;
-    overflow: hidden;
-    margin-left: 25px;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-
-    svg {
-      fill: $white;
-      vertical-align: inherit;
-    }
-
-    @include button_focus_outline_light;
-
-    @include breakpoint($bp-small) {
-      position: static;
-    }
-
-    @include breakpoint($bp-small max-width) {
-      top: 35%;
-    }
-  }
 }
-
 //Styleguide specific
 .ama__alert__wrap.sg {
-  opacity: 1;
+    opacity: 1;
 }
