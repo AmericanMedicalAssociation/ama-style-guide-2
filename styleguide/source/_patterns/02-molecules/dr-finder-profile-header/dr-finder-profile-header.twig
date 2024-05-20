@@ -66,6 +66,12 @@
       </div>
     {% endif %}
   </div>
+  <div class="dr-finder-profile-header__info__summary">
+    {% if drFinderProfileHeader.data.specialtyText is not null and drFinderProfileHeader.data.locationText is not null %}
+      <p>Dr. {{ drFinderProfileHeader.data.labelName }} {{ drFinderProfileHeader.data.specialtyText }}{{ drFinderProfileHeader.data.locationText }}.</p>
+    {% endif %}
+      <p>Physician data used in Find a Doctor is sourced from the American Medical Association's Physician Professional Data. Formerly known as the AMA Physician Masterfile, this collection was established by the AMA in 1906 in response to the need for a comprehensive biographic record of all US physicians. The AMA Physician Professional Data includes information on both AMA members and non-members and international medical graduates to practice or reside in the United States. Each physician record includes educational and demographic information such as name, address, educational history, practice type and specialty.</p>
+  </div>
   {# If this account has not been claimed and is eligable to be claimed, show claim button. #}
   {% if not drFinderProfileHeader.claimed %}
     <div class="dr-finder-profile-header__claim">
