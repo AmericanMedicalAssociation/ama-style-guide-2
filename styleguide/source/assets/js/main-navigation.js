@@ -156,7 +156,7 @@
           if($socialIcons.length && $(window).width() > 850) {
             $socialIcons.sticky({
               wrapperClassName: 'ama__masthead__content__share-wrapper',
-              zIndex: 501
+              zIndex: 500
             });
 
             $socialIcons.on('sticky-start', function () {
