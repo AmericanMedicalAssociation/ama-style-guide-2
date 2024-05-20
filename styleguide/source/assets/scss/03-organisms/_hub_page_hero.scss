@@ -155,8 +155,13 @@
           .ama__button {
             max-width: 291px;
             flex: .5;
+            line-height: 1;
+            padding: 15.5px 14px;
             @include breakpoint($bp-med) {
               max-width: 325px;
+            }
+            &:only-child {
+              min-width: 380px;
             }
           }
         }
