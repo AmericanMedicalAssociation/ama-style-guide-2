@@ -4,7 +4,7 @@
     color: $gray-64;
     width: 100%;
     align-items: center;
-    padding: 5px calc($gutter * .75);
+    padding: 5px calc($gutter * .75) 5px $gutter;
     flex-direction: row;
     position: relative;
     @include breakpoint($bp-med) {
@@ -13,7 +13,10 @@
     &.icon {
         background-image: url('../icons/svg/icon-alert-alert.svg');
         background-repeat: no-repeat;
-        background-position: 20px 50%;
+        background-position: $gutter 50%;
+        @include breakpoint($bp-med) {
+            background-position: 17px 50%;
+        }
     }
     &__wrap {
         opacity: 0;
@@ -26,7 +29,6 @@
             color: #025785;
             text-decoration: none;
             display: inline;
-            font-weight: $font-weight-bold;
             &:hover {
                 text-decoration: underline;
             }
@@ -40,6 +42,9 @@
         &.mobile {
             padding-left: calc($gutter * .75);
             display:block;
+            line-height: 15px;
+            padding-top: calc($gutter *.25);
+            padding-bottom: calc($gutter * .25);
             a,
             p {
                 font-size: 14px;
@@ -50,12 +55,15 @@
         }
         @include breakpoint($bp-med) {
             margin-right: 0;
-            margin-left: $gutter;
+            margin-left: calc($gutter * .5);
             &.mobile {
                 display: none;
             }
             &.desktop {
                 display: block;
+                a {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -64,15 +72,11 @@
         width: 20px;
         overflow: hidden;
         margin-left: auto;
-        top: 0;
-        right: 5px;
         align-self: flex-end;
-        @include breakpoint($bp-med max-width) {
-            top: 35%;
-        }
         &.mobile {
             display: block;
             align-self: start;
+            margin-right: -12px;
         }
         &.desktop {
             display: none;
@@ -83,6 +87,8 @@
             }
             &.desktop {
                 display: block;
+                position: relative;
+                top: -5px;
             }
         }
         svg {
