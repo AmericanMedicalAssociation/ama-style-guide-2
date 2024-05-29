@@ -24871,6 +24871,11 @@ section.ama__page--event__speakers {
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
+.ama__main-navigation--dr-finder {
+  border-bottom: 1px solid #767676;
+  background-color: #46166B;
+  color: #ffffff;
+}
 
 .ui-autocomplete.ui-menu {
   z-index: 502;
@@ -27683,14 +27688,16 @@ section#related_links .ama__membership ul li {
   }
 }
 
+.news-subscribe-wrapper {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 @media (min-width: 37.5em) {
   .news-subscribe-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
   }
 }
 .news-subscribe-wrapper span.icon--subscribe-news {
@@ -32152,7 +32159,7 @@ div[role=alert] {
   .article-header .article-header-row.subscribe-row .news-subscribe-wrapper span.sub-title {
     padding-left: 24px;
     max-width: 155px;
-    line-height: 1;
+    line-height: 21px;
   }
 }
 .article-header .article-header-row.share-row {
@@ -33098,6 +33105,10 @@ div[role=alert] {
     width: 65%;
     max-width: 578px;
   }
+}
+
+.search-results #main-content {
+  scroll-margin-top: 89px;
 }
 
 .ama__series {
