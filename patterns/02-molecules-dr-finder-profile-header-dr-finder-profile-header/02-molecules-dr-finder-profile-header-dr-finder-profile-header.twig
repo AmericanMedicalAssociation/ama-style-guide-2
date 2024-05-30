@@ -3,73 +3,81 @@
   AMA Dr Finder profile header.
 #}
 <div class="dr-finder-profile-header {{ drFinderProfileHeader.verified ? "verified" : "" }} {{ drFinderProfileHeader.member ? "member" : "" }} {{ drFinderProfileHeader.claimed ? "claimed" : "" }}">
-  <div class="dr-finder-profile-header__image-column">
-    <div class="dr-finder-profile-header__image-verified-container">
-      <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
-        {% if drFinderProfileHeader.imageUrl %}
-          <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
-        {% else %}
-          {% if drFinderProfileHeader.avatar %}
-            <img src="{{ drFinderProfileHeader.avatar }}" alt="avatar">
+  <div class="dr-finder-profile-header__details">
+    <div class="dr-finder-profile-header__image-column">
+      <div class="dr-finder-profile-header__image-verified-container">
+        <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
+          {% if drFinderProfileHeader.imageUrl %}
+            <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
+          {% else %}
+            {% if drFinderProfileHeader.avatar %}
+              <img src="{{ drFinderProfileHeader.avatar }}" alt="avatar">
+            {% endif %}
           {% endif %}
-        {% endif %}
-        {% if drFinderProfileHeader.verified %}
-          {% include '@atoms/media/icons/svg/icon-verified.twig' %}
-        {% endif %}
+          {% if drFinderProfileHeader.verified %}
+            {% include '@atoms/media/icons/svg/icon-verified.twig' %}
+          {% endif %}
+        </div>
       </div>
-    </div>
-    {% if drFinderProfileHeader.member %}
-      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
-    {% endif %}
+      {% if drFinderProfileHeader.member %}
+        {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
+      {% endif %}
 
-    {% if drFinderProfileHeader.edit %}
-      <div class="dr-finder-profile-header__upload-actions">
-        {% for button in drFinderProfileHeader.imageActions %}
-          <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-  <div class="dr-finder-profile-header__doctor-info">
-    {% if drFinderProfileHeader.data.name %}
-      <h2 class="dr-finder-profile-header__doctor-info__name ama__h2">{{ drFinderProfileHeader.data.name|raw }}</h2>
-    {% endif %}
-    {% if drFinderProfileHeader.data.pronouns %}
-      <div class="dr-finder-profile-header__doctor-info__pronouns">{{ drFinderProfileHeader.data.pronouns|raw }}</div>
-    {% endif %}
-    {% if drFinderProfileHeader.data.phoneNumber %}
-      <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
-    {% endif %}
-    {% if drFinderProfileHeader.data.address %}
-      {% set isMulti = drFinderProfileHeader.data.address|length > 1 %}
-      {% for item in drFinderProfileHeader.data.address %}
-        <div class="dr-finder-profile-header__doctor-info__address {{ isMulti ? 'multiadress'  : '' }}">{{ item|raw }}</div>
-      {% endfor %}
-    {% endif %}
-    {% if drFinderProfileHeader.data.specialty %}
-      <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
-    {% endif %}
-    {% if drFinderProfileHeader.member %}
-      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
-    {% endif %}
-    {% if drFinderProfileHeader.service %}
-      <div class="dr-finder-profile-header__doctor-info__service">Accepting new patients</div>
-    {% endif %}
-    {% if drFinderProfileHeader.data.url %}
-      <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
-    {% endif %}
-    {% if drFinderProfileHeader.claimed %}
-      <div class="dr-finder-profile-header__edit-actions">
-        {% for button in drFinderProfileHeader.editActions %}
-          <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-  {# If this account has not been claimed and is eligable to be claimed, show claim button. #}
-  {% if not drFinderProfileHeader.claimed %}
-    <div class="dr-finder-profile-header__claim">
-      {% include '@molecules/dr-finder-claim/dr-finder-claim.twig' with { "drFinderClaim" : drFinderProfileHeader.drFinderClaim } %}
+      {% if drFinderProfileHeader.edit %}
+        <div class="dr-finder-profile-header__upload-actions">
+          {% for button in drFinderProfileHeader.imageActions %}
+            <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
+    <div class="dr-finder-profile-header__doctor-info">
+      {% if drFinderProfileHeader.data.name %}
+        <h2 class="dr-finder-profile-header__doctor-info__name ama__h2">{{ drFinderProfileHeader.data.name|raw }}</h2>
+      {% endif %}
+      {% if drFinderProfileHeader.data.pronouns %}
+        <div class="dr-finder-profile-header__doctor-info__pronouns">{{ drFinderProfileHeader.data.pronouns|raw }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.data.phoneNumber %}
+        <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.data.address %}
+        {% set isMulti = drFinderProfileHeader.data.address|length > 1 %}
+        {% for item in drFinderProfileHeader.data.address %}
+          <div class="dr-finder-profile-header__doctor-info__address {{ isMulti ? 'multiadress'  : '' }}">{{ item|raw }}</div>
+        {% endfor %}
+      {% endif %}
+      {% if drFinderProfileHeader.data.specialty %}
+        <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.member %}
+        {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
+      {% endif %}
+      {% if drFinderProfileHeader.service %}
+        <div class="dr-finder-profile-header__doctor-info__service">Accepting new patients</div>
+      {% endif %}
+      {% if drFinderProfileHeader.data.url %}
+        <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.claimed %}
+        <div class="dr-finder-profile-header__edit-actions">
+          {% for button in drFinderProfileHeader.editActions %}
+            <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="dr-finder-profile-header__info__summary">
+    {% if drFinderProfileHeader.data.specialtyText is not null or drFinderProfileHeader.data.locationText is not null %}
+      <p>Dr. {{ drFinderProfileHeader.data.labelName }} {{ drFinderProfileHeader.data.specialtyText }}{{ drFinderProfileHeader.data.locationText }}.</p>
+    {% endif %}
+      <p>Physician data used in Find a Doctor is sourced from the American Medical Association's Physician Professional Data. Formerly known as the AMA Physician Masterfile, this collection was established by the AMA in 1906 in response to the need for a comprehensive biographic record of all US physicians. The AMA Physician Professional Data includes information on both AMA members and non-members and international medical graduates to practice or reside in the United States. Each physician record includes educational and demographic information such as name, address, educational history, practice type and specialty.</p>
+  </div>
+</div>
+<div class="dr-finder-profile-header__aside__claim">
+{% if not drFinderProfileHeader.claimed %}
+  {# If this account has not been claimed and is eligable to be claimed, show claim button. #}
+  {% include '@molecules/dr-finder-claim/dr-finder-claim.twig' with { "drFinderClaim" : drFinderProfileHeader.drFinderClaim } %}
+{% endif %}
 </div>
