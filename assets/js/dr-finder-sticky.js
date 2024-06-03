@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Dr Finder sticky.
+ *
+ * Since we're using a fraction of AMA JS, we need just this for sticky nav.
+ */
+(function ($, Drupal) {
+
+  Drupal.behaviors.ama_dr_finder_sticky = {
+    attach: function (context, settings) {
+
+      $(function () {
+        // If we logged in as admin, we have to unstick the nav bar for admin role be able to manage the site.
+        if ($('body').hasClass('toolbar-tray-open')) {
+          $('.ama__main-navigation--dr-finder').unstick().css("margin-top","8px");
+        }
+        else {
+          // Add sticky to the Nav bar for profile users without admin toolbar.
+          $('.ama__main-navigation--dr-finder').sticky({zIndex: 501});
+        }
+      });
+    }
+  };
+})(jQuery, Drupal);
