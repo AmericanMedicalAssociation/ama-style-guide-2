@@ -11,4 +11,12 @@
 
 .dr-finder-search__cta {
   padding-top: $gutter;
+  &.container {
+    &.profile {
+      @include breakpoint($bp-small) {
+        max-width: 66%;
+        margin-left: 0;
+      }
+    }
+  }
 }

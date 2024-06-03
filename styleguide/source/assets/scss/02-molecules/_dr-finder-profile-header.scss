@@ -5,6 +5,36 @@
     padding-top: $gutter;
     margin-top: $gutter;
     display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  &__details {
+    display: flex;
+    @include breakpoint($bp-small max-width) {
+      flex-direction: column;
+    }
+  }
+  &__info__summary {
+    padding-top: $gutter;
+  }
+  &__aside {
+    &__claim {
+      @include breakpoint($bp-small max-width) {
+        border-top: solid 1px $gray-30;
+        padding-top: $gutter;
+      }
+      @include breakpoint($bp-small) {
+        min-width: 400px;
+        padding-left: 120px;
+      }
+      &__heading {
+        font-weight: 600;
+      }
+      a {
+        color: $blue;
+      }
+    }
   }
 }
 

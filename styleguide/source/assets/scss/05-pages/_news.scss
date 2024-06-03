@@ -117,11 +117,23 @@
       flex-wrap: wrap;
     }
     &.subscribe-row {
-      padding: calc($gutter/2) 0;
-      [data-region="subscribe"] {
+      @include breakpoint($bp-small) {
+        padding: calc($gutter/2) 0;
+      }
+      .news-subscribe-wrapper {
         display: flex;
-        flex-direction: row-reverse;
         padding-right: calc($gutter * .5);
+        flex-direction: row;
+        @include breakpoint($bp-small max-width) {
+          margin: 28px 0;
+        }
+        span.sub-title {
+          @include breakpoint($bp-small max-width) {
+            padding-left: 24px;
+            max-width: 155px;
+            line-height: 21px;
+          }
+        }
       }
     }
     &.share-row {
