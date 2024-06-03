@@ -10194,6 +10194,107 @@ Styles for the new Category Featured Content Custom Block.
   color: #46166B;
 }
 
+.dr-finder__alert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #7229D1;
+  padding: 14px;
+  color: #ffffff;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-image: url("../icons/svg/icon-homepage-alert.svg");
+  background-repeat: no-repeat;
+  background-position: 20px 50%;
+  position: relative;
+}
+@media (min-width: 37.5em) {
+  .dr-finder__alert {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+.dr-finder__alert__wrap {
+  opacity: 0;
+  min-height: unset;
+}
+.dr-finder__alert__text {
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-right: 25px;
+}
+.dr-finder__alert__text.mobile {
+  padding-left: 40px;
+}
+.dr-finder__alert__text.mobile a {
+  color: #ffffff;
+}
+@media (min-width: 37.5em) {
+  .dr-finder__alert__text {
+    margin-right: 0;
+    margin-left: 50px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .dr-finder__alert__text.mobile {
+    display: none;
+  }
+}
+@media (max-width: 37.5em) {
+  .dr-finder__alert__text.desktop {
+    display: none;
+  }
+}
+.dr-finder__alert .ama__button {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 auto;
+  display: none;
+}
+@media (min-width: 37.5em) {
+  .dr-finder__alert .ama__button {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+}
+@media (min-width: 37.5em) {
+  .dr-finder__alert .ama__button {
+    display: block;
+  }
+}
+.dr-finder__alert__close {
+  height: 22px;
+  width: 22px;
+  overflow: hidden;
+  margin-left: 25px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+.dr-finder__alert__close svg {
+  fill: #ffffff;
+  vertical-align: inherit;
+}
+@media (min-width: 37.5em) {
+  .dr-finder__alert__close {
+    position: static;
+  }
+}
+@media (max-width: 37.5em) {
+  .dr-finder__alert__close {
+    top: 35%;
+  }
+}
+
 .dr-finder-claim {
   text-align: center;
   border: 1px solid #000000;
