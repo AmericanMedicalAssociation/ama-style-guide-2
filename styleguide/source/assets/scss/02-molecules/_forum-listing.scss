@@ -4,7 +4,18 @@
     border-collapse: separate;
     border-spacing: 0 0.5em;
     border: none;
-
+    tbody {
+        tr:not(:first-child) {
+            td.forum-heading {
+                &:before {
+                    display: none;
+                    @include breakpoint($bp-large) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
     tr:last-child td {
       border-bottom: none;
     }
@@ -40,12 +51,22 @@
       }
 
       .subforum-listing {
-        margin-left: 2em;
+        margin-left: 1em;
+      @include breakpoint($bp-large) {
+          margin-left: 2em;
+      }
         padding: 14px 0px 23px 0px;
         a {
           font-weight: $font-weight-semibold;
         }
       }
+        [data-th="Last reply"],
+        [data-th="Last post"] {
+            .author,
+            .time {
+                display: block;
+            }
+        }
 
       [data-th="Topics"],
       [data-th="Posts"],
@@ -58,22 +79,43 @@
         span {
           position: relative;
           bottom: 0px;
+            display: inline-block;
+            margin-left: 7px;
 
-          @include breakpoint($bp-small) {
+          @include breakpoint($bp-large) {
             bottom: 34px;
+              display: block;
+              margin-left: 0;
           }
         }
       }
 
       [data-th^="Resolution"],
       [data-th="Replies"] {
-        text-align: center;
+        text-align: left;
+          @include breakpoint($bp-large) {
+              text-align: center;
+          }
+          .forum__last-reply,
+          .forum__replies {
+              .bt-content {
+                  display: inline-block;
+                  margin-left: 15px;
+                  @include breakpoint($bp-large) {
+                      display: block;
+                      margin-left: 0;
+                  }
+              }
+          }
       }
 
       [data-th="Last post"],
       [data-th="Last reply"] {
         span span {
-          top: 13px;
+          top: 0px;
+            @include breakpoint($bp-large) {
+                top: 0px;
+            }
           span {
             top: 0px;
           }
@@ -85,10 +127,10 @@
       border: none;
       background: none;
       border-bottom: 1px solid #cecece;
-      height: min-content;
+      height: auto;
       padding-bottom: 0em;
 
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-large) {
         height: 126px;
       }
 
@@ -151,20 +193,55 @@
   }
 
   .forum__topic {
-    width: 70%;
+      width: 100%;
+      @include breakpoint($bp-large) {
+          width: 70%;
+      }
   }
 
   .forum__title div:first-child {
     font-size: 22px;
     font-weight: normal;
   }
+    tbody tr {
+        &:first-child {
+            td {
+                &:nth-child(2) {
+                display: none;
+                    @include breakpoint($bp-large) {
+                        display: table-cell;
+                    }
+                }
+            }
+        }
+    }
 
   table tr [data-th="Topics"] {
     span {
       position: relative;
       bottom: 0px;
+        display: inline-block;
+        margin-right: 7px;
+        @include breakpoint($bp-large) {
+            display: block;
+            margin-right: 0;
+        }
+
     }
   }
+    .forum__last-reply {
+        span.bt-content {
+            display: inline-block;
+            position: unset;
+            bottom: unset;
+            @include breakpoint($bp-large) {
+                position: relative;
+                bottom: 34px;
+                display: block;
+            }
+        }
+
+    }
 }
 
 #block-ama-one-forums-content {
