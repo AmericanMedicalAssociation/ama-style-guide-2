@@ -6,16 +6,28 @@
     display: block;
   }
   ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-bottom: 0;
+    padding: 11px 0;
+    @include breakpoint($bp-small) {
+      padding: 7px 0;
+    }
   }
 
   li {
-    display: inline-grid;
+    list-style: none;
 
     a {
       margin: 0 (calc($gutter / 2));
       z-index: 99;
       line-height: 1;
+      font-size: 12px;
+
+      @include breakpoint($bp-med) {
+        font-size: 14px;
+      }
 
       @include button_focus_outline_light;
     }
