@@ -37,11 +37,17 @@
     }
 
     .forum-heading {
-      width: 70%;
+        width: 100%;
+        @include breakpoint($bp-large) {
+            width: 70%;
+        }
     }
 
     .ama__column-centered {
-      text-align: center;
+      text-align: left;
+        @include breakpoint($bp-large) {
+            text-align: center;
+        }
     }
   }
 }
