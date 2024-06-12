@@ -12544,10 +12544,20 @@ section.ama__forum_comments {
   border-bottom: 1px solid #cecece;
 }
 .ama__forum-table-wrap table .forum-heading {
-  width: 70%;
+  width: 100%;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table .forum-heading {
+    width: 70%;
+  }
 }
 .ama__forum-table-wrap table .ama__column-centered {
-  text-align: center;
+  text-align: left;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table .ama__column-centered {
+    text-align: center;
+  }
 }
 
 .ama__forum-table-wrap table,
@@ -12555,6 +12565,16 @@ section.ama__forum_comments {
   border-collapse: separate;
   border-spacing: 0 0.5em;
   border: none;
+}
+.ama__forum-table-wrap table tbody tr:not(:first-child) td.forum-heading:before,
+.ama__topic-table-wrap table tbody tr:not(:first-child) td.forum-heading:before {
+  display: none;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tbody tr:not(:first-child) td.forum-heading:before,
+  .ama__topic-table-wrap table tbody tr:not(:first-child) td.forum-heading:before {
+    display: block;
+  }
 }
 .ama__forum-table-wrap table tr:last-child td,
 .ama__topic-table-wrap table tr:last-child td {
@@ -12595,12 +12615,37 @@ section.ama__forum_comments {
 }
 .ama__forum-table-wrap table tr .subforum-listing,
 .ama__topic-table-wrap table tr .subforum-listing {
-  margin-left: 2em;
-  padding: 14px 0px 23px 0px;
+  margin-left: 1em;
+  display: block;
+  padding: 7px 0px 0px;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tr .subforum-listing,
+  .ama__topic-table-wrap table tr .subforum-listing {
+    margin-left: 2em;
+    display: inline;
+    padding: 14px 0px 23px 0px;
+  }
 }
 .ama__forum-table-wrap table tr .subforum-listing a,
 .ama__topic-table-wrap table tr .subforum-listing a {
   font-weight: 600;
+}
+.ama__forum-table-wrap table tr [data-th="Last reply"] .author,
+.ama__forum-table-wrap table tr [data-th="Last reply"] .time,
+.ama__forum-table-wrap table tr [data-th="Last post"] .author,
+.ama__forum-table-wrap table tr [data-th="Last post"] .time,
+.ama__topic-table-wrap table tr [data-th="Last reply"] .author,
+.ama__topic-table-wrap table tr [data-th="Last reply"] .time,
+.ama__topic-table-wrap table tr [data-th="Last post"] .author,
+.ama__topic-table-wrap table tr [data-th="Last post"] .time {
+  display: block;
+}
+.ama__forum-table-wrap table tr [data-th="Last reply"] .author span,
+.ama__forum-table-wrap table tr [data-th="Last post"] .author span,
+.ama__topic-table-wrap table tr [data-th="Last reply"] .author span,
+.ama__topic-table-wrap table tr [data-th="Last post"] .author span {
+  display: inline-block;
 }
 .ama__forum-table-wrap table tr [data-th=Topics] span,
 .ama__forum-table-wrap table tr [data-th=Posts] span,
@@ -12618,8 +12663,10 @@ section.ama__forum_comments {
 .ama__topic-table-wrap table tr [data-th="Last reply"] span {
   position: relative;
   bottom: 0px;
+  display: inline-block;
+  margin-left: 2px;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .ama__forum-table-wrap table tr [data-th=Topics] span,
   .ama__forum-table-wrap table tr [data-th=Posts] span,
   .ama__forum-table-wrap table tr [data-th^=Resolution] span,
@@ -12635,19 +12682,61 @@ section.ama__forum_comments {
   .ama__topic-table-wrap table tr [data-th="Last post"] span,
   .ama__topic-table-wrap table tr [data-th="Last reply"] span {
     bottom: 34px;
+    display: block;
+    margin-left: 0;
   }
 }
 .ama__forum-table-wrap table tr [data-th^=Resolution],
 .ama__forum-table-wrap table tr [data-th=Replies],
 .ama__topic-table-wrap table tr [data-th^=Resolution],
 .ama__topic-table-wrap table tr [data-th=Replies] {
-  text-align: center;
+  text-align: left;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tr [data-th^=Resolution],
+  .ama__forum-table-wrap table tr [data-th=Replies],
+  .ama__topic-table-wrap table tr [data-th^=Resolution],
+  .ama__topic-table-wrap table tr [data-th=Replies] {
+    text-align: center;
+  }
+}
+.ama__forum-table-wrap table tr [data-th^=Resolution] .forum__last-reply .bt-content,
+.ama__forum-table-wrap table tr [data-th^=Resolution] .forum__replies .bt-content,
+.ama__forum-table-wrap table tr [data-th=Replies] .forum__last-reply .bt-content,
+.ama__forum-table-wrap table tr [data-th=Replies] .forum__replies .bt-content,
+.ama__topic-table-wrap table tr [data-th^=Resolution] .forum__last-reply .bt-content,
+.ama__topic-table-wrap table tr [data-th^=Resolution] .forum__replies .bt-content,
+.ama__topic-table-wrap table tr [data-th=Replies] .forum__last-reply .bt-content,
+.ama__topic-table-wrap table tr [data-th=Replies] .forum__replies .bt-content {
+  display: inline-block;
+  margin-left: 15px;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tr [data-th^=Resolution] .forum__last-reply .bt-content,
+  .ama__forum-table-wrap table tr [data-th^=Resolution] .forum__replies .bt-content,
+  .ama__forum-table-wrap table tr [data-th=Replies] .forum__last-reply .bt-content,
+  .ama__forum-table-wrap table tr [data-th=Replies] .forum__replies .bt-content,
+  .ama__topic-table-wrap table tr [data-th^=Resolution] .forum__last-reply .bt-content,
+  .ama__topic-table-wrap table tr [data-th^=Resolution] .forum__replies .bt-content,
+  .ama__topic-table-wrap table tr [data-th=Replies] .forum__last-reply .bt-content,
+  .ama__topic-table-wrap table tr [data-th=Replies] .forum__replies .bt-content {
+    display: block;
+    margin-left: 0;
+  }
 }
 .ama__forum-table-wrap table tr [data-th="Last post"] span span,
 .ama__forum-table-wrap table tr [data-th="Last reply"] span span,
 .ama__topic-table-wrap table tr [data-th="Last post"] span span,
 .ama__topic-table-wrap table tr [data-th="Last reply"] span span {
-  top: 13px;
+  top: 0px;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tr [data-th="Last post"] span span,
+  .ama__forum-table-wrap table tr [data-th="Last reply"] span span,
+  .ama__topic-table-wrap table tr [data-th="Last post"] span span,
+  .ama__topic-table-wrap table tr [data-th="Last reply"] span span {
+    top: 0px;
+  }
 }
 .ama__forum-table-wrap table tr [data-th="Last post"] span span span,
 .ama__forum-table-wrap table tr [data-th="Last reply"] span span span,
@@ -12660,12 +12749,10 @@ section.ama__forum_comments {
   border: none;
   background: none;
   border-bottom: 1px solid #cecece;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  height: auto;
   padding-bottom: 0em;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .ama__forum-table-wrap table td,
   .ama__topic-table-wrap table td {
     height: 126px;
@@ -12678,6 +12765,18 @@ section.ama__forum_comments {
 .ama__forum-table-wrap table td .author a,
 .ama__topic-table-wrap table td .author a {
   font-weight: normal;
+}
+
+table[id^=forum-topic] td.bt-hide {
+  display: none;
+}
+@media (min-width: 75em) {
+  table[id^=forum-topic] td.bt-hide {
+    display: table-cell;
+  }
+}
+table[id^=forum-topic] td.forum_replies a {
+  display: none;
 }
 
 .ama__topic-table-wrap table tr {
@@ -12719,15 +12818,48 @@ section.ama__forum_comments {
   min-width: 11em;
 }
 .ama__topic-table-wrap .forum__topic {
-  width: 70%;
+  width: 100%;
+}
+@media (min-width: 75em) {
+  .ama__topic-table-wrap .forum__topic {
+    width: 70%;
+  }
 }
 .ama__topic-table-wrap .forum__title div:first-child {
   font-size: 22px;
   font-weight: normal;
 }
+.ama__topic-table-wrap tbody tr td[data-th^=Report], .ama__topic-table-wrap tbody tr td[data-th^=Resolution] {
+  display: none;
+}
+@media (min-width: 56.25em) {
+  .ama__topic-table-wrap tbody tr td[data-th^=Report], .ama__topic-table-wrap tbody tr td[data-th^=Resolution] {
+    display: table-cell;
+  }
+}
 .ama__topic-table-wrap table tr [data-th=Topics] span {
   position: relative;
   bottom: 0px;
+  display: inline-block;
+  margin-right: 7px;
+}
+@media (min-width: 75em) {
+  .ama__topic-table-wrap table tr [data-th=Topics] span {
+    display: block;
+    margin-right: 0;
+  }
+}
+.ama__topic-table-wrap .forum__last-reply span.bt-content {
+  display: inline-block;
+  position: unset;
+  bottom: unset;
+}
+@media (min-width: 75em) {
+  .ama__topic-table-wrap .forum__last-reply span.bt-content {
+    position: relative;
+    bottom: 21px;
+    display: block;
+  }
 }
 
 #block-ama-one-forums-content .action-links.ama__button--secondary a {
@@ -12765,13 +12897,11 @@ section.ama__forum_comments {
   top: 0;
 }
 
-@media (min-width: 25em) {
-  #ama__forums #block-pagetitle h1 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
+#ama__forums #block-pagetitle h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   #ama__forums #block-pagetitle h1 {
     margin-bottom: 3.5rem;
     margin-top: 4rem;
@@ -12797,16 +12927,12 @@ section.ama__forum_comments {
   display: flex;
   margin-bottom: 20px;
   width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
-@media (min-width: 25em) {
-  .ama__topic-header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .ama__topic-header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -12830,15 +12956,11 @@ section.ama__forum_comments {
 }
 .ama__topic-print {
   margin-left: auto;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
 }
-@media (min-width: 25em) {
-  .ama__topic-print {
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
-  }
-}
-@media (min-width: 37.5em) {
+@media (min-width: 56.25em) {
   .ama__topic-print {
     -webkit-box-ordinal-group: inherit;
     -ms-flex-order: inherit;
@@ -12871,12 +12993,10 @@ section.ama__forum_comments {
   right: 0;
   top: 0;
 }
-@media (min-width: 25em) {
-  .ama__topic-body {
-    margin-bottom: 0;
-  }
+.ama__topic-body {
+  margin-bottom: 0;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .ama__topic-body {
     margin-bottom: 1em;
   }
@@ -15753,7 +15873,8 @@ ul.ama__podcast-player__links li a:hover::after {
   grid-column: 1/5;
   padding-bottom: 10.5px;
 }
-.ama__promo--inline > div p, .ama__promo--inline > div .ama__resource-link--inline__text, .ama__promo--inline > div .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__promo--inline > div .ama__image__text__subtitle {
+.ama__promo--inline > div p, .ama__promo--inline > div .ama__resource-link--inline__text, .ama__promo--inline > div .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama__promo--inline > div .ama__image__text__subtitle,
+.ama__promo--inline > div ul li {
   font-size: 20px;
 }
 @media (min-width: 56.25em) {
@@ -22166,36 +22287,69 @@ a:focus-visible.ama__hub-card {
 
 .ama__category-nav {
   display: none;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 55px;
+}
+@media (max-width: 75em) {
+  .ama__category-nav {
+    margin-left: 0;
+  }
 }
 @media (min-width: 37.5em) {
   .ama__category-nav {
     display: block;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 65%;
-    flex: 0 0 65%;
-    max-width: 65%;
   }
 }
-.ama__category-nav li {
+.ama__category-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
+  border-right: 1px solid #CBCBCB;
+}
+@media (max-width: 56.25em) {
+  .ama__category-nav ul {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+.ama__category-nav ul li {
   display: inline-block;
   list-style: none;
   margin-left: 0;
 }
-.ama__category-nav li a {
+.ama__category-nav ul li a {
+  color: #000000;
+  font-size: 0.66em;
   text-decoration: none;
-  margin: 0 14px 0 0;
-  margin: 0 14px 0 0;
+  margin-right: 14px;
   letter-spacing: -0.1px;
-  line-height: 65px;
+  white-space: nowrap;
 }
-@media (min-width: 56.25em) {
-  .ama__category-nav li a {
+@media (min-width: 75em) {
+  .ama__category-nav ul li a {
+    font-size: 0.778em;
     line-height: 1.5;
   }
 }
-.ama__category-nav li a:focus-visible {
+.ama__category-nav ul li a:focus-visible {
   outline: 2px solid #027DBC;
   outline-offset: 3px;
+}
+.ama__category-nav ul li a.ama__link--homepage:link, .ama__category-nav ul li a.ama__link--homepage:visited {
+  color: #000000;
+}
+.ama__category-nav ul li a.ama__link--homepage:active, .ama__category-nav ul li a.ama__link--homepage:hover, .ama__category-nav ul li a.ama__link--homepage:focus {
+  color: #000000;
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 .wf-active .ama__category-nav li a {
@@ -26766,28 +26920,50 @@ a.ama__membership:hover {
 }
 
 .ama__org-nav {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 34%;
-  flex: 0 0 34%;
-  max-width: 34%;
   text-align: right;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-right: 55px;
 }
-.ama__org-nav li {
+@media (max-width: 75em) {
+  .ama__org-nav {
+    margin-right: 0;
+  }
+}
+.ama__org-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
+}
+.ama__org-nav ul li {
   display: inline-block;
+  margin-left: 0;
 }
-.ama__org-nav li a {
-  color: #46166B;
-  text-transform: uppercase;
+.ama__org-nav ul li a {
+  color: #000000;
   text-decoration: none;
-  margin: 0 7px;
-  font-size: 0.778em;
+  margin-left: 14px;
+  font-size: 0.66em;
   line-height: 2.214em;
-  font-weight: 600;
+  white-space: nowrap;
 }
-.ama__org-nav li a:hover {
+@media (min-width: 75em) {
+  .ama__org-nav ul li a {
+    font-size: 0.778em;
+    line-height: 1.5;
+  }
+}
+.ama__org-nav ul li a:hover {
   text-decoration: underline;
 }
-.ama__org-nav li a:focus-visible {
+.ama__org-nav ul li a:focus-visible {
   outline: 2px solid #027DBC;
   outline-offset: 3px;
 }
@@ -26911,16 +27087,35 @@ a.ama__membership:hover {
   }
 }
 .ama__product-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 0;
+  padding: 11px 0;
+}
+@media (min-width: 37.5em) {
+  .ama__product-nav ul {
+    padding: 7px 0;
+  }
 }
 .ama__product-nav li {
-  display: -ms-inline-grid;
-  display: inline-grid;
+  list-style: none;
 }
 .ama__product-nav li a {
   margin: 0 14px;
   z-index: 99;
   line-height: 1;
+  font-size: 12px;
+}
+@media (min-width: 56.25em) {
+  .ama__product-nav li a {
+    font-size: 14px;
+  }
 }
 .ama__product-nav li a:focus-visible {
   outline: 2px solid #80d4f5;
@@ -31663,7 +31858,7 @@ div[role=alert] {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-bottom: 1px solid #EDEDED;
+    border-bottom: 0.5px solid #46166B;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
