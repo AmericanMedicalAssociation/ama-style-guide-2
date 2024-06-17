@@ -1,0 +1,35 @@
+{% extends '@templates/two-column-right-75-25.twig' %}
+
+{% set layoutClass = 'container ama__subcategory-index trending-index' %}
+{% set membership, partnerPromo, subscribePromo =
+  trendingIndex.promotionalRealEstate.membership,
+  trendingIndex.promotionalRealEstate.partnerPromo,
+  trendingIndex.promotionalRealEstate.subscribePromo %}
+
+{% block contentTop %}
+  {% set searchField = trendingIndex.searchField %}
+  {% include '@atoms/forms/search-field-as-in-body.twig' %}
+  <div class="ama__search__field__clear-button category"><span>Clear Search</span></div>
+{% endblock %}
+
+{% block contentLeft %}
+  <div class="ama__subcategory-index__stubs">
+    {% for stub in trendingIndex.articleStubs %}
+      <div class="ama__subcategory-index__stub">
+        {% set trendingArticleStub = stub %}
+        {% include '@molecules/trending-page-article-stub.twig' %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="ama__subcategory-index__stubs__load-more">
+    {% include '@atoms/button/button.twig' with { button : trendingIndex.loadMoreButton }%}
+  </div>
+{% endblock %}
+
+{% block contentRight %}
+  {% include '@molecules/membership/membership.twig' with { siteLogo : trendingIndex.siteLogo } %}
+  {% include '@molecules/partner-promo.twig' %}
+  {% include '@molecules/subscribe-promo.twig' %}
+
+{% endblock %}

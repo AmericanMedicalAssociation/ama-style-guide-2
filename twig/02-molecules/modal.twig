@@ -1,0 +1,20 @@
+{% set image = modalImages.image %}
+<div class="ama__image_popup__wrapper">
+    <div class="ama__image_popup__image">
+        {% if image.src is not empty %}
+            <div class="ama__image_popup__modal_image">
+                {% include '@atoms/image/image.twig' %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="ama__image_popup__modal-link-wrapper">
+        <div class="ama__image_popup__icon">
+            <a href="#" class="ama__image_popup__modal-link">
+                {% include '@atoms/media/icons/svg/icon-modal-expand.twig' %}
+            </a>
+            <div class="ama__image_popup__expand__image" style="display:none">
+                <img src="https://picsum.photos/1100/725" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+{% set link = articleStub.title %}
+{% set classes = [
+  articleStub.related ? "ama__article-stub--related",
+  articleStub.small ? "ama__article-stub--small",
+  articleStub.image ? "ama__article-stub--image",
+  articleStub.video ? "ama__article-stub--video",
+  articleStub.categoryPage ? "ama__article-stub--category",
+  articleStub.homepage ? "ama__article-stub--homepage",
+  articleStub.navigation ? "ama__article-stub--navigation",
+  articleStub.series ? "ama__article-stub--series"
+] %}
+
+{% set related, link, headingLevel, paragraph, metadata = articleStub.related, articleStub.link, articleStub.headingLevel, articleStub.paragraph, articleStub.metadata %}
+
+{% macro mediaType(articleStub) %}
+  {% if articleStub.video.src or articleStub.image.src %}
+    {% if articleStub.video %}
+      {% set video = articleStub.video %}
+      {% include "@atoms/video.twig" %}
+    {% else %}
+      {% set image = articleStub.image %}
+      {% include "@atoms/image/image.twig"  with { 'class': 'ama__image' } %}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+<div class="ama__article-stub {{ classes|join(' ') }}">
+  <div>
+  {% block articleStub_media %}
+    {{ _self.mediaType(articleStub) }}
+  {% endblock %}
+
+  {% if not articleStub.related %}
+  <div class="ama__article-stub__copy">
+
+    {% if paragraph %}
+      {% set paragraph = articleStub.paragraph %}
+      <div class="ama__article-stub__description">
+        {% include "@atoms/paragraph.twig" %}
+      </div>
+    {% endif %}
+
+    {% if metadata %}
+      <div class="ama__article-stub__metadata">
+        {% include "@molecules/article-stub/article-stub-metadata.twig" %}
+      </div>
+    {% endif %}
+
+  </div>
+  {% endif %}
+
+  {# {% if articleStub.categoryPage.heading %}
+    {% set heading = articleStub.categoryPage.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %}
+
+  {% if articleStub.homepage.heading %}
+    {% set heading = articleStub.homepage.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %}
+
+  {% if articleStub.navigation.heading %}
+    {% set heading = articleStub.navigation.heading %}
+    {% include "@atoms/heading/heading.twig" %}
+  {% endif %} #}
+
+  {% if link %}
+    {% set link = link|merge({class: 'ama__link--black', target: 'self'}) %}
+    {% set  headingLevel = articleStub.categoryPage.headingLevel ? articleStub.categoryPage.headingLevel : articleStub.headingLevel%}
+    <{{ headingLevel }} class="ama__{{ headingLevel }} ama__article-stub__title">
+      {% include "@atoms/link/link.twig" %}
+    </{{ headingLevel }}>
+  {% endif %}
+
+  {% set podcast = articleStub.podcast %}
+  {% set series_tag = articleStub.series_tag %}
+  {% set video_tag = articleStub.video_tag %}
+  {% if podcast or video_tag or series_tag %}
+    <div class="tags">
+      {% if series_tag == 1 %}<span class="tag">series</span>{% endif %}
+      {% if podcast == 1 %}<span class="tag podcast-tag">podcast</span>{% endif %}
+      {% if video_tag == 1 %}<span class="tag">video</span>{% endif %}
+    </div>
+  {% endif %}
+  {% if series_tag %}
+    <span class="related-series-tag">
+      <a href="">Series Name</a>
+    </span>
+  {% endif %}
+  </div>
+</div>

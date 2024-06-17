@@ -1,0 +1,24 @@
+{% set buttonSize = button.size ? "ama__button--" ~ button.size : "" %}
+{% set buttonStyle =  button.style ? "ama__button--" ~ button.style : "" %}
+
+{% if button.href %}
+  <a
+    href="{{ button.href }}"
+    class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}}"
+    title="{{ button.info }}">
+    {{ button.text }}
+    {% if button.icon %}
+      {% include '@atoms/media/icons/svg/' ~ button.icon ~ '.twig' ignore missing %}
+    {% endif %}
+  </a>
+{% else %}
+  <button
+    type="{{ button.type }}"
+    class="ama__button {{ " " ~ buttonSize }} {{ " " ~ buttonStyle}} {{ " " ~ button.class }}"
+    aria-label="{{ button.info }}">
+    {{ button.text }}
+    {% if button.icon %}
+      {% include '@atoms/media/icons/svg/' ~ button.icon ~ '.twig' ignore missing %}
+    {% endif %}
+  </button>
+{% endif %}

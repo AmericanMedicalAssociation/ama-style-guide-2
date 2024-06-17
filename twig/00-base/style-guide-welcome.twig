@@ -1,0 +1,13 @@
+{% include '@atoms/site-logo/site-logo.twig' %}
+{% include '@atoms/page-title/page-title.twig' %}
+
+{% for item in items %}
+  {% if item.type == 'heading' %}
+    {% set heading = item.content %}
+  {% else %}
+    {% set paragraph = item.content %}
+  {% endif %}
+
+  {% include item.template %}
+
+{% endfor %}

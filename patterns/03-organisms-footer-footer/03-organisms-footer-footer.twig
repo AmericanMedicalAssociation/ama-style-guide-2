@@ -1,0 +1,71 @@
+<footer class="ama__footer {{ footer.class }}">
+  <div class="container">
+    {% include '@atoms/site-logo/site-logo.twig' with { siteLogo : footer.siteLogo } %}
+    <div class="ama__footer__left">
+      {% include "@atoms/paragraph.twig" with { paragraph : footer.mission } %}
+      {% include "@molecules/social-share.twig" %}
+      {% include "@atoms/link/link.twig" with { link : footer.connectLink } %}
+      {% include "@atoms/paragraph.twig" with { paragraph : footer.connectText } %}
+    </div>
+
+    <div class="ama__footer__right">
+      {% block menus %}
+        <div class="ama__footer__menu-secondary-user">
+          {% for column in menus.secondaryUser %}
+            <ul>
+              {% for link in column %}
+                <li>
+                  {% include "@atoms/link/link.twig" %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        </div>
+      {% endblock menus %}
+      {% if footer.email is not empty %}
+        {% include "@atoms/paragraph.twig" with { paragraph : footer.paragraph } %}
+        <div class="ama__subscribe-promo--wide">
+          <div class="ama__subscribe-promo__form">
+            {% block email_subscribe %}
+              <div class="ama__subscribe-promo__email-subscribe-container">
+                {% include '@atoms/forms/email-field.twig' with { email : footer.email } %}
+                {% include '@atoms/button/button.twig' with { button : footer.subscribeButton } %}
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"><defs><path id="a" d="M0 0h20v20H0z"/><mask id="b" x="0" y="0" width="20" height="20" fill="#fff"><use xlink:href="#a"/></mask></defs><g fill="none" fill-rule="evenodd"><use stroke="#979797" mask="url(#b)" stroke-width="2" fill="#FFF" xlink:href="#a"/><path fill="#46166B" d="M0 25h20v20H0z"/><path fill="#FFF" fill-rule="nonzero" d="M8.5 39.035L4 34.716l1.396-1.435 3.077 2.937L14.579 30 16 31.408z"/></g></svg>
+              <span>I verify I'm a US citizen</span>
+            {% endblock %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="container">
+    {% block products %}
+      <div class="ama__footer__menu-products">
+        <ul>
+          {% for link in menus.products %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endblock %}
+  </div>
+
+  <div class="ama__footer__bottom">
+    <div class="container">
+      {% block utility %}
+        <ul class="ama__footer__menu-utility">
+          {% for link in menus.utility %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endblock %}
+      {% include "@atoms/copyright.twig" %}
+    </div>
+  </div>
+</footer>

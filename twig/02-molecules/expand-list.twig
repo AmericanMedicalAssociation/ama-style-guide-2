@@ -1,0 +1,17 @@
+<div class="ama__expand-list">
+  {% for panel in expandList %}
+    {% set searchField = panel.searchField %}
+    <h4 class="ama__expand-list__header">
+      <span class="ama__expand-list__header__icon"></span>
+      <span class="ama__expand-list__header__text">{{ panel.header }}</span>
+    </h4>
+    <div class="ama__expand-list__panel panel">
+      {% if searchField %}
+        {% include "@atoms/forms/search-field.twig" %}
+      {% endif %}
+
+      {% set checkboxes, index = panel.checkboxes, panel.index %}
+      {% include panel.content %}
+    </div>
+  {% endfor %}
+</div>

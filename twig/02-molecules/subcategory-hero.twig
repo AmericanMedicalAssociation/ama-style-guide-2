@@ -1,0 +1,18 @@
+{% set link, image, subheading, metadata = subcategoryHero.link, subcategoryHero.image, subcategoryHero.subheading, subcategoryHero.metadata %}
+
+<div class="ama__subcategory-hero">
+  <a class="ama__subcategory-hero__image" href="{{ subcategoryHero.link.href }}">
+    {% include "@atoms/image/image.twig"  with { 'class': 'ama__image' } %}
+  </a>
+  <div class="ama__subcategory-hero__copy">
+    <span class="ama__subcategory-hero__eyebrow ama__h4--purple">{{ subheading }}</span>
+    <h2 class="ama__h2 ama__subcategory-hero__title">
+      {% include "@atoms/link/link.twig" %}
+    </h2>
+    {% if metadata %}
+      <div class="ama__subcategory-hero__metadata">
+        {% include "@molecules/article-stub/article-stub-metadata.twig" %}
+      </div>
+    {% endif %}
+  </div>
+</div>

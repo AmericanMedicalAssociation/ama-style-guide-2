@@ -1,0 +1,91 @@
+{#
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder profile header.
+#}
+<div class="dr-finder-profile-header {{ drFinderProfileHeader.verified ? "verified" : "" }} {{ drFinderProfileHeader.member ? "member" : "" }} {{ drFinderProfileHeader.claimed ? "claimed" : "" }}">
+  <div class="dr-finder-profile-header__details">
+    <div class="dr-finder-profile-header__image-column">
+      <div class="dr-finder-profile-header__image-verified-container">
+        <div class="dr-finder-profile-header__image-url {{ drFinderProfileHeader.imageUrl ? "with-image": "" }}">
+          {% if drFinderProfileHeader.imageUrl %}
+            <img src="{{ drFinderProfileHeader.imageUrl }}" alt="{{ drFinderProfileHeader.data.name }}"/>
+          {% else %}
+            {% if drFinderProfileHeader.avatar %}
+              <img src="{{ drFinderProfileHeader.avatar }}" alt="avatar">
+            {% endif %}
+          {% endif %}
+          {% if drFinderProfileHeader.verified %}
+            {% include '@atoms/media/icons/svg/icon-verified.twig' %}
+          {% endif %}
+        </div>
+      </div>
+      {% if drFinderProfileHeader.member %}
+        {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
+      {% endif %}
+
+      {% if drFinderProfileHeader.edit %}
+        <div class="dr-finder-profile-header__upload-actions">
+          {% for button in drFinderProfileHeader.imageActions %}
+            <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="dr-finder-profile-header__doctor-info">
+      {% if drFinderProfileHeader.data.name %}
+        <h2 class="dr-finder-profile-header__doctor-info__name ama__h2">{{ drFinderProfileHeader.data.name|raw }}</h2>
+      {% endif %}
+      {% if drFinderProfileHeader.data.pronouns %}
+        <div class="dr-finder-profile-header__doctor-info__pronouns">{{ drFinderProfileHeader.data.pronouns|raw }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.data.phoneNumber %}
+        <div class="dr-finder-profile-header__doctor-info__phone">{{ drFinderProfileHeader.data.phoneNumber }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.data.address %}
+        {% set isMulti = drFinderProfileHeader.data.address|length > 1 %}
+        {% for item in drFinderProfileHeader.data.address %}
+          <div class="dr-finder-profile-header__doctor-info__address {{ isMulti ? 'multiadress'  : '' }}">{{ item|raw }}</div>
+        {% endfor %}
+      {% endif %}
+      {% if drFinderProfileHeader.data.specialty %}
+        <div class="dr-finder-profile-header__doctor-info__specialty">{{ drFinderProfileHeader.data.specialty|raw }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.member %}
+        {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
+      {% endif %}
+      {% if drFinderProfileHeader.service %}
+        <div class="dr-finder-profile-header__doctor-info__service">Accepting new patients</div>
+      {% endif %}
+      {% if drFinderProfileHeader.data.url %}
+        <div class="dr-finder-profile-header__doctor-info__url">{{ drFinderProfileHeader.data.url|raw }}</div>
+      {% endif %}
+      {% if drFinderProfileHeader.claimed %}
+        <div class="dr-finder-profile-header__edit-actions">
+          {% for button in drFinderProfileHeader.editActions %}
+            <div>{% include '@atoms/button/button.twig' with { "button" : button } %}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="dr-finder-profile-header__info__summary">
+    {% if drFinderProfileHeader.data.specialtyText is not null or drFinderProfileHeader.data.locationText is not null %}
+      <p>Dr. {{ drFinderProfileHeader.data.labelName }} {{ drFinderProfileHeader.data.specialtyText }}{{ drFinderProfileHeader.data.locationText }}.</p>
+    {% endif %}
+      <p>Physician data used in Find a Doctor is sourced from the American Medical Association's Physician Professional Data. Formerly known as the AMA Physician Masterfile, this collection was established by the AMA in 1906 in response to the need for a comprehensive biographic record of all US physicians. The AMA Physician Professional Data includes information on both AMA members and non-members and international medical graduates to practice or reside in the United States. Each physician record includes educational and demographic information such as name, address, educational history, practice type and specialty.</p>
+  </div>
+</div>
+<div class="dr-finder-profile-header__aside__claim">
+{% if not drFinderProfileHeader.claimed %}
+  {# If this account has not been claimed and is eligable to be claimed, show claim button. #}
+  {% include '@molecules/dr-finder-claim/dr-finder-claim.twig' with { "drFinderClaim" : drFinderProfileHeader.drFinderClaim } %}
+{% elseif drFinderProfileHeader.unclaimed %}
+  {# Show enhanced claim text to anonyous users on unclaimed profile pages. #}
+  <p class="dr-finder-profile-header__aside__claim__heading">Are you Dr. {{ drFinderProfileHeader.data.formatName }}?</p>
+  <p>If yes, <a href="/login?destination={{ drFinderProfileHeader.pathCurrent }}">Sign in</a> above and click the View Your Page button.  Then click the Claim Your Page button on your physician page to verify your information and add your practice URL.</p>
+  <p class="dr-finder-profile-header__aside__claim__heading">Don't have an AMA Sign In account?</p>
+  <p><a href="/login?destination={{ drFinderProfileHeader.pathCurrent }}">Create your free account account and claim your page</a></p>
+  <p>No, I am a designated administrator or medical staff professional for my organization looking to verify credentials for Dr. {{ drFinderProfileHeader.data.formatName }} or in accordance with accreditation standards such as Joint Commission or NCQA. <a href="https://amacredentialingservices.org/credentialing/Physician-Professional-data%E2%84%A2">Click here to visit AMA Credentialing Services.</a></p>
+  <p>No, I am looking for other physicians specializing in {{ drFinderProfileHeader.data.formatSpecialty }}. <a href="/">Search Find a Doctor for physicians by name and location.</a></p>
+{% endif %}
+</div>

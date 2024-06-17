@@ -1,0 +1,16 @@
+{% set logo, link = wayfinder.logo, wayfinder.link %}
+{% set referred = wayfinder.referred ? "referred" : "notReferred" %}
+
+<section class="ama__wayfinder">
+  <div class="ama__wayfinder__grid container">
+    <div class="ama__wayfinder--referrer">
+      <div class="{{ referred }} ama__wayfinder--referrer__link-back">
+        {% include '@atoms/link/link.twig' %}
+      </div>
+    </div>
+    <div class="ama__wayfinder__logo">
+      {% include '@atoms/site-logo/site-logo.twig' %}
+    </div>
+  </div>
+</section>
+

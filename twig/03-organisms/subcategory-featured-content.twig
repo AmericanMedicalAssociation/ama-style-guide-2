@@ -1,0 +1,9 @@
+<div class="ama__subcategory-featured-content container">
+  {% set contentGroupingHeader = subcatFeaturedContent.contentGroupingHeader %}
+  {% include "@atoms/content-grouping-header.twig" %}
+  <div class="grid-container">
+    {% for articleStub in subcatFeaturedContent.content %}
+      {% include "@molecules/article-stub/article-stub.twig" %}
+    {% endfor %}
+  </div>
+</div>

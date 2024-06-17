@@ -1,0 +1,8 @@
+<div class="ama__display-switch-menu">
+  <ul>
+    {% for term in displaySwitchMenu.terms %}
+      {% set displaySwitch = term %}
+      {% include "@atoms/_display-switch.twig" %}
+    {% endfor %}
+  </ul>
+</div>
