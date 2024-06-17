@@ -12724,6 +12724,42 @@ section.ama__forum_comments {
     margin-left: 0;
   }
 }
+.ama__forum-table-wrap table tr [data-th=Replies] .bt-content br,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content br {
+  display: none;
+}
+@media (min-width: 56.25em) {
+  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content br,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content br {
+    display: initial;
+  }
+}
+.ama__forum-table-wrap table tr [data-th=Replies] .bt-content a,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a {
+  padding: 0 14px;
+}
+.ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:before,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before {
+  content: "(";
+}
+.ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:after,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after {
+  content: ")";
+}
+@media (min-width: 56.25em) {
+  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a {
+    padding: 0;
+  }
+  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:before,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before {
+    content: "";
+  }
+  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:after,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after {
+    content: "";
+  }
+}
 .ama__forum-table-wrap table tr [data-th="Last post"] span span,
 .ama__forum-table-wrap table tr [data-th="Last reply"] span span,
 .ama__topic-table-wrap table tr [data-th="Last post"] span span,
@@ -12781,6 +12817,14 @@ table[id^=forum-topic] td.forum_replies a {
 
 .ama__topic-table-wrap table tr {
   border-top: 1px solid #979797;
+}
+.ama__topic-table-wrap table tr:not(:first-child) td[data-th=Topic]:before {
+  display: none;
+}
+@media (min-width: 75em) {
+  .ama__topic-table-wrap table tr:not(:first-child) td[data-th=Topic]:before {
+    display: inline;
+  }
 }
 .ama__topic-table-wrap th a {
   font-weight: normal;
