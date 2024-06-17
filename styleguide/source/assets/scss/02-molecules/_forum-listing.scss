@@ -116,6 +116,34 @@
               }
           }
       }
+        [data-th="Replies"] {
+            .bt-content {
+                br {
+                    display: none;
+                    @include breakpoint($bp-med) {
+                        display: initial;
+                    }
+                }
+                a {
+                    padding: 0 14px;
+                    &:before {
+                        content: '(';
+                    }
+                    &:after {
+                        content: ')';
+                    }
+                    @include breakpoint($bp-med) {
+                        padding: 0;
+                        &:before {
+                            content: '';
+                        }
+                        &:after {
+                            content: '';
+                        }
+                    }
+                }
+            }
+        }
 
       [data-th="Last post"],
       [data-th="Last reply"] {
@@ -170,6 +198,16 @@ table[id^="forum-topic"] {
   table {
     tr {
       border-top: 1px solid #979797;
+        &:not(:first-child) {
+            td[data-th="Topic"] {
+                &:before {
+                    display: none;
+                    @include breakpoint($bp-large) {
+                        display: inline;
+                    }
+                }
+            }
+        }
     }
   }
 
