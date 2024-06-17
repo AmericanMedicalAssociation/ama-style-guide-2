@@ -30,7 +30,7 @@
 
         // Add the event that closes the popup and sets the cookie that tells us to
         // not show it again until one day has passed.
-        $('.ama__alert__close').click(function() {
+        $('body').on('click', '.ama__alert__close', function() {
           $('.ama__alert__wrap').css({
             "transition": "opacity 2s",
             "opacity": "0",
