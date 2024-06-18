@@ -82,9 +82,9 @@
 {% elseif drFinderProfileHeader.unclaimed %}
   {# Show enhanced claim text to anonyous users on unclaimed profile pages. #}
   <p class="dr-finder-profile-header__aside__claim__heading">Are you Dr. {{ drFinderProfileHeader.data.formatName }}?</p>
-  <p>If yes, <a href="/login?destination={{ drFinderProfileHeader.pathCurrent }}">Sign in</a> above and click the View Your Page button.  Then click the Claim Your Page button on your physician page to verify your information and add your practice URL.</p>
+  <p>If yes, <a href="{{ drFinderProfileHeader.linkLogin }}">Sign in</a> above and click the View Your Page button.  Then click the Claim Your Page button on your physician page to verify your information and add your practice URL.</p>
   <p class="dr-finder-profile-header__aside__claim__heading">Don't have an AMA Sign In account?</p>
-  <p><a href="/login?destination={{ drFinderProfileHeader.pathCurrent }}">Create your free account account and claim your page</a></p>
+  <p><a href="{{ drFinderProfileHeader.linkCreate }}">Create your free account account and claim your page</a></p>
   <p>No, I am a designated administrator or medical staff professional for my organization looking to verify credentials for Dr. {{ drFinderProfileHeader.data.formatName }} or in accordance with accreditation standards such as Joint Commission or NCQA. <a href="https://amacredentialingservices.org/credentialing/Physician-Professional-data%E2%84%A2">Click here to visit AMA Credentialing Services.</a></p>
   <p>No, I am looking for other physicians specializing in {{ drFinderProfileHeader.data.formatSpecialty }}. <a href="/">Search Find a Doctor for physicians by name and location.</a></p>
 {% endif %}
