@@ -1,6 +1,6 @@
 .ama__product-nav {
   display: none;
-  background: $hoverBlack;
+  background: $black;
 
   @include breakpoint($bp-small) {
     display: block;
@@ -12,7 +12,7 @@
     margin-bottom: 0;
     padding: 11px 0;
     @include breakpoint($bp-small) {
-      padding: 7px 0;
+      padding: 6px 0;
     }
   }
 
@@ -27,6 +27,7 @@
 
       @include breakpoint($bp-med) {
         font-size: 14px;
+        line-height: 27px;
       }
 
       @include button_focus_outline_light;
