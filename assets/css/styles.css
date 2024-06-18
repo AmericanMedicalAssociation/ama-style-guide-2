@@ -31906,6 +31906,33 @@ div[role=alert] {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    padding: 0 40px;
+    padding-top: 18px;
+  }
+}
+@media (min-width: 75em) {
+  .ama__homepage__navs {
+    padding: 0;
+    padding-top: 18px;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 992px) {
+  .ama__homepage__navs {
+    padding: 0 20px;
+    padding-top: 18px;
+  }
+  .ama__homepage__navs .ama__org-nav {
+    -ms-flex-negative: 1.2;
+    flex-shrink: 1.2;
+  }
+  .ama__homepage__navs .ama__org-nav ul {
+    display: block;
+    text-align: left;
+  }
+  .ama__homepage__navs ul {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 }
 .ama__homepage .ama__subscribe-promo--wide {
