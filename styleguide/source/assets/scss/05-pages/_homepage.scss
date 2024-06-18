@@ -43,6 +43,30 @@
       align-items: center;
       border-bottom: .5px solid $purple;
       justify-content: space-between;
+      padding: 0 40px;
+      padding-top: 18px;
+    }
+    @include breakpoint($bp-large) {
+      padding: 0;
+      padding-top: 18px;
+    }
+    @media screen and (min-width: 900px) and (max-width: 992px){
+      padding: 0 20px;
+      padding-top: 18px;
+
+      .ama__org-nav {
+        flex-shrink: 1.2;
+
+        ul {
+          display: block;
+          text-align: left;
+        }
+      }
+
+      ul {
+        justify-content: flex-start;
+      }
+
     }
   }
 
