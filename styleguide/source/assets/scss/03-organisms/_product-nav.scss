@@ -2,7 +2,7 @@
   display: none;
   background: $black;
 
-  @include breakpoint($bp-small) {
+  @include breakpoint($bp-med) {
     display: block;
   }
   ul {
@@ -11,23 +11,25 @@
     align-items: center;
     margin-bottom: 0;
     padding: 11px 0;
-    @include breakpoint($bp-small) {
-      padding: 6px 0;
+    @include breakpoint($bp-med) {
+      padding: 6.5px 0;
     }
   }
 
   li {
     list-style: none;
+    line-height: 1;
 
     a {
       margin: 0 (calc($gutter / 2));
       z-index: 99;
       line-height: 1;
       font-size: 12px;
-
       @include breakpoint($bp-med) {
-        font-size: 14px;
         line-height: 27px;
+      }
+      @include breakpoint($bp-large) {
+        font-size: 14px;
       }
 
       @include button_focus_outline_light;
