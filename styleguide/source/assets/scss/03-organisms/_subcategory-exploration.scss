@@ -22,8 +22,14 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      margin-bottom: 0;
+      margin-bottom: calc($gutter / 4);
       justify-content: flex-start;
+      @include breakpoint($bp-med) {
+        margin-bottom: calc($gutter/2);
+      }
+      @include breakpoint($bp-large) {
+        margin-bottom: 0;
+      }
     }
 
     li {
@@ -61,7 +67,7 @@
       margin-bottom: 0;
       padding: 0;
 
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-large) {
         font-weight: 300;
         font-size: 18px;
         padding: 0;
