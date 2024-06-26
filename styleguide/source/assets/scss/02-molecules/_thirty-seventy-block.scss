@@ -1,11 +1,10 @@
+.thirty-seventy-wrapper {
+    border-bottom: 1px solid $gray-7;
+}
 .thirty-seventy-block {
     display: flex;
-    flex-flow: column wrap;
-    border-bottom: 1px solid $gray-7;
+    flex-flow: column-reverse wrap;
     margin-bottom: $gutter * .75;
-    @include breakpoint($bp-small) {
-      margin-bottom: $gutter * .75;
-    }
     @include breakpoint($bp-med) {
       flex-flow: row nowrap;
       padding-bottom: $gutter;
@@ -23,9 +22,11 @@
       @include breakpoint($bp-small max-width) {
         margin-top: $gutter;
       }
-      flex-basis: 35%;
+      flex-basis: 45%;
       h2 {
-        font-size: 2em;
+        font-size: 36px;
+          font-family: kepler-std, serif;
+          font-weight: 400;
         line-height: 42px;
         color: #5E5E5E;
         margin-bottom: calc($gutter / 2);
@@ -35,6 +36,7 @@
         line-height: 1.5em;
         color: #5E5E5E;
         margin-bottom: calc($gutter);
+          font-size: 17px;
       }
       .thirty-seventy-block__buttons {
         display: flex;
@@ -42,19 +44,22 @@
         align-self: auto;
         align-content: center;
         @include breakpoint($bp-small) {
-          min-height: 200px;
-          background: $white;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-self: flex-start;
         }
 
         //Fix for overriding jquery widget
         .ama__button {
-          @include gutter($padding-right-quarter...);
-          @include gutter($padding-left-quarter...);
-          @include gutter($padding-bottom-quarter...);
-          @include gutter($padding-top-quarter...);
+          padding: 5px 12px;
           color: $white;
           font-weight: $font-weight-regular;
           width: 100%;
+            font-size: 16px;
+            line-height: 1;
+            @include breakpoint($bp-med) {
+                width: auto;
+            }
           &--secondary {
             color: $purple;
 
@@ -64,14 +69,29 @@
           }
         }
         &.double-cta {
+            flex-direction: column;
+            @include breakpoint($bp-med) {
+                flex-direction: row;
+            }
           .ama__button {
-            flex-basis: 50%;
+            flex-basis: 100%;
+              @include breakpoint($bp-med) {
+                  flex-basis: 50%;
+              }
           }
           .ama__button:not(.ama__button--secondary) {
           margin-right: calc($gutter / 4);
+              margin-bottom: calc($gutter / 2);
+              @include breakpoint($bp-med) {
+                  margin-right: calc($gutter / 4);
+                  margin-bottom: 0;
+              }
         }
         .ama__button--secondary {
-          margin-left: calc($gutter / 4);
+            margin-left: 0;
+            @include breakpoint($bp-med) {
+                margin-left: calc($gutter / 4);
+            }
         }
       }
         @include breakpoint($bp-small) {
@@ -95,17 +115,18 @@
     }
 
     &__background {
-      flex-basis: 65%;
+      flex-basis: 55%;
       position: relative;
       display: flex;
       flex-direction: column;
       background-size: cover;
       background-position: center center;
-      @include breakpoint($bp-med max-width) {
-        margin: $gutter 0 23px;
-      }
+      margin: $gutter 0 0 0;
+        padding-bottom: $gutter;
+
       @include breakpoint($bp-med) {
-        margin-left: 86px;
+          margin: 0 0 0 80px;
+          padding-bottom: 0;
       }
     }
     .image-container {
@@ -143,13 +164,48 @@
   .js-layout-builder-block,
   .layout.section:not(.ama__category__row) {
     .thirty-seventy-block {
-      margin-bottom: $gutter;
-      @include breakpoint($bp-small) {
-        margin-bottom: $gutter;
+        width: 100%;
+        margin: 0 0 $gutter;
+        padding-top: 0;
+      @include breakpoint($bp-med) {
+          width: 90%;
+        margin: 0 auto 0;
         padding-top: $gutter;
       }
+        @include breakpoint($bp-large) {
+            width: 80%;
+        }
     }
   }
+
+.layout.section.ama__category__row {
+    .thirty-seventy-wrapper {
+        border-bottom:  none;
+        padding-bottom: 0;
+        @include breakpoint($bp-med) {
+            //padding-bottom: $gutter;
+        }
+    }
+    .thirty-seventy-block {
+        width: 100%;
+        margin: 0;
+        padding-top: 0;
+        @include breakpoint($bp-med) {
+            width: 90%;
+            margin: 0 auto 0;
+        }
+        @include breakpoint($bp-large) {
+            width: 80%;
+        }
+        &__background {
+            margin: 0;
+            @include breakpoint($bp-med) {
+                width: 90%;
+                margin: 0 0 0 80px;
+            }
+        }
+    }
+}
 
   .layout.section.ama__category__row .thirty-seventy-block {
     border-bottom: none;
