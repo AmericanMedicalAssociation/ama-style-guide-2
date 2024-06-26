@@ -23,40 +23,40 @@
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        @include breakpoint($bp-small max-width) {
+        margin-top: 0;
+        @include breakpoint($bp-med) {
             margin-top: $gutter;
         }
         flex-basis: 45%;
         h2 {
             font-size: 28px;
+            line-height: 32px;
             @include breakpoint($bp-med) {
                 font-size: 32px;
+                line-height: 38px;
             }
             @include breakpoint($bp-large) {
                 font-size: 36px;
+                line-height: 42px;
             }
             font-family: kepler-std, serif;
             font-weight: 400;
-            line-height: 42px;
-            color: #5E5E5E;
+            color: $black;
             margin-bottom: calc($gutter / 2);
         }
         h5 {
             font-weight: $font-weight-regular;
-            line-height: 1.5em;
-            color: #5E5E5E;
+            line-height: 24px;
+            color: #424242;
             font-size: 16px;
             margin-bottom: calc($gutter);
             @include breakpoint($bp-med) {
                 font-size: 17px;
+                line-height: 25px;
             }
         }
-
         .thirty-seventy-block__buttons {
-
             width:100%;
-
-
             //Fix for overriding jquery widget
             .ama__button {
                 padding: 5px 12px;
@@ -131,7 +131,7 @@
         background-position: center center;
         justify-content: center;
         margin: $gutter 0 0 0;
-        padding-bottom: $gutter;
+        padding-bottom: 20px;
 
         @include breakpoint($bp-med) {
             margin: 0 0 0 20px;
