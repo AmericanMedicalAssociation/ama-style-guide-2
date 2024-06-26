@@ -78,16 +78,14 @@
         }
         &.double-cta {
             flex-direction: column;
+            display: flex;
             width: 100%;
             @include breakpoint($bp-med) {
                 flex-direction: row;
                 width: auto;
             }
           .ama__button {
-            flex-basis: 100%;
-              @include breakpoint($bp-med) {
-                  flex-basis: 50%;
-              }
+
           }
           .ama__button:not(.ama__button--secondary) {
           margin-right: calc($gutter / 4);
@@ -135,9 +133,12 @@
       margin: $gutter 0 0 0;
         padding-bottom: $gutter;
 
-      @include breakpoint($bp-med) {
+        @include breakpoint($bp-med) {
+            margin: 0 0 0 20px;
+            padding-bottom: 0;
+        }
+      @include breakpoint($bp-large) {
           margin: 0 0 0 80px;
-          padding-bottom: 0;
       }
     }
     .image-container {
@@ -212,6 +213,9 @@
             margin: 0;
             @include breakpoint($bp-med) {
                 width: 90%;
+                margin: 0 0 0 20px;
+            }
+            @include breakpoint($bp-large) {
                 margin: 0 0 0 80px;
             }
         }
@@ -241,8 +245,15 @@
   // Article Embed Styles
   .thirty-seventy-block-embed {
     border-top: 1px solid $gray-7;
+      border-bottom: 1px solid $gray-7;
     padding-top: $gutter;
+      padding-bottom: $gutter;
+      @include breakpoint($bp-med) {
+          padding-bottom: 0;
+      }
+      margin-bottom: $gutter;
     .thirty-seventy-block {
+        margin-bottom: 0;
       &.double-button {
         .thirty-seventy-block {
           &__aside {
@@ -253,6 +264,8 @@
             }
           }
           &__background {
+              margin-top: 0;
+              padding-bottom: 0;
             @include breakpoint($bp-med) {
               margin-left: 0;
             }
