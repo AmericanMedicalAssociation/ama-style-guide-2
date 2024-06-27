@@ -1,175 +1,250 @@
+.thirty-seventy-wrapper {
+    border-bottom: 1px solid $gray-7;
+}
 .thirty-seventy-block {
     display: flex;
-    flex-flow: column wrap;
-    border-bottom: 1px solid $gray-7;
+    flex-flow: column-reverse wrap;
     margin-bottom: $gutter * .75;
-    @include breakpoint($bp-small) {
-      margin-bottom: $gutter * .75;
-    }
     @include breakpoint($bp-med) {
-      flex-flow: row nowrap;
-      padding-bottom: $gutter;
+        flex-flow: row nowrap;
+        padding-bottom: $gutter;
     }
 
     &__mobile-image {
-      display: block;
+        display: block;
 
-      @include breakpoint($bp-small) {
-        display: none;
-      }
+        @include breakpoint($bp-small) {
+            display: none;
+        }
     }
 
     &__aside {
-      @include breakpoint($bp-small max-width) {
-        margin-top: $gutter;
-      }
-      flex-basis: 35%;
-      h2 {
-        font-size: 2em;
-        line-height: 42px;
-        color: #5E5E5E;
-        margin-bottom: calc($gutter / 2);
-      }
-      h5 {
-        font-weight: $font-weight-regular;
-        line-height: 1.5em;
-        color: #5E5E5E;
-        margin-bottom: calc($gutter);
-      }
-      .thirty-seventy-block__buttons {
         display: flex;
-        justify-content: space-evenly;
-        align-self: auto;
-        align-content: center;
-        @include breakpoint($bp-small) {
-          min-height: 200px;
-          background: $white;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 0;
+        @include breakpoint($bp-med) {
+            margin-top: $gutter;
         }
-
-        //Fix for overriding jquery widget
-        .ama__button {
-          @include gutter($padding-right-quarter...);
-          @include gutter($padding-left-quarter...);
-          @include gutter($padding-bottom-quarter...);
-          @include gutter($padding-top-quarter...);
-          color: $white;
-          font-weight: $font-weight-regular;
-          width: 100%;
-          &--secondary {
-            color: $purple;
-
-            &:hover {
-              color: $white;
+        flex-basis: 45%;
+        .spacer {
+            height: $gutter;
+            display: block;
+        }
+        h2 {
+            font-size: 28px;
+            line-height: 32px;
+            @include breakpoint($bp-med) {
+                font-size: 32px;
+                line-height: 38px;
             }
-          }
+            @include breakpoint($bp-large) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+            font-family: kepler-std, serif;
+            font-weight: 400;
+            color: $black;
+            margin-bottom: calc($gutter / 2);
         }
-        &.double-cta {
-          .ama__button {
-            flex-basis: 50%;
-          }
-          .ama__button:not(.ama__button--secondary) {
-          margin-right: calc($gutter / 4);
+        h5 {
+            font-weight: $font-weight-regular;
+            line-height: 24px;
+            color: #424242;
+            font-size: 16px;
+            margin-bottom: calc($gutter);
+            @include breakpoint($bp-med) {
+                font-size: 17px;
+                line-height: 25px;
+            }
         }
-        .ama__button--secondary {
-          margin-left: calc($gutter / 4);
-        }
-      }
-        @include breakpoint($bp-small) {
-          background: none;
-          min-height: 300px;
-          align-self: center;
-          align-items: unset;
+        .thirty-seventy-block__buttons {
+            width:100%;
+            //Fix for overriding jquery widget
+            .ama__button {
+                padding: 5px 12px;
+                color: $white;
+                font-weight: $font-weight-regular;
+                width: 100%;
+                font-size: 16px;
+                line-height: 1;
+                @include breakpoint($bp-med) {
+                    width: auto;
+                }
+                &--secondary {
+                    color: $purple;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+            &.double-cta {
+                flex-direction: column;
+                display: flex;
+                width: 100%;
+                @include breakpoint($bp-med) {
+                    flex-direction: row;
+                    width: auto;
+                }
+                .ama__button {
+
+                }
+                .ama__button:not(.ama__button--secondary) {
+                    margin-right: calc($gutter / 4);
+                    margin-bottom: calc($gutter / 2);
+                    @include breakpoint($bp-med) {
+                        margin-right: calc($gutter / 4);
+                        margin-bottom: 0;
+                    }
+                }
+                .ama__button--secondary {
+                    margin-left: 0;
+                    @include breakpoint($bp-med) {
+                        margin-left: calc($gutter / 4);
+                    }
+                }
+            }
+            @include breakpoint($bp-small) {
+                background: none;
+                min-height: 300px;
+                align-self: center;
+                align-items: unset;
+            }
+
+            @include breakpoint($bp-small min-width) {
+                flex-flow: row nowrap;
+                align-self: unset;
+                align-items: center;
+                min-height: 0;
+            }
         }
 
-        @include breakpoint($bp-small min-width) {
-          flex-flow: row nowrap;
-          align-self: unset;
-          align-items: center;
-          min-height: 0;
+        &--full-width {
+            flex-basis: 100%;
         }
-      }
-
-      &--full-width {
-        flex-basis: 100%;
-      }
     }
 
     &__background {
-      flex-basis: 65%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      background-size: cover;
-      background-position: center center;
-      @include breakpoint($bp-med max-width) {
-        margin: $gutter 0 23px;
-      }
-      @include breakpoint($bp-med) {
-        margin-left: 86px;
-      }
+        flex-basis: 55%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center center;
+        justify-content: center;
+        margin: $gutter 0 0 0;
+        padding-bottom: 20px;
+
+        @include breakpoint($bp-med) {
+            margin: 0 0 0 20px;
+            padding-bottom: 0;
+        }
+        @include breakpoint($bp-large) {
+            margin: 0 0 0 80px;
+        }
     }
     .image-container {
-      position: relative;
-      overflow: hidden;
-      @include breakpoint($bp-small) {
-        padding-bottom: 66.67%;
-      }
-      @include breakpoint($bp-small $bp-med) {
-        min-height: 480px;
-      }
+        position: relative;
+        overflow: hidden;
+        @include breakpoint($bp-small) {
+            padding-bottom: 66.67%;
+        }
+        @include breakpoint($bp-small $bp-med) {
+            min-height: 480px;
+        }
     }
 
     .image-container img {
-      width: 100%;
-      @include breakpoint($bp-small) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        object-fit: cover;
-      }
+        width: 100%;
+        @include breakpoint($bp-small) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            object-fit: cover;
+        }
     }
-  }
+}
 
-  .ama__news-article:not(body) {
+.ama__news-article:not(body) {
     margin-bottom: $gutter * .75;
     .thirty-seventy-block {
-      @include breakpoint($bp-small) {
-        margin-bottom: $gutter;
-      }
+        @include breakpoint($bp-small) {
+            margin-bottom: $gutter;
+        }
     }
-  }
+}
 
-  .js-layout-builder-block,
-  .layout.section:not(.ama__category__row) {
+.js-layout-builder-block,
+.layout.section:not(.ama__category__row) {
     .thirty-seventy-block {
-      margin-bottom: $gutter;
-      @include breakpoint($bp-small) {
-        margin-bottom: $gutter;
-        padding-top: $gutter;
-      }
+        width: 100%;
+        margin: 0 0 $gutter;
+        padding-top: 0;
+        @include breakpoint($bp-med) {
+            width: 90%;
+            margin: 0 auto 0;
+            padding-top: $gutter;
+        }
+        @include breakpoint($bp-large) {
+            width: 80%;
+        }
     }
-  }
+}
 
-  .layout.section.ama__category__row .thirty-seventy-block {
+.layout.section.ama__category__row {
+    .thirty-seventy-wrapper {
+        border-bottom:  none;
+        padding-bottom: 0;
+        @include breakpoint($bp-med) {
+            //padding-bottom: $gutter;
+        }
+    }
+    .thirty-seventy-block {
+        width: 100%;
+        margin: 0;
+        padding-top: 0;
+        @include breakpoint($bp-med) {
+            width: 90%;
+            margin: 0 auto 0;
+        }
+        @include breakpoint($bp-large) {
+            width: 80%;
+        }
+        &__background {
+            margin: 0;
+            @include breakpoint($bp-med) {
+                width: 90%;
+                margin: 0 0 0 20px;
+            }
+            @include breakpoint($bp-large) {
+                margin: 0 0 0 80px;
+            }
+        }
+    }
+}
+
+.layout.section.ama__category__row .thirty-seventy-block {
     border-bottom: none;
     @include breakpoint($bp-med) {
-      padding-bottom: 0;
+        padding-bottom: 0;
     }
-  }
+}
 
-  .ama__layout--two-col-right--75-25__top {
+.ama__layout--two-col-right--75-25__top {
     .thirty-seventy-block {
-      @include breakpoint($bp-small) {
-        margin-right: 10px;
-      }
+        @include breakpoint($bp-small) {
+            margin-right: 10px;
+        }
     }
-  }
+}
 
-  a.thirty-seventy-wrapper,
-  .thirty-seventy-block a {
+a.thirty-seventy-wrapper,
+.thirty-seventy-block a {
     text-decoration: none;
-  }
+}
 
   // Article Embed Styles
   .thirty-seventy-block-embed {
