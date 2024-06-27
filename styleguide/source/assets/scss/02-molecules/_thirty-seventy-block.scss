@@ -88,8 +88,21 @@
                     flex-direction: row;
                     width: auto;
                 }
-                .ama__button {
-
+                &.stack {
+                    .ama__button {
+                        margin-left: 0;
+                        margin-right: 0;
+                        margin-bottom: 0;
+                        width:100%;
+                        &.ama__button:not(.ama__button--secondary) {
+                            margin-right: 0;
+                            margin-bottom: 14px;
+                        }
+                    }
+                    @include breakpoint($bp-med) {
+                        flex-direction: column;
+                        width: 100%;
+                    }
                 }
                 .ama__button:not(.ama__button--secondary) {
                     margin-right: calc($gutter / 4);
@@ -112,7 +125,6 @@
                 align-self: center;
                 align-items: unset;
             }
-
             @include breakpoint($bp-small min-width) {
                 flex-flow: row nowrap;
                 align-self: unset;
@@ -246,26 +258,35 @@ a.thirty-seventy-wrapper,
     text-decoration: none;
 }
 
-  // Article Embed Styles
-  .thirty-seventy-block-embed {
+// Article Embed Styles
+.thirty-seventy-block-embed {
     border-top: 1px solid $gray-7;
+    border-bottom: 1px solid $gray-7;
     padding-top: $gutter;
-    .thirty-seventy-block {
-      &.double-button {
-        .thirty-seventy-block {
-          &__aside {
-            @include breakpoint($bp-med) {
-              padding-right: $gutter;
-              max-width: 405px;
-              flex-basis: 60%;
-            }
-          }
-          &__background {
-            @include breakpoint($bp-med) {
-              margin-left: 0;
-            }
-          }
-        }
-      }
+    padding-bottom: $gutter;
+    @include breakpoint($bp-med) {
+        padding-bottom: 0;
     }
-  }
+    margin-bottom: $gutter;
+    .thirty-seventy-block {
+        margin-bottom: 0;
+        &.double-button {
+            .thirty-seventy-block {
+                &__aside {
+                    @include breakpoint($bp-med) {
+                        padding-right: $gutter;
+                        max-width: 405px;
+                        flex-basis: 60%;
+                    }
+                }
+                &__background {
+                    margin-top: 0;
+                    padding-bottom: 0;
+                    @include breakpoint($bp-med) {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
