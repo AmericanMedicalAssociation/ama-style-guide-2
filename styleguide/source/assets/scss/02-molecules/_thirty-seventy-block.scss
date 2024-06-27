@@ -88,8 +88,21 @@
                     flex-direction: row;
                     width: auto;
                 }
-                .ama__button {
-
+                &.stack {
+                    .ama__button {
+                        margin-left: 0;
+                        margin-right: 0;
+                        margin-bottom: 0;
+                        width:100%;
+                        &.ama__button:not(.ama__button--secondary) {
+                            margin-right: 0;
+                            margin-bottom: 14px;
+                        }
+                    }
+                    @include breakpoint($bp-med) {
+                        flex-direction: column;
+                        width: 100%;
+                    }
                 }
                 .ama__button:not(.ama__button--secondary) {
                     margin-right: calc($gutter / 4);
@@ -245,7 +258,6 @@ a.thirty-seventy-wrapper,
 .thirty-seventy-block a {
     text-decoration: none;
 }
-
 
 // Article Embed Styles
   .thirty-seventy-block-embed {
