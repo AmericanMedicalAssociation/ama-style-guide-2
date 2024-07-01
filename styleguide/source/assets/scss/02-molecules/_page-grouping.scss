@@ -91,28 +91,12 @@
 //News Article Page Grouping Block
 
 .ama_page_grouping_news {
-  background-color: $pg-lt-blue;
-  min-height: 80px;
   display: flex;
   margin: 0 0 $gutter;
+  max-width: 380px;
   padding: 0;
   @include breakpoint($bp-small) {
     margin: 0 0 28px 0;
-  }
-
-  &.bottom-border {
-    display: block;
-    padding: 0;
-    width: 100%;
-    background-color: transparent;
-    min-height: 0;
-    height: 0;
-    margin: 0 15px 10px;
-    @include breakpoint($bp-small) {
-      height: 8px;
-      background: $purple;
-      margin: $gutter 0 calc($gutter / 2);
-    }
   }
 
   ul.link-list {
@@ -120,74 +104,54 @@
   }
 
   .links {
-    background-color: $pg-xtra-lt-blue;
-    padding: calc($gutter / 2);
-    flex: 100%;
-    @include breakpoint($bp-small) {
-      padding: calc($gutter / 2) $gutter calc($gutter / 2)  calc($gutter / 2);
-    }
-    @include breakpoint($bp-med) {
-      padding: 10px 28px 10px 14px;
-    }
-
     .ama_page_grouping_title {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
-      margin-bottom: calc($gutter /2);
-      @include breakpoint($bp-small) {
-        font-size: 20px;
-        margin-bottom: 0;
-      }
+      line-height: 32px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid $gray-30;
+      width: 380px;
     }
 
     .link-list {
+      display: inline-block;
       list-style-type: none;
       .ama_page_grouping_link {
-
-        line-height: 1.3;
-        display:inline-block;
-        text-transform: uppercase;
+        line-height: 27px;
+        text-transform: capitalize;
         font-size: 16px;
-        @include breakpoint($bp-small) {
-          font-size: 14px;
+        min-height: 31px;
+        padding-bottom: 4px;
+        margin-bottom: 4.5px;
+        border-bottom: .5px solid $gray-30;
+        @include breakpoint($bp-med) {
+          font-size: 18px;
+          line-height: 27px;
         }
 
         &.heading {
           font-weight: $font-weight-bold;
-          padding-right: calc($gutter / 4);
           position: relative;
-          &::after {
-            content: "|";
-            font-size: 13px;
-            font-weight: $font-weight-regular;
-            position: absolute;
-            top: 0;
-            right: 0;
-          }
         }
 
         a,
         &.active {
           text-decoration: none;
           position: relative;
-          padding-right: calc($gutter / 4);
-
-          &::after {
-            content: "|";
-            font-weight: $font-weight-regular;
-            font-size: 13px;
-            position: absolute;
-            top: 0;
-            right: 0;
-          }
         }
         a {
+          color: $gating-block-link;
           &:hover {
             text-decoration: underline;
+          }
+          &:focus-visible {
+            outline: 1px solid $tab-focus-blue;
           }
         }
         &.active {
           font-weight: $font-weight-bold;
+          color: $purple;
         }
 
         &:last-child {
@@ -205,19 +169,6 @@
         }
 
       }
-    }
-  }
-
-  .ama_page_grouping_image {
-    display: none;
-    line-height: 0;
-    background-color: $pg-lt-blue;
-    @include breakpoint($bp-small) {
-      display: initial;
-      width: 200px;
-    }
-    @include breakpoint($bp-med) {
-      width: 150px;
     }
   }
 }
