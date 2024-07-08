@@ -24,7 +24,10 @@
         justify-content: center;
         flex-direction: column;
         margin-top: 0;
-        flex-basis: 45%;
+        @include breakpoint($bp-med) {
+            flex-basis: 50%;
+            max-width: 396px;
+        }
         .spacer {
             height: $gutter;
             display: block;
@@ -158,7 +161,7 @@
         position: relative;
         overflow: hidden;
         @include breakpoint($bp-small) {
-            padding-bottom: 66.67%;
+            padding-bottom: 66.667%;
         }
         @include breakpoint($bp-small $bp-med) {
             min-height: 480px;
@@ -194,11 +197,9 @@
         padding-top: 0;
         @include breakpoint($bp-med) {
             width: 90%;
+            max-width: 956px;
             margin: 0 auto 0;
             padding-top: $gutter;
-        }
-        @include breakpoint($bp-large) {
-            width: 80%;
         }
     }
 }
