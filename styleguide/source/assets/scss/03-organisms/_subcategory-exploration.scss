@@ -35,7 +35,6 @@
     li {
       list-style-type: none;
       margin: 0 calc($gutter / 4) calc($gutter / 2) 0;
-      padding: 4px;
       background-color: $gray-7;
       border-radius: 4px;
       border: solid 0 #000;
@@ -59,18 +58,16 @@
 
     a,
     h2 {
-      color: $gray-80;
+      color: $black;
       text-decoration: none;
       font-size: 14px;
-      font-weight: 300;
+      font-weight: 400;
       display: flex;
       margin-bottom: 0;
-      padding: 0;
 
       @include breakpoint($bp-large) {
-        font-weight: 300;
+        font-weight: 400;
         font-size: 18px;
-        padding: 0;
       }
 
       &:hover h2,
@@ -83,14 +80,11 @@
       line-height: 26px;
 
       a {
+        padding: 4px;
 
         &:focus-visible {
-          padding: 2px 20.5px 4px 20.5px;
-          margin-left: 4px;
-          margin-top: -4px;
-          height: 26px;
-          line-height: 20px;
-          outline: 3px solid $description-blue-visited;
+          outline: 2px solid $description-blue-visited;
+          margin-left: 2px;
         }
       }
     }
