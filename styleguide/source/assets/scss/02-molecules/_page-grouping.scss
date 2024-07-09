@@ -91,11 +91,11 @@
 //News Article Page Grouping Block
 
 .ama_page_grouping_news {
-  display: flex;
   margin: 0 0 $gutter;
   max-width: 380px;
   padding: 0;
   @include breakpoint($bp-small) {
+    display: flex;
     margin: 0 0 28px 0;
   }
 
@@ -111,7 +111,9 @@
       padding-bottom: 12px;
       margin-bottom: 14px;
       border-bottom: 1px solid $gray-30;
-      width: 380px;
+      @include breakpoint($bp-small) {
+        width: 380px;
+      }
     }
 
     .link-list {
