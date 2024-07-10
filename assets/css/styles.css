@@ -14516,9 +14516,6 @@ span.ama__inline-bio__link:focus-visible {
     margin: 0 0 28px 0;
   }
 }
-.ama_page_grouping_news ul.link-list {
-  margin-top: 4px;
-}
 .ama_page_grouping_news .links .ama_page_grouping_title {
   font-size: 20px;
   font-weight: 600;
@@ -14526,6 +14523,7 @@ span.ama__inline-bio__link:focus-visible {
   padding-bottom: 12px;
   margin-bottom: 14px;
   border-bottom: 1px solid #979797;
+  width: 372px;
 }
 @media (min-width: 37.5em) {
   .ama_page_grouping_news .links .ama_page_grouping_title {
@@ -14533,8 +14531,15 @@ span.ama__inline-bio__link:focus-visible {
   }
 }
 .ama_page_grouping_news .links .link-list {
+  margin-top: 4px;
   display: inline-block;
   list-style-type: none;
+  max-width: 260px;
+}
+@media (min-width: 37.5em) {
+  .ama_page_grouping_news .links .link-list {
+    max-width: 274px;
+  }
 }
 .ama_page_grouping_news .links .link-list .ama_page_grouping_link {
   line-height: 27px;
@@ -29113,20 +29118,27 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 }
 .ama__subcategory-exploration__list li {
   list-style-type: none;
+}
+.ama__subcategory-exploration__list li a {
   margin: 0 7px 14px 0;
   background-color: #EDEDED;
   border-radius: 4px;
   border: solid 0 #000;
+  padding: 8px;
 }
-.ama__subcategory-exploration__list li:hover {
+.ama__subcategory-exploration__list li a:hover {
   background-color: #CBCBCB;
 }
-.ama__subcategory-exploration__list li:last-child a:after {
+.ama__subcategory-exploration__list li a:last-child a:after {
   content: "";
   padding: 0;
 }
-.ama__subcategory-exploration__list li:last-child {
-  margin-right: auto;
+.ama__subcategory-exploration__list li a:focus-visible {
+  outline: 2px solid #0176a5;
+  border-radius: 0;
+  margin-left: 3px;
+  padding: 8px;
+  text-indent: -3px;
 }
 .ama__subcategory-exploration__list h2 a {
   line-height: 1;
@@ -29156,13 +29168,6 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
 }
 .ama__subcategory-exploration__list h2 {
   line-height: 26px;
-}
-.ama__subcategory-exploration__list h2 a {
-  padding: 4px;
-}
-.ama__subcategory-exploration__list h2 a:focus-visible {
-  outline: 2px solid #0176a5;
-  margin-left: 2px;
 }
 .ama__subcategory-exploration__show-more {
   font-size: 1.1em;
