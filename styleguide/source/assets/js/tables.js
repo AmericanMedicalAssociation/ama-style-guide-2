@@ -10,17 +10,25 @@
 (function ($, Drupal) {
   Drupal.behaviors.responsiveTables = {
     attach: function(context, settings) {
+        window.screen.width;
 
       // This conditional has been added to prevent basicTable plugin to selectively not run on tables
-      if (!$('table').hasClass('simpleTable')) {
+      if (!$('table').hasClass('bt')) {
         $('table').basictable({
-          breakpoint: 1024
+          breakpoint: 1182
         });
       }
 
+      // Set the table as bt for mobile.
+        $('.ama__forum-table-wrap table').each( function() {
+            if(window.screen.width <= 1182) {
+                $(this).basictable('start');
+            }
+        });
+
       // this forces tables inside of the .ama__resource--schedules div to have mobile look and feel
       $('.ama__resource--schedules table').each( function() {
-        $(this).basictable('start');
+              $(this).basictable('start');
       });
 
     }
