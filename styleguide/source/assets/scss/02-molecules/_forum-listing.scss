@@ -196,6 +196,25 @@ table[id^="forum-topic"] {
 }
 .ama__topic-table-wrap {
   table {
+      tbody {
+          tr {
+               &:first-child {
+                   display: flex;
+                   flex-direction: column;
+                   @include breakpoint($bp-large) {
+                       display: table-row;
+                   }
+            }
+
+          }
+      }
+      td {
+          display: block;
+          @include breakpoint($bp-large) {
+              display: table-cell;
+          }
+
+      }
     tr {
       border-top: 1px solid #979797;
         &:not(:first-child) {
@@ -266,8 +285,25 @@ table[id^="forum-topic"] {
             &[data-th^="Report"],
             &[data-th^="Resolution"],{
             display: none;
-                @include breakpoint($bp-med) {
+                @include breakpoint($bp-large) {
                     display: table-cell;
+                }
+            }
+
+            &.forum-heading,
+            &.forum__topic {
+                &[data-th="Sections"],
+                &[data-th="Topic"] {
+                    padding-top: 21px;
+                    &:before {
+                        font-weight: $font-weight-bold;
+                        margin-top: 1.5rem;
+                        line-height: 1.143;
+
+                        @include breakpoint($bp-large) {
+
+                        }
+                    }
                 }
             }
         }
