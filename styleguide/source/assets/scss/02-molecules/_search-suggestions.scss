@@ -1,12 +1,20 @@
 .search-suggestions-wrapper {
+    &.show {
+        display: block;
+    }
+    &.hide {
+        display: none;
+    }
     .search-suggestions-block {
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
         background: $white;
-        padding: calc($gutter / 2) $gutter $gutter;
+        padding: calc($gutter / 2) $gutter;
         .title {
             font-size: 18px;
             line-height: 27px;
             color: black;
             margin-bottom: calc($gutter * .25);
+            text-transform: capitalize;
         }
         ul {
             margin-: 0;
@@ -21,18 +29,22 @@
                     position: relative;
                     font-weight: $font-weight-light;
                     display: block;
-                    padding-left: 25px;
+                    padding-left: 24px;
                     font-size: 16px;
+                    line-height: 24px;
                     &:hover {
                         text-decoration: underline;
                     }
                     &:before {
-                        content: '  ';
-                        background: red;
-                        height: 20px;
-                        width: 20px;
+                        content: '';
+                        background-image: url('../icons/svg/icon-search-grey.svg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: left top;
+                        height: 11px;
+                        width: 11px;
                         left: 0;
-                        top: 0;
+                        top: 7px;
                         display: block;
                         position: absolute;
                     }
