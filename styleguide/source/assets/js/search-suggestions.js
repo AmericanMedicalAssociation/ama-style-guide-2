@@ -1,39 +1,77 @@
 (function (Drupal) {
-  Drupal.behaviors.amaSearchSuggestions = {
-    attach: function (context, settings) {
-      // Select the input element and ensure the behavior is processed for the context.
-      const inputElements = context.querySelectorAll('.ama__global-search form input#edit-search');
-      inputElements.forEach(function (element) {
-        element.addEventListener('focus', function () {
-          // Attach keyup event listener on focus
-          document.querySelector('.search-suggestions-block').style.background = 'blue';
+    Drupal.behaviors.amaSearchSuggestions = {
+        attach: function (context, settings) {
+            const block = document.querySelector('.search-suggestions-wrapper');
 
-          const keyUpFunction = function () {
-            if (element.value.trim() !== '') {
-              document.querySelector('.search-suggestions-block').style.background = 'blue';
-            } else {
-              document.querySelector('.search-suggestions-block').style.background = 'red';
-            }
-          };
+            // Function to handle keyup event
+            const handleKeyUp = (event) => {
+                const inputElement = event.target;
+                if (inputElement.value.trim() !== '') {
+                    if (block.classList.contains('show')) {
+                        block.classList.remove('show', 'hide');
+                        block.classList.add('hide');
+                    }
+                } else {
+                    if (block.classList.contains('hide')) {
+                        block.classList.remove('show', 'hide');
+                        block.classList.add('show');
+                    }
+                }
+            };
 
-          element.addEventListener('keyup', keyUpFunction);
+            const inputElement = context.querySelector('.ama__global-search form input#edit-search');
+            inputElement.addEventListener('change', (event) => {
+                if (event.target.value.trim() !== '') {
+                    if (block.classList.contains('show')) {
+                        block.classList.remove('show', 'hide');
+                        block.classList.add('hide');
+                    }
+                } else {
+                    if (block.classList.contains('hide')) {
+                        block.classList.remove('show', 'hide');
+                        block.classList.add('show');
+                    }
+                }
+            }, true);
 
-          // Remove keyup event listener on blur to prevent multiple attachments
-          element.addEventListener('blur', function () {
-            element.removeEventListener('keyup', keyUpFunction);
-            document.querySelector('.search-suggestions-block').style.background = 'blue';
-            console.log('Input lost focus'); // Example action
-          }, { once: true });
-        });
+            inputElement.addEventListener('keyup', handleKeyUp);
 
-        // New logic to handle clicks outside the input element
-        document.addEventListener('mousedown', function(event) {
-          if (element !== event.target && !element.contains(event.target)) {
-            element.blur();
-          }
-        });
+            context.addEventListener('focus', (event) => {
+                const target = event.target;
+                if (target.matches('.ama__global-search form input#edit-search')) {
+                    if (target.value.trim() === '') {
+                        if (block.classList.contains('hide')) {
+                            block.classList.remove('show', 'hide');
+                            block.classList.add('show');
+                        }
+                    }
+                    else {
+                        if (block.classList.contains('show')) {
+                            block.classList.remove('show', 'hide');
+                            block.classList.add('hide');
+                        }
+                    }
+                }
+            }, true);
 
-      });
-    }
-  };
+            context.addEventListener('blur', (event) => {
+                const target = event.target;
+                if (target.matches('.ama__global-search form input#edit-search')) {
+                    if (block.classList.contains('show')) {
+                        block.classList.remove('show', 'hide');
+                        block.classList.add('hide');
+                    }
+                }
+            }, true);
+
+            context.addEventListener('mousedown', (event) => {
+                if (inputElement === event.target) {
+                    inputElement.focus();
+                } else {
+                    inputElement.blur();
+                }
+            });
+
+        }
+    };
 })(Drupal);
