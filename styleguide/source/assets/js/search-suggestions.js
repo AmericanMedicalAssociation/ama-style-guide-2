@@ -6,69 +6,41 @@
             const block = document.querySelector('.search-suggestions-wrapper');
             const inputElement = context.querySelector('.ama__global-search form input#edit-search');
 
-            // Function to handle visibility based on 'keyup' event
+           //  If there is no text in the field, show the block.
+            function toggleShowClass() {
+                const shouldShow = inputElement.value.trim() === '';
+                block.classList.toggle('show', shouldShow);
+            }
+
+            // If there is a keyup event on the input, check the content.
             const handleKeyUp = (event) => {
-                const inputElement = event.target;
                 // Show suggestions if there is no text in the input field.
-                if (inputElement.value.trim() === '') {
-                    if (block.classList.contains('hide')) {
-                        block.classList.remove('show', 'hide');
-                        block.classList.add('show');
-                    }
-                }
+                toggleShowClass();
             };
 
-            // Add 'change' event listener to input element
+            //  If there is a change on the input, check the content.
             inputElement.addEventListener('change', (event) => {
                 // Toggle visibility based on input value
-                if (event.target.value.trim() !== '') {
-                    // Hide suggestions if input is not empty
-                    if (block.classList.contains('show')) {
-                        block.classList.remove('show', 'hide');
-                        block.classList.add('hide');
-                    }
-                } else {
-                    // Show suggestions if input is empty
-                    if (block.classList.contains('hide')) {
-                        block.classList.remove('show', 'hide');
-                        block.classList.add('show');
-                    }
-                }
+                toggleShowClass();
             }, true);
 
             // Add 'keyup' event listener to input element
             inputElement.addEventListener('keyup', handleKeyUp);
 
             // Add 'focus' event listener within context for input
-            context.addEventListener('focus', (event) => {
-                const target = event.target;
+            inputElement.addEventListener('focus', (event) => {
                 // Toggle visibility based on input focus and value
-                if (target.matches('.ama__global-search form input#edit-search')) {
-                    if (target.value.trim() === '') {
-                        // Show suggestions if input is empty
-                        if (block.classList.contains('hide')) {
-                            block.classList.remove('show', 'hide');
-                            block.classList.add('show');
-                        }
-                    }
-                    else {
-                        // Hide suggestions if input is not empty
-                        if (block.classList.contains('show')) {
-                            block.classList.remove('show', 'hide');
-                            block.classList.add('hide');
-                        }
-                    }
+                if (inputElement.matches('.ama__global-search form input#edit-search')) {
+                    toggleShowClass();
                 }
             }, true);
 
             // Add 'blur' event listener within context for input
-            context.addEventListener('blur', (event) => {
-                const target = event.target;
+            inputElement.addEventListener('blur', (event) => {
                 // Hide suggestions when input loses focus
-                if (target.matches('.ama__global-search form input#edit-search')) {
+                if (inputElement.matches('.ama__global-search form input#edit-search')) {
                     if (block.classList.contains('show')) {
-                        block.classList.remove('show', 'hide');
-                        block.classList.add('hide');
+                        block.classList.toggle('show');
                     }
                 }
             }, true);
@@ -82,7 +54,6 @@
                     inputElement.blur();
                 }
             });
-
         }
     };
 })(Drupal);
