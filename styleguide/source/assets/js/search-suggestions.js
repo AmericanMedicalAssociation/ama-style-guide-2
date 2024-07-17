@@ -1,31 +1,39 @@
-/**
- * @file
- * Attaches AMA Image Popup library.
- */
+(function (Drupal) {
+  Drupal.behaviors.amaSearchSuggestions = {
+    attach: function (context, settings) {
+      // Select the input element and ensure the behavior is processed for the context.
+      const inputElements = context.querySelectorAll('.ama__global-search form input#edit-search');
+      inputElements.forEach(function (element) {
+        element.addEventListener('focus', function () {
+          // Attach keyup event listener on focus
+          document.querySelector('.search-suggestions-block').style.background = 'blue';
 
-(function ($, Drupal) {
+          const keyUpFunction = function () {
+            if (element.value.trim() !== '') {
+              document.querySelector('.search-suggestions-block').style.background = 'blue';
+            } else {
+              document.querySelector('.search-suggestions-block').style.background = 'red';
+            }
+          };
 
-console.log('here');
+          element.addEventListener('keyup', keyUpFunction);
 
-    Drupal.behaviors.amaSearchSuggestions = {
-        attach: function (context, settings) {
-            console.log('Search suggestions attached');
-            $('.ama__global-search form input', context).once('amaSearchFocus').on('focus', function () {
-                // Your code to execute when the input is focused goes here
-                console.log('Input focused'); // Example action
-                $('.search-suggestions-wrapper').addClass('show');
-            });
-        }
-    };
+          // Remove keyup event listener on blur to prevent multiple attachments
+          element.addEventListener('blur', function () {
+            element.removeEventListener('keyup', keyUpFunction);
+            document.querySelector('.search-suggestions-block').style.background = 'blue';
+            console.log('Input lost focus'); // Example action
+          }, { once: true });
+        });
 
-    Drupal.behaviors.amaSearchBlur = {
-        attach: function (context, settings) {
-            $('.ama__global-search form input', context).once('amaSearchBlur').on('blur', function () {
-                // Your code to execute when the input loses focus goes here
-                console.log('Input lost focus'); // Example action
-                $('.search-suggestions-wrapper').removeClass('show');
-            });
-        }
-    };
+        // New logic to handle clicks outside the input element
+        document.addEventListener('mousedown', function(event) {
+          if (element !== event.target && !element.contains(event.target)) {
+            element.blur();
+          }
+        });
 
-})(jQuery, Drupal);
+      });
+    }
+  };
+})(Drupal);
