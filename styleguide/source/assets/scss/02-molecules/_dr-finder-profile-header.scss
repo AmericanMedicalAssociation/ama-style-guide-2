@@ -26,13 +26,18 @@
       }
       @include breakpoint($bp-small) {
         min-width: 400px;
-        padding-left: 120px;
+        padding-left: 100px;
       }
       &__heading {
         font-weight: 600;
       }
       a {
         color: $blue;
+      }
+      &.profile-public {
+        @include breakpoint($bp-small) {
+          padding-left: 120px;
+        }
       }
     }
   }
