@@ -1,0 +1,254 @@
+.hub-page {
+  .ama__hub-hero {
+    margin-bottom: calc($gutter * .5);
+  }
+}
+.ama__hub-hero {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: $gray-7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 350px;
+
+  & > div:first-child {
+    width: 100%;
+  }
+
+  @include breakpoint($bp-small) {
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__heading,
+  & .ama__h2 {
+    @include gutter($padding-top-half...);
+    @include gutter($margin-bottom-half...);
+
+    h1,
+    h2 {
+      @include gutter($padding-top-half...);
+      @include gutter($margin-bottom-half...);
+    }
+  }
+
+  &__copy,
+  &__text {
+    @include gutter-all($padding-all-full...);
+    width: 100%;
+  }
+
+  &__list {
+    @include gutter-all($padding-all-full...);
+    list-style-position: inside;
+    margin: inherit;
+
+    ul {
+      margin: inherit;
+      padding: inherit;
+    }
+  }
+
+  &__image,
+  &__video {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint($bp-small) {
+      flex-basis: 50%;
+    }
+
+    .ama__image,
+    .ama__video {
+      display: flex;
+      width: 100%;
+    }
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  &__video {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    height: 100%;
+
+    .ama__video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    @include gutter-all($padding-all-full...);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+    max-width: none;
+    width: auto;
+    @extend .body-list-flush;
+  }
+
+  &__button-container {
+    padding: 20px 0;
+    text-align: center;
+
+    a {
+      @extend %ama__button;
+    }
+  }
+
+  &--cta-only {
+    flex-direction: column;
+    justify-content: center;
+    background-color: $gray-7;
+  }
+
+  &--side-right {
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: 100%;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+  }
+
+  &--hero-side {
+    flex-direction: column;
+    justify-content: flex-start;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description {
+      background-color: rgba($white, 0.45);
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @include breakpoint($bp-small) {
+        width: 50%;
+      }
+    }
+
+    .ama__hub-hero__button-container {
+      padding-left: 0;
+    }
+  }
+
+  &--split-no-overlay,
+  &--split-no-overlay {
+    align-items: stretch;
+
+    .ama__hub-hero__description,
+    .ama__hub-hero__description > div {
+      flex: 1;
+      width: 100%;
+    }
+
+    .ama__hub-hero__copy {
+      margin-top: auto;
+      margin-bottom: 0;
+      order: 2;
+
+
+      align-self: flex-end;
+    }
+
+    .ama__hub-hero_button-container {
+      @include gutter-all($margin-all-full...);
+      order: 1;
+    }
+  }
+
+  &--split {
+    @extend .ama__hub-hero--split-no-overlay;
+
+    .ama__hub-hero__heading,
+    .ama__h2,
+    .ama__hub-hero__copy,
+    p {
+      @include gutter-all($padding-all-full...);
+      background-color: rgba(255, 255, 255, 0.45);
+    }
+
+    p {
+      order: 3;
+    }
+
+    .ama__hub-hero__button-container {
+      order: 2;
+    }
+  }
+
+  &--fifty-fifty {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+
+    .ama__hub-hero__description,
+    article {
+      background-color: rgba($white, 0.45);
+      min-height: 400px;
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      @include breakpoint($bp-small) {
+        width: 100%;
+      }
+    }
+  }
+
+  &--fifty-fifty-left {
+    @extend .ama__hub-hero--fifty-fifty;
+    flex-direction: column;
+
+    @include breakpoint($bp-small) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+/**
+* WYSIWYG Hub card styles.
+*/
+.paragraph--type--wysiwyg {
+  @extend .body-list-flush;
+}

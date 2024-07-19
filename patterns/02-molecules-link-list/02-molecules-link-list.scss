@@ -1,0 +1,99 @@
+.ama__link-list {
+  display: none;
+
+  ul li {
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
+    border-bottom: 1px solid $gray-7;
+    list-style: none;
+
+    &:first-child {
+      border-top: 1px solid $gray-7;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+
+      span {
+        @extend .ama__link--purple;
+        @include gutter($margin-top-full...);
+        font-style: italic;
+        font-weight: 800;
+      }
+    }
+  }
+
+  @include breakpoint($bp-small min-width) {
+    display: block;
+  }
+
+  //Mobile View
+  &--mobile {
+    @include breakpoint($bp-small min-width) {
+      display: none;
+    }
+
+    .ui-accordion-header {
+      @extend .ama__h2;
+      color: $purple;
+      font-weight: $font-weight-regular;
+      border: 1px solid $purple;
+      background-color: transparent;
+      border-radius: 0;
+      text-align: center;
+      margin: 0;
+
+      .ui-icon {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.ui-state-active {
+        color: $white;
+        background-color: $purple;
+        border-bottom: 0;
+
+        .ui-icon {
+          display: block;
+          background-image: none;
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          width: 0;
+          height: 0;
+          pointer-events: none;
+          border-width: 15px 10px 0 10px;
+          border-style: solid;
+          border-color: $white $purple $purple $purple;
+        }
+      }
+    }
+
+
+
+    .ui-accordion-content {
+      border: 0;
+      padding: 0;
+      @include gutter($padding-left-half...);
+      @include gutter($padding-right-half...);
+    }
+
+    .ui-accordion-content ul {
+      list-style: none;
+    }
+
+    .ui-accordion-content ul li {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-half...);
+      border-bottom: 1px solid $gray-7;
+      list-style: none;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{% extends '@templates/one-column.twig' %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="ama__people-listing">
+    <div class="container">
+      {% set masthead = peopleListing.masthead %}
+      {% include '@organisms/masthead/masthead.twig' %}
+      <div class="ama__people-listing__card-container">
+        {% for card in peopleListing.cards %}
+          {% set peopleListingCard = card %}
+          {% include '@molecules/people-listing/people-listing.twig' %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

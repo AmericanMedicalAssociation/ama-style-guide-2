@@ -1,0 +1,9 @@
+<nav class="ama__ribbon_user_menu">
+  <ul class="ama__ribbon_user_menu__nav">
+    {% for link in userMenu %}
+      <li class="ama__ribbon_user_menu__nav_item">
+        {% include '@atoms/link/link.twig' %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

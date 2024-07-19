@@ -1,0 +1,18 @@
+<div class="ama__forum-table-wrap">
+    <table class="">
+        <thead>
+            <tr>
+                <th class="tl-forum-title">{{ forumListing.toplevelForum.title }}</th>
+                <th class="ama__column-centered forum-table-heading">Topics</th>
+                <th class="ama__column-centered forum-table-heading">Posts</th>
+                <th class="forum-table-heading">Last post</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% include "@molecules/forum-listing/forum-listing.twig" %}
+        {% include "@molecules/forum-listing/forum-listing.twig" %}
+        {% include "@molecules/forum-listing/forum-listing.twig" %}
+        </tbody>
+    </table>
+
+</div>

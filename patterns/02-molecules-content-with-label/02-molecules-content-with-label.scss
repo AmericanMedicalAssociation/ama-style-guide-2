@@ -1,0 +1,61 @@
+.ama__bio-section {
+  dl {
+    overflow: hidden;
+    margin: 0 0 calc($gutter/2) 0;
+  }
+
+  dt {
+    font-weight: $font-weight-semibold;
+    text-transform: capitalize;
+    margin-right: calc($gutter/4);
+
+    .as-gated {
+      &:before {
+        @extend .icon--lock;
+        content: "";
+        height: 20px;
+        width: 14px;
+        margin-left: calc($gutter/4);
+      }
+
+      @include breakpoint($bp-small min-width) {
+        display: none;
+      }
+    }
+  }
+
+  dd {
+    margin: 0;
+
+    span {
+      display: block;
+    }
+
+    .as-gated {
+      @extend .ama__type--small;
+      display: none;
+
+      &:before {
+        @extend .icon--lock;
+        content: "";
+        height: 20px;
+        width: 14px;
+      }
+
+      @include breakpoint($bp-small min-width) {
+        display: inline;
+      }
+    }
+  }
+
+  @include breakpoint($bp-small min-width) {
+    dt {
+      float: left;
+      clear: left;
+    }
+
+    dd {
+      float: left;
+    }
+  }
+}

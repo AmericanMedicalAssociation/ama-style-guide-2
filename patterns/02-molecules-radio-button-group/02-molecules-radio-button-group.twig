@@ -1,0 +1,7 @@
+<div class="ama__form-group ama__radio-buttons">
+  {% for radio in radioButtonGroup.radios %}
+    {% set radioButton, index = radio, loop.index %}
+
+    {% include '@atoms/forms/radio-button.twig' %}
+  {% endfor %}
+</div>

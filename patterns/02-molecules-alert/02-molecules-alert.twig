@@ -1,0 +1,9 @@
+<section class="ama__alert__wrap sg">
+  <div class="ama__alert">
+    {% include '@atoms/paragraph.twig' with { paragraph : alert.paragraph } %}
+    {% set button = alert.button %}
+    {% include '@atoms/button/button.twig' %}
+    {% set link = alert.link %}
+    {% include '@atoms/link/link.twig' %}
+  </div>
+</section>

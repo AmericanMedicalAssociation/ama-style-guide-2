@@ -1,0 +1,35 @@
+{% if pageName %}
+  <div class="{{ pageName }}">
+{% endif %}
+  <div class="layout-container">
+    {% block header %}
+      {% include '@organisms/main-navigation/main-navigation.twig' %}
+    {% endblock %}
+
+    <div class="ama__layout--split container {{ class }}">
+      {# Keeping tabindex for accessibility purposes #}
+      <section class="ama__layout--split__content-top">
+        {% block contentTop %}
+          {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
+        {% endblock %}
+      </section>
+
+      <section class="ama__layout--split__left">
+        {% block contentLeft %}
+          {% include '@base/placeholder.twig' with {'placeholder':{'text':'Left region content'}}%}
+        {% endblock %}
+      </section>
+
+      <section class="ama__layout--split__right">
+        {% block contentRight %}
+          {% include '@base/placeholder.twig' with {'placeholder':{'text':'Right region content'}}%}
+        {% endblock %}
+      </section>
+    </div>
+
+    {% include "@organisms/footer/footer.twig" with {'footer':{'class': 'ama__footer ama__resource-page__mobile-footer'}} %}
+
+  {% if pageName %}
+    </div>
+  {% endif %}
+  </div>

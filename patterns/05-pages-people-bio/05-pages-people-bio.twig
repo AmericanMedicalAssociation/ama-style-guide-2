@@ -1,0 +1,31 @@
+{% set layoutClass, masthead, bioImageWithBody, tags, fourUpTeaser, tools, membership =
+       peopleBio.layoutClass, peopleBio.masthead, peopleBio.bioImageWithBody, peopleBio.tags, peopleBio.fourUpTeaser, peopleBio.tools, peopleBio.membership
+%}
+
+{% extends '@templates/two-column-right-full-width.twig' %}
+
+{% block contentTop %}
+  {% include '@organisms/masthead/masthead.twig' %}
+{% endblock %}
+
+{% block contentLeft %}
+  {% include '@organisms/bio-image-with-body.twig' %}
+  {% include '@molecules/tags.twig' %}
+  <div class="user-article-listing-view">
+    {% for userArticleListing in articleListings %}
+      {% include "@organisms/user-article-listing.twig" %}
+    {% endfor %}
+    <ul>
+      <li>
+        {% set button = moreButton.button %}
+        {% include "@atoms/button/button.twig" %}
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block contentRight %}
+  {% include '@molecules/membership/membership.twig' %}
+  {% include '@organisms/tools.twig' %}
+{% endblock %}
+

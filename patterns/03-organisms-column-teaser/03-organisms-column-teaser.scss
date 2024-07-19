@@ -1,0 +1,63 @@
+.ama__column-teaser-wrapper {
+  border-top: solid 4px $purple;
+  padding: 28px 0em;
+
+  .ama__column-teaser {
+    @include child-top-gutters(calc($gutter / 2));
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($bp-small max-width) {
+      flex-direction: column;
+      padding: 0px;
+    }
+
+    div {
+      background: $darkBlue;
+      margin: 0px 8px;
+      padding: 6px 14px 14px 14px;
+      max-width: 274px;
+      flex-basis: 33%;
+      flex-grow: 1;
+      @include breakpoint($bp-small max-width) {
+        flex-basis: 100%;
+      }
+
+      &:first-child {
+        margin-left: 0px;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      &:hover {
+        background-color: $hoverGrayBlue;
+        border-color: $hoverGrayBlue;
+
+        a {
+          color: black;
+        }
+      }
+
+      @include breakpoint($bp-small max-width) {
+        margin: 10px 0px;
+        max-width: unset;
+
+        &:first-child {
+          margin-top: 0px;
+        }
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+
+      .ama__h3 {
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

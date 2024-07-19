@@ -1,0 +1,15 @@
+{% if inline is empty %}
+  <h3 class="ama__h3 date-block">
+{% endif %}
+{% if inline is not empty %}
+    <span class="date-block__week">{{ date.week }},</span>
+{% endif %}
+    <span class="date-block__month">{{ date.month }}</span>
+    <span class="date-block__day">{{ date.day }},</span>
+    <span class="date-block__year">{{ date.year }}</span>
+{% if inline is not empty %}
+    <span class="date-block__time">- {{ date.time }}</span>
+{% endif %}
+{% if inline is empty %}
+  </h3>
+{% endif %}

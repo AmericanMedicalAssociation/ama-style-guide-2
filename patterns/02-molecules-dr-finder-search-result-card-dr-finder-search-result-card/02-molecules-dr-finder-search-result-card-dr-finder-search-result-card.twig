@@ -1,0 +1,26 @@
+{#
+  @copyright Copyright (c) 2022 Palantir.net
+  AMA Dr Finder search result card.
+#}
+<a href="{{ drFinderSearchResultCard.canonicalUrl }}" class="dr-finder-search-result-card {{ drFinderSearchResultCard.verified ? "verified" : "" }} {{ drFinderSearchResultCard.member ? "member" : "" }}">
+  <div class="dr-finder-search-result-card__image {{ drFinderSearchResultCard.imageUrl ? "with-image" : "" }}">
+    {% if drFinderSearchResultCard.imageUrl %}
+      <img src="{{ drFinderSearchResultCard.imageUrl }}" alt="{{ drFinderSearchResultCard.data.name }}">
+    {% else %}
+      {% if drFinderSearchResultCard.avatar %}
+        <img src="{{ drFinderSearchResultCard.avatar }}" alt="avatar">
+      {% endif %}
+    {% endif %}
+    {% if drFinderSearchResultCard.verified %}
+      {% include '@atoms/media/icons/svg/icon-verified.twig' %}
+    {% endif %}
+  </div>
+  <div class="dr-finder-search-result-card__content">
+    <div class="dr-finder-search-result-card__content__name ama__h2">{{ drFinderSearchResultCard.data.name|raw }}</div>
+    <div class="dr-finder-search-result-card__content__address">{{ drFinderSearchResultCard.data.address }}</div>
+    <div class="dr-finder-search-result-card__content__specialty">{{ drFinderSearchResultCard.data.specialty|raw }}</div>
+    {% if drFinderSearchResultCard.member %}
+      {% include '@atoms/dr-finder-badge/dr-finder-badge.twig' %}
+    {% endif %}
+  </div>
+</a>

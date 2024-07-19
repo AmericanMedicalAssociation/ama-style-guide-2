@@ -1,0 +1,34 @@
+{% extends '@templates/one-column.twig' %}
+{% block header %}
+  {% include '@organisms/main-navigation/main-navigation.twig' %}
+  {% set alert = homepage.alert %}
+  {% include '@molecules/alert.twig' %}
+  {% include '@organisms/product-nav.twig' with { productNav : homepage.productNav } %}
+{% endblock %}
+
+{% block contentTop %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="ama__homepage__navs">
+    {% include '@organisms/category-nav.twig' with { catNav : homepage.catNav } %}
+    {% include '@organisms/org-nav.twig' with { orgNav : homepage.orgNav } %}
+  </div>
+
+  {% include '@organisms/homepage-hero-module.twig' with { heroModule : homepage.heroModule } %}
+
+
+  {% include '@molecules/jama/jama.twig' with { jama : homepage.jama } %}
+  {% include '@molecules/subscribe-promo.twig' with { subscribePromo : homepage.subscribePromo } %}
+  {% include '@organisms/member-feature.twig' with { memberFeature : homepage.memberFeature } %}
+  {% include '@atoms/section-title.twig' with { sectionTitle : homepage.fourUpListsHeading } %}
+  {% include '@organisms/four-up-lists.twig' with { fourUpLists : homepage.fourUpLists } %}
+  <div class="ama__homepage__promos">
+    {% include '@molecules/partner-promo.twig' with { partnerPromo : homepage.partnerPromo } %}
+    {% include '@molecules/promo/promo.twig' with { promo : homepage.promo } %}
+  </div>
+  {% include '@organisms/upcoming-events.twig' with { upcomingEvents : homepage.upcomingEvents } %}
+  {% include '@organisms/your-products.twig' with { yourProducts : homepage.yourProducts } %}
+  {% include '@organisms/upcoming-events.twig' %}
+  {% include '@atoms/heading/heading.twig' with { heading : homepage.mission.heading }%}
+{% endblock %}

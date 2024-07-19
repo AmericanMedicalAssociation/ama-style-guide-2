@@ -1,0 +1,6 @@
+<section class="ama__partner-list">
+  {% for partner in partners %}
+    {% set logo, infoCard, boilerplate = partner.logo, partner.infoCard, partner.boilerplate %}
+    {% include "@molecules/partner-info.twig" %}
+  {% endfor %}
+</section>
