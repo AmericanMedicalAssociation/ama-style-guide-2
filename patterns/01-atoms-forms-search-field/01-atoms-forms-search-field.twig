@@ -1,0 +1,7 @@
+<div class="ama__search__field">
+  <label for="ama__search__label" class="is-vishidden">{{ searchField.label }}:</label>
+  <input id="{{ searchField.id }}" class="ama__search__field__input" name="{{ searchField.name }}" type="text" placeholder="{{ searchField.placeholder }}" required="" value="{{ searchField.value }}" aria-required="true">
+  <button class="ama__search__field__button" aria-label="Search button">
+    {% include '@atoms/media/icons/svg/icon-search.twig' %}
+  </button>
+</div>

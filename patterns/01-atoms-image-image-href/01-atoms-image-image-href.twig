@@ -1,0 +1,31 @@
+{% if image.href %}
+  <a
+    href="{{ image.href }}"
+    title="{{ image.info }}">
+    {{ image.heading is not empty ? "<div class='ama__image-wrap'>" }}
+    <img
+      class="{{ class }} ama__image"
+      alt="{{ image.alt }}"
+      src="{{ image.src }}"
+      height="{{ image.height }}"
+      width="{{ image.width }}" />
+    {{ image.heading is not empty ? "</div>" }}
+    {% if image.heading %}
+      <span class="ama__image__text">
+        {% if image.subtitle %}
+          <span class="ama__image__text__subtitle">
+            {{ image.subtitle }}
+          </span>
+        {% endif %}
+        {% include "@atoms/heading/heading.twig" with { "heading" : image.heading } %}
+      </span>
+    {% endif %}
+  </a>
+{% else %}
+  <img
+    class="{{ class }} ama__image"
+    alt="{{ image.alt }}"
+    src="{{ image.src }}"
+    height="{{ image.height }}"
+    width="{{ image.width }}" />
+{% endif %}

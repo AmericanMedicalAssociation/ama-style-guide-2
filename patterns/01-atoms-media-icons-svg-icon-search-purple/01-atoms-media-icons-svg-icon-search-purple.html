@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1721423647" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1721423647" media="all" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="../../assets/favicons/manifest.json" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#46166b" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+  <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1721423647" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1721423647" media="all" />
+  <!-- End Pattern Lab -->
+
+</head>
+<body class="">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Search bw</title>
+    <defs>
+        <path d="M2.50000229,11.565 C2.50000229,6.46038462 6.81625623,2.30769231 12.1187611,2.30769231 C17.4237659,2.30769231 21.7387699,6.46038462 21.7387699,11.565 C21.7387699,16.6696154 17.4237659,20.8211541 12.1187611,20.8211541 C6.81625623,20.8223077 2.50000229,16.6696154 2.50000229,11.565 M29.7050272,28.0996154 L21.3837695,19.0061538 C23.1612712,16.9915385 24.2387722,14.3976923 24.2387722,11.565 C24.2387722,5.18884615 18.8012672,0 12.1187611,0 C5.43750497,0 0,5.18884615 0,11.565 C0,17.9411538 5.43750497,23.1288462 12.1187611,23.1288462 C14.9462637,23.1288462 17.541266,22.1930769 19.6050179,20.64 L27.7950254,29.5892308 C28.0425256,29.8603846 28.396276,30 28.7500263,30 C29.0362765,30 29.3237768,29.91 29.557527,29.7288462 C30.0825275,29.3157692 30.1512776,28.5865385 29.7050272,28.0996154" id="path-1"></path>
+    </defs>
+    <g id="Search-Results" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop---Search-Results-" transform="translate(-960.000000, -137.000000)">
+            <g id="Search-box" transform="translate(110.000000, 95.000000)">
+                <g id="Color/greyscale/#000000" transform="translate(850.000000, 42.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+                    <g id="Group" mask="url(#mask-2)">
+                        <g transform="translate(-1.071429, 0.000000)" id="Color/greyscale/#000000">
+                            <rect id="Rectangle-Copy-19" fill="#46166B" x="0" y="0" width="32.1428571" height="30"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+      <!--DO NOT REMOVE-->
+      <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"media"},"patternDesc":"","patternExtension":"twig","patternName":"icon search purple","patternPartial":"atoms-icon-search-purple","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1721423647">
+  (function() {
+    if (self != top) {
+      var cb = '1721423647';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1721423647">
+  (function() {
+    if (self != top) {
+      var cb = '1721423647';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-multiselect-widget/3.0.0/jquery.multiselect.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+      <script src="../../assets/js/app.js"></script>
+    </div>
+  </body>
+
+</html>

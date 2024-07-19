@@ -1,0 +1,29 @@
+{% if searchHeader.forResults %}
+  <section class="ama__search-header--results">
+    <div class="container">
+      <div class="ama__search-header__results-num">
+        {{ searchHeader.searchResultsNum }}
+      </div>
+      <div class="ama__search-header__option-wrap">
+        {% set searchField = searchHeader.searchField %}
+        {% include "@atoms/forms/search-field.twig" %}
+
+        {% set selectMenu = searchHeader.selectMenu %}
+        <div class="ama__search-header__options">
+          {% include "@atoms/forms/select-menu.twig" %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <section class="ama__search-header">
+    <div class="ama__search-header__results-num">{{ searchHeader.searchResultsNum }}</div>
+    {% set searchField = searchHeader.searchField %}
+    {% include "@atoms/forms/search-field.twig" %}
+    {% set selectMenu = searchHeader.selectMenu %}
+    <div class="ama__search-header__options"> {% include "@atoms/forms/select-menu.twig" %}</div>
+  </section>
+  <section class="ama__search-header__results">
+    <span class="ama__search-header__msg">Results for "Searched term"</span><a class="ama__search-header__clear" href="#">Clear Search</a>
+  </section>
+{% endif %}

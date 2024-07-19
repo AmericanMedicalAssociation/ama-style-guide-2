@@ -1,0 +1,29 @@
+<div class="layout-container">
+  {% block header %}
+    {% include '@organisms/main-navigation/main-navigation.twig' %}
+  {% endblock %}
+
+  <div class="ama__layout--two-col-right--full-width {{ layoutClass }}">
+    <div class="ama__layout--two-col-right--full-width__top">
+      {% block contentTop %}
+        {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Top content' } } %}
+      {% endblock %}
+    </div>
+    <div class="ama__layout--two-col-right--full-width__page-content">
+      <div class="ama__layout--two-col-right--full-width__page-content__left">
+        {% block contentLeft %}
+          {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Left side content' } } %}
+        {% endblock %}
+      </div>
+      <div class="ama__layout--two-col-right--full-width__page-content__right">
+        {% block contentRight %}
+          {% include '@base/placeholder.twig' with { placeholder : { 'text' : 'Right side content' } } %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  {% block footer %}
+    {% include "@organisms/footer/footer.twig" %}
+  {% endblock %}
+</div>

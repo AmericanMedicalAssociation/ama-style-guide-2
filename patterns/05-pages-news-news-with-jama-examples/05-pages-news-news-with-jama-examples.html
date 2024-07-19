@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1721423647" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1721423647" media="all" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="../../assets/favicons/manifest.json" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#46166b" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+  <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1721423647" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1721423647" media="all" />
+  <!-- End Pattern Lab -->
+
+</head>
+<body class="">
+<div class="layout-container">
+        
+      <div id="amaCategoryNavigation" class="ama__main-navigation ">
+  <div class="container">
+          <div class="ama__global-menu">
+  <input id="global-menu" class="ama__global-menu__burger-input" type="checkbox" />
+  <label for="global-menu">
+    <div class="ama__global-menu__burger"></div>
+  </label>
+  <span class="ama__global-menu__menu-text">Menu</span>
+                                                                          </div>
+    
+    <div class="ama_category_navigation_wrapper" body-scroll-lock-ignore>
+  <nav id="ama_category_navigation_menu" class="ama_category_navigation_menu" role="navigation">
+          <ul class="ama_category_navigation_menu__group sm sm-clean sm  sm-vertical">
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Homepage"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Homepage</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Delivering Care"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Delivering Care</span>
+  </a>
+                                                  <ul class="ama_category_navigation_menu__flyout">
+                <li class="ama_category_navigation_menu__flyout__container">
+                  <div class="ama_category_navigation_menu__submenu">
+                    <ol>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Delivering Care"
+  target="_self"
+  class="ama__h5 ama_category_navigation_menu__submenu__header">
+    <span>Delivering Care</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Career Development"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Career Development</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Digital"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Digital</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Diversity"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Diversity</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Claims Processing"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Claims Processing</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="CPT"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>CPT</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Economics"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Economics</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="HIPPA"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>HIPPA</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Medicaid"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Medicaid</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Medicare"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Medicare</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Payment Models"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Payment Models</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Private Tier"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Private Tiers</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Sustainability"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Sustainability</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Well-being"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Well-being</span>
+  </a>
+                        </li>
+                                          </ol>
+                  </div>
+                                                                          <div class="ama_category_navigation_menu__articles">
+                                                                      
+
+
+<div class="ama__article-stub   ama__article-stub--image    ama__article-stub--navigation ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/800/600"
+    height="600"
+    width="800" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+                <div class="ama__article-stub__description">
+        <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    
+          <div class="ama__article-stub__metadata">
+              </div>
+    
+  </div>
+  
+  
+              <h2 class="ama__h2 ama__article-stub__title">
+      <a
+  href="http://www.google.com"
+  title="A link to Google, for example."
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h2>
+  
+            </div>
+</div>
+                                                                      
+
+
+<div class="ama__article-stub   ama__article-stub--image    ama__article-stub--navigation ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/800/600"
+    height="600"
+    width="800" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+                <div class="ama__article-stub__description">
+        <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    
+          <div class="ama__article-stub__metadata">
+              </div>
+    
+  </div>
+  
+  
+              <h2 class="ama__h2 ama__article-stub__title">
+      <a
+  href="http://www.google.com"
+  title="A link to Google, for example."
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h2>
+  
+            </div>
+</div>
+                                          </div>
+                                  </li>
+              </ul>
+                      </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Practice Management"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Practice Management</span>
+  </a>
+                                                  <ul class="ama_category_navigation_menu__flyout">
+                <li class="ama_category_navigation_menu__flyout__container">
+                  <div class="ama_category_navigation_menu__submenu">
+                    <ol>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Practice Management"
+  target="_self"
+  class="ama__h5 ama_category_navigation_menu__submenu__header">
+    <span>Practice Management</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Career Development"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Career Development</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Digital"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Digital</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Diversity"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Diversity</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Claims Processing"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Claims Processing</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="CPT"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>CPT</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Economics"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Economics</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="HIPPA"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>HIPPA</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Medicaid"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Medicaid</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Medicare"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Medicare</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Payment Models"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Payment Models</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Private Tier"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Private Tiers</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Sustainability"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Sustainability</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Well-being"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Well-being</span>
+  </a>
+                        </li>
+                                          </ol>
+                  </div>
+                                                                          <div class="ama_category_navigation_menu__articles">
+                                                                      
+
+
+<div class="ama__article-stub   ama__article-stub--image    ama__article-stub--navigation ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/800/600"
+    height="600"
+    width="800" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+                <div class="ama__article-stub__description">
+        <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    
+          <div class="ama__article-stub__metadata">
+              </div>
+    
+  </div>
+  
+  
+              <h2 class="ama__h2 ama__article-stub__title">
+      <a
+  href="http://www.google.com"
+  title="A link to Google, for example."
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h2>
+  
+            </div>
+</div>
+                                                                      
+
+
+<div class="ama__article-stub   ama__article-stub--image    ama__article-stub--navigation ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/800/600"
+    height="600"
+    width="800" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+                <div class="ama__article-stub__description">
+        <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    
+          <div class="ama__article-stub__metadata">
+              </div>
+    
+  </div>
+  
+  
+              <h2 class="ama__h2 ama__article-stub__title">
+      <a
+  href="http://www.google.com"
+  title="A link to Google, for example."
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h2>
+  
+            </div>
+</div>
+                                          </div>
+                                  </li>
+              </ul>
+                      </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Education"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Education</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Adovcacy"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Adovcacy</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Member Benefits"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Member Benefits</span>
+  </a>
+                                              </li>
+              </ul>
+          <ul class="ama_category_navigation_menu__group sm sm-clean sm  sm-vertical">
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <h6 class="ama__h6 ama_category_navigation_menu__section__heading">Organization</h6>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Board of Trustees"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Board of Trustees</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Councils &amp; Committees"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Councils &amp; Committees</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Member Sections"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Member Sections</span>
+  </a>
+                                                  <ul class="ama_category_navigation_menu__flyout">
+                <li class="ama_category_navigation_menu__flyout__container">
+                  <div class="ama_category_navigation_menu__submenu">
+                    <ol>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Practice Management"
+  target="_self"
+  class="ama__h5 ama_category_navigation_menu__submenu__header">
+    <span>Practice Management</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Career Development"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Career Development</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Digital"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Digital</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Diversity"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Diversity</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Claims Processing"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Claims Processing</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="CPT"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>CPT</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Economics"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Economics</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="HIPPA"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>HIPPA</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Medicaid"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Medicaid</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Medicare"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Medicare</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Payment Models"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Payment Models</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Private Tier"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Private Tiers</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Sustainability"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Sustainability</span>
+  </a>
+                        </li>
+                                                                      <li>
+                          <a
+  href="#"
+  title="Well-being"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--purple">
+    <span>Well-being</span>
+  </a>
+                        </li>
+                                          </ol>
+                  </div>
+                                                                          <div class="ama_category_navigation_menu__articles">
+                                                                      
+
+
+<div class="ama__article-stub   ama__article-stub--image    ama__article-stub--navigation ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/800/600"
+    height="600"
+    width="800" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+                <div class="ama__article-stub__description">
+        <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    
+          <div class="ama__article-stub__metadata">
+              </div>
+    
+  </div>
+  
+  
+              <h2 class="ama__h2 ama__article-stub__title">
+      <a
+  href="http://www.google.com"
+  title="A link to Google, for example."
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h2>
+  
+            </div>
+</div>
+                                                                      
+
+
+<div class="ama__article-stub   ama__article-stub--image    ama__article-stub--navigation ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/800/600"
+    height="600"
+    width="800" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+                <div class="ama__article-stub__description">
+        <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    
+          <div class="ama__article-stub__metadata">
+              </div>
+    
+  </div>
+  
+  
+              <h2 class="ama__h2 ama__article-stub__title">
+      <a
+  href="http://www.google.com"
+  title="A link to Google, for example."
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h2>
+  
+            </div>
+</div>
+                                          </div>
+                                  </li>
+              </ul>
+                      </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="House of Delegates"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>House of Delegates</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="About AMA"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>About AMA</span>
+  </a>
+                                              </li>
+              </ul>
+          <ul class="ama_category_navigation_menu__group sm sm-clean sm  sm-vertical">
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <h6 class="ama__h6 ama_category_navigation_menu__section__heading">Explore Products</h6>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="JAMA Network"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>JAMA Network</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="FREIDA"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>FREIDA</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Education Center"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Education Center</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="AMA Insurance"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>AMA Insurance</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="AMA Journal of Ethics"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>AMA Journal of Ethics</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="CPT"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>CPT</span>
+  </a>
+                                              </li>
+                                      <li class="ama_category_navigation_menu__section" data-sm-horizontal-sub="true">
+                          <a
+  href="#"
+  title="Store"
+  target="_self"
+  class="ama__link ama__link--no-underline ama__link--white">
+    <span>Store</span>
+  </a>
+                                              </li>
+              </ul>
+      </nav>
+
+</div>
+    
+<a href="#" class="ama__site-logo">
+  <img src="../../assets/images/brand/logo-reversed.svg" class="logo" alt="American Medical Association" />
+</a>
+
+
+
+    <div class="ama__main-navigation__join--buttons">
+              
+  <button
+    type="button"
+    class="ama__button  ama__button--small  ama__button--tertiary  "
+    aria-label="alt">
+    Join
+      </button>
+      
+              
+  <button
+    type="button"
+    class="ama__button  ama__button--small  ama__button--tertiary  "
+    aria-label="alt">
+    Renew
+      </button>
+      
+          </div>
+
+    <div class="ama__main-navigation__join--links">
+      <a
+  href="#"
+  title="Join / Renew"
+  target="_self"
+  class="ama__link ama__link--white ama__link--no-underline">
+    <span>Join / Renew</span>
+  </a>
+    </div>
+
+    <div class="global-search-trigger button ama__button ">
+  <i class="global-search-trigger__icon icon--search-white"></i>
+</div>
+<div class="ama__global-search">
+  <div class="ama__search__field ama__search__field--in-body">
+  <label for="ama__search__label" class="is-vishidden">Search:</label>
+  <input id="ama__search__input" class="ama__search__field__input" name="global search" type="text" placeholder="Enter Search Term" required="" aria-required="true">
+  <div class="ama__global-search__action" aria-label="Search button">
+           <input type="submit" id="edit-submit-acquia-search" value="Search" class="button ama__button">
+      </div>
+</div>
+</div>
+
+    <div class="ama__main-navigation__member-benefits-link">
+      <a
+  href="#"
+  title="Member Benefits"
+  target="_self"
+  class="ama__link ama__link--white">
+    <span>Member Benefits</span>
+  </a>
+    </div>
+
+    <div id="ama__sign-in-dropdown" class="ama__sign-in-dropdown">
+  <i class="icon--usermenu-outline ama__sign-in-dropdown__user-icon"></i>
+  <span class="ama__sign-in-dropdown__text">John Smithe</span>
+  <i class="ama__sign-in-dropdown__caret"></i>
+  <div class="ama__sign-in-dropdown__menu">
+                      <ul class="ama__sign-in-dropdown__menu__group">
+                                  <li>
+              <a
+  href="#"
+  title="John Smitherson  MD"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>John Smitherson  MD</span>
+  </a>
+            </li>
+                  </ul>
+              <ul class="ama__sign-in-dropdown__menu__group">
+                                  <li>
+              <a
+  href="#"
+  title="Join/Renew"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Join/Renew</span>
+  </a>
+            </li>
+                                  <li>
+              <a
+  href="#"
+  title="Member Benefits"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Member Benefits</span>
+  </a>
+            </li>
+                  </ul>
+              <ul class="ama__sign-in-dropdown__menu__group">
+                                  <li>
+              <a
+  href="#"
+  title="AMA Account"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>AMA Account</span>
+  </a>
+            </li>
+                                  <li>
+              <a
+  href="#"
+  title="Email Preferences"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Email Preferences</span>
+  </a>
+            </li>
+                                  <li>
+              <a
+  href="#"
+  title="Billing Information"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Billing Information</span>
+  </a>
+            </li>
+                  </ul>
+              <ul class="ama__sign-in-dropdown__menu__group">
+                                  <li>
+              <a
+  href="#"
+  title="Sign Out"
+  target="_self"
+  class="ama__link ama__link--no-underline">
+    <span>Sign Out</span>
+  </a>
+            </li>
+                  </ul>
+            </div>
+</div>
+  </div>
+</div>
+  
+  <div class="ama__layout--two-column--right container ">
+        <section class="ama__layout--two-column--right__content-top">
+        
+<header class="ama__masthead">
+  <div class="ama__masthead__sidebar" role="complementary"></div>
+  <div class="ama__masthead__content " role="complementary">
+    <div class="ama__masthead__content__title__container">
+      <div class="ama__masthead__content__title ">
+                  <a
+  href="#"
+  title="Category link"
+  target="_self"
+  class="ama__masthead__content__link">
+    <span>Delivering care</span>
+  </a>
+                        <h1 class="ama__h1">JAMA Network to launch fully open-access journal</h1>
+                              </div>
+          </div>
+
+    <div class="ama__masthead__content__container">
+              <div class="ama__masthead__content__date">
+            <h3 class="ama__h3 date-block">
+    <span class="date-block__month">April</span>
+    <span class="date-block__day">17,</span>
+    <span class="date-block__year">2018</span>
+  </h3>
+        </div>
+                    <div class="ama__masthead__content__share">
+          <ul class="ama__social-share">
+          <li>
+      <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook"></a>
+    </li>
+          <li>
+      <a href="plus.google.com/+americanmedicalassociation" class="social--googleplus"></a>
+    </li>
+          <li>
+      <a href="twitter.com/AmerMedicalAssn" class="social--twitter"></a>
+    </li>
+          <li>
+      <a href="www.linkedin.com/company/american-medical-association" class="social--linkedin"></a>
+    </li>
+          <li>
+      <a href="mailto:example@ama-assn.org" class="social--email"></a>
+    </li>
+  </ul>
+        </div>
+          </div>
+    
+      </div>
+</header>
+  
+<aside class="ama__inline-bio">
+        <img
+    class="ama__inline-bio__image ama__image"
+    alt="Steven J Stack"
+    src="https://www.ama-assn.org/sites/default/files/styles/medium/public/media-browser/public/people/steven-stack.jpg?itok=r6UW84zq"
+    height="175"
+    width="" />
+  
+  <div class="ama__inline-bio__text">
+                <h3 class="ama__h3">Steven J. Stack, MD</h3>
+                <h3 class="ama__h3">President</h3>
+                <h3 class="ama__h3">Emergency Medicine</h3>
+    
+          <a
+  href="http://twitter.com/StevenStackMD"
+  title="Twitter link"
+  target="_self"
+  class="ama__link--icon ama__inline-bio__link ama__link--blue">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44"><path d="M22 0a22 22 0 1 0 22 22A22 22 0 0 0 22 0zm10.2 16.77v.68a15 15 0 0 1-23 12.61 10.71 10.71 0 0 0 1.26.07A10.56 10.56 0 0 0 17 27.88a5.27 5.27 0 0 1-4.92-3.65 5.28 5.28 0 0 0 2.38-.09A5.26 5.26 0 0 1 10.21 19v-.09a5.24 5.24 0 0 0 2.38.66 5.27 5.27 0 0 1-1.63-7A14.94 14.94 0 0 0 21.81 18a5.26 5.26 0 0 1 9-4.8 10.53 10.53 0 0 0 3.3-1.2 5.28 5.28 0 0 1-2.31 2.91 10.52 10.52 0 0 0 3-.83 10.69 10.69 0 0 1-2.6 2.69z"/></svg>    <span>@StevenStackMD</span>
+  </a>
+          <a
+  href="#"
+  title="Bio link"
+  target="_self"
+  class="ama__inline-bio__link ama__link--blue">
+    <span>Full Bio</span>
+  </a>
+      </div>
+</aside>
+    </section>
+
+    <article class="ama__layout--two-column--right__page-content" role="article">
+        <p > The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.</p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p></p>
+  
+<div class="ama__article-stub--inline">
+  <h4 class="ama__article-stub--inline__label">Example Label Text for an Inline Article Stub</h4>
+  <a
+  href="http://www.google.com"
+  title=""
+  target="_self"
+  class="ama__article-stub--inline__link ama__link--blue">
+    <span>Example text for the article link, lorem ipsum dolor sit amet</span>
+  </a>
+</div>
+    <h1 class="ama__h1">Jama Network Open will provide</h1>
+    
+  
+  <div class=ama__promo--inline>
+    
+        
+  <h class="">Title Text</h>
+
+      <p > A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+  
+      
+  <a
+    href="#"
+    class="ama__button    ama__button--secondary"
+    title="">
+    Sign up
+      </a>
+  
+  </div>
+  <p > The JAMA Network will launch a new online general medical journal, JAMA Network Open, in early 2018. The new journal will publish peer-reviewed, fully open-access clinical research across all medical disciplines. “Open access” is free, immediate, online availability of research articles that permits others to access, read and reuse the content.</p><p>The weekly journal will be the 13th journal in The JAMA Network, which includes JAMA and 11 other specialty journals. The newest journal follows the launch of JAMA Oncology in 2015 and JAMA Cardiology in 2016, which are hybrid journals offering open access for research articles.</p><p>The founding editor-in-chief of <a href="https:sites.jamanetwork.com/jamanetworkopen/m">JAMA Network</a> Open will be Frederick P. Rivara, MD, MPH, now editor-in-chief of JAMA Pediatrics. Dr. Rivara is Seattle Children’s Guild Endowed Chair in Pediatrics, professor of pediatrics and adjunct professor of epidemiology at the University of Washington.</p></p>
+  <div class="ama__jama ama__jama--vertical-images">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
+  <span class="ama__jama__title">
+    
+  </span>
+  <ul class="ama__jama__links">
+                <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.google.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://picsum.photos/226/151"
+      height="auto"
+      width="auto" />
+    </div>    
+      </a>
+      </li>
+                <div class="ama__rule ama__rule--horizontal"></div>
+            <li class="" >
+        
+  <a
+    href="https://www.aol.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Psychiatry
+          </span>
+                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      
+    </div>    
+      </a>
+      </li>
+                <div class="ama__rule ama__rule--horizontal"></div>
+            <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+            <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://picsum.photos/226/151"
+      height="auto"
+      width="auto" />
+    </div>    
+      </a>
+      </li>
+      </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>
+  <div class="ama__tags">
+  <span class="ama__tags-text">More info:</span>
+  <ul class="ama__tags-list">
+                <li>
+        <a
+  href="http://www.google.com"
+  title=""
+  target=""
+  class="ama__tag ama__link--purple">
+    <span>Lorem ipsum</span>
+  </a>
+      </li>
+                <li>
+        <a
+  href="http://www.yahoo.com"
+  title=""
+  target=""
+  class="ama__tag ama__link--purple">
+    <span>Dolor sit</span>
+  </a>
+      </li>
+      </ul>
+</div>
+  <section class="ama__page--news__teasers">
+    <div class="ama__jama ama__jama--horizontal">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
+  <span class="ama__jama__title">
+    
+  </span>
+  <ul class="ama__jama__links">
+                <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.google.com"
+    title="">
+        <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://picsum.photos/226/151"
+      height="auto"
+      width="auto" />
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.aol.com"
+    title="">
+        <div class='ama__image-wrap'>
+      
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Psychiatry
+          </span>
+                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
+      </span>
+          </a>
+      </li>
+                <li class="ama__link--with-image" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+        <div class='ama__image-wrap'>
+      <img
+      class=" ama__image"
+      alt="alt text"
+      src="https://picsum.photos/226/151"
+      height="auto"
+      width="auto" />
+    </div>    
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+          </a>
+      </li>
+      </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>
+    <div class="ama__four-up-teaser">
+          
+
+
+<div class="ama__article-stub   ama__article-stub--image     ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/450/321"
+    height="321"
+    width="450" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+    
+          <div class="ama__article-stub__metadata">
+          <span class="ama__article-stub__metadata__date">Jul 28, 2017</span>
+   <span>·</span>   <span class="ama__article-stub__metadata__read-time">5 min read</span>
+      </div>
+    
+  </div>
+  
+  
+              <h3 class="ama__h3 ama__article-stub__title">
+      <a
+  href="#"
+  title="Link to something"
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h3>
+  
+            </div>
+</div>
+          
+
+
+<div class="ama__article-stub   ama__article-stub--image     ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/450/321"
+    height="321"
+    width="450" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+    
+    
+  </div>
+  
+  
+              <h3 class="ama__h3 ama__article-stub__title">
+      <a
+  href="#"
+  title="Link to something"
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h3>
+  
+            </div>
+</div>
+          
+
+
+<div class="ama__article-stub   ama__article-stub--image     ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/450/321"
+    height="321"
+    width="450" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+    
+    
+  </div>
+  
+  
+              <h3 class="ama__h3 ama__article-stub__title">
+      <a
+  href="#"
+  title="Link to something"
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h3>
+  
+            </div>
+</div>
+          
+
+
+<div class="ama__article-stub   ama__article-stub--image     ">
+  <div>
+                          <img
+    class="ama__image ama__image"
+    alt="alt text"
+    src="https://picsum.photos/450/321"
+    height="321"
+    width="450" />
+      
+  
+    <div class="ama__article-stub__copy">
+
+    
+    
+  </div>
+  
+  
+              <h3 class="ama__h3 ama__article-stub__title">
+      <a
+  href="#"
+  title="Link to something"
+  target="self"
+  class="ama__link--black">
+    <span>Lorem ipsum dolor sit amet.</span>
+  </a>
+    </h3>
+  
+            </div>
+</div>
+  </div>
+  </section>
+    </article>
+
+    <aside id="sidebar-primary" class="ama__layout--two-column--right__sidebar--primary" role="complementary"></aside>
+
+    <aside id="sidebar-secondary" class="ama__layout--two-column--right__sidebar--secondary" role="complementary">
+        <div class="ama__jama ama__jama--vertical">
+  <a href="#" class="ama__jama__header">JAMA Network</a>
+  <span class="ama__jama__title">
+    Podcasts
+  </span>
+  <ul class="ama__jama__links">
+                <li class="" >
+        
+  <a
+    href="https://www.google.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Surgery
+          </span>
+                <h3 class="ama__h3">Surgeon general nominee fought HIV outbreak in rural Indiana</h3>
+      </span>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.aol.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Psychiatry
+          </span>
+                <h3 class="ama__h3">Sugary-drinks tax passes legal muster in Pennsylvania</h3>
+      </span>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.yahoo.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Dermatology
+          </span>
+                <h3 class="ama__h3">Avoid MIPS penalties in 2019: What physicians need to know</h3>
+      </span>
+          </a>
+      </li>
+                <li class="" >
+        
+  <a
+    href="https://www.facebook.com"
+    title="">
+              <span class="ama__image__text">
+                  <span class="ama__image__text__subtitle">
+            JAMA Internal Medicine
+          </span>
+                <h3 class="ama__h3">More sunlight sought on spiking drug prices</h3>
+      </span>
+          </a>
+      </li>
+      </ul>
+  <div class="ama__rule ama__rule--horizontal"></div>
+  <a href="#" class="ama__jama__link--sign-up">Sign-up for a membership to the AMA and receive a subscription to <span class="ama__jama--reg">JAMA</span></a>
+</div>
+  <div class=ama__tools>
+    
+  <h3 class="ama__h3">Topics, Tools and Resources</h3>
+
+            
+<a class="ama__tool" href=https://www.ama-assn.org>
+  <icon class="ama__tool__icon icon--pdf-yellow"></icon>
+  <div class="ama__tool__text">
+    <p > Test tool PDF</p>
+    <div class="ama__tool__meta">
+      <span> .PDF</span>
+      <span>9.9 MB</span>
+    </div>
+  </div>
+</a>
+        
+<a class="ama__tool" href=https://www.ama-assn.org>
+  <icon class="ama__tool__icon icon--video-yellow"></icon>
+  <div class="ama__tool__text">
+    <p > Test tool Video</p>
+    <div class="ama__tool__meta">
+      <span> .MKV</span>
+      <span>715 MB</span>
+    </div>
+  </div>
+</a>
+    
+    <h5 class="ama__h5">Learn More About:</h5>
+
+    <div class="ama__tools-learn-more">
+            <a
+  href="#"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Test learn more link</span>
+  </a>
+      </div>
+</div>
+    </aside>
+  </div>
+
+      <footer class="ama__footer ">
+  <div class="container">
+    
+<a href="#" class="ama__site-logo--footer">
+  <img src="../../assets/images/brand/logo-reversed.svg" class="logo" alt="American Medical Association" />
+</a>
+
+
+    <div class="ama__footer__left">
+      <p class="ama__footer__mission"> The AMA promotes the art and science of medicine and the betterment of public health.</p>
+      <ul class="ama__social-share">
+          <li>
+      <a href="www.facebook.com/AmericanMedicalAssociation" class="social--facebook-white"></a>
+    </li>
+          <li>
+      <a href="plus.google.com/+americanmedicalassociation" class="social--googleplus-white"></a>
+    </li>
+          <li>
+      <a href="twitter.com/AmerMedicalAssn" class="social--twitter-white"></a>
+    </li>
+          <li>
+      <a href="www.linkedin.com/company/american-medical-association" class="social--linkedin-white"></a>
+    </li>
+          <li>
+      <a href="www.youtube.com/user/AmerMedicalAssn" class="social--youtube-white"></a>
+    </li>
+          <li>
+      <a href="www.instagram.com/user/AmerMedicalAssn" class="social--instagram-white"></a>
+    </li>
+  </ul>
+      <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="ama__footer__connect">
+    <span>Contact Us</span>
+  </a>
+      <p > Download AMA Connect app for <a href='#'>iPhone</a> or <a href='#'>Android</a></p>
+    </div>
+
+    <div class="ama__footer__right">
+              <div class="ama__footer__menu-secondary-user">
+                      <ul>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Careers</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Events</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Press Center</span>
+  </a>
+                </li>
+                          </ul>
+                      <ul>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Alliance</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMPAC</span>
+  </a>
+                </li>
+                              <li>
+                  <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Foundation</span>
+  </a>
+                </li>
+                          </ul>
+                  </div>
+                    <p > The best in medicine, delivered to your mailbox</p>
+        <div class="ama__subscribe-promo--wide">
+          <div class="ama__subscribe-promo__form">
+                          <div class="ama__subscribe-promo__email-subscribe-container">
+                <div class="ama__form-group">
+  <label>email</label>
+  <input name="email" type="email" placeholder="Email Address" required="" aria-required="true">
+</div>
+                
+  <button
+    type="button"
+    class="ama__button      "
+    aria-label="alt">
+    Subscribe
+      </button>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"><defs><path id="a" d="M0 0h20v20H0z"/><mask id="b" x="0" y="0" width="20" height="20" fill="#fff"><use xlink:href="#a"/></mask></defs><g fill="none" fill-rule="evenodd"><use stroke="#979797" mask="url(#b)" stroke-width="2" fill="#FFF" xlink:href="#a"/><path fill="#46166B" d="M0 25h20v20H0z"/><path fill="#FFF" fill-rule="nonzero" d="M8.5 39.035L4 34.716l1.396-1.435 3.077 2.937L14.579 30 16 31.408z"/></g></svg>
+              <span>I verify I'm a US citizen</span>
+                      </div>
+        </div>
+          </div>
+  </div>
+
+  <div class="container">
+          <div class="ama__footer__menu-products">
+        <ul>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>JAMA Network</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>FRIEDA</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Education Center</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Insurance</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>AMA Journal of Ethics</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>CPT</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Store</span>
+  </a>
+            </li>
+                  </ul>
+      </div>
+      </div>
+
+  <div class="ama__footer__bottom">
+    <div class="container">
+              <ul class="ama__footer__menu-utility">
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Terms of Use</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Privacy Policy</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Code of Conduct</span>
+  </a>
+            </li>
+                      <li>
+              <a
+  href="http://www.google.com"
+  title="Link to something"
+  target="_self"
+  class="">
+    <span>Website Accessibility</span>
+  </a>
+            </li>
+                  </ul>
+            
+    
+<div class="ama__copyright ama__type--smaller">
+  Copyright  1995 - 2024  American Medical Association. All rights reserved.
+</div>
+    </div>
+  </div>
+</footer>
+  </div>
+
+      <!--DO NOT REMOVE-->
+      <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"templates-two-column-right","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"organisms-masthead","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"molecules-inline-bio","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"molecules-article-stub-as-inline","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"atoms-heading","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"molecules-promo","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"molecules-jama","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"molecules-tags","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"organisms-four-up-teaser","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"},{"lineagePattern":"organisms-tools","lineagePath":"..\/..\/patterns\/05-pages-news-news-with-jama-examples\/05-pages-news-news-with-jama-examples.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"pages","patternSubtype":"news"},"patternDesc":"<h3>Description<\/h3>\n\n<p>An example News page that shows each of the three JAMA molecules in the areas where they can appear.<\/p>\n\n<ul>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5039\">EWL-5039<\/a><\/li>\n<li><a href=\"https:\/\/issues.ama-assn.org\/browse\/EWL-5042\">EWL-5042<\/a><\/li>\n<\/ul>","patternExtension":"twig","patternName":"news with jama examples","patternPartial":"pages-news-with-jama-examples","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1721423647">
+  (function() {
+    if (self != top) {
+      var cb = '1721423647';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1721423647">
+  (function() {
+    if (self != top) {
+      var cb = '1721423647';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-multiselect-widget/3.0.0/jquery.multiselect.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+      <script src="../../assets/js/app.js"></script>
+    </div>
+  </body>
+
+</html>

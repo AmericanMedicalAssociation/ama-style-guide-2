@@ -1,0 +1,10 @@
+{% set button = appliedFilters.button %}
+
+<div class="ama__applied-filters">
+  <div class="ama__applied-filters__header">
+    <p class="ama__applied-filters__label">{{ appliedFilters.label }}</p>
+    {% include "@atoms/button/button.twig"  with { 'class': 'ama__applied-filters__show-filters' } %}
+    <a id="appliedFiltersRemove" class="ama__link--blue ama__applied-filters__remove">{{ appliedFilters.clearAll }}</a>
+  </div>
+  <ul id="appliedFiltersTags" class="ama__applied-filters__tags"></ul>
+</div>

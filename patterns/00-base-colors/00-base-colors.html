@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1721423647" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1721423647" media="all" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="../../assets/favicons/manifest.json" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#46166b" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+  <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1721423647" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1721423647" media="all" />
+  <!-- End Pattern Lab -->
+
+</head>
+<body class="">
+<h2>AMAOne Colors</h2>
+<ul class="sg-colors">
+      <li>
+      <div class="sg-swatch" style="background: #027DBC;"></div>
+      <div class="sg-info">
+        <span>#027DBC</span> <br/>
+        <code>$blue</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #027DBC;"></div>
+      <div class="sg-info">
+        <span>#027DBC</span> <br/>
+        <code>$hoverBlue</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #ED8B00;"></div>
+      <div class="sg-info">
+        <span>#ED8B00</span> <br/>
+        <code>$orange</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #F1A233;"></div>
+      <div class="sg-info">
+        <span>#F1A233</span> <br/>
+        <code>$hoverOrange</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #46166B;"></div>
+      <div class="sg-info">
+        <span>#46166B</span> <br/>
+        <code>$purple</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #9073A6;"></div>
+      <div class="sg-info">
+        <span>#9073A6</span> <br/>
+        <code>$hoverPurple</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #000000;"></div>
+      <div class="sg-info">
+        <span>#000000</span> <br/>
+        <code>$black</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #333333;"></div>
+      <div class="sg-info">
+        <span>#333333</span> <br/>
+        <code>$hoverBlack</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #5C5C5C;"></div>
+      <div class="sg-info">
+        <span>#5C5C5C</span> <br/>
+        <code>$grey-64</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #7F7F7F;"></div>
+      <div class="sg-info">
+        <span>#7F7F7F</span> <br/>
+        <code>$grey-50</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #EDEDED;"></div>
+      <div class="sg-info">
+        <span>#EDEDED</span> <br/>
+        <code>$gray-7</code>
+      </div>
+    </li>
+      <li>
+      <div class="sg-swatch" style="background: #ffffff;"></div>
+      <div class="sg-info">
+        <span>#ffffff</span> <br/>
+        <code>$white</code>
+      </div>
+    </li>
+  </ul>
+
+<h2>Homepage colors</h2>
+<ul class="sg-colors">
+      <li>
+      <div class="sg-swatch" style="background: #7229D1;"></div>
+      <div class="sg-info">
+        <span>#7229D1</span> <br/>
+        <code>$homepagePurple</code>
+      </div>
+    </li>
+  </ul>
+
+
+      <!--DO NOT REMOVE-->
+      <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"base"},"patternDesc":"","patternExtension":"twig","patternName":"colors","patternPartial":"base-colors","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1721423647">
+  (function() {
+    if (self != top) {
+      var cb = '1721423647';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1721423647">
+  (function() {
+    if (self != top) {
+      var cb = '1721423647';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-multiselect-widget/3.0.0/jquery.multiselect.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+      <script src="../../assets/js/app.js"></script>
+    </div>
+  </body>
+
+</html>

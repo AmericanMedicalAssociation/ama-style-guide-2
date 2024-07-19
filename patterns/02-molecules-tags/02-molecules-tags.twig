@@ -1,0 +1,11 @@
+<div class="ama__tags">
+  <span class="ama__tags-text">{{ tags.text }}:</span>
+  <ul class="ama__tags-list">
+    {% for tag in tags.items %}
+      {% set text, url = tag.text, tag.url %}
+      <li>
+        {% include "@atoms/tag.twig" %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

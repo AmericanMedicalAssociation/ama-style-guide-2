@@ -1,0 +1,27 @@
+<div class="layout-container">
+  {% block header %}
+    {% include '@organisms/main-navigation/main-navigation.twig' %}
+  {% endblock %}
+
+  <div class="ama__layout--one-column container {{ class }}">
+    {# Keeping tabindex for accessibility purposes #}
+
+    <section class="ama__layout--one-column__content-top">
+      {% block contentTop %}
+        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Content Top region content'}}%}
+      {% endblock %}
+    </section>
+
+    <article class="ama__layout--one-column__page-content" role="article">
+      {% block pageContent %}
+        {% set placeholder = one_column.page_content.placeholder %}
+        {% include '@base/placeholder.twig' with {'placeholder':{'text':'Page main content'}}%}
+      {% endblock %}
+    </article>
+
+  </div>
+
+  {% block footer %}
+    {% include "@organisms/footer/footer.twig" %}
+  {% endblock %}
+</div>

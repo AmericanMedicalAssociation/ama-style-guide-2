@@ -1,0 +1,37 @@
+{% set classes = [
+    subscribePromo.wide ? "ama__subscribe-promo--wide",
+    subscribePromo.homepage ? "ama__subscribe-promo--homepage"
+  ]
+%}
+
+<div class="ama__category">
+  <div class="layout__region--content">
+    <div class="layout--ama-page-section-one-col">
+      <div class="ama__subscribe-promo {{ classes|join(' ') }}">
+        <div class="ama__subscribe-promo--content">
+          {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.subjectTitle } %}
+          <div class="ama__subscribe-promo__container">
+            <div class="ama__subscribe-promo__content">
+              {% include '@atoms/heading/heading.twig' with { heading : subscribePromo.heading } %}
+              {% include '@atoms/paragraph.twig' with { paragraph : subscribePromo.paragraph } %}
+              {% set email = subscribePromo.email %}
+            </div>
+            <div class="ama__subscribe-promo__form">
+              <form>
+                {% include '@atoms/forms/email-field.twig' %}
+                {% set checkbox = subscribePromo.checkbox %}
+                {% include "@atoms/forms/checkbox.twig" %}
+                {% set button = subscribePromo.button %}
+                {% include '@atoms/button/button.twig' %}
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="ama__subscribe-promo--media">
+          {% set image = subscribePromo.image %}
+          {% include '@atoms/image/image.twig' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
