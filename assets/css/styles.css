@@ -10301,6 +10301,10 @@ Styles for the new Category Featured Content Custom Block.
   padding: 28px;
   margin: 28px 0;
 }
+.dr-finder-claim section {
+  width: 100%;
+  margin: 0 8px;
+}
 
 .dr-find-claim-benefits {
   text-align: left;
@@ -10908,7 +10912,7 @@ main {
 @media (min-width: 37.5em) {
   .dr-finder-profile-header__aside__claim {
     min-width: 400px;
-    padding-left: 120px;
+    padding-left: 100px;
   }
 }
 .dr-finder-profile-header__aside__claim__heading {
@@ -10916,6 +10920,11 @@ main {
 }
 .dr-finder-profile-header__aside__claim a {
   color: #027DBC;
+}
+@media (min-width: 37.5em) {
+  .dr-finder-profile-header__aside__claim.profile-public {
+    padding-left: 120px;
+  }
 }
 
 .dr-finder-profile-header__image-column .dr-finder-badge {
@@ -12815,6 +12824,28 @@ table[id^=forum-topic] td.forum_replies a {
   display: none;
 }
 
+.ama__topic-table-wrap table tbody tr:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media (min-width: 75em) {
+  .ama__topic-table-wrap table tbody tr:first-child {
+    display: table-row;
+  }
+}
+.ama__topic-table-wrap table td {
+  display: block;
+}
+@media (min-width: 75em) {
+  .ama__topic-table-wrap table td {
+    display: table-cell;
+  }
+}
 .ama__topic-table-wrap table tr {
   border-top: 1px solid #979797;
 }
@@ -12876,10 +12907,18 @@ table[id^=forum-topic] td.forum_replies a {
 .ama__topic-table-wrap tbody tr td[data-th^=Report], .ama__topic-table-wrap tbody tr td[data-th^=Resolution] {
   display: none;
 }
-@media (min-width: 56.25em) {
+@media (min-width: 75em) {
   .ama__topic-table-wrap tbody tr td[data-th^=Report], .ama__topic-table-wrap tbody tr td[data-th^=Resolution] {
     display: table-cell;
   }
+}
+.ama__topic-table-wrap tbody tr td.forum-heading[data-th=Sections], .ama__topic-table-wrap tbody tr td.forum-heading[data-th=Topic], .ama__topic-table-wrap tbody tr td.forum__topic[data-th=Sections], .ama__topic-table-wrap tbody tr td.forum__topic[data-th=Topic] {
+  padding-top: 21px;
+}
+.ama__topic-table-wrap tbody tr td.forum-heading[data-th=Sections]:before, .ama__topic-table-wrap tbody tr td.forum-heading[data-th=Topic]:before, .ama__topic-table-wrap tbody tr td.forum__topic[data-th=Sections]:before, .ama__topic-table-wrap tbody tr td.forum__topic[data-th=Topic]:before {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  line-height: 1.143;
 }
 .ama__topic-table-wrap table tr [data-th=Topics] span {
   position: relative;
@@ -13277,6 +13316,10 @@ table[id^=forum-topic] td.forum_replies a {
 .ama__global-search .ama__global-search__action .ama__button:focus-visible {
   outline: 2px solid #80d4f5;
   outline-offset: 3px;
+}
+
+.sapi-did-you-mean {
+  margin-bottom: 20px;
 }
 
 .hero-evergreen {
@@ -24051,10 +24094,6 @@ section.ama__page--event__speakers {
 }
 .gating-block-wrapper .gating-block p, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle, .gating-block-wrapper .gating-block .ama__resource-link--inline__text {
   margin-bottom: 28px;
-}
-.gating-block-wrapper .gating-block h2 {
-  font-size: 22px;
-  margin-bottom: 14px;
 }
 
 .ama__homepage__stubs > .ama__hero-video {
