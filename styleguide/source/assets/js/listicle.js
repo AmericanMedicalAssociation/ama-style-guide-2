@@ -11,7 +11,7 @@
         $('.listicle').each(function () {
           $(this).children().each(function (idx, e) {
             $(e).addClass('listicle__item');
-            $(e).children('ol').each(function (idx, f) {
+            $(e).find('ol, ul').each(function (idx, f) {
               $(f).addClass('listicle__item-sub');
               $(f).children('li').addClass('listicle__item-sub-item');
             });
