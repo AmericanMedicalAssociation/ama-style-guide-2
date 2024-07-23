@@ -1,7 +1,7 @@
 /*
     shows and hides the search_suggestions views block in the global search form.
 
-    JavaScript Methods.
+    Methods.
 
     1. debounce(func, wait)
         - Debounces a function to limit how often it can run.
@@ -28,18 +28,27 @@
 (function (Drupal) {
     Drupal.behaviors.amaSearchSuggestions = {
         attach: function (context, settings) {
-
+            //console.log('search suggestions script is loaded');
             // Cache DOM elements
             const searchSuggestionsWrapper = document.querySelector('.search-suggestions-wrapper');
             const searchSuggestionsBlock = document.querySelector('.search-suggestions-block');
             const inputElement = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input#edit-search--2');
+
+            if (!searchSuggestionsWrapper || !searchSuggestionsBlock || !inputElement) {
+                //console.log('One or more required elements are missing.');
+                return; // Exit the function if any required element is missing
+            }
 
             // Debounced version of toggleShowClass
             const debouncedToggleShowClass = debounce(toggleShowClass, 250);
 
             // Get last tabbable element
             const lastTabbableElement = searchSuggestionsBlock.querySelector('a:last-of-type');
-            console.log('script is loaded.');
+            if (!lastTabbableElement) {
+                //console.log('Last tabbable element is missing.');
+                return; // Exit the function if the last tabbable element is missing
+            }
+            //console.log('script is loaded.');
 
             /*
                 JavaScript Methods.
@@ -47,7 +56,7 @@
 
             // Debounce function to limit how often a function can run
             function debounce(func, wait) {
-                console.log('debouncing');
+                //console.log('debouncing');
                 let timeout;
                 return function executedFunction(...args) {
                     const later = () => {
@@ -61,7 +70,7 @@
 
             //  Set the tabindex of the links within the search suggestions block
             function setTabIndex(shouldShow) {
-                console.log('set tab index');
+                //console.log('set tab index');
                 const links = searchSuggestionsBlock.querySelectorAll('a');
 
                 // Only update tabindex if the visibility state changes.
@@ -75,7 +84,7 @@
             //  If Focus is within .ama__global-search and the text area is empty, show the block.
             // Else, do not.
             function toggleShowClass() {
-                console.log('toggling show class');
+                //console.log('toggling show class');
                 const hasFocus = searchHasFocus();
                 const shouldShow = inputElement.value.trim() === '';
                 const isShown = searchSuggestionsWrapper.classList.contains('show');
@@ -105,13 +114,13 @@
             //  Check if an element within .ama__global-search has focus.
             function searchHasFocus() {
                 // If the active element is within .ama__global-search.
-                console.log('running search has focus');
+                //console.log('running search has focus');
                 if (document.activeElement.closest('.ama__global-search')) {
-                    console.log('it does');
+                    //console.log('it does');
                     return true;
                 }
                 //  Else.
-                console.log('it does not');
+                //console.log('it does not');
                 return false;
             }
 
@@ -124,13 +133,13 @@
 
             // set the focus event listener.
             document.addEventListener('focus', function(event) {
-                console.log('element is focused');
+                //console.log('element is focused');
                 //  Get focused element.
                 const isFocusInsideSearch = event.target.closest('.ama__global-search');
 
                 //  If within search block.
                 if (isFocusInsideSearch) {
-                    console.log('inside search');
+                    //console.log('inside search');
                     //  Invoke the debounced version of toggleShowClass.
                     debouncedToggleShowClass(); // Directly invoke the debounced version of toggleShowClass
 
@@ -143,7 +152,7 @@
 
             //  Add a `focusout` event listener to the last tabbable element
             lastTabbableElement.addEventListener('focusout', function(event) {
-                console.log('last tabbed element');
+                //console.log('last tabbed element');
 
                 //  Determine if the focus is moving outside the search suggestions container
                 const isFocusOutside = !searchSuggestionsWrapper.contains(event.relatedTarget);
