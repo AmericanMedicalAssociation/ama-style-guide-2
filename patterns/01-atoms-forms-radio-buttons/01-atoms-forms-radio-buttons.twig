@@ -1,9 +1,0 @@
-<fieldset>
-  <legend>{{ radioButtons.legend }}</legend>
-  {% for radio in radioButtons.radios %}
-    <div>
-      <input type="radio" id="{{ radio.id }}" name="{{ radio.name }}" value="{{ radio.value }}">
-      <label for="{{ radio.id }}">{{ radio.label }}</label>
-    </div>
-  {% endfor %}
-</fieldset>
