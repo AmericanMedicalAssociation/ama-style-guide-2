@@ -1,0 +1,30 @@
+.ama__gate {
+  background:rgba(0,0,0,0.6);
+  min-height: 235px;
+  padding-top: 30px;
+  margin-bottom: 60px;
+  width: 100%;
+  z-index:1;
+
+  &__container {
+    max-width: 70%;
+    background: $white;
+    position: relative;
+    opacity: 1.0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__blurry {
+    filter: blur(5px);
+  }
+
+  a {
+    color: $blue;
+  }
+}
+
+.ama_gated_form_wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+}

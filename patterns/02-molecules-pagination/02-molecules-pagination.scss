@@ -1,0 +1,53 @@
+.ama__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include gutter($padding-top-full...);
+  @include gutter($padding-bottom-full...);
+
+  // This is for all links in pager including prev/next.
+  a ~ a {
+    @include gutter($margin-left-full...);
+
+    @include breakpoint($bp-small) {
+      position: relative;
+      text-decoration: none;
+      color: $gray-50;
+      padding: 2px;
+
+      &.is-active {
+        color: $purple;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // I have to do this for specificity...
+  a.ama__pagination__prev,
+  a.ama__pagination__next {
+    text-decoration: none;
+    color: $gray-50;
+  }
+
+  // This is only for page numbers.
+  &__page {
+    // On mobile hide everything but active item.
+    &:not(.is-active) {
+      @extend .is-vishidden;
+
+      @include breakpoint($bp-small) {
+        position: relative !important;
+      }
+    }
+
+    &.is-active {
+      text-decoration: none;
+    }
+
+    span {
+      @include breakpoint($bp-small) {
+        @include is-vishidden;
+      }
+    }
+  }
+}

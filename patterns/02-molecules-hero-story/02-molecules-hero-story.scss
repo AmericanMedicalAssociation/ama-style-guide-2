@@ -1,0 +1,60 @@
+.ama__hero-story {
+  display: flex;
+  flex-flow: column nowrap;
+  background: $gray-7;
+
+  &--video {
+    .ama__hero-story__text {
+      @include breakpoint($bp-small max-width) {
+        margin: 0 $gutter ($gutter * 2);
+      }
+    }
+  }
+
+  &__text {
+    min-height: 400px;
+    width: 85%;
+    display: flex;
+    flex-flow: column nowrap;
+    background: $white;
+    padding: $gutter;
+    margin: -$gutter $gutter ($gutter * 2);
+
+    @include breakpoint($bp-small) {
+      margin: 0;
+    }
+
+    @include breakpoint($bp-med) {
+      width: 100%;
+    }
+  }
+
+  &__featured-quote {
+    line-height: 1.2em;
+
+    &:before,
+    &:after {
+      content: '"'
+    }
+  }
+
+  .ama__button {
+    margin: $gutter auto (calc($gutter / 4));
+
+    @include breakpoint($bp-small) {
+      align-self: flex-end;
+      margin: (calc($gutter / 2)) 0 (calc($gutter / 4));
+    }
+  }
+
+  &__media {
+    @include breakpoint($bp-small max-width) {
+      @include gutter($margin-top-full...);
+      order: -1;
+    }
+  }
+
+  &__member-name--purple {
+    color: $homepagePurple;
+  }
+}
