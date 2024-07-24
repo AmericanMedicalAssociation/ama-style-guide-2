@@ -2,6 +2,14 @@
     display: none;
     &.show {
         display: block;
+        margin-left: -12px;
+        width: auto;
+        @include breakpoint($bp-small) {
+            margin-left: 0;
+        }
+        @media (min-width: 900px) and (max-width: 991px) {
+            width: 284px;
+        }
     }
     .search-suggestions-block {
         &.show {
@@ -32,13 +40,13 @@
                     text-decoration: none;
                     position: relative;
                     font-weight: $font-weight-light;
-                    display: block;
+                    display: inline-block;
                     padding-left: 24px;
                     font-size: 16px;
                     line-height: 24px;
                     @include button_focus_outline;
                     &:hover {
-                        text-decoration: underline;
+                        color: #979797;
                     }
                     &:before {
                         content: '';
