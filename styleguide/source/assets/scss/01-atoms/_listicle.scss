@@ -7,7 +7,7 @@
   &__item {
 
     counter-increment: ama-listicle;
-    font-family: kepler-std, serif;
+    font-family: kepler-std-light, serif;
     font-weight: 300;
     margin-bottom: 7px;
     @include gutter($margin-top-half...);
@@ -18,7 +18,7 @@
       flex-wrap: wrap;
     }
 
-    p {
+    p, a {
       font-family: inherit;
       font-weight: inherit;
     }
@@ -61,6 +61,7 @@
     }
 
     a {
+      font-family: inherit;
       font-weight: inherit;
       color: inherit;
       &:hover {
