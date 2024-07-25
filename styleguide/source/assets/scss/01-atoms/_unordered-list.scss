@@ -134,13 +134,16 @@ ul.ul-standard {
     width: 0;
   }
 }
-
+.ama__list {
+  li {
+    @include gutter($margin-left-full...);
+  }
+}
 .ama__org-nav ul,
 .ama__list {
   @include gutter($margin-bottom-half...);
 
   li {
-    @include gutter($margin-left-full...);
     padding: 0;
     list-style: disc;
 
