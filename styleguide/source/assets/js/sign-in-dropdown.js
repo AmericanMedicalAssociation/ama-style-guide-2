@@ -1,45 +1,45 @@
-(function ($, Drupal) {
-  Drupal.behaviors.ama_signInMenu = {
-    attach: function (context, settings) {
-      var $signInDropdown = $('.ama__sign-in-dropdown');
-      var $signInDropdownMenu = $('.ama__sign-in-dropdown__menu');
-      var $signInLink = $('.ama__sign-in-dropdown__text');
-      var $exploreMenu = $('.ama__explore-menu');
-      var $exploreMenuDropdown = $('.ama__explore-menu__menu');
+(function (Drupal) {
+    Drupal.behaviors.ama_signInMenu = {
+        attach: function (context, settings) {
+            var signInDropdown = document.querySelector('.ama__sign-in-dropdown');
+            var signInDropdownMenu = document.querySelector('.ama__sign-in-dropdown__menu');
+            var signInLink = document.querySelector('.ama__sign-in-dropdown__text');
+            var exploreMenu = document.querySelector('.ama__explore-menu');
+            var exploreMenuDropdown = document.querySelector('.ama__explore-menu__menu');
 
-      function dropdownDownMenu(parentElement, menuElement) {
-       parentElement.unbind('click').click(function(e){
-          e.stopPropagation();
-          $(menuElement).slideToggle();
-          $(parentElement).toggleClass('open');
-        });
+            function dropdownDownMenu(parentElement, menuElement) {
+                parentElement.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    menuElement.classList.toggle('open');
+                    parentElement.classList.toggle('open');
+                });
 
-        // Stop link from firing
-        $signInLink.click(function(e) {
-          e.preventDefault();
-        });
+                // Stop link from firing
+                signInLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                });
 
-        $(document).click(function(e) {
-          // if the target of the click isn't the container nor a descendant of the container
-          if (!parentElement.is(e.target) && parentElement.has(e.target).length === 0) {
-            $(menuElement).slideUp();
-            $(parentElement).removeClass('open');
-          }
+                document.addEventListener('click', function (e) {
+                    if (!parentElement.contains(e.target)) {
+                        menuElement.classList.remove('open');
+                        parentElement.classList.remove('open');
+                    }
+                });
 
-          // Set timeout for when a user mouses out of the menu
-          parentElement.mouseenter(function(){
-            clearTimeout();
-          }).mouseleave(function(){
-            setTimeout(function(){
-              $(menuElement).slideUp();
-              $(parentElement).removeClass('open');
-            }, 2000);
-          });
-        });
-      }
+                parentElement.addEventListener('mouseenter', function () {
+                    clearTimeout(parentElement.timeoutId);
+                });
 
-      dropdownDownMenu($signInDropdown, $signInDropdownMenu);
-      dropdownDownMenu($exploreMenu, $exploreMenuDropdown);
-    }
-  };
-})(jQuery, Drupal);
+                parentElement.addEventListener('mouseleave', function () {
+                    parentElement.timeoutId = setTimeout(function () {
+                        menuElement.classList.remove('open');
+                        parentElement.classList.remove('open');
+                    }, 2000);
+                });
+            }
+
+            dropdownDownMenu(signInDropdown, signInDropdownMenu);
+            dropdownDownMenu(exploreMenu, exploreMenuDropdown);
+        }
+    };
+})(Drupal);
