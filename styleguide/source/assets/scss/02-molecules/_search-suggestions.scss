@@ -4,6 +4,7 @@
         display: block;
         margin-left: -12px;
         width: auto;
+        border-top: 1px solid #fefefe;
         @include breakpoint($bp-small) {
             margin-left: 0;
         }
@@ -14,25 +15,26 @@
     .search-suggestions-block {
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
         background: $white;
-        padding: calc($gutter / 2) $gutter;
+        padding: 12px $gutter 19px;
         .title {
             font-size: 18px;
             line-height: 27px;
             color: black;
-            margin-bottom: calc($gutter * .25);
+            margin-bottom: 5px;
             text-transform: capitalize;
         }
         ul {
             margin: 0;
             li {
                 list-style-type: none;
-                margin: 0 0 calc($gutter * .25);
+                margin: 0 0 4px;
                 &::marker {
                     display: none;
                 }
                 a {
                     text-decoration: none;
                     position: relative;
+                    color: $black;
                     font-weight: $font-weight-light;
                     display: inline-block;
                     padding-left: 24px;
@@ -44,14 +46,14 @@
                     }
                     &:before {
                         content: '';
-                        background-image: url('../icons/svg/icon-search-grey.svg');
-                        background-size: cover;
+                        background-image: url('../icons/svg/icon-search-gray.svg');
+                        background-size: contain;
                         background-repeat: no-repeat;
                         background-position: left top;
-                        height: 11px;
-                        width: 11px;
+                        height: 12px;
+                        width: 12px;
                         left: 0;
-                        top: 7px;
+                        top: 8px;
                         display: block;
                         position: absolute;
                     }
