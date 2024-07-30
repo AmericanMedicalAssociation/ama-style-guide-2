@@ -4832,7 +4832,7 @@ a {
 }
 .listicle__item {
   counter-increment: ama-listicle;
-  font-family: kepler-std, serif;
+  font-family: kepler-std-light, serif;
   font-weight: 300;
   margin-bottom: 7px;
   margin-top: 10.5px;
@@ -4855,7 +4855,7 @@ a {
     flex-wrap: wrap;
   }
 }
-.listicle__item p, .listicle__item .ama__resource-link--inline__text, .listicle__item .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .listicle__item .ama__image__text__subtitle {
+.listicle__item p, .listicle__item .ama__resource-link--inline__text, .listicle__item .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .listicle__item .ama__image__text__subtitle, .listicle__item a {
   font-family: inherit;
   font-weight: inherit;
 }
@@ -4906,6 +4906,7 @@ a {
 .listicle__title a,
 .listicle h3 a,
 .listicle h2 a {
+  font-family: inherit;
   font-weight: inherit;
   color: inherit;
 }
@@ -5017,12 +5018,13 @@ a {
 .ama__global-menu__burger-input + label.ui-button.ui-state-active:hover .ama__global-menu__burger {
   content: "";
   width: 100%;
-  height: 4px;
+  height: 2px;
   display: block;
   background-color: #ffffff;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
-  margin: 5px auto;
+  margin: 9px auto;
+  border-radius: 10px;
 }
 .ama__global-menu__burger-input + label:hover, .ama__global-menu__burger-input + label:focus, .ama__global-menu__burger-input + label:active,
 .ama__global-menu__burger-input + label.ui-state-active:hover,
@@ -5059,8 +5061,8 @@ a {
   display: none;
 }
 .ama__global-menu__burger-input:checked + label:before {
-  -webkit-transform: translateY(5px) rotate(135deg);
-  transform: translateY(5px) rotate(135deg);
+  -webkit-transform: translateY(10px) rotate(135deg);
+  transform: translateY(10px) rotate(135deg);
 }
 .ama__global-menu__burger-input:checked + label:after {
   -webkit-transform: translateY(-12px) rotate(-135deg);
@@ -5079,38 +5081,6 @@ a {
 }
 .ama__global-menu__burger-input:checked ~ .menu-text {
   display: none;
-}
-.ama__global-menu__menu-text {
-  display: none;
-}
-@media (min-width: 37.5em) {
-  .ama__global-menu__menu-text {
-    font-size: 0.7em;
-    line-height: 1.072;
-    display: block;
-    color: #ffffff;
-    font-weight: 600;
-    text-transform: uppercase;
-    width: 40px;
-  }
-}
-@media screen and (min-width: 37.5em) and (min-width: 37.5em) {
-  .ama__global-menu__menu-text {
-    font-size: 0.7em;
-    line-height: 1.072;
-  }
-}
-@media screen and (min-width: 37.5em) and (min-width: 56.25em) {
-  .ama__global-menu__menu-text {
-    font-size: 0.778em;
-    line-height: 1.072;
-  }
-}
-@media screen and (min-width: 37.5em) and (min-width: 75em) {
-  .ama__global-menu__menu-text {
-    font-size: 0.778em;
-    line-height: 1.072;
-  }
 }
 .ama__global-menu__nav {
   background-color: #46166B;
@@ -16580,6 +16550,7 @@ a.ama__promo--border:hover {
   display: block;
   margin-left: -12px;
   width: auto;
+  border-top: 1px solid #fefefe;
 }
 @media (min-width: 37.5em) {
   .search-suggestions-wrapper.show {
@@ -16595,13 +16566,13 @@ a.ama__promo--border:hover {
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
   background: #ffffff;
-  padding: 14px 28px;
+  padding: 12px 28px 19px;
 }
 .search-suggestions-wrapper .search-suggestions-block .title {
   font-size: 18px;
   line-height: 27px;
   color: black;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   text-transform: capitalize;
 }
 .search-suggestions-wrapper .search-suggestions-block ul {
@@ -16609,7 +16580,7 @@ a.ama__promo--border:hover {
 }
 .search-suggestions-wrapper .search-suggestions-block ul li {
   list-style-type: none;
-  margin: 0 0 7px;
+  margin: 0 0 4px;
 }
 .search-suggestions-wrapper .search-suggestions-block ul li::marker {
   display: none;
@@ -16617,6 +16588,7 @@ a.ama__promo--border:hover {
 .search-suggestions-wrapper .search-suggestions-block ul li a {
   text-decoration: none;
   position: relative;
+  color: #000000;
   font-weight: 300;
   display: inline-block;
   padding-left: 24px;
@@ -16632,14 +16604,14 @@ a.ama__promo--border:hover {
 }
 .search-suggestions-wrapper .search-suggestions-block ul li a:before {
   content: "";
-  background-image: url("../icons/svg/icon-search-grey.svg");
-  background-size: cover;
+  background-image: url("../icons/svg/icon-search-gray.svg");
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: left top;
-  height: 11px;
-  width: 11px;
+  height: 12px;
+  width: 12px;
   left: 0;
-  top: 7px;
+  top: 8px;
   display: block;
   position: absolute;
 }
