@@ -3,14 +3,27 @@
 .dr-finder-claim {
   text-align: center;
   border: 1px solid $black;
-  padding: $gutter;
+  padding: $gutter 0;
   margin: $gutter 0;
   section {
     width: 100%;
-    margin:0 8px;
+    padding:0 11px 0 22px;
+  }
+  a.ama__button {
+    margin-top: 19px;
+    padding: 9px 26px;
+    font-size: 16px;
   }
 }
 
 .dr-find-claim-benefits {
   text-align: left;
+  font-size: 16px;
+  @include breakpoint($bp-med) {
+    font-size: 18px;
+  }
+  li {
+    margin-left: 18px;
+    padding-left: 4px;
+  }
 }
