@@ -1,6 +1,25 @@
 /* Base styles for sticky navigation */
 
 body {
+    &.toolbar-vertical {
+        .ama__main-navigation {
+            .ama_locker_navigation {
+                &.expanded {
+                    top: 73px;
+                }
+            }
+        }
+        &.toolbar-tray-open {
+            .toolbar-bar {
+                position: fixed;
+            }
+            header {
+                &.sticky-nav {
+                    top: 39px;
+                }
+            }
+        }
+    }
     &.toolbar-horizontal {
         header {
             &.sticky-nav {
