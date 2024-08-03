@@ -118,7 +118,7 @@
 
       // If sticky nav wrapper, remove id to prevent duplicate ids.
       $(window).on('load', function() {
-        $stickyWrapper = $('header .sticky-nav');
+        $stickyWrapper = $('header.sticky-nav');
         if($stickyWrapper.length && $stickyWrapper.has('#share-wrapper')) {
           $stickyWrapper.removeAttr('id');
         }
