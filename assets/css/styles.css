@@ -6946,15 +6946,15 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   width: 20px;
   overflow: hidden;
   margin-left: auto;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
 }
 .ama__alert__close.mobile {
+  height: 27px;
+  width: 27px;
   display: block;
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
-  margin-right: -12px;
+  margin-right: -5px;
 }
 .ama__alert__close.desktop {
   display: none;
@@ -6966,7 +6966,6 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   .ama__alert__close.desktop {
     display: block;
     position: relative;
-    top: -5px;
   }
 }
 .ama__alert__close svg {
@@ -13193,7 +13192,6 @@ table[id^=forum-topic] td.forum_replies a {
   padding-left: 10.5px;
   display: none;
   height: 60px;
-  border-left: 1px solid #767676;
   position: absolute;
   top: 60px;
   left: 0;
@@ -13215,7 +13213,7 @@ table[id^=forum-topic] td.forum_replies a {
     -ms-flex-positive: 1;
     flex-grow: 1;
     height: 34px;
-    border: 0;
+    border: none;
     width: 70px;
   }
 }
@@ -25175,9 +25173,30 @@ section.ama__page--event__speakers {
   }
 }
 
-.ama__main-navigation {
-  position: relative;
+/* Base styles for sticky navigation */
+body.toolbar-vertical .ama__main-navigation .ama_locker_navigation.expanded {
+  top: 73px;
+}
+body.toolbar-vertical.toolbar-tray-open .toolbar-bar {
+  position: fixed;
+}
+body.toolbar-vertical.toolbar-tray-open header.sticky-nav {
+  top: 39px;
+}
+body.toolbar-horizontal header.sticky-nav {
+  top: 39px;
+}
+body.toolbar-horizontal.toolbar-tray-open header.sticky-nav {
+  top: 79px;
+}
+
+header.sticky-nav {
+  top: 0;
+  position: sticky;
   z-index: 501;
+}
+
+.ama__main-navigation {
   width: 100%;
 }
 .ama__main-navigation .ama__main_nav_container {
