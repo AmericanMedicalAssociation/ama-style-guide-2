@@ -27,14 +27,18 @@
     h3 {
       font-size: 22px;
       font-weight: 600;
-      margin: 0;
+      display: inline;
+      margin: 0 0 0 -18px;
       line-height: 1.18;
+      position: relative;
+      padding-left: 30px;
       &::before {
         width: 0;
         height: 0;
+        position: absolute;
         @include breakpoint($bp-small) {
           top: 5px;
-          left: 58px;
+          left: 0px;
           width: 18px;
           height: 18px;
         }
