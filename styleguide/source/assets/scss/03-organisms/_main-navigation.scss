@@ -1,8 +1,50 @@
-.ama__main-navigation {
-  position: relative;
-  z-index: 501;
-  width: 100%;
+/* Base styles for sticky navigation */
 
+body {
+    &.toolbar-vertical {
+        .ama__main-navigation {
+            .ama_locker_navigation {
+                &.expanded {
+                    top: 73px;
+                }
+            }
+        }
+        &.toolbar-tray-open {
+            .toolbar-bar {
+                position: fixed;
+            }
+            header {
+                &.sticky-nav {
+                    top: 39px;
+                }
+            }
+        }
+    }
+    &.toolbar-horizontal {
+        header {
+            &.sticky-nav {
+                top: 39px;
+            }
+        }
+        &.toolbar-tray-open {
+            header {
+                &.sticky-nav {
+                    top: 79px;
+                }
+            }
+        }
+    }
+}
+header {
+    &.sticky-nav {
+        top: 0;
+        position: sticky;
+        z-index: 501;
+    }
+}
+
+.ama__main-navigation {
+  width: 100%;
   .ama__main_nav_container {
     border-bottom: 1px solid $gray-50;
     background-color: $purple;
