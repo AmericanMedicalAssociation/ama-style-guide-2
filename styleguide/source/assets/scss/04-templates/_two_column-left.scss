@@ -37,6 +37,13 @@
       grid-column: 2;
       grid-row: 2 / 4;
     }
+
+    &.ama__news {
+      padding-right: 0;
+      @include breakpoint($bp-small min-width) {
+        grid-column: 2 / 2;
+      }
+    }
   }
   &__sidebar--secondary{
     @include child-top-gutters($gutter);
@@ -51,6 +58,14 @@
       grid-column: 1;
       grid-row: 3;
       -ms-grid-column-span: 1;
+    }
+  }
+  &.news_article {
+    @include breakpoint($bp-small min-width) {
+      grid-template-columns: 2fr 6fr;
+    }
+    @include breakpoint($bp-med min-width) {
+      grid-template-columns: 3fr 8.5fr;
     }
   }
 } // end article
