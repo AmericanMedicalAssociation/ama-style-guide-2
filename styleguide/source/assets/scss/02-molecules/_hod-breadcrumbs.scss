@@ -1,0 +1,35 @@
+nav[data-type="forum-breadcrumb"] {
+    ol.hod-breadcrumbs {
+        li {
+            display: inline-block;
+            margin: calc($gutter / 8) 0;
+            @include breakpoint($bp-small) {
+                margin: calc($gutter / 8) calc($gutter * .5) calc($gutter / 8) 0;
+            }
+            &:last-child {
+                margin: calc($gutter / 8) 0;
+                @include breakpoint($bp-small) {
+                    margin: calc($gutter / 8) 0;
+                }
+            }
+            &.hod-breadcrumb-li {
+                a.hod-breadcrumb {
+                    padding: 4px calc($gutter * .5) 3px;
+                    text-decoration: none;
+                    font-size: 22px;
+                    font-weight: $font-weight-bold;
+                    color: $white;
+                    line-height: 1.23;
+                    background: $purple;
+                    &:hover {
+                        background: $hoverPurple;
+                    }
+                }
+            }
+            a {
+                @include button_focus_outline;
+                font-size: 18px;
+            }
+        }
+    }
+}
