@@ -299,10 +299,6 @@ table[id^="forum-topic"] {
                         font-weight: $font-weight-bold;
                         margin-top: 1.5rem;
                         line-height: 1.143;
-
-                        @include breakpoint($bp-large) {
-
-                        }
                     }
                 }
             }
@@ -373,5 +369,50 @@ table[id^="forum-topic"] {
     position: absolute;
     right: 0;
     top: 0;
+  }
+}
+
+
+// Hide the Topic/resolution column in the HOD forum
+body.hod-forum {
+  table {
+    thead {
+      tr {
+        th {
+          &:first-child {
+            width: 80%;
+          }
+          &:nth-of-type(2) {
+            display: none !important;
+          }
+          &:nth-of-type(3),
+          &:nth-of-type(4) {
+            width: 10%;
+          }
+          &:nth-of-type(4) {
+            word-break: break-all;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          &:first-child {
+            width: 80%;
+          }
+          &:nth-of-type(2) {
+            display: none !important;
+          }
+          &:nth-of-type(3),
+          &:nth-of-type(4) {
+            width: 10%;
+          }
+          &:nth-of-type(4) {
+            word-break: break-all;
+          }
+        }
+      }
+    }
   }
 }
