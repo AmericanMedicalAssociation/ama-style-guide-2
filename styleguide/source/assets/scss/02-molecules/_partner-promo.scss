@@ -5,6 +5,11 @@
   &__text {
     padding: calc($gutter / 2);
     @extend .display-list;
+
+    li {
+      // Override main ul/ol font
+      @include type($kepler-std, $font-weight-light);
+    }
   }
 
   &__heading {

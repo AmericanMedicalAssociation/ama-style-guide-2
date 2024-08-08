@@ -49,6 +49,10 @@
 
 // 2 Level Indented list - (body copy list)
 .body-list {
+  li {
+    // Override main ul font
+    @include type($kepler-std, $font-weight-light);
+  }
   ul {
     @extend .remove-empty;
     margin-left: 13px;

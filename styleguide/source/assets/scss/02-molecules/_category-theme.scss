@@ -6,6 +6,12 @@
     padding-bottom: 28px;
     padding-top: 28px;
   }
+
+  // Override main paragraph font
+  p, p a {
+    @include type($myriad-pro, $font-weight-regular);
+  }
+
   .description {
     font-size: 18px;
     padding-bottom: calc($gutter * .75);

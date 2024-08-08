@@ -5,6 +5,11 @@
   max-width: 1170px;
   margin: 0 auto;
 
+  // Override main paragraph font
+  p, p a {
+    @include type($myriad-pro, $font-weight-regular);
+  }
+
   &__container {
     display: block;
     @include breakpoint($bp-small) {
@@ -125,6 +130,7 @@
       word-break: break-all;
     }
     p {
+      @include type($myriad-pro, $font-weight-regular);
       font-size: 14px;
       word-break: keep-all;
     }

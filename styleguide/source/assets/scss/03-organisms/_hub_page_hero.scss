@@ -51,6 +51,11 @@
   display:flex;
   flex-direction: column;
   padding: calc($gutter * .5) 15px calc($gutter * 1.25);
+
+  // Override main paragraph font
+  p, p a {
+    @include type($myriad-pro, $font-weight-regular);
+  }
   @include breakpoint($bp-small) {
     padding: calc($gutter * 1.25) 15px calc($gutter * .75);
   }
