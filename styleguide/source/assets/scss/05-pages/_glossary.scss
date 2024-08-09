@@ -116,9 +116,8 @@
     .searchbar-wrapper {
 
       .searchbar-inner {
-
         position: relative;
-        margin-bottom: 28px;
+        margin-bottom: 0;
         margin-left: 10px;
         margin-right: 10px;
         @include breakpoint($bp-small) {
@@ -143,9 +142,20 @@
         }
       }
 
+      .ama__search__field__clear-button {
+        margin-left: 10px;
+        @include breakpoint($bp-small) {
+          margin-left: 65px;
+        }
+      }
+
       #edit-topic {
         border: 1px solid $purple;
         padding: 5px 10px;
+        line-height: 1.389;
+        @include breakpoint($bp-med) {
+          line-height: 1.5;
+        }
 
         &::placeholder {
           font-style: italic;
