@@ -4,6 +4,10 @@
   .ama__footer.has_banner {
     margin-top: 0;
   }
+  // Override main paragraph font
+  p, p a {
+    @include type($myriad-pro, $font-weight-regular);
+  }
   .ama__hub-banner {
     background: $purple;
     min-height: 146px;

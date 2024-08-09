@@ -7,6 +7,10 @@
     @include breakpoint($bp-small max-width) {
       margin-bottom: 21px;
     }
+    p, p a {
+      // Override main paragraph font
+      @include type($myriad-pro, $font-weight-regular);
+    }
     .desc-display {
       position: relative;
       overflow: hidden;

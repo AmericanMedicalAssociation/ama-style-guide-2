@@ -9,6 +9,11 @@
     @include gutter($margin-bottom-full...);
   }
 
+  li {
+    // Override main ul/ol font
+    @include type($kepler-std, $font-weight-light);
+  }
+
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
   & > * {
     margin-bottom: 0;

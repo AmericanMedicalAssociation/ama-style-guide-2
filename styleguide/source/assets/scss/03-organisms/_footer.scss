@@ -19,9 +19,16 @@
     }
   }
 
+  // Override main paragraph font
   p,
   &__connect {
+    @include type($myriad-pro, $font-weight-regular);
     @include font-size($footer-font-sizes);
+  }
+
+  p a {
+    @include type($myriad-pro, $font-weight-bold);
+    font-size: 1em;
   }
 
   ul {

@@ -119,13 +119,20 @@ h5,
   }
 }
 
-p {
-  @include type($myriad-pro, $font-weight-regular);
+p, p a {
+  @include type($kepler-std, $font-weight-light);
   @include font-size($p-font-sizes);
   @include gutter($margin-bottom-half...);
 }
 
-ul {
+div[class^="related_coverage"] p,
+div[class^="related_coverage"] p a {
+  @include type($myriad-pro, $font-weight-regular);
+  @include font-size($p-font-sizes);
+}
+
+.ama__product__text p,
+.ama__product__text p a {
   @include type($myriad-pro, $font-weight-regular);
 }
 

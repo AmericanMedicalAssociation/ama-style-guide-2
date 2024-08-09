@@ -30,6 +30,8 @@
 
   &__subcategory {
     @extend .ama__h4--purple;
+    // Override main paragraph font
+    @include type($myriad-pro, $font-weight-bold);
     font-weight: $font-weight-semibold;
     font-size: 0.78em;
     line-height: 1;

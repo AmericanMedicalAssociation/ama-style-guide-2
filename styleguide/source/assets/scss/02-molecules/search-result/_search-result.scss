@@ -15,6 +15,13 @@
       display: flex;
       flex-direction: row-reverse;
     }
+
+    .ama__search-result__description {
+      // Override main paragraph font
+      p, p a, .text-body {
+        @include type($kepler-std, $font-weight-regular);
+      }
+    }
   }
 
   &__text {
@@ -39,6 +46,7 @@
     @extend %ama__h4--purple;
     font-weight: $font-weight-semibold;
     margin: 0;
+    @include type($myriad-pro, $font-weight-bold);
 
     .ama__search-result--best-bet & {
       display: none;
