@@ -4,7 +4,7 @@
     color: $gray-64;
     width: 100%;
     align-items: center;
-    padding: 5px calc($gutter * .75) 5px $gutter;
+    padding: 0 calc($gutter * .75) 0 $gutter;
     flex-direction: row;
     position: relative;
     @include breakpoint($bp-med) {
@@ -44,7 +44,7 @@
             display:block;
             line-height: 15px;
             padding-top: calc($gutter *.25);
-            padding-bottom: calc($gutter * .25);
+            padding-bottom: 8px;
             a,
             p {
                 font-size: 14px;
@@ -77,7 +77,7 @@
             width: 27px;
             display: block;
             align-self: start;
-            margin-right: -5px;
+            margin-right: -15px;
         }
         &.desktop {
             display: none;
