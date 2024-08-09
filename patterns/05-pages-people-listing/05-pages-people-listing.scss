@@ -4,6 +4,11 @@
     flex-wrap: wrap;
     overflow: hidden;
   }
+  
+  // Override main paragraph font
+  p, p a {
+    @include type($myriad-pro, $font-weight-regular);
+  }
 
   &__card-container {
     @include gutter($padding-top-full...);

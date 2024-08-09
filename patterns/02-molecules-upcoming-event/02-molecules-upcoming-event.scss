@@ -13,6 +13,11 @@
     display: flex;
   }
 
+  // Override main paragraph font
+  p {
+    @include type($myriad-pro, $font-weight-regular);
+  }
+
   &__title {
     a {
       display: flex;
