@@ -6,8 +6,8 @@
     margin-bottom: 0;
       padding-left: 0;
       @include breakpoint($bp-small) {
-          margin-bottom: $gutter;
-          font-size: calc($gutter * 1.25);
+          margin-bottom: calc($gutter/2);
+          font-size: 36px;
           padding-left: 11px;
       }
   }
@@ -26,7 +26,10 @@
             padding: calc($gutter * .5) 0;
         }
         li {
-            padding: calc($gutter * .5) 0 calc($gutter * .5) $gutter;
+            padding: calc($gutter * .5) 0 calc($gutter * .5) 17px;
+            &:first-of-type {
+                padding-top: 0;
+            }
             &::before {
                 content: attr(data-list);
                 color: $black;
@@ -41,7 +44,10 @@
         border-bottom: 1px solid #979797;
           position: relative;
         a {
-            text-decoration: none;
+          @include type($myriad-pro, $font-weight-bold);
+          font-size: 20px;
+          line-height: 27px;;
+          text-decoration: none;
           &:hover {
             text-decoration: underline;
             background-color: transparent;
