@@ -90,31 +90,46 @@
 
 //News Article Page Grouping Block
 
+// Sticky top offset for logged in user w/ admin bar
+@include breakpoint($bp-small) {
+  body.toolbar-horizontal {
+    .ama_page_grouping_news {
+      top: 202px;
+    }
+  }
+}
+
 .ama_page_grouping_news {
   margin: 0 0 $gutter;
-  max-width: 380px;
   padding: 0;
+  border-bottom: 1px solid $gray-30;
   @include breakpoint($bp-small) {
     display: flex;
     margin: 0 0 28px 0;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 83px;
+  }
+  @include breakpoint($bp-med) {
+    top: 123px;
   }
 
   .links {
     .ama_page_grouping_title {
+      font-family: kepler-std, serif;
       font-size: 20px;
-      font-weight: 600;
       line-height: 32px;
       padding-bottom: 12px;
       margin-bottom: 14px;
       border-bottom: 1px solid $gray-30;
-      width: 372px;
+      width: 370px;
       @include breakpoint($bp-small) {
-        width: 380px;
+        font-size: 22px;
+        width: 280px;
       }
     }
 
     .link-list {
-      margin-top: 4px;
       display: inline-block;
       list-style-type: none;
       max-width: 260px;
@@ -122,16 +137,14 @@
         max-width: 274px;
       }
       .ama_page_grouping_link {
-        line-height: 27px;
-        text-transform: capitalize;
         font-size: 16px;
-        min-height: 31px;
-        padding-bottom: 4px;
-        margin-bottom: 4.5px;
-        border-bottom: .5px solid $gray-30;
-        @include breakpoint($bp-med) {
+        line-height: 24px;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+        @include breakpoint($bp-small) {
           font-size: 18px;
           line-height: 27px;
+          margin-bottom: 18px;
         }
 
         &.heading {
@@ -145,20 +158,23 @@
           position: relative;
         }
         a {
+          font-family: "myriad-pro-light", "Helvetica", "Arial", "Open Sans", sans-serif;
+          font-weight: 300;
           color: $gating-block-link;
           &:hover {
-            text-decoration: underline;
+            border-bottom: 1px solid $gating-block-link;
           }
           &:focus-visible {
             outline: 1px solid $tab-focus-blue;
           }
         }
         &.active {
-          font-weight: $font-weight-bold;
           color: $purple;
+          @include type($myriad-pro, $font-weight-regular);
         }
 
         &:last-child {
+          margin-bottom: 10px;
           &.active {
             &::after {
               content: "";

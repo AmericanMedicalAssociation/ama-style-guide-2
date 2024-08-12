@@ -1,19 +1,21 @@
 .ama__layout--two-column--left {
-  display: grid;
-  grid-template-columns: 2.5fr 6fr;
-  grid-template-rows: auto auto auto;
   min-height: 30em;
+  @include breakpoint($bp-small) {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 2.5fr 6fr;
+  }
 
   &__content-top {
     grid-column: 1 / 5;
     grid-row: 1;
 
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       grid-column: 1 / 5;
       grid-row: 1;
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($padding-right-full...);
       @include gutter($padding-left-full...);
       grid-column: 1 / 5;
@@ -27,21 +29,24 @@
     grid-column: 1 / 5;
     grid-row: 3;
 
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       @include gutter($padding-right-full...);
       grid-column: 1 / 4;
       grid-row: 3;
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       grid-column: 2;
       grid-row: 2 / 4;
     }
 
     &.ama__news {
       padding-right: 0;
-      @include breakpoint($bp-small min-width) {
-        grid-column: 2 / 2;
+      padding-top: 0;
+      @include breakpoint($bp-small) {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        max-width: 280px;
       }
     }
   }
@@ -51,7 +56,7 @@
     grid-column: 1 / 5;
     grid-row: 4;
     overflow-x: hidden;
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($padding-right-full...);
       @include gutter($padding-left-full...);
       overflow-x: hidden;
@@ -61,10 +66,10 @@
     }
   }
   &.news_article {
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       grid-template-columns: 2fr 6fr;
     }
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       grid-template-columns: 3fr 8.5fr;
     }
   }
@@ -80,7 +85,7 @@
     grid-column: 1 / 5;
     grid-row: 2 ;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($padding-right-full...);
       @include gutter($padding-left-full...);
       grid-column: 1;

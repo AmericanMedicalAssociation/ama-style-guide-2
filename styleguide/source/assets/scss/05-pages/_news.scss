@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: $gutter;
+  margin-bottom: calc($gutter / 2);
+  @include breakpoint($bp-small) {
+    margin-bottom: $gutter;
+  }
   .article-header-row {
     display: flex;
     flex-direction: row;
