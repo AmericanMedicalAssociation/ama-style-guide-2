@@ -1,6 +1,6 @@
 .ama__layout--two-column--right {
   display: grid;
-  grid-template-columns: 1fr 6fr 2.5fr;
+  grid-template-columns: 2.5fr 6fr;
   grid-template-rows: auto auto auto;
   min-height: 30em;
   overflow: hidden;
@@ -13,30 +13,30 @@
     grid-column: 1 / 5;
     grid-row: 1;
 
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       grid-column: 1 / 5;
       grid-row: 1;
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       grid-column: 1 / 5;
-      grid-row: 1;
+      grid-row: 1 / 2;
     }
   }
 
   &__page-content {
     @include gutter($padding-top-full...);
     position: relative;
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
     grid-row: 2;
     word-wrap: break-word;
 
-    @include breakpoint($bp-small min-width) {
-      grid-column: 1 / 5;
-      grid-row: 2;
+    @include breakpoint($bp-small) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 2;
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($padding-top-full...);
       padding: $gutter 0 0 0;
       grid-column:  1 / 3;
@@ -49,12 +49,12 @@
     grid-column: 1 / 5;
     grid-row: 2;
 
-    @include breakpoint($bp-small min-width) {
+    @include breakpoint($bp-small) {
       grid-column: 1 / 4;
       grid-row: 2;
     }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       @include gutter($padding-right-full...);
       grid-column: 1 / 3;
       grid-row: 2;
@@ -73,22 +73,26 @@
     grid-column: 1 / 5;
     grid-row: 2;
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       grid-column: 1;
       grid-row: 1 / 4;
     }
   } // end aside.primary
 
   &--secondary {
-    padding-top: $gutter;
-    grid-column: 1 / 5;
-    grid-row: 3 / 4;
+    // padding-top: $gutter;
+    grid-column: 2 / 2;
+    grid-row: 1;
 
-    @include breakpoint($bp-med min-width) {
-      @include gutter($padding-top-full...);
-      @include gutter($padding-left-full...);
-      grid-column: 3;
-      grid-row: 2 / auto;
+    @include breakpoint($bp-small) {
+      padding-left: calc($gutter * .75);
+      grid-column: 2 /4;
+      grid-row: 2 / 2;
     }
   } // end aside.secondary
+}
+
+// Article only ovveride
+.ama__news + .ama__layout--two-column--right__sidebar--secondary {
+  grid-row: 1 / 2;
 }
