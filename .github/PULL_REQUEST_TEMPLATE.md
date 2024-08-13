@@ -19,8 +19,7 @@ Explain the technical implementation of the work done.
 
 
 ## To Test
-- [ ] Add detailed steps for reviewers to test this feature.
-- [ ] Did you test in IE 11?
+- Add detailed steps for reviewers to test this feature.
 
 
 ## Visual Regressions
@@ -32,7 +31,7 @@ Use something like [Skitch](https://evernote.com/skitch/) or [GIPHY Capture](htt
 
 
 ## Remaining Tasks
-Things relevant to here may be updating [The Glossary](https://issues.ama-assn.org:8446/confluence/display/DTD/Glossary?src=contextnavpagetreemode) with the latest naming changes or review of the relative [D8](https://github.com/AmericanMedicalAssociation/ama-d8) work.
+
 
 
 ## Additional Notes
