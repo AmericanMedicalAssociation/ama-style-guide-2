@@ -122,29 +122,22 @@
       padding-bottom: 12px;
       margin-bottom: 14px;
       border-bottom: 1px solid $gray-30;
-      width: 370px;
       @include breakpoint($bp-small) {
         font-size: 22px;
-        width: 280px;
       }
     }
 
     .link-list {
       display: inline-block;
       list-style-type: none;
-      max-width: 260px;
-      @include breakpoint($bp-small) {
-        max-width: 274px;
-      }
       .ama_page_grouping_link {
         font-size: 16px;
         line-height: 24px;
-        margin-bottom: 15px;
+        margin-bottom: 14px;
         text-transform: capitalize;
         @include breakpoint($bp-small) {
           font-size: 18px;
           line-height: 27px;
-          margin-bottom: 18px;
         }
 
         &.heading {
@@ -174,7 +167,6 @@
         }
 
         &:last-child {
-          margin-bottom: 10px;
           &.active {
             &::after {
               content: "";
