@@ -243,7 +243,7 @@ table[id^="forum-topic"] {
       span.tablesort {
         position: absolute;
         right: 4px;
-        top: 28px;
+        top: 14px;
       }
     }
   }
@@ -266,7 +266,7 @@ table[id^="forum-topic"] {
   }
 
   th:nth-child(4) {
-    min-width: 11em;
+    //min-width: 11em;
   }
 
   .forum__topic {
@@ -379,7 +379,7 @@ table[id^="forum-topic"] {
 }
 
 // Hide the Topic/resolution column in the HOD forum
-/*body.hod-forum {
+body.hod-forum {
   table {
     thead {
       tr {
@@ -390,12 +390,23 @@ table[id^="forum-topic"] {
           &:nth-of-type(2) {
             display: none !important;
           }
+          &:nth-of-type(3) {
+            text-align: left;
+            @include breakpoint($bp-large) {
+              width: 10%;
+              text-align: center;
+            }
+          }
           &:nth-of-type(3),
           &:nth-of-type(4) {
-            width: 10%;
+            width: 100%;
+            @include breakpoint($bp-large) {
+              width: 10%;
+            }
           }
           &:nth-of-type(4) {
-            word-break: break-all;
+            text-align: left;
+
           }
         }
       }
@@ -411,13 +422,16 @@ table[id^="forum-topic"] {
           }
           &:nth-of-type(3),
           &:nth-of-type(4) {
-            width: 10%;
+            width: 100%;
+            @include breakpoint($bp-large) {
+              width: 10%;
+            }
           }
           &:nth-of-type(4) {
-            word-break: break-all;
+
           }
         }
       }
     }
   }
-}*/
+}
