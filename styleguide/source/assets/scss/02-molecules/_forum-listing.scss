@@ -1,20 +1,37 @@
 .ama__forum-table-wrap,
 .ama__topic-table-wrap {
+
+  [aria-sort="ascending"],
+  [aria-sort="descending"] {
+    &.is-active {
+      a {
+        position: relative;
+        .tablesort {
+          position: absolute;
+          right: -17px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+
+
   table {
     border-collapse: separate;
     border-spacing: 0 0.5em;
     border: none;
     tbody {
-        tr:not(:first-child) {
-            td.forum-heading {
-                &:before {
-                    display: none;
-                    @include breakpoint($bp-large) {
-                        display: block;
-                    }
-                }
+      tr:not(:first-child) {
+        td.forum-heading {
+          &:before {
+            display: none;
+            @include breakpoint($bp-large) {
+              display: block;
             }
+          }
         }
+      }
     }
     tr:last-child td {
       border-bottom: none;
@@ -52,29 +69,33 @@
 
       .subforum-listing {
         margin-left: 1em;
-          display: block;
-          padding: 7px 0px 0px;
-      @include breakpoint($bp-large) {
+        display: block;
+        padding: 7px 0px 0px;
+        @include breakpoint($bp-large) {
           margin-left: 2em;
           display: inline;
           padding: 14px 0px 23px 0px;
-      }
+        }
         a {
           font-weight: $font-weight-semibold;
         }
       }
-        [data-th="Last reply"],
-        [data-th="Last post"] {
-            .author,
-            .time {
-                display: block;
-            }
-            .author {
-                span {
-                    display: inline-block;
-                }
-            }
+      [data-th="Last reply"],
+      [data-th="Last post"] {
+        .author,
+        .time {
+          display: block;
         }
+        .author {
+          display: flex;
+          a {
+            margin-left: 4px;
+          }
+          span {
+            display: inline-block;
+          }
+        }
+      }
 
       [data-th="Topics"],
       [data-th="Posts"],
@@ -86,72 +107,71 @@
 
         span {
           position: relative;
-          bottom: 0px;
-            display: inline-block;
-            margin-left: 2px;
+          display: inline-block;
 
           @include breakpoint($bp-large) {
-            bottom: 34px;
-              display: block;
-              margin-left: 0;
+            display: block;
           }
         }
       }
 
       [data-th^="Resolution"],
-      [data-th="Replies"] {
+      [data-th^="Replies"] {
         text-align: left;
-          @include breakpoint($bp-large) {
-              text-align: center;
-          }
-          .forum__last-reply,
-          .forum__replies {
-              .bt-content {
-                  display: inline-block;
-                  margin-left: 15px;
-                  @include breakpoint($bp-large) {
-                      display: block;
-                      margin-left: 0;
-                  }
-              }
-          }
-      }
-        [data-th="Replies"] {
-            .bt-content {
-                br {
-                    display: none;
-                    @include breakpoint($bp-med) {
-                        display: initial;
-                    }
-                }
-                a {
-                    padding: 0 14px;
-                    &:before {
-                        content: '(';
-                    }
-                    &:after {
-                        content: ')';
-                    }
-                    @include breakpoint($bp-med) {
-                        padding: 0;
-                        &:before {
-                            content: '';
-                        }
-                        &:after {
-                            content: '';
-                        }
-                    }
-                }
-            }
+        @include breakpoint($bp-large) {
+          text-align: center;
         }
+        .forum__last-reply,
+        .forum__replies {
+          @include breakpoint($bp-large) {
+            text-align: center;
+          }
+          .bt-content {
+            display: inline-block;
+            margin-left: 15px;
+            @include breakpoint($bp-large) {
+              display: block;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      [data-th="Replies"] {
+        .bt-content {
+          br {
+            display: none;
+            @include breakpoint($bp-med) {
+              display: initial;
+            }
+          }
+          a {
+            padding: 0 14px;
+            &:before {
+              content: '(';
+            }
+            &:after {
+              content: ')';
+            }
+            @include breakpoint($bp-med) {
+              padding: 0;
+              &:before {
+                content: '';
+              }
+              &:after {
+                content: '';
+              }
+            }
+          }
+        }
+      }
 
       [data-th="Last post"],
       [data-th="Last reply"] {
         span span {
           top: 0px;
-            @include breakpoint($bp-large) {
-                top: 0px;
-            }
+          @include breakpoint($bp-large) {
+            top: 0px;
+          }
           span {
             top: 0px;
           }
@@ -165,6 +185,7 @@
       border-bottom: 1px solid #cecece;
       height: auto;
       padding-bottom: 0em;
+      vertical-align:top;
 
       @include breakpoint($bp-large) {
         height: 126px;
@@ -182,51 +203,51 @@
   }
 }
 table[id^="forum-topic"] {
-    td.bt-hide {
-        display: none;
-        @include breakpoint($bp-large) {
-            display: table-cell;
-        }
+  td.bt-hide {
+    display: none;
+    @include breakpoint($bp-large) {
+      display: table-cell;
     }
-    td.forum_replies {
-        a {
-            display: none;
-        }
+  }
+  td.forum_replies {
+    a {
+      display: none;
     }
+  }
 }
 .ama__topic-table-wrap {
   table {
-      tbody {
-          tr {
-               &:first-child {
-                   display: flex;
-                   flex-direction: column;
-                   @include breakpoint($bp-large) {
-                       display: table-row;
-                   }
-            }
-
-          }
-      }
-      td {
-          display: block;
+    tbody {
+      tr {
+        &:first-child {
+          display: flex;
+          flex-direction: column;
           @include breakpoint($bp-large) {
-              display: table-cell;
+            display: table-row;
           }
+        }
 
       }
+    }
+    td {
+      display: block;
+      @include breakpoint($bp-large) {
+        display: table-cell;
+      }
+
+    }
     tr {
       border-top: 1px solid #979797;
-        &:not(:first-child) {
-            td[data-th="Topic"] {
-                &:before {
-                    display: none;
-                    @include breakpoint($bp-large) {
-                        display: inline;
-                    }
-                }
+      &:not(:first-child) {
+        td[data-th="Topic"] {
+          &:before {
+            display: none;
+            @include breakpoint($bp-large) {
+              display: inline;
             }
+          }
         }
+      }
     }
   }
 
@@ -240,11 +261,6 @@ table[id^="forum-topic"] {
     &:nth-of-type(3) {
       position: relative;
       padding-right: 24px;
-      span.tablesort {
-        position: absolute;
-        right: 4px;
-        top: 28px;
-      }
     }
   }
 
@@ -266,73 +282,71 @@ table[id^="forum-topic"] {
   }
 
   th:nth-child(4) {
-    min-width: 11em;
+    //min-width: 11em;
   }
 
   .forum__topic {
-      width: 100%;
-      @include breakpoint($bp-large) {
-          width: 70%;
-      }
+    width: 100%;
+    @include breakpoint($bp-large) {
+      width: 70%;
+    }
   }
 
   .forum__title div:first-child {
     font-size: 22px;
     font-weight: normal;
   }
-    tbody tr {
-        td {
-            &[data-th^="Report"],
-            &[data-th^="Resolution"],{
-            text-align: left;
-                @include breakpoint($bp-large) {
-                    display: table-cell;
-                }
-            }
-
-            &.forum-heading,
-            &.forum__topic {
-                &[data-th="Sections"],
-                &[data-th="Topic"] {
-                    padding-top: 21px;
-                    &:before {
-                        font-weight: $font-weight-bold;
-                        margin-top: 1.5rem;
-                        line-height: 1.143;
-
-                        @include breakpoint($bp-large) {
-
-                        }
-                    }
-                }
-            }
+  tbody tr {
+    td {
+      &[data-th^="Report"],
+      &[data-th^="Resolution"],{
+        text-align: left;
+        @include breakpoint($bp-large) {
+          display: table-cell;
         }
+      }
+
+      &.forum-heading,
+      &.forum__topic {
+        &[data-th="Sections"],
+        &[data-th="Topic"] {
+          padding-top: 21px;
+          &:before {
+            font-weight: $font-weight-bold;
+            margin-top: 1.5rem;
+            line-height: 1.143;
+          }
+        }
+      }
     }
+  }
 
   table tr [data-th="Topics"] {
     span {
       position: relative;
       bottom: 0px;
-        display: inline-block;
-        margin-right: 7px;
-        @include breakpoint($bp-large) {
-            display: block;
-            margin-right: 0;
-        }
+      display: inline-block;
+      margin-right: 7px;
+      @include breakpoint($bp-large) {
+        display: block;
+        margin-right: 0;
+      }
     }
   }
-    .forum__last-reply {
-        span.bt-content {
-            display: inline-block;
-            position: unset;
-            bottom: unset;
-            @include breakpoint($bp-large) {
-                position: relative;
-                bottom: calc($gutter * .75);
-                display: block;
-            }
-        }
+  .forum__last-reply {
+    span.author {
+      text-wrap: nowrap;
     }
+    span.time {
+      display: block;
+    }
+    span.bt-content {
+      display: inline-block;
+      @include breakpoint($bp-large) {
+        display: block;
+      }
+    }
+  }
 }
 
 #block-ama-one-forums-content {
@@ -373,5 +387,63 @@ table[id^="forum-topic"] {
     position: absolute;
     right: 0;
     top: 0;
+  }
+}
+
+// Hide the Topic/resolution column in the HOD forum
+body.hod-forum {
+  table {
+    thead {
+      tr {
+        th {
+          &:first-child {
+            width: 80%;
+          }
+          &:nth-of-type(2) {
+            display: none !important;
+          }
+          &:nth-of-type(3) {
+            text-align: left;
+            @include breakpoint($bp-large) {
+              width: 10%;
+              text-align: center;
+            }
+          }
+          &:nth-of-type(3),
+          &:nth-of-type(4) {
+            width: 100%;
+            @include breakpoint($bp-large) {
+              width: 10%;
+            }
+          }
+          &:nth-of-type(4) {
+            text-align: left;
+
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          &:first-child {
+            width: 80%;
+          }
+          &:nth-of-type(2) {
+            display: none !important;
+          }
+          &:nth-of-type(3),
+          &:nth-of-type(4) {
+            width: 100%;
+            @include breakpoint($bp-large) {
+              width: 10%;
+            }
+          }
+          &:nth-of-type(4) {
+
+          }
+        }
+      }
+    }
   }
 }
