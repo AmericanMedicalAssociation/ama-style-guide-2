@@ -1,5 +1,22 @@
 .ama__forum-table-wrap,
 .ama__topic-table-wrap {
+
+  [aria-sort="ascending"],
+  [aria-sort="descending"] {
+    &.is-active {
+      a {
+        position: relative;
+        .tablesort {
+          position: absolute;
+          right: -17px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+
+
   table {
     border-collapse: separate;
     border-spacing: 0 0.5em;
@@ -70,6 +87,10 @@
           display: block;
         }
         .author {
+          display: flex;
+          a {
+            margin-left: 4px;
+          }
           span {
             display: inline-block;
           }
@@ -86,26 +107,25 @@
 
         span {
           position: relative;
-          bottom: 0px;
           display: inline-block;
-          margin-left: 2px;
 
           @include breakpoint($bp-large) {
-            bottom: 34px;
             display: block;
-            margin-left: 0;
           }
         }
       }
 
       [data-th^="Resolution"],
-      [data-th="Replies"] {
+      [data-th^="Replies"] {
         text-align: left;
         @include breakpoint($bp-large) {
           text-align: center;
         }
         .forum__last-reply,
         .forum__replies {
+          @include breakpoint($bp-large) {
+            text-align: center;
+          }
           .bt-content {
             display: inline-block;
             margin-left: 15px;
@@ -165,6 +185,7 @@
       border-bottom: 1px solid #cecece;
       height: auto;
       padding-bottom: 0em;
+      vertical-align:top;
 
       @include breakpoint($bp-large) {
         height: 126px;
@@ -240,11 +261,6 @@ table[id^="forum-topic"] {
     &:nth-of-type(3) {
       position: relative;
       padding-right: 24px;
-      span.tablesort {
-        position: absolute;
-        right: 4px;
-        top: 14px;
-      }
     }
   }
 
@@ -326,11 +342,7 @@ table[id^="forum-topic"] {
     }
     span.bt-content {
       display: inline-block;
-      position: unset;
-      bottom: unset;
       @include breakpoint($bp-large) {
-        position: relative;
-        bottom: calc($gutter * .75);
         display: block;
       }
     }
