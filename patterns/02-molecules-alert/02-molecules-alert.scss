@@ -34,10 +34,15 @@
             }
         }
         p {
+            @include type($myriad-pro, $font-weight-regular);
             display: inline;
             font-size: 16px;
             margin-right: 4px;
             line-height: 1em;
+
+            & a {
+                @include type($myriad-pro, $font-weight-regular);
+            }
         }
         &.mobile {
             padding-left: calc($gutter * .75);
