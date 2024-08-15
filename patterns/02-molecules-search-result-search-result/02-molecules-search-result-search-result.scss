@@ -18,8 +18,9 @@
 
     .ama__search-result__description {
       // Override main paragraph font
+      @include type($kepler-std, $font-weight-light);
       p, p a, .text-body {
-        @include type($kepler-std, $font-weight-regular);
+        @include type($kepler-std, $font-weight-light);
       }
     }
   }
