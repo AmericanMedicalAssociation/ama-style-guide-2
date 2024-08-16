@@ -145,6 +145,10 @@
           position: relative;
         }
 
+        &:focus-within {
+          outline: 1px solid $tab-focus-blue;
+        }
+
         a,
         &.active {
           text-decoration: none;
@@ -156,9 +160,6 @@
           color: $gating-block-link;
           &:hover {
             border-bottom: 1px solid $gating-block-link;
-          }
-          &:focus-visible {
-            outline: 1px solid $tab-focus-blue;
           }
         }
         &.active {
