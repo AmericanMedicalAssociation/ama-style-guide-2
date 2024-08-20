@@ -135,6 +135,7 @@
       $($mobileSearchTrigger).unbind('click').click(function () {
         $mobileSearch.slideToggle();
         $mobileSearchTrigger.toggleClass('open');
+        $('#edit-search').focus();
       });
 
       //Set focus state on mobile trigger button

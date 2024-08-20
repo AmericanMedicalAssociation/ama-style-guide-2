@@ -9,10 +9,6 @@
   align-items: center;
   border-left: 1px solid $gray-50;
 
-  &.open {
-    outline: 2px solid $pg-lt-blue;
-  }
-
   @include breakpoint($bp-small) {
     display: none;
   }
@@ -123,13 +119,6 @@
     &:hover {
       background-color: $hoverPurple;
     }
-
-    &:focus-visible {
-      outline: 2px solid $pg-lt-blue;
-      outline-offset: 3px;
-    }
-
-    @include button_focus_outline_light;
   }
 }
 
