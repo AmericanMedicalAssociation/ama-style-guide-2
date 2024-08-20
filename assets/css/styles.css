@@ -13426,11 +13426,6 @@ body.hod-forum table tbody tr td:nth-of-type(3), body.hod-forum table tbody tr t
 .ama__global-search .ama__search__field__input::placeholder {
   font-style: italic;
 }
-.ama__global-search input[type=text]:focus-visible,
-.ama__global-search .ama__search__field__input:focus-visible {
-  outline: 2px solid #80d4f5;
-  outline-offset: 3px;
-}
 .ama__global-search .form-actions {
   margin: 0;
 }
@@ -14783,6 +14778,8 @@ span.ama__inline-bio__link:focus-visible {
   line-height: 24px;
   margin-bottom: 14px;
   text-transform: capitalize;
+  padding-left: 5px;
+  margin-left: -5px;
 }
 @media (min-width: 37.5em) {
   .ama_page_grouping_news .links .link-list .ama_page_grouping_link {
@@ -14793,6 +14790,9 @@ span.ama__inline-bio__link:focus-visible {
 .ama_page_grouping_news .links .link-list .ama_page_grouping_link.heading {
   font-weight: 600;
   position: relative;
+}
+.ama_page_grouping_news .links .link-list .ama_page_grouping_link:focus-within {
+  outline: 1px solid #0076a5;
 }
 .ama_page_grouping_news .links .link-list .ama_page_grouping_link a, .ama_page_grouping_news .links .link-list .ama_page_grouping_link.active {
   text-decoration: none;
@@ -14805,9 +14805,6 @@ span.ama__inline-bio__link:focus-visible {
 }
 .ama_page_grouping_news .links .link-list .ama_page_grouping_link a:hover {
   border-bottom: 1px solid #015884;
-}
-.ama_page_grouping_news .links .link-list .ama_page_grouping_link a:focus-visible {
-  outline: 1px solid #0076a5;
 }
 .ama_page_grouping_news .links .link-list .ama_page_grouping_link.active {
   color: #46166B;
@@ -18910,12 +18907,12 @@ article[class*=__page-content] .ama__tags .ama__link--purple.ama__link--catalog:
   width: 100%;
 }
 .thirty-seventy-block__aside .thirty-seventy-block__buttons .ama__button {
-  padding: 8px 12px;
+  padding: 4.5px 12px;
   color: #ffffff;
   font-weight: 400;
   width: 100%;
   font-size: 16px;
-  line-height: 1;
+  line-height: 16px;
 }
 @media (min-width: 56.25em) {
   .thirty-seventy-block__aside .thirty-seventy-block__buttons .ama__button {
