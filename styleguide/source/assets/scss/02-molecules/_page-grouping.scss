@@ -102,9 +102,7 @@
 .ama_page_grouping_news {
   margin: 0 0 $gutter;
   padding: 0;
-  border-bottom: 1px solid $gray-30;
   @include breakpoint($bp-small) {
-    display: flex;
     margin: 0 0 28px 0;
     position: -webkit-sticky; /* For Safari */
     position: sticky;
@@ -115,12 +113,15 @@
   }
 
   .links {
+    display: block;
+    width: 100%;
     .ama_page_grouping_title {
       font-family: kepler-std, serif;
       font-size: 20px;
       line-height: 32px;
       padding-bottom: 12px;
       margin-bottom: 14px;
+      display: block;
       border-bottom: 1px solid $gray-30;
       @include breakpoint($bp-small) {
         font-size: 22px;
@@ -130,6 +131,7 @@
     .link-list {
       display: inline-block;
       list-style-type: none;
+      border-bottom: 1px solid $gray-30;
       .ama_page_grouping_link {
         font-size: 16px;
         line-height: 24px;
