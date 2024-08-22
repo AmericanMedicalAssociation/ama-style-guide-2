@@ -14709,9 +14709,11 @@ span.ama__inline-bio__link:focus-visible {
 .ama_page_grouping_news {
   margin: 0 0 28px;
   padding: 0;
+  border-bottom: none;
 }
 @media (min-width: 37.5em) {
   .ama_page_grouping_news {
+    border-bottom: 1px solid #979797;
     margin: 0 0 28px 0; /* For Safari */
     position: sticky;
     top: 83px;
@@ -14744,6 +14746,11 @@ span.ama__inline-bio__link:focus-visible {
   display: inline-block;
   list-style-type: none;
   border-bottom: 1px solid #979797;
+}
+@media (min-width: 37.5em) {
+  .ama_page_grouping_news .links .link-list {
+    border-bottom: none;
+  }
 }
 .ama_page_grouping_news .links .link-list .ama_page_grouping_link {
   font-size: 16px;
