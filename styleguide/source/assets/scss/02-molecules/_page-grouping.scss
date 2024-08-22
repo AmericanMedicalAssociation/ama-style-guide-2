@@ -102,7 +102,9 @@
 .ama_page_grouping_news {
   margin: 0 0 $gutter;
   padding: 0;
+  border-bottom: none;
   @include breakpoint($bp-small) {
+    border-bottom: 1px solid $gray-30;
     margin: 0 0 28px 0;
     position: -webkit-sticky; /* For Safari */
     position: sticky;
@@ -132,6 +134,9 @@
       display: inline-block;
       list-style-type: none;
       border-bottom: 1px solid $gray-30;
+      @include breakpoint($bp-small) {
+        border-bottom: none;
+      }
       .ama_page_grouping_link {
         font-size: 16px;
         line-height: 24px;
@@ -189,4 +194,3 @@
     }
   }
 }
-
