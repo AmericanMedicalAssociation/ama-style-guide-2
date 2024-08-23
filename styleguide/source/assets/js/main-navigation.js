@@ -161,6 +161,7 @@
             });
 
             $socialIcons.on('sticky-start', function () {
+              $(".ama__category .ama__masthead__content__container").css('visibility','visible');
               $amaSocialShare.addClass('ama__social-share--fixed').css('left', socialStickyPosition).hide().fadeTo('slow', 1);
             });
 
@@ -235,8 +236,8 @@
           $(this).find(searchInput).each(function(){
             //Submit trimmed value
             $(this).val($.trim($(this).val()));
-          });   
-          
+          });
+
       });
     }
   };
