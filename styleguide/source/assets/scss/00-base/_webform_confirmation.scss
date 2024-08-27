@@ -8,8 +8,9 @@
 
   &__message {
     @include gutter($padding-top-full...);
-    display: flex;
-    justify-content: center;
+    p {
+      @include type($myriad-pro, $font-weight-regular);
+    }
   }
 
   &__back {
