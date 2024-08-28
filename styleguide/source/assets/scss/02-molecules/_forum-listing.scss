@@ -209,6 +209,29 @@ table[id^="forum-topic"] {
       display: table-cell;
     }
   }
+  thead {
+    th {
+      position: relative;
+      a {
+        line-height: 19px;
+        &:after {
+          content: ' ';
+          position: absolute;
+          width: 12px;
+          height: 18px;
+          background: url("../icons/svg/icon-forum-asc-desc.svg") no-repeat  0 0 ;
+          background-size: contain
+        }
+      }
+      &.is-active {
+        a {
+          &:after {
+            content: unset;
+          }
+        }
+      }
+    }
+  }
   td.forum_replies {
     a {
       display: none;
