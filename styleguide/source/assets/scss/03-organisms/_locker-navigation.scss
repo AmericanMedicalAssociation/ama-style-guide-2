@@ -46,6 +46,13 @@
         margin-right: 4px;
       }
     }
+
+    // This is set on mobile when a page grouper block overlaps
+    // the locker navigation menu when scrolling
+    // this is a constraint of the design
+    &.hidden {
+      visibility: hidden;
+    }
   }
   a {
     display: flex;
