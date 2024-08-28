@@ -145,7 +145,9 @@
 
       function moveSocialSharePosition(){
         var mainNavPosition = $('.ama__main-navigation .container').offset().left;
+        var fixedClass = 'ama__social-share--fixed';
         var $amaSocialShare = $('.ama__social-share');
+        var $amaShareContainer = $(".ama__category .ama__masthead__content__container, .ama__subcategory-index .share-row");
 
         // Checks to see if there is enough for the sticky nav
         if(mainNavPosition > 60) {
@@ -161,16 +163,17 @@
             });
 
             $socialIcons.on('sticky-start', function () {
-              $(".ama__category .ama__masthead__content__container").css('visibility','visible');
-              $amaSocialShare.addClass('ama__social-share--fixed').css('left', socialStickyPosition).hide().fadeTo('slow', 1);
+              $amaShareContainer.css('visibility','visible');
+              $amaSocialShare.addClass(fixedClass).css('left', socialStickyPosition).hide().fadeTo('slow', 1);
             });
 
             $socialIcons.on('sticky-update', function () {
-              $amaSocialShare.addClass('ama__social-share--fixed').hide().fadeTo('slow', 1);
+              $amaSocialShare.addClass(fixedClass).hide().fadeTo('slow', 1);
             });
 
             $socialIcons.on('sticky-end', function () {
-              $('.ama__social-share--fixed').removeClass('ama__social-share--fixed');
+              $amaShareContainer.css('visibility','hidden');
+              $('.ama__social-share--fixed').removeClass(fixedClass);
             });
           }
         }
