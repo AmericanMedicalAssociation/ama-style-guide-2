@@ -81,18 +81,25 @@
         flex: 1;
       }
 
+      .mg {
+        padding-left: 19px;
+      }
+
       .active_links-rod {
         padding-right: 15px;
+      }
+
+      .active_links-mg {
+        padding-left: 0;
       }
     }
 
     .meeting_heading {
-      &.desktop {
-        display: none;
-      }
-      &.mobile {
-        display: block;
-      }
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      min-height: 108px;
+      justify-content: space-between;
       .col.col-first {
         flex: 1;
       }
@@ -116,28 +123,7 @@
         }
       }
       @include breakpoint($bp-large) {
-        &.desktop {
-          display: flex;
-          position: relative;
-          margin-bottom: 21px;
-
-          h3 {
-            flex: 1;
-            margin-bottom: 29px;
-          }
-    
-          p.annual-interim__text {
-            position: absolute;
-            margin: 0;
-            bottom: 0;
-            &:nth-child(4) {
-              left: 50%;
-            }
-          }
-        }
-        &.mobile {
-          display: none;
-        }
+        min-height: 108px;
       }
     }
 
