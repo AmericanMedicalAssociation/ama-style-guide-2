@@ -96,8 +96,10 @@
       }
 
       [data-th="Topics"],
+      [data-th="Item Type"],
       [data-th="Posts"],
       [data-th^="Resolution"],
+      [data-th^="Comments"],
       [data-th^="Report"],
       [data-th="Replies"],
       [data-th="Last post"],
@@ -109,6 +111,20 @@
 
           @include breakpoint($bp-large) {
             display: block;
+          }
+        }
+      }
+      .forum__replies {
+        margin-bottom: $gutter;
+        text-align: left;
+        @include breakpoint($bp-large) {
+          margin-bottom: 0;
+          text-align: right;
+        }
+        &:before {
+          margin-right: calc($gutter * .25);
+          @include breakpoint($bp-large) {
+            margin-right: 0;
           }
         }
       }
@@ -134,7 +150,8 @@
           }
         }
       }
-      [data-th="Replies"] {
+      [data-th="Replies"],
+      [data-th^="Comments"] {
         .bt-content {
           br {
             display: none;
