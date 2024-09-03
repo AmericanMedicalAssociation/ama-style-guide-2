@@ -252,8 +252,10 @@
             outline: 1px solid $tab-focus-blue;
           }
         }
-        &.active {
+        &.active a {
           color: $purple;
+          pointer-events: none;
+          cursor: not-allowed;
           @include type($myriad-pro, $font-weight-regular);
         }
 
