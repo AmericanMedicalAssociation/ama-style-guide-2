@@ -62,23 +62,40 @@
   @include breakpoint($bp-small) {
     display: flex;
     flex-direction: column;
+    h2.ama__section-title  {
+      flex: 1;
+      line-height: 1;
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .title-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   &__view-all-link {
+    &.mobile {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+    }
+    &.desktop {
+      display: none;
+      @include breakpoint($bp-small) {
+        margin: 0;
+        display: block;
+      }
+    }
     @include font-size($small-font-sizes);
     @include gutter($margin-top-half...);
     margin-bottom: $gutter-mobile;
     float: right;
 
-    @include breakpoint($bp-small) {
-      position: absolute;
-      top: 0;
-      margin-top: 0;
-      right: 0;
-    }
-
     @include breakpoint($bp-med) {
-      top: 45px;
       font-size: .778em;
       line-height: 1.571em;
     }
