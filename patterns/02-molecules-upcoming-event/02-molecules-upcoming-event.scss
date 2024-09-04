@@ -87,10 +87,24 @@
     @include font-size($small-font-sizes);
     float: right;
 
+    &.desktop {
+      display: none;
+    }
+
+    &.mobile {
+      display: block;
+      @include breakpoint($bp-small) {
+        display: none;
+      }
+    }
+
     @include breakpoint($bp-small) {
       position: absolute;
       top: 10px;
       right: 0;
+      &.desktop {
+        display: block;
+      }
     }
 
     @include breakpoint($bp-med) {
