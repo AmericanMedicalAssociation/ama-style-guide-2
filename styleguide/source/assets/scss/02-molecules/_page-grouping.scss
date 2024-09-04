@@ -100,15 +100,23 @@
 }
 
 .ama_page_grouping_news {
-  margin: 0 0 $gutter;
-  padding: 0;
-  border-bottom: none;
+  margin: -14px -15px 28px;
+  padding: 0 15px;
+  // To dislay box shadow only when open
+  // And making sure it is only on mobile
+  @include breakpoint($bp-small max-width) {
+    &:has(.open) {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
   @include breakpoint($bp-small) {
-    border-bottom: 1px solid $gray-30;
     margin: 0 0 28px 0;
+    padding: 0;
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 83px;
+    border-bottom: 1px solid $gray-30;
+    box-shadow: none;
   }
   @include breakpoint($bp-med) {
     top: 123px;
@@ -121,21 +129,94 @@
       font-family: kepler-std, serif;
       font-size: 20px;
       line-height: 32px;
-      padding-bottom: 12px;
-      margin-bottom: 14px;
+      padding: 15px 0;
       display: block;
+      cursor: pointer;
       border-bottom: 1px solid $gray-30;
       @include breakpoint($bp-small) {
+        cursor: initial;
+        margin-bottom: 14px;
+        border-bottom: 1px solid $gray-30;
         font-size: 22px;
+        padding: 0 0 12px 0;
+      }
+
+      @include breakpoint($bp-small max-width) {
+        > div {
+          max-width: 331px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          transition: rotate .2s ease-out;
+
+          &::after {
+            content: " ";
+            background-image: url("../icons/svg/icon-opendropdown-black.svg");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+            opacity: .5;
+            height: 10px;
+            width: 18px;
+            position: absolute;
+            right: 0;
+            top: 22px;
+          }
+        }
+
+        &.open {
+          > div::after {
+            rotate: 180deg;
+            transition: rotate .2s ease-out;
+          }
+        }
       }
     }
 
     .link-list {
-      display: inline-block;
       list-style-type: none;
-      border-bottom: 1px solid $gray-30;
+      clear: both;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+      // There are a lot of particulars with the opened link list on mobile
+      @include breakpoint($bp-small max-width) {
+        &.open {
+          display: block;
+          max-height: 247px;
+          padding: 21px 0 12px;
+          transition: max-height .2s ease-out;
+          overflow-y: scroll;
+          scrollbar-width: thin;
+          scrollbar-color: #aaaaaa #f1f1f1;      
+          &::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 5px;
+            background-color: #f1f1f1;
+          }
+          &::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            width: 5px;
+            border-radius: 2.5px;
+          }
+          &::-webkit-scrollbar-thumb {
+            width: 3px;
+            background-color: #aaaaaa;
+            border-radius: 2.5px;
+            border: 1px solid #f1f1f1;
+            box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+          }
+
+          // This is to show the full outline on focus/tab through
+          a {
+            margin-left: 2px;
+          }
+        }
+      }
       @include breakpoint($bp-small) {
-        border-bottom: none;
+        display: block;
+        max-height: unset;
+        overflow: unset;
       }
       .ama_page_grouping_link {
         font-size: 16px;
@@ -171,8 +252,10 @@
             outline: 1px solid $tab-focus-blue;
           }
         }
-        &.active {
+        &.active a {
           color: $purple;
+          pointer-events: none;
+          cursor: not-allowed;
           @include type($myriad-pro, $font-weight-regular);
         }
 
@@ -192,5 +275,16 @@
 
       }
     }
+  }
+}
+
+// Sticky functionality for News Article Page Grouping Block on mobile
+.ama__layout--two-column--left__page-content.ama__news {
+  @include breakpoint($bp-small max-width) {
+    background: $white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 62px;
+    z-index: 500;
   }
 }
