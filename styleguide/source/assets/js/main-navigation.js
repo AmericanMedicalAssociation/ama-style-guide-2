@@ -149,33 +149,40 @@
         var $amaSocialShare = $('.ama__social-share');
         var $amaShareContainer = $(".ama__category .ama__masthead__content__container, .ama__subcategory-index .share-row");
 
-        // Checks to see if there is enough for the sticky nav
-        if(mainNavPosition > 60) {
+        // Check to see if viewport width is greater than 850px.
+        if ($(window).width() > 850) {
+          // Checks to see if there is enough for the sticky nav
+          if(mainNavPosition > 60) {
 
-          var socialStickyPosition = mainNavPosition - 60;
-          var $socialIcons = $('.ama__masthead__content__share');
+            var socialStickyPosition = mainNavPosition - 60;
+            var $socialIcons = $('.ama__masthead__content__share');
 
-          // Check to see if viewport width is greater 850px then the social icons will be sticky
-          if($socialIcons.length && $(window).width() > 850) {
-            $socialIcons.sticky({
-              wrapperClassName: 'ama__masthead__content__share-wrapper',
-              zIndex: 500
-            });
+            // Check to see if viewport width is greater 850px then the social icons will be sticky
+            if($socialIcons.length && $(window).width() > 850) {
+              $socialIcons.sticky({
+                wrapperClassName: 'ama__masthead__content__share-wrapper',
+                zIndex: 500
+              });
 
-            $socialIcons.on('sticky-start', function () {
-              $amaShareContainer.css('visibility','visible');
-              $amaSocialShare.addClass(fixedClass).css('left', socialStickyPosition).hide().fadeTo('slow', 1);
-            });
+              $socialIcons.on('sticky-start', function () {
+                $amaShareContainer.css('visibility','visible');
+                $amaSocialShare.addClass(fixedClass).css('left', socialStickyPosition).hide().fadeTo('slow', 1);
+              });
 
-            $socialIcons.on('sticky-update', function () {
-              $amaSocialShare.addClass(fixedClass).hide().fadeTo('slow', 1);
-            });
+              $socialIcons.on('sticky-update', function () {
+                $amaSocialShare.addClass(fixedClass).hide().fadeTo('slow', 1);
+              });
 
-            $socialIcons.on('sticky-end', function () {
-              $amaShareContainer.css('visibility','hidden');
-              $('.ama__social-share--fixed').removeClass(fixedClass);
-            });
+              $socialIcons.on('sticky-end', function () {
+                $amaShareContainer.css('visibility','hidden');
+                $('.ama__social-share--fixed').removeClass(fixedClass);
+              });
+            }
           }
+        } else {
+          // Ensure visibility is hidden on mobile.
+          $amaShareContainer.css('visibility','hidden');
+          $amaSocialShare.removeClass(fixedClass).css('left', '');
         }
       }
 
