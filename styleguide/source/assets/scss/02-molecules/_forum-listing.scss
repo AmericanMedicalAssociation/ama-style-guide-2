@@ -9,13 +9,11 @@
         .tablesort {
           position: absolute;
           right: -17px;
-          bottom: 0;
+          top: 4px;
         }
       }
     }
   }
-
-
 
   table {
     border-collapse: separate;
@@ -209,6 +207,34 @@ table[id^="forum-topic"] {
       display: table-cell;
     }
   }
+  thead {
+    th {
+      line-height: 19px;
+      a {
+        position: relative;
+        &:after {
+          content: unset;
+          position: absolute;
+          width: 12px;
+          height: 18px;
+          background: url("../icons/svg/icon-forum-asc-desc.svg") no-repeat  0 0 ;
+          background-size: contain;
+          top: 5px;
+          margin-left: 5px;
+          @include breakpoint($bp-large) {
+            content: ' ';
+          }
+        }
+      }
+      &.is-active {
+        a {
+          &:after {
+            content: unset;
+          }
+        }
+      }
+    }
+  }
   td.forum_replies {
     a {
       display: none;
@@ -260,7 +286,6 @@ table[id^="forum-topic"] {
 
     &:nth-of-type(3) {
       position: relative;
-      padding-right: 24px;
     }
   }
 
@@ -268,21 +293,6 @@ table[id^="forum-topic"] {
     font-weight: $font-weight-semibold;
     font-size: 26px;
     text-transform: uppercase;
-  }
-
-  th:nth-child(2) a {
-    display: flex;
-    flex-direction: row;
-    // width: 6em;
-  }
-
-  th:nth-child(2) a span {
-    position: relative;
-    top: 8px;
-  }
-
-  th:nth-child(4) {
-    //min-width: 11em;
   }
 
   .forum__topic {

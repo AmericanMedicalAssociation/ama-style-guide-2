@@ -227,6 +227,11 @@ section.ama__forum_comments {
   @include breakpoint($bp-med) {
     padding: 15px 42px;
   }
+  h2 {
+    &.pinned-comment + div {
+      margin-bottom: 30px;
+    }
+  }
 }
 #block-ama-one-forums-content {
   > .indented {
