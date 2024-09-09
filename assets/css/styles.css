@@ -6892,35 +6892,30 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 21px 0 28px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   position: relative;
 }
-@media (min-width: 56.25em) {
+@media (min-width: 37.5em) {
   .ama__alert {
-    padding: 14px 21px;
-  }
-}
-.ama__alert.icon {
-  background-image: url("../icons/svg/icon-alert-alert.svg");
-  background-repeat: no-repeat;
-  background-position: 28px 50%;
-}
-@media (min-width: 56.25em) {
-  .ama__alert.icon {
-    background-position: 17px 50%;
+    padding: 14px 0;
   }
 }
 .ama__alert__wrap {
   opacity: 0;
   min-height: unset;
+  padding-right: 8.5px;
 }
 .ama__alert__text {
   margin-bottom: 0;
   margin-right: 25px;
+}
+@media (min-width: 37.5em) {
+  .ama__alert__text {
+    margin-right: 0;
+  }
 }
 .ama__alert__text a {
   color: #025785;
@@ -6943,11 +6938,16 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   font-weight: 400;
 }
 .ama__alert__text.mobile {
-  padding-left: 21px;
+  padding-left: 0;
   display: block;
   line-height: 15px;
   padding-top: 7px;
   padding-bottom: 8px;
+}
+@media (min-width: 37.5em) {
+  .ama__alert__text.mobile {
+    display: none;
+  }
 }
 .ama__alert__text.mobile a,
 .ama__alert__text.mobile p,
@@ -6959,17 +6959,12 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .ama__alert__text.desktop {
   display: none;
 }
-@media (min-width: 56.25em) {
-  .ama__alert__text {
-    margin-right: 0;
-    margin-left: 14px;
-  }
-  .ama__alert__text.mobile {
-    display: none;
-  }
+@media (min-width: 37.5em) {
   .ama__alert__text.desktop {
     display: block;
   }
+}
+@media (min-width: 37.5em) {
   .ama__alert__text.desktop a {
     font-size: 16px;
   }
@@ -6987,15 +6982,17 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
-  margin-right: -15px;
+  margin-right: -9px;
+}
+@media (min-width: 37.5em) {
+  .ama__alert__close.mobile {
+    display: none;
+  }
 }
 .ama__alert__close.desktop {
   display: none;
 }
-@media (min-width: 56.25em) {
-  .ama__alert__close.mobile {
-    display: none;
-  }
+@media (min-width: 37.5em) {
   .ama__alert__close.desktop {
     display: block;
     position: relative;
@@ -7003,6 +7000,27 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 }
 .ama__alert__close svg {
   vertical-align: inherit;
+}
+.ama__alert.icon {
+  background-image: url("../icons/svg/icon-alert-alert.svg");
+  background-repeat: no-repeat;
+  background-position: 14px 50%;
+}
+@media (min-width: 37.5em) {
+  .ama__alert.icon {
+    background-position: 0 50%;
+  }
+}
+.ama__alert.icon .ama__alert__text.desktop {
+  margin-left: 19px;
+}
+.ama__alert.icon .ama__alert__text.mobile {
+  padding-left: 33px;
+}
+@media (min-width: 37.5em) {
+  .ama__alert.icon .ama__alert__text.mobile {
+    padding-left: 19px;
+  }
 }
 
 .ama__alert__wrap.sg {
@@ -12562,6 +12580,9 @@ section.ama__forum_comments {
     padding: 15px 42px;
   }
 }
+section.ama__forum_comments h2.pinned-comment + div {
+  margin-bottom: 30px;
+}
 
 #block-ama-one-forums-content > .indented {
   border: 1px solid #e2e2e2;
@@ -12639,7 +12660,19 @@ section.ama__forum_comments {
 .ama__topic-table-wrap [aria-sort=descending].is-active a .tablesort {
   position: absolute;
   right: -17px;
-  top: 4px;
+  top: 7px;
+}
+.ama__forum-table-wrap [aria-sort=ascending].is-active a .tablesort.tablesort--desc,
+.ama__forum-table-wrap [aria-sort=descending].is-active a .tablesort.tablesort--desc,
+.ama__topic-table-wrap [aria-sort=ascending].is-active a .tablesort.tablesort--desc,
+.ama__topic-table-wrap [aria-sort=descending].is-active a .tablesort.tablesort--desc {
+  background-image: url("../icons/svg/twistie-up.svg");
+}
+.ama__forum-table-wrap [aria-sort=ascending].is-active a .tablesort.tablesort--asc,
+.ama__forum-table-wrap [aria-sort=descending].is-active a .tablesort.tablesort--asc,
+.ama__topic-table-wrap [aria-sort=ascending].is-active a .tablesort.tablesort--asc,
+.ama__topic-table-wrap [aria-sort=descending].is-active a .tablesort.tablesort--asc {
+  background-image: url("../icons/svg/twistie-down.svg");
 }
 .ama__forum-table-wrap table,
 .ama__topic-table-wrap table {
@@ -12743,15 +12776,19 @@ section.ama__forum_comments {
   display: inline-block;
 }
 .ama__forum-table-wrap table tr [data-th=Topics] span,
+.ama__forum-table-wrap table tr [data-th="Item Type"] span,
 .ama__forum-table-wrap table tr [data-th=Posts] span,
 .ama__forum-table-wrap table tr [data-th^=Resolution] span,
+.ama__forum-table-wrap table tr [data-th^=Comments] span,
 .ama__forum-table-wrap table tr [data-th^=Report] span,
 .ama__forum-table-wrap table tr [data-th=Replies] span,
 .ama__forum-table-wrap table tr [data-th="Last post"] span,
 .ama__forum-table-wrap table tr [data-th="Last reply"] span,
 .ama__topic-table-wrap table tr [data-th=Topics] span,
+.ama__topic-table-wrap table tr [data-th="Item Type"] span,
 .ama__topic-table-wrap table tr [data-th=Posts] span,
 .ama__topic-table-wrap table tr [data-th^=Resolution] span,
+.ama__topic-table-wrap table tr [data-th^=Comments] span,
 .ama__topic-table-wrap table tr [data-th^=Report] span,
 .ama__topic-table-wrap table tr [data-th=Replies] span,
 .ama__topic-table-wrap table tr [data-th="Last post"] span,
@@ -12761,20 +12798,46 @@ section.ama__forum_comments {
 }
 @media (min-width: 75em) {
   .ama__forum-table-wrap table tr [data-th=Topics] span,
+  .ama__forum-table-wrap table tr [data-th="Item Type"] span,
   .ama__forum-table-wrap table tr [data-th=Posts] span,
   .ama__forum-table-wrap table tr [data-th^=Resolution] span,
+  .ama__forum-table-wrap table tr [data-th^=Comments] span,
   .ama__forum-table-wrap table tr [data-th^=Report] span,
   .ama__forum-table-wrap table tr [data-th=Replies] span,
   .ama__forum-table-wrap table tr [data-th="Last post"] span,
   .ama__forum-table-wrap table tr [data-th="Last reply"] span,
   .ama__topic-table-wrap table tr [data-th=Topics] span,
+  .ama__topic-table-wrap table tr [data-th="Item Type"] span,
   .ama__topic-table-wrap table tr [data-th=Posts] span,
   .ama__topic-table-wrap table tr [data-th^=Resolution] span,
+  .ama__topic-table-wrap table tr [data-th^=Comments] span,
   .ama__topic-table-wrap table tr [data-th^=Report] span,
   .ama__topic-table-wrap table tr [data-th=Replies] span,
   .ama__topic-table-wrap table tr [data-th="Last post"] span,
   .ama__topic-table-wrap table tr [data-th="Last reply"] span {
     display: block;
+  }
+}
+.ama__forum-table-wrap table tr .forum__replies,
+.ama__topic-table-wrap table tr .forum__replies {
+  margin-bottom: 28px;
+  text-align: left;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tr .forum__replies,
+  .ama__topic-table-wrap table tr .forum__replies {
+    margin-bottom: 0;
+    text-align: right;
+  }
+}
+.ama__forum-table-wrap table tr .forum__replies:before,
+.ama__topic-table-wrap table tr .forum__replies:before {
+  margin-right: 7px;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tr .forum__replies:before,
+  .ama__topic-table-wrap table tr .forum__replies:before {
+    margin-right: 0;
   }
 }
 .ama__forum-table-wrap table tr [data-th^=Resolution],
@@ -12828,38 +12891,54 @@ section.ama__forum_comments {
   }
 }
 .ama__forum-table-wrap table tr [data-th=Replies] .bt-content br,
-.ama__topic-table-wrap table tr [data-th=Replies] .bt-content br {
+.ama__forum-table-wrap table tr [data-th^=Comments] .bt-content br,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content br,
+.ama__topic-table-wrap table tr [data-th^=Comments] .bt-content br {
   display: none;
 }
 @media (min-width: 56.25em) {
   .ama__forum-table-wrap table tr [data-th=Replies] .bt-content br,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content br {
+  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content br,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content br,
+  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content br {
     display: initial;
   }
 }
 .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a,
-.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a {
+.ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a,
+.ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a {
   padding: 0 14px;
 }
 .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:before,
-.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before {
+.ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:before,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before,
+.ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:before {
   content: "(";
 }
 .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:after,
-.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after {
+.ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:after,
+.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after,
+.ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:after {
   content: ")";
 }
 @media (min-width: 56.25em) {
   .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a {
+  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a,
+  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a {
     padding: 0;
   }
   .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:before,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before {
+  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:before,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before,
+  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:before {
     content: "";
   }
   .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:after,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after {
+  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:after,
+  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after,
+  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:after {
     content: "";
   }
 }
@@ -12987,7 +13066,6 @@ table[id^=forum-topic] td.forum_replies a {
 .ama__topic-table-wrap th:first-child {
   font-weight: 600;
   font-size: 26px;
-  text-transform: uppercase;
 }
 .ama__topic-table-wrap .forum__topic {
   width: 100%;
@@ -14788,6 +14866,20 @@ span.ama__inline-bio__link:focus-visible {
     rotate: 180deg;
     -webkit-transition: rotate 0.2s ease-out;
     transition: rotate 0.2s ease-out;
+  }
+}
+.ama_page_grouping_news .links .ama_page_grouping_title .active-mobile {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #46166B;
+  padding: 7px 0 0 0;
+  text-decoration: none;
+}
+@media (min-width: 37.5em) {
+  .ama_page_grouping_news .links .ama_page_grouping_title .active-mobile {
+    display: none;
   }
 }
 .ama_page_grouping_news .links .link-list {
@@ -27693,6 +27785,9 @@ a.ama__membership:hover {
   display: none;
   background: #000000;
 }
+.ama__product-nav .container {
+  min-height: 0;
+}
 @media (min-width: 56.25em) {
   .ama__product-nav {
     display: block;
@@ -27738,6 +27833,9 @@ a.ama__membership:hover {
 .ama__product-nav li a:focus-visible {
   outline: 2px solid #80d4f5;
   outline-offset: 3px;
+}
+.ama__product-nav li:first-child > a {
+  margin-left: 0;
 }
 
 .ama__promo-group {
@@ -30805,6 +30903,17 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
+}
+
+.news_article .ama__layout--two-column--right__sidebar--secondary {
+  padding-left: 0;
+  grid-column: unset;
+  grid-row: unset;
+}
+@media (min-width: 37.5em) {
+  .news_article .ama__layout--two-column--right__sidebar--secondary {
+    padding-left: 21px;
+  }
 }
 
 .ama__layout--two-column--left {
