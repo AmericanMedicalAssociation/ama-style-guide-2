@@ -11,7 +11,7 @@ If you have access to approved developer tools such as AMA co-pilot, ask it the 
 
 
 **Jira Ticket**
-- [EWL-XXXX: Ticket Title](https://issues.ama-assn.org/browse/EWL-XXXX)
+- [EWL-XXXX: Ticket Title](https://ama-it.atlassian.net/browse/EWL-XXXX)
 
 
 ## Description
