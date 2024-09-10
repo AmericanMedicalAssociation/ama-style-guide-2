@@ -21,7 +21,8 @@
     }
 
     &__text {
-        font-weight: $font-weight-bold;
+        // Override main font.
+        @include type($myriad-pro, $font-weight-bold);
         margin-bottom: 0;
         margin-right: 25px;
 
