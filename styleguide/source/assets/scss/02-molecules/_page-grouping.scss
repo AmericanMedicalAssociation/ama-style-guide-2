@@ -171,6 +171,19 @@
           }
         }
       }
+
+      .active-mobile {
+        display: block;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: $font-weight-regular;
+        color: $purple;
+        padding: 7px 0 0 0;
+        text-decoration: none;
+        @include breakpoint($bp-small) {
+          display: none;
+        }
+      }
     }
 
     .link-list {

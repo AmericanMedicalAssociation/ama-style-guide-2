@@ -9,7 +9,13 @@
         .tablesort {
           position: absolute;
           right: -17px;
-          top: 4px;
+          top: 7px;
+          &.tablesort--desc {
+            background-image: url("../icons/svg/twistie-up.svg");
+          }
+          &.tablesort--asc {
+            background-image: url("../icons/svg/twistie-down.svg");
+          }
         }
       }
     }
