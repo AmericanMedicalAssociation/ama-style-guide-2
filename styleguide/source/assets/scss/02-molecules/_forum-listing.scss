@@ -103,6 +103,7 @@
 
       [data-th="Topics"],
       [data-th="Item Type"],
+      [data-th="Item Type by Item Type"],
       [data-th="Posts"],
       [data-th^="Resolution"],
       [data-th^="Comments"],
@@ -288,7 +289,9 @@ table[id^="forum-topic"] {
     tr {
       border-top: 1px solid #979797;
       &:not(:first-child) {
-        td[data-th="Topic"] {
+        td[data-th="Topic"],
+        td[data-th="Item Type by Item Type"],
+        td[data-th="Item Type"]{
           &:before {
             display: none;
             @include breakpoint($bp-large) {
