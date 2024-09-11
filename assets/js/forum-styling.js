@@ -28,10 +28,11 @@
                             
                             // Store the original data-th value
                             originalDataThValues[cell] = dataTh;
-                            
                             // Remove "Sort ascending" and "Sort descending" and trim
                             var newDataTh = dataTh.replace('Sort ascending', '').replace('Sort descending', '').trim();
-                            
+                            if(newDataTh === 'Item Type by Item Type') {
+                                newDataTh = 'Item Type';
+                            }
                              // Set the new data-th value
                             cell.setAttribute('data-th', newDataTh);
                             

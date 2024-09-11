@@ -6906,7 +6906,11 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .ama__alert__wrap {
   opacity: 0;
   min-height: unset;
-  padding-right: 8.5px;
+}
+@media (min-width: 37.5em) {
+  .ama__alert__wrap {
+    padding-right: 8.5px;
+  }
 }
 .ama__alert__text {
   margin-bottom: 0;
@@ -6962,6 +6966,7 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 @media (min-width: 37.5em) {
   .ama__alert__text.desktop {
     display: block;
+    padding-right: 14px;
   }
 }
 @media (min-width: 37.5em) {
@@ -6982,7 +6987,8 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   -ms-flex-item-align: start;
   -ms-grid-row-align: start;
   align-self: start;
-  margin-right: -9px;
+  margin-right: 0;
+  padding-top: 1px;
 }
 @media (min-width: 37.5em) {
   .ama__alert__close.mobile {
@@ -12778,6 +12784,7 @@ section.ama__forum_comments h2.pinned-comment + div {
 }
 .ama__forum-table-wrap table tr [data-th=Topics] span,
 .ama__forum-table-wrap table tr [data-th="Item Type"] span,
+.ama__forum-table-wrap table tr [data-th="Item Type by Item Type"] span,
 .ama__forum-table-wrap table tr [data-th=Posts] span,
 .ama__forum-table-wrap table tr [data-th^=Resolution] span,
 .ama__forum-table-wrap table tr [data-th^=Comments] span,
@@ -12787,6 +12794,7 @@ section.ama__forum_comments h2.pinned-comment + div {
 .ama__forum-table-wrap table tr [data-th="Last reply"] span,
 .ama__topic-table-wrap table tr [data-th=Topics] span,
 .ama__topic-table-wrap table tr [data-th="Item Type"] span,
+.ama__topic-table-wrap table tr [data-th="Item Type by Item Type"] span,
 .ama__topic-table-wrap table tr [data-th=Posts] span,
 .ama__topic-table-wrap table tr [data-th^=Resolution] span,
 .ama__topic-table-wrap table tr [data-th^=Comments] span,
@@ -12800,6 +12808,7 @@ section.ama__forum_comments h2.pinned-comment + div {
 @media (min-width: 75em) {
   .ama__forum-table-wrap table tr [data-th=Topics] span,
   .ama__forum-table-wrap table tr [data-th="Item Type"] span,
+  .ama__forum-table-wrap table tr [data-th="Item Type by Item Type"] span,
   .ama__forum-table-wrap table tr [data-th=Posts] span,
   .ama__forum-table-wrap table tr [data-th^=Resolution] span,
   .ama__forum-table-wrap table tr [data-th^=Comments] span,
@@ -12809,6 +12818,7 @@ section.ama__forum_comments h2.pinned-comment + div {
   .ama__forum-table-wrap table tr [data-th="Last reply"] span,
   .ama__topic-table-wrap table tr [data-th=Topics] span,
   .ama__topic-table-wrap table tr [data-th="Item Type"] span,
+  .ama__topic-table-wrap table tr [data-th="Item Type by Item Type"] span,
   .ama__topic-table-wrap table tr [data-th=Posts] span,
   .ama__topic-table-wrap table tr [data-th^=Resolution] span,
   .ama__topic-table-wrap table tr [data-th^=Comments] span,
@@ -13048,11 +13058,15 @@ table[id^=forum-topic] td.forum_replies a {
 .ama__topic-table-wrap table tr {
   border-top: 1px solid #979797;
 }
-.ama__topic-table-wrap table tr:not(:first-child) td[data-th=Topic]:before {
+.ama__topic-table-wrap table tr:not(:first-child) td[data-th=Topic]:before,
+.ama__topic-table-wrap table tr:not(:first-child) td[data-th="Item Type by Item Type"]:before,
+.ama__topic-table-wrap table tr:not(:first-child) td[data-th="Item Type"]:before {
   display: none;
 }
 @media (min-width: 75em) {
-  .ama__topic-table-wrap table tr:not(:first-child) td[data-th=Topic]:before {
+  .ama__topic-table-wrap table tr:not(:first-child) td[data-th=Topic]:before,
+  .ama__topic-table-wrap table tr:not(:first-child) td[data-th="Item Type by Item Type"]:before,
+  .ama__topic-table-wrap table tr:not(:first-child) td[data-th="Item Type"]:before {
     display: inline;
   }
 }
