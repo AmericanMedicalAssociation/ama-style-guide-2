@@ -12,7 +12,9 @@
     &__wrap {
         opacity: 0;
         min-height: unset;
-        padding-right: 8.5px;
+        @include breakpoint($bp-small) {
+            padding-right: 8.5px;
+        }
     }
     &__text {
         margin-bottom: 0;
@@ -57,6 +59,7 @@
             display: none;
             @include breakpoint($bp-small) {
                 display: block;
+                padding-right: 14px;
             }
             a {
                 @include breakpoint($bp-small) {
@@ -75,7 +78,8 @@
             width: 27px;
             display: block;
             align-self: start;
-            margin-right: -9px;
+            margin-right: 0;
+            padding-top: 1px;
             @include breakpoint($bp-small) {
                 display: none;
             }
