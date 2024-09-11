@@ -647,6 +647,11 @@ a.ama__membership {
 
   .ama__membership-content {
     background: none;
+
+    li {
+      // Override main ul/ol font.
+      @include type($myriad-pro, $font-weight-regular);
+    }
   }
 
   .ama__membership_cta_container {
