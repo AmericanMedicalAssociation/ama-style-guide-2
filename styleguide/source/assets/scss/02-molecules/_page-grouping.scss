@@ -99,7 +99,7 @@
   }
 }
 
-.ama__layout--two-column--right__sidebar--primary .ama_page_grouping_news {
+.layout__region--rail_left .ama_page_grouping_news {
   margin: -14px -15px 27px;
   padding: 0 15px;
   // To dislay box shadow only when open
@@ -113,14 +113,8 @@
   @include breakpoint($bp-small) {
     margin: 0 0 28px 0;
     padding: 0;
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 83px;
     border-bottom: 1px solid $gray-30;
     box-shadow: none;
-  }
-  @include breakpoint($bp-med) {
-    top: 123px;
   }
 
   .links {
