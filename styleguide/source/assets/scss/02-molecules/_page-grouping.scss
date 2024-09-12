@@ -89,17 +89,7 @@
 }
 
 //News Article Page Grouping Block
-
-// Sticky top offset for logged in user w/ admin bar
-@include breakpoint($bp-small) {
-  body.toolbar-horizontal {
-    .ama_page_grouping_news {
-      top: 202px;
-    }
-  }
-}
-
-.ama_page_grouping_news {
+.layout__region--rail_left .ama_page_grouping_news {
   margin: -14px -15px 27px;
   padding: 0 15px;
   // To dislay box shadow only when open
@@ -107,19 +97,14 @@
   @include breakpoint($bp-small max-width) {
     &:has(.open) {
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      background: white;
     }
   }
   @include breakpoint($bp-small) {
     margin: 0 0 28px 0;
     padding: 0;
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 83px;
     border-bottom: 1px solid $gray-30;
     box-shadow: none;
-  }
-  @include breakpoint($bp-med) {
-    top: 123px;
   }
 
   .links {
@@ -288,16 +273,5 @@
 
       }
     }
-  }
-}
-
-// Sticky functionality for News Article Page Grouping Block on mobile
-.ama__layout--two-column--left__page-content.ama__news {
-  @include breakpoint($bp-small max-width) {
-    background: $white;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 62px;
-    z-index: 500;
   }
 }

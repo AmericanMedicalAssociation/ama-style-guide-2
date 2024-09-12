@@ -104,7 +104,6 @@
   &--primary {
     @include gutter($padding-top-full...);
     grid-column: 1 / 5;
-    grid-row: 1;
 
     @include breakpoint($bp-small min-width) {
       grid-column: 1;
@@ -127,16 +126,6 @@
       grid-column: 1 / 4;
     }
   } // end aside.secondary
-}
-
-// Article only ovveride
-.ama__news {
-  grid-column: 1 / 4;
-  grid-row: 2;
-  @include breakpoint($bp-small) {
-    grid-row: 2;
-    grid-column: 2 / 3;
-  }
 }
 
 .news_article {
