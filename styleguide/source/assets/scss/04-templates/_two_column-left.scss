@@ -104,6 +104,16 @@
   }
 } // end article
 
+// Sticky top offset for logged in user w/ admin bar
+@include breakpoint($bp-small) {
+  body.toolbar-horizontal {
+    .ama__layout--two-column--left.news_article > aside {
+      top: 180px;
+    }
+  }
+}
+
+
 .ama__layout--two-column--left__sidebar {
   &--primary {
     @include child-top-gutters($gutter);
