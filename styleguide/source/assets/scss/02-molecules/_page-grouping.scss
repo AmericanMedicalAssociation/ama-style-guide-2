@@ -99,7 +99,7 @@
   }
 }
 
-.ama_page_grouping_news {
+.ama__layout--two-column--right__sidebar--primary .ama_page_grouping_news {
   margin: -14px -15px 27px;
   padding: 0 15px;
   // To dislay box shadow only when open
@@ -107,6 +107,7 @@
   @include breakpoint($bp-small max-width) {
     &:has(.open) {
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      background: white;
     }
   }
   @include breakpoint($bp-small) {
@@ -288,16 +289,5 @@
 
       }
     }
-  }
-}
-
-// Sticky functionality for News Article Page Grouping Block on mobile
-.ama__layout--two-column--left__page-content.ama__news {
-  @include breakpoint($bp-small max-width) {
-    background: $white;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 62px;
-    z-index: 500;
   }
 }
