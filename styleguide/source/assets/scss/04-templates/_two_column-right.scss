@@ -6,6 +6,10 @@
   overflow: hidden;
   align-content: flex-start;
 
+  &.no_grouper {
+    grid-template-columns: 6fr 2.5fr;
+  }
+
   .ama__news {
     padding-right: 0;
     padding-top: 0;
@@ -17,6 +21,7 @@
     grid-column: 1 / 5;
     grid-row: 1;
     @include breakpoint($bp-small) {
+      grid-column: 1 / 2;
       padding: 0;
     }
   }
@@ -27,8 +32,6 @@
   grid-template-rows: auto auto auto;
   min-height: 30em;
   overflow: hidden;
-
-  &.news_article
 
   .layout__region--main {
     min-height: 500px;
