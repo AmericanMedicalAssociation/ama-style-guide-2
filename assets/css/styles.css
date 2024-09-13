@@ -12695,6 +12695,22 @@ section.ama__forum_comments h2.pinned-comment + div {
     display: block;
   }
 }
+.ama__forum-table-wrap table tbody tr td[data-th="Item Type"]:before, .ama__forum-table-wrap table tbody tr td[data-th="Item Type by Item Type"]:before,
+.ama__topic-table-wrap table tbody tr td[data-th="Item Type"]:before,
+.ama__topic-table-wrap table tbody tr td[data-th="Item Type by Item Type"]:before {
+  display: block;
+}
+@media (min-width: 75em) {
+  .ama__forum-table-wrap table tbody tr td[data-th="Item Type"]:before, .ama__forum-table-wrap table tbody tr td[data-th="Item Type by Item Type"]:before,
+  .ama__topic-table-wrap table tbody tr td[data-th="Item Type"]:before,
+  .ama__topic-table-wrap table tbody tr td[data-th="Item Type by Item Type"]:before {
+    display: inline-block;
+  }
+}
+.ama__forum-table-wrap table tbody tr td[data-th=Recent]:before,
+.ama__topic-table-wrap table tbody tr td[data-th=Recent]:before {
+  margin-right: 6px;
+}
 .ama__forum-table-wrap table tr:last-child td,
 .ama__topic-table-wrap table tr:last-child td {
   border-bottom: none;
