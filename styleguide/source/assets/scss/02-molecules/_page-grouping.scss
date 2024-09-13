@@ -176,15 +176,15 @@
       clear: both;
       overflow: hidden;
       max-height: 0;
-      transition: max-height .2s ease-out;
+      // transition: max-height .2s ease-out;
       // There are a lot of particulars with the opened link list on mobile
       @include breakpoint($bp-small max-width) {
         &.open {
           display: block;
           max-height: 247px;
-          padding: 21px 0 12px;
-          transition: max-height .2s ease-out;
+          // transition: max-height .2s ease-out;
           overflow-y: scroll;
+          padding: 21px 0 12px;
           scrollbar-width: thin;
           scrollbar-color: #aaaaaa #f1f1f1;      
           &::-webkit-scrollbar {
