@@ -91,10 +91,16 @@
         @include gutter($padding-left-full...);
       }
     }
+
+    &.no_grouper {
+      grid-template-columns: 6fr 2.5fr;
+    }
+
     .ama__news.ama__layout--two-column--right_no_grouper {
       grid-column: 1 / 5;
       grid-row: 1;
       @include breakpoint($bp-small) {
+        grid-column: 1 / 2;
         padding: 0;
       }
     }
