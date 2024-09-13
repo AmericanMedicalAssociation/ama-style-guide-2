@@ -36,6 +36,24 @@
           }
         }
       }
+      tr {
+        td {
+          &[data-th="Item Type"],
+          &[data-th="Item Type by Item Type"] {
+            &:before {
+              display: block;
+              @include breakpoint($bp-large) {
+                display: inline-block;
+              }
+            }
+          }
+          &[data-th="Recent"] {
+            &:before {
+              margin-right: 6px;
+            }
+          }
+        }
+      }
     }
     tr:last-child td {
       border-bottom: none;

@@ -33,6 +33,12 @@
                             if(newDataTh === 'Item Type by Item Type') {
                                 newDataTh = 'Item Type';
                             }
+                            if(newDataTh === 'Comment by Comment') {
+                                newDataTh = 'Comment';
+                            }
+                            if(newDataTh === 'Recent by Recent') {
+                                newDataTh = 'Recent';
+                            }
                              // Set the new data-th value
                             cell.setAttribute('data-th', newDataTh);
                             
