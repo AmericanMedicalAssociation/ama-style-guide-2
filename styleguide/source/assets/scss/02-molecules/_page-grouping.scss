@@ -240,8 +240,7 @@
           position: relative;
         }
         a {
-          font-family: "myriad-pro-light", "Helvetica", "Arial", "Open Sans", sans-serif;
-          font-weight: 300;
+          @include type($myriad-pro, $font-weight-light);
           color: $gating-block-link;
           &:hover {
             border-bottom: 1px solid $gating-block-link;
