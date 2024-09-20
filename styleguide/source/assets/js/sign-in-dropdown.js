@@ -12,10 +12,10 @@
                 parentElement.unbind('click').click(function(e){
                     e.stopPropagation();
                     if (isDropdownOpen) {
-                        $(menuElement).slideUp();
+                        $(menuElement).hide();
                         $(parentElement).removeClass('open');
                     } else {
-                        $(menuElement).slideDown();
+                        $(menuElement).show();
                         $(parentElement).addClass('open');
                     }
                     isDropdownOpen = !isDropdownOpen;
@@ -29,7 +29,7 @@
                 $(document).click(function(e) {
                     // if the target of the click isn't the container nor a descendant of the container
                     if (!parentElement.is(e.target) && parentElement.has(e.target).length === 0) {
-                        $(menuElement).slideUp();
+                        $(menuElement).hide();
                         $(parentElement).removeClass('open');
                         isDropdownOpen = false;
                     }
@@ -40,7 +40,7 @@
                     clearTimeout(parentElement.timeoutId);
                 }).mouseleave(function(){
                     parentElement.timeoutId = setTimeout(function(){
-                        $(menuElement).slideUp();
+                        $(menuElement).hide();
                         $(parentElement).removeClass('open');
                         isDropdownOpen = false;
                     }, 2000);
