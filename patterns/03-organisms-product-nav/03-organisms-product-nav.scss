@@ -1,7 +1,56 @@
 .ama__product-nav {
-  display: none;
   background: $black;
 
+  .product-menu-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: $white;
+    padding: 10px 0;
+    padding-right: 15px;
+    width: 100%;
+    cursor: pointer;
+    @include breakpoint($bp-med) {
+      display: none;
+    }
+
+    &:after {
+      content: "";
+      background: url('/themes/custom/ama_one/icons/svg/drop-arrow-down.svg') no-repeat 99% center/20px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  .dropdown-container {
+    position: absolute;
+    z-index: -1;
+    height: 0;
+    background-color: $black;
+    width:100%;
+    border-top: 1px solid $white;
+    overflow-y: hidden;
+    @include breakpoint($bp-med) {
+      position: static;
+      height: auto;
+      border: 0;
+    }
+  }
+  &.expanded {
+    .product-menu-title {
+      &:after {
+        content: "";
+        background: url('/themes/custom/ama_one/icons/svg/drop-arrow-up.svg') no-repeat 99% center/20px;
+      }
+    }
+    .dropdown-container {
+      z-index: 600;
+      height: auto;
+      max-height: 262px;
+      overflow-y: auto;
+      scrollbar-color: #f1f1f1 black;
+      scrollbar-width: thin;
+    }
+  }
   .container {
     min-height: 0;
   }
@@ -21,15 +70,24 @@
 
   li {
     list-style: none;
-    line-height: 1;
+    width: 100%;
+    @include breakpoint($bp-med) {
+      width:auto;
+      line-height: 1;
+    }
 
     a {
       margin: 0 (calc($gutter / 2));
       z-index: 99;
-      line-height: 1;
-      font-size: 12px;
+      font-size: 16px;
+      line-height: 24px;
+      margin-left: 0;
+      padding: 7px 0;
+      display: block;
       @include breakpoint($bp-med) {
-        line-height: 27px;
+        padding: 14px 0;
+        line-height: 1px;
+        font-size: 12px;
       }
       @include breakpoint($bp-large) {
         font-size: 14px;
@@ -42,4 +100,9 @@
       margin-left: 0;
     }
   }
+}
+.ama__product-nav-catcher {
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
