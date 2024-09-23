@@ -2,14 +2,23 @@
   background: $black;
 
   .product-menu-title {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     font-size: 16px;
     color: $white;
     padding: 10px 0;
+    padding-right: 15px;
     width: 100%;
     cursor: pointer;
     @include breakpoint($bp-med) {
       display: none;
+    }
+
+    &:after {
+      content: "";
+      background: url('/themes/custom/ama_one/icons/svg/drop-arrow-down.svg') no-repeat 99% center/20px;
+      height: 30px;
+      width: 30px;
     }
   }
   .dropdown-container {
@@ -27,6 +36,12 @@
     }
   }
   &.expanded {
+    .product-menu-title {
+      &:after {
+        content: "";
+        background: url('/themes/custom/ama_one/icons/svg/drop-arrow-up.svg') no-repeat 99% center/20px;
+      }
+    }
     .dropdown-container {
       z-index: 600;
       height: auto;
