@@ -178,6 +178,22 @@
 }
 
 .ama__news-article {
+  // Set scroll positioning for anchor links targeting headings
+  h2[id],
+  h3[id] {
+    scroll-margin-top: 160px;
+    @include breakpoint($bp-small) {
+      scroll-margin-top: 110px;
+    }
+  }
+  // Update margin for logged in users
+  &.toolbar-horizontal {
+    h2[id],
+    h3[id] {
+      scroll-margin-top: 180px; 
+    }
+  }
+
   //give the content column of the news article a tob border
   .ama__layout--two-column--right {
     &__sidebar--secondary {
