@@ -3,7 +3,6 @@
   background-color: $purple;
   display: flex;
   justify-content: center;
-  color: $white;
   height: 60px;
   width: 70px;
   align-items: center;
@@ -21,86 +20,132 @@
   }
 
   @include breakpoint($bp-med) {
-    min-width: 100px;
-    width: auto;
-  }
-
-  @include breakpoint($bp-med) {
     min-width: 135px;
+    width: auto;
     border-left: 0;
   }
 
-  &__user-icon {
-    background-size: 24px 25px;
-    min-height: 24px;
-    min-width: 25px;
-    max-height: 24px;
-    max-width: 25px;
+  &__trigger {
+    display: flex;
+    align-content: center;
+    color: $white;
+    cursor: pointer;
+    outline: none;
 
-    @include breakpoint($bp-small) {
-      @include gutter($margin-left-half...);
+    &.open &__icon {
+      &__arrow svg {
+        transform: rotate(180deg);
+      }
     }
-  }
 
-  &__text {
-    display: none;
+    &__icon {
+      display: inline-block;
+      fill: $white;
 
-    @include breakpoint($bp-large) {
-      @include gutter($margin-left-half...);
-      flex-grow: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
+      &__user {
+        background-size: 24px 25px;
+        min-height: 24px;
+        min-width: 25px;
+        max-height: 24px;
+        max-width: 25px;
+
+        @include breakpoint($bp-large) {
+          display: none;
+        }
+        @include breakpoint($bp-small) {
+          @include gutter($padding-left-quarter...);
+        }
+      }
+
+      &__arrow {
+        display: none;
+        @include gutter($padding-left-quarter...);
+        @include gutter($padding-right-quarter...);
+
+        @include breakpoint($bp-large) {
+          display: block;
+        }
+      }
     }
-  }
 
-  &__caret {
-    display: none;
+    &__text {
+      display: none;
+      text-align: right;
 
-    @include breakpoint($bp-small) {
-      @include gutter($margin-left-half...);
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 10px solid $white;
+      @include breakpoint($bp-large) {
+        @include gutter($margin-left-half...);
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
     }
   }
 
   &__menu {
     @include gutter($padding-left-half...);
     @include gutter($padding-right-half...);
+    @include gutter($padding-top-half...);
+    @include gutter($padding-bottom-half...);
     position: absolute;
-    top: 62px;
+    top: 63px;
     right: 0;
-    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
     background-color: $white;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid $gray-7;
+    border-top: 0;
     color: $black;
-    text-align: right;
+    text-align: left;
     display: none;
-    min-width: 200px;
+    min-width: 210px;
+    max-width: 240px;
+
     @include breakpoint($bp-small) {
-      top: 48px;
+      top: 49px;
     }
 
     li {
       list-style: none;
+      @include gutter($padding-top-quarter...);
+      @include gutter($padding-bottom-quarter...);
 
       a {
         display: block;
       }
     }
 
-    &__group {
-      @include gutter($padding-top-half...);
-      @include gutter($padding-bottom-half...);
-      border-bottom: 1px solid $gray-50;
+    &--open {
+      display: block;
+    }
 
-      &:last-child {
-        border-bottom: 0;
+    &__header {
+      @include gutter($padding-top-quarter...);
+      @include gutter($padding-bottom-quarter...);
+      @include font-size($h5-font-sizes--homepage);
+      @include type($kepler-std, $font-weight-regular);
+      line-height: 24px;
+    }
+
+    &__group {
+      @include gutter($padding-top-quarter...);
+      @include gutter($padding-bottom-quarter...);
+    }
+
+    &__button {
+      &--sign-in {
+        text-transform: none;
+        border-radius: 6px;
+        height: 44px;
+        max-height: 44px;
+        @include gutter($padding-top-quarter...);
+        @include gutter($padding-bottom-quarter...);
       }
+    }
+
+    &__link {
+      text-align: center;
     }
   }
 }
