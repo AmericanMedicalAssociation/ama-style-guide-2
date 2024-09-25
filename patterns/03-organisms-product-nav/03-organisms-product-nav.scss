@@ -13,6 +13,16 @@
     @include breakpoint($bp-med) {
       display: none;
     }
+    @include button_focus_outline_light;
+
+    &:focus-visible {
+      outline-offset: -5px;
+      padding-left: 0;
+      margin-left: -15px;
+      text-indent: 15px;
+      padding-right: 10px;
+
+    }
 
     &:after {
       content: "";
@@ -34,6 +44,14 @@
       height: auto;
       border: 0;
     }
+    &:focus-within {
+      z-index: 600;
+      height: auto;
+      max-height: 262px;
+      overflow-y: auto;
+      scrollbar-color: #f1f1f1 black;
+      scrollbar-width: thin;
+    }
   }
   &.expanded {
     .product-menu-title {
@@ -49,6 +67,10 @@
       overflow-y: auto;
       scrollbar-color: #f1f1f1 black;
       scrollbar-width: thin;
+
+      ul {
+        width: 75%;
+      }
     }
   }
   .container {

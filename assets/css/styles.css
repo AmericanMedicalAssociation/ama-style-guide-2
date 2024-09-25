@@ -13047,6 +13047,7 @@ table[id^=forum-topic] thead th {
   line-height: 19px;
 }
 table[id^=forum-topic] thead th a {
+  white-space: nowrap;
   position: relative;
 }
 table[id^=forum-topic] thead th a:after {
@@ -22095,14 +22096,6 @@ a:focus-visible.ama__hub-card {
     padding-right: 15px;
   }
 }
-.annual-interim__right .active_links-mg {
-  padding-left: 0;
-}
-@media (min-width: 75em) {
-  .annual-interim__right .active_links-mg {
-    padding-left: 19px;
-  }
-}
 @media (max-width: 37.5em) {
   .annual-interim__right .hod {
     margin-bottom: 35px;
@@ -27821,6 +27814,17 @@ a.ama__membership:hover {
     display: none;
   }
 }
+.ama__product-nav .product-menu-title:focus-visible {
+  outline: 2px solid #80d4f5;
+  outline-offset: 3px;
+}
+.ama__product-nav .product-menu-title:focus-visible {
+  outline-offset: -5px;
+  padding-left: 0;
+  margin-left: -15px;
+  text-indent: 15px;
+  padding-right: 10px;
+}
 .ama__product-nav .product-menu-title:after {
   content: "";
   background: url("/themes/custom/ama_one/icons/svg/drop-arrow-down.svg") no-repeat 99% center/20px;
@@ -27843,6 +27847,14 @@ a.ama__membership:hover {
     border: 0;
   }
 }
+.ama__product-nav .dropdown-container:focus-within {
+  z-index: 600;
+  height: auto;
+  max-height: 262px;
+  overflow-y: auto;
+  scrollbar-color: #f1f1f1 black;
+  scrollbar-width: thin;
+}
 .ama__product-nav.expanded .product-menu-title:after {
   content: "";
   background: url("/themes/custom/ama_one/icons/svg/drop-arrow-up.svg") no-repeat 99% center/20px;
@@ -27854,6 +27866,9 @@ a.ama__membership:hover {
   overflow-y: auto;
   scrollbar-color: #f1f1f1 black;
   scrollbar-width: thin;
+}
+.ama__product-nav.expanded .dropdown-container ul {
+  width: 75%;
 }
 .ama__product-nav .container {
   min-height: 0;
