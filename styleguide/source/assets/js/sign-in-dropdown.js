@@ -73,7 +73,7 @@
           $signInDropdownMenu.addClass('ama__sign-in-dropdown__menu--open');
   
           setTimeout(function () {
-            Cookies.set('signInCta', '1', { expires: 1 });
+            Cookies.set('signInCta', '1');
             $signInDropdownMenu.removeClass('ama__sign-in-dropdown__menu--open');
           }, 5000);
         } else {
