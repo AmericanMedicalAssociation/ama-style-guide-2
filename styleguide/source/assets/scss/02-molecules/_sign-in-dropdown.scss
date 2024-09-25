@@ -31,16 +31,18 @@
     color: $white;
     cursor: pointer;
     outline: none;
-
+    
     &.open &__icon {
       &__arrow svg {
         transform: rotate(180deg);
+        transition: transform .3s ease;
       }
     }
 
     &__icon {
       display: inline-block;
       fill: $white;
+
 
       &__user {
         background-size: 24px 25px;
@@ -61,7 +63,12 @@
         display: none;
         @include gutter($padding-left-quarter...);
         @include gutter($padding-right-quarter...);
-
+        
+        svg {
+          transform: rotate(0deg);
+          transition: transform .3s ease;
+        }
+        
         @include breakpoint($bp-large) {
           display: block;
         }
