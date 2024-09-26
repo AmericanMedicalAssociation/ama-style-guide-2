@@ -177,23 +177,11 @@
   }
 }
 
-article.ama__news .ckeditor-accordion-container > dl dt > a > h2 {
-  scroll-margin-top: 210px;
-  @include breakpoint($bp-small) {
-    scroll-margin-top: 110px;
-  }
-}
-
-.toolbar-horizontal {
-  article.ama__news .ckeditor-accordion-container > dl dt > a > h2 {
-    scroll-margin-top: 180px; 
-  }
-}
-
 .ama__news-article {
   // Set scroll positioning for anchor links targeting headings
   h2[id],
-  h3[id] {
+  h3[id],
+  .ckeditor-accordion-container > dl dt > a > h2 {
     scroll-margin-top: 210px;
     @include breakpoint($bp-small) {
       scroll-margin-top: 110px;
@@ -202,7 +190,8 @@ article.ama__news .ckeditor-accordion-container > dl dt > a > h2 {
   // Update margin for logged in users
   &.toolbar-horizontal {
     h2[id],
-    h3[id] {
+    h3[id],
+    .ckeditor-accordion-container > dl dt > a > h2 {
       scroll-margin-top: 180px; 
     }
   }
