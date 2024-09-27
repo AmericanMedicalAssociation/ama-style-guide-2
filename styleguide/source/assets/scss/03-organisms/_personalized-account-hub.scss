@@ -1,0 +1,82 @@
+$card-width-mobile: 85px;
+$card-width: 150px;
+
+$gap-lg: 32px;
+$gap-md: 24px;
+$gap-sm: 16px;
+$gap-xs: 8px;
+
+.ama__personalized-account-hub {
+    display: flex;
+    gap: $gap-md;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid $gray-7;
+    box-shadow: 0px 2px 4px -2px #1018280F;
+    box-shadow: 0px 4px 8px -2px #1018281A;
+    @include gutter-all($padding-all-full...);    
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+}
+
+.ama__personalized-account-info {
+    display: flex;    
+    gap: $gap-xs;
+    flex-direction: column;
+    
+    @include breakpoint($bp-small) {
+        gap: $gap-md;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__card {
+        &__image {
+            width: $card-width-mobile;
+            @include breakpoint($bp-small) {
+                width: $card-width;
+            }
+        }   
+    }
+
+    &__profile {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: $gap-sm;        
+    }
+
+    &__name {
+        @include type($myriad-pro, $font-weight-truebold);
+        @include font-size($h2-font-sizes);
+        line-height: normal;
+    }
+
+    &__subtitle {
+        @include type($myriad-pro, $font-weight-light);
+        letter-spacing: 0.5px;
+        
+        @include font-size($h3-font-sizes--homepage);
+        color: $gray-64;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;        
+        gap: $gap-xs;
+
+        @include breakpoint($bp-small) {            
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &__divider {
+            display: none;
+            color: $gray-20;
+            @include gutter($padding-left-quarter...);
+            @include gutter($padding-right-quarter...);
+            @include breakpoint($bp-small) {
+                display: block;
+            }
+        }
+    }
+
+}
