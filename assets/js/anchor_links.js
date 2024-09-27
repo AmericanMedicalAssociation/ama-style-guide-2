@@ -7,7 +7,7 @@
           // Determine the offset based on the presence of the toolbar-horizontal class
           var offset;
           if ($(window).width() < 601) {
-            offset = 160;
+            offset = 210;
           } else {
             offset = $('body').hasClass('toolbar-horizontal') ? 180 : 110;
           }

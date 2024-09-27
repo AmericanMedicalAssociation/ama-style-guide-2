@@ -12816,6 +12816,7 @@ section.ama__forum_comments h2.pinned-comment + div {
 .ama__forum-table-wrap table tr [data-th=Posts] span,
 .ama__forum-table-wrap table tr [data-th^=Resolution] span,
 .ama__forum-table-wrap table tr [data-th^=Comments] span,
+.ama__forum-table-wrap table tr [data-th^=Comment] span,
 .ama__forum-table-wrap table tr [data-th^=Report] span,
 .ama__forum-table-wrap table tr [data-th=Replies] span,
 .ama__forum-table-wrap table tr [data-th="Last post"] span,
@@ -12827,6 +12828,7 @@ section.ama__forum_comments h2.pinned-comment + div {
 .ama__topic-table-wrap table tr [data-th=Posts] span,
 .ama__topic-table-wrap table tr [data-th^=Resolution] span,
 .ama__topic-table-wrap table tr [data-th^=Comments] span,
+.ama__topic-table-wrap table tr [data-th^=Comment] span,
 .ama__topic-table-wrap table tr [data-th^=Report] span,
 .ama__topic-table-wrap table tr [data-th=Replies] span,
 .ama__topic-table-wrap table tr [data-th="Last post"] span,
@@ -12842,6 +12844,7 @@ section.ama__forum_comments h2.pinned-comment + div {
   .ama__forum-table-wrap table tr [data-th=Posts] span,
   .ama__forum-table-wrap table tr [data-th^=Resolution] span,
   .ama__forum-table-wrap table tr [data-th^=Comments] span,
+  .ama__forum-table-wrap table tr [data-th^=Comment] span,
   .ama__forum-table-wrap table tr [data-th^=Report] span,
   .ama__forum-table-wrap table tr [data-th=Replies] span,
   .ama__forum-table-wrap table tr [data-th="Last post"] span,
@@ -12853,6 +12856,7 @@ section.ama__forum_comments h2.pinned-comment + div {
   .ama__topic-table-wrap table tr [data-th=Posts] span,
   .ama__topic-table-wrap table tr [data-th^=Resolution] span,
   .ama__topic-table-wrap table tr [data-th^=Comments] span,
+  .ama__topic-table-wrap table tr [data-th^=Comment] span,
   .ama__topic-table-wrap table tr [data-th^=Report] span,
   .ama__topic-table-wrap table tr [data-th=Replies] span,
   .ama__topic-table-wrap table tr [data-th="Last post"] span,
@@ -13250,6 +13254,22 @@ body.hod-forum table tbody tr td:nth-of-type(3), body.hod-forum table tbody tr t
   body.hod-forum table tbody tr td:nth-of-type(3), body.hod-forum table tbody tr td:nth-of-type(4) {
     width: 10%;
   }
+}
+/* Format 'count new' */
+table a.new-replies {
+  font-weight: 400;
+}
+table a.new-replies span {
+  display: inline-block !important;
+}
+table a.new-replies .count-new {
+  color: #ffffff;
+  background: #0a6eb4;
+  border-radius: 14px;
+  margin-right: 6px;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0 7px;
 }
 #ama__forums #block-pagetitle h1 {
   margin-top: 1.5rem;
@@ -14913,6 +14933,8 @@ span.ama__inline-bio__link:focus-visible {
   color: #46166B;
   padding: 7px 0 0 0;
   text-decoration: none;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 @media (min-width: 37.5em) {
   .layout__region--rail_left .ama_page_grouping_news .links .ama_page_grouping_title .active-mobile {
@@ -31176,7 +31198,7 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   -ms-grid-row-align: start;
   align-self: start;
   padding-top: 0;
-  top: 62px;
+  top: 112px;
   z-index: 500;
 }
 @media (min-width: 37.5em) {
@@ -33709,17 +33731,20 @@ div[role=alert] {
 }
 
 .ama__news-article h2[id],
-.ama__news-article h3[id] {
-  scroll-margin-top: 160px;
+.ama__news-article h3[id],
+.ama__news-article .ckeditor-accordion-container > dl dt > a > h2 {
+  scroll-margin-top: 210px;
 }
 @media (min-width: 37.5em) {
   .ama__news-article h2[id],
-  .ama__news-article h3[id] {
+  .ama__news-article h3[id],
+  .ama__news-article .ckeditor-accordion-container > dl dt > a > h2 {
     scroll-margin-top: 110px;
   }
 }
 .ama__news-article.toolbar-horizontal h2[id],
-.ama__news-article.toolbar-horizontal h3[id] {
+.ama__news-article.toolbar-horizontal h3[id],
+.ama__news-article.toolbar-horizontal .ckeditor-accordion-container > dl dt > a > h2 {
   scroll-margin-top: 180px;
 }
 @media (min-width: 56.25em) {
