@@ -10,7 +10,10 @@ Account info include name, membership info, and member card
 
 ### Variant options
 
-* [TBD](?p=TBD)
+* [General](?p=molecules-personalized-account-info)
+* [Member](?p=molecules-personalized-account-info-member)
+* [Non-Member](?p=molecules-personalized-account-info-non-member)
+* [Non-Physician](?p=molecules-personalized-account-info-non-physician)
 
 ### Variables
 

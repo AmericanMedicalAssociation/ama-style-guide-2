@@ -9,11 +9,21 @@ This block allows for users to see personalized content such as their name, memb
 
 ### Variant options
 
-* [TBD](?p=TBD)
+* [Main](?p=organisms-personalized-account-hub)
 
 ### Variables
 
-~~~json
+~~~
 {
+    "cardSource":  type: string / required,
+    "account": {
+        "name":  type: string / required,
+        "specialty":  type: string / optional
+    },
+    "membership": {
+        "status": type: string / optional ("Valued Member" "Non-Member" or "Non-Physician")
+        "startYear": type: string / optional
+    }
+    
 }
 ~~~
