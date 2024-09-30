@@ -17140,7 +17140,6 @@ a.ama__promo--border:hover {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #ffffff;
   height: 60px;
   width: 70px;
   -webkit-box-align: center;
@@ -17163,38 +17162,89 @@ a.ama__promo--border:hover {
 }
 @media (min-width: 56.25em) {
   .ama__sign-in-dropdown {
-    min-width: 100px;
-    width: auto;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__sign-in-dropdown {
     min-width: 135px;
+    width: auto;
     border-left: 0;
   }
 }
-.ama__sign-in-dropdown__user-icon {
+.ama__sign-in-dropdown__trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+.ama__sign-in-dropdown__trigger.open .ama__sign-in-dropdown__trigger__icon__arrow svg {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.ama__sign-in-dropdown__trigger__icon {
+  display: inline-block;
+  fill: #ffffff;
+}
+.ama__sign-in-dropdown__trigger__icon__user {
   background-size: 24px 25px;
   min-height: 24px;
   min-width: 25px;
   max-height: 24px;
   max-width: 25px;
 }
+@media (min-width: 75em) {
+  .ama__sign-in-dropdown__trigger__icon__user {
+    display: none;
+  }
+}
 @media (min-width: 37.5em) {
-  .ama__sign-in-dropdown__user-icon {
-    margin-left: 10.5px;
+  .ama__sign-in-dropdown__trigger__icon__user {
+    padding-left: 5.25px;
   }
 }
 @media (min-width: 37.5em) and (min-width: 56.25em) {
-  .ama__sign-in-dropdown__user-icon {
-    margin-left: 14px;
+  .ama__sign-in-dropdown__trigger__icon__user {
+    padding-left: 7px;
   }
 }
-.ama__sign-in-dropdown__text {
+.ama__sign-in-dropdown__trigger__icon__arrow {
   display: none;
+  padding-left: 5.25px;
+  padding-right: 5.25px;
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__trigger__icon__arrow {
+    padding-left: 7px;
+  }
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__trigger__icon__arrow {
+    padding-right: 7px;
+  }
+}
+.ama__sign-in-dropdown__trigger__icon__arrow svg {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 @media (min-width: 75em) {
-  .ama__sign-in-dropdown__text {
+  .ama__sign-in-dropdown__trigger__icon__arrow {
+    display: block;
+  }
+}
+.ama__sign-in-dropdown__trigger__text {
+  display: none;
+  text-align: right;
+}
+@media (min-width: 75em) {
+  .ama__sign-in-dropdown__trigger__text {
     margin-left: 10.5px;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -17206,42 +17256,29 @@ a.ama__promo--border:hover {
   }
 }
 @media (min-width: 75em) and (min-width: 56.25em) {
-  .ama__sign-in-dropdown__text {
-    margin-left: 14px;
-  }
-}
-.ama__sign-in-dropdown__caret {
-  display: none;
-}
-@media (min-width: 37.5em) {
-  .ama__sign-in-dropdown__caret {
-    margin-left: 10.5px;
-    display: block;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 10px solid #ffffff;
-  }
-}
-@media (min-width: 37.5em) and (min-width: 56.25em) {
-  .ama__sign-in-dropdown__caret {
+  .ama__sign-in-dropdown__trigger__text {
     margin-left: 14px;
   }
 }
 .ama__sign-in-dropdown__menu {
   padding-left: 10.5px;
   padding-right: 10.5px;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
   position: absolute;
-  top: 62px;
+  top: 63px;
   right: 0;
-  -webkit-box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
+  box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
   background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #EDEDED;
+  border-top: 0;
   color: #000000;
-  text-align: right;
+  text-align: left;
   display: none;
-  min-width: 200px;
+  min-width: 210px;
+  max-width: 240px;
 }
 @media (min-width: 56.25em) {
   .ama__sign-in-dropdown__menu {
@@ -17253,34 +17290,112 @@ a.ama__promo--border:hover {
     padding-right: 14px;
   }
 }
-@media (min-width: 37.5em) {
-  .ama__sign-in-dropdown__menu {
-    top: 48px;
-  }
-}
-.ama__sign-in-dropdown__menu li {
-  list-style: none;
-}
-.ama__sign-in-dropdown__menu li a {
-  display: block;
-}
-.ama__sign-in-dropdown__menu__group {
-  padding-top: 10.5px;
-  padding-bottom: 10.5px;
-  border-bottom: 1px solid #767676;
-}
 @media (min-width: 56.25em) {
-  .ama__sign-in-dropdown__menu__group {
+  .ama__sign-in-dropdown__menu {
     padding-top: 14px;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__sign-in-dropdown__menu__group {
+  .ama__sign-in-dropdown__menu {
     padding-bottom: 14px;
   }
 }
-.ama__sign-in-dropdown__menu__group:last-child {
-  border-bottom: 0;
+@media (min-width: 37.5em) {
+  .ama__sign-in-dropdown__menu {
+    top: 49px;
+  }
+}
+.ama__sign-in-dropdown__menu li {
+  list-style: none;
+  padding-top: 5.25px;
+  padding-bottom: 5.25px;
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu li {
+    padding-top: 7px;
+  }
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu li {
+    padding-bottom: 7px;
+  }
+}
+.ama__sign-in-dropdown__menu li a {
+  display: block;
+}
+.ama__sign-in-dropdown__menu--open {
+  display: block;
+}
+.ama__sign-in-dropdown__menu__header {
+  padding-top: 5.25px;
+  padding-bottom: 5.25px;
+  font-size: 1.1em;
+  line-height: 1.18;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 24px;
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__header {
+    padding-top: 7px;
+  }
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__header {
+    padding-bottom: 7px;
+  }
+}
+@media screen and (min-width: 37.5em) {
+  .ama__sign-in-dropdown__menu__header {
+    font-size: 1.1em;
+    line-height: 1.18;
+  }
+}
+@media screen and (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__header {
+    font-size: 1.222em;
+    line-height: 1.182;
+  }
+}
+@media screen and (min-width: 75em) {
+  .ama__sign-in-dropdown__menu__header {
+    font-size: 1.222em;
+  }
+}
+.ama__sign-in-dropdown__menu__group {
+  padding-top: 5.25px;
+  padding-bottom: 5.25px;
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__group {
+    padding-top: 7px;
+  }
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__group {
+    padding-bottom: 7px;
+  }
+}
+.ama__sign-in-dropdown__menu__button--sign-in {
+  text-transform: none;
+  border-radius: 6px;
+  height: 44px;
+  max-height: 44px;
+  padding-top: 5.25px;
+  padding-bottom: 5.25px;
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__button--sign-in {
+    padding-top: 7px;
+  }
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__button--sign-in {
+    padding-bottom: 7px;
+  }
+}
+.ama__sign-in-dropdown__menu__link {
+  text-align: center;
 }
 
 /* Define the Sassy Map called $icons */
