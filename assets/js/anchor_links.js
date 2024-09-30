@@ -4,12 +4,15 @@
       $(document).ready(function () {
         // Function to handle scrolling to anchor
         function scrollToAnchor(hash) {
-          // Determine the offset based on the presence of the toolbar-horizontal class
-          var offset;
-          if ($(window).width() < 601) {
-            offset = 210;
+          // Get the height of the header to determine the initial offset
+          var offset = $('header').outerHeight() || 0;
+
+          // Add the height of the page grouper if it exists
+          if ($(window).width() < 601 && $('.ama_page_grouping_news').length) {
+            offset += $('.ama_page_grouping_news').outerHeight();
           } else {
-            offset = $('body').hasClass('toolbar-horizontal') ? 180 : 110;
+            // Determine the desktop offset based on the presence of the toolbar-horizontal class
+            offset = $('body').hasClass('toolbar-horizontal') ? offset + 80 : offset;
           }
 
           var target = $(hash);
