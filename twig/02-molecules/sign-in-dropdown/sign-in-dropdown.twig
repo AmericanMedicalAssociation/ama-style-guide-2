@@ -1,0 +1,29 @@
+<div id="ama__sign-in-dropdown" class="ama__sign-in-dropdown">
+  <div class="ama__sign-in-dropdown__trigger">
+    <i class="ama__sign-in-dropdown__trigger__icon ama__sign-in-dropdown__trigger__icon__user icon--usermenu-outline"></i>
+    <span class="ama__sign-in-dropdown__trigger__text">{{ signInDropdown.text }}</span>
+    <i class="ama__sign-in-dropdown__trigger__icon ama__sign-in-dropdown__trigger__icon__arrow">
+      {% include "@atoms/media/icons/svg/icon-arrow.twig" %}
+    </i>
+  </div>
+  <div class="{{ signInDropdown.menuClass }}" >
+    {# Use styleguide json data. #}
+    <div class="ama__sign-in-dropdown__menu__header">{{ signInDropdown.header }}</div>
+
+    {% if signInDropdown.account is null %}
+      {% for menuGroups in signInDropdown.menuGroups %}
+        <ul class="ama__sign-in-dropdown__menu__group">
+          {% for item in menuGroups.group %}
+            {% set link = item.link %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    {% else %}
+      {# Use Drupal menu data. #}
+      {{ signInDropdown.account }}
+    {% endif %}
+  </div>
+</div>
