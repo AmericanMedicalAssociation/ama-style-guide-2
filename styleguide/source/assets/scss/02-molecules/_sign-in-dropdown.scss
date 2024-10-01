@@ -126,6 +126,7 @@
     &--open {
       display: block;
     }
+   
 
     &__header {
       @include gutter($padding-top-quarter...);
@@ -137,7 +138,7 @@
 
     &__group {
       @include gutter($padding-top-quarter...);
-      @include gutter($padding-bottom-quarter...);
+      @include gutter($padding-bottom-quarter...);    
     }
 
     &__button {
@@ -150,9 +151,14 @@
         @include gutter($padding-bottom-quarter...);
       }
     }
-
-    &__link {
-      text-align: center;
+    &__create-account, &__become-member {
+      text-align: center
     }
+    &__link {
+      &__user {
+        @include gutter($padding-bottom-quarter...);
+      }
+      text-align: left;
+    }      
   }
 }
