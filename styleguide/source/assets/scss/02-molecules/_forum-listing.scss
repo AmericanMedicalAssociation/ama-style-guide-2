@@ -190,21 +190,6 @@
           }
           a {
             padding: 0 14px;
-            &:before {
-              content: '(';
-            }
-            &:after {
-              content: ')';
-            }
-            @include breakpoint($bp-med) {
-              padding: 0;
-              &:before {
-                content: '';
-              }
-              &:after {
-                content: '';
-              }
-            }
           }
         }
       }
