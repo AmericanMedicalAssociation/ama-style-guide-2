@@ -12961,38 +12961,6 @@ section.ama__forum_comments h2.pinned-comment + div {
 .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a {
   padding: 0 14px;
 }
-.ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:before,
-.ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:before,
-.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before,
-.ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:before {
-  content: "(";
-}
-.ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:after,
-.ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:after,
-.ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after,
-.ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:after {
-  content: ")";
-}
-@media (min-width: 56.25em) {
-  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a,
-  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a,
-  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a {
-    padding: 0;
-  }
-  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:before,
-  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:before,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:before,
-  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:before {
-    content: "";
-  }
-  .ama__forum-table-wrap table tr [data-th=Replies] .bt-content a:after,
-  .ama__forum-table-wrap table tr [data-th^=Comments] .bt-content a:after,
-  .ama__topic-table-wrap table tr [data-th=Replies] .bt-content a:after,
-  .ama__topic-table-wrap table tr [data-th^=Comments] .bt-content a:after {
-    content: "";
-  }
-}
 .ama__forum-table-wrap table tr [data-th="Last post"] span span,
 .ama__forum-table-wrap table tr [data-th=Recent] span span,
 .ama__forum-table-wrap table tr [data-th="Last reply"] span span,
@@ -17398,8 +17366,19 @@ a.ama__promo--border:hover {
     padding-bottom: 7px;
   }
 }
-.ama__sign-in-dropdown__menu__link {
+.ama__sign-in-dropdown__menu__create-account, .ama__sign-in-dropdown__menu__become-member {
   text-align: center;
+}
+.ama__sign-in-dropdown__menu__link {
+  text-align: left;
+}
+.ama__sign-in-dropdown__menu__link__user {
+  padding-bottom: 5.25px;
+}
+@media (min-width: 56.25em) {
+  .ama__sign-in-dropdown__menu__link__user {
+    padding-bottom: 7px;
+  }
 }
 
 /* Define the Sassy Map called $icons */
