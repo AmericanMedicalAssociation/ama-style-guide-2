@@ -45,8 +45,11 @@
                             if(newDataTh === 'Recent by Recent') {
                                 newDataTh = 'Recent';
                             }
-                            if(newDataTh === 'Resolution by resolution') {
+                            if(newDataTh === 'Resolution by Resolution') {
                                 newDataTh = 'Resolution';
+                            }
+                            if(newDataTh === 'Topic by Topic') {
+                                newDataTh = 'Topic';
                             }
                             // Set the new data-th value
                             cell.setAttribute('data-th', newDataTh);
