@@ -616,10 +616,12 @@ a.ama__membership {
         }
         &.align-left {
           float: left;
+          clear: left;
           @include gutter($padding-right-full...);
         }
         &.align-right {
           float: right;
+          clear: right;
           @include gutter($padding-left-full...);
         }
       }
