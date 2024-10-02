@@ -338,6 +338,10 @@
           // make the entire subscribe button clickable.
           $('form.salesforce-subscribe-form, .ama__input-wrapper--subscribe-news').on('click', function(e) {
             if ($(this).hasClass('salesforce-subscribe-form')) {
+              // If on subscriptions page, save the scroll position before submitting the form
+              if($('div.view-my-subscription').length) {
+                localStorage.setItem('scrollPos', $(window).scrollTop());
+              };
               $(this).submit();
             }
             else {
@@ -345,6 +349,16 @@
               location.href = link;
             }
           });
+
+          // For subcriptions page, on subscribe button click, reload the page at the same location (i.e offset from top)
+          if($('div.view-my-subscription').length) { 
+            $(window).on('load', function() {
+              if (localStorage.getItem('scrollPos')) {
+                $(window).scrollTop(localStorage.getItem('scrollPos'));
+                localStorage.removeItem('scrollPos');
+              }
+            });
+          };
 
           if($('.paragraph--type--form-50-50 div.success_message').length) {
             $('.paragraph--type--form-50-50').find('.form-content').addClass('success');
