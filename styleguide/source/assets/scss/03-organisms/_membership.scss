@@ -560,6 +560,13 @@ a.ama__membership {
 .text-body {
   promo-embed {
     &.promo-size-full, &.promo-size-half {
+      .partner-promo-inline {
+        [data-size="half"] {
+          &.embedded-entity {
+            flex-direction: column-reverse;
+          }
+        }
+      }
       .embedded-entity {
         flex-direction: column;
         display: flex;
