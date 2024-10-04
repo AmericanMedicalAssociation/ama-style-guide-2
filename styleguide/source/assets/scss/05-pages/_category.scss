@@ -90,6 +90,11 @@
     border-top: 0;
   }
 
+  .ama__masthead__content__container {
+    visibility: hidden;
+    height: 0;
+  }
+
   .ama__masthead {
     margin-bottom: calc($gutter / 4);
     padding: 0;
@@ -125,7 +130,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-    
+
         @include breakpoint($bp-med min-width) {
           @include gutter($margin-top-full...);
           @include gutter($margin-bottom-full...);
