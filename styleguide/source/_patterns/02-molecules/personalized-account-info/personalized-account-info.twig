@@ -1,6 +1,6 @@
 <div class="ama__personalized-account-info">
 	<div class="ama__personalized-account-info__card">
-		<img src="{{ cardSource }}" class="ama__personalized-account-info__card__image" alt="{{ accountCard.alt }}"/>
+		<img src="{{ card_url }}" class="ama__personalized-account-info__card__image" alt="{{ accountCard.alt }}"/>
 	</div>
 	<div class="ama__personalized-account-info__profile">
 		<div class="ama__personalized-account-info__name">{{ account.name }}</div>
@@ -8,8 +8,8 @@
 			<span class="ama__personalized-account-info__subtitle__member-status">
             {% if membership is not null %}
                 {{ membership.status }} 
-                {% if membership.startYear is not null and membership.status == 'Valued Member' %}
-                    Since {{ membership.startYear }}
+                {% if membership.start_year is not null and membership.status == 'Valued Member' %}
+                    Since {{ membership.start_year }}
                 {% endif %}
             {% endif %}
 			</span>

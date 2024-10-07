@@ -15,14 +15,14 @@ This block allows for users to see personalized content such as their name, memb
 
 ~~~
 {
-    "cardSource":  type: string / required,
+    "card_url":  type: string / required,
     "account": {
         "name":  type: string / required,
         "specialty":  type: string / optional
     },
     "membership": {
         "status": type: string / optional ("Valued Member" "Non-Member" or "Non-Physician")
-        "startYear": type: string / optional
+        "start_year": type: string / optional
     }
     
 }
