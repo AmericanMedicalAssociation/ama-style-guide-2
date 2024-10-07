@@ -12,19 +12,23 @@
   a {
     display: block;
     flex: 1 1 46.6%;
+    min-width: 182px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     line-height: 16px;
     color: inherit;
     padding: 8px 10px;
-    &:first-of-type {
-      background: $gating-block-link;
-      color: #bce2f7;
+    @include breakpoint($bp-xs max-width) {
+      min-width: unset;
     }
     &:last-of-type {
       background: #bce2f7;
       color: $gating-block-link;
+    }
+    &:first-of-type {
+      background: $gating-block-link;
+      color: #bce2f7;
     }
     &:hover,
     &:focus,
@@ -34,6 +38,7 @@
   }
 
   &.column {
+    padding: 14px 0;
     a {
       flex: 1 1 100%;
       max-width: 100%;
