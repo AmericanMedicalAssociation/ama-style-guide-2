@@ -1,0 +1,42 @@
+.ama__mobile-homepage-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 10px;
+  border-bottom: .5px solid $gray-30;
+  @include breakpoint($bp-small) {
+    display: none ;
+  }
+  a {
+    display: block;
+    flex: 1 1 46.6%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 16px;
+    color: inherit;
+    padding: 8px 10px;
+    &:first-of-type {
+      background: $gating-block-link;
+      color: #bce2f7;
+    }
+    &:last-of-type {
+      background: #bce2f7;
+      color: $gating-block-link;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: .5;
+    }
+  }
+
+  &.column {
+    a {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+}
