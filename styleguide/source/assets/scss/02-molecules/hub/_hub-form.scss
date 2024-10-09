@@ -1,9 +1,12 @@
 .paragraph--type--form-50-50 {
   display: flex;
-  margin-bottom: calc($gutter/2);
+  margin: $gutter 0;
   flex-direction: column;
   @include breakpoint($bp-small) {
     flex-direction: row;
+  }
+  @include breakpoint($bp-med) {
+    margin: $gutter;
   }
 
   > div {
@@ -14,32 +17,41 @@
   }
 
   .text-content {
-    background: $gray-20;
-    padding: 28px 4%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 18.5px 0;
     @include breakpoint($bp-small) {
-      padding: 57px 4.4% 28px;
+      padding-right: 14px;
       padding-bottom: 0;
+      font-size: 18px;
     }
-    @include breakpoint($bp-large max-width) {
-      flex-basis: 40%;
+    @include breakpoint($bp-med) {
+      padding-right: 40px;
+    }
+
+    p, p * {
+      font-size: 16px;
+      @include breakpoint($bp-small) {
+        font-size: 18px;
+      }
     }
   }
 
   #lead-form-container {
-    padding-bottom: 28px;
+    padding-bottom: $gutter;
+    padding-top: 3.5px;
   }
 
   .form-content {
-    background: $gray-7;
-    padding: 28px 8.6% 26px;
+    padding: 0;
+
     @include breakpoint($bp-small) {
-      padding: 57px 8.6% 0;
+      padding-left: 14px;
+      padding-bottom: 0;
     }
-    @include breakpoint($bp-small max-width) {
-      h3,
-      > div {
-        text-align: center;
-      }
+    @include breakpoint($bp-med) {
+      padding: 28px 0 0 40px;
     }
     
     &.success {
@@ -51,21 +63,18 @@
   }
 
   .ama__h1 {
+    @include type($kepler-std, $font-weight-regular);
+    font-size: 28px;
     margin-bottom: 14px;
+    @include breakpoint($bp-small) {
+      padding-top: 28px;
+    }
   }
 
   .ama__hub-card__image,
   .ama__brightcove-gallery,
   .ama__hub-hero__video {
-    margin: 33px auto 50px;
-    display: none;
-    @include breakpoint($bp-med) {
-      display: block;
-      max-width: 196px;
-    }
-    @include breakpoint($bp-large) {
-      max-width: 344px;
-    }
+    margin: 14px auto;
   }
 
   .salesforce-lead-form {
@@ -74,32 +83,14 @@
     .form-item {
       flex-grow: 1;
       flex-basis: 100%;
+      margin-top: 0;
       @include breakpoint($bp-small max-width) {
-        margin-top: 28px;
-        margin-bottom: 0;
+        margin-bottom: calc($gutter/2);
         text-align: left;
-      }
-      // First name and last name display next to eachother if present
-      &.js-form-item-first-name {
-        + .js-form-item-last-name,
-        &:has(+ .js-form-item-last-name) {
-          @include breakpoint($bp-small) {
-            margin-top: 18px;
-            flex-basis: 50%;
-          }
-        }
-        @include breakpoint($bp-small) {
-          + .js-form-item-last-name {
-            padding-left: 7px;
-          }
-          &:has(+ .js-form-item-last-name) {
-            padding-right: 7px;
-          }
-        }
       }
       label {
         font-size: 14px;
-        text-transform: capitalize;
+        text-transform: uppercase;
         color: $black;
         font-weight: normal;
         &:after {
@@ -107,31 +98,26 @@
         }
       }
       input {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1;
-        padding: 3.25px 3px;
+        padding: 11px 17px;
+        border: 1px solid $gray-64;
         &.error {
           background: none;
         }
         &:focus-visible {
-          border: 2px solid $tab-focus-blue;
+          border: 1px solid $tab-focus-blue;
         }
       }
     }
-    @include breakpoint($bp-small) {
-      .js-form-item-first-name {
-        padding-right: 7px;
-      }
-      .js-form-item-last-name {
-        padding-left: 7px;
-      }
-    }
     .form-actions {
-      margin: 14px auto 6px;
+      margin: 14px 0;
       input {
         min-width: 173px;
-        padding: 5.5px 14px;
+        padding: 5px 42px;
         font-weight: normal;
+        border: 1px solid $gray-64;
+        @include ama-button(0, "secondary");
 
         &.form-submit.ama__button {
           margin: 0;
