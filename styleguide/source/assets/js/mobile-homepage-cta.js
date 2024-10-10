@@ -2,12 +2,16 @@
   Drupal.behaviors.mobileHomepageCta = {
     attach: function (context, settings) {
       (function ($) {
+        // Check character count of anchor elements within the ama__mobile-homepage-cta container
         function checkCharacterCount() {
           // Find the ama__mobile-homepage-cta container
           var container = $('.ama__mobile-homepage-cta', context);
 
           // Remove the 'column' class if it exists
           container.removeClass('column');
+
+          // Remove the 'single' class if it exists
+          container.find('a').removeClass('single');
 
           // Find all anchor elements within the ama__mobile-homepage-cta container
           var anchors = container.find('a');
