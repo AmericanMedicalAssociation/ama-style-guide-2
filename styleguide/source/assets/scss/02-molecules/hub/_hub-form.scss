@@ -68,6 +68,7 @@
     margin-bottom: 14px;
     @include breakpoint($bp-small) {
       padding-top: 28px;
+      font-size: 36px;
     }
   }
 
@@ -114,13 +115,12 @@
       margin: 14px 0;
       input {
         min-width: 173px;
-        padding: 5px 42px;
         font-weight: normal;
-        border: 1px solid $gray-64;
         @include ama-button(0, "secondary");
 
         &.form-submit.ama__button {
           margin: 0;
+          padding: 5px 42px;
         }
     
         &:focus-visible {
