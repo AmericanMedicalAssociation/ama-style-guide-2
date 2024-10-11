@@ -436,6 +436,36 @@
       }
     }
   }
+  .stub-subscription {
+    .label {
+      @include gutter($padding-bottom-quarter...);
+      font-size: 14px;
+      color: $date-olive;
+      margin-top: 0;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .ama__article-stub__title {
+      @include gutter($padding-bottom-quarter...);
+    }
+    .description {
+      @include gutter($padding-bottom-quarter...);
+      font-size: 16px;
+      margin-top: 0;
+      line-height: 1.5;
+    }
+    .additional-link {
+      @include gutter($padding-bottom-quarter...);
+      font-size: 1em;
+      margin-top: 0;
+      line-height: 1.5;
+      text-decoration: none;
+      color: $gating-block-link;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 //  Style the layout container of the article stub list on article and press release pages
