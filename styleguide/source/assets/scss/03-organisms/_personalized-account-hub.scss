@@ -1,30 +1,52 @@
 $card-width-mobile: 85px;
-$card-width: 150px;
+$card-width: 250px;
 
 $gap-lg: 32px;
 $gap-md: 24px;
 $gap-sm: 16px;
 $gap-xs: 8px;
 
+%item {
+    background-color: $white;
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+}
+
+%label {
+    color: $black;
+    @include type($myriad-pro, 600);
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    text-decoration: none;
+}
+
 /* Define the Sassy Map called $icons */
 $quicklink-icons: (
-    gift,
-    bookmark-simple,
-    envelope,
-    graduation-cap
+    book,    
+    books,    
+    check,    
+    discount,    
+    gift,    
+    graduation,    
+    people,    
+    puzzle,    
+    saved,    
+    subscription,        
 );
 
 @each $name in $quicklink-icons {
     .quick-link--icon--#{$name} {
         display: inline-block;
-        background-image: url("../icons/svg/quick-links/icon-" + $name + ".svg");
+        background-image: url("../icons/svg/quick-links/icon-" + $name + "-purple.svg");
         background-repeat: no-repeat;
         background-size: 44px;
         width: 44px;
         height: 44px;
-      
+
     }
-  
+
 }
 
 .ama__personalized-account-hub {
@@ -56,7 +78,7 @@ $quicklink-icons: (
             width: $card-width-mobile;
 
             @include breakpoint($bp-small) {
-                width: $card-width;
+                max-width: $card-width;
             }
         }
     }
@@ -105,22 +127,33 @@ $quicklink-icons: (
 }
 
 .ama__personalized-quick-links {
+    a {
+        text-decoration: none;        
+    }
+    
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
 
-    &__primary {        
+    @include breakpoint($bp-large) {
+        flex-direction: row;
+    }
+
+    &__primary {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        max-width: 350px;
-        gap: 24px;
+        gap: $gap-md;
         $this: &;
 
-        @include breakpoint($bp-small) {
-            max-width: 750px;
+        @include breakpoint($bp-med) {            
             grid-template-columns: repeat(4, 1fr);
-          }
-        
+        }
 
         &__item {
-            width: 165px;
+            @extend %item;
+
+            min-width: 105px;
+            width: 100%;
             height: 165px;
             padding: 10px;
             display: flex;
@@ -128,35 +161,34 @@ $quicklink-icons: (
             justify-content: center;
             align-items: center;
             gap: $gap-sm;
-            background-color: $white;
-            text-decoration: none;
             border-radius: 8px;
             border: 1px solid #E4E3E6;
-            color: $black;
             text-align: center;
-            cursor: pointer;
 
             &:hover {
                 background-color: $homepagePurple;
                 border: 1px solid $homepagePurple;
             }
+
             &:active {
                 background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
 
             }
+
             &:hover #{$this}__icon-background {
                 background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="%2346166B" fill-opacity="0.25"/></svg>');
             }
+
             &:hover #{$this}__label {
                 color: $white;
             }
+
             @each $name in $quicklink-icons {
                 &:hover .quick-link--icon--#{$name} {
-                    background: url("../icons/svg/quick-links/icon-" + $name + "-hover.svg");
+                    background: url("../icons/svg/quick-links/icon-" + $name + "-white.svg");
                 }
-            }          
+            }
         }
-
 
         &__icon-background {
             width: 85px;
@@ -168,15 +200,38 @@ $quicklink-icons: (
             display: flex;
             justify-content: center;
             align-items: center;
-        }      
+        }
 
         &__label {
-            color: $black;
-            @include type($myriad-pro, 500);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
+            @extend %label
+        }
+    }
+
+    &__secondary {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 0;
+
+        &__item {
+            @extend %item;
+            &:hover {
+                text-decoration: underline;
+            }
+            display: flex;
+            height: 44px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            border-bottom: 1px solid var(--Color-DividerLineGrey, #E4E3E6);
+
+            &:last-child {
+                border-bottom: none;
+            }           
+        }
+        &__label {
+            @extend %label
         }
     }
 }
