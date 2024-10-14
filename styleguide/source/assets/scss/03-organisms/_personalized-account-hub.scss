@@ -6,6 +6,27 @@ $gap-md: 24px;
 $gap-sm: 16px;
 $gap-xs: 8px;
 
+/* Define the Sassy Map called $icons */
+$quicklink-icons: (
+    gift,
+    bookmark-simple,
+    envelope,
+    graduation-cap
+);
+
+@each $name in $quicklink-icons {
+    .quick-link--icon--#{$name} {
+        display: inline-block;
+        background-image: url("../icons/svg/quick-links/icon-" + $name + ".svg");
+        background-repeat: no-repeat;
+        background-size: 44px;
+        width: 44px;
+        height: 44px;
+      
+    }
+  
+}
+
 .ama__personalized-account-hub {
     display: flex;
     gap: $gap-md;
@@ -14,16 +35,16 @@ $gap-xs: 8px;
     border: 1px solid $gray-7;
     box-shadow: 0px 2px 4px -2px #1018280F;
     box-shadow: 0px 4px 8px -2px #1018281A;
-    @include gutter-all($padding-all-full...);    
+    @include gutter-all($padding-all-full...);
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
 }
 
 .ama__personalized-account-info {
-    display: flex;    
+    display: flex;
     gap: $gap-xs;
     flex-direction: column;
-    
+
     @include breakpoint($bp-small) {
         gap: $gap-md;
         flex-direction: row;
@@ -33,17 +54,18 @@ $gap-xs: 8px;
     &__card {
         &__image {
             width: $card-width-mobile;
+
             @include breakpoint($bp-small) {
                 width: $card-width;
             }
-        }   
+        }
     }
 
     &__profile {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: $gap-sm;        
+        gap: $gap-sm;
     }
 
     &__name {
@@ -55,15 +77,15 @@ $gap-xs: 8px;
     &__subtitle {
         @include type($myriad-pro, $font-weight-light);
         letter-spacing: 0.5px;
-        
+
         @include font-size($h3-font-sizes--homepage);
         color: $gray-64;
         text-transform: uppercase;
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;
         gap: $gap-xs;
 
-        @include breakpoint($bp-small) {            
+        @include breakpoint($bp-small) {
             flex-direction: row;
             align-items: center;
         }
@@ -73,10 +95,88 @@ $gap-xs: 8px;
             color: $gray-20;
             @include gutter($padding-left-quarter...);
             @include gutter($padding-right-quarter...);
+
             @include breakpoint($bp-small) {
                 display: block;
             }
         }
     }
 
+}
+
+.ama__personalized-quick-links {
+
+    &__primary {        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 350px;
+        gap: 24px;
+        $this: &;
+
+        @include breakpoint($bp-small) {
+            max-width: 750px;
+            grid-template-columns: repeat(4, 1fr);
+          }
+        
+
+        &__item {
+            width: 165px;
+            height: 165px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: $gap-sm;
+            background-color: $white;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid #E4E3E6;
+            color: $black;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $homepagePurple;
+                border: 1px solid $homepagePurple;
+            }
+            &:active {
+                background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+
+            }
+            &:hover #{$this}__icon-background {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="%2346166B" fill-opacity="0.25"/></svg>');
+            }
+            &:hover #{$this}__label {
+                color: $white;
+            }
+            @each $name in $quicklink-icons {
+                &:hover .quick-link--icon--#{$name} {
+                    background: url("../icons/svg/quick-links/icon-" + $name + "-hover.svg");
+                }
+            }          
+        }
+
+
+        &__icon-background {
+            width: 85px;
+            height: 85px;
+            flex-shrink: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }      
+
+        &__label {
+            color: $black;
+            @include type($myriad-pro, 500);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
 }

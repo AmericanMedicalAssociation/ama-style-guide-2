@@ -1,2 +1,15 @@
 <div class="ama__personalized-quick-links">
+    <div class="ama__personalized-quick-links__primary">
+    {% for link in primaryQuickLinks %}
+        <a href="{{ link.url }}" class="ama__personalized-quick-links__primary__item">
+        <div class="ama__personalized-quick-links__primary__icon-background">
+            <div class="{{ link.icon }}"></div>
+        </div>
+        <p class="ama__personalized-quick-links__primary__label">{{ link.title }}</p>
+        </a>
+    {% endfor %}
+    </div>
+    <div class="ama__personalized-quick-links__secondary">         
+    </div>
+
 </div>
