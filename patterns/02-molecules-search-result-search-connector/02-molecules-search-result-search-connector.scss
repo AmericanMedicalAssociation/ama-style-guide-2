@@ -81,14 +81,12 @@
     }
   }
   .search-connector-results {
-    float: left;
     display: flex;
     align-items: center;
     width: 100%;
     overflow-x: scroll;
     @include breakpoint($bp-med min-width) {
       overflow-x: hidden;
-      float: none;
       display: block;
     }
     &:after{

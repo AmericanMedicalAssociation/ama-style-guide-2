@@ -1,0 +1,106 @@
+.ama__sign-in-dropdown {
+  position: relative;
+  background-color: $purple;
+  display: flex;
+  justify-content: center;
+  color: $white;
+  height: 60px;
+  width: 70px;
+  align-items: center;
+  border-left: 1px solid $gray-50;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include breakpoint($bp-small) {
+    height: 34px;
+    justify-content: flex-end;
+    border-left: 0;
+    width: 100px;
+  }
+
+  @include breakpoint($bp-med) {
+    min-width: 100px;
+    width: auto;
+  }
+
+  @include breakpoint($bp-med) {
+    min-width: 135px;
+    border-left: 0;
+  }
+
+  &__user-icon {
+    background-size: 24px 25px;
+    min-height: 24px;
+    min-width: 25px;
+    max-height: 24px;
+    max-width: 25px;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-half...);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include breakpoint($bp-large) {
+      @include gutter($margin-left-half...);
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+  }
+
+  &__caret {
+    display: none;
+
+    @include breakpoint($bp-small) {
+      @include gutter($margin-left-half...);
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 10px solid $white;
+    }
+  }
+
+  &__menu {
+    @include gutter($padding-left-half...);
+    @include gutter($padding-right-half...);
+    position: absolute;
+    top: 62px;
+    right: 0;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4);
+    background-color: $white;
+    color: $black;
+    text-align: right;
+    display: none;
+    min-width: 200px;
+    @include breakpoint($bp-small) {
+      top: 48px;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        display: block;
+      }
+    }
+
+    &__group {
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-half...);
+      border-bottom: 1px solid $gray-50;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
