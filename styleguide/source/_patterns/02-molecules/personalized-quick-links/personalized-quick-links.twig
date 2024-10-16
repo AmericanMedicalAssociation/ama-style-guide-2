@@ -1,7 +1,7 @@
 <div class="ama__personalized-quick-links">
     <div class="ama__personalized-quick-links__primary">
     {% for link in primaryQuickLinks %}
-        <a href="{{ link.url }}" class="ama__personalized-quick-links__primary__item">
+        <a href="{{ link.url }}" class="ama__personalized-quick-links__primary__item" tabindex="0">
         <div class="ama__personalized-quick-links__primary__icon-background">
             <div class="{{ link.icon }}"></div>
         </div>
@@ -11,7 +11,7 @@
     </div>
     <div class="ama__personalized-quick-links__secondary">   
     {% for link in secondaryQuickLinks %}
-        <a href="{{ link.url }}" class="ama__personalized-quick-links__secondary__item ama__personalized-quick-links__secondary_link">        
+        <a href="{{ link.url }}" class="ama__personalized-quick-links__secondary__item ama__personalized-quick-links__secondary_link" tabindex="0">        
             <span class="ama__personalized-quick-links__secondary__label">{{ link.title }}</span>
             <span class="ama__personalized-quick-links__secondary__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
