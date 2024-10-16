@@ -1,3 +1,4 @@
+// Variables
 $card-width-mobile: 85px;
 $card-width: 250px;
 
@@ -6,232 +7,232 @@ $gap-md: 24px;
 $gap-sm: 16px;
 $gap-xs: 8px;
 
+// Placeholder Selectors
 %item {
-    background-color: $white;
-    text-decoration: none;
-    color: $black;
-    cursor: pointer;
+  background-color: $white;
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
 }
 
 %label {
-    color: $black;
-    @include type($myriad-pro, 600);
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-    text-decoration: none;
+  color: $black;
+  @include type($myriad-pro, 600);
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
 }
 
-/* Define the Sassy Map called $icons */
+// Sassy Map
 $quicklink-icons: (
-    book,    
-    books,    
-    check,    
-    discount,    
-    gift,    
-    graduation,    
-    people,    
-    puzzle,    
-    saved,    
-    subscription,        
+  book,
+  books,
+  check,
+  discount,
+  gift,
+  graduation,
+  people,
+  puzzle,
+  saved,
+  subscription,
 );
 
+// Icon Styles
 @each $name in $quicklink-icons {
-    .quick-link--icon--#{$name} {
-        display: inline-block;
-        background-image: url("../icons/svg/quick-links/icon-" + $name + "-purple.svg");
-        background-repeat: no-repeat;
-        background-size: 44px;
-        width: 44px;
-        height: 44px;
-
-    }
-
+  .quick-link--icon--#{$name} {
+    display: inline-block;
+    background-image: url("../icons/svg/quick-links/icon-#{$name}-purple.svg");
+    background-repeat: no-repeat;
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
 }
 
+// Personalized Account Hub
 .ama__personalized-account-hub {
-    display: flex;
-    gap: $gap-md;
-    flex-direction: column;
-    border-radius: 8px;
-    border: 1px solid $gray-7;
-    box-shadow: 0px 2px 4px -2px #1018280F;
-    box-shadow: 0px 4px 8px -2px #1018281A;
-    @include gutter-all($padding-all-full...);
-    @include gutter($margin-top-full...);
-    @include gutter($margin-bottom-full...);
+  display: flex;
+  gap: $gap-md;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid $gray-7;
+  box-shadow: 0px 2px 4px -2px #1018280F, 0px 4px 8px -2px #1018281A;
+  @include gutter-all($padding-all-full...);
+  @include gutter($margin-top-full...);
+  @include gutter($margin-bottom-full...);
 }
 
+// Personalized Account Info
 .ama__personalized-account-info {
+  display: flex;
+  gap: $gap-xs;
+  flex-direction: column;
+
+  @include breakpoint($bp-small) {
+    gap: $gap-md;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__card {
+    &__image {
+      width: $card-width-mobile;
+
+      @include breakpoint($bp-small) {
+        width: $card-width;
+      }
+    }
+  }
+
+  &__profile {
+    flex: 1;
     display: flex;
-    gap: $gap-xs;
     flex-direction: column;
+    gap: $gap-sm;
+  }
+
+  &__name {
+    @include type($myriad-pro, $font-weight-truebold);
+    @include font-size($h2-font-sizes);
+    line-height: normal;
+  }
+
+  &__subtitle {
+    @include type($myriad-pro, $font-weight-light);
+    letter-spacing: 0.5px;
+    @include font-size($h3-font-sizes--homepage);
+    color: $gray-64;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xs;
 
     @include breakpoint($bp-small) {
-        gap: $gap-md;
-        flex-direction: row;
-        align-items: center;
+      flex-direction: row;
+      align-items: center;
     }
 
-    &__card {
-        &__image {
-            width: $card-width-mobile;
+    &__divider {
+      display: none;
+      color: $gray-20;
+      @include gutter($padding-left-quarter...);
+      @include gutter($padding-right-quarter...);
 
-            @include breakpoint($bp-small) {
-                width: $card-width;
-            }
-        }
+      @include breakpoint($bp-small) {
+        display: block;
+      }
     }
-
-    &__profile {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: $gap-sm;
-    }
-
-    &__name {
-        @include type($myriad-pro, $font-weight-truebold);
-        @include font-size($h2-font-sizes);
-        line-height: normal;
-    }
-
-    &__subtitle {
-        @include type($myriad-pro, $font-weight-light);
-        letter-spacing: 0.5px;
-
-        @include font-size($h3-font-sizes--homepage);
-        color: $gray-64;
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        gap: $gap-xs;
-
-        @include breakpoint($bp-small) {
-            flex-direction: row;
-            align-items: center;
-        }
-
-        &__divider {
-            display: none;
-            color: $gray-20;
-            @include gutter($padding-left-quarter...);
-            @include gutter($padding-right-quarter...);
-
-            @include breakpoint($bp-small) {
-                display: block;
-            }
-        }
-    }
-
+  }
 }
 
+// Personalized Quick Links
 .ama__personalized-quick-links {
-    a {
-        text-decoration: none;        
+  display: flex;
+  flex-direction: column;
+  gap: $gap-md;
+
+  a {
+    text-decoration: none;
+  }
+
+  @include breakpoint($bp-large) {
+    flex-direction: row;
+  }
+
+  &__primary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap-md;
+    $this: &;
+
+    @include breakpoint($bp-med) {
+      grid-template-columns: repeat(4, 1fr);
     }
-    
+
+    &__item {
+      @extend %item;
+      min-width: 105px;
+      width: 100%;
+      height: 165px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: $gap-sm;
+      border-radius: 8px;
+      border: 1px solid #E4E3E6;
+      text-align: center;
+
+      &:hover {
+        background-color: $homepagePurple;
+        border: 1px solid $homepagePurple;
+      }
+
+      &:active {
+        background-image: linear-gradient(rgb(0 0 0 / 40%) 0 0);
+      }
+
+      &:hover #{$this}__icon-background {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="%2346166B" fill-opacity="0.25"/></svg>');
+      }
+
+      &:hover #{$this}__label {
+        color: $white;
+      }
+
+      @each $name in $quicklink-icons {
+        &:hover .quick-link--icon--#{$name} {
+          background: url("../icons/svg/quick-links/icon-#{$name}-white.svg");
+        }
+      }
+    }
+
+    &__icon-background {
+      width: 85px;
+      height: 85px;
+      flex-shrink: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__label {
+      @extend %label;
+    }
+  }
+
+  &__secondary {
     display: flex;
     flex-direction: column;
-    gap: $gap-md;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
 
-    @include breakpoint($bp-large) {
-        flex-direction: row;
+    &__item {
+      @extend %item;
+      display: flex;
+      height: 44px;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      border-bottom: 1px solid var(--Color-DividerLineGrey, #E4E3E6);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
-    &__primary {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: $gap-md;
-        $this: &;
-
-        @include breakpoint($bp-med) {            
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        &__item {
-            @extend %item;
-
-            min-width: 105px;
-            width: 100%;
-            height: 165px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: $gap-sm;
-            border-radius: 8px;
-            border: 1px solid #E4E3E6;
-            text-align: center;
-
-            &:hover {
-                background-color: $homepagePurple;
-                border: 1px solid $homepagePurple;
-            }
-
-            &:active {
-                background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
-
-            }
-
-            &:hover #{$this}__icon-background {
-                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="%2346166B" fill-opacity="0.25"/></svg>');
-            }
-
-            &:hover #{$this}__label {
-                color: $white;
-            }
-
-            @each $name in $quicklink-icons {
-                &:hover .quick-link--icon--#{$name} {
-                    background: url("../icons/svg/quick-links/icon-" + $name + "-white.svg");
-                }
-            }
-        }
-
-        &__icon-background {
-            width: 85px;
-            height: 85px;
-            flex-shrink: 0;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        &__label {
-            @extend %label
-        }
+    &__label {
+      @extend %label;
     }
-
-    &__secondary {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1 0 0;
-
-        &__item {
-            @extend %item;
-            &:hover {
-                text-decoration: underline;
-            }
-            display: flex;
-            height: 44px;
-            justify-content: space-between;
-            align-items: center;
-            align-self: stretch;
-            border-bottom: 1px solid var(--Color-DividerLineGrey, #E4E3E6);
-
-            &:last-child {
-                border-bottom: none;
-            }           
-        }
-        &__label {
-            @extend %label
-        }
-    }
+  }
 }
