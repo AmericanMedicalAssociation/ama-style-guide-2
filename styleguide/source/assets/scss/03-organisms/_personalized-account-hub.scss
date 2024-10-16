@@ -152,8 +152,8 @@ $quicklink-icons: (
 
     &__item {
       @extend %item;
-      min-width: 105px;
       width: 100%;
+      min-width: 105px;
       height: 165px;
       padding: 10px;
       display: flex;
@@ -164,6 +164,10 @@ $quicklink-icons: (
       border-radius: 8px;
       border: 1px solid #E4E3E6;
       text-align: center;
+
+      @include breakpoint($bp-med) {
+        min-width: 165px;
+      }
 
       &:hover {
         background-color: $homepagePurple;
