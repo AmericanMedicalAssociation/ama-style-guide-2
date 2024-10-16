@@ -174,6 +174,11 @@ $quicklink-icons: (
         background-image: linear-gradient(rgb(0 0 0 / 40%) 0 0);
       }
 
+      &:focus-visible {
+        outline: 2px solid $tab-focus-blue;
+        outline-offset: 4px;
+      }
+
       &:hover #{$this}__icon-background {
         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="%2346166B" fill-opacity="0.25"/></svg>');
       }
@@ -224,6 +229,13 @@ $quicklink-icons: (
 
       &:hover {
         text-decoration: underline;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $tab-focus-blue;
+        outline-offset: 4px;
+        z-index: 1;
+        position: relative;
       }
 
       &:last-child {
