@@ -138,7 +138,7 @@
 
     &__group {
       @include gutter($padding-top-quarter...);
-      @include gutter($padding-bottom-quarter...);    
+      @include gutter($padding-bottom-quarter...);
     }
 
     &__button {
@@ -160,5 +160,24 @@
       }
       text-align: left;
     }      
+  }
+}
+
+
+// Here we will build new siogn-in menu styling that isn't dumb as hell.
+.authenticated {
+  &.ama__sign-in-dropdown__menu {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    .ama__sign-in-dropdown__menu__group {
+      padding-left: calc($gutter / 2);
+      padding-right: calc($gutter / 2);
+      &:nth-child(2) {
+        border-top: 1px solid $gray-7;
+        border-bottom: 1px solid $gray-7;
+      }
+    }
   }
 }
