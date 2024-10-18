@@ -60,6 +60,12 @@
         display: none;
       }
     }
+
+    .ama__h1 {
+      @include breakpoint($bp-small) {
+        padding-top: 28px;
+      }
+    }
   }
 
   .ama__h1 {
@@ -67,7 +73,6 @@
     font-size: 28px;
     margin-bottom: 14px;
     @include breakpoint($bp-small) {
-      padding-top: 28px;
       font-size: 36px;
     }
   }
