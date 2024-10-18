@@ -55,6 +55,10 @@
     }
     
     &.success {
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+
       h3,
       h3 + div:not(#lead-form-container) {
         display: none;
@@ -147,34 +151,18 @@
     }
   }
 
-  .form-content.success {
-    padding: 120px 0;
-    @include breakpoint($bp-small) {
-      padding: 92px 0;
-    }
-  }
-
   #lead-form-container {
     .success_message {
-      text-align: center;
-      position: relative;
+      @include breakpoint($bp-small) {
+        padding-left:20px;
+      }
       h2 {
-        font-size: 38px;
-        margin-bottom: 112px;
-        &:after {
-          content: " ";
-          position: absolute;
-          left: 42%;
-          top: 65px;
-          width: 92px;
-          height: 92px;
-          background: url('../images/check_confirmation.svg') no-repeat 0px 0px;
-        }
+        @include type($kepler-std, $font-weight-regular);
+        font-size: 36px;
       }
       p {
-        padding-top: 28px;
-        margin: 0 auto;
-        max-width: 280px;
+        padding-top: 14px;
+        font-size: 17px;
       }
     }
   }
