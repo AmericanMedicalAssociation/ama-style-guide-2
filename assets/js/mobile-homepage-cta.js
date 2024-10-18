@@ -10,9 +10,6 @@
           // Remove the 'column' class if it exists
           container.removeClass('column');
 
-          // Remove the 'single' class if it exists
-          container.find('a').removeClass('single');
-
           // Find all anchor elements within the ama__mobile-homepage-cta container
           var anchors = container.find('a');
 
