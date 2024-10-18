@@ -1,0 +1,22 @@
+<div class="ama__personalized-account-info">
+	<div class="ama__personalized-account-info__card">
+		<img src="{{ card_url }}" class="ama__personalized-account-info__card__image" alt="{{ accountCard.alt }}"/>
+	</div>
+	<div class="ama__personalized-account-info__profile">
+		<div class="ama__personalized-account-info__name">{{ account.name }}</div>
+		<div class="ama__personalized-account-info__subtitle">
+			<span class="ama__personalized-account-info__subtitle__member-status">
+            {% if membership is not null %}
+                {{ membership.status }} 
+                {% if membership.start_year is not null and membership.status == 'Valued Member' %}
+                    Since {{ membership.start_year }}
+                {% endif %}
+            {% endif %}
+			</span>
+			{% if account.specialty is not null %}
+				<span class="ama__personalized-account-info__subtitle__divider">|</span>
+				<span class="ama__personalized-account-info__subtitle__specialty">{{ account.specialty }}</span>
+			{% endif %}
+		</div>
+	</div>
+</div>
