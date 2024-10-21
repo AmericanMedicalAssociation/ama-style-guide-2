@@ -6547,8 +6547,8 @@ textarea {
   border: none;
   background-color: currentColor;
   border-radius: 100%;
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   left: 1px;
   top: 11px;
 }
@@ -6565,8 +6565,8 @@ textarea {
   position: absolute;
   background-color: transparent;
   border-radius: 100%;
-  width: 6px;
-  height: 6px;
+  width: 3px;
+  height: 3px;
   left: 1px;
   top: 9px;
 }
@@ -6618,24 +6618,12 @@ textarea {
 }
 .body-list ul, .ama__list ul,
 .text-body ul {
-  margin-left: 13px;
+  margin-left: 7px;
   margin-bottom: 14px;
-}
-@media (min-width: 56.25em) {
-  .body-list ul, .ama__list ul,
-  .text-body ul {
-    margin-left: 32px;
-  }
-}
-@media (min-width: 75em) {
-  .body-list ul, .ama__list ul,
-  .text-body ul {
-    margin-left: 30px;
-  }
 }
 .body-list ul li, .ama__list ul li,
 .text-body ul li {
-  padding-left: 18px;
+  padding-left: 11px;
 }
 .body-list ul li a, .ama__list ul li a,
 .text-body ul li a {
@@ -6653,30 +6641,30 @@ textarea {
 }
 .body-list ul li ul li ul, .ama__list ul li ul li ul,
 .text-body ul li ul li ul {
-  margin-left: -18px;
+  margin-left: 0;
 }
 
 .body-list-flush ul, .paragraph--type--wysiwyg ul, .ama__hub-hero__description ul, .ama__promo--inline ul {
   margin-left: 0;
 }
 .body-list-flush ul li, .paragraph--type--wysiwyg ul li, .ama__hub-hero__description ul li, .ama__promo--inline ul li {
-  padding-left: 18px;
+  padding-left: 11px;
 }
 .body-list-flush ul li ul, .paragraph--type--wysiwyg ul li ul, .ama__hub-hero__description ul li ul, .ama__promo--inline ul li ul {
   margin-left: 0;
 }
 .body-list-flush ul li ul ul, .paragraph--type--wysiwyg ul li ul ul, .ama__hub-hero__description ul li ul ul, .ama__promo--inline ul li ul ul {
-  margin-left: -18px;
+  margin-left: -11px;
 }
 
 .display-list ul, .ama__layout--one-column .ama__promo-group ul, .ama__membership .ama__membership-content ul, .ama__subscribe-promo ul, .ama__promo ul, .ama__promo--border ul, .ama__promo--background ul, .ama__product__text ul, .ama__partner-promo__text ul {
   margin-left: 0;
 }
 .display-list ul li, .ama__layout--one-column .ama__promo-group ul li, .ama__membership .ama__membership-content ul li, .ama__subscribe-promo ul li, .ama__promo ul li, .ama__promo--border ul li, .ama__promo--background ul li, .ama__product__text ul li, .ama__partner-promo__text ul li {
-  padding-left: 18px;
+  padding-left: 11px;
 }
 .display-list ul li ul, .ama__layout--one-column .ama__promo-group ul li ul, .ama__membership .ama__membership-content ul li ul, .ama__subscribe-promo ul li ul, .ama__promo ul li ul, .ama__promo--border ul li ul, .ama__promo--background ul li ul, .ama__product__text ul li ul, .ama__partner-promo__text ul li ul {
-  margin-left: -18px;
+  margin-left: -11px;
 }
 
 /**
@@ -17436,6 +17424,21 @@ a.ama__promo--border:hover {
   }
 }
 
+.authenticated.ama__sign-in-dropdown__menu {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.authenticated.ama__sign-in-dropdown__menu .ama__sign-in-dropdown__menu__group {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.authenticated.ama__sign-in-dropdown__menu .ama__sign-in-dropdown__menu__group:nth-child(2) {
+  border-top: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+}
+
 /* Define the Sassy Map called $icons */
 /* For each key in the map, created an own class */
 /* If you need to add a new icon add it to arraw above */
@@ -21099,9 +21102,23 @@ a:focus-visible.ama__hub-card {
     padding: 28px 0 0 40px;
   }
 }
+.paragraph--type--form-50-50 .form-content.success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 0;
+}
 .paragraph--type--form-50-50 .form-content.success h3,
 .paragraph--type--form-50-50 .form-content.success h3 + div:not(#lead-form-container) {
   display: none;
+}
+@media (min-width: 37.5em) {
+  .paragraph--type--form-50-50 .form-content .ama__h1, .paragraph--type--form-50-50 .form-content .dr-finder-search-results-header__results-text, .paragraph--type--form-50-50 .form-content .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .paragraph--type--form-50-50 .form-content span {
+    padding-top: 28px;
+  }
 }
 .paragraph--type--form-50-50 .ama__h1, .paragraph--type--form-50-50 .dr-finder-search-results-header__results-text, .paragraph--type--form-50-50 .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .paragraph--type--form-50-50 span {
   font-family: "kepler-std", "Georgia", "Times New Roman", serif;
@@ -21111,7 +21128,6 @@ a:focus-visible.ama__hub-card {
 }
 @media (min-width: 37.5em) {
   .paragraph--type--form-50-50 .ama__h1, .paragraph--type--form-50-50 .dr-finder-search-results-header__results-text, .paragraph--type--form-50-50 .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .paragraph--type--form-50-50 span {
-    padding-top: 28px;
     font-size: 36px;
   }
 }
@@ -21237,35 +21253,19 @@ a:focus-visible.ama__hub-card {
   font-size: 12px;
   font-weight: normal;
 }
-.paragraph--type--form-50-50 .form-content.success {
-  padding: 120px 0;
-}
 @media (min-width: 37.5em) {
-  .paragraph--type--form-50-50 .form-content.success {
-    padding: 92px 0;
+  .paragraph--type--form-50-50 #lead-form-container .success_message {
+    padding-left: 20px;
   }
 }
-.paragraph--type--form-50-50 #lead-form-container .success_message {
-  text-align: center;
-  position: relative;
-}
 .paragraph--type--form-50-50 #lead-form-container .success_message h2 {
-  font-size: 38px;
-  margin-bottom: 112px;
-}
-.paragraph--type--form-50-50 #lead-form-container .success_message h2:after {
-  content: " ";
-  position: absolute;
-  left: 42%;
-  top: 65px;
-  width: 92px;
-  height: 92px;
-  background: url("../images/check_confirmation.svg") no-repeat 0px 0px;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 36px;
 }
 .paragraph--type--form-50-50 #lead-form-container .success_message p, .paragraph--type--form-50-50 #lead-form-container .success_message .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .paragraph--type--form-50-50 #lead-form-container .success_message .ama__image__text__subtitle, .paragraph--type--form-50-50 #lead-form-container .success_message .ama__resource-link--inline__text {
-  padding-top: 28px;
-  margin: 0 auto;
-  max-width: 280px;
+  padding-top: 14px;
+  font-size: 17px;
 }
 
 .ama__hub-hero-row {
