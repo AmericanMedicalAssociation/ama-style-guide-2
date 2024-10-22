@@ -16,7 +16,7 @@
           }
 
           var target = $(hash);
-          target = target.length ? target : $('[name=' + hash.slice(1) + ']');
+          target = target.length ? target : $('[name="' + hash.slice(1) + '"]');
           if (target.length) {
             $('html, body').animate(
               {
@@ -29,6 +29,9 @@
 
         // On click of any anchor link
         $('a[href^="#"], a[href*="#"]').bind('click', function (e) {
+          // Don't anchor social links.
+          if (this.getAttribute('data-ga-site_events') == 'social_click') return;
+
           e.preventDefault(); // prevent hard jump, the default behavior
 
           // Perform animated scrolling
