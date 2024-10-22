@@ -31,7 +31,7 @@ $radius: 8px;
 
     @include breakpoint($bp-med) {
       padding: 32px;
-      flex: 0 2 375px;
+      flex: 0 1 375px;
       flex-shrink: 1;
     }
   }
@@ -40,10 +40,13 @@ $radius: 8px;
     align-self: stretch;
     color: $black;
     @include type($kepler-std, $font-weight-semibold);
-    font-size: 32px;
     font-style: normal;
     line-height: normal;
     text-decoration: none;
+    font-size: 26px;
+    @include breakpoint($bp-med) {
+      font-size: 32px;
+    }
   }
 
   &__links {
@@ -87,6 +90,7 @@ $radius: 8px;
         align-items: flex-start;
         flex: 1 0 0;
         border-right: 1px solid $gray-7;
+        border-bottom: none;
         padding: 32px;
         gap: $gap-xs;
 
@@ -104,7 +108,10 @@ $radius: 8px;
   &__link {
     color: $purple;
     @include type($myriad-pro, $font-weight-truebold);
-    font-size: 24px;
+    font-size: 16px;    
+    @include breakpoint($bp-med) {
+      font-size: 24px;
+    }
     font-style: normal;
     line-height: normal;
     text-decoration: none;
