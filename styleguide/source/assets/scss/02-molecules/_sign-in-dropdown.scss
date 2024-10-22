@@ -8,6 +8,15 @@
   align-items: center;
   border-left: 1px solid $gray-50;
 
+  &:hover {
+    cursor: default;
+  }
+  a {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   @include breakpoint($bp-small) {
     height: 34px;
     justify-content: flex-end;
