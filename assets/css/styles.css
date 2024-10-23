@@ -21135,12 +21135,20 @@ a:focus-visible.ama__hub-card {
   }
 }
 .paragraph--type--form-50-50 .video-embed-field-provider-youtube {
-  margin-bottom: 14px;
+  margin-bottom: 21px;
 }
 .paragraph--type--form-50-50 .ama__hub-card__image,
 .paragraph--type--form-50-50 .ama__brightcove-gallery,
 .paragraph--type--form-50-50 .ama__hub-hero__video {
-  margin: 14px auto;
+  margin: 14px 0 38px;
+}
+.paragraph--type--form-50-50 .ama__hub-card__image {
+  position: relative;
+  height: 0;
+  padding-bottom: 66.67%;
+}
+.paragraph--type--form-50-50 .ama__hub-card__image .ama__image {
+  position: absolute;
 }
 .paragraph--type--form-50-50 .salesforce-lead-form {
   display: -webkit-box;
@@ -21430,8 +21438,8 @@ a:focus-visible.ama__hub-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
