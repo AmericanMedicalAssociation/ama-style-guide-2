@@ -1,0 +1,18 @@
+<div class="ama__hub hub-container">
+  <footer class="ama__footer">
+    <div class="ama__footer__bottom">
+      <div class="container">
+        {% block utility %}
+          <ul class="ama__footer__menu-utility">
+            {% for link in footerHubPage.menus.utility %}
+              <li>
+                {% include "@atoms/link/link.twig" %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endblock %}
+        {% include "@atoms/copyright.twig" %}
+      </div>
+    </div>
+  </footer>
+</div>
