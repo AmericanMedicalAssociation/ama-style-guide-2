@@ -9,7 +9,12 @@
   border-left: 1px solid $gray-50;
 
   &:hover {
-    cursor: pointer;
+    cursor: default;
+  }
+  a {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   @include breakpoint($bp-small) {
