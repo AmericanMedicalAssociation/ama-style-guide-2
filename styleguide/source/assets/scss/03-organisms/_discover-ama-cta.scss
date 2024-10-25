@@ -17,7 +17,7 @@ $radius: 8px;
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
   
-  @include breakpoint($bp-med) {
+  @include breakpoint($bp-large) {
     flex-direction: row;
     align-items: center;
     padding: 0px;
@@ -29,7 +29,7 @@ $radius: 8px;
     align-items: flex-start;
     gap: $gap-xs;
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       padding: 32px;
       flex: 0 1 33%;
       max-width: 400px;
@@ -44,7 +44,7 @@ $radius: 8px;
     line-height: normal;
     text-decoration: none;
     font-size: 26px;
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       font-size: 32px;
     }
   }
@@ -56,7 +56,7 @@ $radius: 8px;
     align-self: stretch;
     flex: 1 0 0;
 
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       flex-direction: row;
       align-items: center;
       flex: 1 1 67%;
@@ -86,7 +86,7 @@ $radius: 8px;
         z-index: 1;
         position: relative;
       }
-      @include breakpoint($bp-med) {
+      @include breakpoint($bp-large) {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
@@ -111,7 +111,7 @@ $radius: 8px;
     color: $purple;
     @include type($myriad-pro, $font-weight-truebold);
     font-size: 16px;    
-    @include breakpoint($bp-med) {
+    @include breakpoint($bp-large) {
       font-size: 24px;
     }
     font-style: normal;
