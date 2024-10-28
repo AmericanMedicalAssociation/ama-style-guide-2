@@ -164,10 +164,11 @@ $quicklink-icons: (
     grid-template-columns: repeat(2, 1fr);
     gap: $gap-md;
     $this: &;
-
+    &--span-2 {
+      grid-column: span 2;
+    }
     @include breakpoint($bp-med) {
-      grid-template-columns: repeat(4, 1fr);      
-      
+      display: flex;
     }
     @include breakpoint($bp-large) {    
         flex: 1 1 ($primary-quick-link-base * 4) + ($gap-md * 3)
@@ -178,10 +179,10 @@ $quicklink-icons: (
       width: 100%;
       min-width: $primary-quick-link-base-min-mobile;
       min-height: $primary-quick-link-base-min-mobile;
-      padding: 10px;
+      padding: $gap-sm;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: $gap-sm;
       border-radius: 8px;
@@ -189,7 +190,7 @@ $quicklink-icons: (
       text-align: center;
 
       @include breakpoint($bp-med) {
-        height: $primary-quick-link-base;
+        min-height: $primary-quick-link-base;
         min-width: $primary-quick-link-base-min;
       }
 
