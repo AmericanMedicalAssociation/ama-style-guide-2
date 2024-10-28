@@ -1,0 +1,13 @@
+<div class="ama__discover-ama-cta">
+  <div class="ama__discover-ama-cta__header">
+    <span class="ama__discover-ama-cta__title">{{ title }}</span>
+  </div>
+  <div class="ama__discover-ama-cta__links">
+    {% for item in links %}
+      <a class="ama__discover-ama-cta__links__item" href="{{ item.url }}" target="_blank">
+        <span href="{{ item.url }}" class="ama__discover-ama-cta__link">{{ item.title }}</span>
+		<i class="ama__discover-ama-cta__link__arrow"></i>
+      </a>
+    {% endfor %}
+  </div>
+</div>
