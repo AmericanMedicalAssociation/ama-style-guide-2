@@ -1,28 +1,15 @@
 // Variables
 $card-width-mobile: 85px;
 $card-width: 250px;
-
+// Primary box sizing
+$primary-quick-link-base: 165px;
+$primary-quick-link-base-mobile: 155px;
+$primary-quick-link-base-min: 125px; 
+$primary-quick-link-base-min-mobile: 105px; 
 $gap-lg: 32px;
 $gap-md: 24px;
 $gap-sm: 16px;
 $gap-xs: 8px;
-
-// Placeholder Selectors
-%item {
-  background-color: $white;
-  text-decoration: none;
-  color: $black;
-  cursor: pointer;
-}
-
-%label {
-  color: $black;
-  @include type($myriad-pro, 600);
-  font-size: 16px;
-  font-style: normal;
-  line-height: normal;
-  text-decoration: none;
-}
 
 // Sassy Map
 $quicklink-icons: (
@@ -50,8 +37,24 @@ $quicklink-icons: (
   }
 }
 
-// Personalized Account Hub
-.ama__personalized-account-hub {
+// Placeholder Selectors
+%item {
+  background-color: $white;
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+%label {
+  color: $black;
+  @include type($myriad-pro, 600);
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+}
+
+%quick-links-hub {
   display: flex;
   gap: $gap-md;
   flex-direction: column;
@@ -61,6 +64,22 @@ $quicklink-icons: (
   @include gutter-all($padding-all-full...);
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+}
+
+// Personalized Account Hub
+.ama__personalized-account-hub {
+  @extend %quick-links-hub;
+}
+
+// Logged out quick links
+.ama__quick-links-hub {
+  @extend %quick-links-hub;
+
+  &__title {
+    @include type($myriad-pro, $font-weight-truebold);
+    @include font-size($h2-font-sizes);
+    line-height: normal;
+  }
 }
 
 // Personalized Account Info
@@ -147,14 +166,18 @@ $quicklink-icons: (
     $this: &;
 
     @include breakpoint($bp-med) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);      
+      
+    }
+    @include breakpoint($bp-large) {    
+        flex: 1 1 ($primary-quick-link-base * 4) + ($gap-md * 3)
     }
 
     &__item {
       @extend %item;
       width: 100%;
-      min-width: 105px;
-      height: 165px;
+      min-width: $primary-quick-link-base-min-mobile;
+      min-height: $primary-quick-link-base-min-mobile;
       padding: 10px;
       display: flex;
       flex-direction: column;
@@ -166,7 +189,8 @@ $quicklink-icons: (
       text-align: center;
 
       @include breakpoint($bp-med) {
-        min-width: 165px;
+        height: $primary-quick-link-base;
+        min-width: $primary-quick-link-base-min;
       }
 
       &:hover {
@@ -199,8 +223,8 @@ $quicklink-icons: (
     }
 
     &__icon-background {
-      width: 85px;
-      height: 85px;
+      width: 80px;
+      height: 80px;   
       flex-shrink: 0;
       background-size: contain;
       background-repeat: no-repeat;
@@ -208,6 +232,10 @@ $quicklink-icons: (
       display: flex;
       justify-content: center;
       align-items: center;
+      @include breakpoint($bp-med) {        
+        width: 85px;
+        height: 85px;   
+      }
     }
 
     &__label {
@@ -220,8 +248,12 @@ $quicklink-icons: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1 0 0;
-
+    flex: 1.5 1 30%;
+    min-width: $primary-quick-link-base-min-mobile * 2;;
+    @include breakpoint($bp-small) {     
+      min-width: $primary-quick-link-base;
+    }
+      
     &__item {
       @extend %item;
       display: flex;
