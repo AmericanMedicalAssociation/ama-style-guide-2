@@ -70,9 +70,25 @@
     }
   }
 
+  .layout--ama-page-section-one-col.section:has(.ama__subscribe-promo--wide) {
+    background-color: $purple;
+    @include breakpoint($bp-small) {
+      margin-bottom: 88px;
+    }
+  }
+
   .ama__subscribe-promo--wide {
-    @include gutter($margin-bottom-full...);
-    @include gutter($margin-top-full...);
+    margin-top: 64px;
+    margin-bottom: 72px;
+    padding: 0;
+    .ama__subscribe-promo__subject-title {
+      list-style: none;
+      font-size: 16px;
+      padding-bottom: 0;
+    }
+    .ama__subscribe-promo__heading {
+      font-size: 32px;
+    }
   }
 
   &__promos {
