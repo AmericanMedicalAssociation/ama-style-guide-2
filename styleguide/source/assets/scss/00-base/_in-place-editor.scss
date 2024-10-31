@@ -11,7 +11,7 @@
   margin-top: 1px;
   clear: both;
   flex-flow: row wrap;
-  margin-bottom: 14px;
+  margin-bottom: calc($gutter/2);
   border-bottom: dotted 1px $gray-64;
 
   h5 {
@@ -48,7 +48,7 @@
   }
 
   .ipe-actions a {
-    color: #737373;
+    color: $gray-50;
   }
 
   .ipe-action-list .ipe-icon {
@@ -78,6 +78,6 @@
   }
 
   .ipe-action-list [data-action-id="move"] option {
-    font-size: 14px;
+    font-size: calc($gutter/2);
   }
 }

@@ -64,13 +64,13 @@
   }
 
   .views-field-field-featured-topics {
-    margin: 21px 15px 28px;
+    margin: calc($gutter*.75) 15px $gutter;
     display: block;
     list-style: none;
     clear: both;
 
     @include breakpoint($bp-small) {
-      margin: 21px 0 28px;
+      margin: calc($gutter*.75) 0 $gutter;
       display: flex;
       align-items: flex-start;
       flex-direction: row;

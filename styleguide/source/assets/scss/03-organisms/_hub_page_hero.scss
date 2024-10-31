@@ -101,7 +101,7 @@
     &.hub_hero_heading {
       margin-bottom: calc($gutter * .5);
       &.large {
-        font-size: 28px;
+        font-size: $gutter;
       }
       &.medium {
         font-size: 22px;
@@ -161,7 +161,7 @@
             max-width: 291px;
             flex: .5;
             line-height: 1;
-            padding: 15.5px 14px;
+            padding: 15.5px calc($gutter/2);
             @include breakpoint($bp-med) {
               max-width: 325px;
             }

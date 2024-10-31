@@ -60,16 +60,16 @@
 
   .stub-date {
     display: inline-block;
-    font-size: 14px;
+    font-size: calc($gutter/2);
     text-transform: uppercase;
     line-height: normal;
     color: $gray-50;
-    margin-bottom: 14px;
+    margin-bottom: calc($gutter/2);
   }
 
   .stub-date + span {
     display: inline-block;
-    font-size: 14px;
+    font-size: calc($gutter/2);
     font-weight: $font-weight-bold;
     color: $gray-50;
     padding-left: 4px;
@@ -80,7 +80,7 @@
   }
   .read_time {
     font-weight: $font-weight-regular;
-    font-size: 14px;
+    font-size: calc($gutter/2);
     color: $gray-50;
     text-transform: uppercase;
     padding-bottom: 11.2px;
@@ -139,7 +139,7 @@
     max-width: 25px;
     margin: 14px 14px 0 0;
     &:first-of-type {
-      margin-left: 14px;
+      margin-left: calc($gutter/2);
     }
     &> div {
       &> div {

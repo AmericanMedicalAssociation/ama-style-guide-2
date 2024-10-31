@@ -110,9 +110,9 @@
     font-size: 20px;
     line-height: 25px;
     font-style: italic;
-    padding: 21px 0;
+    padding: calc($gutter*.75) 0;
     @include breakpoint($bp-med min-width) {
-      padding: 7px 0 14px 0;
+      padding: calc($gutter/4) 0 14px 0;
       font-size: 18px;
       line-height: 27px;
     }

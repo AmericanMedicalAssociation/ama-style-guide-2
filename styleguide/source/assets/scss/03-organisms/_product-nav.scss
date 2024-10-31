@@ -49,7 +49,7 @@
       height: auto;
       max-height: 262px;
       overflow-y: auto;
-      scrollbar-color: #f1f1f1 black;
+      scrollbar-color: $scrollbar-gray $black;
       scrollbar-width: thin;
     }
   }
@@ -65,7 +65,7 @@
       height: auto;
       max-height: 262px;
       overflow-y: auto;
-      scrollbar-color: #f1f1f1 black;
+      scrollbar-color: $scrollbar-gray $black;
       scrollbar-width: thin;
 
       ul {
@@ -104,7 +104,7 @@
       font-size: 16px;
       line-height: 24px;
       margin-left: 0;
-      padding: 7px 0;
+      padding: calc($gutter/4) 0;
       display: block;
       @include breakpoint($bp-med) {
         padding: 14px 0;
@@ -112,7 +112,7 @@
         font-size: 12px;
       }
       @include breakpoint($bp-large) {
-        font-size: 14px;
+        font-size: calc($gutter/2);
       }
 
       @include button_focus_outline_light;

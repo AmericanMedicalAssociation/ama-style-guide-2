@@ -78,7 +78,7 @@
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
-  padding-bottom: 28px;
+  padding-bottom: $gutter;
   @include breakpoint($bp-small) {
     flex-direction: row;
   }
@@ -106,14 +106,14 @@
 
     .ama__button {
       font-weight: $font-weight-bold;
-      margin: 21px 0 0;
+      margin: calc($gutter*.75) 0 0;
       @include breakpoint($bp-med) {
         margin: 28px 0 0;
         max-width: 224px;
       }
       a.ama__button {
         color: $text-navy;
-        padding: 8px 14px 7px;
+        padding: 8px 14px calc($gutter/4);
       }
     }
   }
@@ -149,7 +149,7 @@
 // Index Hero slot styling
 .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo {
   margin-top: calc($gutter / 2);
-  padding-top: 14px;
+  padding-top: calc($gutter/2);
   flex-direction: column-reverse;
   @include breakpoint($bp-med) {
     padding: 0;
@@ -158,7 +158,6 @@
     .ama__partner-promo__text {
       h2.ama__h2 {
         color: $purple;
-        font-weight: $font-weight-bold;
       }
     }
   }
@@ -195,8 +194,8 @@
   display: flex;
   flex-direction: column-reverse;
   column-gap: 120px;
-  padding-bottom: 28px;
-  margin-bottom: 28px;
+  padding-bottom: $gutter;
+  margin-bottom: $gutter;
   @include breakpoint($bp-small) {
     flex-direction: row;
     column-gap: 17px;
@@ -220,14 +219,14 @@
     }
     .ama__button {
       font-weight: $font-weight-bold;
-      margin: 21px 0 0;
+      margin: calc($gutter*.75) 0 0;
       @include breakpoint($bp-small) {
         margin: 28px 0 0;
         max-width: 224px;
       }
       a.ama__button {
         color: $text-navy;
-        padding: 8px 14px 7px;
+        padding: 8px 14px calc($gutter/4);
       }
     }
   }

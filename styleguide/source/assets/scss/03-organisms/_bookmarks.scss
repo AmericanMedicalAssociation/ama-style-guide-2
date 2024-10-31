@@ -4,7 +4,7 @@
   @include breakpoint($bp-small) {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 14px;
+    padding-top: calc($gutter/2);
   }
   .ama_bookmark_left {
     border-bottom: none;
@@ -136,13 +136,13 @@
 // Flag/bookmark styling
 .flag {
   text-align: center;
-  border: 1px solid #a28ab5;
+  border: 1px solid $glossary-purple;
   margin-top: 35px;
   @include breakpoint($bp-small max-width) {
     width: 87px;
     height: 44px;
     a {
-      font-size: 14px;
+      font-size: calc($gutter/2);
       line-height: 2;
     }
   }
@@ -152,7 +152,7 @@
     max-height: 46px;
   }
   a {
-    color: #310f4a;
+    color: $bookmark-purple;
     font-size: 10px;
     text-decoration: none;
     position: relative;
@@ -172,7 +172,7 @@
       background-size: cover;
       @include breakpoint($bp-small) {
         padding-left: 5px;
-        width: 21px;
+        width: calc($gutter*.75);
         height: 26px;
         margin: 0 auto;
         position: absolute;
@@ -224,7 +224,7 @@
 
 .view-my-topic {
   .my-topic-listing:first-child {
-    border-top: 1px solid #a28ab5;
+    border-top: 1px solid $glossary-purple;
   }
   .my-topic-listing:last-child {
     border-bottom: none;
@@ -238,15 +238,15 @@
 // My bookmark view styling
 .view-my-bookmark {
   .views-exposed-form {
-    margin-top: 28px;
+    margin-top: $gutter;
     .form-actions {
-      margin-top: 7px;
+      margin-top: calc($gutter/4);
     }
   }
   .views-infinite-scroll-content-wrapper {
     .views-row:first-child {
       .ama_book_mark {
-        border-top: 1px solid #a28ab5;
+        border-top: 1px solid $glossary-purple;
       }
     }
     .views-row:last-child {
@@ -276,7 +276,7 @@
 
 .hub-page {
   .flag {
-    margin-bottom: 14px;
+    margin-bottom: calc($gutter/2);
   }
 }
 
@@ -297,7 +297,7 @@
 //  My Topics view styling.
 .topic-search {
   margin-top: 28px !important;
-  margin-bottom: 14px;
+  margin-bottom: calc($gutter/2);
 }
 .my-topic-listing {
   flex-direction: row;

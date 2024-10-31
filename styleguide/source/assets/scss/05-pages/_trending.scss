@@ -1,5 +1,5 @@
 .ama__trending {
-  margin-top: 28px;
+  margin-top: $gutter;
   .ama__masthead__content__title__container,
   .ama__masthead {
     padding-top: 0;
@@ -29,18 +29,18 @@
   }
 
   .ama__layout--two-col-right--75-25__top {
-    border-bottom: 1px solid #767676;
+    border-bottom: 1px solid $gray-50;
   }
 
   .ama__membership button.ama__button {
-    margin-left: 28px;
-    margin-right: 28px;
+    margin-left: $gutter;
+    margin-right: $gutter;
   }
 
  @include breakpoint($bp-small max-width) {
   .ama__category-index {
     .ama__membership {
-      margin-bottom: 28px;
+      margin-bottom: $gutter;
     }
   }
 }

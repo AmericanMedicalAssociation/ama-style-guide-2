@@ -13,7 +13,7 @@ article ol {
   @extend .remove-empty;
   list-style-position: inside;
   margin-left: 13px;
-  margin-bottom: 14px;
+  margin-bottom: calc($gutter/2);
   counter-reset: inst;
   list-style: none;
   @include breakpoint($bp-med) {

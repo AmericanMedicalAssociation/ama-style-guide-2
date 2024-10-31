@@ -5,7 +5,7 @@
     position: relative;
     margin-bottom: calc($gutter / 2);
     @include breakpoint($bp-small max-width) {
-      margin-bottom: 21px;
+      margin-bottom: calc($gutter*.75);
     }
     p, p a {
       // Override main paragraph font
@@ -66,7 +66,7 @@
     }
   }
   .index-page__related-topics {
-    margin-bottom: 21px;
+    margin-bottom: calc($gutter*.75);
     @include breakpoint($bp-small) {
       margin-bottom: 4px;
     }
@@ -85,7 +85,7 @@
       &:after {
         content: "|";
         display: inline-block;
-        font-weight: 300;
+        font-weight: $font-weight-light;
         font-size: 16px;
         margin-right: 1px;
         margin-left: 5px;
@@ -106,7 +106,7 @@
   }
 
   .ama__75-25__masthead .border {
-    border-bottom: 1px solid #b4b4b4;
+    border-bottom: 1px solid $gray-border;
   }
 
   h2.section-title {
@@ -114,9 +114,6 @@
   }
 }
 .index-page {
-  h1 {
-    font-weight: $font-weight-truebold;
-  }
   .ama__topic-index__stubs .views-exposed-form .form-actions {
     margin-top: 0;
   }
@@ -149,7 +146,7 @@
         border-color: $gray-border;
       }
       > div {
-        margin-right: 14px;
+        margin-right: calc($gutter/2);
       }
     }
   }
@@ -178,7 +175,7 @@
     &.full {
       div p,
       > p:last-of-type {
-        margin-bottom: 14px;
+        margin-bottom: calc($gutter/2);
       }
     }
   }

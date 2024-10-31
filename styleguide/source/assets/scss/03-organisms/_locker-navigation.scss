@@ -59,10 +59,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 7px;
+    padding-top: calc($gutter/4);
     font-size: 10px;
     font-weight: $font-weight-light;
-    color: #310f4a;
+    color: $bookmark-purple;
     text-decoration: none;
     text-align: center;
     background-color: $white;
@@ -79,7 +79,7 @@
     &::before {
       display: block;
       width: 24px;
-      height: 21px;
+      height: calc($gutter*.75);
       margin-left: 8px;
       margin-right: 8px;
       content: "";
@@ -106,7 +106,7 @@
         content: "";
         height: 23px;
         width: 1px;
-        background-color: #000;
+        background-color: $black;
         margin-left: 11px;
         margin-right:10px;
       }
@@ -128,14 +128,14 @@
         }
       }
       @include breakpoint($bp-small) {
-        padding: 13px 0 13px 14px;
+        padding: 13px 0 13px calc($gutter/2);
       }
     }
     &.topics {
       &::before {
-        width: 21px;
-        height: 21px;
-        margin-right: 7px;
+        width: calc($gutter*.75);
+        height: calc($gutter*.75);
+        margin-right: calc($gutter/4);
         background-image: url('../icons/svg/locker-menu-icons/icon-locker-topics.svg');
       }
       &:hover,
@@ -152,9 +152,9 @@
     }
     &.bookmarks {
       &::before {
-        width: 21px;
+        width: calc($gutter*.75);
         height: 24px;
-        margin-right: 7px;
+        margin-right: calc($gutter/4);
         background-image: url('../icons/svg/locker-menu-icons/icon-locker-bookmarks.svg');
       }
       &:hover,

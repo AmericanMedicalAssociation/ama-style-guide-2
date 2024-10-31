@@ -1,13 +1,13 @@
 // My Subscriptions view styling
 .view-my-subscription {
   .views-exposed-form {
-    margin-top: 28px;
+    margin-top: $gutter;
     .form-actions {
-      margin-top: 7px;
+      margin-top: calc($gutter/4);
     }
   }
   .ama_subscription:first-child {
-    border-top: 1px solid #a28ab5;
+    border-top: 1px solid $glossary-purple;
   }
   .ama_subscription:last-child {
     border-bottom: none;
@@ -25,7 +25,7 @@
   @include breakpoint($bp-small) {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 14px;
+    padding-top: calc($gutter/2);
   }
   .title-removed,
   .description-removed {
@@ -59,7 +59,7 @@
           align-self: flex-start;
         }
         .ama__image {
-          margin-bottom: 14px;
+          margin-bottom: calc($gutter/2);
         }
         .flag {
           flex: auto;

@@ -13,14 +13,7 @@
       [data-region="title"] {
         flex: 1;
         .ama__h1 {
-          font-size: 1.9em;
           margin-bottom: calc($gutter * .5);
-          @include breakpoint($bp-small) {
-            font-size: 2.4em;
-          }
-          @include breakpoint($bp-med) {
-            font-size: 2.67em;
-          }
           color: $date-olive;
           &:focus-visible {
             outline: 2px solid $tab-focus-blue;
@@ -34,7 +27,7 @@
         flex: 1;
         padding-bottom: calc($gutter * .5);
         p.ama__subtitle {
-          font-size: 14px;
+          font-size: calc($gutter/2);
           font-weight: $font-weight-regular;
           color: $gray-64;
           margin-bottom: 0;
@@ -57,7 +50,7 @@
         flex-direction: row;
       }
       [data-region="date"] {
-        font-size: 14px;
+        font-size: calc($gutter/2);
         padding-right: $gutter;
         color: $gray-64;
         @include breakpoint($bp-small) {
@@ -98,7 +91,7 @@
         }
         + .author {
           @include breakpoint($bp-small max-width) {
-            padding-top: 14px;
+            padding-top: calc($gutter/2);
           }
         }
       }
@@ -134,7 +127,7 @@
           @include breakpoint($bp-small max-width) {
             padding-left: 24px;
             max-width: 155px;
-            line-height: 21px;
+            line-height: calc($gutter*.75);
           }
         }
       }
@@ -222,7 +215,7 @@
 
   //video component styling
   .embedded-entity.media {
-    padding-top: 14px;
+    padding-top: calc($gutter/2);
 
     .media-caption {
       word-wrap: break-word;
@@ -240,7 +233,7 @@
     }
 
     + .ama-toc-link {
-      padding-top: 14px;
+      padding-top: calc($gutter/2);
     }
 
     + br {
@@ -345,11 +338,11 @@
       margin-bottom: $gutter;
       p,
       span{
-        font-size: 14px;
+        font-size: calc($gutter/2);
       }
       p {
         margin-bottom: 0;
-        line-height: 21px;
+        line-height: calc($gutter*.75);
       }
     }
     .icon {
@@ -461,7 +454,7 @@
   }
   .ama__h5--purple {
     font-size: calc($gutter / 2);
-    font-weight: normal;
+    font-weight: $font-weight-regular;
     line-height: normal;
     margin-top: calc($gutter / 2);
   }

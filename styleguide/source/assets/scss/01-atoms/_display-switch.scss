@@ -6,14 +6,12 @@
   margin-right: calc($gutter / 4);
   margin-bottom: calc($gutter / 4);
   font-weight: $font-weight-semibold;
-  @media screen and (min-width: 768px) {
-    white-space: nowrap;
-  }
-
+  @include breakpoint($bp-small) {
+  white-space: nowrap;
+}
   &:hover {
     cursor: pointer;
   }
-
   &--active {
     background: $purple;
     color: $white;
@@ -23,7 +21,7 @@
   //Event listing checkbox styling
 #views-exposed-form-event-type-listing-event-listing-block {
   .js-form-type-textfield + .form-actions {
-    margin-top: 14px;
+    margin-top: calc($gutter / 2);
   }
   .fieldgroup {
     margin-top: 0;
@@ -37,20 +35,19 @@
     border-radius: unset;
     input[checked="checked"] + label,
     input:focus + label {
-      background: #46166B;
-      color: #ffffff;
+      background: $purple;
+      color: $white;
     }
     input {
       display: none;
     }
     label {
-      font-family: $myriad-pro;
+      @include type($myriad-pro, $font-weight-semibold);
       border: solid 1px $purple;
       border-radius: 5px;
       color: $black;
       font-size: 18px;
       line-height: 1.5;
-      font-weight: 600;
       margin-right: 0;
       padding: 1px 5px;
       text-transform: capitalize;

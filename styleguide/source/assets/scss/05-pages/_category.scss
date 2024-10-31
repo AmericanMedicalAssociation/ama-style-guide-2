@@ -32,7 +32,7 @@
     }
     @include breakpoint($bp-med) {
       margin-right: 0;
-      margin-top: 14px;
+      margin-top: calc($gutter/2);
       .ama__tools {
         margin-bottom: $gutter;
       }
@@ -70,7 +70,7 @@
 
   &__row--no-border-with-padding {
     border: 0;
-    padding: 21px 0;
+    padding: calc($gutter*.75) 0;
     @include breakpoint($bp-small) {
       padding: 28px 0;
     }

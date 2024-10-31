@@ -58,19 +58,19 @@ $one-col-width: 8.333333333333333%;
   padding: 0 15px;
 }
 
-@media (min-width: 768px) {
+@include breakpoint($bp-small) {
   .container {
-    width: 750px;
+    width: 570px;
   }
 }
 
-@media (min-width: 992px) {
+@include breakpoint($bp-med) {
   .container {
-    width: 970px;
+    width: 870px;
   }
 }
 
-@media (min-width: 1200px) {
+@include breakpoint($bp-large) {
   .container {
     width: 1170px;
   }
@@ -98,7 +98,7 @@ $one-col-width: 8.333333333333333%;
 
 /* col-sm-* classes */
 
-@media (min-width: 768px) {
+@include breakpoint($bp-small) {
   @for $i from 1 through $grid-base {
     .col-sm-#{$i} {
       width: $one-col-width*$i;
@@ -109,7 +109,7 @@ $one-col-width: 8.333333333333333%;
 
 /* col-md-* classes*/
 
-@media (min-width: 992px) {
+@include breakpoint($bp-med) {
   @for $i from 1 through $grid-base {
     .col-md-#{$i} {
       width: $one-col-width*$i;
@@ -120,7 +120,7 @@ $one-col-width: 8.333333333333333%;
 
 /* col-lg-* classes*/
 
-@media (min-width: 1200px) {
+@include breakpoint($bp-large) {
   @for $i from 1 through $grid-base {
     .col-lg-#{$i} {
       width: $one-col-width*$i;

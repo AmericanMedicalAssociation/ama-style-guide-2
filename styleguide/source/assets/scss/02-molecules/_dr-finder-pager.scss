@@ -34,7 +34,7 @@
     margin: 1rem 0; /* LTR */
     list-style: none;
     text-align: center;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 
   [dir="rtl"] .pager__items {
@@ -59,9 +59,9 @@
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     text-decoration: none;
-    color: #55565b;
+    color: $drfinder-gray;
     border-radius: 1rem; /* Pager size ÷ 2 */
-    background: #fff; /* Make sure that the text is visible on dark background. */
+    background: $white; /* Make sure that the text is visible on dark background. */
     line-height: 1;
   }
 
@@ -73,8 +73,8 @@
 
   .pager__link:hover,
   .pager__link.is-active:hover {
-    color: #55565b;
-    background: #e5edff;
+    color: $drfinder-gray;
+    background: $drfinder-white;
   }
 
   .pager__link--action-link {
@@ -85,7 +85,7 @@
 
   .pager__link.is-active,
   .pager__item--current {
-    color: #fff;
+    color: $white;
     border: 0.125rem solid transparent;
     background: $purple;
   }
@@ -201,8 +201,8 @@
 
   &.system {
     .dr-finder-back-search {
-      margin-bottom: 28px;
-      padding-bottom: 28px;
+      margin-bottom: $gutter;
+      padding-bottom: $gutter;
     }
   }
 }

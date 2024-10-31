@@ -167,7 +167,7 @@ header {
     text-align: right;
     padding: 0 $gutter;
     max-width: 90px;
-    font-size: 14px;
+    font-size: calc($gutter/2);
     line-height: 1em;
     flex-grow: 2;
 
@@ -213,12 +213,15 @@ header {
     @include gutter($margin-left-half...);
     @include gutter($margin-right-half...);
     display: none;
+    min-width: 0;
+    @include breakpoint($bp-small) {
+      display: none;
+    }
 
-    @include breakpoint($bp-med min-width) {
+    @include breakpoint($bp-med) {
       display: block;
       min-width: 130px;
       text-align: right;
-
       a {
         @include button_focus_outline_light;
       }
@@ -278,7 +281,7 @@ header {
     @include breakpoint($bp-small) {
       height: 81px;
       min-height: 81px;
-      padding: 0 5px 7px 5px;
+      padding: 0 5px calc($gutter/4) 5px;
     }
     @include breakpoint($bp-med) {
       height: 117px;

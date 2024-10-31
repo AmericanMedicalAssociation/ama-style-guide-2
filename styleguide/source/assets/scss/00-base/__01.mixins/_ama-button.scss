@@ -67,7 +67,7 @@
     padding: 7px !important;
     height: 36px;
     font-size: 14px !important;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     border: 1px solid $purple;
     text-transform: uppercase;
     position: static;
@@ -154,7 +154,7 @@
     &:hover {
       // Remove border.
       border-color: transparent;
-      background-color: #dbc8e0;
+      background-color: $filterList-hover;
       color: $purple;
     }
   }
@@ -164,7 +164,7 @@
     border-radius: 25px;
     padding: 0 $gutter;
     color: $purple;
-    background-color: #e4d3e7;
+    background-color: $pill-hover;
     border: none;
 
     &:hover {
@@ -181,7 +181,7 @@
     background-color: transparent;
 
     &:hover {
-      background-color: #dbc8e0;
+      background-color: $filterList-hover;
       color: $purple;
     }
   }

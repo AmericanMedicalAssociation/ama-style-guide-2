@@ -34,8 +34,8 @@ a.index-page  {
 
   //  Share text.
   .text {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: calc($gutter/2);
+    font-weight: $font-weight-regular;
     text-transform: uppercase;
     @include breakpoint($bp-small) {
       font-size: 20px;
@@ -271,10 +271,10 @@ a.index-page  {
       display: block;
     }
     &:hover, &:active {
-      background-color: #46166b33;
+      background-color: $purple;
     }
     &:focus-visible {
-      outline: 2px solid #80d4f5;
+      outline: 2px solid $pg-lt-blue;
       outline-offset: 3px;
     }
     a {
@@ -482,7 +482,7 @@ a.index-page  {
           }
 
           a {
-            margin-bottom: 28px;
+            margin-bottom: $gutter;
             padding-bottom: 0;
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;

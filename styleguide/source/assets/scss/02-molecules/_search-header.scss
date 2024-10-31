@@ -112,7 +112,7 @@
 
   &--results {
     @include gutter($padding-bottom-half...);
-    margin-bottom: 21px;
+    margin-bottom: calc($gutter*.75);
     padding-top: 33px;
 
     .ama__search-header__results-num {
@@ -151,7 +151,7 @@
       input[type="text"] {
         border: none;
         border-bottom: 2px solid $gray-40;
-        padding: 7px 2px;
+        padding: calc($gutter/4) 2px;
       }
     }
 
