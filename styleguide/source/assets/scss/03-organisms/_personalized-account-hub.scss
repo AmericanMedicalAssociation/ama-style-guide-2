@@ -76,9 +76,13 @@ $quicklink-icons: (
   @extend %quick-links-hub;
 
   &__title {
-    @include type($myriad-pro, $font-weight-truebold);
-    @include font-size($h2-font-sizes);
+    align-self: stretch;
+    color: $black;
+    @include type($kepler-std, $font-weight-semibold);
+    font-style: normal;
     line-height: normal;
+    text-decoration: none;
+    @include font-size($h2-font-sizes);        
   }
 }
 
@@ -116,7 +120,7 @@ $quicklink-icons: (
     @include font-size($h2-font-sizes);
     line-height: normal;
   }
-
+  
   &__subtitle {
     @include type($myriad-pro, $font-weight-light);
     letter-spacing: 0.5px;
