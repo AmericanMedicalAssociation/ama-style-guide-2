@@ -1,28 +1,15 @@
 // Variables
 $card-width-mobile: 85px;
 $card-width: 250px;
-
+// Primary box sizing
+$primary-quick-link-base: 165px;
+$primary-quick-link-base-mobile: 155px;
+$primary-quick-link-base-min: 125px; 
+$primary-quick-link-base-min-mobile: 105px; 
 $gap-lg: 32px;
 $gap-md: 24px;
 $gap-sm: 16px;
 $gap-xs: 8px;
-
-// Placeholder Selectors
-%item {
-  background-color: $white;
-  text-decoration: none;
-  color: $black;
-  cursor: pointer;
-}
-
-%label {
-  color: $black;
-  @include type($myriad-pro, 600);
-  font-size: 16px;
-  font-style: normal;
-  line-height: normal;
-  text-decoration: none;
-}
 
 // Sassy Map
 $quicklink-icons: (
@@ -50,17 +37,53 @@ $quicklink-icons: (
   }
 }
 
-// Personalized Account Hub
-.ama__personalized-account-hub {
+// Placeholder Selectors
+%item {
+  background-color: $white;
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+%label {
+  color: $black;
+  @include type($myriad-pro, 600);
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+}
+
+%quick-links-hub {
   display: flex;
-  gap: $gap-md;
+  gap: $gap-sm;
   flex-direction: column;
   border-radius: 8px;
   border: 1px solid $gray-7;
   box-shadow: 0px 2px 4px -2px #1018280F, 0px 4px 8px -2px #1018281A;
-  @include gutter-all($padding-all-full...);
+  @include gutter-all($padding-all-half...);
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+}
+
+// Personalized Account Hub
+.ama__personalized-account-hub {
+  @extend %quick-links-hub;
+}
+
+// Logged out quick links
+.ama__quick-links-hub {
+  @extend %quick-links-hub;
+
+  &__title {
+    align-self: stretch;
+    color: $black;
+    @include type($kepler-std, $font-weight-semibold);
+    font-style: normal;
+    line-height: normal;
+    text-decoration: none;
+    @include font-size($h2-font-sizes);        
+  }
 }
 
 // Personalized Account Info
@@ -97,7 +120,7 @@ $quicklink-icons: (
     @include font-size($h2-font-sizes);
     line-height: normal;
   }
-
+  
   &__subtitle {
     @include type($myriad-pro, $font-weight-light);
     letter-spacing: 0.5px;
@@ -143,22 +166,29 @@ $quicklink-icons: (
   &__primary {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: $gap-md;
+    gap: $gap-sm;
     $this: &;
-
+    &--span-2 {
+      grid-column: span 2;
+    }
     @include breakpoint($bp-med) {
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+    }
+
+    @include breakpoint($bp-large) {
+      flex: 1 1 ($primary-quick-link-base * 4) + ($gap-md * 3);
+      gap: $gap-md;
     }
 
     &__item {
       @extend %item;
       width: 100%;
-      min-width: 105px;
-      height: 165px;
-      padding: 10px;
+      min-width: $primary-quick-link-base-min-mobile;
+      min-height: $primary-quick-link-base-min-mobile;
+      padding: $gap-sm;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: $gap-sm;
       border-radius: 8px;
@@ -166,7 +196,8 @@ $quicklink-icons: (
       text-align: center;
 
       @include breakpoint($bp-med) {
-        min-width: 165px;
+        min-height: $primary-quick-link-base;
+        min-width: $primary-quick-link-base-min;
       }
 
       &:hover {
@@ -199,8 +230,8 @@ $quicklink-icons: (
     }
 
     &__icon-background {
-      width: 85px;
-      height: 85px;
+      width: 80px;
+      height: 80px;   
       flex-shrink: 0;
       background-size: contain;
       background-repeat: no-repeat;
@@ -208,6 +239,10 @@ $quicklink-icons: (
       display: flex;
       justify-content: center;
       align-items: center;
+      @include breakpoint($bp-med) {        
+        width: 85px;
+        height: 85px;   
+      }
     }
 
     &__label {
@@ -220,8 +255,12 @@ $quicklink-icons: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1 0 0;
-
+    flex: 1.5 1 30%;
+    min-width: $primary-quick-link-base-min-mobile * 2;;
+    @include breakpoint($bp-small) {     
+      min-width: $primary-quick-link-base;
+    }
+      
     &__item {
       @extend %item;
       display: flex;
