@@ -39,7 +39,7 @@
       display: flex;
 
       > input#edit-mr-us-citizen, input#edit-us-citizen {
-        margin-right: 7px;
+        margin-right: calc($gutter*.75);
         -webkit-box-shadow: none;
         box-shadow: none;
         border-radius: 0;
@@ -309,7 +309,7 @@
     width: 100%;
     flex: 1;
     padding: 0;
-    margin: 0 0 28px 0;
+    margin: 0 0 $gutter 0;
     @include breakpoint($bp-small) {
       flex: .6;
     }
@@ -420,7 +420,7 @@
   color: $text-navy;
   display: flex;
   flex-direction: column-reverse;
-  padding: 0 0 28px 0;
+  padding: 0 0 $gutter 0;
   padding-bottom: $gutter;
   margin-bottom: $gutter;
   @include breakpoint($bp-small) {
@@ -453,7 +453,7 @@
     width: 100%;
     flex: 1;
     padding: 0;
-    margin: 0 0 28px 0;
+    margin: 0 0 $gutter 0;
     @include breakpoint($bp-small) {
       padding-left: calc($gutter * .75);
       flex: .625;

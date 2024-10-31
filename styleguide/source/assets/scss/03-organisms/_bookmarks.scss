@@ -64,7 +64,7 @@
     &:not(.ama__search-result__image) {
       display: flex;
       @include breakpoint($bp-small) {
-        padding: 28px 0 56px;
+        padding: $gutter 0 56px;
       }
       .flag {
         align-self: flex-end;
@@ -264,7 +264,7 @@
 .no-bookmarks {
   border-top: 2px solid $gray-20;
   border-bottom: 1px solid $gray-20;
-  padding: 14px 0;
+  padding: calc($gutter/2) 0;
 }
 
 // Layout overrides
@@ -296,7 +296,7 @@
 
 //  My Topics view styling.
 .topic-search {
-  margin-top: 28px !important;
+  margin-top: $gutter !important;
   margin-bottom: calc($gutter/2);
 }
 .my-topic-listing {

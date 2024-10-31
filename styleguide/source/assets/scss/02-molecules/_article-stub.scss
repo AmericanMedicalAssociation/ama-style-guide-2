@@ -265,11 +265,11 @@
     line-height: 1;
     text-transform: uppercase;
     display: block;
-    padding: calc($gutter*.75) 0 14px 0;
+    padding: calc($gutter*.75) 0 calc($gutter/2) 0;
     font-weight: $font-weight-semibold;
     width: 100%;
     @include breakpoint($bp-small) {
-      padding: 28px 0 14px 0;
+      padding: $gutter 0 calc($gutter/2) 0;
     }
   }
 

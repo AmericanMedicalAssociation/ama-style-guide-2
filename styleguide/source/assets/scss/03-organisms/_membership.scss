@@ -63,7 +63,7 @@
 
   .ama__membership_cta_container {
     display: block;
-    margin: 14px 28px 0px $gutter;
+    margin: calc($gutter/2) $gutter 0px $gutter;
     @include breakpoint($bp-med min-width) {
       margin-top: calc($gutter/2);
     }
@@ -374,14 +374,14 @@ a.ama__membership {
         max-width: unset;
         position: unset;
         @include breakpoint($bp-small) {
-          margin: 28px 0 0;
+          margin: $gutter 0 0;
           max-width: 224px;
         }
         a.ama__button {
           font-size: 18px;
           line-height: 27px;
           color: $text-navy;
-          padding: 8px 14px 7px;
+          padding: 8px calc($gutter/2) 7px;
           height: unset;
           width: 100%;
           margin: 0;
@@ -517,14 +517,14 @@ a.ama__membership {
         max-width: unset;
         position: unset;
         @include breakpoint($bp-small) {
-          margin: 28px 0 0;
+          margin: $gutter 0 0;
           max-width: 224px;
         }
         a.ama__button {
           color: $text-navy;
           font-size: 18px;
           line-height: 27px;
-          padding: 8px 14px 7px;
+          padding: 8px calc($gutter/2) 7px;
           height: unset;
           width: 100%;
           margin: 0;
@@ -670,7 +670,7 @@ a.ama__membership {
   }
 
   .membership-body {
-    margin: 7px 0;
+    margin: calc($gutter*.75) 0;
   }
 }
 

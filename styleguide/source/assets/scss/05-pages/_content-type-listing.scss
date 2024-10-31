@@ -135,7 +135,7 @@
     .ama__subcategory-page-article-stub {
       border-bottom: solid 1px $gray-20;
       @include breakpoint($bp-med max-width) {
-        padding: 14px 0;
+        padding: calc($gutter/2) 0;
       }
     }
   }
@@ -144,7 +144,7 @@
     .ama__subcategory-page-article-stub {
       border-bottom: solid 1px $gray-20;
       @include breakpoint($bp-small max-width) {
-        padding: 14px 0;
+        padding: calc($gutter/2) 0;
         margin: 0px;
       }
       &__subcategory {
@@ -179,7 +179,7 @@
     font-size: 20px;
     font-weight: $font-weight-regular;
     padding: 10px 45px;
-    margin: 28px 0;
+    margin: $gutter 0;
     }
   }
 }

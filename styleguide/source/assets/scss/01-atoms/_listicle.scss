@@ -7,11 +7,9 @@
   &__item {
 
     counter-increment: ama-listicle;
-    font-family: kepler-std-light, serif;
-    font-weight: $font-weight-light;
+    @include type($kepler-std, $font-weight-light;
     margin-bottom: calc($gutter/4);
     @include gutter($margin-top-half...);
-
     @include breakpoint($bp-small max-width) {
       display: flex;
       flex-direction: row;

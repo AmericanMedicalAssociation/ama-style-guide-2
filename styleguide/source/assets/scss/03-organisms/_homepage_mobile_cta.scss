@@ -3,8 +3,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 7px;
-  padding: 14px 10px;
+  gap: calc($gutter*.75);
+  padding: calc($gutter/2) 10px;
   border-bottom: .5px solid $gray-30;
   @include breakpoint($bp-small) {
     display: none ;
@@ -48,7 +48,7 @@
   }
 
   &.column {
-    padding: 14px 0;
+    padding: calc($gutter/2) 0;
     a {
       flex: 1 1 100%;
       max-width: 100%;

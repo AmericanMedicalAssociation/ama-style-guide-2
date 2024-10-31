@@ -108,12 +108,12 @@
       font-weight: $font-weight-bold;
       margin: calc($gutter*.75) 0 0;
       @include breakpoint($bp-med) {
-        margin: 28px 0 0;
+        margin: $gutter 0 0;
         max-width: 224px;
       }
       a.ama__button {
         color: $text-navy;
-        padding: 8px 14px calc($gutter/4);
+        padding: 8px calc($gutter/2) calc($gutter/4);
       }
     }
   }
@@ -221,12 +221,12 @@
       font-weight: $font-weight-bold;
       margin: calc($gutter*.75) 0 0;
       @include breakpoint($bp-small) {
-        margin: 28px 0 0;
+        margin: $gutter 0 0;
         max-width: 224px;
       }
       a.ama__button {
         color: $text-navy;
-        padding: 8px 14px calc($gutter/4);
+        padding: 8px calc($gutter/2) calc($gutter/4);
       }
     }
   }

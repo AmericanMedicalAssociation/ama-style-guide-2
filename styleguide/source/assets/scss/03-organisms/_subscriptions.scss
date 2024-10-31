@@ -46,7 +46,7 @@
   }
   .ama_subscription_right {
     @include breakpoint($bp-small max-width) {
-      padding: 14px 0;
+      padding: calc($gutter/2) 0;
     }
     @include breakpoint($bp-small) {
       min-width: 180px;
@@ -70,7 +70,7 @@
     &:not(.ama__search-result__image) {
       display: flex;
       @include breakpoint($bp-small) {
-        padding: 28px 0 56px;
+        padding: $gutter 0 56px;
       }
       .salesforce-subscribe-form {
         align-self: flex-end;

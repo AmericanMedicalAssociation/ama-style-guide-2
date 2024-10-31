@@ -2,7 +2,7 @@
 
   @include breakpoint($bp-small max-width) {
     .ama__layout--two-col-right--75-25__left {
-      margin: 0 15px 7px 15px;
+      margin: 0 15px calc($gutter*.75) 15px;
     }
     .ama__subcategory-page-article-stub {
       margin: 0 15px;
@@ -114,7 +114,7 @@
         }
         &:after {
           content: '|';
-          padding: 0 7px;
+          padding: 0 calc($gutter*.75);
         }
         &:last-child:after {
           content: '';

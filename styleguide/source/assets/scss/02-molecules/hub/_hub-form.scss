@@ -51,7 +51,7 @@
       padding-bottom: 0;
     }
     @include breakpoint($bp-med) {
-      padding: 28px 0 0 40px;
+      padding: $gutter 0 0 40px;
     }
 
     &.success {
@@ -83,7 +83,7 @@
   .ama__hub-card__image,
   .ama__brightcove-gallery,
   .ama__hub-hero__video {
-    margin: 14px 0 38px;
+    margin: calc($gutter/2) 0 38px;
   }
 
   .ama__hub-card__image {
@@ -129,7 +129,7 @@
       }
     }
     .form-actions {
-      margin: 14px 0;
+      margin: calc($gutter/2) 0;
       input {
         min-width: 173px;
         font-weight: normal;
