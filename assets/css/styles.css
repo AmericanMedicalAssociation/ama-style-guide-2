@@ -17320,7 +17320,7 @@ a.ama__promo--border:hover {
 }
 @media (min-width: 37.5em) {
   .ama__sign-in-dropdown__menu {
-    top: 49px;
+    top: 48px;
   }
 }
 .ama__sign-in-dropdown__menu li {
@@ -17345,18 +17345,12 @@ a.ama__promo--border:hover {
   display: block;
 }
 .ama__sign-in-dropdown__menu__header {
-  padding-top: 5.25px;
   padding-bottom: 5.25px;
   font-size: 1.1em;
   line-height: 1.18;
   font-family: "kepler-std", "Georgia", "Times New Roman", serif;
   font-weight: 400;
   line-height: 24px;
-}
-@media (min-width: 56.25em) {
-  .ama__sign-in-dropdown__menu__header {
-    padding-top: 7px;
-  }
 }
 @media (min-width: 56.25em) {
   .ama__sign-in-dropdown__menu__header {
@@ -28298,23 +28292,6 @@ a.ama__membership:hover {
   }
 }
 
-.ama__personalized-quick-links__secondary__item, .ama__personalized-quick-links__primary__item {
-  background-color: #ffffff;
-  text-decoration: none;
-  color: #000000;
-  cursor: pointer;
-}
-
-.ama__personalized-quick-links__secondary__label, .ama__personalized-quick-links__primary__label {
-  color: #000000;
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  font-style: normal;
-  line-height: normal;
-  text-decoration: none;
-}
-
 .quick-link--icon--book {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-book-purple.svg");
@@ -28405,11 +28382,28 @@ a.ama__membership:hover {
   height: 44px;
 }
 
-.ama__personalized-account-hub {
+.ama__personalized-quick-links__secondary__item, .ama__personalized-quick-links__primary__item {
+  background-color: #ffffff;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.ama__personalized-quick-links__secondary__label, .ama__personalized-quick-links__primary__label {
+  color: #000000;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.ama__quick-links-hub, .ama__personalized-account-hub {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 24px;
+  gap: 16px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -28418,23 +28412,55 @@ a.ama__membership:hover {
   border: 1px solid #EDEDED;
   -webkit-box-shadow: 0px 2px 4px -2px rgba(16, 24, 40, 0.0588235294), 0px 4px 8px -2px rgba(16, 24, 40, 0.1019607843);
   box-shadow: 0px 2px 4px -2px rgba(16, 24, 40, 0.0588235294), 0px 4px 8px -2px rgba(16, 24, 40, 0.1019607843);
-  padding: 21px;
+  padding: 10.5px;
   margin-top: 21px;
   margin-bottom: 21px;
 }
 @media (min-width: 56.25em) {
-  .ama__personalized-account-hub {
-    padding: 28px;
+  .ama__quick-links-hub, .ama__personalized-account-hub {
+    padding: 14px;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__personalized-account-hub {
+  .ama__quick-links-hub, .ama__personalized-account-hub {
     margin-top: 28px;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__personalized-account-hub {
+  .ama__quick-links-hub, .ama__personalized-account-hub {
     margin-bottom: 28px;
+  }
+}
+
+.ama__quick-links-hub__title {
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  color: #000000;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+  font-size: 1.4em;
+  line-height: 1.143;
+}
+@media screen and (min-width: 37.5em) {
+  .ama__quick-links-hub__title {
+    font-size: 1.3em;
+    line-height: 1.192;
+  }
+}
+@media screen and (min-width: 56.25em) {
+  .ama__quick-links-hub__title {
+    font-size: 1.444em;
+    line-height: 1.192;
+  }
+}
+@media screen and (min-width: 75em) {
+  .ama__quick-links-hub__title {
+    font-size: 1.444em;
+    line-height: 1.192;
   }
 }
 
@@ -28600,19 +28626,32 @@ a.ama__membership:hover {
   display: grid;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 16px;
+}
+.ama__personalized-quick-links__primary--span-2 {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
 }
 @media (min-width: 56.25em) {
   .ama__personalized-quick-links__primary {
-    -ms-grid-columns: (1fr)[4];
-    grid-template-columns: repeat(4, 1fr);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media (min-width: 75em) {
+  .ama__personalized-quick-links__primary {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 732px;
+    flex: 1 1 732px;
+    gap: 24px;
   }
 }
 .ama__personalized-quick-links__primary__item {
   width: 100%;
   min-width: 105px;
-  height: 165px;
-  padding: 10px;
+  min-height: 105px;
+  padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28620,9 +28659,9 @@ a.ama__membership:hover {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -28633,7 +28672,8 @@ a.ama__membership:hover {
 }
 @media (min-width: 56.25em) {
   .ama__personalized-quick-links__primary__item {
-    min-width: 165px;
+    min-height: 165px;
+    min-width: 125px;
   }
 }
 .ama__personalized-quick-links__primary__item:hover {
@@ -28685,8 +28725,8 @@ a.ama__membership:hover {
   background: url("../icons/svg/quick-links/icon-subscription-white.svg");
 }
 .ama__personalized-quick-links__primary__icon-background {
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   background-size: contain;
@@ -28702,6 +28742,12 @@ a.ama__membership:hover {
   -ms-flex-align: center;
   align-items: center;
 }
+@media (min-width: 56.25em) {
+  .ama__personalized-quick-links__primary__icon-background {
+    width: 85px;
+    height: 85px;
+  }
+}
 .ama__personalized-quick-links__secondary {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28716,9 +28762,15 @@ a.ama__membership:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 0px;
-  flex: 1 0 0;
+  -webkit-box-flex: 1.5;
+  -ms-flex: 1.5 1 30%;
+  flex: 1.5 1 30%;
+  min-width: 210px;
+}
+@media (min-width: 37.5em) {
+  .ama__personalized-quick-links__secondary {
+    min-width: 165px;
+  }
 }
 .ama__personalized-quick-links__secondary__item {
   display: -webkit-box;
@@ -34667,6 +34719,11 @@ div[role=alert] {
   background-color: #7f7f7f;
   border: 0;
   height: 2px;
+}
+.ama__news .text-body a.align-right,
+.ama__news .text-body a.align-left {
+  position: relative;
+  z-index: 99;
 }
 
 .article-header form div#edit-actions {
