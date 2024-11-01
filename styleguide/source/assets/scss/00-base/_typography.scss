@@ -5,7 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* stylelint-enable */
   color: $black;
-  @include type($myriad-pro, $font-weight-regular);
+  @include type($kepler-std, $font-weight-regular);
   @include font-size($p-font-sizes);
 }
 
@@ -24,7 +24,7 @@ h1,
   @include font-size($h1-font-sizes);
   @include gutter($margin-bottom-full...);
   @extend %headerLinks;
-
+  color: $date-olive;
   &--homepage {
     color: $purple;
   }
@@ -106,7 +106,7 @@ h5,
     text-transform: uppercase;
 
     &--homepage {
-      @include type($myriad-pro, $font-weight-semibold);
+      @include type($kepler-std, $font-weight-regular);
       @include font-size($small-font-sizes--homepage);
       color: $homepagePurple;
     }
