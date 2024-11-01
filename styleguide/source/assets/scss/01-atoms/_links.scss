@@ -1,5 +1,6 @@
 /* Links */
 a {
+  @include type($myriad-pro, $font-weight-regular);
   color: $black;
   text-decoration: underline;
   outline: 0;
@@ -22,6 +23,7 @@ a {
 
 .ama__link--no-underline,
 %ama__link--no-underline {
+  @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
   &:link,
@@ -70,6 +72,7 @@ a {
 //
 .ama__link--white,
 %ama__link--white {
+  @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
   &:link,
@@ -87,6 +90,7 @@ a {
 
 .ama__link--blue,
 %ama__link--blue {
+  @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
   span {
@@ -109,6 +113,7 @@ a {
 
 .ama__link--hover-red,
 %ama__link--hover-red {
+  @include type($myriad-pro, $font-weight-semibold);
   text-decoration: none;
 
   &:link,
@@ -126,6 +131,7 @@ a {
 
 .ama__link--purple,
 %ama__link--purple {
+  @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
   span {
@@ -148,6 +154,7 @@ a {
 
 .ama__link--gray-50,
 %ama__link--gray-50 {
+  @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
   span {
@@ -170,6 +177,7 @@ a {
 
 .ama__link--homepage,
 %ama__link--homepage {
+  @include type($myriad-pro, $font-weight-regular);
   text-decoration: none;
 
   span {
@@ -193,6 +201,7 @@ a {
 .ama__link--homepage-viewall,
 %ama__link--homepage-viewall {
   @include font-size($font-sizes--14px);
+  @include type($myriad-pro, $font-weight-semibold);
   text-decoration: none;
   font-style: italic;
 
