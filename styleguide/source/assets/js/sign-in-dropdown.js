@@ -64,3 +64,44 @@
         }
     };
 })(jQuery, Drupal);
+
+/**
+ * @file
+ * Attaches behavior to open dismissable sign-in menu when visiting the site
+ */
+(function ($, Drupal) {
+    Drupal.behaviors.signInCta = {
+        attach: function (context, settings) {
+
+            function hasNoCtaCookie() {
+                const signInCtaCookie = Cookies.get('signInCta');
+                return signInCtaCookie !== '1'
+            }
+            function setCtaCompleted(e){
+                Cookies.set('signInCta', '1');
+            }
+            function bindCompletedEvents(dropdownBlock){
+                $(document).on('click', setCtaCompleted);
+                dropdownBlock.on('click', setCtaCompleted);
+            }
+            function startCta(signInDropdown, signInDropdownMenu){
+                if (hasNoCtaCookie()) {
+                    signInDropdown.addClass('open');
+                    signInDropdownMenu.addClass('ama__sign-in-dropdown__menu--open');
+
+                    setTimeout(function () {
+                        signInDropdown.removeClass('open');
+                        signInDropdownMenu.removeClass('ama__sign-in-dropdown__menu--open');
+                        setCtaCompleted()
+                    }, 7000);
+                }
+
+            }
+            const $dropdownBlock = $('.ama__sign-in-dropdown');
+            const $signInDropdownTrigger = $('.ama__sign-in-dropdown__trigger');
+            const $signInDropdownMenu = $('.ama__sign-in-dropdown__menu');
+            bindCompletedEvents($dropdownBlock)
+            startCta($signInDropdownTrigger, $signInDropdownMenu)
+        }
+    };
+})(jQuery, Drupal);
