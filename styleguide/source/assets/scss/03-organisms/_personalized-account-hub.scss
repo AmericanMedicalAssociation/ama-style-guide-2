@@ -1,11 +1,75 @@
+@use "sass:math";
+
 // Variables
 $card-width-mobile: 85px;
 $card-width: 250px;
-
+// Primary box sizing
+$primary-quick-link-base: 165px;
+$primary-quick-link-base-mobile: 155px;
+$primary-quick-link-base-min: 125px;
+$primary-quick-link-base-min-mobile: 105px;
 $gap-lg: 32px;
 $gap-md: 24px;
 $gap-sm: 16px;
 $gap-xs: 8px;
+$gap-compact: 4px;
+
+// Sassy Map
+$quicklink-icons: (
+  advocacy,
+  ambulance,
+  book,
+  books,
+  career,
+  check,
+  discount,
+  documents,
+  event,
+  gift,
+  graduation,
+  hospital,
+  house,
+  lightbulb,
+  people,
+  prescription,
+  puzzle,
+  saved,
+  search,
+  stethoscope,
+  subscription,
+  syringe,
+);
+
+// Icon Styles
+@each $name in $quicklink-icons {
+  %quick-link----#{$name} {
+    display: inline-block;
+    background-image: url("../icons/svg/quick-links/icon-#{$name}-purple.svg");
+    background-repeat: no-repeat;
+
+  }
+
+  .quick-link--icon--#{$name} {
+    @extend %quick-link----#{$name};
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+
+    @include breakpoint($bp-small) {
+      background-size: 44px;
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .quick-link--icon--#{$name}--compact {
+    @extend %quick-link----#{$name};
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
 
 // Placeholder Selectors
 %item {
@@ -24,43 +88,36 @@ $gap-xs: 8px;
   text-decoration: none;
 }
 
-// Sassy Map
-$quicklink-icons: (
-  book,
-  books,
-  check,
-  discount,
-  gift,
-  graduation,
-  people,
-  puzzle,
-  saved,
-  subscription,
-);
-
-// Icon Styles
-@each $name in $quicklink-icons {
-  .quick-link--icon--#{$name} {
-    display: inline-block;
-    background-image: url("../icons/svg/quick-links/icon-#{$name}-purple.svg");
-    background-repeat: no-repeat;
-    background-size: 44px;
-    width: 44px;
-    height: 44px;
-  }
-}
-
-// Personalized Account Hub
-.ama__personalized-account-hub {
+%quick-links-hub {
   display: flex;
-  gap: $gap-md;
+  gap: $gap-sm;
   flex-direction: column;
   border-radius: 8px;
   border: 1px solid $gray-7;
   box-shadow: 0px 2px 4px -2px #1018280F, 0px 4px 8px -2px #1018281A;
-  @include gutter-all($padding-all-full...);
+  @include gutter-all($padding-all-half...);
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+}
+
+// Personalized Account Hub
+.ama__personalized-account-hub {
+  @extend %quick-links-hub;
+}
+
+// Logged out quick links
+.ama__quick-links-hub {
+  @extend %quick-links-hub;
+
+  &__title {
+    align-self: stretch;
+    color: $black;
+    @include type($kepler-std, $font-weight-semibold);
+    font-style: normal;
+    line-height: normal;
+    text-decoration: none;
+    @include font-size($h2-font-sizes);        
+  }
 }
 
 // Personalized Account Info
@@ -97,7 +154,7 @@ $quicklink-icons: (
     @include font-size($h2-font-sizes);
     line-height: normal;
   }
-
+  
   &__subtitle {
     @include type($myriad-pro, $font-weight-light);
     letter-spacing: 0.5px;
@@ -143,22 +200,31 @@ $quicklink-icons: (
   &__primary {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: $gap-md;
+    gap: $gap-sm;
     $this: &;
 
+    &--span-2 {
+      grid-column: span 2;
+    }
+
     @include breakpoint($bp-med) {
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+    }
+
+    @include breakpoint($bp-large) {
+      flex: 1 1 ($primary-quick-link-base * 4) + ($gap-md * 3);
+      gap: $gap-md;
     }
 
     &__item {
       @extend %item;
       width: 100%;
-      min-width: 105px;
-      height: 165px;
-      padding: 10px;
+      min-width: math.div($primary-quick-link-base-min-mobile, 2px);
+      min-height: math.div($primary-quick-link-base-min-mobile, 2px);
+      padding: $gap-sm;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: $gap-sm;
       border-radius: 8px;
@@ -166,7 +232,20 @@ $quicklink-icons: (
       text-align: center;
 
       @include breakpoint($bp-med) {
-        min-width: 165px;
+        min-height: $primary-quick-link-base;
+        min-width: $primary-quick-link-base-min;
+      }
+
+      &--compact {
+        display: flex;
+        justify-content: flex-start;
+        height: 100%;
+        @include breakpoint($bp-med) {
+          min-width: 100px;
+        }
+
+        min-height: 100px;
+        gap: $gap-compact;
       }
 
       &:hover {
@@ -194,20 +273,52 @@ $quicklink-icons: (
       @each $name in $quicklink-icons {
         &:hover .quick-link--icon--#{$name} {
           background: url("../icons/svg/quick-links/icon-#{$name}-white.svg");
+          background-size: 24px;
+          width: 24px;
+          height: 24px;
+
+          @include breakpoint($bp-xs) {
+            background-size: 44px;
+            width: 44px;
+            height: 44px;
+          }
+
+        }
+
+        &:hover .quick-link--icon--#{$name}--compact {
+          background: url("../icons/svg/quick-links/icon-#{$name}-white.svg");
+          background-size: 24px;
+          width: 24px;
+          height: 24px;
         }
       }
     }
 
     &__icon-background {
-      width: 85px;
-      height: 85px;
       flex-shrink: 0;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 45px;
+      height: 45px;
+
+      @include breakpoint($bp-small) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @include breakpoint($bp-med) {
+        width: 85px;
+        height: 85px;
+      }
+
+      &--compact {
+        width: 45px;
+        height: 45px;
+      }
     }
 
     &__label {
@@ -220,7 +331,12 @@ $quicklink-icons: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1 0 0;
+    flex: 1.5 1 30%;
+    min-width: $primary-quick-link-base-min-mobile, 2;
+
+    @include breakpoint($bp-small) {
+      min-width: $primary-quick-link-base;
+    }
 
     &__item {
       @extend %item;

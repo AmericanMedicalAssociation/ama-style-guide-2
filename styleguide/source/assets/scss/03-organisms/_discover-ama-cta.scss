@@ -1,26 +1,56 @@
 // Variables
+$gap-md: 24px;
+$gap-sm: 16px;
 $gap-xs: 8px;
 $radius: 8px;
+$block-padding: 16px 16px 8px 16px;
 
 // Discover AMA CTA
 .ama__discover-ama-cta {
+  $this: &;
   display: flex;
   flex-direction: column;
-  padding: 16px 16px 8px 16px;
+  gap: $gap-xs;
   justify-content: center;
   align-items: flex-start;
-  gap: $gap-xs;
+  padding: $block-padding;
   background-color: $white;
   border-radius: $radius;
   border: 1px solid $gray-7;
   box-shadow: 0px 4px 8px -2px #1018280F, 0px 2px 4px -2px #1018281A;
+
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
-  
+
+
   @include breakpoint($bp-large) {
     flex-direction: row;
+    gap: $gap-sm;
     align-items: center;
     padding: 0px;
+  }
+
+  &__quick-links--inline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $block-padding;
+
+
+    #{$this}__header {
+      @include breakpoint($bp-large) {
+        max-width: 100%;
+        flex: 1 1 0;
+        padding: unset;
+      }
+    }
+
+    #{$this}__links {
+      &--quick-links {        
+        flex: 1 0 0;
+      }
+    }
   }
 
   &__header {
@@ -31,7 +61,7 @@ $radius: 8px;
 
     @include breakpoint($bp-large) {
       padding: 32px;
-      flex: 0 1 33%;
+      flex: 1 1 36%;
       max-width: 400px;
     }
   }
@@ -44,6 +74,7 @@ $radius: 8px;
     line-height: normal;
     text-decoration: none;
     font-size: 26px;
+
     @include breakpoint($bp-large) {
       font-size: 32px;
     }
@@ -60,7 +91,25 @@ $radius: 8px;
       flex-direction: row;
       align-items: center;
       flex: 1 1 67%;
+    }
 
+    &--quick-links {
+      display: grid;
+      gap: $gap-sm;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include breakpoint($bp-small) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include breakpoint($bp-med) {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        @include gutter($margin-bottom-half...);
+        @include gutter($margin-top-half...);
+        @include gutter($margin-right-half...);
+      }
     }
 
     &__item {
@@ -80,17 +129,19 @@ $radius: 8px;
       &:hover {
         text-decoration: underline;
       }
+
       &:focus-visible {
         outline: 2px solid $tab-focus-blue;
         outline-offset: 4px;
         z-index: 1;
         position: relative;
       }
+
       @include breakpoint($bp-large) {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        flex: 1 0 0;
+        flex: 1 0 33%;
         border-right: 1px solid $gray-7;
         border-bottom: none;
         padding: 32px;
@@ -99,6 +150,7 @@ $radius: 8px;
         &:first-child {
           border-left: 1px solid $gray-7;
         }
+
         &:last-child {
           border-right: none;
         }
@@ -108,11 +160,13 @@ $radius: 8px;
 
   &__link {
     color: $purple;
-    @include type($myriad-pro, $font-weight-bold);
-    font-size: 16px;    
+    @include type($myriad-pro, $font-weight-truebold);
+    font-size: 16px;
+
     @include breakpoint($bp-large) {
       font-size: 24px;
     }
+
     font-style: normal;
     line-height: normal;
     text-decoration: none;

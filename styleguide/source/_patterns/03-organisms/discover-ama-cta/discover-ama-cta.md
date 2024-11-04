@@ -9,7 +9,8 @@ This block allows a generic (signed-out) user, to be prompted to discover my AMA
 
 ### Variant options
 
-* [Main](?p=organisms-personalized-account-hub)
+* [Main / cta style](?p=organisms-discover-ama-cta)
+* [quick links style](?p=organisms-discover-ama-cta-quick-links)
 
 ### Variables
 
