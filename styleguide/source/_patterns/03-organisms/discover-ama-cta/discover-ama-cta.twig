@@ -1,13 +1,31 @@
 <div class="ama__discover-ama-cta">
-  <div class="ama__discover-ama-cta__header">
-    <span class="ama__discover-ama-cta__title">{{ title }}</span>
-  </div>
-  <div class="ama__discover-ama-cta__links">
-    {% for item in links %}
-      <a class="ama__discover-ama-cta__links__item" href="{{ item.url }}" target="_blank">
-        <span href="{{ item.url }}" class="ama__discover-ama-cta__link">{{ item.title }}</span>
-		<i class="ama__discover-ama-cta__link__arrow"></i>
-      </a>
-    {% endfor %}
-  </div>
+	<div class="ama__discover-ama-cta__header">
+		<span class="ama__discover-ama-cta__title">{{ title }}</span>
+	</div>
+	{% if links is not empty or quick_links is not empty %}
+		{% if styleVariation != 'compact_quick_links' %}
+			{% set container_class = "ama__discover-ama-cta__links" %}
+		{% else %}
+			{% set container_class = "ama__discover-ama-cta__links ama__discover-ama-cta__links--quick-links" %}
+		{% endif %}
+		<div class="{{ container_class }}">
+			{% if styleVariation != 'compact_quick_links' %}
+				{% for link in links %}
+					<a class="ama__discover-ama-cta__links__item" href="{{ link.url }}" target="_blank">
+						<span href="{{ link.url }}" class="ama__discover-ama-cta__link">{{ link.title }}</span>
+						<i class="ama__discover-ama-cta__link__arrow"></i>
+					</a>
+				{% endfor %}
+			{% else %}
+				{% for link in quick_links %}
+					<a href="{{ link.url }}" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="{{ link.icon }}--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">{{ link.title }}</span>
+					</a>
+				{% endfor %}
+			{% endif %}
+		</div>
+	{% endif %}
 </div>

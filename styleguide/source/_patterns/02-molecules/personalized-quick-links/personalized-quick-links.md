@@ -5,11 +5,12 @@ title: "Personalized Quick Links"
 
 This block allows for users to see personalized Quick links
 
-[TBD](TBD)
+[AWMEE-68](https://ama-it.atlassian.net/browse/AWMEE-671)
 
 ### Variant options
 
-* [TBD](?p=TBD)
+* [Main](?p=molecules-personalized-quick-links)
+* [v2](?p=molecules-personalized-quick-links-v2)
 
 ### Variables
 
