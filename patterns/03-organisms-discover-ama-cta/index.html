@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../../assets/css/styles.css?1730413218" media="all" />
-  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1730413218" media="all" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1730752220" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1730752220" media="all" />
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
@@ -23,8 +23,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1730413218" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1730413218" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1730752220" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1730752220" media="all" />
   <!-- End Pattern Lab -->
 
 </head>
@@ -65,29 +65,99 @@
     
   <div class="sg-pattern-example">
     <div class="ama__discover-ama-cta">
-  <div class="ama__discover-ama-cta__header">
-    <span class="ama__discover-ama-cta__title">New to AMA? Discover what it has to offer.</span>
-  </div>
-  <div class="ama__discover-ama-cta__links">
-          <a class="ama__discover-ama-cta__links__item" href="https://example.com/physicians" target="_blank">
-        <span href="https://example.com/physicians" class="ama__discover-ama-cta__link">Physicians</span>
-		<i class="ama__discover-ama-cta__link__arrow"></i>
-      </a>
-          <a class="ama__discover-ama-cta__links__item" href="https://example.com/residents" target="_blank">
-        <span href="https://example.com/residents" class="ama__discover-ama-cta__link">Residents</span>
-		<i class="ama__discover-ama-cta__link__arrow"></i>
-      </a>
-          <a class="ama__discover-ama-cta__links__item" href="https://example.com/students" target="_blank">
-        <span href="https://example.com/students" class="ama__discover-ama-cta__link">Students</span>
-		<i class="ama__discover-ama-cta__link__arrow"></i>
-      </a>
-      </div>
-</div>
+	<div class="ama__discover-ama-cta__header">
+		<span class="ama__discover-ama-cta__title">New to AMA? Discover what it has to offer.</span>
+	</div>
+										<div class="ama__discover-ama-cta__links">
+												<a class="ama__discover-ama-cta__links__item" href="https://example.com/physicians" target="_blank">
+						<span href="https://example.com/physicians" class="ama__discover-ama-cta__link">Physicians</span>
+						<i class="ama__discover-ama-cta__link__arrow"></i>
+					</a>
+									<a class="ama__discover-ama-cta__links__item" href="https://example.com/residents" target="_blank">
+						<span href="https://example.com/residents" class="ama__discover-ama-cta__link">Residents</span>
+						<i class="ama__discover-ama-cta__link__arrow"></i>
+					</a>
+									<a class="ama__discover-ama-cta__links__item" href="https://example.com/students" target="_blank">
+						<span href="https://example.com/students" class="ama__discover-ama-cta__link">Students</span>
+						<i class="ama__discover-ama-cta__link__arrow"></i>
+					</a>
+									</div>
+	</div>
 
   </div>
   
   <script type="text/json" id="sg-pattern-data-organisms-discover-ama-cta" class="sg-pattern-data">
-    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"organisms","patternSubtype":"discover ama cta"},"patternDesc":"<p>This block allows a generic (signed-out) user, to be prompted to discover my AMA experience broken down by options for Physicians, Residents, and Students so that I can easily navigate to the information specific to their persona type.<\/p>\n\n<p><a href=\"https:\/\/ama-it.atlassian.net\/browse\/AWMEE-17\">AWMEE-17<\/a><\/p>\n\n<h3>Variant options<\/h3>\n\n<ul>\n<li><a href=\"?p=organisms-personalized-account-hub\">Main<\/a><\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n    \"title\":  type: string \/ required,\n    \"links\": []\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":" Signed-Out User CTA for Membership ","patternPartial":"organisms-discover-ama-cta","patternState":""}
+    {"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"organisms","patternSubtype":"discover ama cta"},"patternDesc":"<p>This block allows a generic (signed-out) user, to be prompted to discover my AMA experience broken down by options for Physicians, Residents, and Students so that I can easily navigate to the information specific to their persona type.<\/p>\n\n<p><a href=\"https:\/\/ama-it.atlassian.net\/browse\/AWMEE-17\">AWMEE-17<\/a><\/p>\n\n<h3>Variant options<\/h3>\n\n<ul>\n<li><a href=\"?p=organisms-discover-ama-cta\">Main \/ cta style<\/a><\/li>\n<li><a href=\"?p=organisms-discover-ama-cta-quick-links\">quick links style<\/a><\/li>\n<\/ul>\n\n<h3>Variables<\/h3>\n\n<pre><code>{\n    \"title\":  type: string \/ required,\n    \"links\": []\n}\n<\/code><\/pre>","patternExtension":"twig","patternName":" Signed-Out User CTA for Membership ","patternPartial":"organisms-discover-ama-cta","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="organisms-discover-ama-cta-quick-links" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/03-organisms-discover-ama-cta-discover-ama-cta-quick-links/03-organisms-discover-ama-cta-discover-ama-cta-quick-links.html" class="patternLink" data-patternpartial="organisms-discover-ama-cta-quick-links" title="Link to Pattern">
+        discover ama cta quick links
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="organisms-discover-ama-cta-quick-links" title="View Pattern Info" id="sg-pattern-extra-toggle-organisms-discover-ama-cta-quick-links" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-organisms-discover-ama-cta-quick-links"></div>
+    
+  <div class="sg-pattern-example">
+    <div class="ama__discover-ama-cta">
+	<div class="ama__discover-ama-cta__header">
+		<span class="ama__discover-ama-cta__title">New to AMA? Discover what it has to offer.</span>
+	</div>
+										<div class="ama__discover-ama-cta__links ama__discover-ama-cta__links--quick-links">
+												<a href="https://example.com/benefits" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="quick-link--icon--gift--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">My Benefits</span>
+					</a>
+									<a href="https://example.com/saved-items" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="quick-link--icon--saved--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">My Saved Items</span>
+					</a>
+									<a href="https://example.com/cme-credits" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="quick-link--icon--graduation--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">My CME Credits</span>
+					</a>
+									<a href="https://example.com/jama-network" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="quick-link--icon--subscription--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">JAMA Network™</span>
+					</a>
+									<a href="https://example.com/5" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="quick-link--icon--check--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">Link 5</span>
+					</a>
+									<a href="https://example.com/6" class="ama__discover-ama-cta__links__quick-link ama__personalized-quick-links__primary__item ama__personalized-quick-links__primary__item--compact" tabindex="0">
+						<div class="ama__personalized-quick-links__primary__icon-background ama__personalized-quick-links__primary__icon-background--compact">
+							<div class="quick-link--icon--books--compact"></div>
+						</div>
+						<span class="ama__personalized-quick-links__primary__label">Link 6</span>
+					</a>
+									</div>
+	</div>
+
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-organisms-discover-ama-cta-quick-links" class="sg-pattern-data">
+    {"lineage":false,"lineageR":[],"patternBreadcrumb":{"patternType":"organisms","patternSubtype":"discover ama cta"},"patternDesc":"","patternExtension":"twig","patternName":"discover ama cta quick links","patternPartial":"organisms-discover-ama-cta-quick-links","patternState":""}
   </script>
 </div><!--end .sg-pattern-->            </div> <!--end #sg-patterns-->
 </div><!--end .sg-main-->
@@ -127,10 +197,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1730413218">
+<script id="pl-js-polyfill-insert-1730752220">
   (function() {
     if (self != top) {
-      var cb = '1730413218';
+      var cb = '1730752220';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -140,10 +210,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1730413218">
+<script id="pl-js-insert-1730752220">
   (function() {
     if (self != top) {
-      var cb = '1730413218';
+      var cb = '1730752220';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }
