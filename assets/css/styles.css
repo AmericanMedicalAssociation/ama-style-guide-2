@@ -23983,14 +23983,14 @@ body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectm
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 16px 16px 8px 16px;
+  gap: 8px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  gap: 8px;
+  padding: 16px 16px 8px 16px;
   background-color: #ffffff;
   border-radius: 8px;
   border: 1px solid #EDEDED;
@@ -24015,11 +24015,42 @@ body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectm
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    gap: 16px;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     padding: 0px;
   }
+}
+.ama__discover-ama-cta__quick-links--inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 16px 16px 8px 16px;
+}
+@media (min-width: 75em) {
+  .ama__discover-ama-cta__quick-links--inline .ama__discover-ama-cta__header {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+    padding: unset;
+  }
+}
+.ama__discover-ama-cta__quick-links--inline .ama__discover-ama-cta__links--quick-links {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 0px;
+  flex: 1 0 0;
 }
 .ama__discover-ama-cta__header {
   display: -webkit-box;
@@ -24037,9 +24068,9 @@ body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectm
 @media (min-width: 75em) {
   .ama__discover-ama-cta__header {
     padding: 32px;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 33%;
-    flex: 0 1 33%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 36%;
+    flex: 1 1 36%;
     max-width: 400px;
   }
 }
@@ -24092,6 +24123,51 @@ body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectm
     flex: 1 1 67%;
   }
 }
+.ama__discover-ama-cta__links--quick-links {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 37.5em) {
+  .ama__discover-ama-cta__links--quick-links {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 56.25em) {
+  .ama__discover-ama-cta__links--quick-links {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 10.5px;
+    margin-top: 10.5px;
+    margin-right: 10.5px;
+  }
+}
+@media (min-width: 56.25em) and (min-width: 56.25em) {
+  .ama__discover-ama-cta__links--quick-links {
+    margin-bottom: 14px;
+  }
+}
+@media (min-width: 56.25em) and (min-width: 56.25em) {
+  .ama__discover-ama-cta__links--quick-links {
+    margin-top: 14px;
+  }
+}
+@media (min-width: 56.25em) and (min-width: 56.25em) {
+  .ama__discover-ama-cta__links--quick-links {
+    margin-right: 14px;
+  }
+}
 .ama__discover-ama-cta__links__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24135,8 +24211,8 @@ body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectm
     -ms-flex-align: start;
     align-items: flex-start;
     -webkit-box-flex: 1;
-    -ms-flex: 1 0 0px;
-    flex: 1 0 0;
+    -ms-flex: 1 0 33%;
+    flex: 1 0 33%;
     border-right: 1px solid #EDEDED;
     border-bottom: none;
     padding: 32px;
@@ -28292,94 +28368,554 @@ a.ama__membership:hover {
   }
 }
 
-.quick-link--icon--book {
+.quick-link--icon--advocacy--compact, .quick-link--icon--advocacy {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-advocacy-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--advocacy {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--advocacy {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--advocacy--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--ambulance--compact, .quick-link--icon--ambulance {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-ambulance-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--ambulance {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--ambulance {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--ambulance--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--book--compact, .quick-link--icon--book {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-book-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--books {
+.quick-link--icon--book {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--book {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--book--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--books--compact, .quick-link--icon--books {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-books-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--check {
+.quick-link--icon--books {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--books {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--books--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--career--compact, .quick-link--icon--career {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-career-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--career {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--career {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--career--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--check--compact, .quick-link--icon--check {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-check-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--discount {
+.quick-link--icon--check {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--check {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--check--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--discount--compact, .quick-link--icon--discount {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-discount-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--gift {
+.quick-link--icon--discount {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--discount {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--discount--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--documents--compact, .quick-link--icon--documents {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-documents-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--documents {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--documents {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--documents--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--event--compact, .quick-link--icon--event {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-event-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--event {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--event {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--event--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--gift--compact, .quick-link--icon--gift {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-gift-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--graduation {
+.quick-link--icon--gift {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--gift {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--gift--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--graduation--compact, .quick-link--icon--graduation {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-graduation-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--people {
+.quick-link--icon--graduation {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--graduation {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--graduation--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--hospital--compact, .quick-link--icon--hospital {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-hospital-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--hospital {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--hospital {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--hospital--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--house--compact, .quick-link--icon--house {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-house-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--house {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--house {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--house--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--lightbulb--compact, .quick-link--icon--lightbulb {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-lightbulb-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--lightbulb {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--lightbulb {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--lightbulb--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--people--compact, .quick-link--icon--people {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-people-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--puzzle {
+.quick-link--icon--people {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--people {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--people--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--prescription--compact, .quick-link--icon--prescription {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-prescription-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--prescription {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--prescription {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--prescription--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--puzzle--compact, .quick-link--icon--puzzle {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-puzzle-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--saved {
+.quick-link--icon--puzzle {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--puzzle {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--puzzle--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--saved--compact, .quick-link--icon--saved {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-saved-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
 }
 
-.quick-link--icon--subscription {
+.quick-link--icon--saved {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--saved {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--saved--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--search--compact, .quick-link--icon--search {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-search-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--search {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--search {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--search--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--stethoscope--compact, .quick-link--icon--stethoscope {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-stethoscope-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--stethoscope {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--stethoscope {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--stethoscope--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--subscription--compact, .quick-link--icon--subscription {
   display: inline-block;
   background-image: url("../icons/svg/quick-links/icon-subscription-purple.svg");
   background-repeat: no-repeat;
-  background-size: 44px;
-  width: 44px;
-  height: 44px;
+}
+
+.quick-link--icon--subscription {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--subscription {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--subscription--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link--icon--syringe--compact, .quick-link--icon--syringe {
+  display: inline-block;
+  background-image: url("../icons/svg/quick-links/icon-syringe-purple.svg");
+  background-repeat: no-repeat;
+}
+
+.quick-link--icon--syringe {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 37.5em) {
+  .quick-link--icon--syringe {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.quick-link--icon--syringe--compact {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .ama__personalized-quick-links__secondary__item, .ama__personalized-quick-links__primary__item {
@@ -28649,8 +29185,8 @@ a.ama__membership:hover {
 }
 .ama__personalized-quick-links__primary__item {
   width: 100%;
-  min-width: 105px;
-  min-height: 105px;
+  min-width: 52.5;
+  min-height: 52.5;
   padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28676,6 +29212,22 @@ a.ama__membership:hover {
     min-width: 125px;
   }
 }
+.ama__personalized-quick-links__primary__item--compact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 100px;
+  gap: 4px;
+}
+@media (min-width: 56.25em) {
+  .ama__personalized-quick-links__primary__item--compact {
+    min-width: 100px;
+  }
+}
 .ama__personalized-quick-links__primary__item:hover {
   background-color: #7229D1;
   border: 1px solid #7229D1;
@@ -28694,44 +29246,430 @@ a.ama__membership:hover {
 .ama__personalized-quick-links__primary__item:hover .ama__personalized-quick-links__primary__label {
   color: #ffffff;
 }
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--advocacy {
+  background: url("../icons/svg/quick-links/icon-advocacy-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--advocacy {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--advocacy--compact {
+  background: url("../icons/svg/quick-links/icon-advocacy-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--ambulance {
+  background: url("../icons/svg/quick-links/icon-ambulance-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--ambulance {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--ambulance--compact {
+  background: url("../icons/svg/quick-links/icon-ambulance-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--book {
   background: url("../icons/svg/quick-links/icon-book-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--book {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--book--compact {
+  background: url("../icons/svg/quick-links/icon-book-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--books {
   background: url("../icons/svg/quick-links/icon-books-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--books {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--books--compact {
+  background: url("../icons/svg/quick-links/icon-books-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--career {
+  background: url("../icons/svg/quick-links/icon-career-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--career {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--career--compact {
+  background: url("../icons/svg/quick-links/icon-career-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--check {
   background: url("../icons/svg/quick-links/icon-check-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--check {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--check--compact {
+  background: url("../icons/svg/quick-links/icon-check-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--discount {
   background: url("../icons/svg/quick-links/icon-discount-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--discount {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--discount--compact {
+  background: url("../icons/svg/quick-links/icon-discount-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--documents {
+  background: url("../icons/svg/quick-links/icon-documents-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--documents {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--documents--compact {
+  background: url("../icons/svg/quick-links/icon-documents-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--event {
+  background: url("../icons/svg/quick-links/icon-event-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--event {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--event--compact {
+  background: url("../icons/svg/quick-links/icon-event-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--gift {
   background: url("../icons/svg/quick-links/icon-gift-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--gift {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--gift--compact {
+  background: url("../icons/svg/quick-links/icon-gift-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--graduation {
   background: url("../icons/svg/quick-links/icon-graduation-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--graduation {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--graduation--compact {
+  background: url("../icons/svg/quick-links/icon-graduation-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--hospital {
+  background: url("../icons/svg/quick-links/icon-hospital-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--hospital {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--hospital--compact {
+  background: url("../icons/svg/quick-links/icon-hospital-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--house {
+  background: url("../icons/svg/quick-links/icon-house-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--house {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--house--compact {
+  background: url("../icons/svg/quick-links/icon-house-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--lightbulb {
+  background: url("../icons/svg/quick-links/icon-lightbulb-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--lightbulb {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--lightbulb--compact {
+  background: url("../icons/svg/quick-links/icon-lightbulb-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--people {
   background: url("../icons/svg/quick-links/icon-people-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--people {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--people--compact {
+  background: url("../icons/svg/quick-links/icon-people-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--prescription {
+  background: url("../icons/svg/quick-links/icon-prescription-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--prescription {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--prescription--compact {
+  background: url("../icons/svg/quick-links/icon-prescription-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--puzzle {
   background: url("../icons/svg/quick-links/icon-puzzle-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--puzzle {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--puzzle--compact {
+  background: url("../icons/svg/quick-links/icon-puzzle-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--saved {
   background: url("../icons/svg/quick-links/icon-saved-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--saved {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--saved--compact {
+  background: url("../icons/svg/quick-links/icon-saved-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--search {
+  background: url("../icons/svg/quick-links/icon-search-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--search {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--search--compact {
+  background: url("../icons/svg/quick-links/icon-search-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--stethoscope {
+  background: url("../icons/svg/quick-links/icon-stethoscope-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--stethoscope {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--stethoscope--compact {
+  background: url("../icons/svg/quick-links/icon-stethoscope-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__item:hover .quick-link--icon--subscription {
   background: url("../icons/svg/quick-links/icon-subscription-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--subscription {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--subscription--compact {
+  background: url("../icons/svg/quick-links/icon-subscription-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--syringe {
+  background: url("../icons/svg/quick-links/icon-syringe-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 25em) {
+  .ama__personalized-quick-links__primary__item:hover .quick-link--icon--syringe {
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+.ama__personalized-quick-links__primary__item:hover .quick-link--icon--syringe--compact {
+  background: url("../icons/svg/quick-links/icon-syringe-white.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 .ama__personalized-quick-links__primary__icon-background {
-  width: 80px;
-  height: 80px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" fill="none"><circle cx="42.5" cy="42.5" r="42.5" fill="white"/><circle cx="42.5" cy="42.5" r="42.5" fill="%238641BC" fill-opacity="0.1"/></svg>');
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28741,12 +29679,24 @@ a.ama__membership:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  width: 45px;
+  height: 45px;
+}
+@media (min-width: 37.5em) {
+  .ama__personalized-quick-links__primary__icon-background {
+    width: 80px;
+    height: 80px;
+  }
 }
 @media (min-width: 56.25em) {
   .ama__personalized-quick-links__primary__icon-background {
     width: 85px;
     height: 85px;
   }
+}
+.ama__personalized-quick-links__primary__icon-background--compact {
+  width: 45px;
+  height: 45px;
 }
 .ama__personalized-quick-links__secondary {
   display: -webkit-box;
@@ -28765,7 +29715,7 @@ a.ama__membership:hover {
   -webkit-box-flex: 1.5;
   -ms-flex: 1.5 1 30%;
   flex: 1.5 1 30%;
-  min-width: 210px;
+  min-width: 105px, 2;
 }
 @media (min-width: 37.5em) {
   .ama__personalized-quick-links__secondary {
