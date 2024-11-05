@@ -93,7 +93,20 @@
   }
 
   &--wide {
-    width: 100%;
+    display: block;
+    margin-top: 64px;
+    margin-bottom: 72px;
+    padding: 0 14px;
+    .ama__subscribe-promo__subject-title {
+      list-style: none;
+      font-size: 16px;
+      padding-bottom: 0;
+    }
+
+    .ama__subscribe-promo__heading {
+      font-size: 32px;
+    }
+
     .ajax-progress {
       &.ajax-progress-throbber {
         display:inline;

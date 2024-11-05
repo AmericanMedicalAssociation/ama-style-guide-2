@@ -87,6 +87,15 @@
     }
   }
 
+  .layout--one-col-class:has(.ama__subscribe-promo--wide) {
+    background-color: $purple;
+    width: 100%;
+    max-width: unset;
+    @include breakpoint($bp-small) {
+      margin: 32px 0;
+    }
+  }
+
   &__promos {
 
     @include breakpoint($bp-small) {
