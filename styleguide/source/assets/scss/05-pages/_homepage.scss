@@ -87,24 +87,12 @@
     }
   }
 
-  .layout--ama-page-section-one-col.section:has(.ama__subscribe-promo--wide) {
+  .layout--one-col-class:has(.ama__subscribe-promo--wide) {
     background-color: $purple;
+    width: 100%;
+    max-width: unset;
     @include breakpoint($bp-small) {
-      margin-bottom: 88px;
-    }
-  }
-
-  .ama__subscribe-promo--wide {
-    margin-top: 64px;
-    margin-bottom: 72px;
-    padding: 0;
-    .ama__subscribe-promo__subject-title {
-      list-style: none;
-      font-size: 16px;
-      padding-bottom: 0;
-    }
-    .ama__subscribe-promo__heading {
-      font-size: 32px;
+      margin: 32px 0;
     }
   }
 
