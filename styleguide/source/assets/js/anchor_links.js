@@ -29,11 +29,9 @@
 
         // On click of any anchor link
         $('a[href^="#"], a[href*="#"]').bind('click', function (e) {
-          // Don't anchor social links.
-          if (this.getAttribute('data-ga-site_events') == 'social_click') return;
-
-          e.preventDefault(); // prevent hard jump, the default behavior
-
+            // Don't anchor social links. or urls with a /#/ component
+            if (this.getAttribute('data-ga-site_events') == 'social_click' || this.hash.includes('#/')) return;
+            e.preventDefault(); // prevent hard jump, the default behavior
           // Perform animated scrolling
           scrollToAnchor(this.hash);
         });

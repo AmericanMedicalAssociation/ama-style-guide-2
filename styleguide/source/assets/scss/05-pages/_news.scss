@@ -157,12 +157,16 @@
     height: 2px;
   }
 
-  .text-body {
-    a.align-right,
-    a.align-left {
-      position: relative;
-      z-index: 99;
-    }
+  a:has(div.align-right.embedded-entity.image) {
+    float: right;
+    position: relative;
+    z-index: 99;
+  }
+
+  a:has(div.align-left.embedded-entity.image) {
+    float: left;
+    position: relative;
+    z-index: 99;
   }
 }
 
