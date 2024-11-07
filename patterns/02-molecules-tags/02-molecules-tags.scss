@@ -15,7 +15,7 @@ article[class*='__page-content'] .ama__tags {
 
   &-text {
     font-weight: $font-weight-semibold;
-    margin-right: 7px;
+    margin-right: calc($gutter/4);
     @include gutter($padding-bottom-quarter...);
 
     @include breakpoint($bp-small) {
@@ -41,15 +41,15 @@ article[class*='__page-content'] .ama__tags {
     li {
       margin-left: 0;
       list-style: none;
-      padding-bottom: 14px;
-      padding-right: 14px;
+      padding-bottom: calc($gutter/2);
+      padding-right: calc($gutter/2);
 
 
     }
   }
 
   .ama__tag {
-    font-size: 14px;
+    font-size: calc($gutter/2);
     text-decoration: none;
     display: block;
     background: $gray-7;
@@ -58,7 +58,7 @@ article[class*='__page-content'] .ama__tags {
     color: $black;
     white-space: nowrap;
     height: 34px;
-    padding: 5px 15px 4px 14px;
+    padding: 5px 15px 4px calc($gutter/2);
 
     &:hover{
       background-color: $white;

@@ -2,7 +2,7 @@
 
   @include breakpoint($bp-small max-width) {
     .ama__layout--two-col-right--75-25__left {
-      margin: 0 15px 7px 15px;
+      margin: 0 15px calc($gutter/4) 15px;
     }
     .ama__subcategory-page-article-stub {
       margin: 0 15px;
@@ -64,13 +64,13 @@
   }
 
   .views-field-field-featured-topics {
-    margin: 21px 15px 28px;
+    margin: calc($gutter/4) 15px $gutter;
     display: block;
     list-style: none;
     clear: both;
 
     @include breakpoint($bp-small) {
-      margin: 21px 0 28px;
+      margin: calc($gutter/4) 0 $gutter;
       display: flex;
       align-items: flex-start;
       flex-direction: row;
@@ -114,7 +114,7 @@
         }
         &:after {
           content: '|';
-          padding: 0 7px;
+          padding: 0 calc($gutter/4);
         }
         &:last-child:after {
           content: '';

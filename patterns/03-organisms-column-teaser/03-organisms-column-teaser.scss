@@ -1,6 +1,6 @@
 .ama__column-teaser-wrapper {
   border-top: solid 4px $purple;
-  padding: 28px 0em;
+  padding: $gutter 0em;
 
   .ama__column-teaser {
     @include child-top-gutters(calc($gutter / 2));
@@ -15,7 +15,7 @@
     div {
       background: $darkBlue;
       margin: 0px 8px;
-      padding: 6px 14px 14px 14px;
+      padding: 6px calc($gutter/2) calc($gutter/2) calc($gutter/2);
       max-width: 274px;
       flex-basis: 33%;
       flex-grow: 1;
@@ -54,7 +54,6 @@
       }
 
       .ama__h3 {
-        font-size: 18px;
         color: white;
         text-decoration: none;
       }

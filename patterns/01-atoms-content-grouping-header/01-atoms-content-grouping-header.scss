@@ -5,7 +5,7 @@
   font-size: 26px;
   line-height: 31px;
   font-weight: $font-weight-bold;
-  padding: 0 0 14px 0;
+  padding: 0 0 calc($gutter/2) 0;
   margin-bottom: 0;
   @include breakpoint($bp-med max-width) {
     display: none;
@@ -24,12 +24,12 @@
   font-size: 26px;
   line-height: 31px;
   text-transform: uppercase;
-  margin-bottom: 21px;
+  margin-bottom: calc($gutter*.75);
   @include breakpoint($bp-small min-width) {
     padding: 0;
   }
   @include breakpoint($bp-med min-width) {
-    margin-bottom: 28px;
+    margin-bottom: $gutter;
   }
 }
 

@@ -29,7 +29,7 @@
             margin-left: 0;
           }
         }
-        width: calc(50% - 28px);
+        width: calc(50% - $gutter);
 
         &:first-child {
           margin-left: 0;
@@ -50,7 +50,7 @@
     .ama__link-list {
       &--desktop {
         @include gutter($margin-bottom-full...);
-        width: calc(25% - 28px);
+        width: calc(25% - $gutter);
       }
     }
   }
