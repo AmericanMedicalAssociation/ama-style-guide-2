@@ -97,6 +97,15 @@
 
   &__promos {
 
+    .ama__promo--homepage {
+      h2 {
+        &.ama__h1 {
+          color: $white;
+          font-weight: $font-weight-regular;
+        }
+      }
+    }
+
     @include breakpoint($bp-small) {
       display: flex;
       align-items: center;
@@ -105,13 +114,6 @@
     @include breakpoint($bp-med) {
       .ama__promo--homepage {
         flex-basis: 50%;
-        h2 {
-          &.ama__h1 {
-            color: $white;
-            font-weight: $font-weight-regular;
-          }
-        }
-
         &:last-child {
           margin-left: -5%;
           flex: 0 0 50%;
