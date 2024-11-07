@@ -3,7 +3,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
   > .ama__comment {
     padding: 18px 30px;
     background-color: $white;
-    border: 1px solid #e2e2e2;
+    border: 1px solid $block-quote-border;
     border-left: 0;
     margin: 42px;
     margin-right: 0;
@@ -40,8 +40,8 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
           }
 
           mark.ama__comment-status {
-            background-color: #fff;
-            color: #7234ce;
+            background-color: $white;
+            color: $homepagePurple;
             font-weight: $font-weight-semibold;
           }
 
@@ -55,7 +55,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
           }
 
           .fa-flag, .fa-flag-o {
-            color: #027dbc;
+            color: $blue;
             margin-right: 5px;
           }
 
@@ -64,7 +64,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
 
             &:after {
               content: "|";
-              color: #e2e2e2;
+              color: $block-quote-border;
               margin-right: 5px;
               margin-left: 5px;
             }
@@ -98,7 +98,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
         height: .8em;
         background-size: contain;
         background-position: top;
-        color: #027dbc;
+        color: $blue;
       }
 
       .fa-long-arrow-up {
@@ -118,7 +118,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
 
           &:before {
             content: "|";
-            color: #e2e2e2;
+            color: $block-quote-border;
             margin-right: 8px;
             font-weight: $font-weight-semibold;
           }
@@ -161,7 +161,7 @@ section.ama__forum_comments, #block-ama-one-forums-content {
    }
 
    > .indented {
-     border-bottom: 1px solid #e2e2e2;
+     border-bottom: 1px solid $block-quote-border;
      position: relative;
      margin-top: -1px;
 
@@ -170,14 +170,14 @@ section.ama__forum_comments, #block-ama-one-forums-content {
        position: absolute;
        width: 100%;
        height: 2px;
-       background-color: #fff;
+       background-color: $white;
        margin-top: -1px;
      }
    }
 
    .indented {
      padding-left: 0;
-     background-color: #fff;
+     background-color: $white;
 
      &:after {
        content: " ";
@@ -200,22 +200,22 @@ section.ama__forum_comments, #block-ama-one-forums-content {
      }
 
      .indented {
-       border-left: 6px solid #d1c5da;
+       border-left: 6px solid $drfinder-indented;
        margin-right: 0;
        margin-left: 0;
 
        @include breakpoint($bp-med) {
-         margin: 0 0 0 28px;
+         margin: 0 0 0 $gutter;
        }
      }
 
      > .ama__comment {
-       border-left: 6px solid #d1c5da;
+       border-left: 6px solid $drfinder-indented;
        border-bottom: transparent;
        margin: 0;
 
        @include breakpoint($bp-med) {
-         margin: 0 0 0 28px;
+         margin: 0 0 0 $gutter;
        }
 
      }
@@ -235,7 +235,7 @@ section.ama__forum_comments {
 }
 #block-ama-one-forums-content {
   > .indented {
-    border: 1px solid #e2e2e2;
+    border: 1px solid $block-quote-border;
 
     &:before {
       display: none;
@@ -247,7 +247,7 @@ section.ama__forum_comments {
   }
 }
 .ama__forum_comments {
-  background-color: #f4f4f4;
+  background-color: $bg-gray;
 
   &__form {
     margin-top: 60px;

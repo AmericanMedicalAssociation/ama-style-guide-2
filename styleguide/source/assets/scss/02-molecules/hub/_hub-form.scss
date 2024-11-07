@@ -22,7 +22,7 @@
     flex-direction: column;
     padding: 0 0 18.5px 0;
     @include breakpoint($bp-small) {
-      padding-right: 14px;
+      padding-right: calc($gutter/2);
       padding-bottom: 0;
       font-size: 18px;
     }
@@ -47,11 +47,11 @@
     padding: 0;
 
     @include breakpoint($bp-small) {
-      padding-left: 14px;
+      padding-left: calc($gutter/2);
       padding-bottom: 0;
     }
     @include breakpoint($bp-med) {
-      padding: 28px 0 0 40px;
+      padding: $gutter 0 0 40px;
     }
 
     &.success {
@@ -67,26 +67,23 @@
 
     .ama__h1 {
       @include breakpoint($bp-small) {
-        padding-top: 28px;
+        padding-top: $gutter;
       }
     }
   }
 
   .ama__h1 {
     @include type($kepler-std, $font-weight-regular);
-    font-size: 28px;
-    margin-bottom: 14px;
-    @include breakpoint($bp-small) {
-      font-size: 36px;
-    }
+    font-size: $gutter;
+    margin-bottom: calc($gutter/2);
   }
   .video-embed-field-provider-youtube {
-    margin-bottom: 21px;
+    margin-bottom: calc($gutter*.75);
   }
   .ama__hub-card__image,
   .ama__brightcove-gallery,
   .ama__hub-hero__video {
-    margin: 14px 0 38px;
+    margin: calc($gutter/2) 0 38px;
   }
 
   .ama__hub-card__image {
@@ -110,7 +107,7 @@
         text-align: left;
       }
       label {
-        font-size: 14px;
+        font-size: calc($gutter/2);
         text-transform: uppercase;
         color: $black;
         font-weight: normal;
@@ -132,7 +129,7 @@
       }
     }
     .form-actions {
-      margin: 14px 0;
+      margin: calc($gutter/2) 0;
       input {
         min-width: 173px;
         font-weight: normal;
@@ -167,12 +164,8 @@
       @include breakpoint($bp-small) {
         padding-left:20px;
       }
-      h2 {
-        @include type($kepler-std, $font-weight-regular);
-        font-size: 36px;
-      }
       p {
-        padding-top: 14px;
+        padding-top: calc($gutter/2);
         font-size: 17px;
       }
     }

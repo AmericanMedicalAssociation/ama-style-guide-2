@@ -28,34 +28,35 @@
             flex-basis: 50%;
             max-width: 396px;
         }
+      h2.ama__h2 {
+        font-size: $gutter;
+        line-height: 32px;
+        @include breakpoint($bp-med) {
+          font-size: 32px;
+          line-height: 38px;
+        }
+        @include breakpoint($bp-large) {
+          font-size: 32px;
+          line-height: 42px;
+        }
+      }
         .spacer {
             height: $gutter;
             display: block;
         }
         h2 {
-            font-size: 28px;
-            line-height: 32px;
-            @include breakpoint($bp-med) {
-                font-size: 32px;
-                line-height: 38px;
-            }
-            @include breakpoint($bp-large) {
-                font-size: 36px;
-                line-height: 42px;
-            }
-            font-family: kepler-std, serif;
-            font-weight: 400;
+          @include type($kepler-std, $font-weight-regular);
             color: $black;
             margin-bottom: calc($gutter / 2);
         }
         p.ama__h5 {
+          @include type($kepler-std, $font-weight-regular);
+          @include font-size($h5-font-sizes);
             font-weight: $font-weight-regular;
             line-height: 24px;
-            color: #424242;
-            font-size: 16px;
+            color: $date-olive;
             margin-bottom: calc($gutter);
             @include breakpoint($bp-med) {
-                font-size: 17px;
                 line-height: 25px;
             }
         }
@@ -96,7 +97,7 @@
                         width:100%;
                         &.ama__button:not(.ama__button--secondary) {
                             margin-right: 0;
-                            margin-bottom: 14px;
+                            margin-bottom: calc($gutter/2);
                         }
                     }
                     @include breakpoint($bp-med) {

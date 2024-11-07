@@ -1,21 +1,21 @@
 .annual-interim {
   display: block;
   min-height: 140px;
-  margin-bottom: 28px;
+  margin-bottom: $gutter;
   margin-top: 35px;
   @include breakpoint($bp-small) {
     display: flex;
   }
 
   &__left {
-    background: #3f2378;
+    background: $interim-block;
     background-image: url('../images/dot_pattern_web.svg');
     background-image: linear-gradient(20deg, rgba(50, 62, 148, .75), rgba(63, 35, 120, .75), #371256 80%), url('../images/dot_pattern_web.svg');
     background-repeat: no-repeat;
     background-position: 0 0, 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 14px 0 14px 14px;
+    padding: calc($gutter/2) 0 calc($gutter/2) calc($gutter/2);
     color: $white;
 
     @include breakpoint($bp-small) {
@@ -33,7 +33,7 @@
     }
 
     .active_info {
-      padding-right: 14px;
+      padding-right: calc($gutter/2);
     }
 
     a.annual-interim__link {
@@ -110,16 +110,16 @@
       h3 a {
         color: $purple;
         text-decoration: none;
-        font-size: 22px;
-        line-height: 26px;
         &:hover {
           text-decoration: underline;
         }
       }
       @include breakpoint($bp-med) {
-        h3 a {
-          font-size: 20px;
-          line-height: 32px;
+        h3 {
+          a {
+            font-size: 20px;
+            line-height: 32px;
+          }
         }
       }
       @include breakpoint($bp-large) {
@@ -132,23 +132,21 @@
       @include type($myriad-pro, $font-weight-regular);
       font-size: 18px;
       line-height: 22px;
-      margin-bottom: 21px;
+      margin-bottom: calc($gutter*.75);
       @include breakpoint($bp-med) {
-        margin-bottom: 14px;
+        margin-bottom: calc($gutter/2);
       }
     }
 
     .meeting_information {
       h3 {
-        font-size: 20px;
-        line-height: 31px;
         margin-bottom: 8px;
       }
 
       a.annual-interim__link {
         display: block;
-        margin-bottom: 14px;
-        line-height: 21px;
+        margin-bottom: calc($gutter/2);
+        line-height: calc($gutter*.75);
       }
     }
 
@@ -175,16 +173,14 @@
     }
 
     .fg {
-      padding-top: 7px;
+      padding-top: calc($gutter/4);
       border-top: 1px solid #cbcbcb;
       h4 {
-        font-size: 18px;
-        line-height: 20px;
         display: inline-block;
       }
       a.annual-interim__link {
         display: inline-block;
-        margin-left: 14px;
+        margin-left: calc($gutter/2);
         line-height: 20px;
       }
     }

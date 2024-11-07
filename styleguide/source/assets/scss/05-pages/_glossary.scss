@@ -2,19 +2,19 @@
 
 .ama__glossary-page {
   .ama__h1 {
-    margin-bottom: 21px;
+    margin-bottom: calc($gutter*.75);
   }
   .ama__subtitle {
     font-size: 18px;
     line-height: 1.5;
-    font-weight: normal;
+    font-weight: $font-weight-regular;
   }
   .viewsreference--view-title {
     display: none;
   }
   .glossary-view {
     padding-bottom: 30px;
-    margin-bottom: 28px;
+    margin-bottom: $gutter;
     border-bottom: 4px solid $purple;
     span.result-total[data-total="0"] ~ nav.pager {
       display: none;
@@ -24,8 +24,8 @@
     #views-exposed-form-glossary-terms-topic-term-glossary {
       max-width: 100%;
       padding-bottom: 8px;
-      border-bottom: 1px solid #b4b4b4;
-      margin-bottom: 28px;
+      border-bottom: 1px solid $gray-border;
+      margin-bottom: $gutter;
       div#edit-name {
         overflow:hidden;
         width:85vw;
@@ -33,11 +33,11 @@
         scrollbar-width: thin;          /* "auto" or "thin" */
         scrollbar-color: $purple;
         &::-webkit-scrollbar {
-          width: 14px;
+          width: calc($gutter/2);
         }
 
         &::-webkit-scrollbar-track {
-          background: #ece7f0;
+          background: $bg-purple;
           border-radius: 20px;
         }
         &::-webkit-scrollbar-thumb {
@@ -93,17 +93,17 @@
               }
 
               &.bef-link--selected {
-                background: #46166b;
+                background: $purple;
                 color: $white;
 
                 &:hover {
-                  background: #46166b;
+                  background: $purple;
                   color: $white;
                 }
               }
 
               &:hover {
-                background-color: #a28ab5;
+                background-color: $glossary-purple;
                 color: $purple;
               }
             }
@@ -131,7 +131,7 @@
           position: absolute;
           right: 0;
           bottom: 0;
-          padding: 7px;
+          padding: calc($gutter/4);
           height: 39px;
           width: 39px;
           background: $purple url("../icons/svg/icon-search-white.svg") no-repeat;
@@ -208,9 +208,9 @@
   }
 
   .description {
-    padding: 28px 0 14px;
-    border-bottom: 1px solid #b4b4b4;
-    margin-bottom: 28px;
+    padding: $gutter 0 calc($gutter/2);
+    border-bottom: 1px solid $gray-border;
+    margin-bottom: $gutter;
   }
 
   .ama__75-25__masthead {
@@ -220,8 +220,8 @@
     }
     .heading-left {
       margin-right: 0;
-      border-bottom: 1px solid #b4b4b4;
-      padding-top: 21px;
+      border-bottom: 1px solid $gray-border;
+      padding-top: calc($gutter*.75);
     }
   }
   .ama__layout--two-col-right--75-25 {
@@ -240,7 +240,6 @@
 
   /* Curated Topics Block */
   h2.curated-topics-header {
-    font-weight: $font-weight-bold;
     margin-bottom:$gutter;
   }
   .curated-topics {
@@ -254,9 +253,9 @@
         border-radius: 30px;
         display: inline-block;
         padding: 6px 18px;
-        font-size: 14px;
+        font-size: calc($gutter/2);
         margin-right: 12px;
-        margin-bottom: 14px;
+        margin-bottom: calc($gutter/2);
         text-decoration: none;
         color: $black;
         &:hover {
@@ -278,13 +277,12 @@
 
   /* Suggested Listings */
   h3.suggested-listing-title {
-    font-weight: $font-weight-bold;
     padding-top: $gutter;
     margin-bottom: calc($gutter/2);
     text-transform: uppercase;
     border-top: 4px solid $purple;
     @include breakpoint($bp-small max-width) {
-      margin-top: 28px;
+      margin-top: $gutter;
     }
   }
   .suggested-listings {
@@ -302,12 +300,12 @@
       font-weight: $font-weight-bold;
       padding: 12px 20px 20px 20px;
       text-decoration: none;
-      margin-bottom: 21px;
+      margin-bottom: calc($gutter*.75);
       @include breakpoint($bp-small) {
         font-size: 18px;
         line-height: 25px;
         margin-bottom: 0;
-        padding: 6px 14px 39px;
+        padding: 6px calc($gutter/2) 39px;
       }
       &:nth-of-type(odd) {
         background-color: $darkBlue;

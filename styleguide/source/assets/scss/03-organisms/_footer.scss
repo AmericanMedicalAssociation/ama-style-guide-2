@@ -88,7 +88,7 @@
 
   .ama__subscribe-promo--wide {
     > p {
-      margin-bottom: 28px;
+      margin-bottom: $gutter;
     }
     .ama__subscribe-promo__form {
       .form-actions {
@@ -141,7 +141,7 @@
 
       &:not(:last-child):after {
         content: " | ";
-        padding: 0 7px;
+        padding: 0 calc($gutter/4);
       }
     }
 
@@ -169,7 +169,7 @@
 
       &:not(:last-child):after {
         content: " | ";
-        padding: 0 7px;
+        padding: 0 calc($gutter/4);
       }
     }
 
@@ -246,7 +246,7 @@
         input {
           background-color: $white;
           text-decoration: none;
-          font-weight: 400;
+          font-weight: $font-weight-regular;
           &.error {
             background-image: none;
           }

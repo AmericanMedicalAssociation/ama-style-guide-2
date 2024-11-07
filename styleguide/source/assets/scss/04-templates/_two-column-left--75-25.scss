@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: max-content auto auto;
-  margin-top: 28px;
+  margin-top: $gutter;
 
   &__left {
     @include gutter($margin-right-half...);
@@ -25,7 +25,7 @@
         margin-bottom: $gutter;
       }
       @include breakpoint($bp-small max-width) {
-        margin-bottom: 21px;
+        margin-bottom: calc($gutter*.75);
       }
     }
 

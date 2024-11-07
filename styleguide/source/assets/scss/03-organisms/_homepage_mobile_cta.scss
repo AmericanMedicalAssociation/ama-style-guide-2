@@ -3,8 +3,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 7px;
-  padding: 14px 10px;
+  gap: calc($gutter/4);
+  padding: calc($gutter/2) 10px;
   border-bottom: .5px solid $gray-30;
   @include breakpoint($bp-small) {
     display: none ;
@@ -23,12 +23,12 @@
       min-width: unset;
     }
     &:last-of-type {
-      background: #bce2f7;
+      background: $gating-block-blue;
       color: $gating-block-link;
     }
     &:first-of-type {
       background: $gating-block-link;
-      color: #bce2f7;
+      color: $gating-block-blue;
     }
     &:hover,
     &:focus,
@@ -48,7 +48,7 @@
   }
 
   &.column {
-    padding: 14px 0;
+    padding: calc($gutter/2) 0;
     a {
       flex: 1 1 100%;
       max-width: 100%;

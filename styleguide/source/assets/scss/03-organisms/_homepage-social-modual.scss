@@ -26,7 +26,7 @@
     .profile_three {
       .profile--image {
         max-width: 177px;
-        margin: 0 auto 14px;
+        margin: 0 auto calc($gutter/2);
         img {
           border-radius: 50%;
           width: 100%;
@@ -89,7 +89,7 @@
   &.no-feature {
     .profile--image {
       max-width: 177px;
-      margin: 0 auto 14px;
+      margin: 0 auto calc($gutter/2);
       img {
         border-radius: 50%;
         width: 100%;
@@ -131,11 +131,11 @@
     }
     p {
       @include type($myriad-pro, $font-weight-regular);
-      font-size: 14px;
+      font-size: calc($gutter/2);
       word-break: keep-all;
     }
     a {
-      color: #027DBC;
+      color: $blue;
       text-decoration: none;
     }
   }

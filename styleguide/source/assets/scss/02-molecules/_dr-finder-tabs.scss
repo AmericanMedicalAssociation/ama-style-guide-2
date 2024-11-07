@@ -29,7 +29,7 @@
     flex-direction: column;
     width: 100%;
     margin: 0 0 1.5rem 0;
-    border: 1px solid #d3d4d9;
+    border: 1px solid $drfinder-tabs;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -40,10 +40,10 @@
 
   .tabs__tab {
     position: relative;
-    border-bottom: 1px solid #d3d4d9;
-    background-color: #f9faff;
+    border-bottom: 1px solid $drfinder-tabs;
+    background-color: $drfinder-bg;
     font-size: 0.889rem;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 
   .tabs__tab:last-child {
@@ -53,7 +53,7 @@
   .tabs__tab.is-active {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: $white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
@@ -67,7 +67,7 @@
     min-height: 3rem;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: #55565b;
+    color: $drfinder-gray;
     line-height: 1.2rem;
   }
 
@@ -76,8 +76,8 @@
     margin: -1px;
     padding-left: calc(1.5rem - 2px); /* LTR */
     text-decoration: none;
-    color: #55565b;
-    border: 3px solid #26a769;
+    color: $drfinder-gray;
+    border: 3px solid $drfinder-border;
     border-radius: 2px;
     outline: none;
     box-shadow: none;
@@ -90,7 +90,7 @@
 
   .tabs__link:hover {
     text-decoration: none;
-    color: #232429;
+    color: $drfinder-tabs-hover;
   }
 
   .tabs__link.is-active {
@@ -113,11 +113,11 @@
 
   [dir="rtl"] .tabs__link.is-active:focus {
     border-right: none;
-    border-left: 3px solid #26a769;
+    border-left: 3px solid $drfinder-border;
   }
 
   .tabs__link.is-active:hover {
-    color: #232429;
+    color: $drfinder-tabs-hover;
   }
 
   /* Active and hover indicator. */
@@ -190,7 +190,7 @@
 
   .tabs__trigger:focus {
     padding-right: 0;
-    border: 3px solid #26a769;
+    border: 3px solid $drfinder-border;
     border-radius: 2px;
     box-shadow: none;
   }
@@ -240,7 +240,7 @@
       display: block;
       width: 100%;
       content: "";
-      border-bottom: 1px solid #d3d4d9;
+      border-bottom: 1px solid $drfinder-tabs;
     }
 
     .is-horizontal .tabs__tab {
@@ -279,22 +279,22 @@
       margin: 0;
       padding-right: 2rem;
       padding-left: 2rem;
-      color: #232429;
+      color: $drfinder-tabs-hover;
       border: none;
       border-radius: 2px 2px 0 0;
       outline: 2px dotted transparent;
-      box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
+      box-shadow: 0 0 0 2px $white, 0 0 0 5px $drfinder-border;
     }
     [dir="rtl"] .is-horizontal .tabs__link:focus {
       border: none;
     }
     .is-horizontal .tabs--primary .tabs__link:focus {
-      box-shadow: 0 0 0 2px #f3f4f9, 0 0 0 5px #26a769;
+      box-shadow: 0 0 0 2px $drfinder-shadow, 0 0 0 5px $drfinder-border;
     }
 
     .is-horizontal .tabs__link:hover {
-      color: #0036b1;
-      background: #e5edff;
+      color: $drfinder-blue;
+      background: $drfinder-white;
     }
 
     .is-horizontal .tabs__link.is-active::before {

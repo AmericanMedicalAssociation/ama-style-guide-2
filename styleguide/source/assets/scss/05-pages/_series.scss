@@ -62,10 +62,10 @@
     }
     .ama__rule {
       margin-top: 10px;
-      margin-bottom: 21px;
+      margin-bottom: calc($gutter*.75);
       @include breakpoint($bp-small) {
         margin-top: -15px;
-        margin-bottom: 28px;
+        margin-bottom: $gutter;
       }
     }
   }
@@ -90,7 +90,7 @@
     input.ama__button {
       background: url(../icons/svg/icon-search-white.svg) no-repeat 0 0;
       background-size: 22px 22px;
-      background-position: 7px 7px;
+      background-position: calc($gutter/4) calc($gutter/4);
       background-color: $purple;
       max-height: 40px;
       max-width: 40px;
@@ -114,7 +114,7 @@
   }
 
   .ama__layout--two-col-right--75-25__top {
-    border-bottom: 1px solid #767676;
+    border-bottom: 1px solid $gray-50;
     margin-bottom: 0;
     @include breakpoint($bp-med max-width) {
       padding: 0;
@@ -122,26 +122,26 @@
 
     .ama__search__field__clear-button {
       @include breakpoint($bp-small max-width) {
-        padding: 7px 0 14px;
+        padding: calc($gutter/4) 0 calc($gutter/2);
       }
     }
   }
 
   .ama__membership button.ama__button {
-    margin-left: 28px;
-    margin-right: 28px;
+    margin-left: $gutter;
+    margin-right: $gutter;
   }
 
  .ama__subcategory-index__stub {
 
   .ama__subcategory-page-article-stub {
     @include breakpoint($bp-small max-width) {
-      padding: 14px 0;
+      padding: calc($gutter/2) 0;
       margin: 0px;
     }
     &__subcategory {
       color: $purple;
-      margin: 0 0 7px 0;
+      margin: 0 0 calc($gutter/4) 0;
     }
     &__image {
       @include breakpoint($bp-small) {
@@ -160,7 +160,7 @@
  @include breakpoint($bp-small max-width) {
   .ama__category-index {
     .ama__membership {
-      margin-bottom: 28px;
+      margin-bottom: $gutter;
     }
   }
  }
@@ -169,9 +169,9 @@
   text-align: center;
    a.ama__button {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: $font-weight-regular;
     padding: 10px 45px;
-    margin: 28px 0;
+    margin: $gutter 0;
    }
  }
 

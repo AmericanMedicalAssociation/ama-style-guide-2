@@ -154,10 +154,6 @@
     background: $purple;
     color: $white;
 
-    .ama__h1 {
-      font-weight: normal;
-    }
-
     // Right now the style guide uses `buttons`, but eventually we want to switch these to `a` elements.
     button, a {
       display: block;
@@ -177,7 +173,7 @@ a.ama__promo { // styling for when this pattern renders as a link.
   &--background {
     @extend .ama__promo;
     &:hover {
-      background: darken($gray-7, 8%); // from UX - #d9d9d9
+      background: darken($gray-7, 8%);
       color: black;
     }
   }

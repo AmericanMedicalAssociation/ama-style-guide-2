@@ -23,7 +23,7 @@
             margin-right: 0;
         }
         a {
-            color: #025785;
+            color: $ama-alert;
             text-decoration: none;
             display: inline;
             &:hover {
@@ -52,14 +52,14 @@
             }
             a,
             p {
-                font-size: 14px;
+                font-size: calc($gutter/2);
             }
         }
         &.desktop {
             display: none;
             @include breakpoint($bp-small) {
                 display: block;
-                padding-right: 14px;
+                padding-right: calc($gutter/2);
             }
             a {
                 @include breakpoint($bp-small) {

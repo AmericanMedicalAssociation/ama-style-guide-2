@@ -196,7 +196,7 @@
   width: 2.0625rem;
   height: 0;
   content: "";
-  border-top: solid 2px #7e96a7;
+  border-top: solid 2px $drfinder-border-top;
 }
 
 .messages__close:before {
@@ -209,11 +209,11 @@
 
 .messages__close:hover::before,
 .messages__close:hover::after {
-  border-color: #fff;
+  border-color: $white;
 }
 
 .messages__close:focus {
-  outline: 2px solid #53b0eb;
+  outline: 2px solid $messages;
   outline-offset: 2px;
 }
 
@@ -222,19 +222,19 @@
 }
 
 .messages--error .messages__icon svg {
-  fill: #e33f1e;
+  fill: $messages_error;
 }
 
 .messages--warning .messages__icon svg {
-  fill: #fdca40;
+  fill: $messages_warning;
 }
 
 .messages--status .messages__icon svg {
-  fill: #3fa21c;
+  fill: $messages_status;
 }
 
 .messages--info .messages__icon svg {
-  fill: #53b0eb;
+  fill: $messages;
 }
 
 .messages pre {
@@ -242,11 +242,11 @@
 }
 
 [dir="ltr"] .js-form-managed-file .messages {
-  border-left: solid 6px #e33f1e;
+  border-left: solid 6px $messages_error;
 }
 
 [dir="rtl"] .js-form-managed-file .messages {
-  border-right: solid 6px #e33f1e;
+  border-right: solid 6px $messages_error;
 }
 
 .js-form-managed-file .messages {

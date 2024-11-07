@@ -57,18 +57,19 @@ blockquote {
 #block-ama-one-forums-content {
   blockquote {
     color: $gray-64;
-    padding: 14px 31px 16px 42px;
-    border: 1px solid #e2e2e2;
-    border-left: 6px solid #b3b3b3;
-    background-color: #f7f7f7;
+    padding: calc($gutter/2) 31px 16px 42px;
+    border: 1px solid $block-quote-border;
+    border-left: 6px solid $block-quote-border-left;
+    background-color: $gray-40;
 
     &::before, &:after {
       font-size: 42px;
       position: absolute;
       background-color: transparent;
       width: 30px;
-      color: #b3b3b3;
+      color: $block-quote-border-left;
       line-height: 1em;
+      font-weight: $font-weight-semibold;
 
       @include type($helvetica, 600);
     }

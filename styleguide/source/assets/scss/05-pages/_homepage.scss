@@ -83,7 +83,6 @@
       ul {
         justify-content: flex-start;
       }
-
     }
   }
 
@@ -98,6 +97,15 @@
 
   &__promos {
 
+    .ama__promo--homepage {
+      h2 {
+        &.ama__h1 {
+          color: $white;
+          font-weight: $font-weight-regular;
+        }
+      }
+    }
+
     @include breakpoint($bp-small) {
       display: flex;
       align-items: center;
@@ -106,7 +114,6 @@
     @include breakpoint($bp-med) {
       .ama__promo--homepage {
         flex-basis: 50%;
-
         &:last-child {
           margin-left: -5%;
           flex: 0 0 50%;
@@ -138,9 +145,9 @@
       width: 100%;
 
       h4.ama__h4 {
-        font-size: 14px;
+        //font-size: calc($gutter/2);
         color: $gray-64;
-        margin-bottom: 7px;
+        margin-bottom: calc($gutter/4);
         text-transform: uppercase;
       }
     }
@@ -161,7 +168,7 @@
         &:not(:first-child) {
           .ama__image {
             display: block;
-            margin-bottom: 14px;
+            margin-bottom: calc($gutter/2);
           }
         }
       }
@@ -184,8 +191,8 @@
         grid-column-start: 1;
         grid-column-end: 4;
         grid-row-start: 1;
-        margin: 0 0 21px 0;
-        padding-bottom: 21px;
+        margin: 0 0 calc($gutter*.75) 0;
+        padding-bottom: calc($gutter*.75);
         border-bottom: 1px solid $gray-7;
       }
 
@@ -204,8 +211,8 @@
         grid-column-start: 1;
         grid-column-end: 4;
         grid-row-start: 1;
-        margin: 0 0 21px 0;
-        padding-bottom: 21px;
+        margin: 0 0 calc($gutter*.75) 0;
+        padding-bottom: calc($gutter*.75);
         border-bottom: 1px solid $gray-7;
         height: unset;
       }
@@ -233,7 +240,7 @@
   }
 
   &__trending {
-    margin-bottom: 21px;
+    margin-bottom: calc($gutter*.75);
     @include breakpoint($bp-small) {
       margin-bottom: 35px;
     }
@@ -260,9 +267,9 @@
     }
 
     #block-views-block-trending-listings-trending-listings-block-vertical {
-      margin: 21px auto;
+      margin: calc($gutter*.75) auto;
       @include breakpoint($bp-med) {
-        padding-left: 14px;
+        padding-left: calc($gutter/2);
       }
     }
   }

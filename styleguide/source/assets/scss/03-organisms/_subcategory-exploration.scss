@@ -67,16 +67,8 @@
     h2 {
       color: $black;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 400;
       display: flex;
       margin-bottom: 0;
-
-      @include breakpoint($bp-large) {
-        font-weight: 400;
-        font-size: 18px;
-      }
-
       &:hover h2,
       &:hover {
         text-decoration: none;
@@ -106,12 +98,12 @@
       display: none;
 
       i {
-        background-size: 14px 8px;
+        background-size: calc($gutter/2) 8px;
         background-position: 0 6px;
-        min-height: 14px;
-        min-width: 14px;
-        max-height: 14px;
-        max-width: 14px;
+        min-height: calc($gutter/2);
+        min-width: calc($gutter/2);
+        max-height: calc($gutter/2);
+        max-width: calc($gutter/2);
       }
     }
 
@@ -119,12 +111,12 @@
       display: inline-block;
 
       i {
-        background-size: 14px 8px;
+        background-size: calc($gutter/2) 8px;
         background-position: 0 0;
-        min-height: 14px;
-        min-width: 14px;
-        max-height: 14px;
-        max-width: 14px;
+        min-height: calc($gutter/2);
+        min-width: calc($gutter/2);
+        max-height: calc($gutter/2);
+        max-width: calc($gutter/2);
         @include breakpoint($bp-small max-width) {
           background-position: 0 5px;
         }

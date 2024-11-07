@@ -15,14 +15,13 @@
   @extend .ama__h1;
   color: $black;
   margin-bottom: 0;
-  font-weight: normal;
-
+  font-weight: $font-weight-regular;
   @include breakpoint($bp-small) {
     width: 66%;
   }
 
   span {
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
   }
 }
 

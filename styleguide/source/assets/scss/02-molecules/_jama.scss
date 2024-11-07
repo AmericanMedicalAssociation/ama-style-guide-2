@@ -33,7 +33,7 @@
       // For this component, the image is on the right.
       .ama__image__text {
         padding-left: inherit;
-        padding-right: 14px;
+        padding-right: calc($gutter/2);
       }
       .ama__image-wrap {
         @include breakpoint($bp-xs) {
@@ -65,7 +65,7 @@
 .ama__jama a.ama__jama__header {
   color: $white;
   background-color: $hoverRed;
-  padding: 0 7px;
+  padding: 0 calc($gutter/4);
   font-size: 27px;
   min-width: 265px;
   max-width: 100%;
@@ -76,7 +76,7 @@
 .ama__jama__title {
   font-size: 18px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: $font-weight-semibold;
   display: flex;
   margin-bottom: calc($gutter / 4);
 

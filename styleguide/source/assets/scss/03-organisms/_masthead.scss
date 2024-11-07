@@ -17,7 +17,7 @@
   }
 
   &__content {
-    @include ama-rules(1px, "bottom", $gray-50, solid);
+    border-bottom: 1px solid $gray-50;
     grid-column: 1 / 5;
 
     &__title__container {
@@ -84,15 +84,15 @@
         .layout__region {
           grid-column-start: 2;
           grid-column-end: 5;
-          @include ama-rules(1px, "bottom", $gray-64, solid);
+          border-bottom: 1px solid $gray-64;
         }
       }
 
     }
 
     &__link {
-      font-size: 14px;
-      line-height: 21px;
+      font-size: calc($gutter/2);
+      line-height: calc($gutter*.75);
       color: $gating-block-link;
       text-transform: uppercase;
       padding: $gutter-mobile 0 calc($gutter-mobile/2);
@@ -209,8 +209,8 @@
   .ama__subtitle {
     color: $gray-64;
     font-weight: normal;
-    padding-top: 14px;
-    font-size: 14px;
+    padding-top: calc($gutter/2);
+    font-size: calc($gutter/2);
     @include breakpoint($bp-small) {
       font-size: 16px;
     }
@@ -225,10 +225,10 @@
     margin-right: 0;
 
     @include breakpoint($bp-med) {
-      margin-right: 14px;
+      margin-right: calc($gutter/2);
     }
     &.border {
-      @include ama-rules(2px, "bottom", $gray-50, solid);
+      border-bottom: 1px solid $gray-50;
     }
   }
   .heading-right {
@@ -316,7 +316,7 @@
         a.print {
           padding-left: 38px;
           position: relative;
-          font-size: 14px;
+          font-size: calc($gutter/2);
           text-transform: uppercase;
           text-decoration: none;
           &::after {

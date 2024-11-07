@@ -1,6 +1,6 @@
 .ama__subcategory-explore-topics {
   display: inline-block;
-  padding: 21px 0px $gutter;
+  padding: calc($gutter*.75) 0px $gutter;
 
   @include breakpoint($bp-small) {
     display: flex;
@@ -45,9 +45,9 @@
 }
 
 .layout--ama-page-section-one-col .ama__subcategory-explore-topics {
-  padding: 21px 15px 28px;;
+  padding: calc($gutter*.75) 15px $gutter;;
   @include breakpoint($bp-small) {
-    padding: 21px 0px 28px;
+    padding: calc($gutter*.75) 0px $gutter;
   }
 }
 

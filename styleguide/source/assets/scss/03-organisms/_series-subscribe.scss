@@ -13,7 +13,7 @@
     top: -8px;
     @include breakpoint($bp-small) {
       padding-left: 5px;
-      width: 21px;
+      width: calc($gutter*.75);
       height: 26px;
       margin: 0 auto;
       position: absolute;
@@ -26,8 +26,8 @@
 @mixin triangle-right {
   width: 0; 
   height: 0; 
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
+  border-top: calc($gutter/2) solid transparent;
+  border-bottom: calc($gutter/2) solid transparent;
   border-left: 12px solid $homepagePurple;
   position: absolute;
   top: 0px;
@@ -59,11 +59,10 @@
       margin: 0;
     }
     input.form-submit {
-      border: 1px solid #a28ab5;
+      border: 1px solid $glossary-purple;
       background: none;
-      color: #310f4a;
-      font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-      font-weight: 400;
+      color: $bookmark-purple;
+      @include type($myriad-pro, $font-weight-regular);
       margin-bottom: 0;
       padding: 15px 0 0 0;
       line-height: 1.5em;
@@ -71,7 +70,7 @@
       @include breakpoint($bp-small max-width) {
         width: 87px;
         height: 44px;
-        font-size: 14px;
+        font-size: calc($gutter/2);
         line-height: 2;
         top: -10px;
       }
@@ -100,9 +99,9 @@
   //Taxonomy specific subscribed series styling
   .subscribe-series {
     display: inline-block;
-    border: 1px solid #a28ab5;
+    border: 1px solid $glossary-purple;
     background: none;
-    color: #310f4a;
+    color: $bookmark-purple;
     margin-bottom: 0;
     text-align: center;
     text-decoration: none;
@@ -112,7 +111,7 @@
     @include breakpoint($bp-small max-width) {
       width: 87px;
       height: 44px;
-      font-size: 14px;
+      font-size: calc($gutter/2);
       line-height: 2;
       top: -8px;
     }
@@ -120,7 +119,7 @@
       min-width: 180px;
       max-width: 180px;
       max-height: 46px;
-      padding: 7px 0 8px 25px;
+      padding: calc($gutter/4) 0 8px 25px;
       margin-bottom: 5px;
       margin-top: 35px;
     }
@@ -147,7 +146,7 @@
       &::before {
         background-image: url('../images/SubscribedIcon_Locker.svg');
         @include breakpoint($bp-small) {
-          left: 28px;
+          left: $gutter;
         }
       }
     }
@@ -231,8 +230,8 @@
     }
 
     a {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: calc($gutter/2);
+      font-weight: $font-weight-semibold;
       color: $purple;
       text-transform: uppercase;
       text-decoration: none;
@@ -263,7 +262,7 @@
 
 a.subscribe-series {
   display: block;
-  min-height: 28px;
+  min-height: $gutter;
   top: -30px;
 }
 
@@ -274,7 +273,7 @@ a.subscribe-series {
   @include type($myriad-pro, $font-weight-semibold);
   text-align: left;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: calc($gutter/2);
   line-height: 2;
   width: 182px;
   color: $white;
@@ -334,7 +333,7 @@ a.subscribe-series {
   width: 168px;
   position: relative;
   top: 0;
-  margin-top: 28px;
+  margin-top: $gutter;
   .triangle-right {
     @include triangle-right();
   }

@@ -19,7 +19,7 @@
     border-bottom: 1px solid $pg-blue;
     color: $gray-50;
     line-height: 1.2;
-    padding: 1em 28px 3px 0;
+    padding: 1em $gutter 3px 0;
 
     &:focus,
     &:active {
@@ -110,9 +110,9 @@
     font-size: 20px;
     line-height: 25px;
     font-style: italic;
-    padding: 21px 0;
+    padding: calc($gutter*.75) 0;
     @include breakpoint($bp-med min-width) {
-      padding: 7px 0 14px 0;
+      padding: calc($gutter/4) 0 calc($gutter/2) 0;
       font-size: 18px;
       line-height: 27px;
     }

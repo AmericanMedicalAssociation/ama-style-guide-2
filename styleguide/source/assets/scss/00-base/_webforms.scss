@@ -59,7 +59,7 @@ div[role=alert] {
   h3 {
     @include gutter($margin-top-half...);
     @include gutter($margin-bottom-half...);
-    @include font-size($p-font-sizes);
+    @include font-size($h3-font-sizes);
     color: $gray-50;
   }
 }
@@ -176,14 +176,11 @@ a.webform-button--submit {
     }
   }
 }
-
 .form-submit.ama__button {
   @include gutter($margin-bottom-full...);
 }
-
 .webform-options-display-buttons-label {
+  @include type($myriad-pro, $font-weight-regular);
   font-size: 18px;
-  font-weight: $font-weight-regular;
   text-transform: initial;
-  font-family: Arial, sans-serif;
 }

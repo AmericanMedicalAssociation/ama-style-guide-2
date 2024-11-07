@@ -1,5 +1,5 @@
 .ama__membership .ama__membership-content  {
-  background: #ece7f0;
+  background: $bg-purple;
   @include gutter($padding-bottom-full...);
   @include child-top-gutters(calc($gutter / 2));
   display: flex;
@@ -34,7 +34,7 @@
 
   .ama__membership_logo-container {
     background-color: $purple;
-    min-height: 28px;
+    min-height: $gutter;
     display: flex;
     margin-bottom: 0;
     margin-top: 0;
@@ -63,9 +63,9 @@
 
   .ama__membership_cta_container {
     display: block;
-    margin: 14px 28px 0px 28px;
+    margin: calc($gutter/2) $gutter 0px $gutter;
     @include breakpoint($bp-med min-width) {
-      margin-top: 14px;
+      margin-top: calc($gutter/2);
     }
     .ama__button {
       margin: 0;
@@ -97,7 +97,7 @@ a.ama__membership {
 //Slim Membership Block styling
 .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content,
 .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content {
-  background: #ece7f0;
+  background: $bg-purple;
   margin: 0 -15px 35px -15px;
   position: relative;
   padding-bottom: 0;
@@ -200,7 +200,7 @@ a.ama__membership {
     }
   }
   .ama__membership_cta_container {
-    margin: 21px auto;
+    margin: calc($gutter*.75) auto;
     display: block;
     max-width: 75%;
     text-align: center;
@@ -227,18 +227,14 @@ a.ama__membership {
     }
   }
   h2.ama__h2 {
-    margin-top: 14px;
+    margin-top: calc($gutter/2);
     margin-bottom: 0;
     padding-left: 16%;
     padding-right: 16%;
     text-align: center;
-    font-size: 26px;
     @include breakpoint($bp-small min-width) {
       margin-top: 0;
       padding: 0;
-    }
-    @include breakpoint($bp-med min-width) {
-      font-size: 1.444em;
     }
   }
   a.ama__button {
@@ -261,13 +257,13 @@ a.ama__membership {
       font-size: 20px;
       height: 50px;
       line-height: 50px;
-      margin-right: 28px;
+      margin-right: $gutter;
     }
   }
 }
 
 .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership {
-  margin-bottom: 28px;
+  margin-bottom: $gutter;
   .ama__membership-content {
     @include breakpoint($bp-small max-width) {
       margin: 0 0 35px 0;
@@ -277,9 +273,9 @@ a.ama__membership {
 
 .layout__region--rail_right {
   .ama__membership {
-    margin-bottom: 21px;
+    margin-bottom: calc($gutter*.75);
     @include breakpoint($bp-small min-width) {
-      margin-bottom: 28px;
+      margin-bottom: $gutter;
     }
     @include breakpoint($bp-large min-width) {
       margin-bottom: 56px;
@@ -322,7 +318,7 @@ a.ama__membership {
 .index-page > div > .ama__membership {
     display: flex;
     flex-direction: column-reverse;
-    padding-bottom: 28px;
+    padding-bottom: $gutter;
     width: 100%;
     background: none;
     align-items: flex-start;
@@ -374,18 +370,18 @@ a.ama__membership {
 
       .ama__membership_cta_container {
         font-weight: $font-weight-bold;
-        margin: 21px 0 0;
+        margin: calc($gutter*.75) 0 0;
         max-width: unset;
         position: unset;
         @include breakpoint($bp-small) {
-          margin: 28px 0 0;
+          margin: $gutter 0 0;
           max-width: 224px;
         }
         a.ama__button {
           font-size: 18px;
           line-height: 27px;
           color: $text-navy;
-          padding: 8px 14px 7px;
+          padding: 8px calc($gutter/2) calc($gutter/4);
           height: unset;
           width: 100%;
           margin: 0;
@@ -395,7 +391,6 @@ a.ama__membership {
       .ama__h2 {
         text-transform: uppercase;
         color: $purple;
-        font-weight: $font-weight-bold;
         text-align: left;
         padding: 0;
         margin: 0;
@@ -440,7 +435,7 @@ a.ama__membership {
 // Index Hero slot styling
 .index-page .ama__layout--one-column__page-content .index-hero .ama__membership {
   margin-top: calc($gutter / 2);
-  padding-top: 14px;
+  padding-top: calc($gutter/2);
   flex-direction: column-reverse;
   @include breakpoint($bp-med) {
     padding: 0;
@@ -450,7 +445,6 @@ a.ama__membership {
       margin-right: 0;
       h2.ama__h2 {
         text-transform: unset;
-        font-weight: $font-weight-bold;
       }
     }
   }
@@ -480,7 +474,7 @@ a.ama__membership {
     display: flex;
     flex-direction: column-reverse;
     column-gap: 120px;
-    padding-bottom: 28px;
+    padding-bottom: $gutter;
     @include breakpoint($bp-small) {
       flex-direction: row;
       column-gap: 17px;
@@ -509,8 +503,8 @@ a.ama__membership {
       }
 
       .ama__membership_title_container {
-        margin-top: 28px;
-        margin-bottom: 14px;
+        margin-top: $gutter;
+        margin-bottom: calc($gutter/2);
         @include breakpoint($bp-small) {
           margin-top: 0;
           margin-bottom: 0;
@@ -519,18 +513,18 @@ a.ama__membership {
 
       .ama__membership_cta_container {
         font-weight: $font-weight-bold;
-        margin: 21px 0 0;
+        margin: calc($gutter*.75) 0 0;
         max-width: unset;
         position: unset;
         @include breakpoint($bp-small) {
-          margin: 28px 0 0;
+          margin: $gutter 0 0;
           max-width: 224px;
         }
         a.ama__button {
           color: $text-navy;
           font-size: 18px;
           line-height: 27px;
-          padding: 8px 14px 7px;
+          padding: 8px calc($gutter/2) calc($gutter/4);
           height: unset;
           width: 100%;
           margin: 0;
@@ -540,7 +534,6 @@ a.ama__membership {
       .ama__h2 {
         text-transform: uppercase;
         color: $purple;
-        font-weight: $font-weight-bold;
         text-align: left;
         padding: 0;
         margin: 0;
@@ -673,11 +666,11 @@ a.ama__membership {
   }
 
   .ama__h2 {
-    color: #46166b;
+    color: $purple;
   }
 
   .membership-body {
-    margin: 7px 0;
+    margin: calc($gutter/4) 0;
   }
 }
 

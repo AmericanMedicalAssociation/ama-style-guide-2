@@ -5,7 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* stylelint-enable */
   color: $black;
-  @include type($myriad-pro, $font-weight-regular);
+  @include type($kepler-std, $font-weight-regular);
   @include font-size($p-font-sizes);
 }
 
@@ -24,7 +24,7 @@ h1,
   @include font-size($h1-font-sizes);
   @include gutter($margin-bottom-full...);
   @extend %headerLinks;
-
+  color: $date-olive;
   &--homepage {
     color: $purple;
   }
@@ -34,11 +34,10 @@ h2,
 h2.news,
 .ama__h2,
 %ama__h2 {
-  @include type($myriad-pro, $font-weight-semibold);
+  @include type($kepler-std, $font-weight-semibold);
   @include font-size($h2-font-sizes);
   @include gutter($margin-bottom-half...);
   @extend %headerLinks;
-
   &--homepage {
     @include type($myriad-pro, $font-weight-regular);
     @include font-size($h2-font-sizes--homepage);
@@ -49,7 +48,7 @@ h2.news,
 h3,
 .ama__h3,
 %ama__h3 {
-  @include type($myriad-pro, $font-weight-semibold);
+  @include type($myriad-pro, $font-weight-bold);
   @include font-size($h3-font-sizes);
   @include gutter($margin-bottom-half...);
   @extend %headerLinks;
@@ -106,7 +105,7 @@ h5,
     text-transform: uppercase;
 
     &--homepage {
-      @include type($myriad-pro, $font-weight-semibold);
+      @include type($kepler-std, $font-weight-regular);
       @include font-size($small-font-sizes--homepage);
       color: $homepagePurple;
     }

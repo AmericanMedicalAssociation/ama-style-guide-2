@@ -40,7 +40,7 @@
   }
 
   &--related {
-    @include ama-rules(1px, '', solid, $gray-50);
+    border-top: 1px, '', solid, $gray-50;
     @include gutter($padding-top-half...);
     display: flex;
     flex-wrap: wrap;
@@ -49,7 +49,7 @@
     align-content: flex-start;
 
     &:last-child {
-      @include ama-rules(1px, 'bottom', solid, $gray-50);
+      border-bottom: 1px solid $gray-50;
       @include gutter($padding-bottom-half...);
     }
 
@@ -77,9 +77,9 @@
   }
   .related-series-tag {
     display: block;
-    margin-top: 7px;
+    margin-top: calc($gutter/4);
     a {
-      font-size: 14px;
+      font-size: calc($gutter/2);
       font-weight: $font-weight-bold;
       display: block;
       color: $purple;
@@ -123,7 +123,7 @@
       margin-bottom: 10.5px;
     }
     .ama__image {
-      margin-bottom: 7px;
+      margin-bottom: calc($gutter/4);
     }
   }
 
@@ -132,7 +132,7 @@
     @include gutter($padding-bottom-full...);
     @include gutter($margin-top-full...);
     @include gutter($margin-bottom-full...);
-    border: solid #CBCBCB;
+    border: solid $gray-20;
     border-width: 1px 0;
     clear: both;
   }
@@ -175,7 +175,7 @@
       @include font-size($h5-font-sizes--homepage);
     }
     h2.ama__article-stub__title {
-      @include font-size($h1-font-sizes);
+      @include font-size($h2-font-sizes);
 
       @include breakpoint($bp-small max-width) {
         line-height: 26px;
@@ -200,7 +200,7 @@
     position: relative;
     .series-icon {
       position: absolute;
-      background: #3d1660;
+      background: $series-icon;
       padding: 4.5px 12.5px;
     }
   }
@@ -222,7 +222,7 @@
 
   .tags {
     color: $purple;
-    font-size: 14px;
+    font-size: calc($gutter/2);
     text-transform: uppercase;
     .tag {
       display: inline-block;
@@ -265,16 +265,16 @@
     line-height: 1;
     text-transform: uppercase;
     display: block;
-    padding: 21px 0 14px 0;
+    padding: calc($gutter*.75) 0 calc($gutter/2) 0;
     font-weight: $font-weight-semibold;
     width: 100%;
     @include breakpoint($bp-small) {
-      padding: 28px 0 14px 0;
+      padding: $gutter 0 calc($gutter/2) 0;
     }
   }
 
   .ama__h5--purple {
-    font-size: 14px;
+    font-size: calc($gutter/2);
     font-weight: $font-weight-bold;
   }
 
@@ -346,7 +346,7 @@
         margin-left: 0;
         padding-left: 2.1%;
         position: relative;
-        border-left: 0.5px solid #a1a1a4;
+        border-left: 0.5px solid $border-gray;
         > div {
           border-top: none;
           padding-top: 0;
@@ -376,7 +376,7 @@
       .series-name {
         display: block;
         margin-top: 0;
-        font-size: 14px;
+        font-size: calc($gutter/2);
         padding: 0;
         font-weight: $font-weight-bold;
         display: block;
@@ -388,12 +388,12 @@
         margin-bottom: 0;
         margin-right: calc($gutter * .5);
         line-height: 1;
-        font-size: 14px;
+        font-size: calc($gutter/2);
       }
     }
     .tags {
       color: $purple;
-      font-size: 14px;
+      font-size: calc($gutter/2);
       text-transform: uppercase;
       padding-bottom: calc($gutter * .25);
 
@@ -439,7 +439,7 @@
   .stub-subscription {
     .label {
       @include gutter($padding-bottom-quarter...);
-      font-size: 14px;
+      font-size: calc($gutter/2);
       color: $date-olive;
       margin-top: 0;
       text-transform: uppercase;

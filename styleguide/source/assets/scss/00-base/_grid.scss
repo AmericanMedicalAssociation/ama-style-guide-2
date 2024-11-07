@@ -58,6 +58,7 @@ $one-col-width: 8.333333333333333%;
   padding: 0 15px;
 }
 
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -98,7 +99,7 @@ $one-col-width: 8.333333333333333%;
 
 /* col-sm-* classes */
 
-@media (min-width: 768px) {
+  @media (min-width: 768px) {
   @for $i from 1 through $grid-base {
     .col-sm-#{$i} {
       width: $one-col-width*$i;
@@ -109,7 +110,7 @@ $one-col-width: 8.333333333333333%;
 
 /* col-md-* classes*/
 
-@media (min-width: 992px) {
+  @media (min-width: 992px) {
   @for $i from 1 through $grid-base {
     .col-md-#{$i} {
       width: $one-col-width*$i;
@@ -119,11 +120,10 @@ $one-col-width: 8.333333333333333%;
 
 
 /* col-lg-* classes*/
-
-@media (min-width: 1200px) {
-  @for $i from 1 through $grid-base {
-    .col-lg-#{$i} {
-      width: $one-col-width*$i;
+  @media (min-width: 1200px) {
+    @for $i from 1 through $grid-base {
+      .col-lg-#{$i} {
+        width: $one-col-width*$i;
+      }
     }
   }
-}

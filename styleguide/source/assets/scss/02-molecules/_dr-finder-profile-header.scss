@@ -29,7 +29,7 @@
         padding-left: 100px;
       }
       &__heading {
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
       }
       a:not(.ama__button) {
         color: $blue;
@@ -74,7 +74,7 @@
   position: relative;
   text-align: center;
   background: $profileHeader-image;
-  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 3px calc($gutter/4) rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 50%;
   width: 220px;
@@ -98,7 +98,7 @@
 }
 
 .dr-finder-profile-header__doctor-info__specialty {
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   margin-top: calc($gutter/4);
 }
 
@@ -107,12 +107,12 @@
 }
 
 .dr-finder-profile-header__claim .ama__button {
-  padding: 5px 21px;
+  padding: 5px calc($gutter*.75);
 }
 .dr-finder-profile-header__upload-actions .ama__button {
   width: 100%;
   margin-bottom: calc($gutter/2);
-  padding: 5px 21px;
+  padding: 5px calc($gutter*.75);
 }
 
 .dr-finder-profile-header__edit-actions .ama__button {
@@ -120,14 +120,14 @@
 
   @include breakpoint($bp-small) {
     width: auto;
-    padding: 5px 21px;
+    padding: 5px calc($gutter*.75);
   }
 }
 
 .dr-finder-profile-header__doctor-info__service {
-  font-size: 14px;
+  font-size: calc($gutter/2);
   line-height: 19px;
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
 }
 
 .dr-finder-profile-header__edit-actions,
@@ -136,7 +136,7 @@
 
   @include breakpoint($bp-small) {
     margin-top: 18px;
-    margin-bottom: $gutter*2;
+    margin-bottom: calc($gutter*2);
   }
 }
 

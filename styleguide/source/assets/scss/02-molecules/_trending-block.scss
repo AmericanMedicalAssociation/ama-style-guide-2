@@ -1,5 +1,5 @@
 .ama__trending-block {
-  margin-bottom: 21px;
+  margin-bottom: calc($gutter*.75);
   @include breakpoint($bp-med) {
     max-width: 280px;
     margin-bottom: 35px;
@@ -25,11 +25,11 @@
       text-transform: uppercase;
     }
     h3 {
-      font-size: 22px;
-      font-weight: 600;
+      //font-size: 22px;
+      //font-weight: $font-weight-light;
       display: inline;
       margin: 0 0 0 -18px;
-      line-height: 1.18;
+      //line-height: 1.18;
       position: relative;
       padding-left: 30px;
       &::before {
@@ -52,7 +52,7 @@
   &__inner {
     border: solid 1px $complementary;
     border-top: none;
-    padding-top: 14px;
+    padding-top: calc($gutter/2);
   }
 
   &__links {
@@ -70,8 +70,8 @@
       counter-increment: inst;
       list-style: none;
       width: 90%;
-      padding-bottom: 14px;
-      margin: 14px auto 0;
+      padding-bottom: calc($gutter/2);
+      margin: calc($gutter/2) auto 0;
       border-bottom: 1px solid $gray-20;
       @include breakpoint($bp-large) {
         width: 100%;
@@ -83,13 +83,13 @@
         text-align: center;
         position: absolute;
         top: 0px;
-        left: 7px;
+        left: calc($gutter/4);
         display: inline-block;
         width: 23px;
         height: 23px;
         line-height: 1.1;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
         content: counter(inst, decimal);
         border: solid 1px $purple;
         border-radius: 50%;
@@ -107,9 +107,9 @@
 
     a {
       display: block;
-      margin: 0 14px 7px 0;
+      margin: 0 calc($gutter/2) calc($gutter/4) 0;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: $font-weight-semibold;
       color: $black;
       line-height: 1.11;
       text-decoration: none;
@@ -138,7 +138,7 @@
   }
 
   .ama__trending-block__view-all {
-    margin: 14px 24px 14px 0;
+    margin: calc($gutter/2) 24px calc($gutter/2) 0;
     color: $blue;
     line-height: 1;
   }
@@ -198,7 +198,7 @@
           &::before {
             color: $white;
             background: $purple;
-            left: 7px;
+            left: calc($gutter/4);
           }
         }
       }

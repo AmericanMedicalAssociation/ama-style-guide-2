@@ -15,19 +15,11 @@
         }
   
         h3.ama__h3 {
-          margin-bottom: 14px;
-          a {
-            font-size: 28px;
-            line-height: 32px;
-            @include breakpoint($bp-small) {
-              font-size: 38px;
-              line-height: 42px;
-            }
-          }
+          margin-bottom: calc($gutter/2);
         }
   
         .ama__article-stub__metadata {
-          font-size: 14px;
+          font-size: calc($gutter/2);
         }
       }
       > .ama__image {
@@ -45,18 +37,6 @@
       .ama__video__container .series-icon {
         display: none;
       }
-
-      //Related article stub styling here
-      > .ama__article-stub__copy {
-        h3.ama__h3 {
-          font-size: 28px;
-          line-height: 32px;
-          @include breakpoint($bp-small) {
-            font-size: 38px;
-            line-height: 42px;
-          }
-        }
-      }
       > .ama__image {
         padding-top: 0;
       }
@@ -65,10 +45,10 @@
 
   .ama__article-stub {
     h5.ama__h5 {
-      font-size: 14px;
+      font-size: calc($gutter/2);
       line-height: normal;
       color: $gray-64;
-      margin-bottom: 14px;
+      margin-bottom: calc($gutter/2);
       text-transform: uppercase;
     }
     .ama__video__container {
@@ -76,7 +56,7 @@
       padding-top: 0;
     }
     .series-icon {
-      background-color: #3d1660;
+      background-color: $series-icon;
     }
     &.ama__article-stub--video {
       .ama__bio-image-with-body__image {

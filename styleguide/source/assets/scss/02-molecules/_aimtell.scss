@@ -2,10 +2,10 @@
 // Empty structure left intact for easier tweaking.
 
 pushboxcontainer {
-  color: #000000;
+  color: $black;
   animation: none;
   * {
-    font-family: "myriad-pro",sans-serif;
+    font-family: $myriad-pro;
   }
   pushbox {
     width: 450px;
@@ -35,7 +35,7 @@ pushboxcontainer {
           font-size: 16px;
         }
         teaser-byline {
-          font-size: 14px;
+          font-size: calc($gutter/2);
         }
       }
       noticlose {
@@ -71,13 +71,13 @@ pushboxcontainer {
       buttons {
         button-approve {
           &._aimtellPromptApprove {
-            background: white;
-            color: #46166B;
-            border: #46166B solid 1px;
+            background: $white;
+            color: $purple;
+            border: $purple solid 1px;
             font-size: 16px;
             &:hover {
-              border: #907306 1px solid;
-              background: #907306;
+              border: $gold 1px solid;
+              background: $gold;
               color: white;
             }
           }
@@ -85,12 +85,12 @@ pushboxcontainer {
         button-deny {
           &._aimtellPromptDeny {
             background: white;
-            color: #46166B;
-            border: #46166B solid 1px;
+            color: $purple;
+            border: $purple solid 1px;
             font-size: 16px;
             &:hover {
-              border: #907306 1px solid;
-              background: #907306;
+              border: $gold 1px solid;
+              background: $gold;
               color: white;
             }
           }

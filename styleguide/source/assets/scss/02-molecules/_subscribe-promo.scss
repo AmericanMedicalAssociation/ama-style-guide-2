@@ -39,7 +39,7 @@
       display: flex;
 
       > input#edit-mr-us-citizen, input#edit-us-citizen {
-        margin-right: 7px;
+        margin-right: calc($gutter/4);
         -webkit-box-shadow: none;
         box-shadow: none;
         border-radius: 0;
@@ -55,7 +55,7 @@
           background-image: url('../icons/svg/icon-checkmark-black.svg');
           background-repeat: no-repeat;
           background-position: center;
-          background-size: 14px;
+          background-size: calc($gutter/2);
         }
       }
     }
@@ -68,7 +68,7 @@
       font-size: 18px;
       font-style: italic;
       color: $gray-7;
-      margin-bottom: 14px;
+      margin-bottom: calc($gutter/2);
     }
     .ama__checkbox span {
       color: $white;
@@ -125,7 +125,7 @@
 
     .ama__subscribe-promo__content {
       @include gutter($margin-right-full...);
-      flex: 1;
+      flex: .6;
     }
 
     .ama__subscribe-promo__form,
@@ -135,9 +135,9 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        margin-bottom: 21px;
+        margin-bottom: calc($gutter*.75);
         @include breakpoint($bp-med) {
-          margin-bottom: 14px;
+          margin-bottom: calc($gutter/2);
         }
       }
       .form-item-page-mr-email {
@@ -194,14 +194,14 @@
   &--homepage {
     .ama__subscribe-promo__form {
       flex-direction: row;
-      width: 100%;
+      flex: 1;
 
       @include breakpoint($bp-small min-width) {
-        width: 40%;
+        flex: .4;
       }
 
       @include breakpoint($bp-large min-width) {
-        width: 35%;
+        flex: .35;
       }
     }
 
@@ -248,7 +248,7 @@
       width: 100%;
     }
     .form-item-page-mr-us-citizen {
-      margin-bottom: 14px;
+      margin-bottom: calc($gutter/2);
     }
     input {
       height: 50px;
@@ -256,7 +256,7 @@
     .form-actions {
       position: absolute;
       text-align: center;
-      bottom: 14px;
+      bottom: calc($gutter/2);
       left: 0;
       right: 0;
       margin: auto;
@@ -265,7 +265,7 @@
         top: 8px;
         right: 0;
       }
-      @media only screen and (min-width: 601px) and (max-width: 768px) {
+      @media only screen and (min-width: $bp-small) and (max-width: $bp-med) {
         margin-top: 80px;
       }
       .form-submit {
@@ -319,24 +319,20 @@
   }
   .ama__subscribe-promo--media {
     display: block;
-    width: 100%;
     flex: 1;
     padding: 0;
-    margin: 0 0 28px 0;
+    margin: 0 0 $gutter 0;
     @include breakpoint($bp-small) {
       flex: .6;
     }
   }
   .ama__subscribe-promo__subject-title {
     color: $text-navy;
-    font-weight: 400;
+    font-weight: $font-weight-regular;
     line-height: 1;
   }
   .ama__h2 {
     color: $purple;
-    @include breakpoint($bp-small) {
-      font-weight: $font-weight-bold;
-    }
   }
   .ama__subscribe-promo__form .ama__checkbox {
     .ui-checkboxradio-icon {
@@ -352,7 +348,7 @@
 
   .ama__subscribe-promo__form_page .ama__subscribe-promo__email-subscribe-container .form-item-page-mr-email input[type=text] {
     font-style: italic;
-    border-color: #424242;
+    border-color: $date-olive;
   }
 
   .ama__subscribe-promo__form .ama__button {
@@ -367,8 +363,8 @@
     }
 
     &:hover {
-      background-color: #ffd8a3;
-      border-color: #ffd8a3;
+      background-color: $hoverComplementary;
+      border-color: $hoverComplementary;
     }
   }
 
@@ -395,7 +391,7 @@
 // Index Hero slot styling
 .index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo {
   margin-top: calc($gutter / 2);
-  padding-top: 14px;
+  padding-top: calc($gutter/2);
   flex-direction: column-reverse;
   @include breakpoint($bp-med) {
     padding: 0;
@@ -436,9 +432,9 @@
   color: $text-navy;
   display: flex;
   flex-direction: column-reverse;
-  padding: 0 0 28px 0;
-  padding-bottom: 28px;
-  margin-bottom: 28px;
+  padding: 0 0 $gutter 0;
+  padding-bottom: $gutter;
+  margin-bottom: $gutter;
   @include breakpoint($bp-small) {
     flex-direction: row;
   }
@@ -466,10 +462,9 @@
   }
   .ama__subscribe-promo--media {
     display: block;
-    width: 100%;
     flex: 1;
     padding: 0;
-    margin: 0 0 28px 0;
+    margin: 0 0 $gutter 0;
     @include breakpoint($bp-small) {
       padding-left: calc($gutter * .75);
       flex: .625;
@@ -480,12 +475,11 @@
   }
   .ama__subscribe-promo__subject-title {
     color: $text-navy;
-    font-weight: 400;
+    font-weight: $font-weight-regular;
     line-height: 1;
   }
   .ama__h2 {
     color: $purple;
-    font-weight: $font-weight-bold;
   }
   .ama__subscribe-promo__form .ama__checkbox span {
     color: $text-navy;
@@ -493,7 +487,7 @@
 
   .ama__subscribe-promo__form_page .ama__subscribe-promo__email-subscribe-container .form-item-page-mr-email input[type=text] {
     font-style: italic;
-    border-color: #424242;
+    border-color: $date-olive;
   }
 
   .ama__subscribe-promo__form .ama__button {
@@ -504,8 +498,8 @@
     max-width: 220px;
     margin: 0;
     &:hover {
-      background-color: #ffd8a3;
-      border-color: #ffd8a3;
+      background-color: $hoverComplementary;
+      border-color: $hoverComplementary;
     }
   }
 }
