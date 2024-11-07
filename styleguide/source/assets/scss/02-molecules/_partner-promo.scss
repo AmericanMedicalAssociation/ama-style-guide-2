@@ -27,6 +27,11 @@
     @include gutter-all($padding-all-half...);
     background: $gray-7;
     color: $gray-64;
+    .ama__h2 {
+      &.partner-embed {
+        @include type($myriad-pro, $font-weight-semibold);
+      }
+    }
 
     // Right now the style guide uses `buttons`, but eventually we want to switch these to `a` elements.
     a,

@@ -67,6 +67,23 @@
       padding: 0;
       padding-top: 10px;
     }
+    @media screen and (min-width: 900px) and (max-width: 992px){
+      padding: 0 20px;
+      padding-top: 10px;
+
+      .ama__org-nav {
+        flex-shrink: 1.2;
+
+        ul {
+          display: block;
+          text-align: left;
+        }
+      }
+
+      ul {
+        justify-content: flex-start;
+      }
+    }
   }
 
   .layout--one-col-class:has(.ama__subscribe-promo--wide) {

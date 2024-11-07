@@ -6,9 +6,9 @@
   margin-right: calc($gutter / 4);
   margin-bottom: calc($gutter / 4);
   font-weight: $font-weight-semibold;
-  @include breakpoint($bp-small) {
-  white-space: nowrap;
-}
+  @media screen and (min-width: 768px) {
+    white-space: nowrap;
+  }
   &:hover {
     cursor: pointer;
   }

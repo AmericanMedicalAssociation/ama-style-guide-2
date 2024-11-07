@@ -1,9 +1,9 @@
 .ama__category-nav {
   display: none;
   flex-grow: 1;
-  margin-left: 0;
-  @include breakpoint($bp-large) {
-    margin-left: 55px;
+  margin-left: 55px;
+  @media (max-width: $bp-large) {
+    margin-left: 0;
   }
 
   @include breakpoint($bp-small) {
@@ -14,9 +14,9 @@
     justify-content: space-between;
     padding-bottom: 5px;
     border-right: 1px solid $gray-20;
-    flex-wrap: nowrap;
-    @include breakpoint($bp-med) {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
+    @media (max-width: $bp-med) {
+      flex-wrap: nowrap;
     }
 
     li {
