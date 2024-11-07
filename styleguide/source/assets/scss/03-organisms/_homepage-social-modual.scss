@@ -14,7 +14,7 @@
     display: block;
     @include breakpoint($bp-small) {
       display: flex;
-      column-gap: 20px;
+      column-gap: 24px;
       justify-content: center;
     }
 
@@ -26,7 +26,10 @@
     .profile_three {
       .profile--image {
         max-width: 177px;
-        margin: 0 auto calc($gutter/2);
+        margin: 0 0 24px 0;
+        @include breakpoint($bp-small) {
+          margin: 0 auto calc($gutter/2);
+        }
         img {
           border-radius: 50%;
           width: 100%;
@@ -45,28 +48,33 @@
     }
   
     .profile {
-      margin-bottom: 20px;
-      .profile--image > img {
-        width: 100%;
-      }
-    }
-  
-    @include breakpoint($bp-small max-width) {
-      .profile:nth-child(1) {
-        margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      background: $gray-4;
+      padding: 16px;
+
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+        gap: 24px;
+        padding: 32px;
       }
 
-      .profile_container {
-        margin-bottom: 20px;
+      &--content {
+        h4 {
+          font-size: 24px;
+          font-weight: $font-weight-bold;
+          line-height: 29px;
+          margin-bottom: 16px;
+        }
+
+        p {
+          margin-bottom: 24px;
+        }
       }
     }
 
-    @include breakpoint($bp-small) {
-      .profile {
-        width: 50%;
-        max-width: 580px;
-      }
-  
+    @include breakpoint($bp-small) {  
       .profile_container {
         width: 50%;
       }
@@ -88,31 +96,32 @@
 
   &.no-feature {
     .profile--image {
-      max-width: 177px;
-      margin: 0 auto calc($gutter/2);
+      max-width: 116px;
+      height: 116px;
+      margin: 0 0 24px 0;
+      @include breakpoint($bp-small) {
+        margin: 0 auto calc($gutter/2);
+      }
       img {
-        border-radius: 50%;
+        border-radius: 6px;
         width: 100%;
       }
     }
   }
 
-  a {
+  a.ama__link--purple {
+    color: $homepagePurple;
     position: relative;
-    &.ama__link--blue::after {
+    font-weight: bold;
+    &::after {
       content: " ";
       position: absolute;
       right: -25px;
       top: 8px;
-      width: 18px;
-      height: 11px;
-      background: url('../images/arrow-right-blue.png') no-repeat 0px 0px;
+      width: 16px;
+      height: 12px;
+      background: url('../images/arrow-right-purple-alt.png') no-repeat 0px 0px;
       background-size: contain;
-    }
-
-    @include breakpoint($bp-small max-width) {
-      font-size: 16px;
-      line-height: 22px;
     }
   }
 }
@@ -120,6 +129,22 @@
 .hs_parent_container {
   display: block;
   overflow: auto;
+  .ama__homepage__section-title {
+    @include type($kepler-std, $font-weight-semibold);
+    font-size: 26px;
+    line-height: 31px;
+    background: unset;
+    color: $black;
+    margin-top: 28px;
+    margin-bottom: 24px;
+    padding: 0;
+
+    @include breakpoint($bp-small) {
+      font-size: 32px;
+      line-height: 38px;
+      text-align: center;
+    }
+  }
   .hs_message {
     max-width: 380px;
     margin-bottom: 20px;
