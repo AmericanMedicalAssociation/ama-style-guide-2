@@ -28,6 +28,18 @@
             flex-basis: 50%;
             max-width: 396px;
         }
+      h2.ama__h2 {
+        font-size: $gutter;
+        line-height: 32px;
+        @include breakpoint($bp-med) {
+          font-size: 32px;
+          line-height: 38px;
+        }
+        @include breakpoint($bp-large) {
+          font-size: 32px;
+          line-height: 42px;
+        }
+      }
         .spacer {
             height: $gutter;
             display: block;

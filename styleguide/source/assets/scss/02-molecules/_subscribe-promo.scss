@@ -125,7 +125,7 @@
 
     .ama__subscribe-promo__content {
       @include gutter($margin-right-full...);
-      flex: 1;
+      flex: .6;
     }
 
     .ama__subscribe-promo__form,
@@ -194,14 +194,14 @@
   &--homepage {
     .ama__subscribe-promo__form {
       flex-direction: row;
-      width: 100%;
+      flex: 1;
 
       @include breakpoint($bp-small min-width) {
-        width: 40%;
+        flex: .4;
       }
 
       @include breakpoint($bp-large min-width) {
-        width: 35%;
+        flex: .35;
       }
     }
 
@@ -319,7 +319,6 @@
   }
   .ama__subscribe-promo--media {
     display: block;
-    width: 100%;
     flex: 1;
     padding: 0;
     margin: 0 0 $gutter 0;
@@ -463,7 +462,6 @@
   }
   .ama__subscribe-promo--media {
     display: block;
-    width: 100%;
     flex: 1;
     padding: 0;
     margin: 0 0 $gutter 0;
