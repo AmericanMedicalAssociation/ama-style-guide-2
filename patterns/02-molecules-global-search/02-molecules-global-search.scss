@@ -31,16 +31,18 @@
   left: 0;
   width: 100%;
   background-color: $purple;
-
+  flex-grow: .8;
   @include breakpoint($bp-small) {
     position: relative;
     display: block;
     padding-left: 0;
     top: 0;
-    flex-grow: 1;
     height: 34px;
     border: none;
     width: 70px;
+  }
+  @include breakpoint($bp-med) {
+    flex-grow: 1;
   }
 
   .searchbar-wrapper {
