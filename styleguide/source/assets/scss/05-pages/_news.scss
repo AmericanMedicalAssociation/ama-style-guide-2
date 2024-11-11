@@ -14,7 +14,6 @@
         flex: 1;
         .ama__h1 {
           margin-bottom: calc($gutter * .5);
-          color: color: $gray-64;
           &:focus-visible {
             outline: 2px solid $tab-focus-blue;
             outline-offset: 5px;
@@ -29,7 +28,6 @@
         p.ama__subtitle {
           font-size: calc($gutter/2);
           font-weight: $font-weight-regular;
-          color: $gray-64;
           margin-bottom: 0;
           @include breakpoint($bp-small) {
             font-size: 16px;
@@ -52,7 +50,6 @@
       [data-region="date"] {
         font-size: calc($gutter/2);
         padding-right: $gutter;
-        color: $gray-64;
         @include breakpoint($bp-small) {
           padding-bottom: calc($gutter * .5);
         }
@@ -261,7 +258,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    color: $gray-64;
     border-bottom: solid .5px $gray-64;
     @include breakpoint($bp-small) {
       flex-direction: row;
