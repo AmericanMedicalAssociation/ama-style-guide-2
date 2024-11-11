@@ -215,6 +215,10 @@
     display: block;
     width: 100%;
   }
+  @else if($size == "rounded") {
+    border-radius: 6px;
+    text-transform: none;
+  }
   @else {
    display: inline-block;
   }
