@@ -60,6 +60,11 @@
     h2 {
       a {
         line-height: 1;
+        font-size: 14px;
+        font-weight: $font-weight-regular;
+        @include breakpoint($bp-small) {
+          font-size: 18px;
+        }
       }
     }
 
