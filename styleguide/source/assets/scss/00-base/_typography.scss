@@ -4,8 +4,8 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   /* stylelint-enable */
-  color: $black;
-  @include type($kepler-std, $font-weight-regular);
+  color: $gray-64;
+  @include type($myriad-pro, $font-weight-regular);
   @include font-size($p-font-sizes);
 }
 
@@ -24,7 +24,6 @@ h1,
   @include font-size($h1-font-sizes);
   @include gutter($margin-bottom-full...);
   @extend %headerLinks;
-  color: $gray-64;
   &--homepage {
     color: $purple;
   }
@@ -38,11 +37,9 @@ h2.news,
   @include font-size($h2-font-sizes);
   @include gutter($margin-bottom-half...);
   @extend %headerLinks;
-  color: $gray-64;
   &--homepage {
     @include type($myriad-pro, $font-weight-regular);
     @include font-size($h2-font-sizes--homepage);
-    color: $gray-64;
   }
 }
 
@@ -53,7 +50,6 @@ h3,
   @include font-size($h3-font-sizes);
   @include gutter($margin-bottom-half...);
   @extend %headerLinks;
-  color: $gray-64;
   &--homepage {
     @include type($myriad-pro, $font-weight-regular);
     @include font-size($h3-font-sizes--homepage);
@@ -143,18 +139,17 @@ small,
   @include font-size($small-font-sizes);
 }
 
+i,
+em,
 .ama__type--italic,
 %ama__type-italic {
-  @include type($myriad-pro, $font-weight-regular);
-  @include font-size($small-font-sizes);
   font-style: italic;
 }
 
 strong,
 .ama__type--strong,
 %ama__type--strong {
-  @include type($myriad-pro, $font-weight-bold);
-  @include font-size($p-font-sizes);
+  font-weight: $font-weight-bold;
 }
 
 .ama__menu--button,
