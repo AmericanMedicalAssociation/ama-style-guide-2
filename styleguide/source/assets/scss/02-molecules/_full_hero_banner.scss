@@ -1,13 +1,13 @@
 //  Remove duplicate styles.
 .ama__full_hero_banner {
-  padding: 60px 0 100px;
-  margin-bottom: -75px;
+  padding: 60px 0 150px;
+  margin-bottom: -150px;
   background-size: cover;
   
   &__card {
     width: 100%;
     @include breakpoint($bp-med) {
-      width: 50%;
+      width: 56%;
     }
     display: flex;
     gap: 14px;
@@ -21,6 +21,10 @@
 
     a.ama__button {
       @include ama-button ("rounded", "homepage");
+    }
+
+    .ama__h1 {
+      margin-bottom: 7px;
     }
   }
 
