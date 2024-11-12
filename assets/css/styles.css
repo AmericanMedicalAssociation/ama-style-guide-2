@@ -13521,6 +13521,10 @@ table a.new-replies .count-new {
 .ama__global-search {
   padding-left: 10.5px;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 60px;
   position: absolute;
   top: 60px;
@@ -17480,6 +17484,9 @@ a.ama__promo--border:hover {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
+}
+.authenticated.ama__sign-in-dropdown__menu__header {
+  color: #5C5C5C;
 }
 .authenticated.ama__sign-in-dropdown__menu .ama__sign-in-dropdown__menu__group {
   padding-left: 14px;
