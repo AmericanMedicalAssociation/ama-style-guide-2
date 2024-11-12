@@ -7,7 +7,12 @@
 
   // Override main paragraph font
   p, p a {
-    @include type($myriad-pro, $font-weight-regular);
+    @include type($kepler-std, $font-weight-light);
+    line-height: 21.6px;
+  }
+
+  a {
+    color: inherit;
   }
 
   &__container {
@@ -53,6 +58,7 @@
       margin-bottom: 16px;
       background: $gray-4;
       padding: 16px;
+      border-radius: 8px;
 
       @include breakpoint($bp-small) {
         flex-direction: row;
@@ -94,18 +100,17 @@
     }
   }
 
-  &.no-feature {
-    .profile--image {
+  .profile--image {
+    width: 100%;
+    height: 116px;
+    margin: 0 0 24px 0;
+    @include breakpoint($bp-small) {
+      margin: 0 auto calc($gutter/2);
+    }
+    img {
+      border-radius: 6px;
+      width: 100%;
       max-width: 116px;
-      height: 116px;
-      margin: 0 0 24px 0;
-      @include breakpoint($bp-small) {
-        margin: 0 auto calc($gutter/2);
-      }
-      img {
-        border-radius: 6px;
-        width: 100%;
-      }
     }
   }
 
@@ -113,6 +118,8 @@
     color: $homepagePurple;
     position: relative;
     font-weight: bold;
+    font-size: 16px;
+    line-height: 19.2px;
     &::after {
       content: " ";
       position: absolute;
@@ -127,6 +134,7 @@
 }
 
 .hs_parent_container {
+  color: $black;
   display: block;
   overflow: auto;
   .ama__homepage__section-title {
