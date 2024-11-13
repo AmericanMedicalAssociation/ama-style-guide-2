@@ -131,7 +131,10 @@
       flex: .6;
 
       p {
-        margin-bottom: 0;
+        margin-bottom: 14px;
+        @include breakpoint($bp-small) {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -153,6 +156,10 @@
       .ama__form-group,
       .form-actions {
         margin: 0;
+      }
+
+      .ama__checkbox.form-item {
+        margin-bottom: 0;
       }
 
       .ama__form-group {
