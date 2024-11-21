@@ -44,6 +44,7 @@
     @include breakpoint($bp-med) {
       position: static;
       height: auto;
+      min-height: 44px;
       border: 0;
     }
     &:focus-within {
@@ -109,7 +110,7 @@
       display: block;
       @include breakpoint($bp-med) {
         padding: calc($gutter/2) 0;
-        line-height: 16.8px;
+        line-height: 16px;
         font-size: 12px;
       }
       @include breakpoint($bp-large) {

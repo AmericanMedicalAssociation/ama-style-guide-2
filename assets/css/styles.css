@@ -13487,8 +13487,16 @@ table a.new-replies .count-new {
   color: #ffffff;
   text-decoration: none;
 }
-.ama__full_hero_banner__card .ama__h1, .ama__full_hero_banner__card .dr-finder-search-results-header__results-text, .ama__full_hero_banner__card .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .ama__full_hero_banner__card span {
+.ama__full_hero_banner__card a {
+  font-size: inherit;
+  text-decoration: none;
+}
+.ama__full_hero_banner__card a .ama__h1, .ama__full_hero_banner__card a .dr-finder-search-results-header__results-text, .ama__full_hero_banner__card a .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .ama__full_hero_banner__card a span {
   margin-bottom: 7px;
+}
+.ama__full_hero_banner__card a:focus-visible {
+  outline: 2px solid #80d4f5;
+  outline-offset: 3px;
 }
 .ama__full_hero_banner + .section {
   position: relative;
@@ -29882,6 +29890,7 @@ a.ama__membership:hover {
   .ama__product-nav .dropdown-container {
     position: static;
     height: auto;
+    min-height: 44px;
     border: 0;
   }
 }
@@ -29954,7 +29963,7 @@ a.ama__membership:hover {
 @media (min-width: 56.25em) {
   .ama__product-nav li a {
     padding: 14px 0;
-    line-height: 16.8px;
+    line-height: 16px;
     font-size: 12px;
   }
 }
