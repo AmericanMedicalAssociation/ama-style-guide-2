@@ -26,6 +26,12 @@
                     e.preventDefault();
                 });
 
+                $dropdownBlock.on('focusout', function () {
+                    if (!$dropdownBlock.has(event.relatedTarget).length) {
+                        closeMenu($dropdownTrigger, $dropdownMenu);
+                    }
+                });
+
                 $(document).on('click', function (e) {
                     if (!dropdownBlock.is(e.target) && dropdownBlock.has(e.target).length === 0) {
                         closeMenu(triggerElement, menuElement);
