@@ -2,7 +2,6 @@
   Drupal.behaviors.ama_anchors = {
     attach: function (context, settings) {
       $(document).ready(function () {
-          console.log('script loaded');
         // Function to handle scrolling to anchor
         function scrollToAnchor(hash) {
           // Get the height of the header to determine the initial offset
@@ -19,19 +18,12 @@
           var target = $(hash);
           target = target.length ? target : $('[name="' + hash.slice(1) + '"]');
           if (target.length) {
-              // Check if the clicked element is within a <dt> and the window width is above 992px
-              if ($(this).closest('dt').length && $(window).width() > 992) {
-                  console.log('returning');
-                  return;
-              }
-              else {
-                  $('html, body').animate(
-                      {
-                          scrollTop: target.offset().top - offset,
-                      },
-                      500
+              $('html, body').animate(
+                  {
+                      scrollTop: target.offset().top - offset,
+                  },
+                  500
                   );
-              }
           }
         }
 
