@@ -83,11 +83,17 @@
       @include breakpoint($bp-med max-width) {
         min-height: unset;
         line-height: 1;
-        height: 78px;
+        height: auto;
         padding: 0;
-        > div:first-of-type {
-          margin-bottom: 0;
+        border-top: 1px solid $gray-30;
+        > div {
           min-height: unset;
+          margin: 14px 0;
+
+          &:first-of-type {
+            margin-bottom: 0;
+
+          }
         }
       }
     }
