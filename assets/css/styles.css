@@ -4823,6 +4823,9 @@ a {
     padding-bottom: 14px;
   }
 }
+.listicle > ol > li::before {
+  content: " ";
+}
 .listicle__item {
   counter-increment: ama-listicle;
   font-family: "kepler-std", "Georgia", "Times New Roman", serif;
@@ -4853,6 +4856,9 @@ a {
   font-weight: inherit;
 }
 .listicle__item::before {
+  content: " ";
+}
+.listicle__item h2::before {
   content: counter(ama-listicle);
   position: relative;
   color: #000000;
@@ -4869,6 +4875,7 @@ a {
   width: 100%;
 }
 .listicle__item-sub-item {
+  list-style: none;
   margin-bottom: 10.5px;
   margin-top: 0;
 }
@@ -4924,7 +4931,9 @@ a {
 .listicle.bullet .listicle__item, .listicle.unmarked .listicle__item {
   margin-left: 0;
 }
-.listicle.bullet .listicle__item::before, .listicle.unmarked .listicle__item::before {
+.listicle.bullet .listicle__item h2::before,
+.listicle.bullet .listicle__item h3::before, .listicle.unmarked .listicle__item h2::before,
+.listicle.unmarked .listicle__item h3::before {
   content: "";
   width: 6px;
   height: 6px;
@@ -4935,7 +4944,8 @@ a {
 .listicle.unmarked .listicle__item {
   padding-left: 0;
 }
-.listicle.unmarked .listicle__item::before {
+.listicle.unmarked .listicle__item h2::before,
+.listicle.unmarked .listicle__item h3::before {
   display: none;
 }
 
@@ -17070,6 +17080,8 @@ a.ama__promo--border:hover {
   margin-left: -12px;
   width: auto;
   border-top: 1px solid #fefefe;
+  position: relative;
+  z-index: 600;
 }
 @media (min-width: 37.5em) {
   .search-suggestions-wrapper.show {
@@ -35528,13 +35540,18 @@ div[role=alert] {
   .hub-container .ama__hub-banner__one-link {
     min-height: unset;
     line-height: 1;
-    height: 78px;
+    height: auto;
     padding: 0;
+    border-top: 1px solid #979797;
+  }
+  .ama__hub .ama__hub-banner__one-link > div,
+  .hub-container .ama__hub-banner__one-link > div {
+    min-height: unset;
+    margin: 14px 0;
   }
   .ama__hub .ama__hub-banner__one-link > div:first-of-type,
   .hub-container .ama__hub-banner__one-link > div:first-of-type {
     margin-bottom: 0;
-    min-height: unset;
   }
 }
 
