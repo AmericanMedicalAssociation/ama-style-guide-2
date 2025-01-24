@@ -4,6 +4,10 @@
   @include gutter($padding-top-half...);
   @include gutter($padding-bottom-half...);
 
+  > ol > li::before {
+    content: " ";
+  }
+
   &__item {
 
     counter-increment: ama-listicle;
@@ -22,6 +26,10 @@
     }
 
     &::before {
+      content: " ";
+    }
+
+    h2::before {
       content: counter(ama-listicle);
       position: relative;
       color: $black;
@@ -38,6 +46,7 @@
       width: 100%;
 
       &-item {
+        list-style: none;
         @include gutter($margin-bottom-half...);
         margin-top: 0;
       }
@@ -81,7 +90,8 @@
     margin-left: 0;
     .listicle__item {
       margin-left: 0;
-      &::before {
+      h2::before,
+      h3::before {
         content: '';
         width: 6px;
         height: 6px;
@@ -94,7 +104,8 @@
     list-style: none;
     .listicle__item {
       padding-left: 0;
-      &::before {
+      h2::before,
+      h3::before {
         display: none;
       }
     }
