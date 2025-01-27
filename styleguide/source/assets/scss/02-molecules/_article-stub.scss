@@ -38,14 +38,14 @@
       }
       &[data-count="4"] {
         @include breakpoint($bp-med) {
-
+          width: 48.6%;
           &:nth-child(2) {
             margin-right: 0;
           }
         }
         @include breakpoint($bp-large) {
           margin-right: 20px;
-
+          width: 25%;
           &:nth-child(2) {
             margin-right: 20px;
           }
@@ -53,14 +53,13 @@
       }
       &[data-count="3"] {
         @include breakpoint($bp-med) {
-
+          width: 48.6%;
           &:nth-child(2) {
             margin-right: 0;
           }
           &:nth-child(3) {
             margin-right: auto;
             margin-left: auto;
-            width: 33%;
           }
         }
         @include breakpoint($bp-large) {
@@ -70,9 +69,10 @@
           &:nth-child(3) {
             margin-right: 0px;
             margin-left: 0;
-            width: unset;
+            width: 33%;
           }
           margin-right: 20px;
+          width: 33%;
           margin-bottom: 0px;
         }
       }
