@@ -14,24 +14,68 @@
     margin: 0;
     display: flex;
     flex: 1;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
+    @include breakpoint($bp-med) {
+      flex-direction: row;
+    }
+    @include breakpoint($bp-large) {
+      flex-wrap: nowrap;
+    }
+
     .article-stub {
-      flex: 1 1 auto;
-       width: 100%;
-      @include breakpoint($bp-med) {
-        width: 50%;
-      }
-      @include breakpoint($bp-large) {
-        width: 25%;
-      }
       background: $white;
       border: 1px solid #e4e3e6;
       border-radius: 8px;
-      margin-right: 20px;
+      margin-right: 0px;
       box-shadow: transparent 0 0 10px;
       transition: box-shadow 0.3s;
+      width: 100%;
+      margin-bottom: 20px;
+      @include breakpoint($bp-large) {
+        margin-bottom: 0px;
+      }
+      &[data-count="4"] {
+        @include breakpoint($bp-med) {
+
+          &:nth-child(2) {
+            margin-right: 0;
+          }
+        }
+        @include breakpoint($bp-large) {
+          margin-right: 20px;
+
+          &:nth-child(2) {
+            margin-right: 20px;
+          }
+        }
+      }
+      &[data-count="3"] {
+        @include breakpoint($bp-med) {
+
+          &:nth-child(2) {
+            margin-right: 0;
+          }
+          &:nth-child(3) {
+            margin-right: auto;
+            margin-left: auto;
+            width: 33%;
+          }
+        }
+        @include breakpoint($bp-large) {
+          &:nth-child(2) {
+            margin-right: 20px;
+          }
+          &:nth-child(3) {
+            margin-right: 0px;
+            margin-left: 0;
+            width: unset;
+          }
+          margin-right: 20px;
+          margin-bottom: 0px;
+        }
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -49,6 +93,12 @@
         .stub-image {
           width: 100%;
           max-width: 100%;
+          img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            width: 100%;
+            max-width: 100%;
+          }
         }
         .stub-text {
           padding: 20px;
