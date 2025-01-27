@@ -1,3 +1,125 @@
+.article-stub-list-wrapper {
+  h2.ama_article-stub-header {
+    padding-bottom: 0;
+    text-transform: lowercase;
+    &:first-line {
+      text-transform: capitalize;
+    }
+  }
+
+  .article-stub-list {
+    border-top: none;
+    border-bottom: none;
+    padding: $gutter 0;
+    margin: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    .article-stub {
+      flex: 1 1 auto;
+       width: 100%;
+      @include breakpoint($bp-med) {
+        width: 50%;
+      }
+      @include breakpoint($bp-large) {
+        width: 25%;
+      }
+      background: $white;
+      border: 1px solid #e4e3e6;
+      border-radius: 8px;
+      margin-right: 20px;
+      box-shadow: transparent 0 0 10px;
+      transition: box-shadow 0.3s;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        transition: box-shadow 0.3s;
+        box-shadow: #e4e3e6 0px 0px 10px;
+        .title {
+          text-decoration: underline;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+
+        .stub-image {
+          width: 100%;
+          max-width: 100%;
+        }
+        .stub-text {
+          padding: 20px;
+          .eyebrow {
+            font-size: 14px;
+            line-height: 16.8px;
+            color: $gray-64;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+          }
+          .title {
+            padding: 0;
+            color: $black;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: $font-weight-regular;
+          }
+          .updated {
+            font-size: 16px;
+            line-height: 19.2px;
+            font-family: $kepler-std;
+            font-weight: $font-weight-light;
+            color: $gray-64;
+          }
+          .data {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            font-size: 16px;
+            line-height: 19.2px;
+            font-family: $kepler-std;
+            font-weight: $font-weight-light;
+            color: $gray-64;
+            .date {
+              margin-right: 7px;
+            }
+            .pipe {
+              margin-right: 7px;
+            }
+            .read-time {
+              margin-right: 7px;
+              text-transform: lowercase;
+              &:first-line {
+              text-transform: capitalize;
+              }
+            }
+            .video {
+              content: "";
+              height: 19px;
+              width: 19px;
+              background: url("../icons/svg/icon-play-2.svg") no-repeat 0 0;
+              background-size: contain;
+              margin-right: 7px;
+            }
+            .podcast {
+              content: "";
+              height: 19px;
+              width: 19px;
+              background: url("../icons/svg/icon-headphones.svg") no-repeat 0 0;
+              background-size: contain;
+              margin-right: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
 .ama__article-stub {
   a {
     text-decoration: none;
