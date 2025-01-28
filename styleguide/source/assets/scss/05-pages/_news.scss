@@ -9,6 +9,9 @@
   .article-header-row {
     display: flex;
     flex-direction: row;
+    .author {
+      margin-bottom: calc($gutter * .5);
+    }
     .ama__masthead__content__link {
       font-weight: 700;
       color: $blue;
@@ -20,10 +23,14 @@
       [data-region="title"] {
         flex: 1;
         .ama__h1 {
-          margin-bottom: calc($gutter * .5);
+          font-size: 1.8em;
+          margin-bottom: calc($gutter * .75);
           &:focus-visible {
             outline: 2px solid $tab-focus-blue;
             outline-offset: 5px;
+          }
+          @include breakpoint($bp-med) {
+            font-size: 2.222em;
           }
         }
       }
@@ -31,7 +38,7 @@
     &.subtitle-row {
       [data-region="subtitle"] {
         flex: 1;
-        padding-bottom: calc($gutter * .5);
+        padding-bottom: calc($gutter * .75);
         p.ama__subtitle {
           font-size: calc($gutter/2);
           font-weight: $font-weight-light;
