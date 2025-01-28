@@ -214,11 +214,7 @@ header {
     @include gutter($margin-right-half...);
     display: none;
     min-width: 0;
-    @include breakpoint($bp-small) {
-      display: none;
-    }
-
-    @include breakpoint($bp-med) {
+    @include breakpoint(992px) {
       display: block;
       min-width: 130px;
       text-align: right;
