@@ -33,6 +33,12 @@
       transition: box-shadow 0.3s;
       width: 100%;
       margin-bottom: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      @include breakpoint($bp-med) {
+        margin-right: 20px;
+      }
       @include breakpoint($bp-large) {
         margin-bottom: 0px;
       }
@@ -60,6 +66,7 @@
           &:nth-child(3) {
             margin-right: auto;
             margin-left: auto;
+            flex-grow: .1;
           }
         }
         @include breakpoint($bp-large) {
@@ -70,6 +77,7 @@
             margin-right: 0px;
             margin-left: 0;
             width: 33%;
+            flex-grow:  1;
           }
           margin-right: 20px;
           width: 33%;
@@ -88,6 +96,9 @@
       }
       a {
         text-decoration: none;
+        // flex the link to make it take up the whole card
+        flex-grow: 1;
+        display: block;
       }
 
         .stub-image {
@@ -168,6 +179,51 @@
     }
   }
 
+/* Temporary! These are styles to patch the series reference blocks that live in the article stub list until we can refactor that view.*/
+.paragraph--type--series-related-article {
+  img {
+    margin-bottom:20px;
+  }
+  .eyebrow {
+    font-size: 14px;
+    line-height: 16.8px;
+    color: $gray-64;
+    margin: 0px 20px 10px 20px;
+    text-transform: uppercase;
+  }
+  h3.title {
+    padding: 0 20px;
+    color: $black;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $font-weight-regular;
+  }
+  .data {
+    margin: 0 20px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 19.2px;
+    font-family: $kepler-std;
+    font-weight: $font-weight-light;
+    color: $gray-64;
+  }
+  .date {
+    margin-right: 7px;
+  }
+  .pipe {
+    margin-right: 7px;
+  }
+  .read_time {
+    margin-right: 7px;
+    text-transform: lowercase;
+    &:first-line {
+      text-transform: capitalize;
+    }
+  }
+}
 
 
 .ama__article-stub {
