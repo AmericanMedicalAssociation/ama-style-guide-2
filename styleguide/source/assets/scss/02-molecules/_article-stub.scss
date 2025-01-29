@@ -25,6 +25,13 @@
     }
 
     .article-stub {
+      a,
+      &a {
+        &:focus-visible {
+          outline: 2px solid $tab-focus-blue;
+          outline-offset: 5px;
+        }
+      }
       background: $white;
       border: 1px solid #e4e3e6;
       border-radius: 8px;
