@@ -33,7 +33,7 @@
                     } else if ($eyebrow.length) {
                         var heightDifference = maxHeight - $eyebrow.outerHeight();
                         if (heightDifference > 0) {
-                            $eyebrow.animate({ 'margin-bottom': (heightDifference + 10) + 'px' }, 400, 'swing');
+                            $eyebrow.animate({ 'margin-bottom': (heightDifference + 10) + 'px' }, 200, 'swing');
                         }
                     }
                 });
