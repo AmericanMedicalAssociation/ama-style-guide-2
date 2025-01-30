@@ -3,7 +3,7 @@
     Drupal.behaviors.stubListHeight = {
         attach: function (context, settings) {
             // Initialize window width and resize timer
-            let windowWidth = $(window).width();
+            let windowWidth = $(window).innerWidth();
             let resizeTimer;
 
             // Iterate over each article stub list in the context on load and set classes.
@@ -13,38 +13,34 @@
                     const $eyebrow = $(this).find('.eyebrow');
                     if ($eyebrow.length && !$(this).closest('.article-stub-list').hasClass('has-eyebrows')) {
                         $(this).closest('.article-stub-list').addClass('has-eyebrows');
-                        $(this).closest('.article-stub-list').addClass('unprocessed');
                     }
                 });
+                // If not mobile, run the spacing immediately.
+                if (windowWidth > 900) {
+                    runSpacingFunction(context);
+                }
             });
 
-            // Run CheckThresholds on load.
+            // Run CheckThresholds to set variables.
             checkThresholds();
 
-            // Set up a resize event listener to check thresholds after resizing
+            // Resize event listener to check thresholds after resizing
             $(window).resize(function () {
                 clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(checkThresholds, 200);
+                // Only fire if it has been a full 200ms since the last resize.
+                resizeTimer = setTimeout(checkThresholds, 250);
             });
 
             /*
             Function list:
             - checkThresholds: Check window width thresholds and trigger when breakpoints are passed.
             - runSpacingFunction: Run initial spacing adjustments.
-            - reRunSpacingFunction: Re-run spacing adjustments when necessary.
-            - reSetSpacing: Reset all spacing adjustments.
+            - resetSpacing: Reset all spacing adjustments.
             - getEyebrowHeight: Get the height of the tallest div.eyebrow in the .article-stub-list.
             */
 
             function checkThresholds() {
                 const newWindowWidth = $(window).width();
-
-                // on load, run runSpacingFunction if the window isn't mobile.
-                $('.article-stub-list.has-eyebrows.unprocessed', context).each(function () {
-                    if (windowWidth > 900) {
-                        runSpacingFunction(context);
-                    }
-                }) ;
                 // check if breakpoints have been passed.
                 if ((windowWidth <= 900 && newWindowWidth > 900) ||
                     (windowWidth > 900 && newWindowWidth <= 900) ||
@@ -53,30 +49,13 @@
                     (windowWidth <= 1200 && newWindowWidth > 1200) ||
                     (windowWidth > 1200 && newWindowWidth <= 1200)) {
 
-                    // If the windows went from mobile to larger.
-                    if (windowWidth <= 900 && newWindowWidth > 900) {
-                        $('.article-stub-list.has-eyebrows', context).each(function () {
-                            // If the article stub list is unprocessed, run the initial runSpacingFunction().
-                            if ($(this).hasClass('unprocessed')) {
-                                runSpacingFunction(context);
-                            }
-                            else {
-                                // If the article stub list is processed, run reRunSpacingFunction().
-                                reRunSpacingFunction(context);
-                            }
-                        });
-                    }
-                    else if (windowWidth >= 900 && newWindowWidth < 900) {
-                        // If the windows went from larger to mobile, reset the spacing.
+                    // If the windows went from larger to mobile, reset the spacing.
+                    if (windowWidth >= 900 && newWindowWidth < 900) {
                         resetSpacing(context);
                     }
                     else {
-                        $('.article-stub-list.has-eyebrows', context).each(function () {
-                            if (!$(this).hasClass('unprocessed')) {
-                                // for anything else, re-run the reRunSpacingFunction().
-                                reRunSpacingFunction(context);
-                            }
-                        });
+                        // otherwise run the spacing function.
+                        runSpacingFunction(context);
                     }
                     // Update and wait for next resize.
                     windowWidth = newWindowWidth;
@@ -92,42 +71,15 @@
                         const $img = $(this).find('img');
                         const $eyebrow = $(this).find('.eyebrow');
 
-                        if (!$eyebrow.length && $img.css('margin-bottom') === '0px') {
-                            $img.animate({'margin-bottom': maxHeight + 'px'}, 200, 'swing');
-                        } else if ($eyebrow.length) {
-                            const currentHeight = $eyebrow.outerHeight();
-                            if (currentHeight < maxHeight) {
-                                $eyebrow.animate({ 'margin-bottom': (maxHeight - currentHeight) + 'px' }, 200, 'swing');
-                            } else {
-                                $eyebrow.css('margin-bottom', '0px');
-                            }
-                        }
-                    });
-                    $(this).removeClass('unprocessed');
-                });
-            }
-
-            function reRunSpacingFunction(context) {
-                $('.article-stub-list.has-eyebrows', context).each(function () {
-                    const $articleStubs = $(this).find('.article-stub');
-                    let maxHeight = getEyebrowHeight($articleStubs);
-
-                    // Set the new img bottom margin for updated article stubs without .eyebrows
-                    $articleStubs.each(function () {
-                        const $img = $(this).find('img');
-                        const $eyebrow = $(this).find('.eyebrow');
-
-                        if (!$eyebrow.length && $img.length) {
+                        if (!$eyebrow.length) {
                             const currentMarginBottom = parseInt($img.css('margin-bottom'), 10);
                             if (currentMarginBottom !== maxHeight) {
                                 $img.animate({'margin-bottom': maxHeight + 'px'}, 200, 'swing');
                             }
-                        } else if ($eyebrow.length) {
+                        } else {
                             const currentHeight = $eyebrow.outerHeight();
-                            if (currentHeight < maxHeight) {
+                            if (currentHeight !== maxHeight) {
                                 $eyebrow.animate({ 'margin-bottom': (maxHeight - currentHeight) + 'px' }, 200, 'swing');
-                            } else {
-                                $eyebrow.css('margin-bottom', '0px');
                             }
                         }
                     });
@@ -168,6 +120,7 @@
                         }
                     }
                 });
+                // div.eyebrow height + 10px default bottom margin.
                 maxHeight = maxHeight + 10;
                 return maxHeight;
             }
