@@ -1,15 +1,12 @@
 (function ($, Drupal) {
+    // Define a Drupal behavior for adjusting the position of article stub elements.
     Drupal.behaviors.stubListHeight = {
         attach: function (context, settings) {
-
+            // Initialize window width and resize timer
             let windowWidth = $(window).width();
             let resizeTimer;
 
-            $(window).resize(function () {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(checkThresholds, 200);
-            });
-
+            // Iterate over each article stub list in the context on load and set classes.
             $('.article-stub-list', context).each(function () {
                 const $articleStubs = $(this).find('.article-stub');
                 $articleStubs.each(function () {
@@ -21,17 +18,34 @@
                 });
             });
 
+            // Run CheckThresholds on load.
             checkThresholds();
+
+            // Set up a resize event listener to check thresholds after resizing
+            $(window).resize(function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(checkThresholds, 200);
+            });
+
+            /*
+            Function list:
+            - checkThresholds: Check window width thresholds and trigger when breakpoints are passed.
+            - runSpacingFunction: Run initial spacing adjustments.
+            - reRunSpacingFunction: Re-run spacing adjustments when necessary.
+            - reSetSpacing: Reset all spacing adjustments.
+            - getEyebrowHeight: Get the height of the tallest div.eyebrow in the .article-stub-list.
+            */
 
             function checkThresholds() {
                 const newWindowWidth = $(window).width();
 
+                // on load, run runSpacingFunction if the window isn't mobile.
                 $('.article-stub-list.has-eyebrows.unprocessed', context).each(function () {
                     if (windowWidth > 900) {
                         runSpacingFunction(context);
                     }
                 }) ;
-
+                // check if breakpoints have been passed.
                 if ((windowWidth <= 900 && newWindowWidth > 900) ||
                     (windowWidth > 900 && newWindowWidth <= 900) ||
                     (windowWidth <= 992 && newWindowWidth > 992) ||
@@ -39,27 +53,32 @@
                     (windowWidth <= 1200 && newWindowWidth > 1200) ||
                     (windowWidth > 1200 && newWindowWidth <= 1200)) {
 
+                    // If the windows went from mobile to larger.
                     if (windowWidth <= 900 && newWindowWidth > 900) {
                         $('.article-stub-list.has-eyebrows', context).each(function () {
+                            // If the article stub list is unprocessed, run the initial runSpacingFunction().
                             if ($(this).hasClass('unprocessed')) {
                                 runSpacingFunction(context);
                             }
                             else {
+                                // If the article stub list is processed, run reRunSpacingFunction().
                                 reRunSpacingFunction(context);
                             }
                         });
                     }
-
                     else if (windowWidth >= 900 && newWindowWidth < 900) {
+                        // If the windows went from larger to mobile, reset the spacing.
                         resetSpacing(context);
                     }
                     else {
                         $('.article-stub-list.has-eyebrows', context).each(function () {
                             if (!$(this).hasClass('unprocessed')) {
+                                // for anything else, re-run the reRunSpacingFunction().
                                 reRunSpacingFunction(context);
                             }
                         });
                     }
+                    // Update and wait for next resize.
                     windowWidth = newWindowWidth;
                 }
             }
