@@ -7,7 +7,7 @@
 
             $(window).resize(function () {
                 clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(checkThresholds, 500);
+                resizeTimer = setTimeout(checkThresholds, 200);
             });
 
             $('.article-stub-list', context).each(function () {
