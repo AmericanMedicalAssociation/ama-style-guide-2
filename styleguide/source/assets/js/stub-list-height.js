@@ -64,7 +64,8 @@
             function runSpacingFunction(context) {
                 $('.has-eyebrows', context).each(function () {
                     const $articleStubs = $(this).find('.article-stub');
-                    let maxHeight = getEyebrowHeight($articleStubs);
+                    const result = getEyebrowHeight($articleStubs);
+                    let maxHeight = result.maxHeight;
 
                     $articleStubs.each(function () {
                         const $img = $(this).find('img');
@@ -100,25 +101,15 @@
                 });
             }
 
+            // In tablet mode, align the titles of stubs 1-2 and 3-4 independently.
             function adjustPair($pair) {
                 // If there is only one article in the pair, it doesn't need alignment.
                 if ($pair.length === 1) {
                     quickReset($pair);
                 } else {
-                    let maxHeight = 0;
-                    let hasEyebrow = false;
-
-                    // Get the max height of the eyebrows in the pair.
-                    $pair.each(function () {
-                        const $eyebrow = $(this).find('.eyebrow');
-                        if ($eyebrow.length) {
-                            hasEyebrow = true;
-                            const height = $eyebrow.outerHeight();
-                            if (height > maxHeight) {
-                                maxHeight = height;
-                            }
-                        }
-                    });
+                    const result = getEyebrowHeight($pair);
+                    let maxHeight = result.maxHeight;
+                    let hasEyebrow = result.hasEyebrow;
 
                     //  This pair contains at least 1 eyebrow.
                     if (hasEyebrow) {
@@ -131,7 +122,7 @@
                                 const currentHeight = $eyebrow.outerHeight();
                                 //  If they're different, match the maxHeight.
                                 if (currentHeight !== maxHeight) {
-                                    $eyebrow.css('margin-bottom', ((maxHeight + 10) - currentHeight) + 'px' );
+                                    $eyebrow.css('margin-bottom', (maxHeight- currentHeight) + 'px' );
                                 }
                                 // If they're the same, set default margin.
                                 if (currentHeight === maxHeight) {
@@ -143,8 +134,8 @@
                             } else {
                             //  This stub doesn't have an eyebrow, so set the max-height as the img bottom margin.
                                 const currentMarginBottom = parseInt($img.css('margin-bottom'), 10);
-                                if (currentMarginBottom !== (maxHeight + 10)) {
-                                    $img.css('margin-bottom', (maxHeight + 10) + 'px');
+                                if (currentMarginBottom !== maxHeight) {
+                                    $img.css('margin-bottom', maxHeight + 'px');
                                 }
                             }
                         });
@@ -173,7 +164,6 @@
                             const currentMarginBottom = parseInt($img.css('margin-bottom'), 10);
                             if (currentMarginBottom !== 0) {
                                 $img.css('margin-bottom', '0px');
-
                             }
                         }
                         if ($eyebrow.length && $eyebrow.css('margin-bottom') !== '10px') {
@@ -204,9 +194,11 @@
 
             function getEyebrowHeight($articleStubs) {
                 let maxHeight = 0;
+                let hasEyebrow = false;
                 $articleStubs.each(function () {
                     const $eyebrow = $(this).find('.eyebrow');
                     if ($eyebrow.length) {
+                        hasEyebrow = true;
                         const height = $eyebrow.outerHeight();
                         if (height > maxHeight) {
                             maxHeight = height;
@@ -214,8 +206,9 @@
                     }
                 });
                 maxHeight = maxHeight + 10;
-                return maxHeight;
+                return { maxHeight, hasEyebrow };
             }
+
         }
     };
 })(jQuery, Drupal);
