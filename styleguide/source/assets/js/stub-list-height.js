@@ -34,6 +34,7 @@
 
             function checkThresholds() {
                 const newWindowWidth = window.innerWidth;
+                //  If any breakpoint is passed, run.
                 if ((windowWidth <= 900 && newWindowWidth > 900) ||
                     (windowWidth > 900 && newWindowWidth <= 900) ||
                     (windowWidth <= 992 && newWindowWidth > 992) ||
@@ -45,6 +46,7 @@
                     if (windowWidth > 900 && newWindowWidth <= 900) {
                         resetSpacing(context);
                     }
+
                     // If going to or from the two tablet breakpoints, run the tablet spacing function.
                     if ((windowWidth <= 900 && newWindowWidth > 900 && newWindowWidth <= 1199) ||
                         (windowWidth >= 1200 && newWindowWidth > 900 && newWindowWidth <= 1199) ||
@@ -52,10 +54,12 @@
                         (windowWidth > 991 && windowWidth <= 1199 && newWindowWidth > 900 && newWindowWidth <= 991)) {
                         runTabletSpacingFunction(context);
                     }
+
                     // If going to desktop, run the spacing function.
                     if (windowWidth < 1200 && newWindowWidth >= 1200) {
                         runSpacingFunction(context);
                     }
+
                     // Update windowWidth for next run.
                     windowWidth = newWindowWidth;
                 }
@@ -64,6 +68,7 @@
             function runSpacingFunction(context) {
                 $('.has-eyebrows', context).each(function () {
                     const $articleStubs = $(this).find('.article-stub');
+                    // Get the height of the tallest eyebrow.
                     const result = getEyebrowHeight($articleStubs);
                     let maxHeight = result.maxHeight;
 
@@ -71,12 +76,15 @@
                         const $img = $(this).find('img');
                         const $eyebrow = $(this).find('.eyebrow');
 
+                        // If this stub doesn't have an eyebrow.
                         if (!$eyebrow.length) {
+                            // Check the bottom margin of the img. If it doesn't equal maxHeight, change it.
                             const currentMarginBottom = parseInt($img.css('margin-bottom'), 10);
                             if (currentMarginBottom !== maxHeight) {
                                 $img.css('margin-bottom', maxHeight + 'px');
                             }
                         } else {
+                            // If it has an eyebrow, measure it and compare it to maxHeight. If it's different, change it.
                             const currentHeight = $eyebrow.outerHeight();
                             if (currentHeight !== maxHeight) {
                                 $eyebrow.css('margin-bottom', (maxHeight - currentHeight) + 'px');
@@ -86,6 +94,7 @@
                 });
             }
 
+            // Trigger spacing adjustments on tablet.
             function runTabletSpacingFunction(context) {
                 $('.has-eyebrows', context).each(function () {
                     const $articleStubs = $(this).find('.article-stub');
@@ -152,6 +161,7 @@
                 }
             }
 
+            // Reset all spacing on mobile.
             function resetSpacing(context) {
                 $('.has-eyebrows', context).each(function () {
                     const $articleStubs = $(this).find('.article-stub');
@@ -173,6 +183,7 @@
                 });
             }
 
+            // Reset a single or pair of cards in tablet mode.
             function quickReset($pair) {
                 $pair.each(function () {
                     const $img = $(this).find('img');
@@ -192,6 +203,7 @@
                 });
             }
 
+            // Get the tallest eyebrow height and set a boolean whether the set contains an eyebrow.
             function getEyebrowHeight($articleStubs) {
                 let maxHeight = 0;
                 let hasEyebrow = false;
