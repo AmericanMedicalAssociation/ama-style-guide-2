@@ -73,13 +73,11 @@
                         if (!$eyebrow.length) {
                             const currentMarginBottom = parseInt($img.css('margin-bottom'), 10);
                             if (currentMarginBottom !== maxHeight) {
-                                //$img.animate({'margin-bottom': maxHeight + 'px'}, 200, 'swing');
                                 $img.css('margin-bottom', maxHeight + 'px');
                             }
                         } else {
                             const currentHeight = $eyebrow.outerHeight();
                             if (currentHeight !== maxHeight) {
-                                //$eyebrow.animate({ 'margin-bottom': (maxHeight - currentHeight) + 'px' }, 200, 'swing');
                                 $eyebrow.css('margin-bottom', (maxHeight - currentHeight) + 'px');
                             }
                         }
