@@ -11,7 +11,7 @@
             });
 
             // Add class to article-stub-list if it contains an eyebrow.
-            $('.article-stub-list', context).each(function () {
+            $('.article-stub-list-wrapper.show-eyebrows .article-stub-list', context).each(function () {
                 const $articleStubs = $(this).find('.article-stub');
                 $articleStubs.each(function () {
                     const $eyebrow = $(this).find('.eyebrow');
