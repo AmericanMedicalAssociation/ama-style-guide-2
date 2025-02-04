@@ -121,10 +121,6 @@
           padding-top: $gutter;
         }
       }
-
-      + .share-row.subscribe-row {
-        padding-top: 0;
-      }
     }
     &.author-row .author,
     &.author-row .author [data-once="quickedit"] {
@@ -153,11 +149,10 @@
     }
     &.share-row {
       border-bottom: 1px solid $bg-purple;
-      @include breakpoint($bp-small) {
-        padding-bottom: $gutter;
-      }
+      border-top: 1px solid $bg-purple;
+      justify-content: space-between;
+      padding: 21px 0;
       [data-region="share"] {
-        margin-left: auto;
         .share-wrapper {
           border-bottom: none;
           padding-top: 0;
