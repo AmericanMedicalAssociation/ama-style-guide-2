@@ -11,6 +11,14 @@
   .flag-bookmark {
     a {
       text-decoration: none;
+      &:focus-visible {
+        .icon.bookmark {
+          outline: 2px solid $tab-focus-blue;
+          &:before {
+            outline: 0;
+          }
+        }
+      }
     }
   }
 
@@ -79,10 +87,6 @@
         &:before {
           background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
         }
-      }
-      &:focus-visible {
-        outline: 2px solid $tab-focus-blue;
-        height: 33px;
       }
       &.printed {
         &:before {
@@ -236,6 +240,13 @@
       padding: 0;
     }
   }
+  .print-pdf {
+    &:focus-visible {
+      .icon.print {
+        outline: 2px solid $tab-focus-blue;
+      }
+    }
+  }
 }
 
 //  Styles for the social share bar in the news article masthead.
@@ -319,11 +330,24 @@
         }
         .icon {
           @include ama-button("small", "actions");
-        }
+          &.share,
+          &.copy {
+            &:focus-visible {
+              outline: 2px solid $tab-focus-blue;
 
-        div.action-flag a:focus-visible {
-          div.icon.bookmark::before {
-            outline: 2px solid $tab-focus-blue;
+              .share-modal {
+                display: flex;
+
+                &:focus-within {
+                  display: flex;
+                }
+              }
+            }
+            &:focus-within {
+              .share-modal {
+                display: flex;
+              }
+            }
           }
         }
         div.icon.print {
