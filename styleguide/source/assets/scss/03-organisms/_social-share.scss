@@ -31,20 +31,16 @@
       &:before {
         height: 24px;
         width: 16px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-save-not-selected.svg");
-      }
-    }
-    &.bookmark.masthead:hover {
-      &:before {
-        background-image: url("../icons/svg/social-share-icons/v1-icon-save-not-selected.svg");
+        background-image: url("../icons/svg/social-share-icons/v1-icon-save-selected.svg");
       }
     }
   }
-  &.action-unflag {
+
+  .action-flag {
     .icon {
       &.bookmark {
         &:before {
-          background-image: url("../icons/svg/social-share-icons/v1-icon-save-selected.svg");
+          background-image: url("../icons/svg/social-share-icons/v1-icon-save-not-selected.svg");
         }
       }
     }
@@ -70,7 +66,8 @@
       &.masthead:hover:before {
         background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
       }
-      &.copied {
+      &.copied,
+      &.copied:hover {
         &:before {
           background-image: url("../icons/svg/social-share-icons/v1-icon-copy-selected.svg");
         }
@@ -108,31 +105,30 @@
       &:hover {
         cursor: pointer;
       }
-      &.masthead:hover:before {
-        background-image: url("../icons/svg/social-share-icons/v1-icon-share-not-selected.svg");
-      }
 
       //  Social Modal.
       .share-modal {
         display:flex;
         flex-direction: column;
-        border: 1px solid $border-gray;
-        border-radius: 20px 20px 0 0;
+        border: 1px solid $gray-4;
         z-index: 99;
         bottom: 0;
         right: 0;
         position: fixed;
-        padding: 20px 48px 20px 34px;
+        padding: 7px;
         background: $white;
         display: block;
-        border-radius: 20px;
+        border-radius: 10px;
+        width: 221px;
+        :after {
+          content: "";
+          display: inline-block;
+          width: 100%;
+        }
         @include breakpoint($bp-small) {
           position: absolute;
-          right: -125px;
-          bottom: -332px;
-        }
-        @include breakpoint($bp-med) {
-          right: -145px;
+          right: -130px;
+          bottom: -244px;
         }
         &.hidden {
           display: none;
@@ -155,25 +151,23 @@
           white-space: nowrap;
           display: block;
           position:relative;
-          padding-left: 54px;
-          padding-bottom: $gutter;
-          font-size: 20px;
-          font-weight: $font-weight-bold;
+          font-size: 16px;
+          font-weight: $font-weight-regular;
           text-decoration: none;
+          border-radius: 4px;
           &:focus {
             text-decoration: underline;
           }
           &:hover {
-            text-decoration: underline;
+            background-color: $gray-4;
           }
           &:last-child {
             padding-bottom: 0;
           }
           &:before {
-            width: 40px;
-            height: 40px;
-            left: 0px;
-            top: -4px;
+            width: 22px;
+            height: 22px;
+            left: 7px;
             content: " ";
             background-repeat: no-repeat;
             position: absolute;
@@ -181,35 +175,33 @@
         }
         .facebook {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/fb.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-facebook.svg");
           }
         }
         .linkedin {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/linkedin.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-linkedin.svg");
           }
         }
         .twitter {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/twitter.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-twitter.svg");
             background-size: contain;
-            width: 35px;
-            height: 35px;
-            top: -2px;
+            width: 18px;
+            height: 18px;
           }
         }
         .email {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/email.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-email.svg");
           }
         }
         .doximity {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/doximity.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-doximity.svg");
             background-size: contain;
-            width: 35px;
-            height: 35px;
-            top: -2px;
+            width: 20px;
+            height: 20px;
           }
         }
       }
@@ -221,16 +213,13 @@
   .contextual-link-wrapper {
     position: absolute;
     display: none;
-    left: 30px;
+    left: 0;
     @include breakpoint($bp-small max-width) {
       display: block;
     }
     &:hover, &:active {
-      background-color: $purple;
-    }
-    &:focus-visible {
-      outline: 2px solid $pg-lt-blue;
-      outline-offset: 3px;
+      text-decoration: underline;
+      color: $homepagePurple;
     }
     a {
       color: black;
@@ -238,6 +227,9 @@
       text-decoration: underline;
       text-transform: none;
       padding: 0;
+      &:focus-visible {
+        outline: 2px solid $tab-focus-blue;
+      }
     }
   }
   .print-pdf {
@@ -270,8 +262,8 @@
           width: 50px !important;
 
           .share-modal {
-            right: -316px;
-            bottom: -250px;
+            right: -229px;
+            bottom: -193px;
           }
         }
       }
@@ -311,16 +303,16 @@
           bottom: 0;
           right: 0;
           left: 0;
-          height: 57px;
           margin: calc($gutter/4) 0 0;
           background-color: $white;
-          border-top: 1px solid $border-gray;
+          border-top: 1px solid $bg-purple;
           padding: 0;
+          box-shadow: 0px 4px 20px -4px rgba(23, 24, 24, 0.12);
           .icon.masthead {
             padding: 0;
             width: 44px;
             height: 44px;
-            margin-left: 6px;
+            margin: calc($gutter/2) calc($gutter/2) calc($gutter/2) 0;
             .text {
               display: none;
             }
@@ -360,12 +352,16 @@
         .share-modal {
           cursor: default;
           @include breakpoint($bp-small max-width) {
-            bottom: 60px;
+            bottom: 87px;
+            right: 14px;
           }
 
           a {
-            margin-bottom: $gutter;
+            display: flex;
+            height: 44px;
+            align-items: center;
             padding-bottom: 0;
+            text-indent: calc($gutter * 1.25);
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;
             }
