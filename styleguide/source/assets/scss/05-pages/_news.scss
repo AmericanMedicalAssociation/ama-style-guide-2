@@ -137,7 +137,7 @@
         padding-right: calc($gutter * .5);
         flex-direction: row;
         @include breakpoint($bp-small max-width) {
-          margin: $gutter 0;
+          margin: ($gutter/2) 0 $gutter 0;
         }
         span.sub-title {
           @include breakpoint($bp-small max-width) {
@@ -149,15 +149,20 @@
     }
     &.share-row {
       border-bottom: 1px solid $bg-purple;
-      border-top: 1px solid $bg-purple;
       justify-content: space-between;
-      padding: 21px 0;
+      margin-bottom: $gutter;
+      
       [data-region="share"] {
         .share-wrapper {
           border-bottom: none;
           padding-top: 0;
           padding-bottom: 0;
         }
+      }
+      @include breakpoint($bp-small) {
+        border-top: 1px solid $bg-purple;
+        padding: 21px 0;
+        margin-bottom: 0;
       }
     }
   }
