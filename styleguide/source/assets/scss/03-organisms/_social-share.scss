@@ -326,6 +326,7 @@
           &.share,
           &.copy {
             &:focus-visible {
+              background-color: $white;
               outline: 2px solid $tab-focus-blue;
 
               .share-modal {
@@ -340,6 +341,18 @@
               .share-modal {
                 display: flex;
               }
+            }
+          }
+          &.shared,
+          &.printed,
+          &.copied {
+            background-color: $gray-4;
+          }
+        }
+        .action-unflag {
+          .icon {
+            &.bookmark {
+              background-color: $gray-4;
             }
           }
         }
