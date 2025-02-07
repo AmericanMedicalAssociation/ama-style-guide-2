@@ -279,7 +279,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     color: $gray-64;
     border-bottom: solid .5px $gray-64;
     @include breakpoint($bp-small) {
@@ -295,6 +295,7 @@
       }
     }
     .article-event-details {
+      color: $black;
       padding-left: 0;
       order: 0;
       display: flex;
@@ -310,37 +311,27 @@
       }
     }
     .article-event-type {
-      margin-bottom: calc($gutter * .25);
-      margin-top: 24px;
-      font-size: 26px;
-      line-height: 1;
-      font-weight: $font-weight-bold;
-      @include breakpoint($bp-small) {
-        margin-top: 0;
-      }
-      @include breakpoint($bp-med) {
-        font-size: 31px;
-      }
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: $font-weight-semibold;
     }
-    .article-event-title {
-      margin-bottom: $gutter;
-      font-size: 24px;
-      line-height: 27px;
-      font-weight: $font-weight-regular;
-      color: $blue;
+    .article-event-info-wrapper {
+      font-family: $kepler-std;
+      font-size: 18px;
+      font-weight: $font-weight-light;
+      line-height: 21PX;
+      > div {
+        margin-top: 14px;
+      }
     }
     .article-event-date {
-      margin-top: 9px;
-      margin-bottom: 19px;
-      font-size: 24px;
-      line-height: 1;
-      font-weight: $font-weight-bold;
       text-transform: uppercase;
     }
     .article-event-location {
+      font-family: $myriad-pro;
       font-size: 20px;
-      font-weight: $font-weight-bold;
-      margin-top: -4px;
+      font-weight: $font-weight-semibold;
+      line-height: 24px;
     }
     .article-event-cta {
       margin-top: 25px;
@@ -357,27 +348,13 @@
         text-transform: capitalize;
         min-width: 100%;
         flex: 1;
-        &:hover {
-          //background-color: $hoverPurple;
-        }
         @include breakpoint($bp-small) {
           min-width: 280px;
         }
       }
     }
-    .article-event-address {
-      margin-bottom: $gutter;
-      p,
-      span{
-        font-size: calc($gutter/2);
-      }
-      p {
-        margin-bottom: 0;
-        line-height: calc($gutter*.75);
-      }
-    }
     .icon {
-      padding-left: 44px;
+      padding-left: 33px;
       position: relative;
       &:before {
         position: absolute;
@@ -393,33 +370,17 @@
         padding-bottom: 0;
         border: none;
         &:before {
-          height: 30px;
-          width: 30px;
+          height: 24px;
+          width: 24px;
           top: -3px;
-          background-image: url("../icons/svg/event-header-icons/AddtoCalendarIcon.svg");
-        }
-        &:hover::before {
-          //background-image: url("../icons/svg/event-header-icons/AddtoCalendarIconHover.svg");
-        }
-        &:hover {
-          //text-decoration: underline;
-          //cursor: pointer;
+          background-image: url("../icons/svg/icon-event-calendar.svg");
         }
       }
       &.locate-event {
         &:before {
-          width: 29px;
-          height: 33px;
-          left: -5px;
-          top: 5px;
-          background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIcon.svg");
-        }
-        &:hover::before {
-          //background-image: url("../icons/svg/event-header-icons/LocateOnGoogleMapsIconHover.svg");
-        }
-        &:hover {
-          //text-decoration: underline;
-          //cursor: pointer;
+          width: 24px;
+          height: 24px;
+          background-image: url("../icons/svg/icon-event-location.svg");
         }
       }
     }
