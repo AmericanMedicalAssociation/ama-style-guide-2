@@ -63,7 +63,7 @@
   &__button-flex {
       flex-direction: column;
       a {
-        margin: 0 auto 15px auto;
+        margin: 0 0 15px 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -86,7 +86,7 @@
         align-items: center;
       }
       a:nth-child(2) {
-        margin: 0 0 0 16px;
+        margin: 0 0 15px 16px;
       }
     }
   }
@@ -140,7 +140,7 @@
   }
 
   &--no-image {
-    @include gutter($padding-bottom-full...);
+    //@include gutter($padding-bottom-full...);
     min-height: 0;
 
     .ama__hub-card__heading {
