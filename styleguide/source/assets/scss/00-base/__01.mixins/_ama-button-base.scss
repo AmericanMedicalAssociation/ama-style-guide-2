@@ -33,3 +33,20 @@
     outline-offset: 3px;
   }
 }
+
+@mixin ama-action-button-base {
+  border: 1px solid $bg-purple;
+  border-radius: 100px;
+  background-color: #fff;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 36px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $gray-4;
+    text-decoration: none;
+  }
+}

@@ -1,28 +1,4 @@
-//  Override the default article stub padding and border.
-a.index-page  {
-  &.ama__subcategory-page-article-stub {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  &.ama__subcategory-page-article-stub--topics {
-    border-bottom: none;
-    .ama__subcategory-page-article-stub__text {
-      p.ama__subcategory-page-article-stub__subcategory {
-        margin-bottom: calc($gutter * .5);
-      }
-      p {
-        margin-bottom: 0;
-      }
-    }
-    &.ama__content-type-stub {
-      border-bottom: none;
-    }
-  }
-}
-
-
-
-/** Styles for the teaser social share bar. **/
+/** Styles for the article social share bar. **/
 .share-wrapper {
   display: flex;
   flex-direction: row;
@@ -32,151 +8,131 @@ a.index-page  {
   border-bottom: 2px solid $gray-20;
   padding-top: calc($gutter * .75);
 
-  //  Share text.
-  .text {
-    font-size: calc($gutter/2);
-    font-weight: $font-weight-regular;
-    text-transform: uppercase;
-    @include breakpoint($bp-small) {
-      font-size: 20px;
+  .flag-bookmark,
+  .article-bookmark {
+    a {
+      text-decoration: none;
+      &:focus-visible {
+        .icon.bookmark {
+          outline: 2px solid $tab-focus-blue;
+          &:before {
+            outline: 0;
+          }
+        }
+      }
+      &.flag-login {
+        text-decoration: none;
+      }
     }
   }
+
   .ajax-progress {
     display: none;
   }
 
-  // Bookmark icon styles in teaser footer
-  .ama_book_mark {
-    .flag-bookmark {
-      padding-top: 5px;
-    }
-  }
-  .flag-footer {
-    @include breakpoint($bp-small max-width) {
-      align-self: flex-start;
-    }
-
-    a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
+  .icon {
+    &.bookmark {
+      &:before {
+        height: 24px;
+        width: 16px;
+        background-image: url("../icons/svg/social-share-icons/v1-icon-save-selected.svg");
       }
     }
+  }
+
+  .action-flag {
     .icon {
       &.bookmark {
         &:before {
-          top: -5px;
-          height: 38px;
-          width: 38px;
-          background-image: url("../icons/svg/social-share-icons/bookmark.svg");
-        }
-      }
-      &.bookmark.masthead:hover {
-        &:before {
-          background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
-        }
-      }
-    }
-    &.action-unflag {
-      .icon {
-        &.bookmark {
-          &:before {
-            background-image: url("../icons/svg/social-share-icons/bookmarked.svg");
-          }
+          background-image: url("../icons/svg/social-share-icons/v1-icon-save-not-selected.svg");
         }
       }
     }
   }
 
   //  Icon and print icon parent styles.
-  .icon, a.print {
-    padding-left: 39px;
-    margin-left: calc($gutter * .5);
-    position: relative;
-    @include breakpoint($bp-small) {
-      margin-left: calc($gutter * .75);
-    }
-    // Override browser styling
-    &:focus-visible {
-      outline: 2px solid $tab-focus-blue;
-      position: relative;
-      z-index: 99;
-    }
-    &:before {
-      position: absolute;
-      content: " ";
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-size: cover;
-      left: 0;
+  .icon {
+    a {
+      &:hover {
+        text-decoration: none;
+      }
     }
     &.copy {
-      color: $black;
-      padding-top: 0;
-      padding-bottom: 0;
-      border: none;
       &:before {
-        height: 38.5px;
-        width: 35.5px;
+        height: 24px;
+        width: 22px;
         top: -5px;
-        background-image: url("../icons/svg/social-share-icons/copy.svg");
+        background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
       }
       &:hover {
-        text-decoration: underline;
         cursor: pointer;
       }
       &.masthead:hover:before {
-        background-image: url("../icons/svg/social-share-icons/copied.svg");
+        background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
       }
-      &.copied {
+      &.copied,
+      &.copied:hover {
         &:before {
-          background-image: url("../icons/svg/social-share-icons/copied.svg");
+          background-image: url("../icons/svg/social-share-icons/v1-icon-copy-selected.svg");
+        }
+      }
+    }
+    &.print {
+      &:before {
+        height: 18px;
+        width: 21px;
+        background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
+      }
+      &:hover {
+        cursor: pointer;
+        &:before {
+          background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
+        }
+      }
+      &.printed {
+        &:before {
+          background-image: url("../icons/svg/social-share-icons/v1-icon-print-selected.svg");
         }
       }
     }
     &.share {
       &:before {
-        width: 48px;
-        height: 42px;
-        left: -6px;
-        top: -11px;
-        background-image: url("../icons/svg/social-share-icons/share.svg");
+        width: 21px;
+        height: 17.25px;
+        background-image: url("../icons/svg/social-share-icons/v1-icon-share-not-selected.svg");
       }
       &.shared {
         &:before {
-          background-image: url("../icons/svg/social-share-icons/shared.svg");
+          background-image: url("../icons/svg/social-share-icons/v1-icon-share-selected.svg");
         }
       }
       &:hover {
-        text-decoration: underline;
         cursor: pointer;
-      }
-      &.masthead:hover:before {
-        background-image: url("../icons/svg/social-share-icons/shared.svg");
       }
 
       //  Social Modal.
       .share-modal {
         display:flex;
         flex-direction: column;
-        border: 1px solid $border-gray;
-        border-radius: 20px 20px 0 0;
+        border: 1px solid $gray-4;
         z-index: 99;
         bottom: 0;
         right: 0;
         position: fixed;
-        padding: 20px 48px 20px 34px;
+        padding: 7px;
         background: $white;
         display: block;
-        border-radius: 20px;
+        border-radius: 10px;
+        width: 221px;
+        :after {
+          content: "";
+          display: inline-block;
+          width: 100%;
+        }
         @include breakpoint($bp-small) {
           position: absolute;
-          right: -125px;
-          bottom: -332px;
-        }
-        @include breakpoint($bp-med) {
-          right: -145px;
+          right: -130px;
+          bottom: -244px;
         }
         &.hidden {
           display: none;
@@ -199,25 +155,23 @@ a.index-page  {
           white-space: nowrap;
           display: block;
           position:relative;
-          padding-left: 54px;
-          padding-bottom: $gutter;
-          font-size: 20px;
-          font-weight: $font-weight-bold;
+          font-size: 16px;
+          font-weight: $font-weight-regular;
           text-decoration: none;
+          border-radius: 4px;
           &:focus {
             text-decoration: underline;
           }
           &:hover {
-            text-decoration: underline;
+            background-color: $gray-4;
           }
           &:last-child {
             padding-bottom: 0;
           }
           &:before {
-            width: 40px;
-            height: 40px;
-            left: 0px;
-            top: -4px;
+            width: 22px;
+            height: 22px;
+            left: 7px;
             content: " ";
             background-repeat: no-repeat;
             position: absolute;
@@ -225,57 +179,51 @@ a.index-page  {
         }
         .facebook {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/fb.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-facebook.svg");
           }
         }
         .linkedin {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/linkedin.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-linkedin.svg");
           }
         }
         .twitter {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/twitter.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-twitter.svg");
             background-size: contain;
-            width: 35px;
-            height: 35px;
-            top: -2px;
+            width: 18px;
+            height: 18px;
           }
         }
         .email {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/email.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-email.svg");
           }
         }
         .doximity {
           &:before {
-            background-image: url("../icons/svg/social-share-icons/doximity.svg");
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-doximity.svg");
             background-size: contain;
-            width: 35px;
-            height: 35px;
-            top: -2px;
+            width: 20px;
+            height: 20px;
           }
         }
       }
     }
   }
   .icon.print {
-    width: 92px;
-    margin-left: 0;
+    background-color: #fff;
   }
   .contextual-link-wrapper {
     position: absolute;
     display: none;
-    left: 30px;
+    left: 0;
     @include breakpoint($bp-small max-width) {
       display: block;
     }
     &:hover, &:active {
-      background-color: $purple;
-    }
-    &:focus-visible {
-      outline: 2px solid $pg-lt-blue;
-      outline-offset: 3px;
+      text-decoration: underline;
+      color: $homepagePurple;
     }
     a {
       color: black;
@@ -283,6 +231,17 @@ a.index-page  {
       text-decoration: underline;
       text-transform: none;
       padding: 0;
+      &:focus-visible {
+        outline: 2px solid $tab-focus-blue;
+      }
+    }
+  }
+  .print-pdf {
+    text-decoration: none;
+    &:focus-visible {
+      .icon.print {
+        outline: 2px solid $tab-focus-blue;
+      }
     }
   }
 }
@@ -293,10 +252,6 @@ a.index-page  {
   position: relative;
   .share-row {
     .share {
-      margin-left: 15px;
-      @include breakpoint($bp-small) {
-        height: 43px;
-      }
 
       &.is-sticky {
         .share-wrapper {
@@ -311,8 +266,8 @@ a.index-page  {
           width: 50px !important;
 
           .share-modal {
-            right: -316px;
-            bottom: -250px;
+            right: -229px;
+            bottom: -193px;
           }
         }
       }
@@ -325,29 +280,23 @@ a.index-page  {
           left: 0;
           position: absolute;
           margin-top: 250px;
+          .icon {
+            padding: 0;
+            width: 44px;
+            height: 44px;
+            .text {
+              display: none;
+            }
+            &::before {
+              margin: 0 auto;
+            }
+          }
           // Adjust icon alignment when sticky/scrolling
           .icon,
           .bookmark {
             margin: 0 0 15px 0;
-            width: 30px;
-            height: 30px;
             padding-left: 0;
-          }
-          .icon.copy {
-            margin-right: 0;
-            margin-top: 5px;
-          }
-          .icon a.print {
-            margin-left: -2px;
-            width: 30px;
-            height: 30px;
-          }
-          .icon.share::before {
-            left: -9px;
-          }
-          .icon.copy::before,
-          .icon.bookmark::before {
-            left: -4px;
+            border-radius: 100px;
           }
         }
         @include breakpoint($bp-small max-width) {
@@ -358,47 +307,30 @@ a.index-page  {
           bottom: 0;
           right: 0;
           left: 0;
-          height: 57px;
           margin: calc($gutter/4) 0 0;
           background-color: $white;
-          border-top: 1px solid $border-gray;
+          border-top: 1px solid $bg-purple;
           padding: 0;
+          box-shadow: 0px 4px 20px -4px rgba(23, 24, 24, 0.12);
+          .icon.masthead {
+            padding: 0;
+            width: 44px;
+            height: 44px;
+            margin: calc($gutter/2) calc($gutter/2) calc($gutter/2) 0;
+            .text {
+              display: none;
+            }
+            &::before {
+              margin: 0 auto;
+            }
+          }
         }
         .icon {
-          &::before {
-            left: 0;
-            top: 0;
-            background-position: center;
-          }
-          // Override browser styling
-          &:focus-visible {
-            outline: 2px solid $tab-focus-blue;
-            position: relative;
-            z-index: 99;
-          }
-          &.print {
-            &a {
-              color: transparent;
-              padding-right: 15px;
-            }
-          }
-          &.copy {
-            margin-right: -6px;
-            margin-top: 3px;
-            @include breakpoint($bp-small max-width) {
-              height: 40px;
-            }
-          }
-          &.bookmark {
-            margin-top: 10px;
-            @include breakpoint($bp-small) {
-              margin-top: 3px;
-            }
-          }
-
+          @include ama-button("small", "actions");
           &.share,
           &.copy {
             &:focus-visible {
+              background-color: $white;
               outline: 2px solid $tab-focus-blue;
 
               .share-modal {
@@ -415,75 +347,42 @@ a.index-page  {
               }
             }
           }
-
-          &.share {
-            &:before {
-              @include breakpoint($bp-small max-width) {
-                top: -22px;
-              }
+          &.shared,
+          &.printed,
+          &.copied {
+            background-color: $gray-4;
+          }
+        }
+        .action-unflag {
+          .icon {
+            &.bookmark {
+              background-color: $gray-4;
             }
           }
-        }
-
-        div.action-flag a:focus-visible {
-          div.icon.bookmark::before {
-            outline: 2px solid $tab-focus-blue;
-          }
-        }
-        span.text {
-          position: absolute;
-          display: none;
         }
         div.icon.print {
           @include breakpoint($bp-small max-width) {
             display: none;
           }
         }
-        a.print {
-          height: 33px;
-          width: 33px;
-          margin-top: calc($gutter/4);
-          background-color: transparent;
-          padding-top: 0;
-          padding-bottom: 0;
-          padding-left: 33px;
-          border: none;
-          text-indent: 150%;
-          white-space: nowrap;
-          display: block;
-          overflow: hidden;
-          &:before {
-            height: 33px;
-            width: 33px;
-            background-image: url("../icons/svg/social-share-icons/print.svg");
-          }
-          &:hover {
-            text-decoration: underline;
-            cursor: pointer;
-            &:before {
-              background-image: url("../icons/svg/social-share-icons/printed.svg");
-            }
-          }
-          &:focus-visible {
-            outline: 2px solid $tab-focus-blue;
-            height: 33px;
-          }
-          &.printed {
-            &:before {
-              background-image: url("../icons/svg/social-share-icons/printed.svg");
-            }
-          }
-        }
 
         .share-modal {
           cursor: default;
+          background: $white;
+          border-radius: 8px;
+          border: 1px solid $gray-4;
+          box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
           @include breakpoint($bp-small max-width) {
-            bottom: 60px;
+            bottom: 87px;
+            right: 14px;
           }
 
           a {
-            margin-bottom: $gutter;
+            display: flex;
+            height: 44px;
+            align-items: center;
             padding-bottom: 0;
+            text-indent: calc($gutter * 1.25);
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;
             }

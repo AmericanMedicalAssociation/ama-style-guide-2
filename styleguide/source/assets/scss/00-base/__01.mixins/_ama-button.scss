@@ -3,7 +3,10 @@
 //
 
 @mixin ama-button ($size:"", $style:"") {
-  @include ama-button-base;
+  @if($style != "actions") {
+    @include ama-button-base;
+
+  }
 
   @if($style == "secondary") {
     background-color: $white;
@@ -223,5 +226,54 @@
   }
   @else {
    display: inline-block;
+  }
+
+  // New small share buttons for Articles
+  @if($size == "small" and $style == "actions") {
+    @include ama-action-button-base;
+    
+    @include breakpoint($bp-small) {
+      margin-right: calc($gutter/4);
+    }
+    // Override browser styling
+    &:focus-visible {
+      outline: 2px solid $tab-focus-blue;
+      position: relative;
+      z-index: 99;
+    }
+    
+    @include breakpoint($bp-small) {
+      padding: 5px 14px;
+    }
+
+    .text {
+      display: none;
+
+      @include breakpoint($bp-small) {
+        color: $gray-64;
+        font-weight: $font-weight-regular;
+        display: block;
+        font-size: calc($gutter/2);
+        text-decoration: none;
+        line-height: 14px;
+      }
+    }
+
+    &::before {
+      content: " ";
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      left: 0;
+      margin-right: 6px;
+      display: block;
+      background-position: center;
+    }
+    // Override browser styling
+    &:focus-visible {
+      outline: 2px solid $tab-focus-blue;
+      position: relative;
+      z-index: 99;
+    }
   }
 }
