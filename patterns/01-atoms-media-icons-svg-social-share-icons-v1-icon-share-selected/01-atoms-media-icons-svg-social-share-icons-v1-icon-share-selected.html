@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css?1739219336" media="all" />
+  <link rel="stylesheet" href="../../assets/css/pattern-scaffolding.css?1739219336" media="all" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../../assets/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="../../assets/favicons/manifest.json" />
+  <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#46166b" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+  <!-- never cache patterns -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1739219336" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1739219336" media="all" />
+  <!-- End Pattern Lab -->
+
+</head>
+<body class="">
+<svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.2801 9.15451L13.7801 16.6545C13.6752 16.7595 13.5415 16.831 13.3959 16.86C13.2504 16.889 13.0995 16.8742 12.9624 16.8173C12.8252 16.7605 12.7081 16.6643 12.6257 16.5409C12.5433 16.4174 12.4993 16.2723 12.4995 16.1239V12.3954C7.14633 12.6992 3.47602 16.1708 2.4457 17.2704C2.28392 17.4432 2.07176 17.5606 1.83943 17.6058C1.60709 17.651 1.3664 17.6218 1.15163 17.5223C0.936861 17.4228 0.758942 17.2581 0.643196 17.0516C0.52745 16.8452 0.479774 16.6075 0.506955 16.3723C0.854767 13.3479 2.51133 10.4389 5.17195 8.18138C7.38164 6.30638 10.0676 5.11669 12.4995 4.90857V1.12388C12.4993 0.97546 12.5433 0.83034 12.6257 0.706895C12.7081 0.58345 12.8252 0.487229 12.9624 0.430415C13.0995 0.3736 13.2504 0.358747 13.3959 0.387735C13.5415 0.416723 13.6752 0.488248 13.7801 0.593257L21.2801 8.09326C21.3498 8.16291 21.4051 8.24563 21.4429 8.33668C21.4806 8.42773 21.5 8.52532 21.5 8.62388C21.5 8.72244 21.4806 8.82004 21.4429 8.91109C21.4051 9.00214 21.3498 9.08485 21.2801 9.15451Z" fill="#5C5C5C"/>
+</svg>
+
+      <!--DO NOT REMOVE-->
+      <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
+  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"atoms","patternSubtype":"media"},"patternDesc":"","patternExtension":"twig","patternName":"v1 icon share selected","patternPartial":"atoms-v1-icon-share-selected","patternState":"","extraOutput":[]}
+</script>
+
+<script>
+  /*!
+  * scriptLoader - v0.1
+  *
+  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+  * Licensed under the MIT license
+  *
+  */
+  
+  var scriptLoader = {
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1739219336">
+  (function() {
+    if (self != top) {
+      var cb = '1739219336';
+      var js = [];
+      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
+        js.push('styleguide/bower_components/classList.min.js');
+      }
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1739219336">
+  (function() {
+    if (self != top) {
+      var cb = '1739219336';
+      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
+      scriptLoader.run(js,cb,'pl-js-insert');
+    }
+  })();
+</script>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-multiselect-widget/3.0.0/jquery.multiselect.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+      <script src="../../assets/js/app.js"></script>
+    </div>
+  </body>
+
+</html>
