@@ -10,6 +10,9 @@
 
   .flag-bookmark,
   .article-bookmark {
+    @include breakpoint($bp-small max-width) {
+      margin: calc($gutter/2);
+    }
     a {
       text-decoration: none;
       &:focus-visible {
@@ -311,6 +314,9 @@
             width: 36px;
             height: 36px;
             margin: calc($gutter/2) calc($gutter/2) calc($gutter/2) 0;
+            &.bookmark {
+              margin: 0;
+            }
             .text {
               display: none;
             }
