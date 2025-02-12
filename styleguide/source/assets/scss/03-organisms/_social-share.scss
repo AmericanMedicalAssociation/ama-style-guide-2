@@ -32,10 +32,10 @@
 
   .icon {
     &.bookmark {
+      @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-save-selected.svg");
       &:before {
         height: 24px;
         width: 16px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-save-selected.svg");
       }
     }
   }
@@ -58,17 +58,14 @@
       }
     }
     &.copy {
+      @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
       &:before {
         height: 24px;
         width: 22px;
         top: -5px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
       }
       &:hover {
         cursor: pointer;
-      }
-      &.masthead:hover:before {
-        background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
       }
       &.copied,
       &.copied:hover {
@@ -78,10 +75,10 @@
       }
     }
     &.print {
+      @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
       &:before {
         height: 18px;
         width: 21px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
       }
       &:hover {
         cursor: pointer;
@@ -89,17 +86,17 @@
           background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
         }
       }
-      &.printed {
-        &:before {
-          background-image: url("../icons/svg/social-share-icons/v1-icon-print-selected.svg");
-        }
+    }
+    &.printed {
+      &:before {
+        background-image: url("../icons/svg/social-share-icons/v1-icon-print-selected.svg");
       }
     }
     &.share {
+      @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-share-not-selected.svg");
       &:before {
         width: 21px;
         height: 17.25px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-share-not-selected.svg");
       }
       &.shared {
         &:before {
@@ -320,7 +317,7 @@
           }
         }
         .icon {
-          @include ama-button("small", "actions");
+          //@include ama-button("small", "actions");
           &.share,
           &.copy {
             &:focus-visible {

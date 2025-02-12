@@ -2,7 +2,7 @@
 // $type => "secondary", ""
 //
 
-@mixin ama-button ($size:"", $style:"") {
+@mixin ama-button ($size:"", $style:"", $icon:"") {
   @if($style != "actions") {
     @include ama-button-base;
 
@@ -286,7 +286,8 @@
     }
 
     &::before {
-      content: " ";
+      content: "";
+      background-image: url($icon);
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: cover;
