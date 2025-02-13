@@ -18,7 +18,14 @@
         .ama__masthead__content__link {
           font-weight: $font-weight-bold;
           color: $blue;
-          padding-bottom: calc($gutter * .5);
+          padding: 0;
+          margin-bottom: calc($gutter * .5);
+          display: inline-block;
+          &:focus {
+            outline: 2px solid $blue;
+            outline-offset: 5px;
+            text-decoration: none;
+          }
         }
         .ama__h1 {
           font-size: 1.8em;
