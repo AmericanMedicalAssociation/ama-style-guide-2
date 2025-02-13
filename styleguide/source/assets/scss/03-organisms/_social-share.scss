@@ -10,6 +10,9 @@
 
   .flag-bookmark,
   .article-bookmark {
+    @include breakpoint($bp-small max-width) {
+      margin: calc($gutter/2);
+    }
     a {
       text-decoration: none;
       &:focus-visible {
@@ -169,9 +172,10 @@
             padding-bottom: 0;
           }
           &:before {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             left: 7px;
+            top: 10px;
             content: " ";
             background-repeat: no-repeat;
             position: absolute;
@@ -190,9 +194,6 @@
         .twitter {
           &:before {
             background-image: url("../icons/svg/social-share-icons/v1-icon-share-twitter.svg");
-            background-size: contain;
-            width: 18px;
-            height: 18px;
           }
         }
         .email {
@@ -203,9 +204,6 @@
         .doximity {
           &:before {
             background-image: url("../icons/svg/social-share-icons/v1-icon-share-doximity.svg");
-            background-size: contain;
-            width: 20px;
-            height: 20px;
           }
         }
       }
@@ -292,8 +290,7 @@
             }
           }
           // Adjust icon alignment when sticky/scrolling
-          .icon,
-          .bookmark {
+          .icon {
             margin: 0 0 15px 0;
             padding-left: 0;
             border-radius: 100px;
@@ -314,9 +311,12 @@
           box-shadow: 0px 4px 20px -4px rgba(23, 24, 24, 0.12);
           .icon.masthead {
             padding: 0;
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             margin: calc($gutter/2) calc($gutter/2) calc($gutter/2) 0;
+            &.bookmark {
+              margin: 0;
+            }
             .text {
               display: none;
             }
@@ -378,11 +378,12 @@
           }
 
           a {
-            display: flex;
+            display: block;
             height: 44px;
             align-items: center;
             padding-bottom: 0;
-            text-indent: calc($gutter * 1.25);
+            text-indent: 37px;
+            line-height: 44px;
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;
             }
