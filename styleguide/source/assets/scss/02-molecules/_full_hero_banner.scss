@@ -21,6 +21,11 @@
 
     a.ama__button {
       @include ama-button ("rounded", "homepage");
+
+      &.secondary {
+        @include ama-button ("rounded", "homepage-secondary");
+        border-color: #E4E3E6;
+      }
     }
 
     a {
@@ -37,6 +42,17 @@
       }
     }
   
+  }
+
+  .cta_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    width: 100%;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
   }
 
   + .section {
