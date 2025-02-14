@@ -250,7 +250,9 @@
   position: relative;
   .share-row {
     .share {
-
+      @include breakpoint($bp-small) {
+        height: 36px;
+      }
       &.is-sticky {
         .share-wrapper {
           display: flex;
