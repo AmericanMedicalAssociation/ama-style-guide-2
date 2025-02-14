@@ -155,19 +155,36 @@
 
 .news-subscribe-wrapper {
   max-height: 36px;
-  
+  @include breakpoint($bp-small) {
+    justify-content: flex-end;
+  }
   .sub-title {
       margin-right: calc($gutter/2);
-      display: block;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      @include breakpoint($bp-small) {
+        @include breakpoint(700px max-width) {
+          display: none;
+        }
+      }
+
+      @include breakpoint($bp-med) {
+        display: flex;
+        width: 80%;
+      }
 
     a {
       font-size: calc($gutter/2);
+      text-align: right;
       font-weight: $font-weight-bold;
       color: $homepagePurple;
       text-transform: uppercase;
       text-decoration: none;
       line-height: 150%; /* 21px */
       letter-spacing: 1.12px;
+      max-height: 36px;
 
       &:focus-visible {
         outline: 2px solid $tab-focus-blue;

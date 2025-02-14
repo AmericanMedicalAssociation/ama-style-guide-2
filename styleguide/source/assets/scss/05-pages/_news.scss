@@ -138,14 +138,12 @@
       }
       .news-subscribe-wrapper {
         display: flex;
-        padding-right: calc($gutter * .5);
         flex-direction: row;
         @include breakpoint($bp-small max-width) {
           margin: calc($gutter/2) 0 $gutter 0;
         }
         span.sub-title {
           @include breakpoint($bp-small max-width) {
-            padding-left: 24px;
             line-height: calc($gutter*.75);
           }
         }
