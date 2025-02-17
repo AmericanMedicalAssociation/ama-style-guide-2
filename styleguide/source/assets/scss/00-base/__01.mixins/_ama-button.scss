@@ -2,7 +2,7 @@
 // $type => "secondary", ""
 //
 
-@mixin ama-button ($size:"", $style:"") {
+@mixin ama-button ($size:"", $style:"", $icon:"") {
   @if($style != "actions") {
     @include ama-button-base;
 
@@ -65,15 +65,39 @@
     }
   }
   @else if($style == "news-subscribe") {
-    background-color: $white;
-    color: $purple;
-    padding: calc($gutter/4) !important;
-    height: 36px;
-    font-size: 14px !important;
-    font-weight: $font-weight-semibold;
-    border: 1px solid $purple;
-    text-transform: uppercase;
-    position: static;
+    @include ama-action-button-base;
+    input {
+      padding: 0 6px 0 0;
+      font-family: $myriad-pro;
+      cursor: pointer;
+      color: $gray-64;
+      border: 0;
+      background: transparent;
+      font-weight: $font-weight-semibold;
+      display: block;
+      font-size: 14px;
+      text-decoration: none;
+      line-height: 14px;
+    }
+    // Override browser styling
+    &:focus-visible {
+      outline: 2px solid $tab-focus-blue;
+      position: relative;
+      z-index: 99;
+    }
+    
+    @include breakpoint($bp-small) {
+      padding: 5px 14px;
+    }
+
+    @include breakpoint($bp-small) {
+      color: $gray-64;
+      font-weight: $font-weight-regular;
+      display: block;
+      font-size: calc($gutter/2);
+      text-decoration: none;
+      line-height: 14px;
+    }
   }
 
   //outline
@@ -260,7 +284,8 @@
     }
 
     &::before {
-      content: " ";
+      content: "";
+      background-image: url($icon);
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: cover;
