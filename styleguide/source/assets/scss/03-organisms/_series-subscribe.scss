@@ -216,21 +216,23 @@
       }
     }
   }
+  a.subscribe-series {
+    padding: 0 6px 0 0;
+    @include type($myriad-pro, $font-weight-semibold);
+    cursor: pointer;
+    color: $gray-64;
+    border: 0;
+    background: transparent;
+    font-weight: 600;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 14px;
+  }
 }
 
-a.subscribe-series {
-  padding: 0 6px 0 0;
-  @include type($myriad-pro, $font-weight-semibold);
-  cursor: pointer;
-  color: $gray-64;
-  border: 0;
-  background: transparent;
-  font-weight: 600;
-  display: block;
-  font-size: 14px;
-  text-decoration: none;
-  line-height: 14px;
-}
+
+
 
 .series-tag + .subscribe-series,
 .series-tag + .salesforce-subscribe-form input.form-submit {
