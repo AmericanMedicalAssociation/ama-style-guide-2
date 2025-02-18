@@ -155,9 +155,7 @@
 
 .news-subscribe-wrapper {
   max-height: 36px;
-  @include breakpoint($bp-small) {
-    justify-content: flex-end;
-  }
+  justify-content: flex-end;
   .sub-title {
       margin-right: calc($gutter/2);
       display: flex;
@@ -205,11 +203,10 @@
         background-position: 0 0;
         background-size: cover;
         left: 0;
-        margin-right: 6px;
         display: block;
         background-position: center;
-        height: 24px;
-        width: 16px;
+        height: 20px;
+        width: 20px;
         background-image: url("../icons/svg/social-share-icons/v1-icon-subscribe.svg");
       }
       &.ama__button--news-subscribe-subscribed {
@@ -219,13 +216,23 @@
       }
     }
   }
+  a.subscribe-series {
+    padding: 0 6px 0 0;
+    @include type($myriad-pro, $font-weight-semibold);
+    cursor: pointer;
+    color: $gray-64;
+    border: 0;
+    background: transparent;
+    font-weight: 600;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 14px;
+  }
 }
 
-a.subscribe-series {
-  display: block;
-  min-height: $gutter;
-  top: -30px;
-}
+
+
 
 .series-tag + .subscribe-series,
 .series-tag + .salesforce-subscribe-form input.form-submit {
