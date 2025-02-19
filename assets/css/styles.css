@@ -31539,6 +31539,12 @@ section#related_links .ama__membership ul li {
 .news-subscribe-wrapper span.icon--subscribe-news.ama__button--news-subscribe-subscribed::after {
   background-image: url("../icons/svg/social-share-icons/v1-icon-subscribed.svg");
 }
+.news-subscribe-wrapper span.icon--subscribe-news:has(:focus-visible) {
+  outline: 2px solid #0076a5;
+}
+.news-subscribe-wrapper span.icon--subscribe-news input:focus-visible {
+  outline: none;
+}
 .news-subscribe-wrapper a.subscribe-series {
   padding: 0 6px 0 0;
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
