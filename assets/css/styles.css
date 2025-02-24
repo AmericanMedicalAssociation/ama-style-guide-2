@@ -7213,11 +7213,6 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .article-stub-list-wrapper h2.ama_article-stub-header,
 .article_stub_as_inline--wrapper h2.ama_article-stub-header {
   padding-bottom: 0;
-  text-transform: lowercase;
-}
-.article-stub-list-wrapper h2.ama_article-stub-header:first-line,
-.article_stub_as_inline--wrapper h2.ama_article-stub-header:first-line {
-  text-transform: capitalize;
 }
 .article-stub-list-wrapper.show-eyebrows .article-stub-list .article-stub .eyebrow,
 .article_stub_as_inline--wrapper.show-eyebrows .article-stub-list .article-stub .eyebrow {
@@ -7307,9 +7302,40 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.article-stub-list-wrapper .article-stub-list .article-stub a, .article-stub-list-wrapper .article-stub-list .article-stuba,
-.article_stub_as_inline--wrapper .article-stub-list .article-stub a,
-.article_stub_as_inline--wrapper .article-stub-list .article-stuba {
+.article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .stub-text,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .stub-text {
+  padding: 22px 14px 56px;
+}
+.article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .title a,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .title a {
+  color: #000000;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  text-decoration: none;
+}
+.article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .additional-link,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .additional-link {
+  color: #46166B;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.article-stub-list-wrapper .article-stub-list .article-stub > a, .article-stub-list-wrapper .article-stub-list .article-stuba,
+.article-stub-list-wrapper .article-stub-list .article-stub > div.subscription-stub,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub > a,
+.article_stub_as_inline--wrapper .article-stub-list .article-stuba,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub > div.subscription-stub {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7318,9 +7344,11 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.article-stub-list-wrapper .article-stub-list .article-stub a:focus-visible, .article-stub-list-wrapper .article-stub-list .article-stuba:focus-visible,
-.article_stub_as_inline--wrapper .article-stub-list .article-stub a:focus-visible,
-.article_stub_as_inline--wrapper .article-stub-list .article-stuba:focus-visible {
+.article-stub-list-wrapper .article-stub-list .article-stub > a:focus-visible, .article-stub-list-wrapper .article-stub-list .article-stuba:focus-visible,
+.article-stub-list-wrapper .article-stub-list .article-stub > div.subscription-stub:focus-visible,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub > a:focus-visible,
+.article_stub_as_inline--wrapper .article-stub-list .article-stuba:focus-visible,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub > div.subscription-stub:focus-visible {
   border-radius: 8px;
   outline: 2px solid #0076a5;
   outline-offset: 5px;
@@ -7415,8 +7443,9 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 .article_stub_as_inline--wrapper .article-stub-list .article-stub:hover .title {
   text-decoration: underline;
 }
-.article-stub-list-wrapper .article-stub-list .article-stub a,
-.article_stub_as_inline--wrapper .article-stub-list .article-stub a {
+.article-stub-list-wrapper .article-stub-list .article-stub > a, .article-stub-list-wrapper .article-stub-list .article-stub > div,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub > a,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub > div {
   text-decoration: none;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -7465,6 +7494,23 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   font-weight: 400;
   font-family: "kepler-std", "Georgia", "Times New Roman", serif;
   margin-bottom: 7px;
+}
+.article-stub-list-wrapper .article-stub-list .article-stub .stub-text .title a,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub .stub-text .title a {
+  color: #000000;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  text-decoration: none;
+}
+.article-stub-list-wrapper .article-stub-list .article-stub .stub-text .description,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub .stub-text .description {
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  color: #5C5C5C;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.2px;
 }
 .article-stub-list-wrapper .article-stub-list .article-stub .data,
 .article_stub_as_inline--wrapper .article-stub-list .article-stub .data {
