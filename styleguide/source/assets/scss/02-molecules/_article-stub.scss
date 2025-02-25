@@ -48,7 +48,7 @@
 
       div.subscription-stub {
         .stub-text {
-          padding: 22px 14px 56px;
+          padding: 22px 14px;
           .title {
             a {
               color: $black;
@@ -59,17 +59,16 @@
               text-decoration: none;
             }
           }
-          .additional-link {
-            color: $purple;
-            position: absolute;
-            bottom: 0;
-            height: 40px;
-            font-weight: $font-weight-bold;
-            font-size: 16px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-          }
+        }
+        .additional-link {
+          color: $purple;
+          font-weight: $font-weight-bold;
+          font-size: 16px;
+          text-decoration: none;
+          display: flex;
+          align-items: flex-end;
+          flex-grow: 1;
+          padding: 16px;
         }
       }
 
