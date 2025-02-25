@@ -74,7 +74,8 @@
 
       > a,
       &a,
-      > div.subscription-stub {
+      > div.subscription-stub,
+      div.paragraph--type--series-related-article a {
         &:focus-visible {
           border-radius: 8px;
           outline: 2px solid $tab-focus-blue;
@@ -153,7 +154,7 @@
           text-decoration: underline;
         }
       }
-      > a, > div {
+      > a, > div, div.paragraph--type--series-related-article a {
         text-decoration: none;
         // flex the link to make it take up the whole card
         flex-grow: 1;
