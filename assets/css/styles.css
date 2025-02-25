@@ -7304,7 +7304,7 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
 }
 .article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .stub-text,
 .article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .stub-text {
-  padding: 22px 14px 56px;
+  padding: 22px 14px;
 }
 .article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .title a,
 .article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .title a {
@@ -7315,21 +7315,22 @@ pushboxcontainer pushbox pushbox-cta buttons powered {
   font-family: "kepler-std", "Georgia", "Times New Roman", serif;
   text-decoration: none;
 }
-.article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .additional-link,
-.article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .stub-text .additional-link {
+.article-stub-list-wrapper .article-stub-list .article-stub div.subscription-stub .additional-link,
+.article_stub_as_inline--wrapper .article-stub-list .article-stub div.subscription-stub .additional-link {
   color: #46166B;
-  position: absolute;
-  bottom: 0;
-  height: 40px;
   font-weight: 700;
   font-size: 16px;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 16px;
 }
 .article-stub-list-wrapper .article-stub-list .article-stub > a, .article-stub-list-wrapper .article-stub-list .article-stuba,
 .article-stub-list-wrapper .article-stub-list .article-stub > div.subscription-stub,
