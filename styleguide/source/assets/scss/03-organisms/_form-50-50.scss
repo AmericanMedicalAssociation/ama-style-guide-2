@@ -1,0 +1,43 @@
+.form-fifty-fifty-wrapper {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint($bp-med) {
+    flex-direction: row;
+  }
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 0px;
+    @include breakpoint($bp-med) {
+      flex: .5;
+      margin-right: 20px;
+    }
+    .media {
+
+    }
+    .title {
+
+    }
+    .body {
+
+    }
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    @include breakpoint($bp-med) {
+      flex: .5;
+    }
+    .title {
+
+    }
+    .body {
+
+    }
+    .form {
+
+    }
+  }
+}
