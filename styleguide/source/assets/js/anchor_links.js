@@ -29,11 +29,14 @@
 
                 // On click of any anchor link
                 $('a[href^="#"], a[href*="#"]').bind('click', function (e) {
-                    // Don't scroll to anchor social links, urls with a /#/ component, or accordion headings on desktop.
-                    if (this.getAttribute('data-ga-site_events') == 'social_click' || this.hash.includes('#/') || ($(this).parent().is('dt') && $(window).width() > 992) || /\/comment\/\d+#/.test(this.href)) return;
-                    e.preventDefault(); // prevent hard jump, the default behavior
-                    // Perform animated scrolling
-                    scrollToAnchor(this.hash);
+                    // Don't scroll to anchor social links, urls with a /#/ component, accordion headings on desktop or any other external links with anchors.
+                    if (this.getAttribute('data-ga-site_events') == 'social_click' || this.hash.includes('#/') || ($(this).parent().is('dt') && $(window).width() > 992) || /\/comment\/\d+#/.test(this.href) || this.hasAttribute('data-extlink')) {
+                        return;
+                    } else {
+                        e.preventDefault(); // prevent hard jump, the default behavior
+                        // Perform animated scrolling
+                        scrollToAnchor(this.hash);
+                    }
                 });
 
                 // On page load with anchor in URL
