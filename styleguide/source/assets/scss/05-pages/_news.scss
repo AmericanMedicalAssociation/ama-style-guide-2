@@ -300,10 +300,10 @@
     .article-event-image {
       flex: 1;
       @include breakpoint($bp-small) {
-        flex: .5;
+        flex: .61;
       }
       @include breakpoint($bp-med) {
-        flex: .66;
+        flex: .59;
       }
     }
     .article-event-details {
@@ -314,11 +314,12 @@
       flex: 1;
       align-self: auto;
       @include breakpoint($bp-small) {
-        padding-left: calc($gutter * 4.25);
-        flex: .5;
+        padding-left: calc($gutter/2);
+        flex: .39;
       }
       @include breakpoint($bp-med) {
-        flex: .34;
+        padding-left: 33px;
+        flex: .41;
       }
     }
     .article-event-type {
@@ -355,25 +356,26 @@
       margin-top: -4px;
     }
     .article-event-cta {
-      margin-top: 25px;
-      @include breakpoint($bp-med) {
-        margin-top: 33px;
-      }
-      .article-event-link  {
-        background-color: $purple;
-        color: $white;
-        text-decoration: none;
-        padding: 5px calc($gutter * .75);
+      display: flex;
+      flex-direction: row;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      gap: 14px;
+      .article-event-link {
+        @include ama-button ("rounded", "homepage");
+        padding: 12.5px 16px;
         text-align: center;
-        display: inline-block;
-        text-transform: capitalize;
-        min-width: 100%;
+        min-width: 156px;
         flex: 1;
-        &:hover {
-          //background-color: $hoverPurple;
-        }
-        @include breakpoint($bp-small) {
-          min-width: 280px;
+
+        &.secondary {
+          @include ama-button ("rounded", "homepage-secondary");
+          border-color: #E4E3E6;
+          &:hover {
+            background-color: $gray-4;
+            color: inherit;
+            border: 1px solid #E4E3E6;
+          }
         }
       }
     }
