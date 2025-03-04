@@ -38,10 +38,15 @@
     background-color: $bg-gray;
     margin: 28px 0;
     padding: 21px 14px;
+    border-radius: 8px;
+
+    &:not(:has(div > p)) {
+      display: flex;
+    }
 
     @include breakpoint($bp-small) {
       padding: 28px;
-      margin: 48px 0;
+      margin: 42px 0;
     }
 
     // Noting here, with the recent article updates (i.e no full width column) these styes dont apply.
@@ -77,8 +82,9 @@
           display: block;
           margin: 0;
           line-height: 1;
-          position: relative;
-          top: 50%;
+          flex: 1;
+          margin-right: 21px;
+          align-self: center;
         }
       }
     }
@@ -114,7 +120,6 @@
       justify-content: center;
       padding: 0;
       grid-column: 1/5;
-      justify-content: center;
       margin-right: 0;
       order: 3;
       @include breakpoint($bp-small) {
