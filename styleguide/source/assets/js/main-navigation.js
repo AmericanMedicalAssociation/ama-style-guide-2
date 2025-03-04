@@ -116,6 +116,16 @@
         e.stopPropagation();
       });
 
+      $(document).ready(function () {
+        // Clear search input on main nav on search page
+        if(window.location.href.includes("/search")) {
+          var $searchInput = $("form[id='block-exposedformacquia-search-solrpage']").find("input[name='search']");
+          if($searchInput.length) {
+            $searchInput.val('');
+          }
+        }
+      });
+
       // If sticky nav wrapper, remove id to prevent duplicate ids.
       $(window).on('load', function() {
         $stickyWrapper = $('header.sticky-nav');
