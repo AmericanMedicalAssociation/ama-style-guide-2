@@ -13941,7 +13941,6 @@ table a.new-replies .count-new {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 14px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -13965,6 +13964,12 @@ table a.new-replies .count-new {
   .ama__full_hero_banner__card {
     padding: 28px;
   }
+}
+.ama__full_hero_banner__card h2.ama__h1, .ama__full_hero_banner__card h2.dr-finder-search-results-header__results-text {
+  margin-bottom: 21px;
+}
+.ama__full_hero_banner__card h2.ama__h1:has(+ .ama__full_hero_banner__subtitle), .ama__full_hero_banner__card h2.dr-finder-search-results-header__results-text:has(+ .ama__full_hero_banner__subtitle) {
+  margin-bottom: 14px;
 }
 .ama__full_hero_banner__card a.ama__button {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
@@ -14098,6 +14103,13 @@ table a.new-replies .count-new {
 .ama__full_hero_banner__card a:focus-visible {
   outline: 2px solid #80d4f5;
   outline-offset: 3px;
+}
+.ama__full_hero_banner__subtitle {
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  font-weight: 300;
+  line-height: 24px;
+  color: #5C5C5C;
+  margin-bottom: 21px;
 }
 .ama__full_hero_banner .cta_container {
   display: -webkit-box;
@@ -25554,6 +25566,250 @@ section.ama__page--event__speakers {
   .ama__footer__left .ama__footer__mission {
     max-width: 65%;
   }
+}
+
+/**
+ * Styles the form-50-50 component.
+ * block type form-50-50 is referenced and used on article pages.
+ */
+.article--field-form-50-50 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media (min-width: 37.5em) {
+  .article--field-form-50-50 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+@media (min-width: 56.25em) {
+  .article--field-form-50-50 {
+    margin: 0 28px;
+  }
+}
+@media (min-width: 37.5em) {
+  .article--field-form-50-50 > div {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+.article--field-form-50-50 .text-content {
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 0 18.5px 0;
+}
+@media (min-width: 37.5em) {
+  .article--field-form-50-50 .text-content {
+    padding-right: 14px;
+    padding-bottom: 0;
+    font-size: 18px;
+  }
+}
+@media (min-width: 56.25em) {
+  .article--field-form-50-50 .text-content {
+    padding-right: 40px;
+  }
+}
+.article--field-form-50-50 .text-content p, .article--field-form-50-50 .text-content .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .article--field-form-50-50 .text-content .ama__image__text__subtitle, .article--field-form-50-50 .text-content .ama__resource-link--inline__text, .article--field-form-50-50 .text-content p *, .article--field-form-50-50 .text-content .ama__jama .ama__image__text .ama__image__text__subtitle *, .ama__jama .ama__image__text .article--field-form-50-50 .text-content .ama__image__text__subtitle *, .article--field-form-50-50 .text-content .ama__resource-link--inline__text * {
+  font-size: 16px;
+}
+@media (min-width: 37.5em) {
+  .article--field-form-50-50 .text-content p, .article--field-form-50-50 .text-content .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .article--field-form-50-50 .text-content .ama__image__text__subtitle, .article--field-form-50-50 .text-content .ama__resource-link--inline__text, .article--field-form-50-50 .text-content p *, .article--field-form-50-50 .text-content .ama__jama .ama__image__text .ama__image__text__subtitle *, .ama__jama .ama__image__text .article--field-form-50-50 .text-content .ama__image__text__subtitle *, .article--field-form-50-50 .text-content .ama__resource-link--inline__text * {
+    font-size: 18px;
+  }
+}
+.article--field-form-50-50 #lead-form-container {
+  padding-bottom: 28px;
+  padding-top: 3.5px;
+}
+.article--field-form-50-50 .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0;
+}
+@media (min-width: 37.5em) {
+  .article--field-form-50-50 .form-content {
+    padding-left: 14px;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 56.25em) {
+  .article--field-form-50-50 .form-content {
+    padding: 28px 0 0 40px;
+  }
+}
+.article--field-form-50-50 .form-content .success_message {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.article--field-form-50-50 .form-content.success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 0;
+  padding-top: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.article--field-form-50-50 .form-content.success .title,
+.article--field-form-50-50 .form-content.success .body {
+  display: none;
+}
+.article--field-form-50-50 .form-content.success .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.article--field-form-50-50 .form-content.success .form #lead-form-container {
+  width: 100%;
+}
+.article--field-form-50-50 .form-content.success .form #lead-form-container .success_message {
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.article--field-form-50-50 .form-content .ama__h1, .article--field-form-50-50 .form-content .dr-finder-search-results-header__results-text, .article--field-form-50-50 .form-content .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .article--field-form-50-50 .form-content span {
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 14px;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+}
+.article--field-form-50-50 .form-content .video-embed-field-provider-youtube {
+  margin-bottom: 21px;
+}
+.article--field-form-50-50 .form-content .ama__brightcove-gallery {
+  margin: 14px 0 38px;
+}
+.article--field-form-50-50 .form-content .media {
+  position: relative;
+  margin: 14px 0 38px;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-item {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  margin-top: 0;
+}
+@media (max-width: 37.5em) {
+  .article--field-form-50-50 .form-content .salesforce-lead-form .form-item {
+    margin-bottom: 14px;
+    text-align: left;
+  }
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-item label {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: normal;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-item label:after {
+  content: "";
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-item input {
+  font-size: 18px;
+  line-height: 1;
+  padding: 11px 17px;
+  border: 1px solid #5C5C5C;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-item input.error {
+  background: none;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-item input:focus-visible {
+  border: 1px solid #0076a5;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions {
+  margin: 14px 0;
+  width: 100%;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input:focus-visible {
+  outline: 2px solid #0076a5;
+  outline-offset: 3px;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input.ama__button {
+  text-align: center;
+  min-height: 44px;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+  border-radius: 6px;
+  padding: 7px 16px;
+  width: 100%;
+  min-width: 100px;
+}
+@media (min-width: 37.5em) {
+  .article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input.ama__button {
+    width: auto;
+  }
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input.ama__button.ama__button--primary {
+  color: #ffffff;
+  background: #7229D1;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input.ama__button.ama__button--primary:hover {
+  background: #44197D;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input.ama__button.ama__button--secondary {
+  color: #46166B;
+  background: #ffffff;
+  border: 1px solid #E4E3E6;
+}
+.article--field-form-50-50 .form-content .salesforce-lead-form .form-actions input.ama__button.ama__button--secondary:hover {
+  background: #F9F9F9;
+}
+.article--field-form-50-50 .form-content .form-item--error-message {
+  margin-top: 4px;
+  margin-bottom: 0;
+  border: none;
+}
+.article--field-form-50-50 .form-content .form-item--error-message strong {
+  color: #E90C26;
+  font-size: 12px;
+  font-weight: normal;
+}
+.article--field-form-50-50 .form-content #lead-form-container .success_message p, .article--field-form-50-50 .form-content #lead-form-container .success_message .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .article--field-form-50-50 .form-content #lead-form-container .success_message .ama__image__text__subtitle, .article--field-form-50-50 .form-content #lead-form-container .success_message .ama__resource-link--inline__text {
+  padding-top: 14px;
+  font-size: 17px;
 }
 
 .ama__four-up-links {
