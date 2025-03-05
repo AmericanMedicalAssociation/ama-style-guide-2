@@ -34,16 +34,17 @@ promo-embed {
     .link {
       margin-bottom: calc($gutter * .5);
       p {
-        font-size: calc($gutter/2);
+        font-size: 14px;
         @include breakpoint($bp-small) {
-          font-size: 20px;
-        }
-        @include breakpoint($bp-med) {
           font-size: 18px;
         }
         a {
           color: $blue;
           text-decoration: none;
+          font-size: 14px;
+          @include breakpoint($bp-small) {
+            font-size: 18px;
+          }
           &:hover {
             text-decoration: underline;
           }
