@@ -1,4 +1,4 @@
-.paragraph--type--form-50-50  {
+.paragraph.form-50-50  {
   display: flex;
   margin: $gutter 0;
   flex-direction: column;
@@ -136,6 +136,7 @@
         @include ama-button(0, "secondary");
 
         &.form-submit.ama__button {
+          caret-color: transparent;
           margin: 0;
           padding: 5px 42px;
         }
@@ -159,7 +160,7 @@
     }
   }
 
-  #lead-form-container {
+
     .success_message {
       @include breakpoint($bp-small) {
         padding-left:20px;
@@ -169,5 +170,5 @@
         font-size: 17px;
       }
     }
-  }
+
 }

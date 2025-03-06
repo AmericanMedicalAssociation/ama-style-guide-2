@@ -3,7 +3,7 @@
  * block type form-50-50 is referenced and used on article pages.
  */
 
-.article--field-form-50-50 {
+.block.form-50-50 {
   display: flex;
   margin: 0;
   flex-direction: column;
@@ -11,7 +11,7 @@
     flex-direction: row;
   }
   @include breakpoint($bp-med) {
-    margin: 0 $gutter;
+    margin: $gutter;
   }
 
   > div {
@@ -60,10 +60,6 @@
     @include breakpoint($bp-med) {
       padding: $gutter 0 0 40px;
     }
-    .success_message {
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
 
     &.success {
       display: flex;
@@ -71,22 +67,9 @@
       padding-left: 0;
       padding-top: 0;
       align-items: center;
-
-      .title,
-      .body {
-        display:none;
-      }
-      .form {
-        display: flex;
-        #lead-form-container {
-          width: 100%;
-          .success_message {
-            width: 100%;
-            text-align: center;
-            opacity: 1;
-            transition: opacity 0.5s;
-          }
-        }
+      .success_message {
+        width: 100%;
+        text-align: center;
       }
     }
 
@@ -160,6 +143,8 @@
             outline-offset: 3px;
           }
           &.ama__button {
+            caret-color: transparent;
+            margin-bottom: 0;
             text-align: center;
             min-height: 44px;
             font-family: $myriad-pro;
@@ -209,13 +194,13 @@
       }
     }
 
-    #lead-form-container {
+
       .success_message {
         p {
           padding-top: calc($gutter / 2);
           font-size: 17px;
         }
       }
-    }
+
   }
 }
