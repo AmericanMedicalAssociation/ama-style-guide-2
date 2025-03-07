@@ -32,7 +32,7 @@
             // Cache DOM elements
             const searchSuggestionsWrapper = document.querySelector('.search-suggestions-wrapper');
             const searchSuggestionsBlock = document.querySelector('.search-suggestions-block');
-            const inputElement = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input#edit-search--2');
+            const inputElement = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input[id^="edit-search--"]');
 
             if (!searchSuggestionsWrapper || !searchSuggestionsBlock || !inputElement) {
                 console.log('search-suggestions.js - One or more required elements are missing.');
