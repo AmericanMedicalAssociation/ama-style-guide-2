@@ -111,7 +111,7 @@
         }
         .author {
           display: flex;
-          a {
+          [property="schema:name"] {
             margin-left: 4px;
           }
           span {
@@ -343,7 +343,7 @@ table[id^="forum-topic"] {
   tbody tr {
     td {
       &[data-th^="Report"],
-      &[data-th^="Resolution"],{
+      &[data-th^="Resolution"] {
         text-align: left;
         @include breakpoint($bp-large) {
           display: table-cell;
@@ -509,9 +509,6 @@ table {
         text-align: center;
         line-height: 1.3;
         padding: 0 calc($gutter/4);
-      }
-      .glyph {
-
       }
     }
   }
