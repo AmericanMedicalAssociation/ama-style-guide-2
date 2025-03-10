@@ -11,7 +11,7 @@
     flex-direction: row;
   }
   @include breakpoint($bp-med) {
-    margin: $gutter;
+    margin: 14px $gutter;
   }
 
   > div {
@@ -34,21 +34,41 @@
     @include breakpoint($bp-med) {
       padding-right: 40px;
     }
-
-    p, p * {
-      font-size: 16px;
-      @include breakpoint($bp-small) {
-        font-size: 18px;
+    .title h2 {
+      font-family: $kepler-std;
+      font-weight: 400;
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    .title {
+      margin-bottom: 14px;
+    }
+    .body {
+      p {
+        font-family: $myriad-pro;
+        font-size: 16px;
+        @include breakpoint($bp-small) {
+          font-size: 18px;
+        }
       }
     }
+
+    .video-embed-field-provider-youtube {
+      margin-bottom: calc($gutter * .75);
+    }
+    .ama__brightcove-gallery {
+      margin: 0;
+    }
+
+    .media {
+      position: relative;
+      margin: 0 0 36px;
+    }
   }
-
-
     #lead-form-container {
       padding-bottom: $gutter;
       padding-top: 3.5px;
     }
-
   .form-content {
     display: flex;
     flex-direction: column;
@@ -60,7 +80,11 @@
     @include breakpoint($bp-med) {
       padding: $gutter 0 0 40px;
     }
-
+    .body {
+      * {
+        font-family: $myriad-pro;
+      }
+    }
     &.success {
       display: flex;
       justify-content: center;
@@ -70,6 +94,7 @@
       .success_message {
         width: 100%;
         text-align: center;
+        font-family: $myriad-pro;
       }
     }
 
@@ -78,19 +103,6 @@
       font-size: $gutter;
       margin-bottom: calc($gutter / 2);
       @include type($kepler-std, $font-weight-regular);
-    }
-
-
-    .video-embed-field-provider-youtube {
-      margin-bottom: calc($gutter * .75);
-    }
-    .ama__brightcove-gallery {
-      margin: 14px 0 38px;
-    }
-
-    .media {
-      position: relative;
-      margin: calc($gutter / 2) 0 38px;
     }
 
     .salesforce-lead-form {
