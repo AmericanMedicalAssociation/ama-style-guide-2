@@ -3,7 +3,7 @@
  * block type form-50-50 is referenced and used on article pages.
  */
 
-.article--field-form-50-50 {
+.block.form-50-50 {
   display: flex;
   margin: 0;
   flex-direction: column;
@@ -11,7 +11,7 @@
     flex-direction: row;
   }
   @include breakpoint($bp-med) {
-    margin: 0 $gutter;
+    margin: 14px $gutter;
   }
 
   > div {
@@ -34,21 +34,41 @@
     @include breakpoint($bp-med) {
       padding-right: 40px;
     }
-
-    p, p * {
-      font-size: 16px;
-      @include breakpoint($bp-small) {
-        font-size: 18px;
+    .title h2 {
+      font-family: $kepler-std;
+      font-weight: 400;
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    .title {
+      margin-bottom: 14px;
+    }
+    .body {
+      p {
+        font-family: $myriad-pro;
+        font-size: 16px;
+        @include breakpoint($bp-small) {
+          font-size: 18px;
+        }
       }
     }
+
+    .video-embed-field-provider-youtube {
+      margin-bottom: calc($gutter * .75);
+    }
+    .ama__brightcove-gallery {
+      margin: 0;
+    }
+
+    .media {
+      position: relative;
+      margin: 0 0 36px;
+    }
   }
-
-
     #lead-form-container {
       padding-bottom: $gutter;
       padding-top: 3.5px;
     }
-
   .form-content {
     display: flex;
     flex-direction: column;
@@ -60,33 +80,18 @@
     @include breakpoint($bp-med) {
       padding: $gutter 0 0 40px;
     }
-    .success_message {
-      opacity: 0;
-      transition: opacity 0.5s;
+    .body {
+      * {
+        font-family: $myriad-pro;
+      }
     }
-
     &.success {
       display: flex;
       justify-content: center;
-      padding-left: 0;
       padding-top: 0;
       align-items: center;
-
-      .title,
-      .body {
-        display:none;
-      }
-      .form {
-        display: flex;
-        #lead-form-container {
-          width: 100%;
-          .success_message {
-            width: 100%;
-            text-align: center;
-            opacity: 1;
-            transition: opacity 0.5s;
-          }
-        }
+      .success_message {
+        width: 100%;
       }
     }
 
@@ -95,19 +100,6 @@
       font-size: $gutter;
       margin-bottom: calc($gutter / 2);
       @include type($kepler-std, $font-weight-regular);
-    }
-
-
-    .video-embed-field-provider-youtube {
-      margin-bottom: calc($gutter * .75);
-    }
-    .ama__brightcove-gallery {
-      margin: 14px 0 38px;
-    }
-
-    .media {
-      position: relative;
-      margin: calc($gutter / 2) 0 38px;
     }
 
     .salesforce-lead-form {
@@ -160,6 +152,8 @@
             outline-offset: 3px;
           }
           &.ama__button {
+            caret-color: transparent;
+            margin-bottom: 0;
             text-align: center;
             min-height: 44px;
             font-family: $myriad-pro;
@@ -196,7 +190,6 @@
       }
     }
 
-
     .form-item--error-message {
       margin-top: 4px;
       margin-bottom: 0;
@@ -209,13 +202,12 @@
       }
     }
 
-    #lead-form-container {
       .success_message {
         p {
           padding-top: calc($gutter / 2);
           font-size: 17px;
+          font-family: $myriad-pro;
         }
       }
-    }
   }
 }
