@@ -1,3 +1,101 @@
+.ama__promo--inline {
+
+  @extend .display-list;
+  @extend .body-list-flush;
+  display: flex;
+  flex-direction: column;
+  @include breakpoint($bp-large) {
+    flex-direction: row;
+  }
+  z-index: 500;
+  width: 100%;
+  background-color: $bg-gray;
+  margin: 28px 0;
+  padding: 21px 14px;
+  border-radius: 8px;
+  @include breakpoint($bp-small) {
+    padding: 28px;
+    margin: 42px 0;
+  }
+  .text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    &.no-body {
+      align-items: flex-start;
+      @include breakpoint($bp-large) {
+        align-items: center;
+      }
+    }
+    .title {
+      h3 {
+        margin-bottom: 7px;
+        @include breakpoint($bp-med) {
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+  .link {
+    flex: 1;
+    display: flex;
+    margin-left: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+    @include breakpoint($bp-large) {
+      flex: 0 1 auto;
+      max-width: 30%;
+      margin-left: 21px;
+      justify-content: flex-end;
+    }
+    .cta {
+      width: 100%;
+      .ama__button {
+        @extend .ama__button--homepage-secondary;
+        border: 1px solid #E4E3E6;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: normal;
+        font-weight: 700;
+        text-transform: none;
+        max-width: 100%;
+        width: 100%;
+        @include breakpoint($bp-small) {
+          width: auto;
+        }
+
+        &:hover {
+          color: $purple;
+          border: 1px solid #E4E3E6;
+          background-color: $gray-4;
+        }
+
+        &:focus-visible {
+          color: $purple;
+          border-color: initial;
+          background-color: $white;
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 6px;
+            border: 2px solid $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 .ama__promo {
   @include gutter($padding-top-half...);
   @include gutter($padding-right-half...);
@@ -26,103 +124,6 @@
 
   &--stub-body {
     min-height: 210px;
-  }
-
-  &--inline {
-    @extend .body-list-flush;
-    display: flex;
-    flex-direction: column;
-    @include breakpoint($bp-large) {
-      flex-direction: row;
-    }
-    z-index: 500;
-    width: 100%;
-    background-color: $bg-gray;
-    margin: 28px 0;
-    padding: 21px 14px;
-    border-radius: 8px;
-    @include breakpoint($bp-small) {
-      padding: 28px;
-      margin: 42px 0;
-    }
-    &.listicle-margin {
-      margin-right: 60px;
-    }
-    .text {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center; // Left justify horizontally
-      &.no-body {
-        align-items: flex-start;
-        @include breakpoint($bp-large) {
-          align-items: center;
-        }
-      }
-      .title {
-        // Reposition heading if no body content
-        h3 {
-          @include breakpoint($bp-small max-width) {
-            margin-bottom: 7px;
-          }
-        }
-      }
-    }
-    .link {
-      flex: 1;
-      display: flex;
-      margin-left: 0;
-      align-items: flex-start;
-      justify-content: flex-start;
-      @include breakpoint($bp-large) {
-        flex: 0 1 auto;
-        max-width: 30%;
-        padding-left: 21px;
-        justify-content: flex-end;
-      }
-      .cta {
-        width: 100%;
-        .ama__button {
-          @extend .ama__button--homepage-secondary;
-          border: 1px solid #E4E3E6;
-          border-radius: 8px;
-          font-size: 16px;
-          line-height: normal;
-          font-weight: 700;
-          text-transform: none;
-          max-width: 100%;
-          width: 100%;
-          @include breakpoint($bp-small) {
-            width: auto;
-          }
-
-          &:hover {
-            color: $purple;
-            border: 1px solid #E4E3E6;
-            background-color: $gray-4;
-          }
-
-          &:focus-visible {
-            color: $purple;
-            border-color: initial;
-            background-color: $white;
-
-            &:after {
-              content: '';
-              display: block;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              border-radius: 6px;
-              border: 2px solid $blue;
-            }
-          }
-        }
-      }
-    }
   }
 
   // Remove margins on child elements so that we can set consistent spacing elsewhere.
