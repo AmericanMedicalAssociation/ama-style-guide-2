@@ -48,10 +48,8 @@
     .body {
       width: 100%;
       // Remove the bottom margin on the final html element in the body.
-      &:last-child {
-        p {
-          margin-bottom: 0;
-        }
+      > div[body] > :last-child {
+        margin-bottom: 0;
       }
     }
     h3 {
