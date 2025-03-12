@@ -26,7 +26,7 @@
 
     // If there's no body, center the title.
     &.no-body {
-      margin-bottom: 14px;
+      margin-bottom: 21px;
       text-align: left;
       align-items: flex-start;
       justify-content: flex-start;
@@ -37,10 +37,7 @@
         margin-bottom: 0;
       }
       .title {
-        margin-bottom: 14px;
-        @include breakpoint($bp-large) {
-          margin-bottom: 0;
-        }
+        margin-bottom: 0;
       }
     }
     .title {
@@ -49,7 +46,17 @@
     }
     .body {
       width: 100%;
-      margin-bottom: 7px;
+      margin-bottom: 21px;
+      @include breakpoint($bp-large) {
+        margin-bottom: 0;
+      }
+      // Remove the bottom margin on the final html element in the body.
+      &:last-child {
+        p {
+          margin-bottom: 0;
+        }
+      }
+
     }
     h3 {
       margin-bottom: 0;
