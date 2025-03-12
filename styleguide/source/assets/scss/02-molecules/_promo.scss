@@ -23,19 +23,37 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    // If there's no body, center the title.
     &.no-body {
+      margin-bottom: 14px;
+      text-align: left;
       align-items: flex-start;
+      justify-content: flex-start;
       @include breakpoint($bp-large) {
+        text-align: center;
+        justify-content: center;
         align-items: center;
+        margin-bottom: 0;
+      }
+      .title {
+        padding-left: 12px;
+        margin-bottom: 14px;
+        @include breakpoint($bp-large) {
+          padding-left: 0;
+          margin-bottom: 0;
+        }
       }
     }
     .title {
-      h3 {
-        margin-bottom: 7px;
-        @include breakpoint($bp-med) {
-          margin-bottom: 14px;
-        }
-      }
+      margin-bottom: 14px;
+      width: 100%;
+    }
+    .body {
+      width: 100%;
+    }
+    h3 {
+      margin-bottom: 0;
     }
   }
   .link {
