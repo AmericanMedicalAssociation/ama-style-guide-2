@@ -2,22 +2,28 @@
     display: none;
     &.show {
         display: block;
-        margin-left: -12px;
-        width: auto;
         border-top: 1px solid $search-suggestions-white;
-        position: relative;
         z-index: 600;
+        position: absolute;
+        width: 100%;
+        top: 52px;
         @include breakpoint($bp-small) {
             margin-left: 0;
+            width: 88%;
+            top: 43px;
         }
-        @media (min-width: 900px) and (max-width: 991px) {
-            //width: 284px;
-        }
+        // This media query was very intentional so im keeping it just incase
+        // @media (min-width: 900px) and (max-width: 991px) {
+        //     width: 284px;
+        // }
     }
     .search-suggestions-block {
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
         background: $white;
-        padding: 12px $gutter 19px;
+        padding: 12px $gutter 19px 16px;
+        @include breakpoint($bp-small) {
+            padding: 12px $gutter 19px;
+        }
         .title {
             font-size: 18px;
             line-height: 27px;
