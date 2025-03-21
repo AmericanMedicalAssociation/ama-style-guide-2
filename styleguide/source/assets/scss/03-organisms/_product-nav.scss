@@ -1,5 +1,5 @@
 .ama__product-nav {
-  background: $black;
+  background: #2A0D40;
   @include type($myriad-pro, $font-weight-regular);;
 
   .product-menu-title {
@@ -12,6 +12,7 @@
     align-items: center;
     width: 100%;
     cursor: pointer;
+    position: relative;
     @include breakpoint($bp-med) {
       display: none;
     }
@@ -23,14 +24,17 @@
       margin-left: -15px;
       text-indent: 15px;
       padding-right: 10px;
-
     }
 
     &:after {
       content: "";
-      background: url('/themes/custom/ama_one/icons/svg/drop-arrow-down.svg') no-repeat 99% center/20px;
-      height: 30px;
-      width: 30px;
+      background: url('/themes/custom/ama_one/icons/svg/drop-arrow-down.svg') no-repeat 99% center;
+      background-size: contain;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      top: 20px;
+      left: 158px;
     }
   }
   .dropdown-container {
