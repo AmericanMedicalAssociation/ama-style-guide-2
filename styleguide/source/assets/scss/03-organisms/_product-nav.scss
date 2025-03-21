@@ -41,7 +41,7 @@
     position: absolute;
     z-index: -1;
     height: 0;
-    background-color: $black;
+    background-color: #2A0D40;
     width:100%;
     border-top: 1px solid $white;
     overflow-y: hidden;
@@ -64,7 +64,8 @@
     .product-menu-title {
       &:after {
         content: "";
-        background: url('/themes/custom/ama_one/icons/svg/drop-arrow-up.svg') no-repeat 99% center/20px;
+        background: url('/themes/custom/ama_one/icons/svg/drop-arrow-up.svg') no-repeat 99% center;
+        background-size: contain;
       }
     }
     .dropdown-container {
