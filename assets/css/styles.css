@@ -14225,6 +14225,9 @@ table a.new-replies .count-new {
   .ama__global-search__action {
     margin-left: 15px;
   }
+  .ama__global-search:focus-within {
+    border: 2px solid #027DBC;
+  }
 }
 @media (min-width: 56.25em) {
   .ama__global-search {
@@ -14232,9 +14235,6 @@ table a.new-replies .count-new {
     -ms-flex-positive: 1;
     flex-grow: 1;
   }
-}
-.ama__global-search:focus-within {
-  border: 2px solid #027DBC;
 }
 .ama__global-search form {
   width: 100%;
@@ -14260,11 +14260,14 @@ table a.new-replies .count-new {
     display: block;
   }
 }
-.ama__global-search input[type=text]:focus, .ama__global-search input[type=text]:active,
-.ama__global-search .ama__search__field__input:focus,
+.ama__global-search input[type=text]:active,
 .ama__global-search .ama__search__field__input:active {
   color: #000000;
   font-style: normal;
+  border: none;
+}
+.ama__global-search input[type=text]:focus,
+.ama__global-search .ama__search__field__input:focus {
   border: none;
 }
 .ama__global-search .form-actions {
@@ -30794,7 +30797,7 @@ a.ama__membership:hover {
 }
 
 .ama__product-nav {
-  background: #000000;
+  background: #2A0D40;
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
 }
@@ -30814,6 +30817,7 @@ a.ama__membership:hover {
   align-items: center;
   width: 100%;
   cursor: pointer;
+  position: relative;
 }
 @media (min-width: 56.25em) {
   .ama__product-nav .product-menu-title {
@@ -30833,9 +30837,13 @@ a.ama__membership:hover {
 }
 .ama__product-nav .product-menu-title:after {
   content: "";
-  background: url("/themes/custom/ama_one/icons/svg/drop-arrow-down.svg") no-repeat 99% center/20px;
-  height: 30px;
-  width: 30px;
+  background: url("/themes/custom/ama_one/icons/svg/drop-arrow-down.svg") no-repeat 99% center;
+  background-size: contain;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 20px;
+  left: 158px;
 }
 .ama__product-nav .dropdown-container {
   position: absolute;
