@@ -45,15 +45,13 @@
     &__action {
       margin-left: 15px;
     }
+    &:focus-within {
+      border: 2px solid $blue;
+    }
   }
   @include breakpoint($bp-med) {
     flex-grow: 1;
   }
-
-  &:focus-within {
-    border: 2px solid $blue;
-  }
-
 
   form {
     width: 100%;
@@ -77,10 +75,13 @@
       display: block;
     }
 
-    &:focus,
     &:active {
       color: $black;
       font-style: normal;
+      border: none;
+    }
+
+    &:focus {
       border: none;
     }
   }
