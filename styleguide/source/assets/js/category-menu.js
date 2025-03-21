@@ -8,7 +8,14 @@
  * Licensed MIT
  */
 
-
-jQuery('.ama_category_navigation_menu__group').smartmenus({
-  subIndicatorsPos: 'append'
-});
+(function ($, Drupal, once) {
+    Drupal.behaviors.categoryMenuBehavior = {
+        attach: function (context, settings) {
+            once('categoryMenuBehavior', '.ama_category_navigation_menu__group', context).forEach(function (element) {
+                $(element).smartmenus({
+                    subIndicatorsPos: 'append'
+                });
+            });
+        }
+    };
+})(jQuery, Drupal, once);
