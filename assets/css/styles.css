@@ -17045,19 +17045,28 @@ ul.ama__podcast-player__links li a:hover::after {
 }
 .ama__promo--inline .link .cta {
   width: 100%;
+  padding: 0 !important;
 }
 .ama__promo--inline .link .cta .ama__button {
   border: 1px solid #E4E3E6;
   border-radius: 8px;
+  text-transform: none;
   padding: 12px 16px 12px 16px;
   min-height: 44px;
   min-width: 100px;
   font-size: 16px;
   line-height: normal;
   font-weight: 700;
-  text-transform: none;
   max-width: 100%;
   width: 100%;
+}
+.ama__promo--inline .link .cta .ama__button.primary {
+  background-color: #7229D1;
+  color: #ffffff;
+}
+.ama__promo--inline .link .cta .ama__button.primary:hover {
+  background-color: #9073A6;
+  color: #ffffff;
 }
 @media (min-width: 37.5em) {
   .ama__promo--inline .link .cta .ama__button {
@@ -17070,20 +17079,10 @@ ul.ama__podcast-player__links li a:hover::after {
   background-color: #F5F5F5;
 }
 .ama__promo--inline .link .cta .ama__button:focus-visible {
-  color: #46166B;
+  background-color: initial;
   border-color: initial;
-  background-color: #ffffff;
-}
-.ama__promo--inline .link .cta .ama__button:focus-visible:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 6px;
-  border: 2px solid #027DBC;
+  outline: 2px solid #027DBC;
+  outline-offset: 3px;
 }
 
 .ama__promo, a.ama__promo--border, a.ama__promo--background, .ama__promo--border, .ama__promo--background {
@@ -30849,7 +30848,7 @@ a.ama__membership:hover {
   position: absolute;
   z-index: -1;
   height: 0;
-  background-color: #000000;
+  background-color: #2A0D40;
   width: 100%;
   border-top: 1px solid #ffffff;
   overflow-y: hidden;
@@ -30872,7 +30871,8 @@ a.ama__membership:hover {
 }
 .ama__product-nav.expanded .product-menu-title:after {
   content: "";
-  background: url("/themes/custom/ama_one/icons/svg/drop-arrow-up.svg") no-repeat 99% center/20px;
+  background: url("/themes/custom/ama_one/icons/svg/drop-arrow-up.svg") no-repeat 99% center;
+  background-size: contain;
 }
 .ama__product-nav.expanded .dropdown-container {
   z-index: 600;
@@ -35356,9 +35356,6 @@ body.search-results .ama__layout--two-column--left {
 .ama__category .ama__masthead {
   margin-bottom: 7px;
   padding: 0;
-}
-.ama__category .ama__h1, .ama__category .dr-finder-search-results-header__results-text, .ama__category .dr-finder-filter_suggestions span, .dr-finder-filter_suggestions .ama__category span {
-  text-transform: uppercase;
 }
 .ama__category .ama__article-stub__title {
   padding: 0;
