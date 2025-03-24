@@ -78,19 +78,28 @@
     }
     .cta {
       width: 100%;
+      padding: 0 !important;
       .ama__button {
         @extend .ama__button--homepage-secondary;
         border: 1px solid #E4E3E6;
         border-radius: 8px;
+        text-transform: none;
         padding: 12px 16px 12px 16px;
         min-height: 44px;
         min-width: 100px;
         font-size: 16px;
         line-height: normal;
         font-weight: 700;
-        text-transform: none;
         max-width: 100%;
         width: 100%;
+        &.primary {
+          background-color: $homepagePurple;
+          color: $white;
+          &:hover {
+            background-color: $hoverPurple;
+            color: $white;
+          }
+        }
         @include breakpoint($bp-small) {
           width: auto;
         }
@@ -102,21 +111,10 @@
         }
 
         &:focus-visible {
-          color: $purple;
+          background-color: initial;
           border-color: initial;
-          background-color: $white;
-
-          &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            border-radius: 6px;
-            border: 2px solid $blue;
-          }
+          outline: 2px solid $blue;
+          outline-offset: 3px;
         }
       }
     }
