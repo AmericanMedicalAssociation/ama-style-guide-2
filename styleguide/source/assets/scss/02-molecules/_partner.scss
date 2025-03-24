@@ -18,3 +18,38 @@
     float: left;
   }
 }
+
+.ama__news {
+  .ama__partner {
+    border-color: #E4E3E6;
+    border-bottom: 1px solid #E4E3E6;
+    padding: 35px 0;
+
+    .ama__info-card {
+      background: $gray-4;
+      padding: 28px 21px;
+      margin-bottom: 28px;
+      @include breakpoint($bp-small max-width) {
+        width: 100%;
+      }
+
+      &__label {
+        @include type($kepler-std, $font-weight-semibold);
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 14px;
+      }
+      &__text {
+        padding: 0;
+      }
+
+      h4 + .ama__info-card__job_title {
+        margin-bottom: 14px;
+      }
+
+      h4:not(:has(+ .ama__info-card__job_title)) {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
