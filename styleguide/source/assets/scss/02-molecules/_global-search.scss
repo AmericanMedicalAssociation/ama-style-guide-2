@@ -1,93 +1,88 @@
 .global-search-trigger {
   position: relative;
-  background-color: $purple;
   display: flex;
   justify-content: center;
   color: $white;
-  height: 60px;
-  width: 70px;
+  height: 56px;
+  width: 56px;
   align-items: center;
-  border-left: 1px solid $gray-50;
+  border-left: 1px solid #E4E3E6;
 
   @include breakpoint($bp-small) {
     display: none;
   }
 
   &__icon {
-    background-size: 24px 25px;
+    background-size: 24px 24px;
     min-height: 24px;
-    min-width: 25px;
+    min-width: 24px;
     max-height: 24px;
-    max-width: 25px;
+    max-width: 24px;
   }
 }
 
 .ama__global-search {
-  @include gutter($padding-left-half...);
   display: none;
-  flex-direction: column;
-  height: 60px;
+  height: 52px;
   position: absolute;
-  top: 60px;
+  top: 56px;
   left: 0;
   width: 100%;
-  background-color: $purple;
-  flex-grow: .8;
   z-index: 600;
+  border-top: 1px solid #E4E3E6;
   @include breakpoint($bp-small) {
+    background-color: $white;
     position: relative;
-    display: block;
-    padding-left: 0;
+    display: flex;
+    padding: 0 21px;
     top: 0;
-    height: 34px;
-    border: none;
-    width: 70px;
+    height: 44px;
+    max-width: 343px;
+    border: 1px solid #E4E3E6;
+    border-radius: 100px;
+    align-items: center;
+    margin: 0 28px 0 auto;
+    &__action {
+      margin-left: 15px;
+    }
+    &:focus-within {
+      border: 2px solid $blue;
+    }
   }
   @include breakpoint($bp-med) {
     flex-grow: 1;
+  }
+
+  form {
+    width: 100%;
   }
 
   .searchbar-wrapper {
     width: 100%;
   }
 
-  .ama__search__field--in-body {
-    display: flex;
-    margin-bottom: 0;
-    justify-content: flex-end;
-    align-items: center;
-
-    @include breakpoint($bp-small) {
-      justify-content: flex-start;
-    }
-  }
-
   input[type="text"],
   .ama__search__field__input {
-    @include gutter($padding-top-half...);
-    @include gutter($padding-bottom-half...);
+    padding: 16px 14px;
     background-image: none;
-    border: 0;
-    max-height: 40px;
-    min-height: 40px;
-    min-width: 250px;
+    border: none;
+    font-size: 16px;
+    line-height: 1;
+    flex-grow: 1;
 
     @include breakpoint($bp-small) {
-      padding: 0 calc($gutter/4);
+      padding: 0;
       display: block;
-      max-height: 34px;
-      min-height: 34px;
     }
 
-    &:focus,
     &:active {
       color: $black;
       font-style: normal;
-      border: 1px solid $white;
+      border: none;
     }
 
-    &::placeholder {
-      font-style: italic;
+    &:focus {
+      border: none;
     }
   }
 
@@ -95,33 +90,33 @@
     margin: 0;
   }
 
-  .ama__global-search__action .ama__button {
-    @extend .icon--search-white;
-    background-size: 0 0;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    overflow: hidden;
-    min-width: 100px;
-    position: relative;
-    text-indent: 0;
-
-    @include breakpoint($bp-small) {
-      border: 2px solid $white;
+  .ama__global-search__action {
+    .ama__button {
+      @extend .icon--search-purple;
+      background-size: 0 0;
+      padding: 0;
+      outline: none;
+      overflow: hidden;
+      min-width: 100px;
+      position: relative;
+      text-indent: 0;
+      border: none;
       background-color: $purple;
-      background-size: 22px 22px;
-      background-position: 5px 4px;
-      min-height: 34px;
-      max-height: 34px;
-      min-width: 34px;
-      max-width: 34px;
-      height: 34px;
-      width: 39px;
-      text-indent: -999px;
-    }
-
-    &:hover {
-      background-color: $hoverPurple;
+      height: 52px;
+      max-height: 52px;
+  
+      @include breakpoint($bp-small) {
+        background-color: $white;
+        background-size: 24px 24px;
+        background-position: center;
+        min-height: 24px;
+        max-height: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        height: 24px;
+        width: 24px;
+        text-indent: -999px;
+      }
     }
   }
 }

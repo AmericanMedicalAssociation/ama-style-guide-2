@@ -2,9 +2,21 @@
 .article_stub_as_inline--wrapper {
   h2.ama_article-stub-header {
     padding-bottom: 0;
-    text-transform: lowercase;
-    &:first-line {
-      text-transform: capitalize;
+  }
+  &.show-eyebrows {
+    .article-stub-list {
+      .article-stub {
+        .eyebrow {
+          display: block;
+        }
+      }
+    }
+  }
+  .article-stub-list {
+    .article-stub {
+      .eyebrow {
+        display: none;
+      }
     }
   }
 
@@ -34,8 +46,36 @@
         flex-direction: column;
       }
 
-      a,
-      &a {
+      div.subscription-stub {
+        .stub-text {
+          padding: 22px 14px;
+          .title {
+            a {
+              color: $black;
+              font-size: 20px;
+              line-height: 24px;
+              font-weight: $font-weight-regular;
+              font-family: $kepler-std;
+              text-decoration: none;
+            }
+          }
+        }
+        .additional-link {
+          color: $purple;
+          font-weight: $font-weight-bold;
+          font-size: 16px;
+          text-decoration: none;
+          display: flex;
+          align-items: flex-end;
+          flex-grow: 1;
+          padding: 16px;
+        }
+      }
+
+      > a,
+      &a,
+      > div.subscription-stub,
+      div.paragraph--type--series-related-article a {
         &:focus-visible {
           border-radius: 8px;
           outline: 2px solid $tab-focus-blue;
@@ -51,15 +91,16 @@
       box-shadow: transparent 0 0 10px;
       transition: box-shadow 0.3s;
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       @include breakpoint($bp-med) {
-        margin-right: 20px;
+        margin-right: 14px;
       }
       @include breakpoint($bp-large) {
         margin-bottom: 0px;
+        margin-right: 24px;
       }
       &[data-count="4"] {
         @include breakpoint($bp-med) {
@@ -90,7 +131,7 @@
         }
         @include breakpoint($bp-large) {
           &:nth-child(2) {
-            margin-right: 20px;
+            margin-right: 24px;
           }
           &:nth-child(3) {
             margin-right: 0px;
@@ -98,7 +139,7 @@
             width: 33%;
             flex-grow:  1;
           }
-          margin-right: 20px;
+          margin-right: 24px;
           width: 33%;
           margin-bottom: 0px;
         }
@@ -113,11 +154,14 @@
           text-decoration: underline;
         }
       }
-      a {
+      > a, > div, div.paragraph--type--series-related-article a {
         text-decoration: none;
         // flex the link to make it take up the whole card
         flex-grow: 1;
         display: flex;
+      }
+      .paragraph--type--series-related-article a {
+        text-decoration: none;
       }
 
         .stub-image {
@@ -125,8 +169,8 @@
           max-width: 100%;
           align-self: flex-start;
           img {
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
             width: 100%;
             max-width: 100%;
             margin-bottom: 0;
@@ -134,12 +178,12 @@
           }
         }
         .stub-text {
-          padding: 20px 20px 0;
+          padding: 22px 14px 0;
           .eyebrow {
             font-size: 14px;
             line-height: 16.8px;
             color: $gray-64;
-            margin-bottom: 10px;
+            margin-bottom: 7px;
             text-transform: uppercase;
             transition: margin-bottom .25s ease-in-out;
           }
@@ -149,10 +193,30 @@
             font-size: 20px;
             line-height: 24px;
             font-weight: $font-weight-regular;
+            font-family: $kepler-std;
+            margin-bottom: 7px;
+
+            // Code for subscription title.
+            a {
+              color: $black;
+              font-size: 20px;
+              line-height: 24px;
+              font-weight: $font-weight-regular;
+              font-family: $kepler-std;
+              text-decoration: none;
+            }
+          }
+
+          .description {
+            font-family: $kepler-std;
+            color: $gray-64;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 19.2px;
           }
         }
       .data {
-        padding: 0 20px 20px;
+        padding: 0 14px 22px;
         display: flex;
         margin-top: auto;
         flex-direction: row;
@@ -176,6 +240,7 @@
         }
         .pipe {
           margin-right: 7px;
+          color: #e4e3e6;
         }
         .read-time {
           margin-right: 7px;

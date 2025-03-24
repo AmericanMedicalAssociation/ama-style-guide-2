@@ -154,87 +154,35 @@
 }
 
 .news-subscribe-wrapper {
-  align-items: center;
-  @include breakpoint($bp-small) {
-    display: flex;
-  }
+  max-height: 36px;
+  justify-content: flex-end;
+  .sub-title {
+      margin-right: calc($gutter/2);
+      display: flex;
+      align-items: center;
+      width: 100%;
 
-  span.icon--subscribe-news {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-
-    .ama__button--news-subscribe {
-      padding-right: 36px !important;
-      &:hover {
-        border-color: transparent;
-        color: $white;
-        background-color: $purple;
-      }
-      &:focus-visible {
-        outline: 2px solid $tab-focus-blue;
-        outline-offset: 5px;  
-      }
-    }
-    &:hover {
-      &:after {
-        background-image: url("../icons/svg/icon-subscribe-hover.svg");
-      }
-      + span.arrow {
-        + span.arrow {
+      @include breakpoint($bp-small) {
+        @include breakpoint(700px max-width) {
           display: none;
         }
       }
-      .ama__button--news-subscribe {
-        border-color: transparent;
-        color: $white;
-        background-color: $purple;
-      }
-    }
-    &:after {
-      content: "";
-      display: inline-block;
-      height: 32px;
-      width: 32px;
-      margin-left: -32px;
-      overflow: hidden;
-      position: relative;
-      background-image: url("../icons/svg/icon-subscribe.svg");
-    }
-    + span.arrow {
-      width: 0; 
-      height: 0;
-      border-top: 18px solid transparent; 
-      border-bottom: 18px solid transparent; /* 36px height (18+18) */
-      border-left: 18px solid $purple;
-      position: absolute;
 
-      + span.arrow {
-        width: 0; 
-        height: 0;
-        border-top: 18px solid transparent; 
-        border-bottom: 18px solid transparent; /* 36px height (18+18) */
-        border-left: 18px solid $white;
-        margin-left: -1px;
-        position: absolute;
+      @include breakpoint($bp-med) {
+        display: flex;
+        width: 80%;
       }
-    }
-  }
-  
-  .form-actions {
-    margin: 0;
-  }
-  .sub-title {
-    @include breakpoint($bp-small) {
-      margin-left: 30px;
-    }
 
     a {
       font-size: calc($gutter/2);
-      font-weight: $font-weight-semibold;
-      color: $purple;
+      text-align: right;
+      font-weight: $font-weight-bold;
+      color: $homepagePurple;
       text-transform: uppercase;
       text-decoration: none;
+      line-height: 150%; /* 21px */
+      letter-spacing: 1.12px;
+      max-height: 36px;
 
       &:focus-visible {
         outline: 2px solid $tab-focus-blue;
@@ -246,25 +194,51 @@
       }
     }
   }
-  .subscribed {
-    span.icon--subscribe-news {
-      &:after {
-        background-image: url("../icons/svg/icon-unsubscribe.svg");
+  span {
+    &.icon--subscribe-news {
+      display: flex;
+      &::after {
+        content: " ";
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+        left: 0;
+        display: block;
+        background-position: center;
+        height: 20px;
+        width: 20px;
+        background-image: url("../icons/svg/social-share-icons/v1-icon-subscribe.svg");
       }
-      &:hover {
-        &:after {
-          background-image: url("../icons/svg/icon-unsubscribe-hover.svg");
+      &.ama__button--news-subscribe-subscribed {
+        &::after {
+          background-image: url("../icons/svg/social-share-icons/v1-icon-subscribed.svg");
         }
+      }
+      &:has(:focus-visible) {
+        outline: 2px solid $tab-focus-blue;
+      }
+      input:focus-visible {
+        outline: none;
       }
     }
   }
+  a.subscribe-series {
+    padding: 0 6px 0 0;
+    @include type($myriad-pro, $font-weight-semibold);
+    cursor: pointer;
+    color: $gray-64;
+    border: 0;
+    background: transparent;
+    font-weight: 600;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 14px;
+  }
 }
 
-a.subscribe-series {
-  display: block;
-  min-height: $gutter;
-  top: -30px;
-}
+
+
 
 .series-tag + .subscribe-series,
 .series-tag + .salesforce-subscribe-form input.form-submit {
