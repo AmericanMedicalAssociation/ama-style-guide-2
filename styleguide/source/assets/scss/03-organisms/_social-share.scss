@@ -1,92 +1,94 @@
 /** Styles for the article social share bar. **/
-.share-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-items: flex-end;
-  justify-content: flex-end;
-  padding-bottom: $gutter;
-  border-bottom: 2px solid $gray-20;
-  padding-top: calc($gutter * .75);
+.article-header-row {
+  .share-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: $gutter;
+    border-bottom: 2px solid $gray-20;
+    padding-top: calc($gutter * .75);
 
-  .flag-bookmark,
-  .article-bookmark {
-    a {
-      text-decoration: none;
-      &:focus-visible {
-        .icon.bookmark {
-          outline: 2px solid $tab-focus-blue;
+    .flag-bookmark,
+    .article-bookmark {
+      @include breakpoint($bp-small max-width) {
+        margin: calc($gutter/2);
+      }
+      a {
+        text-decoration: none;
+        &:focus-visible {
+          .icon.bookmark {
+            outline: 2px solid $tab-focus-blue;
+            &:before {
+              outline: 0;
+            }
+          }
+        }
+        &.flag-login {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .ajax-progress {
+      display: none;
+    }
+
+    .icon {
+      &.bookmark {
+        @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-save-selected.svg");
+        &:before {
+          height: 24px;
+          width: 16px;
+        }
+      }
+    }
+
+    .action-flag {
+      .icon {
+        &.bookmark {
           &:before {
-            outline: 0;
+            background-image: url("../icons/svg/social-share-icons/v1-icon-save-not-selected.svg");
           }
         }
       }
-      &.flag-login {
-        text-decoration: none;
-      }
     }
-  }
 
-  .ajax-progress {
-    display: none;
-  }
-
-  .icon {
-    &.bookmark {
-      &:before {
-        height: 24px;
-        width: 16px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-save-selected.svg");
-      }
-    }
-  }
-
-  .action-flag {
+    //  Icon and print icon parent styles.
     .icon {
-      &.bookmark {
-        &:before {
-          background-image: url("../icons/svg/social-share-icons/v1-icon-save-not-selected.svg");
+      a {
+        &:hover {
+          text-decoration: none;
         }
       }
-    }
-  }
-
-  //  Icon and print icon parent styles.
-  .icon {
-    a {
-      &:hover {
-        text-decoration: none;
-      }
-    }
-    &.copy {
-      &:before {
-        height: 24px;
-        width: 22px;
-        top: -5px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
-      }
-      &:hover {
-        cursor: pointer;
-      }
-      &.masthead:hover:before {
-        background-image: url("../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
-      }
-      &.copied,
-      &.copied:hover {
+      &.copy {
+        @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-copy-not-selected.svg");
         &:before {
-          background-image: url("../icons/svg/social-share-icons/v1-icon-copy-selected.svg");
+          height: 24px;
+          width: 22px;
+          top: -5px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &.copied,
+        &.copied:hover {
+          &:before {
+            background-image: url("../icons/svg/social-share-icons/v1-icon-copy-selected.svg");
+          }
         }
       }
-    }
-    &.print {
-      &:before {
-        height: 18px;
-        width: 21px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
-      }
-      &:hover {
-        cursor: pointer;
+      &.print {
+        @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
         &:before {
-          background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
+          height: 18px;
+          width: 21px;
+        }
+        &:hover {
+          cursor: pointer;
+          &:before {
+            background-image: url("../icons/svg/social-share-icons/v1-icon-print-not-selected.svg");
+          }
         }
       }
       &.printed {
@@ -94,153 +96,148 @@
           background-image: url("../icons/svg/social-share-icons/v1-icon-print-selected.svg");
         }
       }
-    }
-    &.share {
-      &:before {
-        width: 21px;
-        height: 17.25px;
-        background-image: url("../icons/svg/social-share-icons/v1-icon-share-not-selected.svg");
-      }
-      &.shared {
+      &.share {
+        @include ama-button("small", "actions", "../icons/svg/social-share-icons/v1-icon-share-not-selected.svg");
         &:before {
-          background-image: url("../icons/svg/social-share-icons/v1-icon-share-selected.svg");
+          width: 21px;
+          height: 17.25px;
         }
-      }
-      &:hover {
-        cursor: pointer;
-      }
+        &.shared {
+          &:before {
+            background-image: url("../icons/svg/social-share-icons/v1-icon-share-selected.svg");
+          }
+        }
+        &:hover {
+          cursor: pointer;
+        }
 
-      //  Social Modal.
-      .share-modal {
-        display:flex;
-        flex-direction: column;
-        border: 1px solid $gray-4;
-        z-index: 99;
-        bottom: 0;
-        right: 0;
-        position: fixed;
-        padding: 7px;
-        background: $white;
-        display: block;
-        border-radius: 10px;
-        width: 221px;
-        :after {
-          content: "";
-          display: inline-block;
-          width: 100%;
-        }
-        @include breakpoint($bp-small) {
-          position: absolute;
-          right: -130px;
-          bottom: -244px;
-        }
-        &.hidden {
-          display: none;
-          .click-catcher {
-            display:none;
-          }
-        }
-        .click-catcher {
-          z-index: 0;
-          position: fixed;
-          cursor: default;
-          top: 0;
-          right: 0;
-          left: 0;
+        //  Social Modal.
+        .share-modal {
+          display:flex;
+          flex-direction: column;
+          border: 1px solid $gray-4;
+          z-index: 99;
           bottom: 0;
+          right: 0;
+          position: fixed;
+          padding: 7px;
+          background: $white;
           display: block;
-          background: transparent;
-        }
-        a {
-          white-space: nowrap;
-          display: block;
-          position:relative;
-          font-size: 16px;
-          font-weight: $font-weight-regular;
-          text-decoration: none;
-          border-radius: 4px;
-          &:focus {
-            text-decoration: underline;
+          border-radius: 10px;
+          width: 221px;
+          :after {
+            content: "";
+            display: inline-block;
+            width: 100%;
           }
-          &:hover {
-            background-color: $gray-4;
-          }
-          &:last-child {
-            padding-bottom: 0;
-          }
-          &:before {
-            width: 22px;
-            height: 22px;
-            left: 7px;
-            content: " ";
-            background-repeat: no-repeat;
+          @include breakpoint($bp-small) {
             position: absolute;
+            right: -130px;
+            bottom: -244px;
           }
-        }
-        .facebook {
-          &:before {
-            background-image: url("../icons/svg/social-share-icons/v1-icon-share-facebook.svg");
+          &.hidden {
+            display: none;
+            .click-catcher {
+              display:none;
+            }
           }
-        }
-        .linkedin {
-          &:before {
-            background-image: url("../icons/svg/social-share-icons/v1-icon-share-linkedin.svg");
+          .click-catcher {
+            z-index: 0;
+            position: fixed;
+            cursor: default;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: block;
+            background: transparent;
           }
-        }
-        .twitter {
-          &:before {
-            background-image: url("../icons/svg/social-share-icons/v1-icon-share-twitter.svg");
-            background-size: contain;
-            width: 18px;
-            height: 18px;
+          a {
+            white-space: nowrap;
+            display: block;
+            position:relative;
+            font-size: 16px;
+            font-weight: $font-weight-regular;
+            text-decoration: none;
+            border-radius: 4px;
+            &:focus {
+              text-decoration: underline;
+            }
+            &:hover {
+              background-color: $gray-4;
+            }
+            &:last-child {
+              padding-bottom: 0;
+            }
+            &:before {
+              width: 24px;
+              height: 24px;
+              left: 7px;
+              top: 10px;
+              content: " ";
+              background-repeat: no-repeat;
+              position: absolute;
+            }
           }
-        }
-        .email {
-          &:before {
-            background-image: url("../icons/svg/social-share-icons/v1-icon-share-email.svg");
+          .facebook {
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/v1-icon-share-facebook.svg");
+            }
           }
-        }
-        .doximity {
-          &:before {
-            background-image: url("../icons/svg/social-share-icons/v1-icon-share-doximity.svg");
-            background-size: contain;
-            width: 20px;
-            height: 20px;
+          .linkedin {
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/v1-icon-share-linkedin.svg");
+            }
+          }
+          .twitter {
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/v1-icon-share-twitter.svg");
+            }
+          }
+          .email {
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/v1-icon-share-email.svg");
+            }
+          }
+          .doximity {
+            &:before {
+              background-image: url("../icons/svg/social-share-icons/v1-icon-share-doximity.svg");
+            }
           }
         }
       }
     }
-  }
-  .icon.print {
-    background-color: #fff;
-  }
-  .contextual-link-wrapper {
-    position: absolute;
-    display: none;
-    left: 0;
-    @include breakpoint($bp-small max-width) {
-      display: block;
+    .icon.print {
+      background-color: #fff;
     }
-    &:hover, &:active {
-      text-decoration: underline;
-      color: $homepagePurple;
+    .contextual-link-wrapper {
+      position: absolute;
+      display: none;
+      left: 0;
+      @include breakpoint($bp-small max-width) {
+        display: block;
+      }
+      &:hover, &:active {
+        text-decoration: underline;
+        color: $homepagePurple;
+      }
+      a {
+        color: black;
+        font-size: 20px;
+        text-decoration: underline;
+        text-transform: none;
+        padding: 0;
+        &:focus-visible {
+          outline: 2px solid $tab-focus-blue;
+        }
+      }
     }
-    a {
-      color: black;
-      font-size: 20px;
-      text-decoration: underline;
-      text-transform: none;
-      padding: 0;
+    .print-pdf {
+      text-decoration: none;
       &:focus-visible {
-        outline: 2px solid $tab-focus-blue;
-      }
-    }
-  }
-  .print-pdf {
-    text-decoration: none;
-    &:focus-visible {
-      .icon.print {
-        outline: 2px solid $tab-focus-blue;
+        .icon.print {
+          outline: 2px solid $tab-focus-blue;
+        }
       }
     }
   }
@@ -252,7 +249,9 @@
   position: relative;
   .share-row {
     .share {
-
+      @include breakpoint($bp-small) {
+        height: 36px;
+      }
       &.is-sticky {
         .share-wrapper {
           display: flex;
@@ -292,8 +291,7 @@
             }
           }
           // Adjust icon alignment when sticky/scrolling
-          .icon,
-          .bookmark {
+          .icon {
             margin: 0 0 15px 0;
             padding-left: 0;
             border-radius: 100px;
@@ -314,9 +312,12 @@
           box-shadow: 0px 4px 20px -4px rgba(23, 24, 24, 0.12);
           .icon.masthead {
             padding: 0;
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             margin: calc($gutter/2) calc($gutter/2) calc($gutter/2) 0;
+            &.bookmark {
+              margin: 0;
+            }
             .text {
               display: none;
             }
@@ -326,7 +327,7 @@
           }
         }
         .icon {
-          @include ama-button("small", "actions");
+          //@include ama-button("small", "actions");
           &.share,
           &.copy {
             &:focus-visible {
@@ -378,11 +379,12 @@
           }
 
           a {
-            display: flex;
+            display: block;
             height: 44px;
             align-items: center;
             padding-bottom: 0;
-            text-indent: calc($gutter * 1.25);
+            text-indent: 37px;
+            line-height: 44px;
             &:focus-visible {
               outline: 2px solid $tab-focus-blue;
             }

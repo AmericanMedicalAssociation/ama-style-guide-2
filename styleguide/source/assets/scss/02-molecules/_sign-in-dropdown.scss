@@ -1,13 +1,11 @@
 .ama__sign-in-dropdown {
+  display: flex;
   position: relative;
   background-color: $purple;
-  display: flex;
-  justify-content: center;
-  height: 60px;
-  width: 70px;
   align-items: center;
-  border-left: 1px solid $gray-50;
-  margin-left: auto;
+  border-left: 1px solid #E4E3E6;
+  width: 56px;
+  height: 56px;
   &:hover {
     cursor: default;
   }
@@ -18,27 +16,18 @@
   }
 
   @include breakpoint($bp-small) {
-    height: 34px;
-    justify-content: flex-end;
-    border-left: 0;
-    width: 100px;
-  }
-
-  @include breakpoint($bp-med) {
-    min-width: 135px;
-    width: auto;
+    display: flex;
+    height: 44px;
     border-left: 0;
   }
 
   &__trigger {
-    display: flex;
-    align-content: center;
-    color: $white;
+    height: 24px;
     cursor: pointer;
-    outline: none;
+    margin: 0 auto;
     
     &.open &__icon {
-      &__arrow svg {
+      &__arrow {
         transform: rotate(180deg);
         transition: transform .3s ease;
       }
@@ -46,15 +35,13 @@
 
     &__icon {
       display: inline-block;
-      fill: $white;
-
 
       &__user {
-        background-size: 24px 25px;
+        background-size: 24px 24px;
         min-height: 24px;
-        min-width: 25px;
+        min-width: 24px;
         max-height: 24px;
-        max-width: 25px;
+        max-width: 24px;
 
         @include breakpoint($bp-large) {
           display: none;
@@ -66,16 +53,22 @@
 
       &__arrow {
         display: none;
-        @include gutter($padding-left-quarter...);
-        @include gutter($padding-right-quarter...);
-        
-        svg {
-          transform: rotate(0deg);
-          transition: transform .3s ease;
-        }
+        padding-left: 4px;
         
         @include breakpoint($bp-large) {
           display: block;
+          width: 20px;
+          height: 20px;
+          background-image: url('../icons/svg/icon-chevron.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: left top;
+          align-self: center;
+          transform: rotate(0deg);
+          transition: transform .3s ease;
+          position: absolute;
+          right: -23px;
+          top: 14px;
         }
       }
     }
@@ -85,13 +78,18 @@
       text-align: right;
 
       @include breakpoint($bp-large) {
-        @include gutter($margin-left-half...);
         flex-grow: 1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: block;
+        display: inline-block;
       }
+    }
+
+    // Some css foo to make the focus outline work on the parent of the link element
+    &:has(.ama__sign-in-dropdown__trigger__text:focus-visible) {
+      outline: 2px solid $blue;
+      outline-offset: 3px;
     }
   }
 
@@ -101,7 +99,7 @@
     @include gutter($padding-top-half...);
     @include gutter($padding-bottom-half...);
     position: absolute;
-    top: 61px;
+    top: 56px;
     right: 0;
     box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
     background-color: $white;
@@ -116,7 +114,7 @@
     max-width: 240px;
 
     @include breakpoint($bp-small) {
-      top: 48px;
+      top: 60px;
     }
 
     li {
@@ -126,6 +124,8 @@
 
       a {
         display: block;
+        font-size: 18px;
+        line-height: 1.5;
       }
     }
 

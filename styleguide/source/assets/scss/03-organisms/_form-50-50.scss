@@ -1,0 +1,213 @@
+/**
+ * Styles the form-50-50 component.
+ * block type form-50-50 is referenced and used on article pages.
+ */
+
+.block.form-50-50 {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  @include breakpoint($bp-small) {
+    flex-direction: row;
+  }
+  @include breakpoint($bp-med) {
+    margin: 14px $gutter;
+  }
+
+  > div {
+    @include breakpoint($bp-small) {
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+  }
+
+  .text-content {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 18.5px 0;
+    @include breakpoint($bp-small) {
+      padding-right: calc($gutter / 2);
+      padding-bottom: 0;
+      font-size: 18px;
+    }
+    @include breakpoint($bp-med) {
+      padding-right: 40px;
+    }
+    .title h2 {
+      font-family: $kepler-std;
+      font-weight: 400;
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    .title {
+      margin-bottom: 14px;
+    }
+    .body {
+      p {
+        font-family: $myriad-pro;
+        font-size: 16px;
+        @include breakpoint($bp-small) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .video-embed-field-provider-youtube {
+      margin-bottom: calc($gutter * .75);
+    }
+    .ama__brightcove-gallery {
+      margin: 0;
+    }
+
+    .media {
+      position: relative;
+      margin: 0 0 36px;
+    }
+  }
+    #lead-form-container {
+      padding-bottom: $gutter;
+      padding-top: 3.5px;
+    }
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    @include breakpoint($bp-small) {
+      padding-left: calc($gutter / 2);
+      padding-bottom: 0;
+    }
+    @include breakpoint($bp-med) {
+      padding: $gutter 0 0 40px;
+    }
+    .body {
+      * {
+        font-family: $myriad-pro;
+      }
+    }
+    &.success {
+      display: flex;
+      justify-content: center;
+      padding-top: 0;
+      align-items: center;
+      .success_message {
+        width: 100%;
+      }
+    }
+
+    .ama__h1 {
+      font-weight: $font-weight-regular;
+      font-size: $gutter;
+      margin-bottom: calc($gutter / 2);
+      @include type($kepler-std, $font-weight-regular);
+    }
+
+    .salesforce-lead-form {
+      display: flex;
+      flex-wrap: wrap;
+
+      .form-item {
+        flex-grow: 1;
+        flex-basis: 100%;
+        margin-top: 0;
+        @include breakpoint($bp-small max-width) {
+          margin-bottom: calc($gutter / 2);
+          text-align: left;
+        }
+
+        label {
+          font-size: calc($gutter / 2);
+          text-transform: uppercase;
+          color: $black;
+          font-weight: normal;
+
+          &:after {
+            content: '';
+          }
+        }
+
+        input {
+          font-size: 18px;
+          line-height: 1;
+          padding: 11px 17px;
+          border: 1px solid $gray-64;
+
+          &.error {
+            background: none;
+          }
+
+          &:focus-visible {
+            border: 1px solid $tab-focus-blue;
+          }
+        }
+      }
+
+      .form-actions {
+        margin: calc($gutter / 2) 0;
+        width: 100%;
+
+        input {
+          &:focus-visible {
+            outline: 2px solid $tab-focus-blue;
+            outline-offset: 3px;
+          }
+          &.ama__button {
+            caret-color: transparent;
+            margin-bottom: 0;
+            text-align: center;
+            min-height: 44px;
+            font-family: $myriad-pro;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: $font-weight-bold;
+            line-height: 19px;
+            border-radius: 6px;
+            padding: 7px 16px;
+            width: 100%;
+            min-width: 100px;
+            @include breakpoint($bp-small) {
+              width: auto;
+            }
+            &.ama__button--primary {
+              color: $white;
+              background: #7229D1;
+              &:hover {
+                background: #44197D;
+              }
+            }
+
+            &.ama__button--secondary {
+              color: #46166B;
+              background: $white;
+              border: 1px solid #E4E3E6;
+
+              &:hover {
+                background: #F9F9F9;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .form-item--error-message {
+      margin-top: 4px;
+      margin-bottom: 0;
+      border: none;
+
+      strong {
+        color: $red;
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+
+      .success_message {
+        p {
+          padding-top: calc($gutter / 2);
+          font-size: 17px;
+          font-family: $myriad-pro;
+        }
+      }
+  }
+}

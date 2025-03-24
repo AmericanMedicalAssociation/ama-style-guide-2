@@ -359,10 +359,6 @@
               }
             });
           };
-
-          if($('.paragraph--type--form-50-50 div.success_message').length) {
-            $('.paragraph--type--form-50-50').find('.form-content').addClass('success');
-          };
         });
       })(jQuery);
     }

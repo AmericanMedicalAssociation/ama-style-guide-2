@@ -12,20 +12,21 @@
     .author {
       margin-bottom: calc($gutter * .5);
     }
-    .ama__masthead__content__link {
-      font-weight: $font-weight-bold;
-      font-size: 16px;
-      text-decoration: none;
-      color: $homepagePurple;
-      padding: calc($gutter/4);
-      margin-left: calc($gutter/4);
-      height: 44px;
-      display: flex;
-      align-items: center;
-    }
     &.title-row {
       [data-region="title"] {
         flex: 1;
+        .ama__masthead__content__link {
+          font-weight: $font-weight-bold;
+          color: $blue;
+          padding: 0;
+          margin-bottom: calc($gutter * .5);
+          display: inline-block;
+          &:focus {
+            outline: 2px solid $blue;
+            outline-offset: 5px;
+            text-decoration: none;
+          }
+        }
         .ama__h1 {
           font-size: 1.8em;
           margin-bottom: calc($gutter * .75);
@@ -134,14 +135,12 @@
       }
       .news-subscribe-wrapper {
         display: flex;
-        padding-right: calc($gutter * .5);
         flex-direction: row;
         @include breakpoint($bp-small max-width) {
           margin: calc($gutter/2) 0 $gutter 0;
         }
         span.sub-title {
           @include breakpoint($bp-small max-width) {
-            padding-left: 24px;
             line-height: calc($gutter*.75);
           }
         }
@@ -157,6 +156,18 @@
           border-bottom: none;
           padding-top: 0;
           padding-bottom: 0;
+
+          div.contextual-link-wrapper .ama__masthead__content__link {
+            font-weight: $font-weight-bold;
+            font-size: 16px;
+            text-decoration: none;
+            color: $homepagePurple;
+            padding: calc($gutter/4);
+            margin-left: calc($gutter/4);
+            height: 44px;
+            display: flex;
+            align-items: center;
+          }
         }
       }
       @include breakpoint($bp-small) {
@@ -207,9 +218,9 @@
   h2[id],
   h3[id],
   .ckeditor-accordion-container > dl dt > a > h2 {
-    scroll-margin-top: 210px;
+    scroll-margin-top: 203px;
     @include breakpoint($bp-small) {
-      scroll-margin-top: 110px;
+      scroll-margin-top: 103px;
     }
   }
   // Update margin for logged in users
@@ -217,7 +228,7 @@
     h2[id],
     h3[id],
     .ckeditor-accordion-container > dl dt > a > h2 {
-      scroll-margin-top: 180px; 
+      scroll-margin-top: 173px; 
     }
   }
 
@@ -280,19 +291,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
     color: $gray-64;
-    border-bottom: solid .5px $gray-64;
     @include breakpoint($bp-small) {
       flex-direction: row;
     }
     .article-event-image {
       flex: 1;
       @include breakpoint($bp-small) {
-        flex: .5;
+        flex: .61;
       }
       @include breakpoint($bp-med) {
-        flex: .66;
+        flex: .59;
       }
     }
     .article-event-details {
@@ -303,11 +312,12 @@
       flex: 1;
       align-self: auto;
       @include breakpoint($bp-small) {
-        padding-left: calc($gutter * 4.25);
-        flex: .5;
+        padding-left: calc($gutter/2);
+        flex: .39;
       }
       @include breakpoint($bp-med) {
-        flex: .34;
+        padding-left: 33px;
+        flex: .41;
       }
     }
     .article-event-type {
@@ -344,25 +354,29 @@
       margin-top: -4px;
     }
     .article-event-cta {
-      margin-top: 25px;
-      @include breakpoint($bp-med) {
-        margin-top: 33px;
-      }
-      .article-event-link  {
-        background-color: $purple;
-        color: $white;
-        text-decoration: none;
-        padding: 5px calc($gutter * .75);
+      display: flex;
+      flex-direction: row;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      gap: 14px;
+      .article-event-link {
+        @include ama-button ("rounded", "homepage");
+        padding: 12.5px 16px;
         text-align: center;
-        display: inline-block;
-        text-transform: capitalize;
-        min-width: 100%;
+        min-width: 156px;
         flex: 1;
-        &:hover {
-          //background-color: $hoverPurple;
-        }
         @include breakpoint($bp-small) {
-          min-width: 280px;
+          max-width: 326px;
+        }
+
+        &.secondary {
+          @include ama-button ("rounded", "homepage-secondary");
+          border-color: #E4E3E6;
+          &:hover {
+            background-color: $gray-4;
+            color: inherit;
+            border: 1px solid #E4E3E6;
+          }
         }
       }
     }

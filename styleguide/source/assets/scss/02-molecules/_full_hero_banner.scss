@@ -10,7 +10,6 @@
       width: 56%;
     }
     display: flex;
-    gap: 14px;
     flex-direction: column;
     align-items: flex-start;
     background: white;
@@ -19,12 +18,25 @@
     box-shadow: 0px 2px 4px -2px #1018280F, 0px 4px 8px -2px #1018281A;
     @include gutter-all($padding-all-full...);
 
+    h2.ama__h1 {
+      margin-bottom: 21px;
+
+      &:has(+ .ama__full_hero_banner__subtitle) {
+        margin-bottom: 14px;
+      }
+    }
+
     a.ama__button {
       @include ama-button ("rounded", "homepage");
 
       &.secondary {
         @include ama-button ("rounded", "homepage-secondary");
         border-color: #E4E3E6;
+        &:hover {
+          background-color: $gray-4;
+          color: inherit;
+          border: 1px solid #E4E3E6;
+        }
       }
     }
 
@@ -44,11 +56,18 @@
   
   }
 
+  &__subtitle {
+    @include type($kepler-std, $font-weight-light);
+    line-height: 24px;
+    color: $gray-64;
+    margin-bottom: 21px;
+  }
+
   .cta_container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 8px 24px;
+    gap: 14px;
     width: 100%;
     @include breakpoint($bp-small) {
       flex-direction: row;

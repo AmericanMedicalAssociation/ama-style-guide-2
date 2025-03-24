@@ -2,10 +2,6 @@
 .article_stub_as_inline--wrapper {
   h2.ama_article-stub-header {
     padding-bottom: 0;
-    text-transform: lowercase;
-    &:first-line {
-      text-transform: capitalize;
-    }
   }
   &.show-eyebrows {
     .article-stub-list {
@@ -50,8 +46,36 @@
         flex-direction: column;
       }
 
-      a,
-      &a {
+      div.subscription-stub {
+        .stub-text {
+          padding: 22px 14px;
+          .title {
+            a {
+              color: $black;
+              font-size: 20px;
+              line-height: 24px;
+              font-weight: $font-weight-regular;
+              font-family: $kepler-std;
+              text-decoration: none;
+            }
+          }
+        }
+        .additional-link {
+          color: $purple;
+          font-weight: $font-weight-bold;
+          font-size: 16px;
+          text-decoration: none;
+          display: flex;
+          align-items: flex-end;
+          flex-grow: 1;
+          padding: 16px;
+        }
+      }
+
+      > a,
+      &a,
+      > div.subscription-stub,
+      div.paragraph--type--series-related-article a {
         &:focus-visible {
           border-radius: 8px;
           outline: 2px solid $tab-focus-blue;
@@ -130,11 +154,14 @@
           text-decoration: underline;
         }
       }
-      a {
+      > a, > div, div.paragraph--type--series-related-article a {
         text-decoration: none;
         // flex the link to make it take up the whole card
         flex-grow: 1;
         display: flex;
+      }
+      .paragraph--type--series-related-article a {
+        text-decoration: none;
       }
 
         .stub-image {
@@ -168,6 +195,24 @@
             font-weight: $font-weight-regular;
             font-family: $kepler-std;
             margin-bottom: 7px;
+
+            // Code for subscription title.
+            a {
+              color: $black;
+              font-size: 20px;
+              line-height: 24px;
+              font-weight: $font-weight-regular;
+              font-family: $kepler-std;
+              text-decoration: none;
+            }
+          }
+
+          .description {
+            font-family: $kepler-std;
+            color: $gray-64;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 19.2px;
           }
         }
         .data {
