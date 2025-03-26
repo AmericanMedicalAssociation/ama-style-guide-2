@@ -99,6 +99,11 @@
             background-color: $hoverPurple;
             color: $white;
           }
+          &:focus-visible {
+            color: $white;
+            border-color: $purple;
+            background-color: $hoverPurple;
+          }
         }
         @include breakpoint($bp-small) {
           width: auto;
@@ -111,8 +116,9 @@
         }
 
         &:focus-visible {
-          background-color: initial;
-          border-color: initial;
+          color: $purple;
+          border: 1px solid #E4E3E6;
+          background-color: $white;
           outline: 2px solid $blue;
           outline-offset: 3px;
         }
