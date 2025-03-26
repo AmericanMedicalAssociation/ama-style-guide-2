@@ -296,7 +296,10 @@ table[id^="forum-topic"] {
 
     }
     tr {
-      border-top: 1px solid $gray-30;
+      border-top: none;
+      @include breakpoint($bp-large) {
+        border-top: 1px solid $gray-30;
+      }
       &:not(:first-child) {
         td[data-th="Topic"],
         td[data-th="Item Type by Item Type"],
@@ -354,11 +357,17 @@ table[id^="forum-topic"] {
       &.forum__topic {
         &[data-th="Sections"],
         &[data-th="Topic"] {
-          padding-top: calc($gutter*.75);
+          padding-top: 0;
+          @include breakpoint($bp-large) {
+            padding-top: calc($gutter*.75);
+          }
           &:before {
             font-weight: $font-weight-bold;
             margin-top: 1.5rem;
             line-height: 1.143;
+            @include breakpoint($bp-large) {
+              margin-top: 1.5rem;
+            }
           }
         }
       }
