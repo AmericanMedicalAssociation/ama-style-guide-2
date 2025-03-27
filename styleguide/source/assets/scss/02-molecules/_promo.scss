@@ -81,7 +81,6 @@
       padding: 0 !important;
       .ama__button {
         @extend .ama__button--homepage-secondary;
-        border: 1px solid #E4E3E6;
         border-radius: 8px;
         text-transform: none;
         padding: 12px 16px 12px 16px;
@@ -92,17 +91,19 @@
         font-weight: 700;
         max-width: 100%;
         width: 100%;
+        &:not(.primary) {
+          border: 1px solid #E4E3E6;
+        }
         &.primary {
-          background-color: $homepagePurple;
           color: $white;
+          background-color: $homepagePurple;
           &:hover {
-            background-color: $hoverPurple;
             color: $white;
+            background-color: $purple;
           }
           &:focus-visible {
             color: $white;
-            border-color: $purple;
-            background-color: $hoverPurple;
+            background-color: $homepagePurple;
           }
         }
         @include breakpoint($bp-small) {
@@ -111,13 +112,11 @@
 
         &:hover {
           color: $purple;
-          border: 1px solid #E4E3E6;
           background-color: $gray-4;
         }
 
         &:focus-visible {
           color: $purple;
-          border: 1px solid #E4E3E6;
           background-color: $white;
           outline: 2px solid $blue;
           outline-offset: 3px;
