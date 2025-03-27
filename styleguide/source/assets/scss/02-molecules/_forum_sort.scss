@@ -1,0 +1,81 @@
+.sort-options-block {
+  display: block;
+  clear: both;
+  width: 100%;
+  @include breakpoint($bp-large) {
+    display: none;
+  }
+
+  form {
+    .order-wrapper {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      margin-bottom: 14px;
+      &:after {
+        background-image: url("../icons/svg/icon-drop-arrow-down-black.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        position: absolute;
+        height: 7px;
+        width: 11px;
+        top: 14px;
+        right: 4px;
+        z-index: 1;
+      }
+
+      select {
+        width: auto;
+        position: relative;
+        padding: 2px 18px 2px 4px;
+        font-size: 18px;
+        border: 1px solid $purple;
+        z-index: 2;
+        background: transparent;
+        &[name="sort"] {
+          display: none;
+        }
+        .options-wrapper {
+          background-color: #F3F3F3;
+          option {
+            background-color: transparent;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .current-sort {
+      font-size: 20px;
+      a {
+        margin-left: 8px;
+      }
+
+      a[aria-sort="asc"],
+      a[aria-sort="desc"] {
+        position: relative;
+
+        .tablesort {
+          position: absolute;
+          right: -17px;
+          top: calc($gutter / 4);
+
+          &.tablesort--desc {
+            background-image: url("../icons/svg/twistie-down-blue.svg");
+          }
+
+          &.tablesort--asc {
+            background-image: url("../icons/svg/twistie-up-blue.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+td[data-th="Item Type"] {
+  margin-top: 1.5rem;
+  @include breakpoint($bp-large) {
+    margin-top: 0;
+  }
+}
