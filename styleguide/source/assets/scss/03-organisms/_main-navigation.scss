@@ -162,6 +162,9 @@ header {
       line-height: 1 !important;
       text-transform: none;
       min-width: 100px;
+      &:hover {
+        background-color: $purple;
+      }
 
       &.secondary {
         @include ama-button("rounded", "homepage-secondary");
@@ -223,6 +226,12 @@ header {
       outline-offset: 3px;
     }
 
+    &__menu {
+      @include breakpoint($bp-med) {
+        margin-right: -25px;
+      }
+    }
+
     @include breakpoint($bp-small min-width) {
       width: auto;
     }
@@ -231,11 +240,15 @@ header {
   &__member-benefits-link {
     display: none;
     @include breakpoint(992px) {
+      white-space: nowrap;
       display: block;
       margin-right: 28px;
       a {
         font-size: 16px;
         text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
         &:focus-visible {
           outline: 2px solid $blue;
           outline-offset: 3px;
