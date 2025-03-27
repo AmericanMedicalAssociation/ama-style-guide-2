@@ -11,7 +11,7 @@
       position: relative;
       display: inline-block;
       width: auto;
-
+      margin-bottom: 14px;
       &:after {
         background-image: url("../icons/svg/icon-drop-arrow-down-black.svg");
         background-repeat: no-repeat;
@@ -24,13 +24,13 @@
         right: 4px;
         z-index: 1;
       }
+
       select {
         width: auto;
         position: relative;
         padding: 2px 18px 2px 4px;
         font-size: 18px;
         border: 1px solid $purple;
-        margin-bottom: 16px;
         z-index: 2;
         background: transparent;
         &[name="sort"] {
@@ -47,6 +47,9 @@
     }
     .current-sort {
       font-size: 20px;
+      a {
+        margin-left: 8px;
+      }
 
       a[aria-sort="asc"],
       a[aria-sort="desc"] {
@@ -67,5 +70,12 @@
         }
       }
     }
+  }
+}
+
+td[data-th="Item Type"] {
+  margin-top: 1.5rem;
+  @include breakpoint($bp-large) {
+    margin-top: 0;
   }
 }
