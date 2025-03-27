@@ -1,7 +1,22 @@
 .search-suggestions-wrapper {
+    height: 0;
+    opacity: 0;
+    width: 0;
+    transition: width .5s ease;
+    transition: height .5s ease;
+    transition: opacity 0.2s ease;
+  @include breakpoint($bp-small) {
     display: none;
+  }
     &.show {
+      width: auto;
+      height: auto;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      @include breakpoint($bp-small) {
         display: block;
+      }
+
         border-top: 1px solid $search-suggestions-white;
         z-index: 600;
         position: absolute;
