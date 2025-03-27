@@ -1,7 +1,18 @@
 .search-suggestions-wrapper {
-    display: none;
+    height: 0;
+    opacity: 0;
+    width: 0;
+    transition: width .5s ease;
+    transition: height .5s ease;
+    transition: opacity 0.2s ease;
+    @include breakpoint($bp-small) {
+      display: none;
+    }
     &.show {
-        display: block;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        transition: opacity 0.5s ease;
         border-top: 1px solid $search-suggestions-white;
         z-index: 600;
         position: absolute;
@@ -11,6 +22,7 @@
             margin-left: 0;
             width: 88%;
             top: 43px;
+            display: block;
         }
         // This media query was very intentional so im keeping it just incase
         // @media (min-width: 900px) and (max-width: 991px) {
