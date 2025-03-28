@@ -29,8 +29,13 @@
       background: $gray-4;
       padding: 28px 21px;
       margin-bottom: 28px;
+      border-radius: 6px;
       @include breakpoint($bp-small max-width) {
         width: 100%;
+      }
+
+      a {
+        text-underline-offset: 25%;
       }
 
       &__label {
