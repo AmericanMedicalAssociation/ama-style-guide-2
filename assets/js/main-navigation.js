@@ -143,7 +143,7 @@
       });
 
       $($mobileSearchTrigger).unbind('click').click(function () {
-        $mobileSearch.slideToggle();
+        $mobileSearch.slideToggle("fast", "linear");
         $mobileSearchTrigger.toggleClass('open');
         $('#edit-search').focus();
       });
