@@ -1,40 +1,78 @@
 .layout-content {
   .container {
+    //  The padding causes display issues.
+    padding-left: 0;
+    padding-right: 0;
     .container,
     .container .container {
-      width: 100% !important;
+      width: auto !important;
+      padding: 0;
       @include breakpoint($bp-small) {
-        width: 100% !important;
+        width: auto !important;
+        padding: 0;
       }
       @include breakpoint($bp-med) {
-        width: 100% !important;
+        width: auto !important;
+        padding: 0;
       }
       @include breakpoint($bp-large) {
-        width: 100% !important;
-      }
-    }
-    > .container,
-    > .container > .container,
-    > .container > .container > .container {
-      background: red;
-      width: 100% !important;
-      @include breakpoint($bp-small) {
-        width: 100% !important;
-      }
-      @include breakpoint($bp-med) {
-        width: 100% !important;
-      }
-      @include breakpoint($bp-large) {
-        width: 100% !important;
+        width: auto !important;
+        padding: 0;
       }
     }
   }
-  &.ama__layout--two-col-right--75-25  {
+/* it's the container class, but only for the layout builder page twig. */
+.layout-builder-container {
+  width: 100%;
+  @media (min-width: 768px) {
+    .layout-builder-container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .layout-builder-container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .layout-builder-container {
+      width: 1170px;
+    }
+  }
+}
 
-  }
   &.section {
-
+    &.layout__region--main {
+      padding-bottom: 0;
+    }
   }
+
+
+
+
+  form.layout-builder-form {
+    display: flex;
+    flex-direction: column;
+    .form-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      > * {
+        margin-right: 0;
+        &:last-child {
+          margin-left: auto;
+        }
+        @include breakpoint($bp-small) {
+          margin-right: $gutter;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 
@@ -45,7 +83,22 @@
 
 
 .layout-builder__layout {
+  overflow: visible !important;
+  .ama__layout--one-column {
 
+  }
+  header {
+
+  }
+  article {
+    margin-right: 0;
+    @include breakpoint($bp-small) {
+      margin-right: 20px;
+    }
+  }
+  aside {
+    padding-left: 0 !important;
+  }
 
 }
 
@@ -56,4 +109,50 @@
 
 .layout-builder__section {
 
+}
+
+.layout-builder-block {
+
+}
+
+.layout-builder__region {
+  padding-bottom: 0 !important;
+  margin-bottom: 28px !important;
+}
+
+/* individual overrides */
+.layout-content {
+  .layout-builder__layout {
+    &.layout--one-col-class {
+      background-color: transparent !important;
+      .ama__subscribe-promo--wide {
+        margin: 0 auto 28px auto;
+        padding: 28px;
+      }
+    }
+    &.ama__layout--one-column {
+      .ama__layout--one-column__page-content {
+        margin-right : 0;
+        .ama__category-nav {
+          margin-left: 0;
+          margin-right: 28px;
+        }
+        .ama__org-nav {
+          margin-right: 0;
+        }
+      }
+    }
+    .ama__full_hero_banner {
+      margin-bottom: 0;
+    }
+    .ama__partner-promo {
+      flex-direction: column !important;
+    }
+    .description {
+      .truncated,
+      .fulltext.text-body {
+        display: none;
+      }
+    }
+  }
 }
