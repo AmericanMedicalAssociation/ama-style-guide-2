@@ -1,9 +1,59 @@
-.layout-builder__layout {
-  max-width: 1200px;
+.layout-content {
+  .container {
+    .container,
+    .container .container {
+      width: 100% !important;
+      @include breakpoint($bp-small) {
+        width: 100% !important;
+      }
+      @include breakpoint($bp-med) {
+        width: 100% !important;
+      }
+      @include breakpoint($bp-large) {
+        width: 100% !important;
+      }
+    }
+    > .container,
+    > .container > .container,
+    > .container > .container > .container {
+      background: red;
+      width: 100% !important;
+      @include breakpoint($bp-small) {
+        width: 100% !important;
+      }
+      @include breakpoint($bp-med) {
+        width: 100% !important;
+      }
+      @include breakpoint($bp-large) {
+        width: 100% !important;
+      }
+    }
+  }
   &.ama__layout--two-col-right--75-25  {
 
   }
   &.section {
 
   }
+}
+
+
+.vertical-tabs__pane {
+  min-height: 170px;
+  padding: 28px 40px;
+}
+
+
+.layout-builder__layout {
+
+
+}
+
+
+.layout-builder__add-section {
+
+}
+
+.layout-builder__section {
+
 }
