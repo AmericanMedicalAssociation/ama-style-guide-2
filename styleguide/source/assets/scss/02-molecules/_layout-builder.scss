@@ -1,6 +1,14 @@
-.layout-content {
-  width: calc(1197px + ($gutter * 3));
+.layout-builder-page {
   .container {
+    @media (min-width: calc(768px + ($gutter * 3))) {
+      width: calc(750px + ($gutter * 3));
+    }
+    @media (min-width: calc(992px + ($gutter * 3))) {
+      width: calc(970px + ($gutter * 3));
+    }
+    @media (min-width: calc(1200px + ($gutter * 3))) {
+      width: calc(1170px + ($gutter * 3));
+    }
     //  The padding causes display issues.
     padding-left: 0;
     padding-right: 0;
@@ -104,56 +112,46 @@
       }
     }
   }
-
-}
-
-
-.vertical-tabs__pane {
-  min-height: 170px;
-  padding: 28px 40px;
-}
+    .vertical-tabs__pane {
+      min-height: 170px;
+      padding: 28px 40px;
+    }
 
 
-.layout-builder__layout {
-  overflow: visible !important;
-  .ama__layout--one-column {
+  .layout-builder__layout {
+    overflow: visible !important;
+    .ama__layout--one-column {
 
-  }
-  header {
+    }
+    header {
 
-  }
-  article {
-    margin-right: 0;
-    @include breakpoint($bp-small) {
-      margin-right: 20px;
+    }
+    article {
+      margin-right: 0;
+      @include breakpoint($bp-small) {
+        margin-right: 20px;
+      }
+    }
+    aside {
+      padding-left: 0 !important;
     }
   }
-  aside {
-    padding-left: 0 !important;
+  .layout-builder__add-section {
+
+  }
+  .layout-builder__section {
+
+  }
+  .layout-builder-block {
+
   }
 
-}
+  .layout-builder__region {
+    padding-bottom: 0 !important;
+    margin-bottom: 28px !important;
+  }
 
-
-.layout-builder__add-section {
-
-}
-
-.layout-builder__section {
-
-}
-
-.layout-builder-block {
-
-}
-
-.layout-builder__region {
-  padding-bottom: 0 !important;
-  margin-bottom: 28px !important;
-}
-
-/* individual overrides */
-.layout-content {
+  /* individual overrides */
   .layout-builder__layout {
     &.layout--one-col-class {
       background-color: transparent !important;
@@ -213,9 +211,37 @@
       }
     }
   }
+  #layout-builder {
+    display: flex;
+    flex-direction: column;
+  }
 }
-
-#layout-builder {
-  display: flex;
-  flex-direction: column;
+#drupal-off-canvas {
+  .block-categories {
+    details {
+      .layout-builder-browser-block-item {
+        display: block;
+        a {
+          display: block;
+          color: #fff;
+          margin-bottom: 20px;
+          img {
+            max-width: 50%;
+            max-height: 200px;
+            margin: 0 0 20px;
+            clear: both;
+            display:block;
+          }
+        }
+        &:last-child {
+          a {
+            img {
+              margin: 0 0;
+            }
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
 }
