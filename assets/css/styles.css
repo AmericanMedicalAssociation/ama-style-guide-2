@@ -14306,9 +14306,9 @@ table a.new-replies .count-new {
   .ama__global-search {
     background-color: #ffffff;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     padding: 0 21px;
     top: 0;
     height: 44px;
@@ -27566,7 +27566,7 @@ header.sticky-nav {
   color: #9073A6;
   text-decoration: none;
 }
-.ama__main-navigation__join--buttons a.ama__button.secondary:hover {
+.ama__main-navigation__join--buttons a.ama__button.secondary:hover, .ama__main-navigation__join--buttons a.ama__button.secondary:focus-visible {
   background-color: #F5F5F5;
   color: inherit;
   border: 1px solid #E4E3E6;
