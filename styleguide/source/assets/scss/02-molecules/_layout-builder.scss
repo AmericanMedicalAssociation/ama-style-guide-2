@@ -1,10 +1,10 @@
 .layout-content {
+  width: calc(1197px + ($gutter * 3));
   .container {
     //  The padding causes display issues.
     padding-left: 0;
     padding-right: 0;
-    .container,
-    .container .container {
+    .container {
       width: auto !important;
       padding: 0;
       @include breakpoint($bp-small) {
@@ -18,6 +18,38 @@
       @include breakpoint($bp-large) {
         width: auto !important;
         padding: 0;
+      }
+      .container {
+        width: auto !important;
+        padding: 0;
+        @include breakpoint($bp-small) {
+          width: auto !important;
+          padding: 0;
+        }
+        @include breakpoint($bp-med) {
+          width: auto !important;
+          padding: 0;
+        }
+        @include breakpoint($bp-large) {
+          width: auto !important;
+          padding: 0;
+        }
+        .container {
+          width: auto !important;
+          padding: 0;
+          @include breakpoint($bp-small) {
+            width: auto !important;
+            padding: 0;
+          }
+          @include breakpoint($bp-med) {
+            width: auto !important;
+            padding: 0;
+          }
+          @include breakpoint($bp-large) {
+            width: auto !important;
+            padding: 0;
+          }
+        }
       }
     }
   }
@@ -155,4 +187,35 @@
       }
     }
   }
+  [data-drupal-messages] {
+    order: 999;
+    margin-bottom: $gutter;
+    h2 {
+      padding: 12px;
+      background: #f6aeb5;
+      border-radius: 8px;
+      color: #8b3743;
+    }
+    ul {
+      list-style-type: none;
+      background: #aef6cb;
+      color: #378b59;
+      color: dark-green;
+      padding: 16px;
+      font-style: italic;
+      border-radius: 8px;
+      li {
+        padding-bottom: 14px;
+        font-size: 18px;
+        &:last-child {
+        padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+#layout-builder {
+  display: flex;
+  flex-direction: column;
 }
