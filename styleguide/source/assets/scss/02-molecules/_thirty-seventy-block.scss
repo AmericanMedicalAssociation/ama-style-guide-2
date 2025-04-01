@@ -89,15 +89,10 @@
                     width: auto;
                 }
                 &.stack {
-                    .ama__button {
-                        margin-left: 0;
-                        margin-right: 0;
-                        margin-bottom: 0;
-                        width:100%;
-                        &.ama__button:not(.ama__button--secondary) {
-                            margin-right: 0;
-                            margin-bottom: calc($gutter/2);
-                        }
+                    gap: 14px;
+
+                    a {
+                        width: 100%;
                     }
                     @include breakpoint($bp-med) {
                         flex-direction: column;
