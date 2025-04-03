@@ -150,7 +150,7 @@ header {
   &__join--buttons {
     display: none;
 
-    @include breakpoint($bp-small min-width) {
+    @media (min-width: 768px) {
       display: flex;
       margin-right: 28px;
     }
