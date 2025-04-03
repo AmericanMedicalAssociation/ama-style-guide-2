@@ -1,6 +1,12 @@
 .search-suggestions-wrapper {
     display: none;
     &.show {
+      @media (min-width: 600px) and (max-width: 740px) {
+        display: none;
+      }
+      @media (min-width: 740px) and (max-width: 768px) {
+        overflow: hidden;
+      }
         display: block;
         border-top: 1px solid $search-suggestions-white;
         z-index: 600;
@@ -9,9 +15,12 @@
         top: 52px;
         @include breakpoint($bp-small) {
             margin-left: 0;
-            width: 88%;
+            width: 83%;
             top: 43px;
         }
+      @include breakpoint($bp-med) {
+        width: 88%;
+      }
         // This media query was very intentional so im keeping it just incase
         // @media (min-width: 900px) and (max-width: 991px) {
         //     width: 284px;
