@@ -17848,11 +17848,26 @@ a.ama__promo--border:hover {
   width: 100%;
   top: 52px;
 }
+@media (min-width: 600px) and (max-width: 740px) {
+  .search-suggestions-wrapper.show {
+    display: none;
+  }
+}
+@media (min-width: 740px) and (max-width: 768px) {
+  .search-suggestions-wrapper.show {
+    overflow: hidden;
+  }
+}
 @media (min-width: 37.5em) {
   .search-suggestions-wrapper.show {
     margin-left: 0;
-    width: 88%;
+    width: 83%;
     top: 43px;
+  }
+}
+@media (min-width: 56.25em) {
+  .search-suggestions-wrapper.show {
+    width: 88%;
   }
 }
 .search-suggestions-wrapper .search-suggestions-block {
