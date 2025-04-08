@@ -5,7 +5,6 @@
     <i class="drfinder__sign-in-dropdown__caret"></i>
   </div>
   <div class="{{ signInDropdown.menuClass }}" >
-    <div class="drfinder__sign-in-dropdown__menu__header">{{ signInDropdown.header }}</div>
     {% if signInDropdown.account is null %}
       {% for menuGroups in signInDropdown.menuGroups %}
         <ul class="drfinder__sign-in-dropdown__menu__group">

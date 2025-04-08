@@ -31,18 +31,24 @@
     }
 
     &__caret {
-        margin-left: 21px;
-        margin-top: 2px;
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 10px solid #ffffff;
+        display: none;
+        @include breakpoint($bp-small) {
+            display: block;
+            margin-left: 21px;
+            margin-top: 2px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid #ffffff;
+        }
       }
 
     &__trigger {
       display: flex;
+      width: 70px;
       align-items: center;
+      justify-content: center;
       height: 24px;
       cursor: pointer;
       margin: 0 auto;
@@ -68,27 +74,7 @@
             @include gutter($padding-left-quarter...);
           }
         }
-  
-        &__arrow {
-          display: none;
-          padding-left: 4px;
-          
-          @include breakpoint($bp-large) {
-            display: block;
-            width: 20px;
-            height: 20px;
-            background-image: url('../icons/svg/icon-chevron.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: left top;
-            align-self: center;
-            transform: rotate(0deg);
-            transition: transform .3s ease;
-            position: absolute;
-            right: -23px;
-            top: 14px;
-          }
-        }
+
       }
   
       &__text {
@@ -109,6 +95,10 @@
       &:has(.drfinder_sign-in-dropdown__trigger__text:focus-visible) {
         outline: 2px solid $blue;
         outline-offset: 3px;
+      }
+
+      @include breakpoint($bp-small) {
+        width: auto;
       }
     }
   
@@ -153,33 +143,17 @@
         display: block;
       }
      
-  
-      &__header {
-        @include gutter($padding-bottom-quarter...);
-        @include font-size($h5-font-sizes--homepage);
-        @include type($kepler-std, $font-weight-regular);
-        line-height: 24px;
-        color: $black;
-      }
-  
       &__group {
         @include gutter($padding-top-quarter...);
         @include gutter($padding-bottom-quarter...);
-      }
-  
-      &__button {
-        &--sign-in {
-          text-transform: none;
-          border-radius: 6px;
-          height: 44px;
-          max-height: 44px;
-          @include gutter($padding-top-quarter...);
-          @include gutter($padding-bottom-quarter...);
+        padding-left: calc($gutter / 2);
+        padding-right: calc($gutter / 2);
+        &:nth-child(1) {
+          border-top: 1px solid $gray-7;
+          border-bottom: 1px solid $gray-7;
         }
       }
-      &__create-account, &__become-member {
-        text-align: center
-      }
+
       &__link {
         &__user {
           @include gutter($padding-bottom-quarter...);
@@ -188,26 +162,5 @@
       }      
     }
   }
-  
-  
-  // Here we will build new siogn-in menu styling that isn't dumb as hell.
-  .authenticated {
-    &.ama__sign-in-dropdown__menu {
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
-      &__header {
-        color: $black;
-      }
-      .ama__sign-in-dropdown__menu__group {
-        padding-left: calc($gutter / 2);
-        padding-right: calc($gutter / 2);
-        &:nth-child(2) {
-          border-top: 1px solid $gray-7;
-          border-bottom: 1px solid $gray-7;
-        }
-      }
-    }
-  }
+
 
