@@ -57,11 +57,11 @@
         }
       }
     }
-    h2 {
+    div {
       a {
+        @include type($kepler-std, $font-weight-regular);
         line-height: 1;
         font-size: 14px;
-        font-weight: $font-weight-regular;
         @include breakpoint($bp-small) {
           font-size: 18px;
         }
@@ -69,18 +69,17 @@
     }
 
     a,
-    h2 {
+    div {
       color: $black;
       text-decoration: none;
       display: flex;
       margin-bottom: 0;
-      &:hover h2,
       &:hover {
         text-decoration: none;
       }
     }
 
-    h2 {
+    div {
       line-height: 26px;
     }
   }
