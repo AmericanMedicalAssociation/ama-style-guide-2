@@ -1,0 +1,166 @@
+.drfinder__sign-in-dropdown {
+    display: flex;
+    position: relative;
+    background-color: $purple;
+    align-items: center;
+    border-left: 1px solid #E4E3E6;
+    margin-left: auto;
+    width: auto;
+    height: 60px;
+    &:hover {
+      cursor: default;
+    }
+    a {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    @include breakpoint($bp-small) {
+      display: flex;
+      height: 44px;
+      border-left: 0;
+    }
+  
+    &__user-icon {
+        background-size: 24px 25px;
+        min-height: 24px;
+        min-width: 25px;
+        max-height: 24px;
+        max-width: 25px;
+    }
+
+    &__caret {
+        display: none;
+        @include breakpoint($bp-small) {
+            display: block;
+            margin-left: 21px;
+            margin-top: 2px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid #ffffff;
+        }
+      }
+
+    &__trigger {
+      display: flex;
+      width: 70px;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      cursor: pointer;
+      margin: 0 auto;
+      
+      &.open &__icon {
+        &__arrow {
+          transform: rotate(180deg);
+          transition: transform .3s ease;
+        }
+      }
+  
+      &__icon {
+        display: inline-block;
+  
+        &__user {
+          background-size: 24px 25px;
+          min-height: 24px;
+          min-width: 24px;
+          max-height: 24px;
+          max-width: 25px;
+  
+          @include breakpoint($bp-small) {
+            @include gutter($padding-left-quarter...);
+          }
+        }
+
+      }
+  
+      &__text {
+        display: none;
+        text-align: right;
+  
+        @include breakpoint($bp-large) {
+          flex-grow: 1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: inline-block;
+          margin-left: 14px;
+        }
+      }
+  
+      // Some css foo to make the focus outline work on the parent of the link element
+      &:has(.drfinder_sign-in-dropdown__trigger__text:focus-visible) {
+        outline: 2px solid $blue;
+        outline-offset: 3px;
+      }
+
+      @include breakpoint($bp-small) {
+        width: auto;
+      }
+    }
+  
+    &__menu {
+      @include gutter($padding-left-half...);
+      @include gutter($padding-right-half...);
+      @include gutter($padding-top-half...);
+      @include gutter($padding-bottom-half...);
+      position: absolute;
+      top: 61px;
+      right: 0;
+      box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
+      background-color: $white;
+      border-radius: 0 0 8px 8px;
+      border: 1px solid $gray-7;
+      border-top: 0;
+      color: $black;
+      text-align: left;
+      display: none;
+      flex-direction: column;
+      min-width: 210px;
+      max-width: 240px;
+  
+      @include breakpoint($bp-small) {
+        top: 54px;
+      }
+  
+      li {
+        list-style: none;
+        @include gutter($padding-top-quarter...);
+        @include gutter($padding-bottom-quarter...);
+        text-align: right;
+  
+        a {
+          display: block;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+      }
+  
+      &--open {
+        display: block;
+      }
+     
+      &__group {
+        @include gutter($padding-top-quarter...);
+        @include gutter($padding-bottom-quarter...);
+        padding-left: calc($gutter / 2);
+        padding-right: calc($gutter / 2);
+        &:nth-child(1) {
+          border-top: 1px solid $gray-7;
+          border-bottom: 1px solid $gray-7;
+        }
+      }
+
+      &__link {
+        &__user {
+          @include gutter($padding-bottom-quarter...);
+        }
+        text-align: left;
+      }      
+    }
+  }
+
+

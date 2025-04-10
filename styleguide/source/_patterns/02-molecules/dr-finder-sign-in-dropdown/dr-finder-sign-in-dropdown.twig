@@ -1,0 +1,23 @@
+<div id="drfinder__sign-in-dropdown" class="drfinder__sign-in-dropdown">
+  <div class="drfinder__sign-in-dropdown__trigger">
+    <i class="drfinder__sign-in-dropdown__trigger__icon drfinder__sign-in-dropdown__trigger__icon__user icon--usermenu-outline"></i>
+    <span class="drfinder__sign-in-dropdown__trigger__text">{{ signInDropdown.text }}</span>
+    <i class="drfinder__sign-in-dropdown__caret"></i>
+  </div>
+  <div class="{{ signInDropdown.menuClass }}" >
+    {% if signInDropdown.account is null %}
+      {% for menuGroups in signInDropdown.menuGroups %}
+        <ul class="drfinder__sign-in-dropdown__menu__group">
+          {% for item in menuGroups.group %}
+            {% set link = item.link %}
+            <li>
+              {% include "@atoms/link/link.twig" %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    {% else %}
+      {{ signInDropdown.account }}
+    {% endif %}
+  </div>
+</div>
