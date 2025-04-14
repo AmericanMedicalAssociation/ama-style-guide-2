@@ -145,48 +145,6 @@
       .form-actions {
         margin: calc($gutter / 2) 0;
         width: 100%;
-
-        input {
-          &:focus-visible {
-            outline: 2px solid $tab-focus-blue;
-            outline-offset: 3px;
-          }
-          &.ama__button {
-            caret-color: transparent;
-            margin-bottom: 0;
-            text-align: center;
-            min-height: 44px;
-            font-family: $myriad-pro;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: $font-weight-bold;
-            line-height: 19px;
-            border-radius: 6px;
-            padding: 7px 16px;
-            width: 100%;
-            min-width: 100px;
-            @include breakpoint($bp-small) {
-              width: auto;
-            }
-            &.ama__button--primary {
-              color: $white;
-              background: #7229D1;
-              &:hover {
-                background: #44197D;
-              }
-            }
-
-            &.ama__button--secondary {
-              color: #46166B;
-              background: $white;
-              border: 1px solid #E4E3E6;
-
-              &:hover {
-                background: #F9F9F9;
-              }
-            }
-          }
-        }
       }
     }
 
