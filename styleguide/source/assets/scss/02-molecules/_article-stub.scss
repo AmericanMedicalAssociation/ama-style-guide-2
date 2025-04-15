@@ -215,57 +215,67 @@
             line-height: 19.2px;
           }
         }
-      .data {
-        padding: 0 14px 22px;
-        display: flex;
-        margin-top: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        font-size: 16px;
-        line-height: 19.2px;
-        font-family: $kepler-std;
-        font-weight: $font-weight-light;
-        color: $gray-64;
-        .updated {
+        .data {
+          padding: 0 14px 22px;
+          display: flex;
+          margin-top: auto;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-start;
           font-size: 16px;
           line-height: 19.2px;
           font-family: $kepler-std;
           font-weight: $font-weight-light;
           color: $gray-64;
-          flex-basis: 100%;
-        }
-        .date {
-          margin-right: 7px;
-        }
-        .pipe {
-          margin-right: 7px;
-          color: #e4e3e6;
-        }
-        .read-time {
-          margin-right: 7px;
-          text-transform: lowercase;
-          &:first-line {
-            text-transform: capitalize;
+          .updated {
+            font-size: 16px;
+            line-height: 19.2px;
+            font-family: $kepler-std;
+            font-weight: $font-weight-light;
+            color: $gray-64;
+            flex-basis: 100%;
+          }
+          .date {
+            margin-right: 7px;
+          }
+          .pipe {
+            margin-right: 7px;
+            color: #e4e3e6;
+          }
+          .read-time {
+            margin-right: 7px;
+            text-transform: lowercase;
+            &:first-line {
+              text-transform: capitalize;
+            }
+          }
+          .video {
+            content: "";
+            height: 19px;
+            width: 19px;
+            background: url("../icons/svg/icon-play-2.svg") no-repeat 0 0;
+            background-size: contain;
+            margin-right: 7px;
+          }
+          .podcast {
+            content: "";
+            height: 19px;
+            width: 19px;
+            background: url("../icons/svg/icon-headphones.svg") no-repeat 0 0;
+            background-size: contain;
+            margin-right: 7px;
           }
         }
-        .video {
-          content: "";
-          height: 19px;
-          width: 19px;
-          background: url("../icons/svg/icon-play-2.svg") no-repeat 0 0;
-          background-size: contain;
-          margin-right: 7px;
-        }
-        .podcast {
-          content: "";
-          height: 19px;
-          width: 19px;
-          background: url("../icons/svg/icon-headphones.svg") no-repeat 0 0;
-          background-size: contain;
-          margin-right: 7px;
-        }
-      }
+
+        // Hide any inherit styles from article stub blank spaces
+        &:has(.paragraph--type--blank-space) {
+          background: none;
+          border: none;
+          box-shadow: none;
+          @include breakpoint($bp-med max-width) {
+            display: none;
+          }
+        }        
       }
     }
   }
