@@ -25,32 +25,14 @@
         margin-bottom: 14px;
       }
     }
-
-    a.ama__button {
-      @include ama-button ("rounded", "homepage");
-
-      &.secondary {
-        @include ama-button ("rounded", "homepage-secondary");
-        border-color: #E4E3E6;
-        &:hover {
-          background-color: $gray-4;
-          color: inherit;
-          border: 1px solid #E4E3E6;
-        }
-      }
-    }
-
-    a {
+    h2 a {
       font-size: inherit;
+    }
+    a {
       text-decoration: none;
 
       .ama__h1 {
         margin-bottom: 7px;
-      }
-
-      &:focus-visible {
-        outline: 2px solid $pg-lt-blue;
-        outline-offset: 3px;
       }
     }
   
