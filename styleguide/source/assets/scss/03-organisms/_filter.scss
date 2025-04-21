@@ -3,7 +3,8 @@
   @include breakpoint($bp-med) {
     display: block;
   }
-  .ama__applied-filters__tags {
+  .ama__applied-filters__tags,
+  .ama__expand-list {
     display: none;
   }
 
@@ -13,11 +14,13 @@
   }
 
   @include breakpoint($bp-med){
-    .ama__applied-filters__tags {
+    .ama__applied-filters__tags,
+    .ama__expand-list {
       display: block;
     }
 
-    .ama__search-header {
+    .ama__search-header,
+    .ama__search-header__results {
       display: none;
     }
   }
@@ -26,6 +29,15 @@
     display: none;
   }
 
+  &__collapse-panels {
+    @include gutter($margin-top-full...);
+    @include gutter($margin-bottom-full...);
+    text-align: center;
+
+    @include breakpoint($bp-large){
+      display: none;
+    }
+  }
   .ama__content-facets {
     .ama__content-facets__header {
       padding-top: calc($gutter/2);
@@ -42,6 +54,15 @@
       line-height: 26px;
       flex: 1;
       margin-bottom: 0;
+
+      .ama__expand-list__header__text {
+        font-size: 22px;
+        line-height: 26px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        margin-bottom: 0;
+      }
     }
     .facet-item {
       list-style-type: none;
