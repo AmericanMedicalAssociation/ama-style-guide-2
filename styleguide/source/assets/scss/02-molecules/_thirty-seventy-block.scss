@@ -59,27 +59,17 @@
                 line-height: 25px;
             }
         }
+
+        [class*=button-main-] {
+            min-width: 100%;
+            width: 100%;
+            @include breakpoint($bp-med) {
+                min-width: 100px;
+                width: auto;
+            }
+        }
         .thirty-seventy-block__buttons {
             width:100%;
-            //Fix for overriding jquery widget
-            .ama__button {
-                padding: 4.5px 12px;
-                color: $white;
-                font-weight: $font-weight-regular;
-                width: 100%;
-                font-size: 16px;
-                line-height: 16px;
-                @include breakpoint($bp-med) {
-                    width: auto;
-                }
-                &--secondary {
-                    color: $purple;
-
-                    &:hover {
-                        color: $white;
-                    }
-                }
-            }
             &.double-cta {
                 flex-direction: column;
                 display: flex;
