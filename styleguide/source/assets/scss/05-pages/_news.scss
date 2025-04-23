@@ -367,24 +367,11 @@
       margin-top: 28px;
       flex-wrap: wrap;
       gap: 14px;
-      .article-event-link {
-        @include ama-button ("rounded", "homepage");
-        padding: 12.5px 16px;
-        text-align: center;
+      [class*=button-main-] {
         min-width: 156px;
         flex: 1;
         @include breakpoint($bp-small) {
           max-width: 326px;
-        }
-
-        &.secondary {
-          @include ama-button ("rounded", "homepage-secondary");
-          border-color: #E4E3E6;
-          &:hover {
-            background-color: $gray-4;
-            color: inherit;
-            border: 1px solid #E4E3E6;
-          }
         }
       }
     }
