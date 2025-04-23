@@ -76,54 +76,6 @@
         justify-content: center;
       }
     }
-    .cta {
-      width: 100%;
-      padding: 0 !important;
-      .ama__button {
-        @extend .ama__button--homepage-secondary;
-        border: 1px solid #E4E3E6;
-        border-radius: 8px;
-        text-transform: none;
-        padding: 12px 16px 12px 16px;
-        min-height: 44px;
-        min-width: 100px;
-        font-size: 16px;
-        line-height: normal;
-        font-weight: 700;
-        max-width: 100%;
-        width: 100%;
-        &.primary {
-          background-color: $homepagePurple;
-          color: $white;
-          &:hover {
-            background-color: $hoverPurple;
-            color: $white;
-          }
-          &:focus-visible {
-            color: $white;
-            border-color: $purple;
-            background-color: $hoverPurple;
-          }
-        }
-        @include breakpoint($bp-small) {
-          width: auto;
-        }
-
-        &:hover {
-          color: $purple;
-          border: 1px solid #E4E3E6;
-          background-color: $gray-4;
-        }
-
-        &:focus-visible {
-          color: $purple;
-          border: 1px solid #E4E3E6;
-          background-color: $white;
-          outline: 2px solid $blue;
-          outline-offset: 3px;
-        }
-      }
-    }
   }
 }
 
