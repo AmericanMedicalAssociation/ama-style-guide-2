@@ -145,6 +145,12 @@
       .form-actions {
         margin: calc($gutter / 2) 0;
         width: 100%;
+        [class*=button-main-] {
+          width: 100%;
+          @include breakpoint($bp-small) {
+            width: auto;
+          }
+        }
       }
     }
 

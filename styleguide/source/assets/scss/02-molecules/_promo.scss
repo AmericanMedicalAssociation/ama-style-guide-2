@@ -58,11 +58,13 @@
   }
   .link {
     flex: 1;
-    display: flex;
     margin-left: 0;
     align-items: flex-start;
     justify-content: flex-start;
     max-width: 100%;
+    @include breakpoint($bp-small) {
+      display: flex;
+    }
     @include breakpoint($bp-large) {
       flex: 0 1 auto;
       max-width: 30%;
@@ -75,6 +77,14 @@
         align-items: center;
         justify-content: center;
       }
+    }
+    .cta {
+      [class*=button-main-] {
+        width: 100%;
+        @include breakpoint($bp-small) {
+          width: auto;
+        }      
+      }       
     }
   }
 }
