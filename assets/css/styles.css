@@ -17075,9 +17075,6 @@ ul.ama__podcast-player__links li a:hover::after {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-left: 0;
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -17086,6 +17083,13 @@ ul.ama__podcast-player__links li a:hover::after {
   -ms-flex-pack: start;
   justify-content: flex-start;
   max-width: 100%;
+}
+@media (min-width: 37.5em) {
+  .ama__promo--inline .link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 @media (min-width: 75em) {
   .ama__promo--inline .link {
@@ -17112,6 +17116,14 @@ ul.ama__podcast-player__links li a:hover::after {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+}
+.ama__promo--inline .link .cta [class*=button-main-] {
+  width: 100%;
+}
+@media (min-width: 37.5em) {
+  .ama__promo--inline .link .cta [class*=button-main-] {
+    width: auto;
   }
 }
 
@@ -25599,6 +25611,9 @@ section.ama__page--event__speakers {
     max-width: 65%;
   }
 }
+.ama__footer.drfinder__footer p a, .ama__footer.drfinder__footer .ama__jama .ama__image__text .ama__image__text__subtitle a, .ama__jama .ama__image__text .ama__footer.drfinder__footer .ama__image__text__subtitle a, .ama__footer.drfinder__footer .ama__resource-link--inline__text a {
+  font-weight: 600;
+}
 
 /**
  * Styles the form-50-50 component.
@@ -25782,6 +25797,14 @@ section.ama__page--event__speakers {
 .block.form-50-50 .form-content .salesforce-lead-form .form-actions {
   margin: 14px 0;
   width: 100%;
+}
+.block.form-50-50 .form-content .salesforce-lead-form .form-actions [class*=button-main-] {
+  width: 100%;
+}
+@media (min-width: 37.5em) {
+  .block.form-50-50 .form-content .salesforce-lead-form .form-actions [class*=button-main-] {
+    width: auto;
+  }
 }
 .block.form-50-50 .form-content .form-item--error-message {
   margin-top: 4px;
@@ -37426,138 +37449,16 @@ div[role=alert] {
   flex-wrap: wrap;
   gap: 14px;
 }
-.ama__news-article .event-header .article-event-cta .article-event-link {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 10.5px;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 1px solid #46166B;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  background-color: #7229D1;
-  border-color: transparent;
-  color: #ffffff;
-  text-transform: uppercase;
-  border-radius: 6px;
-  text-transform: none;
-  font-size: 16px !important;
-  font-weight: 700;
-  padding: 12.5px 16px;
-  text-align: center;
+.ama__news-article .event-header .article-event-cta [class*=button-main-] {
   min-width: 156px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-@media screen and (min-width: 37.5em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 56.25em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-}
-@media screen and (min-width: 75em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link {
-    font-size: 18px;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link {
-    padding: 14px;
-  }
-}
-.ama__news-article .event-header .article-event-cta .article-event-link:hover, .ama__news-article .event-header .article-event-cta .article-event-link:focus-visible {
-  border-color: #46166B;
-  background-color: #9073A6;
-  color: #ffffff;
-}
-.ama__news-article .event-header .article-event-cta .article-event-link:hover {
-  background-color: #9073A6;
-  border-color: transparent;
-  color: #ffffff;
-  text-decoration: none;
-}
 @media (min-width: 37.5em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link {
+  .ama__news-article .event-header .article-event-cta [class*=button-main-] {
     max-width: 326px;
   }
-}
-.ama__news-article .event-header .article-event-cta .article-event-link.secondary {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 10.5px;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 1px solid #46166B;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  background-color: #ffffff;
-  border-color: transparent;
-  color: #46166B;
-  text-transform: uppercase;
-  border-radius: 6px;
-  text-transform: none;
-  font-size: 16px !important;
-  font-weight: 700;
-  border-color: #E4E3E6;
-}
-@media screen and (min-width: 37.5em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link.secondary {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 56.25em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link.secondary {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-}
-@media screen and (min-width: 75em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link.secondary {
-    font-size: 18px;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__news-article .event-header .article-event-cta .article-event-link.secondary {
-    padding: 14px;
-  }
-}
-.ama__news-article .event-header .article-event-cta .article-event-link.secondary:hover, .ama__news-article .event-header .article-event-cta .article-event-link.secondary:focus-visible {
-  border-color: #46166B;
-  background-color: #9073A6;
-  color: #ffffff;
-}
-.ama__news-article .event-header .article-event-cta .article-event-link.secondary:hover {
-  background-color: #ffffff;
-  border-color: transparent;
-  color: #9073A6;
-  text-decoration: none;
-}
-.ama__news-article .event-header .article-event-cta .article-event-link.secondary:hover {
-  background-color: #F5F5F5;
-  color: inherit;
-  border: 1px solid #E4E3E6;
 }
 .ama__news-article .event-header .icon {
   padding-left: 33px;
