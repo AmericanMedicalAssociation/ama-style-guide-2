@@ -29,7 +29,8 @@
       content: " ";
     }
 
-    h2::before {
+    h2::before,
+    h3::before {
       content: counter(ama-listicle);
       position: relative;
       color: $black;
@@ -39,17 +40,6 @@
       font-size: 22px;
       margin-right: 12px;
     }
-
-    h3::before {
-          content: counter(ama-listicle);
-          position: relative;
-          color: $black;
-          top: 0;
-          text-align: center;
-          @include type($myriad-pro, $font-weight-semibold);
-          font-size: 22px;
-          margin-right: 12px;
-        }
 
     &-sub {
       list-style: none;
