@@ -4846,7 +4846,8 @@ a {
 .listicle__item::before {
   content: " ";
 }
-.listicle__item h2::before {
+.listicle__item h2::before,
+.listicle__item h3::before {
   content: counter(ama-listicle);
   position: relative;
   color: #000000;
@@ -19073,7 +19074,8 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   background: #46166B;
 }
 .ama__subscribe-promo__subject-title {
-  padding-bottom: 14px;
+  display: block;
+  margin-bottom: 14px;
 }
 .ama__subscribe-promo__heading {
   color: #ffffff;
