@@ -4,7 +4,7 @@
   position: relative;
   margin-bottom: calc($gutter / 2);
   @include breakpoint($bp-small) {
-    margin-bottom: $gutter;
+    margin-bottom: 42px;
   }
   .article-header-row {
     display: flex;
@@ -29,7 +29,7 @@
         }
         .ama__h1 {
           font-size: 1.8em;
-          margin-bottom: calc($gutter * .75);
+          margin-bottom: calc($gutter * .25);
           @include breakpoint($bp-med) {
             font-size: 2.222em;
           }
@@ -39,6 +39,7 @@
     &.subtitle-row {
       [data-region="subtitle"] {
         flex: 1;
+        padding-top: calc($gutter * .5);
         padding-bottom: calc($gutter * .75);
         p.ama__subtitle {
           font-size: calc($gutter/2);
@@ -272,7 +273,6 @@
 
   //video component styling
   .embedded-entity.media {
-    padding-top: calc($gutter/2);
 
     .media-caption {
       word-wrap: break-word;
