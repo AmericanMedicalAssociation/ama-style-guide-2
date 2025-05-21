@@ -10,6 +10,7 @@
     font-size: 18px;
     display: flex;
     flex-direction: column;
+    color: black;
     @include breakpoint($bp-small) {
       width: 50%;
     }
@@ -37,6 +38,9 @@
     }
     ul {
       text-align: left;
+      li {
+        line-height: 24px;
+      }
     }
     p:has(a.ama__button) {
       min-width: 50%;
@@ -54,8 +58,9 @@
     }
     a {
       &:not(.ama__button) {
-        color: $gating-block-link;
-        text-decoration: none;
+        font-weight: 300;
+        text-underline-offset: 30%;
+        text-decoration: underline;
         &:hover {
           text-decoration: underline;
           background: transparent;
@@ -67,6 +72,14 @@
     }
     p {
       margin-bottom: calc($gutter);
+    }
+    > p {
+      font-size: 16px;
+      line-height: 20px;
+      a {
+        font-size: inherit;
+        line-height: inherit;
+      }
     }
   }
 }
