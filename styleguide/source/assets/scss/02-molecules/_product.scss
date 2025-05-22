@@ -1,13 +1,11 @@
 .ama__product {
   @include gutter($margin-top-full...);
-  @include gutter-all($padding-all-half...);
-  background: $gray-7;
-  border: 1px solid $gray-50;
+  @include gutter-all($padding-all-full...);
+  background: $white;
+  width: 100%;
+  border: 1px solid $gray-20;
+  border-radius: 8px;
   overflow: hidden;
-
-  &__link {
-    float: right;
-  }
 
   &__text {
     @extend .display-list;
@@ -34,10 +32,6 @@
     width: 24%;
     display: flex;
     align-items: flex-start;
-
-    &__link {
-      float: none;
-    }
 
     &:nth-of-type(3n+1){
       width: 49%;
@@ -71,29 +65,22 @@
   }
 
   .title-bar {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    @include breakpoint($bp-small) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    h2 {
+      flex: 1;
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
   }
 
   &__view-all-link {
-    &.mobile {
-      display: block;
-      @include breakpoint($bp-small) {
-        display: none;
-      }
-    }
-    &.desktop {
-      display: none;
-      @include breakpoint($bp-small) {
-        margin: 0;
-        display: block;
-      }
-    }
-    @include font-size($small-font-sizes);
+    margin: 0;
+    display: block;
     @include gutter($margin-top-half...);
-    margin-bottom: $gutter-mobile;
-    float: right;
 
     @include breakpoint($bp-med) {
       font-size: .778em;
