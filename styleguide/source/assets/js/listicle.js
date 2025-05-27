@@ -32,6 +32,7 @@
           if (imageWidth >= width*.7) {
             $(this).addClass('no-margin')
             $(this).closest ('figure').addClass('no-margin')
+          $(this).closest ('figure').addClass('no-margin')
           }
         })
       }
