@@ -111,9 +111,33 @@
       // Closes menu on doc load
       $('#global-menu').prop('checked', false);
 
-      $('.ama__global-menu').click(function (e) {
+      function handleGlobalMenuActivate(e) {
+        // For keydown, only act on Enter or Space
+        if (e.type === 'keydown') {
+          if (!(e.key === 'Enter' || e.key === ' ' || e.keyCode === 13 || e.keyCode === 32)) {
+            return;
+          }
+          e.preventDefault();
+          var $checkbox = $('#global-menu');
+          $checkbox.prop('checked', !$checkbox.prop('checked'));
+        }
+        // For click, just toggle if not already handled
+        if (e.type === 'click') {
+          var $checkbox = $('#global-menu');
+          $checkbox.prop('checked', !$checkbox.prop('checked'));
+        }
         hideShow();
         e.stopPropagation();
+      }
+
+      $('.ama__global-menu').on('click keydown', handleGlobalMenuActivate);
+
+      $('.ama_category_navigation_menu__group > .ama_category_navigation_menu__section a').on('keydown', function(e) {
+        // Check if Escape is pressed and focus is on the ul itself
+        if ((e.key === 'Escape' || e.keyCode === 27) && document.activeElement === this) {
+          $('#global-menu').prop('checked', false);
+          hideShow();
+        }
       });
 
       $(document).ready(function () {
