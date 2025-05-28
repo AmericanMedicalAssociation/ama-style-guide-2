@@ -140,6 +140,16 @@
         }
       });
 
+      // When the element or any child loses focus
+      $categoryNavigationMenuGroup.on('focusout', function(e) {
+        // relatedTarget is the element gaining focus
+        // If it's not a descendant of this group, close the menu
+        if (!this.contains(e.relatedTarget)) {
+          $('#global-menu').prop('checked', false);
+          hideShow();
+        }
+      });
+
       $(document).ready(function () {
         // Clear search input on main nav on search page
         if(window.location.href.includes("/search")) {
