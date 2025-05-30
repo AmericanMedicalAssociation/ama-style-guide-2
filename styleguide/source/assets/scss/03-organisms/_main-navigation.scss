@@ -165,27 +165,11 @@ header {
       margin-right: 28px;
     }
 
-    a.ama__button {
-      @include ama-button("rounded", "homepage");
+    a.button-main-primary {
       @include gutter($margin-right-half...);
-      padding: 13px !important;
-      line-height: 1 !important;
-      text-transform: none;
-      min-width: 100px;
-      &:hover {
-        background-color: $purple;
-      }
 
-      &.secondary {
-        @include ama-button("rounded", "homepage-secondary");
-        text-transform: none;
+      &.button-main-secondary {
         margin-right: 0;
-        border-color: $divider-line-gray;
-        &:hover, &:focus-visible {
-          background-color: $gray-4;
-          color: inherit;
-          border: 1px solid $divider-line-gray;
-        }
       }
     }
 
