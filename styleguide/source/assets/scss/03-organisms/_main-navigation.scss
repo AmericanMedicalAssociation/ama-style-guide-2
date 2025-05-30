@@ -85,6 +85,9 @@ header {
     @include breakpoint($bp-small) {
       margin-right: 28px;
     }
+    &:focus-visible {
+      outline: 2px solid $blue;
+    }
   }
 
   .ama_category_navigation_wrapper {
