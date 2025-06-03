@@ -132,19 +132,9 @@
 
       $('.ama__global-menu').on('click keydown', handleGlobalMenuActivate);
 
-      $('.ama_category_navigation_menu__group > .ama_category_navigation_menu__section a').on('keydown', function(e) {
+      $('.ama_category_navigation_menu__group > .ama_category_navigation_menu__section > a').on('keydown', function(e) {
         // Check if Escape is pressed and focus is on the ul itself
         if ((e.key === 'Escape' || e.keyCode === 27) && document.activeElement === this) {
-          $('#global-menu').prop('checked', false);
-          hideShow();
-        }
-      });
-
-      // When the element or any child loses focus
-      $categoryNavigationMenuGroup.on('focusout', function(e) {
-        // relatedTarget is the element gaining focus
-        // If it's not a descendant of this group, close the menu
-        if (!this.contains(e.relatedTarget)) {
           $('#global-menu').prop('checked', false);
           hideShow();
         }
