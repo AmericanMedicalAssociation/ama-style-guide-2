@@ -35,11 +35,14 @@
           }
         }
       }
+
+      &+ .date-row.author-row {
+        margin-top: calc($gutter * .5);
+      }
     }
     &.subtitle-row {
       [data-region="subtitle"] {
         flex: 1;
-        padding-top: calc($gutter * .5);
         padding-bottom: calc($gutter * .75);
         p.ama__subtitle {
           font-size: calc($gutter/2);
