@@ -57,7 +57,8 @@
       margin-bottom: calc($gutter * .25);
     }
     a {
-      &:not(.ama__button) {
+      &:not(.ama__button),
+      &:not(.button-main-primary) {
         font-weight: 300;
         text-underline-offset: 30%;
         text-decoration: underline;
@@ -65,6 +66,9 @@
           text-decoration: underline;
           background: transparent;
         }
+      }
+      &.ama__button {
+        @include ama-button("rounded", "homepage");
       }
     }
     ul {
@@ -77,8 +81,11 @@
       font-size: 16px;
       line-height: 20px;
       a {
+      &:not(.ama__button),
+      &:not(.button-main-primary) {
         font-size: inherit;
         line-height: inherit;
+      }
       }
     }
   }
