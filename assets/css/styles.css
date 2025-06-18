@@ -18912,7 +18912,7 @@ footer .ama__social-share a.social--twitter-white:hover {
   padding-bottom: 0;
   display: inline-block;
 }
-.ama__subcategory-page-article-stub__date-time span {
+.ama__subcategory-page-article-stub__date-time span:not(.date-display-range) {
   font-size: 14px;
   padding-left: 1px;
   padding-right: 3px;
@@ -24265,6 +24265,11 @@ a:focus-visible.ama__hub-card {
 .ama_category_navigation_menu__articles .ama__article-stub .ama__article-stub__copy:hover {
   background-color: transparent;
 }
+.ama_category_navigation_menu__articles .ama__article-stub a:focus-visible h2,
+.ama_category_navigation_menu__articles .ama__article-stub .ama__article-stub__title:focus-visible h2,
+.ama_category_navigation_menu__articles .ama__article-stub .ama__article-stub__copy:focus-visible h2 {
+  text-decoration: underline;
+}
 .ama_category_navigation_menu__articles .ama__article-stub a p, .ama_category_navigation_menu__articles .ama__article-stub a .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .ama_category_navigation_menu__articles .ama__article-stub a .ama__image__text__subtitle, .ama_category_navigation_menu__articles .ama__article-stub a .ama__resource-link--inline__text,
 .ama_category_navigation_menu__articles .ama__article-stub .ama__article-stub__title p,
 .ama_category_navigation_menu__articles .ama__article-stub .ama__article-stub__title .ama__jama .ama__image__text .ama__image__text__subtitle,
@@ -26062,14 +26067,72 @@ section.ama__page--event__speakers {
   font-size: 14px;
   margin-bottom: 7px;
 }
-.gating-block-wrapper .gating-block a:not(.ama__button) {
+.gating-block-wrapper .gating-block a:not(.ama__button), .gating-block-wrapper .gating-block a:not(.button-main-primary) {
   font-weight: 300;
   text-underline-offset: 30%;
   text-decoration: underline;
 }
-.gating-block-wrapper .gating-block a:not(.ama__button):hover {
+.gating-block-wrapper .gating-block a:not(.ama__button):hover, .gating-block-wrapper .gating-block a:not(.button-main-primary):hover {
   text-decoration: underline;
   background: transparent;
+}
+.gating-block-wrapper .gating-block a.ama__button {
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 10.5px;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #46166B;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: #7229D1;
+  border-color: transparent;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 6px;
+  text-transform: none;
+  font-size: 16px !important;
+  font-weight: 700;
+}
+@media screen and (min-width: 37.5em) {
+  .gating-block-wrapper .gating-block a.ama__button {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 56.25em) {
+  .gating-block-wrapper .gating-block a.ama__button {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 75em) {
+  .gating-block-wrapper .gating-block a.ama__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 56.25em) {
+  .gating-block-wrapper .gating-block a.ama__button {
+    padding: 14px;
+  }
+}
+.gating-block-wrapper .gating-block a.ama__button:hover, .gating-block-wrapper .gating-block a.ama__button:focus-visible {
+  border-color: #46166B;
+  background-color: #9073A6;
+  color: #ffffff;
+}
+.gating-block-wrapper .gating-block a.ama__button:hover {
+  background-color: #9073A6;
+  border-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
 }
 .gating-block-wrapper .gating-block ul {
   margin-bottom: 26px;
@@ -26081,7 +26144,7 @@ section.ama__page--event__speakers {
   font-size: 16px;
   line-height: 20px;
 }
-.gating-block-wrapper .gating-block > p a, .gating-block-wrapper .ama__jama .ama__image__text .gating-block > .ama__image__text__subtitle a, .ama__jama .ama__image__text .gating-block-wrapper .gating-block > .ama__image__text__subtitle a, .gating-block-wrapper .gating-block > .ama__resource-link--inline__text a {
+.gating-block-wrapper .gating-block > p a:not(.ama__button), .gating-block-wrapper .ama__jama .ama__image__text .gating-block > .ama__image__text__subtitle a:not(.ama__button), .ama__jama .ama__image__text .gating-block-wrapper .gating-block > .ama__image__text__subtitle a:not(.ama__button), .gating-block-wrapper .gating-block > .ama__resource-link--inline__text a:not(.ama__button), .gating-block-wrapper .gating-block > p a:not(.button-main-primary), .gating-block-wrapper .ama__jama .ama__image__text .gating-block > .ama__image__text__subtitle a:not(.button-main-primary), .ama__jama .ama__image__text .gating-block-wrapper .gating-block > .ama__image__text__subtitle a:not(.button-main-primary), .gating-block-wrapper .gating-block > .ama__resource-link--inline__text a:not(.button-main-primary) {
   font-size: inherit;
   line-height: inherit;
 }
@@ -27330,142 +27393,16 @@ header.sticky-nav {
     margin-right: 28px;
   }
 }
-.ama__main-navigation__join--buttons a.ama__button {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 10.5px;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 1px solid #46166B;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  background-color: #7229D1;
-  border-color: transparent;
-  color: #ffffff;
-  text-transform: uppercase;
-  border-radius: 6px;
-  text-transform: none;
-  font-size: 16px !important;
-  font-weight: 700;
+.ama__main-navigation__join--buttons a.button-main-primary {
   margin-right: 10.5px;
-  padding: 13px !important;
-  line-height: 1 !important;
-  text-transform: none;
-  min-width: 100px;
-}
-@media screen and (min-width: 37.5em) {
-  .ama__main-navigation__join--buttons a.ama__button {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 56.25em) {
-  .ama__main-navigation__join--buttons a.ama__button {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-}
-@media screen and (min-width: 75em) {
-  .ama__main-navigation__join--buttons a.ama__button {
-    font-size: 18px;
-  }
 }
 @media (min-width: 56.25em) {
-  .ama__main-navigation__join--buttons a.ama__button {
-    padding: 14px;
-  }
-}
-.ama__main-navigation__join--buttons a.ama__button:hover, .ama__main-navigation__join--buttons a.ama__button:focus-visible {
-  border-color: #46166B;
-  background-color: #9073A6;
-  color: #ffffff;
-}
-.ama__main-navigation__join--buttons a.ama__button:hover {
-  background-color: #9073A6;
-  border-color: transparent;
-  color: #ffffff;
-  text-decoration: none;
-}
-@media (min-width: 56.25em) {
-  .ama__main-navigation__join--buttons a.ama__button {
+  .ama__main-navigation__join--buttons a.button-main-primary {
     margin-right: 14px;
   }
 }
-.ama__main-navigation__join--buttons a.ama__button:hover {
-  background-color: #46166B;
-}
-.ama__main-navigation__join--buttons a.ama__button.secondary {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 10.5px;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 1px solid #46166B;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  background-color: #ffffff;
-  border-color: transparent;
-  color: #46166B;
-  text-transform: uppercase;
-  border-radius: 6px;
-  text-transform: none;
-  font-size: 16px !important;
-  font-weight: 700;
-  text-transform: none;
+.ama__main-navigation__join--buttons a.button-main-primary.button-main-secondary {
   margin-right: 0;
-  border-color: #E4E3E6;
-}
-@media screen and (min-width: 37.5em) {
-  .ama__main-navigation__join--buttons a.ama__button.secondary {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 56.25em) {
-  .ama__main-navigation__join--buttons a.ama__button.secondary {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-}
-@media screen and (min-width: 75em) {
-  .ama__main-navigation__join--buttons a.ama__button.secondary {
-    font-size: 18px;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__main-navigation__join--buttons a.ama__button.secondary {
-    padding: 14px;
-  }
-}
-.ama__main-navigation__join--buttons a.ama__button.secondary:hover, .ama__main-navigation__join--buttons a.ama__button.secondary:focus-visible {
-  border-color: #46166B;
-  background-color: #9073A6;
-  color: #ffffff;
-}
-.ama__main-navigation__join--buttons a.ama__button.secondary:hover {
-  background-color: #ffffff;
-  border-color: transparent;
-  color: #9073A6;
-  text-decoration: none;
-}
-.ama__main-navigation__join--buttons a.ama__button.secondary:hover, .ama__main-navigation__join--buttons a.ama__button.secondary:focus-visible {
-  background-color: #F5F5F5;
-  color: inherit;
-  border: 1px solid #E4E3E6;
 }
 .ama__main-navigation__join--buttons a:focus-visible {
   outline: 2px solid #027DBC;
@@ -31169,7 +31106,7 @@ promo-embed.promo-size-half.align-right {
   padding-right: 0;
   padding-left: 0;
 }
-@media (max-width: 37.5em) {
+@media (max-width: 56.25em) {
   promo-embed.promo-size-half.align-right {
     float: none;
   }
@@ -33034,8 +32971,8 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   }
   .article-header .share-row .share .share-wrapper .icon.masthead {
     padding: 0;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     margin: 14px 14px 14px 0;
   }
   .article-header .share-row .share .share-wrapper .icon.masthead.bookmark {
@@ -37402,10 +37339,13 @@ div[role=alert] {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
   width: 100%;
   padding-left: 21px;
+}
+@media (max-width: 37.5em) {
+  .ama__news-article .event-header .article-event-details {
+    padding-right: 21px;
+  }
 }
 @media (min-width: 37.5em) {
   .ama__news-article .event-header .article-event-details {
