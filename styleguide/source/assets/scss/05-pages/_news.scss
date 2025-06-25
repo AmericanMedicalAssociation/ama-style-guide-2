@@ -310,6 +310,7 @@
     justify-content: flex-start;
     align-items: center;
     color: $gray-64;
+    line-height: 1;
     @include breakpoint($bp-small) {
       flex-direction: row;
     }
@@ -320,6 +321,10 @@
       }
       @include breakpoint($bp-med) {
         flex: .59;
+      }
+      a {
+        display: block;
+        line-height: 1;
       }
     }
     .article-event-details {
@@ -333,7 +338,7 @@
       padding-left: calc($gutter * .75);
       @include breakpoint($bp-small max-width) {
         padding-right: calc($gutter * .75);
-
+        margin-top: 22px;
       }
       @include breakpoint($bp-small) {
         padding-left: calc($gutter/2);
