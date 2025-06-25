@@ -42,11 +42,11 @@
         line-height: 24px;
       }
     }
-    p:has(a.ama__button) {
+    p:has(a.ama__button),
+    p:has(a.button-main-primary) {
       min-width: 50%;
       max-width: 100%;
       .gating-cta {
-        width: 100%;
         &.ama__button {
           padding: 9px calc($gutter/4);
         }
@@ -56,19 +56,34 @@
       font-size: calc($gutter/2);
       margin-bottom: calc($gutter * .25);
     }
-    a {
-      &:not(.ama__button),
-      &:not(.button-main-primary) {
-        font-weight: 300;
-        text-underline-offset: 30%;
+    a:not(.ama__button),
+    a:not(.button-main-primary) {
+      font-weight: 300;
+      text-underline-offset: 30%;
+      text-decoration: underline;
+      &:hover {
         text-decoration: underline;
-        &:hover {
-          text-decoration: underline;
-          background: transparent;
-        }
+        background: transparent;
       }
-      &.ama__button {
-        @include ama-button("rounded", "homepage");
+    }
+    a.ama__button {
+      @include ama-button("rounded", "homepage");
+    }
+    a.ama__button,
+    a.button-main-primary {
+      font-weight: 600;
+      text-decoration: none;
+      width: 100%;
+      @include breakpoint($bp-small) {
+        width: fit-content;
+        min-width: 100px;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: $purple;
+        border-color: $purple;
+        text-decoration: none;
       }
     }
     ul {
