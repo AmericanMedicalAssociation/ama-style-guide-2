@@ -44,6 +44,12 @@ comment.ama-one-comment {
       margin-left: auto;
       cursor: pointer;
       position: relative;
+      a {
+        text-decoration: none;
+        &:hover {;
+          text-decoration: underline;
+        }
+      }
       &:before {
         position: absolute;
         content: " ";
@@ -66,8 +72,37 @@ comment.ama-one-comment {
           border-radius: 8px;
           right: 0;
           z-index: 99;
+          white-space: nowrap;
           ul {
             list-style: none;
+            .flag {
+              border: none;
+              position: relative;
+              &.action-flag {
+                &:after {
+                  position: absolute;
+                  content: " ";
+                  width: 10px;
+                  height: 10px;
+                  right: 5px;
+                  top: 8px;
+                }
+              }
+              &.action-unflag {
+                padding-right: 28px;
+                &:after {
+                  position: absolute;
+                  content: " ";
+                  background-image: url('../icons/svg/icon-close.svg');
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  width: 10px;
+                  height: 10px;
+                  right: 5px;
+                  top: 8px;
+                }
+              }
+            }
           }
         }
       }
@@ -153,7 +188,7 @@ section[id^="node-abstract-field-abstract-comments--"] {
 }
 
 .indented {
-  margin-left: 0;
+  margin-left: 20px;
   .indented {
     margin-left: 20px;
     .intented {
@@ -170,7 +205,7 @@ section[id^="node-abstract-field-abstract-comments--"] {
   &.ajax-comments-form-edit {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: column;
     div[class^='field--name-'] {
       .field--name-field-comment-body {
         flex: .9;
@@ -182,10 +217,6 @@ section[id^="node-abstract-field-abstract-comments--"] {
     .field--name-field-deleted {
       flex: .1;
     }
-  }
-
-  .form-actions {
-    flex: 0 0 100%;
   }
 }
 
