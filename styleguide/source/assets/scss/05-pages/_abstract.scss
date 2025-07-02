@@ -65,25 +65,26 @@ body.ama__abstract {
     }
   }
   .gated-article {
-    .abstract-hero {
-      margin-bottom: 0;
-    }
-    .abstract-background {
-      background-size: cover;
-      position: relative;
-      &::before {
-        content: ""; /* Necessary for the pseudo-element to be created */
+    position: relative;
+    &:after {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%); /* Adjust colors and opacity as needed */
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, 0.5) 20%, rgb(255, 255, 255) 80%);
       }
-    }
     .abstract-category-breadcrumb {
       .card-container {
         margin-top: 56px;
+        position: absolute;
+        top: 164px;
+        z-index: 999;
+        left: 0; 
+        right: 0; 
+        margin-inline: auto; 
+        width: fit-content;
       }
     }
   }
