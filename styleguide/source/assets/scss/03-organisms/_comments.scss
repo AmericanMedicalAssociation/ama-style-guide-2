@@ -78,28 +78,25 @@ comment.ama-one-comment {
             .flag {
               border: none;
               position: relative;
+              padding-right: 28px;
+              &:after {
+                position: absolute;
+                content: " ";
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 18px;
+                height: 18px;
+                right: 0;
+                top: 3px;
+              }
               &.action-flag {
                 &:after {
-                  position: absolute;
-                  content: " ";
-                  width: 10px;
-                  height: 10px;
-                  right: 5px;
-                  top: 8px;
+                  background-image: url('../icons/svg/icon-flag-outline.svg');
                 }
               }
               &.action-unflag {
-                padding-right: 28px;
                 &:after {
-                  position: absolute;
-                  content: " ";
-                  background-image: url('../icons/svg/icon-close.svg');
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                  width: 10px;
-                  height: 10px;
-                  right: 5px;
-                  top: 8px;
+                  background-image: url('../icons/svg/icon-flag-filled.svg');
                 }
               }
             }
