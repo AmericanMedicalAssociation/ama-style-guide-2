@@ -209,13 +209,11 @@ section[id^="node-abstract-field-abstract-comments--"] {
       border-radius: 15px;
     }
     div[id^="edit-actions--"] {
+      display: flex;
+      flex-direction: row-reverse;
       margin-bottom: 21px;
-      input {
-        display: inline-block;
-        margin-right: 21px;
-        &:last-child {
-          margin-right: 0;
-        }
+      .submit-span {
+        margin-left: 21px;
       }
     }
   }
@@ -234,8 +232,12 @@ section[id^="node-abstract-field-abstract-comments--"] {
   }
 }
 
-
 .comment-abstract-comments-form {
+  &.ajax-comments-form-reply {
+    .field--name-field-deleted {
+      display: none;
+    }
+  }
   &.ajax-comments-form-add {
     .field--name-field-deleted {
       display: none;
@@ -247,8 +249,6 @@ section[id^="node-abstract-field-abstract-comments--"] {
     }
   }
 }
-
-
 
 /* Hide the messages in the comments section */
 section[id^='node-abstract-field-abstract-comments'] {
