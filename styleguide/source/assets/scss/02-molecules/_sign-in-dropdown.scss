@@ -147,15 +147,9 @@
       @include gutter($padding-bottom-quarter...);
     }
 
-    &__button {
-      &--sign-in {
-        text-transform: none;
-        border-radius: 6px;
-        height: 44px;
-        max-height: 44px;
-        @include gutter($padding-top-quarter...);
-        @include gutter($padding-bottom-quarter...);
-      }
+    .button-main-primary {
+      padding: inherit;
+      font-size: inherit;
     }
     &__create-account, &__become-member {
       text-align: center
