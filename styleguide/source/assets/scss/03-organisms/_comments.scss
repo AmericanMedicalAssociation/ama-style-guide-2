@@ -121,13 +121,31 @@ comment.ama-one-comment {
     color: $black;
     margin-bottom: 21px;
   }
+  span.flag-message {
+    border: none;
+    position: relative;
+    padding-right: 24px;
+    font-size:12px;
+    &:after {
+      position: absolute;
+      background-image: url('../icons/svg/icon-flag-filled.svg');
+      content: " ";
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 14px;
+      height: 14px;
+      right: 0;
+      top: 2px;
+    }
+  }
   .info {
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    .role-message {
+    .role-message,
+    .flag-message{
       width: 100%;
       display: flex;
       justify-content: flex-end;
