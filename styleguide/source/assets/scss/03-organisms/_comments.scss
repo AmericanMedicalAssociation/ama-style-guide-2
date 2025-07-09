@@ -287,3 +287,45 @@ section[id^='node-abstract-field-abstract-comments'] {
     margin-top: 1rem;
   }
 }
+
+form.comment-abstract-comments-form {
+  .cancel-span {
+    .icon {
+      color: $purple;
+    }
+    position: relative;
+    content: "";
+    input.cancel-icon {
+      padding-right: 50px;
+    }
+    &:after {
+      position: absolute;
+      content: " ";
+      background-image: url('../icons/svg/icon-cancel.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 18px;
+      height: 18px;
+      right: 14px;
+      top: 13px;
+    }
+  }
+  .submit-span {
+    position: relative;
+    content: "";
+    input.plane-icon {
+      padding-right: 50px;
+    }
+    &:after {
+      position: absolute;
+      content: " ";
+      background-image: url('../icons/svg/paper-plane-white.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 26px;
+      height: 26px;
+      right: 14px;
+      top: 10px;
+    }
+  }
+}
