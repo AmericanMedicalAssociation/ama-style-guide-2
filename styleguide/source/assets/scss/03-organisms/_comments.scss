@@ -81,6 +81,11 @@ comment.ama-one-comment {
             .comment-reply {
               display: none;
             }
+            span.flag {
+              &.action-unflag {
+                cursor: default;
+              }
+            }
             .flag {
               border: none;
               position: relative;
@@ -121,13 +126,31 @@ comment.ama-one-comment {
     color: $black;
     margin-bottom: 21px;
   }
+  span.flag-message {
+    border: none;
+    position: relative;
+    padding-right: 24px;
+    font-size:12px;
+    &:after {
+      position: absolute;
+      background-image: url('../icons/svg/icon-flag-filled.svg');
+      content: " ";
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 14px;
+      height: 14px;
+      right: 0;
+      top: 2px;
+    }
+  }
   .info {
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    .role-message {
+    .role-message,
+    .flag-message{
       width: 100%;
       display: flex;
       justify-content: flex-end;
@@ -209,13 +232,11 @@ section[id^="node-abstract-field-abstract-comments--"] {
       border-radius: 15px;
     }
     div[id^="edit-actions--"] {
+      display: flex;
+      flex-direction: row-reverse;
       margin-bottom: 21px;
-      input {
-        display: inline-block;
-        margin-right: 21px;
-        &:last-child {
-          margin-right: 0;
-        }
+      .submit-span {
+        margin-left: 21px;
       }
     }
   }
@@ -234,8 +255,12 @@ section[id^="node-abstract-field-abstract-comments--"] {
   }
 }
 
-
 .comment-abstract-comments-form {
+  &.ajax-comments-form-reply {
+    .field--name-field-deleted {
+      display: none;
+    }
+  }
   &.ajax-comments-form-add {
     .field--name-field-deleted {
       display: none;
@@ -247,8 +272,6 @@ section[id^="node-abstract-field-abstract-comments--"] {
     }
   }
 }
-
-
 
 /* Hide the messages in the comments section */
 section[id^='node-abstract-field-abstract-comments'] {
@@ -264,3 +287,26 @@ section[id^='node-abstract-field-abstract-comments'] {
     margin-top: 1rem;
   }
 }
+
+form.comment-abstract-comments-form {
+  .button {
+    &.form-submit {
+      &.plane-icon {
+        background-image: url('../icons/svg/paper-plane-white.svg');
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-position: right 14px center;
+        padding-right: 50px;
+      }
+      &.cancel-icon {
+        background-image: url('../icons/svg/icon-cancel.svg');
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: right 14px center;
+        padding-right: 50px;
+        margin-right: 14px;
+      }
+    }
+  }
+}
+
