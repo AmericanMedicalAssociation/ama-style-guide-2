@@ -102,7 +102,25 @@
         margin-bottom: 0px;
         margin-right: 24px;
       }
+      .stub-text {
+        .description {
+            font-family: $kepler-std;
+            color: $gray-64;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 24px;
+            margin-bottom: 7px;
+          }
+      }
       &[data-count="4"] {
+        .stub-text {
+          .description {
+            @include breakpoint($bp-small min-width) {
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+        }
         @include breakpoint($bp-med) {
           width: 48.6%;
           &:nth-child(2) {
@@ -206,14 +224,6 @@
               text-decoration: none;
             }
           }
-
-          .description {
-            font-family: $kepler-std;
-            color: $gray-64;
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 19.2px;
-          }
         }
         .data {
           padding: 0 14px 22px;
@@ -236,14 +246,15 @@
             margin-right: 5px;
           }
           .date {
-            margin-right: 5px;
+            margin-right: 7px;
           }
           .pipe {
-            margin-right: 5px;
+            margin-right: 7px;
             color: $divider-line-gray;
           }
           .read-time {
             text-transform: lowercase;
+            margin-right: 7px;
             &:first-line {
               text-transform: capitalize;
             }
@@ -749,6 +760,23 @@
       }
     }
   }
+}
+
+.article_stub_as_inline--wrapper {
+  .article-stub-list {
+    .article-stub {
+      &[data-count="3"] {
+        .stub-text {
+          .description {
+            @include breakpoint($bp-small min-width) {
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+        } 
+      }
+    } 
+  } 
 }
 
 //  Style the layout container of the article stub list on article and press release pages
