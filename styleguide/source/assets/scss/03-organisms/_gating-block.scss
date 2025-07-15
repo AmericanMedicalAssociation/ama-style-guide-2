@@ -44,8 +44,12 @@
     }
     p:has(a.ama__button),
     p:has(a.button-main-primary) {
-      min-width: 50%;
-      max-width: 100%;
+      width: 100%;
+      @include breakpoint($bp-small) {
+        min-width: 50%;
+        max-width: 100%;
+        width: unset;
+      }
       .gating-cta {
         &.ama__button {
           padding: 9px 16px;
