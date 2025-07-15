@@ -298,6 +298,9 @@ form.comment-abstract-comments-form {
         background-position: right 14px center;
         padding-right: 50px;
       }
+      &.plane-icon[disabled] {
+        color: #ffffff;
+      }
       &.cancel-icon {
         background-image: url('../icons/svg/icon-cancel.svg');
         background-repeat: no-repeat;
@@ -305,6 +308,11 @@ form.comment-abstract-comments-form {
         background-position: right 14px center;
         padding-right: 50px;
         margin-right: 14px;
+        color: $purple;
+      }
+      &.cancel-icon[disabled] {
+        background-image: url('../icons/svg/icon-cancel-white.svg');
+        color: #ffffff;
       }
     }
   }
