@@ -122,7 +122,7 @@
       @include gutter($padding-top-quarter...);
       @include gutter($padding-bottom-quarter...);
 
-      a {
+      a:not(.button-main-primary) {
         display: block;
         font-size: 18px;
         line-height: 1.5;
@@ -147,10 +147,6 @@
       @include gutter($padding-bottom-quarter...);
     }
 
-    .button-main-primary {
-      padding: inherit;
-      font-size: inherit;
-    }
     &__create-account, &__become-member {
       text-align: center
     }
