@@ -18087,7 +18087,7 @@ a.ama__promo--border:hover {
     padding-bottom: 7px;
   }
 }
-.ama__sign-in-dropdown__menu li a {
+.ama__sign-in-dropdown__menu li a:not(.button-main-primary) {
   display: block;
   font-size: 18px;
   line-height: 1.5;
@@ -18139,10 +18139,6 @@ a.ama__promo--border:hover {
   .ama__sign-in-dropdown__menu__group {
     padding-bottom: 7px;
   }
-}
-.ama__sign-in-dropdown__menu .button-main-primary {
-  padding: inherit;
-  font-size: inherit;
 }
 .ama__sign-in-dropdown__menu__create-account, .ama__sign-in-dropdown__menu__become-member {
   text-align: center;
@@ -24911,6 +24907,9 @@ form.comment-abstract-comments-form .button.form-submit.plane-icon {
   background-position: right 14px center;
   padding-right: 50px;
 }
+form.comment-abstract-comments-form .button.form-submit.plane-icon[disabled] {
+  color: #ffffff;
+}
 form.comment-abstract-comments-form .button.form-submit.cancel-icon {
   background-image: url("../icons/svg/icon-cancel.svg");
   background-repeat: no-repeat;
@@ -24918,6 +24917,11 @@ form.comment-abstract-comments-form .button.form-submit.cancel-icon {
   background-position: right 14px center;
   padding-right: 50px;
   margin-right: 14px;
+  color: #46166B;
+}
+form.comment-abstract-comments-form .button.form-submit.cancel-icon[disabled] {
+  background-image: url("../icons/svg/icon-cancel-white.svg");
+  color: #ffffff;
 }
 
 .webform-submission-contact-us-form .please-select-one-of-the-following- > div .form-submit {
@@ -26355,8 +26359,18 @@ section.ama__page--event__speakers {
 .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary),
 .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary),
 .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.button-main-primary) {
-  min-width: 50%;
-  max-width: 100%;
+  width: 100%;
+}
+@media (min-width: 37.5em) {
+  .gating-block-wrapper .gating-block p:has(a.ama__button), .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button), .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button), .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button),
+  .gating-block-wrapper .gating-block p:has(a.button-main-primary),
+  .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary),
+  .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary),
+  .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.button-main-primary) {
+    min-width: 50%;
+    max-width: 100%;
+    width: unset;
+  }
 }
 .gating-block-wrapper .gating-block p:has(a.ama__button) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button) .gating-cta.ama__button, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button) .gating-cta.ama__button,
 .gating-block-wrapper .gating-block p:has(a.button-main-primary) .gating-cta.ama__button,
