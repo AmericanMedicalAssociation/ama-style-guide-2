@@ -24613,6 +24613,9 @@ comment.ama-one-comment {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+comment.ama-one-comment p.deleted-comment, comment.ama-one-comment .ama__jama .ama__image__text .deleted-comment.ama__image__text__subtitle, .ama__jama .ama__image__text comment.ama-one-comment .deleted-comment.ama__image__text__subtitle, comment.ama-one-comment .deleted-comment.ama__resource-link--inline__text {
+  margin-bottom: 0;
+}
 comment.ama-one-comment .comment-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24631,9 +24634,15 @@ comment.ama-one-comment .comment-header.deleted {
   margin-bottom: 0;
 }
 comment.ama-one-comment .comment-header .author {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+}
+comment.ama-one-comment .comment-header.focus .contextual {
+  display: none !important;
+}
+comment.ama-one-comment .comment-header.focus .contextual button {
+  display: none !important;
 }
 comment.ama-one-comment .comment-header .member-container {
   margin-left: 14px;
@@ -24644,7 +24653,7 @@ comment.ama-one-comment .comment-header .member-container .member {
   text-transform: uppercase;
   position: relative;
   font-size: 12px;
-  padding: 6px 14px;
+  padding: 3px 14px;
   font-weight: 700;
   color: #7229D1;
   border: 1px solid #e3d7f5;
@@ -24674,19 +24683,25 @@ comment.ama-one-comment .comment-header .options-menu:before {
   content: " ";
   background-image: url("../icons/svg/three-dots.svg");
   background-repeat: no-repeat;
-  width: 24px;
-  height: 14px;
+  background-position: center;
+  background-color: transparent;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   right: 0;
-  top: -11px;
+  top: -21px;
+}
+comment.ama-one-comment .comment-header .options-menu.open:before {
+  background-color: #F9F9F9;
 }
 comment.ama-one-comment .comment-header .options-menu.open .panel {
   display: block;
-  padding: 15px;
+  padding: 14px;
   background: #ffffff;
   border: 1px solid #e4e3e6;
   text-align: right;
   position: absolute;
-  top: 14px;
+  top: 28px;
   border-radius: 8px;
   right: 0;
   z-index: 99;
@@ -24694,6 +24709,26 @@ comment.ama-one-comment .comment-header .options-menu.open .panel {
 }
 comment.ama-one-comment .comment-header .options-menu.open .panel ul {
   list-style: none;
+}
+comment.ama-one-comment .comment-header .options-menu.open .panel ul li {
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 44px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+comment.ama-one-comment .comment-header .options-menu.open .panel ul li.flag-link .flag {
+  text-align: right;
+  margin-top: 0;
+  height: auto;
+  width: auto;
 }
 comment.ama-one-comment .comment-header .options-menu.open .panel ul .comment-reply {
   display: none;
@@ -24704,7 +24739,9 @@ comment.ama-one-comment .comment-header .options-menu.open .panel ul span.flag.a
 comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag {
   border: none;
   position: relative;
-  padding-right: 28px;
+  padding-right: 30px;
+  max-width: 100%;
+  min-width: auto;
 }
 comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag:after {
   position: absolute;
@@ -24713,7 +24750,7 @@ comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag:after
   background-size: contain;
   width: 18px;
   height: 18px;
-  right: 0;
+  right: 4px;
   top: 3px;
 }
 comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag.action-flag:after {
@@ -24762,6 +24799,7 @@ comment.ama-one-comment .info {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  min-height: 44px;
   width: 100%;
 }
 comment.ama-one-comment .info .role-message,
@@ -24781,29 +24819,45 @@ comment.ama-one-comment .info .date {
   font-size: 16px;
   color: #5c5c5c;
 }
-comment.ama-one-comment .info .reply {
-  font-size: 14px;
+comment.ama-one-comment .info .reply-wrapper {
+  position: relative;
   margin-left: auto;
+}
+comment.ama-one-comment .info .reply-wrapper .reply {
+  font-size: 14px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
-comment.ama-one-comment .info .reply li.comment-edit,
-comment.ama-one-comment .info .reply li.comment-delete {
+comment.ama-one-comment .info .reply-wrapper .reply li.comment-edit,
+comment.ama-one-comment .info .reply-wrapper .reply li.comment-delete {
   display: none;
 }
-comment.ama-one-comment .info .reply li.comment-reply {
-  padding: 6px 14px;
-  border: 1px solid #5C5C5C;
+comment.ama-one-comment .info .reply-wrapper .reply li.comment-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 44px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid #e4e3e6;
   border-radius: 100px;
 }
-comment.ama-one-comment .info .reply li.comment-reply a {
+comment.ama-one-comment .info .reply-wrapper .reply li.comment-reply a {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  padding: 0 14px 0 44px;
   position: relative;
-  padding-left: 30px;
   text-decoration: none;
-  color: #5c5c5c;
+  color: #5C5C5C;
 }
-comment.ama-one-comment .info .reply li.comment-reply a:before {
+comment.ama-one-comment .info .reply-wrapper .reply li.comment-reply a:before {
   position: absolute;
   content: " ";
   background-image: url("../icons/svg/reply-arrow.svg");
@@ -24811,8 +24865,8 @@ comment.ama-one-comment .info .reply li.comment-reply a:before {
   background-size: contain;
   width: 24px;
   height: 24px;
-  left: 0;
-  top: -3px;
+  left: 15px;
+  top: -1px;
 }
 comment.ama-one-comment ul.links.inline {
   list-style-type: none;
@@ -24910,18 +24964,37 @@ form.comment-abstract-comments-form .button.form-submit.plane-icon {
 form.comment-abstract-comments-form .button.form-submit.plane-icon[disabled] {
   color: #ffffff;
 }
-form.comment-abstract-comments-form .button.form-submit.cancel-icon {
-  background-image: url("../icons/svg/icon-cancel.svg");
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position: right 14px center;
-  padding-right: 50px;
+form.comment-abstract-comments-form .button.form-submit.form-cancel {
   margin-right: 14px;
-  color: #46166B;
 }
 form.comment-abstract-comments-form .button.form-submit.cancel-icon[disabled] {
   background-image: url("../icons/svg/icon-cancel-white.svg");
   color: #ffffff;
+}
+
+comment {
+  position: relative;
+}
+comment .message-overlay .copied-message {
+  position: absolute;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  font-size: 16px;
+  bottom: 30px;
+  color: #5c5c5c;
+  left: 120px;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+comment .message-overlay .copied-message.flag-message {
+  left: 110px;
+}
+comment .message-overlay .copied-message.show {
+  opacity: 0.95;
+  z-index: 500;
+}
+comment .message-overlay .copied-message.fade-out, comment .message-overlay .copied-message.move-up {
+  opacity: 0;
 }
 
 .webform-submission-contact-us-form .please-select-one-of-the-following- > div .form-submit {
