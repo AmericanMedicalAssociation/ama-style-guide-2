@@ -24997,6 +24997,142 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   opacity: 0;
 }
 
+/* Style the stupid jquery modal */
+.ui-dialog.ui-widget {
+  border-radius: 8px;
+  border: 1px solid #e4e3e6;
+  -webkit-box-shadow: 0 8px 32px rgba(34, 34, 34, 0.12);
+  box-shadow: 0 8px 32px rgba(34, 34, 34, 0.12);
+  background: #fff;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
+  color: #222;
+  padding: 0;
+  z-index: 101;
+  max-width: 450px !important;
+  overflow-y: hidden;
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar {
+  display: none;
+  border-bottom: 1px solid #e4e3e6;
+  background: #f9f9f9;
+  border-radius: 8px 8px 0 0;
+  padding: 18px 24px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5c5c5c;
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5c5c5c;
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+  opacity: 1;
+  background: #f0eafa;
+  border-radius: 50%;
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  background-image: url("../icons/svg/icon-cancel-white.svg");
+  background-size: 18px 18px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+.ui-dialog.ui-widget .ui-dialog-content {
+  overflow-y: hidden;
+  padding: 75px 32px 0 32px;
+  font-size: 18px;
+  color: #222;
+  line-height: 1.5;
+  min-height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+.ui-dialog.ui-widget .ui-dialog-content form {
+  overflow-y: hidden;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane {
+  border-radius: 0 0 8px 8px;
+  padding: 0 32px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  margin-top: 0;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 14px;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button {
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-weight: 600;
+  padding: 0 16px;
+  min-height: 44px;
+  min-width: 100px;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid #e4e3e6;
+  background: #fff;
+  color: #7229D1;
+  -webkit-transition: background 0.2s, color 0.2s, border 0.2s;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button--primary, .ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button-main-primary {
+  background: #7229D1;
+  color: #fff;
+  border: 1px solid #7229D1;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button--primary:hover, .ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button-main-primary:hover {
+  background: #5c1fa0;
+  border-color: #5c1fa0;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.dialog-cancel {
+  background: #fff;
+  color: #7229D1;
+  border: 1px solid #e4e3e6;
+}
+.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.dialog-cancel:hover {
+  background: #f0eafa;
+}
+
 .webform-submission-contact-us-form .please-select-one-of-the-following- > div .form-submit {
   width: 100%;
 }
