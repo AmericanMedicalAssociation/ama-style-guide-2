@@ -24699,7 +24699,7 @@ comment.ama-one-comment .comment-header .options-menu.open .panel {
   padding: 14px;
   background: #ffffff;
   border: 1px solid #e4e3e6;
-  text-align: right;
+  min-width: 180px;
   position: absolute;
   top: 28px;
   border-radius: 8px;
@@ -24725,7 +24725,7 @@ comment.ama-one-comment .comment-header .options-menu.open .panel ul li {
   justify-content: center;
 }
 comment.ama-one-comment .comment-header .options-menu.open .panel ul li.flag-link .flag {
-  text-align: right;
+  text-align: left;
   margin-top: 0;
   height: auto;
   width: auto;
@@ -24739,25 +24739,8 @@ comment.ama-one-comment .comment-header .options-menu.open .panel ul span.flag.a
 comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag {
   border: none;
   position: relative;
-  padding-right: 30px;
   max-width: 100%;
   min-width: auto;
-}
-comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag:after {
-  position: absolute;
-  content: " ";
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 18px;
-  height: 18px;
-  right: 4px;
-  top: 3px;
-}
-comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag.action-flag:after {
-  background-image: url("../icons/svg/icon-flag-outline.svg");
-}
-comment.ama-one-comment .comment-header .options-menu.open .panel ul .flag.action-unflag:after {
-  background-image: url("../icons/svg/icon-flag-filled.svg");
 }
 comment.ama-one-comment .comment-header .options-menu .panel {
   display: none;
@@ -24772,19 +24755,7 @@ comment.ama-one-comment .comment-body {
 comment.ama-one-comment span.flag-message {
   border: none;
   position: relative;
-  padding-right: 24px;
   font-size: 12px;
-}
-comment.ama-one-comment span.flag-message:after {
-  position: absolute;
-  background-image: url("../icons/svg/icon-flag-filled.svg");
-  content: " ";
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 14px;
-  height: 14px;
-  right: 0;
-  top: 2px;
 }
 comment.ama-one-comment .info {
   display: -webkit-box;
