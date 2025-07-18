@@ -1,0 +1,69 @@
+.layout--ama-page-section-one-col {
+  &.purple_gradient {
+    background: linear-gradient(90deg, #46166B, #7229D1);
+  }
+  .layout-builder-block {
+    background: transparent;
+  }
+}
+
+.full-promo-block {
+  background: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 32px;
+  @include breakpoint($bp-small) {
+    padding: 90px 32px;
+  }
+  &.purple_gradient {
+    background: linear-gradient(90deg, #46166B, #7229D1);
+  }
+  &.pale_purple {
+    background-color: #F3E8FF;
+  }
+  &.light_text {
+    h2,
+    p {
+      color: #ffffff !important;
+    }
+  }
+  .title {
+    h2 {
+      font-family: $myriad-pro;
+      font-size: 34px;
+      line-height: 46px;
+      font-weight: $font-weight-bold;
+      margin-bottom: 18px;
+    }
+  }
+  .body {
+    p {
+      font-family: $myriad-pro;
+      font-size: 18px;
+    }
+    margin-bottom: 18px;
+  }
+  .ctas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+    .cta-one {
+      margin-right: 0;
+      margin-bottom: 21px;
+      @include breakpoint ($bp-small) {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+    .cta-two {
+
+    }
+  }
+}
