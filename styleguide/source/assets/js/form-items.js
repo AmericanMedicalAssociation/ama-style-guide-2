@@ -364,3 +364,18 @@
     }
   };
 })(jQuery, Drupal);
+
+(function ($, Drupal) {
+  Drupal.behaviors.abstractFormFilters = {
+    attach: function (context, settings) {
+      function filterTopics() {
+        $('.abstract-additional-filters label').hide();
+        $('.abstract-filters .ui-checkboxradio-checked').each(function() {
+          var selectedTopic = $(this).attr('for');
+          $('.abstract-additional-filters label[for="' + selectedTopic + '"').show();
+        });
+      }
+      filterTopics();    
+    }
+  };
+})(jQuery, Drupal);
