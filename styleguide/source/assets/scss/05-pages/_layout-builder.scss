@@ -37,9 +37,14 @@ form[id*="-layout-builder-form"] {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 20%;
+      label {
+        display: block;
+      }
       .form-item-moderation-state-0-current {
         flex: .15;
+        label {
+          margin-bottom: 25px;
+        }
       }
       .form-item-moderation-state-0-state {
         flex: .5;
@@ -50,7 +55,69 @@ form[id*="-layout-builder-form"] {
     }
   }
 }
+#layout-builder-revert-overrides {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  #edit-actions,
+  #edit-content {
+    padding-top: 21px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    input,
+    a {
+      width: 100%;
+      @include breakpoint($bp-small) {
+        width: auto;
+      }
+    }
+    input {
+      margin-bottom: 5px;
+      @include breakpoint($bp-small) {
+        margin-bottom: 0;
+      }
+    }
 
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+  }
+}
+.layout-builder__section {
+  .ama__full_hero_banner {
+    margin-bottom: 0;
+  }
+  .layout-builder__region {
+    position: relative;
+    margin-bottom: 115px;
+    min-height: 85px;
+  }
+  .layout-builder__add-block {
+    position: absolute;
+    width: 100%;
+    bottom: -99px;
+    left: 0;
+    border: 2px dashed #2f91da;
+  }
+}
+.layout-builder__add-section {
+  padding: 1.5em 0;
+}
+
+#layout-builder {
+  .layout-builder-container {
+    @extend .container;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .ama__category-page-article-stub {
+    overflow: hidden;
+  }
+}
 /* From Older PR */
 .layout-builder-page {
   .container {
@@ -141,7 +208,11 @@ form[id*="-layout-builder-form"] {
     }
   }
 
-
+#layout-builder {
+  .ama__full_hero_banner {
+    margin-bottom: 0;
+  }
+}
 
 
   form.layout-builder-form {
@@ -191,7 +262,7 @@ form[id*="-layout-builder-form"] {
     }
   }
   .layout-builder__add-section {
-
+    padding: 1.5em 0;
   }
   .layout-builder__section {
 
