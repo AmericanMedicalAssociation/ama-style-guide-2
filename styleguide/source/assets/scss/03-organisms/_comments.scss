@@ -274,19 +274,11 @@ section[id^="node-abstract-field-abstract-comments--"] {
 }
 
 .comment-abstract-comments-form {
-  &.ajax-comments-form-reply {
-    .field--name-field-deleted {
-      display: none;
-    }
-  }
-  &.ajax-comments-form-add {
-    .field--name-field-deleted {
-      display: none;
-    }
-  }
+  &.ajax-comments-form-reply,
+  &.ajax-comments-form-add,
   &.ajax-comments-form-edit {
     .field--name-field-deleted {
-      display: block;
+      display: none;
     }
   }
 }
@@ -307,6 +299,14 @@ section[id^='node-abstract-field-abstract-comments'] {
 }
 
 form.comment-abstract-comments-form {
+  textarea {
+    resize: none;
+  }
+  .form-item-field-comment-body-0-value {
+    label {
+      display: none;
+    }
+  }
   .button {
     &.form-submit {
       &.plane-icon {
@@ -321,11 +321,6 @@ form.comment-abstract-comments-form {
       }
       &.form-cancel {
         margin-right: 14px;
-        //color: $purple;
-      }
-      &.cancel-icon[disabled] {
-        background-image: url('../icons/svg/icon-cancel-white.svg');
-        color: #ffffff;
       }
     }
   }
@@ -429,8 +424,6 @@ comment {
   }
 
   .ui-dialog-buttonpane {
-    //background: #f9f9f9;
-    //border-top: 1px solid #e4e3e6;
     border-radius: 0 0 8px 8px;
     padding: 0 32px 18px;
     display: flex;
