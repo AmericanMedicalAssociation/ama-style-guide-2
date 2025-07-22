@@ -1,3 +1,42 @@
+#layout-builder {
+  position: relative;
+  .overlay {
+    display: none;
+    &.active {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      z-index: 1000;
+    }
+  }
+}
+
+#content-lock-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border: 2px solid gray;
+  background-color: lightgray;
+  p {
+    margin-bottom: 0;
+  }
+  &.locked {
+    background-color: pink;
+    border: 2px solid red;
+    &.self-locked {
+      background-color: peachpuff;
+      border: 2px solid orange;
+    }
+  }
+}
+
+
 /* from newer PR */
 #block-ama-one-help {
   display: none;
@@ -8,24 +47,6 @@ form[id*="-layout-builder-form"] {
       display: flex;
       flex-direction: row;
       gap: 20px;
-    }
-  }
-  #edit-unlock {
-    height: 44px;
-    background: #7229D1;
-    color: $white;
-    border-radius: 8px;
-    padding: 9px 16px;
-    text-decoration: none;
-    min-width: 100px;
-    font-weight: $font-weight-bold;
-    font-size: 16px;
-    display: block;
-    text-align: center;
-    max-width: 100px;
-    margin-top: 1rem;
-    &:hover {
-      background: $purple;
     }
   }
   #edit-preview-toggle,
@@ -89,13 +110,13 @@ form[id*="-layout-builder-form"] {
   }
   .layout-builder__region {
     position: relative;
-    margin-bottom: 115px;
+    margin-bottom: 120px;
     min-height: 85px;
   }
   .layout-builder__add-block {
     position: absolute;
     width: 100%;
-    bottom: -99px;
+    bottom: -104px;
     left: 0;
     border: 2px dashed #2f91da;
   }
@@ -120,93 +141,7 @@ form[id*="-layout-builder-form"] {
 }
 /* From Older PR */
 .layout-builder-page {
-  .container {
-    @media (min-width: calc(768px + ($gutter * 3))) {
-      width: calc(750px + ($gutter * 3));
-    }
-    @media (min-width: calc(992px + ($gutter * 3))) {
-      width: calc(970px + ($gutter * 3));
-    }
-    @media (min-width: calc(1200px + ($gutter * 3))) {
-      width: calc(1170px + ($gutter * 3));
-    }
-    //  The padding causes display issues.
-    padding-left: 0;
-    padding-right: 0;
-    .container {
-      width: auto !important;
-      padding: 0;
-      @include breakpoint($bp-small) {
-        width: auto !important;
-        padding: 0;
-      }
-      @include breakpoint($bp-med) {
-        width: auto !important;
-        padding: 0;
-      }
-      @include breakpoint($bp-large) {
-        width: auto !important;
-        padding: 0;
-      }
-      .container {
-        width: auto !important;
-        padding: 0;
-        @include breakpoint($bp-small) {
-          width: auto !important;
-          padding: 0;
-        }
-        @include breakpoint($bp-med) {
-          width: auto !important;
-          padding: 0;
-        }
-        @include breakpoint($bp-large) {
-          width: auto !important;
-          padding: 0;
-        }
-        .container {
-          width: auto !important;
-          padding: 0;
-          @include breakpoint($bp-small) {
-            width: auto !important;
-            padding: 0;
-          }
-          @include breakpoint($bp-med) {
-            width: auto !important;
-            padding: 0;
-          }
-          @include breakpoint($bp-large) {
-            width: auto !important;
-            padding: 0;
-          }
-        }
-      }
-    }
-  }
-/* it's the container class, but only for the layout builder page twig. */
-.layout-builder-container {
-  width: 100%;
-  @media (min-width: 768px) {
-    .layout-builder-container {
-      width: 750px;
-    }
-  }
-  @media (min-width: 992px) {
-    .layout-builder-container {
-      width: 970px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .layout-builder-container {
-      width: 1170px;
-    }
-  }
-}
 
-  &.section {
-    &.layout__region--main {
-      padding-bottom: 0;
-    }
-  }
 
 #layout-builder {
   .ama__full_hero_banner {
@@ -237,20 +172,19 @@ form[id*="-layout-builder-form"] {
       }
     }
   }
+  .vertical-tabs {
+    display: none;
     .vertical-tabs__pane {
       min-height: 170px;
       padding: 28px 40px;
     }
+  }
 
 
+
+
+  /* individual overrides */
   .layout-builder__layout {
-    overflow: visible !important;
-    .ama__layout--one-column {
-
-    }
-    header {
-
-    }
     article {
       margin-right: 0;
       @include breakpoint($bp-small) {
@@ -260,24 +194,7 @@ form[id*="-layout-builder-form"] {
     aside {
       padding-left: 0 !important;
     }
-  }
-  .layout-builder__add-section {
-    padding: 1.5em 0;
-  }
-  .layout-builder__section {
-
-  }
-  .layout-builder-block {
-
-  }
-
-  .layout-builder__region {
-    padding-bottom: 0 !important;
-    margin-bottom: 28px !important;
-  }
-
-  /* individual overrides */
-  .layout-builder__layout {
+    overflow: visible !important;
     &.layout--one-col-class {
       background-color: transparent !important;
       .ama__subscribe-promo--wide {
@@ -287,18 +204,18 @@ form[id*="-layout-builder-form"] {
     }
     &.ama__layout--one-column {
       .ama__layout--one-column__page-content {
-        margin-right : 0;
+        //margin-right : 0;
         .ama__category-nav {
-          margin-left: 0;
-          margin-right: 28px;
+          //margin-left: 0;
+          //margin-right: 28px;
         }
         .ama__org-nav {
-          margin-right: 0;
+          //margin-right: 0;
         }
       }
     }
     .ama__full_hero_banner {
-      margin-bottom: 0;
+      //margin-bottom: 0;
     }
     .ama__partner-promo {
       flex-direction: column !important;
@@ -320,6 +237,7 @@ form[id*="-layout-builder-form"] {
       background: #aef6cb;
       color: #378b59;
       border-radius: 8px;
+      margin: 28px 0;
       padding: 12px 14px;
       font-style: italic;
       h2 {
@@ -333,6 +251,10 @@ form[id*="-layout-builder-form"] {
           }
         }
       }
+    }
+    &.layout-builder {
+      border: none;
+      background-color: transparent;
     }
   }
   #edit-actions {
@@ -360,8 +282,7 @@ form[id*="-layout-builder-form"] {
     }
   }
   #edit-unlock {
-    @extend .ama__button;
-    @extend .ama__button--secondary;
+    display: none;
   }
   #layout-builder-discard-changes {
     margin: 15vh auto 0;
