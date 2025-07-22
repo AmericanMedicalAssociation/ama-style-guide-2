@@ -364,3 +364,28 @@
     }
   };
 })(jQuery, Drupal);
+
+(function ($, Drupal) {
+  Drupal.behaviors.abstractFormFilters = {
+    attach: function (context, settings) {
+      function filterTopics() {
+        $('.abstract-additional-filters label').hide();
+        $('.abstract-filters .ui-checkboxradio-checked').each(function() {
+          var selectedTopic = $(this).attr('for');
+          $('.abstract-additional-filters label[for="' + selectedTopic + '"').show();
+        });
+      }
+      filterTopics();
+
+      $(once('.abstract-topics-filter-button', context)).on('click', 'span', function(e) {
+        if ($('.abstract-topics-checkboxes').hasClass('hidden')) {
+          $('.abstract-topics-checkboxes').removeClass('hidden');
+        }
+        else {
+          $('.abstract-topics-checkboxes').addClass('hidden');
+        }
+        e.stopPropagation();
+      });
+    }
+  };
+})(jQuery, Drupal);
