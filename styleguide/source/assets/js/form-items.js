@@ -380,9 +380,11 @@
       $(once('.abstract-topics-filter-button', context)).on('click', 'span', function(e) {
         if ($('.abstract-topics-checkboxes').hasClass('hidden')) {
           $('.abstract-topics-checkboxes').removeClass('hidden');
+          $('.abstract-topics-wrapper').addClass('active');
         }
         else {
           $('.abstract-topics-checkboxes').addClass('hidden');
+          $('.abstract-topics-wrapper').removeClass('active');
         }
         e.stopPropagation();
       });

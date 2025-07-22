@@ -89,24 +89,157 @@ body.ama__abstract {
     }
   }
 }
+#views-exposed-form-research-challenge-listing-block-with-filters-block-1 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 21px;
+  background: $white;
+  border-radius: 8px;
+  border: 1px solid $divider-line-gray;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10);
+  position: static;
+  margin-top: -65px;
+}
+
+fieldset#edit-topic--2--wrapper {
+  display: inline-block;
+}
+
 .abstract-filter-wrapper {
   position: relative;
 
-  .abstract-additional-filters {
-    display: flex;
-    position: absolute;
-    bottom: 54px;
-    left: 350px;
+  .form-item-topic-search {
+    margin: 0 0 16px !important;
+    position: relative;
+    &:after {         
+      content: '';
+      background-image: url('../icons/svg/icon-search-purple.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left top;
+      height: 24px;
+      width: 24px;
+      right: 0;
+      top: 0;
+      display: block;
+      position: absolute;
+      right: 21px;
+      top: 10px;
+    }
 
-    label {
-      display: none;
+    #edit-topic-search--2 {
+      border-radius: 100px;
+      font-size: 16px;
+      line-height: 1;
+      padding: 11px 21px;
+    }
+  }
+
+  .form-composite {
+    margin: 0 !important;
+  }
+
+  .abstract-additional-filters {
+    // display: inline-block;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 104px;  
+
+    .filters-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button-pill-primary {
+      display: block;
+      padding: 14px 36px 14px 14px;
+      text-transform: capitalize;
+      height: unset;
+      border: 1px solid $divider-line-gray;
+      margin-right: 0;
+
+      &:first-of-type {
+        margin-left: 12px;
+      }
+
+      .ui-checkboxradio-icon,
+      .ui-checkboxradio-icon-space {
+        display: none;
+      }
+
+      &:hover {
+        border: 1px solid $divider-line-gray;
+        background-color: $gray-4;
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+        color: initial;
+        font-weight: 600;
+      }
+
+      &:after {         
+        content: '';
+        background-image: url('../icons/svg/icon-close.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left top;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        display: block;
+      }
     }
   }
   .abstract-topics-wrapper {
-    width: 300px;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid $divider-line-gray;
+    border-radius: 40px;
+    position: relative;
+    display: inline-block;
+    &:hover {
+      cursor: pointer;
+    }
+    &:before {         
+      content: '';
+      background-image: url('../icons/svg/icon-sliders-horizontal.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left top;
+      height: 24px;
+      width: 24px;
+      display: block;
+      position: absolute;
+      left: 16px;
+      top: 10px;
+    }
+
+    &.active {
+      background-color: $gray-4;
+      box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+    }
+
+    .abstract-topics-filter-button {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 600;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      color: $gray-64;
+      > span {
+        padding: 15px 0 15px 34px;
+        display: block;
+        z-index: 2;
+      }
+    }
 
     .abstract-topics-checkboxes {
       position: absolute;
+      top: 50px;
+      left: -23px;
       z-index: 99;
       display: flex;
       padding: 21px;
@@ -115,6 +248,11 @@ body.ama__abstract {
       border-radius: 8px;
       border: 1px solid #E4E3E6;
       background: #FFF;
+      width: 470px;
+      @include breakpoint($bp-small) {
+        left: -8px;
+        width: 390px;
+      }
 
       &.hidden {
         display: none;
@@ -127,14 +265,43 @@ body.ama__abstract {
         line-height: 24px; /* 120% */
         padding-bottom: 28px;
       }
+
+      .form-item {
+        margin-bottom: 14px;
+        label {
+          color: $black;
+          font-family: $kepler-std;
+          font-size: 18px;
+          line-height: 24px;
+          font-weight: 300;
+          text-transform: capitalize;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .ama__checkbox .ui-checkboxradio-label .ui-icon-background {
+        margin-right: 14px;
+      }
     }
   }
+
+  .form-actions {
+    display: none;
+  }
 }
-.layout--ama-page-section-one-col {
+.research-category-hero.layout--ama-page-section-one-col {
   &.bg-purple {
     background: $purple-gradient;
     padding: 63px 0;
-    margin-bottom: 63px;
     color: white;
+  }
+
+  h1 {
+    margin-bottom: 21px;
+    @include breakpoint($bp-small) {
+      margin-bottom: 63px;
+    }
   }
 }
