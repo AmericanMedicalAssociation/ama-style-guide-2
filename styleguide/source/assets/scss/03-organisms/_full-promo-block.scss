@@ -1,76 +1,61 @@
-.layout--ama-page-section-one-col {
-  &.purple_gradient {
-    background: linear-gradient(90deg, #46166B, #7229D1);
-  }
-  &.pale_purple {
-    background-color: #F3E8FF;
-  }
-  &.gray {
-    background-color: $gray-64;
-  }
-  .layout-builder-block {
-    background: transparent;
-  }
-}
-
 .full-promo-block {
-  background: transparent;
-  position: relative;
+  font-family: $myriad-pro;
+  padding: 91px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 40px 32px;
-  @include breakpoint($bp-small) {
-    padding: 90px 32px;
-  }
-  &.purple_gradient {
-    background: linear-gradient(90deg, #46166B, #7229D1);
-  }
-  &.pale_purple {
-    background-color: #F3E8FF;
-  }
+  background-color: transparent;
   &.light_text {
-    h2,
-    p {
-      color: #ffffff !important;
-    }
+    color: $white;
+  }
+  &.dark_text {
+    color: $black;
+  }
+  &.bg_purple_gradient {
+    background: $linear-purple-gradient;
+  }
+  &.bg_pale_purple {
+    background-color: $bg_purple;
+  }
+  &.bg_none {
+    background-color: transparent;
+  }
+  &.bg_gray {
+    background-color: $bg_gray;
+  }
+  &.bg_purple {
+    background-color: $purple;
   }
   .title {
     h2 {
-      font-family: $myriad-pro;
       font-size: 34px;
-      line-height: 46px;
       font-weight: $font-weight-bold;
-      margin-bottom: 18px;
+      font-family: $myriad-pro;
+      line-height: 64px;
     }
   }
   .body {
     p {
-      font-family: $myriad-pro;
       font-size: 18px;
+      font-weight: $font-weight-regular;
+      font-family: $myriad-pro;
+      margin-bottom: 32px;
     }
-    margin-bottom: 18px;
   }
   .ctas {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     flex-direction: column;
+    gap: calc($gutter * .75);
     @include breakpoint($bp-small) {
       flex-direction: row;
+
     }
-    .cta-one {
-      margin-right: 0;
-      margin-bottom: 21px;
-      @include breakpoint ($bp-small) {
-        margin-right: 1rem;
-        margin-bottom: 0;
-      }
+    .cta_one {
+
     }
-    .cta-two {
+    .cta_two {
 
     }
   }
 }
-
