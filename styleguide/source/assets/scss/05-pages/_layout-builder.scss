@@ -20,18 +20,24 @@
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  padding: 15px;
-  border: 2px solid gray;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-top: calc($gutter / 2);
+  border: 1px solid $border-gray;
   background-color: lightgray;
+  font-family: $myriad-pro;
+  .unlock-button {
+    margin-left: auto;
+  }
   p {
     margin-bottom: 0;
   }
   &.locked {
-    background-color: pink;
-    border: 2px solid red;
+    background-color: #ffd3cf;
+    border: 1px solid #fa7c6e;
     &.self-locked {
-      background-color: peachpuff;
-      border: 2px solid orange;
+      background-color: #f7e6d7;
+      border: 1px solid #f5b47a;
     }
   }
 }
@@ -47,6 +53,7 @@ form[id*="-layout-builder-form"] {
       display: flex;
       flex-direction: row;
       gap: 20px;
+      margin-bottom: $gutter;
     }
   }
   #edit-preview-toggle,
@@ -104,6 +111,7 @@ form[id*="-layout-builder-form"] {
     }
   }
 }
+
 .layout-builder__section {
   .ama__full_hero_banner {
     margin-bottom: 0;
@@ -153,6 +161,7 @@ form[id*="-layout-builder-form"] {
   form.layout-builder-form {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid $bg-gray;
     .form-actions {
       display: flex;
       flex-direction: row;
@@ -170,13 +179,28 @@ form[id*="-layout-builder-form"] {
           }
         }
       }
+      #edit-custom-revert {
+        margin-left: auto;
+        margin-right: 0;
+        &.disabled {
+          color: #7f7f7f;
+          background-color: #E4E3E6;
+          &:hover {
+            color: #7f7f7f;
+            background-color: #E4E3E6;
+            cursor: default;
+          }
+        }
+      }
     }
-  }
-  .vertical-tabs {
-    display: none;
-    .vertical-tabs__pane {
-      min-height: 170px;
-      padding: 28px 40px;
+    .js-form-type-vertical-tabs {
+      display: none;
+      .vertical-tabs {
+        display: none;
+        .vertical-tabs__pane {
+          display: none;
+        }
+      }
     }
   }
 
@@ -228,17 +252,20 @@ form[id*="-layout-builder-form"] {
     }
   }
   #layout-builder {
+    .layout-builder-block {
+      padding: 1.5em;
+    }
     display: flex;
     flex-direction: column;
     [data-drupal-messages] {
-      order: 999;
+      @extend .container;
       margin-bottom: $gutter;
       font-size: 18px;
       background: #aef6cb;
       color: #378b59;
       border-radius: 8px;
-      margin: 28px 0;
-      padding: 12px 14px;
+      margin: 28px auto;
+      padding: 12px 14px !important;
       font-style: italic;
       h2 {
       }
@@ -252,13 +279,21 @@ form[id*="-layout-builder-form"] {
         }
       }
     }
+    .is-sticky {
+      position: relative;
+      .addtoany_list {
+        position: relative !important;
+        width: 100% !important;
+        z-index: initial !important;
+        top: auto !important;
+      }
+    }
     &.layout-builder {
       border: none;
       background-color: transparent;
+      padding: 0 1.5rem;
+      border: none;
     }
-  }
-  #edit-actions {
-    margin-bottom: $gutter;
   }
   .ama__button:not([value="Search"]) {
     min-height: 44px;
@@ -310,6 +345,16 @@ form[id*="-layout-builder-form"] {
   }
 }
 #drupal-off-canvas {
+  .js-form-type-checkbox {
+    input[type="checkbox"] {
+      transform: scale(1.3);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
   .block-categories {
     details {
       .layout-builder-browser-block-item {
