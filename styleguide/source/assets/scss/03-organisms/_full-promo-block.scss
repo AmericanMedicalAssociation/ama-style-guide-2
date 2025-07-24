@@ -1,0 +1,75 @@
+.full-promo-block {
+  font-family: $myriad-pro;
+  padding: 40px 32px;
+  @include breakpoint($bp-small) {
+    padding: 90px 32px;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  &.light_text {
+    color: $white;
+    p,
+    h2 {
+      color: $white !important;
+    }
+  }
+  &.dark_text {
+    color: $black;
+  }
+  &.bg_purple_gradient {
+    background: $linear-purple-gradient;
+  }
+  &.bg_pale_purple {
+    background-color: $bg_purple;
+  }
+  &.bg_none {
+    background-color: transparent;
+  }
+  &.bg_gray {
+    background-color: $bg_gray;
+  }
+  &.bg_purple {
+    background-color: $purple;
+  }
+  .title {
+    h2 {
+      font-size: 34px;
+      font-weight: $font-weight-bold;
+      font-family: $myriad-pro;
+      line-height: 46px;
+      margin-bottom: 18px;
+    }
+  }
+  .body {
+    p {
+      font-size: 18px;
+      font-weight: $font-weight-regular;
+      font-family: $myriad-pro;
+      margin-bottom: 32px;
+    }
+  }
+  .ctas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc($gutter * .75);
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+
+    }
+    .cta_one {
+      margin-right: 0;
+      margin-bottom: 21px;
+      @include breakpoint ($bp-small) {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+    .cta_two {
+
+    }
+  }
+}
