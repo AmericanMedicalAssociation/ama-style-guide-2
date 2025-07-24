@@ -1,6 +1,9 @@
 .full-promo-block {
   font-family: $myriad-pro;
-  padding: 91px 0;
+  padding: 40px 32px;
+  @include breakpoint($bp-small) {
+    padding: 90px 32px;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +11,10 @@
   background-color: transparent;
   &.light_text {
     color: $white;
+    p,
+    h2 {
+      color: $white !important;
+    }
   }
   &.dark_text {
     color: $black;
@@ -32,7 +39,8 @@
       font-size: 34px;
       font-weight: $font-weight-bold;
       font-family: $myriad-pro;
-      line-height: 64px;
+      line-height: 46px;
+      margin-bottom: 18px;
     }
   }
   .body {
@@ -46,13 +54,19 @@
   .ctas {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: calc($gutter * .75);
     @include breakpoint($bp-small) {
       flex-direction: row;
 
     }
     .cta_one {
-
+      margin-right: 0;
+      margin-bottom: 21px;
+      @include breakpoint ($bp-small) {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
     }
     .cta_two {
 
