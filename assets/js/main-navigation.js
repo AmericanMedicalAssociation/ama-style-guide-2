@@ -71,16 +71,7 @@
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
             if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
-              bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup, {
-                allowTouchMove: function allowTouchMove(el) {
-                  while (el && el !== document.body) {
-                    if (el.getAttribute('body-scroll-lock-ignore') !== null) {
-                      return true;
-                    }
-                    el = el.parentNode;
-                  }
-                }
-              });
+              bodyScrollLock.lock($categoryNavigationMenuGroup);
             }
 
             if (agentID) {
@@ -103,7 +94,7 @@
         else {
           $categoryNavigationMenu.slideUp(function () {
             $(this).parent().height(0);
-            bodyScrollLock.clearAllBodyScrollLocks();
+            bodyScrollLock.unlock();
           });
         }
       }
