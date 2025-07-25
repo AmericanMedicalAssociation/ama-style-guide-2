@@ -299,23 +299,23 @@ fieldset {
   width: 100%;
 }
 
-.container, .container-fluid {
+.container, .layout-builder-page #layout-builder [data-drupal-messages], #layout-builder .layout-builder-container, .container-fluid {
   margin: 0 auto;
   padding: 0 15px;
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container, .layout-builder-page #layout-builder [data-drupal-messages], #layout-builder .layout-builder-container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
-  .container {
+  .container, .layout-builder-page #layout-builder [data-drupal-messages], #layout-builder .layout-builder-container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  .container {
+  .container, .layout-builder-page #layout-builder [data-drupal-messages], #layout-builder .layout-builder-container {
     width: 1170px;
   }
 }
@@ -594,7 +594,7 @@ fieldset {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.container {
+.container, .layout-builder-page #layout-builder [data-drupal-messages], #layout-builder .layout-builder-container {
   max-width: 1260px;
   margin: 0 auto;
 }
@@ -1906,11 +1906,11 @@ a.webform-button--submit {
   color: #ffffff;
 }
 
-.form-submit.ama__button {
+.form-submit.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions .form-submit#edit-cancel {
   margin-bottom: 21px;
 }
 @media (min-width: 56.25em) {
-  .form-submit.ama__button {
+  .form-submit.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions .form-submit#edit-cancel {
     margin-bottom: 28px;
   }
 }
@@ -1935,8 +1935,42 @@ html.js iframe[src="javascript:false"] {
   border-bottom: solid 3px #5C5C5C;
 }
 
+.bg_purple_gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#46166B), to(#7229D1));
+  background: linear-gradient(90deg, #46166B 0%, #7229D1 100%);
+}
+
+.bg_pale_purple {
+  background-color: #ece7f0;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg_none {
+  background-color: transparent;
+}
+
+.bg_gray {
+  background-color: #f4f4f4;
+}
+
+.bg_purple {
+  background-color: #46166B;
+}
+
+.light_text {
+  color: #ffffff;
+}
+
+.dark_text {
+  color: #000000;
+}
+
 .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__hub-hero__button-container a, .ama__hub-card__button-container a,
-.ama__button {
+.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -1960,41 +1994,49 @@ html.js iframe[src="javascript:false"] {
 }
 @media screen and (min-width: 37.5em) {
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__hub-hero__button-container a, .ama__hub-card__button-container a,
-  .ama__button {
+  .ama__button,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 56.25em) {
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__hub-hero__button-container a, .ama__hub-card__button-container a,
-  .ama__button {
+  .ama__button,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     font-size: 18px;
     line-height: 1.5;
   }
 }
 @media screen and (min-width: 75em) {
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__hub-hero__button-container a, .ama__hub-card__button-container a,
-  .ama__button {
+  .ama__button,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     font-size: 18px;
   }
 }
 @media (min-width: 56.25em) {
   .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__hub-hero__button-container a, .ama__hub-card__button-container a,
-  .ama__button {
+  .ama__button,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     padding: 14px;
   }
 }
 .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button:hover, .ama__hub-hero__button-container a:hover, .ama__hub-card__button-container a:hover, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button:focus-visible, .ama__hub-hero__button-container a:focus-visible, .ama__hub-card__button-container a:focus-visible,
 .ama__button:hover,
-.ama__button:focus-visible {
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.ama__button:focus-visible,
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:focus-visible {
   border-color: #46166B;
   color: #ffffff;
 }
 .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button:hover, .ama__hub-hero__button-container a:hover, .ama__hub-card__button-container a:hover,
-.ama__button:hover {
+.ama__button:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover {
   background-color: #9073A6;
 }
 .ama__hub-card__button-container .ama__button--secondary,
-.ama__button--secondary {
+.ama__button--secondary,
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -2018,35 +2060,42 @@ html.js iframe[src="javascript:false"] {
 }
 @media screen and (min-width: 37.5em) {
   .ama__hub-card__button-container .ama__button--secondary,
-  .ama__button--secondary {
+  .ama__button--secondary,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 56.25em) {
   .ama__hub-card__button-container .ama__button--secondary,
-  .ama__button--secondary {
+  .ama__button--secondary,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     font-size: 18px;
     line-height: 1.5;
   }
 }
 @media screen and (min-width: 75em) {
   .ama__hub-card__button-container .ama__button--secondary,
-  .ama__button--secondary {
+  .ama__button--secondary,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     font-size: 18px;
   }
 }
 @media (min-width: 56.25em) {
   .ama__hub-card__button-container .ama__button--secondary,
-  .ama__button--secondary {
+  .ama__button--secondary,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
     padding: 14px;
   }
 }
 .ama__button--secondary:hover,
-.ama__button--secondary:focus-visible {
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.ama__button--secondary:focus-visible,
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:focus-visible {
   border-color: #46166B;
   color: #ffffff;
 }
-.ama__button--secondary:hover {
+.ama__button--secondary:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover {
   background-color: #46166B;
   color: #ffffff;
 }
@@ -2425,7 +2474,9 @@ html.js iframe[src="javascript:false"] {
   color: #5C5C5C !important;
 }
 .ama__button--homepage,
-.ama__subscribe-promo__form .ama__button {
+.ama__subscribe-promo__form .ama__button,
+.ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -2450,38 +2501,52 @@ html.js iframe[src="javascript:false"] {
 }
 @media screen and (min-width: 37.5em) {
   .ama__button--homepage,
-  .ama__subscribe-promo__form .ama__button {
+  .ama__subscribe-promo__form .ama__button,
+  .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 56.25em) {
   .ama__button--homepage,
-  .ama__subscribe-promo__form .ama__button {
+  .ama__subscribe-promo__form .ama__button,
+  .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel {
     font-size: 18px;
     line-height: 1.5;
   }
 }
 @media screen and (min-width: 75em) {
   .ama__button--homepage,
-  .ama__subscribe-promo__form .ama__button {
+  .ama__subscribe-promo__form .ama__button,
+  .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel {
     font-size: 18px;
   }
 }
 @media (min-width: 56.25em) {
   .ama__button--homepage,
-  .ama__subscribe-promo__form .ama__button {
+  .ama__subscribe-promo__form .ama__button,
+  .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel {
     padding: 14px;
   }
 }
 .ama__button--homepage:hover,
 .ama__subscribe-promo__form .ama__button:hover,
+.ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel:hover,
 .ama__button--homepage:focus-visible,
-.ama__subscribe-promo__form .ama__button:focus-visible {
+.ama__subscribe-promo__form .ama__button:focus-visible,
+.ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:focus-visible,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel:focus-visible {
   border-color: #46166B;
   color: #ffffff;
 }
 .ama__button--homepage:hover,
-.ama__subscribe-promo__form .ama__button:hover {
+.ama__subscribe-promo__form .ama__button:hover,
+.ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel:hover {
   background-color: #9073A6;
   border-color: transparent;
   color: #ffffff;
@@ -3977,7 +4042,7 @@ html.js iframe[src="javascript:false"] {
   max-width: 50px;
 }
 
-.icon--search-purple, .ama__global-search .ama__global-search__action .ama__button, .ama__search__field .form-submit {
+.icon--search-purple, .ama__global-search .ama__global-search__action .ama__button, .ama__global-search .ama__global-search__action .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__global-search .ama__global-search__action #edit-cancel, .ama__search__field .form-submit {
   display: inline-block;
   background: url("../icons/svg/icon-search-purple.svg") no-repeat 0 0;
   background-size: 33px 33px;
@@ -10714,20 +10779,20 @@ Styles for the new Category Featured Content Custom Block.
     display: none;
   }
 }
-.dr-finder__alert .ama__button {
+.dr-finder__alert .ama__button, .dr-finder__alert .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder__alert #edit-cancel {
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 auto;
   display: none;
 }
 @media (min-width: 37.5em) {
-  .dr-finder__alert .ama__button {
+  .dr-finder__alert .ama__button, .dr-finder__alert .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder__alert #edit-cancel {
     -ms-flex-item-align: end;
     align-self: flex-end;
   }
 }
 @media (min-width: 37.5em) {
-  .dr-finder__alert .ama__button {
+  .dr-finder__alert .ama__button, .dr-finder__alert .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder__alert #edit-cancel {
     display: block;
   }
 }
@@ -10765,7 +10830,7 @@ Styles for the new Category Featured Content Custom Block.
   width: 100%;
   padding: 0 11px 0 22px;
 }
-.dr-finder-claim a.ama__button {
+.dr-finder-claim a.ama__button, .dr-finder-claim .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder-claim a#edit-cancel {
   margin-top: 19px;
   padding: 9px 26px;
   font-size: 16px;
@@ -11468,21 +11533,21 @@ main {
   color: #027DBC;
 }
 
-.dr-finder-profile-header__claim .ama__button {
+.dr-finder-profile-header__claim .ama__button, .dr-finder-profile-header__claim .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder-profile-header__claim #edit-cancel {
   padding: 5px 21px;
 }
 
-.dr-finder-profile-header__upload-actions .ama__button {
+.dr-finder-profile-header__upload-actions .ama__button, .dr-finder-profile-header__upload-actions .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder-profile-header__upload-actions #edit-cancel {
   width: 100%;
   margin-bottom: 14px;
   padding: 5px 21px;
 }
 
-.dr-finder-profile-header__edit-actions .ama__button {
+.dr-finder-profile-header__edit-actions .ama__button, .dr-finder-profile-header__edit-actions .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder-profile-header__edit-actions #edit-cancel {
   width: 100%;
 }
 @media (min-width: 37.5em) {
-  .dr-finder-profile-header__edit-actions .ama__button {
+  .dr-finder-profile-header__edit-actions .ama__button, .dr-finder-profile-header__edit-actions .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder-profile-header__edit-actions #edit-cancel {
     width: auto;
     padding: 5px 21px;
   }
@@ -11529,14 +11594,14 @@ main {
 }
 
 @media (min-width: 37.5em) {
-  .ama-drfinder-profile.container {
+  .ama-drfinder-profile.container, .layout-builder-page #layout-builder .ama-drfinder-profile[data-drupal-messages], #layout-builder .ama-drfinder-profile.layout-builder-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 
-.dr-finder-profile__actions .ama__button {
+.dr-finder-profile__actions .ama__button, .dr-finder-profile__actions .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .dr-finder-profile__actions #edit-cancel {
   padding: 5px 21px;
 }
 
@@ -12316,174 +12381,6 @@ main {
 }
 .ama__event-stub--sticky {
   background: #EDEDED;
-}
-
-.ama__expand-list .ui-accordion-header, .ama__expand-list__header {
-  padding-top: 10.5px;
-  padding-left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  color: #000000;
-  text-transform: uppercase;
-}
-@media (min-width: 56.25em) {
-  .ama__expand-list .ui-accordion-header, .ama__expand-list__header {
-    padding-top: 14px;
-  }
-}
-.ama__expand-list .ui-accordion-header:active, .ama__expand-list .ui-accordion-header:focus, .ama__expand-list__header:active, .ama__expand-list__header:focus {
-  outline: none;
-}
-.ama__expand-list .ui-accordion-header h3, .ama__expand-list__header h3 {
-  margin-bottom: 7px;
-}
-.ama__expand-list .ui-accordion-header__text, .ama__expand-list__header__text {
-  font-size: 22px;
-  line-height: 26px;
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  margin-bottom: 0;
-}
-.ama__expand-list .ui-accordion-header .ui-accordion-header-icon, .ama__expand-list__header .ui-accordion-header-icon {
-  display: none;
-}
-.ama__expand-list .ui-accordion-header__icon, .ama__expand-list__header__icon {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  float: right;
-  /* Vertical line */
-}
-.ama__expand-list .ui-accordion-header__icon:before, .ama__expand-list .ui-accordion-header__icon:after, .ama__expand-list__header__icon:before, .ama__expand-list__header__icon:after {
-  content: "";
-  position: absolute;
-  background-color: #5C5C5C;
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  transition: -webkit-transform 0.25s ease-out;
-  transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
-}
-.ama__expand-list .ui-accordion-header__icon:before, .ama__expand-list__header__icon:before {
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  margin-left: -1px;
-}
-.ama__expand-list .ui-accordion-header__icon:after, .ama__expand-list__header__icon:after {
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  margin-top: -1px;
-}
-.ama__expand-list .ui-accordion-header.ui-state-active .ama__expand-list__header__icon, .ama__expand-list__header.ui-state-active .ama__expand-list__header__icon {
-  cursor: pointer;
-}
-.ama__expand-list .ui-accordion-header.ui-state-active .ama__expand-list__header__icon:before, .ama__expand-list__header.ui-state-active .ama__expand-list__header__icon:before {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-.ama__expand-list .ui-accordion-header.ui-state-active .ama__expand-list__header__icon:after, .ama__expand-list__header.ui-state-active .ama__expand-list__header__icon:after {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-.ama__expand-list .ama__search__field {
-  padding-top: 10.5px;
-  padding-bottom: 10.5px;
-  width: 100%;
-  min-height: 72px;
-}
-@media (min-width: 56.25em) {
-  .ama__expand-list .ama__search__field {
-    padding-top: 14px;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__expand-list .ama__search__field {
-    padding-bottom: 14px;
-  }
-}
-.ama__expand-list .ui-accordion-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-}
-.ama__expand-list .ui-accordion-content label {
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 300;
-}
-@media screen and (min-width: 37.5em) {
-  .ama__expand-list .ui-accordion-content label {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 56.25em) {
-  .ama__expand-list .ui-accordion-content label {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-}
-@media screen and (min-width: 75em) {
-  .ama__expand-list .ui-accordion-content label {
-    font-size: 18px;
-  }
-}
-.ama__expand-list .ui-accordion-content li {
-  margin-top: 10.5px;
-  margin-bottom: 0;
-}
-@media (min-width: 56.25em) {
-  .ama__expand-list .ui-accordion-content li {
-    margin-top: 14px;
-  }
-}
-.ama__expand-list .ui-accordion-content li a {
-  text-decoration: none;
-}
-.ama__expand-list .ui-accordion-content li a:hover {
-  color: #3597C9;
-}
-.ama__expand-list .ui-accordion-content input[type=checkbox] {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-@media (min-width: 75em) {
-  .ama__expand-list .ui-accordion-content input[type=checkbox] {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-  }
 }
 
 .ama__explore-menu {
@@ -13863,12 +13760,12 @@ table[id^=forum-topic] td.forum_replies a {
   }
 }
 
-#block-ama-one-forums-content .action-links.ama__button--secondary a {
+#block-ama-one-forums-content .action-links.ama__button--secondary a, #block-ama-one-forums-content .layout-builder-page #layout-builder-discard-changes #edit-actions .action-links#edit-cancel a, .layout-builder-page #layout-builder-discard-changes #edit-actions #block-ama-one-forums-content .action-links#edit-cancel a {
   color: #46166B;
   text-decoration: none;
   padding: 0px 40px;
 }
-#block-ama-one-forums-content .action-links.ama__button--secondary:hover a {
+#block-ama-one-forums-content .action-links.ama__button--secondary:hover a, #block-ama-one-forums-content .layout-builder-page #layout-builder-discard-changes #edit-actions .action-links#edit-cancel:hover a, .layout-builder-page #layout-builder-discard-changes #edit-actions #block-ama-one-forums-content .action-links#edit-cancel:hover a {
   color: white;
 }
 #block-ama-one-forums-content a.print_forum_link {
@@ -14302,7 +14199,7 @@ table a.new-replies .count-new {
 .ama__global-search .form-actions {
   margin: 0;
 }
-.ama__global-search .ama__global-search__action .ama__button {
+.ama__global-search .ama__global-search__action .ama__button, .ama__global-search .ama__global-search__action .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__global-search .ama__global-search__action #edit-cancel {
   background-size: 0 0;
   padding: 0;
   outline: none;
@@ -14316,7 +14213,7 @@ table a.new-replies .count-new {
   max-height: 52px;
 }
 @media (min-width: 37.5em) {
-  .ama__global-search .ama__global-search__action .ama__button {
+  .ama__global-search .ama__global-search__action .ama__button, .ama__global-search .ama__global-search__action .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__global-search .ama__global-search__action #edit-cancel {
     background-color: #ffffff;
     background-size: 24px 24px;
     background-position: center;
@@ -14430,7 +14327,7 @@ table a.new-replies .count-new {
     padding-bottom: 28px;
   }
 }
-.hero-evergreen__background .hero-evergreen__buttons .ama__button {
+.hero-evergreen__background .hero-evergreen__buttons .ama__button, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
   padding-right: 42px;
   padding-left: 42px;
   padding-bottom: 5.25px;
@@ -14440,37 +14337,37 @@ table a.new-replies .count-new {
   font-weight: 400;
 }
 @media (min-width: 56.25em) {
-  .hero-evergreen__background .hero-evergreen__buttons .ama__button {
+  .hero-evergreen__background .hero-evergreen__buttons .ama__button, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
     padding-right: 56px;
   }
 }
 @media (min-width: 56.25em) {
-  .hero-evergreen__background .hero-evergreen__buttons .ama__button {
+  .hero-evergreen__background .hero-evergreen__buttons .ama__button, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
     padding-left: 56px;
   }
 }
 @media (min-width: 56.25em) {
-  .hero-evergreen__background .hero-evergreen__buttons .ama__button {
+  .hero-evergreen__background .hero-evergreen__buttons .ama__button, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
     padding-bottom: 7px;
   }
 }
 @media (min-width: 56.25em) {
-  .hero-evergreen__background .hero-evergreen__buttons .ama__button {
+  .hero-evergreen__background .hero-evergreen__buttons .ama__button, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
     padding-top: 7px;
   }
 }
 @media (min-width: 56.25em) {
-  .hero-evergreen__background .hero-evergreen__buttons .ama__button {
+  .hero-evergreen__background .hero-evergreen__buttons .ama__button, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
     margin: 28px;
   }
 }
-.hero-evergreen__background .hero-evergreen__buttons .ama__button--secondary {
+.hero-evergreen__background .hero-evergreen__buttons .ama__button--secondary, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel {
   color: #46166B;
 }
-.hero-evergreen__background .hero-evergreen__buttons .ama__button--secondary:hover {
+.hero-evergreen__background .hero-evergreen__buttons .ama__button--secondary:hover, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel:hover {
   color: #ffffff;
 }
-.hero-evergreen__background .hero-evergreen__buttons .ama__button:focus-visible {
+.hero-evergreen__background .hero-evergreen__buttons .ama__button:focus-visible, .hero-evergreen__background .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:focus-visible, .layout-builder-page #layout-builder-discard-changes #edit-actions .hero-evergreen__background .hero-evergreen__buttons #edit-cancel:focus-visible {
   outline: 2px solid #027DBC;
   outline-offset: 3px;
 }
@@ -14528,16 +14425,24 @@ table a.new-replies .count-new {
   }
 }
 
-.ama__news-article .hero-evergreen__buttons .ama__button,
+.ama__news-article .hero-evergreen__buttons .ama__button, .ama__news-article .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__news-article .hero-evergreen__buttons #edit-cancel,
 .js-layout-builder-block .hero-evergreen__buttons .ama__button,
-.layout__region .hero-evergreen__buttons .ama__button {
+.js-layout-builder-block .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .js-layout-builder-block .hero-evergreen__buttons #edit-cancel,
+.layout__region .hero-evergreen__buttons .ama__button,
+.layout__region .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout__region .hero-evergreen__buttons #edit-cancel {
   border: solid 1px #471b6d;
   background-color: #ffffff;
   color: #46166B;
 }
-.ama__news-article .hero-evergreen__buttons .ama__button:hover,
+.ama__news-article .hero-evergreen__buttons .ama__button:hover, .ama__news-article .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__news-article .hero-evergreen__buttons #edit-cancel:hover,
 .js-layout-builder-block .hero-evergreen__buttons .ama__button:hover,
-.layout__region .hero-evergreen__buttons .ama__button:hover {
+.js-layout-builder-block .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .js-layout-builder-block .hero-evergreen__buttons #edit-cancel:hover,
+.layout__region .hero-evergreen__buttons .ama__button:hover,
+.layout__region .hero-evergreen__buttons .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout__region .hero-evergreen__buttons #edit-cancel:hover {
   background-color: #46166B;
   color: #ffffff;
 }
@@ -14621,11 +14526,11 @@ table a.new-replies .count-new {
 .ama__hero-story__featured-quote:before, .ama__hero-story__featured-quote:after {
   content: '"';
 }
-.ama__hero-story .ama__button {
+.ama__hero-story .ama__button, .ama__hero-story .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__hero-story #edit-cancel {
   margin: 28px auto 7px;
 }
 @media (min-width: 37.5em) {
-  .ama__hero-story .ama__button {
+  .ama__hero-story .ama__button, .ama__hero-story .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__hero-story #edit-cancel {
     -ms-flex-item-align: end;
     align-self: flex-end;
     margin: 14px 0 7px;
@@ -15888,13 +15793,17 @@ span.ama__inline-bio__link a:focus-visible {
   }
 }
 .ama__partner-promo button,
-.ama__partner-promo .ama__button {
+.ama__partner-promo .ama__button,
+.ama__partner-promo .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__partner-promo #edit-cancel {
   margin-top: 10.5px;
   width: 100%;
 }
 @media (min-width: 56.25em) {
   .ama__partner-promo button,
-  .ama__partner-promo .ama__button {
+  .ama__partner-promo .ama__button,
+  .ama__partner-promo .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__partner-promo #edit-cancel {
     margin-top: 14px;
   }
 }
@@ -15914,7 +15823,9 @@ span.ama__inline-bio__link a:focus-visible {
 }
 .ama__partner-promo--homepage a,
 .ama__partner-promo--homepage button,
-.ama__partner-promo--homepage .ama__button {
+.ama__partner-promo--homepage .ama__button,
+.ama__partner-promo--homepage .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__partner-promo--homepage #edit-cancel {
   margin-top: 21px;
   margin-right: 10.5px;
   width: auto;
@@ -15923,14 +15834,18 @@ span.ama__inline-bio__link a:focus-visible {
 @media (min-width: 56.25em) {
   .ama__partner-promo--homepage a,
   .ama__partner-promo--homepage button,
-  .ama__partner-promo--homepage .ama__button {
+  .ama__partner-promo--homepage .ama__button,
+  .ama__partner-promo--homepage .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__partner-promo--homepage #edit-cancel {
     margin-top: 28px;
   }
 }
 @media (min-width: 56.25em) {
   .ama__partner-promo--homepage a,
   .ama__partner-promo--homepage button,
-  .ama__partner-promo--homepage .ama__button {
+  .ama__partner-promo--homepage .ama__button,
+  .ama__partner-promo--homepage .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__partner-promo--homepage #edit-cancel {
     margin-right: 14px;
   }
 }
@@ -16100,35 +16015,95 @@ span.ama__inline-bio__link a:focus-visible {
 .index-page > div > .ama__partner-promo .ama__partner-promo__text ul {
   color: #000000;
 }
-.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button,
+.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel,
 .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .ama__button,
+.ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text #edit-cancel,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .ama__button,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text #edit-cancel,
 .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .ama__button,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text #edit-cancel,
 .index-page .index-promo .ama__partner-promo .ama__partner-promo__text .ama__button,
+.index-page .index-promo .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__partner-promo .ama__partner-promo__text #edit-cancel,
 .index-page .no-results .ama__partner-promo .ama__partner-promo__text .ama__button,
-.index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button {
+.index-page .no-results .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__partner-promo .ama__partner-promo__text #edit-cancel,
+.index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button,
+.index-page > div > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__partner-promo .ama__partner-promo__text #edit-cancel {
   font-weight: 700;
   margin: 21px 0 0;
 }
 @media (min-width: 56.25em) {
-  .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel,
   .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text #edit-cancel,
   .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text #edit-cancel,
   .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text #edit-cancel,
   .index-page .index-promo .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .index-page .index-promo .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__partner-promo .ama__partner-promo__text #edit-cancel,
   .index-page .no-results .ama__partner-promo .ama__partner-promo__text .ama__button,
-  .index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button {
+  .index-page .no-results .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__partner-promo .ama__partner-promo__text #edit-cancel,
+  .index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .index-page > div > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__partner-promo .ama__partner-promo__text #edit-cancel {
     margin: 28px 0 0;
     max-width: 224px;
   }
 }
-.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
 .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
 .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
 .index-page .index-promo .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.index-page .index-promo .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.index-page .index-promo .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.index-page .index-promo .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
 .index-page .no-results .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
-.index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button {
+.index-page .no-results .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.index-page .no-results .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.index-page .no-results .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
+.index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.index-page > div > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.index-page > div > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel {
   color: #001b1b;
   padding: 8px 14px 7px;
 }
@@ -16226,11 +16201,11 @@ span.ama__inline-bio__link a:focus-visible {
 .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo__text h3.ama__h3, .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo__text h3.ama__subcategory-hero__title, .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__partner-promo__text h3.ama__category-hero__title {
   color: #027DBC;
 }
-.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__button {
+.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__button, .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo #edit-cancel {
   background: #46166B;
   color: #ffffff;
 }
-.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__button:hover {
+.index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .ama__button:hover, .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .index-hero .ama__partner-promo #edit-cancel:hover {
   background: #9073A6;
 }
 
@@ -16312,23 +16287,43 @@ span.ama__inline-bio__link a:focus-visible {
 .ama__jama .ama__image__text .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__image__text__subtitle {
   color: #000000;
 }
-.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button,
+.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel,
 .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button,
-.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button {
+.layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel {
   font-weight: 700;
   margin: 21px 0 0;
 }
 @media (min-width: 37.5em) {
-  .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel,
   .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button,
-  .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button {
+  .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel,
+  .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button,
+  .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel {
     margin: 28px 0 0;
     max-width: 224px;
   }
 }
-.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel, .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
 .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
-.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button {
+.layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button a.ama__button,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a.ama__button,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel a.ama__button,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .ama__button a#edit-cancel,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__partner-promo .ama__partner-promo__text #edit-cancel a#edit-cancel {
   color: #001b1b;
   padding: 8px 14px 7px;
 }
@@ -16537,7 +16532,7 @@ span.ama__inline-bio__link a:focus-visible {
     padding: 14px;
   }
 }
-.ama__people-listing-card__button-container .ama__button--secondary {
+.ama__people-listing-card__button-container .ama__button--secondary, .ama__people-listing-card__button-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__people-listing-card__button-container #edit-cancel {
   width: 100%;
 }
 
@@ -18823,6 +18818,9 @@ footer .ama__social-share a.social--twitter-white:hover {
   display: -ms-flexbox;
   display: flex;
   text-decoration: none;
+  gap: 14px;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 @media (max-width: 37.5em) {
   .ama__subcategory-page-article-stub {
@@ -18832,6 +18830,12 @@ footer .ama__social-share a.social--twitter-white:hover {
 }
 .ama__subcategory-page-article-stub__image {
   display: block;
+  max-width: 100%;
+}
+@media (min-width: 37.5em) {
+  .ama__subcategory-page-article-stub__image {
+    max-width: 25%;
+  }
 }
 .ama__subcategory-page-article-stub__image img.ama__bio-image-with-body__image {
   margin: 0;
@@ -19004,7 +19008,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     padding: 35px 14px 0 14px;
   }
 }
-.ama__category-index .ama__category-index__stubs__load-more a.ama__button {
+.ama__category-index .ama__category-index__stubs__load-more a.ama__button, .ama__category-index .ama__category-index__stubs__load-more .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category-index .ama__category-index__stubs__load-more a#edit-cancel {
   font-size: 20px;
   font-weight: 400;
   padding: 10px 45px;
@@ -19023,7 +19027,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
 .ama__subscribe-promo__heading {
   color: #ffffff;
 }
-.ama__subscribe-promo__form .ama__button {
+.ama__subscribe-promo__form .ama__button, .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel {
   -webkit-appearance: none;
   border-radius: 0;
   display: block;
@@ -19032,7 +19036,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   border: 0;
   text-transform: none;
 }
-.ama__subscribe-promo__form .ama__button:hover {
+.ama__subscribe-promo__form .ama__button:hover, .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo__form #edit-cancel:hover {
   background: #9073A6;
 }
 .ama__subscribe-promo__form .us-verify {
@@ -19202,7 +19206,7 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   display: none;
 }
 @media (min-width: 37.5em) {
-  .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button,
+  .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__subscribe-promo--wide .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo--wide .ama__subscribe-promo__form #edit-cancel,
   .ama__subscribe-promo--wide .ama__subscribe-promo__form form .ama__button {
     margin: 0 0 0 auto;
   }
@@ -19278,14 +19282,14 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     margin-bottom: auto;
   }
 }
-.ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__button {
+.ama__subscribe-promo--homepage .ama__subscribe-promo__form form .ama__button, .ama__subscribe-promo--homepage .ama__subscribe-promo__form form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo--homepage .ama__subscribe-promo__form form #edit-cancel {
   margin: 0 auto;
 }
-.ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .ama__button {
+.ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .ama__button, .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container #edit-cancel {
   height: 50.7px;
 }
 @media (min-width: 75em) {
-  .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .ama__button {
+  .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .ama__button, .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subscribe-promo .ama__subscribe-promo__email-subscribe-container #edit-cancel {
     height: 50px;
   }
 }
@@ -19498,12 +19502,22 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   font-style: italic;
   border-color: #424242;
 }
-.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
 .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
 .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
 .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
-.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button {
+.index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
+.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel {
   background-color: #ED8B00;
   color: #000000;
   font-weight: 700;
@@ -19512,21 +19526,41 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   text-transform: none;
 }
 @media (min-width: 37.5em) {
-  .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+  .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
   .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+  .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
   .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+  .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
   .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+  .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
   .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
-  .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button {
+  .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
+  .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+  .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel {
     max-width: 220px;
   }
 }
-.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
 .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
 .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
 .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
-.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover {
+.index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
+.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover {
   background-color: #ffd8a3;
   border-color: #ffd8a3;
 }
@@ -19597,11 +19631,11 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
     max-width: unset;
   }
 }
-.index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo .ama__button {
+.index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo .ama__button, .index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo #edit-cancel {
   background: #46166B;
   color: #ffffff;
 }
-.index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo .ama__button:hover {
+.index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo .ama__button:hover, .index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .index-hero .ama__subscribe-promo #edit-cancel:hover {
   background: #9073A6;
 }
 
@@ -19735,9 +19769,13 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   font-style: italic;
   border-color: #424242;
 }
-.ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button, .ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
 .layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
-.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button {
+.layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel {
   background-color: #ED8B00;
   color: #000000;
   font-weight: 700;
@@ -19745,9 +19783,13 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   max-width: 220px;
   margin: 0;
 }
-.ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover, .ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
 .layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
-.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover {
+.layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .ama__button:hover,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__subscribe-promo .ama__subscribe-promo__form #edit-cancel:hover {
   background-color: #ffd8a3;
   border-color: #ffd8a3;
 }
@@ -20087,21 +20129,21 @@ article[class*=__page-content] .ama__tags .ama__link--purple.ama__link--catalog:
     width: 100%;
   }
 }
-.thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button:not(.ama__button--secondary) {
+.thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button:not(.ama__button--secondary), .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:not(.ama__button--secondary), .layout-builder-page #layout-builder-discard-changes #edit-actions .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta #edit-cancel:not(.ama__button--secondary) {
   margin-right: 7px;
   margin-bottom: 14px;
 }
 @media (min-width: 56.25em) {
-  .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button:not(.ama__button--secondary) {
+  .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button:not(.ama__button--secondary), .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:not(.ama__button--secondary), .layout-builder-page #layout-builder-discard-changes #edit-actions .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta #edit-cancel:not(.ama__button--secondary) {
     margin-right: 7px;
     margin-bottom: 0;
   }
 }
-.thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button--secondary {
+.thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button--secondary, .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta #edit-cancel {
   margin-left: 0;
 }
 @media (min-width: 56.25em) {
-  .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button--secondary {
+  .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .ama__button--secondary, .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .thirty-seventy-block__aside .thirty-seventy-block__buttons.double-cta #edit-cancel {
     margin-left: 7px;
   }
 }
@@ -21338,7 +21380,7 @@ a.thirty-seventy-wrapper,
 .ama__hub-card__button-container {
   text-align: center;
 }
-.ama__hub-card__button-container .ama__button--secondary {
+.ama__hub-card__button-container .ama__button--secondary, .ama__hub-card__button-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__hub-card__button-container #edit-cancel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21957,7 +21999,7 @@ a:focus-visible.ama__hub-card {
   background-color: #46166B;
   color: #ffffff;
 }
-.paragraph.form-50-50 .salesforce-lead-form .form-actions input.form-submit.ama__button {
+.paragraph.form-50-50 .salesforce-lead-form .form-actions input.form-submit.ama__button, .paragraph.form-50-50 .salesforce-lead-form .form-actions .layout-builder-page #layout-builder-discard-changes #edit-actions input.form-submit#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .paragraph.form-50-50 .salesforce-lead-form .form-actions input.form-submit#edit-cancel {
   caret-color: transparent;
   margin: 0;
   padding: 5px 42px;
@@ -23799,7 +23841,7 @@ a:focus-visible.ama__hub-card {
 }
 
 @media (max-width: 37.5em) {
-  .ama__category-index.container {
+  .ama__category-index.container, .layout-builder-page #layout-builder .ama__category-index[data-drupal-messages], #layout-builder .ama__category-index.layout-builder-container {
     padding: 0;
   }
 }
@@ -24903,14 +24945,8 @@ section[id^=node-abstract-field-abstract-comments--] form div[id^=edit-actions--
   margin-left: 0px;
 }
 
-.comment-abstract-comments-form.ajax-comments-form-reply .field--name-field-deleted {
+.comment-abstract-comments-form.ajax-comments-form-reply .field--name-field-deleted, .comment-abstract-comments-form.ajax-comments-form-add .field--name-field-deleted, .comment-abstract-comments-form.ajax-comments-form-edit .field--name-field-deleted {
   display: none;
-}
-.comment-abstract-comments-form.ajax-comments-form-add .field--name-field-deleted {
-  display: none;
-}
-.comment-abstract-comments-form.ajax-comments-form-edit .field--name-field-deleted {
-  display: block;
 }
 
 /* Hide the messages in the comments section */
@@ -24925,6 +24961,12 @@ section[id^=node-abstract-field-abstract-comments] .js-ajax-comments-messages ~ 
   margin-top: 1rem;
 }
 
+form.comment-abstract-comments-form textarea {
+  resize: none;
+}
+form.comment-abstract-comments-form .form-item-field-comment-body-0-value label {
+  display: none;
+}
 form.comment-abstract-comments-form .button.form-submit.plane-icon {
   background-image: url("../icons/svg/paper-plane-white.svg");
   background-repeat: no-repeat;
@@ -24937,10 +24979,6 @@ form.comment-abstract-comments-form .button.form-submit.plane-icon[disabled] {
 }
 form.comment-abstract-comments-form .button.form-submit.form-cancel {
   margin-right: 14px;
-}
-form.comment-abstract-comments-form .button.form-submit.cancel-icon[disabled] {
-  background-image: url("../icons/svg/icon-cancel-white.svg");
-  color: #ffffff;
 }
 
 comment {
@@ -24969,7 +25007,7 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
 }
 
 /* Style the stupid jquery modal */
-.ui-dialog.ui-widget {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] {
   border-radius: 8px;
   border: 1px solid #e4e3e6;
   -webkit-box-shadow: 0 8px 32px rgba(34, 34, 34, 0.12);
@@ -24982,7 +25020,7 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   max-width: 450px !important;
   overflow-y: hidden;
 }
-.ui-dialog.ui-widget .ui-dialog-titlebar {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar {
   display: none;
   border-bottom: 1px solid #e4e3e6;
   background: #f9f9f9;
@@ -24992,12 +25030,12 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   font-weight: 600;
   color: #5c5c5c;
 }
-.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-title {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar .ui-dialog-title {
   font-size: 20px;
   font-weight: 600;
   color: #5c5c5c;
 }
-.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-titlebar-close {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar .ui-dialog-titlebar-close {
   background: none;
   border: none;
   -webkit-box-shadow: none;
@@ -25009,19 +25047,19 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
-.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
   opacity: 1;
   background: #f0eafa;
   border-radius: 50%;
 }
-.ui-dialog.ui-widget .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
   background-image: url("../icons/svg/icon-cancel-white.svg");
   background-size: 18px 18px;
   width: 18px;
   height: 18px;
   display: inline-block;
 }
-.ui-dialog.ui-widget .ui-dialog-content {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-content {
   overflow-y: hidden;
   padding: 75px 32px 0 32px;
   font-size: 18px;
@@ -25036,10 +25074,10 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   justify-content: center;
   text-align: center;
 }
-.ui-dialog.ui-widget .ui-dialog-content form {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-content form {
   overflow-y: hidden;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane {
   border-radius: 0 0 8px 8px;
   padding: 0 32px 18px;
   display: -webkit-box;
@@ -25051,13 +25089,13 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   border: 1px solid transparent;
   margin-top: 0;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 14px;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   padding: 0 16px;
@@ -25086,21 +25124,21 @@ comment .message-overlay .copied-message.fade-out, comment .message-overlay .cop
   -webkit-transition: background 0.2s, color 0.2s, border 0.2s;
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button--primary, .ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button-main-primary {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button.button--primary, .ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button.button-main-primary {
   background: #7229D1;
   color: #fff;
   border: 1px solid #7229D1;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button--primary:hover, .ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.button-main-primary:hover {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button.button--primary:hover, .ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button.button-main-primary:hover {
   background: #5c1fa0;
   border-color: #5c1fa0;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.dialog-cancel {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button.dialog-cancel {
   background: #fff;
   color: #7229D1;
   border: 1px solid #e4e3e6;
 }
-.ui-dialog.ui-widget .ui-dialog-buttonpane .ui-dialog-buttonset .button.dialog-cancel:hover {
+.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-buttonpane .ui-dialog-buttonset .button.dialog-cancel:hover {
   background: #f0eafa;
 }
 
@@ -25487,7 +25525,7 @@ body[data-once*=form-single-submit] > div.ui-selectmenu-menu.ui-front.ui-selectm
   padding-top: 28px;
 }
 @media (min-width: 37.5em) {
-  .dr-finder-search__cta.container.profile {
+  .dr-finder-search__cta.container.profile, .layout-builder-page #layout-builder .dr-finder-search__cta.profile[data-drupal-messages], #layout-builder .dr-finder-search__cta.profile.layout-builder-container {
     max-width: 66%;
     margin-left: 0;
   }
@@ -25617,8 +25655,7 @@ section.ama__page--event__speakers {
     display: block;
   }
 }
-.ama__filter .ama__applied-filters__tags,
-.ama__filter .ama__expand-list {
+.ama__filter .ama__applied-filters__tags {
   display: none;
 }
 .ama__filter .ama__checkboxes {
@@ -25626,37 +25663,15 @@ section.ama__page--event__speakers {
   overflow: scroll;
 }
 @media (min-width: 56.25em) {
-  .ama__filter .ama__applied-filters__tags,
-  .ama__filter .ama__expand-list {
+  .ama__filter .ama__applied-filters__tags {
     display: block;
   }
-  .ama__filter .ama__search-header,
-  .ama__filter .ama__search-header__results {
+  .ama__filter .ama__search-header {
     display: none;
   }
 }
 .ama__filter__see-results {
   display: none;
-}
-.ama__filter__collapse-panels {
-  margin-top: 21px;
-  margin-bottom: 21px;
-  text-align: center;
-}
-@media (min-width: 56.25em) {
-  .ama__filter__collapse-panels {
-    margin-top: 28px;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__filter__collapse-panels {
-    margin-bottom: 28px;
-  }
-}
-@media (min-width: 75em) {
-  .ama__filter__collapse-panels {
-    display: none;
-  }
 }
 .ama__filter .ama__content-facets .ama__content-facets__header {
   padding-top: 14px;
@@ -25673,14 +25688,6 @@ section.ama__page--event__speakers {
   border-radius: 0;
   color: #000000;
   text-transform: uppercase;
-  font-size: 22px;
-  line-height: 26px;
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  margin-bottom: 0;
-}
-.ama__filter .ama__content-facets .ama__content-facets__header .ama__expand-list__header__text {
   font-size: 22px;
   line-height: 26px;
   -webkit-box-flex: 1;
@@ -25852,7 +25859,7 @@ section.ama__page--event__speakers {
     flex-direction: row;
   }
 }
-.ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
+.ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form #edit-cancel {
   text-transform: capitalize;
   color: #000000;
   background: #FF9E1B;
@@ -25978,7 +25985,7 @@ section.ama__page--event__speakers {
   .ama__footer__bottom {
     padding: 0;
   }
-  .ama__footer__bottom > .container {
+  .ama__footer__bottom > .container, .layout-builder-page #layout-builder .ama__footer__bottom > [data-drupal-messages], #layout-builder .ama__footer__bottom > .layout-builder-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -26006,7 +26013,7 @@ section.ama__page--event__speakers {
   line-height: 1.25em;
 }
 @media (min-width: 37.5em) {
-  .ama__footer > .container {
+  .ama__footer > .container, .layout-builder-page #layout-builder .ama__footer > [data-drupal-messages], #layout-builder .ama__footer > .layout-builder-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -26059,7 +26066,7 @@ section.ama__page--event__speakers {
     line-height: 1;
     border: 1px;
   }
-  .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
+  .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form #edit-cancel {
     margin: 0;
   }
   .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form div[role=alert] {
@@ -26464,23 +26471,46 @@ section.ama__page--event__speakers {
   }
 }
 
-.layout--ama-page-section-one-col.purple_gradient {
-  background: -webkit-gradient(linear, left top, right top, from(#46166B), to(#7229D1));
-  background: linear-gradient(90deg, #46166B, #7229D1);
-}
-.layout--ama-page-section-one-col.pale_purple {
-  background-color: #F3E8FF;
-}
-.layout--ama-page-section-one-col.gray {
-  background-color: #5C5C5C;
-}
-.layout--ama-page-section-one-col .layout-builder-block {
-  background: transparent;
-}
-
 .full-promo-block {
-  background: transparent;
-  position: relative;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  padding: 40px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 37.5em) {
+  .full-promo-block {
+    padding: 90px 32px;
+  }
+}
+.full-promo-block .title {
+  width: 100%;
+}
+.full-promo-block .title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  line-height: 46px;
+  margin-bottom: 18px;
+}
+.full-promo-block .body {
+  width: 100%;
+}
+.full-promo-block .body p, .full-promo-block .body .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .full-promo-block .body .ama__image__text__subtitle, .full-promo-block .body .ama__resource-link--inline__text {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  margin-bottom: 32px;
+}
+.full-promo-block .ctas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26491,55 +26521,8 @@ section.ama__page--event__speakers {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  text-align: center;
-  padding: 40px 32px;
-}
-@media (min-width: 37.5em) {
-  .full-promo-block {
-    padding: 90px 32px;
-  }
-}
-.full-promo-block.purple_gradient {
-  background: -webkit-gradient(linear, left top, right top, from(#46166B), to(#7229D1));
-  background: linear-gradient(90deg, #46166B, #7229D1);
-}
-.full-promo-block.pale_purple {
-  background-color: #F3E8FF;
-}
-.full-promo-block.light_text h2,
-.full-promo-block.light_text p,
-.full-promo-block.light_text .ama__jama .ama__image__text .ama__image__text__subtitle,
-.ama__jama .ama__image__text .full-promo-block.light_text .ama__image__text__subtitle,
-.full-promo-block.light_text .ama__resource-link--inline__text {
-  color: #ffffff !important;
-}
-.full-promo-block .title h2 {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-size: 34px;
-  line-height: 46px;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-.full-promo-block .body {
-  margin-bottom: 18px;
-}
-.full-promo-block .body p, .full-promo-block .body .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .full-promo-block .body .ama__image__text__subtitle, .full-promo-block .body .ama__resource-link--inline__text {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
-  font-size: 18px;
-}
-.full-promo-block .ctas {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  width: 100%;
+  gap: 21px;
 }
 @media (min-width: 37.5em) {
   .full-promo-block .ctas {
@@ -26549,16 +26532,17 @@ section.ama__page--event__speakers {
     flex-direction: row;
   }
 }
-.full-promo-block .ctas .cta-one {
+.full-promo-block .ctas .cta_one {
   margin-right: 0;
   margin-bottom: 21px;
 }
 @media (min-width: 37.5em) {
-  .full-promo-block .ctas .cta-one {
+  .full-promo-block .ctas .cta_one {
     margin-right: 1rem;
     margin-bottom: 0;
   }
 }
+
 .gating-block-wrapper {
   margin: 28px 14px;
   padding: 28px 0 42px;
@@ -26629,7 +26613,7 @@ section.ama__page--event__speakers {
 .gating-block-wrapper .gating-block ul li {
   line-height: 24px;
 }
-.gating-block-wrapper .gating-block p:has(a.ama__button), .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button), .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button), .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button),
+.gating-block-wrapper .gating-block p:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel), .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel), .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel), .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel),
 .gating-block-wrapper .gating-block p:has(a.button-main-primary),
 .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary),
 .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary),
@@ -26637,7 +26621,7 @@ section.ama__page--event__speakers {
   width: 100%;
 }
 @media (min-width: 37.5em) {
-  .gating-block-wrapper .gating-block p:has(a.ama__button), .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button), .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button), .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button),
+  .gating-block-wrapper .gating-block p:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel), .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel), .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel), .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel),
   .gating-block-wrapper .gating-block p:has(a.button-main-primary),
   .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary),
   .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary),
@@ -26647,11 +26631,19 @@ section.ama__page--event__speakers {
     width: unset;
   }
 }
-.gating-block-wrapper .gating-block p:has(a.ama__button) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button) .gating-cta.ama__button, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button) .gating-cta.ama__button,
+.gating-block-wrapper .gating-block p:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta.ama__button, .gating-block-wrapper .gating-block p:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block p:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta#edit-cancel, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta#edit-cancel, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta.ama__button, .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta#edit-cancel, .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta.ama__button, .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.ama__button, .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel) .gating-cta#edit-cancel,
 .gating-block-wrapper .gating-block p:has(a.button-main-primary) .gating-cta.ama__button,
+.gating-block-wrapper .gating-block p:has(a.button-main-primary) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block p:has(a.button-main-primary) .gating-cta#edit-cancel,
 .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary) .gating-cta.ama__button,
+.gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block .ama__jama .ama__image__text .ama__image__text__subtitle:has(a.button-main-primary) .gating-cta#edit-cancel,
 .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary) .gating-cta.ama__button,
-.gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.button-main-primary) .gating-cta.ama__button {
+.ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__jama .ama__image__text .gating-block-wrapper .gating-block .ama__image__text__subtitle:has(a.button-main-primary) .gating-cta#edit-cancel,
+.gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.button-main-primary) .gating-cta.ama__button,
+.gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.button-main-primary) .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-cta#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block .ama__resource-link--inline__text:has(a.button-main-primary) .gating-cta#edit-cancel {
   padding: 9px 16px;
 }
 .gating-block-wrapper .gating-block .small {
@@ -26669,7 +26661,7 @@ section.ama__page--event__speakers {
   text-decoration: underline;
   background: transparent;
 }
-.gating-block-wrapper .gating-block a.ama__button {
+.gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -26696,44 +26688,44 @@ section.ama__page--event__speakers {
   font-weight: 700;
 }
 @media screen and (min-width: 37.5em) {
-  .gating-block-wrapper .gating-block a.ama__button {
+  .gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 56.25em) {
-  .gating-block-wrapper .gating-block a.ama__button {
+  .gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel {
     font-size: 18px;
     line-height: 1.5;
   }
 }
 @media screen and (min-width: 75em) {
-  .gating-block-wrapper .gating-block a.ama__button {
+  .gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel {
     font-size: 18px;
   }
 }
 @media (min-width: 56.25em) {
-  .gating-block-wrapper .gating-block a.ama__button {
+  .gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel {
     padding: 14px;
   }
 }
-.gating-block-wrapper .gating-block a.ama__button:hover, .gating-block-wrapper .gating-block a.ama__button:focus-visible {
+.gating-block-wrapper .gating-block a.ama__button:hover, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel:hover, .gating-block-wrapper .gating-block a.ama__button:focus-visible, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel:focus-visible, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel:focus-visible {
   border-color: #46166B;
   color: #ffffff;
 }
-.gating-block-wrapper .gating-block a.ama__button:hover {
+.gating-block-wrapper .gating-block a.ama__button:hover, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel:hover {
   background-color: #9073A6;
   border-color: transparent;
   color: #ffffff;
   text-decoration: none;
 }
-.gating-block-wrapper .gating-block a.ama__button,
+.gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel,
 .gating-block-wrapper .gating-block a.button-main-primary {
   font-weight: 600;
   text-decoration: none;
   width: 100%;
 }
 @media (min-width: 37.5em) {
-  .gating-block-wrapper .gating-block a.ama__button,
+  .gating-block-wrapper .gating-block a.ama__button, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel,
   .gating-block-wrapper .gating-block a.button-main-primary {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -26741,7 +26733,7 @@ section.ama__page--event__speakers {
     min-width: 100px;
   }
 }
-.gating-block-wrapper .gating-block a.ama__button:hover,
+.gating-block-wrapper .gating-block a.ama__button:hover, .gating-block-wrapper .gating-block .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .gating-block-wrapper .gating-block a#edit-cancel:hover,
 .gating-block-wrapper .gating-block a.button-main-primary:hover {
   color: #ffffff;
   background-color: #46166B;
@@ -27124,34 +27116,34 @@ section.ama__page--event__speakers {
   text-decoration: none;
 }
 
-.container .background-wrapper {
+.container .background-wrapper, .layout-builder-page #layout-builder [data-drupal-messages] .background-wrapper, #layout-builder .layout-builder-container .background-wrapper {
   width: calc(99.9vw - 17px);
   margin-left: calc((100% - 100vw) / 2 + 8px);
 }
 @media (min-width: 56.25em) {
-  .container .background-wrapper {
+  .container .background-wrapper, .layout-builder-page #layout-builder [data-drupal-messages] .background-wrapper, #layout-builder .layout-builder-container .background-wrapper {
     width: calc(99.9vw - 15px);
     margin-left: calc((100% - 100vw) / 2 + 7px);
   }
 }
-.container .background-wrapper .hub-page-hero {
+.container .background-wrapper .hub-page-hero, .layout-builder-page #layout-builder [data-drupal-messages] .background-wrapper .hub-page-hero, #layout-builder .layout-builder-container .background-wrapper .hub-page-hero {
   padding: 14px 15px 35px;
 }
 @media (min-width: 37.5em) {
-  .container .background-wrapper .hub-page-hero {
+  .container .background-wrapper .hub-page-hero, .layout-builder-page #layout-builder [data-drupal-messages] .background-wrapper .hub-page-hero, #layout-builder .layout-builder-container .background-wrapper .hub-page-hero {
     padding: 35px 15px 21px;
   }
 }
 @media (min-width: 56.25em) {
-  .container .background-wrapper .hub-page-hero {
+  .container .background-wrapper .hub-page-hero, .layout-builder-page #layout-builder [data-drupal-messages] .background-wrapper .hub-page-hero, #layout-builder .layout-builder-container .background-wrapper .hub-page-hero {
     padding: 35px 14px 35px 17px;
   }
 }
-.container .hub-page-mobile.media {
+.container .hub-page-mobile.media, .layout-builder-page #layout-builder [data-drupal-messages] .hub-page-mobile.media, #layout-builder .layout-builder-container .hub-page-mobile.media {
   max-width: unset;
   margin: 0 -15px;
 }
-.container .cta-container-mobile {
+.container .cta-container-mobile, .layout-builder-page #layout-builder [data-drupal-messages] .cta-container-mobile, #layout-builder .layout-builder-container .cta-container-mobile {
   padding: 14px 0px;
   margin: 14px 0px;
 }
@@ -27326,7 +27318,7 @@ section.ama__page--event__speakers {
     display: flex;
   }
 }
-.hub-page-hero.has-media .body .copy .cta-container .ama__button {
+.hub-page-hero.has-media .body .copy .cta-container .ama__button, .hub-page-hero.has-media .body .copy .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero.has-media .body .copy .cta-container #edit-cancel {
   max-width: 291px;
   -webkit-box-flex: 0.5;
   -ms-flex: 0.5;
@@ -27335,11 +27327,11 @@ section.ama__page--event__speakers {
   padding: 15.5px 14px;
 }
 @media (min-width: 56.25em) {
-  .hub-page-hero.has-media .body .copy .cta-container .ama__button {
+  .hub-page-hero.has-media .body .copy .cta-container .ama__button, .hub-page-hero.has-media .body .copy .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero.has-media .body .copy .cta-container #edit-cancel {
     max-width: 325px;
   }
 }
-.hub-page-hero.has-media .body .copy .cta-container .ama__button:only-child {
+.hub-page-hero.has-media .body .copy .cta-container .ama__button:only-child, .hub-page-hero.has-media .body .copy .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:only-child, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero.has-media .body .copy .cta-container #edit-cancel:only-child {
   min-width: 380px;
 }
 .hub-page-hero.has-media .body .media {
@@ -27439,7 +27431,7 @@ section.ama__page--event__speakers {
   -ms-flex-pack: left;
   justify-content: left;
 }
-.hub-page-hero .cta-container .ama__button,
+.hub-page-hero .cta-container .ama__button, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container #edit-cancel,
 .hub-page-hero .cta-container .ama__botton span {
   color: #46166B;
   font-weight: 400;
@@ -27448,34 +27440,34 @@ section.ama__page--event__speakers {
   flex: 0.4;
 }
 @media (min-width: 75em) {
-  .hub-page-hero .cta-container .ama__button,
+  .hub-page-hero .cta-container .ama__button, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container #edit-cancel,
   .hub-page-hero .cta-container .ama__botton span {
     -webkit-box-flex: 0.3;
     -ms-flex: 0.3;
     flex: 0.3;
   }
 }
-.hub-page-hero .cta-container .ama__button:hover, .hub-page-hero .cta-container .ama__button:focus-visible,
+.hub-page-hero .cta-container .ama__button:hover, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container #edit-cancel:hover, .hub-page-hero .cta-container .ama__button:focus-visible, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:focus-visible, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container #edit-cancel:focus-visible,
 .hub-page-hero .cta-container .ama__botton span:hover,
 .hub-page-hero .cta-container .ama__botton span:focus-visible {
   color: #5C5C5C;
   border-color: #ffd8a3;
   background-color: #ffd8a3;
 }
-.hub-page-hero .cta-container .ama__button:first-child,
+.hub-page-hero .cta-container .ama__button:first-child, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:first-child, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container #edit-cancel:first-child,
 .hub-page-hero .cta-container .ama__botton span:first-child {
   margin-right: 14px;
 }
-.hub-page-hero .cta-container .ama__button:last-child,
+.hub-page-hero .cta-container .ama__button:last-child, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:last-child, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container #edit-cancel:last-child,
 .hub-page-hero .cta-container .ama__botton span:last-child {
   margin-right: 0;
 }
-.hub-page-hero .cta-container .ama__button.ama__button--complementary, .hub-page-hero .cta-container .ama__button.ama__button--complementary span,
+.hub-page-hero .cta-container .ama__button.ama__button--complementary, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container .ama__button--complementary#edit-cancel, .hub-page-hero .cta-container .ama__button.ama__button--complementary span, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel span, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container .ama__button--complementary#edit-cancel span,
 .hub-page-hero .cta-container .ama__botton span.ama__button--complementary,
 .hub-page-hero .cta-container .ama__botton span.ama__button--complementary span {
   color: #000000;
 }
-.hub-page-hero .cta-container .ama__button.ama__button--complementary:hover, .hub-page-hero .cta-container .ama__button.ama__button--complementary span:hover,
+.hub-page-hero .cta-container .ama__button.ama__button--complementary:hover, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container .ama__button--complementary#edit-cancel:hover, .hub-page-hero .cta-container .ama__button.ama__button--complementary span:hover, .hub-page-hero .cta-container .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel span:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .hub-page-hero .cta-container .ama__button--complementary#edit-cancel span:hover,
 .hub-page-hero .cta-container .ama__botton span.ama__button--complementary:hover,
 .hub-page-hero .cta-container .ama__botton span.ama__button--complementary span:hover {
   color: #5C5C5C;
@@ -27526,7 +27518,7 @@ section.ama__page--event__speakers {
     display: none;
   }
 }
-.cta-container-mobile .ama__button {
+.cta-container-mobile .ama__button, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile #edit-cancel {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -27548,7 +27540,7 @@ section.ama__page--event__speakers {
   -ms-flex-pack: left;
   justify-content: left;
 }
-.cta-container-mobile .ama__button {
+.cta-container-mobile .ama__button, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile #edit-cancel {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -27556,15 +27548,15 @@ section.ama__page--event__speakers {
   margin-top: 14px;
   font-weight: 400;
 }
-.cta-container-mobile .ama__button:hover, .cta-container-mobile .ama__button:focus-visible {
+.cta-container-mobile .ama__button:hover, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile #edit-cancel:hover, .cta-container-mobile .ama__button:focus-visible, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:focus-visible, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile #edit-cancel:focus-visible {
   color: #5C5C5C;
   border-color: #ffd8a3;
   background-color: #ffd8a3;
 }
-.cta-container-mobile .ama__button.ama__button--complementary {
+.cta-container-mobile .ama__button.ama__button--complementary, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile .ama__button--complementary#edit-cancel {
   margin-top: 0;
 }
-.cta-container-mobile .ama__button.ama__button--complementary:hover, .cta-container-mobile .ama__button.ama__button--complementary:focus-visible {
+.cta-container-mobile .ama__button.ama__button--complementary:hover, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile .ama__button--complementary#edit-cancel:hover, .cta-container-mobile .ama__button.ama__button--complementary:focus-visible, .cta-container-mobile .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__button--complementary#edit-cancel:focus-visible, .layout-builder-page #layout-builder-discard-changes #edit-actions .cta-container-mobile .ama__button--complementary#edit-cancel:focus-visible {
   color: #5C5C5C;
 }
 
@@ -27893,16 +27885,16 @@ header.sticky-nav {
     font-size: 16px;
   }
 }
-.ama__main-navigation .ama__main_nav_container .container {
+.ama__main-navigation .ama__main_nav_container .container, .ama__main-navigation .ama__main_nav_container .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__main-navigation .ama__main_nav_container [data-drupal-messages], .ama__main-navigation .ama__main_nav_container #layout-builder .layout-builder-container, #layout-builder .ama__main-navigation .ama__main_nav_container .layout-builder-container {
   min-height: 60px;
 }
 @media (min-width: 37.5em) {
-  .ama__main-navigation .ama__main_nav_container .container {
+  .ama__main-navigation .ama__main_nav_container .container, .ama__main-navigation .ama__main_nav_container .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__main-navigation .ama__main_nav_container [data-drupal-messages], .ama__main-navigation .ama__main_nav_container #layout-builder .layout-builder-container, #layout-builder .ama__main-navigation .ama__main_nav_container .layout-builder-container {
     min-height: 44px;
     padding: 14px;
   }
 }
-.ama__main-navigation .container {
+.ama__main-navigation .container, .ama__main-navigation .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__main-navigation [data-drupal-messages], .ama__main-navigation #layout-builder .layout-builder-container, #layout-builder .ama__main-navigation .layout-builder-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27914,12 +27906,12 @@ header.sticky-nav {
   min-height: 56px;
 }
 @media (min-width: 37.5em) {
-  .ama__main-navigation .container {
+  .ama__main-navigation .container, .ama__main-navigation .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__main-navigation [data-drupal-messages], .ama__main-navigation #layout-builder .layout-builder-container, #layout-builder .ama__main-navigation .layout-builder-container {
     padding-right: 10.5px;
   }
 }
 @media (min-width: 37.5em) and (min-width: 56.25em) {
-  .ama__main-navigation .container {
+  .ama__main-navigation .container, .ama__main-navigation .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__main-navigation [data-drupal-messages], .ama__main-navigation #layout-builder .layout-builder-container, #layout-builder .ama__main-navigation .layout-builder-container {
     padding-right: 14px;
   }
 }
@@ -28163,15 +28155,15 @@ header.sticky-nav {
     min-height: 117px;
   }
 }
-.ama__hub .ama__main-navigation .ama__main_nav_container .container {
+.ama__hub .ama__main-navigation .ama__main_nav_container .container, .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container [data-drupal-messages], .ama__hub .ama__main-navigation .ama__main_nav_container #layout-builder .layout-builder-container, #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-container {
   height: 100%;
 }
 @media (max-width: 56.25em) {
-  .ama__hub .ama__main-navigation .ama__main_nav_container .container {
+  .ama__hub .ama__main-navigation .ama__main_nav_container .container, .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container [data-drupal-messages], .ama__hub .ama__main-navigation .ama__main_nav_container #layout-builder .layout-builder-container, #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-container {
     width: 100%;
   }
 }
-.ama__hub .ama__main-navigation .ama__main_nav_container .container > div {
+.ama__hub .ama__main-navigation .ama__main_nav_container .container > div, .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-page #layout-builder [data-drupal-messages] > div, .layout-builder-page #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container [data-drupal-messages] > div, .ama__hub .ama__main-navigation .ama__main_nav_container #layout-builder .layout-builder-container > div, #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-container > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28188,7 +28180,7 @@ header.sticky-nav {
   align-self: flex-end;
 }
 @media (min-width: 37.5em) {
-  .ama__hub .ama__main-navigation .ama__main_nav_container .container > div {
+  .ama__hub .ama__main-navigation .ama__main_nav_container .container > div, .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-page #layout-builder [data-drupal-messages] > div, .layout-builder-page #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container [data-drupal-messages] > div, .ama__hub .ama__main-navigation .ama__main_nav_container #layout-builder .layout-builder-container > div, #layout-builder .ama__hub .ama__main-navigation .ama__main_nav_container .layout-builder-container > div {
     padding-bottom: 8px;
     -webkit-box-align: end;
     -ms-flex-align: end;
@@ -28287,7 +28279,7 @@ header.sticky-nav {
   }
 }
 @media (max-width: 56.25em) {
-  .ama__masthead__content__event__button .ama__button {
+  .ama__masthead__content__event__button .ama__button, .ama__masthead__content__event__button .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__masthead__content__event__button #edit-cancel {
     font-size: 0.8em;
     line-height: 1.438;
     font-weight: 400;
@@ -28295,24 +28287,24 @@ header.sticky-nav {
   }
 }
 @media screen and (max-width: 56.25em) and (min-width: 37.5em) {
-  .ama__masthead__content__event__button .ama__button {
+  .ama__masthead__content__event__button .ama__button, .ama__masthead__content__event__button .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__masthead__content__event__button #edit-cancel {
     font-size: 0.9em;
     line-height: 1.389;
   }
 }
 @media screen and (max-width: 56.25em) and (min-width: 56.25em) {
-  .ama__masthead__content__event__button .ama__button {
+  .ama__masthead__content__event__button .ama__button, .ama__masthead__content__event__button .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__masthead__content__event__button #edit-cancel {
     font-size: 1em;
     line-height: 1.389;
   }
 }
 @media screen and (max-width: 56.25em) and (min-width: 75em) {
-  .ama__masthead__content__event__button .ama__button {
+  .ama__masthead__content__event__button .ama__button, .ama__masthead__content__event__button .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__masthead__content__event__button #edit-cancel {
     font-size: 1em;
   }
 }
 @media (max-width: 56.25em) {
-  .ama__masthead__content__event__button .ama__button:hover {
+  .ama__masthead__content__event__button .ama__button:hover, .ama__masthead__content__event__button .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__masthead__content__event__button #edit-cancel:hover {
     background-color: #ffffff;
     color: #46166B;
     text-decoration: underline;
@@ -28931,7 +28923,7 @@ header.sticky-nav {
     margin-top: 14px;
   }
 }
-.ama__membership .ama__membership-content .ama__membership_cta_container .ama__button {
+.ama__membership .ama__membership-content .ama__membership_cta_container .ama__button, .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__membership .ama__membership-content .ama__membership_cta_container #edit-cancel {
   margin: 0;
   width: 100%;
 }
@@ -29155,8 +29147,10 @@ a.ama__membership:hover {
     padding: 0;
   }
 }
-.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
-.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
+.ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a#edit-cancel,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
+.ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a#edit-cancel {
   padding: 0 22px;
   font-size: 18px;
   height: 50px;
@@ -29166,8 +29160,10 @@ a.ama__membership:hover {
   overflow: hidden;
 }
 @media (min-width: 37.5em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
-  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a#edit-cancel,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a#edit-cancel {
     display: inline-block;
     margin: 0;
     padding: 0 12px;
@@ -29177,8 +29173,10 @@ a.ama__membership:hover {
   }
 }
 @media (min-width: 56.25em) {
-  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
-  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button {
+  .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button, .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__homepage div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a#edit-cancel,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a.ama__button,
+  .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+  .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__subcategory-index div .layout--ama-page-section-one-col .ama__membership .ama__membership-content a#edit-cancel {
     font-size: 20px;
     height: 50px;
     line-height: 50px;
@@ -29408,13 +29406,25 @@ a.ama__membership:hover {
     max-width: 224px;
   }
 }
-.ama__category .layout__region--content > .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.ama__category .layout__region--content > .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button, .ama__category .layout__region--content > .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content > .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
 .ama__category .layout__region--content .layout--onecol .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.ama__category .layout__region--content .layout--onecol .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--onecol .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
 .index-page .ama__layout--one-column__page-content .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.index-page .ama__layout--one-column__page-content .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
 .index-page .index-promo .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.index-page .index-promo .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .index-promo .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
 .index-page .no-results .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
-.index-page > div > .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button {
+.index-page .no-results .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .no-results .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
+.index-page > div > .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.index-page > div > .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .index-page > div > .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel {
   font-size: 18px;
   line-height: 27px;
   color: #001b1b;
@@ -29563,12 +29573,12 @@ a.ama__membership:hover {
     padding-right: 22px;
   }
 }
-.index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container a.ama__button {
+.index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container a.ama__button, .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container a#edit-cancel {
   background: #46166B;
   border-color: #46166B;
   color: #ffffff;
 }
-.index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container a.ama__button:hover {
+.index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container a.ama__button:hover, .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions .index-page .ama__layout--one-column__page-content .index-hero .ama__membership .ama__membership_cta_container a#edit-cancel:hover {
   background: #9073A6;
 }
 
@@ -29658,8 +29668,10 @@ a.ama__membership:hover {
     max-width: 224px;
   }
 }
-.layout-builder__layout.layout--onecol .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
-.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button {
+.layout-builder__layout.layout--onecol .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button, .layout-builder__layout.layout--onecol .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--onecol .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container a.ama__button,
+.layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel,
+.layout-builder-page #layout-builder-discard-changes #edit-actions .layout-builder__layout.layout--ama-page-section-one-col .layout__region .ama__membership .ama__membership-content .ama__membership_cta_container a#edit-cancel {
   color: #001b1b;
   font-size: 18px;
   line-height: 27px;
@@ -29839,7 +29851,7 @@ a.ama__membership:hover {
     padding-left: 28px;
   }
 }
-.ama__membership.ama_drfinder_promo .ama__membership_cta_container .ama__button {
+.ama__membership.ama_drfinder_promo .ama__membership_cta_container .ama__button, .ama__membership.ama_drfinder_promo .ama__membership_cta_container .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__membership.ama_drfinder_promo .ama__membership_cta_container #edit-cancel {
   width: auto;
 }
 .ama__membership.ama_drfinder_promo .ama__h2, .ama__membership.ama_drfinder_promo .ama__link-list--mobile .ui-accordion-header, .ama__link-list--mobile .ama__membership.ama_drfinder_promo .ui-accordion-header, .ama__membership.ama_drfinder_promo .ama__promo--inline-banner a, .ama__promo--inline-banner .ama__membership.ama_drfinder_promo a {
@@ -29861,7 +29873,7 @@ a.ama__membership:hover {
     margin-right: 0;
   }
 }
-.ama__org-nav ul {
+.ama__org-nav ul:not(.contextual-links) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29873,11 +29885,11 @@ a.ama__membership:hover {
   padding-bottom: 5px;
   margin-bottom: 14px;
 }
-.ama__org-nav ul li {
+.ama__org-nav ul:not(.contextual-links) li {
   display: inline-block;
   margin-left: 0;
 }
-.ama__org-nav ul li a {
+.ama__org-nav ul:not(.contextual-links) li a {
   color: #000000;
   text-decoration: none;
   margin-left: 14px;
@@ -29886,15 +29898,15 @@ a.ama__membership:hover {
   white-space: nowrap;
 }
 @media (min-width: 75em) {
-  .ama__org-nav ul li a {
+  .ama__org-nav ul:not(.contextual-links) li a {
     font-size: 0.778em;
     line-height: 1.5;
   }
 }
-.ama__org-nav ul li a:hover {
+.ama__org-nav ul:not(.contextual-links) li a:hover {
   text-decoration: underline;
 }
-.ama__org-nav ul li a:focus-visible {
+.ama__org-nav ul:not(.contextual-links) li a:focus-visible {
   outline: 2px solid #027DBC;
   outline-offset: 3px;
 }
@@ -31484,7 +31496,7 @@ a.ama__membership:hover {
 .ama__product-nav.expanded .dropdown-container ul {
   width: 75%;
 }
-.ama__product-nav .container {
+.ama__product-nav .container, .ama__product-nav .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__product-nav [data-drupal-messages], .ama__product-nav #layout-builder .layout-builder-container, #layout-builder .ama__product-nav .layout-builder-container {
   min-height: 0;
 }
 @media (min-width: 56.25em) {
@@ -31898,7 +31910,7 @@ li.ui-state-active > [href="#contacts"] .ama__resource-tabs__nav__icon {
     height: calc(100vh - 180px);
   }
 }
-.ama__resource-tabs__content .ui-widget-content a.ama__button {
+.ama__resource-tabs__content .ui-widget-content a.ama__button, .ama__resource-tabs__content .ui-widget-content .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__resource-tabs__content .ui-widget-content a#edit-cancel {
   color: #ffffff;
 }
 .ama__resource-tabs__content .ama_resource-subheader {
@@ -32038,7 +32050,7 @@ section#related_links .ama__membership ul li {
   background-color: #46166B;
 }
 @media (max-width: 37.5em) {
-  .ama__ribbon .container {
+  .ama__ribbon .container, .ama__ribbon .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__ribbon [data-drupal-messages], .ama__ribbon #layout-builder .layout-builder-container, #layout-builder .ama__ribbon .layout-builder-container {
     padding: 0;
   }
 }
@@ -32247,11 +32259,11 @@ section#related_links .ama__membership ul li {
     margin-bottom: 28px;
   }
 }
-.ama__sales-landing-page-hero__content .ama__button {
+.ama__sales-landing-page-hero__content .ama__button, .ama__sales-landing-page-hero__content .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__sales-landing-page-hero__content #edit-cancel {
   width: 100%;
 }
 @media (min-width: 37.5em) {
-  .ama__sales-landing-page-hero__content .ama__button {
+  .ama__sales-landing-page-hero__content .ama__button, .ama__sales-landing-page-hero__content .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__sales-landing-page-hero__content #edit-cancel {
     width: auto;
   }
 }
@@ -34096,7 +34108,7 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   }
 }
 @media (max-width: 37.5em) {
-  .ama__subcategory-index.container {
+  .ama__subcategory-index.container, .layout-builder-page #layout-builder .ama__subcategory-index[data-drupal-messages], #layout-builder .ama__subcategory-index.layout-builder-container {
     padding: 0;
   }
 }
@@ -34489,7 +34501,7 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   text-align: center;
   padding: 28px 14px;
 }
-.ama__trending-index .ama__trending-index__stubs__load-more a.ama__button {
+.ama__trending-index .ama__trending-index__stubs__load-more a.ama__button, .ama__trending-index .ama__trending-index__stubs__load-more .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__trending-index .ama__trending-index__stubs__load-more a#edit-cancel {
   font-size: 20px;
   font-weight: 400;
   padding: 10px 45px;
@@ -34703,7 +34715,7 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   padding-right: 0;
 }
 @media (max-width: 37.5em) {
-  .ama__layout--split.container {
+  .ama__layout--split.container, .layout-builder-page #layout-builder .ama__layout--split[data-drupal-messages], #layout-builder .ama__layout--split.layout-builder-container {
     padding: 0;
   }
 }
@@ -35664,128 +35676,90 @@ body.search-results .ama__layout--two-column--left {
 }
 
 .ama__layout--two-col-right--75-25 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 3fr 1fr;
-  grid-template-columns: 3fr 1fr;
-  -ms-grid-rows: -webkit-max-content auto auto;
-  -ms-grid-rows: max-content auto auto;
-  grid-template-rows: -webkit-max-content auto auto;
-  grid-template-rows: max-content auto auto;
-  grid-template-areas: "content sidebar" "content_below sidebar";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
-@media (max-width: 37.5em) {
+@media (min-width: 37.5em) {
   .ama__layout--two-col-right--75-25 {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 14px;
   }
 }
+.ama__layout--two-col-right--75-25 .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0.75;
+  -ms-flex: 0.75;
+  flex: 0.75;
+}
+.ama__layout--two-col-right--75-25 .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0.25;
+  -ms-flex: 0.25;
+  flex: 0.25;
+}
 .ama__layout--two-col-right--75-25__top {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  margin-bottom: 21px;
-  grid-area: content;
-  -ms-grid-row: 1;
-  grid-row: 1/1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
 }
 @media (max-width: 37.5em) {
   .ama__layout--two-col-right--75-25__top {
     padding: 0 14px;
     margin-bottom: 0;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-column: 1;
-    grid-column: 1/1;
   }
 }
-@media (min-width: 56.25em) {
-  .ama__layout--two-col-right--75-25__top {
-    margin-bottom: 28px;
-  }
+.ama__layout--two-col-right--75-25__right, .ama__layout--two-col-right--75-25__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
 }
-.ama__layout--two-col-right--75-25__left {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  margin-right: 10.5px;
-  -ms-grid-column: 1;
-  grid-column: 1/1;
-  -ms-grid-row: 2;
-  grid-row: 2/2;
-  grid-area: content_below;
-}
-.ama__category .ama__layout--two-col-right--75-25.ama__category__row > .ama__layout--two-col-right--75-25__left {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-@media (max-width: 37.5em) {
-  .ama__layout--two-col-right--75-25__left {
-    -ms-grid-column: 1;
-    grid-column: 1/1;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2/3;
-  }
-}
-@media (min-width: 56.25em) {
-  .ama__layout--two-col-right--75-25__left {
-    margin-right: 14px;
-  }
-}
-.ama__layout--two-col-right--75-25__right {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  margin-left: 10.5px;
-  -ms-grid-column: 2;
-  grid-column: 2/2;
-  -ms-grid-row: 2;
-  grid-row: 2/2;
-  grid-area: sidebar;
-}
-.ama__category .ama__layout--two-col-right--75-25.ama__category__row > .ama__layout--two-col-right--75-25__right {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-}
-.ama__layout--two-col-right--75-25__right > div {
+.ama__layout--two-col-right--75-25__right > div, .ama__layout--two-col-right--75-25__left > div {
   margin-top: 0;
   margin-bottom: 56px;
+  width: 100%;
 }
-.ama__layout--two-col-right--75-25__right > div:last-child {
+.ama__layout--two-col-right--75-25__right > div:last-child, .ama__layout--two-col-right--75-25__left > div:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 56.25em) {
-  .ama__layout--two-col-right--75-25__right > div {
+  .ama__layout--two-col-right--75-25__right > div, .ama__layout--two-col-right--75-25__left > div {
     margin-bottom: 28px;
   }
 }
 @media (max-width: 37.5em) {
-  .ama__layout--two-col-right--75-25__right > div {
+  .ama__layout--two-col-right--75-25__right > div, .ama__layout--two-col-right--75-25__left > div {
     margin-bottom: 21px;
   }
-}
-@media (min-width: 56.25em) {
-  .ama__layout--two-col-right--75-25__right {
-    margin-left: 14px;
-  }
-}
-@media (max-width: 37.5em) {
-  .ama__layout--two-col-right--75-25__right {
-    -ms-grid-row: 3;
-    grid-row: 3/3;
-    -ms-grid-column: 1;
-    grid-column: 1/1;
-    padding: 0 14px;
-  }
-}
-
-.ama__category-index.ama__layout--two-col-right--75-25 .ama__layout--two-col-right--75-25__left {
-  grid-row: unset;
-  grid-area: unset;
 }
 
 .ama__layout--two-col-right--full-width {
@@ -36068,7 +36042,7 @@ body.ama__abstract .gated-article .abstract-category-breadcrumb .card-container 
   border-top: solid 1px #a1a1a4;
   max-width: 100%;
 }
-.ama__category__row .container {
+.ama__category__row .container, .ama__category__row .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__category__row [data-drupal-messages], .ama__category__row #layout-builder .layout-builder-container, #layout-builder .ama__category__row .layout-builder-container {
   padding: 0;
 }
 .ama__category__row:last-of-type {
@@ -36297,13 +36271,13 @@ body.ama__abstract .gated-article .abstract-category-breadcrumb .card-container 
     margin-bottom: 28px;
   }
 }
-.ama__content-type > .container {
+.ama__content-type > .container, .layout-builder-page #layout-builder .ama__content-type > [data-drupal-messages], #layout-builder .ama__content-type > .layout-builder-container {
   padding: 0;
 }
 .ama__content-type .ama__search__field__clear-button span {
   color: #7229D1;
 }
-.ama__content-type .ama__global-search__action input.ama__button {
+.ama__content-type .ama__global-search__action input.ama__button, .ama__content-type .ama__global-search__action .layout-builder-page #layout-builder-discard-changes #edit-actions input#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__content-type .ama__global-search__action input#edit-cancel {
   background: url(../icons/svg/icon-search-white.svg) no-repeat 0 0;
   background-size: 22px 22px;
   background-position: 7px 7px;
@@ -36336,7 +36310,7 @@ body.ama__abstract .gated-article .abstract-category-breadcrumb .card-container 
     padding: 7px 0 14px;
   }
 }
-.ama__content-type .ama__membership button.ama__button {
+.ama__content-type .ama__membership button.ama__button, .ama__content-type .ama__membership .layout-builder-page #layout-builder-discard-changes #edit-actions button#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__content-type .ama__membership button#edit-cancel {
   margin-left: 28px;
   margin-right: 28px;
 }
@@ -36383,7 +36357,7 @@ body.ama__abstract .gated-article .abstract-category-breadcrumb .card-container 
 .ama__content-type ul.pager {
   text-align: center;
 }
-.ama__content-type ul.pager a.ama__button {
+.ama__content-type ul.pager a.ama__button, .ama__content-type ul.pager .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__content-type ul.pager a#edit-cancel {
   font-size: 20px;
   font-weight: 400;
   padding: 10px 45px;
@@ -36745,7 +36719,7 @@ div[role=alert] {
   text-align: center;
 }
 
-.ama__dr-finder .pager .ama__button--secondary {
+.ama__dr-finder .pager .ama__button--secondary, .ama__dr-finder .pager .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__dr-finder .pager #edit-cancel {
   font-weight: 400;
   padding: 10px 45px;
 }
@@ -37569,7 +37543,7 @@ div[role=alert] {
   }
 }
 @media (max-width: 37.5em) {
-  .ama__homepage .ama__layout--split.container {
+  .ama__homepage .ama__layout--split.container, .ama__homepage .layout-builder-page #layout-builder .ama__layout--split[data-drupal-messages], .layout-builder-page #layout-builder .ama__homepage .ama__layout--split[data-drupal-messages], .ama__homepage #layout-builder .ama__layout--split.layout-builder-container, #layout-builder .ama__homepage .ama__layout--split.layout-builder-container {
     padding: 0 15px;
   }
 }
@@ -37719,9 +37693,437 @@ div[role=alert] {
   }
 }
 
-.hub-container .ama__layout--one-column.container {
+.hub-container .ama__layout--one-column.container, .hub-container .layout-builder-page #layout-builder .ama__layout--one-column[data-drupal-messages], .layout-builder-page #layout-builder .hub-container .ama__layout--one-column[data-drupal-messages], .hub-container #layout-builder .ama__layout--one-column.layout-builder-container, #layout-builder .hub-container .ama__layout--one-column.layout-builder-container {
   max-width: 1440px;
   width: 100%;
+}
+
+.ama__landing-page .ama__full_hero_banner {
+  margin-bottom: 0;
+}
+
+#layout-builder {
+  position: relative;
+}
+#layout-builder .overlay {
+  display: none;
+}
+#layout-builder .overlay.active {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+}
+
+#content-lock-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-top: 14px;
+  border: 1px solid #a1a1a4;
+  background-color: lightgray;
+  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+}
+#content-lock-status .unlock-button {
+  margin-left: auto;
+}
+#content-lock-status p, #content-lock-status .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text #content-lock-status .ama__image__text__subtitle, #content-lock-status .ama__resource-link--inline__text {
+  margin-bottom: 0;
+}
+#content-lock-status.locked {
+  background-color: #ffd3cf;
+  border: 1px solid #fa7c6e;
+}
+#content-lock-status.locked.self-locked {
+  background-color: #f7e6d7;
+  border: 1px solid #f5b47a;
+}
+
+/* from newer PR */
+#block-ama-one-help {
+  display: none;
+}
+
+form[id*=-layout-builder-form] .layout-actions #edit-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+form[id*=-layout-builder-form] #edit-preview-toggle,
+form[id*=-layout-builder-form] #edit-layout-builder-message {
+  display: none;
+}
+form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper label {
+  display: block;
+}
+form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper .form-item-moderation-state-0-current {
+  -webkit-box-flex: 0.15;
+  -ms-flex: 0.15;
+  flex: 0.15;
+}
+form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper .form-item-moderation-state-0-current label {
+  margin-bottom: 25px;
+}
+form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper .form-item-moderation-state-0-state {
+  -webkit-box-flex: 0.5;
+  -ms-flex: 0.5;
+  flex: 0.5;
+}
+form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper transitionset {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+
+#layout-builder-revert-overrides {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+#layout-builder-revert-overrides #edit-actions,
+#layout-builder-revert-overrides #edit-content {
+  padding-top: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#layout-builder-revert-overrides #edit-actions input,
+#layout-builder-revert-overrides #edit-actions a,
+#layout-builder-revert-overrides #edit-content input,
+#layout-builder-revert-overrides #edit-content a {
+  width: 100%;
+}
+@media (min-width: 37.5em) {
+  #layout-builder-revert-overrides #edit-actions input,
+  #layout-builder-revert-overrides #edit-actions a,
+  #layout-builder-revert-overrides #edit-content input,
+  #layout-builder-revert-overrides #edit-content a {
+    width: auto;
+  }
+}
+#layout-builder-revert-overrides #edit-actions input,
+#layout-builder-revert-overrides #edit-content input {
+  margin-bottom: 5px;
+}
+@media (min-width: 37.5em) {
+  #layout-builder-revert-overrides #edit-actions input,
+  #layout-builder-revert-overrides #edit-content input {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 37.5em) {
+  #layout-builder-revert-overrides #edit-actions,
+  #layout-builder-revert-overrides #edit-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.layout-builder__section .ama__full_hero_banner {
+  margin-bottom: 0;
+}
+.layout-builder__section .layout-builder__region {
+  position: relative;
+  margin-bottom: 120px;
+  min-height: 85px;
+}
+.layout-builder__section .layout-builder__add-block {
+  position: absolute;
+  width: 100%;
+  bottom: -104px;
+  left: 0;
+  border: 2px dashed #2f91da;
+}
+
+.layout-builder__add-section {
+  padding: 1.5em 0;
+}
+
+#layout-builder .layout-builder-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#layout-builder .container, .layout-builder-page #layout-builder [data-drupal-messages], #layout-builder .layout-builder-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#layout-builder .ama__category-page-article-stub {
+  overflow: hidden;
+}
+
+/* From Older PR */
+.layout-builder-page {
+  /* individual overrides */
+}
+.layout-builder-page #layout-builder .ama__full_hero_banner {
+  margin-bottom: 0;
+}
+.layout-builder-page form.layout-builder-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-bottom: 1px solid #f4f4f4;
+}
+.layout-builder-page form.layout-builder-form .form-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.layout-builder-page form.layout-builder-form .form-actions > * {
+  margin-right: 0;
+}
+.layout-builder-page form.layout-builder-form .form-actions > *:last-child {
+  margin-left: auto;
+}
+@media (min-width: 37.5em) {
+  .layout-builder-page form.layout-builder-form .form-actions > * {
+    margin-right: 28px;
+  }
+  .layout-builder-page form.layout-builder-form .form-actions > *:last-child {
+    margin-right: 0;
+  }
+}
+.layout-builder-page form.layout-builder-form .form-actions #edit-custom-revert {
+  margin-left: auto;
+  margin-right: 0;
+}
+.layout-builder-page form.layout-builder-form .form-actions #edit-custom-revert.disabled {
+  color: #7f7f7f;
+  background-color: #E4E3E6;
+}
+.layout-builder-page form.layout-builder-form .form-actions #edit-custom-revert.disabled:hover {
+  color: #7f7f7f;
+  background-color: #E4E3E6;
+  cursor: default;
+}
+.layout-builder-page form.layout-builder-form .js-form-type-vertical-tabs {
+  display: none;
+}
+.layout-builder-page form.layout-builder-form .js-form-type-vertical-tabs .vertical-tabs {
+  display: none;
+}
+.layout-builder-page form.layout-builder-form .js-form-type-vertical-tabs .vertical-tabs .vertical-tabs__pane {
+  display: none;
+}
+.layout-builder-page .layout-builder__layout {
+  overflow: visible !important;
+}
+.layout-builder-page .layout-builder__layout article {
+  margin-right: 0;
+}
+@media (min-width: 37.5em) {
+  .layout-builder-page .layout-builder__layout article {
+    margin-right: 20px;
+  }
+}
+.layout-builder-page .layout-builder__layout aside {
+  padding-left: 0 !important;
+}
+.layout-builder-page .layout-builder__layout.layout--one-col-class {
+  background-color: transparent !important;
+}
+.layout-builder-page .layout-builder__layout.layout--one-col-class .ama__subscribe-promo--wide {
+  margin: 0 auto 28px auto;
+  padding: 28px;
+}
+.layout-builder-page .layout-builder__layout .ama__partner-promo {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+.layout-builder-page .layout-builder__layout .description .truncated,
+.layout-builder-page .layout-builder__layout .description .fulltext.text-body {
+  display: none;
+}
+.layout-builder-page #layout-builder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.layout-builder-page #layout-builder .layout-builder-block {
+  background: transparent;
+}
+.layout-builder-page #layout-builder [data-drupal-messages] {
+  margin-bottom: 28px;
+  font-size: 18px;
+  background: #aef6cb;
+  color: #378b59;
+  border-radius: 8px;
+  margin: 28px auto;
+  padding: 12px 14px !important;
+  font-style: italic;
+}
+.layout-builder-page #layout-builder [data-drupal-messages] ul {
+  list-style-type: none;
+}
+.layout-builder-page #layout-builder [data-drupal-messages] ul li {
+  padding-bottom: 14px;
+}
+.layout-builder-page #layout-builder [data-drupal-messages] ul li:last-child {
+  padding-bottom: 0;
+}
+.layout-builder-page #layout-builder .is-sticky {
+  position: relative;
+}
+.layout-builder-page #layout-builder .is-sticky .addtoany_list {
+  position: relative !important;
+  width: 100% !important;
+  z-index: initial !important;
+  top: auto !important;
+}
+.layout-builder-page #layout-builder.layout-builder {
+  border: none;
+  background-color: transparent;
+  padding: 0 1.5rem;
+  border: none;
+}
+.layout-builder-page .ama__button:not([value=Search]), .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:not([value=Search]) {
+  min-height: 44px;
+  min-width: 100px;
+  padding: 12px 16px 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: normal;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+.layout-builder-page .ama__button:not([value=Search]).ama__button--primary, .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:not([value=Search]).ama__button--primary {
+  background-color: #46166B;
+}
+.layout-builder-page .ama__button:not([value=Search]).ama__button--primary:hover, .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel:not([value=Search]).ama__button--primary:hover {
+  background-color: #9073A6;
+}
+.layout-builder-page #edit-unlock {
+  display: none;
+}
+.layout-builder-page #layout-builder-discard-changes {
+  margin: 15vh auto 0;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.layout-builder-page #layout-builder-discard-changes #edit-actions {
+  margin: 5vh auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-submit {
+  display: block;
+  margin-right: 0rem;
+}
+@media (min-width: 37.5em) {
+  .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-submit {
+    margin-right: 3rem;
+  }
+}
+.layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
+  display: block;
+}
+
+#drupal-off-canvas .js-form-type-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#drupal-off-canvas .js-form-type-checkbox input[type=checkbox] {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item {
+  display: block;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item a {
+  display: block;
+  color: #fff;
+  margin-bottom: 20px;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item a img {
+  max-width: 50%;
+  max-height: 200px;
+  margin: 0 0 20px;
+  clear: both;
+  display: block;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item:last-child a {
+  margin-bottom: 0;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item:last-child a img {
+  margin: 0 0;
 }
 
 .article-header {
@@ -38600,7 +39002,7 @@ div[role=alert] {
     border: none;
     position: relative;
   }
-  .ama__resource-page .ama__layout--split__left .container {
+  .ama__resource-page .ama__layout--split__left .container, .ama__resource-page .ama__layout--split__left #layout-builder .layout-builder-container, #layout-builder .ama__resource-page .ama__layout--split__left .layout-builder-container, .ama__resource-page .ama__layout--split__left .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .ama__resource-page .ama__layout--split__left [data-drupal-messages] {
     width: auto;
   }
 }
@@ -38670,7 +39072,7 @@ div[role=alert] {
   list-style: none;
   margin: 0;
 }
-.ama__resource-page__desktop-footer.ama__footer .ama__footer > .container {
+.ama__resource-page__desktop-footer.ama__footer .ama__footer > .container, .ama__resource-page__desktop-footer.ama__footer #layout-builder .ama__footer > .layout-builder-container, #layout-builder .ama__resource-page__desktop-footer.ama__footer .ama__footer > .layout-builder-container, .ama__resource-page__desktop-footer.ama__footer .layout-builder-page #layout-builder .ama__footer > [data-drupal-messages], .layout-builder-page #layout-builder .ama__resource-page__desktop-footer.ama__footer .ama__footer > [data-drupal-messages] {
   display: inherit;
   -ms-flex-wrap: inherit;
   flex-wrap: inherit;
@@ -38714,7 +39116,7 @@ div[role=alert] {
   position: inherit;
   bottom: inherit;
 }
-.ama__resource-page__desktop-footer.ama__footer .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button {
+.ama__resource-page__desktop-footer.ama__footer .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__resource-page__desktop-footer.ama__footer .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__resource-page__desktop-footer.ama__footer .ama__footer__right .ama__subscribe-promo--wide .ama__subscribe-promo__form #edit-cancel {
   margin: 0 auto;
   display: inline-block;
   background: #46166B;
@@ -38770,7 +39172,7 @@ div[role=alert] {
     line-height: 1.056;
   }
 }
-.ama__resource-page__desktop-footer.ama__footer .ama__footer__bottom > .container {
+.ama__resource-page__desktop-footer.ama__footer .ama__footer__bottom > .container, .ama__resource-page__desktop-footer.ama__footer #layout-builder .ama__footer__bottom > .layout-builder-container, #layout-builder .ama__resource-page__desktop-footer.ama__footer .ama__footer__bottom > .layout-builder-container, .ama__resource-page__desktop-footer.ama__footer .layout-builder-page #layout-builder .ama__footer__bottom > [data-drupal-messages], .layout-builder-page #layout-builder .ama__resource-page__desktop-footer.ama__footer .ama__footer__bottom > [data-drupal-messages] {
   display: block;
 }
 .ama__resource-page__desktop-footer.ama__footer .ama__footer__mission {
@@ -38806,12 +39208,12 @@ div[role=alert] {
     padding-bottom: 28px;
   }
 }
-.ama__sales-landing-page__cta .ama__button {
+.ama__sales-landing-page__cta .ama__button, .ama__sales-landing-page__cta .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__sales-landing-page__cta #edit-cancel {
   display: block;
   margin: 0 auto;
 }
 @media (min-width: 37.5em) {
-  .ama__sales-landing-page__cta .ama__button {
+  .ama__sales-landing-page__cta .ama__button, .ama__sales-landing-page__cta .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__sales-landing-page__cta #edit-cancel {
     width: 25%;
   }
 }
@@ -38986,13 +39388,13 @@ div[role=alert] {
 .ama__series #views-exposed-form-series-listing-block-series-listing > .js-form-type-textfield {
   margin-top: 0;
 }
-.ama__series > .container {
+.ama__series > .container, #layout-builder .ama__series > .layout-builder-container, .layout-builder-page #layout-builder .ama__series > [data-drupal-messages] {
   padding: 0;
 }
 .ama__series .ama__search__field__clear-button span {
   color: #7229D1;
 }
-.ama__series .ama__global-search__action input.ama__button {
+.ama__series .ama__global-search__action input.ama__button, .ama__series .ama__global-search__action .layout-builder-page #layout-builder-discard-changes #edit-actions input#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__series .ama__global-search__action input#edit-cancel {
   background: url(../icons/svg/icon-search-white.svg) no-repeat 0 0;
   background-size: 22px 22px;
   background-position: 7px 7px;
@@ -39031,7 +39433,7 @@ div[role=alert] {
     padding: 7px 0 14px;
   }
 }
-.ama__series .ama__membership button.ama__button {
+.ama__series .ama__membership button.ama__button, .ama__series .ama__membership .layout-builder-page #layout-builder-discard-changes #edit-actions button#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__series .ama__membership button#edit-cancel {
   margin-left: 28px;
   margin-right: 28px;
 }
@@ -39064,7 +39466,7 @@ div[role=alert] {
 .ama__series ul.pager {
   text-align: center;
 }
-.ama__series ul.pager a.ama__button {
+.ama__series ul.pager a.ama__button, .ama__series ul.pager .layout-builder-page #layout-builder-discard-changes #edit-actions a#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__series ul.pager a#edit-cancel {
   font-size: 20px;
   font-weight: 400;
   padding: 10px 45px;
@@ -39376,7 +39778,7 @@ div[role=alert] {
   -ms-grid-column-span: 3;
   grid-column: 1/3;
 }
-.ama__trending > .container {
+.ama__trending > .container, #layout-builder .ama__trending > .layout-builder-container, .layout-builder-page #layout-builder .ama__trending > [data-drupal-messages] {
   padding: 0;
 }
 .ama__trending .trending-index,
@@ -39389,7 +39791,7 @@ div[role=alert] {
 .ama__trending .ama__layout--two-col-right--75-25__top {
   border-bottom: 1px solid #767676;
 }
-.ama__trending .ama__membership button.ama__button {
+.ama__trending .ama__membership button.ama__button, .ama__trending .ama__membership .layout-builder-page #layout-builder-discard-changes #edit-actions button#edit-cancel, .layout-builder-page #layout-builder-discard-changes #edit-actions .ama__trending .ama__membership button#edit-cancel {
   margin-left: 28px;
   margin-right: 28px;
 }
@@ -39399,24 +39801,24 @@ div[role=alert] {
   }
 }
 
-.user-page .container {
+.user-page .container, .user-page #layout-builder .layout-builder-container, #layout-builder .user-page .layout-builder-container, .user-page .layout-builder-page #layout-builder [data-drupal-messages], .layout-builder-page #layout-builder .user-page [data-drupal-messages] {
   min-height: 40vh;
   padding: 0 0;
 }
-.user-page .container h1 {
+.user-page .container h1, .user-page #layout-builder .layout-builder-container h1, #layout-builder .user-page .layout-builder-container h1, .user-page .layout-builder-page #layout-builder [data-drupal-messages] h1, .layout-builder-page #layout-builder .user-page [data-drupal-messages] h1 {
   padding-top: 4rem;
   padding-bottom: 1.5rem;
 }
 @media (min-width: 56.25em) {
-  .user-page .container h1 {
+  .user-page .container h1, .user-page #layout-builder .layout-builder-container h1, #layout-builder .user-page .layout-builder-container h1, .user-page .layout-builder-page #layout-builder [data-drupal-messages] h1, .layout-builder-page #layout-builder .user-page [data-drupal-messages] h1 {
     padding-top: 5rem;
     padding-bottom: 2rem;
   }
 }
-.user-page .container h3 {
+.user-page .container h3, .user-page #layout-builder .layout-builder-container h3, #layout-builder .user-page .layout-builder-container h3, .user-page .layout-builder-page #layout-builder [data-drupal-messages] h3, .layout-builder-page #layout-builder .user-page [data-drupal-messages] h3 {
   margin-bottom: 1.5rem;
 }
-.user-page .container h2 {
+.user-page .container h2, .user-page #layout-builder .layout-builder-container h2, #layout-builder .user-page .layout-builder-container h2, .user-page .layout-builder-page #layout-builder [data-drupal-messages] h2, .layout-builder-page #layout-builder .user-page [data-drupal-messages] h2 {
   margin-bottom: 28px;
 }
 

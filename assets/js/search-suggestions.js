@@ -34,7 +34,7 @@
             const searchSuggestionsBlock = document.querySelector('.search-suggestions-block');
             const inputElement = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input[id^="edit-search--"]');
 
-            const shouldShow = inputElement.value.trim() === '';
+            const shouldShow = inputElement && inputElement.value.trim() === '';
             if (shouldShow && (!searchSuggestionsWrapper || !searchSuggestionsBlock || !inputElement)) {
                 console.log('search-suggestions.js - One or more required elements are missing.');
                 return; // Exit the function if any required element is missing
@@ -44,7 +44,7 @@
             const debouncedToggleShowClass = debounce(toggleShowClass, 250);
 
             // Get last tabbable element
-            const lastTabbableElement = searchSuggestionsBlock.querySelector('a:last-of-type');
+            const lastTabbableElement = searchSuggestionsBlock ? searchSuggestionsBlock.querySelector('a:last-of-type') : null;
             if (!lastTabbableElement) {
                 return;
             }
@@ -84,7 +84,7 @@
             // Else, do not.
             function toggleShowClass() {
                 const hasFocus = searchHasFocus();
-                const shouldShow = inputElement.value.trim() === '';
+                const shouldShow = inputElement && inputElement.value.trim() === '';
                 const isShown = searchSuggestionsWrapper.classList.contains('show');
 
                 if (hasFocus && shouldShow && !isShown) {
