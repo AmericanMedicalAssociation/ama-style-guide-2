@@ -1935,39 +1935,6 @@ html.js iframe[src="javascript:false"] {
   border-bottom: solid 3px #5C5C5C;
 }
 
-.bg_purple_gradient {
-  background: -webkit-gradient(linear, left top, right top, from(#46166B), to(#7229D1));
-  background: linear-gradient(90deg, #46166B 0%, #7229D1 100%);
-}
-
-.bg_pale_purple {
-  background-color: #ece7f0;
-}
-
-.bg-white {
-  background-color: #ffffff;
-}
-
-.bg_none {
-  background-color: transparent;
-}
-
-.bg_gray {
-  background-color: #f4f4f4;
-}
-
-.bg_purple {
-  background-color: #46166B;
-}
-
-.light_text {
-  color: #ffffff;
-}
-
-.dark_text {
-  color: #000000;
-}
-
 .ama__footer .ama__subscribe-promo--wide .ama__subscribe-promo__form .ama__button, .ama__hub-hero__button-container a, .ama__hub-card__button-container a,
 .ama__button,
 .layout-builder-page #layout-builder-discard-changes #edit-actions #edit-cancel {
@@ -3458,6 +3425,67 @@ html.js iframe[src="javascript:false"] {
   background-color: #46166B;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+/**
+ * Backgrounds
+ */
+.bg_purple_gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#46166B), to(#7229D1));
+  background: linear-gradient(90deg, #46166B 0%, #7229D1 100%);
+}
+
+/**
+ * Background Colors
+ */
+.bg_light_purple {
+  background-color: #F3ECF8;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg_none {
+  background-color: transparent;
+}
+
+.bg_gray {
+  background-color: #f4f4f4;
+}
+
+.bg_purple {
+  background-color: #46166B;
+}
+
+.bg_dark_purple {
+  background-color: #2A0D40;
+}
+
+/**
+ * Text Contrast
+ */
+.light_text {
+  color: #ffffff;
+}
+
+.dark_text {
+  color: #000000;
+}
+
+/**
+ * Padding
+ */
+.half_padding {
+  padding: 14px 0;
+}
+
+.full_padding {
+  padding: 28px 0;
+}
+
+.extra_padding {
+  padding: 42px 0;
 }
 
 .ama__form-steps {
@@ -37701,6 +37729,22 @@ div[role=alert] {
 .ama__landing-page .ama__full_hero_banner {
   margin-bottom: 0;
 }
+.ama__landing-page .landing-page-gating {
+  position: relative;
+}
+.ama__landing-page .landing-page-gating .gating-block-fade {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgb(255, 255, 255)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+}
+.ama__landing-page .landing-page-gating .gating-block-wrapper {
+  margin: 0 auto 40px;
+  padding: 28px 14px 42px;
+}
 
 #layout-builder {
   position: relative;
@@ -38126,6 +38170,22 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
   margin: 0 0;
 }
 
+/**
+ * Layout Builder Configure Section
+ */
+#layout-builder-configure-section .settings-section {
+  border-radius: 6px;
+  padding: 28px;
+  margin-bottom: 21px;
+  background: #333;
+}
+#layout-builder-configure-section .settings-section h3 {
+  margin-bottom: 21px;
+}
+#layout-builder-configure-section img {
+  width: 100%;
+  max-width: 300px;
+}
 .article-header {
   display: -webkit-box;
   display: -ms-flexbox;
