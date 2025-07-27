@@ -753,6 +753,7 @@ div[role=alert] a, h4 a,
 .ama__tabs .ama__agenda-date a.ui-tabs-anchor a,
 .ama__75-25__masthead__content .link a, h3 a,
 .ama__h3 a,
+#layout-builder-configure-section .settings-section summary a,
 .ama__subcategory-hero__title a,
 .ama__category-hero__title a,
 .ama__masthead__content .ama__subtitle a,
@@ -945,6 +946,7 @@ h2.news--homepage,
 
 h3,
 .ama__h3,
+#layout-builder-configure-section .settings-section summary,
 .ama__subcategory-hero__title,
 .ama__category-hero__title,
 .ama__masthead__content .ama__subtitle,
@@ -960,6 +962,7 @@ h3,
 @media screen and (min-width: 37.5em) {
   h3,
   .ama__h3,
+  #layout-builder-configure-section .settings-section summary,
   .ama__subcategory-hero__title,
   .ama__category-hero__title,
   .ama__masthead__content .ama__subtitle,
@@ -973,6 +976,7 @@ h3,
 @media screen and (min-width: 56.25em) {
   h3,
   .ama__h3,
+  #layout-builder-configure-section .settings-section summary,
   .ama__subcategory-hero__title,
   .ama__category-hero__title,
   .ama__masthead__content .ama__subtitle,
@@ -986,6 +990,7 @@ h3,
 @media screen and (min-width: 75em) {
   h3,
   .ama__h3,
+  #layout-builder-configure-section .settings-section summary,
   .ama__subcategory-hero__title,
   .ama__category-hero__title,
   .ama__masthead__content .ama__subtitle,
@@ -999,6 +1004,7 @@ h3,
 @media (min-width: 56.25em) {
   h3,
   .ama__h3,
+  #layout-builder-configure-section .settings-section summary,
   .ama__subcategory-hero__title,
   .ama__category-hero__title,
   .ama__masthead__content .ama__subtitle,
@@ -3442,6 +3448,7 @@ html.js iframe[src="javascript:false"] {
   background-color: #F3ECF8;
 }
 
+.bg_white,
 .bg-white {
   background-color: #ffffff;
 }
@@ -3450,11 +3457,13 @@ html.js iframe[src="javascript:false"] {
   background-color: transparent;
 }
 
-.bg_gray {
+.bg_gray,
+.bg-gray {
   background-color: #f4f4f4;
 }
 
-.bg_purple {
+.bg_purple,
+.bg-purple {
   background-color: #46166B;
 }
 
@@ -3474,18 +3483,68 @@ html.js iframe[src="javascript:false"] {
 }
 
 /**
- * Padding
+ * Padding Bottom
  */
-.half_padding {
-  padding: 14px 0;
+.padding_bottom_0 {
+  padding-bottom: 0px;
 }
 
-.full_padding {
-  padding: 28px 0;
+.padding_bottom_14 {
+  padding-bottom: 14px;
 }
 
-.extra_padding {
-  padding: 42px 0;
+.padding_bottom_28 {
+  padding-bottom: 28px;
+}
+
+.padding_bottom_42 {
+  padding-bottom: 42px;
+}
+
+.padding_bottom_70 {
+  padding-bottom: 70px;
+}
+
+.padding_bottom_98 {
+  padding-bottom: 98px;
+}
+
+/**
+ * Padding Top
+ */
+.padding_top_0 {
+  padding-top: 0px;
+}
+
+.padding_top_14 {
+  padding-top: 14px;
+}
+
+.padding_top_28 {
+  padding-top: 28px;
+}
+
+.padding_top_42 {
+  padding-top: 42px;
+}
+
+.padding_top_70 {
+  padding-top: 70px;
+}
+
+.padding_top_98 {
+  padding-top: 98px;
+}
+
+/**
+ * Borders
+ */
+.border_top_gray {
+  border-top: 1px solid #a1a1a4;
+}
+
+.border_bottom_gray {
+  border-bottom: 1px solid #a1a1a4;
 }
 
 .ama__form-steps {
@@ -9675,8 +9734,10 @@ Styles for the new Category Featured Content Custom Block.
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.ama__category-theme .date .read_time .ama__h3, .ama__category-theme .date .read_time .ama__subcategory-hero__title, .ama__category-theme .date .read_time .ama__category-hero__title,
+.ama__category-theme .date .read_time .ama__h3, .ama__category-theme .date .read_time #layout-builder-configure-section .settings-section summary, #layout-builder-configure-section .settings-section .ama__category-theme .date .read_time summary, .ama__category-theme .date .read_time .ama__subcategory-hero__title, .ama__category-theme .date .read_time .ama__category-hero__title,
 .ama__category-theme .mobile-date .read_time .ama__h3,
+.ama__category-theme .mobile-date .read_time #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .ama__category-theme .mobile-date .read_time summary,
 .ama__category-theme .mobile-date .read_time .ama__subcategory-hero__title,
 .ama__category-theme .mobile-date .read_time .ama__category-hero__title {
   display: inline;
@@ -9705,6 +9766,8 @@ Styles for the new Category Featured Content Custom Block.
 }
 .ama__category-theme .category-theme__container h3,
 .ama__category-theme .category-theme__container .ama__h3,
+.ama__category-theme .category-theme__container #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .ama__category-theme .category-theme__container summary,
 .ama__category-theme .category-theme__container .ama__subcategory-hero__title,
 .ama__category-theme .category-theme__container .ama__category-hero__title {
   margin-bottom: 0 !important;
@@ -15845,7 +15908,7 @@ span.ama__inline-bio__link a:focus-visible {
     padding: 14px;
   }
 }
-.ama__partner-promo--homepage .ama__h3.partner-embed, .ama__partner-promo--homepage .partner-embed.ama__subcategory-hero__title, .ama__partner-promo--homepage .partner-embed.ama__category-hero__title {
+.ama__partner-promo--homepage .ama__h3.partner-embed, .ama__partner-promo--homepage #layout-builder-configure-section .settings-section summary.partner-embed, #layout-builder-configure-section .settings-section .ama__partner-promo--homepage summary.partner-embed, .ama__partner-promo--homepage .partner-embed.ama__subcategory-hero__title, .ama__partner-promo--homepage .partner-embed.ama__category-hero__title {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 600;
 }
@@ -16404,7 +16467,7 @@ span.ama__inline-bio__link a:focus-visible {
     padding-top: 28px;
   }
 }
-.partner-promo-inline .ama__h3, .partner-promo-inline .ama__subcategory-hero__title, .partner-promo-inline .ama__category-hero__title {
+.partner-promo-inline .ama__h3, .partner-promo-inline #layout-builder-configure-section .settings-section summary, #layout-builder-configure-section .settings-section .partner-promo-inline summary, .partner-promo-inline .ama__subcategory-hero__title, .partner-promo-inline .ama__category-hero__title {
   color: #46166B;
 }
 
@@ -19484,20 +19547,30 @@ div.ama__category-index a.ama__subcategory-page-article-stub.ama__subcategory-pa
   font-weight: 400;
   line-height: 1;
 }
-.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__h3, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__category-hero__title, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subcategory-hero__title,
+.ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__h3, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo #layout-builder-configure-section .settings-section summary, #layout-builder-configure-section .settings-section .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo summary, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__category-hero__title, .ama__category .layout__region--content .layout--onecol .ama__subscribe-promo .ama__subcategory-hero__title,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__h3,
+.ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo summary,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__category-hero__title,
 .ama__category .layout__region--content .layout--ama-page-section-one-col .ama__subscribe-promo .ama__subcategory-hero__title,
 .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__h3,
+.index-page .ama__layout--one-column__page-content .ama__subscribe-promo #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .index-page .ama__layout--one-column__page-content .ama__subscribe-promo summary,
 .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__category-hero__title,
 .index-page .ama__layout--one-column__page-content .ama__subscribe-promo .ama__subcategory-hero__title,
 .index-page .index-promo .ama__subscribe-promo .ama__h3,
+.index-page .index-promo .ama__subscribe-promo #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .index-page .index-promo .ama__subscribe-promo summary,
 .index-page .index-promo .ama__subscribe-promo .ama__category-hero__title,
 .index-page .index-promo .ama__subscribe-promo .ama__subcategory-hero__title,
 .index-page .no-results .ama__subscribe-promo .ama__h3,
+.index-page .no-results .ama__subscribe-promo #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .index-page .no-results .ama__subscribe-promo summary,
 .index-page .no-results .ama__subscribe-promo .ama__category-hero__title,
 .index-page .no-results .ama__subscribe-promo .ama__subcategory-hero__title,
 .index-page > div > .ama__subscribe-promo .ama__h3,
+.index-page > div > .ama__subscribe-promo #layout-builder-configure-section .settings-section summary,
+#layout-builder-configure-section .settings-section .index-page > div > .ama__subscribe-promo summary,
 .index-page > div > .ama__subscribe-promo .ama__category-hero__title,
 .index-page > div > .ama__subscribe-promo .ama__subcategory-hero__title {
   color: #46166B;
@@ -24665,7 +24738,7 @@ a:focus-visible.ama__hub-card {
     margin-bottom: 0px;
   }
 }
-.ama__column-teaser-wrapper .ama__column-teaser div .ama__h3, .ama__column-teaser-wrapper .ama__column-teaser div .ama__category-hero__title, .ama__column-teaser-wrapper .ama__column-teaser div .ama__subcategory-hero__title {
+.ama__column-teaser-wrapper .ama__column-teaser div .ama__h3, .ama__column-teaser-wrapper .ama__column-teaser div #layout-builder-configure-section .settings-section summary, #layout-builder-configure-section .settings-section .ama__column-teaser-wrapper .ama__column-teaser div summary, .ama__column-teaser-wrapper .ama__column-teaser div .ama__category-hero__title, .ama__column-teaser-wrapper .ama__column-teaser div .ama__subcategory-hero__title {
   color: white;
   text-decoration: none;
 }
@@ -28693,12 +28766,12 @@ header.sticky-nav {
   }
 }
 @media (min-width: 25em) {
-  .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h3.dr-finder-search-results-header__results-text, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__h3, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__category-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__subcategory-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__subcategory-hero__title {
+  .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text #layout-builder-configure-section .settings-section summary.ama__h1, #layout-builder-configure-section .settings-section .ama__75-25__masthead__content .bio-row .ama__inline-bio__text summary.ama__h1, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h3.dr-finder-search-results-header__results-text, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text #layout-builder-configure-section .settings-section summary.dr-finder-search-results-header__results-text, #layout-builder-configure-section .settings-section .ama__75-25__masthead__content .bio-row .ama__inline-bio__text summary.dr-finder-search-results-header__results-text, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__h3, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__category-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__subcategory-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__subcategory-hero__title {
     margin-bottom: 15px;
   }
 }
 @media (min-width: 56.25em) {
-  .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h3.dr-finder-search-results-header__results-text, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__h3, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__category-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__subcategory-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__subcategory-hero__title {
+  .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text #layout-builder-configure-section .settings-section summary.ama__h1, #layout-builder-configure-section .settings-section .ama__75-25__masthead__content .bio-row .ama__inline-bio__text summary.ama__h1, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h3.dr-finder-search-results-header__results-text, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text #layout-builder-configure-section .settings-section summary.dr-finder-search-results-header__results-text, #layout-builder-configure-section .settings-section .ama__75-25__masthead__content .bio-row .ama__inline-bio__text summary.dr-finder-search-results-header__results-text, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__h3, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__h3, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__category-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__category-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .ama__h1.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-search-results-header__results-text.ama__subcategory-hero__title, .ama__75-25__masthead__content .bio-row .ama__inline-bio__text .dr-finder-filter_suggestions span.ama__subcategory-hero__title, .dr-finder-filter_suggestions .ama__75-25__masthead__content .bio-row .ama__inline-bio__text span.ama__subcategory-hero__title {
     margin-bottom: 0px;
   }
 }
@@ -34648,6 +34721,12 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   padding-left: 4px;
 }
 
+.section-dynamic .layout_region--main,
+.section-dynamic .layout_region--content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .ama__layout--one-column {
   display: -ms-grid;
   display: grid;
@@ -35855,7 +35934,7 @@ body.search-results .ama__layout--two-column--left {
 body.ama__abstract #block-ama-one-content {
   background-color: #F5F5F5;
 }
-body.ama__abstract .layout--ama-page-section-one-col.bg-purple {
+body.ama__abstract .layout--ama-page-section-one-col.bg-purple, body.ama__abstract .layout--ama-page-section-one-col.bg_purplle {
   background: radial-gradient(127.5% 238.17% at 50% 50%, #2A0D40 28.72%, #46166B 100%);
   padding: 63px 0;
   margin-bottom: 63px;
@@ -35993,7 +36072,7 @@ body.ama__abstract .gated-article .abstract-category-breadcrumb .card-container 
   padding-bottom: 28px;
 }
 
-.layout--ama-page-section-one-col.bg-purple {
+.layout--ama-page-section-one-col.bg-purple, .layout--ama-page-section-one-col.bg_purplle {
   background: radial-gradient(127.5% 238.17% at 50% 50%, #2A0D40 28.72%, #46166B 100%);
   padding: 63px 0;
   margin-bottom: 63px;
@@ -37170,16 +37249,13 @@ div[role=alert] {
 .ama__homepage .ama__layout--one-column.bg-white {
   background-color: #ffffff;
 }
-.ama__homepage.bg-gray {
+.ama__homepage.bg-gray, .ama__homepage.bg_gray {
   background-color: #F5F5F5;
 }
 .ama__homepage .bg-none {
   background-color: transparent;
 }
-.ama__homepage .section {
-  background-color: #ffffff;
-}
-.ama__homepage .section.bg-gray {
+.ama__homepage .section.bg-gray, .ama__homepage .section.bg_gray {
   background-color: #F5F5F5;
 }
 .ama__homepage .section.bg-none {
@@ -38148,34 +38224,41 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
   margin-right: 8px;
   vertical-align: middle;
 }
-#drupal-off-canvas .block-categories details .layout-builder-browser-block-item {
-  display: block;
-}
-#drupal-off-canvas .block-categories details .layout-builder-browser-block-item a {
-  display: block;
-  color: #fff;
-  margin-bottom: 20px;
-}
-#drupal-off-canvas .block-categories details .layout-builder-browser-block-item a img {
-  max-width: 50%;
-  max-height: 200px;
-  margin: 0 0 20px;
-  clear: both;
-  display: block;
-}
-#drupal-off-canvas .block-categories details .layout-builder-browser-block-item:last-child a {
-  margin-bottom: 0;
-}
-#drupal-off-canvas .block-categories details .layout-builder-browser-block-item:last-child a img {
-  margin: 0 0;
-}
 
 /**
  * Layout Builder Configure Section
  */
+#drupal-off-canvas .draggable:hover {
+  background-color: #444;
+}
+#drupal-off-canvas .block-categories details summary {
+  width: 100%;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item a {
+  border: 1px solid #2E2E2E;
+  padding: 20px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  text-align: left;
+  color: #eee;
+}
+#drupal-off-canvas .block-categories details .layout-builder-browser-block-item a img {
+  max-width: 250px;
+  margin-bottom: 14px;
+}
+
 #layout-builder-configure-section .settings-section {
   border-radius: 6px;
-  padding: 28px;
+  padding: 0 28px;
   margin-bottom: 21px;
   background: #333;
 }
@@ -38186,6 +38269,51 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
   width: 100%;
   max-width: 300px;
 }
+#layout-builder-configure-section .options-inline {
+  border-radius: 4px;
+  padding: 0 28px 28px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+#layout-builder-configure-section .options-inline .form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 50%;
+}
+#layout-builder-configure-section .options-inline .form-item.js-form-type-checkbox {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+#layout-builder-configure-section .options-inline .form-item.js-form-type-checkbox input[type=checkbox] {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+#layout-builder-configure-section .settings-section summary {
+  display: list-item;
+  font-weight: 400;
+}
+
 .article-header {
   display: -webkit-box;
   display: -ms-flexbox;
