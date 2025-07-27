@@ -355,28 +355,35 @@ form[id*="-layout-builder-form"] {
     flex-direction: row;
     align-items: center;
   }
+}
+
+/**
+ * Layout Builder Configure Section
+ */
+#drupal-off-canvas {
+  .draggable {
+    &:hover {
+      background-color: #444;
+    }
+  }
   .block-categories {
     details {
+      summary {
+        width: 100%;
+      }
       .layout-builder-browser-block-item {
-        display: block;
         a {
-          display: block;
-          color: #fff;
-          margin-bottom: 20px;
+          border: 1px solid $gray-80;
+          padding: 20px;
+          border-radius: 4px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          color: #eee;
           img {
-            max-width: 50%;
-            max-height: 200px;
-            margin: 0 0 20px;
-            clear: both;
-            display:block;
-          }
-        }
-        &:last-child {
-          a {
-            img {
-              margin: 0 0;
-            }
-            margin-bottom: 0;
+            max-width: 250px;
+            margin-bottom: 14px;
           }
         }
       }
@@ -384,30 +391,49 @@ form[id*="-layout-builder-form"] {
   }
 }
 
-/**
- * Layout Builder Configure Section
- */
+
+// Settings form styling
 #layout-builder-configure-section {
   .settings-section {
     border-radius: 6px;
-    padding: $gutter;
+    padding: 0 $gutter;
     margin-bottom: 21px;
     background: #333;
     h3 {
       margin-bottom: calc($gutter * .75);
     }
   }
-  .admin-settings {
-
-  }
   img {
     width:100%;
     max-width: 300px;
   }
-  .content-styling {
-
+  .options-inline {
+    border-radius: 4px;
+    padding: 0 28px 28px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    .form-item {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      &.js-form-type-checkbox {
+        flex-direction: row;
+        input[type="checkbox"] {
+          transform: scale(1.3);
+          margin-right: 8px;
+          vertical-align: middle;
+        }
+      }
+    }
   }
-  .content-organization {
-
+  .settings-section {
+    summary {
+      @extend .ama__h3;
+      display: list-item;
+      font-weight: $font-weight-regular;
+    }
   }
 }

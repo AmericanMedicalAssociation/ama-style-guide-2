@@ -11,16 +11,19 @@
 .bg_light_purple {
   background-color: $subscribe-filled;
 }
+.bg_white,
 .bg-white {
   background-color: $white;
 }
 .bg_none {
   background-color: transparent;
 }
-.bg_gray {
+.bg_gray,
+.bg-gray {
   background-color: $bg-gray;
 }
-.bg_purple {
+.bg_purple,
+.bg-purple {
   background-color: $purple;
 }
 .bg_dark_purple {
@@ -38,15 +41,55 @@
 }
 
 /**
- * Padding
+ * Padding Bottom
  */
-.half_padding {
-  padding: calc($gutter /2) 0;
+.padding_bottom_0 {
+  padding-bottom: 0px;
 }
-.full_padding {
-  padding: calc($gutter) 0;
+.padding_bottom_14 {
+  padding-bottom: 14px;
 }
-.extra_padding {
-  padding: calc($gutter * 1.5) 0;
+.padding_bottom_28 {
+  padding-bottom: 28px;
+}
+.padding_bottom_42 {
+  padding-bottom: 42px;
+}
+.padding_bottom_70 {
+  padding-bottom: 70px;
+}
+.padding_bottom_98 {
+  padding-bottom: 98px;
 }
 
+/**
+ * Padding Top
+ */
+.padding_top_0 {
+  padding-top: 0px;
+}
+.padding_top_14 {
+  padding-top: 14px;
+}
+.padding_top_28 {
+  padding-top: 28px;
+}
+.padding_top_42 {
+  padding-top: 42px;
+}
+.padding_top_70 {
+  padding-top: 70px;
+}
+.padding_top_98 {
+  padding-top: 98px;
+}
+
+/**
+ * Borders
+ */
+.border_top_gray {
+  border-top: 1px solid $border-gray;
+}
+.border_bottom_gray {
+  border-bottom: 1px solid $border-gray;
+}
