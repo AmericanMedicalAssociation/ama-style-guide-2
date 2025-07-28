@@ -41,6 +41,31 @@
 }
 
 /**
+ * Padding Left
+ */
+margin_bottom_negative {
+  .margin_bottom_14 {
+    margin-bottom: 0;
+    @include breakpoint($bp-small) {
+      margin-bottom: -49px;
+    }
+  }
+  .margin_bottom_28 {
+    margin-bottom: 0;
+    @include breakpoint($bp-small) {
+      margin-bottom: -147px;
+    }
+  }
+  .margin_bottom_35 {
+    margin-bottom: 0;
+    @include breakpoint($bp-small) {
+      margin-bottom: -196px;
+    }
+  }
+}
+
+
+/**
  * Padding Bottom
  */
 .padding_bottom_0 {
@@ -48,18 +73,51 @@
 }
 .padding_bottom_14 {
   padding-bottom: 14px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 14px;
+  }
 }
 .padding_bottom_28 {
-  padding-bottom: 28px;
+  padding-bottom: 21px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 28px;
+  }
 }
-.padding_bottom_42 {
-  padding-bottom: 42px;
+.padding_bottom_35 {
+  padding-bottom: 21px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 35px;
+  }
+}
+.padding_bottom_49 {
+  padding-bottom: 28px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 42px;
+  }
 }
 .padding_bottom_70 {
-  padding-bottom: 70px;
+  padding-bottom: 32px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 70px;
+  }
 }
 .padding_bottom_98 {
-  padding-bottom: 98px;
+  padding-bottom: 32px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 98px;
+  }
+}
+.padding_bottom_147 {
+  padding-bottom: 32px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 147px;
+  }
+}
+.padding_bottom_196 {
+  padding-bottom: 36px;
+  @include breakpoint($bp-small) {
+    padding-bottom: 196px;
+  }
 }
 
 /**
@@ -70,26 +128,247 @@
 }
 .padding_top_14 {
   padding-top: 14px;
+  @include breakpoint($bp-small) {
+    padding-top: 14px;
+  }
 }
 .padding_top_28 {
-  padding-top: 28px;
+  padding-top: 21px;
+  @include breakpoint($bp-small) {
+    padding-top: 28px;
+  }
 }
-.padding_top_42 {
-  padding-top: 42px;
+.padding_top_35 {
+  padding-top: 21px;
+  @include breakpoint($bp-small) {
+    padding-top: 35px;
+  }
+}
+.padding_top_49 {
+  padding-top: 28px;
+  @include breakpoint($bp-small) {
+    padding-top: 42px;
+  }
 }
 .padding_top_70 {
-  padding-top: 70px;
+  padding-top: 32px;
+  @include breakpoint($bp-small) {
+    padding-top: 70px;
+  }
 }
 .padding_top_98 {
-  padding-top: 98px;
+  padding-top: 32px;
+  @include breakpoint($bp-small) {
+    padding-top: 98px;
+  }
+}
+.padding_top_147 {
+  padding-top: 32px;
+  @include breakpoint($bp-small) {
+    padding-top: 147px;
+  }
+}
+.padding_top_196 {
+  padding-top: 36px;
+  @include breakpoint($bp-small) {
+    padding-top: 196px;
+  }
 }
 
 /**
  * Borders
  */
+
+// Gray borders
 .border_top_gray {
   border-top: 1px solid $border-gray;
 }
 .border_bottom_gray {
   border-bottom: 1px solid $border-gray;
+}
+
+// Purple borders
+.border_top_purple {
+  border-top: 1px solid $purple;
+}
+.border_bottom_purple {
+  border-bottom: 1px solid $purple;
+}
+
+/**
+  * Overlays
+ */
+
+// Activates styling.
+.section-dynamic {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // Enable Overlay.
+  &.enable_overlay {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    // Black overlay
+    &.overlay_black {
+      &::before {
+        background-color: rgba(0, 0, 0, 1);
+      }
+
+      &.overlay_opacity_20 {
+        &::before {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &.overlay_opacity_40 {
+        &::before {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      &.overlay_opacity_60 {
+        &::before {
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      &.overlay_opacity_80 {
+        &::before {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+    }
+
+    // White overlay
+    &.overlay_white {
+      &::before {
+        background-color: rgba(255, 255, 255, 1);
+      }
+
+      &.overlay_opacity_20 {
+        &::before {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      &.overlay_opacity_40 {
+        &::before {
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+      }
+
+      &.overlay_opacity_60 {
+        &::before {
+          background-color: rgba(255, 255, 255, 0.6);
+        }
+      }
+
+      &.overlay_opacity_80 {
+        &::before {
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+
+    // Purple overlay
+    &.overlay_purple {
+      &::before {
+        background-color: rgba(70, 22, 107, 1); // #46166B, 60%
+      }
+
+      &.overlay_opacity_20 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.2);
+        }
+      }
+
+      &.overlay_opacity_40 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.4);
+        }
+      }
+
+      &.overlay_opacity_60 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.6);
+        }
+      }
+
+      &.overlay_opacity_80 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.8);
+        }
+      }
+    }
+
+    // Light purple overlay
+    &.overlay_light_purple {
+      &::before {
+        background-color: rgba(70, 22, 107, 1); // #46166B, 60%
+      }
+
+      &.overlay_opacity_20 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.2);
+        }
+      }
+
+      &.overlay_opacity_40 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.4);
+        }
+      }
+
+      &.overlay_opacity_60 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.6);
+        }
+      }
+
+      &.overlay_opacity_80 {
+        &::before {
+          background-color: rgba(70, 22, 107, 0.8);
+        }
+      }
+    }
+
+    // Dark purple overlay
+    &.overlay_dark_purple {
+      &::before {
+        background-color: rgba(42, 13, 64, 1); // #2A0D40, 60%
+      }
+
+      &.overlay_opacity_20 {
+        &::before {
+          background-color: rgba(42, 13, 64, 0.2);
+        }
+      }
+
+      &.overlay_opacity_40 {
+        &::before {
+          background-color: rgba(42, 13, 64, 0.4);
+        }
+      }
+
+      &.overlay_opacity_60 {
+        &::before {
+          background-color: rgba(42, 13, 64, 0.6);
+        }
+      }
+
+      &.overlay_opacity_80 {
+        &::before {
+          background-color: rgba(42, 13, 64, 0.8);
+        }
+      }
+    }
+  }
 }
