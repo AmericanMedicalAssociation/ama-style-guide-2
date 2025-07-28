@@ -27,7 +27,13 @@
     &.bg-none {
       background-color: transparent;
     }
-
+    // If this is a dynamic section, remove the default padding.
+    &.section-dynamic {
+      .layout__region--main {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
     .layout__region--main {
       padding-top: calc($gutter);
       padding-bottom: calc($gutter);

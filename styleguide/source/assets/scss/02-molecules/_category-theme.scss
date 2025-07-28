@@ -1,4 +1,17 @@
 //  Remove duplicate styles.
+
+// If inside a dynamic section, remove the padding.
+.section-dynamic {
+  .ama__category-theme {
+    padding-bottom: 0;
+    padding-top: 0;
+    @include breakpoint($bp-small) {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
+
 .ama__category-theme {
   padding-bottom: 0;
   padding-top: 0;
