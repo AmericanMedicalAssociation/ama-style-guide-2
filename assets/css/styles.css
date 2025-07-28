@@ -9873,6 +9873,17 @@ Styles for the new Category Featured Content Custom Block.
   margin-bottom: 21px;
 }
 
+.section-dynamic .ama__category-theme {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+@media (min-width: 37.5em) {
+  .section-dynamic .ama__category-theme {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
 .ama__category-theme {
   padding-bottom: 0;
   padding-top: 0;
@@ -34976,6 +34987,14 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   padding-bottom: 0;
 }
 
+.dynamic-top-border {
+  margin-bottom: -1px;
+}
+
+.dynamic-bottom-border {
+  margin-top: -1px;
+}
+
 .ama__layout--one-column {
   display: -ms-grid;
   display: grid;
@@ -37509,6 +37528,10 @@ div[role=alert] {
 }
 .ama__homepage .section.bg-none {
   background-color: transparent;
+}
+.ama__homepage .section.section-dynamic .layout__region--main {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .ama__homepage .section .layout__region--main {
   padding-top: 28px;
