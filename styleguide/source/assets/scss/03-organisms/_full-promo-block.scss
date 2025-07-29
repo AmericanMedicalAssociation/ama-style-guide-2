@@ -1,0 +1,48 @@
+.full-promo-block {
+  font-family: $myriad-pro;
+  padding: 40px 32px;
+  @include breakpoint($bp-small) {
+    padding: 90px 32px;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  .title {
+    width: 100%;
+    h2 {
+      font-size: 34px;
+      font-weight: $font-weight-bold;
+      font-family: $myriad-pro;
+      line-height: 46px;
+      margin-bottom: 18px;
+    }
+  }
+  .body {
+    width: 100%;
+    p {
+      font-size: 18px;
+      font-weight: $font-weight-regular;
+      font-family: $myriad-pro;
+      margin-bottom: 32px;
+    }
+  }
+  .ctas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: calc($gutter * .75);
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+    }
+    .cta_one {
+      margin-right: 0;
+      margin-bottom: 21px;
+      @include breakpoint ($bp-small) {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

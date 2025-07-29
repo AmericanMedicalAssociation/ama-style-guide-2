@@ -1,0 +1,34 @@
+.section-dynamic {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.enable_overlay {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .layout_region--main,
+  .layout_region--content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+// contain the border divs entirely within their section.
+.dynamic-top-border {
+  margin-bottom: -1px;
+}
+.dynamic-bottom-border {
+  margin-top: -1px;
+}
