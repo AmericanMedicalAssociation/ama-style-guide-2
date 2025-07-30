@@ -4,9 +4,11 @@
 .thirty-seventy-block {
     display: flex;
     flex-flow: column-reverse wrap;
+    gap: 21px;
     margin-bottom: $gutter * .75;
     @include breakpoint($bp-med) {
         flex-flow: row nowrap;
+        gap: 35px;
         padding-bottom: $gutter;
     }
 
@@ -26,20 +28,30 @@
         margin-top: 0;
         @include breakpoint($bp-med) {
             flex-basis: 50%;
-            max-width: 396px;
         }
-      h2.ama__h2 {
-        font-size: $gutter;
-        line-height: 32px;
-        @include breakpoint($bp-med) {
-          font-size: 32px;
-          line-height: 38px;
+        .eyebrow {
+            font-size: 16px;
+            line-height: normal;
+            color: $gray-64;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            transition: margin-bottom .25s ease-in-out;
+            @include breakpoint($bp-med) {
+                margin-bottom: 9px;
+            }
         }
-        @include breakpoint($bp-large) {
-          font-size: 32px;
-          line-height: 42px;
+        h2.ama__h2 {
+            font-size: $gutter;
+            line-height: 32px;
+            @include breakpoint($bp-med) {
+            font-size: 32px;
+            line-height: 38px;
+            }
+            @include breakpoint($bp-large) {
+            font-size: 32px;
+            line-height: 42px;
+            }
         }
-      }
         .spacer {
             height: $gutter;
             display: block;
@@ -123,7 +135,7 @@
     }
 
     &__background {
-        flex-basis: 55%;
+        flex-basis: 50%;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -131,14 +143,20 @@
         background-position: center center;
         justify-content: center;
         margin: $gutter 0 0 0;
-        padding-bottom: 20px;
 
         @include breakpoint($bp-med) {
             margin: 0 0 0 20px;
-            padding-bottom: 0;
         }
-        @include breakpoint($bp-large) {
-            margin: 0 0 0 80px;
+    }
+        &.image-left {
+        &__aside {
+            margin-left: 20px;
+        }
+        &__background {
+            margin: 0;
+        }
+        @include breakpoint($bp-med) {
+            flex-flow: row-reverse nowrap;
         }
     }
     .image-container {
@@ -162,6 +180,7 @@
             object-fit: cover;
         }
     }
+    
 }
 
 .ama__news-article:not(body) {
