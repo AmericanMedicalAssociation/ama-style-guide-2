@@ -4,9 +4,11 @@
 .thirty-seventy-block {
     display: flex;
     flex-flow: column-reverse wrap;
+    gap: 21px;
     margin-bottom: $gutter * .75;
     @include breakpoint($bp-med) {
         flex-flow: row nowrap;
+        gap: 35px;
         padding-bottom: $gutter;
     }
 
@@ -26,40 +28,45 @@
         margin-top: 0;
         @include breakpoint($bp-med) {
             flex-basis: 50%;
-            max-width: 396px;
         }
-      h2.ama__h2 {
-        font-size: $gutter;
-        line-height: 32px;
-        @include breakpoint($bp-med) {
-          font-size: 32px;
-          line-height: 38px;
+        .eyebrow {
+            font-size: 16px;
+            line-height: normal;
+            color: $gray-64;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            transition: margin-bottom .25s ease-in-out;
+            @include breakpoint($bp-med) {
+                margin-bottom: 14px;
+            }
         }
-        @include breakpoint($bp-large) {
-          font-size: 32px;
-          line-height: 42px;
+        h2.ama__h2 {
+            font-size: 24px;
+            line-height: normal;
+            @include breakpoint($bp-med) {
+                font-size: 32px;
+                line-height: 38px;
+            }
         }
-      }
         .spacer {
             height: $gutter;
             display: block;
         }
         h2 {
-          color: $black;
-          margin-bottom: calc($gutter / 2);
+            color: $black;
+            margin-bottom: calc($gutter / 2);
         }
         p.ama__h5 {
-          @include type($kepler-std, $font-weight-regular);
-          @include font-size($h5-font-sizes);
-            font-weight: $font-weight-regular;
-            line-height: 24px;
+            @include type($kepler-std, $font-weight-light);
+            font-size: 16px;
+            line-height: 20px;
             color: $date-olive;
-            margin-bottom: calc($gutter);
+            margin-bottom: 21px;
             @include breakpoint($bp-med) {
-                line-height: 25px;
+                font-size: 18px;
+                line-height: 24px;
             }
         }
-
         [class*=button-main-] {
             min-width: 100%;
             width: 100%;
@@ -84,7 +91,7 @@
                         width: 100%;
                     }
                     @include breakpoint($bp-med) {
-                        flex-direction: column;
+                        flex-direction: row;
                         width: 100%;
                     }
                 }
@@ -123,27 +130,34 @@
     }
 
     &__background {
-        flex-basis: 55%;
+        flex-basis: 50%;
         position: relative;
         display: flex;
         flex-direction: column;
         background-size: cover;
         background-position: center center;
         justify-content: center;
-        margin: $gutter 0 0 0;
-        padding-bottom: 20px;
+        margin: 35px 0 0 0;
 
         @include breakpoint($bp-med) {
             margin: 0 0 0 20px;
-            padding-bottom: 0;
         }
-        @include breakpoint($bp-large) {
-            margin: 0 0 0 80px;
+    }
+        &.image-left {
+        &__aside {
+            margin-left: 20px;
+        }
+        &__background {
+            margin: 0;
+        }
+        @include breakpoint($bp-med) {
+            flex-flow: row-reverse nowrap;
         }
     }
     .image-container {
         position: relative;
         overflow: hidden;
+        line-height: 0;
         @include breakpoint($bp-small) {
             padding-bottom: 66.667%;
         }
@@ -162,6 +176,7 @@
             object-fit: cover;
         }
     }
+    
 }
 
 .ama__news-article:not(body) {
@@ -177,13 +192,14 @@
 .layout.section:not(.ama__category__row) {
     .thirty-seventy-block {
         width: 100%;
-        margin: 0 0 $gutter;
+        margin: 0 0 35px;
         padding-top: 0;
         @include breakpoint($bp-med) {
             width: 90%;
             max-width: 956px;
             margin: 0 auto 0;
-            padding-top: $gutter;
+            padding-top: 63px;
+            padding-bottom: 63px;
         }
     }
 }
