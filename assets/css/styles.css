@@ -38234,7 +38234,7 @@ div[role=alert] {
   width: 100%;
 }
 
-.ama__landing-page .ama__full_hero_banner {
+.ama__landing-page .ama__full_hero_banner.disable-overlap {
   margin-bottom: 0;
 }
 .ama__landing-page .landing-page-gating {
@@ -38441,7 +38441,46 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
 
 /* From Older PR */
 .layout-builder-page {
+  position: relative;
   /* individual overrides */
+}
+.layout-builder-page .layout-builder-nav-tabs {
+  position: fixed;
+  bottom: 1px;
+  right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 12px;
+}
+.layout-builder-page .layout-builder-nav-tabs a {
+  display: block;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px 8px 0 0;
+}
+.layout-builder-page .layout-builder-nav-tabs a.layout-builder-top {
+  margin-right: 5px;
+  background: #eff6fc;
+  color: #979797;
+  border: 1px solid #2f91da;
+}
+.layout-builder-page .layout-builder-nav-tabs a.layout-builder-top:hover {
+  background: #2f91da;
+  color: #eff6fc;
+}
+.layout-builder-page .layout-builder-nav-tabs a.layout-builder-bottom {
+  background: #f7f7f7;
+  color: #979797;
+  border: 1px solid #979797;
+}
+.layout-builder-page .layout-builder-nav-tabs a.layout-builder-bottom:hover {
+  background: #979797;
+  color: #f7f7f7;
 }
 .layout-builder-page #layout-builder .ama__full_hero_banner {
   margin-bottom: 0;
