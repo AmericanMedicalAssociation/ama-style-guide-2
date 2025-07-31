@@ -43,6 +43,7 @@
         h2.ama__h2 {
             font-size: 24px;
             line-height: normal;
+            margin-bottom: 0;
             @include breakpoint($bp-med) {
                 font-size: 32px;
                 line-height: 38px;
@@ -54,14 +55,14 @@
         }
         h2 {
             color: $black;
-            margin-bottom: calc($gutter / 2);
         }
         p.ama__h5 {
             @include type($kepler-std, $font-weight-light);
             font-size: 16px;
             line-height: 20px;
             color: $date-olive;
-            margin-bottom: 21px;
+            margin-top: 14px;
+            margin-bottom: 0;
             @include breakpoint($bp-med) {
                 font-size: 18px;
                 line-height: 24px;
@@ -77,6 +78,7 @@
         }
         .thirty-seventy-block__buttons {
             width:100%;
+            margin-top: 21px;
             &.double-cta {
                 flex-direction: column;
                 display: flex;
@@ -87,9 +89,6 @@
                     width: auto;
                 }
                 &.stack {
-                    a {
-                        width: 100%;
-                    }
                     @include breakpoint($bp-med) {
                         flex-direction: row;
                         width: 100%;
@@ -137,7 +136,6 @@
         background-size: cover;
         background-position: center center;
         justify-content: center;
-        margin: 35px 0 0 0;
 
         @include breakpoint($bp-med) {
             margin: 0 0 0 20px;
@@ -192,8 +190,9 @@
 .layout.section:not(.ama__category__row) {
     .thirty-seventy-block {
         width: 100%;
-        margin: 0 0 35px;
-        padding-top: 0;
+        margin: 0;
+        padding-top: 35px;
+        padding-bottom: 35px;
         @include breakpoint($bp-med) {
             width: 90%;
             max-width: 956px;
