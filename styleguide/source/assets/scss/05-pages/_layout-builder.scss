@@ -149,6 +149,40 @@ form[id*="-layout-builder-form"] {
 }
 /* From Older PR */
 .layout-builder-page {
+position: relative;
+.layout-builder-nav-tabs {
+  position: fixed;
+  bottom: 1px;
+  right: 5px;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  a {
+    display: block;
+    font-weight: $font-weight-bold;
+    padding: 8px 14px;
+    border-radius: 8px 8px 0 0;
+    &.layout-builder-top {
+      margin-right: 5px;
+      background: #eff6fc;
+      color: #979797;
+      border: 1px solid #2f91da;;
+      &:hover {
+        background: #2f91da;
+        color: #eff6fc;;
+      }
+    }
+    &.layout-builder-bottom {
+      background: #f7f7f7;
+      color: #979797;
+      border: 1px solid #979797;
+      &:hover {
+        background: #979797;
+        color: #f7f7f7;
+      }
+    }
+  }
+}
 
 
   #layout-builder {
