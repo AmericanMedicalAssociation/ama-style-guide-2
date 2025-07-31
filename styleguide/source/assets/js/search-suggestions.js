@@ -28,154 +28,99 @@
 (function (Drupal) {
     Drupal.behaviors.amaSearchSuggestions = {
         attach: function (context, settings) {
+            var $searchWrapper = context.querySelector('.search-suggestions-wrapper');
+            var $searchBlock = context.querySelector('.search-suggestions-block');
+            var $input = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input[id^="edit-search--"]');
 
-            // Cache DOM elements
-            const searchSuggestionsWrapper = document.querySelector('.search-suggestions-wrapper');
-            const searchSuggestionsBlock = document.querySelector('.search-suggestions-block');
-            const inputElement = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input[id^="edit-search--"]');
-
-            const shouldShow = inputElement && inputElement.value.trim() === '';
-            if (shouldShow && (!searchSuggestionsWrapper || !searchSuggestionsBlock || !inputElement)) {
-                console.log('search-suggestions.js - One or more required elements are missing.');
-                return; // Exit the function if any required element is missing
-            }
-
-            // Debounced version of toggleShowClass
-            const debouncedToggleShowClass = debounce(toggleShowClass, 250);
-
-            // Get last tabbable element
-            const lastTabbableElement = searchSuggestionsBlock ? searchSuggestionsBlock.querySelector('a:last-of-type') : null;
-            if (!lastTabbableElement) {
+            if (!$searchWrapper || !$searchBlock || !$input) {
                 return;
             }
 
-            /*
-               Methods.
-            */
-
-            // Debounce function to limit how often a function can run
+            // Debounce function (ES5)
             function debounce(func, wait) {
-
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
+                var timeout;
+                return function () {
+                    var args = arguments;
                     clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
+                    timeout = setTimeout(function () {
+                        func.apply(null, args);
+                    }, wait);
                 };
             }
 
-            //  Set the tabindex of the links within the search suggestions block
+            // Set tabindex for links
             function setTabIndex(shouldShow) {
-
-                const links = searchSuggestionsBlock.querySelectorAll('a');
-
-                // Only update tabindex if the visibility state changes.
-                if (shouldShow !== searchSuggestionsWrapper.classList.contains('show')) {
-                    links.forEach((link) => {
+                var links = $searchBlock.querySelectorAll('a');
+                var isShown = $searchWrapper.classList.contains('show');
+                if (shouldShow !== isShown) {
+                    Array.prototype.forEach.call(links, function (link) {
                         link.setAttribute('tabindex', shouldShow ? '0' : '-1');
                     });
                 }
             }
 
-            //  If Focus is within .ama__global-search and the text area is empty, show the block.
-            // Else, do not.
-            function toggleShowClass() {
-                const hasFocus = searchHasFocus();
-                const shouldShow = inputElement && inputElement.value.trim() === '';
-                const isShown = searchSuggestionsWrapper.classList.contains('show');
-
-                if (hasFocus && shouldShow && !isShown) {
-
-                    // If the block should be shown but is hidden.
-                    setTabIndex(true);
-                    searchSuggestionsWrapper.classList.add('show');
-
-                    // Update ARIA attributes for accessibility.
-                    inputElement.setAttribute('aria-expanded', 'true');
-                    searchSuggestionsWrapper.setAttribute('aria-hidden', 'false');
-
-                } else if ((!hasFocus || !shouldShow) && isShown) {
-
-                    //  If the block should be hidden but is still visible, hide it.
-                    setTabIndex(false);
-                    searchSuggestionsWrapper.classList.remove('show');
-
-                    // Update ARIA attributes for accessibility.
-                    inputElement.setAttribute('aria-expanded', 'false');
-                    searchSuggestionsWrapper.setAttribute('aria-hidden', 'true');
-                }
-            }
-
-            //  Check if an element within .ama__global-search has focus.
+            // Check if focus is inside search
             function searchHasFocus() {
-                // If the active element is within .ama__global-search.
-                if (document.activeElement.closest('.ama__global-search')) {
-                    return true;
-                }
-                //  Else.
-                return false;
+                var active = document.activeElement;
+                return !!(active && active.closest('.ama__global-search'));
             }
 
-            /*
-                Event Listeners.
-             */
+            // Toggle show/hide
+            function toggleShowClass() {
+                var hasFocus = searchHasFocus();
+                var shouldShow = $input && $input.value.trim() === '';
+                var isShown = $searchWrapper.classList.contains('show');
+                if (hasFocus && shouldShow && !isShown) {
+                    setTabIndex(true);
+                    $searchWrapper.classList.add('show');
+                    $input.setAttribute('aria-expanded', 'true');
+                    $searchWrapper.setAttribute('aria-hidden', 'false');
+                } else if ((!hasFocus || !shouldShow) && isShown) {
+                    setTabIndex(false);
+                    $searchWrapper.classList.remove('show');
+                    $input.setAttribute('aria-expanded', 'false');
+                    $searchWrapper.setAttribute('aria-hidden', 'true');
+                }
+            }
 
-            // Set the Input event listener.
-            inputElement.addEventListener('input', debouncedToggleShowClass, true);
+            var debouncedToggle = debounce(toggleShowClass, 250);
 
-            // set the focus event listener.
-            document.addEventListener('focus', function(event) {
+            // Input event
+            $input.addEventListener('input', debouncedToggle, true);
 
-                //  Get focused element.
-                const isFocusInsideSearch = event.target.closest('.ama__global-search');
-
-                //  If within search block.
-                if (isFocusInsideSearch) {
-
-                    //  Invoke the debounced version of toggleShowClass.
-                    debouncedToggleShowClass(); // Directly invoke the debounced version of toggleShowClass
-
-                } else if (searchSuggestionsWrapper.classList.contains('show')) {
-
-                    searchSuggestionsWrapper.classList.remove('show');
+            // Focus event (scoped to context)
+            context.addEventListener('focus', function (event) {
+                var isFocusInside = event.target.closest('.ama__global-search');
+                if (isFocusInside) {
+                    debouncedToggle();
+                } else if ($searchWrapper.classList.contains('show')) {
+                    $searchWrapper.classList.remove('show');
                     setTabIndex(false);
                 }
             }, true);
 
-            //  Add a `focusout` event listener to the last tabbable element
-            lastTabbableElement.addEventListener('focusout', function(event) {
+            // Focusout on last tabbable element
+            var $lastTabbable = $searchBlock.querySelector('a:last-of-type');
+            if ($lastTabbable) {
+                $lastTabbable.addEventListener('focusout', function (event) {
+                    var isFocusOutside = !$searchWrapper.contains(event.relatedTarget);
+                    if (isFocusOutside) {
+                        $searchWrapper.classList.remove('show');
+                        setTabIndex(false);
+                        $input.setAttribute('aria-expanded', 'false');
+                        $searchWrapper.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            }
 
-                //  Determine if the focus is moving outside the search suggestions container
-                const isFocusOutside = !searchSuggestionsWrapper.contains(event.relatedTarget);
-
-                //  Hide the suggestions on focus out.
-                if (isFocusOutside) {
-                    searchSuggestionsWrapper.classList.remove('show');
+            // Click event (scoped to context)
+            context.addEventListener('click', function (event) {
+                var isClickInside = $searchWrapper.contains(event.target);
+                if (!isClickInside && $searchWrapper.classList.contains('show')) {
+                    $searchWrapper.classList.remove('show');
                     setTabIndex(false);
-
-                    // Update ARIA attributes for accessibility
-                    inputElement.setAttribute('aria-expanded', 'false');
-                    searchSuggestionsWrapper.setAttribute('aria-hidden', 'true');
-                }
-            });
-
-            //  Add a click event to hide block if user clicks away.
-            document.addEventListener('click', function(event) {
-
-                //  Get the click target.
-                const isClickInsideSearch = searchSuggestionsWrapper.contains(event.target);
-
-                //  Hide the suggestions on click outside.
-                if (!isClickInsideSearch && searchSuggestionsWrapper.classList.contains('show')) {
-                    searchSuggestionsWrapper.classList.remove('show');
-                    setTabIndex(false);
-
-                    // Update ARIA attributes for accessibility
-                    inputElement.setAttribute('aria-expanded', 'false');
-                    searchSuggestionsWrapper.setAttribute('aria-hidden', 'true');
+                    $input.setAttribute('aria-expanded', 'false');
+                    $searchWrapper.setAttribute('aria-hidden', 'true');
                 }
             });
         }
