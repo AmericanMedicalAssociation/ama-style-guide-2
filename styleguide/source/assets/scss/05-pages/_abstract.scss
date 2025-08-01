@@ -3,13 +3,10 @@ body.ama__abstract {
     background-color: $gray-4;
   }
   .layout--ama-page-section-one-col {
-    &.bg-purple,
-    &.bg_purplle {
-      background: $purple-gradient;
-      padding: 63px 0;
+    &.abstract-hero {
       margin-bottom: 63px;
-      color: white;
     }
+
     .abstract-category-breadcrumb {
       display: inline-flex;
       a {
@@ -289,25 +286,14 @@ fieldset#edit-topic--2--wrapper {
     display: none;
   }
 }
-.research-category-hero.layout--ama-page-section-one-col {
-  &.bg-purple {
-    background: $purple-gradient;
-    padding: 63px 0;
-    color: white;
-  }
-}
-.layout--ama-page-section-one-col {
-  &.bg-purple,
-  &.bg_purplle {
-    background: $purple-gradient;
-    padding: 63px 0;
-    color: white;
-  }
 
-  h1 {
-    margin-bottom: 21px;
-    @include breakpoint($bp-small) {
-      margin-bottom: 63px;
+body.ama__abstract {
+  .layout--ama-page-section-one-col {
+    h1 {
+      margin-bottom: 21px;
+      @include breakpoint($bp-small) {
+        margin-bottom: 63px;
+      }
     }
   }
 }
