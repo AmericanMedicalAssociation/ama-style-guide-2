@@ -3441,6 +3441,10 @@ html.js iframe[src="javascript:false"] {
   background: linear-gradient(90deg, #46166B 0%, #7229D1 100%);
 }
 
+.bg_purple_gradient_dark {
+  background: radial-gradient(127.5% 238.17% at 50% 50%, #2A0D40 28.72%, #46166B 100%);
+}
+
 /**
  * Background Colors
  */
@@ -3451,10 +3455,6 @@ html.js iframe[src="javascript:false"] {
 .bg_white,
 .bg-white {
   background-color: #ffffff;
-}
-
-.bg_none {
-  background-color: transparent;
 }
 
 .bg_gray,
@@ -3553,6 +3553,24 @@ margin_bottom_negative .margin_bottom_35 {
   }
 }
 
+.padding_bottom_56 {
+  padding-bottom: 28px;
+}
+@media (min-width: 37.5em) {
+  .padding_bottom_56 {
+    padding-bottom: 56px;
+  }
+}
+
+.padding_bottom_63 {
+  padding-bottom: 28px;
+}
+@media (min-width: 37.5em) {
+  .padding_bottom_63 {
+    padding-bottom: 63px;
+  }
+}
+
 .padding_bottom_70 {
   padding-bottom: 32px;
 }
@@ -3629,6 +3647,24 @@ margin_bottom_negative .margin_bottom_35 {
 @media (min-width: 37.5em) {
   .padding_top_49 {
     padding-top: 42px;
+  }
+}
+
+.padding_top_56 {
+  padding-top: 28px;
+}
+@media (min-width: 37.5em) {
+  .padding_top_56 {
+    padding-top: 56px;
+  }
+}
+
+.padding_top_63 {
+  padding-top: 28px;
+}
+@media (min-width: 37.5em) {
+  .padding_top_63 {
+    padding-top: 63px;
   }
 }
 
@@ -36194,11 +36230,8 @@ body.search-results .ama__layout--two-column--left {
 body.ama__abstract #block-ama-one-content {
   background-color: #F5F5F5;
 }
-body.ama__abstract .layout--ama-page-section-one-col.bg-purple, body.ama__abstract .layout--ama-page-section-one-col.bg_purplle {
-  background: radial-gradient(127.5% 238.17% at 50% 50%, #2A0D40 28.72%, #46166B 100%);
-  padding: 63px 0;
+body.ama__abstract .layout--ama-page-section-one-col.abstract-hero {
   margin-bottom: 63px;
-  color: white;
 }
 body.ama__abstract .layout--ama-page-section-one-col .abstract-category-breadcrumb {
   display: -webkit-inline-box;
@@ -36487,22 +36520,11 @@ fieldset#edit-topic--2--wrapper {
   display: none;
 }
 
-.research-category-hero.layout--ama-page-section-one-col.bg-purple {
-  background: radial-gradient(127.5% 238.17% at 50% 50%, #2A0D40 28.72%, #46166B 100%);
-  padding: 63px 0;
-  color: white;
-}
-
-.layout--ama-page-section-one-col.bg-purple, .layout--ama-page-section-one-col.bg_purplle {
-  background: radial-gradient(127.5% 238.17% at 50% 50%, #2A0D40 28.72%, #46166B 100%);
-  padding: 63px 0;
-  color: white;
-}
-.layout--ama-page-section-one-col h1 {
+body.ama__abstract .layout--ama-page-section-one-col h1 {
   margin-bottom: 21px;
 }
 @media (min-width: 37.5em) {
-  .layout--ama-page-section-one-col h1 {
+  body.ama__abstract .layout--ama-page-section-one-col h1 {
     margin-bottom: 63px;
   }
 }
@@ -38415,6 +38437,12 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
   margin-bottom: 120px;
   min-height: 85px;
 }
+.layout-builder__section .layout-builder__region .layout-builder-block {
+  background-color: unset;
+}
+.layout-builder__section .layout-builder__region .research-category-hero {
+  background: unset;
+}
 .layout-builder__section .layout-builder__add-block {
   position: absolute;
   width: 100%;
@@ -38560,9 +38588,6 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
 .layout-builder-page .layout-builder__layout aside {
   padding-left: 0 !important;
 }
-.layout-builder-page .layout-builder__layout.layout--one-col-class {
-  background-color: transparent !important;
-}
 .layout-builder-page .layout-builder__layout.layout--one-col-class .ama__subscribe-promo--wide {
   margin: 0 auto 28px auto;
   padding: 28px;
@@ -38585,9 +38610,6 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-.layout-builder-page #layout-builder .layout-builder-block {
-  background: transparent;
 }
 .layout-builder-page #layout-builder [data-drupal-messages] {
   margin-bottom: 28px;
@@ -38619,7 +38641,6 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
 }
 .layout-builder-page #layout-builder.layout-builder {
   border: none;
-  background-color: transparent;
   padding: 0 1.5rem;
   border: none;
 }
@@ -38727,6 +38748,9 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
   margin-bottom: 14px;
 }
 
+#layout-builder-configure-section .form-item-layout-settings-layout-builder-id {
+  display: none;
+}
 #layout-builder-configure-section .settings-section {
   border-radius: 6px;
   padding: 0 28px;
