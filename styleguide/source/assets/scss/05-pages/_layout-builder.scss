@@ -120,6 +120,12 @@ form[id*="-layout-builder-form"] {
     position: relative;
     margin-bottom: 120px;
     min-height: 85px;
+    .layout-builder-block {
+      background-color: unset;
+    }
+    .research-category-hero {
+      background: unset;
+    }
   }
   .layout-builder__add-block {
     position: absolute;
@@ -254,26 +260,10 @@ position: relative;
     }
     overflow: visible !important;
     &.layout--one-col-class {
-      background-color: transparent !important;
       .ama__subscribe-promo--wide {
         margin: 0 auto 28px auto;
         padding: 28px;
       }
-    }
-    &.ama__layout--one-column {
-      .ama__layout--one-column__page-content {
-        //margin-right : 0;
-        .ama__category-nav {
-          //margin-left: 0;
-          //margin-right: 28px;
-        }
-        .ama__org-nav {
-          //margin-right: 0;
-        }
-      }
-    }
-    .ama__full_hero_banner {
-      //margin-bottom: 0;
     }
     .ama__partner-promo {
       flex-direction: column !important;
@@ -286,9 +276,6 @@ position: relative;
     }
   }
   #layout-builder {
-    .layout-builder-block {
-      background: transparent;
-    }
     display: flex;
     flex-direction: column;
     [data-drupal-messages] {
@@ -324,7 +311,6 @@ position: relative;
     }
     &.layout-builder {
       border: none;
-      background-color: transparent;
       padding: 0 1.5rem;
       border: none;
     }
