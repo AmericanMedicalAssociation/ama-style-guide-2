@@ -51,3 +51,49 @@
     }
   }
 }
+
+.ama__pagination.abstract-pagination {
+  a ~ a {
+    padding: 0;
+    margin: 0;
+  }
+  .pager__items {
+    display: flex;
+    align-items: start;
+
+    .ama__pagination__page.after-ellipsis {
+      display: flex;
+      justify-content: end;
+      &::after {
+        content: "...";
+        margin-left: 14px;
+      }
+    }
+    .ama__pagination__page.before-ellipsis {
+      display: flex;
+      justify-content: start;
+      &::before {
+        content: "...";
+        margin-right: 14px;
+      }
+    }
+    .pager__item--previous {
+      margin-right: 14px;
+    }
+    .pager__item--next {
+      margin-left: 14px;
+    }
+  }
+  .ama__pagination__page:not(.is-active),
+  .ama__pagination__page.is-active {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 30px;
+    justify-content: center;
+    overflow: visible;
+  }
+}
+
