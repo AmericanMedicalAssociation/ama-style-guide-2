@@ -36531,6 +36531,50 @@ body.ama__abstract .layout--ama-page-section-one-col h1 {
   }
 }
 
+.paragraph--type--abstract-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.paragraph--type--abstract-author span.abstract-author-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.paragraph--type--abstract-author span.abstract-author-name > div {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+.paragraph--type--abstract-author span.abstract-author-name::after {
+  content: ",";
+  margin-right: 5px;
+}
+.paragraph--type--abstract-author span.abstract-author-name:last-child::after {
+  content: "";
+}
+
+#abstract-no-results {
+  margin-top: 45px;
+}
+
 .ama__application .app_description {
   font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
   font-weight: 400;
