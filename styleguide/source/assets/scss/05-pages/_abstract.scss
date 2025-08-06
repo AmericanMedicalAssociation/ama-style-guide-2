@@ -298,3 +298,30 @@ body.ama__abstract {
     }
   }
 }
+.paragraph--type--abstract-author {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  span.abstract-author-name {
+    display: flex;
+    gap: 2px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    > div {
+      flex-direction: row;
+      flex-grow: 0;
+    }
+    &::after {
+      content: ',';
+      margin-right: 5px;
+    }
+    &:last-child {
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
+#abstract-no-results {
+  margin-top: 45px;
+}
