@@ -2,7 +2,7 @@
 
 // Variables
 $card-width-mobile: 85px;
-$card-width: 250px;
+$card-width: 150px;
 // Primary box sizing
 $primary-quick-link-base: 165px;
 $primary-quick-link-base-mobile: 155px;
@@ -90,15 +90,18 @@ $quicklink-icons: (
 
 %quick-links-hub {
   display: flex;
-  gap: $gap-sm;
+  gap: 28px;
   flex-direction: column;
   background: white;
   border-radius: 8px;
   border: 1px solid $gray-7;
   box-shadow: 0px 2px 4px -2px #1018280F, 0px 4px 8px -2px #1018281A;
-  @include gutter-all($padding-all-half...);
+  padding: 21px;
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+  @include breakpoint($bp-med) {
+    padding: 28px;
+  }
 }
 
 // Personalized Account Hub
@@ -152,19 +155,25 @@ $quicklink-icons: (
 
   &__name {
     @include type($myriad-pro, $font-weight-bold);
-    @include font-size($h2-font-sizes);
     line-height: normal;
+    font-size: 20px;
+    @include breakpoint($bp-small) {
+      font-size: 24px;
+    }
   }
   
   &__subtitle {
     @include type($myriad-pro, $font-weight-light);
     letter-spacing: 0.5px;
-    @include font-size($h3-font-sizes--homepage);
     text-transform: uppercase;
     color: $gray-64;
     display: flex;
     flex-direction: column;
     gap: $gap-xs;
+    font-size: 14px;
+    @include breakpoint($bp-small) {
+      font-size: 16px;
+    }
 
     @include breakpoint($bp-small) {
       flex-direction: row;
