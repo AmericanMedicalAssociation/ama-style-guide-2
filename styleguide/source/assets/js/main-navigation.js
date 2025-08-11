@@ -71,12 +71,21 @@
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
               if ((categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
-                  $categoryNavigationMenuGroup
-                      .addClass('scroll')
-                      .css({
-                          'max-height': (viewportHeight - $mainNav.outerHeight() - productNavHeight - alertBannerHeight) + 'px',
-                          'overflow-y': 'auto'
-                      });
+                  if ((categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
+                      $categoryNavigationMenuGroup
+                          .addClass('scroll')
+                          .css({
+                              'max-height': (viewportHeight - $mainNav.outerHeight() - productNavHeight - alertBannerHeight) + 'px',
+                              'overflow-y': 'auto'
+                          });
+                  } else {
+                      $categoryNavigationMenuGroup
+                          .removeClass('scroll')
+                          .css({
+                              'max-height': '',
+                              'overflow-y': ''
+                          });
+                  }
               }
 
             if (agentID) {
