@@ -70,18 +70,23 @@
       function hideShow() {
         if ($('#global-menu').prop('checked')) {
           $categoryNavigationMenu.slideDown(function () {
-            if ((categoryNavMenuHeight +  $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
-              bodyScrollLock.disableBodyScroll($categoryNavigationMenuGroup, {
-                allowTouchMove: function allowTouchMove(el) {
-                  while (el && el !== document.body) {
-                    if (el.getAttribute('body-scroll-lock-ignore') !== null) {
-                      return true;
-                    }
-                    el = el.parentNode;
+              if ((categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
+                  if ((categoryNavMenuHeight + $mainNav.outerHeight() + productNavHeight + alertBannerHeight) > viewportHeight) {
+                      $categoryNavigationMenuGroup
+                          .addClass('scroll')
+                          .css({
+                              'max-height': (viewportHeight - $mainNav.outerHeight() - productNavHeight - alertBannerHeight) + 'px',
+                              'overflow-y': 'auto'
+                          });
+                  } else {
+                      $categoryNavigationMenuGroup
+                          .removeClass('scroll')
+                          .css({
+                              'max-height': '',
+                              'overflow-y': ''
+                          });
                   }
-                }
-              });
-            }
+              }
 
             if (agentID) {
               // Only make the menu height same as viewport on mobile devices
@@ -103,7 +108,6 @@
         else {
           $categoryNavigationMenu.slideUp(function () {
             $(this).parent().height(0);
-            bodyScrollLock.clearAllBodyScrollLocks();
           });
         }
       }
