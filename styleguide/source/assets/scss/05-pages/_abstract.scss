@@ -62,6 +62,42 @@ body.ama__abstract {
       }
     }
   }
+
+  .card-flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+
+    .card-title {
+      order: 1;
+      flex-basis: 100%;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      @include breakpoint($bp-small) {
+        flex: 1 1 auto;
+      }
+    }
+
+    .card-embed {
+      order: 2;
+      flex-basis: 100%;
+      @include breakpoint($bp-small) {
+        order: 3;
+        flex-basis: 100%;
+      }
+    }
+
+    .card-fullscreen-btn {
+      order: 3;
+      flex-basis: 100%;
+      @include breakpoint($bp-small) {
+        order: 2;
+        flex: 0 0 auto;
+      }
+    }
+
+  }
+
   .gated-article {
     position: relative;
     &:after {
