@@ -3,175 +3,316 @@
  * block type form-50-50 is referenced and used on article pages.
  */
 
+.ama__layout--two-column__ama-news-page-content {
+  .block.form-50-50 {
+    gap: 0;
+    @include breakpoint($bp-small) {
+      flex-direction: row;
+      gap: 10px;
+    }
+    @include breakpoint($bp-large) {
+      gap: 10px;
+    }
+  }
+  .form-content {
+    .form-container {
+      padding: 0;
+      @include breakpoint($bp-small) {
+        padding: 70px 50px 50px;
+      }
+    }
+  }
+}
+
 .block.form-50-50 {
   display: flex;
   margin: 0;
   flex-direction: column;
+  font-family: $myriad-pro;
+  gap: 0;
   @include breakpoint($bp-small) {
     flex-direction: row;
+    gap: 60px;
   }
-  @include breakpoint($bp-med) {
-    margin: 14px $gutter;
+  @include breakpoint($bp-large) {
+    gap: 160px;
   }
-
-  > div {
+  .text-content,
+  .form-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     @include breakpoint($bp-small) {
-      flex-grow: 1;
-      flex-basis: 50%;
+      flex: .5;
     }
   }
 
-  .text-content {
+  h2,
+  h3,
+  p,
+  a,
+  ul,
+  li {
+    font-family: $myriad-pro;
+  }
+  ul {
+    margin-left: 25px;
+  }
+  h2,
+  h3 {
+    font-weight: $font-weight-bold;
+  }
+  p {
     font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 18.5px 0;
     @include breakpoint($bp-small) {
-      padding-right: calc($gutter / 2);
-      padding-bottom: 0;
       font-size: 18px;
     }
-    @include breakpoint($bp-med) {
-      padding-right: 40px;
-    }
-    .title h2 {
-      font-family: $kepler-std;
-      font-weight: 400;
-      font-size: 28px;
-      margin-bottom: 0;
+  }
+
+  /* Text Side */
+  .text-content {
+    text-align: center;
+    padding-top: 40px;
+    @include breakpoint($bp-small) {
+      padding-bottom: 0;
+      text-align: left;
+      padding-top: 57px;
     }
     .title {
-      margin-bottom: 14px;
-    }
-    .body {
-      p {
-        font-family: $myriad-pro;
-        font-size: 16px;
+      margin-bottom: 24px;
+      padding-right: 5px;
+      padding-left: 5px;
+      @include breakpoint($bp-small) {
+        margin-bottom: $gutter;
+        padding-right: 0;
+        padding-left: 0;
+      }
+      h2 {
+        font-size: 28px;
+        margin-bottom: 0;
+        line-height: 33.6px;
         @include breakpoint($bp-small) {
-          font-size: 18px;
+          font-size: 48px;
+          line-height: 52px;
+          letter-spacing: -0.96px;
         }
       }
     }
-
-    .video-embed-field-provider-youtube {
-      margin-bottom: calc($gutter * .75);
+    .body {
+      padding-bottom: 40px;
+      padding-right: 5px;
+      padding-left: 5px;
+      @include breakpoint($bp-small) {
+        padding-bottom: 0px;
+        padding-right: 5px;
+        padding-left: 5px;
+        margin-bottom: calc($gutter / 2);
+      }
     }
-    .ama__brightcove-gallery {
-      margin: 0;
-    }
-
     .media {
       position: relative;
-      margin: 0 0 36px;
+      margin-bottom: 0;
+      margin-right: -15px;
+      margin-left: -15px;
+      padding-left: 35px;
+      padding-right: 35px;
+      padding-top: 24px;
+      background: $white;
+      line-height: 0;
+      max-width: unset;
+      @include breakpoint($bp-small) {
+        background: unset;
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 450px;
+        padding-top: 0;
+      }
+      &.hidden {
+        display: none;
+        @include breakpoint($bp-small) {
+          display: block;
+        }
+      }
+      .video-embed-field-provider-youtube {
+        margin-bottom: calc($gutter * .75);
+      }
+      .ama__brightcove-gallery {
+        margin: 0;
+      }
     }
   }
-    #lead-form-container {
-      padding-bottom: $gutter;
-      padding-top: 3.5px;
-    }
+
+  /* Form Side */
   .form-content {
+    padding: 28px 20px;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    padding: 0;
+    background: $white;
     @include breakpoint($bp-small) {
-      padding-left: calc($gutter / 2);
-      padding-bottom: 0;
+      padding: 0 0 0 0;
+      background: unset;
+      margin-right: 0;
+      margin-left: 0;
     }
-    @include breakpoint($bp-med) {
-      padding: $gutter 0 0 40px;
-    }
-    .body {
-      * {
-        font-family: $myriad-pro;
-      }
-    }
+
+    /* Success state */
     &.success {
-      display: flex;
-      justify-content: center;
-      padding-top: 0;
-      align-items: center;
-      .success_message {
-        width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 28px;
+      padding-top: 32px;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+      @include breakpoint($bp-small) {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .form-container {
+        flex: 1 1 auto;
+        align-items: center;
+        flex-direction: column;
+        min-height: 40vh;
+        border-radius: 12px;
+        box-shadow: none;
+        @include breakpoint($bp-small) {
+          box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+          flex-direction: row;
+        }
+        #lead-form-container {
+          .success_message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0;
+            text-align: center;
+            @include breakpoint($bp-small) {
+              margin-top: -50px;
+            }
+            .success-icon {
+              border-radius: 100%;
+              background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+              width: 80px;
+              height: 80px;
+              position: relative;
+              margin-bottom: 24px;
+              &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-image: url('../icons/svg/icon-check-white.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+            }
+            .success-body {
+              color: #6B7280;
+            }
+          }
+        }
       }
     }
+    /* End of success state */
 
-    .ama__h1 {
-      font-weight: $font-weight-regular;
-      font-size: $gutter;
-      margin-bottom: calc($gutter / 2);
-      @include type($kepler-std, $font-weight-regular);
-    }
-
-    .salesforce-lead-form {
+    .form-container {
       display: flex;
-      flex-wrap: wrap;
-
-      .form-item {
-        flex-grow: 1;
-        flex-basis: 100%;
-        margin-top: 0;
-        @include breakpoint($bp-small max-width) {
+      flex-direction: column;
+      background: white;
+      color: $black;
+      padding: 0px;
+      border-radius: 4px;
+      @include breakpoint($bp-small) {
+        padding: 70px;
+      }
+      .form-text {
+        .title {
           margin-bottom: calc($gutter / 2);
-          text-align: left;
-        }
-
-        label {
-          font-size: calc($gutter / 2);
-          text-transform: uppercase;
-          color: $black;
-          font-weight: normal;
-
-          &:after {
-            content: '';
+          h3.ama__h1 {
+            margin-bottom: 0;
+            font-size: 28px;
+            line-height: 36px;
+            @include breakpoint($bp-small) {
+              font-size: 30px;
+              line-height: 45px;
+            }
           }
         }
-
-        input {
-          font-size: 18px;
-          line-height: 1;
-          padding: 11px 17px;
-          border: 1px solid $gray-64;
-
-          &.error {
-            background: none;
-          }
-
-          &:focus-visible {
-            border: 1px solid $tab-focus-blue;
-          }
+        .body {
+          color: #6B7280;
+          margin-bottom: 18px;
         }
       }
+      #salesforce-lead-form {
+          display: flex;
+          flex-wrap: wrap;
 
-      .form-actions {
-        margin: calc($gutter / 2) 0;
-        width: 100%;
-        [class*=button-main-] {
+          .form-item {
+            flex-grow: 1;
+            flex-basis: 100%;
+            margin-top: 0;
+            @include breakpoint($bp-small max-width) {
+              margin-bottom: calc($gutter / 2);
+              text-align: left;
+            }
+
+            label {
+              font-size: calc($gutter / 2);
+              color: $black;
+              font-weight: normal;
+              display: block;
+              margin-bottom: 4px;
+              &:after {
+                content: '*';
+              }
+            }
+
+            input {
+              font-size: 18px;
+              line-height: 1;
+              padding: 11px 28px 11px 17px;
+              border: 1px solid #D1D5DB;
+              border-radius: 8px;
+              &.error {
+                border-radius: 8px !important;
+                border: 1px solid #F04438 !important;
+                background: url('../icons/svg/icon-circle-error.svg') no-repeat right 12px center;
+              }
+              &:focus-visible {
+                border: 1px solid $tab-focus-blue;
+              }
+            }
+            .form-item--error-message {
+              font-size: 14px;
+              line-height: 20px;
+              margin-top: 8px;
+              margin-bottom: 0;
+              border: none;
+              &[role=alert] {
+                border-bottom: none;
+              }
+              strong {
+                color: #F04438 !important;
+                font-weight: $font-weight-regular !important;
+              }
+            }
+          }
+
+        .form-actions {
+          margin: 21px 0 calc($gutter / 2);
           width: 100%;
-          @include breakpoint($bp-small) {
-            width: auto;
+
+          [class*=button-main-] {
+            width: 100%;
+            @include breakpoint($bp-small) {
+              width: auto;
+            }
           }
         }
       }
     }
-
-    .form-item--error-message {
-      margin-top: 4px;
-      margin-bottom: 0;
-      border: none;
-
-      strong {
-        color: $red;
-        font-size: 12px;
-        font-weight: normal;
-      }
-    }
-
-      .success_message {
-        p {
-          padding-top: calc($gutter / 2);
-          font-size: 17px;
-          font-family: $myriad-pro;
-        }
-      }
   }
 }
