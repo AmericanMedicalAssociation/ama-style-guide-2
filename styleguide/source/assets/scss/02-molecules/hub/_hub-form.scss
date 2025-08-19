@@ -136,6 +136,16 @@
     .form-actions {
       margin: calc($gutter/2) 0;
       input {
+        min-width: 173px;
+        font-weight: normal;
+        @include ama-button(0, "secondary");
+
+        &.form-submit.ama__button {
+          caret-color: transparent;
+          margin: 0;
+          padding: 5px 42px;
+        }
+
         &:focus-visible {
           outline: 2px solid $tab-focus-blue;
           outline-offset: 3px;
@@ -156,14 +166,14 @@
   }
 
 
-    .success_message {
-      @include breakpoint($bp-small) {
-        padding-left:20px;
-      }
-      p {
-        padding-top: calc($gutter/2);
-        font-size: 17px;
-      }
+  .success_message {
+    @include breakpoint($bp-small) {
+      padding-left:20px;
     }
+    p {
+      padding-top: calc($gutter/2);
+      font-size: 17px;
+    }
+  }
 
 }
