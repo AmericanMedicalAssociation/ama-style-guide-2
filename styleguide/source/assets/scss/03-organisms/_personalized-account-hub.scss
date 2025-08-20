@@ -90,7 +90,7 @@ $quicklink-icons: (
 
 %quick-links-hub {
   display: flex;
-  gap: 28px;
+  gap: 21px;
   flex-direction: column;
   background: white;
   border-radius: 8px;
@@ -99,6 +99,9 @@ $quicklink-icons: (
   padding: 21px;
   @include gutter($margin-top-full...);
   @include gutter($margin-bottom-full...);
+  @include breakpoint($bp-small) {
+    gap: 28px;
+  }
   @include breakpoint($bp-med) {
     padding: 28px;
   }
@@ -138,11 +141,7 @@ $quicklink-icons: (
 
   &__card {
     &__image {
-      width: $card-width-mobile;
-
-      @include breakpoint($bp-small) {
-        width: $card-width;
-      }
+      width: $card-width;
     }
   }
 
