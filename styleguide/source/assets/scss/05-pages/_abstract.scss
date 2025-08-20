@@ -8,7 +8,14 @@ body.ama__abstract {
     }
 
     .abstract-category-breadcrumb {
-      display: inline-flex;
+      white-space: break-spaces;
+      padding-right: 35px;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+      @include breakpoint($bp-small) {
+        margin-bottom: 7px;
+      }
       a {
         color: $gating-block-blue;
         text-decoration: none;
@@ -17,27 +24,42 @@ body.ama__abstract {
         font-weight: $font-weight-bold;
         letter-spacing: 1.12px;
       }
-
       &:after {
         content: url(../icons/svg/icon-vertical-line.svg);
+        position: absolute;
+        height: 20px;
+        width: 24px;
+        top: 3px;
+        right: 4px;
       }
     }
     .abstract-topic-breadcrumb {
-      display: inline-flex;
+      display: inline-block;
       ul.shs {
         display: flex;
         li {
-          display: flex;
+          @include breakpoint($bp-small) {
+            margin-bottom: 7px;
+          }
+          margin-bottom: 18px;
+          white-space: break-spaces;
           color: $gating-block-blue;
           text-decoration: none;
           text-transform: uppercase;
           font-size: 14px;
           font-weight: $font-weight-bold;
           letter-spacing: 1.12px;
+          padding-right: 35px;
           &:after {
             content: url(../icons/svg/icon-vertical-line.svg);
+            position: absolute;
+            height: 20px;
+            width: 24px;
+            top: 3px;
+            right: 4px;
           }
           &:last-child {
+            padding-right: 0;
             &:after {
               content: none;
             }
@@ -47,7 +69,16 @@ body.ama__abstract {
       }
     }
     .abstract-author-wrapper {
+      font-family: $kepler-std, serif;
+      font-size: 16px;
+      color: $white;
+      line-height: 20px;
+      font-weight: $font-weight-light;
+      margin-bottom: 7px;
       display: flex;
+      @include breakpoint($bp-small) {
+        line-height: 24px;
+      }
       .abstract-author {
         display: flex;
         padding-right: 5px;
@@ -328,9 +359,6 @@ body.ama__abstract {
   .layout--ama-page-section-one-col {
     h1 {
       margin-bottom: 21px;
-      @include breakpoint($bp-small) {
-        margin-bottom: 63px;
-      }
     }
   }
 }
