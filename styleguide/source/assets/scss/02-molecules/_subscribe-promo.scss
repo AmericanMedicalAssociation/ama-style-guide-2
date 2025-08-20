@@ -113,7 +113,8 @@
 
     .ajax-progress {
       &.ajax-progress-throbber {
-        display:inline;
+        display: block;
+        max-width: 100px;
         margin: 0;
       }
     }
@@ -153,6 +154,10 @@
       }
       .form-item-page-mr-email {
         margin: 0;
+
+        input {
+          border-color: $white;
+        }
       }
       .ama__form-group,
       .form-actions {

@@ -56,16 +56,18 @@
             color: $black;
             margin-bottom: calc($gutter / 2);
         }
-        p.ama__h5 {
-            @include type($kepler-std, $font-weight-light);
-            font-size: 16px;
-            line-height: 20px;
-            color: $date-olive;
-            margin-bottom: 21px;
-            @include breakpoint($bp-med) {
-                font-size: 18px;
-                line-height: 24px;
-            }
+        p {
+            line-height: 28px;
+            margin-bottom: 18px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 400;
+            
         }
         [class*=button-main-] {
             min-width: 100%;

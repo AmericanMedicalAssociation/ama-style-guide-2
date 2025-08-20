@@ -2,7 +2,7 @@
   font-family: $myriad-pro;
   padding: 40px 32px;
   @include breakpoint($bp-small) {
-    padding: 90px 32px;
+    padding: 92px 32px;
   }
   display: flex;
   flex-direction: column;
@@ -18,13 +18,21 @@
       margin-bottom: 18px;
     }
   }
+  .subtitle {
+    font-size: 18px;
+    font-weight: $font-weight-regular;
+    font-family: $myriad-pro;
+    width: 100%;
+    margin-bottom: 32px;
+  }
   .body {
     width: 100%;
+    margin-bottom: 32px;
     p {
+      margin-bottom: 0;
       font-size: 18px;
       font-weight: $font-weight-regular;
       font-family: $myriad-pro;
-      margin-bottom: 32px;
     }
   }
   .ctas {
@@ -32,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    gap: calc($gutter * .75);
+    gap: 24px;
     @include breakpoint($bp-small) {
       flex-direction: row;
     }
