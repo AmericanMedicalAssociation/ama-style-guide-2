@@ -67,12 +67,23 @@
 }
 
 // Modal Window
-.ama-image-popup-modal {
+.ama-image-popup-modal.ui-dialog.ui-widget[aria-describedby=drupal-modal] {
   z-index:502;
   display: table;
-  max-width: 95%;
+  max-width: 95% !important;
   max-height: 92vh !important;
-  padding: .5em .5em 0;
+  padding: .5em .5em;
+  border: none;
+  border-radius: 0;
+
+  .ui-dialog-titlebar {
+    display: block;
+    border-bottom: none;
+    background: #f9f9f9;
+    border-radius: unset;
+    padding:0;
+  }
+
   .ui-dialog-content {
     padding: 0;
     max-height:100vh !important;
@@ -107,8 +118,8 @@
   opacity: 0.81;
 }
 
-.ama-image-popup-modal .ui-dialog-titlebar-close {
-  background: url('../images/close.svg');
+.ama-image-popup-modal.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  background: url('../images/close.svg') !important;
   border: none;
   position: absolute;
   right: -24px;
@@ -118,6 +129,6 @@
   padding: 0;
 }
 
-.ama-image-popup-modal .ui-dialog-titlebar-close:focus {
+.ama-image-popup-modal.ui-dialog.ui-widget[aria-describedby=drupal-modal] .ui-dialog-titlebar-close:focus {
   outline: none;
 }
