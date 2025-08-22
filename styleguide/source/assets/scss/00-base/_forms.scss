@@ -63,6 +63,7 @@ label {
   color: $gray-50;
 
   span {
+    @include type($myriad-pro, $font-weight-regular);
     text-transform: capitalize;
   }
 
@@ -74,4 +75,8 @@ label {
 fieldset {
   border: none;
   padding-left: 0;
+}
+
+.ui-widget {
+  @include type($myriad-pro, $font-weight-regular);
 }

@@ -39,13 +39,14 @@
     @include gutter($margin-bottom-full...);
   }
   .form-actions {
-    display: inline-block;
+    display: flex;
     input {
       padding: 5px 70px;
     }
     .webform-button--submit {
       background-color: $purple;
       color: $white;
+      margin-left: 28px;
       &:hover {
         background-color: $hoverPurple;
       }
