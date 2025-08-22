@@ -144,6 +144,15 @@
         @include breakpoint($bp-med) {
             margin: 0 0 0 20px;
         }
+
+        .ama__hub-hero__video {
+            @include breakpoint($bp-med max-width) {
+                min-height: 405px;
+            }
+            @include breakpoint($bp-small max-width) {
+                min-height: 265px;
+            }
+        }
     }
         &.image-left {
         &__aside {
