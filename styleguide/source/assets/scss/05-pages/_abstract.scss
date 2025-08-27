@@ -43,6 +43,20 @@ body.ama__abstract {
     }
     .abstract-topic-breadcrumb {
       display: inline-block;
+      a {
+        &:focus {
+          ul.shs li {
+            outline: 2px solid $blue;
+            outline-offset: 5px;
+            text-decoration: none;
+          }
+        }
+        &:hover {
+          ul.shs li {
+            text-decoration: underline;
+          }
+        }
+      }
       ul.shs {
         display: flex;
         li {
