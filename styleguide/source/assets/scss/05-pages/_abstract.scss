@@ -23,6 +23,14 @@ body.ama__abstract {
         font-size: 14px;
         font-weight: $font-weight-bold;
         letter-spacing: 1.12px;
+        &:focus {
+          outline: 2px solid $blue;
+          outline-offset: 5px;
+          text-decoration: none;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &:after {
         content: url(../icons/svg/icon-vertical-line.svg);
@@ -35,6 +43,20 @@ body.ama__abstract {
     }
     .abstract-topic-breadcrumb {
       display: inline-block;
+      a {
+        &:focus {
+          ul.shs li {
+            outline: 2px solid $blue;
+            outline-offset: 5px;
+            text-decoration: none;
+          }
+        }
+        &:hover {
+          ul.shs li {
+            text-decoration: underline;
+          }
+        }
+      }
       ul.shs {
         display: flex;
         li {
