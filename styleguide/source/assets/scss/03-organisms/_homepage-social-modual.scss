@@ -17,7 +17,7 @@
 
   &__container {
     display: block;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-large) {
       display: flex;
       column-gap: 24px;
       justify-content: center;
@@ -32,7 +32,7 @@
       .profile--image {
         max-width: 177px;
         margin: 0 0 24px 0;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-large) {
           margin: 0 auto calc($gutter/2);
         }
         img {
@@ -47,7 +47,7 @@
 
     .profile_two {
       margin-bottom: 42px;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-large) {
         margin-bottom: 35px;
       }
     }
@@ -60,7 +60,7 @@
       padding: 16px;
       border-radius: 8px;
 
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-large) {
         flex-direction: row;
         gap: 24px;
         padding: 32px;
@@ -81,7 +81,7 @@
       }
     }
 
-    @include breakpoint($bp-small) {  
+    @include breakpoint($bp-large) {  
       .profile_container {
         width: 50%;
       }
@@ -104,7 +104,7 @@
   .profile--image {
     height: 116px;
     margin: 0 0 24px 0;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-large) {
       margin: 0 auto calc($gutter/2);
     }
     img {
@@ -124,7 +124,7 @@
       content: " ";
       position: absolute;
       right: -25px;
-      top: 8px;
+      top: 6px;
       width: 16px;
       height: 12px;
       background: url('../images/arrow-right-purple-alt.png') no-repeat 0px 0px;
