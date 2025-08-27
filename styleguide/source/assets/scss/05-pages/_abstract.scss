@@ -242,12 +242,15 @@ fieldset#edit-topic--2--wrapper {
     }
 
     .button-pill-primary {
-      display: none;
       padding: 14px 36px 14px 14px;
       text-transform: capitalize;
       height: unset;
       border: 1px solid $divider-line-gray;
       margin-right: 0;
+
+      &.hidden {
+        display: none;
+      }
 
       .ui-checkboxradio-icon,
       .ui-checkboxradio-icon-space {
