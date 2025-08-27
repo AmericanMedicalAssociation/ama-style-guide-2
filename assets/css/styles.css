@@ -27629,7 +27629,7 @@ section.ama__page--event__speakers {
 .homepage-social-module__container {
   display: block;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .homepage-social-module__container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -27653,7 +27653,7 @@ section.ama__page--event__speakers {
   max-width: 177px;
   margin: 0 0 24px 0;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .homepage-social-module__container .profile_two .profile--image,
   .homepage-social-module__container .profile_three .profile--image {
     margin: 0 auto 14px;
@@ -27671,7 +27671,7 @@ section.ama__page--event__speakers {
 .homepage-social-module__container .profile_two {
   margin-bottom: 42px;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .homepage-social-module__container .profile_two {
     margin-bottom: 35px;
   }
@@ -27689,7 +27689,7 @@ section.ama__page--event__speakers {
   padding: 16px;
   border-radius: 8px;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .homepage-social-module__container .profile {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -27711,7 +27711,7 @@ section.ama__page--event__speakers {
 .homepage-social-module__container .profile--content p, .homepage-social-module__container .profile--content .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .homepage-social-module__container .profile--content .ama__image__text__subtitle, .homepage-social-module__container .profile--content .ama__resource-link--inline__text {
   margin-bottom: 24px;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .homepage-social-module__container .profile_container {
     width: 50%;
   }
@@ -27736,7 +27736,7 @@ section.ama__page--event__speakers {
   height: 116px;
   margin: 0 0 24px 0;
 }
-@media (min-width: 37.5em) {
+@media (min-width: 75em) {
   .homepage-social-module .profile--image {
     margin: 0 auto 14px;
   }
@@ -27757,7 +27757,7 @@ section.ama__page--event__speakers {
   content: " ";
   position: absolute;
   right: -25px;
-  top: 8px;
+  top: 6px;
   width: 16px;
   height: 12px;
   background: url("../images/arrow-right-purple-alt.png") no-repeat 0px 0px;
@@ -36539,6 +36539,14 @@ body.ama__abstract .layout--ama-page-section-one-col .abstract-category-breadcru
   font-weight: 700;
   letter-spacing: 1.12px;
 }
+body.ama__abstract .layout--ama-page-section-one-col .abstract-category-breadcrumb a:focus {
+  outline: 2px solid #027DBC;
+  outline-offset: 5px;
+  text-decoration: none;
+}
+body.ama__abstract .layout--ama-page-section-one-col .abstract-category-breadcrumb a:hover {
+  text-decoration: underline;
+}
 body.ama__abstract .layout--ama-page-section-one-col .abstract-category-breadcrumb:after {
   content: url(../icons/svg/icon-vertical-line.svg);
   position: absolute;
@@ -36549,6 +36557,14 @@ body.ama__abstract .layout--ama-page-section-one-col .abstract-category-breadcru
 }
 body.ama__abstract .layout--ama-page-section-one-col .abstract-topic-breadcrumb {
   display: inline-block;
+}
+body.ama__abstract .layout--ama-page-section-one-col .abstract-topic-breadcrumb a:focus ul.shs li {
+  outline: 2px solid #027DBC;
+  outline-offset: 5px;
+  text-decoration: none;
+}
+body.ama__abstract .layout--ama-page-section-one-col .abstract-topic-breadcrumb a:hover ul.shs li {
+  text-decoration: underline;
 }
 body.ama__abstract .layout--ama-page-section-one-col .abstract-topic-breadcrumb ul.shs {
   display: -webkit-box;
@@ -36762,12 +36778,14 @@ fieldset#edit-topic--2--wrapper {
   margin-left: 12px;
 }
 .abstract-filter-wrapper .abstract-additional-filters .button-pill-primary {
-  display: none;
   padding: 14px 36px 14px 14px;
   text-transform: capitalize;
   height: unset;
   border: 1px solid #E4E3E6;
   margin-right: 0;
+}
+.abstract-filter-wrapper .abstract-additional-filters .button-pill-primary.hidden {
+  display: none;
 }
 .abstract-filter-wrapper .abstract-additional-filters .button-pill-primary .ui-checkboxradio-icon,
 .abstract-filter-wrapper .abstract-additional-filters .button-pill-primary .ui-checkboxradio-icon-space {
