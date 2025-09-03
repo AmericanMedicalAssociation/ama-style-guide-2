@@ -6,7 +6,7 @@
 .ama__layout--two-column__ama-news-page-content {
   .block.form-50-50 {
     gap: 0;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       flex-direction: row;
       gap: 10px;
     }
@@ -17,7 +17,7 @@
   .form-content {
     .form-container {
       padding: 0;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         padding: 70px 50px 50px;
       }
     }
@@ -27,10 +27,10 @@
 .block.form-50-50 {
   display: flex;
   margin: 0;
-  flex-direction: column;
   font-family: $myriad-pro;
   gap: 0;
-  @include breakpoint($bp-small) {
+  flex-direction: column;
+  @include breakpoint($bp-med) {
     flex-direction: row;
     gap: 60px;
   }
@@ -39,12 +39,8 @@
   }
   .text-content,
   .form-content {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    @include breakpoint($bp-small) {
-      flex: .5;
-    }
   }
 
   h2,
@@ -64,7 +60,7 @@
   }
   p {
     font-size: 16px;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       font-size: 18px;
     }
   }
@@ -73,7 +69,7 @@
   .text-content {
     text-align: center;
     padding-top: 40px;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       padding-bottom: 0;
       text-align: left;
       padding-top: 57px;
@@ -82,7 +78,7 @@
       margin-bottom: 24px;
       padding-right: 5px;
       padding-left: 5px;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         margin-bottom: $gutter;
         padding-right: 0;
         padding-left: 0;
@@ -91,7 +87,7 @@
         font-size: 28px;
         margin-bottom: 0;
         line-height: 33.6px;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           font-size: 48px;
           line-height: 52px;
           letter-spacing: -0.96px;
@@ -102,7 +98,7 @@
       padding-bottom: 40px;
       padding-right: 5px;
       padding-left: 5px;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         padding-bottom: 0px;
         padding-right: 5px;
         padding-left: 5px;
@@ -120,7 +116,7 @@
       background: $white;
       line-height: 0;
       max-width: unset;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         background: unset;
         margin-right: 0;
         margin-left: 0;
@@ -131,7 +127,7 @@
       }
       &.hidden {
         display: none;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           display: block;
         }
       }
@@ -152,7 +148,7 @@
     align-items: center;
     display: flex;
     background: $white;
-    @include breakpoint($bp-small) {
+    @include breakpoint($bp-med) {
       padding: 0 0 0 0;
       background: unset;
       margin-right: 0;
@@ -167,7 +163,7 @@
       padding-top: 32px;
       border-radius: 12px;
       box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         box-shadow: none;
         border-radius: 0;
       }
@@ -178,7 +174,7 @@
         min-height: 40vh;
         border-radius: 12px;
         box-shadow: none;
-        @include breakpoint($bp-small) {
+        @include breakpoint($bp-med) {
           box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
           flex-direction: row;
         }
@@ -189,7 +185,7 @@
             align-items: center;
             margin-top: 0;
             text-align: center;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               margin-top: -50px;
             }
             .success-icon {
@@ -225,7 +221,7 @@
       color: $black;
       padding: 0px;
       border-radius: 4px;
-      @include breakpoint($bp-small) {
+      @include breakpoint($bp-med) {
         padding: 70px;
       }
       .form-text {
@@ -235,7 +231,7 @@
             margin-bottom: 0;
             font-size: 28px;
             line-height: 36px;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               font-size: 30px;
               line-height: 45px;
             }
@@ -254,7 +250,7 @@
             flex-grow: 1;
             flex-basis: 100%;
             margin-top: 0;
-            @include breakpoint($bp-small max-width) {
+            @include breakpoint($bp-med) {
               margin-bottom: calc($gutter / 2);
               text-align: left;
             }
@@ -310,7 +306,7 @@
 
           [class*=button-main-] {
             width: 100%;
-            @include breakpoint($bp-small) {
+            @include breakpoint($bp-med) {
               width: auto;
             }
           }
