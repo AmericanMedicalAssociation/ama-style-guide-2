@@ -14394,7 +14394,7 @@ table a.new-replies .count-new {
 }
 
 .ama__full_hero_banner {
-  padding: 60px 0 150px;
+  padding: 60px 0;
   margin-bottom: -150px;
   background-size: cover;
 }
@@ -33597,11 +33597,11 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   background-repeat: no-repeat;
   position: absolute;
 }
+.index-page .share-wrapper .icon.share .share-modal .email:before, .index-page .share-wrapper a.print.share .share-modal .email:before {
+  background-image: url("../icons/svg/social-share-icons/email.svg");
+}
 .index-page .share-wrapper .icon.share .share-modal .facebook:before, .index-page .share-wrapper a.print.share .share-modal .facebook:before {
   background-image: url("../icons/svg/social-share-icons/fb.svg");
-}
-.index-page .share-wrapper .icon.share .share-modal .linkedin:before, .index-page .share-wrapper a.print.share .share-modal .linkedin:before {
-  background-image: url("../icons/svg/social-share-icons/linkedin.svg");
 }
 .index-page .share-wrapper .icon.share .share-modal .twitter:before, .index-page .share-wrapper a.print.share .share-modal .twitter:before {
   background-image: url("../icons/svg/social-share-icons/twitter.svg");
@@ -33610,8 +33610,11 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   height: 35px;
   top: -2px;
 }
-.index-page .share-wrapper .icon.share .share-modal .email:before, .index-page .share-wrapper a.print.share .share-modal .email:before {
-  background-image: url("../icons/svg/social-share-icons/email.svg");
+.index-page .share-wrapper .icon.share .share-modal .bluesky:before, .index-page .share-wrapper a.print.share .share-modal .bluesky:before {
+  background-image: url("../icons/svg/social-share-icons/bluesky.svg");
+}
+.index-page .share-wrapper .icon.share .share-modal .linkedin:before, .index-page .share-wrapper a.print.share .share-modal .linkedin:before {
+  background-image: url("../icons/svg/social-share-icons/linkedin.svg");
 }
 .index-page .share-wrapper .icon.share .share-modal .doximity:before, .index-page .share-wrapper a.print.share .share-modal .doximity:before {
   background-image: url("../icons/svg/social-share-icons/doximity.svg");
@@ -34122,17 +34125,20 @@ a.index-page.ama__subcategory-page-article-stub--topics.ama__content-type-stub {
   background-repeat: no-repeat;
   position: absolute;
 }
+.article-header-row .share-wrapper .icon.share .share-modal .email:before {
+  background-image: url("../icons/svg/social-share-icons/v1-icon-share-email.svg");
+}
 .article-header-row .share-wrapper .icon.share .share-modal .facebook:before {
   background-image: url("../icons/svg/social-share-icons/v1-icon-share-facebook.svg");
-}
-.article-header-row .share-wrapper .icon.share .share-modal .linkedin:before {
-  background-image: url("../icons/svg/social-share-icons/v1-icon-share-linkedin.svg");
 }
 .article-header-row .share-wrapper .icon.share .share-modal .twitter:before {
   background-image: url("../icons/svg/social-share-icons/v1-icon-share-twitter.svg");
 }
-.article-header-row .share-wrapper .icon.share .share-modal .email:before {
-  background-image: url("../icons/svg/social-share-icons/v1-icon-share-email.svg");
+.article-header-row .share-wrapper .icon.share .share-modal .bluesky:before {
+  background-image: url("../icons/svg/social-share-icons/bluesky.svg");
+}
+.article-header-row .share-wrapper .icon.share .share-modal .linkedin:before {
+  background-image: url("../icons/svg/social-share-icons/v1-icon-share-linkedin.svg");
 }
 .article-header-row .share-wrapper .icon.share .share-modal .doximity:before {
   background-image: url("../icons/svg/social-share-icons/v1-icon-share-doximity.svg");
