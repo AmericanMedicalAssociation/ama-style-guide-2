@@ -14394,9 +14394,13 @@ table a.new-replies .count-new {
 }
 
 .ama__full_hero_banner {
-  padding: 60px 0;
+  padding: 60px 0 150px;
   margin-bottom: -150px;
   background-size: cover;
+}
+.ama__full_hero_banner.disable-overlap {
+  margin-bottom: 0;
+  padding: 60px 0 60px;
 }
 .ama__full_hero_banner__card {
   width: 100%;
@@ -25469,7 +25473,7 @@ comment .message-overlay .copied-message {
   font-size: 16px;
   bottom: 30px;
   color: #5c5c5c;
-  left: 120px;
+  left: 170px;
   opacity: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
