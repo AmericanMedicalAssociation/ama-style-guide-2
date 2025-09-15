@@ -1,8 +1,12 @@
 //  Remove duplicate styles.
 .ama__full_hero_banner {
-  padding: 60px 0;
+  padding: 60px 0 150px;
   margin-bottom: -150px;
   background-size: cover;
+  &.disable-overlap {
+    margin-bottom: 0;
+    padding: 60px 0 60px;
+  }
 
   &__card {
     width: 100%;
