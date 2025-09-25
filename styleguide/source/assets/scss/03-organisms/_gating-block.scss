@@ -22,6 +22,9 @@
       width: 100%;
       max-width: 100%;
     }
+    .gating-align {
+      display: none;
+    }
     &.left {
       text-align: left;
       align-items: flex-start;
@@ -37,7 +40,12 @@
       }
     }
     ul {
+      &.checkmark {
+        margin-bottom: 0 $gutter 0 0;
+      }
       text-align: left;
+      font-size: 18px;
+      margin-bottom: 0 $gutter 0 0;
       li {
         line-height: 24px;
       }
