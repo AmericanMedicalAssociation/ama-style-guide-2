@@ -24,7 +24,7 @@
 
                 dropdownBlock.on('keydown', function(e) {
                     // Enter or Space toggles the dropdown
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if ((e.key === 'Enter' || e.key === ' ') && e.target === this) {
                         e.preventDefault();
                         if (isDropdownOpen) {
                             closeMenu(triggerElement, menuElement);
