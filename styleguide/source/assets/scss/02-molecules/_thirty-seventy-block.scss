@@ -1,6 +1,3 @@
-.thirty-seventy-wrapper {
-    border-bottom: 1px solid $gray-7;
-}
 .thirty-seventy-block {
     display: flex;
     flex-flow: column-reverse wrap;
@@ -217,11 +214,7 @@
 
 .layout.section.ama__category__row {
     .thirty-seventy-wrapper {
-        border-bottom:  none;
         padding-bottom: 0;
-        @include breakpoint($bp-med) {
-            //padding-bottom: $gutter;
-        }
     }
     .thirty-seventy-block {
         width: 100%;
@@ -248,7 +241,6 @@
 }
 
 .layout.section.ama__category__row .thirty-seventy-block {
-    border-bottom: none;
     @include breakpoint($bp-med) {
         padding-bottom: 0;
     }
@@ -269,8 +261,6 @@ a.thirty-seventy-wrapper,
 
 // Article Embed Styles
 .thirty-seventy-block-embed {
-    border-top: 1px solid $gray-7;
-    border-bottom: 1px solid $gray-7;
     padding-top: $gutter;
     padding-bottom: $gutter;
     @include breakpoint($bp-med) {
