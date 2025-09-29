@@ -371,13 +371,15 @@
     }
     .article-event-cta {
       display: flex;
-      flex-direction: row;
       margin-top: 28px;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 14px;
+      @include breakpoint($bp-small) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
       [class*=button-main-] {
-        min-width: 156px;
-        flex: 1;
+        min-width: 100px;
         @include breakpoint($bp-small) {
           max-width: 326px;
         }
