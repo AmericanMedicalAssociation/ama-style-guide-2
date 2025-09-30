@@ -22,6 +22,24 @@
                     isDropdownOpen = !isDropdownOpen;
                 });
 
+                dropdownBlock.on('keydown', function(e) {
+                    // Enter or Space toggles the dropdown
+                    if ((e.key === 'Enter' || e.key === ' ') && e.target === this) {
+                        e.preventDefault();
+                        if (isDropdownOpen) {
+                            closeMenu(triggerElement, menuElement);
+                        } else {
+                            openMenu(triggerElement, menuElement);
+                        }
+                        isDropdownOpen = !isDropdownOpen;
+                    }
+                    // Escape closes the dropdown
+                    if (e.key === 'Escape' && isDropdownOpen) {
+                        closeMenu(triggerElement, menuElement);
+                        isDropdownOpen = false;
+                    }
+                });
+
                 $signInLink.on('click', function (e) {
                     e.preventDefault();
                 });
