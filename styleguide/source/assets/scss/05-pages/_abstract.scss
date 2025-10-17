@@ -197,25 +197,11 @@ fieldset#edit-topic--2--wrapper {
   position: relative;
 
   .form-item-topic-search {
-    margin: 0 0 16px !important;
+    margin: 0 !important; 
     position: relative;
-    &:after {         
-      content: '';
-      background-image: url('../icons/svg/icon-search-purple.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left top;
-      height: 24px;
-      width: 24px;
-      right: 0;
-      top: 0;
-      display: block;
-      position: absolute;
-      right: 21px;
-      top: 10px;
-    }
     input[name='topic-search'],
     #edit-topic-search--2 {
+      border: none;
       border-radius: 100px;
       font-size: 16px;
       line-height: 1;
@@ -374,7 +360,78 @@ fieldset#edit-topic--2--wrapper {
       }
     }
   }
+  .abstract-topic-search-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid #E4E3E6;
+      border-radius: 100px;
+      margin-bottom: 16px;
 
+        .form-item-topic-search {
+          flex-grow: 1;
+          @include breakpoint($bp-small max-width) { 
+            margin: 0px;
+          }
+        }
+
+        input[name='abstract-topic-search'] {
+          margin-right: 25px;;
+        }
+        input[type="text"]{
+          padding: 16px 14px;
+          background-image: none;
+          border: none;
+          font-size: 16px;
+          line-height: 1;
+          flex-grow: 1;
+
+          @include breakpoint($bp-small) {
+            padding: 0;
+            display: block;
+          }
+
+          &:active {
+            color: $black;
+            font-style: normal;
+            border: none;
+          }
+
+          &:focus {
+            border: none;
+          }
+        }
+
+        input[type="submit"] {
+          background-size: 0 0;
+          padding: 0;
+          outline: none;
+          overflow: hidden;
+          min-width: 100px;
+          position: relative;
+          text-indent: 0;
+          border: none;
+          border-radius: 0;
+          background-color: #46166B;
+          height: 56px;
+          max-height: 56px;
+          @include breakpoint($bp-med) {
+            background-color: $white;
+            background-color: #ffffff;
+            background-size: 24px 24px;
+            background-position: center;
+            background-image: url(../icons/svg/icon-search-purple.svg);
+            background-repeat: no-repeat;
+            min-height: 24px;
+            max-height: 24px;
+            min-width: 24px;
+            max-width: 24px;
+            height: 24px;
+            width: 24px;
+            text-indent: -999px;
+          }
+        }
+  }
   .form-actions {
     display: none;
   }
