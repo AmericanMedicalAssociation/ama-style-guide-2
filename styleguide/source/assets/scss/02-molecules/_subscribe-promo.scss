@@ -31,7 +31,8 @@
       }
     }
     .us-verify {
-      font-size: 10px;
+      font-size: 16px;
+      line-height: 20px;
       text-transform: initial;
     }
     .ui-checkboxradio-icon {
@@ -74,8 +75,10 @@
       margin-bottom: calc($gutter/2);
     }
     .ama__checkbox span {
-      @include type($myriad-pro, $font-weight-regular);
-      color: $white;
+      @include type($kepler-std, $font-weight-light);
+      color: $gray-64;
+      font-size: 14px;
+      line-height: 18px;
     }
   }
 
@@ -246,11 +249,47 @@
       }
     }
   }
-  .ama__subscribe-promo__email-subscribe-container {
-    .ama__button {
-      height: 50.7px;
+  &__email-subscribe-container {
+    label {
+      font-size: 14px;
+      font-weight: $font-weight-semibold;
+      line-height: 19px;
+      color: $black;
+      text-transform: none;
+    }
+    .form-group {
+
+       @include breakpoint($bp-small min-width) {
+        display: flex;
+        flex-direction: row;
+        align-items: self-end;
+        gap: 14px;
+      }
+
+       @include breakpoint($bp-large min-width) {
+        display: flex;
+        flex-direction: row;
+        align-items: self-end;
+        gap: 14px;
+      }
+
+      .form-item-footer-mr-email {
+        margin-top: 4px;
+        margin-bottom: 28px;
+      }
+    }
+    input[type=text] {
+      font-size: 14px;
+      line-height: normal;
+      border-radius: 8px;
+      height: 44px;
+    }
+    .form-submit{
+      height: 44px;
+      margin-bottom: 0;
+      width:100%;
       @include breakpoint($bp-large min-width) {
-        height: 50px;
+        height: 44px;
       }
     }
   }
