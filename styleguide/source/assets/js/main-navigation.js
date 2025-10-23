@@ -176,6 +176,26 @@
         $('#edit-search').focus();
       });
 
+      $($mobileSearchTrigger).on('keydown', function(e) {
+        // Check if Enter or Space is pressed and focus is on the button itself
+        if ((e.key === 'Enter' || e.key === ' ' || e.keyCode === 13 || e.keyCode === 32) && e.target === this) {
+          $mobileSearch.slideToggle("fast", "linear");
+          $mobileSearchTrigger.toggleClass('open');
+          $('#edit-search').focus();
+        }
+      });
+
+      //$($mobileSearchTrigger) on escape key close the search field
+      $($mobileSearch).on('keydown', function(e) {
+        if ((e.key === 'Escape' || e.keyCode === 27)) {
+          if ($mobileSearch.is(':visible')) {
+            $mobileSearch.slideUp("fast", "linear");
+            $mobileSearchTrigger.removeClass('open');
+            $mobileSearchTrigger.focus();
+          }
+        }
+      });
+
       //Set focus state on mobile trigger button
       $($mobileSearchTrigger).focus(function(){
         $mobileSearchTrigger.css('outline', 'outline: 2px solid #80d4f5');
