@@ -31,6 +31,8 @@
             var $searchWrapper = context.querySelector('.search-suggestions-wrapper');
             var $searchBlock = context.querySelector('.search-suggestions-block');
             var $input = context.querySelector('.ama__global-search form input#edit-search, .ama__global-search form input[id^="edit-search--"]');
+            var $mobileSearchTrigger = context.querySelector('.global-search-trigger');
+            var $mobileSearch = context.querySelector('.ama__global-search');
 
             if (!$searchWrapper || !$searchBlock || !$input) {
                 return;
@@ -96,6 +98,9 @@
                 } else if ($searchWrapper.classList.contains('show')) {
                     $searchWrapper.classList.remove('show');
                     setTabIndex(false);
+                    $mobileSearchTrigger.classList.remove('open');
+                    $mobileSearchTrigger.focus();
+                    $mobileSearch.style.display = "none";
                 }
             }, true);
 
