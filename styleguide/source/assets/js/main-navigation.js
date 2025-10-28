@@ -179,6 +179,7 @@
       $($mobileSearchTrigger).on('keydown', function(e) {
         // Check if Enter or Space is pressed and focus is on the button itself
         if ((e.key === 'Enter' || e.key === ' ' || e.keyCode === 13 || e.keyCode === 32) && e.target === this) {
+          e.preventDefault();
           $mobileSearch.slideToggle("fast", "linear");
           $mobileSearchTrigger.toggleClass('open');
           $('#edit-search').focus();
