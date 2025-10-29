@@ -402,33 +402,24 @@ fieldset#edit-topic--2--wrapper {
         }
 
         input[type="submit"] {
-          background-size: 0 0;
+          background-size: 24px 24px;
+          background-color: $white;
+          background-position: center;
+          background-image: url(../icons/svg/icon-search-purple.svg);
+          background-repeat: no-repeat;
           padding: 0;
           outline: none;
           overflow: hidden;
-          min-width: 100px;
           position: relative;
-          text-indent: 0;
+          text-indent: -999px;
           border: none;
           border-radius: 0;
-          background-color: #46166B;
-          height: 56px;
-          max-height: 56px;
-          @include breakpoint($bp-med) {
-            background-color: $white;
-            background-color: #ffffff;
-            background-size: 24px 24px;
-            background-position: center;
-            background-image: url(../icons/svg/icon-search-purple.svg);
-            background-repeat: no-repeat;
-            min-height: 24px;
-            max-height: 24px;
-            min-width: 24px;
-            max-width: 24px;
-            height: 24px;
-            width: 24px;
-            text-indent: -999px;
-          }
+          min-height: 24px;
+          max-height: 24px;
+          min-width: 24px;
+          max-width: 24px;
+          height: 24px;
+          width: 24px;
         }
   }
   .form-actions {
