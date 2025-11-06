@@ -10,12 +10,20 @@
     @include gutter($padding-top-full...);
     p {
       @include type($myriad-pro, $font-weight-regular);
+      &.volvo_pin {
+        font-size: 24px; 
+        letter-spacing: 2px;
+      }
     }
   }
 
   &__back {
     @include gutter($margin-top-full...);
     display: flex;
-    justify-content: center;
+    @include breakpoint($bp-med max-width) {
+      .button-main-primary {
+        width: 100%;
+      }
+    }
   }
 }
