@@ -14,19 +14,17 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
     .ama__comment-header {
       display: flex;
       justify-content: space-between;
-      flex-direction: column;
+      flex-direction: row;
 
-      @include breakpoint($bp-med) {
-        flex-direction: row;
-      }
       .ama__comment {
         &--info {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
 
           @include breakpoint($bp-small) {
             flex-direction: row;
+            align-items: center;
           }
 
           .ama__comment {
@@ -149,7 +147,19 @@ section.ama__forum_comments, #block-ama-one-forums-content {
     padding-top: 15px;
   }
   .flag {
-    margin-top: 0 ;
+    margin-top: 0;
+    a {
+      &:before {
+        display: none;
+      }
+    }
+    @include breakpoint($bp-small) {
+      a {
+        &:before {
+          display: block;
+        }
+      }
+    }
   }
 
    > .ama__comment {
