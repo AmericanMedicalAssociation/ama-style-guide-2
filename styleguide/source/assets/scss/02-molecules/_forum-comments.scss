@@ -23,6 +23,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
         &--info {
           display: flex;
           flex-direction: column;
+          align-items: center;
 
           @include breakpoint($bp-small) {
             flex-direction: row;
@@ -49,6 +50,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
 
         &-link {
           display: flex;
+          align-items: center;
 
           .add-flag {
             margin: 0;
@@ -67,6 +69,7 @@ section.ama__forum_comments, section.ama__forum_comments .indented,
               color: $block-quote-border;
               margin-right: 5px;
               margin-left: 5px;
+              margin-top: 6px;
             }
           }
 
@@ -145,6 +148,9 @@ section.ama__forum_comments, #block-ama-one-forums-content {
   h2 {
     padding-top: 15px;
   }
+  .flag {
+    margin-top: 0 ;
+  }
 
    > .ama__comment {
      &:after {
@@ -173,11 +179,6 @@ section.ama__forum_comments, #block-ama-one-forums-content {
        background-color: $white;
        margin-top: -1px;
      }
-   }
-
-   .indented {
-     padding-left: 0;
-     background-color: $white;
 
      &:after {
        content: " ";
@@ -190,6 +191,13 @@ section.ama__forum_comments, #block-ama-one-forums-content {
        top: 0;
        left: 0;
      }
+   }
+   
+
+   .indented {
+     padding-left: 0;
+     background-color: $white;
+     padding-bottom: $gutter;
 
      h3 {
        display: none;
