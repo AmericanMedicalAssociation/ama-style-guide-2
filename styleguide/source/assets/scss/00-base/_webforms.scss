@@ -189,6 +189,13 @@ a.webform-button--submit {
   .form-actions {
     display: flex;
     gap: 14px;
+    margin-bottom: 42px;
+    @include breakpoint($bp-med) {
+      margin-bottom: 56px;
+    }
+    @include breakpoint($bp-small) {
+      margin-bottom: 70px;
+    }
     .webform-button--submit {
       justify-content: unset;
       margin: 0;

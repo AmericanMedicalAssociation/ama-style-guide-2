@@ -1,6 +1,7 @@
 .webform-confirmation {
   @include gutter($padding-top-full...);
-  @include gutter($padding-bottom-full...);
+  max-width: 564px;
+  margin: 0 auto;
 
   &__header {
     border-bottom: 1px solid $gray-7;
@@ -9,7 +10,8 @@
   &__message {
     @include gutter($padding-top-full...);
     p {
-      @include type($myriad-pro, $font-weight-regular);
+      @include type($kepler-std, $font-weight-regular);
+      margin-bottom: 21px;
       &.volvo_pin {
         font-size: 24px; 
         letter-spacing: 2px;
@@ -18,8 +20,15 @@
   }
 
   &__back {
-    @include gutter($margin-top-full...);
     display: flex;
+    margin-top: 35px;
+    margin-bottom: 42px;
+    @include breakpoint($bp-med) {
+      margin-bottom: 56px;
+    }
+    @include breakpoint($bp-small) {
+      margin-bottom: 70px;
+    }
     @include breakpoint($bp-med max-width) {
       .button-main-primary {
         width: 100%;
