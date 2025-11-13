@@ -262,45 +262,45 @@ section[id^="node-abstract-field-abstract-comments--"] {
   }
 }
 
-
-
-.indented {
-  position: relative;
-  padding-left: 20px;
+.ama__abstract {
   .indented {
+    position: relative;
     padding-left: 20px;
-    .intented {
+    .indented {
       padding-left: 20px;
       .intented {
-        padding-left: 0px;
+        padding-left: 20px;
+        .intented {
+          padding-left: 0px;
+        }
       }
     }
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0; 
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 0 35px;
-    border-left: 1px solid #e4e3e6;
-    border-bottom: 1px solid #e4e3e6;
-    pointer-events: none;
-    transform: translateY(-60px); 
-    z-index: 5;
-  }
-  .indented {
     &::after {
-      transform: translateY(-80px);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0; 
+      width: 100%;
+      height: 100%;
+      border-radius: 0 0 0 35px;
+      border-left: 1px solid #e4e3e6;
+      border-bottom: 1px solid #e4e3e6;
+      pointer-events: none;
+      transform: translateY(-60px); 
+      z-index: 5;
     }
     .indented {
       &::after {
-        transform: translateY(-100px);
+        transform: translateY(-80px);
       }
       .indented {
         &::after {
-          transform: translateY(-120px);
+          transform: translateY(-100px);
+        }
+        .indented {
+          &::after {
+            transform: translateY(-120px);
+          }
         }
       }
     }
