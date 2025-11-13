@@ -1542,16 +1542,12 @@ strong,
 
 .webform-confirmation {
   padding-top: 21px;
-  padding-bottom: 21px;
+  max-width: 564px;
+  margin: 0 auto;
 }
 @media (min-width: 56.25em) {
   .webform-confirmation {
     padding-top: 28px;
-  }
-}
-@media (min-width: 56.25em) {
-  .webform-confirmation {
-    padding-bottom: 28px;
   }
 }
 .webform-confirmation__header {
@@ -1566,21 +1562,34 @@ strong,
   }
 }
 .webform-confirmation__message p, .webform-confirmation__message .ama__resource-link--inline__text, .webform-confirmation__message .ama__jama .ama__image__text .ama__image__text__subtitle, .ama__jama .ama__image__text .webform-confirmation__message .ama__image__text__subtitle {
-  font-family: "myriad-pro", "Helvetica", "Arial", "Open Sans", sans-serif;
+  font-family: "kepler-std", "Georgia", "Times New Roman", serif;
   font-weight: 400;
+  margin-bottom: 21px;
+}
+.webform-confirmation__message p.volvo_pin, .webform-confirmation__message .volvo_pin.ama__resource-link--inline__text, .webform-confirmation__message .ama__jama .ama__image__text .volvo_pin.ama__image__text__subtitle, .ama__jama .ama__image__text .webform-confirmation__message .volvo_pin.ama__image__text__subtitle {
+  font-size: 24px;
+  letter-spacing: 2px;
 }
 .webform-confirmation__back {
-  margin-top: 21px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 42px;
 }
 @media (min-width: 56.25em) {
   .webform-confirmation__back {
-    margin-top: 28px;
+    margin-bottom: 56px;
+  }
+}
+@media (min-width: 37.5em) {
+  .webform-confirmation__back {
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 56.25em) {
+  .webform-confirmation__back .button-main-primary {
+    width: 100%;
   }
 }
 
@@ -1937,6 +1946,30 @@ a.webform-button--submit {
   font-weight: 400;
   font-size: 18px;
   text-transform: initial;
+}
+
+#webform-submission-volvo-incentive-form-add-form .form-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 14px;
+  margin-bottom: 42px;
+}
+@media (min-width: 56.25em) {
+  #webform-submission-volvo-incentive-form-add-form .form-actions {
+    margin-bottom: 56px;
+  }
+}
+@media (min-width: 37.5em) {
+  #webform-submission-volvo-incentive-form-add-form .form-actions {
+    margin-bottom: 70px;
+  }
+}
+#webform-submission-volvo-incentive-form-add-form .form-actions .webform-button--submit {
+  -webkit-box-pack: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  margin: 0;
 }
 
 html.js iframe[src="javascript:false"] {
@@ -13332,19 +13365,10 @@ section.ama__forum_comments > .ama__comment .ama__comment-header, section.ama__f
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-@media (min-width: 56.25em) {
-  section.ama__forum_comments > .ama__comment .ama__comment-header, section.ama__forum_comments .indented > .ama__comment .ama__comment-header,
-  #block-ama-one-forums-content > .ama__comment .ama__comment-header, #block-ama-one-forums-content .indented > .ama__comment .ama__comment-header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment--info, section.ama__forum_comments .indented > .ama__comment .ama__comment-header .ama__comment--info,
 #block-ama-one-forums-content > .ama__comment .ama__comment-header .ama__comment--info, #block-ama-one-forums-content .indented > .ama__comment .ama__comment-header .ama__comment--info {
@@ -13355,6 +13379,9 @@ section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment--
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 @media (min-width: 37.5em) {
   section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment--info, section.ama__forum_comments .indented > .ama__comment .ama__comment-header .ama__comment--info,
@@ -13363,6 +13390,9 @@ section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment--
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment--info .ama__comment--author-info, section.ama__forum_comments .indented > .ama__comment .ama__comment-header .ama__comment--info .ama__comment--author-info,
@@ -13385,6 +13415,9 @@ section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment-l
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment-link .add-flag, section.ama__forum_comments .indented > .ama__comment .ama__comment-header .ama__comment-link .add-flag,
 #block-ama-one-forums-content > .ama__comment .ama__comment-header .ama__comment-link .add-flag, #block-ama-one-forums-content .indented > .ama__comment .ama__comment-header .ama__comment-link .add-flag {
@@ -13408,6 +13441,7 @@ section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment-l
   color: #e2e2e2;
   margin-right: 5px;
   margin-left: 5px;
+  margin-top: 6px;
 }
 section.ama__forum_comments > .ama__comment .ama__comment-header .ama__comment-link .votingapi-widgets.flag .flag-rating, section.ama__forum_comments .indented > .ama__comment .ama__comment-header .ama__comment-link .votingapi-widgets.flag .flag-rating,
 #block-ama-one-forums-content > .ama__comment .ama__comment-header .ama__comment-link .votingapi-widgets.flag .flag-rating, #block-ama-one-forums-content .indented > .ama__comment .ama__comment-header .ama__comment-link .votingapi-widgets.flag .flag-rating {
@@ -13488,6 +13522,17 @@ section.ama__forum_comments, #block-ama-one-forums-content {
 section.ama__forum_comments h2, #block-ama-one-forums-content h2 {
   padding-top: 15px;
 }
+section.ama__forum_comments .flag, #block-ama-one-forums-content .flag {
+  margin-top: 0;
+}
+section.ama__forum_comments .flag a:before, #block-ama-one-forums-content .flag a:before {
+  display: none;
+}
+@media (min-width: 37.5em) {
+  section.ama__forum_comments .flag a:before, #block-ama-one-forums-content .flag a:before {
+    display: block;
+  }
+}
 section.ama__forum_comments > .ama__comment:after, #block-ama-one-forums-content > .ama__comment:after {
   content: " ";
   height: 100%;
@@ -13512,11 +13557,7 @@ section.ama__forum_comments > .indented:before, #block-ama-one-forums-content > 
   background-color: #ffffff;
   margin-top: -1px;
 }
-section.ama__forum_comments .indented, #block-ama-one-forums-content .indented {
-  padding-left: 0;
-  background-color: #ffffff;
-}
-section.ama__forum_comments .indented:after, #block-ama-one-forums-content .indented:after {
+section.ama__forum_comments > .indented:after, #block-ama-one-forums-content > .indented:after {
   content: " ";
   height: 100%;
   width: 6px;
@@ -13526,6 +13567,11 @@ section.ama__forum_comments .indented:after, #block-ama-one-forums-content .inde
   position: absolute;
   top: 0;
   left: 0;
+}
+section.ama__forum_comments .indented, #block-ama-one-forums-content .indented {
+  padding-left: 0;
+  background-color: #ffffff;
+  padding-bottom: 28px;
 }
 section.ama__forum_comments .indented h3, #block-ama-one-forums-content .indented h3 {
   display: none;
@@ -25406,20 +25452,20 @@ section[id^=node-abstract-field-abstract-comments--] form div[id^=edit-actions--
   margin-left: 21px;
 }
 
-.indented {
+.ama__abstract .indented {
   position: relative;
   padding-left: 20px;
 }
-.indented .indented {
+.ama__abstract .indented .indented {
   padding-left: 20px;
 }
-.indented .indented .intented {
+.ama__abstract .indented .indented .intented {
   padding-left: 20px;
 }
-.indented .indented .intented .intented {
+.ama__abstract .indented .indented .intented .intented {
   padding-left: 0px;
 }
-.indented::after {
+.ama__abstract .indented::after {
   content: "";
   position: absolute;
   top: 0;
@@ -25434,15 +25480,15 @@ section[id^=node-abstract-field-abstract-comments--] form div[id^=edit-actions--
   transform: translateY(-60px);
   z-index: 5;
 }
-.indented .indented::after {
+.ama__abstract .indented .indented::after {
   -webkit-transform: translateY(-80px);
   transform: translateY(-80px);
 }
-.indented .indented .indented::after {
+.ama__abstract .indented .indented .indented::after {
   -webkit-transform: translateY(-100px);
   transform: translateY(-100px);
 }
-.indented .indented .indented .indented::after {
+.ama__abstract .indented .indented .indented .indented::after {
   -webkit-transform: translateY(-120px);
   transform: translateY(-120px);
 }
