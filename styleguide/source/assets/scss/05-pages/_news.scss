@@ -12,6 +12,14 @@
     .author {
       margin-bottom: calc($gutter * .5);
     }
+    .ama__inline-bio {
+      &.position_enabled {
+        .ama__inline-bio__link a:after {
+          content: ",";
+          margin-right: 4px;
+        }
+      }
+    }
     &.title-row {
       [data-region="title"] {
         flex: 1;
