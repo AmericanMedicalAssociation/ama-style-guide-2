@@ -15177,6 +15177,9 @@ span.ama__inline-bio__link a:focus-visible {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  row-gap: 2px;
 }
 .ama__inline-bio__link:hover {
   text-decoration: none;
@@ -39413,6 +39416,10 @@ form[id*=-layout-builder-form] #edit-moderation-state-wrapper .form-wrapper tran
 }
 .article-header .article-header-row .author {
   margin-bottom: 14px;
+}
+.article-header .article-header-row .ama__inline-bio.position_enabled .ama__inline-bio__link a:after {
+  content: ",";
+  margin-right: 4px;
 }
 .article-header .article-header-row.title-row [data-region=title] {
   -webkit-box-flex: 1;
