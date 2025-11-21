@@ -12,13 +12,13 @@
     attach: function(context, settings) {
 
       $(function() {
-        if ($('.ama__footer.has_banner').length) {
+        if ($('footer.has_banner').length) {
           function setbannerOffset() {
             // get hub banner height, minus one to account for white space below footer
             var hubBanner = $('.ama__hub-banner').outerHeight() - 1;
 
             // take height and set as margin-bottom on footer
-            $('.ama__footer.has_banner').css('margin-bottom', hubBanner + 'px');
+            $('footer.has_banner').css('margin-bottom', hubBanner + 'px');
           }
 
           // on load, set offset
